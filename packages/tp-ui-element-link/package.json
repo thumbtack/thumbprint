@@ -25,7 +25,7 @@
             "url": "https://danoc.me/"
         }
     ],
-    "license": "UNLICENSED",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"
     },

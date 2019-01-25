@@ -12,7 +12,7 @@
         "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
-    "license": "UNLICENSED",
+    "license": "Apache-2.0",
     "scripts": {
         "start": "yarn clear && yarn generateCss",
         "clear": "rm -rf dist",

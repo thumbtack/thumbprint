@@ -12,7 +12,7 @@
         "access": "public"
     },
     "author": "Daniel O'Connor <daniel@danoc.me>",
-    "license": "UNLICENSED",
+    "license": "Apache-2.0",
     "dependencies": {
         "is-semver": "^1.0.8",
         "lodash": "^4.17.10",
