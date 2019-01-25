@@ -16,7 +16,7 @@
         "access": "public"
     },
     "author": "Daniel O'Connor <daniel@danoc.me>",
-    "license": "UNLICENSED",
+    "license": "Apache-2.0",
     "devDependencies": {
         "fs-extra": "^5.0.0",
         "glob": "^7.1.2",

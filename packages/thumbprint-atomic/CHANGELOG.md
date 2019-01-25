@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use Apache License 2.0.
+
 ## 3.1.1 - 2019-01-24
 
 ### Changed
