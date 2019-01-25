@@ -4,9 +4,11 @@ Thumbprint is the design system at Thumbtack. Though its primary purpose to supp
 
 ## Documentation
 
-[![Screenshot of Thumbprint documentation](https://i.imgur.com/kAJIzpC.png)](https://thumbprint.design/)
-
 Thumbprint is documented at [thumbprint.design](https://thumbprint.design/).
+
+[![Screenshot of Thumbprint documentation](https://i.imgur.com/ioUtLO5.png)](https://thumbprint.design/)
+
+The documentation is hosted on Netlify and built with [Gatsby](https://www.gatsbyjs.org/) and [Gatsby MDX](https://github.com/ChristopherBiscardi/gatsby-mdx).
 
 ## Overview
 
@@ -46,8 +48,6 @@ The Thumbprint codebase is a monorepo containing individually versioned NPM pack
 | [`@thumbtack/tp-ui-layout-input-row`](/packages/tp-ui-layout-input-row)       | [![npm version](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-input-row)](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-input-row)       |
 | [`@thumbtack/tp-ui-layout-longread`](/packages/tp-ui-layout-longread)         | [![npm version](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-longread)](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-longread)         |
 | [`@thumbtack/tp-ui-layout-wrap`](/packages/tp-ui-layout-wrap)                 | [![npm version](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-wrap)](https://badgen.net/npm/v/@thumbtack/tp-ui-layout-wrap)                 |
-
-Our documentation lives in [the `www/` folder](www) and is built with [Gatsby](https://www.gatsbyjs.org/) and [Gatsby MDX](https://github.com/ChristopherBiscardi/gatsby-mdx).
 
 ## Contributing
 
