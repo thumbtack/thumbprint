@@ -2,7 +2,11 @@
 
 Thumbprint is the design system at Thumbtack. Though its primary purpose to support Thumbtack projects, we have open-sourced it for those interested in how we build and manage our documentation and code.
 
+## Documentation
+
 [![Screenshot of Thumbprint documentation](https://i.imgur.com/kAJIzpC.png)](https://thumbprint.design/)
+
+Thumbprint is documented at [thumbprint.design](https://thumbprint.design/).
 
 ## Overview
 
