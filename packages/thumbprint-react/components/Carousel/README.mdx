@@ -1,0 +1,67 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: carousel/index.mdx
+platform: react
+url: /components/carousel/react/
+mdxType: componentApi
+---
+
+## How the carousel works
+
+The `Carousel` component is a low-level controlled component. It displays multiple items in a row and animates when the `selectedIndex` changes. It is infinite by default and the contents are draggable by touch devices.
+
+```jsx
+class CarouselDemo extends React.Component {
+    constructor() {
+        this.state = {
+            selectedIndex: 0,
+        };
+
+        this.onSelectedIndexChange = this.onSelectedIndexChange.bind(this);
+    }
+
+    onSelectedIndexChange(newIndex) {
+        this.setState({ selectedIndex: Math.round(newIndex) });
+    }
+
+    render() {
+        return (
+            <Carousel
+                visibleCount={3}
+                spacing="16px"
+                selectedIndex={this.state.selectedIndex}
+                onSelectedIndexChange={this.onSelectedIndexChange}
+            >
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Personal Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/328491711124668465/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Personal Training</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Dog Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761411685384319/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Dog Training</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Local Moving (under 50 miles)"
+                        url="https://picsum.photos/666/417/?image=300"
+                    />
+                    <ServiceCardTitle>Local Moving (under 50 miles)</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Massage Therapy"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761720722374783/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Massage Therapy</ServiceCardTitle>
+                </ServiceCard>
+            </Carousel>
+        );
+    }
+}
+```

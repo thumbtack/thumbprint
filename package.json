@@ -1,0 +1,102 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && cd www && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn start",
+        "updated": "lerna updated",
+        "bootstrap": "lerna run prepublishOnly",
+        "publish": "git checkout master && git pull && yarn test && yarn build:dist && lerna publish",
+        "build:docs": "yarn run bootstrap && cd www && yarn build",
+        "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
+        "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
+        "test": "yarn run bootstrap && yarn run test:lint && yarn run test:jest && yarn run test:prettier",
+        "test:jest": "TZ=America/Los_Angeles jest --config .jest.config.json",
+        "test:jest:watch": "yarn run bootstrap && yarn test:jest --watch",
+        "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different || (c=$?; echo \"\n⚠️  Some files in this branch have not been formatted with Prettier. Please run 'yarn run format' to format them.\n\"; (exit $c))",
+        "test:lint": "yarn test:lint:md && yarn test:lint:css && yarn test:lint:js",
+        "test:lint:md": "remark \"packages/*/CHANGELOG.md\" --frail --quiet",
+        "test:lint:css": "stylelint --ignore-pattern **/*.module.scss **/*.scss",
+        "test:lint:js": "eslint . --ignore-path .gitignore --ext .jsx --ext .js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-react": "^7.0.0",
+        "@thumbtack/changelog-lint": "^0.1.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-jest": "^23.6.0",
+        "babel-plugin-external-helpers": "^6.22.0",
+        "babel-plugin-inline-react-svg": "^0.5.2",
+        "enzyme": "^3.6.0",
+        "enzyme-adapter-react-16": "^1.7.0",
+        "enzyme-to-json": "^3.3.4",
+        "eslint": "^5.9.0",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jest": "^22.1.0",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-react": "^7.11.1",
+        "execa": "^0.10.0",
+        "folder-hash": "^2.1.1",
+        "fs-extra": "^7.0.0",
+        "husky": "^1.1.2",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^23.6.0",
+        "lerna": "^2.2.0",
+        "node-sass": "^4.5.2",
+        "prettier": "1.15.3",
+        "pretty-quick": "^1.8.0",
+        "prop-types": "^15.6.1",
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0",
+        "remark-cli": "^5.0.0",
+        "stylelint": "^9.9.0",
+        "stylelint-config-prettier": "^4.0.0",
+        "stylelint-config-recommended-scss": "^3.2.0",
+        "stylelint-scss": "^3.5.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thumbtack/thumbprint.git"
+    },
+    "keywords": [
+        "thumbtack",
+        "thumbprint",
+        "ui-library",
+        "design-system"
+    ],
+    "author": {
+        "name": "Tom Genoni",
+        "email": "tom@atomeye.com",
+        "url": "http://atomeye.com/"
+    },
+    "contributors": [
+        {
+            "name": "Daniel O'Connor",
+            "email": "daniel@danoc.me",
+            "url": "https://danoc.me/"
+        }
+    ],
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint#readme",
+    "remarkConfig": {
+        "plugins": [
+            "@thumbtack/changelog-lint"
+        ]
+    },
+    "workspaces": [
+        "packages/*",
+        "www"
+    ],
+    "resolutions": {
+        "react-docgen": "3.0.0-rc.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}

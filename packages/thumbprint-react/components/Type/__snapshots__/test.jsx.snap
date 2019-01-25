@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text allows size to be customised 1`] = `
+<Text
+  elementName="p"
+  size={2}
+>
+  <p
+    className="text2"
+  >
+    goose
+  </p>
+</Text>
+`;
+
+exports[`Text can render a marquee 1`] = `
+<Text
+  elementName="marquee"
+  size={1}
+>
+  <marquee
+    className="text1"
+  >
+    goose
+  </marquee>
+</Text>
+`;
+
+exports[`Text can render a span 1`] = `
+<Text
+  elementName="span"
+  size={1}
+>
+  <span
+    className="text1"
+  >
+    goose
+  </span>
+</Text>
+`;
+
+exports[`Text renders a paragraph by default 1`] = `
+<Text
+  elementName="p"
+  size={1}
+>
+  <p
+    className="text1"
+  >
+    goose
+  </p>
+</Text>
+`;
+
+exports[`Text renders content that is passed in 1`] = `
+<Text
+  elementName="p"
+  size={1}
+>
+  <p
+    className="text1"
+  >
+    goose
+  </p>
+</Text>
+`;
+
+exports[`Text supports \`className\` 1`] = `
+<Text
+  className="white black blue"
+  elementName="p"
+  size={1}
+>
+  <p
+    className="text1 white black blue"
+  >
+    goose
+  </p>
+</Text>
+`;
+
+exports[`Text supports \`dataTest\` prop 1`] = `
+<Text
+  dataTest="Duck"
+  elementName="p"
+  size={1}
+>
+  <p
+    className="text1"
+    data-test="Duck"
+  >
+    Goose
+  </p>
+</Text>
+`;
+
+exports[`Title allows size to be customised 1`] = `
+<Title
+  size={2}
+>
+  <div
+    className="title2"
+  >
+    goose
+  </div>
+</Title>
+`;
+
+exports[`Title renders a div by default 1`] = `
+<Title
+  size={1}
+>
+  <div
+    className="title1"
+  >
+    goose
+  </div>
+</Title>
+`;
+
+exports[`Title renders content that is passed in 1`] = `
+<Title
+  size={1}
+>
+  <div
+    className="title1"
+  >
+    goose
+  </div>
+</Title>
+`;
+
+exports[`Title supports \`className\` 1`] = `
+<Title
+  className="white black blue"
+  size={1}
+>
+  <div
+    className="title1 white black blue"
+  >
+    goose
+  </div>
+</Title>
+`;
+
+exports[`Title supports \`dataTest\` prop 1`] = `
+<Title
+  dataTest="Duck"
+  headingLevel={1}
+  size={1}
+>
+  <h1
+    className="title1"
+    data-test="Duck"
+  >
+    Goose
+  </h1>
+</Title>
+`;
+
+exports[`Title supports \`id\` prop 1`] = `
+<Title
+  headingLevel={1}
+  id="Duck"
+  size={1}
+>
+  <h1
+    className="title1"
+    id="Duck"
+  >
+    Goose
+  </h1>
+</Title>
+`;
+
+exports[`Title supports different heading levels 1`] = `
+<Title
+  headingLevel={6}
+  size={1}
+>
+  <h6
+    className="title1"
+  >
+    goose
+  </h6>
+</Title>
+`;

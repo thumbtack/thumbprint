@@ -1,0 +1,27 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+.root {
+    margin-left: tp-spacer(3);
+}
+
+.bullet {
+    list-style-type: disc;
+}
+
+.decimal {
+    list-style-type: decimal;
+}
+
+.alpha {
+    list-style-type: lower-alpha;
+}
+
+.item {
+    padding-left: tp-spacer(0.5);
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding-left: tp-spacer(1.5);
+    }
+}

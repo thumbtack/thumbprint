@@ -1,0 +1,14 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+.root {
+    border-top: 1px solid $tp-color__gray;
+    margin-top: auto;
+    padding: tp-spacer(3) tp-spacer(2.5);
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: 0 tp-spacer(4) tp-spacer(5);
+        border-top: none;
+    }
+}

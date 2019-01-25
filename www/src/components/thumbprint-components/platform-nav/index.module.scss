@@ -1,0 +1,10 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.navbarDivider {
+    // This extends the bottom bar the entire width of the content page.
+    // The margin-top value must equal the height of the navbar.
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: -3px;
+}

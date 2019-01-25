@@ -1,0 +1,28 @@
+// Breakpoints
+// Use with:
+//
+// @include tp-respond-above($tp-breakpoint__medium) {
+// ...css here...
+// }
+//
+// @include tp-respond-above(300px) {
+// ...css here...
+// }
+
+@mixin tp-respond-between($min-width, $max-width) {
+    @media (min-width: $min-width + 1) and (max-width: $max-width) {
+        @content;
+    }
+}
+
+@mixin tp-respond-above($width) {
+    @media (min-width: $width + 1) {
+        @content;
+    }
+}
+
+@mixin tp-respond-below($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}

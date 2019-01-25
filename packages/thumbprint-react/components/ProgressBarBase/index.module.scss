@@ -1,0 +1,16 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.outer {
+    background-color: $tp-color__gray-200;
+    border-radius: 3px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.inner {
+    background-color: $tp-color__blue;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    transition: transform 1s ease;
+}

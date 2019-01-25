@@ -1,0 +1,60 @@
+@import 'node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import 'node_modules/@thumbtack/tp-ui-core-function/_index';
+@import 'node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+@mixin tp-longread {
+    h1 {
+        font-size: $tp-font__title__3__size;
+        line-height: $tp-font__title__3__line-height;
+        font-weight: $tp-font__title__3__weight;
+
+        @include tp-respond-above($tp-breakpoint__medium) {
+            font-size: $tp-font__title__3__responsive__size;
+            line-height: $tp-font__title__3__responsive__line-height;
+            font-weight: $tp-font__title__3__responsive__weight;
+        }
+    }
+
+    h2 {
+        font-size: $tp-font__title__4__size;
+        line-height: $tp-font__title__4__line-height;
+        font-weight: $tp-font__title__4__weight;
+        margin-top: tp-spacer(5);
+    }
+
+    h3 {
+        font-size: $tp-font__title__5__size;
+        line-height: $tp-font__title__5__line-height;
+        font-weight: $tp-font__title__5__weight;
+        margin-top: tp-spacer(4);
+    }
+
+    ul,
+    ol {
+        margin-bottom: tp-spacer(1.5);
+        margin-left: tp-spacer(3);
+
+        > li {
+            padding-left: tp-spacer(0.5);
+
+            @include tp-respond-above($tp-breakpoint__small) {
+                padding-left: tp-spacer(1.5);
+            }
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    p,
+    ul,
+    ol {
+        margin-bottom: tp-spacer(2.5);
+        margin-top: tp-spacer(2.5);
+    }
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "## 1.2.3 - 2010-02-02
+
+### Foo
+
+### Bar
+
+### Foo",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 7,
+      "location": Object {
+        "end": Object {
+          "column": 8,
+          "line": 7,
+          "offset": 48,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 7,
+          "offset": 41,
+        },
+      },
+      "reason": "Third-level heading “Foo” appears twice within “1.2.3 - 2010-02-02”.",
+      "ruleId": "changelog-heading-3-duplicate-sections",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

@@ -1,0 +1,257 @@
+---
+package: '@thumbtack/tp-ui-layout-form'
+kit: form/index.mdx
+platform: scss
+url: /components/form/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-layout-form';
+import '@thumbtack/tp-ui-element-label';
+import '@thumbtack/tp-ui-layout-grid';
+import '@thumbtack/tp-ui-layout-button-row';
+import '@thumbtack/tp-ui-element-input';
+import '@thumbtack/tp-ui-element-checkbox';
+import '@thumbtack/tp-ui-element-select';
+import '@thumbtack/tp-ui-element-radio';
+import '@thumbtack/tp-ui-element-button';
+import '@thumbtack/tp-ui-element-textarea';
+import '@thumbtack/tp-ui-component-form-note';
+
+## Basic form row
+
+You can use `tp-grid` to lay out inputs within a form.
+
+```html
+<form>
+    <label class="tp-label" for="input-2166446100578304">Some Label</label>
+    <div class="tp-grid">
+        <div class="tp-col tp-col--flex">
+            <input
+                type="text"
+                class="tp-text-input"
+                placeholder="placeholder text"
+                id="input-2166446100578304"
+                name="input-2166446100578304"
+            />
+        </div>
+        <div class="tp-col"><button class="tp-button">Some Action</button></div>
+    </div>
+</form>
+```
+
+## Complex example
+
+```html
+<form>
+    <fieldset class="tp-fieldset">
+        <ol class="tp-form-fields">
+            <li class="tp-form-field__item">
+                <label class="tp-label" for="input-1906585706168320">Input</label>
+                <input
+                    type="text"
+                    class="tp-text-input"
+                    id="input-1906585706168320"
+                    name="input-1906585706168320"
+                />
+            </li>
+            <li class="tp-form-field__item">
+                <label class="tp-label" for="input-4688348568354816">Fixed-width Input</label>
+                <input
+                    type="text"
+                    class="tp-text-input tp-width--250"
+                    id="input-4688348568354816"
+                    name="input-4688348568354816"
+                />
+            </li>
+            <li class="tp-form-field__item">
+                <div class="tp-grid">
+                    <div class="tp-col tp-col--6">
+                        <label class="tp-label" for="input-2059093021818880">Split Inputs</label>
+                        <input
+                            type="text"
+                            class="tp-text-input"
+                            id="input-2059093021818880"
+                            name="input-2059093021818880"
+                        />
+                    </div>
+                    <div class="tp-col tp-col--6">
+                        <label class="tp-label" for="input-7371016592424960">Split Inputs</label>
+                        <input
+                            type="text"
+                            class="tp-text-input"
+                            id="input-7371016592424960"
+                            name="input-7371016592424960"
+                        />
+                    </div>
+                </div>
+            </li>
+            <li class="tp-form-field__item">
+                <label class="tp-label" for="input-4799893331771392">Textarea</label>
+                <textarea
+                    id="input-4799893331771392"
+                    name="input-4799893331771392"
+                    class="tp-textarea"
+                >
+                </textarea>
+            </li>
+            <li class="tp-form-field__item">
+                <div class="tp-input-wrap">
+                    <input
+                        class="tp-checkbox-input"
+                        id="input-8588007737131008"
+                        name="input-8588007737131008"
+                        type="checkbox"
+                        checked=""
+                    />
+                    <div class="tp-checkbox-image"></div>
+                    <label class="tp-label" for="input-8588007737131008">
+                        Send me notifications. I like them.
+                    </label>
+                </div>
+                <div class="tp-input-wrap">
+                    <input
+                        class="tp-checkbox-input"
+                        id="input-2448423001260032"
+                        name="input-2448423001260032"
+                        type="checkbox"
+                    />
+                    <div class="tp-checkbox-image"></div>
+                    <label class="tp-label" for="input-2448423001260032">
+                        Send me email summaries.
+                    </label>
+                </div>
+            </li>
+        </ol>
+    </fieldset>
+    <div class="tp-button-row tp-button-row--right">
+        <button class="tp-button tp-button--secondary">Cancel</button>
+        <button class="tp-button">Submit</button>
+    </div>
+</form>
+```
+
+## Error states
+
+Error states and form notes can be added to inputs, providing helpful information to the user.
+
+```html
+<form>
+    <ol class="tp-form-fields">
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--bad-news" for="input-6274776431591424">
+                Address
+            </label>
+            <input
+                type="text"
+                class="tp-text-input tp-text-input--bad-news"
+                name="input-6274776431591424"
+                id="input-6274776431591424"
+            />
+            <div class="tp-form-note tp-form-note--bad-news">This field is required.</div>
+        </li>
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--bad-news" for="input-7234166728949760">Choose</label>
+            <select
+                class="tp-select tp-select--bad-news"
+                name="input-7234166728949760"
+                id="input-7234166728949760"
+            >
+                <option value="one">This is option one</option>
+                <option value="two">And this is option two</option>
+            </select>
+            <div class="tp-form-note tp-form-note--bad-news">This field is required.</div>
+        </li>
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--bad-news" for="input-7305020003319808">
+                Textarea
+            </label>
+            <textarea
+                class="tp-textarea tp-textarea--bad-news"
+                name="input-7305020003319808"
+                id="input-7305020003319808"
+            >
+                This is text I typed
+            </textarea>
+            <div class="tp-form-note tp-form-note--bad-news">This field is required.</div>
+        </li>
+    </ol>
+</form>
+```
+
+## Disabled states
+
+```html
+<form>
+    <ol class="tp-form-fields">
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--disabled" for="input-8904144492429312">
+                Address
+            </label>
+            <input
+                type="text"
+                class="tp-text-input"
+                id="input-8904144492429312"
+                name="input-8904144492429312"
+                disabled
+            />
+        </li>
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--disabled" for="input-3941123064070144">
+                Fill Space
+            </label>
+            <select
+                class="tp-select"
+                id="input-874927628484608"
+                name="input-874927628484608"
+                disabled
+            >
+                <option value="one">This is option one</option>
+                <option value="two">And this is option two</option>
+            </select>
+        </li>
+        <li class="tp-form-field__item">
+            <label class="tp-label tp-label--disabled" for="input-874927628484608">
+                Textarea
+            </label>
+            <textarea
+                class="tp-textarea"
+                id="input-874927628484608"
+                name="input-874927628484608"
+                disabled
+            >
+            </textarea>
+        </li>
+        <li class="tp-form-field__item">
+            <div class="tp-input-wrap">
+                <input
+                    class="tp-checkbox-input"
+                    id="input-1337531096367104"
+                    name="input-1337531096367104"
+                    type="checkbox"
+                    disabled
+                />
+                <div class="tp-checkbox-image"></div>
+                <label class="tp-label tp-label--disabled" for="input-1337531096367104">
+                    Send me email summaries.
+                </label>
+            </div>
+        </li>
+        <li class="tp-form-field__item">
+            <div class="tp-input-wrap">
+                <input
+                    class="tp-radio-input"
+                    name="input-7075228336881664"
+                    id="input-7075228336881664b"
+                    type="radio"
+                    disabled
+                />
+                <div class="tp-radio-image"></div>
+                <label class="tp-label tp-label--disabled" for="input-7075228336881664b">
+                    As soon as possible
+                </label>
+            </div>
+        </li>
+    </ol>
+</form>
+```

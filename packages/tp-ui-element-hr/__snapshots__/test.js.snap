@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-rule {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #d3d4d5;
+  margin-top: 7px;
+  margin-bottom: 8px; }
+  .tp-rule--dotted {
+    border-top-style: dotted; }
+  .tp-rule--dashed {
+    border-top-style: dashed; }
+"
+`;

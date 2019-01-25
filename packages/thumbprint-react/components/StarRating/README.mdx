@@ -1,0 +1,73 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: star-rating/index.mdx
+platform: react
+url: /components/star-rating/react/
+mdxType: componentApi
+---
+
+import '@thumbtack/thumbprint-atomic';
+
+## Basic examples
+
+### Sizes
+
+```jsx
+<React.Fragment>
+    <div>
+        <StarRating rating={0} />
+    </div>
+    <div>
+        <StarRating rating={2.5} />
+    </div>
+    <div>
+        <StarRating rating={5} />
+    </div>
+    <div>
+        <StarRating rating={0} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={2.5} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={5} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={0} size="large" />
+    </div>
+    <div>
+        <StarRating rating={2.5} size="large" />
+    </div>
+    <div>
+        <StarRating rating={5} size="large" />
+    </div>
+</React.Fragment>
+```
+
+## `StarRating` with inline text
+
+```jsx
+<div className="flex">
+    <StarRating rating={2.7} size="large" />
+    <span className="ml3 b">13 reviews</span>
+</div>
+```
+
+## Event listeners
+
+```jsx
+<StarRating
+    size="large"
+    rating={3}
+    hoverRating={2}
+    onStarClick={value => {
+        console.log(`StarRating: Clicked on ${value}`);
+    }}
+    onStarHover={value => {
+        console.log(`StarRating: Hovered over ${value}`);
+    }}
+    onMouseLeave={() => {
+        console.log('StarRating: onMouseLeave');
+    }}
+/>
+```

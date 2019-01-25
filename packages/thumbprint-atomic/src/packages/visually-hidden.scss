@@ -1,0 +1,28 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+.visually-hidden {
+    position: fixed !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_visually-hidden {
+        position: fixed !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_visually-hidden {
+        position: fixed !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_visually-hidden {
+        position: fixed !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+    }
+}

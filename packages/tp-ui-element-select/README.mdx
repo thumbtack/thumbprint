@@ -1,0 +1,87 @@
+---
+package: '@thumbtack/tp-ui-element-select'
+kit: select/index.mdx
+platform: scss
+url: /components/select/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-element-select';
+import '@thumbtack/tp-ui-element-label';
+
+## Select dropdown sizes
+
+This is the default size for select dropdowns.
+
+### Large
+
+```html
+<label class="tp-label" for="example-size-large">Select a state</label>
+<select id="example-size-large" value="ca" class="tp-select">
+    <option value="ny">New York</option>
+    <option value="ca">California</option>
+    <option value="tn">Tennessee</option>
+    <option value="fl">Florida</option>
+</select>
+```
+
+### Small
+
+The `tp-select--small` class renders a smaller select dropdown.
+
+```html
+<label class="tp-label" for="example-size-small">Select a state</label>
+<select id="example-size-small" value="ca" class="tp-select tp-select--small">
+    <option value="ny">New York</option>
+    <option value="ca">California</option>
+    <option value="tn">Tennessee</option>
+    <option value="fl">Florida</option>
+</select>
+```
+
+## Widths
+
+By default, the select dropdown renders as an `inline-block` element. Its width is determined by the `option` with the longest text.
+
+The `tp-select--full` class can be used to set the width to 100%.
+
+### Full width
+
+```html
+<select value="ca" class="tp-select tp-select--full">
+    <option value="ny">New York</option>
+    <option value="ca">California</option>
+    <option value="tn">Tennessee</option>
+    <option value="fl">Florida</option>
+</select>
+```
+
+## Disabled selects
+
+The `disabled` attribute visually and functionally disables the select dropdown.
+
+```html
+<label class="tp-label tp-label--disabled" for="example-disabled">Select a state</label>
+<select id="example-disabled" value="ca" disabled class="tp-select">
+    <option value="ny">New York</option>
+    <option value="ca">California</option>
+    <option value="tn">Tennessee</option>
+    <option value="fl">Florida</option>
+</select>
+```
+
+## Select dropdown with an error
+
+The `tp-select--bad-news` class can be used to visually represent an error.
+
+This prop only changes the select dropdown’s color. It should be used alongside an error message that helps users advance through the form.
+
+```html
+<label class="tp-label tp-label--bad-news" for="example-disabled">Select a state</label>
+<select id="example-disabled" value="ca" class="tp-select tp-select--bad-news">
+    <option value="ny">New York</option>
+    <option value="ca">California</option>
+    <option value="tn">Tennessee</option>
+    <option value="fl">Florida</option>
+</select>
+```

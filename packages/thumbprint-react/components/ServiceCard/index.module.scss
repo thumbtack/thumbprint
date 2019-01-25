@@ -1,0 +1,58 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+
+.root {
+    color: inherit;
+    display: block;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+.image {
+    height: 0;
+    padding-bottom: 62.5%; // 8x5 aspect ratio
+    border-radius: $tp-border__radius__base;
+    margin-bottom: tp-spacer(1);
+    background-size: cover;
+}
+
+.title {
+    font-weight: 700;
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__body__1__line-height;
+    // Uses line-height to calculate max-height.
+    max-height: $tp-font__body__1__line-height * 2;
+    margin-bottom: tp-spacer(0.5);
+    overflow: hidden;
+    // For webkit browsers that support multiline truncation.
+    /* autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.descriptionWrap {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    font-size: $tp-font__body__3__size;
+    line-height: $tp-font__body__3__line-height;
+    color: $tp-color__black-300;
+}
+
+.descriptionWrap svg {
+    flex: none;
+    margin-right: tp-spacer(0.5);
+}
+
+.iconBlue svg {
+    color: $tp-color__blue;
+}
+
+.iconGreen svg {
+    color: $tp-color__green;
+}

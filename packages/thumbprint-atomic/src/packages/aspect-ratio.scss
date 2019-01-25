@@ -1,0 +1,30 @@
+.aspect-ratio {
+    height: 0 !important;
+    position: relative !important;
+}
+
+.aspect-ratio-16x9 {
+    padding-bottom: 56.25% !important;
+}
+
+.aspect-ratio-8x5 {
+    padding-bottom: 62.5% !important;
+}
+
+.aspect-ratio-7x3 {
+    padding-bottom: 42.86% !important;
+}
+
+.aspect-ratio-1x1 {
+    padding-bottom: 100% !important;
+}
+
+.aspect-ratio-object {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}

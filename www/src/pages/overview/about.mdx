@@ -1,0 +1,96 @@
+---
+title: About
+description: Thumbprint is the design system for digital products at Thumbtack.
+---
+
+import { Title, Text, GridColumn, Grid } from '@thumbtack/thumbprint-react';
+import { Img } from 'components/mdx';
+
+Thumbprint is a living system that streamlines the design and development process through consolidation, standardization, and documentation. By reducing decision-making friction, we free teams to focus on higher-order problems while increasing quality and consistency for Thumbtack's customers.
+
+## Principles
+
+### Build with a consistent process
+
+We use toolkits to help us identify, prioritize, and scope our work. Toolkits capture broad concepts, like typography or color, and smaller ones, like pills and loaders. We build only what is essential after considering stakeholder feedback, accessibility requirements, and future use cases.
+
+### Communicate and document everything
+
+Providing clear references and dependable tools are critical to the success of Thumbprint. This is accomplished by creating a shared language for designers and developers, responding quickly to questions, continually communicating changes, and refining our documentation to ensure quick and reliable results.
+
+### Encourage collaboration and feedback
+
+Encouraging contributions and constructive criticism helps establish trust with teams and promotes the system as a shared resource with a transparent process. By spreading system thinking to a wider, diverse group, we also form greater clarity about what to build and, equally important, what not to build.
+
+## Team
+
+<div className="mt5">
+    <Grid gutter="wide">
+        <GridColumn aboveSmall={6}>
+            <div className="flex mb2">
+                <Img
+                    src="./aaron.jpg"
+                    alt="Photo of Aaron"
+                    width="48"
+                    height="48"
+                    className="br2"
+                />
+                <div className="ml2">
+                    <div className="b">Aaron Bailey</div>
+                    <Text size={2} className="black-300">
+                        Product Design Manager
+                    </Text>
+                </div>
+            </div>
+            <Text size={2} className="black-300 pb5">
+                Aaron leads the team, plans the work, provides design guidance, and keeps us on
+                track.
+            </Text>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <div className="flex mb2">
+                <Img src="./jon.jpg" alt="Photo of Jon" width="48" height="48" className="br2" />
+                <div className="ml2">
+                    <div className="b">Jon Kerwin</div>
+                    <Text size={2} className="black-300">
+                        Product Designer
+                    </Text>
+                </div>
+            </div>
+            <Text size={2} className="black-300 pb5">
+                Jon conducts the design audits, establishes guidelines, and builds and manages the
+                design assets for the system.
+            </Text>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <div className="flex mb2">
+                <Img src="./dan.jpg" alt="Photo of Daniel" width="48" height="48" className="br2" />
+                <div className="ml2">
+                    <div className="b">Daniel O’Connor</div>
+                    <Text size={2} className="black-300">
+                        UI Developer
+                    </Text>
+                </div>
+            </div>
+            <Text size={2} className="black-300 pb5">
+                Daniel spearheads our React efforts, creates and maintains components,
+                documentation, and infrastructure tools.
+            </Text>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <div className="flex mb2">
+                <Img src="./tom.jpg" alt="Photo of Tom" width="48" height="48" className="br2" />
+                <div className="ml2">
+                    <div className="b">Tom Genoni</div>
+                    <Text size={2} className="black-300">
+                        UI Developer
+                    </Text>
+                </div>
+            </div>
+            <Text size={2} className="black-300">
+                Tom designs and builds internal tools, writes and manages documentation, and creates
+                and maintains components.
+            </Text>
+        </GridColumn>
+    </Grid>
+</div>

@@ -1,0 +1,56 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+.strike {
+    text-decoration: line-through !important;
+}
+
+.underline {
+    text-decoration: underline !important;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_strike {
+        text-decoration: line-through !important;
+    }
+
+    .s_underline {
+        text-decoration: underline !important;
+    }
+
+    .s_no-underline {
+        text-decoration: none !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_strike {
+        text-decoration: line-through !important;
+    }
+
+    .m_underline {
+        text-decoration: underline !important;
+    }
+
+    .m_no-underline {
+        text-decoration: none !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_strike {
+        text-decoration: line-through !important;
+    }
+
+    .l_underline {
+        text-decoration: underline !important;
+    }
+
+    .l_no-underline {
+        text-decoration: none !important;
+    }
+}

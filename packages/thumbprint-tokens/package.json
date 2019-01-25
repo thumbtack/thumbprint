@@ -1,0 +1,25 @@
+{
+    "name": "@thumbtack/thumbprint-tokens",
+    "version": "6.2.3",
+    "main": "dist/javascript/index.cjs.js",
+    "module": "dist/javascript/index.es.js",
+    "sideEffects": false,
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "start": "./src/index.js",
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "author": "Daniel O'Connor <daniel@danoc.me>",
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "fs-extra": "^5.0.0",
+        "glob": "^7.1.2",
+        "lodash": "^4.17.4"
+    }
+}

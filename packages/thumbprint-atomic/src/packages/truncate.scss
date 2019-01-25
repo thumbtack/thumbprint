@@ -1,0 +1,32 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+.truncate {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_truncate {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_truncate {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_truncate {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}

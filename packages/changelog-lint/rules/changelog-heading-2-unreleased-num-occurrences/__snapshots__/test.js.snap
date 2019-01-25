@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "## UNRELEASED",
+  "output": Array [
+    Object {
+      "column": null,
+      "fatal": false,
+      "line": null,
+      "location": Object {
+        "end": Object {
+          "column": null,
+          "line": null,
+        },
+        "start": Object {
+          "column": null,
+          "line": null,
+        },
+      },
+      "reason": "Changelog must contain one second level heading that says “Unreleased“ (0 found).",
+      "ruleId": "changelog-heading-2-unreleased-num-occurrences",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #1 fails 1`] = `
+Object {
+  "input": "## Unreleased
+
+## Unreleased",
+  "output": Array [
+    Object {
+      "column": null,
+      "fatal": false,
+      "line": null,
+      "location": Object {
+        "end": Object {
+          "column": null,
+          "line": null,
+        },
+        "start": Object {
+          "column": null,
+          "line": null,
+        },
+      },
+      "reason": "Changelog must contain one second level heading that says “Unreleased“ (2 found).",
+      "ruleId": "changelog-heading-2-unreleased-num-occurrences",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

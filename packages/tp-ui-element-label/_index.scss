@@ -1,0 +1,17 @@
+@import 'node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import 'node_modules/@thumbtack/tp-ui-core-function/_index';
+
+.tp-label {
+    display: block;
+    margin-bottom: tp-spacer(0.5);
+    font-weight: 700;
+
+    &--bad-news {
+        color: $tp-color__red;
+    }
+
+    &--disabled {
+        color: $tp-color__gray;
+        cursor: default !important;
+    }
+}

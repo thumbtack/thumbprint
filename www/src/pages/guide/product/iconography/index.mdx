@@ -1,0 +1,29 @@
+---
+title: Iconography
+description: Consistently styled visuals for our products.
+---
+
+import {
+    ContentActionsAttachMedium,
+    ContentActionsAttachSmall,
+    ContentActionsAttachTiny,
+} from '@thumbtack/thumbprint-icons';
+
+import Alert from 'components/alert';
+
+Used sparingly, [Thumbprint icons](/icons/) provide increased meaning and visual importance to sections of content and user actions. Our published set consists of about 100 custom-drawn icons divided into nine categories, with a back catalog of another 400 that can be added as needed.
+
+## Sizes
+
+Each icon comes in at least two sizes, "medium" and "small", with a smaller number in a "tiny" size, and each is available for React, HTML, Android, PNGs for iOS, and the SVG itself.
+
+| Size   | Dimensions | Example                        |
+| ------ | ---------- | ------------------------------ |
+| Medium | 28x28      | <ContentActionsAttachMedium /> |
+| Small  | 18x18      | <ContentActionsAttachSmall />  |
+| Tiny   | 14x14      | <ContentActionsAttachTiny />   |
+
+<Alert type="warning" title="Don’t resize icons">
+    Although SVGs are resolution independent these icons were pixel-aligned to be rendered only at
+    the dimensions provided. If you have a special case please contact the Design Systems team.
+</Alert>

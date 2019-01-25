@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`item renders content that is passed in 1`] = `
+<ListItem>
+  <li
+    className="item"
+  >
+    goose
+  </li>
+</ListItem>
+`;
+
+exports[`renders content that is passed in 1`] = `
+<List
+  theme="bullet"
+>
+  <ul
+    className="root bullet"
+  >
+    goose
+  </ul>
+</List>
+`;
+
+exports[`renders ol for alpha theme 1`] = `
+<List
+  theme="alpha"
+>
+  <ol
+    className="root alpha"
+  >
+    goose
+  </ol>
+</List>
+`;
+
+exports[`renders ol for decimal theme 1`] = `
+<List
+  theme="decimal"
+>
+  <ol
+    className="root decimal"
+  >
+    goose
+  </ol>
+</List>
+`;
+
+exports[`renders ul for bullet theme 1`] = `
+<List
+  theme="bullet"
+>
+  <ul
+    className="root bullet"
+  >
+    goose
+  </ul>
+</List>
+`;

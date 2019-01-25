@@ -1,0 +1,36 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+$close-button-height: 48px;
+
+.contents {
+    background-color: $tp-color__gray-200;
+    border-radius: $tp-border__radius__base;
+    position: relative;
+    min-height: $close-button-height;
+}
+
+.contentsBrand {
+    background-color: $tp-color__ui__brand;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: $close-button-height;
+    width: 48px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.closeIcon {
+    fill: $tp-color__black-300;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.closeIconBrand {
+    opacity: 0.5;
+}

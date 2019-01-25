@@ -1,0 +1,222 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+$button-height-large: 52px;
+$button-height-small: 40px;
+$button-border-width: 2px;
+
+.loaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    // The 'height' and 'overflow' is set to help ensure that only small icons are used. Medium
+    // size icons will purposely get clipped off.
+    height: 18px;
+    overflow: hidden;
+
+    &HasChildren {
+        margin-right: 12px;
+    }
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.themedButton {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-family: inherit;
+    margin: 0;
+    border-width: $button-border-width;
+    border-style: solid;
+    font-weight: 700;
+    user-select: none;
+    padding: 0 22px;
+    position: relative;
+    overflow: visible;
+
+    &RoundedBordersLeft {
+        border-top-left-radius: $tp-border__radius__base;
+        border-bottom-left-radius: $tp-border__radius__base;
+    }
+
+    &RoundedBordersRight {
+        border-top-right-radius: $tp-border__radius__base;
+        border-bottom-right-radius: $tp-border__radius__base;
+    }
+
+    &HasNoRightBorder {
+        border-right: none;
+    }
+
+    &WidthAuto {
+        width: auto;
+    }
+
+    &WidthFull {
+        width: 100%;
+    }
+
+    &WidthFullBelowSmall {
+        width: 100%;
+
+        @include tp-respond-above($tp-breakpoint__small) {
+            width: auto;
+        }
+    }
+
+    &ThemePrimary {
+        color: $tp-color__white;
+        background-color: $tp-color__blue;
+        border-color: $tp-color__blue;
+
+        &[disabled] {
+            color: $tp-color__white;
+            background-color: $tp-color__blue-300;
+            border-color: $tp-color__blue-300;
+        }
+
+        &:not([disabled]):hover {
+            color: $tp-color__white;
+        }
+
+        &:focus {
+            color: $tp-color__white;
+            background-color: $tp-color__blue-500;
+            border-color: $tp-color__blue-500;
+        }
+    }
+
+    &ThemeSecondary {
+        color: $tp-color__black-300;
+        background-color: $tp-color__white;
+        border-color: $tp-color__gray;
+
+        &[disabled] {
+            color: $tp-color__gray;
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+
+        &:not([disabled]):hover {
+            color: $tp-color__black-300;
+        }
+
+        &:focus {
+            color: $tp-color__black-300;
+            background-color: $tp-color__white;
+            border-color: $tp-color__black-300;
+        }
+    }
+
+    &ThemeCaution {
+        color: $tp-color__red;
+        background-color: $tp-color__white;
+        border-color: $tp-color__gray;
+
+        &[disabled] {
+            color: $tp-color__red-300;
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+
+        &:not([disabled]):hover {
+            color: $tp-color__red;
+        }
+
+        &:focus {
+            color: $tp-color__red-500;
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+    }
+
+    &ThemeSolid {
+        color: $tp-color__black;
+        background-color: $tp-color__white;
+        border-color: $tp-color__white;
+
+        &[disabled] {
+            color: $tp-color__black-300;
+            background-color: 'rgba(255, 255, 255, 0.5)';
+            border-color: 'transparent';
+        }
+
+        &:not([disabled]):hover {
+            color: $tp-color__black;
+        }
+
+        &:focus {
+            color: $tp-color__black;
+            background-color: $tp-color__white;
+            border-color: $tp-color__white;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:not([disabled]) {
+        cursor: pointer;
+
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &[disabled] {
+        cursor: default;
+    }
+}
+
+.flexWrapper {
+    // This wraps the content since `button`s are not able to use `display: flex`.
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        // Fix bug in IE 11 with `align-items: center` and `min-height`.
+        // https://github.com/philipwalton/flexbugs/issues/231
+        content: '';
+        display: block;
+        min-height: inherit;
+        font-size: 0;
+    }
+
+    &Size {
+        &Small {
+            min-height: $button-height-small - ($button-border-width * 2);
+            line-height: $tp-font__body__2__line-height;
+            font-size: $tp-font__body__2__size;
+        }
+
+        &Large {
+            min-height: $button-height-large - ($button-border-width * 2);
+            line-height: $tp-font__body__1__line-height;
+            font-size: $tp-font__body__1__size;
+        }
+    }
+}

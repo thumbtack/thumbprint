@@ -1,0 +1,49 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: button-row/index.mdx
+platform: react
+url: /components/button-row/react/
+mdxType: componentApi
+---
+
+## Button placement
+
+### Default (Left)
+
+```jsx
+<ButtonRow>
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Center
+
+```jsx
+<ButtonRow justify="center">
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Right
+
+```jsx
+<ButtonRow justify="right">
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Stacked at Small
+
+Best used with `"full-below-small"` on the children.
+
+```jsx
+<ButtonRow isStackedBelowSmall>
+    <Button width="full-below-small">Click Me</Button>
+    <Button width="full-below-small" theme="secondary">
+        Click Me
+    </Button>
+</ButtonRow>
+```

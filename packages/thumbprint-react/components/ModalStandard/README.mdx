@@ -1,0 +1,69 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: modal-standard/index.mdx
+platform: react
+url: /components/modal-standard/react/
+mdxType: componentApi
+deprecated: This package was deprecated in favor of [ModalDefault](/components/modal-default/react/).
+---
+
+## Basic modal
+
+Modals can be opened or closed with a `isOpen` prop.
+
+This example includes a wrapper component that opens the modal when the button is clicked on.
+
+```jsx
+class ModalStandardDemo extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isOpen: false,
+        };
+
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+    }
+
+    closeModal() {
+        this.setState({ isOpen: false });
+        console.log('ModalStandard `onCloseClick` fired');
+    }
+
+    openModal() {
+        this.setState({ isOpen: true });
+    }
+
+    render() {
+        return (
+            <div>
+                <Button onClick={this.openModal}>Open Modal</Button>
+
+                <ModalStandard
+                    isOpen={this.state.isOpen}
+                    onCloseClick={this.closeModal}
+                    shouldCloseOnBackdropClick
+                    onOpenFinish={() => {
+                        console.log('ModalStandard `onOpenFinish` fired');
+                    }}
+                    onCloseFinish={() => {
+                        console.log('ModalStandard `onCloseFinish` fired');
+                    }}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
+                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
+                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
+                    mauris in arcu maximus placerat. Cras vitae interdum ipsum. Proin convallis quis
+                    elit quis pellentesque. Curabitur a ex eget neque congue tempor sed ut felis.
+                    Vivamus in erat ac lacus vehicula condimentum. Nam fringilla molestie facilisis.
+                    Etiam eros nisl, mattis et sagittis non, blandit vel nisl. Duis blandit
+                    condimentum lorem, sed convallis sapien porttitor vitae. Curabitur molestie,
+                    massa et molestie aliquam, odio purus rhoncus sem, a sodales ipsum nisi ac nibh.
+                    Nunc in dapibus mauris. Pellentesque rhoncus id arcu at auctor.
+                </ModalStandard>
+            </div>
+        );
+    }
+}
+```

@@ -1,0 +1,49 @@
+---
+package: '@thumbtack/tp-ui-layout-wrap'
+kit: wrap/index.mdx
+platform: scss
+url: /components/wrap/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-layout-wrap';
+
+## Basic wrap
+
+Basic wrapper with a max-width and side padding.
+
+```html
+<div class="tp-wrap ba b-green">Your page content goes here.</div>
+```
+
+## Wrap snap
+
+This provides a wrapper around content that "snaps" to fixed max-widths depending on the breakpoint. You can put any content in this wrapper.
+
+The layout of the content inside the `wrap-snap` can be adjusted using the provide breakpoint mixins, for example:
+
+```css
+.my-component {
+    @include tp-respond-above($tp-breakpoint__medium);
+}
+```
+
+```html
+<div class="tp-wrap-snap ba b-green" className="ba b-green">Your page content goes here.</div>
+```
+
+## Wrap bleed
+
+In some cases you'll want the wrapper to be full width with no padding at mobile, that is, below the small breakpoint.
+
+### Wrap
+
+```html
+<div class="tp-wrap tp-wrap--bleed-below-small ba b-green">Your page content goes here.</div>
+```
+
+### Wrap snap
+
+```html
+<div class="tp-wrap-snap tp-wrap--bleed-below-small ba b-green">Your page content goes here.</div>
+```

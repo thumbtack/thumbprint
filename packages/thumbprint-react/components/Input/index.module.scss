@@ -1,0 +1,211 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+$border-width: 1px;
+$icon-padding: 16px;
+
+.root {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    padding: $border-width;
+    // Prevents the z-indices used within this component from bubbling up and affecting the rest of
+    // the page. https://github.com/thumbtack/thumbprint-archive/issues/954
+    z-index: 0;
+
+    &UiState {
+        &Default {
+            color: $tp-color__black;
+        }
+
+        &Readonly {
+            color: $tp-color__black;
+        }
+
+        &Disabled {
+            color: $tp-color__gray;
+        }
+
+        &Error {
+            color: $tp-color__red;
+        }
+    }
+}
+
+// The '.input.input.input' element is used to increase specificity so that the selector takes
+// precedence over a highly specific selector in Thumbtack's website.
+// https://github.com/thumbtack/thumbprint-archive/issues/244
+.input.input.input {
+    border: none;
+    flex: 1 0 0%;
+    // Input elements, by default, have a 20 character min-width due to the `size` attribute.
+    // Adding `min-width: 0` allows the input to shrink below the 20 character width when needed.
+    // This only affects Firefox and Edge, normalizing the behavior across browsers.
+    min-width: 0;
+    color: inherit;
+    font-family: $tp-font__family__base;
+    vertical-align: middle;
+    height: auto;
+    background: transparent;
+    border-radius: $tp-border__radius__base;
+    z-index: 2;
+    position: relative;
+    width: 100%;
+
+    &:focus ~ .inputStyles {
+        border-color: $tp-color__blue;
+    }
+
+    &:focus {
+        // Focus styles are added to another element, not the actual input element.
+        border: none;
+        box-shadow: none;
+        color: $tp-color__black;
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    // Remove browser default "clear" button since it should be added with "InputClearButton".
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
+    }
+
+    // Remove browser default "clear" button for IE 11. This rule needs to be separated as
+    // it fails to apply if grouped with the above `::-webkit` selectors.
+    &::-ms-clear {
+        display: none;
+    }
+
+    &Size {
+        &Small {
+            font-size: $tp-font__body__2__size;
+            line-height: $tp-font__body__2__line-height;
+            padding: 9px 16px;
+        }
+
+        &Large {
+            font-size: $tp-font__body__1__size;
+            line-height: $tp-font__body__1__line-height;
+            padding: 13px 16px;
+        }
+    }
+}
+
+.inputStyles {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    // background-color: ${props => backgroundColor[props.uiState]};
+    border: $border-width solid;
+
+    &RoundedBordersLeft {
+        border-top-left-radius: $tp-border__radius__base;
+        border-bottom-left-radius: $tp-border__radius__base;
+    }
+
+    &RoundedBordersRight {
+        border-top-right-radius: $tp-border__radius__base;
+        border-bottom-right-radius: $tp-border__radius__base;
+    }
+
+    &HasNoRightBorder {
+        border-right: none;
+    }
+
+    &UiState {
+        &Default {
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+
+        &Readonly {
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+
+        &Disabled {
+            background-color: $tp-color__gray-200;
+            border-color: $tp-color__gray;
+        }
+
+        &Error {
+            background-color: $tp-color__white;
+            border-color: $tp-color__red;
+        }
+    }
+}
+
+.unstyledButton {
+    color: $tp-color__gray;
+    // Increase click target area.
+    padding: 4px;
+    margin: -4px;
+    background: none;
+    border: none;
+    display: flex;
+    line-height: 1;
+
+    &:focus,
+    &:hover {
+        color: $tp-color__black-300;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 0px $border-width $tp-color__blue;
+    }
+}
+
+.inputInnerElement {
+    z-index: 2;
+    position: relative;
+    cursor: text;
+}
+
+.inputIconContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    &Position {
+        &Left {
+            // Create 12px of space between icon and text.
+            margin-right: -4px;
+
+            &SizeSmall {
+                padding-left: $icon-padding;
+            }
+
+            &SizeLarge {
+                padding-left: $icon-padding;
+            }
+        }
+
+        &Right {
+            // Create 12px of space between icon and text.
+            margin-left: -4px;
+
+            &SizeSmall {
+                padding-right: $icon-padding;
+            }
+
+            &SizeLarge {
+                padding-right: $icon-padding;
+            }
+        }
+    }
+}
+
+.displayNone {
+    display: none;
+}

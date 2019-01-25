@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updates \`aria-valuenow\` as \`width\` changes 1`] = `
+<ProgressBarBase
+  width={33}
+>
+  <div
+    className="outer"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow={33}
+      className="inner"
+      role="progressbar"
+      style={
+        Object {
+          "transform": "translateX(-67%)",
+        }
+      }
+    />
+  </div>
+</ProgressBarBase>
+`;
+
+exports[`updates \`aria-valuenow\` as \`width\` changes 2`] = `
+<ProgressBarBase
+  width={50}
+>
+  <div
+    className="outer"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow={50}
+      className="inner"
+      role="progressbar"
+      style={
+        Object {
+          "transform": "translateX(-50%)",
+        }
+      }
+    />
+  </div>
+</ProgressBarBase>
+`;
+
+exports[`updates CSS transform based on \`width\` 1`] = `
+<ProgressBarBase
+  width={33}
+>
+  <div
+    className="outer"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow={33}
+      className="inner"
+      role="progressbar"
+      style={
+        Object {
+          "transform": "translateX(-67%)",
+        }
+      }
+    />
+  </div>
+</ProgressBarBase>
+`;
+
+exports[`updates CSS transform based on \`width\` 2`] = `
+<ProgressBarBase
+  width={50}
+>
+  <div
+    className="outer"
+  >
+    <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow={50}
+      className="inner"
+      role="progressbar"
+      style={
+        Object {
+          "transform": "translateX(-50%)",
+        }
+      }
+    />
+  </div>
+</ProgressBarBase>
+`;

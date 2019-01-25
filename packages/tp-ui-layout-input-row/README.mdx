@@ -1,0 +1,63 @@
+---
+package: '@thumbtack/tp-ui-layout-input-row'
+kit: input-row/index.mdx
+platform: scss
+url: /components/input-row/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-element-button';
+import '@thumbtack/tp-ui-element-input';
+import '@thumbtack/tp-ui-layout-input-row';
+
+## Button group
+
+### Default
+
+```html
+<div class="tp-input-row">
+    <button class="tp-button tp-button--secondary">Add User</button>
+    <button class="tp-button tp-button--secondary">Delete User</button>
+    <button class="tp-button tp-button--secondary">Make Donuts</button>
+</div>
+```
+
+### Full bleed
+
+```html
+<div class="tp-input-row tp-input-row--bleed">
+    <button class="tp-button tp-button--full tp-button--secondary">Add</button>
+    <button class="tp-button tp-button--full tp-button--secondary">Delete</button>
+    <button class="tp-button tp-button--full tp-button--secondary">Make</button>
+</div>
+```
+
+### With a divider
+
+```html
+<div class="tp-input-row tp-input-row--bleed tp-input-row--divider">
+    <button class="tp-button tp-button--full">Add</button>
+    <button class="tp-button tp-button--full">Delete</button>
+    <button class="tp-button tp-button--full">Make</button>
+</div>
+```
+
+## Input row with button
+
+The `size="1"` attribute is used here to allow the input to shrink as small as possible across browsers.
+
+```html
+<div class="tp-input-row">
+    <input type="text" size="1" class="tp-text-input" />
+    <button class="tp-button">Get Started</button>
+</div>
+```
+
+## Input with button that flexes
+
+```html
+<div class="tp-input-row tp-input-row--button-stretch">
+    <input type="text" size="1" class="tp-text-input" />
+    <button class="tp-button">Get Started</button>
+</div>
+```

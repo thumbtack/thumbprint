@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds proper accessibility attributes 1`] = `
+<LoaderDots
+  assistiveText="Goose"
+  size="medium"
+  theme="brand"
+>
+  <ul
+    className="root"
+    role="status"
+  >
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="hiddenText"
+    >
+      Goose
+    </li>
+  </ul>
+</LoaderDots>
+`;
+
+exports[`has proper default attributes 1`] = `
+<LoaderDots
+  assistiveText="Loading"
+  size="medium"
+  theme="brand"
+>
+  <ul
+    className="root"
+    role="status"
+  >
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeMedium"
+    />
+    <li
+      className="hiddenText"
+    >
+      Loading
+    </li>
+  </ul>
+</LoaderDots>
+`;
+
+exports[`sets size attribute 1`] = `
+<LoaderDots
+  assistiveText="Loading"
+  size="small"
+  theme="brand"
+>
+  <ul
+    className="root"
+    role="status"
+  >
+    <li
+      className="dot dotThemeBrand dotSizeSmall"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeSmall"
+    />
+    <li
+      className="dot dotThemeBrand dotSizeSmall"
+    />
+    <li
+      className="hiddenText"
+    >
+      Loading
+    </li>
+  </ul>
+</LoaderDots>
+`;
+
+exports[`sets theme attribute 1`] = `
+<LoaderDots
+  assistiveText="Loading"
+  size="medium"
+  theme="inverse"
+>
+  <ul
+    className="root"
+    role="status"
+  >
+    <li
+      className="dot dotThemeInverse dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeInverse dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeInverse dotSizeMedium"
+    />
+    <li
+      className="hiddenText"
+    >
+      Loading
+    </li>
+  </ul>
+</LoaderDots>
+`;
+
+exports[`sets theme attribute 2`] = `
+<LoaderDots
+  assistiveText="Loading"
+  size="medium"
+  theme="muted"
+>
+  <ul
+    className="root"
+    role="status"
+  >
+    <li
+      className="dot dotThemeMuted dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeMuted dotSizeMedium"
+    />
+    <li
+      className="dot dotThemeMuted dotSizeMedium"
+    />
+    <li
+      className="hiddenText"
+    >
+      Loading
+    </li>
+  </ul>
+</LoaderDots>
+`;

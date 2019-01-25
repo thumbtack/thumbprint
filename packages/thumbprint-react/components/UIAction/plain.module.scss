@@ -1,0 +1,52 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.plain {
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+
+    &ThemePrimary {
+        color: $tp-color__blue;
+
+        [disabled] {
+            color: $tp-color__blue-300;
+        }
+    }
+
+    &ThemeSecondary {
+        color: $tp-color__black-300;
+
+        [disabled] {
+            color: $tp-color__gray;
+        }
+    }
+
+    &ThemeTertiary {
+        color: $tp-color__white;
+        text-decoration: underline;
+
+        [disabled] {
+            color: $tp-color__white;
+        }
+    }
+
+    &ThemeInherit {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+.textContainer {
+    align-self: baseline;
+    margin-left: 8px;
+}

@@ -1,0 +1,86 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    display: inline-block;
+    position: relative;
+
+    &WidthFull {
+        width: 100%;
+    }
+}
+
+.select {
+    // Vendor prefixes are needed to work around a bug in Gatsby, the framework that powers our
+    // documentation site, so that the component doesn't appear broken on our documentation.
+    // https://github.com/thumbtack/thumbprint-archive/issues/899
+    // https://github.com/gatsbyjs/gatsby/issues/1347
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border: 1px solid;
+    font-family: $tp-font__family__base;
+    border-radius: $tp-border__radius__base;
+    outline: none;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: auto 18px;
+    padding-left: 14px;
+    padding-right: 54px;
+    width: 100%;
+
+    &:focus {
+        border-color: $tp-color__blue;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $tp-color__black;
+    }
+
+    &State {
+        &Disabled {
+            background-color: $tp-color__gray-200;
+            border-color: $tp-color__gray;
+            color: $tp-color__gray;
+        }
+
+        &Error {
+            background-color: $tp-color__white;
+            border-color: $tp-color__red;
+            color: $tp-color__red;
+        }
+
+        &Default {
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+            color: $tp-color__black;
+        }
+    }
+
+    &Size {
+        &Small {
+            height: 40px;
+            font-size: $tp-font__body__2__size;
+        }
+
+        &Large {
+            height: 52px;
+            font-size: $tp-font__title__5__size;
+        }
+    }
+}
+
+.caret {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    pointer-events: none;
+}

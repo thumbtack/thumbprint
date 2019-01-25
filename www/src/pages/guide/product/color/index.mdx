@@ -1,0 +1,195 @@
+---
+title: Color
+description: A simple system for interfaces and illustrations.
+---
+
+import { ContentActionsCheckTiny } from '@thumbtack/thumbprint-icons';
+import { Text, GridColumn, Grid } from '@thumbtack/thumbprint-react';
+import {
+    tpColorBlue100,
+    tpColorBlue200,
+    tpColorBlue,
+    tpColorBlue600,
+    tpColorIndigo100,
+    tpColorIndigo200,
+    tpColorIndigo,
+    tpColorIndigo600,
+    tpColorPurple100,
+    tpColorPurple200,
+    tpColorPurple,
+    tpColorPurple600,
+    tpColorGreen100,
+    tpColorGreen200,
+    tpColorGreen,
+    tpColorGreen600,
+    tpColorYellow100,
+    tpColorYellow200,
+    tpColorYellow,
+    tpColorYellow600,
+    tpColorRed100,
+    tpColorRed200,
+    tpColorRed,
+    tpColorRed600,
+    tpColorBlack,
+    tpColorBlack300,
+    tpColorGray,
+    tpColorGray300,
+    tpColorGray200,
+    tpColorWhite,
+} from '@thumbtack/thumbprint-tokens';
+import { InlineCode } from 'components/mdx';
+import Swatch from 'components/thumbprint-guide/swatch';
+import SwatchUsage from 'components/thumbprint-guide/swatch-usage';
+
+## Naming
+
+Color names are unambiguous and direct. "Blue" means blue. We do this to avoid unneeded abstractions. Extended color names, like `black-300` are variations that, like font-weight values, denote increasingly darker (500, 600) and increasingly lighter shades (300, 200).
+
+## Palette
+
+-   Our primary palette consists of "core" colors, as indicated by `(c)`, and help establish our brand.
+-   We have extended this with shades that are reserved primarily for illustrations.
+
+<div className="grid mt5">
+    <Swatch name="blue-100" hex={tpColorBlue100} />
+    <Swatch name="blue-200" hex={tpColorBlue200} />
+    <Swatch hasBorder />
+    <Swatch name="blue" hex={tpColorBlue} isCore />
+    <Swatch hasBorder />
+    <Swatch name="blue-600" hex={tpColorBlue600} />
+    <Swatch name="indigo-100" hex={tpColorIndigo100} />
+    <Swatch name="indigo-200" hex={tpColorIndigo200} />
+    <Swatch hasBorder />
+    <Swatch name="indigo" hex={tpColorIndigo} isCore />
+    <Swatch hasBorder />
+    <Swatch name="indigo-600" hex={tpColorIndigo600} />
+    <Swatch name="purple-100" hex={tpColorPurple100} />
+    <Swatch name="purple-200" hex={tpColorPurple200} />
+    <Swatch hasBorder />
+    <Swatch name="purple" hex={tpColorPurple} isCore />
+    <Swatch hasBorder />
+    <Swatch name="purple-600" hex={tpColorPurple600} />
+    <Swatch name="green-100" hex={tpColorGreen100} />
+    <Swatch name="green-200" hex={tpColorGreen200} />
+    <Swatch hasBorder />
+    <Swatch name="green" hex={tpColorGreen} isCore />
+    <Swatch hasBorder />
+    <Swatch name="green-600" hex={tpColorGreen600} />
+    <Swatch name="yellow-100" hex={tpColorYellow100} />
+    <Swatch name="yellow-200" hex={tpColorYellow200} />
+    <Swatch hasBorder />
+    <Swatch name="yellow" hex={tpColorYellow} isCore />
+    <Swatch hasBorder />
+    <Swatch name="yellow-600" hex={tpColorYellow600} />
+    <Swatch name="red-100" hex={tpColorRed100} />
+    <Swatch name="red-200" hex={tpColorRed200} />
+    <Swatch hasBorder />
+    <Swatch name="red" hex={tpColorRed} isCore />
+    <Swatch hasBorder />
+    <Swatch name="red-600" hex={tpColorRed600} />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch name="black-300" hex={tpColorBlack300} isCore />
+    <Swatch name="black" hex={tpColorBlack} isCore />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch name="gray-200" hex={tpColorGray200} isCore />
+    <Swatch name="gray-300" hex={tpColorGray300} isCore />
+    <Swatch name="gray" hex={tpColorGray} isCore />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+    <Swatch name="white" hex={tpColorWhite} isCore hasBorder />
+    <Swatch hasBorder />
+    <Swatch hasBorder />
+</div>
+
+## Usage
+
+<SwatchUsage
+    name="Blue"
+    hex={tpColorBlue}
+    doText="Highlights key actions in UI, buttons, links, icons, and branded moments"
+    dontText="Success graphics, body copy, headlines"
+/>
+
+<SwatchUsage
+    name="Indigo"
+    hex={tpColorIndigo}
+    doText="Graphs and data visualizations, tags, pills, status labels, illustrations"
+    dontText="Text, icons"
+/>
+
+<SwatchUsage
+    name="Purple"
+    hex={tpColorPurple}
+    doText="Graphs and data visualizations, tags, pills, status labels, illustrations"
+    dontText="Text, icons"
+/>
+
+<SwatchUsage
+    name="Green"
+    hex={tpColorGreen}
+    doText="Success graphics, completion, and confirmation"
+    dontText="Text, background for white text, graphs and data visualizations, icons"
+/>
+
+<SwatchUsage
+    name="Yellow"
+    hex={tpColorYellow}
+    doText="Stars, review charts, alerts, illustrations"
+    dontText="Text, background for white text, graphs and data visualizations, icons"
+/>
+
+<SwatchUsage
+    name="Red"
+    hex={tpColorRed}
+    doText="Icons, caution buttons, alerts, warning states"
+    dontText="Background for white text, icons"
+/>
+
+<SwatchUsage
+    name="Black"
+    hex={tpColorBlack}
+    doText="Headings, iconography, and small text that supports UI"
+    dontText="Buttons, illustrations"
+/>
+
+<SwatchUsage
+    name="Black300"
+    hex={tpColorBlack300}
+    doText="Subheadings and body copy"
+    dontText="Logos, icons, backgrounds, borders"
+/>
+
+<SwatchUsage
+    name="Gray"
+    hex={tpColorGray}
+    doText="Inactive icons, ghost text"
+    dontText="Logos, icons, backgrounds, borders"
+/>
+
+<SwatchUsage name="Gray300" hex={tpColorGray300} doText="Borders" dontText="Text, buttons" />
+
+<SwatchUsage
+    name="Gray200"
+    hex={tpColorGray200}
+    doText="Backgrounds behind components, like cards"
+    dontText="Text, buttons, borders, icons"
+/>
+
+<SwatchUsage
+    hasBorder
+    name="White"
+    hex={tpColorWhite}
+    doText="Text, borders, icons"
+    dontText="On light backgrounds"
+/>
+
+## Implementations
+
+-   All color variables shown here available for SCSS and JS usage in [Thumbprint Tokens](/tokens/#section-color).
+-   The "core" colors, as indicated by `(c)`, are available as classes in [Thumbprint Atomic](/atomic/#section-color) for both `color` and `background` properties.

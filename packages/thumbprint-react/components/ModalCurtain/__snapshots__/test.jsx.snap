@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders \`accessibilityLabel\` 1`] = `
+<ModalCurtain
+  accessibilityLabel="goosegoosegoose"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exited"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="goosegoosegoose"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      aria-label="goosegoosegoose"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="goosegoosegoose"
+        role="dialog"
+      />
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders a basic curtain 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exited"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      aria-label="Modal"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+      />
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders modal in \`entered\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="entered"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      aria-label="Modal"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+      >
+        <EscListener
+          onEscPress={[Function]}
+        />
+        <NoScroll />
+      </div>
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders modal in \`entering\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="entering"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      aria-label="Modal"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+      >
+        <EscListener
+          onEscPress={[Function]}
+        />
+        <NoScroll />
+      </div>
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders modal in \`exited\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exited"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      aria-label="Modal"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+      />
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders modal in \`exiting\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exiting"
+>
+  <Portal
+    containerInfo={
+      <body>
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+        <div
+          aria-label="Modal"
+          role="dialog"
+        />
+      </body>
+    }
+  >
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={false}
+      aria-label="Modal"
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      role="dialog"
+      tag="div"
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+      />
+    </FocusTrap>
+  </Portal>
+</ModalCurtain>
+`;
+
+exports[`renders text that is passed in 1`] = `
+<div>
+  <button
+    type="button"
+  />
+  <ModalCurtain
+    accessibilityLabel="Modal"
+    onCloseClick={[Function]}
+    shouldCloseOnEscape={true}
+    stage="exited"
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="goosegoosegoose"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+          >
+            <button
+              data-test-id="goose"
+              type="button"
+            />
+          </div>
+          <div
+            aria-label="Modal"
+            role="dialog"
+          >
+            Goose
+          </div>
+        </body>
+      }
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={false}
+        aria-label="Modal"
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
+        paused={false}
+        role="dialog"
+        tag="div"
+      >
+        <div
+          aria-label="Modal"
+          role="dialog"
+        >
+          Goose
+        </div>
+      </FocusTrap>
+    </Portal>
+  </ModalCurtain>
+</div>
+`;

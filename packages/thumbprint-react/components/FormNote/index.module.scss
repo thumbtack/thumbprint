@@ -1,0 +1,10 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    font-size: $tp-font__body__3__size;
+    color: $tp-color__black;
+}
+
+.rootError {
+    color: $tp-color__red;
+}

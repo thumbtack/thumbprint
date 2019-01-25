@@ -1,0 +1,32 @@
+---
+package: '@thumbtack/tp-ui-element-textarea'
+kit: textarea/index.mdx
+platform: scss
+url: /components/textarea/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-element-label';
+import '@thumbtack/tp-ui-element-textarea';
+
+## Basic textarea example
+
+```html
+<label class="tp-label" for="example-basic-textarea">Business description</label>
+<textarea
+    class="tp-textarea"
+    id="example-basic-textarea"
+    placeholder="Tell us about your business"
+/>
+```
+
+## Textarea with an error
+
+The `tp-textarea--bad-news` class only changes the textarea’s color. It should be used alongside an error message that helps users advance through the form.
+
+```html
+<textarea
+    class="tp-textarea tp-textarea--bad-news"
+    placeholder="Tell us about your business"
+></textarea>
+```

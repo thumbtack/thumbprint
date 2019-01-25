@@ -1,0 +1,14 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+.item {
+    flex: none;
+}

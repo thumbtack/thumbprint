@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+"a,
+.tp-link {
+  color: #009fd9;
+  fill: #009fd9;
+  cursor: pointer; }
+  a:hover,
+  .tp-link:hover {
+    color: #009fd9; }
+  a:active,
+  .tp-link:active {
+    color: #009fd9; }
+
+.tp-link--secondary {
+  color: #676d73;
+  fill: #676d73;
+  cursor: pointer; }
+  .tp-link--secondary:hover {
+    color: #676d73; }
+  .tp-link--secondary:active {
+    color: #676d73; }
+
+.tp-link--tertiary {
+  color: #ffffff;
+  fill: #ffffff;
+  text-decoration: underline;
+  cursor: pointer; }
+  .tp-link--tertiary:hover {
+    color: #ffffff; }
+  .tp-link--tertiary:focus {
+    outline: auto; }
+  .tp-link--tertiary:active {
+    color: #ffffff; }
+
+.tp-link--inherit, .tp-link--inherit:link, .tp-link--inherit:visited, .tp-link--inherit:hover, .tp-link--inherit:active {
+  color: inherit;
+  fill: inherit; }
+
+.tp-link--disabled, .tp-link--disabled:link, .tp-link--disabled:visited, .tp-link--disabled:hover, .tp-link--disabled:active {
+  color: #2f3033;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none; }
+
+.tp-link--dark {
+  color: #2f3033;
+  fill: #2f3033;
+  cursor: pointer; }
+  .tp-link--dark:hover {
+    color: #009fd9; }
+  .tp-link--dark:active {
+    color: #2f3033; }
+
+.tp-link--muted {
+  color: #676d73;
+  fill: #676d73;
+  cursor: pointer; }
+  .tp-link--muted:hover {
+    color: #009fd9; }
+  .tp-link--muted:active {
+    color: #676d73; }
+
+.tp-link--bad-news {
+  color: #ff5a5f;
+  fill: #ff5a5f;
+  cursor: pointer; }
+  .tp-link--bad-news:hover, .tp-link--bad-news:active {
+    color: #ff8d90; }
+
+.tp-link--reverse {
+  color: #ffffff;
+  fill: #ffffff;
+  cursor: pointer; }
+  .tp-link--reverse:hover, .tp-link--reverse:focus, .tp-link--reverse:active {
+    color: #ffffff;
+    opacity: 0.7; }
+
+.tp-link--underline {
+  text-decoration: underline; }
+"
+`;

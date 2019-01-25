@@ -1,0 +1,233 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+// Grid
+.grid {
+    margin-left: -16px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.gridWide {
+    margin-left: -32px !important;
+}
+
+.gridFlush {
+    margin-left: 0 !important;
+}
+
+// Column
+.col {
+    padding-left: 16px !important;
+    width: 100% !important;
+}
+
+.colWide {
+    padding-left: 32px !important;
+}
+
+.colFlush {
+    padding-left: 0 !important;
+}
+
+// Column default
+.col1 {
+    width: 8.333333% !important;
+}
+
+.col2 {
+    width: 16.666666% !important;
+}
+
+.col3 {
+    width: 25% !important;
+}
+
+.col4 {
+    width: 33.333333% !important;
+}
+
+.col5 {
+    width: 41.666666% !important;
+}
+
+.col6 {
+    width: 50% !important;
+}
+
+.col7 {
+    width: 58.333333% !important;
+}
+
+.col8 {
+    width: 66.666666% !important;
+}
+
+.col9 {
+    width: 75% !important;
+}
+
+.col10 {
+    width: 83.333333% !important;
+}
+
+.col11 {
+    width: 91.666666% !important;
+}
+
+.col12 {
+    width: 100% !important;
+}
+
+// Above small
+@include tp-respond-above($tp-breakpoint__small) {
+    .aboveSmallCol1 {
+        width: 8.333333% !important;
+    }
+
+    .aboveSmallCol2 {
+        width: 16.666666% !important;
+    }
+
+    .aboveSmallCol3 {
+        width: 25% !important;
+    }
+
+    .aboveSmallCol4 {
+        width: 33.333333% !important;
+    }
+
+    .aboveSmallCol5 {
+        width: 41.666666% !important;
+    }
+
+    .aboveSmallCol6 {
+        width: 50% !important;
+    }
+
+    .aboveSmallCol7 {
+        width: 58.333333% !important;
+    }
+
+    .aboveSmallCol8 {
+        width: 66.666666% !important;
+    }
+
+    .aboveSmallCol9 {
+        width: 75% !important;
+    }
+
+    .aboveSmallCol10 {
+        width: 83.333333% !important;
+    }
+
+    .aboveSmallCol11 {
+        width: 91.666666% !important;
+    }
+
+    .aboveSmallCol12 {
+        width: 100% !important;
+    }
+}
+
+// Above medium
+@include tp-respond-above($tp-breakpoint__medium) {
+    .aboveMediumCol1 {
+        width: 8.333333% !important;
+    }
+
+    .aboveMediumCol2 {
+        width: 16.666666% !important;
+    }
+
+    .aboveMediumCol3 {
+        width: 25% !important;
+    }
+
+    .aboveMediumCol4 {
+        width: 33.333333% !important;
+    }
+
+    .aboveMediumCol5 {
+        width: 41.666666% !important;
+    }
+
+    .aboveMediumCol6 {
+        width: 50% !important;
+    }
+
+    .aboveMediumCol7 {
+        width: 58.333333% !important;
+    }
+
+    .aboveMediumCol8 {
+        width: 66.666666% !important;
+    }
+
+    .aboveMediumCol9 {
+        width: 75% !important;
+    }
+
+    .aboveMediumCol10 {
+        width: 83.333333% !important;
+    }
+
+    .aboveMediumCol11 {
+        width: 91.666666% !important;
+    }
+
+    .aboveMediumCol12 {
+        width: 100% !important;
+    }
+}
+
+// Above large
+@include tp-respond-above($tp-breakpoint__large) {
+    .aboveLargeCol1 {
+        width: 8.333333% !important;
+    }
+
+    .aboveLargeCol2 {
+        width: 16.666666% !important;
+    }
+
+    .aboveLargeCol3 {
+        width: 25% !important;
+    }
+
+    .aboveLargeCol4 {
+        width: 33.333333% !important;
+    }
+
+    .aboveLargeCol5 {
+        width: 41.666666% !important;
+    }
+
+    .aboveLargeCol6 {
+        width: 50% !important;
+    }
+
+    .aboveLargeCol7 {
+        width: 58.333333% !important;
+    }
+
+    .aboveLargeCol8 {
+        width: 66.666666% !important;
+    }
+
+    .aboveLargeCol9 {
+        width: 75% !important;
+    }
+
+    .aboveLargeCol10 {
+        width: 83.333333% !important;
+    }
+
+    .aboveLargeCol11 {
+        width: 91.666666% !important;
+    }
+
+    .aboveLargeCol12 {
+        width: 100% !important;
+    }
+}

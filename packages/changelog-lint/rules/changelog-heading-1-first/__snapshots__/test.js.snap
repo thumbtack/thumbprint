@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "foo
+
+# Changelog",
+  "output": Array [
+    Object {
+      "column": null,
+      "fatal": false,
+      "line": null,
+      "location": Object {
+        "end": Object {
+          "column": null,
+          "line": null,
+        },
+        "start": Object {
+          "column": null,
+          "line": null,
+        },
+      },
+      "reason": "Changelog must start with a top level heading named “# Changelog”",
+      "ruleId": "changelog-heading-1-first",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #1 fails 1`] = `
+Object {
+  "input": "> Hi There!
+
+# Changelog",
+  "output": Array [
+    Object {
+      "column": null,
+      "fatal": false,
+      "line": null,
+      "location": Object {
+        "end": Object {
+          "column": null,
+          "line": null,
+        },
+        "start": Object {
+          "column": null,
+          "line": null,
+        },
+      },
+      "reason": "Changelog must start with a top level heading named “# Changelog”",
+      "ruleId": "changelog-heading-1-first",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

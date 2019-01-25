@@ -1,0 +1,41 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+
+    &:focus ~ .checkboxImage {
+        box-shadow: 0 0 0px 4px $tp-color__gray-300;
+    }
+}
+
+.checkboxImage {
+    width: 20px;
+    height: 20px;
+    border-radius: $tp-border__radius__base;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+}
+
+.text {
+    // This must take up the remaining available space for content that must be right-aligned.
+    flex: 1 0 0%;
+    // 'min-width' is needed to allow text within the checkbox to truncate.
+    min-width: 0;
+    font-size: $tp-font__body__1__size;
+    font-weight: 400;
+    padding-left: 8px;
+}

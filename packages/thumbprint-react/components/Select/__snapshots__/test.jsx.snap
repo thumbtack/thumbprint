@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<Select
+  dataTest="Duck"
+  hasError={false}
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={false}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      data-test="Duck"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#2f3033"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`adds \`disabled\` attribute 1`] = `
+<Select
+  hasError={false}
+  isDisabled={true}
+  isFullWidth={false}
+  isRequired={false}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDisabled selectSizeLarge"
+      disabled={true}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#d3d4d5"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`adds \`id\` attribute 1`] = `
+<Select
+  hasError={false}
+  id="Goose"
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={false}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      disabled={false}
+      id="Goose"
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#2f3033"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`adds \`name\` HTML attribute 1`] = `
+<Select
+  hasError={false}
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={false}
+  name="duck"
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      disabled={false}
+      name="duck"
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#2f3033"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`adds \`required\` attribute 1`] = `
+<Select
+  hasError={false}
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={true}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={true}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#2f3033"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`renders an error state with \`hasError\` 1`] = `
+<Select
+  hasError={true}
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={false}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateError selectSizeLarge"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#ff5a5f"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`renders options that are passed in as \`children\` 1`] = `
+<Select
+  hasError={false}
+  isDisabled={false}
+  isFullWidth={false}
+  isRequired={false}
+  onChange={[Function]}
+  size="large"
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    >
+      <option>
+        New York
+      </option>
+      <option>
+        California
+      </option>
+    </select>
+    <svg
+      className="caret"
+      data-thumbprint-id="navigation-caret-down--small"
+      fill="#2f3033"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+      />
+    </svg>
+  </div>
+</Select>
+`;
+
+exports[`uses \`value\` as the selected option 1`] = `
+<div
+  class="root"
+>
+  <select
+    class="select selectStateDefault selectSizeLarge"
+  >
+    <option
+      value="ny"
+    >
+      New York
+    </option>
+    <option
+      selected=""
+      value="ca"
+    >
+      California
+    </option>
+  </select>
+  <svg
+    class="caret"
+    data-thumbprint-id="navigation-caret-down--small"
+    fill="#2f3033"
+    height="18"
+    viewBox="0 0 18 18"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
+    />
+  </svg>
+</div>
+`;

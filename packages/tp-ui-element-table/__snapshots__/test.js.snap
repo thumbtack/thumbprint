@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-table {
+  width: 100%;
+  font-size: inherit; }
+  .tp-table th,
+  .tp-table td {
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px; }
+    .tp-table th:first-child,
+    .tp-table td:first-child {
+      padding-left: 0; }
+  .tp-table th {
+    font-weight: 700;
+    font-size: 20px;
+    color: #676d73;
+    text-align: left; }
+    .tp-table th[field] {
+      cursor: pointer; }
+  .tp-table td {
+    vertical-align: top; }
+  .tp-table .tp-cell-collapse {
+    width: 1%; }
+  .tp-table--rule > thead > th, .tp-table--rule-bottom > thead > th {
+    padding-bottom: 8px; }
+  .tp-table--rule > thead > tr, .tp-table--rule-bottom > thead > tr {
+    border-bottom: 1px solid #e9eced; }
+  .tp-table--rule > tbody > tr, .tp-table--rule-bottom > tbody > tr {
+    border-bottom: 1px solid #e9eced; }
+    .tp-table--rule > tbody > tr:first-child, .tp-table--rule-bottom > tbody > tr:first-child {
+      border-bottom: 1px solid #e9eced; }
+    .tp-table--rule > tbody > tr:last-child, .tp-table--rule-bottom > tbody > tr:last-child {
+      border-bottom: none; }
+  .tp-table--rule-bottom > tbody > tr:last-child {
+    border-bottom: 1px solid #e9eced; }
+"
+`;

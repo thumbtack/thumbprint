@@ -1,0 +1,15 @@
+@import '../../constants';
+
+.modalContents {
+    margin: auto;
+    width: 100%;
+    transform: translateY(-16px);
+}
+
+.modalContentsAnimated {
+    transition: transform $transition-speed;
+}
+
+.modalContentsOpen {
+    transform: translateY(0);
+}

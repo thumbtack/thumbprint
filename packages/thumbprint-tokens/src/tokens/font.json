@@ -1,0 +1,215 @@
+{
+    "name": "Type",
+    "tokens": [
+        {
+            "group": "Title 1",
+            "name": "Title 1 Font Size",
+            "id": "tp-font__title__1__size",
+            "value": "28px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 1",
+            "name": "Title 1 Line Height",
+            "id": "tp-font__title__1__line-height",
+            "value": "32px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 1",
+            "name": "Title 1 Weight",
+            "id": "tp-font__title__1__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 1",
+            "name": "Title 1 Responsive Font Size",
+            "id": "tp-font__title__1__responsive__size",
+            "value": "40px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 1",
+            "name": "Title 1 Responsive Line Height",
+            "id": "tp-font__title__1__responsive__line-height",
+            "value": "44px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 1",
+            "name": "Title 1 Responsive Weight",
+            "id": "tp-font__title__1__responsive__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Font Size",
+            "id": "tp-font__title__2__size",
+            "value": "24px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Line Height",
+            "id": "tp-font__title__2__line-height",
+            "value": "28px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Weight",
+            "id": "tp-font__title__2__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Responsive Font Size",
+            "id": "tp-font__title__2__responsive__size",
+            "value": "32px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Responsive Line Height",
+            "id": "tp-font__title__2__responsive__line-height",
+            "value": "40px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 2",
+            "name": "Title 2 Responsive Weight",
+            "id": "tp-font__title__2__responsive__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Font Size",
+            "id": "tp-font__title__3__size",
+            "value": "22px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Line Height",
+            "id": "tp-font__title__3__line-height",
+            "value": "28px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Weight",
+            "id": "tp-font__title__3__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Responsive Font Size",
+            "id": "tp-font__title__3__responsive__size",
+            "value": "24px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Responsive Line Height",
+            "id": "tp-font__title__3__responsive__line-height",
+            "value": "32px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 3",
+            "name": "Title 3 Responsive Weight",
+            "id": "tp-font__title__3__responsive__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 4",
+            "name": "Title 4 Font Size",
+            "id": "tp-font__title__4__size",
+            "value": "20px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 4",
+            "name": "Title 4 Line Height",
+            "id": "tp-font__title__4__line-height",
+            "value": "28px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 4",
+            "name": "Title 4 Weight",
+            "id": "tp-font__title__4__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 5",
+            "name": "Title 5 Font Size",
+            "id": "tp-font__title__5__size",
+            "value": "18px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 5",
+            "name": "Title 5 Line Height",
+            "id": "tp-font__title__5__line-height",
+            "value": "24px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 5",
+            "name": "Title 5 Weight",
+            "id": "tp-font__title__5__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Body 1",
+            "name": "Body 1 Font Size",
+            "id": "tp-font__body__1__size",
+            "value": "16px",
+            "type": "font-size"
+        },
+        {
+            "group": "Body 1",
+            "name": "Body 1 Line Height",
+            "id": "tp-font__body__1__line-height",
+            "value": "24px",
+            "type": "line-height"
+        },
+        {
+            "group": "Body 2",
+            "name": "Body 2 Font Size",
+            "id": "tp-font__body__2__size",
+            "value": "14px",
+            "type": "font-size"
+        },
+        {
+            "group": "Body 2",
+            "name": "Body 2 Line Height",
+            "id": "tp-font__body__2__line-height",
+            "value": "20px",
+            "type": "line-height"
+        },
+        {
+            "group": "Body 3",
+            "name": "Body 3 Font Size",
+            "id": "tp-font__body__3__size",
+            "value": "12px",
+            "type": "font-size"
+        },
+        {
+            "group": "Body 3",
+            "name": "Body 3 Line Height",
+            "id": "tp-font__body__3__line-height",
+            "value": "18px",
+            "type": "line-height"
+        }
+    ]
+}

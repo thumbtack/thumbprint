@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-button {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  line-height: 24px;
+  border-width: 2px;
+  border-style: solid;
+  font-size: 16px;
+  font-weight: 700;
+  user-select: none;
+  border-radius: 4px;
+  padding-left: 22px;
+  padding-right: 22px;
+  overflow: visible;
+  min-height: 52px;
+  background-color: #009fd9;
+  border-color: transparent;
+  color: #ffffff; }
+  .tp-button:hover, .tp-button:active {
+    color: #ffffff; }
+  .tp-button:focus {
+    outline: none;
+    text-decoration: underline;
+    color: #ffffff;
+    background-color: #007fad;
+    border-color: #007fad; }
+
+.tp-button--secondary {
+  background-color: #ffffff;
+  border-color: #d3d4d5;
+  color: #676d73; }
+  .tp-button--secondary:hover, .tp-button--secondary:active {
+    color: #676d73; }
+  .tp-button--secondary:focus {
+    color: #676d73;
+    background-color: #ffffff;
+    border-color: #676d73; }
+
+.tp-button--caution {
+  background-color: #ffffff;
+  border-color: #d3d4d5;
+  color: #ff5a5f; }
+  .tp-button--caution:hover, .tp-button--caution:active {
+    color: #ff5a5f; }
+  .tp-button--caution:focus {
+    color: #cc3553;
+    background-color: #ffffff;
+    border-color: #d3d4d5; }
+
+.tp-button--solid {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #2f3033; }
+  .tp-button--solid:hover, .tp-button--solid:active {
+    color: #2f3033; }
+  .tp-button--solid:focus {
+    color: #2f3033;
+    background-color: #ffffff;
+    border-color: #ffffff; }
+
+.tp-button--line {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff; }
+  .tp-button--line:hover, .tp-button--line:active, .tp-button--line:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff; }
+
+.tp-button--clear {
+  color: #009fd9;
+  background: none;
+  border-color: transparent; }
+  .tp-button--clear:hover, .tp-button--clear:active, .tp-button--clear:focus {
+    background: none;
+    border-color: transparent;
+    color: #009fd9; }
+
+.tp-button--full {
+  width: 100%;
+  text-align: center; }
+
+.tp-button--full-below-small {
+  width: 100%;
+  text-align: center; }
+  @media (min-width: 482px) {
+    .tp-button--full-below-small {
+      width: auto; } }
+
+.tp-button--small {
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 40px; }
+
+.tp-button--disabled, .tp-button--disabled:visited, .tp-button--disabled:hover, .tp-button--disabled:active, .tp-button--disabled:focus,
+.tp-button[disabled],
+.tp-button[disabled]:visited,
+.tp-button[disabled]:hover,
+.tp-button[disabled]:active,
+.tp-button[disabled]:focus {
+  cursor: default;
+  color: #ffffff;
+  background-color: #79d2f2;
+  border-color: #79d2f2; }
+  .tp-button--disabled.tp-button--secondary, .tp-button--disabled:visited.tp-button--secondary, .tp-button--disabled:hover.tp-button--secondary, .tp-button--disabled:active.tp-button--secondary, .tp-button--disabled:focus.tp-button--secondary,
+  .tp-button[disabled].tp-button--secondary,
+  .tp-button[disabled]:visited.tp-button--secondary,
+  .tp-button[disabled]:hover.tp-button--secondary,
+  .tp-button[disabled]:active.tp-button--secondary,
+  .tp-button[disabled]:focus.tp-button--secondary {
+    color: #d3d4d5;
+    background-color: #ffffff;
+    border-color: #d3d4d5; }
+  .tp-button--disabled.tp-button--caution, .tp-button--disabled:visited.tp-button--caution, .tp-button--disabled:hover.tp-button--caution, .tp-button--disabled:active.tp-button--caution, .tp-button--disabled:focus.tp-button--caution,
+  .tp-button[disabled].tp-button--caution,
+  .tp-button[disabled]:visited.tp-button--caution,
+  .tp-button[disabled]:hover.tp-button--caution,
+  .tp-button[disabled]:active.tp-button--caution,
+  .tp-button[disabled]:focus.tp-button--caution {
+    color: #ffb0b0;
+    background-color: #ffffff;
+    border-color: #d3d4d5; }
+  .tp-button--disabled.tp-button--solid, .tp-button--disabled:visited.tp-button--solid, .tp-button--disabled:hover.tp-button--solid, .tp-button--disabled:active.tp-button--solid, .tp-button--disabled:focus.tp-button--solid,
+  .tp-button[disabled].tp-button--solid,
+  .tp-button[disabled]:visited.tp-button--solid,
+  .tp-button[disabled]:hover.tp-button--solid,
+  .tp-button[disabled]:active.tp-button--solid,
+  .tp-button[disabled]:focus.tp-button--solid {
+    color: #676d73;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: transparent; }
+  .tp-button--disabled.tp-button--tertiary, .tp-button--disabled:visited.tp-button--tertiary, .tp-button--disabled:hover.tp-button--tertiary, .tp-button--disabled:active.tp-button--tertiary, .tp-button--disabled:focus.tp-button--tertiary,
+  .tp-button[disabled].tp-button--tertiary,
+  .tp-button[disabled]:visited.tp-button--tertiary,
+  .tp-button[disabled]:hover.tp-button--tertiary,
+  .tp-button[disabled]:active.tp-button--tertiary,
+  .tp-button[disabled]:focus.tp-button--tertiary {
+    background-color: #ffffff;
+    color: #d3d4d5; }
+  .tp-button--disabled.tp-button--clear, .tp-button--disabled:visited.tp-button--clear, .tp-button--disabled:hover.tp-button--clear, .tp-button--disabled:active.tp-button--clear, .tp-button--disabled:focus.tp-button--clear,
+  .tp-button[disabled].tp-button--clear,
+  .tp-button[disabled]:visited.tp-button--clear,
+  .tp-button[disabled]:hover.tp-button--clear,
+  .tp-button[disabled]:active.tp-button--clear,
+  .tp-button[disabled]:focus.tp-button--clear {
+    background-color: transparent;
+    border-color: transparent;
+    color: #d3d4d5; }
+  .tp-button--disabled.tp-button--reverse, .tp-button--disabled.tp-button--line, .tp-button--disabled:visited.tp-button--reverse, .tp-button--disabled:visited.tp-button--line, .tp-button--disabled:hover.tp-button--reverse, .tp-button--disabled:hover.tp-button--line, .tp-button--disabled:active.tp-button--reverse, .tp-button--disabled:active.tp-button--line, .tp-button--disabled:focus.tp-button--reverse, .tp-button--disabled:focus.tp-button--line,
+  .tp-button[disabled].tp-button--reverse,
+  .tp-button[disabled].tp-button--line,
+  .tp-button[disabled]:visited.tp-button--reverse,
+  .tp-button[disabled]:visited.tp-button--line,
+  .tp-button[disabled]:hover.tp-button--reverse,
+  .tp-button[disabled]:hover.tp-button--line,
+  .tp-button[disabled]:active.tp-button--reverse,
+  .tp-button[disabled]:active.tp-button--line,
+  .tp-button[disabled]:focus.tp-button--reverse,
+  .tp-button[disabled]:focus.tp-button--line {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    opacity: 0.35; }
+
+.tp-button-reset {
+  padding: 0;
+  background: none;
+  border: none; }
+  .tp-button-reset:active {
+    outline: none; }
+
+.tp-button--reset {
+  padding: 0;
+  background: none;
+  border: none; }
+  .tp-button--reset:active {
+    outline: none; }
+
+.tp-button-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.tp-button-icon__icon {
+  flex: none;
+  margin: 0;
+  margin-right: 12px;
+  fill: currentColor; }
+"
+`;

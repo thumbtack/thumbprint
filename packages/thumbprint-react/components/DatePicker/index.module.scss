@@ -1,0 +1,172 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    // Set 'inline-block' on the container to mimic react-day-picker's default behavior.
+    display: inline-block;
+}
+
+.root :global(.DayPicker) {
+    display: inline-block;
+}
+
+.root :global(.DayPicker-wrapper) {
+    margin: 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    flex-direction: row;
+    padding: 1rem 0;
+
+    @media screen and (max-width: 410px) {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+}
+
+.root :global(.DayPicker-Month) {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    user-select: none;
+    margin: 0 1rem;
+
+    @media screen and (max-width: 410px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.root :global(.DayPicker-NavBar) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 0.5rem;
+    top: 1rem;
+}
+
+.root :global(.DayPicker-NavButton) {
+    top: 130px;
+    border: 1px solid $tp-color__gray;
+    position: absolute;
+    width: 40px;
+    height: 90px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.root :global(.DayPicker-NavButton--prev) {
+    left: -4rem;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5wcmV2PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9InByZXYiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzLjM5MzE5MywgMjUuMDAwMDAwKSBzY2FsZSgtMSwgMSkgdHJhbnNsYXRlKC0xMy4zOTMxOTMsIC0yNS4wMDAwMDApIHRyYW5zbGF0ZSgwLjg5MzE5MywgMC4wMDAwMDApIiBmaWxsPSIjNTY1QTVDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAsNDkuMTIzNzMzMSBMMCw0NS4zNjc0MzQ1IEwyMC4xMzE4NDU5LDI0LjcyMzA2MTIgTDAsNC4yMzEzODMxNCBMMCwwLjQ3NTA4NDQ1OSBMMjUsMjQuNzIzMDYxMiBMMCw0OS4xMjM3MzMxIEwwLDQ5LjEyMzczMzEgWiIgaWQ9InJpZ2h0IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K');
+
+    @media screen and (max-width: 410px) {
+        left: -3rem;
+    }
+}
+
+.root :global(.DayPicker-NavButton--next) {
+    right: -4rem;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5uZXh0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9Im5leHQiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTUxNDUxLCAwLjAwMDAwMCkiIGZpbGw9IiM1NjVBNUMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCw0OS4xMjM3MzMxIEwwLDQ1LjM2NzQzNDUgTDIwLjEzMTg0NTksMjQuNzIzMDYxMiBMMCw0LjIzMTM4MzE0IEwwLDAuNDc1MDg0NDU5IEwyNSwyNC43MjMwNjEyIEwwLDQ5LjEyMzczMzEgTDAsNDkuMTIzNzMzMSBaIiBpZD0icmlnaHQiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=');
+
+    @media screen and (max-width: 410px) {
+        right: -3rem;
+    }
+}
+
+.root :global(.DayPicker-NavButton--interactionDisabled) {
+    display: none;
+}
+
+.root :global(.DayPicker-Caption) {
+    display: table-caption;
+    height: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.root :global(.DayPicker-Weekdays) {
+    display: table-header-group;
+}
+
+.root :global(.DayPicker-WeekdaysRow) {
+    display: table-row;
+}
+
+.root :global(.DayPicker-Weekday) {
+    display: table-cell;
+    padding: 0.5rem;
+    font-size: 0.875em;
+    text-align: center;
+    font-weight: 400;
+    color: $tp-color__black-300;
+}
+
+.root :global(.DayPicker-Body) {
+    display: table-row-group;
+}
+
+.root :global(.DayPicker-Week) {
+    display: table-row;
+}
+
+.root :global(.DayPicker-Day) {
+    display: table-cell;
+    padding: 0.5rem;
+    color: $tp-color__black;
+    border: 1px solid $tp-color__gray;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    font-weight: 400;
+    height: 46px;
+    width: 46px;
+
+    @media screen and (max-width: 350px) {
+        width: 30px;
+        padding: 0.3rem;
+    }
+}
+
+.root :global(.DayPicker-Day--disabled) {
+    color: $tp-color__gray;
+    cursor: default;
+}
+
+.root :global(.DayPicker-Day--outside) {
+    cursor: default;
+    border: none;
+}
+
+.root :global(.DayPicker-Day--selected) {
+    color: $tp-color__white;
+    background-color: $tp-color__blue;
+}
+
+.root :global(.DayPicker-Day--selected.DayPicker-Day--outside) {
+    background-color: transparent;
+}
+
+.root :global(.DayPicker-WeekNumber) {
+    display: table-cell;
+    padding: 0.5rem;
+    text-align: right;
+    vertical-align: middle;
+    min-width: 1rem;
+    font-size: 0.75em;
+    cursor: pointer;
+}
+
+.root :global(.DayPicker-Footer) {
+    display: table-caption;
+    caption-side: bottom;
+    padding-top: 0.5rem;
+}
+
+.root :global(.DayPicker-Weekday) abbr {
+    text-decoration: none;
+}

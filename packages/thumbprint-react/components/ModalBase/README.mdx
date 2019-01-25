@@ -1,0 +1,70 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: modal-base/index.mdx
+platform: react
+url: /components/modal-base/react/
+mdxType: componentApi
+deprecated: This package was deprecated in favor of [ModalCurtain](/components/modal-curtain/react/).
+---
+
+## Basic ModalBase
+
+### Modal with wrapper component
+
+This example includes a wrapper component that opens the modal when the button is clicked on.
+
+```jsx
+class ModalBaseDemo extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isOpen: false,
+        };
+
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+    }
+
+    closeModal() {
+        this.setState({ isOpen: false });
+        console.log('ModalBase `onCloseClick` fired');
+    }
+
+    openModal() {
+        this.setState({ isOpen: true });
+    }
+
+    render() {
+        return (
+            <div>
+                <Button onClick={this.openModal}>Open Modal</Button>
+
+                <ModalBase
+                    isOpen={this.state.isOpen}
+                    onCloseClick={this.closeModal}
+                    shouldCloseOnBackdropClick
+                    onOpenFinish={() => {
+                        console.log('ModalBase `onOpenFinish` fired');
+                    }}
+                    onCloseFinish={() => {
+                        console.log('ModalBase `onCloseFinish` fired');
+                    }}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
+                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
+                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
+                    mauris in arcu maximus placerat. Cras vitae interdum ipsum. Proin convallis quis
+                    elit quis pellentesque. Curabitur a ex eget neque congue tempor sed ut felis.
+                    Vivamus in erat ac lacus vehicula condimentum. Nam fringilla molestie facilisis.
+                    Etiam eros nisl, mattis et sagittis non, blandit vel nisl. Duis blandit
+                    condimentum lorem, sed convallis sapien porttitor vitae. Curabitur molestie,
+                    massa et molestie aliquam, odio purus rhoncus sem, a sodales ipsum nisi ac nibh.
+                    Nunc in dapibus mauris. Pellentesque rhoncus id arcu at auctor.
+                    <Button onClick={this.closeModal}>Close Modal</Button>
+                </ModalBase>
+            </div>
+        );
+    }
+}
+```

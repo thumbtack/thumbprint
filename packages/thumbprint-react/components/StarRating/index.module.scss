@@ -1,0 +1,77 @@
+$spacing--small: 1px;
+$spacing--medium: 2px;
+$spacing--large: 3px;
+
+$size--small: 12px;
+$size--medium: 18px;
+$size--large: 24px;
+
+.root {
+    position: relative;
+    display: inline-block;
+}
+
+.rootSize {
+    &Small {
+        margin: 0 (-$spacing--small);
+    }
+
+    &Medium {
+        margin: 0 (-$spacing--medium);
+    }
+
+    &Large {
+        margin: 0 (-$spacing--large);
+    }
+}
+
+.rootIsClickable {
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+}
+
+.rowGold {
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none; // We want the gray version of the stars to handle all events
+}
+
+.starContainer {
+    &Small {
+        padding: 0 $spacing--small;
+    }
+
+    &Medium {
+        padding: 0 $spacing--medium;
+    }
+
+    &Large {
+        padding: 0 $spacing--large;
+    }
+}
+
+.starSVG {
+    display: block;
+}
+
+.starSVGSize {
+    &Small {
+        height: $size--small;
+        width: $size--small;
+    }
+
+    &Medium {
+        height: $size--medium;
+        width: $size--medium;
+    }
+
+    &Large {
+        height: $size--large;
+        width: $size--large;
+    }
+}

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridColumn adds \`dataTest\` prop 1`] = `
+<Grid
+  dataTest="Duck"
+  gutter="normal"
+>
+  <div
+    className="grid"
+    data-test="Duck"
+  >
+    <GridColumn
+      base={1}
+      dataTest="Goose"
+    >
+      <div
+        className="col col1"
+        data-test="Goose"
+      >
+        goose
+      </div>
+    </GridColumn>
+  </div>
+</Grid>
+`;
+
+exports[`GridColumn column renders content that is passed in 1`] = `
+<Grid
+  gutter="normal"
+>
+  <div
+    className="grid"
+  >
+    <GridColumn
+      base={12}
+    >
+      <div
+        className="col col12"
+      >
+        goose
+      </div>
+    </GridColumn>
+  </div>
+</Grid>
+`;
+
+exports[`GridColumn column renders content with custom widths 1`] = `
+<Grid
+  gutter="normal"
+>
+  <div
+    className="grid"
+  >
+    <GridColumn
+      aboveLarge={4}
+      aboveMedium={3}
+      aboveSmall={2}
+      base={1}
+    >
+      <div
+        className="col col1 aboveSmallCol2 aboveMediumCol3 aboveLargeCol4"
+      >
+        goose
+      </div>
+    </GridColumn>
+  </div>
+</Grid>
+`;
+
+exports[`grid renders content that is passed in 1`] = `
+<Grid
+  gutter="normal"
+>
+  <div
+    className="grid"
+  >
+    goose
+  </div>
+</Grid>
+`;
+
+exports[`grid renders with flush gutter 1`] = `
+<Grid
+  gutter="flush"
+>
+  <div
+    className="grid gridFlush"
+  >
+    goose
+  </div>
+</Grid>
+`;
+
+exports[`grid renders with wide gutter 1`] = `
+<Grid
+  gutter="wide"
+>
+  <div
+    className="grid gridWide"
+  >
+    goose
+  </div>
+</Grid>
+`;

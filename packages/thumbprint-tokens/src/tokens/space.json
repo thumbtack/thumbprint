@@ -1,0 +1,53 @@
+{
+    "name": "Space",
+    "tokens": [
+        {
+            "name": "Space",
+            "id": "tp-space__1",
+            "value": "4px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__2",
+            "value": "8px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__3",
+            "value": "16px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__4",
+            "value": "24px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__5",
+            "value": "32px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__6",
+            "value": "64px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__7",
+            "value": "128px",
+            "type": "space"
+        },
+        {
+            "name": "Space",
+            "id": "tp-space__8",
+            "value": "256px",
+            "type": "space"
+        }
+    ]
+}

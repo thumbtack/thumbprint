@@ -1,0 +1,40 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+.normal {
+    font-weight: $tp-font__weight__normal !important;
+}
+
+.b {
+    font-weight: $tp-font__weight__bold !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_normal {
+        font-weight: $tp-font__weight__normal !important;
+    }
+
+    .s_b {
+        font-weight: $tp-font__weight__bold !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_normal {
+        font-weight: $tp-font__weight__normal !important;
+    }
+
+    .m_b {
+        font-weight: $tp-font__weight__bold !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_normal {
+        font-weight: $tp-font__weight__normal !important;
+    }
+
+    .l_b {
+        font-weight: $tp-font__weight__bold !important;
+    }
+}

@@ -1,0 +1,47 @@
+@import 'node_modules/@thumbtack/tp-ui-core-function/_index';
+
+.tp-button-row {
+    display: flex;
+
+    .tp-button {
+        margin-right: tp-spacer(1);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &--right {
+        justify-content: flex-end;
+
+        .tp-button {
+            margin-right: 0;
+            margin-left: tp-spacer(1);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &--center {
+        justify-content: center;
+
+        .tp-button {
+            margin-left: tp-spacer(0.5);
+            margin-right: tp-spacer(0.5);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__left {
+        margin-right: auto;
+    }
+
+    &__right {
+        margin-left: auto;
+    }
+}

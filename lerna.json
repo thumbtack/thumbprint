@@ -1,0 +1,29 @@
+{
+    "lerna": "2.0.0",
+    "packages": ["packages/*"],
+    "version": "independent",
+    "npmClient": "yarn",
+    "useWorkspaces": true,
+    "commands": {
+        "publish": {
+            "allowBranch": "master",
+            "ignore": [
+                "README.mdx",
+                "README.md",
+                "CHANGELOG.md",
+                "CONTRIBUTING.md",
+                "yarn.lock",
+                "stories.jsx",
+                "*.test.js",
+                "test.js",
+                "*.test.jsx",
+                "test.jsx",
+                "*.test.js.snap",
+                "test.js.snap",
+                "*.test.jsx.snap",
+                "test.jsx.snap"
+            ],
+            "message": ""
+        }
+    }
+}

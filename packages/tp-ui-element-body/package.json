@@ -1,0 +1,34 @@
+{
+    "name": "@thumbtack/tp-ui-element-body",
+    "version": "2.0.7",
+    "main": "_index.scss",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thumbtack/thumbprint.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "author": {
+        "name": "Tom Genoni",
+        "email": "tom@atomeye.com",
+        "url": "http://atomeye.com/"
+    },
+    "contributors": [
+        {
+            "name": "Daniel O'Connor",
+            "email": "daniel@danoc.me",
+            "url": "https://danoc.me/"
+        }
+    ],
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/tp-ui-element-body/#readme",
+    "dependencies": {
+        "@thumbtack/thumbprint-tokens": "^6.2.3",
+        "@thumbtack/tp-ui-core-mixin": "^3.0.3"
+    }
+}

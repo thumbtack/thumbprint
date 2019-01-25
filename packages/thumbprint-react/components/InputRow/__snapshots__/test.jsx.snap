@@ -1,0 +1,580 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<InputRow
+  dataTest="Duck"
+>
+  <div
+    className="root"
+    data-test="Duck"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".2"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`renders all children 1`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".2"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`sets width ratios even if some are \`null\` 1`] = `
+<InputRow
+  widthRatios={
+    Array [
+      1,
+      null,
+      null,
+    ]
+  }
+>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": null,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".2"
+      style={
+        Object {
+          "flex": null,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`sets width ratios when they are all numbers 1`] = `
+<InputRow
+  widthRatios={
+    Array [
+      1,
+      1,
+      1,
+    ]
+  }
+>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".2"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`works with \`Input\` and \`Button\` 1`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <Input
+        hasError={false}
+        isDisabled={false}
+        isReadOnly={false}
+        isRequired={false}
+        onChange={[Function]}
+        shouldFocusOnPageLoad={false}
+        size="large"
+        type="text"
+        value=""
+      >
+        <div
+          className="root rootUiStateDefault"
+        >
+          <input
+            autoFocus={false}
+            className="input inputSizeLarge"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value=""
+          />
+          <div
+            className="inputStyles inputStylesRoundedBordersLeft inputStylesHasNoRightBorder inputStylesUiStateDefault"
+          />
+        </div>
+      </Input>
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef
+        isDisabled={false}
+        isLoading={false}
+        size="large"
+        theme="primary"
+        type="button"
+        width="auto"
+      >
+        <ForwardRef
+          icon={null}
+          isDisabled={false}
+          isLoading={false}
+          onClick={null}
+          shouldOpenInNewTab={false}
+          size="large"
+          theme="primary"
+          to={null}
+          type="button"
+          width="auto"
+        >
+          <button
+            className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
+            onClick={null}
+            type="button"
+          >
+            <span
+              className="flexWrapper flexWrapperSizeLarge"
+            >
+              Duck
+            </span>
+          </button>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`works with \`Input\` and \`Button\` 2`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef
+        isDisabled={false}
+        isLoading={false}
+        size="large"
+        theme="primary"
+        type="button"
+        width="auto"
+      >
+        <ForwardRef
+          icon={null}
+          isDisabled={false}
+          isLoading={false}
+          onClick={null}
+          shouldOpenInNewTab={false}
+          size="large"
+          theme="primary"
+          to={null}
+          type="button"
+          width="auto"
+        >
+          <button
+            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
+            onClick={null}
+            type="button"
+          >
+            <span
+              className="flexWrapper flexWrapperSizeLarge"
+            >
+              Duck
+            </span>
+          </button>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <Input
+        hasError={false}
+        isDisabled={false}
+        isReadOnly={false}
+        isRequired={false}
+        onChange={[Function]}
+        shouldFocusOnPageLoad={false}
+        size="large"
+        type="text"
+        value=""
+      >
+        <div
+          className="root rootUiStateDefault"
+        >
+          <input
+            autoFocus={false}
+            className="input inputSizeLarge"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value=""
+          />
+          <div
+            className="inputStyles inputStylesRoundedBordersRight inputStylesUiStateDefault"
+          />
+        </div>
+      </Input>
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`works with \`Input\` and \`Button\` 3`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef
+        isDisabled={false}
+        isLoading={false}
+        size="large"
+        theme="primary"
+        type="button"
+        width="auto"
+      >
+        <ForwardRef
+          icon={null}
+          isDisabled={false}
+          isLoading={false}
+          onClick={null}
+          shouldOpenInNewTab={false}
+          size="large"
+          theme="primary"
+          to={null}
+          type="button"
+          width="auto"
+        >
+          <button
+            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
+            onClick={null}
+            type="button"
+          >
+            <span
+              className="flexWrapper flexWrapperSizeLarge"
+            >
+              Duck
+            </span>
+          </button>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <Input
+        hasError={false}
+        isDisabled={false}
+        isReadOnly={false}
+        isRequired={false}
+        onChange={[Function]}
+        shouldFocusOnPageLoad={false}
+        size="large"
+        type="text"
+        value=""
+      >
+        <div
+          className="root rootUiStateDefault"
+        >
+          <input
+            autoFocus={false}
+            className="input inputSizeLarge"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value=""
+          />
+          <div
+            className="inputStyles inputStylesRoundedBordersRight inputStylesUiStateDefault"
+          />
+        </div>
+      </Input>
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`works with \`Input\` and \`Button\` 4`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <Input
+        hasError={false}
+        isDisabled={false}
+        isReadOnly={false}
+        isRequired={false}
+        onChange={[Function]}
+        shouldFocusOnPageLoad={false}
+        size="large"
+        type="text"
+        value=""
+      >
+        <div
+          className="root rootUiStateDefault"
+        >
+          <input
+            autoFocus={false}
+            className="input inputSizeLarge"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value=""
+          />
+          <div
+            className="inputStyles inputStylesRoundedBordersLeft inputStylesHasNoRightBorder inputStylesUiStateDefault"
+          />
+        </div>
+      </Input>
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef
+        isDisabled={false}
+        isLoading={false}
+        size="large"
+        theme="primary"
+        type="button"
+        width="auto"
+      >
+        <ForwardRef
+          icon={null}
+          isDisabled={false}
+          isLoading={false}
+          onClick={null}
+          shouldOpenInNewTab={false}
+          size="large"
+          theme="primary"
+          to={null}
+          type="button"
+          width="auto"
+        >
+          <button
+            className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
+            onClick={null}
+            type="button"
+          >
+            <span
+              className="flexWrapper flexWrapperSizeLarge"
+            >
+              Duck
+            </span>
+          </button>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </div>
+</InputRow>
+`;

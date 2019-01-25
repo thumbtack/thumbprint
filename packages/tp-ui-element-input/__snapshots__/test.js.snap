@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-text-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d3d4d5;
+  border-radius: 4px;
+  padding: 13px 15px;
+  font-size: 16px;
+  vertical-align: middle;
+  line-height: 24px; }
+  .tp-text-input--small {
+    line-height: 20px;
+    padding: 9px 15px;
+    font-size: 14px; }
+  .tp-text-input:focus {
+    outline: none;
+    color: #2f3033;
+    border-color: #009fd9; }
+  .tp-text-input--bad-news {
+    color: #ff5a5f;
+    border-color: #ff5a5f; }
+  .tp-text-input[disabled], .tp-text-input--disabled {
+    background-color: #fafafa;
+    color: #d3d4d5; }
+  .tp-text-input::-ms-clear, .tp-text-input::-webkit-search-decoration, .tp-text-input::-webkit-search-cancel-button, .tp-text-input::-webkit-search-results-button, .tp-text-input::-webkit-search-results-decoration {
+    display: none; }
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+_:-ms-fullscreen,
+:root .tp-text-input {
+  min-height: 50px; }
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+_:-ms-fullscreen,
+:root .tp-text-input--small {
+  min-height: 38px; }
+
+.tp-input-icon {
+  position: relative; }
+  .tp-input-icon__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+  .tp-input-icon--left .tp-text-input {
+    padding-left: 56px; }
+    .tp-input-icon--left .tp-text-input--small {
+      padding-left: 46px; }
+  .tp-input-icon--left .tp-input-icon__icon {
+    left: 17px; }
+  .tp-input-icon--right .tp-text-input {
+    padding-right: 56px; }
+    .tp-input-icon--right .tp-text-input--small {
+      padding-right: 46px; }
+  .tp-input-icon--right .tp-input-icon__icon {
+    right: 17px; }
+"
+`;

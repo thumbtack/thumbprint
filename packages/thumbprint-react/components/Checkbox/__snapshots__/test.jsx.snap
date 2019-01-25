@@ -1,0 +1,738 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<Checkbox
+  dataTest="Duck"
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      data-test="Duck"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`adds \`disabled\` attribute 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={true}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "default",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={true}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "borderColor": "#e9eced",
+          "color": "#d3d4d5",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`adds \`name\` attribute 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name="ohhi"
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name="ohhi"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`applies \`labelPadding\` as padding on the label 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="10px 20px"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "10px 20px",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`if no \`children\` are passed in 1`] = `
+<Checkbox
+  hasError={false}
+  id="no-children"
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id="no-children"
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+  </label>
+</Checkbox>
+`;
+
+exports[`is checked when \`isChecked\` is set to true 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={true}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={true}
+      checked={true}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#009fd9",
+          "borderColor": "#009fd9",
+          "color": "#ffffff",
+        }
+      }
+    >
+      <svg
+        data-thumbprint-id="contentactions-check--small"
+        fill="currentColor"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.5810763,3.19812449 C14.132085,2.85681117 13.5060971,2.96739243 13.1851033,3.44586905 L8.01720309,11.1408364 L4.52827048,8.83245251 C4.05827956,8.52197434 3.44229146,8.67402358 3.1502971,9.17270255 C2.85930272,9.67138151 3.00329993,10.3274261 3.47229088,10.6379043 L8.55419272,14 L14.8130718,4.68246529 C15.1350656,4.20398867 15.0300676,3.53943781 14.5810763,3.19812449"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`is not checked by default 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders \`children\` passed in 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders \`hasError\` state 1`] = `
+<Checkbox
+  hasError={true}
+  id={null}
+  isChecked={true}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={true}
+      checked={true}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#ff5a5f",
+          "color": "#ff5a5f",
+        }
+      }
+    >
+      <svg
+        data-thumbprint-id="contentactions-check--small"
+        fill="currentColor"
+        height="18"
+        viewBox="0 0 18 18"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.5810763,3.19812449 C14.132085,2.85681117 13.5060971,2.96739243 13.1851033,3.44586905 L8.01720309,11.1408364 L4.52827048,8.83245251 C4.05827956,8.52197434 3.44229146,8.67402358 3.1502971,9.17270255 C2.85930272,9.67138151 3.00329993,10.3274261 3.47229088,10.6379043 L8.55419272,14 L14.8130718,4.68246529 C15.1350656,4.20398867 15.0300676,3.53943781 14.5810763,3.19812449"
+          fillRule="evenodd"
+        />
+      </svg>
+    </div>
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "#ff5a5f",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders \`hasError\` state 2`] = `
+<Checkbox
+  hasError={true}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#ff5a5f",
+          "color": "#ff5a5f",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "#ff5a5f",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders \`input\` within \`label\` 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders checkbox input 1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  isIndeterminate={false}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`renders indeterminate SVG when both \`isIndeterminate\` and \`isChecked\` are true  1`] = `
+<Checkbox
+  hasError={false}
+  id={null}
+  isChecked={true}
+  isDisabled={false}
+  isIndeterminate={true}
+  labelPadding="14px 0"
+  name={null}
+  onChange={[MockFunction]}
+>
+  <label
+    className="root"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked="mixed"
+      checked={true}
+      className="input"
+      disabled={false}
+      id={null}
+      name={null}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#009fd9",
+          "borderColor": "#009fd9",
+          "color": "#ffffff",
+        }
+      }
+    >
+      <svg
+        fill="currentColor"
+        height="2"
+        viewBox="0 0 10 2"
+        width="10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          height="2"
+          width="10"
+          x="0"
+          y="0"
+        />
+      </svg>
+    </div>
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;

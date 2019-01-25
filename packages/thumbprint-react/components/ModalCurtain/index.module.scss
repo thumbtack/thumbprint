@@ -1,0 +1,25 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    overflow: auto;
+    visibility: hidden;
+    z-index: $tp-z-index__modal;
+
+    &Open {
+        opacity: 1;
+        visibility: visible;
+
+        // Turn off the black flashing that happens on iOS when tapping on the curtain. This
+        // happens when an `onClick` is added to an element in iOS.
+        // https://stackoverflow.com/questions/6211959/html5-div-flashes-on-tap
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}

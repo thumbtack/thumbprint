@@ -1,0 +1,31 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.sideNavSectionGroup:not(:last-of-type) {
+    margin-bottom: $tp-space__3;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: $tp-space__5;
+        right: $tp-space__4;
+        bottom: -($tp-space__2);
+        height: 1px;
+        background: $tp-color__gray-300;
+    }
+}
+
+.sideNavClickableBox {
+    user-select: none;
+    cursor: pointer;
+}
+
+.sideNavSectionGroupIsActive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $tp-space__1;
+    background: $tp-color__blue;
+}

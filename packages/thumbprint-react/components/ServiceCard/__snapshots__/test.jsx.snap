@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ServiceCard renders an href when supplied 1`] = `
+<ServiceCard
+  url="https://www.thumbtack.com/k/massage/near-me/"
+>
+  <a
+    className="root"
+    href="https://www.thumbtack.com/k/massage/near-me/"
+  >
+    Lorem
+  </a>
+</ServiceCard>
+`;
+
+exports[`ServiceCardDescription renders a description when supplied 1`] = `
+<ServiceCardDescription
+  iconColor="blue"
+>
+  <div
+    className="descriptionWrap iconBlue"
+  >
+    <div
+      className="description"
+    >
+      Lorem
+    </div>
+  </div>
+</ServiceCardDescription>
+`;
+
+exports[`ServiceCardDescription renders a icon and color is blue 1`] = `
+<ServiceCardDescription
+  icon={<svg />}
+  iconColor="blue"
+>
+  <div
+    className="descriptionWrap iconBlue"
+  >
+    <svg />
+    <div
+      className="description"
+    >
+      Lorem
+    </div>
+  </div>
+</ServiceCardDescription>
+`;
+
+exports[`ServiceCardDescription renders icon color 1`] = `
+<ServiceCardDescription
+  icon=""
+  iconColor="green"
+>
+  <div
+    className="descriptionWrap iconGreen"
+  >
+    <div
+      className="description"
+    >
+      Lorem
+    </div>
+  </div>
+</ServiceCardDescription>
+`;
+
+exports[`ServiceCardImage adds lazyload class for lazysizes to work 1`] = `
+<ServiceCardImage
+  alt="Lorem"
+  url=""
+>
+  <div
+    aria-label="Lorem"
+    className="image lazyload"
+    data-bg=""
+    role="img"
+  />
+</ServiceCardImage>
+`;
+
+exports[`ServiceCardImage renders an aria-label when supplied by alt 1`] = `
+<ServiceCardImage
+  alt="Lorem"
+  url=""
+>
+  <div
+    aria-label="Lorem"
+    className="image lazyload"
+    data-bg=""
+    role="img"
+  />
+</ServiceCardImage>
+`;
+
+exports[`ServiceCardImage renders an background image when supplied 1`] = `
+<ServiceCardImage
+  alt=""
+  url="https://www.thumbtack.com/image.png"
+>
+  <div
+    aria-label=""
+    className="image lazyload"
+    data-bg="https://www.thumbtack.com/image.png"
+    role="img"
+  />
+</ServiceCardImage>
+`;
+
+exports[`ServiceCardTitle renders a title when supplied 1`] = `
+<ServiceCardTitle>
+  <div
+    className="title"
+    title="Lorem"
+  >
+    Lorem
+  </div>
+</ServiceCardTitle>
+`;

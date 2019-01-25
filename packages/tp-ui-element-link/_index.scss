@@ -1,0 +1,42 @@
+@import '_mixin';
+
+a,
+.tp-link {
+    @include tp-link;
+}
+
+.tp-link--secondary {
+    @include tp-link--secondary;
+}
+
+.tp-link--tertiary {
+    @include tp-link--tertiary;
+}
+
+.tp-link--inherit {
+    @include tp-link--inherit;
+}
+
+.tp-link--disabled {
+    @include tp-link--disabled;
+}
+
+.tp-link--dark {
+    @include tp-link--dark;
+}
+
+.tp-link--muted {
+    @include tp-link--muted;
+}
+
+.tp-link--bad-news {
+    @include tp-link--bad-news;
+}
+
+.tp-link--reverse {
+    @include tp-link--reverse;
+}
+
+.tp-link--underline {
+    @include tp-link--underline;
+}

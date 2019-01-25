@@ -1,0 +1,640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`zIndex\` 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="body"
+  position="top"
+  text="Goose"
+  theme="dark"
+  zIndex={123}
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="tooltip tooltipDark"
+            data-test-id="tooltip"
+            role="tooltip"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 123;"
+          >
+            Goose
+            <div
+              class="nubbin nubbinDark"
+            />
+          </div>
+        </body>
+      }
+    >
+      <PositionedTooltip
+        hide={[Function]}
+        onMouseLeave={[Function]}
+        position="top"
+        shouldDisplace={true}
+        show={[Function]}
+        supportsTouch={false}
+        theme="dark"
+        zIndex={123}
+      >
+        <Popper
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+        >
+          <InnerPopper
+            eventsEnabled={true}
+            modifiers={
+              Object {
+                "offset": Object {
+                  "offset": "0, 16px",
+                },
+                "preventOverflow": Object {
+                  "boundariesElement": "window",
+                },
+              }
+            }
+            placement="top"
+            positionFixed={false}
+            referenceElement={
+              <button
+                aria-label="Goose"
+                type="button"
+              >
+                Duck
+              </button>
+            }
+          >
+            <div
+              className="tooltip tooltipDark"
+              data-test-id="tooltip"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              role="tooltip"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                  "zIndex": 123,
+                }
+              }
+            >
+              <WhenChildrenChange
+                do={[Function]}
+              >
+                Goose
+              </WhenChildrenChange>
+              <div
+                className="nubbin nubbinDark"
+                style={Object {}}
+              />
+            </div>
+          </InnerPopper>
+        </Popper>
+      </PositionedTooltip>
+    </Portal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`renders a closed tooltip 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="body"
+  position="top"
+  text="Goose"
+  theme="dark"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`renders an inline tooltip 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="inline"
+  position="top"
+  text="Goose"
+  theme="dark"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <PositionedTooltip
+      hide={[Function]}
+      onMouseLeave={[Function]}
+      position="top"
+      shouldDisplace={false}
+      show={[Function]}
+      supportsTouch={false}
+      theme="dark"
+    >
+      <Popper
+        modifiers={
+          Object {
+            "offset": Object {
+              "offset": "0, 16px",
+            },
+            "preventOverflow": Object {
+              "boundariesElement": "window",
+            },
+          }
+        }
+        placement="top"
+        positionFixed={false}
+      >
+        <InnerPopper
+          eventsEnabled={true}
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+          referenceElement={
+            <button
+              aria-label="Goose"
+              type="button"
+            >
+              Duck
+            </button>
+          }
+        >
+          <div
+            className="tooltip tooltipDark"
+            data-test-id="tooltip"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "left": 0,
+                "opacity": 0,
+                "pointerEvents": "none",
+                "position": "absolute",
+                "top": 0,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <WhenChildrenChange
+              do={[Function]}
+            >
+              Goose
+            </WhenChildrenChange>
+            <div
+              className="nubbin nubbinDark"
+              style={Object {}}
+            />
+          </div>
+        </InnerPopper>
+      </Popper>
+    </PositionedTooltip>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`renders an open tooltip 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="body"
+  position="top"
+  text="Goose"
+  theme="dark"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="tooltip tooltipDark"
+            data-test-id="tooltip"
+            role="tooltip"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+          >
+            Goose
+            <div
+              class="nubbin nubbinDark"
+            />
+          </div>
+        </body>
+      }
+    >
+      <PositionedTooltip
+        hide={[Function]}
+        onMouseLeave={[Function]}
+        position="top"
+        shouldDisplace={true}
+        show={[Function]}
+        supportsTouch={false}
+        theme="dark"
+      >
+        <Popper
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+        >
+          <InnerPopper
+            eventsEnabled={true}
+            modifiers={
+              Object {
+                "offset": Object {
+                  "offset": "0, 16px",
+                },
+                "preventOverflow": Object {
+                  "boundariesElement": "window",
+                },
+              }
+            }
+            placement="top"
+            positionFixed={false}
+            referenceElement={
+              <button
+                aria-label="Goose"
+                type="button"
+              >
+                Duck
+              </button>
+            }
+          >
+            <div
+              className="tooltip tooltipDark"
+              data-test-id="tooltip"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              role="tooltip"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                  "zIndex": undefined,
+                }
+              }
+            >
+              <WhenChildrenChange
+                do={[Function]}
+              >
+                Goose
+              </WhenChildrenChange>
+              <div
+                className="nubbin nubbinDark"
+                style={Object {}}
+              />
+            </div>
+          </InnerPopper>
+        </Popper>
+      </PositionedTooltip>
+    </Portal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`renders an open tooltip with \`bottom\` placement 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="body"
+  position="bottom"
+  text="Goose"
+  theme="dark"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="tooltip tooltipDark"
+            data-test-id="tooltip"
+            role="tooltip"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+          >
+            Goose
+            <div
+              class="nubbin nubbinDark"
+            />
+          </div>
+        </body>
+      }
+    >
+      <PositionedTooltip
+        hide={[Function]}
+        onMouseLeave={[Function]}
+        position="bottom"
+        shouldDisplace={true}
+        show={[Function]}
+        supportsTouch={false}
+        theme="dark"
+      >
+        <Popper
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="bottom"
+          positionFixed={false}
+        >
+          <InnerPopper
+            eventsEnabled={true}
+            modifiers={
+              Object {
+                "offset": Object {
+                  "offset": "0, 16px",
+                },
+                "preventOverflow": Object {
+                  "boundariesElement": "window",
+                },
+              }
+            }
+            placement="bottom"
+            positionFixed={false}
+            referenceElement={
+              <button
+                aria-label="Goose"
+                type="button"
+              >
+                Duck
+              </button>
+            }
+          >
+            <div
+              className="tooltip tooltipDark"
+              data-test-id="tooltip"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              role="tooltip"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                  "zIndex": undefined,
+                }
+              }
+            >
+              <WhenChildrenChange
+                do={[Function]}
+              >
+                Goose
+              </WhenChildrenChange>
+              <div
+                className="nubbin nubbinDark"
+                style={Object {}}
+              />
+            </div>
+          </InnerPopper>
+        </Popper>
+      </PositionedTooltip>
+    </Portal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`renders an open tooltip with a \`light\` theme 1`] = `
+<Tooltip
+  closeDelayLength={200}
+  container="body"
+  position="top"
+  text="Goose"
+  theme="light"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="Goose"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="tooltip tooltipLight"
+            data-test-id="tooltip"
+            role="tooltip"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+          >
+            Goose
+            <div
+              class="nubbin nubbinLight"
+            />
+          </div>
+        </body>
+      }
+    >
+      <PositionedTooltip
+        hide={[Function]}
+        onMouseLeave={[Function]}
+        position="top"
+        shouldDisplace={true}
+        show={[Function]}
+        supportsTouch={false}
+        theme="light"
+      >
+        <Popper
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+        >
+          <InnerPopper
+            eventsEnabled={true}
+            modifiers={
+              Object {
+                "offset": Object {
+                  "offset": "0, 16px",
+                },
+                "preventOverflow": Object {
+                  "boundariesElement": "window",
+                },
+              }
+            }
+            placement="top"
+            positionFixed={false}
+            referenceElement={
+              <button
+                aria-label="Goose"
+                type="button"
+              >
+                Duck
+              </button>
+            }
+          >
+            <div
+              className="tooltip tooltipLight"
+              data-test-id="tooltip"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              role="tooltip"
+              style={
+                Object {
+                  "left": 0,
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": 0,
+                  "zIndex": undefined,
+                }
+              }
+            >
+              <WhenChildrenChange
+                do={[Function]}
+              >
+                Goose
+              </WhenChildrenChange>
+              <div
+                className="nubbin nubbinLight"
+                style={Object {}}
+              />
+            </div>
+          </InnerPopper>
+        </Popper>
+      </PositionedTooltip>
+    </Portal>
+  </Manager>
+</Tooltip>
+`;

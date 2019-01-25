@@ -1,0 +1,1606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not add title text if a function is provided 1`] = `
+<div
+  className="root rootSizeSmall rootIsClickable"
+>
+  <div
+    className="row rowGold"
+    data-test-id="star-row-gold"
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  >
+    <div
+      className="starContainerSmall"
+      key="0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="4"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+    data-test-id="star-row-gray"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="starContainerSmall"
+      key="0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="4"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`generates the correct title 1`] = `
+<div
+  className="root rootSizeSmall"
+  title="2 out of 5 star rating"
+>
+  <div
+    className="row rowGold"
+    data-test-id="star-row-gold"
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "width": "40%",
+      }
+    }
+  >
+    <div
+      className="starContainerSmall"
+      key="0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="4"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#febe14"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+    data-test-id="star-row-gray"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="starContainerSmall"
+      key="0"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="1"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="2"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="3"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="starContainerSmall"
+      key="4"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <StarIcon
+        className="starSVG starSVGSizeSmall"
+        fill="#d3d4d5"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders 0 star rating 1`] = `
+<StarRating
+  hoverRating={0}
+  onMouseLeave={[Function]}
+  onStarClick={[Function]}
+  onStarHover={[Function]}
+  rating={0}
+  size="small"
+>
+  <div
+    className="root rootSizeSmall"
+    title="0 out of 5 star rating"
+  >
+    <div
+      className="row rowGold"
+      data-test-id="star-row-gold"
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+    <div
+      className="row"
+      data-test-id="star-row-gray"
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+  </div>
+</StarRating>
+`;
+
+exports[`renders 2.5 star rating 1`] = `
+<StarRating
+  hoverRating={0}
+  onMouseLeave={[Function]}
+  onStarClick={[Function]}
+  onStarHover={[Function]}
+  rating={2.5}
+  size="small"
+>
+  <div
+    className="root rootSizeSmall"
+    title="2.5 out of 5 star rating"
+  >
+    <div
+      className="row rowGold"
+      data-test-id="star-row-gold"
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+    <div
+      className="row"
+      data-test-id="star-row-gray"
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+  </div>
+</StarRating>
+`;
+
+exports[`renders 3 star rating 1`] = `
+<StarRating
+  hoverRating={0}
+  onMouseLeave={[Function]}
+  onStarClick={[Function]}
+  onStarHover={[Function]}
+  rating={3}
+  size="small"
+>
+  <div
+    className="root rootSizeSmall"
+    title="3 out of 5 star rating"
+  >
+    <div
+      className="row rowGold"
+      data-test-id="star-row-gold"
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "width": "60%",
+        }
+      }
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+    <div
+      className="row"
+      data-test-id="star-row-gray"
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+  </div>
+</StarRating>
+`;
+
+exports[`renders 10 star SVG elements in total 1`] = `
+<StarRating
+  hoverRating={0}
+  onMouseLeave={[Function]}
+  onStarClick={[Function]}
+  onStarHover={[Function]}
+  rating={5}
+  size="small"
+>
+  <div
+    className="root rootSizeSmall"
+    title="5 out of 5 star rating"
+  >
+    <div
+      className="row rowGold"
+      data-test-id="star-row-gold"
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#febe14"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#febe14"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+    <div
+      className="row"
+      data-test-id="star-row-gray"
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="starContainerSmall"
+        key="0"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="1"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="2"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="3"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+      <div
+        className="starContainerSmall"
+        key="4"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <StarIcon
+          className="starSVG starSVGSizeSmall"
+          fill="#d3d4d5"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            className="starSVG starSVGSizeSmall"
+            fill="#d3d4d5"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0c-.297 0-.543.2-.62.473l-1.574 4.86H.64c-.357 0-.64.31-.64.67 0 .22.11.417.277.534C.38 6.607 4.45 9.58 4.45 9.58s-1.563 4.8-1.593 4.877a.648.648 0 0 0 .977.76L8 12.183s4.073 2.967 4.167 3.034a.65.65 0 0 0 .37.116.65.65 0 0 0 .606-.876c-.03-.077-1.593-4.877-1.593-4.877s4.07-2.973 4.173-3.043A.654.654 0 0 0 16 6c0-.356-.277-.667-.634-.667H10.2L8.62.473A.643.643 0 0 0 8 0"
+            />
+          </svg>
+        </StarIcon>
+      </div>
+    </div>
+  </div>
+</StarRating>
+`;

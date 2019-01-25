@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`works if variable is provided 1`] = `
+"@font-face {
+  font-family: 'Mark';
+  font-weight: 400;
+  src: url(https://example.com/fonts/mark/mark-tt.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt.woff) format(\\"woff\\"); }
+
+@font-face {
+  font-family: 'Mark';
+  font-weight: 700;
+  src: url(https://example.com/fonts/mark/mark-tt-bold.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-bold.woff) format(\\"woff\\"); }
+"
+`;

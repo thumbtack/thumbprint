@@ -1,0 +1,980 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={2.3}
+  spacing="0px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={2.3}
+          spacing="0px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(-29.999999999999982%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={-0.8}
+  spacing="0px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={-0.8}
+          spacing="0px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(-19.999999999999996%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`spacing\` no spacing 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="0px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="0px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`spacing\` spacing in ems 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="2em"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="2em"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 2em)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "2em",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "2em",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "2em",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "2em",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`spacing\` spacing in pixels 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="10px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="10px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 10px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "10px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "10px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "10px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "10px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`visibleCount\` one and a half visible items 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="0px"
+  visibleCount={1.5}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="0px"
+          visibleCount={1.5}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`visibleCount\` one visible item 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="0px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="0px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`\`visibleCount\` three visible items 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="0px"
+  visibleCount={3}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="0px"
+          visibleCount={3}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="1/.1"
+                style={
+                  Object {
+                    "order": 1,
+                    "paddingRight": "0px",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="2/.2"
+                style={
+                  Object {
+                    "order": 2,
+                    "paddingRight": "0px",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="3/.3"
+                style={
+                  Object {
+                    "order": 3,
+                    "paddingRight": "0px",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;
+
+exports[`renders a carousel 1`] = `
+<Carousel
+  onSelectedIndexChange={[Function]}
+  selectedIndex={0}
+  spacing="0px"
+  visibleCount={1}
+>
+  <div>
+    <Swipeable
+      delta={10}
+      disabled={false}
+      flickThreshold={0.6}
+      nodeName="div"
+      onSwiped={[Function]}
+      onSwiping={[Function]}
+      preventDefaultTouchmoveEvent={true}
+      rotationAngle={0}
+      stopPropagation={false}
+    >
+      <div
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <BaseCarousel
+          animationDuration={400}
+          selectedIndex={0}
+          spacing="0px"
+          visibleCount={1}
+        >
+          <div
+            className="root"
+          >
+            <ul
+              className="wrapper"
+              style={
+                Object {
+                  "transform": "translateX(0%)",
+                  "transitionDuration": false,
+                  "transitionProperty": "transform",
+                  "width": "calc(100% + 0px)",
+                }
+              }
+            >
+              <li
+                className="item"
+                key="0/.0"
+                style={
+                  Object {
+                    "order": 0,
+                    "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                gooose
+              </li>
+            </ul>
+          </div>
+        </BaseCarousel>
+      </div>
+    </Swipeable>
+  </div>
+</Carousel>
+`;

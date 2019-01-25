@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "## 1.2 - ",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 10,
+          "line": 1,
+          "offset": 9,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.2“ is not a valid SemVer version.",
+      "ruleId": "changelog-heading-2-valid-semver",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #1 fails 1`] = `
+Object {
+  "input": "## 1.a.0 -",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 11,
+          "line": 1,
+          "offset": 10,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.a.0“ is not a valid SemVer version.",
+      "ruleId": "changelog-heading-2-valid-semver",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

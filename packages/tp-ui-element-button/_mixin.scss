@@ -1,0 +1,233 @@
+@import 'node_modules/@thumbtack/tp-ui-core-function/_index';
+@import 'node_modules/@thumbtack/tp-ui-core-mixin/_index';
+@import 'node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+// Button mixins
+
+@mixin tp-button($important: null) {
+    box-sizing: border-box $important;
+    display: inline-block $important;
+    vertical-align: middle $important;
+    white-space: nowrap $important;
+    font-family: inherit $important;
+    cursor: pointer $important;
+    margin: 0 $important;
+    padding-top: tp-spacer(1.5) $important;
+    padding-bottom: tp-spacer(1.5) $important;
+    line-height: 24px $important;
+    border-width: 2px $important;
+    border-style: solid $important;
+    font-size: 16px $important;
+    font-weight: 700 $important;
+    user-select: none $important;
+    border-radius: $tp-border__radius__base $important;
+    padding-left: 22px $important;
+    padding-right: 22px $important;
+    overflow: visible $important;
+    min-height: 52px $important;
+
+    // Unique styles for the base, button start here.
+    background-color: $tp-color__blue $important;
+    border-color: transparent $important;
+    color: $tp-color__white $important;
+
+    &:hover,
+    &:active {
+        color: $tp-color__white $important;
+    }
+
+    &:focus {
+        outline: none;
+        text-decoration: underline;
+
+        // Focus styles for base
+        color: $tp-color__white $important;
+        background-color: $tp-color__blue-500 $important;
+        border-color: $tp-color__blue-500 $important;
+    }
+}
+
+@mixin tp-button--secondary($important: null) {
+    background-color: $tp-color__white $important;
+    border-color: $tp-color__gray $important;
+    color: $tp-color__black-300 $important;
+
+    &:hover,
+    &:active {
+        color: $tp-color__black-300 $important;
+    }
+
+    &:focus {
+        color: $tp-color__black-300 $important;
+        background-color: $tp-color__white $important;
+        border-color: $tp-color__black-300 $important;
+    }
+}
+
+@mixin tp-button--caution($important: null) {
+    background-color: $tp-color__white $important;
+    border-color: $tp-color__gray $important;
+    color: $tp-color__red $important;
+
+    &:hover,
+    &:active {
+        color: $tp-color__red $important;
+    }
+
+    &:focus {
+        color: $tp-color__red-500 $important;
+        background-color: $tp-color__white $important;
+        border-color: $tp-color__gray $important;
+    }
+}
+
+@mixin tp-button--solid($important: null) {
+    background-color: $tp-color__white $important;
+    border-color: $tp-color__white $important;
+    color: $tp-color__black $important;
+
+    &:hover,
+    &:active {
+        color: $tp-color__black $important;
+    }
+
+    &:focus {
+        color: $tp-color__black $important;
+        background-color: $tp-color__white $important;
+        border-color: $tp-color__white $important;
+    }
+}
+
+// @deprecated
+@mixin tp-button--line($important: null) {
+    background-color: transparent $important;
+    border-color: $tp-color__white $important;
+    color: $tp-color__white $important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: rgba(255, 255, 255, 0.2) $important;
+        color: $tp-color__white $important;
+    }
+}
+
+// Remove background and border color
+// @deprecated
+@mixin tp-button--clear($important: null) {
+    color: $tp-color__blue $important;
+    background: none;
+    border-color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: none;
+        border-color: transparent;
+        color: $tp-color__blue $important;
+    }
+}
+
+@mixin tp-button--small($important: null) {
+    font-size: 14px $important;
+    line-height: 20px $important;
+    padding-top: tp-spacer(1) $important;
+    padding-bottom: tp-spacer(1) $important;
+    min-height: 40px $important;
+}
+
+@mixin tp-button--full($important: null) {
+    width: 100% $important;
+    text-align: center $important;
+}
+
+// Disabled
+// used either an attribute or a class, depending on the use case.
+@mixin tp-button--disabled($important: null) {
+    &,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+        cursor: default $important;
+        color: $tp-color__white $important;
+        background-color: $tp-color__blue-300 $important;
+        border-color: $tp-color__blue-300 $important;
+
+        &.tp-button--secondary {
+            color: $tp-color__gray $important;
+            background-color: $tp-color__white $important;
+            border-color: $tp-color__gray $important;
+        }
+
+        &.tp-button--caution {
+            color: $tp-color__red-300 $important;
+            background-color: $tp-color__white $important;
+            border-color: $tp-color__gray $important;
+        }
+
+        &.tp-button--solid {
+            color: $tp-color__black-300 $important;
+            background-color: rgba(255, 255, 255, 0.5) $important;
+            border-color: transparent $important;
+        }
+
+        &.tp-button--tertiary {
+            background-color: $tp-color__white $important;
+            color: $tp-color__gray $important;
+        }
+
+        &.tp-button--clear {
+            background-color: transparent $important;
+            border-color: transparent $important;
+            color: $tp-color__gray $important;
+        }
+
+        &.tp-button--reverse,
+        &.tp-button--line {
+            background-color: transparent $important;
+            color: $tp-color__white $important;
+            border-color: $tp-color__white $important;
+            opacity: 0.35;
+        }
+    }
+}
+
+// Remove browser default button styling
+
+@mixin tp-button-reset($important: null) {
+    padding: 0;
+    background: none;
+    border: none;
+
+    &:active {
+        outline: none;
+    }
+}
+
+// @deprecated
+@mixin tp-button--reset($important: null) {
+    padding: 0;
+    background: none;
+    border: none;
+
+    &:active {
+        outline: none;
+    }
+}
+
+// Buttons with icons
+
+@mixin tp-button-icon($important: null) {
+    display: flex $important;
+    flex-direction: row $important;
+    align-items: center $important;
+    justify-content: center $important;
+}
+
+@mixin tp-button-icon__icon($important: null) {
+    flex: none $important;
+    margin: 0 $important;
+    margin-right: tp-spacer(1.5) $important;
+    fill: currentColor $important;
+}

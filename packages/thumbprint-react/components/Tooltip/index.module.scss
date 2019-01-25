@@ -1,0 +1,62 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+
+$tooltip-max-width: 235px;
+
+.childrenWrapper {
+    display: inline-flex;
+}
+
+.tooltip {
+    box-shadow: 0px 1px 3px 0px rgba($tp-color__black, 0.5);
+    font-size: $tp-font__body__3__size;
+    // Prevent font-weight from being inherited.
+    font-weight: 400;
+    line-height: $tp-font__body__3__line-height;
+    padding: tp-spacer(1) tp-spacer(2);
+    border-radius: $tp-border__radius__base;
+    max-width: $tooltip-max-width;
+
+    &Dark {
+        background: $tp-color__black;
+        color: $tp-color__white;
+    }
+
+    &Light {
+        background: $tp-color__white;
+        color: $tp-color__black;
+    }
+}
+
+.nubbin {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: tp-spacer(1);
+    // Create a arrow with CSS.
+    border-width: tp-spacer(1) tp-spacer(1) 0 tp-spacer(1);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &Top {
+        transform: rotate(0deg);
+        bottom: tp-spacer(-1);
+    }
+
+    &Bottom {
+        transform: scale(-1);
+        top: tp-spacer(-1);
+    }
+
+    &Dark {
+        border-top-color: $tp-color__black;
+    }
+
+    &Light {
+        border-top-color: $tp-color__white;
+    }
+}

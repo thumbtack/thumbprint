@@ -1,0 +1,46 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: service-card/index.mdx
+platform: react
+url: /components/service-card/react/
+mdxType: componentApi
+---
+
+Notes:
+
+-   Cards should be shown in a responsive grid with 3 or 4 per row
+-   `ServiceCardTitle` will be truncated to two lines using CSS
+
+## With icon
+
+```jsx
+<div style={{ maxWidth: '300px' }}>
+    <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription icon={<ContentModifierMapPinSmall />}>
+            67 Pros near you
+        </ServiceCardDescription>
+    </ServiceCard>
+</div>
+```
+
+## Without icon
+
+```jsx
+<div style={{ maxWidth: '300px' }}>
+    <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription>
+            Let us help you keep your lawn green and your garden happy and healthy.
+        </ServiceCardDescription>
+    </ServiceCard>
+</div>
+```

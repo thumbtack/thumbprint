@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-alert {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  padding: 12px 16px;
+  color: #ffffff;
+  background: #d3d4d5;
+  font-weight: 400;
+  border-radius: 4px; }
+  .tp-alert a {
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ffffff;
+    fill: #ffffff; }
+    .tp-alert a:hover {
+      color: #ffffff;
+      opacity: 0.7; }
+  .tp-alert--banner {
+    display: block;
+    text-align: center;
+    border-radius: 0; }
+  .tp-alert--good-news {
+    background: #2db783; }
+  .tp-alert--bad-news {
+    background: #ff5a5f; }
+  .tp-alert--warning {
+    background: #febe14; }
+  .tp-alert--note {
+    background: #009fd9; }
+  .tp-alert__text {
+    align-self: center; }
+  .tp-alert__icon {
+    fill: currentColor;
+    flex: none;
+    margin-right: 12px;
+    position: relative;
+    top: -1px; }
+"
+`;

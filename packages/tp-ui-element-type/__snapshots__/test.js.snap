@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-title-1 {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700; }
+  @media (min-width: 701px) {
+    .tp-title-1 {
+      font-size: 40px;
+      line-height: 44px;
+      font-weight: 700; } }
+
+.tp-title-2 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700; }
+  @media (min-width: 701px) {
+    .tp-title-2 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 700; } }
+
+.tp-title-3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700; }
+  @media (min-width: 701px) {
+    .tp-title-3 {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700; } }
+
+.tp-title-4 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700; }
+
+.tp-title-5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700; }
+
+.tp-body-1 {
+  font-size: 16px;
+  line-height: 24px; }
+
+.tp-body-2 {
+  font-size: 14px;
+  line-height: 20px; }
+
+.tp-body-3 {
+  font-size: 12px;
+  line-height: 18px; }
+
+.tp-heading-1 {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-1 {
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 500; } }
+
+.tp-heading-2 {
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-2 {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 500; } }
+
+.tp-heading-3 {
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-3 {
+      font-size: 32px;
+      line-height: 1.3;
+      font-weight: 500; } }
+
+.tp-heading-4 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-4 {
+      font-size: 24px;
+      line-height: 1.4;
+      font-weight: 500; } }
+
+.tp-heading-5 {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-5 {
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 500; } }
+
+.tp-heading-6 {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500; }
+  @media (min-width: 701px) {
+    .tp-heading-6 {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 500; } }
+
+.tp-text-1--static {
+  font-size: 20px;
+  line-height: 1.6; }
+
+.tp-text-1 {
+  font-size: 20px;
+  line-height: 1.6; }
+  @media (min-width: 701px) {
+    .tp-text-1 {
+      font-size: 24px;
+      line-height: 1.5; } }
+
+.tp-text-2--static {
+  font-size: 16px;
+  line-height: 1.6; }
+
+.tp-text-3--static {
+  font-size: 14px;
+  line-height: 1.6; }
+
+.tp-text-4--static {
+  font-size: 12px;
+  line-height: 1.6; }
+"
+`;

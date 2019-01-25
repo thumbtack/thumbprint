@@ -1,0 +1,23 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.preview {
+    font-family: $tp-font__family__base;
+}
+
+.codeContainer {
+    border-color: $tp-color__gray-300;
+    max-height: 300px;
+    overflow-y: auto;
+
+    &:focus-within {
+        border-color: $tp-color__blue;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: $tp-space__4;
+    }
+}
+
+.code:focus {
+    outline: none;
+}

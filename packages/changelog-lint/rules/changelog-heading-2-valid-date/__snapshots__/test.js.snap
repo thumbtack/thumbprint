@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "## 2012-03-90",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 14,
+          "line": 1,
+          "offset": 13,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“2012-03-90“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #1 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 20133-01-01",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 23,
+          "line": 1,
+          "offset": 22,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 20133-01-01“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #2 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 2013-13-01",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 22,
+          "line": 1,
+          "offset": 21,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 2013-13-01“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #3 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 2013-12-32",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 22,
+          "line": 1,
+          "offset": 21,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 2013-12-32“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #4 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 2013-1-20",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 2013-1-20“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #5 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 2013-01-1",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 2013-01-1“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;
+
+exports[`invalid case #6 fails 1`] = `
+Object {
+  "input": "## 1.1.1 - 2013-1-1",
+  "output": Array [
+    Object {
+      "column": 1,
+      "fatal": false,
+      "line": 1,
+      "location": Object {
+        "end": Object {
+          "column": 20,
+          "line": 1,
+          "offset": 19,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "reason": "“1.1.1 - 2013-1-1“ does not end with a valid date in the format YYYY-MM-DD.",
+      "ruleId": "changelog-heading-2-valid-date",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

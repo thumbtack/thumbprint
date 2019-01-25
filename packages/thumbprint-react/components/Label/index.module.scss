@@ -1,0 +1,25 @@
+@import '~@thumbtack/tp-ui-core-function/_index';
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.text {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__body__1__line-height;
+    margin-bottom: tp-spacer(1);
+
+    &UiState {
+        &Disabled {
+            color: $tp-color__gray;
+        }
+
+        &Error {
+            color: $tp-color__red;
+        }
+
+        &Default {
+            color: $tp-color__black;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-input-row {
+  position: relative;
+  z-index: 0;
+  display: flex; }
+  .tp-input-row > * {
+    margin-left: 0;
+    border-radius: 0; }
+    .tp-input-row > *:not(:first-child) {
+      margin-left: -2px; }
+    .tp-input-row > *:hover, .tp-input-row > *:focus {
+      position: relative; }
+    .tp-input-row > *:first-child {
+      border-radius: 4px 0 0 4px; }
+    .tp-input-row > *:last-child {
+      border-radius: 0 4px 4px 0; }
+  .tp-input-row--bleed > *:first-child, .tp-input-row--bleed > *:last-child {
+    border-radius: 0; }
+  .tp-input-row--divider > .tp-button:not(:first-child) {
+    border-left-color: #007fad; }
+  .tp-input-row .tp-text-input {
+    flex: 1; }
+  .tp-input-row .tp-button {
+    position: relative; }
+    .tp-input-row .tp-button:focus {
+      z-index: 1; }
+  .tp-input-row--button-stretch .tp-text-input {
+    flex: 3; }
+  .tp-input-row--button-stretch .tp-button {
+    flex: 1; }
+"
+`;

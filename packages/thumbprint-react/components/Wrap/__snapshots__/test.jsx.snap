@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<Wrap
+  dataTest="Duck"
+>
+  <div
+    className="root"
+    data-test="Duck"
+  >
+    goose
+  </div>
+</Wrap>
+`;
+
+exports[`renders content that is passed in 1`] = `
+<Wrap>
+  <div
+    className="root"
+  >
+    goose
+  </div>
+</Wrap>
+`;
+
+exports[`renders content that is passed in with a bleed breakpoint 1`] = `
+<Wrap
+  bleedBelow="medium"
+>
+  <div
+    className="root bleedBelowMedium"
+  >
+    goose
+  </div>
+</Wrap>
+`;

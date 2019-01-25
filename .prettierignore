@@ -1,0 +1,12 @@
+coverage
+yarn.lock
+dist
+tmp
+svg
+.git
+.cache
+# Ignore `dist` files created by the Thumbprint documentation.
+www/public
+www/.cache
+# Prevent Yarn and Prettier from conflicting.
+package.json

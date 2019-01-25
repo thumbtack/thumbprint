@@ -1,0 +1,15 @@
+{
+    "name": "Wrap",
+    "tokens": [
+        {
+            "name": "Max-Width",
+            "id": "tp-wrap__max-width",
+            "value": "946px"
+        },
+        {
+            "name": "No-Pad Width",
+            "id": "tp-wrap__no-pad-width",
+            "value": "1010px"
+        }
+    ]
+}

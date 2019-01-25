@@ -1,0 +1,48 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+
+// The `.root.root.root` is used to increase specificity so Thumbprint takes precedence over a
+// highly specific selector in Thumbtack's website.
+// https://github.com/thumbtack/thumbprint-archive/issues/244
+.root.root.root {
+    font-family: $tp-font__family__base;
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__body__1__line-height;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: $tp-border__radius__base;
+    padding: 10px 14px;
+    vertical-align: middle;
+    resize: vertical;
+    height: tp-spacer(19);
+    min-height: tp-spacer(13);
+
+    &:focus {
+        border-color: $tp-color__blue;
+    }
+
+    ::-webkit-input-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    &StateDefault {
+        border-color: $tp-color__gray;
+        color: $tp-color__black;
+        background-color: $tp-color__white;
+    }
+
+    &StateDisabled {
+        border-color: $tp-color__gray;
+        color: $tp-color__gray;
+        background-color: $tp-color__gray-200;
+    }
+
+    &StateError {
+        border-color: $tp-color__red;
+        color: $tp-color__red;
+        background-color: $tp-color__white;
+    }
+}

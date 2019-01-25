@@ -1,0 +1,31 @@
+{
+    "name": "@thumbtack/thumbprint-atomic",
+    "description": "Atomic classes for building Thumbtack UI",
+    "version": "3.1.1",
+    "author": "Tom Genoni <tom@thumbtack.com>",
+    "main": "dist/atomic.css",
+    "style": "dist/atomic.css",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "yarn clear && yarn generateCss",
+        "clear": "rm -rf dist",
+        "generateCss": "mkdir -p dist && node-sass -q src/atomic.scss dist/atomic.css && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+    },
+    "devDependencies": {
+        "@thumbtack/thumbprint-tokens": "^6.2.3",
+        "@thumbtack/tp-ui-core-mixin": "^3.0.3",
+        "autoprefixer": "^9.0.1",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.0",
+        "node-sass": "^4.9.2",
+        "postcss-cli": "^6.1.1"
+    }
+}

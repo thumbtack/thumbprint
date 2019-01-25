@@ -1,0 +1,32 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../constants';
+
+.modalStructureBackdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    overflow: auto;
+    visibility: hidden;
+    z-index: $tp-z-index__modal;
+}
+
+.modalStructureBackdropOpen {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalStructureBackdropAnimated {
+    // The visibility transition is used to delay the switch from `hidden` to `visible`,
+    // allowing the opacity transition to run before it visibly disappears.
+    transition: opacity $transition-speed, visibility $transition-speed;
+
+    &.modalStructureBackdropOpen {
+        transition: opacity $transition-speed;
+    }
+}

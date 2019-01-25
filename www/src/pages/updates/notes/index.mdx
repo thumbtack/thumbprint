@@ -1,0 +1,41 @@
+---
+title: Release Notes
+description: Email newsletters from the Design Systems team.
+---
+
+import { graphql, Link } from 'gatsby';
+import { Text } from '@thumbtack/thumbprint-react';
+import { UL, LI } from 'components/mdx';
+
+export const pageQuery = graphql`
+    {
+        allMdx(
+            filter: { fileAbsolutePath: { glob: "**/src/pages/updates/notes/20*.mdx" } }
+            sort: { order: DESC, fields: fileAbsolutePath }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                    }
+                    parent {
+                        ... on File {
+                            relativeDirectory
+                            name
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
+<UL>
+    {props.data.allMdx.edges.map(({ node }) => (
+        <LI key={node.parent.relativeDirectory + '/' + node.parent.name}>
+            <Link to={node.parent.relativeDirectory + '/' + node.parent.name}>
+                {node.frontmatter.title}
+            </Link>
+        </LI>
+    ))}
+</UL>

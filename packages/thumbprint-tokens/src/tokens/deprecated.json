@@ -1,0 +1,855 @@
+{
+    "name": "Deprecated",
+    "tokens": [
+        {
+            "name": "Spacer",
+            "id": "tp-spacer__unit",
+            "value": "8",
+            "deprecated": true,
+            "type": "spacing"
+        },
+        {
+            "name": "Slate",
+            "id": "tp-color__ui__slate",
+            "value": "#6d7273",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black 300"
+        },
+        {
+            "name": "Base",
+            "id": "tp-color__ui__base",
+            "value": "#e6f0f2",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Gray 300"
+        },
+        {
+            "name": "Main",
+            "id": "tp-color__ui__main",
+            "value": "#0abae6",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue"
+        },
+        {
+            "name": "Celebrate",
+            "id": "tp-color__ui__celebrate",
+            "value": "#fbe002",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Yellow"
+        },
+        {
+            "name": "Betterment",
+            "id": "tp-color__ui__betterment",
+            "value": "#455fcf",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Indigo"
+        },
+        {
+            "name": "Crafy",
+            "id": "tp-color__ui__crafty",
+            "value": "#8b71de",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Purple"
+        },
+        {
+            "name": "Faint",
+            "id": "tp-color__ui__faint",
+            "value": "#f7fafb",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Gray 200"
+        },
+        {
+            "name": "Light",
+            "id": "tp-color__ui__light",
+            "value": "#f0f6f7",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Gray 300"
+        },
+        {
+            "name": "Pale",
+            "id": "tp-color__ui__pale",
+            "value": "#ced6d9",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Gray"
+        },
+        {
+            "name": "Muted",
+            "id": "tp-color__ui__muted",
+            "value": "#858b8c",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black 300"
+        },
+        {
+            "name": "Dark",
+            "id": "tp-color__ui__dark",
+            "value": "#333333",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black"
+        },
+        {
+            "name": "Black",
+            "id": "tp-color__ui__black",
+            "value": "#000000",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black"
+        },
+        {
+            "name": "White",
+            "id": "tp-color__ui__white",
+            "value": "#ffffff",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to White"
+        },
+        {
+            "name": "Sky",
+            "id": "tp-color__ui__sky",
+            "value": "#3f93f3",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue"
+        },
+        {
+            "name": "Sky Light",
+            "id": "tp-color__ui__sky_light",
+            "value": "#70acf1",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 300"
+        },
+        {
+            "name": "Sky Faint",
+            "id": "tp-color__ui__sky-faint",
+            "value": "#94beee",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 400"
+        },
+        {
+            "name": "Sky Dark",
+            "id": "tp-color__ui__sky-dark",
+            "value": "#287ddd",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 500"
+        },
+        {
+            "name": "Good News",
+            "id": "tp-color__ui__good-news",
+            "value": "#3ac392",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Green"
+        },
+        {
+            "name": "Good News Light",
+            "id": "tp-color__ui__good-news-light",
+            "value": "#62cca7",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Green 300"
+        },
+        {
+            "name": "Good News Faint",
+            "id": "tp-color__ui__good-news-faint",
+            "value": "#93dbc2",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Green 200"
+        },
+        {
+            "name": "Bad News",
+            "id": "tp-color__ui__bad-news",
+            "value": "#f16a4f",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red"
+        },
+        {
+            "name": "Bad News Light",
+            "id": "tp-color__ui__bad-news-light",
+            "value": "#f28974",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red 300"
+        },
+        {
+            "name": "Bad News Faint",
+            "id": "tp-color__ui__bad-news-faint",
+            "value": "#f2a494",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red 200"
+        },
+        {
+            "name": "Brand",
+            "id": "tp-color__ui__brand",
+            "value": "#f27802",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue or Indigo"
+        },
+        {
+            "name": "Brand Light",
+            "id": "tp-color__ui__brand-light",
+            "value": "#f0913a",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 200 or Indigo 200"
+        },
+        {
+            "name": "Brand Faint",
+            "id": "tp-color__ui__brand-faint",
+            "value": "#f0a86e",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 300 or Indigo 300"
+        },
+        {
+            "name": "Gold",
+            "id": "tp-color__ui__gold",
+            "value": "#ff9f02",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Yellow"
+        },
+        {
+            "name": "Gold Light",
+            "id": "tp-color__ui__gold-light",
+            "value": "#ffb742",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Yellow 300"
+        },
+        {
+            "name": "Gold Faint",
+            "id": "tp-color__ui__gold-faint",
+            "value": "#ffcb78",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Yellow 200"
+        },
+        {
+            "name": "Base",
+            "id": "tp-color__text__base",
+            "description": "Maps to Black",
+            "value": "#333333",
+            "type": "color",
+            "deprecated": true
+        },
+        {
+            "name": "Dark",
+            "id": "tp-color__text__dark",
+            "value": "#333333",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black"
+        },
+        {
+            "name": "Slate",
+            "id": "tp-color__text__slate",
+            "value": "#6d7273",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black 300"
+        },
+        {
+            "name": "Main",
+            "id": "tp-color__text__main",
+            "value": "#08aed7",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue"
+        },
+        {
+            "name": "Celebrate",
+            "id": "tp-color__text__celebrate",
+            "value": "#fbe002",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Yellow"
+        },
+        {
+            "name": "Betterment",
+            "id": "tp-color__text__betterment",
+            "value": "#455fcf",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Indigo"
+        },
+        {
+            "name": "Crafty",
+            "id": "tp-color__text__crafty",
+            "value": "#8b71de",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Purple"
+        },
+        {
+            "name": "Muted",
+            "id": "tp-color__text__muted",
+            "value": "#858b8c",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Black 300"
+        },
+        {
+            "name": "Pale",
+            "id": "tp-color__text__pale",
+            "value": "#ced6d9",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Gray"
+        },
+        {
+            "name": "Good News",
+            "id": "tp-color__text__good-news",
+            "value": "#3ac392",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Green"
+        },
+        {
+            "name": "Brand",
+            "id": "tp-color__text__brand",
+            "value": "#f27802",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue or Indigo"
+        },
+        {
+            "name": "Sky",
+            "id": "tp-color__text__sky",
+            "value": "#3f93f3",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue"
+        },
+        {
+            "name": "Sky Dark",
+            "id": "tp-color__text__sky-dark",
+            "value": "#287ddd",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 500"
+        },
+        {
+            "name": "Bad News",
+            "id": "tp-color__text__bad-news",
+            "value": "#f16a4f",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red"
+        },
+        {
+            "name": "Bad News Light",
+            "id": "tp-color__text__bad-news-light",
+            "value": "#f28974",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red 300"
+        },
+        {
+            "name": "White",
+            "id": "tp-color__text__white",
+            "value": "#ffffff",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to White"
+        },
+        {
+            "name": "Base",
+            "description": "Maps to Blue",
+            "id": "tp-color__link__base",
+            "value": "#3f93f3",
+            "type": "color",
+            "deprecated": true
+        },
+        {
+            "name": "Light",
+            "id": "tp-color__link__light",
+            "value": "#70acf1",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 300"
+        },
+        {
+            "name": "Faint",
+            "id": "tp-color__link__faint",
+            "value": "#94beee",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Blue 200"
+        },
+        {
+            "name": "Bad News",
+            "id": "tp-color__link__bad-news",
+            "value": "#f16a4f",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to Red"
+        },
+        {
+            "name": "White",
+            "id": "tp-color__link__white",
+            "value": "#ffffff",
+            "type": "color",
+            "deprecated": true,
+            "description": "Maps to White"
+        },
+        {
+            "name": "Super 1 Font Size",
+            "id": "tp-font__super__1__size",
+            "value": "56px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Super 1 Line Height",
+            "id": "tp-font__super__1__line-height",
+            "value": "1.1",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Super 1 Weight",
+            "id": "tp-font__super__1__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Super 1 Responsive Font Size",
+            "id": "tp-font__super__1__responsive__size",
+            "value": "64px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Super 1 Responsive Line Height",
+            "id": "tp-font__super__1__responsive__line-height",
+            "value": "1.1",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Super 1 Responsive Weight",
+            "id": "tp-font__super__1__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Font Size",
+            "id": "tp-font__heading__1__size",
+            "value": "32px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Line Height",
+            "id": "tp-font__heading__1__line-height",
+            "value": "1.3",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Weight",
+            "id": "tp-font__heading__1__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Responsive Font Size",
+            "id": "tp-font__heading__1__responsive__size",
+            "value": "48px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Responsive Line Height",
+            "id": "tp-font__heading__1__responsive__line-height",
+            "value": "1.1",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 1 Responsive Weight",
+            "id": "tp-font__heading__1__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Font Size",
+            "id": "tp-font__heading__2__size",
+            "value": "30px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Line Height",
+            "id": "tp-font__heading__2__line-height",
+            "value": "1.3",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Weight",
+            "id": "tp-font__heading__2__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Responsive",
+            "id": "tp-font__heading__2__responsive__size",
+            "value": "40px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Responsive Line Height",
+            "id": "tp-font__heading__2__responsive__line-height",
+            "value": "1.2",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 2 Responsive Weight",
+            "id": "tp-font__heading__2__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Font Size",
+            "id": "tp-font__heading__3__size",
+            "value": "24px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Line Height",
+            "id": "tp-font__heading__3__line-height",
+            "value": "1.4",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Weight",
+            "id": "tp-font__heading__3__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Responsive Font Size",
+            "id": "tp-font__heading__3__responsive__size",
+            "value": "32px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Responsive Line Height",
+            "id": "tp-font__heading__3__responsive__line-height",
+            "value": "1.3",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 3 Responsive Weight",
+            "id": "tp-font__heading__3__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Font Size",
+            "id": "tp-font__heading__4__size",
+            "value": "20px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Line Height",
+            "id": "tp-font__heading__4__line-height",
+            "value": "1.4",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Weight",
+            "id": "tp-font__heading__4__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Responsive Font Size",
+            "id": "tp-font__heading__4__responsive__size",
+            "value": "24px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Responsive Line Height",
+            "id": "tp-font__heading__4__responsive__line-height",
+            "value": "1.4",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 4 Responsive Weight",
+            "id": "tp-font__heading__4__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Font Size",
+            "id": "tp-font__heading__5__size",
+            "value": "16px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Line Height",
+            "id": "tp-font__heading__5__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Weight",
+            "id": "tp-font__heading__5__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Responsive Font Size",
+            "id": "tp-font__heading__5__responsive__size",
+            "value": "20px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Responsive Line Height",
+            "id": "tp-font__heading__5__responsive__line-height",
+            "value": "1.5",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 5 Responsive Weight",
+            "id": "tp-font__heading__5__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Font Size",
+            "id": "tp-font__heading__6__size",
+            "value": "14px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Line Height",
+            "id": "tp-font__heading__6__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Weight",
+            "id": "tp-font__heading__6__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Responsive Font Size",
+            "id": "tp-font__heading__6__responsive__size",
+            "value": "16px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Responsive Line Height",
+            "id": "tp-font__heading__6__responsive__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Heading 6 Responsive Weight",
+            "id": "tp-font__heading__6__responsive__weight",
+            "value": "500",
+            "type": "font-weight",
+            "deprecated": true
+        },
+        {
+            "name": "Text 1 Font Size",
+            "id": "tp-font__text__1__size",
+            "value": "20px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Text 1 Line Height",
+            "id": "tp-font__text__1__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Text 1 Responsive Font Size",
+            "id": "tp-font__text__1__responsive__size",
+            "value": "24px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Text 1 Responsive Line Height",
+            "id": "tp-font__text__1__responsive__line-height",
+            "value": "1.5",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Text 2 Font Size",
+            "id": "tp-font__text__2__size",
+            "value": "16px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Text 2 Line Height",
+            "id": "tp-font__text__2__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Text 3 Font Size",
+            "id": "tp-font__text__3__size",
+            "value": "14px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Text 3 Line Height",
+            "id": "tp-font__text__3__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Text 4 Font Size",
+            "id": "tp-font__text__4__size",
+            "value": "12px",
+            "type": "font-size",
+            "deprecated": true
+        },
+        {
+            "name": "Text 4 Line Height",
+            "id": "tp-font__text__4__line-height",
+            "value": "1.6",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Input Padding All",
+            "id": "tp-form__input__padding__all",
+            "value": "6px 12px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Input Padding Sides",
+            "id": "tp-form__input__padding__sides",
+            "value": "12px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Input Padding Ends",
+            "id": "tp-form__input__padding__ends",
+            "value": "6px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Input Padding Line Height",
+            "id": "tp-form__input__line-height",
+            "value": "1.5",
+            "type": "line-height",
+            "deprecated": true
+        },
+        {
+            "name": "Large",
+            "id": "tp-wrap-snap__large",
+            "value": "946px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Medium",
+            "id": "tp-wrap-snap__medium",
+            "value": "668px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Small",
+            "id": "tp-wrap-snap__small",
+            "value": "449px",
+            "type": "spacing",
+            "deprecated": true
+        },
+        {
+            "name": "Avatar: Extra Small",
+            "id": "tp-avatar__size__xsmall",
+            "value": "20px",
+            "deprecated": true
+        },
+        {
+            "name": "Avatar: Small",
+            "id": "tp-avatar__size__small",
+            "value": "32px",
+            "deprecated": true
+        },
+        {
+            "name": "Avatar: Medium",
+            "id": "tp-avatar__size__medium",
+            "value": "48px",
+            "deprecated": true
+        },
+        {
+            "name": "Avatar: Large",
+            "id": "tp-avatar__size__large",
+            "value": "72px",
+            "deprecated": true
+        },
+        {
+            "name": "Avatar: Extra Large",
+            "id": "tp-avatar__size__xlarge",
+            "value": "124px",
+            "deprecated": true
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+---
+title: Design tokens
+description: Variables for visual consistency across platforms.
+---
+
+Design tokens power the visual building blocks of Thumbprint. Values for colors, type, and breakpoints, among many others, are stored in a simple format that are converted and distributed to specific programming languages.
+
+![Screenshot showing how tokens work](./tokens.png)
+
+Because tokens are our "single source of truth", changes are only made in one place. Project maintainers update their version of the tokens to receive updates, easing coordination and reducing human error.
+
+## Code example
+
+Our color blue, like all other tokens, is stored as an object.
+
+```js
+{
+    "name": "Blue",
+    "id": "tp-color__blue",
+    "value": "#009fd9",
+    "type": "color"
+}
+```
+
+In this case the `id` is transformed into different languages.
+
+-   In Sass the variable becomes `$tp-color__blue`.
+-   In React the variable becomes `tpColorBlue`.
+
+In each case the resulting value is the hex color `#009fd9`.

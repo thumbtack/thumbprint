@@ -1,0 +1,35 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+.root {
+    display: flex;
+    align-items: center;
+}
+
+.item + .item {
+    margin-left: $tp-space__2;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.justifyLeft {
+    justify-content: flex-start;
+}
+
+.justifyRight {
+    justify-content: flex-end;
+}
+
+.stackBelowSmall {
+    @include tp-respond-below($tp-breakpoint__small) {
+        flex-direction: column;
+        align-items: stretch;
+
+        .item + .item {
+            margin-top: $tp-space__2;
+            margin-left: 0;
+        }
+    }
+}

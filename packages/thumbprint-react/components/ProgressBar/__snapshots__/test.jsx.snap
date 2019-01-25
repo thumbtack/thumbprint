@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`aligns label text with \`labelAlign\` 1`] = `
+<ProgressBar
+  labelAlign="left"
+  shouldShowLabel={true}
+  value={0}
+>
+  <div>
+    <ProgressBarBase
+      width={0}
+    >
+      <div
+        className="outer"
+      >
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={0}
+          className="inner"
+          role="progressbar"
+          style={
+            Object {
+              "transform": "translateX(-100%)",
+            }
+          }
+        />
+      </div>
+    </ProgressBarBase>
+    <div
+      className="label"
+    >
+      0
+      % complete
+    </div>
+  </div>
+</ProgressBar>
+`;
+
+exports[`aligns label text with \`labelAlign\` 2`] = `
+<ProgressBar
+  labelAlign="center"
+  shouldShowLabel={true}
+  value={0}
+>
+  <div>
+    <ProgressBarBase
+      width={0}
+    >
+      <div
+        className="outer"
+      >
+        <div
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={0}
+          className="inner"
+          role="progressbar"
+          style={
+            Object {
+              "transform": "translateX(-100%)",
+            }
+          }
+        />
+      </div>
+    </ProgressBarBase>
+    <div
+      className="label labelCenter"
+    >
+      0
+      % complete
+    </div>
+  </div>
+</ProgressBar>
+`;
+
+exports[`passes progress to base component 1`] = `
+<div>
+  <ProgressBarBase
+    width={33}
+  />
+  <div
+    className="label"
+  >
+    33
+    % complete
+  </div>
+</div>
+`;
+
+exports[`shows label when \`shouldShowLabel\` is false 1`] = `
+<div>
+  <ProgressBarBase
+    width={0}
+  />
+</div>
+`;
+
+exports[`shows label when \`shouldShowLabel\` is true 1`] = `
+<div>
+  <ProgressBarBase
+    width={0}
+  />
+  <div
+    className="label"
+  >
+    0
+    % complete
+  </div>
+</div>
+`;

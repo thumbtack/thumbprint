@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compiles correctly 1`] = `
+".tp-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  width: 1px;
+  height: 1px; }
+  .tp-checkbox-input ~ .tp-label {
+    margin-bottom: 0; }
+  .tp-checkbox-input:focus + .tp-checkbox-image {
+    box-shadow: 0 0 0 4px #e9eced; }
+  .tp-checkbox-input.tp-checkbox-input--bad-news + .tp-checkbox-image {
+    border-color: #ff5a5f; }
+  .tp-checkbox-input:checked + .tp-checkbox-image::after {
+    content: '';
+    display: block;
+    height: 18px;
+    width: 18px; }
+  .tp-checkbox-input:checked:not(:disabled):not(.tp-checkbox-input--bad-news) + .tp-checkbox-image {
+    border-color: #009fd9;
+    background-color: #009fd9; }
+    .tp-checkbox-input:checked:not(:disabled):not(.tp-checkbox-input--bad-news) + .tp-checkbox-image::after {
+      background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#ffffff' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E\\");
+      background-position: center; }
+  .tp-checkbox-input:checked.tp-checkbox-input--bad-news + .tp-checkbox-image::after {
+    background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#ff5a5f' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E\\");
+    background-position: center; }
+  .tp-checkbox-input:checked:disabled + .tp-checkbox-image {
+    background-color: #fafafa; }
+    .tp-checkbox-input:checked:disabled + .tp-checkbox-image::after {
+      background-image: url(\\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#d3d4d5' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E\\");
+      background-position: center; }
+
+.tp-checkbox-image {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 2px solid #d3d4d5;
+  position: absolute;
+  border-radius: 4px;
+  top: 2px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+"
+`;

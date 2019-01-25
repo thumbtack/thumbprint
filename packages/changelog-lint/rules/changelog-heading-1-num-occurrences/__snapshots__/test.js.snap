@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid case #0 fails 1`] = `
+Object {
+  "input": "# Changelog
+
+# Changelog",
+  "output": Array [
+    Object {
+      "column": null,
+      "fatal": false,
+      "line": null,
+      "location": Object {
+        "end": Object {
+          "column": null,
+          "line": null,
+        },
+        "start": Object {
+          "column": null,
+          "line": null,
+        },
+      },
+      "reason": "Change log must contain one top level heading (2 found).",
+      "ruleId": "changelog-heading-1-num-occurrences",
+      "source": "remark-lint",
+      "stack": null,
+    },
+  ],
+}
+`;

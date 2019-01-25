@@ -1,0 +1,10 @@
+{
+    "name": "@thumbtack/gatsby-transformer-thumbprint-tokens",
+    "version": "0.0.5",
+    "private": true,
+    "license": "UNLICENSED",
+    "dependencies": {
+        "lodash": "^4.17.10",
+        "slugify": "^1.3.3"
+    }
+}

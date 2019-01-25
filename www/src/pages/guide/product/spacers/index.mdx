@@ -1,0 +1,108 @@
+---
+title: Spacers
+description: A simple system to encourage visual rhythm.
+---
+
+import { Img } from 'components/mdx';
+import { Title, Text } from '@thumbtack/thumbprint-react';
+
+Good spacing systems are based on increments that are visually distinguishable and are backed by solid mathematical principles. This toolkit gives designers and developers guidelines for effectively applying layout spacing, resulting in a more consistent application of space across our product.
+
+<Title size={2} className="mb2">
+    16px = base increment
+</Title>
+
+Our spacing system is built on a base increment of 16px, with factors of 4px and 8px.
+The base of 16px also acts as a default spacer, as it is the most widely used spacing
+increment.
+
+Multiples of 16 make up the upper increments of our spacing system. Please stick to
+these increments to maintain consistency.
+
+<div className="flex items-center mb2">
+    <div className="w1 b">1</div>
+    <div className="h2" style="width:4px;background:#ffcdcf;">&nbsp;</div>
+    <div className="ml2 b">4px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">2</div>
+    <div className="h2" style="width:8px;background:#fed9b5;">&nbsp;</div>
+    <div className="ml2 b">8px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">3</div>
+    <div className="h2" style="width:16px;background:#feebb8;">&nbsp;</div>
+    <div className="ml2 b">16px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">4</div>
+    <div className="h2" style="width:24px;background:#c0e9d9;">&nbsp;</div>
+    <div className="ml2 b">24px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">5</div>
+    <div className="h2" style="width:32px;background:#b2e2f3;">&nbsp;</div>
+    <div className="ml2 b">32px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">6</div>
+    <div className="h2" style="width:64px;background:#e5d8fa;">&nbsp;</div>
+    <div className="ml2 b">64px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">7</div>
+    <div className="h2" style="width:128px;background:#eecbf7;">&nbsp;</div>
+    <div className="ml2 b">128px</div>
+</div>
+<div className="flex items-center mb2">
+    <div className="w1 b">8</div>
+    <div className="h2" style="width:256px;background:#d1d3d4;">&nbsp;</div>
+    <div className="ml2 b">256px</div>
+</div>
+
+### But wait, why is 24px included?
+
+24 is not a multiple of 16, but it is the 3rd most used increment in our system. We have included it order to give designers more flexibility at the smaller end of the spectrum.
+
+### But what if I need to nudge something a few pixels?
+
+A set of nudge classes are available to developers to aid in perfect positioning. These nudge classes are not available to designers and should only be used in components and elements that require it.
+
+## Spacing framework
+
+To further our understanding and communication of space, we’ve broken down the types of space we apply in our system.
+
+We reference 2 types of space and apply them in 4 ways:
+
+-   **basic (stack)**
+-   **basic (inline)**
+-   **inset-square**
+-   **inset-asymmetrical**
+
+### Basic (stack and inline)
+
+We use basic spacers for anywhere we need to apply horizontal or vertical space in our layouts. While we apply that space in the same way, we reference it’s application differently depending on if it’s horizontal or vertical space.
+
+-   **Inline spacing** refers to horizontally spaced objects.
+-   **Stack spacing** refers to vertically stacked content.
+
+<div className="center pa3 mw8">
+    <Img src="./spacer-layout-1.png" alt="Spacer layout" />
+</div>
+
+### Inset (square and asymmetrical)
+
+Inset spacing is used for UI components and containers. We apply that space either in an equal or asymmetrical way.
+
+-   **Inset-square** spacing is used to evenly apply spacing inside of a container or component.
+-   **Inset-asymmetrical** spacing is used to apply different top/bottom and left/right values. We follow the box model in our classification of asymmetrical values.
+
+<div className="mv5 tc center" style={{ maxWidth: '343px' }}>
+    <Img src="./spacer-layout-2.png" alt="Spacer layout" />
+    <div className="tp-body-3">Square inset of 16px.</div>
+</div>
+
+<div className="tc center" style={{ maxWidth: '343px' }}>
+    <Img src="./spacer-layout-3.png" alt="Spacer layout" />
+    <div className="tp-body-3">Asymmetrical inset of 24, 16px.</div>
+</div>

@@ -1,0 +1,634 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EntityAvatar renders an image when the user has one 1`] = `
+<EntityAvatar
+  imageUrl="//www.placecage.com/130/130"
+  initial="N"
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <img
+      className="baseAvatar squareAvatar lazyload"
+      data-src="//www.placecage.com/130/130"
+    />
+  </div>
+</EntityAvatar>
+`;
+
+exports[`EntityAvatar renders the initials when the user has no image 1`] = `
+<EntityAvatar
+  initial="N"
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar squareAvatar"
+    >
+      N
+    </span>
+  </div>
+</EntityAvatar>
+`;
+
+exports[`adds lazyload class for lazysizes to work 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  imageUrl="//www.placecage.com/130/130"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <img
+      className="baseAvatar circleAvatar lazyload"
+      data-src="//www.placecage.com/130/130"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
+<Avatar
+  fullName="Duck Goose"
+  hasUnreadNotifications={false}
+  imageUrl="//www.placecage.com/130/130"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <img
+      alt="Avatar for Duck Goose"
+      className="baseAvatar circleAvatar lazyload"
+      data-src="//www.placecage.com/130/130"
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`adds the \`fullName\` as \`title\` text 1`] = `
+<Avatar
+  fullName="Duck Goose"
+  hasUnreadNotifications={false}
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`adds the \`fullName\` as \`title\` text 2`] = `
+<Avatar
+  fullName="Duck Goose"
+  hasUnreadNotifications={false}
+  imageUrl="//www.placecage.com/130/130"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <img
+      alt="Avatar for Duck Goose"
+      className="baseAvatar circleAvatar lazyload"
+      data-src="//www.placecage.com/130/130"
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`adds the \`fullName\` as \`title\` text 3`] = `
+<Avatar
+  fullName="Duck Goose"
+  hasUnreadNotifications={false}
+  isChecked={false}
+  size="medium"
+  title="DG"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`does not add lazyload class if an image is not provided 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="NC"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      NC
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
+<Avatar
+  fullName="Duck Goose"
+  hasUnreadNotifications={false}
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge by default 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge by default 2`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={false}
+  size="large"
+>
+  <div
+    className="root rootLarge"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={false}
+  size="xsmall"
+>
+  <div
+    className="root rootXsmall"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={true}
+  size="xsmall"
+>
+  <div
+    className="root rootXsmall"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
+<Avatar
+  hasUnreadNotifications={true}
+  initials="DK"
+  isChecked={false}
+  size="xsmall"
+>
+  <div
+    className="root rootXsmall"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={false}
+  isOnline={true}
+  size="xsmall"
+>
+  <div
+    className="root rootXsmall"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  isChecked={false}
+  isOnline={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarSmallBadge"
+      />
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarLargeBadge"
+      >
+        <CheckIcon
+          viewBox="0 0 17 13"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            viewBox="0 0 17 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 .943c0 .26-.1.5-.28.69L5.81 12.713c-.18.18-.43.28-.69.29-.26 0-.51-.11-.69-.29 0 0-3.79-3.78-4.16-4.16a.942.942 0 0 1-.27-.69c0-.26.11-.5.3-.68.39-.36 1-.34 1.37.04.26.27 2.33 2.34 3.44 3.44L15.33.293c.37-.38.98-.39 1.37-.03.18.18.29.42.3.68"
+              fillRule="evenodd"
+            />
+          </svg>
+        </CheckIcon>
+      </div>
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 2`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarLargeBadge"
+      >
+        <CheckIcon
+          viewBox="0 0 17 13"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            viewBox="0 0 17 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 .943c0 .26-.1.5-.28.69L5.81 12.713c-.18.18-.43.28-.69.29-.26 0-.51-.11-.69-.29 0 0-3.79-3.78-4.16-4.16a.942.942 0 0 1-.27-.69c0-.26.11-.5.3-.68.39-.36 1-.34 1.37.04.26.27 2.33 2.34 3.44 3.44L15.33.293c.37-.38.98-.39 1.37-.03.18.18.29.42.3.68"
+              fillRule="evenodd"
+            />
+          </svg>
+        </CheckIcon>
+      </div>
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 3`] = `
+<Avatar
+  hasUnreadNotifications={true}
+  initials="DK"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="red"
+      size="medium"
+    >
+      <div
+        className="badge badgeRed mediumAvatarSmallBadge"
+      />
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 4`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={false}
+  isOnline={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarSmallBadge"
+      />
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders an SVG when \`isChecked\` is true 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarLargeBadge"
+      >
+        <CheckIcon
+          viewBox="0 0 17 13"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            viewBox="0 0 17 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 .943c0 .26-.1.5-.28.69L5.81 12.713c-.18.18-.43.28-.69.29-.26 0-.51-.11-.69-.29 0 0-3.79-3.78-4.16-4.16a.942.942 0 0 1-.27-.69c0-.26.11-.5.3-.68.39-.36 1-.34 1.37.04.26.27 2.33 2.34 3.44 3.44L15.33.293c.37-.38.98-.39 1.37-.03.18.18.29.42.3.68"
+              fillRule="evenodd"
+            />
+          </svg>
+        </CheckIcon>
+      </div>
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders an SVG when \`isChecked\` is true 2`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="DK"
+  isChecked={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarLargeBadge"
+      >
+        <CheckIcon
+          viewBox="0 0 17 13"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            viewBox="0 0 17 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 .943c0 .26-.1.5-.28.69L5.81 12.713c-.18.18-.43.28-.69.29-.26 0-.51-.11-.69-.29 0 0-3.79-3.78-4.16-4.16a.942.942 0 0 1-.27-.69c0-.26.11-.5.3-.68.39-.36 1-.34 1.37.04.26.27 2.33 2.34 3.44 3.44L15.33.293c.37-.38.98-.39 1.37-.03.18.18.29.42.3.68"
+              fillRule="evenodd"
+            />
+          </svg>
+        </CheckIcon>
+      </div>
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      DK
+    </span>
+  </div>
+</Avatar>
+`;
+
+exports[`renders an image when the user has one 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  imageUrl="//www.placecage.com/130/130"
+  initials="NC"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <img
+      className="baseAvatar circleAvatar lazyload"
+      data-src="//www.placecage.com/130/130"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  isChecked={true}
+  isOnline={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="green"
+      size="medium"
+    >
+      <div
+        className="badge badgeGreen mediumAvatarLargeBadge"
+      >
+        <CheckIcon
+          viewBox="0 0 17 13"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            viewBox="0 0 17 13"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17 .943c0 .26-.1.5-.28.69L5.81 12.713c-.18.18-.43.28-.69.29-.26 0-.51-.11-.69-.29 0 0-3.79-3.78-4.16-4.16a.942.942 0 0 1-.27-.69c0-.26.11-.5.3-.68.39-.36 1-.34 1.37.04.26.27 2.33 2.34 3.44 3.44L15.33.293c.37-.38.98-.39 1.37-.03.18.18.29.42.3.68"
+              fillRule="evenodd"
+            />
+          </svg>
+        </CheckIcon>
+      </div>
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`renders notification dot without checkmark SVG when \`isChecked\` and \`hasUnreadNotifications\` are true 1`] = `
+<Avatar
+  hasUnreadNotifications={true}
+  isChecked={true}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <Badge
+      background="red"
+      size="medium"
+    >
+      <div
+        className="badge badgeRed mediumAvatarSmallBadge"
+      />
+    </Badge>
+    <span
+      className="initialsAvatar circleAvatar"
+    />
+  </div>
+</Avatar>
+`;
+
+exports[`renders the initials when the user has no image 1`] = `
+<Avatar
+  hasUnreadNotifications={false}
+  initials="NC"
+  isChecked={false}
+  size="medium"
+>
+  <div
+    className="root rootMedium"
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+    >
+      NC
+    </span>
+  </div>
+</Avatar>
+`;

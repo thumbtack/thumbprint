@@ -1,0 +1,64 @@
+---
+package: '@thumbtack/tp-ui-element-label'
+kit: label/index.mdx
+platform: scss
+url: /components/label/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-element-label';
+import '@thumbtack/tp-ui-element-input';
+import '@thumbtack/tp-ui-component-form-note';
+
+## Examples
+
+When using a `<label>`, it’s important to ensure that the `<label>` is linked to a form element. You can do this by:
+
+1. Adding a `for` attribute to the `<label>` that matches the `id` of an associated form element.
+2. Wrapping the form element within the `label`. (You’ll have to add the `tp-label` class to an element within the `<label>` and not on the `<label>` itself.)
+
+If done correctly, clicking on the label text should switch the browser’s focus to the form element.
+
+### Label with an input
+
+```html
+<label class="tp-label" for="input-2781013281341440">Email address</label>
+<input
+    type="text"
+    class="tp-text-input"
+    id="input-2781013281341440"
+    placeholder="example@example.com"
+/>
+```
+
+### Disabled label
+
+Labels can appear visually disabled. It’s important to also disable the associated form element.
+
+```html
+<label class="tp-label tp-label--disabled" for="input-22291815954776064">Email address</label>
+<input
+    type="text"
+    class="tp-text-input"
+    disabled
+    id="input-22291815954776064"
+    placeholder="example@example.com"
+/>
+```
+
+### Label with a validation error
+
+You can change the label color to red when the associated form element has invalid data.
+
+Validation errors must be also include text that explains the error. This helps guide the user and is crucial for users with visual impairments.
+
+```html
+<label class="tp-label tp-label--bad-news" for="input-1301239354621952">Email address</label>
+<input
+    type="text"
+    class="tp-text-input tp-text-input--bad-news"
+    id="input-1301239354621952"
+    value="example@exampl"
+/>
+<div class="tp-form-note tp-form-note--bad-news">The email address you entered is incorrect.</div>
+```

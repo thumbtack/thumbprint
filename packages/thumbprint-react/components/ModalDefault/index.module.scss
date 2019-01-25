@@ -1,0 +1,187 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/tp-ui-core-function/_index';
+@import '~@thumbtack/tp-ui-core-mixin/_index';
+
+$header-height-small: tp-spacer(7);
+$header-height-large: tp-spacer(8);
+
+// These values are duplicated in the JavaScript.
+$transition-open-duration: 300ms;
+$transition-close-duration: 250ms;
+
+$easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+$width-narrow: 416px;
+$width-medium: 632px;
+$width-wide: 1400px;
+
+.curtain {
+    padding: tp-spacer(0);
+    // ModalCurtain closing transition on small screens.
+    transition: opacity 0ms $easing $transition-close-duration,
+        visibility $transition-close-duration $easing;
+
+    &Open {
+        // ModalCurtain opening transition on small screen.
+        transition: opacity 0ms $easing;
+    }
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: tp-spacer(4);
+        background-color: rgba(0, 0, 0, 0.8);
+
+        // ModalCurtain closing on medium and large screens.
+        transition: opacity $transition-close-duration $easing,
+            visibility $transition-close-duration $easing;
+
+        &Open {
+            // ModalCurtain opening on medium and large screens.
+            transition: opacity $transition-open-duration $easing;
+        }
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform: translate(0, 100%);
+    // Wrapper close transition on small screens.
+    transition: transform $transition-close-duration $easing;
+
+    &Open {
+        // Wrapper open transition on small screens.
+        transition: transform $transition-open-duration $easing;
+        transform: translate(0, 0);
+    }
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        display: block;
+        height: auto;
+        margin: auto;
+        transition: none;
+        // Even if the curtain animates, the modal wrapper will appear and disappear immediately on
+        // medium and large screens.
+        opacity: 0;
+
+        &Open {
+            transition: none;
+            opacity: 1;
+        }
+    }
+
+    &Narrow {
+        max-width: $width-narrow;
+
+        // The `max-width` doesn't apply on small devices because we want the modal to take up the
+        // entire screen.
+        @include tp-respond-below($tp-breakpoint__small) {
+            max-width: 100%;
+        }
+    }
+
+    &Medium {
+        max-width: $width-medium;
+
+        // The `max-width` doesn't apply on small devices because we want the modal to take up the
+        // entire screen.
+        @include tp-respond-below($tp-breakpoint__small) {
+            max-width: 100%;
+        }
+    }
+
+    &Wide {
+        max-width: $width-wide;
+
+        // The `max-width` doesn't apply on small devices because we want the modal to take up the
+        // entire screen.
+        @include tp-respond-below($tp-breakpoint__small) {
+            max-width: 100%;
+        }
+    }
+}
+
+.container {
+    background-color: $tp-color__white;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 20px 20px $tp-space__5;
+    // Momentum scrolling on iOS.
+    -webkit-overflow-scrolling: touch;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: 0 tp-spacer(4) tp-spacer(5);
+    }
+
+    &Sticky {
+        flex: 1;
+    }
+}
+
+.closeButton {
+    background: $tp-color__white;
+    display: flex;
+    border-bottom: 1px solid $tp-color__gray;
+    min-height: $header-height-small;
+    align-items: flex-start;
+    justify-content: flex-end;
+    // The close button is at the bottom of the DOM so that it is not the first focused element
+    // when the modal opens. We visually move it to the top with the flexbox `order` property.
+    // This works better than absolute positioning because the browser will be able to properly
+    // scroll to form fields when tabbing through a modal that is taller than the viewport.
+    order: -1;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        border-bottom: none;
+        min-height: $header-height-large;
+    }
+
+    &Icon {
+        // Increase click target of the button to make it easier to tap.
+        margin: tp-spacer(2);
+    }
+}
+
+.modalHeader {
+    // This value works well even if `ModalDefaultContent` isn't used in the modal.
+    margin-bottom: tp-spacer(1.5);
+}
+
+.modalTitle {
+    font-size: $tp-font__title__2__size;
+    line-height: $tp-font__title__2__line-height;
+    font-weight: $tp-font__title__2__weight;
+}
+
+.modalDescription {
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__body__1__line-height;
+    color: $tp-color__black-300;
+}
+
+.modalTitle + .modalDescription {
+    margin-top: tp-spacer(1);
+}
+
+.modalContent {
+    // Add top padding, not bottom margin, because top padding is built into the `ModalDefaultFooter` due
+    // to a top-border on mobile when sticky. Using padding prevents the margins from collapsing
+    // with the margin from `ModalDefaultHeader`.
+    padding-top: tp-spacer(1.5);
+}
+
+.modalFooterFluid {
+    padding: tp-spacer(3) 0 0 0;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: tp-spacer(4) 0 0 0;
+    }
+}

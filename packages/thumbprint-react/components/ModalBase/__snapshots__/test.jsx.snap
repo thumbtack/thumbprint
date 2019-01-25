@@ -1,0 +1,450 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a basic modal 1`] = `
+<ModalBase
+  onCloseClick={[Function]}
+>
+  <Displaced
+    mounted={true}
+    onCloseClick={[Function]}
+  >
+    <Portal
+      containerInfo={
+        <div>
+          <div>
+            <div
+              class="modalStructureBackdrop modalStructureBackdropAnimated"
+              style="padding: 48px 20px;"
+            >
+              <div
+                class="modalContents modalContentsAnimated"
+                style="max-width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <ModalStructure
+        assistiveTitle="Modal"
+        backdropPadding="48px 20px"
+        contentsMaxWidth="100%"
+        isOpen={false}
+        mounted={true}
+        onCloseClick={[Function]}
+        shouldAnimate={true}
+        shouldCloseOnBackdropClick={true}
+        shouldCloseOnEscape={true}
+      >
+        <FocusTrap
+          _createFocusTrap={[Function]}
+          active={false}
+          focusTrapOptions={Object {}}
+          paused={false}
+          tag="div"
+        >
+          <div>
+            <div
+              className="modalStructureBackdrop modalStructureBackdropAnimated"
+              style={
+                Object {
+                  "padding": "48px 20px",
+                }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="100%"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={true}
+                stopPropagation={false}
+              >
+                <ModalContents
+                  aria-label="Modal"
+                  contentsMaxWidth="100%"
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
+                  }
+                  isOpen={false}
+                  onCloseClick={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  role="dialog"
+                  shouldAnimate={true}
+                  stopPropagation={false}
+                >
+                  <div
+                    className="modalContents modalContentsAnimated"
+                    style={
+                      Object {
+                        "maxWidth": "100%",
+                      }
+                    }
+                  />
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
+            </div>
+          </div>
+        </FocusTrap>
+      </ModalStructure>
+    </Portal>
+  </Displaced>
+</ModalBase>
+`;
+
+exports[`renders a modal without animation 1`] = `
+<ModalBase
+  onCloseClick={[Function]}
+  shouldAnimate={false}
+>
+  <Displaced
+    mounted={true}
+    onCloseClick={[Function]}
+    shouldAnimate={false}
+  >
+    <Portal
+      containerInfo={
+        <div>
+          <div>
+            <div
+              class="modalStructureBackdrop"
+              style="padding: 48px 20px;"
+            >
+              <div
+                class="modalContents"
+                style="max-width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <ModalStructure
+        assistiveTitle="Modal"
+        backdropPadding="48px 20px"
+        contentsMaxWidth="100%"
+        isOpen={false}
+        mounted={true}
+        onCloseClick={[Function]}
+        shouldAnimate={false}
+        shouldCloseOnBackdropClick={true}
+        shouldCloseOnEscape={true}
+      >
+        <FocusTrap
+          _createFocusTrap={[Function]}
+          active={false}
+          focusTrapOptions={Object {}}
+          paused={false}
+          tag="div"
+        >
+          <div>
+            <div
+              className="modalStructureBackdrop"
+              style={
+                Object {
+                  "padding": "48px 20px",
+                }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="100%"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={false}
+                stopPropagation={false}
+              >
+                <ModalContents
+                  aria-label="Modal"
+                  contentsMaxWidth="100%"
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
+                  }
+                  isOpen={false}
+                  onCloseClick={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  role="dialog"
+                  shouldAnimate={false}
+                  stopPropagation={false}
+                >
+                  <div
+                    className="modalContents"
+                    style={
+                      Object {
+                        "maxWidth": "100%",
+                      }
+                    }
+                  />
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
+            </div>
+          </div>
+        </FocusTrap>
+      </ModalStructure>
+    </Portal>
+  </Displaced>
+</ModalBase>
+`;
+
+exports[`renders text that is passed in 1`] = `
+<div>
+  <button
+    type="button"
+  />
+  <ModalBase
+    onCloseClick={[Function]}
+  >
+    <Displaced
+      mounted={true}
+      onCloseClick={[Function]}
+    >
+      <Portal
+        containerInfo={
+          <div>
+            <div>
+              <div
+                class="modalStructureBackdrop modalStructureBackdropAnimated"
+                style="padding: 48px 20px;"
+              >
+                <div
+                  class="modalContents modalContentsAnimated"
+                  style="max-width: 100%;"
+                >
+                  Goose
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      >
+        <ModalStructure
+          assistiveTitle="Modal"
+          backdropPadding="48px 20px"
+          contentsMaxWidth="100%"
+          isOpen={false}
+          mounted={true}
+          onCloseClick={[Function]}
+          shouldAnimate={true}
+          shouldCloseOnBackdropClick={true}
+          shouldCloseOnEscape={true}
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            focusTrapOptions={Object {}}
+            paused={false}
+            tag="div"
+          >
+            <div>
+              <div
+                className="modalStructureBackdrop modalStructureBackdropAnimated"
+                style={
+                  Object {
+                    "padding": "48px 20px",
+                  }
+                }
+              >
+                <OnClickOutside(ModalContents)
+                  aria-label="Modal"
+                  contentsMaxWidth="100%"
+                  disableOnClickOutside={true}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
+                  }
+                  excludeScrollbar={false}
+                  isOpen={false}
+                  onCloseClick={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  role="dialog"
+                  shouldAnimate={true}
+                  stopPropagation={false}
+                >
+                  <ModalContents
+                    aria-label="Modal"
+                    contentsMaxWidth="100%"
+                    disableOnClickOutside={[Function]}
+                    enableOnClickOutside={[Function]}
+                    eventTypes={
+                      Array [
+                        "mousedown",
+                        "touchstart",
+                      ]
+                    }
+                    isOpen={false}
+                    onCloseClick={[Function]}
+                    outsideClickIgnoreClass="ignore-react-onclickoutside"
+                    preventDefault={false}
+                    role="dialog"
+                    shouldAnimate={true}
+                    stopPropagation={false}
+                  >
+                    <div
+                      className="modalContents modalContentsAnimated"
+                      style={
+                        Object {
+                          "maxWidth": "100%",
+                        }
+                      }
+                    >
+                      Goose
+                    </div>
+                  </ModalContents>
+                </OnClickOutside(ModalContents)>
+              </div>
+            </div>
+          </FocusTrap>
+        </ModalStructure>
+      </Portal>
+    </Displaced>
+  </ModalBase>
+</div>
+`;
+
+exports[`supports disabling the transitions 1`] = `
+<ModalBase
+  onCloseClick={[Function]}
+  shouldAnimate={false}
+>
+  <Displaced
+    mounted={true}
+    onCloseClick={[Function]}
+    shouldAnimate={false}
+  >
+    <Portal
+      containerInfo={
+        <div>
+          <div>
+            <div
+              class="modalStructureBackdrop"
+              style="padding: 48px 20px;"
+            >
+              <div
+                class="modalContents"
+                style="max-width: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <ModalStructure
+        assistiveTitle="Modal"
+        backdropPadding="48px 20px"
+        contentsMaxWidth="100%"
+        isOpen={false}
+        mounted={true}
+        onCloseClick={[Function]}
+        shouldAnimate={false}
+        shouldCloseOnBackdropClick={true}
+        shouldCloseOnEscape={true}
+      >
+        <FocusTrap
+          _createFocusTrap={[Function]}
+          active={false}
+          focusTrapOptions={Object {}}
+          paused={false}
+          tag="div"
+        >
+          <div>
+            <div
+              className="modalStructureBackdrop"
+              style={
+                Object {
+                  "padding": "48px 20px",
+                }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="100%"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={false}
+                stopPropagation={false}
+              >
+                <ModalContents
+                  aria-label="Modal"
+                  contentsMaxWidth="100%"
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
+                  eventTypes={
+                    Array [
+                      "mousedown",
+                      "touchstart",
+                    ]
+                  }
+                  isOpen={false}
+                  onCloseClick={[Function]}
+                  outsideClickIgnoreClass="ignore-react-onclickoutside"
+                  preventDefault={false}
+                  role="dialog"
+                  shouldAnimate={false}
+                  stopPropagation={false}
+                >
+                  <div
+                    className="modalContents"
+                    style={
+                      Object {
+                        "maxWidth": "100%",
+                      }
+                    }
+                  />
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
+            </div>
+          </div>
+        </FocusTrap>
+      </ModalStructure>
+    </Portal>
+  </Displaced>
+</ModalBase>
+`;

@@ -1,0 +1,2638 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\` is true 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={true}
+  width="medium"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="medium"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperWide"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      >
+                        <p>
+                          Hi there!
+                        </p>
+                        <button
+                          type="button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperMedium"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    />
+                    <div />
+                    <div
+                      className="closeButton"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefault renders a basic modal 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="medium"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="medium"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperMedium"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    />
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefault renders a basic modal with content 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="medium"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="medium"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperWide"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      >
+                        <p>
+                          Hi there!
+                        </p>
+                        <button
+                          type="button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperMedium"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    >
+                      <p>
+                        Hi there!
+                      </p>
+                      <button
+                        type="button"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefault renders a narrow modal 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="narrow"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="narrow"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperNarrow"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    />
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefault renders a wide modal 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="wide"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="wide"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperWide"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperWide"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    />
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is false 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="medium"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="medium"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperWide"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      >
+                        <p>
+                          Hi there!
+                        </p>
+                        <button
+                          type="button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperMedium"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents"
+                    />
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefaultContent renders contents 1`] = `
+<ModalDefaultContent>
+  <div
+    className="modalContent"
+  >
+    Goose
+  </div>
+</ModalDefaultContent>
+`;
+
+exports[`ModalDefaultDescription renders a basic description 1`] = `
+<ModalDefaultDescription>
+  <div
+    className="modalDescription"
+  >
+    Goose
+  </div>
+</ModalDefaultDescription>
+`;
+
+exports[`ModalDefaultFooter renders a non-sticky footer 1`] = `
+<ModalDefaultFooter
+  isSticky={false}
+>
+  <div
+    className="modalFooterFluid"
+  >
+    Goose
+  </div>
+</ModalDefaultFooter>
+`;
+
+exports[`ModalDefaultFooter renders a sticky footer 1`] = `
+<ModalDefault
+  isOpen={false}
+  onCloseClick={[Function]}
+  shouldCloseOnCurtainClick={true}
+  shouldHideCloseButton={false}
+  width="medium"
+>
+  <ModalDefaultAnimatedWrapper
+    isOpen={false}
+    onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
+    width="medium"
+  >
+    <Transition
+      in={false}
+      timeout={
+        Object {
+          "enter": 300,
+          "exit": 250,
+        }
+      }
+    >
+      <ModalCurtain
+        accessibilityLabel="Modal"
+        onCloseClick={[Function]}
+        shouldCloseOnEscape={true}
+        stage="exited"
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperNarrow"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperWide"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      >
+                        <p>
+                          Hi there!
+                        </p>
+                        <button
+                          type="button"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root rootOpen curtain curtainOpen"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperOpen wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root rootOpen curtain curtainOpen"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperOpen wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root rootOpen curtain curtainOpen"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperOpen wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents"
+                      />
+                      <div />
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="Modal"
+                role="dialog"
+              >
+                <div
+                  class="root curtain"
+                  data-test="thumbprint-modal-curtain"
+                >
+                  <div
+                    class="wrapper wrapperMedium"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <div
+                        class="contents contentsSticky"
+                      />
+                      <div>
+                        <div
+                          class="root"
+                        >
+                          Goose
+                        </div>
+                      </div>
+                      <div
+                        class="closeButton"
+                      >
+                        <button
+                          aria-label="Close modal"
+                          class="plain plainThemeInherit"
+                          type="button"
+                        >
+                          <span
+                            class="flexCenter"
+                          >
+                            <svg
+                              class="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                fill-rule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+          }
+        >
+          <FocusTrap
+            _createFocusTrap={[Function]}
+            active={false}
+            aria-label="Modal"
+            focusTrapOptions={
+              Object {
+                "clickOutsideDeactivates": true,
+              }
+            }
+            paused={false}
+            role="dialog"
+            tag="div"
+          >
+            <div
+              aria-label="Modal"
+              role="dialog"
+            >
+              <div
+                className="root curtain"
+                data-test="thumbprint-modal-curtain"
+                onClick={[Function]}
+              >
+                <div
+                  className="wrapper wrapperMedium"
+                >
+                  <div
+                    className="container"
+                  >
+                    <div
+                      className="contents contentsSticky"
+                    >
+                      <ModalDefaultFooter
+                        isSticky={true}
+                      >
+                        <Portal
+                          containerInfo={
+                            <div>
+                              <div
+                                class="root"
+                              >
+                                Goose
+                              </div>
+                            </div>
+                          }
+                        >
+                          <StickyFooter
+                            setSticky={[Function]}
+                          >
+                            <div
+                              className="root"
+                            >
+                              Goose
+                            </div>
+                          </StickyFooter>
+                        </Portal>
+                      </ModalDefaultFooter>
+                    </div>
+                    <div />
+                    <div
+                      className="closeButton"
+                    >
+                      <ForwardRef
+                        accessibilityLabel="Close modal"
+                        iconLeft={
+                          <NavigationCloseSmall
+                            className="closeButtonIcon"
+                            fill="currentColor"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[Function]}
+                        theme="inherit"
+                        type="button"
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          isDisabled={false}
+                          onClick={[Function]}
+                          shouldOpenInNewTab={false}
+                          theme="inherit"
+                          to={null}
+                          type="button"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            className="plain plainThemeInherit"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="flexCenter"
+                            >
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fillRule="evenodd"
+                                  />
+                                </svg>
+                              </NavigationCloseSmall>
+                            </span>
+                          </button>
+                        </ForwardRef>
+                      </ForwardRef>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FocusTrap>
+        </Portal>
+      </ModalCurtain>
+    </Transition>
+  </ModalDefaultAnimatedWrapper>
+</ModalDefault>
+`;
+
+exports[`ModalDefaultHeader renders a basic header 1`] = `
+<ModalDefaultHeader>
+  <div
+    className="modalHeader"
+  >
+    Goose
+  </div>
+</ModalDefaultHeader>
+`;
+
+exports[`ModalDefaultTitle renders a basic title 1`] = `
+<ModalDefaultTitle>
+  <div
+    className="modalTitle"
+  >
+    Goose
+  </div>
+</ModalDefaultTitle>
+`;

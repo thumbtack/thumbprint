@@ -1,0 +1,105 @@
+@import 'node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import 'node_modules/@thumbtack/tp-ui-core-function/_index';
+
+.tp-text-input {
+    width: 100%;
+    background-color: $tp-color__white;
+    border: 1px solid $tp-color__gray;
+    border-radius: $tp-border__radius__base;
+    padding: 13px 15px;
+    font-size: $tp-font__body__1__size;
+    vertical-align: middle;
+    line-height: $tp-font__body__1__line-height;
+
+    &--small {
+        line-height: $tp-font__body__2__line-height;
+        padding: 9px 15px;
+        font-size: $tp-font__body__2__size;
+    }
+
+    &:focus {
+        outline: none;
+        color: $tp-color__black;
+        border-color: $tp-color__blue;
+    }
+
+    &--bad-news {
+        color: $tp-color__red;
+        border-color: $tp-color__red;
+    }
+
+    &[disabled],
+    &--disabled {
+        background-color: $tp-color__gray-200;
+        color: $tp-color__gray;
+    }
+
+    // Remove clear button from input in IE and Chrome
+    // https://stackoverflow.com/a/35895940
+    &::-ms-clear,
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
+    }
+}
+
+// HACK: IE11-only fix for input heights
+// Min-height required as bottom padding not respected
+/* stylelint-disable-next-line selector-type-no-unknown */
+_:-ms-fullscreen,
+:root .tp-text-input {
+    min-height: 50px;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+_:-ms-fullscreen,
+:root .tp-text-input--small {
+    min-height: 38px;
+}
+
+// Icons in inputs
+// This places a clickable svg icon "inside" an input.
+
+.tp-input-icon {
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &--left {
+        .tp-text-input {
+            padding-left: tp-spacer(7);
+
+            &--small {
+                // `16px` left of icon, `18px` wide icon, `12px` right of icon.
+                padding-left: 46px;
+            }
+        }
+
+        .tp-input-icon__icon {
+            // Extra pixel is needed because absolute positioning ignores the border width.
+            left: tp-spacer(2) + 1px;
+        }
+    }
+
+    &--right {
+        .tp-text-input {
+            padding-right: tp-spacer(7);
+
+            &--small {
+                // `16px` right of icon, `18px` wide icon, `12px` left of icon.
+                padding-right: 46px;
+            }
+        }
+
+        .tp-input-icon__icon {
+            // Extra pixel is needed because absolute positioning ignores the border width.
+            right: tp-spacer(2) + 1px;
+        }
+    }
+}

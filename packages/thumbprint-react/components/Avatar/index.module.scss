@@ -1,0 +1,67 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    position: relative;
+}
+
+.rootXsmall {
+    width: $tp-avatar__size__xsmall;
+    height: $tp-avatar__size__xsmall;
+    font-size: 8px;
+}
+
+.rootSmall {
+    width: $tp-avatar__size__small;
+    height: $tp-avatar__size__small;
+    font-size: $tp-font__text__4__size;
+}
+
+.rootMedium {
+    width: $tp-avatar__size__medium;
+    height: $tp-avatar__size__medium;
+    font-size: $tp-font__text__4__size;
+}
+
+.rootLarge {
+    width: $tp-avatar__size__large;
+    height: $tp-avatar__size__large;
+    font-size: $tp-font__text__3__size;
+}
+
+.rootXlarge {
+    width: $tp-avatar__size__xlarge;
+    height: $tp-avatar__size__xlarge;
+    font-size: $tp-font__text__1__size;
+}
+
+// baseAvatar is a collection of styles common to all avatars.
+.baseAvatar {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    // ls.object-fit requires us to store this attribute somewhere IE can read it
+    // see: https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/object-fit
+    font-family: 'object-fit: cover';
+}
+
+// initialsAvatar is used when there is no image available.
+.initialsAvatar {
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(0deg, $tp-color__black-300, $tp-color__gray);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: initial;
+    color: $tp-color__white;
+    font-weight: 700;
+}
+
+.circleAvatar {
+    border-radius: 50%;
+}
+
+.squareAvatar {
+    border-radius: 4px;
+}

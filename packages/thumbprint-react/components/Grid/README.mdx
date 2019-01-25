@@ -1,0 +1,67 @@
+---
+package: '@thumbtack/thumbprint-react'
+kit: grid/index.mdx
+platform: react
+url: /components/grid/react/
+mdxType: componentApi
+---
+
+## Examples
+
+### Basic grid
+
+```jsx
+<Grid>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### Wide gutters
+
+```jsx
+<Grid gutter="wide">
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### No gutters
+
+```jsx
+<Grid gutter="flush">
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### Responsive at all breakpoints
+
+```jsx
+<Grid>
+    <GridColumn base={12} aboveSmall={8} aboveMedium={6} aboveLarge={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```

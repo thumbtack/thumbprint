@@ -1,0 +1,23 @@
+{
+    "name": "Line Height",
+    "tokens": [
+        {
+            "name": "Base",
+            "id": "tp-font__line-height__base",
+            "value": "1.6",
+            "type": "line-height"
+        },
+        {
+            "name": "Tight",
+            "id": "tp-font__line-height__tight",
+            "value": "1.4",
+            "type": "line-height"
+        },
+        {
+            "name": "Loose",
+            "id": "tp-font__line-height__loose",
+            "value": "1.9",
+            "type": "line-height"
+        }
+    ]
+}

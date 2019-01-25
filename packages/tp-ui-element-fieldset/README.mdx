@@ -1,0 +1,96 @@
+---
+package: '@thumbtack/tp-ui-element-fieldset'
+kit: fieldset/index.mdx
+platform: scss
+url: /components/fieldset/scss/
+mdxType: componentApi
+---
+
+import '@thumbtack/tp-ui-layout-form';
+import '@thumbtack/tp-ui-layout-grid';
+import '@thumbtack/tp-ui-layout-button-row';
+import '@thumbtack/tp-ui-element-label';
+import '@thumbtack/tp-ui-element-input';
+import '@thumbtack/tp-ui-element-button';
+import '@thumbtack/tp-ui-element-fieldset';
+
+## Complete form example
+
+```html
+<fieldset class="tp-fieldset">
+    <ol class="tp-form-fields">
+        <li class="tp-form-field__item">
+            <label class="tp-label" for="input-4592577034584064">Input</label>
+            <input
+                type="text"
+                class="tp-text-input"
+                name="input-4592577034584064"
+                id="input-4592577034584064"
+            />
+        </li>
+        <li class="tp-form-field__item">
+            <div class="tp-grid">
+                <div class="tp-col tp-col--6">
+                    <label class="tp-label" for="input-3433812902019072">Split Inputs</label>
+                    <input
+                        type="text"
+                        class="tp-text-input"
+                        name="input-3433812902019072"
+                        id="input-3433812902019072"
+                    />
+                </div>
+                <div class="tp-col tp-col--6">
+                    <label class="tp-label" for="input-6453571409149952">Split Inputs</label>
+                    <input
+                        type="text"
+                        class="tp-text-input"
+                        name="input-6453571409149952"
+                        id="input-6453571409149952"
+                    />
+                </div>
+            </div>
+        </li>
+    </ol>
+</fieldset>
+
+<fieldset class="tp-fieldset">
+    <ol class="tp-form-fields">
+        <li class="tp-form-field__item">
+            <label class="tp-label" for="input-2527917405896704">Input</label>
+            <input
+                type="text"
+                class="tp-text-input"
+                name="input-2527917405896704"
+                id="input-2527917405896704"
+            />
+        </li>
+        <li class="tp-form-field__item">
+            <div class="tp-grid">
+                <div class="tp-col tp-col--6">
+                    <label class="tp-label" for="input-4286127047442432">Split Inputs</label>
+                    <input
+                        type="text"
+                        class="tp-text-input"
+                        name="input-4286127047442432"
+                        id="input-4286127047442432"
+                    />
+                </div>
+                <div class="tp-col tp-col--6">
+                    <label class="tp-label" for="input-5053601976156160">Split Inputs</label>
+                    <input
+                        type="text"
+                        class="tp-text-input"
+                        name="input-5053601976156160"
+                        id="input-5053601976156160"
+                    />
+                </div>
+            </div>
+        </li>
+    </ol>
+</fieldset>
+
+<div class="tp-button-row tp-button-row--right">
+    <button class="tp-button tp-button--secondary">Cancel</button>
+    <button class="tp-button">Submit</button>
+</div>
+```

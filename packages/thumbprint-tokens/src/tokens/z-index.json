@@ -1,0 +1,11 @@
+{
+    "name": "Z-Index",
+    "description": "Values to help stack Thumbprint UI components.",
+    "tokens": [
+        {
+            "name": "Modal",
+            "id": "tp-z-index__modal",
+            "value": 200
+        }
+    ]
+}

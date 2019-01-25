@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders form note text 1`] = `
+<FormNote
+  hasError={false}
+>
+  <div
+    className="root"
+  >
+    Goose
+  </div>
+</FormNote>
+`;
+
+exports[`renders form note with error 1`] = `
+<FormNote
+  hasError={true}
+>
+  <div
+    className="root rootError"
+  >
+    Goose
+  </div>
+</FormNote>
+`;

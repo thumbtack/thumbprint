@@ -1,0 +1,56 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '../../node_modules/@thumbtack/tp-ui-core-mixin/_index';
+
+.ws-normal {
+    white-space: normal !important;
+}
+
+.nowrap {
+    white-space: nowrap !important;
+}
+
+.pre {
+    white-space: pre !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_ws-normal {
+        white-space: normal !important;
+    }
+
+    .s_nowrap {
+        white-space: nowrap !important;
+    }
+
+    .s_pre {
+        white-space: pre !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_ws-normal {
+        white-space: normal !important;
+    }
+
+    .m_nowrap {
+        white-space: nowrap !important;
+    }
+
+    .m_pre {
+        white-space: pre !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_ws-normal {
+        white-space: normal !important;
+    }
+
+    .l_nowrap {
+        white-space: nowrap !important;
+    }
+
+    .l_pre {
+        white-space: pre !important;
+    }
+}

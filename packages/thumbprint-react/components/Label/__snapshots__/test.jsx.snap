@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<Label
+  dataTest="Duck"
+  hasError={false}
+  isDisabled={false}
+>
+  <label
+    className="text textUiStateDefault"
+    data-test="Duck"
+  >
+    Goose
+  </label>
+</Label>
+`;
+
+exports[`renders disabled label 1`] = `
+<Label
+  for="foo"
+  hasError={false}
+  isDisabled={true}
+>
+  <label
+    className="text textUiStateDisabled"
+    htmlFor="foo"
+  >
+    Bar
+  </label>
+</Label>
+`;
+
+exports[`renders label \`for\` attribute 1`] = `
+<Label
+  for="Goose"
+  hasError={false}
+  isDisabled={false}
+>
+  <label
+    className="text textUiStateDefault"
+    htmlFor="Goose"
+  >
+    Foo
+  </label>
+</Label>
+`;
+
+exports[`renders label text 1`] = `
+<Label
+  for="Duck"
+  hasError={false}
+  isDisabled={false}
+>
+  <label
+    className="text textUiStateDefault"
+    htmlFor="Duck"
+  >
+    Goose
+  </label>
+</Label>
+`;
+
+exports[`renders label with error 1`] = `
+<Label
+  for="foo"
+  hasError={true}
+  isDisabled={false}
+>
+  <label
+    className="text textUiStateError"
+    htmlFor="foo"
+  >
+    Bar
+  </label>
+</Label>
+`;
