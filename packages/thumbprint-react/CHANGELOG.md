@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Use Apache License 2.0.
+-   [Patch] Remove duplicated `rollup` packages in `package.json`.
 
 ## 0.1.3 - 2019-01-25
 
