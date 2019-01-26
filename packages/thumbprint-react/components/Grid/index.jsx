@@ -47,9 +47,6 @@ const columnDefaultProps = {
     dataTest: undefined,
 };
 
-// This lint rule is throwing an invalid error. Turning it off for now since the line causing the
-// error will go away soon: https://github.com/thumbtack/thumbprint-archive/issues/1443
-// eslint-disable-next-line react/prop-types
 export function GridColumn({ children, base, aboveSmall, aboveMedium, aboveLarge, dataTest }) {
     return (
         <Consumer>

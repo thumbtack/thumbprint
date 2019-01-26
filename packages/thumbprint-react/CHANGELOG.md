@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Use Apache License 2.0.
+-   [Patch] Remove two unnecessary comments disabling eslint rules.
 
 ## 0.1.3 - 2019-01-25
 

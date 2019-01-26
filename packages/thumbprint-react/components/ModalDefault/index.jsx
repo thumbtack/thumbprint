@@ -248,10 +248,6 @@ class ModalDefaultFooter extends React.Component {
 
     render() {
         const { isClient } = this.state;
-        // This lint rule is throwing an invalid error. Turning it off for now since the line
-        // causing the error will go away soon:
-        // https://github.com/thumbtack/thumbprint-archive/issues/1443
-        // eslint-disable-next-line react/prop-types
         const { isSticky, children } = this.props;
 
         if (!isClient) {
