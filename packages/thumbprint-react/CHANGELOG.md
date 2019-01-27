@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Patch] Minimize SVG used in `StarRating` component.
 -   [Patch] Use Apache License 2.0.
 -   [Patch] Remove duplicated `rollup` packages in `package.json`.
 
