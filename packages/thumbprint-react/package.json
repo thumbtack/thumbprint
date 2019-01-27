@@ -49,9 +49,6 @@
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
-        "rollup": "^1.1.0",
-        "rollup-plugin-babel": "^4.2.0",
-        "rollup-plugin-cpy": "^1.1.0",
         "rotate-array": "^1.1.0",
         "warning": "^4.0.2"
     },
