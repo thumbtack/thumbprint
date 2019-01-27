@@ -6,6 +6,7 @@
 
 -   [Patch] Minimize SVG used in `StarRating` component.
 -   [Patch] Use Apache License 2.0.
+-   [Patch] Remove two unnecessary comments disabling eslint rules.
 -   [Patch] Remove duplicated `rollup` packages in `package.json`.
 
 ## 0.1.3 - 2019-01-25
