@@ -15,26 +15,26 @@ const IndexPage = ({ location }) => (
         <Helmet>
             <meta name="description" content={description} />
         </Helmet>
-        <div className="flex flex-column bg-gray-200" style={{ minHeight: '100%' }}>
+        <div>
             <div
-                className="bg-white flex items-center l_mt6 bt b-gray-300 l_mt0 l_bn l_overflow-y-hidden"
+                className="bg-white flex items-center bt l_bt-0 bb b-gray-300 l_overflow-y-hidden bb b-gray-300"
                 style={{ maxHeight: '430px' }}
             >
-                <div className="flex-none w-30 m_w-50">
+                <div className="flex-none dn m_db m_w-40 l_w-50 m_mr3">
                     <img src={IntroImage} alt="hero" className="db" style={{ maxWidth: '100%' }} />
                 </div>
-                <div className="ph6">
+                <div className="ph4 pv5 m_pv0">
                     <ThumbprintLogo
-                        style={{ width: '202px' }}
+                        style={{ width: '180px' }}
                         className="db"
                         alt="Thumbprint logo"
                     />
-                    <div className="black-300 mb2" style={{ fontSize: '28px' }}>
+                    <div className="black-300 mb2" style={{ fontSize: '22px' }}>
                         Design System
                     </div>
-                    <Text size={2} className="black-300">
+                    <div className="black-300" style={{ maxWidth: '360px' }}>
                         {description}
-                    </Text>
+                    </div>
                 </div>
             </div>
             <div className="pt4 m_pt6">
