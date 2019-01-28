@@ -19,13 +19,11 @@ const PageHeader = ({ metaTitle, description, pageTitle }) => (
                         // Hide the section name visually if it is the same as the page title. We
                         // still render it in the DOM so Algolia can use it for their search index.
                         'visually-hidden': pageTitle === activeSection,
-                        'black-300 mb1 ttu': true,
+                        'black-300 mb1': true,
                     })}
-                    size={3}
+                    size={2}
                 >
-                    <span data-algolia="lvl0" style={{ letterSpacing: '1px' }}>
-                        {activeSection}
-                    </span>
+                    <span data-algolia="lvl0">{activeSection}</span>
                 </Text>
             )}
         </ActiveSectionContext.Consumer>
