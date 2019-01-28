@@ -13,6 +13,10 @@
     @include tp-respond-above($tp-breakpoint__medium) {
         height: 454px;
     }
+
+    @include tp-respond-above($tp-breakpoint__large) {
+        border-top: none;
+    }
 }
 
 .imageWrap {
