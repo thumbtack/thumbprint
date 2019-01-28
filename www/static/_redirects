@@ -2,9 +2,6 @@ https://api.thumbprint.design/* https://thumbprint.design/api/:splat 301!
 https://guide.thumbprint.design/* https://thumbprint.design/guide/:splat 301!
 https://thumbprint.thumbtack.com/* https://thumbprint.design/:splat 301!
 
-# Allows us to proxy traffic to a different site
-/icons/* https://thumbprint-icons.netlify.com/:splat 200
-
 #
 # Historical Redirects
 #
