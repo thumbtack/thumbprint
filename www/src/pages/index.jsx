@@ -5,7 +5,7 @@ import { tpColorGray200 } from '@thumbtack/thumbprint-tokens';
 import Container from '../components/container';
 import Wrap from '../components/wrap';
 import Featured from '../components/thumbprint-www/featured';
-import IntroImage from '../components/thumbprint-www/intro/images/hero.png';
+import IntroImage from '../components/thumbprint-www/intro/images/hero.svg';
 import ThumbprintLogo from '../components/container/thumbprintLogo.svg';
 
 const description = 'Assets for building high-quality, consistent user experiences at Thumbtack.';
@@ -26,7 +26,7 @@ const IndexPage = ({ location }) => (
                 style={{ maxHeight: '430px' }}
             >
                 <div className="flex-none dn m_db m_w-40 l_w-50 m_mr3">
-                    <img src={IntroImage} alt="hero" className="db" style={{ maxWidth: '100%' }} />
+                    <IntroImage alt="hero" className="db" style={{ maxWidth: '100%' }} />
                 </div>
                 <div className="ph4 pv5 m_pv0">
                     <ThumbprintLogo
