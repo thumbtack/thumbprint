@@ -39,8 +39,6 @@ export const pageQuery = graphql`
 -   Used primarily to lock elements with background images in into a desired proportion.
 -   Also for fluid media embedded from third party sites like YouTube, Vimeo, etc.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="s_col-4 mb2 s_mb0">
@@ -103,8 +101,6 @@ Sets location of a background image.
 -   Determines how an background image will fill the container.
 -   Use with [background-position](#section-background-position) classes to set image location.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="s_col-6 mb3 s_mb0">
@@ -112,7 +108,6 @@ Sets location of a background image.
                 className="h5 contain ba b-gray"
                 style={{ background: 'url(https://placebear.com/420/320?image=2) no-repeat' }}
             />
-            <InlineCode theme="plain">contain</InlineCode>
             <div className="tp-body-2">
                 <InlineCode>contain</InlineCode> will ensure that the entire image is displayed
                 within the element, regardless of the elements dimensions.
@@ -123,7 +118,6 @@ Sets location of a background image.
                 className="h5 cover ba b-gray"
                 style={{ background: 'url(https://placebear.com/420/320?image=2) no-repeat' }}
             />
-            <InlineCode theme="plain">cover</InlineCode>
             <div className="tp-body-2">
                 <InlineCode>cover</InlineCode> will ensure the entire element is covered but won’t
                 guarantee that the entire image will be shown.
@@ -138,8 +132,6 @@ Sets location of a background image.
 
 -   Set border on all sides or individual sides.
 -   Use with [border-colors](#section-border-colors) classes.
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
@@ -169,8 +161,6 @@ Sets location of a background image.
 ## Border Color
 
 Applies border color to any active border.
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid mb3">
@@ -221,8 +211,6 @@ Applies border color to any active border.
 
 Add rounded corners.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="s_col-4">
@@ -255,8 +243,6 @@ Sets the style of the border.
 -   By default this sets the border style for all sides.
 -   Due to the way the CSS spec works if you want it to apply to only certain sides, you'll need to disable the sides you don't want.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="s_col-4">
@@ -279,8 +265,6 @@ Sets the style of the border.
 ## Border Width
 
 Border widths are set to `1px` by default, these classes increase border width.
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
@@ -311,8 +295,6 @@ Border widths are set to `1px` by default, these classes increase border width.
 
 -   Colors for text, links, and backgrounds.
 -   Be sure to follow color usage guidelines.
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid mb3">
@@ -386,8 +368,6 @@ Options for block, inline, and tables elements.
 -   Our Mark font only supports two weights: `400` and `700`.
 -   Use only when [Type](https://thumbprint.design/components/type/react/) components are not adequate.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="col-6">
@@ -415,8 +395,6 @@ These classes should be used in place of `grid`. That will be deprecated.
 -   The immediate child of a `grid` will default to 100% width, which is common for mobile.
 -   Use `col-*` classes to declare width of column.
 -   A `grid` must wrap `col` as immediate children.
-
-### Examples
 
 <div className="pa3 ba b-gray mb4">
     <InlineCode theme="plain">grid</InlineCode>
@@ -486,8 +464,6 @@ These classes should be used in place of `grid`. That will be deprecated.
 
 Options for setting fixed heights.
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="col-2">
@@ -540,8 +516,6 @@ Options for setting fixed heights.
 
 ## Max Width
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="mb3">
         <div className="h1 bg-gray br b-blue mw1" />
@@ -592,8 +566,6 @@ Options for setting fixed heights.
 
 ## Text Align
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="m_col-4 mb3 m_mb0">
@@ -615,8 +587,6 @@ Options for setting fixed heights.
 
 ## Text Decoration
 
-### Examples
-
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="grid">
         <div className="m_col-6 mb3 m_mb0">
@@ -635,8 +605,6 @@ Options for setting fixed heights.
 ## Text Transform
 
 Manipulate case of text.
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="row">
@@ -663,8 +631,6 @@ Single-line truncation.
 
 -   An ellipsis will show only on Webkit browsers, like Safari and Chrome.
 -   Truncating to two or more lines requires custom CSS.
-
-### Examples
 
 ```html
 <div className="truncate mb3 b">
@@ -707,8 +673,6 @@ Control how text wraps.
 
 -   Fixed and percentage widths.
 -   Use to set the column widths in [Columns](#columns).
-
-### Examples
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
     <div className="mb3">
