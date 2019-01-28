@@ -16,7 +16,7 @@ const Featured = () => (
             >
                 <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
                     <div className="mr3">
-                        <AboutSvg className="db w4 m_w-auto" />
+                        <AboutSvg className="db w4 w-auto" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">About</div>
@@ -34,7 +34,7 @@ const Featured = () => (
             >
                 <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
                     <div className="mr3">
-                        <ColorSvg className="db w4 m_w-auto" />
+                        <ColorSvg className="db w4 w-auto" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Color</div>
@@ -52,7 +52,7 @@ const Featured = () => (
             >
                 <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
                     <div className="mr3">
-                        <ChecklistSvg className="db w4 m_w-auto" />
+                        <ChecklistSvg className="db w4 w-auto" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Roadmap</div>
@@ -70,7 +70,7 @@ const Featured = () => (
             >
                 <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
                     <div className="mr3">
-                        <HelpSvg className="db w4 m_w-auto" />
+                        <HelpSvg className="db w4 w-auto" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Help</div>

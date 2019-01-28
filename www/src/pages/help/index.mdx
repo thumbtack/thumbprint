@@ -4,7 +4,7 @@ description: Questions and resources.
 ---
 
 import { Title, Text, ThemedLink } from '@thumbtack/thumbprint-react';
-import { Img } from 'components/mdx';
+import { Img, P } from 'components/mdx';
 
 <div className="flex mb4 pb4 bb b-gray-300">
     <div className="mr3 flex-none">
@@ -14,10 +14,10 @@ import { Img } from 'components/mdx';
         <Title size={4} headingLevel={2}>
             Slack
         </Title>
-        <Text className="mb3 black-300">
+        <P>
             If you’re wondering if we already have a solution for a design or development issue or
             would like assistance figuring out a problem, post in #thumbprint-questions.
-        </Text>
+        </P>
         <ThemedLink
             theme="primary"
             size="small"
@@ -39,10 +39,10 @@ import { Img } from 'components/mdx';
         <Title size={4} headingLevel={2}>
             Github
         </Title>
-        <Text className="mb3 black-300">
+        <P>
             Code for all React and SCSS, tokens, icons, Atomic and the documentation lives in our
             Thumbprint repository. We also track all issues and reviews there.
-        </Text>
+        </P>
         <ThemedLink theme="primary" size="small" to="https://github.com/thumbtack/thumbprint">
             Open Github
         </ThemedLink>
