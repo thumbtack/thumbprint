@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { Text } from '@thumbtack/thumbprint-react';
+import { tpColorGray200 } from '@thumbtack/thumbprint-tokens';
 import Container from '../components/container';
 import Wrap from '../components/wrap';
 import Featured from '../components/thumbprint-www/featured';
@@ -14,6 +14,11 @@ const IndexPage = ({ location }) => (
     <Container location={location}>
         <Helmet>
             <meta name="description" content={description} />
+            <style type="text/css">{`
+                body {
+                    background-color: ${tpColorGray200};
+                }
+            `}</style>
         </Helmet>
         <div>
             <div
