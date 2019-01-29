@@ -6,7 +6,6 @@ import styles from './index.module.scss';
 const Wrap = ({ hasPadding, children }) => (
     <div
         className={classNames(styles.wrap, {
-            'ph4 l_ph6 center': true,
             l_pv6: hasPadding,
         })}
         data-algolia="content"
