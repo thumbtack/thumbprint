@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const isActive = ({ isCurrent }) => {
     const commonClasses = 'b pv2 ph3 black relative top-3 ';
     return isCurrent
-        ? { className: `bb bw-3 b-blue z-1 ${commonClasses}` }
+        ? { className: `bb bw-3 b-blue ${commonClasses}` }
         : { className: commonClasses };
 };
 
