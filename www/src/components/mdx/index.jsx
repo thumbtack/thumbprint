@@ -112,7 +112,7 @@ export const Pre = p => <div {...p} />;
 
 export const LI = p => (
     <ListItem>
-        <Text elementName="p" className={`black-300 ${styles.readingWidth}`} {...p} />
+        <Text elementName="div" className={`black-300 ${styles.readingWidth}`} {...p} />
     </ListItem>
 );
 
