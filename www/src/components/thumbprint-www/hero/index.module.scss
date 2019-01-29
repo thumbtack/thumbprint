@@ -32,7 +32,8 @@
     }
 
     @include tp-respond-above($tp-breakpoint__large) {
-        width: 45%;
+        width: 50%;
+        max-width: 450px;
     }
 }
 
