@@ -8,7 +8,7 @@ import ChecklistSvg from './svg/checklist.svg';
 import styles from './index.module.scss';
 
 const Featured = () => (
-    <div className="grid pb5">
+    <div className="grid">
         <div className="m_col-6 mb3">
             <Link
                 to="/overview/about/"
@@ -21,7 +21,7 @@ const Featured = () => (
                     <div className="">
                         <div className="tp-title-5 mb1">About</div>
                         <div className="black-300">
-                            The principles and team members that make Thumbprint.
+                            The principles and team members of Thumbprint.
                         </div>
                     </div>
                 </div>
