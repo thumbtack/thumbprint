@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemedLink } from '@thumbtack/thumbprint-react';
-import { Title, Text } from '@thumbtack/thumbprint-react';
+import { ThemedLink, Title, Text } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
 const Notices = () => (
