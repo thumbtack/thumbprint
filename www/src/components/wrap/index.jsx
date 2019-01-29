@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 const Wrap = ({ hasPadding, children }) => (
     <div
         className={classNames(styles.wrap, {
-            l_pv6: hasPadding,
+            'pb5 l_pv6': hasPadding,
         })}
         data-algolia="content"
     >

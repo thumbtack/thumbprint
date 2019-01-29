@@ -8,6 +8,8 @@
     border-color: $tp-color__gray-300;
     max-height: 300px;
     overflow-y: auto;
+    // Momentum scrolling on iOS.
+    -webkit-overflow-scrolling: touch;
 
     &:focus-within {
         border-color: $tp-color__blue;
