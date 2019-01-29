@@ -8,7 +8,7 @@ import ChecklistSvg from './svg/checklist.svg';
 import styles from './index.module.scss';
 
 const Featured = () => (
-    <div className="grid pb5">
+    <div className="grid">
         <div className="m_col-6 mb3">
             <Link
                 to="/overview/about/"
@@ -20,8 +20,8 @@ const Featured = () => (
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">About</div>
-                        <div className="tp-body-2 black-300">
-                            The principles and team members that make Thumbprint.
+                        <div className="black-300">
+                            The principles and team members of Thumbprint.
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const Featured = () => (
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Color</div>
-                        <div className="tp-body-2 black-300">
+                        <div className="black-300">
                             Names and usage rules for applying it across the system.
                         </div>
                     </div>
@@ -56,7 +56,7 @@ const Featured = () => (
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Roadmap</div>
-                        <div className="tp-body-2 black-300">
+                        <div className="black-300">
                             Work we’re planning and work we’ve completed.
                         </div>
                     </div>
@@ -74,7 +74,7 @@ const Featured = () => (
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Help</div>
-                        <div className="tp-body-2 black-300">
+                        <div className="black-300">
                             Have a question or something to contribute? Let us know!
                         </div>
                     </div>
