@@ -1,5 +1,10 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
+.sideNav {
+    // Momentum scrolling on iOS.
+    -webkit-overflow-scrolling: touch;
+}
+
 .sideNavSectionGroup:not(:last-of-type) {
     margin-bottom: $tp-space__3;
     position: relative;
