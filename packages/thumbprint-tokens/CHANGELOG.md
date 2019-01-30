@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add title type styles for sizes 6, 7, and 8. (#70)
+
 ## 6.2.4 - 2019-01-30
 
 ### Changed
