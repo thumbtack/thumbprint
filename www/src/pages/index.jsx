@@ -17,10 +17,7 @@ const IndexPage = ({ location, data }) => (
         <Helmet>
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
-            <meta
-                property="og:image"
-                content={join(data.site.siteMetadata.siteUrl, openGraphImage)}
-            />
+            <meta property="og:image" content={data.site.siteMetadata.siteUrl + openGraphImage} />
         </Helmet>
         <div>
             <Hero />
