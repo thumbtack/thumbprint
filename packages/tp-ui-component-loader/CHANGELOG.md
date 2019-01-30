@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.3.9 - 2019-01-30
+
 ### Changed
 
 -   [Patch] Use Apache License 2.0.
