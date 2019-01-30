@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -35,9 +35,9 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/#readme",
     "dependencies": {
-        "@thumbtack/thumbprint-tokens": "^6.2.3",
-        "@thumbtack/tp-ui-core-function": "^1.0.8",
-        "@thumbtack/tp-ui-core-mixin": "^3.0.3",
+        "@thumbtack/thumbprint-tokens": "^6.2.4",
+        "@thumbtack/tp-ui-core-function": "^1.0.9",
+        "@thumbtack/tp-ui-core-mixin": "^3.0.4",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
         "focus-trap-react": "^3.0.5",

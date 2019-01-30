@@ -1,11 +1,11 @@
 {
     "name": "@thumbtack/tp-ui-element-button",
-    "version": "2.0.11",
+    "version": "2.0.12",
     "main": "_index.scss",
     "dependencies": {
-        "@thumbtack/thumbprint-tokens": "^6.2.3",
-        "@thumbtack/tp-ui-core-function": "^1.0.8",
-        "@thumbtack/tp-ui-core-mixin": "^3.0.3"
+        "@thumbtack/thumbprint-tokens": "^6.2.4",
+        "@thumbtack/tp-ui-core-function": "^1.0.9",
+        "@thumbtack/tp-ui-core-mixin": "^3.0.4"
     },
     "repository": {
         "type": "git",

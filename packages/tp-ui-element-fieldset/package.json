@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/tp-ui-element-fieldset",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Creates spacing between form groups",
     "main": "_index.scss",
     "repository": {
@@ -29,6 +29,6 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/tp-ui-element-fieldset/#readme",
     "dependencies": {
-        "@thumbtack/tp-ui-core-function": "^1.0.8"
+        "@thumbtack/tp-ui-core-function": "^1.0.9"
     }
 }
