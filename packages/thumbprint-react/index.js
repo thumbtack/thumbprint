@@ -7,7 +7,7 @@ export { default as DatePicker } from './components/DatePicker/index.jsx';
 export { default as FormNote } from './components/FormNote/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index.jsx';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
-export { default as InputRow } from './components/InputRow/index.jsx';
+export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index.jsx';
 export { default as Link, ThemedLink } from './components/Link/index.jsx';
 export { List, ListItem } from './components/List/index.jsx';
