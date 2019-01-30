@@ -8,8 +8,5 @@ exports[`compiles correctly 1`] = `
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  @media (max-width: 481px) {
-    body.tp-body-text-responsive {
-      font-size: 14px; } }
 "
 `;
