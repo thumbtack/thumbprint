@@ -6,6 +6,10 @@
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
 
+### Fixed
+
+-   [Patch] Bring back `InputRowContext` context that was accidentally removed during consolidation into one NPM package. (#8)
+
 ## 0.1.4 - 2019-01-30
 
 ### Changed
