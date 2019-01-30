@@ -28,7 +28,6 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/tp-ui-element-body/#readme",
     "dependencies": {
-        "@thumbtack/thumbprint-tokens": "^6.2.4",
-        "@thumbtack/tp-ui-core-mixin": "^3.0.4"
+        "@thumbtack/thumbprint-tokens": "^6.2.4"
     }
 }
