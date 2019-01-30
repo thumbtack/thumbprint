@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
+
 ## 0.1.4 - 2019-01-30
 
 ### Changed

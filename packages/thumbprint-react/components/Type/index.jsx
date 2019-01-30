@@ -12,7 +12,7 @@ const titlePropTypes = {
     /**
      * Size level of the text.
      */
-    size: PropTypes.oneOf([1, 2, 3, 4, 5]).isRequired,
+    size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8]).isRequired,
     /**
      * Allows you to pass in additional styles to apply to the text. It is intentionally not
      * possible to overwrite `font-size`, `line-height`, and `font-weight`. If you need to do so,
