@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `tp-body-text-responsive` class. It was added a long time ago but never used. (#46)
+
 ## 2.0.8 - 2019-01-30
 
 ### Changed

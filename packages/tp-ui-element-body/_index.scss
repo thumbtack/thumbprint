@@ -1,5 +1,4 @@
 @import 'node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import 'node_modules/@thumbtack/tp-ui-core-mixin/_index';
 
 body {
     color: $tp-color__black;
@@ -8,10 +7,4 @@ body {
     line-height: $tp-font__line-height__base;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    &.tp-body-text-responsive {
-        @include tp-respond-below($tp-breakpoint__small) {
-            font-size: $tp-font__body__2__size;
-        }
-    }
 }
