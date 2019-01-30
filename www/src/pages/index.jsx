@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { join } from 'path';
 import Container from '../components/container';
 import Wrap from '../components/wrap';
 import Featured from '../components/thumbprint-www/featured';
@@ -17,10 +16,7 @@ const IndexPage = ({ location, data }) => (
         <Helmet>
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
-            <meta
-                property="og:image"
-                content={join(data.site.siteMetadata.siteUrl, openGraphImage)}
-            />
+            <meta property="og:image" content={data.site.siteMetadata.siteUrl + openGraphImage} />
         </Helmet>
         <div>
             <Hero />
