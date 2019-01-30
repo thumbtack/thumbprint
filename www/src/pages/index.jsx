@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { join } from 'path';
 import Container from '../components/container';
 import Wrap from '../components/wrap';
 import Featured from '../components/thumbprint-www/featured';
