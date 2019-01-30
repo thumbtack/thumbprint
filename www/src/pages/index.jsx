@@ -14,6 +14,7 @@ const description = 'Assets for building high-quality, consistent user experienc
 const IndexPage = ({ location, data }) => (
     <Container location={location}>
         <Helmet>
+            <meta name="twitter:description" content={description} />
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={data.site.siteMetadata.siteUrl + openGraphImage} />

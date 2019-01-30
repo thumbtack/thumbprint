@@ -11,6 +11,8 @@ const PageHeader = ({ metaTitle, description, pageTitle }) => (
             {metaTitle && <title>{metaTitle} / Thumbprint</title>}
             {description && (
                 <React.Fragment>
+                    <meta name="twitter:title" content={`${metaTitle} / Thumbprint`} />
+                    <meta name="twitter:description" content={description} />
                     <meta name="description" content={description} />
                     <meta property="og:description" content={description} />
                 </React.Fragment>
