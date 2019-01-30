@@ -14,7 +14,7 @@ const Featured = () => (
                 to="/overview/about/"
                 className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
             >
-                <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
+                <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
                         <AboutSvg className="db w4 w-auto" />
                     </div>
@@ -32,7 +32,7 @@ const Featured = () => (
                 to="/guide/product/color/"
                 className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
             >
-                <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
+                <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
                         <ColorSvg className="db w4 w-auto" />
                     </div>
@@ -50,7 +50,7 @@ const Featured = () => (
                 to="/updates/roadmap/"
                 className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
             >
-                <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
+                <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
                         <ChecklistSvg className="db w4 w-auto" />
                     </div>
@@ -68,7 +68,7 @@ const Featured = () => (
                 to="/help/"
                 className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
             >
-                <div className="flex ph3 pv1 m_ph4 m_pv3 items-center">
+                <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
                         <HelpSvg className="db w4 w-auto" />
                     </div>

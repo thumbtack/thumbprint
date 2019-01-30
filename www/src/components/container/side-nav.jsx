@@ -8,7 +8,9 @@ import { NavigationCaretDownSmall, NavigationCaretUpSmall } from '@thumbtack/thu
 import { ScrollMarkerLink } from 'react-scroll-marker';
 import styles from './side-nav.module.scss';
 
-const SideNav = ({ children }) => <ul className="flex-1 overflow-y-auto pb3">{children}</ul>;
+const SideNav = ({ children }) => (
+    <ul className={`flex-1 overflow-y-auto pb3 ${styles.sideNav}`}>{children}</ul>
+);
 
 SideNav.propTypes = {
     children: PropTypes.node.isRequired,
