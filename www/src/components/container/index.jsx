@@ -77,7 +77,7 @@ class Container extends React.Component {
                         <meta name="twitter:site" content="@thumbtackdesign" />
                         <meta name="twitter:title" content="Thumbprint" />
 
-                        <meta name="og:title" content="Thumbprint" />
+                        <meta property="og:title" content="Thumbprint" />
 
                         <style type="text/css">
                             {`
