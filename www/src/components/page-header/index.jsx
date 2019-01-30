@@ -9,12 +9,8 @@ const PageHeader = ({ metaTitle, description, pageTitle }) => (
     <div className="mb5">
         <Helmet>
             {metaTitle && <title>{metaTitle} / Thumbprint</title>}
-            {description && (
-                <React.Fragment>
-                    <meta name="description" content={description} />
-                    <meta property="og:description" content={description} />
-                </React.Fragment>
-            )}
+            {description && <meta name="description" content={description} />}
+            {description && <meta property="og:description" content={description} />}
         </Helmet>
 
         <ActiveSectionContext.Consumer>
