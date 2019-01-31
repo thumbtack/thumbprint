@@ -16,13 +16,12 @@
     "scripts": {
         "start": "yarn clear && yarn generateCss",
         "clear": "rm -rf dist",
-        "generateCss": "mkdir -p dist && node-sass -q src/thumbprint-global.scss dist/thumbprint-global.css && postcss dist/thumbprint-global.css --map --use autoprefixer css-mqpacker cssnano --replace",
+        "generateCss": "mkdir -p dist && node-sass -q src/thumbprint-global.scss dist/thumbprint-global.css && postcss dist/thumbprint-global.css --map --use autoprefixer cssnano --replace",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^6.2.4",
         "autoprefixer": "^9.0.1",
-        "css-mqpacker": "^7.0.0",
         "cssnano": "^4.1.0",
         "node-sass": "^4.9.2",
         "postcss-cli": "^6.1.1"
