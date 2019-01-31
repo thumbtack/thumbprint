@@ -2,16 +2,13 @@
 
 ## Unreleased
 
-### Fixed
-
--   [Patch] Add `tpColorGray` to fix disabled state of label. It was not grayed out as expected. (#85)
-
 ### Added
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
 
 ### Fixed
 
+-   [Patch] Add `tpColorGray` to fix disabled state of label. It was not grayed out as expected. (#85)
 -   [Patch] Bring back `InputRowContext` context that was accidentally removed during consolidation into one NPM package. (#8)
 
 ## 0.1.4 - 2019-01-30
