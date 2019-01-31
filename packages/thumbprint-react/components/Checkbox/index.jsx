@@ -66,7 +66,7 @@ const backgroundColor = {
 
 const textColor = {
     error: tokens.tpColorRed,
-    disabled: 'inherit',
+    disabled: tokens.tpColorGray,
     default: 'inherit',
 };
 
