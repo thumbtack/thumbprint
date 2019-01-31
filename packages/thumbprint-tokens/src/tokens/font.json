@@ -170,6 +170,69 @@
             "type": "font-weight"
         },
         {
+            "group": "Title 6",
+            "name": "Title 6 Font Size",
+            "id": "tp-font__title__6__size",
+            "value": "16px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 6",
+            "name": "Title 6 Line Height",
+            "id": "tp-font__title__6__line-height",
+            "value": "24px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 6",
+            "name": "Title 6 Weight",
+            "id": "tp-font__title__6__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 7",
+            "name": "Title 7 Font Size",
+            "id": "tp-font__title__7__size",
+            "value": "14px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 7",
+            "name": "title 7 Line Height",
+            "id": "tp-font__title__7__line-height",
+            "value": "20px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 7",
+            "name": "Title 7 Weight",
+            "id": "tp-font__title__7__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
+            "group": "Title 8",
+            "name": "Title 8 Font Size",
+            "id": "tp-font__title__8__size",
+            "value": "12px",
+            "type": "font-size"
+        },
+        {
+            "group": "Title 8",
+            "name": "Title 8 Line Height",
+            "id": "tp-font__title__8__line-height",
+            "value": "18px",
+            "type": "line-height"
+        },
+        {
+            "group": "Title 8",
+            "name": "Title 8 Weight",
+            "id": "tp-font__title__8__weight",
+            "value": "700",
+            "type": "font-weight"
+        },
+        {
             "group": "Body 1",
             "name": "Body 1 Font Size",
             "id": "tp-font__body__1__size",
