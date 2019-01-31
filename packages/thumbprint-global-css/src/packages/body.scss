@@ -1,0 +1,10 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+body {
+    color: $tp-color__black;
+    font-family: $tp-font__family__base;
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__line-height__base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
