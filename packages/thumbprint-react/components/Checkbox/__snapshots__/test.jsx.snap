@@ -100,7 +100,7 @@ exports[`adds \`disabled\` attribute 1`] = `
       className="text"
       style={
         Object {
-          "color": "inherit",
+          "color": "#d3d4d5",
         }
       }
     >
