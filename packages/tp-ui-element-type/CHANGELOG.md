@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add type sizes for `Title` `6`, `7`, and `8`. (#70)
+
 ## 4.0.8 - 2019-01-30
 
 ### Changed
