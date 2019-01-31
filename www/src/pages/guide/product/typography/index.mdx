@@ -12,20 +12,25 @@ Our brand font is Mark and comes in two weights, 400 and 700. We have five "titl
 
 ## Type values
 
-| Component            | Responsive                   | Font Size   | Line Height | Font Weight |
-| -------------------- | ---------------------------- | ----------- | ----------- | ----------- |
-| `<Title size={1} />` | <ContentActionsCheckSmall /> | `28px/40px` | `32px/44px` | `700`       |
-| `<Title size={2} />` | <ContentActionsCheckSmall /> | `24px/32px` | `28px/40px` | `700`       |
-| `<Title size={3} />` | <ContentActionsCheckSmall /> | `22px/24px` | `28px/32px` | `700`       |
-| `<Title size={4} />` |                              | `20px`      | `28px`      | `700`       |
-| `<Title size={5} />` |                              | `18px`      | `24px`      | `700`       |
-| `<Text size={1} />`  |                              | `16px`      | `24px`      | `400`       |
-| `<Text size={2} />`  |                              | `14px`      | `20px`      | `400`       |
-| `<Text size={3} />`  |                              | `12px`      | `18px`      | `400`       |
+| Component            | Responsive                                    | Font Size   | Line Height | Font Weight |
+| -------------------- | --------------------------------------------- | ----------- | ----------- | ----------- |
+| `<Title size={1} />` | <ContentActionsCheckSmall aria-label="Yes" /> | `28px/40px` | `32px/44px` | `700`       |
+| `<Title size={2} />` | <ContentActionsCheckSmall aria-label="Yes" /> | `24px/32px` | `28px/40px` | `700`       |
+| `<Title size={3} />` | <ContentActionsCheckSmall aria-label="Yes" /> | `22px/24px` | `28px/32px` | `700`       |
+| `<Title size={4} />` |                                               | `20px`      | `28px`      | `700`       |
+| `<Title size={5} />` |                                               | `18px`      | `24px`      | `700`       |
+| `<Title size={6} />` |                                               | `16px`      | `24px`      | `700`       |
+| `<Title size={7} />` |                                               | `14px`      | `20px`      | `700`       |
+| `<Title size={8} />` |                                               | `12px`      | `18px`      | `700`       |
+| `<Text size={1} />`  |                                               | `16px`      | `24px`      | `400`       |
+| `<Text size={2} />`  |                                               | `14px`      | `20px`      | `400`       |
+| `<Text size={3} />`  |                                               | `12px`      | `18px`      | `400`       |
 
 <Alert type="note" title="HTML headings">
-    Though numbered 1 though 5 our "Title" components are independent of the HTML heading elements
-    h1-h6. Use the <InlineCode>size</InlineCode> required by the design with the appropriate
+    Though numbered 1 though 8, our <InlineCode>Title</InlineCode> components are independent of the
+    HTML heading elements
+    <InlineCode>h1</InlineCode>-<InlineCode>h6</InlineCode>. Use the <InlineCode>size</InlineCode> required
+    by the design with the appropriate
     <InlineCode>headlingLevel</InlineCode> prop for SEO and semantics.
 </Alert>
 
@@ -71,6 +76,33 @@ Our brand font is Mark and comes in two weights, 400 and 700. We have five "titl
 
 ```jsx
 <Title size={5}>
+    When you need to hire someone – a landscaper, a DJ, anyone – Thumbtack finds them for you for
+    free.
+</Title>
+```
+
+`<Title size={6} />`
+
+```jsx
+<Title size={6}>
+    When you need to hire someone – a landscaper, a DJ, anyone – Thumbtack finds them for you for
+    free.
+</Title>
+```
+
+`<Title size={7} />`
+
+```jsx
+<Title size={7}>
+    When you need to hire someone – a landscaper, a DJ, anyone – Thumbtack finds them for you for
+    free.
+</Title>
+```
+
+`<Title size={8} />`
+
+```jsx
+<Title size={8}>
     When you need to hire someone – a landscaper, a DJ, anyone – Thumbtack finds them for you for
     free.
 </Title>
