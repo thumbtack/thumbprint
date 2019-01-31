@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Add `tpColorGray` to fix disabled state of label. It was not grayed out as expected. (#85)
+
 ### Added
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
