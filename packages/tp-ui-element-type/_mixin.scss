@@ -52,6 +52,24 @@
     font-weight: $tp-font__title__5__weight $important;
 }
 
+@mixin tp-title-6($important: null) {
+    font-size: $tp-font__title__6__size $important;
+    line-height: $tp-font__title__6__line-height $important;
+    font-weight: $tp-font__title__6__weight $important;
+}
+
+@mixin tp-title-7($important: null) {
+    font-size: $tp-font__title__7__size $important;
+    line-height: $tp-font__title__7__line-height $important;
+    font-weight: $tp-font__title__7__weight $important;
+}
+
+@mixin tp-title-8($important: null) {
+    font-size: $tp-font__title__8__size $important;
+    line-height: $tp-font__title__8__line-height $important;
+    font-weight: $tp-font__title__8__weight $important;
+}
+
 @mixin tp-body-1($important: null) {
     font-size: $tp-font__body__1__size $important;
     line-height: $tp-font__body__1__line-height $important;
