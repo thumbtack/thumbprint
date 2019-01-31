@@ -72,6 +72,13 @@ class Container extends React.Component {
                 <ActiveSectionContext.Provider value={activeSection}>
                     <Helmet>
                         <title>Thumbprint</title>
+
+                        <meta name="twitter:card" content="summary" />
+                        <meta name="twitter:site" content="@thumbtackdesign" />
+                        <meta name="twitter:title" content="Thumbprint" />
+
+                        <meta property="og:title" content="Thumbprint" />
+
                         <style type="text/css">
                             {`
                             /*
