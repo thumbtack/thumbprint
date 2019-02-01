@@ -1,0 +1,58 @@
+.tp-alert {
+    display: flex;
+    font-size: $tp-font__body__2__size;
+    line-height: $tp-font__body__2__line-height;
+    text-align: left;
+    padding: tp-spacer(1.5) tp-spacer(2);
+    color: $tp-color__white;
+    background: $tp-color__gray;
+    font-weight: 400;
+    border-radius: $tp-border__radius__base;
+
+    & a {
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+        color: $tp-color__white;
+        fill: $tp-color__white;
+
+        &:hover {
+            color: $tp-color__white;
+            opacity: 0.7;
+        }
+    }
+
+    &--banner {
+        display: block;
+        text-align: center;
+        border-radius: 0;
+    }
+
+    &--good-news {
+        background: $tp-color__green;
+    }
+
+    &--bad-news {
+        background: $tp-color__red;
+    }
+
+    &--warning {
+        background: $tp-color__yellow;
+    }
+
+    &--note {
+        background: $tp-color__blue;
+    }
+
+    &__text {
+        align-self: center;
+    }
+
+    &__icon {
+        fill: currentColor;
+        flex: none;
+        margin-right: tp-spacer(1.5);
+        position: relative;
+        top: -1px;
+    }
+}
