@@ -64,6 +64,23 @@
     }
 }
 
+@mixin tp-button--tertiary($important: null) {
+    background-color: $tp-color__white $important;
+    border-color: $tp-color__gray $important;
+    color: $tp-color__black-300 $important;
+
+    &:hover,
+    &:active {
+        color: $tp-color__black-300 $important;
+    }
+
+    &:focus {
+        color: $tp-color__black-300 $important;
+        background-color: $tp-color__white $important;
+        border-color: $tp-color__black-300 $important;
+    }
+}
+
 @mixin tp-button--caution($important: null) {
     background-color: $tp-color__white $important;
     border-color: $tp-color__gray $important;
@@ -155,6 +172,12 @@
         border-color: $tp-color__blue-300 $important;
 
         &.tp-button--secondary {
+            color: $tp-color__gray $important;
+            background-color: $tp-color__white $important;
+            border-color: $tp-color__gray $important;
+        }
+
+        &.tp-button--tertiary {
             color: $tp-color__gray $important;
             background-color: $tp-color__white $important;
             border-color: $tp-color__gray $important;

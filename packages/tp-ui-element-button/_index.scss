@@ -10,6 +10,10 @@
     @include tp-button--secondary;
 }
 
+.tp-button--tertiary {
+    @include tp-button--tertiary;
+}
+
 .tp-button--caution {
     @include tp-button--caution;
 }
