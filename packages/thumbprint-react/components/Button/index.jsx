@@ -155,7 +155,7 @@ Button.propTypes = {
     /**
      * Controls the button’s background, text, and border color.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'caution', 'solid']),
+    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'caution', 'solid']),
     /**
      * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
      */
