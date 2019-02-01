@@ -1,0 +1,12 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+a {
+    color: $tp-color__blue;
+    fill: $tp-color__blue;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        color: $tp-color__blue;
+    }
+}
