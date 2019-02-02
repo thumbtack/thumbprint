@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-scss",
-    "description": "SCSS components for building Thumbtack UI",
+    "description": "CSS and Sass mixins for building Thumbtack UI",
     "version": "0.0.0",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/css/thumbprint-css.css",
@@ -14,10 +14,10 @@
     },
     "license": "Apache-2.0",
     "scripts": {
-        "start": "yarn clear && mkdir -p dist && yarn generateCss && yarn moveScss",
+        "start": "yarn clear && mkdir -p dist && yarn generateCss && yarn copyMixin",
         "clear": "rm -rf dist",
         "generateCss": "mkdir -p dist/css && node-sass -q src/thumbprint-css.scss dist/css/thumbprint-css.css && postcss dist/css/thumbprint-css.css --map --use autoprefixer cssnano --replace",
-        "moveScss": "mkdir -p dist/mixin && cp src/thumbprint-mixin.scss dist/mixin/ && cp -R src/components dist/mixin/components",
+        "copyMixin": "mkdir -p dist/mixin && cp src/thumbprint-mixin.scss dist/mixin/ && cp -R src/mixins dist/mixin/mixins",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {

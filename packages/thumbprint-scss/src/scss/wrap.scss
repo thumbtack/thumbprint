@@ -1,4 +1,4 @@
-@import '_mixin';
+@import '../mixins/wrap';
 
 .tp-wrap {
     @include tp-wrap;

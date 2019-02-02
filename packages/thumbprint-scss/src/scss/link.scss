@@ -1,4 +1,4 @@
-@import '_mixin';
+@import '../mixins/link';
 
 .tp-link {
     @include tp-link;

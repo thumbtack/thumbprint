@@ -1,14 +1,14 @@
 @import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
 
 // Global mixins
-@import 'components/mixin/_index';
-@import 'components/function/_index'; // @deprecated
+@import 'mixins/mixin';
+@import 'mixins/function'; // @deprecated
 
 // Component mixins
-@import 'components/avatar/_mixin';
-@import 'components/button/_mixin';
-@import 'components/link/_mixin';
-@import 'components/list/_mixin';
-@import 'components/longread/_mixin';
-@import 'components/type/_mixin';
-@import 'components/wrap/_mixin';
+@import 'mixins/avatar';
+@import 'mixins/button';
+@import 'mixins/link';
+@import 'mixins/list';
+@import 'mixins/longread';
+@import 'mixins/type';
+@import 'mixins/wrap';

@@ -1,4 +1,4 @@
-@import '_mixin';
+@import '../mixins/longread';
 
 .tp-longread {
     @include tp-longread;

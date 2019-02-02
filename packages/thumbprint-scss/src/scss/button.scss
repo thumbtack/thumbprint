@@ -1,4 +1,4 @@
-@import '_mixin';
+@import '../mixins/button';
 
 .tp-button {
     @include tp-button;
