@@ -4,4 +4,4 @@
 
 ### Added
 
--   [Minor] Created package for Thumbprint SCSS. (#90)
+-   [Minor] Created package for Thumbprint SCSS. (#38)
