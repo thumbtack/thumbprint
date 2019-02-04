@@ -10,6 +10,7 @@
 
 -   [Patch] Add `tpColorGray` to fix disabled state of label. It was not grayed out as expected. (#85)
 -   [Patch] Bring back `InputRowContext` context that was accidentally removed during consolidation into one NPM package. (#8)
+-   [Patch] Revert regression in `StarRating` that was introduced when running it through SVGO.
 
 ## 0.1.4 - 2019-01-30
 
