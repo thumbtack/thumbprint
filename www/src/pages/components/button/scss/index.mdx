@@ -1,0 +1,42 @@
+---
+title: Button
+description: Clickable elements used to perform actions.
+---
+
+import { graphql } from 'gatsby';
+import TabNav, { TabNavItem } from 'components/tab-nav';
+import PackageTable from 'components/package-table';
+
+export const pageQuery = graphql`
+    {
+        packageJson: json(name: { eq: "@thumbtack/thumbprint-scss" }) {
+            name
+            version
+        }
+    }
+`;
+
+<TabNav>
+    <TabNavItem to="/components/button/usage/">Usage</TabNavItem>
+    <TabNavItem to="/components/button/react/">React</TabNavItem>
+    <TabNavItem to="/components/button/scss/">SCSS</TabNavItem>
+</TabNav>
+
+<PackageTable
+    version={props.data.packageJson.version}
+    packageName={props.data.packageJson.name}
+    deprecated={false}
+    sourceDirectory="https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-scss"
+/>
+
+## Button themes
+
+These are the available button styles for use on light background colors.
+
+```html
+<div class="tp-button-row">
+    <button class="tp-button">Primary</button>
+    <button class="tp-button tp-button--secondary">Secondary</button>
+    <button class="tp-button tp-button--caution">Caution</button>
+</div>
+```

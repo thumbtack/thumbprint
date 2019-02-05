@@ -29,13 +29,6 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'kits',
-                path: `${__dirname}/src/kits`,
-            },
-        },
-        {
             resolve: 'gatsby-plugin-sass',
             options: {
                 // Allows SCSS files within `packages` to find their imports.
@@ -47,9 +40,6 @@ module.exports = {
             options: {
                 extensions: ['.mdx'],
                 defaultLayouts: {
-                    packages: require.resolve(
-                        './src/components/thumbprint-components/page/index.jsx',
-                    ),
                     default: require.resolve('./src/components/mdx/index.jsx'),
                 },
                 gatsbyRemarkPlugins: [
@@ -61,8 +51,13 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: `gatsby-transformer-json`,
+            options: {
+                typeName: `Json`,
+            },
+        },
         'gatsby-transformer-thumbprint-atomic',
-        'gatsby-transformer-thumbprint-components',
         'gatsby-transformer-thumbprint-tokens',
         {
             resolve: 'gatsby-transformer-react-docgen',
