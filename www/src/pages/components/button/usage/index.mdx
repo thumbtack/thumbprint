@@ -1,0 +1,25 @@
+---
+title: Button
+description: Clickable elements used to perform actions.
+---
+
+import TabNav, { TabNavItem } from 'components/tab-nav';
+import PackageTable from 'components/package-table';
+import { Button, TextButton, ButtonRow } from '@thumbtack/thumbprint-react';
+import { ContentModifierMessageSmall } from '@thumbtack/thumbprint-icons';
+
+<TabNav>
+    <TabNavItem to="/components/button/usage/">Usage</TabNavItem>
+    <TabNavItem to="/components/button/react/">React</TabNavItem>
+    <TabNavItem to="/components/button/scss/">SCSS</TabNavItem>
+</TabNav>
+
+## Types
+
+Buttons change width depending on the content inside of them and have three variations: Primary, Secondary and Caution.
+
+<ButtonRow>
+    <Button>Primary</Button>
+    <Button theme="secondary">Secondary</Button>
+    <Button theme="caution">Caution</Button>
+</ButtonRow>
