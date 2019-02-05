@@ -607,16 +607,16 @@ Options for setting fixed heights.
 Manipulate case of text.
 
 <div className="pa3 ba b-gray-300 mb4 tp-body-2">
-    <div className="row">
-        <div className="col m_w-1/3 mb3 m_mb0">
+    <div className="grid">
+        <div className="col-4 mb3 m_mb0">
             <div className="bg-gray-200 pa2 ttc">capitalize</div>
             <InlineCode theme="plain">ttc</InlineCode>
         </div>
-        <div className="col m_w-1/3 mb3 m_mb0">
+        <div className="col-4 mb3 m_mb0">
             <div className="bg-gray-200 pa2 ttl">Lowercase</div>
             <InlineCode theme="plain">ttl</InlineCode>
         </div>
-        <div className="col m_w-1/3">
+        <div className="col-4">
             <div className="bg-gray-200 pa2 ttu">uppercase</div>
             <InlineCode theme="plain">ttu</InlineCode>
         </div>
@@ -633,16 +633,16 @@ Single-line truncation.
 -   Truncating to two or more lines requires custom CSS.
 
 ```html
-<div className="truncate mb3 b">
+<div class="truncate mb3 b">
     In the era of instant-everything, it’s crazy that you still have to waste an entire afternoon
     researching, calling and comparing local pros whenever you need one.
 </div>
-<div className="flex">
-    <div className="truncate flex-auto">
+<div class="flex">
+    <div class="truncate flex-auto">
         Hi, good to meet you. When do you think we could set up the meeting to decide the needs of
         the conference?
     </div>
-    <div className="nowrap b ml2">Jun 21</div>
+    <div class="nowrap b ml2">Jun 21</div>
 </div>
 ```
 
