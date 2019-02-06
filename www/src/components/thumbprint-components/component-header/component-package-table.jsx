@@ -8,7 +8,7 @@ import PackageTable from '../../package-table';
 const getImportStatement = ({ components, packageName }) =>
     `import { ${components.map(c => c.displayName).join(', ')} } from '${packageName}';`;
 
-const ComponentPackageTable = ({ version, name, homepage, components, deprecated }) => (
+const ComponentPackageTable = ({ version, name, homepage, components }) => (
     <PackageTable
         version={version}
         packageName={name}
