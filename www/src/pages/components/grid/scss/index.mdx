@@ -3,10 +3,19 @@ title: Grid
 description: Responsive layouts, automatically aligned.
 ---
 
-import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import { graphql, Link } from 'gatsby';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
+
+<DeprecatedComponentAlert>
+    This package was deprecated on September 11 in favor of classes from{' '}
+    <Link to="/atomic/#section-grid">Thumbprint Atomic</Link>.
+</DeprecatedComponentAlert>
 
 ## Overview
 

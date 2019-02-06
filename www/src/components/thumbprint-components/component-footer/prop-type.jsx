@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
-import { InlineCode } from '../mdx';
+import { InlineCode } from '../../mdx';
 
 const PropType = ({ type, value }) => {
     if (type === 'enum') {

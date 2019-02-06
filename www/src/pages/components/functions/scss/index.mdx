@@ -3,10 +3,21 @@ title: Functions
 description: Functions for use in SCSS files
 ---
 
-import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import { graphql, Link } from 'gatsby';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<DeprecatedComponentAlert>
+    This package and <InlineCode>tp-spacer</InlineCode> were deprecated on September 11 in favor of
+    margin and padding classes from <Link to="/atomic/">Thumbprint Atomic</Link> or tokens from{' '}
+    <Link to="/tokens/#section-space">Thumbprint Tokens</Link>.
+</DeprecatedComponentAlert>
 
 ## Import and usage
 

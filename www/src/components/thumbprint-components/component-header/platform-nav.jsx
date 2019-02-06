@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
-import TabNav, { TabNavItem } from '../tab-nav';
+import TabNav, { TabNavItem } from '../../tab-nav';
 
 /**
  * Given `/components/button/react/`, this function returns `react`.
