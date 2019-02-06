@@ -1,0 +1,80 @@
+---
+title: Label
+description: Form labels commonly used with inputs.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Examples
+
+The `Label` React component uses the `for` prop to associate itself with a form field.
+
+The `for` and `id` props must match and be unique to the page. You can use [Lodash's `uniqueId`](https://lodash.com/docs/4.17.10#uniqueId) to generate a unique id.
+
+### Label with an input
+
+```jsx
+<React.Fragment>
+    <Label for="example-49293">Email address</Label>
+    <Input id="example-49293" onChange={() => {}} placeholder="example@example.com" />
+</React.Fragment>
+```
+
+### Disabled label
+
+Labels can appear visually disabled. It’s important to also disable the associated form element.
+
+```jsx
+<React.Fragment>
+    <Label for="example-201998" isDisabled>
+        Email address
+    </Label>
+    <Input id="example-201998" isDisabled onChange={() => {}} placeholder="example@example.com" />
+</React.Fragment>
+```
+
+### Label with a validation error
+
+You can change the label color to red when the associated form element has invalid data.
+
+Validation errors must be also include text that explains the error. This helps guide the user and is crucial for users with visual impairments.
+
+```jsx
+<React.Fragment>
+    <Label for="example-083109" hasError>
+        Email address
+    </Label>
+    <Input id="example-083109" hasError value="example@exampl" onChange={() => {}} />
+    <div className="mb1">
+        <FormNote hasError>The email address you entered is incorrect.</FormNote>
+    </div>
+</React.Fragment>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/label/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Label/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

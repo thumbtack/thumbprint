@@ -50,10 +50,7 @@ Create a new folder in `packages` with the following structure:
 
 ```
 ├── CHANGELOG.md
-├── README.mdx       # Examples in documentation pages
-├── index.jsx        # Component definition (for React)
 ├── package.json
-└── test.jsx
 ```
 
 This is an example of a Thumbprint package that uses React. Thumbprint packages that ship SCSS contain a `_index.scss` file instead of `index.js`.

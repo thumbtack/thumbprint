@@ -1,0 +1,260 @@
+---
+title: Input
+description: Form inputs with sizes and style variations.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Input with an icon and clear button
+
+`Input` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
+
+In this example, notice how `value` is stored within `this.state`. The `onChange` function will set the new `value` when the user enters or removes a character in the input.
+
+```jsx
+class ClearableInput extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            inputText: '1355 Market St.',
+        };
+    }
+
+    render() {
+        return (
+            <div>
+                <Label for="example-28402">Street address</Label>
+                <Input
+                    id="example-28402"
+                    value={this.state.inputText}
+                    placeholder="Enter an address"
+                    innerLeft={
+                        <InputIcon>
+                            <ContentModifierMapPinMedium />
+                        </InputIcon>
+                    }
+                    innerRight={
+                        <InputClearButton
+                            onClick={() => {
+                                this.setState({
+                                    inputText: '',
+                                });
+                            }}
+                        />
+                    }
+                    onChange={text => {
+                        this.setState({
+                            inputText: text,
+                        });
+                    }}
+                />
+            </div>
+        );
+    }
+}
+```
+
+## Input sizes
+
+Inputs are available in two sizes: `small` and `large`. `large` is the default size.
+
+### Small input
+
+```jsx
+class InputExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({
+            value,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <Input
+                size="small"
+                value={value}
+                placeholder="example@example.com"
+                onChange={this.onChange}
+            />
+        );
+    }
+}
+```
+
+### Large input
+
+```jsx
+class InputExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({
+            value,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return <Input value={value} placeholder="example@example.com" onChange={this.onChange} />;
+    }
+}
+```
+
+## Disabled inputs
+
+The `isDisabled` prop disables the `Input` visually and functionally.
+
+```jsx
+class InputExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({
+            value,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <Input
+                isDisabled
+                placeholder="example@example.com"
+                value={value}
+                onChange={this.onChange}
+            />
+        );
+    }
+}
+```
+
+## Input with an error
+
+The `hasError` prop only changes the input’s color. It should be used alongside an error message that helps users advance through the form.
+
+```jsx
+class InputExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({
+            value,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <Input
+                hasError
+                placeholder="example@example.com"
+                value={value}
+                onChange={this.onChange}
+            />
+        );
+    }
+}
+```
+
+## Button attached to an input
+
+You can use the [`InputRow` component](/components/input-row/react/) to attach a `Button` to an `Input`.
+
+```jsx
+class InputExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(value) {
+        this.setState({
+            value,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <InputRow widthRatios={[1, null]}>
+                <Input placeholder="Enter a zip code" onChange={this.onChange} value={value} />
+                <Button>Find a pro</Button>
+            </InputRow>
+        );
+    }
+}
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/input/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Input/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

@@ -13,7 +13,7 @@ If you’re unfamiliar with Atomic CSS here are a few resources.
 -   [CSS Utility Classes and “Separation of Concerns”](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
 -   [How I Learned to Stop Worrying and Love the Atomic Class](https://medium.com/buzzfeed-design/how-i-learned-to-stop-worrying-and-love-the-atomic-class-98d6ccc45781)
 
-## Class Syntax
+## Syntax
 
 The list of classes in Thumbprint Atomic are based primarily on [Tachyons](https://tachyons.io), easily the most popular of the Atomic libraries, with some syntax changes.
 
@@ -99,6 +99,12 @@ As with the previous Sass example above, since this CSS is not included in our c
     }
 }
 ```
+
+## Adding new Atomic classes
+
+We occasionally get requests to add new classes to the Atomic library. In an effort to balance the library’s completeness with its bundle size, we’ve adopted the approach that there should be at least 10 instances of a property in Thumbtack's website codebase before we add it to Atomic.
+
+If the Atomic class you’d like is not available please write the custom CSS in your Sass file as shown the [usage](#section-usage) examples above. You can can also open an [issue](https://github.com/thumbtack/thumbprint/issues/new) if you would like us to consider adding it.
 
 ## Limitations
 

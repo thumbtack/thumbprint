@@ -25,5 +25,9 @@
         "cssnano": "^4.1.0",
         "node-sass": "^4.9.2",
         "postcss-cli": "^6.1.1"
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-global-css/"
 }

@@ -1,0 +1,39 @@
+---
+title: Progress Bar Base
+description: A basic component that progress bars are built on
+unlisted: true
+---
+
+import { graphql, Link } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+```jsx
+<ProgressBarBase width={70} />
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/progress-bar-base/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/ProgressBarBase/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

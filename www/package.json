@@ -27,6 +27,7 @@
         "gatsby-remark-copy-linked-files": "^2.0.0",
         "gatsby-remark-smartypants": "^2.0.0",
         "gatsby-source-filesystem": "^2.0.0",
+        "gatsby-transformer-json": "^2.1.8",
         "gatsby-transformer-react-docgen": "^3.0.0",
         "invariant": "^2.2.4",
         "lodash": "^4.17.4",

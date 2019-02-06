@@ -1,0 +1,72 @@
+---
+title: Block List
+description: Layout options for vertically stacking content.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Default
+
+```html
+<ul class="tp-block-list">
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li><a href="#" class="tp-block-list__link">Item Fours</a></li>
+    <li>Item Three</li>
+</ul>
+```
+
+## Flush
+
+```html
+<ul class="tp-block-list tp-block-list--flush">
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li><a href="#" class="tp-block-list__link">Item Fours</a></li>
+    <li>Item Three</li>
+</ul>
+```
+
+## Bottom border
+
+```html
+<ul class="tp-block-list tp-block-list--all">
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li><a href="#" class="tp-block-list__link">Item Fours</a></li>
+    <li>Item Three</li>
+</ul>
+```
+
+## Surrounding border
+
+```html
+<ul class="tp-block-list-group">
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li><a href="#" class="tp-block-list__link">Item Fours</a></li>
+    <li>Item Three</li>
+</ul>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/block-list/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-layout-block-list" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

@@ -1,0 +1,192 @@
+---
+title: Date Picker
+description: Configurable date selector.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Initial dates
+
+The `DatePicker` can optionally have an initial date selected.
+
+### No initial date selected
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return <DatePicker value={value} onChange={this.onChange} />;
+    }
+}
+```
+
+### With an initial date selected
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: new Date(),
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return <DatePicker value={value} onChange={this.onChange} />;
+    }
+}
+```
+
+### Multiple date selection
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: [
+                new Date(),
+                new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 2),
+                new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 5),
+            ],
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return <DatePicker value={value} onChange={this.onChange} allowMultiSelection />;
+    }
+}
+```
+
+### Past date selection enabled
+
+The `DatePicker` disables past days by default. This can be enabled by setting `disabledDays` to `null`.
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: new Date(),
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return <DatePicker value={value} onChange={this.onChange} disabledDays={null} />;
+    }
+}
+```
+
+### Date selection with `lastMonth` enabled
+
+Users won’t be able to navigate or interact with the days after `lastMonth`.
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: new Date(),
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <DatePicker
+                value={value}
+                lastMonth={new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 60)}
+                onChange={this.onChange}
+            />
+        );
+    }
+}
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/date-picker/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/DatePicker/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

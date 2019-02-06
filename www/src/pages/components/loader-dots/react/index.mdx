@@ -1,0 +1,70 @@
+---
+title: Loader Dots
+description: Loading indicator with three animated dots.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Loader Sizes
+
+### Default
+
+```jsx
+<LoaderDots size="medium" />
+```
+
+### Small
+
+```jsx
+<LoaderDots size="small" />
+```
+
+## Loader colors
+
+This loader is available in multiple colors for use on elements with a non-white background.
+
+### Brand
+
+```jsx
+<LoaderDots theme="brand" />
+```
+
+### Inverse
+
+```jsx theme=dark
+<LoaderDots theme="inverse" />
+```
+
+### Muted
+
+```jsx
+<LoaderDots theme="muted" />
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/loader-dots/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/LoaderDots/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

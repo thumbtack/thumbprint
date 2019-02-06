@@ -1,0 +1,98 @@
+---
+title: Star Rating
+description: Display a star rating out of 5.0.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic examples
+
+### Sizes
+
+```jsx
+<React.Fragment>
+    <div>
+        <StarRating rating={0} />
+    </div>
+    <div>
+        <StarRating rating={2.5} />
+    </div>
+    <div>
+        <StarRating rating={5} />
+    </div>
+    <div>
+        <StarRating rating={0} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={2.5} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={5} size="medium" />
+    </div>
+    <div>
+        <StarRating rating={0} size="large" />
+    </div>
+    <div>
+        <StarRating rating={2.5} size="large" />
+    </div>
+    <div>
+        <StarRating rating={5} size="large" />
+    </div>
+</React.Fragment>
+```
+
+## `StarRating` with inline text
+
+```jsx
+<div className="flex">
+    <StarRating rating={2.7} size="large" />
+    <span className="ml3 b">13 reviews</span>
+</div>
+```
+
+## Event listeners
+
+```jsx
+<StarRating
+    size="large"
+    rating={3}
+    hoverRating={2}
+    onStarClick={value => {
+        console.log(`StarRating: Clicked on ${value}`);
+    }}
+    onStarHover={value => {
+        console.log(`StarRating: Hovered over ${value}`);
+    }}
+    onMouseLeave={() => {
+        console.log('StarRating: onMouseLeave');
+    }}
+/>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/star-rating/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/StarRating/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
