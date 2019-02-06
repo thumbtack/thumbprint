@@ -8,10 +8,18 @@
     "files": [
         "dist"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thumbtack/thumbprint.git"
+    },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-scss/",
     "license": "Apache-2.0",
     "scripts": {
         "start": "yarn clear && mkdir -p dist && yarn generateCss && yarn copyMixin",
