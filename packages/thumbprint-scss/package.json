@@ -1,0 +1,34 @@
+{
+    "name": "@thumbtack/thumbprint-scss",
+    "description": "CSS and Sass mixins for building Thumbtack UI",
+    "version": "0.0.0",
+    "author": "Tom Genoni <tom@thumbtack.com>",
+    "main": "dist/css/thumbprint-css.css",
+    "style": "dist/css/thumbprint-css.css",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "license": "Apache-2.0",
+    "scripts": {
+        "start": "yarn clear && mkdir -p dist && yarn generateCss && yarn copyMixin",
+        "clear": "rm -rf dist",
+        "generateCss": "mkdir -p dist/css && node-sass -q src/thumbprint-css.scss dist/css/thumbprint-css.css && postcss dist/css/thumbprint-css.css --map --use autoprefixer cssnano --replace",
+        "copyMixin": "mkdir -p dist/mixin && cp src/thumbprint-mixin.scss dist/mixin/ && cp -R src/mixins dist/mixin/mixins",
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+    },
+    "devDependencies": {
+        "@thumbtack/thumbprint-tokens": "^6.2.4",
+        "autoprefixer": "^9.0.1",
+        "cssnano": "^4.1.0",
+        "node-sass": "^4.9.2",
+        "postcss-cli": "^6.1.1"
+    },
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-scss/"
+}

@@ -33,7 +33,7 @@
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"
     },
-    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/#readme",
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
         "@thumbtack/thumbprint-tokens": "^6.2.4",
         "@thumbtack/tp-ui-core-function": "^1.0.9",

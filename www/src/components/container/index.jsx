@@ -23,6 +23,7 @@ import 'focus-visible';
 import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
 import ThumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
+import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
 
@@ -286,8 +287,11 @@ class Container extends React.Component {
                                                     <SideNavSectionGroup>
                                                         {map(allComponents.group, group => (
                                                             <SideNavSectionGroupLink
-                                                                to={group.edges[0].node.path}
                                                                 key={group.edges[0].node.path}
+                                                                {...getComponentsLinkProps(
+                                                                    group.edges,
+                                                                    pathname,
+                                                                )}
                                                             >
                                                                 {group.fieldValue}
                                                             </SideNavSectionGroupLink>
