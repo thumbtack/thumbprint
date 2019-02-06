@@ -3,10 +3,13 @@
     "description": "CSS and Sass mixins for building Thumbtack UI",
     "version": "0.0.0",
     "author": "Tom Genoni <tom@thumbtack.com>",
-    "main": "dist/css/thumbprint-css.css",
-    "style": "dist/css/thumbprint-css.css",
+    "main": "css.css",
+    "style": "css.css",
     "files": [
-        "dist"
+        "css.css",
+        "css.css.map",
+        "mixins.scss",
+        "mixins"
     ],
     "repository": {
         "type": "git",
@@ -22,10 +25,10 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-scss/",
     "license": "Apache-2.0",
     "scripts": {
-        "start": "yarn clear && mkdir -p dist && yarn generateCss && yarn copyMixin",
-        "clear": "rm -rf dist",
-        "generateCss": "mkdir -p dist/css && node-sass -q src/thumbprint-css.scss dist/css/thumbprint-css.css && postcss dist/css/thumbprint-css.css --map --use autoprefixer cssnano --replace",
-        "copyMixin": "mkdir -p dist/mixin && cp src/thumbprint-mixin.scss dist/mixin/ && cp -R src/mixins dist/mixin/mixins",
+        "start": "yarn generate-css && yarn copy-mixins",
+        "clear": "rm -rf mixins.scss mixins/* css.css css.css.map",
+        "generate-css": "node-sass -q src/css.scss css.css && postcss css.css --map --use autoprefixer cssnano --replace",
+        "copy-mixins": "cp src/mixins.scss mixins.scss && cp -R src/mixins mixins",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
