@@ -199,7 +199,12 @@ class Container extends React.Component {
                                                 }
                                             }
                                             allComponents: allSitePage(
-                                                filter: { path: { glob: "/components/*/*/" } }
+                                                filter: {
+                                                    path: { glob: "/components/*/*/" }
+                                                    context: {
+                                                        frontmatter: { unlisted: { ne: true } }
+                                                    }
+                                                }
                                             ) {
                                                 group(field: context___frontmatter___title) {
                                                     fieldValue
