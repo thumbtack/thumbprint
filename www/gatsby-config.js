@@ -16,7 +16,7 @@ module.exports = {
                 // Ignore these files because they make up ~70% of the file nodes. This was causing
                 // Gatsby to run out of memory on Netlify deploys.
                 // https://github.com/thumbtack/thumbprint-archive/issues/1093
-                ignore: ['**/dist', '**/.cache', '**/__snapshots__'],
+                ignore: ['**/dist', '**/.cache', '**/__snapshots__', '**/*.map'],
             },
         },
         {
