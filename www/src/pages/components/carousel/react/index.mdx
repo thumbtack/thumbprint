@@ -1,0 +1,94 @@
+---
+title: Carousel
+description: Grouped content that is navigated horizontally.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## How the carousel works
+
+The `Carousel` component is a low-level controlled component. It displays multiple items in a row and animates when the `selectedIndex` changes. It is infinite by default and the contents are draggable by touch devices.
+
+```jsx
+class CarouselDemo extends React.Component {
+    constructor() {
+        this.state = {
+            selectedIndex: 0,
+        };
+
+        this.onSelectedIndexChange = this.onSelectedIndexChange.bind(this);
+    }
+
+    onSelectedIndexChange(newIndex) {
+        this.setState({ selectedIndex: Math.round(newIndex) });
+    }
+
+    render() {
+        return (
+            <Carousel
+                visibleCount={3}
+                spacing="16px"
+                selectedIndex={this.state.selectedIndex}
+                onSelectedIndexChange={this.onSelectedIndexChange}
+            >
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Personal Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/328491711124668465/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Personal Training</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Dog Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761411685384319/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Dog Training</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Local Moving (under 50 miles)"
+                        url="https://picsum.photos/666/417/?image=300"
+                    />
+                    <ServiceCardTitle>Local Moving (under 50 miles)</ServiceCardTitle>
+                </ServiceCard>
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Massage Therapy"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761720722374783/small/standard/hero"
+                    />
+                    <ServiceCardTitle>Massage Therapy</ServiceCardTitle>
+                </ServiceCard>
+            </Carousel>
+        );
+    }
+}
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/carousel/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Carousel/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

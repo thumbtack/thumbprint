@@ -1,0 +1,68 @@
+---
+title: Service Card
+description: Display service image with title and description.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## With icon
+
+```jsx
+<div style={{ maxWidth: '300px' }}>
+    <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription icon={<ContentModifierMapPinSmall />}>
+            67 Pros near you
+        </ServiceCardDescription>
+    </ServiceCard>
+</div>
+```
+
+## Without icon
+
+```jsx
+<div style={{ maxWidth: '300px' }}>
+    <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription>
+            Let us help you keep your lawn green and your garden happy and healthy.
+        </ServiceCardDescription>
+    </ServiceCard>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/service-card/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/ServiceCard/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

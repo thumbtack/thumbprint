@@ -195,7 +195,28 @@ MDXRenderer.propTypes = {
     children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
 };
 
-const getSectionByPathname = pathName => {
+const getPlatformByPathname = pathname => {
+    const mappings = {
+        react: 'React',
+        scss: 'SCSS',
+        usage: 'Usage',
+    };
+
+    const splitPathname = pathname.split('/');
+
+    // If input is `/components/button/react/`, this gets the word `react`.
+    const platformSlug = splitPathname[splitPathname.length - 2];
+
+    // Fail loudly so developers know they need to update the mapping.
+    invariant(
+        platformSlug,
+        `The first part of the pathname \`${pathname}\` does not have a platform name mapped to it. Add one to the \`mappings\` object in this function.`,
+    );
+
+    return mappings[platformSlug];
+};
+
+const getSectionByPathname = pathname => {
     // This needs to be updated if a new section is added or a section is renamed.
     const mappings = {
         overview: 'Overview',
@@ -209,14 +230,14 @@ const getSectionByPathname = pathName => {
     };
 
     // If input is `/guide/product/brand-assets/`, this gets the word `guide`.
-    const firstPartOfPathname = pathName.split('/')[1];
+    const firstPartOfPathname = pathname.split('/')[1];
 
     const displayName = mappings[firstPartOfPathname];
 
     // Fail loudly so developers know they need to update the mapping.
     invariant(
         displayName,
-        `The first part of the pathname \`${pathName}\` does not have a display name mapped to it. Add one to the \`mappings\` object in this function.`,
+        `The first part of the pathname \`${pathname}\` does not have a display name mapped to it. Add one to the \`mappings\` object in this function.`,
     );
 
     return displayName;
@@ -225,14 +246,31 @@ const getSectionByPathname = pathName => {
 const MDX = props => {
     const { children, location, pageContext } = props;
 
+    const isComponentPage = location.pathname.startsWith('/components/');
+
+    const pageTitle = isComponentPage ? (
+        <span>
+            {pageContext.frontmatter.title}
+            <span className="visually-hidden">
+                {`(${getPlatformByPathname(location.pathname)})`}
+            </span>
+        </span>
+    ) : (
+        pageContext.frontmatter.title
+    );
+
+    const metaTitle = isComponentPage
+        ? `${pageContext.frontmatter.title} (${getPlatformByPathname(location.pathname)})`
+        : pageContext.frontmatter.title;
+
     return (
         <Container location={location} activeSection={getSectionByPathname(location.pathname)}>
             <Wrap>
                 {pageContext.frontmatter && (
                     <React.Fragment>
                         <PageHeader
-                            pageTitle={pageContext.frontmatter.title}
-                            metaTitle={pageContext.frontmatter.title}
+                            pageTitle={pageTitle}
+                            metaTitle={metaTitle}
                             description={pageContext.frontmatter.description}
                         />
                         <MDXRenderer>{children}</MDXRenderer>

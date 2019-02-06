@@ -1,0 +1,75 @@
+---
+title: List
+description: Styling lists with bullets, numbers, or letters.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## List variations
+
+### Bullet
+
+```jsx
+<List>
+    <ListItem>item one</ListItem>
+    <ListItem>
+        item two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+    </ListItem>
+    <ListItem>item three</ListItem>
+</List>
+```
+
+### Number
+
+```jsx
+<List theme="decimal">
+    <ListItem>item one</ListItem>
+    <ListItem>
+        item two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+    </ListItem>
+    <ListItem>item three</ListItem>
+</List>
+```
+
+### Lower alpha
+
+```jsx
+<List theme="alpha">
+    <ListItem>item one</ListItem>
+    <ListItem>
+        item two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+    </ListItem>
+    <ListItem>item three</ListItem>
+</List>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/list/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/List/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
