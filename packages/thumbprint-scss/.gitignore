@@ -1,0 +1,6 @@
+# These are `dist` files. They exist in the root so that consumers importing
+# these have short and easy to remember import paths.
+/css.css
+/css.css.map
+/mixins.scss
+/mixins
