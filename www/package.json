@@ -11,6 +11,7 @@
         "@mdx-js/tag": "^0.16.6",
         "@thumbtack/thumbprint-icons": "^2.8.1",
         "@thumbtack/thumbprint-react": "^0.1.4",
+        "@thumbtack/thumbprint-scss": "^0.0.0",
         "babel-plugin-inline-react-svg": "^1.0.1",
         "classnames": "^2.2.5",
         "clickable-box": "^0.1.0",
