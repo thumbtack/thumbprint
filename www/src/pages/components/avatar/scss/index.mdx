@@ -1,0 +1,90 @@
+---
+title: Avatar
+description: Display user images and badges on Thumbtack.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Avatar Sizes
+
+### Extra Large
+
+```html
+<div class="tp-avatar tp-avatar--xlarge">
+    <img src="https://www.placecage.com/130/130" class="tp-avatar__img" />
+</div>
+```
+
+### Large
+
+```html
+<div class="tp-avatar tp-avatar--large">
+    <img src="https://www.placecage.com/130/130" class="tp-avatar__img" />
+</div>
+```
+
+### Medium
+
+```html
+<div class="tp-avatar tp-avatar--medium">
+    <img src="https://www.placecage.com/130/130" class="tp-avatar__img" />
+</div>
+```
+
+### Small
+
+```html
+<div class="tp-avatar tp-avatar--small">
+    <img src="https://www.placecage.com/130/130" class="tp-avatar__img" />
+</div>
+```
+
+### Extra Small
+
+```html
+<div class="tp-avatar tp-avatar--xsmall">
+    <img src="https://www.placecage.com/130/130" class="tp-avatar__img" />
+</div>
+```
+
+## Avatar Badges
+
+### Hired
+
+```html
+<div class="tp-avatar tp-avatar--xlarge">
+    <img src="//www.placecage.com/130/130" class="tp-avatar__img" />
+    <div class="tp-avatar__badge tp-avatar__badge--hired" />
+</div>
+```
+
+### Notification
+
+```html
+<div class="tp-avatar tp-avatar--xlarge">
+    <img src="//www.placecage.com/130/130" class="tp-avatar__img" />
+    <div class="tp-avatar__badge tp-avatar__badge--notification">99</div>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-component-avatar" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

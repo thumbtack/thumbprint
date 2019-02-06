@@ -1,0 +1,123 @@
+---
+title: Checkbox
+description: Boxes for checking and unchecking multiple values in forms.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic checkboxes
+
+Here are a few tips for using checkboxes:
+
+-   The `checked` attribute can be used to check a checkbox by default.
+-   The `label` and `input` are connected through the `for` and `id` attributes. Clicking on the label text should toggle the related checkbox.`
+
+```html
+<div class="tp-input-wrap">
+    <input
+        class="tp-checkbox-input"
+        name="example-basic"
+        id="example-basic-a"
+        type="checkbox"
+        checked
+    />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label" for="example-basic-a">Morning</label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-checkbox-input" name="example-basic" id="example-basic-b" type="checkbox" />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label" for="example-basic-b">Afternoon</label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-checkbox-input" name="example-basic" id="example-basic-c" type="checkbox" />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label" for="example-basic-c">Evening</label>
+</div>
+```
+
+## Disabled checkboxes
+
+Add the `disabled` attribute to the `input` element to make it visually and functionally disabled.
+
+You should also use `tp-label--disabled` to visually disable the `label`.
+
+```html
+<div class="tp-input-wrap">
+    <input
+        disabled
+        class="tp-checkbox-input"
+        name="example-disabled"
+        id="example-disabled-a"
+        type="checkbox"
+        checked
+    />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label tp-label--disabled" for="example-disabled-a">Morning</label>
+</div>
+<div class="tp-input-wrap">
+    <input
+        disabled
+        class="tp-checkbox-input"
+        name="example-disabled"
+        id="example-disabled-b"
+        type="checkbox"
+    />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label tp-label--disabled" for="example-disabled-b">Afternoon</label>
+</div>
+<div class="tp-input-wrap">
+    <input
+        disabled
+        class="tp-checkbox-input"
+        name="example-disabled"
+        id="example-disabled-c"
+        type="checkbox"
+    />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label tp-label--disabled" for="example-disabled-c">Evening</label>
+</div>
+```
+
+## Checkbox with an error
+
+The `tp-checkbox-input--bad-news` class can be used to visually represent an error.
+
+This class only changes the checkbox’s color. It should be used alongside an error message that helps users advance through the form.
+
+```html
+<div class="tp-input-wrap">
+    <input
+        class="tp-checkbox-input tp-checkbox-input--bad-news"
+        name="example-error"
+        id="example-error-a"
+        type="checkbox"
+    />
+    <div class="tp-checkbox-image"></div>
+    <label class="tp-label tp-label--bad-news" for="example-error-a">
+        I accept the Terms of Service
+    </label>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/checkbox/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-element-checkbox" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

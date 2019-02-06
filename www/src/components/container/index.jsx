@@ -23,7 +23,7 @@ import 'focus-visible';
 import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
 import ThumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
-import getComponentsSideNav from './get-components-side-nav';
+import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
 
@@ -163,42 +163,6 @@ class Container extends React.Component {
                                 <StaticQuery
                                     query={graphql`
                                         query HeadingQuery {
-                                            allComponentsKits: allMdx(
-                                                filter: {
-                                                    frontmatter: {
-                                                        mdxType: { eq: "kit" }
-                                                        unlisted: { ne: true }
-                                                    }
-                                                }
-                                                sort: { fields: [frontmatter___name], order: ASC }
-                                            ) {
-                                                edges {
-                                                    node {
-                                                        frontmatter {
-                                                            name
-                                                            url
-                                                        }
-                                                        parent {
-                                                            ... on File {
-                                                                relativePath
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            allComponentApi: allMdx {
-                                                group(field: frontmatter___kit) {
-                                                    fieldValue
-                                                    edges {
-                                                        node {
-                                                            frontmatter {
-                                                                url
-                                                                platform
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
                                             allAtomic: mdx(
                                                 fileAbsolutePath: {
                                                     glob: "**/src/pages/atomic/index.mdx"
@@ -234,24 +198,39 @@ class Container extends React.Component {
                                                     }
                                                 }
                                             }
+                                            allComponents: allSitePage(
+                                                filter: {
+                                                    path: { glob: "/components/*/*/" }
+                                                    context: {
+                                                        frontmatter: { unlisted: { ne: true } }
+                                                    }
+                                                }
+                                            ) {
+                                                group(field: context___frontmatter___title) {
+                                                    fieldValue
+                                                    edges {
+                                                        node {
+                                                            path
+                                                            context {
+                                                                frontmatter {
+                                                                    title
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     `}
                                     render={data => {
                                         const {
                                             allAtomic,
-                                            allComponentsKits,
-                                            allComponentApi,
                                             allGuides,
                                             allTokens,
+                                            allComponents,
                                         } = data;
 
                                         const { pathname, hash } = location;
-
-                                        const allComponents = getComponentsSideNav(
-                                            allComponentsKits,
-                                            allComponentApi,
-                                            pathname,
-                                        );
 
                                         return (
                                             <SideNav pathName={pathname} hash={hash}>
@@ -311,13 +290,15 @@ class Container extends React.Component {
                                                     isActive={activeSection === 'Components'}
                                                 >
                                                     <SideNavSectionGroup>
-                                                        {map(allComponents, page => (
+                                                        {map(allComponents.group, group => (
                                                             <SideNavSectionGroupLink
-                                                                to={page.to}
-                                                                key={page.to}
-                                                                isActive={page.isActive}
+                                                                key={group.edges[0].node.path}
+                                                                {...getComponentsLinkProps(
+                                                                    group.edges,
+                                                                    pathname,
+                                                                )}
                                                             >
-                                                                {page.title}
+                                                                {group.fieldValue}
                                                             </SideNavSectionGroupLink>
                                                         ))}
                                                     </SideNavSectionGroup>

@@ -1,0 +1,76 @@
+---
+title: Button Row
+description: Consistent spacing between buttons.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Button placement
+
+### Default (Left)
+
+```jsx
+<ButtonRow>
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Center
+
+```jsx
+<ButtonRow justify="center">
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Right
+
+```jsx
+<ButtonRow justify="right">
+    <Button>Click Me</Button>
+    <Button theme="secondary">Click Me</Button>
+</ButtonRow>
+```
+
+### Stacked at Small
+
+Best used with `"full-below-small"` on the children.
+
+```jsx
+<ButtonRow isStackedBelowSmall>
+    <Button width="full-below-small">Click Me</Button>
+    <Button width="full-below-small" theme="secondary">
+        Click Me
+    </Button>
+</ButtonRow>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/button-row/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/ButtonRow/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

@@ -1,0 +1,50 @@
+---
+title: Textarea
+description: Multiline inputs for text.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic textarea example
+
+```html
+<label class="tp-label" for="example-basic-textarea">Business description</label>
+<textarea
+    class="tp-textarea"
+    id="example-basic-textarea"
+    placeholder="Tell us about your business"
+/>
+```
+
+## Textarea with an error
+
+The `tp-textarea--bad-news` class only changes the textarea’s color. It should be used alongside an error message that helps users advance through the form.
+
+```html
+<textarea
+    class="tp-textarea tp-textarea--bad-news"
+    placeholder="Tell us about your business"
+></textarea>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/textarea/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-element-textarea" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

@@ -1,0 +1,113 @@
+---
+title: Radio
+description: Boxes for checking and unchecking single values in forms.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic radio buttons
+
+Here are a few tips for using radio buttons:
+
+-   All of the radio buttons in a group share a `name` attribute. This enables keyboard navigation and ensures that only one radio button with a group is selected at once.
+-   The `checked` attribute allows you to set a default value.
+-   The `label`’s `for` attribute must match the `id` of the associated radio. This allows users to select the radio while clicking on the `label` text.
+
+```html
+<div class="tp-input-wrap">
+    <input
+        class="tp-radio-input"
+        name="input-basic-radio"
+        type="radio"
+        id="input-basic-radio-a"
+        checked
+    />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label" for="input-basic-radio-a">Long Distance Moving</label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-radio-input" name="input-basic-radio" type="radio" id="input-basic-radio-b" />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label" for="input-basic-radio-b">Furniture Moving and Heavy Lifting</label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-radio-input" name="input-basic-radio" type="radio" id="input-basic-radio-c" />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label" for="input-basic-radio-c">Pool Table Moving</label>
+</div>
+```
+
+## Disabled radio buttons
+
+Add the `disabled` attribute to the `input` element to make it visually and functionally disabled.
+
+You should also use `tp-label--disabled` to visually disable the `label`.
+
+```html
+<div class="tp-input-wrap">
+    <input
+        class="tp-radio-input"
+        name="input-disabed"
+        id="input-disabed-a"
+        type="radio"
+        checked
+        disabled
+    />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label tp-label--disabled" for="input-disabed-a">Long Distance Moving</label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-radio-input" name="input-disabed" id="input-disabed-b" type="radio" disabled />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label tp-label--disabled" for="input-disabed-b">
+        Furniture Moving and Heavy Lifting
+    </label>
+</div>
+<div class="tp-input-wrap">
+    <input class="tp-radio-input" name="input-disabed" id="input-disabed-c" type="radio" disabled />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label tp-label--disabled" for="input-disabed-c">Pool Table Moving</label>
+</div>
+```
+
+## Radio button with an error
+
+The `tp-radio-input--bad-news` class can be used to visually represent an error.
+
+This class only changes the radio button’s color. It should be used alongside an error message that helps users advance through the form.
+
+```html
+<div class="tp-input-wrap">
+    <input
+        class="tp-radio-input tp-radio-input--bad-news"
+        name="input-error"
+        id="input-error-a"
+        type="radio"
+        checked
+    />
+    <div class="tp-radio-image"></div>
+    <label class="tp-label tp-label--bad-news" for="input-error-a">Long Distance Moving</label>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/radio/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-element-radio" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

@@ -1,0 +1,118 @@
+---
+title: Table
+description: Options for styling tabular data.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Table options
+
+### Default
+
+```html
+<table class="tp-table">
+    <thead>
+        <tr>
+            <th>Professional</th>
+            <th class="tp-text--right">Numbers</th>
+            <th class="tp-cell-collapse">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Professional name one</td>
+            <td class="tp-text--right">258</td>
+            <td>Up</td>
+        </tr>
+        <tr>
+            <td>Professional name two that runs longer</td>
+            <td class="tp-text--right">19</td>
+            <td>Down</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Rules
+
+```html
+<table class="tp-table tp-table--rule">
+    <thead>
+        <tr>
+            <th>Quote</th>
+            <th class="tp-text--right">Numbers</th>
+            <th class="tp-cell-collapse">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Quote title one</td>
+            <td class="tp-text--right">258</td>
+            <td>Up</td>
+        </tr>
+        <tr>
+            <td>Quote title two that runs longer</td>
+            <td class="tp-text--right">19</td>
+            <td>Down</td>
+        </tr>
+        <tr>
+            <td>Quote title three</td>
+            <td class="tp-text--right">400</td>
+            <td>Up</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Bottom border
+
+```html
+<table class="tp-table tp-table--rule-bottom">
+    <thead>
+        <tr>
+            <th>Quote</th>
+            <th class="tp-text--right">Numbers</th>
+            <th class="tp-cell-collapse">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Quote title one</td>
+            <td class="tp-text--right">258</td>
+            <td>Up</td>
+        </tr>
+        <tr>
+            <td>Quote title two that runs longer</td>
+            <td class="tp-text--right">19</td>
+            <td>Down</td>
+        </tr>
+        <tr>
+            <td>Quote title three</td>
+            <td class="tp-text--right">400</td>
+            <td>Up</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/table/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/tp-ui-element-table" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

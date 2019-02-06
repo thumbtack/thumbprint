@@ -1,0 +1,99 @@
+---
+title: Tooltip
+description: Floating labels providing context.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic tooltips on icons
+
+Hover, click, or focus on the tooltip to open it.
+
+Screen readers will announce the `Tooltip` component `text` when the button receives focus.
+
+```jsx
+<div
+    style={{
+        minHeight: '120px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }}
+>
+    <Tooltip text="This is a default tooltip.">
+        {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+            <TextButton
+                iconLeft={<NotificationAlertsHelpSmall />}
+                theme="inherit"
+                accessibilityLabel={ariaLabel}
+                onMouseEnter={onMouseEnter}
+                onClick={onClick}
+                onFocus={onFocus}
+                onMouseLeave={onMouseLeave}
+                onBlur={onBlur}
+                ref={ref}
+            />
+        )}
+    </Tooltip>
+</div>
+```
+
+## Light tooltip on a dark background
+
+The `theme` prop makes it possible to use tooltips on dark backgrounds.
+
+```jsx theme=dark
+<div
+    style={{
+        minHeight: '120px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#fff',
+    }}
+>
+    <Tooltip text="This is a default tooltip." theme="light">
+        {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+            <TextButton
+                iconLeft={<NotificationAlertsHelpSmall />}
+                theme="inherit"
+                accessibilityLabel={ariaLabel}
+                onMouseEnter={onMouseEnter}
+                onClick={onClick}
+                onFocus={onFocus}
+                onMouseLeave={onMouseLeave}
+                onBlur={onBlur}
+                ref={ref}
+            />
+        )}
+    </Tooltip>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/tooltip/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Tooltip/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
