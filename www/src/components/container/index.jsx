@@ -264,6 +264,14 @@ class Container extends React.Component {
                                                         >
                                                             Contributing
                                                         </SideNavSectionGroupLink>
+                                                        <SideNavSectionGroupLink
+                                                            to="/overview/developers/"
+                                                            isActive={
+                                                                pathname === '/overview/developers/'
+                                                            }
+                                                        >
+                                                            Developers
+                                                        </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                 </SideNavSection>
 
@@ -288,6 +296,17 @@ class Container extends React.Component {
                                                     title="Components"
                                                     isActive={activeSection === 'Components'}
                                                 >
+                                                    <SideNavSectionGroup>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/globals/scss"
+                                                            isActive={
+                                                                pathname ===
+                                                                '/components/globals/scss'
+                                                            }
+                                                        >
+                                                            Globals
+                                                        </SideNavSectionGroupLink>
+                                                    </SideNavSectionGroup>
                                                     <SideNavSectionGroup>
                                                         {map(allComponents.group, group => (
                                                             <SideNavSectionGroupLink

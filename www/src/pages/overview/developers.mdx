@@ -1,0 +1,39 @@
+---
+title: Developers
+description: How to code with Thumbprint.
+---
+
+import { Img } from 'components/mdx';
+
+Thumbprint provides code in a number of technologies. React and SCSS components, tokens, mixins, Atomic CSS, and custom SCSS are all available as tools to build UIs. But knowing what to use and when to use them isn’t always clear, especially to those new to Thumbprint. We’ve put together this document to help guide those decisions.
+
+## React projects
+
+### RATS
+
+No, not the little animal. It’s an acronym to help remember the order of technologies to try.
+
+1. **R**eact
+2. **A**tomic
+3. **T**okens
+4. **S**ass
+
+### 1. React
+
+First check if a Thumbprint React component is available for your needs. A component may also already exist in your project.
+
+### 2. Atomic
+
+If your layout requires tweaks not available in the React component, look to our [Atomic library](/atomic/usage/) for the classes you need. This is a large collection of responsive classes to help build a UI without needing to write custom CSS. It’s especially helpful for adding color, spacing, borders, and constructing common flexbox layouts.
+
+### 3. Tokens
+
+There will be layouts where using Atomic is too cumbersome or incomplete. In these cases [tokens](/tokens/) can be used to retain visual consistency. You’ll be using the same variables used in our React components and Atomic library. Available as JS and SCSS variables, you can be confident that any future updates to token values will be applied to your code.
+
+### 4. Sass
+
+Lastly, occasionally there layouts where values must be hardcoded. For instance, if an image needs to be absolutely positioned in a unique way. In these situations it’s okay to use hardcoded values. But leave a comment explaining why so code reviewers and future developers will understand.
+
+## Non-React projects
+
+If you cannot use React but want to include Thumbprint styling, for example, integrations with third party tools or HTML prototyping, we have a CSS-only options. Contact us on Slack and we'll determine how best to help.
