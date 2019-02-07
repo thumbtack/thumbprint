@@ -36,8 +36,7 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
         "@thumbtack/thumbprint-tokens": "^6.2.4",
-        "@thumbtack/tp-ui-core-function": "^1.0.9",
-        "@thumbtack/tp-ui-core-mixin": "^3.0.4",
+        "@thumbtack/thumbprint-scss": "^0.0.0",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
         "focus-trap-react": "^3.0.5",

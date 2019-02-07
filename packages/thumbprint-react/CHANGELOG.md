@@ -6,6 +6,10 @@
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
 
+### Changed
+
+-   [Patch] Use `@thumbtack/thumbprint-scss` instead of `@thumbtack/tp-ui-core-mixin` and `@thumbtack/tp-ui-core-function`. This is a behind-the-scenes change that doesn't affect the the output. (#38)
+
 ### Fixed
 
 -   [Patch] Add `tpColorGray` to fix disabled state of label. It was not grayed out as expected. (#85)

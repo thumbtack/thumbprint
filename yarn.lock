@@ -767,16 +767,6 @@
   resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-icons/-/thumbprint-icons-2.8.1.tgz#8fb09d3be4b84e3eef4706502276074240832a5f"
   integrity sha512-2XFXorV6HZ1mrRTiiTOcLdy+lP9yDiQlR2quGfBtCxavxX6JElMFft2/Q4PmLAnDQAHKGeHnjHAA3AXCfjbrWA==
 
-"@thumbtack/tp-ui-core-function@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@thumbtack/tp-ui-core-function/-/tp-ui-core-function-1.0.9.tgz#4a5798bb73fe2fdb794853cf87bf603d8b0ab3bb"
-  integrity sha512-fgYOgzHciaHFjRmfR4um8ua4u3I4mpWW4B0nls2h5upgGst5xfX8BijTpacsBLNYAoNjRcb7Ma1KpDc+LE/X+Q==
-
-"@thumbtack/tp-ui-core-mixin@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@thumbtack/tp-ui-core-mixin/-/tp-ui-core-mixin-3.0.4.tgz#bfe6709436de835e23da52ec7b4d8baf489e2f51"
-  integrity sha512-FfaRG1GPXASNKY1yvuw08/6lCpUFUUBT9JHLe7BFnhrgDwRhAXh21/JHQ+846VevQBeyEjymbITRRz+ODiQ0qg==
-
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"

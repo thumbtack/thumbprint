@@ -1,5 +1,5 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import '~@thumbtack/tp-ui-core-mixin/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
 
 // The double selectors in this file ensure that consumers using the `className` prop can't easily
 // overwrite the styles that we want to enforce in the component.

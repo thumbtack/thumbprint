@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^6.2.4",
-        "@thumbtack/tp-ui-core-mixin": "^3.0.4",
+        "@thumbtack/thumbprint-scss": "^0.0.0",
         "autoprefixer": "^9.0.1",
         "css-mqpacker": "^7.0.0",
         "cssnano": "^4.1.0",
