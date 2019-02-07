@@ -3,11 +3,11 @@
     "description": "CSS and Sass mixins for building Thumbtack UI",
     "version": "0.1.0",
     "author": "Tom Genoni <tom@thumbtack.com>",
-    "main": "css.css",
-    "style": "css.css",
+    "main": "components.css",
+    "style": "components.css",
     "files": [
-        "css.css",
-        "css.css.map",
+        "components.css",
+        "components.css.map",
         "mixins.scss",
         "mixins"
     ],
@@ -26,8 +26,8 @@
     "license": "Apache-2.0",
     "scripts": {
         "start": "yarn generate-css && yarn copy-mixins",
-        "clear": "rm -rf mixins.scss mixins/* css.css css.css.map",
-        "generate-css": "node-sass -q src/css.scss css.css && postcss css.css --map --use autoprefixer cssnano --replace",
+        "clear": "rm -rf mixins.scss mixins/* components.css components.css.map",
+        "generate-css": "node-sass -q src/css.scss components.css && postcss components.css --map --use autoprefixer cssnano --replace",
         "copy-mixins": "cp src/mixins.scss mixins.scss && cp -R src/mixins mixins",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
