@@ -60,7 +60,6 @@ $padding-ends: 12px;
     }
 }
 
-%tp-block-list-group,
 .tp-block-list-group {
     @extend %tp-block-list;
     border: 1px solid $tp-color__gray-300;
