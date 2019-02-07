@@ -1,0 +1,10 @@
+@import '../mixins/longread';
+
+.tp-longread {
+    @include tp-longread;
+
+    &--spacing {
+        padding-top: tp-spacer(6);
+        padding-bottom: tp-spacer(6);
+    }
+}

@@ -27,7 +27,7 @@ You should default to using the spacer function whenever possible but when build
 
 ```scss
 // Include this `import` at the top of your file.
-@import '@thumbtack/tp-ui-core-function/_index';
+@import '@thumbtack/thumbprint-scss/mixins';
 
 .my-component {
     margin-bottom: tp-spacer(2); // equivalent to 16px
@@ -52,7 +52,7 @@ export const pageQuery = graphql`
             }
         }
         # Get package information by NPM package name.
-        packageTable: json(name: { eq: "@thumbtack/tp-ui-core-function" }) {
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-scss" }) {
             ...PackageTableFragment
         }
     }

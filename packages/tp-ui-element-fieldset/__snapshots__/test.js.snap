@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`compiles correctly 1`] = `
-".tp-fieldset {
-  margin-bottom: 64px; }
-"
-`;

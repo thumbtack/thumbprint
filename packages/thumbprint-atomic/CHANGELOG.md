@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use `@thumbtack/thumbprint-scss` instead of `@thumbtack/tp-ui-core-mixin`. This is a behind-the-scenes change that doesn't affect the the output. (#38)
+
 ## 3.1.2 - 2019-01-30
 
 ### Changed

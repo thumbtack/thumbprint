@@ -16,7 +16,7 @@ Helpful SCSS mixins for using media queries and setting breakpoints. These mixin
 
 ```scss
 // Include this `import` at the top of your file.
-@import '@thumbtack/tp-ui-core-mixin/_index';
+@import '@thumbtack/thumbprint-scss/mixins';
 
 @include tp-respond-between($tp-breakpoint__small, $tp-breakpoint__medium) {
     // The CSS within this block will render between the specified breakpoints.
@@ -27,7 +27,7 @@ Helpful SCSS mixins for using media queries and setting breakpoints. These mixin
 
 ```scss
 // Include this `import` at the top of your file.
-@import '@thumbtack/tp-ui-core-mixin/_index';
+@import '@thumbtack/thumbprint-scss/mixins';
 
 @include tp-respond-above($tp-breakpoint__small) {
     // The CSS within this block will render above specified breakpoint.
@@ -38,7 +38,7 @@ Helpful SCSS mixins for using media queries and setting breakpoints. These mixin
 
 ```scss
 // Include this `import` at the top of your file.
-@import '@thumbtack/tp-ui-core-mixin/_index';
+@import '@thumbtack/thumbprint-scss/mixins';
 
 @include tp-respond-below($tp-breakpoint__large) {
     // The CSS within this block will render below the specified breakpoint.
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
             }
         }
         # Get package information by NPM package name.
-        packageTable: json(name: { eq: "@thumbtack/tp-ui-core-mixin" }) {
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-scss" }) {
             ...PackageTableFragment
         }
     }

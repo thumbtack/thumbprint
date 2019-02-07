@@ -1,0 +1,21 @@
+@import '../mixins/list';
+
+.tp-list {
+    @include tp-list;
+
+    &--disc {
+        @include tp-list--disc;
+    }
+
+    &--decimal {
+        @include tp-list--decimal;
+    }
+
+    &--lower-alpha {
+        @include tp-list--lower-alpha;
+    }
+
+    &--spaced {
+        @include tp-list--spaced;
+    }
+}

@@ -5,6 +5,12 @@ tmp
 svg
 .git
 .cache
+# These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
+# importing these have short and easy to remember import paths.
+packages/thumbprint-scss/css.css
+packages/thumbprint-scss/css.css.map
+packages/thumbprint-scss/mixins.scss
+packages/thumbprint-scss/mixins
 # Ignore `dist` files created by the Thumbprint documentation.
 www/public
 www/.cache

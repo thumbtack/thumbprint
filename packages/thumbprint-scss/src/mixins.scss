@@ -1,0 +1,14 @@
+@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+// Global mixins
+@import 'mixins/mixin';
+@import 'mixins/function'; // @deprecated
+
+// Component mixins
+@import 'mixins/avatar';
+@import 'mixins/button';
+@import 'mixins/link';
+@import 'mixins/list';
+@import 'mixins/longread';
+@import 'mixins/type';
+@import 'mixins/wrap';
