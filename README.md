@@ -1,3 +1,5 @@
+[![Build Status](https://badgen.net/travis/thumbtack/thumbprint)](https://travis-ci.org/thumbtack/thumbprint)
+
 # Thumbprint
 
 Thumbprint is the design system at Thumbtack. Though its primary purpose to support Thumbtack projects, we have open-sourced it for those interested in how we build and manage our documentation and code.
@@ -14,13 +16,13 @@ The documentation is hosted on Netlify and built with [Gatsby](https://www.gatsb
 
 The Thumbprint codebase is a monorepo containing individually versioned NPM packages. These packges include:
 
-| Package                                                               | Version                                                                                                                                |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@thumbtack/thumbprint-atomic`](/packages/thumbprint-atomic)         | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-atomic)](https://badgen.net/npm/v/@thumbtack/thumbprint-atomic)         |
-| [`@thumbtack/thumbprint-tokens`](/packages/thumbprint-tokens)         | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-tokens)](https://badgen.net/npm/v/@thumbtack/thumbprint-tokens)         |
-| [`@thumbtack/thumbprint-react`](/packages/thumbprint-react)           | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-react)](https://badgen.net/npm/v/@thumbtack/thumbprint-react)           |
-| [`@thumbtack/thumbprint-scss`](/packages/thumbprint-scss)             | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-scss)](https://badgen.net/npm/v/@thumbtack/thumbprint-scss)             |
-| [`@thumbtack/thumbprint-global-css`](/packages/thumbprint-global-css) | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-global-css)](https://badgen.net/npm/v/@thumbtack/thumbprint-global-css) |
+| Package                                                               | Version                                                                                                                                 | Size                                                                                                                                                                            |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@thumbtack/thumbprint-atomic`](/packages/thumbprint-atomic)         | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-atomic)](https://npmjs.com/package/@thumbtack/thumbprint-atomic)         | [![Bundle size](https://badgen.net/bundlephobia/minzip/@thumbtack/thumbprint-atomic?label=gzip%20size)](https://bundlephobia.com/result?p=@thumbtack/thumbprint-atomic)         |
+| [`@thumbtack/thumbprint-tokens`](/packages/thumbprint-tokens)         | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-tokens)](https://npmjs.com/package/@thumbtack/thumbprint-tokens)         | [![Bundle size](https://badgen.net/bundlephobia/minzip/@thumbtack/thumbprint-tokens?label=gzip%20size)](https://bundlephobia.com/result?p=@thumbtack/thumbprint-tokens)         |
+| [`@thumbtack/thumbprint-react`](/packages/thumbprint-react)           | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-react)](https://npmjs.com/package/@thumbtack/thumbprint-react)           | [![Bundle size](https://badgen.net/bundlephobia/minzip/@thumbtack/thumbprint-react?label=gzip%20size)](https://bundlephobia.com/result?p=@thumbtack/thumbprint-react)           |
+| [`@thumbtack/thumbprint-scss`](/packages/thumbprint-scss)             | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-scss)](https://npmjs.com/package/@thumbtack/thumbprint-scss)             | [![Bundle size](https://badgen.net/bundlephobia/minzip/@thumbtack/thumbprint-scss?label=gzip%20size)](https://bundlephobia.com/result?p=@thumbtack/thumbprint-scss)             |
+| [`@thumbtack/thumbprint-global-css`](/packages/thumbprint-global-css) | [![npm version](https://badgen.net/npm/v/@thumbtack/thumbprint-global-css)](https://npmjs.com/package/@thumbtack/thumbprint-global-css) | [![Bundle size](https://badgen.net/bundlephobia/minzip/@thumbtack/thumbprint-global-css?label=gzip%20size)](https://bundlephobia.com/result?p=@thumbtack/thumbprint-global-css) |
 
 ## Contributing
 
