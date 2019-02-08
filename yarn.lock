@@ -6176,6 +6176,11 @@ find-cache-dir@^2.0.0:
     make-dir "^1.0.0"
     pkg-dir "^3.0.0"
 
+find-parent-dir@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+  integrity sha1-M8RLQpqysvBkYpnF+fcY83b/jVQ=
+
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -10394,6 +10399,13 @@ node-releases@^1.1.3:
   integrity sha512-lODUVHEIZutZx+TDdOk47qLik8FJMXzJ+WnyUGci1MTvTOyzZrz5eVPIIpc5Hb3NfHZGeGHeuwrRYVI1PEITWg==
   dependencies:
     semver "^5.3.0"
+
+node-sass-tilde-importer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/node-sass-tilde-importer/-/node-sass-tilde-importer-1.0.2.tgz#1a15105c153f648323b4347693fdb0f331bad1ce"
+  integrity sha512-Swcmr38Y7uB78itQeBm3mThjxBy9/Ah/ykPIaURY/L6Nec9AyRoL/jJ7ECfMR+oZeCTVQNxVMu/aHU+TLRVbdg==
+  dependencies:
+    find-parent-dir "^0.3.0"
 
 node-sass@^4.5.2, node-sass@^4.9.2:
   version "4.11.0"

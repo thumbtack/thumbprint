@@ -9,8 +9,6 @@ packages/thumbprint-icons/www
 # importing these have short and easy to remember import paths.
 packages/thumbprint-scss/components.css
 packages/thumbprint-scss/components.css.map
-packages/thumbprint-scss/mixins.scss
-packages/thumbprint-scss/mixins
 
 # Created by https://www.gitignore.io/api/osx,node,intellij+all
 
