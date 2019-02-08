@@ -1,5 +1,5 @@
 $thumbprint-font-url: 'https://fonts.thumbtack.com/';
-@import '@thumbtack/tp-ui-core-font-face';
+@import '~@thumbtack/tp-ui-core-font-face/_index.scss';
 
 .container {
     display: flex;

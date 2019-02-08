@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Fix SCSS imports by adding the file extension at the end of the imports.
+
 ## 0.2.0 - 2019-02-07
 
 ### Added

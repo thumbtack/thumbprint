@@ -34,6 +34,7 @@
         "lodash": "^4.17.4",
         "marked": "^0.6.0",
         "mousetrap": "^1.6.2",
+        "node-sass-tilde-importer": "1.0.0",
         "postcss-import": "^12.0.0",
         "prism-react-renderer": "^0.1.4",
         "react": "16.6.3",

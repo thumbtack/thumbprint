@@ -25,10 +25,9 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-scss/",
     "license": "Apache-2.0",
     "scripts": {
-        "start": "yarn generate-css && yarn copy-mixins",
-        "clear": "rm -rf mixins.scss mixins/* components.css components.css.map",
-        "generate-css": "node-sass -q src/css.scss components.css && postcss components.css --map --use autoprefixer cssnano --replace",
-        "copy-mixins": "cp src/mixins.scss mixins.scss && cp -R src/mixins mixins",
+        "start": "yarn generate-css",
+        "clear": "rm components.css components.css.map",
+        "generate-css": "node-sass -q components.scss components.css --importer=./node-sass-importer.js && postcss components.css --map --use autoprefixer cssnano --replace",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
@@ -36,6 +35,7 @@
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
         "node-sass": "^4.9.2",
+        "node-sass-tilde-importer": "1.0.0",
         "postcss-cli": "^6.1.1"
     }
 }
