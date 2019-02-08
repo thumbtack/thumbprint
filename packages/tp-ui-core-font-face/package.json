@@ -31,6 +31,7 @@
         "@thumbtack/thumbprint-tokens": "^6.3.0"
     },
     "devDependencies": {
-        "node-sass-tilde-importer": "^1.0.2"
+        "node-sass-tilde-importer": "1.0.0",
+        "tmp": "^0.0.33"
     }
 }
