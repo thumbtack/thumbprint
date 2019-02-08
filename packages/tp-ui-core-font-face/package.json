@@ -29,5 +29,8 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/tp-ui-core-font-face/#readme",
     "dependencies": {
         "@thumbtack/thumbprint-tokens": "^6.3.0"
+    },
+    "devDependencies": {
+        "node-sass-tilde-importer": "^1.0.2"
     }
 }
