@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.1 - 2019-02-08
+
 ### Changed
 
 -   [Patch] Change name of the CSS dist from `css.css` to `components.css`.

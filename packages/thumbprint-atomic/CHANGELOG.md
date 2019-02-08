@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.1.4 - 2019-02-08
+
 ### Changed
 
 -   [Patch] Use tilde imports in Node Sass with `node-sass-tilde-importer`. This doesn't affect the published code.

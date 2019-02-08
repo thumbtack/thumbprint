@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.0.0 - 2019-02-08
+
 ### Changed
 
 -   [Major] Use tilde imports in Node Sass with `node-sass-tilde-importer`. Environments using Webpack's CSS loader (includes CRA, Gatsby, Next.js) aren't affected.
