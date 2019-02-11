@@ -1,6 +1,4 @@
-import some from 'lodash/some';
-import castArray from 'lodash/castArray';
-import map from 'lodash/map';
+import { some, castArray, map } from 'lodash-es';
 
 import isBefore from 'date-fns/is_before';
 import isToday from 'date-fns/is_today';

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import onClickOutside from 'react-onclickoutside';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import styles from './index.module.scss';
 
 class ModalContents extends React.Component {

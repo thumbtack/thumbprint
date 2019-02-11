@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import noop from 'lodash/noop';
+import { noop } from 'lodash-es';
 import Input, { InputClearButton, InputIcon } from './index';
 
 describe('Input', () => {

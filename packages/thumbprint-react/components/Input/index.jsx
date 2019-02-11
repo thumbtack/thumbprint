@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import classNames from 'classnames';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { InputRowContext } from '../InputRow/index.jsx';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import classNames from 'classnames';
 import LoaderDots from '../LoaderDots/index.jsx';
 import { InputRowContext } from '../InputRow/index.jsx';

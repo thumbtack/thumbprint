@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DayPicker, { DateUtils, PropTypes as DayPickerPropTypes } from 'react-day-picker';
 
-import get from 'lodash/get';
-import map from 'lodash/map';
+import { get, map } from 'lodash-es';
 
 import styles from './index.module.scss';
 

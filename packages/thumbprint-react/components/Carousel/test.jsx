@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { noop } from 'lodash';
+import { noop } from 'lodash-es';
 import Carousel from './index';
 
 test('renders a carousel', () => {

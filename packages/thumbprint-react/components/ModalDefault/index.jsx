@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'lodash/noop';
+import { noop } from 'lodash-es';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { TextButton } from '../Button/index.jsx';
 import StickyFooter from './components/sticky-footer.jsx';

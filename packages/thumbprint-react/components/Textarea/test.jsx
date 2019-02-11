@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import noop from 'lodash/noop';
+import { noop } from 'lodash-es';
 import Textarea from './index';
 
 test('adds placeholder', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { tpSpacerUnit } from '@thumbtack/thumbprint-tokens';
-import assign from 'lodash/assign';
+import { assign } from 'lodash-es';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';

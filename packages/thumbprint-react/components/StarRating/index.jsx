@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clamp from 'lodash/clamp';
-import isNumber from 'lodash/isNumber';
-import times from 'lodash/times';
-import noop from 'lodash/noop';
+import { clamp, isNumber, times, noop } from 'lodash-es';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import StarIcon from './static/star.svg';

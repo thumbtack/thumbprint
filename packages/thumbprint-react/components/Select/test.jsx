@@ -1,5 +1,5 @@
 import React from 'react';
-import { noop } from 'lodash';
+import { noop } from 'lodash-es';
 import { mount, render } from 'enzyme';
 import Select from './index';
 
