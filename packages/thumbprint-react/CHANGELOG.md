@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use `lodash-es` instead of `lodash` for Thumbprint.
+
 ## 0.2.1 - 2019-02-08
 
 ### Changed
