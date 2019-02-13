@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix contents div in ModalDefault with sticky ModalFooter having no height in IE11. (#115)
+
 ## 0.2.1 - 2019-02-08
 
 ### Changed
