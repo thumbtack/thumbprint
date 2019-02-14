@@ -1,6 +1,6 @@
 ---
-title: Globals
-description: Root HTML styling.
+title: Global CSS
+description: Global styles required for using Thumbprint components
 ---
 
 import { graphql } from 'gatsby';
@@ -8,9 +8,9 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-A dependency of using Thumbprint React or SCSS components is the inclusion of the `thumbprint-global-css` package.
+A dependency of using Thumbprint React or SCSS components is the inclusion of the `@thumbtack/thumbprint-global-css` package.
 
-The output of this package is a small CSS file and it should be the first file included in your Thumbprint SCSS or CSS project.
+The output of this package is a small CSS file and it should be the first file included in your project that Thumbprint.
 
 ## SCSS usage
 
@@ -18,18 +18,24 @@ The output of this package is a small CSS file and it should be the first file i
 @import '[node_modules path]/@thumbtack/thumbprint-global-css/thumbprint-global';
 ```
 
+## JavaScript usage
+
+```js
+import '@thumbtack/thumbprint-global-css';
+```
+
 ## What's included
 
--   **reset**: Normalize styling for root all HTML elements.
--   **body**: Color, font, and line-height defaults for the `body` element.
--   **a**: Color and hover states default for the `a` element.
+-   **CSS Reset**: Normalize styling for root all HTML elements.
+-   **`<body>` styles**: Color, font, and line-height defaults for the `body` element.
+-   **`<a>` styles**: Color and hover states default for the `a` element.
 
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/globals/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/global-css/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
