@@ -52,6 +52,20 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-compile-es6-packages',
+            options: {
+                modules: [
+                    // These three packages are used by `react-live`, the dependency we use to
+                    // render live component examples. Maintainer doesn't want to add IE 11
+                    // support.
+                    // https://github.com/mathiasbynens/regexpu-core/issues/15
+                    'regexpu-core',
+                    'unicode-match-property-ecmascript',
+                    'unicode-match-property-value-ecmascript',
+                ],
+            },
+        },
+        {
             resolve: `gatsby-transformer-json`,
             options: {
                 typeName: `Json`,
