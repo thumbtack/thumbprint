@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix contents div in ModalDefault with sticky ModalFooter having no height in IE11. (#115)
+
+## 0.2.1 - 2019-02-08
+
+### Changed
+
+-   [Patch] Fix SCSS imports by adding the file extension at the end of the imports.
+
 ## 0.2.0 - 2019-02-07
 
 ### Added

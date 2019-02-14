@@ -1,4 +1,5 @@
 const { resolver } = require('react-docgen');
+const sassImporter = require('node-sass-tilde-importer');
 
 module.exports = {
     siteMetadata: {
@@ -31,8 +32,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sass',
             options: {
-                // Allows SCSS files within `packages` to find their imports.
-                includePaths: ['../'],
+                importer: sassImporter,
             },
         },
         {

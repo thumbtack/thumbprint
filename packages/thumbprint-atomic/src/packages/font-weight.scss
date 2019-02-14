@@ -1,5 +1,5 @@
-@import '../../node_modules/@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import '../../node_modules/@thumbtack/thumbprint-scss/mixins';
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
 
 .normal {
     font-weight: $tp-font__weight__normal !important;
