@@ -1,0 +1,27 @@
+.tp-textarea {
+    width: 100%;
+    border: 1px solid $tp-color__gray;
+    border-radius: $tp-border__radius__base;
+    font-size: $tp-font__body__1__size;
+    line-height: $tp-font__body__1__line-height;
+    padding: 10px 14px;
+    vertical-align: middle;
+    resize: vertical;
+    height: $tp-spacer__unit * 19px;
+    min-height: $tp-spacer__unit * 13px;
+
+    &:focus {
+        border-color: $tp-color__blue;
+    }
+
+    &--bad-news {
+        border-color: $tp-color__red;
+        color: $tp-color__red;
+    }
+
+    &[disabled],
+    &--disabled {
+        background-color: $tp-color__gray-200;
+        color: $tp-color__gray;
+    }
+}

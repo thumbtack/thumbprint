@@ -1,4 +1,5 @@
 const { resolver } = require('react-docgen');
+const sassImporter = require('node-sass-tilde-importer');
 
 module.exports = {
     siteMetadata: {
@@ -16,7 +17,7 @@ module.exports = {
                 // Ignore these files because they make up ~70% of the file nodes. This was causing
                 // Gatsby to run out of memory on Netlify deploys.
                 // https://github.com/thumbtack/thumbprint-archive/issues/1093
-                ignore: ['**/dist', '**/.cache', '**/__snapshots__'],
+                ignore: ['**/dist', '**/.cache', '**/__snapshots__', '**/*.map'],
             },
         },
         {
@@ -29,17 +30,9 @@ module.exports = {
             },
         },
         {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'kits',
-                path: `${__dirname}/src/kits`,
-            },
-        },
-        {
             resolve: 'gatsby-plugin-sass',
             options: {
-                // Allows SCSS files within `packages` to find their imports.
-                includePaths: ['../'],
+                importer: sassImporter,
             },
         },
         {
@@ -47,9 +40,6 @@ module.exports = {
             options: {
                 extensions: ['.mdx'],
                 defaultLayouts: {
-                    packages: require.resolve(
-                        './src/components/thumbprint-components/page/index.jsx',
-                    ),
                     default: require.resolve('./src/components/mdx/index.jsx'),
                 },
                 gatsbyRemarkPlugins: [
@@ -61,8 +51,27 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: 'gatsby-plugin-compile-es6-packages',
+            options: {
+                modules: [
+                    // These three packages are used by `react-live`, the dependency we use to
+                    // render live component examples. Maintainer doesn't want to add IE 11
+                    // support.
+                    // https://github.com/mathiasbynens/regexpu-core/issues/15
+                    'regexpu-core',
+                    'unicode-match-property-ecmascript',
+                    'unicode-match-property-value-ecmascript',
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-transformer-json`,
+            options: {
+                typeName: `Json`,
+            },
+        },
         'gatsby-transformer-thumbprint-atomic',
-        'gatsby-transformer-thumbprint-components',
         'gatsby-transformer-thumbprint-tokens',
         {
             resolve: 'gatsby-transformer-react-docgen',

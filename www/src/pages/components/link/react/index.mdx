@@ -1,0 +1,220 @@
+---
+title: Link
+description: Color and style variations for anchor links.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Link styles
+
+The `Link` component can be used to render plain text links.
+
+```jsx
+<React.Fragment>
+    Learn more about <Link to="https://www.facebook.com/Thumbtack/">Thumbtack on Facebook</Link>.
+</React.Fragment>
+```
+
+### Secondary links
+
+```jsx
+<Link theme="secondary" to="https://www.thumbtack.com/privacy/">
+    Privacy Policy
+</Link>
+```
+
+### Tertiary links
+
+These links render as white text with an underline. They work well on dark backgrounds.
+
+```jsx theme=dark
+<div style={{ color: tokens.tpColorWhite }}>
+    Learn more about
+    <Link theme="tertiary" to="https://www.facebook.com/Thumbtack/">
+        Thumbtack on Facebook
+    </Link>.
+</div>
+```
+
+### Link with an icon
+
+The `Link` component provides a `iconLeft` prop to help vertically position icons alongside text.
+
+```jsx
+<Link iconLeft={<ContentActionsPhoneCallSmall />} to="https://example.com/">
+    Call this Pro
+</Link>
+```
+
+### Link with icon that inherits color of parent
+
+This link inherits the color of its parent with `theme=&quot;inherit&quot;`.
+
+```jsx theme=dark
+<div style={{ color: tokens.tpColorWhite }}>
+    <Link
+        iconLeft={<ContentActionsShareMedium />}
+        accessibilityLabel="Share this page"
+        theme="inherit"
+        to="https://example.com/"
+    />
+</div>
+```
+
+### Changing the font size
+
+Links inherit the font size of their container.
+
+```jsx
+<div style={{ fontSize: tokens.tpFontBody2Size }}>
+    Learn more about <Link to="https://www.facebook.com/Thumbtack/">Thumbtack on Facebook</Link>.
+</div>
+```
+
+### Changing the font weight
+
+Links also inherit the font weight of their container.
+
+```jsx
+<React.Fragment>
+    Learn more about{' '}
+    <strong>
+        <Link to="https://www.facebook.com/Thumbtack/">Thumbtack on Facebook</Link>
+    </strong>
+    .
+</React.Fragment>
+```
+
+## Opening links in new tabs
+
+The `shouldOpenInNewTab` prop will open links in a new tab. It also handles the [`target="_blank"` security vulnerability](https://mathiasbynens.github.io/rel-noopener/).
+
+```jsx
+<React.Fragment>
+    Learn more about{' '}
+    <Link to="https://www.facebook.com/Thumbtack/" shouldOpenInNewTab>
+        Thumbtack on Facebook
+    </Link>
+    .
+</React.Fragment>
+```
+
+## Themed links
+
+The `ThemedLink` component renders `<a>` tags that visually look like buttons.
+
+These are the available `ThemedLink` styles for use on light background colors.
+
+```jsx
+<ButtonRow>
+    <ThemedLink theme="primary" to="https://example.com/">
+        Primary
+    </ThemedLink>
+    <ThemedLink theme="secondary" to="https://example.com/">
+        Secondary
+    </ThemedLink>
+    <ThemedLink theme="caution" to="https://example.com/">
+        Caution
+    </ThemedLink>
+</ButtonRow>
+```
+
+### Use on dark backgrounds
+
+The `solid` theme works well on dark backgrounds.
+
+```jsx theme=dark
+<ThemedLink theme="solid" to="https://example.com/">
+    Solid
+</ThemedLink>
+```
+
+### Size options
+
+The `ThemedLink` component also has a `small` variation.
+
+```jsx
+<ButtonRow>
+    <ThemedLink theme="primary" size="small" to="https://example.com/">
+        Primary
+    </ThemedLink>
+    <ThemedLink theme="secondary" size="small" to="https://example.com/">
+        Secondary
+    </ThemedLink>
+    <ThemedLink theme="caution" size="small" to="https://example.com/">
+        Caution
+    </ThemedLink>
+</ButtonRow>
+```
+
+### Disabled themed links
+
+The `isDisabled` prop visually and functionally disables the link.
+
+```jsx
+<ButtonRow>
+    <ThemedLink isDisabled theme="primary" to="https://example.com/">
+        Primary
+    </ThemedLink>
+    <ThemedLink isDisabled theme="secondary" to="https://example.com/">
+        Secondary
+    </ThemedLink>
+    <ThemedLink isDisabled theme="caution" to="https://example.com/">
+        Caution
+    </ThemedLink>
+</ButtonRow>
+```
+
+### Full width
+
+```jsx
+<ThemedLink width="full" to="https://example.com/">
+    Send Quote
+</ThemedLink>
+```
+
+### Full width on small screens
+
+This link becomes full width on viewports that are smaller than our `small` breakpoint. The width is `auto` on larger screens.
+
+```jsx
+<ThemedLink width="full-below-small" to="https://example.com/">
+    Send Quote
+</ThemedLink>
+```
+
+### Icon within the ThemedLink
+
+```jsx
+<ThemedLink icon={<ContentModifierMessageSmall />} to="https://example.com/">
+    Send Message
+</ThemedLink>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/link/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Link/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

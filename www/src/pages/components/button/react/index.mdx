@@ -1,0 +1,174 @@
+---
+title: Button
+description: Clickable elements used to perform actions.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Button themes
+
+These are the available `Button` styles for use on light background colors.
+
+```jsx
+<ButtonRow>
+    <Button>Primary</Button>
+    <Button theme="secondary">Secondary</Button>
+    <Button theme="caution">Caution</Button>
+</ButtonRow>
+```
+
+### Use on dark backgrounds
+
+The `solid` theme works well on dark backgrounds.
+
+```jsx theme=dark
+<Button theme="solid">Solid</Button>
+```
+
+## Small buttons
+
+Buttons are `large` by default. The `size` prop allows you to render a `small` button.
+
+```jsx
+<ButtonRow>
+    <Button size="small">Primary</Button>
+    <Button size="small" theme="secondary">
+        Secondary
+    </Button>
+    <Button size="small" theme="caution">
+        Caution
+    </Button>
+</ButtonRow>
+```
+
+## Disabled buttons
+
+The `isDisabled` prop visually and functionally disables the button.
+
+```jsx
+<ButtonRow>
+    <Button isDisabled theme="primary">
+        Primary
+    </Button>
+    <Button isDisabled theme="secondary">
+        Secondary
+    </Button>
+    <Button isDisabled theme="caution">
+        Caution
+    </Button>
+</ButtonRow>
+```
+
+```jsx theme=dark
+<ButtonRow>
+    <Button isDisabled theme="solid">
+        Solid
+    </Button>
+</ButtonRow>
+```
+
+## Full width buttons
+
+```jsx
+<Button width="full">Send Quote</Button>
+```
+
+### Full width on small screens
+
+This button becomes full width on viewports that are smaller than [our `small` breakpoint](/tokens/#section-breakpoint). The width is `auto` on larger screens.
+
+```jsx
+<Button width="full-below-small">Send Quote</Button>
+```
+
+## Icon within a button
+
+The `icon` prop accepts any small icon from [Thumbprint Icons](/icons/).
+
+```jsx
+<Button icon={<ContentModifierMessageSmall />}>Send Message</Button>
+```
+
+## Button with loading indicator
+
+These loading indicators should be used when buttons are processing. They are avialble in the `primary` and `secondary` button themes.
+
+```jsx
+<ButtonRow>
+    <Button isLoading>Send Quote</Button>
+    <Button theme="secondary" isLoading>
+        Send Quote
+    </Button>
+</ButtonRow>
+```
+
+## Buttons that look like links
+
+The `TextButton` component renders button elements that visually appear as text links. These buttons accept an `onClick` and render as inline elements.
+
+```jsx
+<React.Fragment>
+    The Pro exceeded our expectations and did a fantastic&hellip; <TextButton>Read more</TextButton>
+</React.Fragment>
+```
+
+### Adding an icon with text
+
+The `TextButton` component provides a `iconLeft` prop to help vertically position icons alongside text.
+
+```jsx
+<b>
+    <TextButton iconLeft={<NavigationArrowLeftSmall />}>Back</TextButton>
+</b>
+```
+
+### Icon that inherits color of parent
+
+This icon inherits the color of its parent with `theme="inherit"`.
+
+```jsx theme=dark
+<div style={{ color: tokens.tpColorWhite }}>
+    <TextButton theme="inherit" iconLeft={<NavigationCloseMedium />} accessibilityLabel="Close" />
+</div>
+```
+
+### Changing the font size and weight
+
+These buttons inherit the font size and font weight of their container.
+
+```jsx
+<Text size={3}>
+    The Pro exceeded our expectations and did a fantastic&hellip;{' '}
+    <b>
+        <TextButton>Read more</TextButton>
+    </b>
+</Text>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Button/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

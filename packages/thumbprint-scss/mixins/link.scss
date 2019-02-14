@@ -1,0 +1,146 @@
+@mixin tp-link {
+    color: $tp-color__blue;
+    fill: $tp-color__blue;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover {
+        color: $tp-color__blue;
+    }
+
+    &:active {
+        color: $tp-color__blue;
+    }
+}
+
+@mixin tp-link--secondary {
+    color: $tp-color__black-300;
+    fill: $tp-color__black-300;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover {
+        color: $tp-color__black-300;
+    }
+
+    &:active {
+        color: $tp-color__black-300;
+    }
+}
+
+@mixin tp-link--tertiary {
+    color: $tp-color__white;
+    fill: $tp-color__white;
+    text-decoration: underline;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover {
+        color: $tp-color__white;
+    }
+
+    &:focus {
+        outline: auto;
+    }
+
+    &:active {
+        color: $tp-color__white;
+    }
+}
+
+// `&:link` targets anchors without hrefs
+@mixin tp-link--inherit {
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: inherit;
+        fill: inherit;
+    }
+}
+
+@mixin tp-link--disabled {
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: $tp-color__black;
+        opacity: 0.5;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+// @deprecated
+@mixin tp-link--dark {
+    color: $tp-color__black;
+    fill: $tp-color__black;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover {
+        color: $tp-color__blue;
+    }
+
+    &:active {
+        color: $tp-color__black;
+    }
+}
+
+// @deprecated
+@mixin tp-link--muted {
+    color: $tp-color__black-300;
+    fill: $tp-color__black-300;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover {
+        color: $tp-color__blue;
+    }
+
+    &:active {
+        color: $tp-color__black-300;
+    }
+}
+
+// @deprecated
+@mixin tp-link--bad-news {
+    color: $tp-color__red;
+    fill: $tp-color__red;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover,
+    &:active {
+        color: lighten($tp-color__red, 10%);
+    }
+}
+
+// @deprecated
+@mixin tp-link--reverse {
+    color: $tp-color__white;
+    fill: $tp-color__white;
+    cursor: pointer;
+
+    // Hover is added here because, while the color is the same as the default, we must override
+    // styles applied to the global `a` element.
+    &:hover,
+    &:focus,
+    &:active {
+        color: $tp-color__white;
+        opacity: 0.7;
+    }
+}
+
+// @deprecated
+@mixin tp-link--underline {
+    text-decoration: underline;
+}
