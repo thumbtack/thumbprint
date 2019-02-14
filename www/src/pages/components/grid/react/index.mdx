@@ -1,0 +1,94 @@
+---
+title: Grid
+description: Responsive layouts, automatically aligned.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Examples
+
+### Basic grid
+
+```jsx
+<Grid>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={12} aboveSmall={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### Wide gutters
+
+```jsx
+<Grid gutter="wide">
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### No gutters
+
+```jsx
+<Grid gutter="flush">
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+### Responsive at all breakpoints
+
+```jsx
+<Grid>
+    <GridColumn base={12} aboveSmall={8} aboveMedium={6} aboveLarge={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/grid/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Grid/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

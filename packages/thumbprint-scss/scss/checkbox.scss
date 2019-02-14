@@ -1,0 +1,72 @@
+.tp-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+
+    & ~ .tp-label {
+        margin-bottom: 0;
+    }
+
+    // Focus states
+    &:focus + .tp-checkbox-image {
+        box-shadow: 0 0 0 4px $tp-color__gray-300;
+    }
+
+    &.tp-checkbox-input--bad-news + .tp-checkbox-image {
+        border-color: $tp-color__red;
+    }
+
+    // Override `.tp-checkbox-image` when the checkbox is checked
+    &:checked {
+        & + .tp-checkbox-image::after {
+            // Checkmark icon from Thumbprint Icons as an inline SVG.
+            content: '';
+            display: block;
+            height: 18px;
+            width: 18px;
+        }
+
+        &:not(:disabled):not(.tp-checkbox-input--bad-news) + .tp-checkbox-image {
+            // Add blue background to selected and non-disabled checkboxes.
+            border-color: $tp-color__blue;
+            background-color: $tp-color__blue;
+
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#ffffff' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E");
+                background-position: center;
+            }
+        }
+
+        // Error state when checkbox is checked
+        &.tp-checkbox-input--bad-news + .tp-checkbox-image::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#ff5a5f' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E");
+            background-position: center;
+        }
+
+        &:disabled + .tp-checkbox-image {
+            // Use gray border for disabled checked checkbox.
+            background-color: $tp-color__gray-200;
+
+            &::after {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#d3d4d5' width='18' height='18' viewBox='0 0 18 18'%3E%3Cpath fill-rule='evenodd' d='M14.581 3.198c-.449-.341-1.075-.23-1.396.248L8.017 11.14 4.528 8.832c-.47-.31-1.086-.158-1.378.34-.29.5-.147 1.155.322 1.466L8.554 14l6.26-9.318c.321-.478.216-1.143-.233-1.484'%3E%3C/path%3E%3C/svg%3E");
+                background-position: center;
+            }
+        }
+    }
+}
+
+.tp-checkbox-image {
+    width: 20px;
+    height: 20px;
+    background: $tp-color__white;
+    border: 2px solid $tp-color__gray;
+    position: absolute;
+    border-radius: $tp-border__radius__base;
+    top: 2px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

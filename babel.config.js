@@ -1,8 +1,6 @@
-module.exports = api => {
-    api.cache.forever();
-
-    const presets = ['@babel/preset-env', '@babel/preset-react'];
-    const plugins = [
+module.exports = {
+    presets: ['@babel/preset-env', '@babel/preset-react'],
+    plugins: [
         [
             'inline-react-svg',
             {
@@ -17,10 +15,5 @@ module.exports = api => {
                 },
             },
         ],
-    ];
-
-    return {
-        presets,
-        plugins,
-    };
+    ],
 };

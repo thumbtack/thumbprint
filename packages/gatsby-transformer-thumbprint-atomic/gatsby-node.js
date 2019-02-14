@@ -1,5 +1,6 @@
 const sass = require('node-sass');
 const crypto = require('crypto');
+const importer = require('node-sass-tilde-importer');
 const parseAst = require('./parse-ast');
 
 const createCssNode = ({ node, actions }) => {
@@ -9,7 +10,7 @@ const createCssNode = ({ node, actions }) => {
     const css = sass
         .renderSync({
             file: node.absolutePath,
-            includePaths: ['../..'],
+            importer,
         })
         .css.toString();
 

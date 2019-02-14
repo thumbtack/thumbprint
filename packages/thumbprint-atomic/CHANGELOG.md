@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 3.1.4 - 2019-02-08
+
+### Changed
+
+-   [Patch] Use tilde imports in Node Sass with `node-sass-tilde-importer`. This doesn't affect the published code.
+
+## 3.1.3 - 2019-02-07
+
+### Changed
+
+-   [Patch] Backwards compatible update of Tokens version.
+-   [Patch] Use `@thumbtack/thumbprint-scss` instead of `@thumbtack/tp-ui-core-mixin`. This is a behind-the-scenes change that doesn't affect the the output. (#38)
+
 ## 3.1.2 - 2019-01-30
 
 ### Changed

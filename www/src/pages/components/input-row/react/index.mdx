@@ -1,0 +1,75 @@
+---
+title: Input Row
+description: Horizontally align inputs and buttons.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## `InputRow` with an `Input` and `Button`
+
+The `widthRatios` prop in this example tells the input to take up as much space as possible.
+
+```jsx
+<InputRow widthRatios={[1, null]}>
+    <Input placeholder="Enter a zip code" onChange={() => {}} />
+    <Button>Find a pro</Button>
+</InputRow>
+```
+
+## Custom components within `InputRow`
+
+The `Input` and `Button` components use [React's Context API](https://reactjs.org/docs/context.html) to remove their rounded borders when used within an `InputRow`.
+
+The `InputRow` exports its React context as `InputRowContext`. This makes it possible to use custom components within `InputRow`.
+
+To use `InputRowContext`, start by importing it within your component:
+
+```js
+import { InputRowContext } from '@thumbtack/thumbprint-react';
+```
+
+Within your component's JSX, you'll use `<InputRowContext.Consumer>` to gain access to three booleans: `isWithinInputRow`, `isFirstInputRowChild`, `isLastInputRowChild`.
+
+Here's an example:
+
+```jsx shouldRender=false
+<InputRowContext.Consumer>
+    {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }) => <div />}
+</InputRowContext.Consumer>
+```
+
+We recommend doing the following with these booleans:
+
+-   Remove your component's right border when `isWithinInputRow && !isLastInputRowChild`.
+-   Remove left rounded corners when `isWithinInputRow && !isFirstInputRowChild`.
+-   Remove right rounded corners when `isWithinInputRow && !isLastInputRowChild`.
+
+You can [learn more about React's Context API](https://reactjs.org/docs/context.html) in the React documentation.
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/input-row/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/InputRow/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
