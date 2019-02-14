@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use a red border in the `caution` button focus state. (#116)
+
 ### Fixed
 
 -   [Patch] Fix contents div in ModalDefault with sticky ModalFooter having no height in IE11. (#115)
