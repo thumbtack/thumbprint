@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use a red border in the `caution` button focus state. (#116)
+
 ## 0.1.1 - 2019-02-08
 
 ### Changed
