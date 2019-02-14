@@ -1,21 +1,23 @@
 # Thumbprint Global CSS
 
-This package contains the root styling required by our Thumbprint SCSS and React components.
+A dependency of using Thumbprint React or SCSS components is the inclusion of the `@thumbtack/thumbprint-global-css` package.
 
--   **reset**: Normalize styling for root HTML elements.
--   **body**: Color, font, and line-height defaults for the `body` element.
--   **a**: Color and hover states default for the `a` element.
+The output of this package is a small CSS file and it should be the first file included in your project that Thumbprint.
 
-This output of this package is a compiled CSS file that can be included in SCSS or used as a standalone CSS file.
+## SCSS usage
 
-## Installation
-
-```
-yarn add @thumbtack/thumbprint-global-css
+```scss
+@import '[node_modules path]/@thumbtack/thumbprint-global-css/thumbprint-global';
 ```
 
-## Use in SCSS
+## JavaScript usage
 
+```js
+import '@thumbtack/thumbprint-global-css';
 ```
-@import '[node_modules path]/@thumbtack/thumbprint-global-css/thumbprint-global
-```
+
+## What's included
+
+-   **CSS Reset**: Normalize styling for root all HTML elements.
+-   **`<body>` styles**: Color, font, and line-height defaults for the `body` element.
+-   **`<a>` styles**: Color and hover states default for the `a` element.
