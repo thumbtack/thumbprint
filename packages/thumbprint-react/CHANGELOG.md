@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Use a red border in the `caution` button focus state. (#116)
+-   [Patch] Support all `autocomplete` values in `Input` component. (#113)
 
 ### Fixed
 
