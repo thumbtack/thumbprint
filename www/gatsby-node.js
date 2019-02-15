@@ -26,8 +26,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 // them in the documentation. By default, Webpack will use the
                 // value of the `main` or `module` field in the package's
                 // `package.json` file. This makes it difficult to develop
-                // locally because it'd require running re-compiling the code
-                // after each change.
+                // locally because it'd require re-compiling the code after
+                // each change.
                 '@thumbtack/thumbprint-react':
                     process.env.NODE_ENV === 'development'
                         ? path.resolve(__dirname, '../packages/thumbprint-react/index.js')
