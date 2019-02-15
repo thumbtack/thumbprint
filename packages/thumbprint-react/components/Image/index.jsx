@@ -28,7 +28,7 @@ class LazyImage extends React.Component {
                 <Waypoint onEnter={() => this.setSrc(srcProp)}>{children({ src, alt })}</Waypoint>
                 {/* SEO friendliness: https://youtu.be/PFwUbgvpdaQ?t=2018 */}
                 <noscript>
-                    <img src={src} alt={alt} />
+                    <img src={srcProp} alt={alt} />
                 </noscript>
             </>
         );

@@ -8,7 +8,7 @@ const ServiceCardImage = ({ url, alt }) => (
     <LazyImage src={url} alt={alt}>
         {({ src, alt: innerAlt }) => (
             <div
-                className={`${styles.image} lazyload`}
+                className={styles.image}
                 style={src ? { backgroundImage: `url("${src}")` } : undefined}
                 role="img"
                 aria-label={innerAlt}
