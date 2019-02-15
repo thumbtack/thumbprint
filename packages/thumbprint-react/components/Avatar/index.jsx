@@ -26,55 +26,36 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-class EntityAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
-
-    render() {
-        const { imageUrl, size, initial, fullName } = this.props;
-
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootSmall]: size === 'small',
-                    [styles.rootMedium]: size === 'medium',
-                    [styles.rootLarge]: size === 'large',
-                    [styles.rootXlarge]: size === 'xlarge',
-                })}
-            >
-                {imageUrl ? (
+const EntityAvatar = ({ imageUrl, size, initial, fullName }) => (
+    <div
+        className={classNames(styles.root, {
+            [styles.rootSmall]: size === 'small',
+            [styles.rootMedium]: size === 'medium',
+            [styles.rootLarge]: size === 'large',
+            [styles.rootXlarge]: size === 'xlarge',
+        })}
+    >
+        {imageUrl ? (
+            <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
+                {({ src, alt }) => (
                     <img
                         className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
-                        data-src={imageUrl}
-                        alt={fullName && `Avatar for ${fullName}`}
-                        title={fullName && `Avatar for ${fullName}`}
+                        src={src}
+                        alt={alt}
+                        title={alt}
                     />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    >
-                        {initial}
-                    </span>
                 )}
-            </div>
-        );
-    }
-}
+            </LazyImage>
+        ) : (
+            <span
+                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                title={fullName && `Avatar for ${fullName}`}
+            >
+                {initial}
+            </span>
+        )}
+    </div>
+);
 
 EntityAvatar.propTypes = {
     /**
@@ -104,39 +85,40 @@ EntityAvatar.defaultProps = {
 };
 
 const Avatar = props => {
-    const { imageUrl, fullName, initials } = props;
+    const { imageUrl, fullName, initials, size } = props;
 
     return (
-        <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
-            {({ src, alt }) => (
-                <div
-                    className={classNames(styles.root, {
-                        [styles.rootXsmall]: props.size === 'xsmall',
-                        [styles.rootSmall]: props.size === 'small',
-                        [styles.rootMedium]: props.size === 'medium',
-                        [styles.rootLarge]: props.size === 'large',
-                        [styles.rootXlarge]: props.size === 'xlarge',
-                    })}
-                >
-                    {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-                    {imageUrl ? (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+        >
+            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+
+            {imageUrl ? (
+                <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
+                    {({ src, alt }) => (
                         <img
                             className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
                             src={src}
                             alt={alt}
                             title={alt}
                         />
-                    ) : (
-                        <span
-                            className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                            title={fullName && `Avatar for ${fullName}`}
-                        >
-                            {initials}
-                        </span>
                     )}
-                </div>
+                </LazyImage>
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initials}
+                </span>
             )}
-        </LazyImage>
+        </div>
     );
 };
 
