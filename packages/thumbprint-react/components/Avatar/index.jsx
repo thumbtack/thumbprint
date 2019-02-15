@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { LazyImage } from '../Image/index.jsx';
 import CheckIcon from './static/check.svg';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
@@ -102,59 +103,44 @@ EntityAvatar.defaultProps = {
     size: 'medium',
 };
 
-/**
- * @default
- */
-export default class Avatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
+const Avatar = props => {
+    const { imageUrl, fullName, initials } = props;
 
-    render() {
-        const { props } = this;
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: props.size === 'xsmall',
-                    [styles.rootSmall]: props.size === 'small',
-                    [styles.rootMedium]: props.size === 'medium',
-                    [styles.rootLarge]: props.size === 'large',
-                    [styles.rootXlarge]: props.size === 'xlarge',
-                })}
-            >
-                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-                {props.imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
-                        data-src={props.imageUrl}
-                        alt={props.fullName && `Avatar for ${props.fullName}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    >
-                        {props.initials}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
+            {({ src, alt }) => (
+                <div
+                    className={classNames(styles.root, {
+                        [styles.rootXsmall]: props.size === 'xsmall',
+                        [styles.rootSmall]: props.size === 'small',
+                        [styles.rootMedium]: props.size === 'medium',
+                        [styles.rootLarge]: props.size === 'large',
+                        [styles.rootXlarge]: props.size === 'xlarge',
+                    })}
+                >
+                    {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+                    {imageUrl ? (
+                        <img
+                            className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
+                            src={src}
+                            alt={alt}
+                            title={alt}
+                        />
+                    ) : (
+                        <span
+                            className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                            title={fullName && `Avatar for ${fullName}`}
+                        >
+                            {initials}
+                        </span>
+                    )}
+                </div>
+            )}
+        </LazyImage>
+    );
+};
+
+export default Avatar;
 
 Avatar.propTypes = {
     /**
