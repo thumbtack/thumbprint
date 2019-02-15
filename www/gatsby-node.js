@@ -29,11 +29,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 // locally because it'd require running re-compiling the code
                 // after each change.
                 '@thumbtack/thumbprint-react':
-                    process.env.NODE_ENV !== 'production'
+                    process.env.NODE_ENV === 'development'
                         ? path.resolve(__dirname, '../packages/thumbprint-react/index.js')
                         : '@thumbtack/thumbprint-react',
                 '@thumbtack/thumbprint-scss':
-                    process.env.NODE_ENV !== 'production'
+                    process.env.NODE_ENV === 'development'
                         ? path.resolve(__dirname, '../packages/thumbprint-scss/components.scss')
                         : '@thumbtack/thumbprint-scss',
             },
