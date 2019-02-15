@@ -319,7 +319,7 @@ exports[`compiles correctly 1`] = `
 .tp-button[disabled]:visited.tp-button--caution {
   color: #ffb0b0;
   background-color: #fff;
-  border-color: #d3d4d5;
+  border-color: #cc3553;
 }
 .tp-button--disabled.tp-button--solid,
 .tp-button--disabled:active.tp-button--solid,
