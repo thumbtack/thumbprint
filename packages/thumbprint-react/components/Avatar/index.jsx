@@ -102,9 +102,6 @@ EntityAvatar.defaultProps = {
     size: 'medium',
 };
 
-/**
- * @default
- */
 export default class Avatar extends React.Component {
     componentDidMount() {
         // These imports are only needed client-side and allow for lazy-loading images. They should

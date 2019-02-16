@@ -131,9 +131,6 @@ InputIcon.defaultProps = {
     color: 'inherit',
 };
 
-/**
- * @default
- */
 class Input extends React.Component {
     constructor(props) {
         super(props);
