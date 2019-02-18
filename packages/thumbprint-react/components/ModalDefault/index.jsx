@@ -288,9 +288,6 @@ class ModalDefaultFooter extends React.Component {
 ModalDefaultFooter.propTypes = modalFooterPropTypes;
 ModalDefaultFooter.defaultProps = modalFooterDefaultProps;
 
-/**
- * @default
- */
 class ModalDefault extends React.Component {
     constructor(props) {
         super(props);

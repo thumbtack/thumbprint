@@ -50,9 +50,6 @@ function ServiceCardDescription({ iconColor, icon, children }) {
     );
 }
 
-/**
- * @default
- */
 export default function ServiceCard({ url, children }) {
     return (
         <a href={url} className={styles.root}>
