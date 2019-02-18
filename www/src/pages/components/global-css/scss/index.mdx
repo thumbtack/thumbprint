@@ -1,0 +1,50 @@
+---
+title: Global CSS
+description: Global styles required for using Thumbprint components
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+A dependency of using Thumbprint React or SCSS components is the inclusion of the `@thumbtack/thumbprint-global-css` package.
+
+The output of this package is a small CSS file and it should be the first file included in your project that Thumbprint.
+
+## SCSS usage
+
+```scss
+@import '[node_modules path]/@thumbtack/thumbprint-global-css/thumbprint-global';
+```
+
+## JavaScript usage
+
+```js
+import '@thumbtack/thumbprint-global-css';
+```
+
+## What's included
+
+-   **CSS Reset**: Normalize styling for root all HTML elements.
+-   **`<body>` styles**: Color, font, and line-height defaults for the `body` element.
+-   **`<a>` styles**: Color and hover states default for the `a` element.
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/global-css/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-global-css" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
