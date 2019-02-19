@@ -7,10 +7,12 @@
 -   [Patch] Use a red border in the `caution` button focus state. (#116)
 -   [Patch] Support all `autocomplete` values in `Input` component. (#113)
 -   [Patch] Remove `@default` annotation from JSDoc comments.
+-   [Patch] Eliminate the need for the `babel-plugin-inline-react-svg` plugin. This is a behind-the-scenes change.
 
 ### Fixed
 
 -   [Patch] Fix contents div in ModalDefault with sticky ModalFooter having no height in IE11. (#115)
+-   [Patch] Minimize SVGs in the `StarRating`, `ModalStandard`, and `Avatar` components.
 
 ## 0.2.1 - 2019-02-08
 
