@@ -18,5 +18,5 @@
             url(#{$thumbprint-font-url}mark/mark-tt-bold.woff) format('woff');
     }
 } @else {
-    @error "The variable `$thumbprint-font-url` must be provided if using the `@thumbtack/tp-ui-core-font-face` package. Please visit our documentation for help: https://thumbprint.design/components/font-face/scss/";
+    @error "The variable `$thumbprint-font-url` must be provided if using the `@thumbtack/thumbprint-font-face` package. Please visit our documentation for help: https://thumbprint.design/components/font-face/scss/";
 }

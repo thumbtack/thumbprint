@@ -8,7 +8,7 @@ it('throws error if variable is not provided correctly', () => {
 
     try {
         sass.renderSync({
-            file: 'packages/tp-ui-core-font-face/_index.scss',
+            file: 'packages/thumbprint-font-face/_index.scss',
             importer,
         }).css.toString();
     } catch (e) {
@@ -24,7 +24,7 @@ it('works if variable is provided', () => {
     fs.writeFileSync(
         file.name,
         `$thumbprint-font-url: 'https://example.com/fonts/';\n${fs.readFileSync(
-            'packages/tp-ui-core-font-face/_index.scss',
+            'packages/thumbprint-font-face/_index.scss',
             'utf-8',
         )}`,
     );
