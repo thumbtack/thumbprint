@@ -39,9 +39,6 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    // ls.object-fit requires us to store this attribute somewhere IE can read it
-    // see: https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/object-fit
-    font-family: 'object-fit: cover';
 }
 
 // initialsAvatar is used when there is no image available.

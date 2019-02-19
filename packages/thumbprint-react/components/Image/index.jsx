@@ -7,43 +7,63 @@ class LazyImage extends React.Component {
         super(props);
 
         this.state = {
-            src: props.placeholder,
+            shouldLoadImage: false,
         };
 
-        this.setSrc = this.setSrc.bind(this);
+        this.setShouldLoadImage = this.setShouldLoadImage.bind(this);
     }
 
-    setSrc(src) {
+    setShouldLoadImage(shouldLoadImage) {
         this.setState({
-            src,
+            shouldLoadImage,
         });
     }
 
     render() {
-        const { children, src: srcProp, alt } = this.props;
-        const { src } = this.state;
+        const { children, src, alt } = this.props;
+        const { shouldLoadImage } = this.state;
 
         return (
-            <>
-                <Waypoint onEnter={() => this.setSrc(srcProp)}>{children({ src, alt })}</Waypoint>
-                {/* SEO friendliness: https://youtu.be/PFwUbgvpdaQ?t=2018 */}
+            <React.Fragment>
+                <Waypoint
+                    onEnter={() => this.setShouldLoadImage(true)}
+                    // Start loading slightly before the user scrolls to the image
+                    topOffset={-100}
+                    bottomOffset={-100}
+                >
+                    {children({ src: shouldLoadImage ? src : undefined, alt })}
+                </Waypoint>
+                {/*
+                    Using `noscript` allows Google to index the image.
+                    Source: https://youtu.be/PFwUbgvpdaQ?t=2018 (Google I/O 2018)
+                */}
                 <noscript>
-                    <img src={srcProp} alt={alt} />
+                    <img src={src} alt={alt} />
                 </noscript>
-            </>
+            </React.Fragment>
         );
     }
 }
 
 LazyImage.propTypes = {
+    /**
+     * A function that receives an object containing the properties `src` and `alt`. Using a
+     * function gives the consumer greater control, allowing this to work with both CSS background
+     * images as well as `img` tags.
+     */
     children: PropTypes.func.isRequired,
+    /**
+     * The URL to the image that should be lazy-loaded.
+     */
     src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
+    /**
+     * Text describing the image.
+     */
+    alt: PropTypes.string,
 };
 
 LazyImage.defaultProps = {
-    placeholder: undefined,
+    alt: '',
 };
 
 // eslint-disable-next-line import/prefer-default-export
