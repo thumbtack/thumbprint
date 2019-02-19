@@ -199,7 +199,10 @@ class Container extends React.Component {
                                             }
                                             allComponents: allSitePage(
                                                 filter: {
-                                                    path: { glob: "/components/*/*/" }
+                                                    path: {
+                                                        glob: "/components/*/*/"
+                                                        ne: "/components/global-css/scss/"
+                                                    }
                                                     context: {
                                                         frontmatter: { unlisted: { ne: true } }
                                                     }
@@ -264,6 +267,14 @@ class Container extends React.Component {
                                                         >
                                                             Contributing
                                                         </SideNavSectionGroupLink>
+                                                        <SideNavSectionGroupLink
+                                                            to="/overview/developers/"
+                                                            isActive={
+                                                                pathname === '/overview/developers/'
+                                                            }
+                                                        >
+                                                            Developers
+                                                        </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                 </SideNavSection>
 
@@ -288,6 +299,17 @@ class Container extends React.Component {
                                                     title="Components"
                                                     isActive={activeSection === 'Components'}
                                                 >
+                                                    <SideNavSectionGroup>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/global-css/scss/"
+                                                            isActive={
+                                                                pathname ===
+                                                                '/components/global-css/scss/'
+                                                            }
+                                                        >
+                                                            Global CSS
+                                                        </SideNavSectionGroupLink>
+                                                    </SideNavSectionGroup>
                                                     <SideNavSectionGroup>
                                                         {map(allComponents.group, group => (
                                                             <SideNavSectionGroupLink
