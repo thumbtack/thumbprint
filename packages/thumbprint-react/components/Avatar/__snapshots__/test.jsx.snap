@@ -325,10 +325,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
       <div
         className="badge badgeGreen mediumAvatarLargeBadge"
       >
-        <CheckIcon
-          viewBox="0 0 17 13"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <CheckIcon>
           <svg
             viewBox="0 0 17 13"
             xmlns="http://www.w3.org/2000/svg"
@@ -367,10 +364,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
       <div
         className="badge badgeGreen mediumAvatarLargeBadge"
       >
-        <CheckIcon
-          viewBox="0 0 17 13"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <CheckIcon>
           <svg
             viewBox="0 0 17 13"
             xmlns="http://www.w3.org/2000/svg"
@@ -464,10 +458,7 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
       <div
         className="badge badgeGreen mediumAvatarLargeBadge"
       >
-        <CheckIcon
-          viewBox="0 0 17 13"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <CheckIcon>
           <svg
             viewBox="0 0 17 13"
             xmlns="http://www.w3.org/2000/svg"
@@ -506,10 +497,7 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
       <div
         className="badge badgeGreen mediumAvatarLargeBadge"
       >
-        <CheckIcon
-          viewBox="0 0 17 13"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <CheckIcon>
           <svg
             viewBox="0 0 17 13"
             xmlns="http://www.w3.org/2000/svg"
@@ -567,10 +555,7 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
       <div
         className="badge badgeGreen mediumAvatarLargeBadge"
       >
-        <CheckIcon
-          viewBox="0 0 17 13"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <CheckIcon>
           <svg
             viewBox="0 0 17 13"
             xmlns="http://www.w3.org/2000/svg"
