@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ModalBase from '../ModalBase/index.jsx';
 import styles from './index.module.scss';
-import CloseIcon from './static/close-icon.svg';
+
+const CloseIcon = p => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...p}>
+        <path d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z" />
+    </svg>
+);
 
 const ModalStandard = ({
     children,

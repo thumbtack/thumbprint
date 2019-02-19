@@ -176,11 +176,7 @@ exports[`renders a basic modal 1`] = `
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <title>
-                          TT_UI_Close_Icon
-                        </title>
                         <path
-                          class="cls-2"
                           d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                         />
                       </svg>
@@ -275,19 +271,13 @@ exports[`renders a basic modal 1`] = `
                         >
                           <CloseIcon
                             className="closeIcon"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
                               viewBox="0 0 24 24"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                TT_UI_Close_Icon
-                              </title>
                               <path
-                                className="cls-2"
                                 d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                               />
                             </svg>
@@ -360,11 +350,7 @@ exports[`renders a basic modal with content 1`] = `
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <title>
-                          TT_UI_Close_Icon
-                        </title>
                         <path
-                          class="cls-2"
                           d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                         />
                       </svg>
@@ -467,19 +453,13 @@ exports[`renders a basic modal with content 1`] = `
                         >
                           <CloseIcon
                             className="closeIcon"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
                               viewBox="0 0 24 24"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                TT_UI_Close_Icon
-                              </title>
                               <path
-                                className="cls-2"
                                 d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                               />
                             </svg>
@@ -544,11 +524,7 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <title>
-                          TT_UI_Close_Icon
-                        </title>
                         <path
-                          class="cls-2"
                           d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                         />
                       </svg>
@@ -643,19 +619,13 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                         >
                           <CloseIcon
                             className="closeIcon"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
                               viewBox="0 0 24 24"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                TT_UI_Close_Icon
-                              </title>
                               <path
-                                className="cls-2"
                                 d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
                               />
                             </svg>
