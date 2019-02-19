@@ -173,11 +173,14 @@ exports[`renders a basic modal 1`] = `
                     >
                       <svg
                         class="closeIcon"
-                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        width="28"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                         />
                       </svg>
                     </button>
@@ -269,19 +272,27 @@ exports[`renders a basic modal 1`] = `
                           onClick={[Function]}
                           type="button"
                         >
-                          <CloseIcon
+                          <NavigationCloseMedium
                             className="closeIcon"
+                            fill="currentColor"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            width="28"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
-                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              height="28"
+                              viewBox="0 0 28 28"
+                              width="28"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                               />
                             </svg>
-                          </CloseIcon>
+                          </NavigationCloseMedium>
                         </button>
                       </div>
                     </div>
@@ -347,11 +358,14 @@ exports[`renders a basic modal with content 1`] = `
                     >
                       <svg
                         class="closeIcon"
-                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        width="28"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                         />
                       </svg>
                     </button>
@@ -451,19 +465,27 @@ exports[`renders a basic modal with content 1`] = `
                           onClick={[Function]}
                           type="button"
                         >
-                          <CloseIcon
+                          <NavigationCloseMedium
                             className="closeIcon"
+                            fill="currentColor"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            width="28"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
-                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              height="28"
+                              viewBox="0 0 28 28"
+                              width="28"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                               />
                             </svg>
-                          </CloseIcon>
+                          </NavigationCloseMedium>
                         </button>
                       </div>
                     </div>
@@ -521,11 +543,14 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                     >
                       <svg
                         class="closeIcon"
-                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        height="28"
+                        viewBox="0 0 28 28"
+                        width="28"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                         />
                       </svg>
                     </button>
@@ -617,19 +642,27 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                           onClick={[Function]}
                           type="button"
                         >
-                          <CloseIcon
+                          <NavigationCloseMedium
                             className="closeIcon"
+                            fill="currentColor"
+                            height="28"
+                            viewBox="0 0 28 28"
+                            width="28"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
                             <svg
                               className="closeIcon"
-                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              height="28"
+                              viewBox="0 0 28 28"
+                              width="28"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M21 4.46L19.54 3 12 10.54 4.46 3 3 4.46 10.54 12 3 19.54 4.46 21 12 13.46 19.54 21 21 19.54 13.46 12 21 4.46z"
+                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
                               />
                             </svg>
-                          </CloseIcon>
+                          </NavigationCloseMedium>
                         </button>
                       </div>
                     </div>

@@ -8,6 +8,7 @@
 -   [Patch] Support all `autocomplete` values in `Input` component. (#113)
 -   [Patch] Remove `@default` annotation from JSDoc comments.
 -   [Patch] Eliminate the need for the `babel-plugin-inline-react-svg` plugin. This is a behind-the-scenes change.
+-   [Patch] Move around icon files for greater consistency and reusability. (#39, #41, #42)
 
 ### Fixed
 
