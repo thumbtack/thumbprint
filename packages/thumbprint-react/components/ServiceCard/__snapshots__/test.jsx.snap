@@ -74,13 +74,13 @@ exports[`ServiceCardImage renders an aria-label when supplied by alt 1`] = `
     src=""
   >
     <Waypoint
-      bottomOffset="0px"
+      bottomOffset={-100}
       fireOnRapidScroll={true}
       horizontal={false}
       onEnter={[Function]}
       onLeave={[Function]}
       onPositionChange={[Function]}
-      topOffset="0px"
+      topOffset={-100}
     >
       <div
         aria-label="Lorem"
@@ -108,13 +108,13 @@ exports[`ServiceCardImage renders an background image when supplied 1`] = `
     src="https://www.thumbtack.com/image.png"
   >
     <Waypoint
-      bottomOffset="0px"
+      bottomOffset={-100}
       fireOnRapidScroll={true}
       horizontal={false}
       onEnter={[Function]}
       onLeave={[Function]}
       onPositionChange={[Function]}
-      topOffset="0px"
+      topOffset={-100}
     >
       <div
         aria-label=""
