@@ -6,6 +6,10 @@
 
 -   [Patch] Use a red border in the `caution` button focus state. (#116)
 
+### Deprecated
+
+-   [Patch] Indicate that the "wrap snap" class and mixin are deprecated. (#17)
+
 ## 0.1.1 - 2019-02-08
 
 ### Changed
