@@ -20,7 +20,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 // https://caniuse.com/#feat=css-focus-visible
 import 'focus-visible';
 import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
-import ThumbprintLogo from './thumbprintLogo.svg';
+import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
 import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
@@ -123,7 +123,8 @@ class Container extends React.Component {
                             >
                                 <div className="pa4 flex-none z-1 bg-gray-200">
                                     <Link to="/" className="db mb3">
-                                        <ThumbprintLogo
+                                        <img
+                                            src={thumbprintLogo}
                                             className="db"
                                             style={{ width: '130px' }}
                                             alt="Thumbprint logo"

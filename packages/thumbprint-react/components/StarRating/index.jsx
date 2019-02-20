@@ -6,7 +6,6 @@ import times from 'lodash/times';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import StarIcon from './static/star.svg';
 import styles from './index.module.scss';
 
 // Total number of stars
@@ -14,6 +13,12 @@ const MAX_NUM_STARS = 5;
 
 // Smallest increment we render
 const PRECISION = 0.5;
+
+const StarIcon = p => (
+    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" {...p}>
+        <path d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0" />
+    </svg>
+);
 
 function StarRating({ rating, hoverRating, onStarClick, onStarHover, size, onMouseLeave }) {
     const clampedRating = clamp(rating, 0, MAX_NUM_STARS);
