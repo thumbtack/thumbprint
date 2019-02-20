@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Patch] Replaced Sass placeholder and `@extend` with class. (#107)
 -   [Patch] Use a red border in the `caution` button focus state. (#116)
 
 ### Deprecated
