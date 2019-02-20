@@ -17,6 +17,8 @@
     }
 }
 
+// This is deprecated in favor of non-snapping wrappers.
+// @deprecated
 @mixin tp-wrap-snap {
     margin-left: auto;
     margin-right: auto;
