@@ -18,7 +18,11 @@ yarn add @thumbtack/thumbprint-scss
 The CSS for Thumbprint SCSS components is hosted on the [unpkg CDN](https://unpkg.com/). You can include it in a link tag.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/@thumbtack/thumbprint-scss@^0.1.1" />
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://unpkg.com/@thumbtack/thumbprint-scss@^0.1.1/components.css"
+/>
 ```
 
 For best results, change the version number to the [latest version of the package](https://www.npmjs.com/package/@thumbtack/thumbprint-scss).
