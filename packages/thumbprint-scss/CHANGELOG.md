@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.2 - 2019-02-20
+
 ### Changed
 
 -   [Patch] Replaced Sass placeholder and `@extend` with class. (#107)
