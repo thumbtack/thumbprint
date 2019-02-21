@@ -62,15 +62,11 @@ ServiceCard.propTypes = {
     /**
      * URL pointing to the card link destination.
      */
-    url: PropTypes.string,
+    url: PropTypes.string.isRequired,
     /**
      * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
      */
     children: PropTypes.node.isRequired,
-};
-
-ServiceCard.defaultProps = {
-    url: undefined,
 };
 
 ServiceCardImage.propTypes = {
