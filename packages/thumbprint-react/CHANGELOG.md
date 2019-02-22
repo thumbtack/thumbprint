@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.3 - 2019-02-22
+
 ### Changed
 
 -   [Patch] `url` prop of `ServiceCard` is now required (#16)
