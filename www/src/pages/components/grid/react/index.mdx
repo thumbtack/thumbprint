@@ -58,6 +58,33 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </Grid>
 ```
 
+### Multi-row
+
+Using multiple columns with a combined width that exceed `12` will automatically wrap into new rows.
+
+```jsx
+<Grid>
+    <GridColumn base={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+    <GridColumn base={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
 ### Responsive at all breakpoints
 
 ```jsx
