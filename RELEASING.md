@@ -2,9 +2,9 @@
 
 Thumbprint is a collection of small packages that are versioned independently and follow [Semantic Versioning](http://semver.org/). We use [Lerna](https://github.com/lerna/lerna) to automate most of the package release process, but there are still some manual steps.
 
-## Who can publish to NPM
+## Who can publish to npm
 
-The following users have credentials to publish packages to NPM:
+The following users have credentials to publish packages to npm:
 
 1. [Daniel O’Connor](https://github.com/danoc)
 2. [Tom Genoni](https://github.com/tomgenoni)
@@ -13,9 +13,9 @@ The following users have credentials to publish packages to NPM:
 
 This list ordered based on experience releasing packages and contributing to Thumbprint.
 
-## Check to see if you have credentials to publish to NPM
+## Check to see if you have credentials to publish to npm
 
-Run `npm whoami`. You’ll be able to publish packages if the user NPM returns is a collaborator for the packages on [Thumbtack’s NPM org](https://www.npmjs.com/org/thumbtack).
+Run `npm whoami`. You’ll be able to publish packages if the user npm returns is a collaborator for the packages on [Thumbtack’s npm org](https://www.npmjs.com/org/thumbtack).
 
 ## How to publish
 
@@ -34,7 +34,7 @@ The documentation is automatically deployed to Netlify when a PR is merged into 
 
 ## Releasing beta versions of packages
 
-Run `npm whoami`. You’ll be able to publish if the user NPM returns is a collaborator for the packages on [Thumbtack’s NPM org](https://www.npmjs.com/org/thumbtack).
+Run `npm whoami`. You’ll be able to publish if the user npm returns is a collaborator for the packages on [Thumbtack’s npm org](https://www.npmjs.com/org/thumbtack).
 
 1. Run `git checkout [branch-name]` to navigate to the branch that contains the changes you'd like to release.
 2. Navigate to the package with `cd packages/[package-name]`.
