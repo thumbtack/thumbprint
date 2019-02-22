@@ -67,6 +67,18 @@ export default class ModalCurtain extends React.Component {
         this.setState({ isClient: true });
     }
 
+    componentDidUpdate(prevProps) {
+        const { stage } = this.props;
+
+        if (prevProps.stage !== stage && window && window.history) {
+            if (stage === 'entering') {
+                window.history.pushState({}, document.title);
+            } else if (stage === 'exiting') {
+                window.history.back();
+            }
+        }
+    }
+
     render() {
         const { isClient } = this.state;
         const { shouldCloseOnEscape, accessibilityLabel, onCloseClick, children } = this.props;
