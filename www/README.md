@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/10043c63-1dc0-47ef-a69d-583e55171728/deploy-status)](https://app.netlify.com/sites/thumbprint/deploys)
+
 # thumbprint.design
 
 The Thumbprint documentation is powered by [Gatsby](https://www.gatsbyjs.org/) and hosted on [Netlify](https://netlify.com/). It is deployed automatically when pull requests are merged into `master`.
