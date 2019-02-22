@@ -10,9 +10,9 @@ It will be available at [http://localhost:8090/](http://localhost:8090/).
 
 ## How to make changes
 
-The [`src`](https://github.com/thumbtack/thumbprint/tree/master/www/src) folder contains all of our pages and components.
+The [`src`](https://github.com/thumbtack/thumbprint/tree/master/www/src) folder contains all of the documentation's pages and components.
 
-The URL for each page in our documentation maps exactly to the a file in [`src/pages/`](https://github.com/thumbtack/thumbprint/tree/master/www/src/pages). These pages can import components from [`src/components`](https://github.com/thumbtack/thumbprint/tree/master/www/src/components) as well as packages from NPM. The available packages are defined in [this folder's `package.json`](https://github.com/thumbtack/thumbprint/blob/master/www/package.json).
+The URL for each page in our documentation maps exactly to a file in [`src/pages/`](https://github.com/thumbtack/thumbprint/tree/master/www/src/pages). These pages can import components from [`src/components`](https://github.com/thumbtack/thumbprint/tree/master/www/src/components) as well as packages from NPM. The available packages are defined in [this folder's `package.json`](https://github.com/thumbtack/thumbprint/blob/master/www/package.json).
 
 ### Working with MDX files
 
@@ -37,13 +37,15 @@ You can [use triple backticks](https://help.github.com/en/articles/creating-and-
 
 Beyond [specifying a language](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#syntax-highlighting), the triple backticks can include the following custom configuration options:
 
--   `shouldRender`: Code written in `jsx` or `html` will render by default if [the language identifier](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#syntax-highlighting) was included. You can use the `shouldRender` option to prevent the example from rendering. (Here's an [example from the `InputRow` React component](https://github.com/thumbtack/thumbprint/blob/e9016e6b8589710641dbd7ded6434095dab5cdf0/www/src/pages/components/input-row/react/index.mdx#L38-L42).)
+-   `shouldRender`: Code written in `jsx` or `html` will render by default if [the language identifier](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#syntax-highlighting) was included. You can use `shouldRender=false` to prevent the example from rendering. (Here's an [example from the `InputRow` React component](https://github.com/thumbtack/thumbprint/blob/e9016e6b8589710641dbd7ded6434095dab5cdf0/www/src/pages/components/input-row/react/index.mdx#L38-L42).)
 -   `theme`: You can set a rendered example's background color to `light`, `dark`, or `white`. The option defaults to `white`. (Here's an [example from the React `Button` component](https://github.com/thumbtack/thumbprint/blob/e9016e6b8589710641dbd7ded6434095dab5cdf0/www/src/pages/components/button/react/index.mdx#L27-L29).)
 
-## Troubleshooting tips
+## Troubleshooting
 
 Try doing one of the following if you run into issues:
 
 -   Run `yarn install` or `yarn install --force` in the Thumbprint root folder.
 -   Check the version of Yarn or Node that you're using. Our [`CONTRIBUTING.md` file](https://github.com/thumbtack/thumbprint/blob/master/CONTRIBUTING.md) includes our version requirements.
 -   Run `rm -rf www/.cache www/public` to clear Gatsby's cache. ([View related bug in Gatsby](https://github.com/gatsbyjs/gatsby/issues/11747).)
+
+If these tips don't won't, reach out to [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) on GitHub.
