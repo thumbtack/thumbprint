@@ -458,6 +458,21 @@ These classes should be used in place of the [SCSS `grid`](/components/grid/scss
 </div>
 ```
 
+### Multi-row
+
+Using multiple columns with a combined width that exceed `12` will automatically wrap into new rows.
+
+```html
+<div class="grid">
+    <div class="col-4 mb3"><div class="bg-gray-200 ba b-gray h3"></div></div>
+    <div class="col-4 mb3"><div class="bg-gray-200 ba b-gray h3"></div></div>
+    <div class="col-4 mb3"><div class="bg-gray-200 ba b-gray h3"></div></div>
+    <div class="col-4"><div class="bg-gray-200 ba b-gray h3"></div></div>
+    <div class="col-4"><div class="bg-gray-200 ba b-gray h3"></div></div>
+    <div class="col-4"><div class="bg-gray-200 ba b-gray h3"></div></div>
+</div>
+```
+
 ### Centered grid
 
 Though this design pattern is often built using grid classes, it is more easily solved by using `mw7 center tc`.
