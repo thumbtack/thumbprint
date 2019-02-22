@@ -389,7 +389,7 @@ Options for block, inline, and tables elements.
 
 ## Grid
 
-These classes should be used in place of `grid`. That will be deprecated.
+These classes should be used in place of the [SCSS `grid`](/components/grid/scss/). That has been deprecated.
 
 -   Columns should be divisible by 12.
 -   The immediate child of a `grid` will default to 100% width, which is common for mobile.
@@ -455,6 +455,20 @@ These classes should be used in place of `grid`. That will be deprecated.
     <div className="s_col-3 mb3 s_mb0">...content...</div>
     <div className="s_col-3 mb3 s_mb0">...content...</div>
     <div className="s_col-6">...content...</div>
+</div>
+```
+
+### Centered grid
+
+Though this design pattern is often built using grid classes, it is more easily solved by using `mw7 center tc`.
+
+```html
+<div class="mw7 center tc">
+    <div class="ba b-green">
+        “In our industry, you hear a lot of talk about the future of work. What I’ve come to believe
+        — because I see it every day — is that the entrepreneurial spirit of independent
+        professionals is the most precious resource we have as a society.”
+    </div>
 </div>
 ```
 
