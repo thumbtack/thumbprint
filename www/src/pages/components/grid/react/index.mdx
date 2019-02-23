@@ -60,26 +60,26 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ### Multi-row
 
-Using multiple columns with a combined width that exceeds `12` will automatically wrap into new rows.
+Using multiple columns with a combined width that exceeds `12` will automatically wrap into new rows. In this example the columns are stacked by default, two per row above the small breakpoint, and three per row above the medium breakpoint.
 
 ```jsx
 <Grid>
-    <GridColumn base={4}>
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
         <div className="ba b-green h3 mb3" />
     </GridColumn>
-    <GridColumn base={4}>
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
         <div className="ba b-green h3 mb3" />
     </GridColumn>
-    <GridColumn base={4}>
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
         <div className="ba b-green h3 mb3" />
     </GridColumn>
-    <GridColumn base={4}>
-        <div className="ba b-green h3" />
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3 m_mb0" />
     </GridColumn>
-    <GridColumn base={4}>
-        <div className="ba b-green h3" />
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3 s_mb0" />
     </GridColumn>
-    <GridColumn base={4}>
+    <GridColumn base={12} aboveSmall={6} aboveMedium={4}>
         <div className="ba b-green h3" />
     </GridColumn>
 </Grid>
