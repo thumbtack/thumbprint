@@ -56,6 +56,10 @@ Thumbprint Atomic classes are available to all React and Twig pages on thumbtack
 
 Atomic is included in `Layout.jsx` which means all React pages will include Atomic classes by default. The recommended usage is to contain the classes in the JSX by using the Atomic classes directly, or as variables, and write any custom CSS not covered by Atomic classes in a Sass file.
 
+#### CSS Modules
+
+Do not add Atomic classes using the [composes](https://github.com/css-modules/css-modules#composition) functionality that’s available in CSS Modules. Due to the specificity and the built-in responsiveness of Atomic classes, unexpected behavior can result.
+
 #### JSX
 
 ```js shouldRender=false
