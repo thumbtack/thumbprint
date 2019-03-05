@@ -90,9 +90,6 @@
         "packages/*",
         "www"
     ],
-    "resolutions": {
-        "react-docgen": "3.0.0-rc.2"
-    },
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --staged"
