@@ -3,20 +3,20 @@ title: Truncation
 description: Recommendations when cutting it short.
 ---
 
-Though truncating text should be used infrequently there are situations where the user can benefit from seeing a preview of data. For example, a user may want to skim through the beginning of multiple product reviews before wanting to view all of a specific one.
+Though truncation should be used infrequently there are situations where the user can benefit from seeing a preview of data. For example, a user may want to skim through the beginning of multiple reviews before deciding to view one in its entirety.
 
 ## Types
 
-In Thumbtack products there are three types of truncation in use:
+In Thumbtack products there are four types of truncation in use:
 
-1. Strings that are 1 lines long with an ellipsis when the text overflows. There is no UI action to expand what's been truncated
-2. Strings that are between 2 and 3 lines long with an ellipsis when the text overflows. There is no UI action to expand what's been truncated
-3. Long blocks of text, like user reviews, that can be expanded with a "Read More" link.
+1. Strings 1 line long with an ellipsis with no UI action to expand what's been truncated.
+2. Strings between 2 and 3 lines long with an ellipsis with no UI action to expand what's been truncated.
+3. Long blocks of text, like user reviews, that can be expanded with a "Read more" link.
 4. Lists of items that are extended with a "Show more" link.
 
 ## Patterns & implementations
 
-### Single-line strings
+### 1. Single-line strings
 
 In this case a few lines of well-supported CSS is sufficient. The `truncate` class is available in our [Atomic library](/atomic/#section-truncate) to make this easy.
 
@@ -38,7 +38,7 @@ In this case a few lines of well-supported CSS is sufficient. The `truncate` cla
     </div>
 </div>
 
-### Multiline strings
+### 2. Multiline strings
 
 This type of truncation is a bit more complicated with no one perfect solution. There a number of Sass and Javascript approaches but they buggy or convoluted. In this case we recommend a Sass approach that uses `line-height` tokens to calculate a `max-height`.
 
@@ -55,16 +55,26 @@ This type of truncation is a bit more complicated with no one perfect solution. 
 ```
 
 -   Users of Webkit-based browsers will see an ellipsis if the text overflows the number of lines specified in `-webkit-line-clamp`.
--   Non-WebKit browsers, like Firefox, will see no ellipsis and the text will cut off at the last word that fits.
+-   Non-WebKit browsers, like Firefox, will see no ellipsis and the text will cut off at the last word that fits. Though this is not ideal the drawbacks of the alternatives outweigh their benefits.
 
 #### Example
 
 <img src="./multiline.png" alt="Multiline truncation example" width="300" />
 
-### "Read more"
+### 3. "Read more"
 
-Because the Sass pattern for multiline truncation relies on a `max-height` calculation, can visually break if size of the text container changes unexpectedly. To insulate against this we recommend the following:
+Because the Sass pattern for multiline truncation describe above relies on a `max-height` calculation, it can visually break if size of the text container changes unexpectedly. To insulate against this we recommend the following:
 
 -   Truncate the string using a word count.
 -   If the word count threshold is met, append an ellipsis to the string.
--   The “Read more” link should one its own line below.
+-   The “Read more” link should be on its own line below.
+-   A “Read less” button to undo the reveal action is not needed.
+
+<div class="bg-gray dib tc mt3 pa6">[JK EXAMPLE HERE]</div>
+
+### 4. "Show more"
+
+This is a standard Javascript interaction to show/hide multiple elements in a list. The number of elements to hide and reveal should be at the discretion of the designer and developer, keeping in the mind the following:
+
+-   Include logic to avoid hiding only one element.
+-   Consider whether the user should be able to show and re-hide the content.
