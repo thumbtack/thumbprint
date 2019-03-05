@@ -7,7 +7,7 @@
         "start": "gatsby develop --port 8090"
     },
     "dependencies": {
-        "@mdx-js/mdx": "0.20.1",
+        "@mdx-js/mdx": "0.20.2",
         "@mdx-js/tag": "0.18.0",
         "@thumbtack/thumbprint-icons": "^2.8.1",
         "@thumbtack/thumbprint-react": "^0.2.3",
