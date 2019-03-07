@@ -202,7 +202,10 @@ class Container extends React.Component {
                                                 filter: {
                                                     path: {
                                                         glob: "/components/*/*/"
-                                                        ne: "/components/global-css/scss/"
+                                                        nin: [
+                                                            "/components/global-css/scss/"
+                                                            "/components/global-scss/scss/"
+                                                        ]
                                                     }
                                                     context: {
                                                         frontmatter: { unlisted: { ne: true } }
@@ -309,6 +312,15 @@ class Container extends React.Component {
                                                             }
                                                         >
                                                             Global CSS
+                                                        </SideNavSectionGroupLink>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/global-scss/scss/"
+                                                            isActive={
+                                                                pathname ===
+                                                                '/components/global-scss/scss/'
+                                                            }
+                                                        >
+                                                            Global SCSS
                                                         </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                     <SideNavSectionGroup>
