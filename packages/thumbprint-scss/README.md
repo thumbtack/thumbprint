@@ -47,14 +47,14 @@ For projects that want to compile Thumbprint CSS components along with other SCS
 You can import all Thumbprint components (classes starting with `tp-*`) in JavaScript with this import:
 
 ```js
-@import '@thumbtack/thumbprint-scss';
+import '@thumbtack/thumbprint-scss';
 ```
 
 You can import specific components as well:
 
 ```js
-@import '@thumbtack/thumbprint-scss/button';
-@import '@thumbtack/thumbprint-scss/input';
+import '@thumbtack/thumbprint-scss/button';
+import '@thumbtack/thumbprint-scss/input';
 ```
 
 This works in development environments that support importing CSS files in JavaScript. It works without any additional configuration in Create React App, Gatsby, and Next.js.
