@@ -1,9 +1,10 @@
 # Thumbprint SCSS
 
-This package contains the SCSS components and mixins. It distributes two files:
+This package contains the SCSS components and mixins. It distributes a few files:
 
 1. **`components.css`**: This is a compiled CSS file of all Thumbprint SCSS components, for example, buttons, type, and form elements. It is primarly used for projects that do not use React.
 2. **`mixins.scss`**: This is a rollup of all functions and Thumbprint mixins used by the SCSS components and includes our breakpoints.
+3. **`alert.css`, `avatar.css`, `block-list.css`, etc.**: These files are published so that consumers can require individual files if needed.
 
 See the [Thumbprint](https://thumbprint.design) Components section for full documentation.
 
@@ -47,6 +48,13 @@ You can import all Thumbprint components (classes starting with `tp-*`) in JavaS
 
 ```js
 @import '@thumbtack/thumbprint-scss';
+```
+
+You can import specific components as well:
+
+```js
+@import '@thumbtack/thumbprint-scss/button';
+@import '@thumbtack/thumbprint-scss/input';
 ```
 
 This works in development environments that support importing CSS files in JavaScript. It works without any additional configuration in Create React App, Gatsby, and Next.js.

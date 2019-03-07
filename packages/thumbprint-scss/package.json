@@ -6,8 +6,7 @@
     "main": "components.css",
     "style": "components.css",
     "files": [
-        "components.css",
-        "components.css.map",
+        "*.css",
         "mixins.scss",
         "mixins"
     ],
@@ -26,16 +25,19 @@
     "license": "Apache-2.0",
     "scripts": {
         "start": "yarn generate-css",
-        "clear": "rm components.css components.css.map",
-        "generate-css": "node-sass -q components.scss components.css --importer=./node-sass-importer.js && postcss components.css --map --use autoprefixer cssnano --replace",
+        "clear": "rm *.css",
+        "generate-css": "./generate-css.js",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^6.3.0",
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
+        "fs-extra": "^7.0.1",
+        "glob": "^7.1.3",
         "node-sass": "^4.9.2",
         "node-sass-tilde-importer": "1.0.0",
+        "p-map": "^2.0.0",
         "postcss-cli": "^6.1.1"
     }
 }
