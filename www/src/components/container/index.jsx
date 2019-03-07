@@ -204,7 +204,7 @@ class Container extends React.Component {
                                                         glob: "/components/*/*/"
                                                         nin: [
                                                             "/components/global-css/scss/"
-                                                            "/components/global-scss/scss/"
+                                                            "/components/mixins/scss/"
                                                         ]
                                                     }
                                                     context: {
@@ -314,13 +314,13 @@ class Container extends React.Component {
                                                             Global CSS
                                                         </SideNavSectionGroupLink>
                                                         <SideNavSectionGroupLink
-                                                            to="/components/global-scss/scss/"
+                                                            to="/components/mixins/scss/"
                                                             isActive={
                                                                 pathname ===
-                                                                '/components/global-scss/scss/'
+                                                                '/components/mixins/scss/'
                                                             }
                                                         >
-                                                            Global SCSS
+                                                            Mixins &amp; functions
                                                         </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                     <SideNavSectionGroup>

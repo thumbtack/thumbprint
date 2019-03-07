@@ -1,6 +1,6 @@
 ---
-title: Global SCSS
-description: CSS for all SCSS components, along with their mixins and functions.
+title: Mixins & functions
+description: Responsive mixins and a spacer function.
 ---
 
 import { graphql, Link } from 'gatsby';
@@ -12,27 +12,6 @@ import {
 import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
-
-This package houses all the SCSS, mixins, and functions for Thumbprint SCSS packages. It makes available two files:
-
-1. `components.css` is the combined CSS of all SCSS packages.
-2. `mixins.scss` is a rollup of all SCSS mixins and functions.
-
-## Usage
-
-The most common use case is including `mixins.scss` into your SCSS files. This gives you access to the responsive mixins and, less frequently needed, any of the mixins that power some SCSS packages, like `button` or `link`.
-
-### Mixins & functions
-
-```scss
-@import '[node_modules path]/thumbprint-scss/mixins';
-```
-
-### Component CSS
-
-```scss
-@import '[node_modules path]/thumbprint-scss/components';
-```
 
 ## Mixins
 
@@ -131,7 +110,7 @@ For spacing classes to use in your HTML see [Thumbprint Atomic](/atomic/).
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/global-scss/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/mixins/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
