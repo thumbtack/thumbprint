@@ -7,6 +7,7 @@
 ### Changed
 
 -   [Patch] `url` prop of `ServiceCard` is now required (#16)
+-   [Patch] Set focus to `ModalCurtain` root instead of the first focusable element within modal (#156)
 
 ## 0.2.2 - 2019-02-20
 

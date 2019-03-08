@@ -24,19 +24,17 @@ exports[`does not show the close button if \`shouldHideCloseButton\` is true 1`]
       <Portal
         containerInfo={
           <div>
-            <div>
+            <div
+              class="modalStructureBackdrop modalStructureBackdropAnimated"
+              style="padding: 48px 20px;"
+            >
               <div
-                class="modalStructureBackdrop modalStructureBackdropAnimated"
-                style="padding: 48px 20px;"
+                class="modalContents modalContentsAnimated"
+                style="max-width: 600px;"
               >
                 <div
-                  class="modalContents modalContentsAnimated"
-                  style="max-width: 600px;"
-                >
-                  <div
-                    class="contents"
-                  />
-                </div>
+                  class="contents"
+                />
               </div>
             </div>
           </div>
@@ -58,28 +56,45 @@ exports[`does not show the close button if \`shouldHideCloseButton\` is true 1`]
             active={false}
             focusTrapOptions={Object {}}
             paused={false}
-            tag="div"
           >
-            <div>
-              <div
-                className="modalStructureBackdrop modalStructureBackdropAnimated"
-                style={
-                  Object {
-                    "padding": "48px 20px",
-                  }
+            <div
+              className="modalStructureBackdrop modalStructureBackdropAnimated"
+              style={
+                Object {
+                  "padding": "48px 20px",
                 }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="600px"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={true}
+                stopPropagation={false}
               >
-                <OnClickOutside(ModalContents)
+                <ModalContents
                   aria-label="Modal"
                   contentsMaxWidth="600px"
-                  disableOnClickOutside={true}
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
-                  excludeScrollbar={false}
                   isOpen={false}
                   onCloseClick={[Function]}
                   outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -88,40 +103,20 @@ exports[`does not show the close button if \`shouldHideCloseButton\` is true 1`]
                   shouldAnimate={true}
                   stopPropagation={false}
                 >
-                  <ModalContents
-                    aria-label="Modal"
-                    contentsMaxWidth="600px"
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
+                  <div
+                    className="modalContents modalContentsAnimated"
+                    style={
+                      Object {
+                        "maxWidth": "600px",
+                      }
                     }
-                    isOpen={false}
-                    onCloseClick={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    role="dialog"
-                    shouldAnimate={true}
-                    stopPropagation={false}
                   >
                     <div
-                      className="modalContents modalContentsAnimated"
-                      style={
-                        Object {
-                          "maxWidth": "600px",
-                        }
-                      }
-                    >
-                      <div
-                        className="contents"
-                      />
-                    </div>
-                  </ModalContents>
-                </OnClickOutside(ModalContents)>
-              </div>
+                      className="contents"
+                    />
+                  </div>
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
             </div>
           </FocusTrap>
         </ModalStructure>
@@ -155,36 +150,34 @@ exports[`renders a basic modal 1`] = `
       <Portal
         containerInfo={
           <div>
-            <div>
+            <div
+              class="modalStructureBackdrop modalStructureBackdropAnimated"
+              style="padding: 48px 20px;"
+            >
               <div
-                class="modalStructureBackdrop modalStructureBackdropAnimated"
-                style="padding: 48px 20px;"
+                class="modalContents modalContentsAnimated"
+                style="max-width: 600px;"
               >
                 <div
-                  class="modalContents modalContentsAnimated"
-                  style="max-width: 600px;"
+                  class="contents"
                 >
-                  <div
-                    class="contents"
+                  <button
+                    class="closeButton"
+                    type="button"
                   >
-                    <button
-                      class="closeButton"
-                      type="button"
+                    <svg
+                      class="closeIcon"
+                      fill="currentColor"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      width="28"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="closeIcon"
-                        fill="currentColor"
-                        height="28"
-                        viewBox="0 0 28 28"
-                        width="28"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      <path
+                        d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -207,28 +200,45 @@ exports[`renders a basic modal 1`] = `
             active={false}
             focusTrapOptions={Object {}}
             paused={false}
-            tag="div"
           >
-            <div>
-              <div
-                className="modalStructureBackdrop modalStructureBackdropAnimated"
-                style={
-                  Object {
-                    "padding": "48px 20px",
-                  }
+            <div
+              className="modalStructureBackdrop modalStructureBackdropAnimated"
+              style={
+                Object {
+                  "padding": "48px 20px",
                 }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="600px"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={true}
+                stopPropagation={false}
               >
-                <OnClickOutside(ModalContents)
+                <ModalContents
                   aria-label="Modal"
                   contentsMaxWidth="600px"
-                  disableOnClickOutside={true}
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
-                  excludeScrollbar={false}
                   isOpen={false}
                   onCloseClick={[Function]}
                   outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -237,42 +247,31 @@ exports[`renders a basic modal 1`] = `
                   shouldAnimate={true}
                   stopPropagation={false}
                 >
-                  <ModalContents
-                    aria-label="Modal"
-                    contentsMaxWidth="600px"
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
+                  <div
+                    className="modalContents modalContentsAnimated"
+                    style={
+                      Object {
+                        "maxWidth": "600px",
+                      }
                     }
-                    isOpen={false}
-                    onCloseClick={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    role="dialog"
-                    shouldAnimate={true}
-                    stopPropagation={false}
                   >
                     <div
-                      className="modalContents modalContentsAnimated"
-                      style={
-                        Object {
-                          "maxWidth": "600px",
-                        }
-                      }
+                      className="contents"
                     >
-                      <div
-                        className="contents"
+                      <button
+                        className="closeButton"
+                        onClick={[Function]}
+                        type="button"
                       >
-                        <button
-                          className="closeButton"
-                          onClick={[Function]}
-                          type="button"
+                        <NavigationCloseMedium
+                          className="closeIcon"
+                          fill="currentColor"
+                          height="28"
+                          viewBox="0 0 28 28"
+                          width="28"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <NavigationCloseMedium
+                          <svg
                             className="closeIcon"
                             fill="currentColor"
                             height="28"
@@ -280,25 +279,16 @@ exports[`renders a basic modal 1`] = `
                             width="28"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              className="closeIcon"
-                              fill="currentColor"
-                              height="28"
-                              viewBox="0 0 28 28"
-                              width="28"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                              />
-                            </svg>
-                          </NavigationCloseMedium>
-                        </button>
-                      </div>
+                            <path
+                              d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                            />
+                          </svg>
+                        </NavigationCloseMedium>
+                      </button>
                     </div>
-                  </ModalContents>
-                </OnClickOutside(ModalContents)>
-              </div>
+                  </div>
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
             </div>
           </FocusTrap>
         </ModalStructure>
@@ -332,44 +322,42 @@ exports[`renders a basic modal with content 1`] = `
       <Portal
         containerInfo={
           <div>
-            <div>
+            <div
+              class="modalStructureBackdrop modalStructureBackdropAnimated"
+              style="padding: 48px 20px;"
+            >
               <div
-                class="modalStructureBackdrop modalStructureBackdropAnimated"
-                style="padding: 48px 20px;"
+                class="modalContents modalContentsAnimated"
+                style="max-width: 600px;"
               >
                 <div
-                  class="modalContents modalContentsAnimated"
-                  style="max-width: 600px;"
+                  class="contents"
                 >
-                  <div
-                    class="contents"
+                  <p>
+                    Hi there!
+                  </p>
+                  <button
+                    type="button"
                   >
-                    <p>
-                      Hi there!
-                    </p>
-                    <button
-                      type="button"
+                    Submit
+                  </button>
+                  <button
+                    class="closeButton"
+                    type="button"
+                  >
+                    <svg
+                      class="closeIcon"
+                      fill="currentColor"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      width="28"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      Submit
-                    </button>
-                    <button
-                      class="closeButton"
-                      type="button"
-                    >
-                      <svg
-                        class="closeIcon"
-                        fill="currentColor"
-                        height="28"
-                        viewBox="0 0 28 28"
-                        width="28"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      <path
+                        d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -392,28 +380,45 @@ exports[`renders a basic modal with content 1`] = `
             active={false}
             focusTrapOptions={Object {}}
             paused={false}
-            tag="div"
           >
-            <div>
-              <div
-                className="modalStructureBackdrop modalStructureBackdropAnimated"
-                style={
-                  Object {
-                    "padding": "48px 20px",
-                  }
+            <div
+              className="modalStructureBackdrop modalStructureBackdropAnimated"
+              style={
+                Object {
+                  "padding": "48px 20px",
                 }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="600px"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={true}
+                stopPropagation={false}
               >
-                <OnClickOutside(ModalContents)
+                <ModalContents
                   aria-label="Modal"
                   contentsMaxWidth="600px"
-                  disableOnClickOutside={true}
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
-                  excludeScrollbar={false}
                   isOpen={false}
                   onCloseClick={[Function]}
                   outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -422,50 +427,39 @@ exports[`renders a basic modal with content 1`] = `
                   shouldAnimate={true}
                   stopPropagation={false}
                 >
-                  <ModalContents
-                    aria-label="Modal"
-                    contentsMaxWidth="600px"
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
+                  <div
+                    className="modalContents modalContentsAnimated"
+                    style={
+                      Object {
+                        "maxWidth": "600px",
+                      }
                     }
-                    isOpen={false}
-                    onCloseClick={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    role="dialog"
-                    shouldAnimate={true}
-                    stopPropagation={false}
                   >
                     <div
-                      className="modalContents modalContentsAnimated"
-                      style={
-                        Object {
-                          "maxWidth": "600px",
-                        }
-                      }
+                      className="contents"
                     >
-                      <div
-                        className="contents"
+                      <p>
+                        Hi there!
+                      </p>
+                      <button
+                        type="button"
                       >
-                        <p>
-                          Hi there!
-                        </p>
-                        <button
-                          type="button"
+                        Submit
+                      </button>
+                      <button
+                        className="closeButton"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <NavigationCloseMedium
+                          className="closeIcon"
+                          fill="currentColor"
+                          height="28"
+                          viewBox="0 0 28 28"
+                          width="28"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          Submit
-                        </button>
-                        <button
-                          className="closeButton"
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          <NavigationCloseMedium
+                          <svg
                             className="closeIcon"
                             fill="currentColor"
                             height="28"
@@ -473,25 +467,16 @@ exports[`renders a basic modal with content 1`] = `
                             width="28"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              className="closeIcon"
-                              fill="currentColor"
-                              height="28"
-                              viewBox="0 0 28 28"
-                              width="28"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                              />
-                            </svg>
-                          </NavigationCloseMedium>
-                        </button>
-                      </div>
+                            <path
+                              d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                            />
+                          </svg>
+                        </NavigationCloseMedium>
+                      </button>
                     </div>
-                  </ModalContents>
-                </OnClickOutside(ModalContents)>
-              </div>
+                  </div>
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
             </div>
           </FocusTrap>
         </ModalStructure>
@@ -525,36 +510,34 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
       <Portal
         containerInfo={
           <div>
-            <div>
+            <div
+              class="modalStructureBackdrop modalStructureBackdropAnimated"
+              style="padding: 48px 20px;"
+            >
               <div
-                class="modalStructureBackdrop modalStructureBackdropAnimated"
-                style="padding: 48px 20px;"
+                class="modalContents modalContentsAnimated"
+                style="max-width: 600px;"
               >
                 <div
-                  class="modalContents modalContentsAnimated"
-                  style="max-width: 600px;"
+                  class="contents"
                 >
-                  <div
-                    class="contents"
+                  <button
+                    class="closeButton"
+                    type="button"
                   >
-                    <button
-                      class="closeButton"
-                      type="button"
+                    <svg
+                      class="closeIcon"
+                      fill="currentColor"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      width="28"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        class="closeIcon"
-                        fill="currentColor"
-                        height="28"
-                        viewBox="0 0 28 28"
-                        width="28"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
+                      <path
+                        d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -577,28 +560,45 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
             active={false}
             focusTrapOptions={Object {}}
             paused={false}
-            tag="div"
           >
-            <div>
-              <div
-                className="modalStructureBackdrop modalStructureBackdropAnimated"
-                style={
-                  Object {
-                    "padding": "48px 20px",
-                  }
+            <div
+              className="modalStructureBackdrop modalStructureBackdropAnimated"
+              style={
+                Object {
+                  "padding": "48px 20px",
                 }
+              }
+            >
+              <OnClickOutside(ModalContents)
+                aria-label="Modal"
+                contentsMaxWidth="600px"
+                disableOnClickOutside={true}
+                eventTypes={
+                  Array [
+                    "mousedown",
+                    "touchstart",
+                  ]
+                }
+                excludeScrollbar={false}
+                isOpen={false}
+                onCloseClick={[Function]}
+                outsideClickIgnoreClass="ignore-react-onclickoutside"
+                preventDefault={false}
+                role="dialog"
+                shouldAnimate={true}
+                stopPropagation={false}
               >
-                <OnClickOutside(ModalContents)
+                <ModalContents
                   aria-label="Modal"
                   contentsMaxWidth="600px"
-                  disableOnClickOutside={true}
+                  disableOnClickOutside={[Function]}
+                  enableOnClickOutside={[Function]}
                   eventTypes={
                     Array [
                       "mousedown",
                       "touchstart",
                     ]
                   }
-                  excludeScrollbar={false}
                   isOpen={false}
                   onCloseClick={[Function]}
                   outsideClickIgnoreClass="ignore-react-onclickoutside"
@@ -607,42 +607,31 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                   shouldAnimate={true}
                   stopPropagation={false}
                 >
-                  <ModalContents
-                    aria-label="Modal"
-                    contentsMaxWidth="600px"
-                    disableOnClickOutside={[Function]}
-                    enableOnClickOutside={[Function]}
-                    eventTypes={
-                      Array [
-                        "mousedown",
-                        "touchstart",
-                      ]
+                  <div
+                    className="modalContents modalContentsAnimated"
+                    style={
+                      Object {
+                        "maxWidth": "600px",
+                      }
                     }
-                    isOpen={false}
-                    onCloseClick={[Function]}
-                    outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    preventDefault={false}
-                    role="dialog"
-                    shouldAnimate={true}
-                    stopPropagation={false}
                   >
                     <div
-                      className="modalContents modalContentsAnimated"
-                      style={
-                        Object {
-                          "maxWidth": "600px",
-                        }
-                      }
+                      className="contents"
                     >
-                      <div
-                        className="contents"
+                      <button
+                        className="closeButton"
+                        onClick={[Function]}
+                        type="button"
                       >
-                        <button
-                          className="closeButton"
-                          onClick={[Function]}
-                          type="button"
+                        <NavigationCloseMedium
+                          className="closeIcon"
+                          fill="currentColor"
+                          height="28"
+                          viewBox="0 0 28 28"
+                          width="28"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <NavigationCloseMedium
+                          <svg
                             className="closeIcon"
                             fill="currentColor"
                             height="28"
@@ -650,25 +639,16 @@ exports[`shows the close button if \`shouldHideCloseButton\` is false 1`] = `
                             width="28"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <svg
-                              className="closeIcon"
-                              fill="currentColor"
-                              height="28"
-                              viewBox="0 0 28 28"
-                              width="28"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
-                              />
-                            </svg>
-                          </NavigationCloseMedium>
-                        </button>
-                      </div>
+                            <path
+                              d="M15.414 14l5.658-5.657a1 1 0 1 0-1.415-1.414L14 12.586 8.343 6.929a1 1 0 0 0-1.414 1.414L12.586 14l-5.657 5.657a1 1 0 1 0 1.414 1.414L14 15.414l5.66 5.66a.996.996 0 0 0 1.408 0 1.004 1.004 0 0 0 0-1.42L15.414 14z"
+                            />
+                          </svg>
+                        </NavigationCloseMedium>
+                      </button>
                     </div>
-                  </ModalContents>
-                </OnClickOutside(ModalContents)>
-              </div>
+                  </div>
+                </ModalContents>
+              </OnClickOutside(ModalContents)>
             </div>
           </FocusTrap>
         </ModalStructure>
