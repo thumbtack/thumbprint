@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockList renders a border around list 1`] = `
+<BlockList
+  border="group"
+  flush={false}
+>
+  <div
+    className="list listBorderGroup"
+  >
+    goose
+  </div>
+</BlockList>
+`;
+
+exports[`BlockList renders a bottom border on the list 1`] = `
+<BlockList
+  border="bottom"
+  flush={false}
+>
+  <div
+    className="list listBorderBottom"
+  >
+    goose
+  </div>
+</BlockList>
+`;
+
+exports[`BlockList renders content that is passed in 1`] = `
+<BlockList
+  flush={false}
+>
+  <div
+    className="list"
+  >
+    goose
+  </div>
+</BlockList>
+`;
+
+exports[`BlockList renders no left/right padding for list items 1`] = `
+<BlockList
+  flush={true}
+>
+  <div
+    className="list listFlush"
+  >
+    <BlockListItem>
+      <div
+        className="item"
+      >
+        goose
+      </div>
+    </BlockListItem>
+  </div>
+</BlockList>
+`;
+
+exports[`BlockListItem renders content that is passed in 1`] = `
+<BlockListItem>
+  <div
+    className="item"
+  >
+    goose
+  </div>
+</BlockListItem>
+`;
+
+exports[`BlockListItemLink renders a link 1`] = `
+<BlockListItemLink
+  to="https://thumbtack.com"
+>
+  <a
+    className="itemLink"
+    href="https://thumbtack.com"
+  >
+    goose
+  </a>
+</BlockListItemLink>
+`;
+
+exports[`BlockListItemLink renders content that is passed in 1`] = `
+<BlockListItemLink
+  to="https://thumbtack.com"
+>
+  <a
+    className="itemLink"
+    href="https://thumbtack.com"
+  >
+    goose
+  </a>
+</BlockListItemLink>
+`;
