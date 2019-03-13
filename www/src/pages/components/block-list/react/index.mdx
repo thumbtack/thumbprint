@@ -23,6 +23,51 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </BlockList>
 ```
 
+## Default with complex link
+
+Note the use of `color-inherit` to override the default link color of `<BlockListItemLink>`.
+
+```jsx
+<BlockList border="group">
+    <BlockListItem>
+        <BlockListItemLink to="https://thumbtack.com" className="color-inherit">
+            <div class="flex">
+                <div className="mr3">
+                    <img
+                        src="https://randomuser.me/api/portraits/women/80.jpg"
+                        className="br2 mt1"
+                        width="40"
+                    />
+                </div>
+                <Text size={2} className="black-300">
+                    We bring out the best in our colleagues — and our product — by pushing each
+                    beyond what we believe we’re capable of. We give honest feedback, even when it’s
+                    hard.
+                </Text>
+            </div>
+        </BlockListItemLink>
+    </BlockListItem>
+    <BlockListItem>
+        <BlockListItemLink to="https://thumbtack.com" className="color-inherit">
+            <div class="flex">
+                <div className="mr3">
+                    <img
+                        src="https://randomuser.me/api/portraits/women/84.jpg"
+                        className="br2 mt1"
+                        width="40"
+                    />
+                </div>
+                <Text size={2} className="black-300">
+                    In a world where tech is often seen as eroding good jobs, we’re helping small
+                    business owners thrive. Our product makes entrepreneurship accessible to
+                    everyone.
+                </Text>
+            </div>
+        </BlockListItemLink>
+    </BlockListItem>
+</BlockList>
+```
+
 ## Flush
 
 ```jsx

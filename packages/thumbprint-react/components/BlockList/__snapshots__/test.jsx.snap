@@ -66,6 +66,20 @@ exports[`BlockListItem renders content that is passed in 1`] = `
 </BlockListItem>
 `;
 
+exports[`BlockListItemLink renders a class that is passed in 1`] = `
+<BlockListItemLink
+  className="red"
+  to="https://thumbtack.com"
+>
+  <a
+    className="itemLink red"
+    href="https://thumbtack.com"
+  >
+    goose
+  </a>
+</BlockListItemLink>
+`;
+
 exports[`BlockListItemLink renders a link 1`] = `
 <BlockListItemLink
   to="https://thumbtack.com"

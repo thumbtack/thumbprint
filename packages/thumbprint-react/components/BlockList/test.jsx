@@ -42,6 +42,15 @@ describe('BlockListItemLink', () => {
         expect(wrapper.text()).toBe('goose');
         expect(wrapper).toMatchSnapshot();
     });
+    test('renders a class that is passed in', () => {
+        const wrapper = mount(
+            <BlockListItemLink to="https://thumbtack.com" className="red">
+                goose
+            </BlockListItemLink>,
+        );
+        expect(wrapper.find('a').hasClass('red')).toBe(true);
+        expect(wrapper).toMatchSnapshot();
+    });
     test('renders a link', () => {
         const wrapper = mount(
             <BlockListItemLink to="https://thumbtack.com">goose</BlockListItemLink>,

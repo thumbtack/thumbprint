@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-export function BlockListItemLink({ children, to }) {
+export function BlockListItemLink({ children, to, className }) {
     return (
-        <a href={to} className={styles.itemLink}>
+        <a
+            href={to}
+            className={classNames({
+                [styles.itemLink]: true,
+                [className]: className !== undefined,
+            })}
+        >
             {children}
         </a>
     );
@@ -66,4 +72,12 @@ BlockListItemLink.propTypes = {
      * The content of the item link.
      */
     children: PropTypes.node.isRequired,
+    /**
+     * A class to provide extra styling options.
+     */
+    className: PropTypes.string,
+};
+
+BlockListItemLink.defaultProps = {
+    className: undefined,
 };
