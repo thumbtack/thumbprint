@@ -1,0 +1,82 @@
+---
+title: Block List
+description: Layout options for vertically stacking content.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Default
+
+`<BlockListItemLink>` creates a link that takes up all of the space in the row.
+
+```jsx
+<BlockList>
+    <BlockListItem>Item One</BlockListItem>
+    <BlockListItem>
+        <BlockListItemLink to="https://example.com">Item Two</BlockListItemLink>
+    </BlockListItem>
+    <BlockListItem>Item Three</BlockListItem>
+    <BlockListItem>Item Four</BlockListItem>
+</BlockList>
+```
+
+## Flush
+
+```jsx
+<BlockList flush>
+    <BlockListItem>Item One</BlockListItem>
+    <BlockListItem>Item Two</BlockListItem>
+    <BlockListItem>Item Three</BlockListItem>
+    <BlockListItem>Item Four</BlockListItem>
+</BlockList>
+```
+
+## Bottom border
+
+```jsx
+<BlockList border="bottom">
+    <BlockListItem>Item One</BlockListItem>
+    <BlockListItem>Item Two</BlockListItem>
+    <BlockListItem>Item Three</BlockListItem>
+    <BlockListItem>Item Four</BlockListItem>
+</BlockList>
+```
+
+## Surrounding border
+
+```jsx
+<BlockList border="surround">
+    <BlockListItem>Item One</BlockListItem>
+    <BlockListItem>Item Two</BlockListItem>
+    <BlockListItem>Item Three</BlockListItem>
+    <BlockListItem>Item Four</BlockListItem>
+</BlockList>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/block-list/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/BlockList/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
