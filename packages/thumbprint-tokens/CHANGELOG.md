@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.3.1 - 2019-03-11
+
 ### Changed
 
 -   [Patch] Remove notion of "private" tokens. They now all documented and can be used. (#145)

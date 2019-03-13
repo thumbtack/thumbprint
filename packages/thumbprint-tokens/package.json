@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-tokens",
-    "version": "6.3.0",
+    "version": "6.3.1",
     "main": "dist/javascript/index.cjs.js",
     "module": "dist/javascript/index.es.js",
     "sideEffects": false,
