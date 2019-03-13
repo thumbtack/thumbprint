@@ -38,7 +38,7 @@ export function BlockList({ children, flush, border }) {
 
 BlockList.propTypes = {
     /**
-     * Either add a border to the bottom or suround the entire list.
+     * Add a border to the bottom or surround the entire list.
      */
     border: PropTypes.oneOf(['bottom', 'group']),
     /**
@@ -58,7 +58,7 @@ BlockList.defaultProps = {
 
 BlockListItem.propTypes = {
     /**
-     * The content of the item.
+     * The content of the list item.
      */
     children: PropTypes.node.isRequired,
 };
@@ -73,7 +73,7 @@ BlockListItemLink.propTypes = {
      */
     children: PropTypes.node.isRequired,
     /**
-     * A class to provide extra styling options.
+     * Classes for extra styling options.
      */
     className: PropTypes.string,
 };
