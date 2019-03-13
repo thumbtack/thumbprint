@@ -9,14 +9,24 @@ Though truncation should be used infrequently there are situations where the use
 
 In Thumbtack products there are four types of truncation in use:
 
-1. Strings 1 line long with an ellipsis with no UI action to expand what's been truncated.
-2. Strings between 2 and 3 lines long with an ellipsis with no UI action to expand what's been truncated.
+1. Strings that are one line long with no UI action to expand what's been truncated.
+2. Strings between two and three lines long with no UI action to expand what's been truncated.
 3. Long blocks of text, like user reviews, that can be expanded with a "Read more" link.
 4. Lists of items that are extended with a "Show more" link.
 
 ## Patterns & implementations
 
 ### 1. Single-line strings
+
+<div className="ba b-gray-300 pa4">
+    <div className="truncate">
+        In our industry, you hear a lot of talk about the future of work. What I’ve come to believe
+        — because I see it every day — is that the entrepreneurial spirit of independent
+        professionals is the most precious resource we have as a society.
+    </div>
+</div>
+
+#### Web
 
 In this case a few lines of well-supported CSS is sufficient. The `truncate` class is available in our [Atomic library](/atomic/#section-truncate) to make this easy.
 
@@ -28,17 +38,13 @@ In this case a few lines of well-supported CSS is sufficient. The `truncate` cla
 }
 ```
 
-#### Example
+### 2. Multiline strings
 
-<div className="bg-gray-200 pa3">
-    <div className="truncate">
-        In our industry, you hear a lot of talk about the future of work. What I’ve come to believe
-        — because I see it every day — is that the entrepreneurial spirit of independent
-        professionals is the most precious resource we have as a society.
-    </div>
+<div class="ba b-gray-300 pa4">
+    <img src="./multiline.png" alt="Multiline truncation example" width="300" />
 </div>
 
-### 2. Multiline strings
+#### Web
 
 This type of truncation is a bit more complicated with no one perfect solution. There a number of Sass and Javascript approaches but they buggy or convoluted. In this case we recommend a Sass approach that uses `line-height` tokens to calculate a `max-height`.
 
@@ -57,11 +63,11 @@ This type of truncation is a bit more complicated with no one perfect solution. 
 -   Users of Webkit-based browsers will see an ellipsis if the text overflows the number of lines specified in `-webkit-line-clamp`.
 -   Non-WebKit browsers, like Firefox, will see no ellipsis and the text will cut off at the last word that fits. Though this is not ideal the drawbacks of the alternatives outweigh their benefits.
 
-#### Example
-
-<img src="./multiline.png" alt="Multiline truncation example" width="300" />
-
 ### 3. "Read more"
+
+<div class="ba b-gray-300 pa4 mb3">
+    <img src="./read-more.png" alt="Read more example" width="614" />
+</div>
 
 Because the Sass pattern for multiline truncation describe above relies on a `max-height` calculation, it can visually break if size of the text container changes unexpectedly. To insulate against this we recommend the following:
 
@@ -70,9 +76,13 @@ Because the Sass pattern for multiline truncation describe above relies on a `ma
 -   The “Read more” link should be on its own line below.
 -   A “Read less” button to undo the reveal action is not needed.
 
-<div class="bg-gray dib tc mt3 pa6">[JK EXAMPLE HERE]</div>
+Note that depending on the width of the container this approach means that the truncation will often not occur at the of a line.
 
 ### 4. "Show more"
+
+<div class="ba b-gray-300 pa4 mb3">
+    <img src="./list.png" alt="Read more example" width="163" />
+</div>
 
 This is a standard Javascript interaction to show/hide multiple elements in a list. The number of elements to hide and reveal should be at the discretion of the designer and developer, keeping in the mind the following:
 
