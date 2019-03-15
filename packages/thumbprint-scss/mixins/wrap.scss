@@ -1,3 +1,6 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
+@import '../mixins/mixin';
+
 @mixin tp-wrap {
     margin-left: auto;
     margin-right: auto;
