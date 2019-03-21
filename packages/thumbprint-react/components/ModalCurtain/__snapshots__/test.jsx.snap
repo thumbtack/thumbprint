@@ -13,26 +13,32 @@ exports[`renders \`accessibilityLabel\` 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="goosegoosegoose"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -40,19 +46,18 @@ exports[`renders \`accessibilityLabel\` 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={false}
-      aria-label="goosegoosegoose"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="goosegoosegoose"
         role="dialog"
+        tabIndex="-1"
       />
     </FocusTrap>
   </Portal>
@@ -72,6 +77,7 @@ exports[`renders a basic curtain 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -79,19 +85,18 @@ exports[`renders a basic curtain 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={false}
-      aria-label="Modal"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="Modal"
         role="dialog"
+        tabIndex="-1"
       />
     </FocusTrap>
   </Portal>
@@ -111,18 +116,22 @@ exports[`renders modal in \`entered\` stage 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -130,19 +139,18 @@ exports[`renders modal in \`entered\` stage 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
-      aria-label="Modal"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="Modal"
         role="dialog"
+        tabIndex="-1"
       >
         <EscListener
           onEscPress={[Function]}
@@ -167,14 +175,17 @@ exports[`renders modal in \`entering\` stage 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -182,19 +193,18 @@ exports[`renders modal in \`entering\` stage 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={false}
-      aria-label="Modal"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="Modal"
         role="dialog"
+        tabIndex="-1"
       >
         <EscListener
           onEscPress={[Function]}
@@ -219,10 +229,12 @@ exports[`renders modal in \`exited\` stage 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -230,19 +242,18 @@ exports[`renders modal in \`exited\` stage 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={false}
-      aria-label="Modal"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="Modal"
         role="dialog"
+        tabIndex="-1"
       />
     </FocusTrap>
   </Portal>
@@ -262,22 +273,27 @@ exports[`renders modal in \`exiting\` stage 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
         <div
           aria-label="Modal"
           role="dialog"
+          tabindex="-1"
         />
       </body>
     }
@@ -285,19 +301,18 @@ exports[`renders modal in \`exiting\` stage 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={false}
-      aria-label="Modal"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
+          "initialFocus": [Function],
         }
       }
       paused={false}
-      role="dialog"
-      tag="div"
     >
       <div
         aria-label="Modal"
         role="dialog"
+        tabIndex="-1"
       />
     </FocusTrap>
   </Portal>
@@ -321,34 +336,42 @@ exports[`renders text that is passed in 1`] = `
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="goosegoosegoose"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           />
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           >
             <button
               data-test-id="goose"
@@ -358,6 +381,7 @@ exports[`renders text that is passed in 1`] = `
           <div
             aria-label="Modal"
             role="dialog"
+            tabindex="-1"
           >
             Goose
           </div>
@@ -367,19 +391,18 @@ exports[`renders text that is passed in 1`] = `
       <FocusTrap
         _createFocusTrap={[Function]}
         active={false}
-        aria-label="Modal"
         focusTrapOptions={
           Object {
             "clickOutsideDeactivates": true,
+            "initialFocus": [Function],
           }
         }
         paused={false}
-        role="dialog"
-        tag="div"
       >
         <div
           aria-label="Modal"
           role="dialog"
+          tabIndex="-1"
         >
           Goose
         </div>
