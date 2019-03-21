@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Minor] Change `tp-alert--warning` background color to `$tp-color__yellow-200` and text color to `$tp-color__yellow-600` for better readability.
+
 ## 0.1.3 - 2019-03-11
 
 ### Changed
