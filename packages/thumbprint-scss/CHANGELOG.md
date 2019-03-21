@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Replace deprecated `tp-font__text` tokens with new values. (#171)
+
 ## 0.1.3 - 2019-03-11
 
 ### Changed
