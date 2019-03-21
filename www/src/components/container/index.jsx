@@ -126,7 +126,7 @@ class Container extends React.Component {
                                         <img
                                             src={thumbprintLogo}
                                             className="db"
-                                            style={{ width: '130px' }}
+                                            style={{ width: '130px', height: '22px' }}
                                             alt="Thumbprint logo"
                                         />
                                     </Link>

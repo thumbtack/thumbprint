@@ -49,7 +49,7 @@
         "react": "^16.4.0",
         "react-dom": "^16.4.0",
         "remark-cli": "^5.0.0",
-        "stylelint": "^9.9.0",
+        "stylelint": "^9.10.1",
         "stylelint-config-prettier": "^4.0.0",
         "stylelint-config-recommended-scss": "^3.2.0",
         "stylelint-scss": "^3.5.0"
@@ -90,9 +90,6 @@
         "packages/*",
         "www"
     ],
-    "resolutions": {
-        "react-docgen": "3.0.0-rc.2"
-    },
     "husky": {
         "hooks": {
             "pre-commit": "pretty-quick --staged"
