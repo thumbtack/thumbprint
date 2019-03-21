@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Change font path to point to subsetted version of font.
+
 ## 0.1.1 - 2019-03-11
 
 ### Changed
