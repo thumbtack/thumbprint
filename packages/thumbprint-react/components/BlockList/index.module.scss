@@ -13,13 +13,6 @@
     border-bottom: 1px solid $tp-color__gray-300;
 }
 
-.listFlush {
-    .item {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 .item {
     padding: $tp-space__2 $tp-space__3;
 
@@ -28,7 +21,7 @@
     }
 }
 
-.itemLink {
+.itemLink.itemLink {
     padding: $tp-space__2 $tp-space__3;
     margin: -#{$tp-space__2} -#{$tp-space__3};
     display: block;

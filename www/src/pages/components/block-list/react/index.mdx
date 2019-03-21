@@ -16,7 +16,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 <BlockList>
     <BlockListItem>Item One</BlockListItem>
     <BlockListItem>
-        <BlockListItemLink to="https://thumbtack.com">Item Two</BlockListItemLink>
+        <BlockListItemLink href="https://thumbtack.com">Item Two</BlockListItemLink>
     </BlockListItem>
     <BlockListItem>Item Three</BlockListItem>
     <BlockListItem>Item Four</BlockListItem>
@@ -30,7 +30,7 @@ Note the use of `color-inherit` to override the default blue link color of `<Blo
 ```jsx
 <BlockList border="group">
     <BlockListItem>
-        <BlockListItemLink to="https://thumbtack.com" className="color-inherit hover-bg-gray-200">
+        <BlockListItemLink href="https://thumbtack.com" className="color-inherit hover-bg-gray-200">
             <div className="flex">
                 <div className="mr3">
                     <img
@@ -48,7 +48,7 @@ Note the use of `color-inherit` to override the default blue link color of `<Blo
         </BlockListItemLink>
     </BlockListItem>
     <BlockListItem>
-        <BlockListItemLink to="https://thumbtack.com" className="color-inherit hover-bg-gray-200">
+        <BlockListItemLink href="https://thumbtack.com" className="color-inherit hover-bg-gray-200">
             <div className="flex">
                 <div className="mr3">
                     <img
@@ -65,17 +65,6 @@ Note the use of `color-inherit` to override the default blue link color of `<Blo
             </div>
         </BlockListItemLink>
     </BlockListItem>
-</BlockList>
-```
-
-## Flush
-
-```jsx
-<BlockList flush>
-    <BlockListItem>Item One</BlockListItem>
-    <BlockListItem>Item Two</BlockListItem>
-    <BlockListItem>Item Three</BlockListItem>
-    <BlockListItem>Item Four</BlockListItem>
 </BlockList>
 ```
 

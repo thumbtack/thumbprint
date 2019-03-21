@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-export function BlockListItemLink({ children, to, className }) {
+export function BlockListItemLink({ className, children, ...rest }) {
     return (
         <a
-            href={to}
+            {...rest}
             className={classNames({
                 [styles.itemLink]: true,
                 [className]: className !== undefined,
@@ -21,12 +21,11 @@ export function BlockListItem({ children }) {
     return <div className={styles.item}>{children}</div>;
 }
 
-export function BlockList({ children, flush, border }) {
+export function BlockList({ children, border }) {
     return (
         <div
             className={classNames({
                 [styles.list]: true,
-                [styles.listFlush]: flush === true,
                 [styles.listBorderGroup]: border === 'group',
                 [styles.listBorderBottom]: border === 'bottom',
             })}
@@ -42,10 +41,6 @@ BlockList.propTypes = {
      */
     border: PropTypes.oneOf(['bottom', 'group']),
     /**
-     * Remove padding on left and right side of each list item.
-     */
-    flush: PropTypes.bool,
-    /**
      * The list items and any item links.
      */
     children: PropTypes.node.isRequired,
@@ -53,7 +48,6 @@ BlockList.propTypes = {
 
 BlockList.defaultProps = {
     border: undefined,
-    flush: false,
 };
 
 BlockListItem.propTypes = {
@@ -67,15 +61,15 @@ BlockListItemLink.propTypes = {
     /**
      * URL pointing to the item link destination.
      */
-    to: PropTypes.string.isRequired,
-    /**
-     * The content of the item link.
-     */
-    children: PropTypes.node.isRequired,
+    href: PropTypes.string.isRequired,
     /**
      * Classes for extra styling options.
      */
     className: PropTypes.string,
+    /**
+     * Content of the link.
+     */
+    children: PropTypes.node.isRequired,
 };
 
 BlockListItemLink.defaultProps = {
