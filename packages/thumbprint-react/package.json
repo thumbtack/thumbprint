@@ -39,7 +39,7 @@
         "@thumbtack/thumbprint-tokens": "^6.3.1",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
-        "focus-trap-react": "^3.0.5",
+        "focus-trap-react": "^6.0.0",
         "lazysizes": "^4.1.5",
         "lodash": "^4.17.11",
         "no-scroll": "^2.1.0",
