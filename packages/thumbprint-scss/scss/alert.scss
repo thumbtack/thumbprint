@@ -43,6 +43,81 @@
         background: $tp-color__yellow;
     }
 
+    &--warning-500 {
+        background: $tp-color__yellow;
+        color: $tp-color__yellow-500;
+
+        & a {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+
+            &:hover {
+                color: $tp-color__yellow-600;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &--warning-600 {
+        background: $tp-color__yellow;
+        color: $tp-color__yellow-600;
+
+        & a {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+
+            &:hover {
+                color: $tp-color__yellow-600;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &--warning-600-200 {
+        background: $tp-color__yellow-200;
+        color: $tp-color__yellow-600;
+
+        & a {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+
+            &:hover {
+                color: $tp-color__yellow-600;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &--warning-600-100 {
+        background: $tp-color__yellow-100;
+        color: $tp-color__yellow-600;
+
+        & a {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+
+            &:hover {
+                color: $tp-color__yellow-600;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &--warning-600-300 {
+        background: $tp-color__yellow-300;
+        color: $tp-color__yellow-600;
+
+        & a {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+
+            &:hover {
+                color: $tp-color__yellow-600;
+                opacity: 0.7;
+            }
+        }
+    }
+
     &--note {
         background: $tp-color__blue;
     }
