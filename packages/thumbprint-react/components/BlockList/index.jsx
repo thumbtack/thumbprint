@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-export function BlockListItemLink({ className, children, ...rest }) {
+export function BlockListItemLink({ className, ...rest }) {
     return (
+        // eslint-disable-next-line jsx-a11y/anchor-has-content
         <a
             {...rest}
             className={classNames({
                 [styles.itemLink]: true,
                 [className]: className !== undefined,
             })}
-        >
-            {children}
-        </a>
+        />
     );
 }
 
@@ -63,15 +62,7 @@ BlockListItemLink.propTypes = {
      */
     href: PropTypes.string.isRequired,
     /**
-     * Classes for extra styling options.
-     */
-    className: PropTypes.string,
-    /**
      * Content of the link.
      */
     children: PropTypes.node.isRequired,
-};
-
-BlockListItemLink.defaultProps = {
-    className: undefined,
 };

@@ -3,7 +3,6 @@
 exports[`BlockList renders a border around list 1`] = `
 <BlockList
   border="group"
-  flush={false}
 >
   <div
     className="list listBorderGroup"
@@ -16,7 +15,6 @@ exports[`BlockList renders a border around list 1`] = `
 exports[`BlockList renders a bottom border on the list 1`] = `
 <BlockList
   border="bottom"
-  flush={false}
 >
   <div
     className="list listBorderBottom"
@@ -27,31 +25,11 @@ exports[`BlockList renders a bottom border on the list 1`] = `
 `;
 
 exports[`BlockList renders content that is passed in 1`] = `
-<BlockList
-  flush={false}
->
+<BlockList>
   <div
     className="list"
   >
     goose
-  </div>
-</BlockList>
-`;
-
-exports[`BlockList renders no left/right padding for list items 1`] = `
-<BlockList
-  flush={true}
->
-  <div
-    className="list listFlush"
-  >
-    <BlockListItem>
-      <div
-        className="item"
-      >
-        goose
-      </div>
-    </BlockListItem>
   </div>
 </BlockList>
 `;
@@ -73,7 +51,7 @@ exports[`BlockListItemLink renders a class that is passed in 1`] = `
 >
   <a
     className="itemLink red"
-    href="https://thumbtack.com"
+    to="https://thumbtack.com"
   >
     goose
   </a>
@@ -82,11 +60,26 @@ exports[`BlockListItemLink renders a class that is passed in 1`] = `
 
 exports[`BlockListItemLink renders a link 1`] = `
 <BlockListItemLink
-  to="https://thumbtack.com"
+  href="https://thumbtack.com"
 >
   <a
     className="itemLink"
     href="https://thumbtack.com"
+  >
+    goose
+  </a>
+</BlockListItemLink>
+`;
+
+exports[`BlockListItemLink renders a link 2`] = `
+<BlockListItemLink
+  target="_blank"
+  to="https://thumbtack.com"
+>
+  <a
+    className="itemLink"
+    target="_blank"
+    to="https://thumbtack.com"
   >
     goose
   </a>
@@ -99,7 +92,7 @@ exports[`BlockListItemLink renders content that is passed in 1`] = `
 >
   <a
     className="itemLink"
-    href="https://thumbtack.com"
+    to="https://thumbtack.com"
   >
     goose
   </a>
