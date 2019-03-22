@@ -1,3 +1,6 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
+@import '../mixins/function';
+
 .tp-text-input {
     width: 100%;
     background-color: $tp-color__white;

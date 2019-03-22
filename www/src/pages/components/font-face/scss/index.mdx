@@ -10,12 +10,10 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Provides the `@font-face` CSS rules needed to use the Mark font in weights `400` and `700`.
 
-Consumers of this package must provide a `$thumbprint-font-url` variable that points to a URL that can load the fonts.
-
-Here's a basic example:
+Consumers of this package must provide a `$thumbprint-font-url` variable that points to a URL that can load the fonts. Here's a basic example:
 
 ```scss
-$thumbprint-font-url: 'https://example.com/fonts/';
+$thumbprint-font-url: 'https://example.com/path/';
 @import '~@thumbtack/thumbprint-font-face';
 ```
 
@@ -50,7 +48,7 @@ export const pageQuery = graphql`
             }
         }
         # Get package information by NPM package name.
-        packageTable: json(name: { eq: "@thumbtack/thumbprint-scss" }) {
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-font-face" }) {
             ...PackageTableFragment
         }
     }

@@ -4,11 +4,31 @@
 
 ### Changed
 
+-   [Patch] Set focus to `ModalCurtain` root instead of the first focusable element within modal (#156)
+-   [Patch] Replace deprecated `tp-font__text` tokens with new values. (#171)
+
+## 0.2.4 - 2019-03-11
+
+### Changed
+
+-   [Patch] Update version of dependencies. This doesn't affect the outputted code.
+
+## 0.2.3 - 2019-02-22
+
+### Changed
+
+-   [Patch] `url` prop of `ServiceCard` is now required (#16)
+
+## 0.2.2 - 2019-02-20
+
+### Changed
+
 -   [Patch] Use a red border in the `caution` button focus state. (#116)
 -   [Patch] Support all `autocomplete` values in `Input` component. (#113)
 -   [Patch] Create internal image component for lazy-loading images.
 -   [Patch] Remove `@default` annotation from JSDoc comments.
 -   [Patch] Eliminate the need for the `babel-plugin-inline-react-svg` plugin. This is a behind-the-scenes change.
+-   [Patch] Move around icon files for greater consistency and reusability. (#39, #41, #42)
 
 ### Fixed
 

@@ -13,25 +13,25 @@
 .rootSmall {
     width: $tp-avatar__size__small;
     height: $tp-avatar__size__small;
-    font-size: $tp-font__text__4__size;
+    font-size: $tp-font__body__3__size;
 }
 
 .rootMedium {
     width: $tp-avatar__size__medium;
     height: $tp-avatar__size__medium;
-    font-size: $tp-font__text__4__size;
+    font-size: $tp-font__body__3__size;
 }
 
 .rootLarge {
     width: $tp-avatar__size__large;
     height: $tp-avatar__size__large;
-    font-size: $tp-font__text__3__size;
+    font-size: $tp-font__body__2__size;
 }
 
 .rootXlarge {
     width: $tp-avatar__size__xlarge;
     height: $tp-avatar__size__xlarge;
-    font-size: $tp-font__text__1__size;
+    font-size: $tp-font__title__4__size;
 }
 
 // baseAvatar is a collection of styles common to all avatars.

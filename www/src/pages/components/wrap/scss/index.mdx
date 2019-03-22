@@ -4,7 +4,12 @@ description: Max-width wrappers for pages and components.
 ---
 
 import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
@@ -17,6 +22,11 @@ Basic wrapper with a max-width and side padding.
 ```
 
 ## Wrap snap
+
+<DeprecatedComponentAlert>
+    Wrappers that "snap" and the <InlineCode>tp-wrap-snap</InlineCode> class are deprecated in favor
+    of fluid wrappers.
+</DeprecatedComponentAlert>
 
 This provides a wrapper around content that "snaps" to fixed max-widths depending on the breakpoint. You can put any content in this wrapper.
 

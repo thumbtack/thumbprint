@@ -7,8 +7,8 @@ packages/thumbprint-icons/www
 
 # These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
 # importing these have short and easy to remember import paths.
-packages/thumbprint-scss/components.css
-packages/thumbprint-scss/components.css.map
+packages/thumbprint-scss/*.css
+packages/thumbprint-scss/*.css.map
 
 # Created by https://www.gitignore.io/api/osx,node,intellij+all
 
