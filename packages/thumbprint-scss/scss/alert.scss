@@ -9,11 +9,10 @@
     padding: tp-spacer(1.5) tp-spacer(2);
     color: $tp-color__white;
     background: $tp-color__gray;
-    font-weight: 400;
+    font-weight: 700;
     border-radius: $tp-border__radius__base;
 
     & a {
-        font-weight: 700;
         text-decoration: underline;
         cursor: pointer;
         color: $tp-color__white;
@@ -40,7 +39,14 @@
     }
 
     &--warning {
-        background: $tp-color__yellow;
+        background: $tp-color__yellow-200;
+        color: $tp-color__yellow-600;
+
+        a,
+        a:hover {
+            color: $tp-color__yellow-600;
+            fill: $tp-color__yellow-600;
+        }
     }
 
     &--note {

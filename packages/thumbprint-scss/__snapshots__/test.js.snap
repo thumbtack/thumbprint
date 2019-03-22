@@ -10,11 +10,10 @@ exports[`compiles correctly 1`] = `
   padding: 12px 16px;
   color: #fff;
   background: #d3d4d5;
-  font-weight: 400;
+  font-weight: 700;
   border-radius: 4px;
 }
 .tp-alert a {
-  font-weight: 700;
   text-decoration: underline;
   cursor: pointer;
   color: #fff;
@@ -36,7 +35,13 @@ exports[`compiles correctly 1`] = `
   background: #ff5a5f;
 }
 .tp-alert--warning {
-  background: #febe14;
+  background: #ffebb3;
+  color: #8a5500;
+}
+.tp-alert--warning a,
+.tp-alert--warning a:hover {
+  color: #8a5500;
+  fill: #8a5500;
 }
 .tp-alert--note {
   background: #009fd9;
