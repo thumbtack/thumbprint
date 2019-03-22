@@ -162,29 +162,29 @@
 // Text sizes
 
 @mixin tp-text-1--static($important: null) {
-    font-size: $tp-font__text__1__size $important;
-    line-height: $tp-font__text__1__line-height $important;
+    font-size: $tp-font__title__4__size $important;
+    line-height: 1.6 $important;
 }
 
 @mixin tp-text-1($important: null) {
     @include tp-text-1--static($important: null);
     @include tp-respond-above($tp-breakpoint__medium) {
-        font-size: $tp-font__text__1__responsive__size $important;
-        line-height: $tp-font__text__1__responsive__line-height $important;
+        font-size: 24px $important;
+        line-height: 1.5 $important;
     }
 }
 
 @mixin tp-text-2--static($important: null) {
-    font-size: $tp-font__text__2__size $important;
-    line-height: $tp-font__text__2__line-height $important;
+    font-size: $tp-font__body__1__size $important;
+    line-height: 1.6 $important;
 }
 
 @mixin tp-text-3--static($important: null) {
-    font-size: $tp-font__text__3__size $important;
-    line-height: $tp-font__text__3__line-height $important;
+    font-size: $tp-font__body__2__size $important;
+    line-height: 1.6 $important;
 }
 
 @mixin tp-text-4--static($important: null) {
-    font-size: $tp-font__text__4__size $important;
-    line-height: $tp-font__text__4__line-height $important;
+    font-size: $tp-font__body__3__size $important;
+    line-height: 1.6 $important;
 }
