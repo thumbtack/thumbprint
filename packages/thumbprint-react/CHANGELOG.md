@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.5 - 2019-03-25
+
 ### Changed
 
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
