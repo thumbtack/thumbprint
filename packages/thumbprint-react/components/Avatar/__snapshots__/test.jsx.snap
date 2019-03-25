@@ -15,6 +15,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
     >
       <Waypoint
         bottomOffset={-100}
+        debug={false}
         fireOnRapidScroll={true}
         horizontal={false}
         onEnter={[Function]}
@@ -49,6 +50,7 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar squareAvatar"
+      title=""
     >
       N
     </span>
@@ -73,6 +75,7 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
     >
       <Waypoint
         bottomOffset={-100}
+        debug={false}
         fireOnRapidScroll={true}
         horizontal={false}
         onEnter={[Function]}
@@ -132,6 +135,7 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
     >
       <Waypoint
         bottomOffset={-100}
+        debug={false}
         fireOnRapidScroll={true}
         horizontal={false}
         onEnter={[Function]}
@@ -561,6 +565,7 @@ exports[`renders an image when the user has one 1`] = `
     >
       <Waypoint
         bottomOffset={-100}
+        debug={false}
         fireOnRapidScroll={true}
         horizontal={false}
         onEnter={[Function]}

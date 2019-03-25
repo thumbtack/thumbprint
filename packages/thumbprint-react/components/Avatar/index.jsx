@@ -53,6 +53,7 @@ const EntityAvatar = ({ imageUrl, size, initial, fullName }) => {
                             className={`${styles.baseAvatar} ${styles.squareAvatar}`}
                             src={src}
                             alt={alt}
+                            title={alt}
                         />
                     )}
                 </LazyImage>
@@ -118,6 +119,7 @@ const Avatar = props => {
                             className={`${styles.baseAvatar} ${styles.circleAvatar}`}
                             src={src}
                             alt={alt}
+                            title={alt}
                         />
                     )}
                 </LazyImage>

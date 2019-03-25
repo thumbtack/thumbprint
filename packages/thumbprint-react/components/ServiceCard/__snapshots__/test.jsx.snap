@@ -75,6 +75,7 @@ exports[`ServiceCardImage renders an aria-label when supplied by alt 1`] = `
   >
     <Waypoint
       bottomOffset={-100}
+      debug={false}
       fireOnRapidScroll={true}
       horizontal={false}
       onEnter={[Function]}
@@ -109,6 +110,7 @@ exports[`ServiceCardImage renders an background image when supplied 1`] = `
   >
     <Waypoint
       bottomOffset={-100}
+      debug={false}
       fireOnRapidScroll={true}
       horizontal={false}
       onEnter={[Function]}
