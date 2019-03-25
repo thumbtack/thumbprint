@@ -1,6 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Waypoint from 'react-waypoint';
+import Rect from '@reach/rect';
+
+class ResponsiveImage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+
+        // this.setShouldLoadImage = this.setShouldLoadImage.bind(this);
+    }
+
+    // setShouldLoadImage(shouldLoadImage) {
+    //     this.setState({
+    //         shouldLoadImage,
+    //     });
+    // }
+
+    render() {
+        const { src, srcSet, children } = this.props;
+
+        return (
+            <Rect observe>
+                {({ rect, ref }) =>
+                    children({
+                        // TODO: Is `src` needed in non-IE browsers if `srcSet` is supported?
+                        src: rect && rect.width ? src : undefined,
+                        srcSet: rect && rect.width ? srcSet : undefined,
+                        sizes: rect && rect.width ? `${rect.width}px` : undefined,
+                        className: 'db w-100',
+                        ref,
+                    })
+                }
+            </Rect>
+        );
+    }
+}
 
 class LazyImage extends React.Component {
     constructor(props) {
@@ -67,4 +103,4 @@ LazyImage.defaultProps = {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export { LazyImage };
+export { LazyImage, ResponsiveImage };
