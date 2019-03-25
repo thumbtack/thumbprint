@@ -1625,6 +1625,9 @@ exports[`compiles correctly 1`] = `
 .pre {
   white-space: pre !important;
 }
+.pre-line {
+  white-space: pre-line !important;
+}
 .w1 {
   width: 16px !important;
 }
@@ -3117,6 +3120,9 @@ exports[`compiles correctly 1`] = `
   .s_pre {
     white-space: pre !important;
   }
+  .s_pre-line {
+    white-space: pre-line !important;
+  }
   .s_w1 {
     width: 16px !important;
   }
@@ -4583,6 +4589,9 @@ exports[`compiles correctly 1`] = `
   .m_pre {
     white-space: pre !important;
   }
+  .m_pre-line {
+    white-space: pre-line !important;
+  }
   .m_w1 {
     width: 16px !important;
   }
@@ -6048,6 +6057,9 @@ exports[`compiles correctly 1`] = `
   }
   .l_pre {
     white-space: pre !important;
+  }
+  .l_pre-line {
+    white-space: pre-line !important;
   }
   .l_w1 {
     width: 16px !important;
