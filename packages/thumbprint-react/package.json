@@ -47,7 +47,7 @@
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
-        "react-waypoint": "^8.1.0",
+        "react-waypoint": "^9.0.1",
         "rotate-array": "^1.1.0",
         "warning": "^4.0.2"
     },

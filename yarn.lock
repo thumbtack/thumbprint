@@ -12742,6 +12742,15 @@ react-waypoint@^8.1.0:
     prop-types "^15.0.0"
     react-is "^16.6.3"
 
+react-waypoint@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/react-waypoint/-/react-waypoint-9.0.1.tgz#4fb2529c23fd2de239a01712d09988733dfc229a"
+  integrity sha512-AdP1EhU5fOFne1aEfZPv2AhVC+cGJ3TxITOnZM9tBBlXOOhz3lXtTSHdicRCY+2VBqerT6zD1tAtp89Mng+Chg==
+  dependencies:
+    consolidated-events "^1.1.0 || ^2.0.0"
+    prop-types "^15.0.0"
+    react-is "^16.6.3"
+
 react@16.6.3, react@^16.4.0:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"

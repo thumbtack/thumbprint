@@ -34,36 +34,39 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-const EntityAvatar = ({ imageUrl, size, initial, fullName }) => (
-    <div
-        className={classNames(styles.root, {
-            [styles.rootSmall]: size === 'small',
-            [styles.rootMedium]: size === 'medium',
-            [styles.rootLarge]: size === 'large',
-            [styles.rootXlarge]: size === 'xlarge',
-        })}
-    >
-        {imageUrl ? (
-            <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
-                {({ src, alt }) => (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.squareAvatar}`}
-                        src={src}
-                        alt={alt}
-                        title={alt}
-                    />
-                )}
-            </LazyImage>
-        ) : (
-            <span
-                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                title={fullName && `Avatar for ${fullName}`}
-            >
-                {initial}
-            </span>
-        )}
-    </div>
-);
+const EntityAvatar = ({ imageUrl, size, initial, fullName }) => {
+    const assistiveText = fullName ? `Avatar for ${fullName}` : '';
+
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+        >
+            {imageUrl ? (
+                <LazyImage src={imageUrl} alt={assistiveText}>
+                    {({ src, alt }) => (
+                        <img
+                            className={`${styles.baseAvatar} ${styles.squareAvatar}`}
+                            src={src}
+                            alt={alt}
+                        />
+                    )}
+                </LazyImage>
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                    title={assistiveText}
+                >
+                    {initial}
+                </span>
+            )}
+        </div>
+    );
+};
 
 EntityAvatar.propTypes = {
     /**
@@ -94,6 +97,7 @@ EntityAvatar.defaultProps = {
 
 const Avatar = props => {
     const { imageUrl, fullName, initials, size } = props;
+    const assistiveText = fullName && `Avatar for ${fullName}`;
 
     return (
         <div
@@ -108,20 +112,19 @@ const Avatar = props => {
             {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
 
             {imageUrl ? (
-                <LazyImage src={imageUrl} alt={fullName ? `Avatar for ${fullName}` : ''}>
+                <LazyImage src={imageUrl} alt={assistiveText}>
                     {({ src, alt }) => (
                         <img
                             className={`${styles.baseAvatar} ${styles.circleAvatar}`}
                             src={src}
                             alt={alt}
-                            title={alt}
                         />
                     )}
                 </LazyImage>
             ) : (
                 <span
                     className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                    title={fullName && `Avatar for ${fullName}`}
+                    title={assistiveText}
                 >
                     {initials}
                 </span>
