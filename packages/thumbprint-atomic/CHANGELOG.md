@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 3.1.7 - 2019-03-25
+
+### Changed
+
+-   [Patch] Update version of dependencies (including Autoprefixer).
+
 ## 3.1.6 - 2019-03-11
 
 ### Changed

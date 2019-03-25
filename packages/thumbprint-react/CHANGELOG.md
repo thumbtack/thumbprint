@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.5 - 2019-03-25
+
 ### Changed
 
 -   [Patch] Set focus to `ModalCurtain` root instead of the first focusable element within modal (#156)
