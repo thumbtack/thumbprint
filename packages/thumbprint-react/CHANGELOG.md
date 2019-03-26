@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Move away from `tp-spacer` in `List` component. (#159)
+
 ## 0.2.5 - 2019-03-25
 
 ### Changed
