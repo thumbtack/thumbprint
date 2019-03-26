@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
 
 ## 0.2.6 - 2019-03-26
@@ -57,7 +58,6 @@
 ### Added
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
--   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 
 ### Changed
 
