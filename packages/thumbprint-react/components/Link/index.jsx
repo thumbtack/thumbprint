@@ -23,7 +23,6 @@ const getCommonLinkProps = props => {
 
 /**
  * Anchor link that renders as text.
- * @default
  */
 const Link = React.forwardRef((props, ref) => (
     <Plain {...getCommonLinkProps(props)} theme={props.theme} iconLeft={props.iconLeft} ref={ref} />

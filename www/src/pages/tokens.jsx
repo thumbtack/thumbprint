@@ -34,7 +34,6 @@ const TokenRow = ({ group, groupName, language }) => (
                             key={token.id}
                             className={classNames({
                                 'bb b-gray-300': groupName === 'null' && index !== group.length - 1,
-                                dn: token.private,
                             })}
                         >
                             <td className="tl pv2" data-algolia="include">
@@ -189,7 +188,6 @@ export const pageQuery = graphql`
                         type
                         description
                         deprecated
-                        private
                         value
                         group
                     }

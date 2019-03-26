@@ -58,7 +58,7 @@ export const H4 = p => (
     <Title
         {...p}
         id={generateSlug({ level: 'example', children: p.children })}
-        size={5}
+        size={6}
         headingLevel={4}
         className="mt5 mb1"
     />

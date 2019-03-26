@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+## 3.2.0 - 2019-03-26
+
+### Added
+
+-   [Minor] Add `pre-line` class for `white-space: pre-line`. (#177)
+
+## 3.1.7 - 2019-03-25
+
+### Changed
+
+-   [Patch] Update version of dependencies (including Autoprefixer).
+
+## 3.1.6 - 2019-03-11
+
+### Changed
+
+-   [Patch] Update version of dependencies. This doesn't affect the output of Atomic.
+
+## 3.1.5 - 2019-02-20
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint SCSS dependency. This doesn't affect the output of Atomic.
+
 ## 3.1.4 - 2019-02-08
 
 ### Changed

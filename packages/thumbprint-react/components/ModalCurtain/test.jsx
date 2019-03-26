@@ -87,6 +87,30 @@ test('renders text that is passed in', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('initially traps focus to the root dialog node', () => {
+    jest.useFakeTimers();
+
+    const onCloseClick = jest.fn();
+    const wrapper = mount(
+        <ModalCurtain stage="entered" onCloseClick={onCloseClick}>
+            {() => (
+                <>
+                    <button type="button" />
+                    <input />
+                </>
+            )}
+        </ModalCurtain>,
+    );
+
+    // Run setTimeouts() in <FocusTrap> to completion
+    jest.runAllTimers();
+
+    const modalWrapper = wrapper.find('[role="dialog"]');
+    expect(modalWrapper.is(':focus')).toBe(true);
+
+    jest.useRealTimers();
+});
+
 test('`onCloseClick` is not called when non-ESC keys are pressed', () => {
     const onCloseClick = jest.fn();
     mount(<ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />);

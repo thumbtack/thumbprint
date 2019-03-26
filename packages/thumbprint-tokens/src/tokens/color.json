@@ -18,8 +18,7 @@
             "name": "Blue 300",
             "id": "tp-color__blue-300",
             "value": "#79d2f2",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Blue",
@@ -31,8 +30,7 @@
             "name": "Blue 500",
             "id": "tp-color__blue-500",
             "value": "#007fad",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Blue 600",
@@ -56,8 +54,7 @@
             "name": "Indigo 300",
             "id": "tp-color__indigo-300",
             "value": "#96c2ff",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Indigo",
@@ -69,8 +66,7 @@
             "name": "Indigo 500",
             "id": "tp-color__indigo-500",
             "value": "#4f54b3",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Indigo 600",
@@ -94,8 +90,7 @@
             "name": "Purple 300",
             "id": "tp-color__purple-300",
             "value": "#d3baff",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Purple",
@@ -107,8 +102,7 @@
             "name": "Purple 500",
             "id": "tp-color__purple-500",
             "value": "#8a5ed6",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Purple 600",
@@ -132,8 +126,7 @@
             "name": "Green 300",
             "id": "tp-color__green-300",
             "value": "#73e4a2",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Green",
@@ -145,8 +138,7 @@
             "name": "Green 500",
             "id": "tp-color__green-500",
             "value": "#109e78",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Green 600",
@@ -170,8 +162,7 @@
             "name": "Yellow 300",
             "id": "tp-color__yellow-300",
             "value": "#ffdd80",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Yellow",
@@ -183,8 +174,7 @@
             "name": "Yellow 500",
             "id": "tp-color__yellow-500",
             "value": "#d48300",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Yellow 600",
@@ -208,8 +198,7 @@
             "name": "Red 300",
             "id": "tp-color__red-300",
             "value": "#ffb0b0",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Red",
@@ -221,8 +210,7 @@
             "name": "Red 500",
             "id": "tp-color__red-500",
             "value": "#cc3553",
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "name": "Red 600",

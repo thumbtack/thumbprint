@@ -89,9 +89,6 @@ TextButton.defaultProps = {
     dataTest: undefined,
 };
 
-/**
- * @default
- */
 const Button = React.forwardRef((props, ref) => (
     <Themed
         {...getCommonProps(props)}

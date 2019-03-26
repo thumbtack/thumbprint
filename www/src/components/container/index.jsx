@@ -20,7 +20,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 // https://caniuse.com/#feat=css-focus-visible
 import 'focus-visible';
 import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
-import ThumbprintLogo from './thumbprintLogo.svg';
+import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
 import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
@@ -123,9 +123,10 @@ class Container extends React.Component {
                             >
                                 <div className="pa4 flex-none z-1 bg-gray-200">
                                     <Link to="/" className="db mb3">
-                                        <ThumbprintLogo
+                                        <img
+                                            src={thumbprintLogo}
                                             className="db"
-                                            style={{ width: '130px' }}
+                                            style={{ width: '130px', height: '22px' }}
                                             alt="Thumbprint logo"
                                         />
                                     </Link>
@@ -199,7 +200,13 @@ class Container extends React.Component {
                                             }
                                             allComponents: allSitePage(
                                                 filter: {
-                                                    path: { glob: "/components/*/*/" }
+                                                    path: {
+                                                        glob: "/components/*/*/"
+                                                        nin: [
+                                                            "/components/global-css/scss/"
+                                                            "/components/mixins/scss/"
+                                                        ]
+                                                    }
                                                     context: {
                                                         frontmatter: { unlisted: { ne: true } }
                                                     }
@@ -264,6 +271,14 @@ class Container extends React.Component {
                                                         >
                                                             Contributing
                                                         </SideNavSectionGroupLink>
+                                                        <SideNavSectionGroupLink
+                                                            to="/overview/developers/"
+                                                            isActive={
+                                                                pathname === '/overview/developers/'
+                                                            }
+                                                        >
+                                                            Developers
+                                                        </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                 </SideNavSection>
 
@@ -288,6 +303,26 @@ class Container extends React.Component {
                                                     title="Components"
                                                     isActive={activeSection === 'Components'}
                                                 >
+                                                    <SideNavSectionGroup>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/global-css/scss/"
+                                                            isActive={
+                                                                pathname ===
+                                                                '/components/global-css/scss/'
+                                                            }
+                                                        >
+                                                            Global CSS
+                                                        </SideNavSectionGroupLink>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/mixins/scss/"
+                                                            isActive={
+                                                                pathname ===
+                                                                '/components/mixins/scss/'
+                                                            }
+                                                        >
+                                                            Mixins &amp; functions
+                                                        </SideNavSectionGroupLink>
+                                                    </SideNavSectionGroup>
                                                     <SideNavSectionGroup>
                                                         {map(allComponents.group, group => (
                                                             <SideNavSectionGroupLink

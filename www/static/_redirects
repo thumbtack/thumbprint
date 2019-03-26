@@ -218,3 +218,6 @@ https://thumbprint.thumbtack.com/* https://thumbprint.design/:splat 301!
 /api/atomic/about /atomic/usage
 /api/atomic /atomic
 /api/tokens /tokens
+
+# Combine mixins and functions documentation
+/components/functions/scss /components/mixins/scss

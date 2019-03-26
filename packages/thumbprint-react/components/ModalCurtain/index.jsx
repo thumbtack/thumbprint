@@ -61,6 +61,8 @@ export default class ModalCurtain extends React.Component {
         this.state = {
             isClient: false,
         };
+
+        this.modalWrapperNode = null;
     }
 
     componentDidMount() {
@@ -82,39 +84,53 @@ export default class ModalCurtain extends React.Component {
         return ReactDOM.createPortal(
             <FocusTrap
                 active={stage === 'entered'}
-                role="dialog"
-                aria-label={accessibilityLabel}
                 focusTrapOptions={{
                     clickOutsideDeactivates: true,
+                    // Set initial focus to the modal wrapper itself instead of
+                    // focusing on the first focusable element by default
+                    initialFocus: () => this.modalWrapperNode,
                 }}
             >
-                {shouldRenderEscListener && <EscListener onEscPress={onCloseClick} />}
-
-                {shouldRenderNoScroll && <NoScroll />}
-
                 {/**
-                    This component uses the render prop pattern. `children` expects a function
-                    and receives an object that contains `curtainOnClick` and
-                    `curtainClassName`.
-
-                    While using those two properties is optional, they provide helpful
-                    functionality.
+                    Use tabIndex="-1" to allow programmatic focus (as initialFocus node for <FocusTrap>)
+                    but not be tabbable by user.
                 */}
-                {children &&
-                    children({
-                        curtainOnClick: event => {
-                            // Ensures that the click event happened on the element that has the
-                            // `onClick`. This prevents clicks deep within `children` from bubbling
-                            // up and closing the ModalCurtain.
-                            if (event.target === event.currentTarget) {
-                                onCloseClick();
-                            }
-                        },
-                        curtainClassName: classNames({
-                            [styles.root]: true,
-                            [styles.rootOpen]: isEnteringOrEntered,
-                        }),
-                    })}
+                <div
+                    role="dialog"
+                    aria-label={accessibilityLabel}
+                    tabIndex="-1"
+                    ref={div => {
+                        this.modalWrapperNode = div;
+                    }}
+                >
+                    {shouldRenderEscListener && <EscListener onEscPress={onCloseClick} />}
+
+                    {shouldRenderNoScroll && <NoScroll />}
+
+                    {/**
+                        This component uses the render prop pattern. `children` expects a function
+                        and receives an object that contains `curtainOnClick` and
+                        `curtainClassName`.
+
+                        While using those two properties is optional, they provide helpful
+                        functionality.
+                    */}
+                    {children &&
+                        children({
+                            curtainOnClick: event => {
+                                // Ensures that the click event happened on the element that has the
+                                // `onClick`. This prevents clicks deep within `children` from bubbling
+                                // up and closing the ModalCurtain.
+                                if (event.target === event.currentTarget) {
+                                    onCloseClick();
+                                }
+                            },
+                            curtainClassName: classNames({
+                                [styles.root]: true,
+                                [styles.rootOpen]: isEnteringOrEntered,
+                            }),
+                        })}
+                </div>
             </FocusTrap>,
             document.body,
         );
