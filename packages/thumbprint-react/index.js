@@ -1,6 +1,7 @@
 export { default as Avatar, EntityAvatar } from './components/Avatar/index.jsx';
 export { default as Button, TextButton } from './components/Button/index.jsx';
 export { default as ButtonRow } from './components/ButtonRow/index.jsx';
+export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
 export { default as Carousel } from './components/Carousel/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as DatePicker } from './components/DatePicker/index.jsx';
