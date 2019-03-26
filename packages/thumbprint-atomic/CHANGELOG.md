@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 3.2.0 - 2019-03-26
+
+### Added
+
+-   [Minor] Add `pre-line` class for `white-space: pre-line`. (#177)
+
 ## 3.1.7 - 2019-03-25
 
 ### Changed

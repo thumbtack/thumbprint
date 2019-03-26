@@ -2,7 +2,7 @@
 @import '~@thumbtack/thumbprint-scss/mixins';
 
 .root {
-    margin-left: tp-spacer(3);
+    margin-left: $tp-space__4;
 }
 
 .bullet {
@@ -18,9 +18,9 @@
 }
 
 .item {
-    padding-left: tp-spacer(0.5);
+    padding-left: $tp-space__1;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding-left: tp-spacer(1.5);
+        padding-left: 12px;
     }
 }
