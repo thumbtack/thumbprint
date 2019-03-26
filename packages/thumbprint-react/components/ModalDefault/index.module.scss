@@ -42,8 +42,12 @@ $width-wide: 1400px;
 
 .wrapper {
     width: 100%;
+
+    // By default, the modal is always 100% height and the page can not scroll.
+    // The modal itself must handle any vertical overflow.
     height: 100%;
     display: flex;
+
     transform: translate(0, 100%);
     // Wrapper close transition on small screens.
     transition: transform $transition-close-duration $easing;
@@ -55,8 +59,16 @@ $width-wide: 1400px;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        display: block;
-        height: auto;
+        // If desired, we allow the modal to grow vertically beyond the height
+        // of the viewport. If the modal is tall enough, this will make the
+        // page scroll. Without this, the modal won't grow taller than the
+        // viewport.
+        &ShouldPageScrollAboveSmall {
+            display: block;
+            height: auto;
+        }
+
+        // Center the modal horizontally and vertically.
         margin: auto;
         transition: none;
         // Even if the curtain animates, the modal wrapper will appear and disappear immediately on
@@ -116,12 +128,14 @@ $width-wide: 1400px;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
-    @include tp-respond-above($tp-breakpoint__small) {
-        padding: 0 tp-spacer(4) tp-spacer(5);
-    }
-
     &Sticky {
         flex: 1 1 auto;
+    }
+
+    &NotSticky {
+        @include tp-respond-above($tp-breakpoint__small) {
+            padding: 0 tp-spacer(4) tp-spacer(5);
+        }
     }
 }
 
@@ -138,7 +152,7 @@ $width-wide: 1400px;
     // scroll to form fields when tabbing through a modal that is taller than the viewport.
     order: -1;
 
-    @include tp-respond-above($tp-breakpoint__small) {
+    &NotSticky {
         border-bottom: none;
         min-height: $header-height-large;
     }

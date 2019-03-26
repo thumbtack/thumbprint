@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] `ModalDefaultAnimatedWrapper` now has a prop called `shouldPageScrollAboveSmall` that defaults to `true`. If `true`, the modal will be allowed to grow taller than the viewport above `small` breakpoints. If `false`, the modal height will limited by the viewport height at all breakpoints. This is a backwards compatible change since the default value remains the same as the previous behavior.
+
+### Changed
+
+-   [Patch] The `isSticky` prop in `ModalDefaultFooter` will now affect modals at all breakpoints. Previously, only the small breakpoint was affected. (#135)
+
 ## 0.2.6 - 2019-03-26
 
 ### Changed
