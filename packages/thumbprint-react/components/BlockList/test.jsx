@@ -29,14 +29,14 @@ describe('BlockListItem', () => {
 describe('BlockListItemLink', () => {
     test('renders content that is passed in', () => {
         const wrapper = mount(
-            <BlockListItemLink to="https://thumbtack.com">goose</BlockListItemLink>,
+            <BlockListItemLink href="https://thumbtack.com">goose</BlockListItemLink>,
         );
         expect(wrapper.text()).toBe('goose');
         expect(wrapper).toMatchSnapshot();
     });
     test('renders a class that is passed in', () => {
         const wrapper = mount(
-            <BlockListItemLink to="https://thumbtack.com" className="red">
+            <BlockListItemLink href="https://thumbtack.com" className="red">
                 goose
             </BlockListItemLink>,
         );
@@ -52,7 +52,7 @@ describe('BlockListItemLink', () => {
     });
     test('forwards custom props', () => {
         const wrapper = mount(
-            <BlockListItemLink to="https://thumbtack.com" target="_blank">
+            <BlockListItemLink href="https://thumbtack.com" target="_blank">
                 goose
             </BlockListItemLink>,
         );

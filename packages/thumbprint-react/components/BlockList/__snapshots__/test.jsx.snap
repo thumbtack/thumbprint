@@ -44,14 +44,29 @@ exports[`BlockListItem renders content that is passed in 1`] = `
 </BlockListItem>
 `;
 
+exports[`BlockListItemLink forwards custom props 1`] = `
+<BlockListItemLink
+  href="https://thumbtack.com"
+  target="_blank"
+>
+  <a
+    className="itemLink"
+    href="https://thumbtack.com"
+    target="_blank"
+  >
+    goose
+  </a>
+</BlockListItemLink>
+`;
+
 exports[`BlockListItemLink renders a class that is passed in 1`] = `
 <BlockListItemLink
   className="red"
-  to="https://thumbtack.com"
+  href="https://thumbtack.com"
 >
   <a
     className="itemLink red"
-    to="https://thumbtack.com"
+    href="https://thumbtack.com"
   >
     goose
   </a>
@@ -71,28 +86,13 @@ exports[`BlockListItemLink renders a link 1`] = `
 </BlockListItemLink>
 `;
 
-exports[`BlockListItemLink renders a link 2`] = `
-<BlockListItemLink
-  target="_blank"
-  to="https://thumbtack.com"
->
-  <a
-    className="itemLink"
-    target="_blank"
-    to="https://thumbtack.com"
-  >
-    goose
-  </a>
-</BlockListItemLink>
-`;
-
 exports[`BlockListItemLink renders content that is passed in 1`] = `
 <BlockListItemLink
-  to="https://thumbtack.com"
+  href="https://thumbtack.com"
 >
   <a
     className="itemLink"
-    to="https://thumbtack.com"
+    href="https://thumbtack.com"
   >
     goose
   </a>

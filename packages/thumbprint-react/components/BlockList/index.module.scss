@@ -22,7 +22,7 @@
 }
 
 .itemLink.itemLink {
-    padding: $tp-space__2 $tp-space__3;
-    margin: -#{$tp-space__2} -#{$tp-space__3};
-    display: block;
+    padding: $tp-space__2 $tp-space__3 !important;
+    margin: -#{$tp-space__2} -#{$tp-space__3} !important;
+    display: block !important;
 }
