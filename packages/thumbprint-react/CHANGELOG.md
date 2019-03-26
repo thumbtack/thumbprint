@@ -189,7 +189,6 @@
 ### Added
 
 -   [Minor] Add `Title` sizes `6`, `7`, and `8`. (#70)
--   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 
 ### Changed
 
