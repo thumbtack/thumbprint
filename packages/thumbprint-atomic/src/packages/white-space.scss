@@ -13,6 +13,10 @@
     white-space: pre !important;
 }
 
+.pre-line {
+    white-space: pre-line !important;
+}
+
 @include tp-respond-above($tp-breakpoint__small) {
     .s_ws-normal {
         white-space: normal !important;
@@ -24,6 +28,10 @@
 
     .s_pre {
         white-space: pre !important;
+    }
+
+    .s_pre-line {
+        white-space: pre-line !important;
     }
 }
 
@@ -39,6 +47,10 @@
     .m_pre {
         white-space: pre !important;
     }
+
+    .m_pre-line {
+        white-space: pre-line !important;
+    }
 }
 
 @include tp-respond-above($tp-breakpoint__large) {
@@ -52,5 +64,9 @@
 
     .l_pre {
         white-space: pre !important;
+    }
+
+    .l_pre-line {
+        white-space: pre-line !important;
     }
 }

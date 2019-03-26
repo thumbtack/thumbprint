@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.2.6 - 2019-03-26
+
+### Changed
+
+-   [Patch] Move away from `tp-spacer` in `List` component. (#159)
+
+## 0.2.5 - 2019-03-25
+
 ### Changed
 
 -   [Minor] Add `BlockList` component. (#70)
