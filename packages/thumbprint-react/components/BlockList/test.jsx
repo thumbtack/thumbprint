@@ -50,7 +50,7 @@ describe('BlockListItemLink', () => {
         expect(wrapper.find('a').prop('href')).toBe('https://thumbtack.com');
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders a link', () => {
+    test('forwards custom props', () => {
         const wrapper = mount(
             <BlockListItemLink to="https://thumbtack.com" target="_blank">
                 goose
