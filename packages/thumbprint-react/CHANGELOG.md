@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
+
 ## 0.2.6 - 2019-03-26
 
 ### Changed
@@ -12,7 +16,6 @@
 
 ### Changed
 
--   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
 -   [Patch] Set focus to `ModalCurtain` root instead of the first focusable element within modal (#156)
 -   [Patch] Replace deprecated `tp-font__text` tokens with new values. (#171)
 
