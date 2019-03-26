@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `BlockList` component. (#70)
+
 ## 0.2.6 - 2019-03-26
 
 ### Changed
@@ -12,7 +16,6 @@
 
 ### Changed
 
--   [Minor] Add `BlockList` component. (#70)
 -   [Patch] Set focus to `ModalCurtain` root instead of the first focusable element within modal (#156)
 -   [Patch] Replace deprecated `tp-font__text` tokens with new values. (#171)
 
