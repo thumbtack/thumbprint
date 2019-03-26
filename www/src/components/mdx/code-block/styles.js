@@ -8,7 +8,7 @@ const previewThemes = {
 
 const classes = {
     // Border color is defined by the theme above.
-    preview: `pa4 mb1 ba bw-2 br2 overflow-x-auto ${styles.preview}`,
+    preview: `pa4 mb1 ba bw-2 br2 ${styles.preview}`,
     codeContainer: `br2 bg-gray-200 mb4 ${styles.codeContainer}`,
     code: `${styles.code}`,
 };

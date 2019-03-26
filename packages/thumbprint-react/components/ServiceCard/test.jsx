@@ -19,17 +19,11 @@ describe('ServiceCardImage', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('adds lazyload class for lazysizes to work', () => {
-        const wrapper = mount(<ServiceCardImage alt="Lorem" url="" />);
-        expect(wrapper.find('.lazyload')).toHaveLength(1);
-        expect(wrapper).toMatchSnapshot();
-    });
-
     test('renders an background image when supplied', () => {
         const wrapper = mount(
             <ServiceCardImage alt="" url="https://www.thumbtack.com/image.png" />,
         );
-        expect(wrapper.find('.image').prop('data-bg')).toBe('https://www.thumbtack.com/image.png');
+
         expect(wrapper).toMatchSnapshot();
     });
 });
