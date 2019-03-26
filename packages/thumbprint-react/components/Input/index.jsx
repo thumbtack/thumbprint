@@ -131,9 +131,6 @@ InputIcon.defaultProps = {
     color: 'inherit',
 };
 
-/**
- * @default
- */
 class Input extends React.Component {
     constructor(props) {
         super(props);
@@ -381,17 +378,10 @@ Input.propTypes = {
      */
     dataTest: PropTypes.string,
     /**
-     * This tells the browser whether to attempt autocompletion of the input. Currently a [subset of
-     * specification values are supported](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+     * This tells the browser whether to attempt autocompletion of the input.
+     * [Supports all values](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete).
      */
-    autoComplete: PropTypes.oneOf([
-        'off',
-        'name',
-        'given-name',
-        'family-name',
-        'email',
-        'postal-code',
-    ]),
+    autoComplete: PropTypes.string,
 };
 
 Input.defaultProps = {

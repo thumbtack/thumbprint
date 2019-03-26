@@ -1,8 +1,10 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
+
 $padding-sides: 6px;
 $padding-ends: 12px;
 
-%tp-block-list,
-.tp-block-list {
+.tp-block-list,
+.tp-block-list-group {
     list-style: none;
     margin-left: 0;
 
@@ -10,9 +12,10 @@ $padding-ends: 12px;
         padding: $padding-sides $padding-ends;
         border-top: 1px solid $tp-color__gray-300;
     }
+}
 
+.tp-block-list {
     // for links that will take up full space of list item.
-
     &__link {
         display: block;
         cursor: pointer;
@@ -61,7 +64,6 @@ $padding-ends: 12px;
 }
 
 .tp-block-list-group {
-    @extend %tp-block-list;
     border: 1px solid $tp-color__gray-300;
     border-radius: $tp-border__radius__base;
 

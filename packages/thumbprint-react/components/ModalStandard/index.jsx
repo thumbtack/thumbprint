@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ModalBase from '../ModalBase/index.jsx';
 import styles from './index.module.scss';
-import CloseIcon from './static/close-icon.svg';
+import { NavigationCloseMedium } from '../../icons/index.jsx';
 
 const ModalStandard = ({
     children,
@@ -32,7 +32,7 @@ const ModalStandard = ({
             {children}
             {shouldHideCloseButton === false && (
                 <button onClick={onCloseClick} className={styles.closeButton} type="button">
-                    <CloseIcon
+                    <NavigationCloseMedium
                         className={classnames({
                             [styles.closeIcon]: true,
                             [styles.closeIconBrand]: theme === 'brand',

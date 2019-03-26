@@ -58,6 +58,33 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </Grid>
 ```
 
+### Multi-row
+
+Using multiple columns with a combined width that exceeds `12` will automatically wrap into new rows. In this example the columns are stacked by default, two per row above the small breakpoint, and three per row above the medium breakpoint.
+
+```jsx
+<Grid>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3" />
+    </GridColumn>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3 m_mb0" />
+    </GridColumn>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3 mb3 s_mb0" />
+    </GridColumn>
+    <GridColumn aboveSmall={6} aboveMedium={4}>
+        <div className="ba b-green h3" />
+    </GridColumn>
+</Grid>
+```
+
 ### Responsive at all breakpoints
 
 ```jsx
@@ -66,6 +93,20 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
         <div className="ba b-green h3" />
     </GridColumn>
 </Grid>
+```
+
+### Centered grid
+
+The `Grid` component should not be used for centered single-column grids. This can be built with [Atomic classes](https://thumbprint.design/atomic/): `mw7 center tc`.
+
+```html
+<div class="mw7 center tc">
+    <div class="ba b-green">
+        “In our industry, you hear a lot of talk about the future of work. What I’ve come to believe
+        — because I see it every day — is that the entrepreneurial spirit of independent
+        professionals is the most precious resource we have as a society.”
+    </div>
+</div>
 ```
 
 <ComponentFooter data={props.data} />

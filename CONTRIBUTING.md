@@ -15,7 +15,7 @@ If you're a Thumbtack employee, you can also post on [#design-systems](https://t
 There are two ways to contribute code back to Thumbprint:
 
 1. **Tackle open GitHub issues:** Issues labeled as “[good first issue](https://github.com/thumbtack/thumbprint/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)” or “[help wanted](https://github.com/thumbtack/thumbprint/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)” are perfect for contributors that want to tackle small tasks.
-2. **Propose and create a new component:** Creating a component allows contributors to dive-deep into component API design, testing, accessibility, and documentation. Please [create a GitHub issue](https://github.com/thumbtack/thumbprint/issues) to propose a new component. If the component is a good candidate for Thumbprint, we’ll schedule a kick-off meeting to discuss next steps.
+2. **Propose and create a new React component:** Creating a React component allows contributors to dive-deep into component API design, testing, accessibility, and documentation. Please [create a GitHub issue](https://github.com/thumbtack/thumbprint/issues) to propose a new component. If the component is a good candidate for Thumbprint, we’ll schedule a kick-off meeting to discuss next steps.
 
 Not sure if the component should be reusable? Take a look at the “[Where should a React component live](https://docs.google.com/a/thumbtack.com/document/d/1-EGijB_3mc49T_CSzWowNfhEKlwiTdZh8tqIx6URZys/edit?usp=sharing)” RFC (internal only).
 
@@ -32,7 +32,15 @@ yarn
 yarn start
 ```
 
-Then open http://localhost:8090/ to see the docs. We use the documentation the development environment for Thumbprint.
+Then open [http://localhost:8090/](http://localhost:8090/) to see the docs. Take a look at [`www/README.md`](https://github.com/thumbtack/thumbprint/blob/master/www/README.md) to learn more.
+
+### Working on Components, Tokens, Atomic, or something else?
+
+The Thumbprint codebase is a collection of packages that we version independently and publish to NPM. These packages live in [`packages/`](https://github.com/thumbtack/thumbprint/tree/master/packages). Take a look at the package's `README.md` for specific information about that package.
+
+To add or remove NPM packages from code in `packages/`, `cd` into the package's folder (`cd packages/[package-name]`) and use `yarn add`, `yarn remove`, or `yarn upgrade`. Thumbprint uses [Yarn's workspaces feature](https://yarnpkg.com/lang/en/docs/workspaces/) to manage multiple `package.json` files in one codebase.
+
+Our documentation source code lives in [`www/`](https://github.com/thumbtack/thumbprint/tree/master/www). Take a look at [`www/README.md`](https://github.com/thumbtack/thumbprint/blob/master/www/README.md) to learn more.
 
 ### Submitting a pull request
 
@@ -50,17 +58,14 @@ Create a new folder in `packages` with the following structure:
 
 ```
 ├── CHANGELOG.md
+├── README.md
 ├── package.json
 ```
 
-This is an example of a Thumbprint package that uses React. Thumbprint packages that ship SCSS contain a `_index.scss` file instead of `index.js`.
-
 Thumbprint follows a [traditional GitHub workflow](https://guides.github.com/introduction/flow/). This means that you should work in a feature branch and submit a pull request when ready for code review.
-
-**Tip:** Reference other packages to understand how each file works.
 
 ### Releasing Thumbprint packages
 
 [Learn how to release the Thumbprint packages and documentation](https://github.com/thumbtack/thumbprint/blob/master/RELEASING.md). This process is done by [Thumbprint maintainers](https://github.com/orgs/thumbtack/teams/design-systems/members) after your code has merged into `master`.
 
-As always, reach out to [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) if you have questions or feedback.
+As always, reach out to [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) if you have questions or feedback.

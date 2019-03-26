@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import HelpSvg from './svg/help.svg';
-import ColorSvg from './svg/color.svg';
-import AboutSvg from './svg/about.svg';
-import ChecklistSvg from './svg/checklist.svg';
+import helpSvg from './svg/help.svg';
+import colorSvg from './svg/color.svg';
+import aboutSvg from './svg/about.svg';
+import checklistSvg from './svg/checklist.svg';
 import styles from './index.module.scss';
 
 const Featured = () => (
@@ -16,7 +16,7 @@ const Featured = () => (
             >
                 <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
-                        <AboutSvg className="db w4 w-auto" />
+                        <img src={aboutSvg} className="db w4 w-auto" alt="" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">About</div>
@@ -34,7 +34,7 @@ const Featured = () => (
             >
                 <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
-                        <ColorSvg className="db w4 w-auto" />
+                        <img src={colorSvg} className="db w4 w-auto" alt="" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Color</div>
@@ -52,7 +52,7 @@ const Featured = () => (
             >
                 <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
-                        <ChecklistSvg className="db w4 w-auto" />
+                        <img src={checklistSvg} className="db w4 w-auto" alt="" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Roadmap</div>
@@ -70,7 +70,7 @@ const Featured = () => (
             >
                 <div className="flex pv3 ph3 m_ph4 items-center">
                     <div className="mr3">
-                        <HelpSvg className="db w4 w-auto" />
+                        <img src={helpSvg} className="db w4 w-auto" alt="" />
                     </div>
                     <div className="">
                         <div className="tp-title-5 mb1">Help</div>

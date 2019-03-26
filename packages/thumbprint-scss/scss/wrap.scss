@@ -4,6 +4,8 @@
     @include tp-wrap;
 }
 
+// This is deprecated in favor of non-snapping wrappers.
+// @deprecated
 .tp-wrap-snap {
     @include tp-wrap-snap;
 }
