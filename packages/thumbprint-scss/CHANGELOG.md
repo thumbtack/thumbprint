@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Add `tp-spacer` function dependency to `button.scss`, `list.scss`, and `wrap.scss`. The roll up `components.css` was fine but these individual files were not evaluating the function when they output to their corresponding CSS files.
+
 ### Added
 
 -   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `tp-button--secondary` with `tp-button--tertiary` to avoid and visual changes. (#89)
