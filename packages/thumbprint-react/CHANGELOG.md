@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `BlockList` component. (#70)
+
 ### Changed
 
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.

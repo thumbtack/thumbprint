@@ -225,6 +225,20 @@ exports[`compiles correctly 1`] = `
   background-color: #fff;
   border-color: #676d73;
 }
+.tp-button--tertiary {
+  background-color: #fff;
+  border-color: #d3d4d5;
+  color: #676d73;
+}
+.tp-button--tertiary:active,
+.tp-button--tertiary:hover {
+  color: #676d73;
+}
+.tp-button--tertiary:focus {
+  color: #676d73;
+  background-color: #fff;
+  border-color: #676d73;
+}
 .tp-button--caution {
   background-color: #fff;
   border-color: #d3d4d5;
@@ -305,15 +319,25 @@ exports[`compiles correctly 1`] = `
   border-color: #79d2f2;
 }
 .tp-button--disabled.tp-button--secondary,
+.tp-button--disabled.tp-button--tertiary,
 .tp-button--disabled:active.tp-button--secondary,
+.tp-button--disabled:active.tp-button--tertiary,
 .tp-button--disabled:focus.tp-button--secondary,
+.tp-button--disabled:focus.tp-button--tertiary,
 .tp-button--disabled:hover.tp-button--secondary,
+.tp-button--disabled:hover.tp-button--tertiary,
 .tp-button--disabled:visited.tp-button--secondary,
+.tp-button--disabled:visited.tp-button--tertiary,
 .tp-button[disabled].tp-button--secondary,
+.tp-button[disabled].tp-button--tertiary,
 .tp-button[disabled]:active.tp-button--secondary,
+.tp-button[disabled]:active.tp-button--tertiary,
 .tp-button[disabled]:focus.tp-button--secondary,
+.tp-button[disabled]:focus.tp-button--tertiary,
 .tp-button[disabled]:hover.tp-button--secondary,
-.tp-button[disabled]:visited.tp-button--secondary {
+.tp-button[disabled]:hover.tp-button--tertiary,
+.tp-button[disabled]:visited.tp-button--secondary,
+.tp-button[disabled]:visited.tp-button--tertiary {
   color: #d3d4d5;
   background-color: #fff;
   border-color: #d3d4d5;
@@ -345,19 +369,6 @@ exports[`compiles correctly 1`] = `
   color: #676d73;
   background-color: hsla(0, 0%, 100%, 0.5);
   border-color: transparent;
-}
-.tp-button--disabled.tp-button--tertiary,
-.tp-button--disabled:active.tp-button--tertiary,
-.tp-button--disabled:focus.tp-button--tertiary,
-.tp-button--disabled:hover.tp-button--tertiary,
-.tp-button--disabled:visited.tp-button--tertiary,
-.tp-button[disabled].tp-button--tertiary,
-.tp-button[disabled]:active.tp-button--tertiary,
-.tp-button[disabled]:focus.tp-button--tertiary,
-.tp-button[disabled]:hover.tp-button--tertiary,
-.tp-button[disabled]:visited.tp-button--tertiary {
-  background-color: #fff;
-  color: #d3d4d5;
 }
 .tp-button--disabled.tp-button--clear,
 .tp-button--disabled:active.tp-button--clear,
