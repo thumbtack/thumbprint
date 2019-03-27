@@ -1,0 +1,28 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.list {
+    border-top: 1px solid $tp-color__gray-300;
+}
+
+.listBorderGroup {
+    border: 1px solid $tp-color__gray-300;
+    border-radius: 4px;
+}
+
+.listBorderBottom {
+    border-bottom: 1px solid $tp-color__gray-300;
+}
+
+.item {
+    padding: $tp-space__2 $tp-space__3;
+
+    &:not(:first-child) {
+        border-top: 1px solid $tp-color__gray-300;
+    }
+}
+
+.itemLink.itemLink {
+    padding: $tp-space__2 $tp-space__3 !important;
+    margin: -#{$tp-space__2} -#{$tp-space__3} !important;
+    display: block !important;
+}

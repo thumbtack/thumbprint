@@ -64,31 +64,38 @@ exports[`ServiceCardDescription renders icon color 1`] = `
 </ServiceCardDescription>
 `;
 
-exports[`ServiceCardImage adds lazyload class for lazysizes to work 1`] = `
-<ServiceCardImage
-  alt="Lorem"
-  url=""
->
-  <div
-    aria-label="Lorem"
-    className="image lazyload"
-    data-bg=""
-    role="img"
-  />
-</ServiceCardImage>
-`;
-
 exports[`ServiceCardImage renders an aria-label when supplied by alt 1`] = `
 <ServiceCardImage
   alt="Lorem"
   url=""
 >
-  <div
-    aria-label="Lorem"
-    className="image lazyload"
-    data-bg=""
-    role="img"
-  />
+  <LazyImage
+    alt="Lorem"
+    src=""
+  >
+    <Waypoint
+      bottomOffset={-100}
+      debug={false}
+      fireOnRapidScroll={true}
+      horizontal={false}
+      onEnter={[Function]}
+      onLeave={[Function]}
+      onPositionChange={[Function]}
+      topOffset={-100}
+    >
+      <div
+        aria-label="Lorem"
+        className="image"
+        role="img"
+      />
+    </Waypoint>
+    <noscript>
+      <img
+        alt="Lorem"
+        src=""
+      />
+    </noscript>
+  </LazyImage>
 </ServiceCardImage>
 `;
 
@@ -97,12 +104,33 @@ exports[`ServiceCardImage renders an background image when supplied 1`] = `
   alt=""
   url="https://www.thumbtack.com/image.png"
 >
-  <div
-    aria-label=""
-    className="image lazyload"
-    data-bg="https://www.thumbtack.com/image.png"
-    role="img"
-  />
+  <LazyImage
+    alt=""
+    src="https://www.thumbtack.com/image.png"
+  >
+    <Waypoint
+      bottomOffset={-100}
+      debug={false}
+      fireOnRapidScroll={true}
+      horizontal={false}
+      onEnter={[Function]}
+      onLeave={[Function]}
+      onPositionChange={[Function]}
+      topOffset={-100}
+    >
+      <div
+        aria-label=""
+        className="image"
+        role="img"
+      />
+    </Waypoint>
+    <noscript>
+      <img
+        alt=""
+        src="https://www.thumbtack.com/image.png"
+      />
+    </noscript>
+  </LazyImage>
 </ServiceCardImage>
 `;
 
