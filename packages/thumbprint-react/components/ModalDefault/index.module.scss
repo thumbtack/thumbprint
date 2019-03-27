@@ -152,8 +152,12 @@ $width-wide: 1400px;
     // scroll to form fields when tabbing through a modal that is taller than the viewport.
     order: -1;
 
-    &NotSticky {
-        border-bottom: none;
+    @include tp-respond-above($tp-breakpoint__small) {
+        // The close button should always have a line underneath if at the small breakpoint or if
+        // the modal is sticky.
+        &NotSticky {
+            border-bottom: none;
+        }
         min-height: $header-height-large;
     }
 
