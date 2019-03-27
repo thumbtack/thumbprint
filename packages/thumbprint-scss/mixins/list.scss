@@ -1,5 +1,6 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
 @import '../mixins/mixin';
+@import '../mixins/function';
 
 @mixin tp-list {
     margin-bottom: tp-spacer(1.5);
