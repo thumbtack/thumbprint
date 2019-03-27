@@ -1,5 +1,4 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import '~@thumbtack/thumbprint-scss/mixins';
 
 // The `.root.root.root` is used to increase specificity so Thumbprint takes precedence over a
 // highly specific selector in Thumbtack's website.
@@ -15,8 +14,8 @@
     padding: 10px 14px;
     vertical-align: middle;
     resize: vertical;
-    height: tp-spacer(19);
-    min-height: tp-spacer(13);
+    height: 152px;
+    min-height: 104px;
 
     &:focus {
         border-color: $tp-color__blue;

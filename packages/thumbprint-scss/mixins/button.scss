@@ -1,3 +1,4 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
 // Button mixins
 
 @mixin tp-button($important: null) {
@@ -8,8 +9,8 @@
     font-family: inherit $important;
     cursor: pointer $important;
     margin: 0 $important;
-    padding-top: tp-spacer(1.5) $important;
-    padding-bottom: tp-spacer(1.5) $important;
+    padding-top: 12px $important;
+    padding-bottom: 12px $important;
     line-height: 24px $important;
     border-width: 2px $important;
     border-style: solid $important;
@@ -144,8 +145,8 @@
 @mixin tp-button--small($important: null) {
     font-size: 14px $important;
     line-height: 20px $important;
-    padding-top: tp-spacer(1) $important;
-    padding-bottom: tp-spacer(1) $important;
+    padding-top: $tp-space__2 $important;
+    padding-bottom: $tp-space__2 $important;
     min-height: 40px $important;
 }
 
@@ -242,6 +243,6 @@
 @mixin tp-button-icon__icon($important: null) {
     flex: none $important;
     margin: 0 $important;
-    margin-right: tp-spacer(1.5) $important;
+    margin-right: 12px $important;
     fill: currentColor $important;
 }

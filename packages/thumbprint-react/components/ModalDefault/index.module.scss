@@ -1,8 +1,8 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 @import '~@thumbtack/thumbprint-scss/mixins';
 
-$header-height-small: tp-spacer(7);
-$header-height-large: tp-spacer(8);
+$header-height-small: 56px;
+$header-height-large: $tp-space__6;
 
 // These values are duplicated in the JavaScript.
 $transition-open-duration: 300ms;
@@ -15,7 +15,7 @@ $width-medium: 632px;
 $width-wide: 1400px;
 
 .curtain {
-    padding: tp-spacer(0);
+    padding: 0;
     // ModalCurtain closing transition on small screens.
     transition: opacity 0ms $easing $transition-close-duration,
         visibility $transition-close-duration $easing;
@@ -26,7 +26,7 @@ $width-wide: 1400px;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: tp-spacer(4);
+        padding: $tp-space__5;
         background-color: rgba(0, 0, 0, 0.8);
 
         // ModalCurtain closing on medium and large screens.
@@ -117,7 +117,7 @@ $width-wide: 1400px;
     -webkit-overflow-scrolling: touch;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: 0 tp-spacer(4) tp-spacer(5);
+        padding: 0 $tp-space__5 40px;
     }
 
     &Sticky {
@@ -145,13 +145,13 @@ $width-wide: 1400px;
 
     &Icon {
         // Increase click target of the button to make it easier to tap.
-        margin: tp-spacer(2);
+        margin: $tp-space__3;
     }
 }
 
 .modalHeader {
     // This value works well even if `ModalDefaultContent` isn't used in the modal.
-    margin-bottom: tp-spacer(1.5);
+    margin-bottom: 12px;
 }
 
 .modalTitle {
@@ -167,20 +167,20 @@ $width-wide: 1400px;
 }
 
 .modalTitle + .modalDescription {
-    margin-top: tp-spacer(1);
+    margin-top: $tp-space__2;
 }
 
 .modalContent {
     // Add top padding, not bottom margin, because top padding is built into the `ModalDefaultFooter` due
     // to a top-border on mobile when sticky. Using padding prevents the margins from collapsing
     // with the margin from `ModalDefaultHeader`.
-    padding-top: tp-spacer(1.5);
+    padding-top: 12px;
 }
 
 .modalFooterFluid {
-    padding: tp-spacer(3) 0 0 0;
+    padding: $tp-space__4 0 0 0;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: tp-spacer(4) 0 0 0;
+        padding: $tp-space__5 0 0 0;
     }
 }
