@@ -1,5 +1,4 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
 
 .tp-text-input {
     width: 100%;
@@ -73,7 +72,7 @@ _:-ms-fullscreen,
 
     &--left {
         .tp-text-input {
-            padding-left: tp-spacer(7);
+            padding-left: 56px;
 
             &--small {
                 // `16px` left of icon, `18px` wide icon, `12px` right of icon.
@@ -83,13 +82,13 @@ _:-ms-fullscreen,
 
         .tp-input-icon__icon {
             // Extra pixel is needed because absolute positioning ignores the border width.
-            left: tp-spacer(2) + 1px;
+            left: $tp-space__3 + 1px;
         }
     }
 
     &--right {
         .tp-text-input {
-            padding-right: tp-spacer(7);
+            padding-right: 56px;
 
             &--small {
                 // `16px` right of icon, `18px` wide icon, `12px` left of icon.
@@ -99,7 +98,7 @@ _:-ms-fullscreen,
 
         .tp-input-icon__icon {
             // Extra pixel is needed because absolute positioning ignores the border width.
-            right: tp-spacer(2) + 1px;
+            right: $tp-space__3 + 1px;
         }
     }
 }
