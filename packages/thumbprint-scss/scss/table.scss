@@ -1,5 +1,4 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
 
 .tp-table {
     width: 100%;
@@ -7,9 +6,9 @@
 
     th,
     td {
-        padding-left: tp-spacer(2);
-        padding-top: tp-spacer(1);
-        padding-bottom: tp-spacer(1);
+        padding-left: $tp-space__3;
+        padding-top: $tp-space__2;
+        padding-bottom: $tp-space__2;
 
         &:first-child {
             padding-left: 0;
@@ -48,7 +47,7 @@
     &--rule-bottom {
         > thead {
             > th {
-                padding-bottom: tp-spacer(1);
+                padding-bottom: $tp-space__2;
             }
 
             > tr {

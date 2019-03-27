@@ -6,12 +6,12 @@
     margin-right: auto;
     width: 100%;
     max-width: $tp-wrap__max-width;
-    padding-left: tp-spacer(2);
-    padding-right: tp-spacer(2);
+    padding-left: $tp-space__3;
+    padding-right: $tp-space__3;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding-left: tp-spacer(4);
-        padding-right: tp-spacer(4);
+        padding-left: $tp-space__5;
+        padding-right: $tp-space__5;
     }
 
     @include tp-respond-above($tp-wrap__no-pad-width) {

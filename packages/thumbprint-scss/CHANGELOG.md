@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
+
 ### Added
 
 -   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `tp-button--secondary` with `tp-button--tertiary` to avoid and visual changes. (#89)

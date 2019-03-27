@@ -2,14 +2,14 @@
 @import '../mixins/mixin';
 
 @mixin tp-list {
-    margin-bottom: tp-spacer(1.5);
-    margin-left: tp-spacer(3);
+    margin-bottom: 12px;
+    margin-left: $tp-space__4;
 
     > li {
-        padding-left: tp-spacer(0.5);
+        padding-left: $tp-space__1;
 
         @include tp-respond-above($tp-breakpoint__small) {
-            padding-left: tp-spacer(1.5);
+            padding-left: 12px;
         }
     }
 }
@@ -28,6 +28,6 @@
 
 @mixin tp-list--spaced {
     > li {
-        margin-bottom: tp-spacer(0.5);
+        margin-bottom: $tp-space__1;
     }
 }
