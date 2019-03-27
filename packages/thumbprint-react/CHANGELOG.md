@@ -2,16 +2,13 @@
 
 ## Unreleased
 
-### Changed
-
--   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
-
 ### Added
 
 -   [Minor] Add `BlockList` component. (#70)
 
 ### Changed
 
+-   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
 
 ## 0.2.6 - 2019-03-26
