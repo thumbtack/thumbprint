@@ -1,5 +1,5 @@
-@import '../mixins/function';
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
 
 .tp-fieldset {
-    margin-bottom: tp-spacer(8);
+    margin-bottom: $tp-space__6;
 }

@@ -1,9 +1,8 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
 
 .tp-label {
     display: block;
-    margin-bottom: tp-spacer(0.5);
+    margin-bottom: $tp-space__1;
     font-weight: 700;
 
     &--bad-news {
