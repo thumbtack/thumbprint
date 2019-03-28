@@ -1,12 +1,11 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
 
 .tp-alert {
     display: flex;
     font-size: $tp-font__body__2__size;
     line-height: $tp-font__body__2__line-height;
     text-align: left;
-    padding: tp-spacer(1.5) tp-spacer(2);
+    padding: 12px $tp-space__3;
     color: $tp-color__white;
     background: $tp-color__gray;
     font-weight: 700;
@@ -60,7 +59,7 @@
     &__icon {
         fill: currentColor;
         flex: none;
-        margin-right: tp-spacer(1.5);
+        margin-right: 12px;
         position: relative;
         top: -1px;
     }

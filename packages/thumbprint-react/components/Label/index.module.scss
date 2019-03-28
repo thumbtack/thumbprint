@@ -1,4 +1,3 @@
-@import '~@thumbtack/thumbprint-scss/mixins';
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
 .text {
@@ -7,7 +6,7 @@
     font-weight: 700;
     font-size: $tp-font__body__1__size;
     line-height: $tp-font__body__1__line-height;
-    margin-bottom: tp-spacer(1);
+    margin-bottom: $tp-space__2;
 
     &UiState {
         &Disabled {

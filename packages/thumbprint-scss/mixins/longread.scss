@@ -18,26 +18,26 @@
         font-size: $tp-font__title__4__size;
         line-height: $tp-font__title__4__line-height;
         font-weight: $tp-font__title__4__weight;
-        margin-top: tp-spacer(5);
+        margin-top: 40px;
     }
 
     h3 {
         font-size: $tp-font__title__5__size;
         line-height: $tp-font__title__5__line-height;
         font-weight: $tp-font__title__5__weight;
-        margin-top: tp-spacer(4);
+        margin-top: $tp-space__5;
     }
 
     ul,
     ol {
-        margin-bottom: tp-spacer(1.5);
-        margin-left: tp-spacer(3);
+        margin-bottom: 12px;
+        margin-left: $tp-space__4;
 
         > li {
-            padding-left: tp-spacer(0.5);
+            padding-left: $tp-space__1;
 
             @include tp-respond-above($tp-breakpoint__small) {
-                padding-left: tp-spacer(1.5);
+                padding-left: 12px;
             }
         }
     }
@@ -53,7 +53,7 @@
     p,
     ul,
     ol {
-        margin-bottom: tp-spacer(2.5);
-        margin-top: tp-spacer(2.5);
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 }

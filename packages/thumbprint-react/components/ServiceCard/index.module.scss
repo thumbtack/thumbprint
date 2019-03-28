@@ -1,5 +1,4 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import '~@thumbtack/thumbprint-scss/mixins';
 
 .root {
     color: inherit;
@@ -14,7 +13,7 @@
     height: 0;
     padding-bottom: 62.5%; // 8x5 aspect ratio
     border-radius: $tp-border__radius__base;
-    margin-bottom: tp-spacer(1);
+    margin-bottom: $tp-space__2;
     background-size: cover;
 }
 
@@ -24,7 +23,7 @@
     line-height: $tp-font__body__1__line-height;
     // Uses line-height to calculate max-height.
     max-height: $tp-font__body__1__line-height * 2;
-    margin-bottom: tp-spacer(0.5);
+    margin-bottom: $tp-space__1;
     overflow: hidden;
     // For webkit browsers that support multiline truncation.
     /* autoprefixer: off */
@@ -46,7 +45,7 @@
 
 .descriptionWrap svg {
     flex: none;
-    margin-right: tp-spacer(0.5);
+    margin-right: $tp-space__1;
 }
 
 .iconBlue svg {

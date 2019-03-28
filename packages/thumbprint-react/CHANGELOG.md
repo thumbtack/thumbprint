@@ -10,6 +10,7 @@
 ### Changed
 
 -   [Patch] The `isSticky` prop in `ModalDefaultFooter` will now affect modals at all breakpoints. Previously, only the small breakpoint was affected. (#135)
+-   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
 
 ## 0.2.6 - 2019-03-26
