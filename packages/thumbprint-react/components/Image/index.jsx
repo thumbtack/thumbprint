@@ -3,6 +3,32 @@ import PropTypes from 'prop-types';
 import { Waypoint } from 'react-waypoint';
 import Rect from '@reach/rect';
 
+const getImageServiceSrc = ({ id, format, width }) =>
+    `https://d1vg1gqh4nkuns.cloudfront.net/i/${id}/width/${width}.${format}`;
+
+const getImageServiceSrcSet = (id, formats) => {
+    const o = {};
+
+    formats.forEach(format => {
+        o[format] = {
+            120: getImageServiceSrc({ id, format, width: 120 }),
+            320: getImageServiceSrc({ id, format, width: 320 }),
+            400: getImageServiceSrc({ id, format, width: 400 }),
+            640: getImageServiceSrc({ id, format, width: 640 }),
+            768: getImageServiceSrc({ id, format, width: 768 }),
+            1024: getImageServiceSrc({ id, format, width: 1024 }),
+            1366: getImageServiceSrc({ id, format, width: 1366 }),
+            1600: getImageServiceSrc({ id, format, width: 1600 }),
+            1920: getImageServiceSrc({ id, format, width: 1920 }),
+            2200: getImageServiceSrc({ id, format, width: 2200 }),
+            2350: getImageServiceSrc({ id, format, width: 2350 }),
+            2560: getImageServiceSrc({ id, format, width: 2560 }),
+        };
+    });
+
+    return o;
+};
+
 const srcSetToString = ({ jpeg, webp }) => {
     const jpegSizes = Object.keys(jpeg);
     const webpSizes = Object.keys(webp);
@@ -147,4 +173,4 @@ LazyImage.defaultProps = {
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export { LazyImage, ResponsiveImage };
+export { LazyImage, ResponsiveImage, getImageServiceSrc, getImageServiceSrcSet };

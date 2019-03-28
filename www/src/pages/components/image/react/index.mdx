@@ -10,58 +10,45 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Examples
 
+### `ResponsiveImage` with Image Service
+
+This example gets an image from Thumbtack's image service and loads it in `jpeg` and `webp`.
+
 ```jsx
-<ResponsiveImage
-    srcSet={{
-        webp: {
-            120: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/120.webp',
-            320: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/320.webp',
-            400: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/400.webp',
-            640: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/640.webp',
-            768: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/768.webp',
-            1024: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1024.webp',
-            1366: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1366.webp',
-            1600: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1600.webp',
-            1920: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1920.webp',
-            2200: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2200.webp',
-            2350: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2350.webp',
-            2560: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2560.webp',
-        },
-        jpeg: {
-            120: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/120.jpeg',
-            320: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/320.jpeg',
-            400: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/400.jpeg',
-            640: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/640.jpeg',
-            768: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/768.jpeg',
-            1024: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1024.jpeg',
-            1366: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1366.jpeg',
-            1600: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1600.jpeg',
-            1920: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/1920.jpeg',
-            2200: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2200.jpeg',
-            2350: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2350.jpeg',
-            2560: 'https://d1vg1gqh4nkuns.cloudfront.net/i/350357374752325652/width/2560.jpeg',
-        },
-    }}
->
-    {({ ref, sizes, src, srcSet, className }) => {
-        return (
-            <div>
-                <div className="w-100">
-                    <picture>
-                        {srcSet && srcSet.webp && (
-                            <source type="image/webp" sizes={sizes} srcSet={srcSet.webp} />
-                        )}
-                        {srcSet && srcSet.jpeg && (
-                            <source type="image/jpeg" sizes={sizes} srcSet={srcSet.jpeg} />
-                        )}
-                        <img src={src} sizes={sizes} className={className} alt="" ref={ref} />
-                    </picture>
-                </div>
-                <p className="flex-none ml3">Image width: {sizes}</p>
-            </div>
-        );
-    }}
+<ResponsiveImage srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}>
+    {({ ref, sizes, src, srcSet, className }) => (
+        <>
+            <picture ref={ref} className={className}>
+                {srcSet && (
+                    <>
+                        <source type="image/webp" sizes={sizes} srcSet={srcSet.webp} />
+                        <source type="image/jpeg" sizes={sizes} srcSet={srcSet.jpeg} />
+                    </>
+                )}
+                <img src={src} sizes={sizes} alt="" />
+            </picture>
+            <p className="mt3">Image width: {sizes}</p>
+        </>
+    )}
 </ResponsiveImage>
+```
+
+### Single image from the Image Service
+
+This example gets a single image from Thumbtack's image service.
+
+```jsx
+<img src={getImageServiceSrc({ id: '350357374752325652', width: 400, format: 'jpeg' })} alt="" />
+```
+
+### Lazy-loaded image
+
+This example lazy-loads an image from `placeimg.com`.
+
+```jsx
+<LazyImage src="https://placeimg.com/640/480/nature" alt="Photo of nature">
+    {({ src, alt }) => <img src={src} alt={alt} />}
+</LazyImage>
 ```
 
 <ComponentFooter data={props.data} />
