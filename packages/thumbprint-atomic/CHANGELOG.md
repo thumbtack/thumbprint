@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 3.2.1 - 2019-03-28
+
+-   [Patch] Update version of the Thumbprint SCSS dependency. This doesn't affect the output of Atomic.
+
 ## 3.2.0 - 2019-03-26
 
 ### Added
