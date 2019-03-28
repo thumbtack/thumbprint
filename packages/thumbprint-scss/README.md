@@ -53,8 +53,8 @@ import '@thumbtack/thumbprint-scss';
 You can import specific components as well:
 
 ```js
-import '@thumbtack/thumbprint-scss/button';
-import '@thumbtack/thumbprint-scss/input';
+import '@thumbtack/thumbprint-scss/button.css';
+import '@thumbtack/thumbprint-scss/input.css';
 ```
 
 This works in development environments that support importing CSS files in JavaScript. It works without any additional configuration in Create React App, Gatsby, and Next.js.
