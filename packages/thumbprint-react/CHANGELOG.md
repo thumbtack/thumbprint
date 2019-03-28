@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0 - 2019-03-28
+
 ### Added
 
 -   [Minor] Add `BlockList` component. (#70)
