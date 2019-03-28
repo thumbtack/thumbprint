@@ -4,11 +4,13 @@ exports[`works if variable is provided 1`] = `
 "@font-face {
   font-family: 'Mark';
   font-weight: 400;
-  src: url(https://example.com/fonts/mark/mark-tt-subset.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset.woff) format(\\"woff\\"); }
+  font-display: swap;
+  src: local(\\"Mark, Avenir, Helvetica, Arial, sans-serif\\"), url(https://example.com/fonts/mark/mark-tt-subset.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset.woff) format(\\"woff\\"); }
 
 @font-face {
   font-family: 'Mark';
   font-weight: 700;
-  src: url(https://example.com/fonts/mark/mark-tt-subset-bold.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset-bold.woff) format(\\"woff\\"); }
+  font-display: swap;
+  src: local(\\"Mark, Avenir, Helvetica, Arial, sans-serif\\"), url(https://example.com/fonts/mark/mark-tt-subset-bold.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset-bold.woff) format(\\"woff\\"); }
 "
 `;
