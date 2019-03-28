@@ -1,11 +1,10 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
 
 .tp-button-row {
     display: flex;
 
     .tp-button {
-        margin-right: tp-spacer(1);
+        margin-right: $tp-space__2;
 
         &:last-child {
             margin-right: 0;
@@ -17,7 +16,7 @@
 
         .tp-button {
             margin-right: 0;
-            margin-left: tp-spacer(1);
+            margin-left: $tp-space__2;
 
             &:first-child {
                 margin-left: 0;
@@ -29,8 +28,8 @@
         justify-content: center;
 
         .tp-button {
-            margin-left: tp-spacer(0.5);
-            margin-right: tp-spacer(0.5);
+            margin-left: $tp-space__1;
+            margin-right: $tp-space__1;
 
             &:first-child {
                 margin-left: 0;

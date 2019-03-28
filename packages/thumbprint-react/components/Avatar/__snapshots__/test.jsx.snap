@@ -9,10 +9,33 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
-      className="baseAvatar squareAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <LazyImage
+      alt=""
+      src="//www.placecage.com/130/130"
+    >
+      <Waypoint
+        bottomOffset={-100}
+        debug={false}
+        fireOnRapidScroll={true}
+        horizontal={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        onPositionChange={[Function]}
+        topOffset={-100}
+      >
+        <img
+          alt=""
+          className="baseAvatar squareAvatar"
+          title=""
+        />
+      </Waypoint>
+      <noscript>
+        <img
+          alt=""
+          src="//www.placecage.com/130/130"
+        />
+      </noscript>
+    </LazyImage>
   </div>
 </EntityAvatar>
 `;
@@ -27,29 +50,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar squareAvatar"
+      title=""
     >
       N
     </span>
   </div>
 </EntityAvatar>
-`;
-
-exports[`adds lazyload class for lazysizes to work 1`] = `
-<Avatar
-  hasUnreadNotifications={false}
-  imageUrl="//www.placecage.com/130/130"
-  isChecked={false}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-  >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
-  </div>
-</Avatar>
 `;
 
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
@@ -63,12 +69,33 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
+    <LazyImage
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-      title="Avatar for Duck Goose"
-    />
+      src="//www.placecage.com/130/130"
+    >
+      <Waypoint
+        bottomOffset={-100}
+        debug={false}
+        fireOnRapidScroll={true}
+        horizontal={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        onPositionChange={[Function]}
+        topOffset={-100}
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="baseAvatar circleAvatar"
+          title="Avatar for Duck Goose"
+        />
+      </Waypoint>
+      <noscript>
+        <img
+          alt="Avatar for Duck Goose"
+          src="//www.placecage.com/130/130"
+        />
+      </noscript>
+    </LazyImage>
   </div>
 </Avatar>
 `;
@@ -102,12 +129,33 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
   <div
     className="root rootMedium"
   >
-    <img
+    <LazyImage
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-      title="Avatar for Duck Goose"
-    />
+      src="//www.placecage.com/130/130"
+    >
+      <Waypoint
+        bottomOffset={-100}
+        debug={false}
+        fireOnRapidScroll={true}
+        horizontal={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        onPositionChange={[Function]}
+        topOffset={-100}
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="baseAvatar circleAvatar"
+          title="Avatar for Duck Goose"
+        />
+      </Waypoint>
+      <noscript>
+        <img
+          alt="Avatar for Duck Goose"
+          src="//www.placecage.com/130/130"
+        />
+      </noscript>
+    </LazyImage>
   </div>
 </Avatar>
 `;
@@ -127,25 +175,6 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       className="initialsAvatar circleAvatar"
       title="Avatar for Duck Goose"
     />
-  </div>
-</Avatar>
-`;
-
-exports[`does not add lazyload class if an image is not provided 1`] = `
-<Avatar
-  hasUnreadNotifications={false}
-  initials="NC"
-  isChecked={false}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-    >
-      NC
-    </span>
   </div>
 </Avatar>
 `;
@@ -530,10 +559,33 @@ exports[`renders an image when the user has one 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <LazyImage
+      alt=""
+      src="//www.placecage.com/130/130"
+    >
+      <Waypoint
+        bottomOffset={-100}
+        debug={false}
+        fireOnRapidScroll={true}
+        horizontal={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        onPositionChange={[Function]}
+        topOffset={-100}
+      >
+        <img
+          alt=""
+          className="baseAvatar circleAvatar"
+          title=""
+        />
+      </Waypoint>
+      <noscript>
+        <img
+          alt=""
+          src="//www.placecage.com/130/130"
+        />
+      </noscript>
+    </LazyImage>
   </div>
 </Avatar>
 `;

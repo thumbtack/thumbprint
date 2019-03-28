@@ -4,6 +4,8 @@ description: Clickable elements used to perform actions.
 ---
 
 import { graphql } from 'gatsby';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
@@ -15,10 +17,17 @@ These are the available `Button` styles for use on light background colors.
 ```html
 <div class="tp-button-row">
     <button class="tp-button">Primary</button>
-    <button class="tp-button tp-button--secondary">Secondary</button>
+    <button class="tp-button tp-button--tertiary">Tertiary</button>
     <button class="tp-button tp-button--caution">Caution</button>
 </div>
 ```
+
+<Alert type="warning" title="Where's the secondary theme?">
+    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
+    <InlineCode>secondary</InlineCode> button.{' '}
+    <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
+</Alert>
 
 ### Use on dark backgrounds
 
@@ -35,7 +44,7 @@ Buttons are large by default. The `tp-button--small` class allows you to render 
 ```html
 <div class="tp-button-row">
     <button class="tp-button tp-button--small">Primary</button>
-    <button class="tp-button tp-button--small tp-button--secondary">Secondary</button>
+    <button class="tp-button tp-button--small tp-button--tertiary">Tertiary</button>
     <button class="tp-button tp-button--small tp-button--caution">Caution</button>
 </div>
 ```
@@ -47,7 +56,7 @@ The `disabled` attribute visually and functionally disables the button.
 ```html
 <div class="tp-button-row">
     <button class="tp-button" disabled>Primary</button>
-    <button class="tp-button tp-button--secondary" disabled>Secondary</button>
+    <button class="tp-button tp-button--tertiary" disabled>Tertiary</button>
     <button class="tp-button tp-button--caution" disabled>Caution</button>
 </div>
 ```

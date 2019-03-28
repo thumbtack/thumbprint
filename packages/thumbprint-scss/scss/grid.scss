@@ -1,5 +1,5 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index.scss';
-@import '../mixins/function';
+
 @import '../mixins/mixin';
 
 .tp-grid {
@@ -8,23 +8,23 @@
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: tp-spacer(-2);
+    margin-left: -#{$tp-space__3};
 }
 
 .tp-grid--narrow {
-    margin-left: tp-spacer(-1);
+    margin-left: -#{$tp-space__2};
 }
 
 .tp-grid--narrow .tp-col {
-    padding-left: tp-spacer(1);
+    padding-left: $tp-space__2;
 }
 
 .tp-grid--wide {
-    margin-left: tp-spacer(-4);
+    margin-left: -#{$tp-space__5};
 }
 
 .tp-grid--wide .tp-col {
-    padding-left: tp-spacer(4);
+    padding-left: $tp-space__5;
 }
 
 .tp-grid--flush {
@@ -82,7 +82,7 @@
 .tp-col {
     box-sizing: border-box;
     flex: 0 0 auto;
-    padding-left: tp-spacer(2);
+    padding-left: $tp-space__3;
 }
 
 .tp-col--1 {

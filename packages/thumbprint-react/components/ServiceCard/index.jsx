@@ -2,31 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
+import { LazyImage } from '../Image/index.jsx';
 
-class ServiceCardImage extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes/plugins/unveilhooks/ls.unveilhooks');
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        /* eslint-enable */
-    }
-
-    render() {
-        const { url, alt } = this.props;
-
-        return (
-            <div className={`${styles.image} lazyload`} data-bg={url} role="img" aria-label={alt} />
-        );
-    }
-}
+const ServiceCardImage = ({ url, alt }) => (
+    <LazyImage src={url} alt={alt}>
+        {({ src, alt: innerAlt }) => (
+            <div
+                className={styles.image}
+                style={src ? { backgroundImage: `url("${src}")` } : undefined}
+                role="img"
+                aria-label={innerAlt}
+            />
+        )}
+    </LazyImage>
+);
 
 function ServiceCardTitle({ children }) {
     return (
