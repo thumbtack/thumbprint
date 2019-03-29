@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0 - 2019-03-28
+
 ### Changed
 
 -   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
