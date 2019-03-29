@@ -33,6 +33,8 @@ const Select = ({
     isRequired,
     name,
     onChange,
+    onFocus,
+    onBlur,
     onClick,
     size,
     value,
@@ -59,7 +61,9 @@ const Select = ({
                 required={isRequired}
                 value={value}
                 onClick={() => onClick && onClick()}
-                onChange={e => onChange(e.target.value)}
+                onChange={e => onChange(e.target.value, e)}
+                onFocus={onFocus}
+                onBlur={onBlur}
                 data-test={dataTest}
                 name={name}
             >
@@ -119,6 +123,14 @@ Select.propTypes = {
      */
     onChange: PropTypes.func.isRequired,
     /**
+     * Fires when the select receives focus.
+     */
+    onFocus: PropTypes.func,
+    /**
+     * Fires when the select loses focus.
+     */
+    onBlur: PropTypes.func,
+    /**
      * A selector hook into the React component for use in automated testing environments.
      */
     dataTest: PropTypes.string,
@@ -137,6 +149,8 @@ Select.defaultProps = {
     isFullWidth: false,
     size: 'large',
     onClick: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
     dataTest: undefined,
     name: undefined,
 };

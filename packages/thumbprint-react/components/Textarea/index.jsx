@@ -27,6 +27,7 @@ const Textarea = ({
     onFocus,
     placeholder,
     value,
+    name,
 }) => {
     const uiState = getUIState({ hasError, isDisabled });
 
@@ -48,6 +49,7 @@ const Textarea = ({
             onFocus={onFocus}
             onBlur={onBlur}
             data-test={dataTest}
+            name={name}
         />
     );
 };
@@ -74,6 +76,10 @@ Textarea.propTypes = {
      * Text that appears within the textarea when there is no `value`.
      */
     placeholder: PropTypes.string,
+    /**
+     * Adds `name` HTML attribute to element, indicating the property name associated with the selected value.
+     */
+    name: PropTypes.string,
     /**
      * The current value of the textarea.
      */
@@ -117,6 +123,7 @@ Textarea.defaultProps = {
     onFocus: undefined,
     onBlur: undefined,
     dataTest: undefined,
+    name: undefined,
 };
 
 export default Textarea;

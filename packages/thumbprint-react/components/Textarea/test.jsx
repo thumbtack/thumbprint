@@ -38,6 +38,12 @@ test('adds `maxLength` attribute', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('adds `name` HTML attribute', () => {
+    const wrapperA = mount(<Textarea name="duck" onChange={noop} value="goose" />);
+    expect(wrapperA.find('textarea').prop('name')).toEqual('duck');
+    expect(wrapperA).toMatchSnapshot();
+});
+
 test('renders `value` as the `value` attribute', () => {
     const wrapper = render(<Textarea value="Goose" onChange={jest.fn} />);
     expect(wrapper.text()).toBe('Goose');
