@@ -78,6 +78,26 @@ exports[`adds \`maxLength\` attribute 1`] = `
 </Textarea>
 `;
 
+exports[`adds \`name\` HTML attribute 1`] = `
+<Textarea
+  hasError={false}
+  isDisabled={false}
+  isRequired={false}
+  name="duck"
+  onChange={[Function]}
+  value="goose"
+>
+  <textarea
+    className="root rootStateDefault"
+    disabled={false}
+    name="duck"
+    onChange={[Function]}
+    required={false}
+    value="goose"
+  />
+</Textarea>
+`;
+
 exports[`adds \`required\` attribute 1`] = `
 <Textarea
   hasError={false}
