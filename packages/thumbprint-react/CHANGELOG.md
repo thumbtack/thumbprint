@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] `Select`'s `onChange` function now sends the original event as a second argument (#188)
+-   [Minor] `Select` now supports `onBlur` and `onFocus` props
+-   [Minor] `Textarea` now supports a `name` prop
+
 ## 0.3.0 - 2019-03-28
 
 ### Added

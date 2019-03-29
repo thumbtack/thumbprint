@@ -49,19 +49,39 @@ test('uses `value` as the selected option', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('calls `onChange` function and supplies new value', () => {
+test('calls `onChange` function and supplies new value and event', () => {
     const onChange = jest.fn();
 
     const wrapper = mount(<Select onChange={onChange} value="goose" />);
     const select = wrapper.find('select');
 
-    select.simulate('change', { target: { value: 'He' } });
+    const event1 = { target: { value: 'He' } };
+    select.simulate('change', event1);
     expect(onChange).toHaveBeenCalledTimes(1);
-    expect(onChange).toHaveBeenLastCalledWith('He');
+    expect(onChange).toHaveBeenLastCalledWith(event1.target.value, expect.objectContaining(event1));
 
-    select.simulate('change', { target: { value: 'Hello' } });
+    const event2 = { target: { value: 'Hello' } };
+    select.simulate('change', event2);
     expect(onChange).toHaveBeenCalledTimes(2);
-    expect(onChange).toHaveBeenLastCalledWith('Hello');
+    expect(onChange).toHaveBeenLastCalledWith(event2.target.value, expect.objectContaining(event2));
+});
+
+test('calls `onBlur` function when supplied', () => {
+    const onBlur = jest.fn();
+
+    const wrapper = mount(<Select onBlur={onBlur} onChange={jest.fn} value="goose" />);
+
+    wrapper.find('select').simulate('blur');
+    expect(onBlur).toHaveBeenCalledTimes(1);
+});
+
+test('calls `onFocus` function when supplied', () => {
+    const onFocus = jest.fn();
+
+    const wrapper = mount(<Select onFocus={onFocus} onChange={jest.fn} value="goose" />);
+
+    wrapper.find('select').simulate('focus');
+    expect(onFocus).toHaveBeenCalledTimes(1);
 });
 
 test('calls `onClick` function when clicked on', () => {
