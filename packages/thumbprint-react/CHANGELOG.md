@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.0 - 2019-03-29
+
 ### Added
 
 -   [Minor] `Select`'s `onChange` function now sends the original event as a second argument (#188)
