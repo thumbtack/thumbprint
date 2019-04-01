@@ -4,20 +4,17 @@
         {
             "name": "Base",
             "id": "font__line-height__base",
-            "value": "1.6",
-            "type": "line-height"
+            "value": "1.6"
         },
         {
             "name": "Tight",
             "id": "font__line-height__tight",
-            "value": "1.4",
-            "type": "line-height"
+            "value": "1.4"
         },
         {
             "name": "Loose",
             "id": "font__line-height__loose",
-            "value": "1.9",
-            "type": "line-height"
+            "value": "1.9"
         }
     ]
 }

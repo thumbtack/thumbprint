@@ -4,25 +4,21 @@
         {
             "name": "Base",
             "id": "border__radius__base",
-            "type": "border-radius",
             "value": "4px"
         },
         {
             "name": "Big",
             "id": "border__radius__big",
-            "type": "border-radius",
             "value": "6px"
         },
         {
             "name": "Full",
             "id": "border__radius__full",
-            "type": "border-radius",
             "value": "50%"
         },
         {
             "name": "Sides",
             "id": "border__radius__sides",
-            "type": "border-radius",
             "value": "9999px"
         }
     ]
