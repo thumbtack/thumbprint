@@ -5,9 +5,4 @@
     border-top: 1px solid $tp-color__gray;
     margin-top: auto;
     padding: $tp-space__4 20px;
-
-    @include tp-respond-above($tp-breakpoint__small) {
-        padding: 0 $tp-space__5 40px;
-        border-top: none;
-    }
 }

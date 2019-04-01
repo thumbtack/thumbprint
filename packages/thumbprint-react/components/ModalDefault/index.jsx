@@ -35,6 +35,7 @@ const ModalDefaultAnimatedWrapper = ({
     onOpenFinish,
     shouldCloseOnCurtainClick,
     width,
+    shouldPageScrollAboveSmall,
 }) => (
     <Transition
         in={isOpen}
@@ -65,6 +66,7 @@ const ModalDefaultAnimatedWrapper = ({
                                 [styles.wrapperWide]: width === 'wide',
                                 [styles.wrapperNarrow]: width === 'narrow',
                                 [styles.wrapperMedium]: width === 'medium',
+                                [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
                         >
                             <div
@@ -104,6 +106,12 @@ ModalDefaultAnimatedWrapper.propTypes = {
      */
     shouldCloseOnCurtainClick: PropTypes.bool,
     /**
+     * Allows the page to scroll vertically at viewports larger than the small breakpoint. If
+     * `false`, the modal will always be equal to or smaller than the viewport and the contents
+     * of the modal will scroll, not the page itself.
+     */
+    shouldPageScrollAboveSmall: PropTypes.bool,
+    /**
      * Should the modal appear open.
      */
     isOpen: PropTypes.bool,
@@ -119,6 +127,7 @@ ModalDefaultAnimatedWrapper.defaultProps = {
     onCloseFinish: undefined,
     isOpen: false,
     shouldCloseOnCurtainClick: true,
+    shouldPageScrollAboveSmall: true,
     width: 'medium',
 };
 
@@ -332,6 +341,14 @@ class ModalDefault extends React.Component {
                 shouldCloseOnCurtainClick={shouldCloseOnCurtainClick}
                 isOpen={isOpen}
                 width={width}
+                // We allow the modal to grow taller than the page only if
+                // there is no sticky footer. This means that the page can
+                // scroll vertically when the modal contents are tall enough.
+                // If we have a sticky footer, we prevent the modal from
+                // getting taller than the viewport so that the footer can
+                // always appear at the bottom. In this case, the inside
+                // of the modal itself will scroll vertically as needed.
+                shouldPageScrollAboveSmall={!hasStickyFooter}
             >
                 <Provider
                     value={{
@@ -343,6 +360,7 @@ class ModalDefault extends React.Component {
                         className={classNames({
                             [styles.contents]: true,
                             [styles.contentsSticky]: hasStickyFooter,
+                            [styles.contentsNotSticky]: !hasStickyFooter,
                         })}
                     >
                         {children}
@@ -357,7 +375,12 @@ class ModalDefault extends React.Component {
                         not focused first by the focus trap. We visually
                         position it at the top with flexbox.
                     */}
-                    <div className={styles.closeButton}>
+                    <div
+                        className={classNames({
+                            [styles.closeButton]: true,
+                            [styles.closeButtonNotSticky]: !hasStickyFooter,
+                        })}
+                    >
                         {shouldHideCloseButton === false && (
                             <TextButton
                                 accessibilityLabel="Close modal"
