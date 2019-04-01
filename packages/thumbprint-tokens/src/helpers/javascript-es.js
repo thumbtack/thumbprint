@@ -8,5 +8,5 @@ module.exports = {
 
         return `"${value}"`;
     },
-    formatId: ({ id }) => camelCase(`${id}`),
+    formatId: ({ id }) => camelCase(`tp-${id}`),
 };
