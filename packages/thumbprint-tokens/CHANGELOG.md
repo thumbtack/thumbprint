@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Simplify script that generates tokens.
+
 ## 6.3.1 - 2019-03-11
 
 ### Changed
