@@ -48,7 +48,7 @@ const TokenRow = ({ group, groupName, language }) => (
                                 )}
                             </td>
                             <td className="tr pv2">
-                                <TokenExample type={token.type}>{token.value}</TokenExample>
+                                <TokenExample type={token.type}>{token.value.web}</TokenExample>
                             </td>
                         </tr>
                     ))}
@@ -188,7 +188,9 @@ export const pageQuery = graphql`
                         type
                         description
                         deprecated
-                        value
+                        value {
+                            web
+                        }
                         group
                     }
                 }

@@ -22,8 +22,8 @@ const onCreateNode = async ({ node, actions, loadNodeContent }) => {
     // to handle values of different types. https://github.com/gatsbyjs/gatsby/issues/2404
     parsedContent.tokens = map(parsedContent.tokens, token => {
         const newToken = token;
-        if (isNumber(token.value)) {
-            newToken.value = toString(token.value);
+        if (isNumber(token.value.web)) {
+            newToken.value.web = toString(token.value.web);
         }
         return newToken;
     });
