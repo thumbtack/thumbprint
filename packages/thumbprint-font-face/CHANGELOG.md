@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.0.1 - 2019-04-02
+
+### Changed
+
+-   [Patch] Update version of dependencies. This doesn't affect the outputted code.
+
 ## 1.0.0 - 2019-03-25
 
 ### Changed
