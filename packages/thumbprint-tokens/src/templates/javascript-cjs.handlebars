@@ -1,4 +1,5 @@
 {{#each this}}
+{{#if value.web}}
 {{#if description}}
 // {{description}}
 {{/if}}
@@ -6,4 +7,5 @@
 // @deprecated
 {{/if}}
 exports.{{formatId this}} = {{{formatValue this}}};
+{{/if}}
 {{/each}}

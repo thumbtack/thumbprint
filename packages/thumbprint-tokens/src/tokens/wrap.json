@@ -4,12 +4,12 @@
         {
             "name": "Max-Width",
             "id": "wrap__max-width",
-            "value": "946px"
+            "value": { "web": "946px" }
         },
         {
             "name": "No-Pad Width",
             "id": "wrap__no-pad-width",
-            "value": "1010px"
+            "value": { "web": "1010px" }
         }
     ]
 }
