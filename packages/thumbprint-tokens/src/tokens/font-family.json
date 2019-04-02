@@ -3,13 +3,13 @@
     "tokens": [
         {
             "name": "Base",
-            "id": "tp-font__family__base",
+            "id": "font__family__base",
             "value": "Mark, Avenir, Helvetica, Arial, sans-serif",
             "type": "font-family"
         },
         {
             "name": "Monospace",
-            "id": "tp-font__family__monospace",
+            "id": "font__family__monospace",
             "value": "'Source Code Pro', monospace",
             "type": "font-family"
         }

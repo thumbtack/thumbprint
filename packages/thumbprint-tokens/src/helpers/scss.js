@@ -1,4 +1,4 @@
 module.exports = {
-    formatId: ({ id }) => `$${id}`,
+    formatId: ({ id }) => `$tp-${id}`,
     formatValue: ({ value }) => value,
 };

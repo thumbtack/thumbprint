@@ -3,57 +3,57 @@
     "tokens": [
         {
             "name": "Large",
-            "id": "tp-breakpoint__large",
+            "id": "breakpoint__large",
             "type": "breakpoint",
             "value": "1025px"
         },
         {
             "name": "Large (Value)",
-            "id": "tp-breakpoint__large__value",
+            "id": "breakpoint__large__value",
             "value": 1025
         },
         {
             "name": "Medium",
-            "id": "tp-breakpoint__medium",
+            "id": "breakpoint__medium",
             "type": "breakpoint",
             "value": "700px"
         },
         {
             "name": "Medium (Value)",
-            "id": "tp-breakpoint__medium__value",
+            "id": "breakpoint__medium__value",
             "value": 700
         },
         {
             "name": "Small",
-            "id": "tp-breakpoint__small",
+            "id": "breakpoint__small",
             "type": "breakpoint",
             "value": "481px"
         },
         {
             "name": "Small (Value)",
-            "id": "tp-breakpoint__small__value",
+            "id": "breakpoint__small__value",
             "value": 481
         },
         {
             "name": "Split View Medium",
-            "id": "tp-breakpoint__split-view__medium",
+            "id": "breakpoint__split-view__medium",
             "type": "breakpoint",
             "value": "1060px"
         },
         {
             "name": "Split View Medium (Value)",
-            "id": "tp-breakpoint__split-view__medium__value",
+            "id": "breakpoint__split-view__medium__value",
             "value": 1060
         },
         {
             "name": "Split View Small",
-            "id": "tp-breakpoint__split-view__small",
+            "id": "breakpoint__split-view__small",
             "type": "breakpoint",
             "value": "769px"
         },
         {
             "name": "Split View Small (Value)",
-            "id": "tp-breakpoint__split-view__small__value",
+            "id": "breakpoint__split-view__small__value",
             "type": "breakpoint",
             "value": 769
         }
