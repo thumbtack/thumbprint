@@ -203,6 +203,7 @@ class Container extends React.Component {
                                                     path: {
                                                         glob: "/components/*/*/"
                                                         nin: [
+                                                            "/components/overview/"
                                                             "/components/global-css/scss/"
                                                             "/components/mixins/scss/"
                                                         ]
@@ -304,6 +305,14 @@ class Container extends React.Component {
                                                     isActive={activeSection === 'Components'}
                                                 >
                                                     <SideNavSectionGroup>
+                                                        <SideNavSectionGroupLink
+                                                            to="/components/overview/"
+                                                            isActive={
+                                                                pathname === '/components/overview/'
+                                                            }
+                                                        >
+                                                            Overview
+                                                        </SideNavSectionGroupLink>
                                                         <SideNavSectionGroupLink
                                                             to="/components/global-css/scss/"
                                                             isActive={
