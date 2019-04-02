@@ -1,0 +1,9 @@
+{{#each this}}
+{{#if description}}
+// {{description}}
+{{/if}}
+{{#if deprecated}}
+// @deprecated
+{{/if}}
+export var {{formatId this}} = {{{formatValue this}}};
+{{/each}}
