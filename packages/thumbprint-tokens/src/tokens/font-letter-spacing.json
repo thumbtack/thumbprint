@@ -3,19 +3,19 @@
     "tokens": [
         {
             "name": "Loose",
-            "id": "tp-font__letter-spacing__loose",
+            "id": "font__letter-spacing__loose",
             "value": "1px",
             "type": "spacing"
         },
         {
             "name": "Tight",
-            "id": "tp-font__letter-spacing__tight",
+            "id": "font__letter-spacing__tight",
             "value": "-1px",
             "type": "spacing"
         },
         {
             "name": "Extra Tight",
-            "id": "tp-font__letter-spacing__extra-tight",
+            "id": "font__letter-spacing__extra-tight",
             "value": "-2px",
             "type": "spacing"
         }

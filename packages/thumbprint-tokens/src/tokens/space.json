@@ -3,49 +3,49 @@
     "tokens": [
         {
             "name": "Space",
-            "id": "tp-space__1",
+            "id": "space__1",
             "value": "4px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__2",
+            "id": "space__2",
             "value": "8px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__3",
+            "id": "space__3",
             "value": "16px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__4",
+            "id": "space__4",
             "value": "24px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__5",
+            "id": "space__5",
             "value": "32px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__6",
+            "id": "space__6",
             "value": "64px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__7",
+            "id": "space__7",
             "value": "128px",
             "type": "space"
         },
         {
             "name": "Space",
-            "id": "tp-space__8",
+            "id": "space__8",
             "value": "256px",
             "type": "space"
         }

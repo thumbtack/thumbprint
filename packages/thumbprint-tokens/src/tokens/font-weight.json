@@ -3,13 +3,13 @@
     "tokens": [
         {
             "name": "Normal",
-            "id": "tp-font__weight__normal",
+            "id": "font__weight__normal",
             "value": "400",
             "type": "font-weight"
         },
         {
             "name": "Bold",
-            "id": "tp-font__weight__bold",
+            "id": "font__weight__bold",
             "value": "700",
             "type": "font-weight"
         }

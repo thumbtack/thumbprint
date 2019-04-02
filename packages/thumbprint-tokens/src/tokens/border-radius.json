@@ -3,25 +3,25 @@
     "tokens": [
         {
             "name": "Base",
-            "id": "tp-border__radius__base",
+            "id": "border__radius__base",
             "type": "border-radius",
             "value": "4px"
         },
         {
             "name": "Big",
-            "id": "tp-border__radius__big",
+            "id": "border__radius__big",
             "type": "border-radius",
             "value": "6px"
         },
         {
             "name": "Full",
-            "id": "tp-border__radius__full",
+            "id": "border__radius__full",
             "type": "border-radius",
             "value": "50%"
         },
         {
             "name": "Sides",
-            "id": "tp-border__radius__sides",
+            "id": "border__radius__sides",
             "type": "border-radius",
             "value": "9999px"
         }
