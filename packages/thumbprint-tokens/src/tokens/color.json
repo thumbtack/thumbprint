@@ -5,253 +5,253 @@
         {
             "name": "Blue 100",
             "id": "color__blue-100",
-            "value": "#eaf6fa",
+            "value": { "web": "#eaf6fa" },
             "type": "color"
         },
         {
             "name": "Blue 200",
             "id": "color__blue-200",
-            "value": "#b3ebff",
+            "value": { "web": "#b3ebff" },
             "type": "color"
         },
         {
             "name": "Blue 300",
             "id": "color__blue-300",
-            "value": "#79d2f2",
+            "value": { "web": "#79d2f2" },
             "type": "color"
         },
         {
             "name": "Blue",
             "id": "color__blue",
-            "value": "#009fd9",
+            "value": { "web": "#009fd9" },
             "type": "color"
         },
         {
             "name": "Blue 500",
             "id": "color__blue-500",
-            "value": "#007fad",
+            "value": { "web": "#007fad" },
             "type": "color"
         },
         {
             "name": "Blue 600",
             "id": "color__blue-600",
-            "value": "#005a7a",
+            "value": { "web": "#005a7a" },
             "type": "color"
         },
         {
             "name": "Indigo 100",
             "id": "color__indigo-100",
-            "value": "#e8f1fd",
+            "value": { "web": "#e8f1fd" },
             "type": "color"
         },
         {
             "name": "Indigo 200",
             "id": "color__indigo-200",
-            "value": "#cce1ff",
+            "value": { "web": "#cce1ff" },
             "type": "color"
         },
         {
             "name": "Indigo 300",
             "id": "color__indigo-300",
-            "value": "#96c2ff",
+            "value": { "web": "#96c2ff" },
             "type": "color"
         },
         {
             "name": "Indigo",
             "id": "color__indigo",
-            "value": "#5968e2",
+            "value": { "web": "#5968e2" },
             "type": "color"
         },
         {
             "name": "Indigo 500",
             "id": "color__indigo-500",
-            "value": "#4f54b3",
+            "value": { "web": "#4f54b3" },
             "type": "color"
         },
         {
             "name": "Indigo 600",
             "id": "color__indigo-600",
-            "value": "#383c80",
+            "value": { "web": "#383c80" },
             "type": "color"
         },
         {
             "name": "Purple 100",
             "id": "color__purple-100",
-            "value": "#f5efff",
+            "value": { "web": "#f5efff" },
             "type": "color"
         },
         {
             "name": "Purple 200",
             "id": "color__purple-200",
-            "value": "#dfccff",
+            "value": { "web": "#dfccff" },
             "type": "color"
         },
         {
             "name": "Purple 300",
             "id": "color__purple-300",
-            "value": "#d3baff",
+            "value": { "web": "#d3baff" },
             "type": "color"
         },
         {
             "name": "Purple",
             "id": "color__purple",
-            "value": "#a97ff0",
+            "value": { "web": "#a97ff0" },
             "type": "color"
         },
         {
             "name": "Purple 500",
             "id": "color__purple-500",
-            "value": "#8a5ed6",
+            "value": { "web": "#8a5ed6" },
             "type": "color"
         },
         {
             "name": "Purple 600",
             "id": "color__purple-600",
-            "value": "#502095",
+            "value": { "web": "#502095" },
             "type": "color"
         },
         {
             "name": "Green 100",
             "id": "color__green-100",
-            "value": "#e1fdf3",
+            "value": { "web": "#e1fdf3" },
             "type": "color"
         },
         {
             "name": "Green 200",
             "id": "color__green-200",
-            "value": "#c6f7da",
+            "value": { "web": "#c6f7da" },
             "type": "color"
         },
         {
             "name": "Green 300",
             "id": "color__green-300",
-            "value": "#73e4a2",
+            "value": { "web": "#73e4a2" },
             "type": "color"
         },
         {
             "name": "Green",
             "id": "color__green",
-            "value": "#2db783",
+            "value": { "web": "#2db783" },
             "type": "color"
         },
         {
             "name": "Green 500",
             "id": "color__green-500",
-            "value": "#109e78",
+            "value": { "web": "#109e78" },
             "type": "color"
         },
         {
             "name": "Green 600",
             "id": "color__green-600",
-            "value": "#0f6648",
+            "value": { "web": "#0f6648" },
             "type": "color"
         },
         {
             "name": "Yellow 100",
             "id": "color__yellow-100",
-            "value": "#fdf7e7",
+            "value": { "web": "#fdf7e7" },
             "type": "color"
         },
         {
             "name": "Yellow 200",
             "id": "color__yellow-200",
-            "value": "#ffebb3",
+            "value": { "web": "#ffebb3" },
             "type": "color"
         },
         {
             "name": "Yellow 300",
             "id": "color__yellow-300",
-            "value": "#ffdd80",
+            "value": { "web": "#ffdd80" },
             "type": "color"
         },
         {
             "name": "Yellow",
             "id": "color__yellow",
-            "value": "#febe14",
+            "value": { "web": "#febe14" },
             "type": "color"
         },
         {
             "name": "Yellow 500",
             "id": "color__yellow-500",
-            "value": "#d48300",
+            "value": { "web": "#d48300" },
             "type": "color"
         },
         {
             "name": "Yellow 600",
             "id": "color__yellow-600",
-            "value": "#8a5500",
+            "value": { "web": "#8a5500" },
             "type": "color"
         },
         {
             "name": "Red 100",
             "id": "color__red-100",
-            "value": "#ffeff0",
+            "value": { "web": "#ffeff0" },
             "type": "color"
         },
         {
             "name": "Red 200",
             "id": "color__red-200",
-            "value": "#ffd9d9",
+            "value": { "web": "#ffd9d9" },
             "type": "color"
         },
         {
             "name": "Red 300",
             "id": "color__red-300",
-            "value": "#ffb0b0",
+            "value": { "web": "#ffb0b0" },
             "type": "color"
         },
         {
             "name": "Red",
             "id": "color__red",
-            "value": "#ff5a5f",
+            "value": { "web": "#ff5a5f" },
             "type": "color"
         },
         {
             "name": "Red 500",
             "id": "color__red-500",
-            "value": "#cc3553",
+            "value": { "web": "#cc3553" },
             "type": "color"
         },
         {
             "name": "Red 600",
             "id": "color__red-600",
-            "value": "#76012c",
+            "value": { "web": "#76012c" },
             "type": "color"
         },
         {
             "name": "Black 300",
             "id": "color__black-300",
-            "value": "#676d73",
+            "value": { "web": "#676d73" },
             "type": "color"
         },
         {
             "name": "Black",
             "id": "color__black",
-            "value": "#2f3033",
+            "value": { "web": "#2f3033" },
             "type": "color"
         },
         {
             "name": "Gray 200",
             "id": "color__gray-200",
-            "value": "#fafafa",
+            "value": { "web": "#fafafa" },
             "type": "color"
         },
         {
             "name": "Gray 300",
             "id": "color__gray-300",
-            "value": "#e9eced",
+            "value": { "web": "#e9eced" },
             "type": "color"
         },
         {
             "name": "Gray",
             "id": "color__gray",
-            "value": "#d3d4d5",
+            "value": { "web": "#d3d4d5" },
             "type": "color"
         },
         {
             "name": "White",
             "id": "color__white",
-            "value": "#ffffff",
+            "value": { "web": "#ffffff" },
             "type": "color"
         }
     ]

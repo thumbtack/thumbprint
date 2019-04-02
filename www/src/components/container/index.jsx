@@ -172,14 +172,13 @@ class Container extends React.Component {
                                                     value
                                                 }
                                             }
-                                            allTokens: allThumbprintTokens(
+                                            allTokens: allThumbprintToken(
                                                 sort: { order: ASC, fields: [name] }
                                                 filter: { name: { ne: "Deprecated" } }
                                             ) {
                                                 edges {
                                                     node {
                                                         name
-                                                        slug
                                                     }
                                                 }
                                             }
@@ -378,8 +377,11 @@ class Container extends React.Component {
                                                     <SideNavSectionGroup>
                                                         {map(allTokens.edges, ({ node }, index) => (
                                                             <SideNavSectionGroupLink
-                                                                to={`/tokens/#section-${node.slug}`}
-                                                                key={node.slug}
+                                                                to={`/tokens/#${generateSlug({
+                                                                    level: 'section',
+                                                                    children: node.name,
+                                                                })}`}
+                                                                key={node.name}
                                                                 isActive={pathname === false}
                                                                 isFirstHashLink={index === 0}
                                                             >

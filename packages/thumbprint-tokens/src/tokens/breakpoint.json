@@ -4,52 +4,52 @@
         {
             "name": "Large",
             "id": "breakpoint__large",
-            "value": "1025px"
+            "value": { "web": "1025px" }
         },
         {
             "name": "Large (Value)",
             "id": "breakpoint__large__value",
-            "value": 1025
+            "value": { "web": 1025 }
         },
         {
             "name": "Medium",
             "id": "breakpoint__medium",
-            "value": "700px"
+            "value": { "web": "700px" }
         },
         {
             "name": "Medium (Value)",
             "id": "breakpoint__medium__value",
-            "value": 700
+            "value": { "web": 700 }
         },
         {
             "name": "Small",
             "id": "breakpoint__small",
-            "value": "481px"
+            "value": { "web": "481px" }
         },
         {
             "name": "Small (Value)",
             "id": "breakpoint__small__value",
-            "value": 481
+            "value": { "web": 481 }
         },
         {
             "name": "Split View Medium",
             "id": "breakpoint__split-view__medium",
-            "value": "1060px"
+            "value": { "web": "1060px" }
         },
         {
             "name": "Split View Medium (Value)",
             "id": "breakpoint__split-view__medium__value",
-            "value": 1060
+            "value": { "web": 1060 }
         },
         {
             "name": "Split View Small",
             "id": "breakpoint__split-view__small",
-            "value": "769px"
+            "value": { "web": "769px" }
         },
         {
             "name": "Split View Small (Value)",
             "id": "breakpoint__split-view__small__value",
-            "value": 769
+            "value": { "web": 769 }
         }
     ]
 }

@@ -4,7 +4,9 @@
 
 Thumbprint Tokens are published as JavaScript and SCSS.
 
-## Token specification
+## API
+
+### Token JSON files
 
 All tokens live within a `tokens/*.json` file. Token files follow the following format:
 
@@ -16,13 +18,17 @@ All tokens live within a `tokens/*.json` file. Token files follow the following 
         {
             "name": "Blue",
             "id": "color__blue",
-            "value": "#009fd9",
+            "value": {
+                "web": "#009fd9"
+            },
             "type": "color"
         },
         {
             "name": "Celebrate",
             "id": "color__celebrate",
-            "value": "#fbe002",
+            "value": {
+                "web": "#fbe002"
+            },
             "type": "color",
             "deprecated": true,
             "description": "Use our new yellow color instead."
@@ -31,33 +37,39 @@ All tokens live within a `tokens/*.json` file. Token files follow the following 
 }
 ```
 
+### Token object specification
+
 A single token can have the following fields:
 
-### `id`
+#### `id`
 
 `string`, _required_
 
 Unique string used to generate the variable names
 
-### `name`
+#### `name`
 
 `string`, _required_
 
 Human readable name for the token
 
-### `description`
+#### `description`
 
 `string`, _required_
 
 Additional information about the token
 
-### `value`
+#### `value`
 
-`string` or `number`, _required_
+`object`, _required_
 
-The value of the token
+The value of the token in each platform that the token supports
 
-### `type`
+##### `value.web`
+
+`string` or `number`
+
+#### `type`
 
 `string`
 
@@ -67,7 +79,7 @@ Valid values include:
 
 -   `color`
 
-### `deprecated`
+#### `deprecated`
 
 `bool`
 
