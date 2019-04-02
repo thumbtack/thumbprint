@@ -1,5 +1,25 @@
 const path = require('path');
 
+exports.sourceNodes = ({ actions }) => {
+    const { createTypes } = actions;
+    const typeDefs = `
+        type ThumbprintToken implements Node {
+            tokens: [ThumbprintTokenTokens!]!
+        }
+
+        type ThumbprintTokenTokens {
+            value: ThumbprintTokenTokensValue!
+        }
+
+        type ThumbprintTokenTokensValue {
+            web: String
+            ios: String
+            android: String
+        }
+    `;
+    createTypes(typeDefs);
+};
+
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
