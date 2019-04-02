@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Revert change that replaces `lazysizes` with internal image component because it was not working well within carousels.
+
 ## 0.5.0 - 2019-04-01
 
 ### Added
