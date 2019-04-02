@@ -2,6 +2,12 @@ const path = require('path');
 
 exports.sourceNodes = ({ actions }) => {
     const { createTypes } = actions;
+
+    // GraphQL requires that fields to have the same data type. We can't do
+    // that since some of our token values are numbers and some are strings.
+    // Adding the (partial) schema definition here tells Gatsby to treat the
+    // fields in `ThumbprintTokenTokensValue` as a string even if it sees
+    // one that is a number.
     const typeDefs = `
         type ThumbprintToken implements Node {
             tokens: [ThumbprintTokenTokens!]!
@@ -17,6 +23,7 @@ exports.sourceNodes = ({ actions }) => {
             android: String
         }
     `;
+
     createTypes(typeDefs);
 };
 
