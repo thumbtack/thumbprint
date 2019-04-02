@@ -4,14 +4,12 @@
         {
             "name": "Base",
             "id": "font__family__base",
-            "value": "Mark, Avenir, Helvetica, Arial, sans-serif",
-            "type": "font-family"
+            "value": "Mark, Avenir, Helvetica, Arial, sans-serif"
         },
         {
             "name": "Monospace",
             "id": "font__family__monospace",
-            "value": "'Source Code Pro', monospace",
-            "type": "font-family"
+            "value": "'Source Code Pro', monospace"
         }
     ]
 }

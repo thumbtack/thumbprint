@@ -4,7 +4,6 @@
         {
             "name": "Large",
             "id": "breakpoint__large",
-            "type": "breakpoint",
             "value": "1025px"
         },
         {
@@ -15,7 +14,6 @@
         {
             "name": "Medium",
             "id": "breakpoint__medium",
-            "type": "breakpoint",
             "value": "700px"
         },
         {
@@ -26,7 +24,6 @@
         {
             "name": "Small",
             "id": "breakpoint__small",
-            "type": "breakpoint",
             "value": "481px"
         },
         {
@@ -37,7 +34,6 @@
         {
             "name": "Split View Medium",
             "id": "breakpoint__split-view__medium",
-            "type": "breakpoint",
             "value": "1060px"
         },
         {
@@ -48,13 +44,11 @@
         {
             "name": "Split View Small",
             "id": "breakpoint__split-view__small",
-            "type": "breakpoint",
             "value": "769px"
         },
         {
             "name": "Split View Small (Value)",
             "id": "breakpoint__split-view__small__value",
-            "type": "breakpoint",
             "value": 769
         }
     ]

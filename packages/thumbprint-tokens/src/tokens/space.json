@@ -4,50 +4,42 @@
         {
             "name": "Space",
             "id": "space__1",
-            "value": "4px",
-            "type": "space"
+            "value": "4px"
         },
         {
             "name": "Space",
             "id": "space__2",
-            "value": "8px",
-            "type": "space"
+            "value": "8px"
         },
         {
             "name": "Space",
             "id": "space__3",
-            "value": "16px",
-            "type": "space"
+            "value": "16px"
         },
         {
             "name": "Space",
             "id": "space__4",
-            "value": "24px",
-            "type": "space"
+            "value": "24px"
         },
         {
             "name": "Space",
             "id": "space__5",
-            "value": "32px",
-            "type": "space"
+            "value": "32px"
         },
         {
             "name": "Space",
             "id": "space__6",
-            "value": "64px",
-            "type": "space"
+            "value": "64px"
         },
         {
             "name": "Space",
             "id": "space__7",
-            "value": "128px",
-            "type": "space"
+            "value": "128px"
         },
         {
             "name": "Space",
             "id": "space__8",
-            "value": "256px",
-            "type": "space"
+            "value": "256px"
         }
     ]
 }

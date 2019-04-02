@@ -4,14 +4,12 @@
         {
             "name": "Normal",
             "id": "font__weight__normal",
-            "value": "400",
-            "type": "font-weight"
+            "value": "400"
         },
         {
             "name": "Bold",
             "id": "font__weight__bold",
-            "value": "700",
-            "type": "font-weight"
+            "value": "700"
         }
     ]
 }
