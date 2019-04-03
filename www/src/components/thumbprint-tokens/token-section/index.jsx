@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text } from '@thumbtack/thumbprint-react';
 import classNames from 'classnames';
 import { groupBy, map } from 'lodash';
@@ -68,6 +69,15 @@ const TokenSection = ({ section, idTransform }) => {
             </table>
         </div>
     );
+};
+
+TokenSection.propTypes = {
+    section: PropTypes.shape({}).isRequired,
+    /**
+     * Function that gets run on the token `id`, transforming the string into the variable name
+     * for that platform.
+     */
+    idTransform: PropTypes.func.isRequired,
 };
 
 export default TokenSection;
