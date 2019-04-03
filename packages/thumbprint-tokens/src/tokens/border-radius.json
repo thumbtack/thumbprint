@@ -4,22 +4,22 @@
         {
             "name": "Base",
             "id": "border__radius__base",
-            "value": "4px"
+            "value": { "web": "4px" }
         },
         {
             "name": "Big",
             "id": "border__radius__big",
-            "value": "6px"
+            "value": { "web": "6px" }
         },
         {
             "name": "Full",
             "id": "border__radius__full",
-            "value": "50%"
+            "value": { "web": "50%" }
         },
         {
             "name": "Sides",
             "id": "border__radius__sides",
-            "value": "9999px"
+            "value": { "web": "9999px" }
         }
     ]
 }

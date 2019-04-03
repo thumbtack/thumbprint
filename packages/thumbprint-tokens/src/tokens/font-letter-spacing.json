@@ -4,17 +4,17 @@
         {
             "name": "Loose",
             "id": "font__letter-spacing__loose",
-            "value": "1px"
+            "value": { "web": "1px" }
         },
         {
             "name": "Tight",
             "id": "font__letter-spacing__tight",
-            "value": "-1px"
+            "value": { "web": "-1px" }
         },
         {
             "name": "Extra Tight",
             "id": "font__letter-spacing__extra-tight",
-            "value": "-2px"
+            "value": { "web": "-2px" }
         }
     ]
 }
