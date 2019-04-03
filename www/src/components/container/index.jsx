@@ -377,7 +377,7 @@ class Container extends React.Component {
                                                     <SideNavSectionGroup>
                                                         {map(allTokens.edges, ({ node }, index) => (
                                                             <SideNavSectionGroupLink
-                                                                to={`/tokens/#${generateSlug({
+                                                                to={`/tokens/scss/#${generateSlug({
                                                                     level: 'section',
                                                                     children: node.name,
                                                                 })}`}

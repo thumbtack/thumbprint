@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Color from './color';
-import { InlineCode } from '../../mdx';
+import { InlineCode } from '../../../mdx';
 
 const TokenExample = props => {
     let children;
