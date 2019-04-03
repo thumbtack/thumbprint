@@ -48,7 +48,7 @@ const TokenRow = ({ group, groupName, language }) => (
                                 )}
                             </td>
                             <td className="tr pv2">
-                                <TokenExample type={token.type}>{token.value}</TokenExample>
+                                <TokenExample type={token.type}>{token.value.web}</TokenExample>
                             </td>
                         </tr>
                     ))}
@@ -86,7 +86,7 @@ class Page extends React.Component {
         const { language } = this.state;
 
         // Sort alphabetically but with the "Deprecated" section last.
-        const sectionEdges = sortBy(data.allThumbprintTokens.edges, [
+        const sectionEdges = sortBy(data.allThumbprintToken.edges, [
             section => section.node.name === 'Deprecated',
             'node.name',
         ]);
@@ -123,7 +123,7 @@ class Page extends React.Component {
                         return (
                             <div key={section.name}>
                                 {section.tokens.length > 0 && (
-                                    <ScrollMarkerSection id={section.slug}>
+                                    <ScrollMarkerSection id={section.name}>
                                         {({ id }) => (
                                             <section>
                                                 <H2 id={id}>{section.name}</H2>
@@ -165,7 +165,7 @@ class Page extends React.Component {
 
 Page.propTypes = {
     data: PropTypes.shape({
-        allThumbprintTokens: PropTypes.shape({
+        allThumbprintToken: PropTypes.shape({
             edges: PropTypes.array,
         }),
     }).isRequired,
@@ -176,11 +176,10 @@ export default Page;
 
 export const pageQuery = graphql`
     query Tokens {
-        allThumbprintTokens(sort: { order: ASC, fields: [name] }) {
+        allThumbprintToken(sort: { order: ASC, fields: [name] }) {
             edges {
                 node {
                     name
-                    slug
                     description
                     tokens {
                         id
@@ -188,7 +187,9 @@ export const pageQuery = graphql`
                         type
                         description
                         deprecated
-                        value
+                        value {
+                            web
+                        }
                         group
                     }
                 }

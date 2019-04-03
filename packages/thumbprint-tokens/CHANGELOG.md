@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 6.3.2 - 2019-04-02
+
+### Changed
+
+-   [Patch] Simplify script that generates tokens.
+-   [Patch] Under-the-hood changes that will allow for future tokens without a `tp` prefix.
+
 ## 6.3.1 - 2019-03-11
 
 ### Changed

@@ -41,12 +41,16 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Best used with `"full-below-small"` on the children.
 
+Note: this reverses the order of the buttons on small screens as well, per our
+design guidelines which require primary action buttons to be on the right of a
+row, but on top when stacked.
+
 ```jsx
-<ButtonRow isStackedBelowSmall>
-    <Button width="full-below-small">Click Me</Button>
+<ButtonRow isStackedBelowSmall justify="right">
     <Button width="full-below-small" theme="secondary">
         Click Me
     </Button>
+    <Button width="full-below-small">Click Me</Button>
 </ButtonRow>
 ```
 

@@ -12,6 +12,7 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="medium"
   >
     <Transition
@@ -42,17 +43,17 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -92,17 +93,17 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -142,17 +143,17 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperWide"
+                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -192,13 +193,13 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       >
                         <p>
                           Hi there!
@@ -211,7 +212,7 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                       </div>
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -251,17 +252,17 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       />
                     </div>
                   </div>
@@ -292,17 +293,17 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperMedium"
+                  className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     />
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     />
                   </div>
                 </div>
@@ -328,6 +329,7 @@ exports[`ModalDefault renders a basic modal 1`] = `
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="medium"
   >
     <Transition
@@ -358,17 +360,17 @@ exports[`ModalDefault renders a basic modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -423,17 +425,17 @@ exports[`ModalDefault renders a basic modal 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperMedium"
+                  className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     />
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     >
                       <ForwardRef
                         accessibilityLabel="Close modal"
@@ -532,6 +534,7 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="medium"
   >
     <Transition
@@ -562,17 +565,17 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -612,17 +615,17 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -662,17 +665,17 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperWide"
+                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -712,13 +715,13 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       >
                         <p>
                           Hi there!
@@ -731,7 +734,7 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                       </div>
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -786,13 +789,13 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperMedium"
+                  className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     >
                       <p>
                         Hi there!
@@ -805,7 +808,7 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                     </div>
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     >
                       <ForwardRef
                         accessibilityLabel="Close modal"
@@ -904,6 +907,7 @@ exports[`ModalDefault renders a narrow modal 1`] = `
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="narrow"
   >
     <Transition
@@ -934,17 +938,17 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -984,17 +988,17 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1049,17 +1053,17 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperNarrow"
+                  className="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     />
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     >
                       <ForwardRef
                         accessibilityLabel="Close modal"
@@ -1158,6 +1162,7 @@ exports[`ModalDefault renders a wide modal 1`] = `
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="wide"
   >
     <Transition
@@ -1188,17 +1193,17 @@ exports[`ModalDefault renders a wide modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1238,17 +1243,17 @@ exports[`ModalDefault renders a wide modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1288,17 +1293,17 @@ exports[`ModalDefault renders a wide modal 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperWide"
+                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1353,17 +1358,17 @@ exports[`ModalDefault renders a wide modal 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperWide"
+                  className="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     />
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     >
                       <ForwardRef
                         accessibilityLabel="Close modal"
@@ -1462,6 +1467,7 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={true}
     width="medium"
   >
     <Transition
@@ -1492,17 +1498,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1542,17 +1548,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1592,17 +1598,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperWide"
+                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1642,13 +1648,13 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       >
                         <p>
                           Hi there!
@@ -1661,7 +1667,7 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                       </div>
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1701,17 +1707,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       />
                     </div>
                   </div>
@@ -1727,17 +1733,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -1792,17 +1798,17 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperMedium"
+                  className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                 >
                   <div
                     className="container"
                   >
                     <div
-                      className="contents"
+                      className="contents contentsNotSticky"
                     />
                     <div />
                     <div
-                      className="closeButton"
+                      className="closeButton closeButtonNotSticky"
                     >
                       <ForwardRef
                         accessibilityLabel="Close modal"
@@ -1933,6 +1939,7 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
+    shouldPageScrollAboveSmall={false}
     width="medium"
   >
     <Transition
@@ -1963,17 +1970,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2013,17 +2020,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperNarrow"
+                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2063,17 +2070,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperWide"
+                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2113,13 +2120,13 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       >
                         <p>
                           Hi there!
@@ -2132,7 +2139,7 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                       </div>
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2172,17 +2179,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       />
                     </div>
                   </div>
@@ -2198,17 +2205,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2248,17 +2255,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperOpen wrapperMedium"
+                    class="wrapper wrapperOpen wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2298,17 +2305,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperOpen wrapperMedium"
+                    class="wrapper wrapperOpen wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2348,17 +2355,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperOpen wrapperMedium"
+                    class="wrapper wrapperOpen wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"
@@ -2398,17 +2405,17 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                   data-test="thumbprint-modal-curtain"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                   >
                     <div
                       class="container"
                     >
                       <div
-                        class="contents"
+                        class="contents contentsNotSticky"
                       />
                       <div />
                       <div
-                        class="closeButton"
+                        class="closeButton closeButtonNotSticky"
                       >
                         <button
                           aria-label="Close modal"

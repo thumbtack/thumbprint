@@ -3,27 +3,23 @@
     "tokens": [
         {
             "name": "Base",
-            "id": "tp-border__radius__base",
-            "type": "border-radius",
-            "value": "4px"
+            "id": "border__radius__base",
+            "value": { "web": "4px" }
         },
         {
             "name": "Big",
-            "id": "tp-border__radius__big",
-            "type": "border-radius",
-            "value": "6px"
+            "id": "border__radius__big",
+            "value": { "web": "6px" }
         },
         {
             "name": "Full",
-            "id": "tp-border__radius__full",
-            "type": "border-radius",
-            "value": "50%"
+            "id": "border__radius__full",
+            "value": { "web": "50%" }
         },
         {
             "name": "Sides",
-            "id": "tp-border__radius__sides",
-            "type": "border-radius",
-            "value": "9999px"
+            "id": "border__radius__sides",
+            "value": { "web": "9999px" }
         }
     ]
 }

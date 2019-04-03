@@ -4,6 +4,19 @@ import Avatar, { EntityAvatar } from './index';
 
 test('renders an image when the user has one', () => {
     const wrapper = mount(<Avatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
+    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('adds lazyload class for lazysizes to work', () => {
+    const wrapper = mount(<Avatar imageUrl="//www.placecage.com/130/130" />);
+    expect(wrapper.find('.lazyload')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+});
+
+test('does not add lazyload class if an image is not provided', () => {
+    const wrapper = mount(<Avatar initials="NC" />);
+    expect(wrapper.find('.lazyload')).toHaveLength(0);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -137,6 +150,7 @@ test('renders checkmark SVG when `isChecked` and `isOnline` are true', () => {
 
 test('EntityAvatar renders an image when the user has one', () => {
     const wrapper = mount(<EntityAvatar imageUrl="//www.placecage.com/130/130" initial="N" />);
+    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
     expect(wrapper).toMatchSnapshot();
 });
 

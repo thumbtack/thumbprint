@@ -24,11 +24,11 @@
 
 .stackBelowSmall {
     @include tp-respond-below($tp-breakpoint__small) {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: stretch;
 
         .item + .item {
-            margin-top: $tp-space__2;
+            margin-bottom: $tp-space__2;
             margin-left: 0;
         }
     }
