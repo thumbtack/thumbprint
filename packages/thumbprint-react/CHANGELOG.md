@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Patch] Fix `ButtonRow` so that it displays the primary call to action on top when the button row is stacked.
+
 ## 0.5.1 - 2019-04-02
 
 ### Fixed
