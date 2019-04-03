@@ -7,14 +7,18 @@
     @font-face {
         font-family: 'Mark';
         font-weight: 400;
-        src: url(#{$thumbprint-font-url}mark/mark-tt-subset.woff2) format('woff2'),
+        font-display: swap;
+        src: local('#{$tp-font__family__base}'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset.woff2) format('woff2'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset.woff) format('woff');
     }
 
     @font-face {
         font-family: 'Mark';
         font-weight: 700;
-        src: url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff2) format('woff2'),
+        font-display: swap;
+        src: local('#{$tp-font__family__base}'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff2) format('woff2'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff) format('woff');
     }
 } @else {
