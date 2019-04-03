@@ -11,7 +11,7 @@
         "test": "yarn run bootstrap && yarn run test:lint && yarn run test:jest && yarn run test:prettier",
         "test:jest": "TZ=America/Los_Angeles jest",
         "test:jest:watch": "yarn run bootstrap && yarn test:jest --watch",
-        "test:prettier": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --list-different || (c=$?; echo \"\n⚠️  Some files in this branch have not been formatted with Prettier. Please run 'yarn run format' to format them.\n\"; (exit $c))",
+        "test:prettier": "./scripts/test-prettier.sh",
         "test:lint": "yarn test:lint:md && yarn test:lint:css && yarn test:lint:js",
         "test:lint:md": "remark \"packages/*/CHANGELOG.md\" --frail --quiet",
         "test:lint:css": "stylelint --ignore-pattern **/*.module.scss **/*.scss",
