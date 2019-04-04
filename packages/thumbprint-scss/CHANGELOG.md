@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Replace `$tp-spacer__unit` in `textarea.scss` with hardcoded pixel value.
+
 ## 0.3.1 - 2019-04-02
 
 ### Changed
