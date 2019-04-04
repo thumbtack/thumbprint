@@ -5,253 +5,391 @@
         {
             "name": "Blue 100",
             "id": "color__blue-100",
-            "value": { "web": "#eaf6fa" },
+            "value": {
+                "web": "#eaf6fa",
+                "ios": "UIColor(red: 0.918, green: 0.965, blue: 0.980, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Blue 200",
             "id": "color__blue-200",
-            "value": { "web": "#b3ebff" },
+            "value": {
+                "web": "#b3ebff",
+                "ios": "UIColor(red: 0.702, green: 0.922, blue: 1.000, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Blue 300",
             "id": "color__blue-300",
-            "value": { "web": "#79d2f2" },
-            "type": "color"
+            "value": {
+                "web": "#79d2f2",
+                "ios": "UIColor(red: 0.475, green: 0.824, blue: 0.949, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Blue",
             "id": "color__blue",
-            "value": { "web": "#009fd9" },
+            "value": {
+                "web": "#009fd9",
+                "ios": "UIColor(red: 0.000, green: 0.624, blue: 0.851, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Blue 500",
             "id": "color__blue-500",
-            "value": { "web": "#007fad" },
-            "type": "color"
+            "value": {
+                "web": "#007fad",
+                "ios": "UIColor(red: 0.000, green: 0.498, blue: 0.678, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Blue 600",
             "id": "color__blue-600",
-            "value": { "web": "#005a7a" },
+            "value": {
+                "web": "#005a7a",
+                "ios": "UIColor(red: 0.000, green: 0.353, blue: 0.478, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Indigo 100",
             "id": "color__indigo-100",
-            "value": { "web": "#e8f1fd" },
+            "value": {
+                "web": "#e8f1fd",
+                "ios": "UIColor(red: 0.910, green: 0.945, blue: 0.992, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Indigo 200",
             "id": "color__indigo-200",
-            "value": { "web": "#cce1ff" },
+            "value": {
+                "web": "#cce1ff",
+                "ios": "UIColor(red: 0.800, green: 0.882, blue: 1.000, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Indigo 300",
             "id": "color__indigo-300",
-            "value": { "web": "#96c2ff" },
-            "type": "color"
+            "value": {
+                "web": "#96c2ff",
+                "ios": "UIColor(red: 0.588, green: 0.761, blue: 1.000, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Indigo",
             "id": "color__indigo",
-            "value": { "web": "#5968e2" },
+            "value": {
+                "web": "#5968e2",
+                "ios": "UIColor(red: 0.349, green: 0.408, blue: 0.886, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Indigo 500",
             "id": "color__indigo-500",
-            "value": { "web": "#4f54b3" },
-            "type": "color"
+            "value": {
+                "web": "#4f54b3",
+                "ios": "UIColor(red: 0.310, green: 0.329, blue: 0.702, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Indigo 600",
             "id": "color__indigo-600",
-            "value": { "web": "#383c80" },
+            "value": {
+                "web": "#383c80",
+                "ios": "UIColor(red: 0.220, green: 0.235, blue: 0.502, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Purple 100",
             "id": "color__purple-100",
-            "value": { "web": "#f5efff" },
+            "value": {
+                "web": "#f5efff",
+                "ios": "UIColor(red: 0.961, green: 0.937, blue: 1.000, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Purple 200",
             "id": "color__purple-200",
-            "value": { "web": "#dfccff" },
+            "value": {
+                "web": "#dfccff",
+                "ios": "UIColor(red: 0.875, green: 0.800, blue: 1.000, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Purple 300",
             "id": "color__purple-300",
-            "value": { "web": "#d3baff" },
-            "type": "color"
+            "value": {
+                "web": "#d3baff",
+                "ios": "UIColor(red: 0.827, green: 0.729, blue: 1.000, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Purple",
             "id": "color__purple",
-            "value": { "web": "#a97ff0" },
+            "value": {
+                "web": "#a97ff0",
+                "ios": "UIColor(red: 0.663, green: 0.498, blue: 0.941, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Purple 500",
             "id": "color__purple-500",
-            "value": { "web": "#8a5ed6" },
-            "type": "color"
+            "value": {
+                "web": "#8a5ed6",
+                "ios": "UIColor(red: 0.541, green: 0.369, blue: 0.839, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Purple 600",
             "id": "color__purple-600",
-            "value": { "web": "#502095" },
+            "value": {
+                "web": "#502095",
+                "ios": "UIColor(red: 0.314, green: 0.125, blue: 0.584, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Green 100",
             "id": "color__green-100",
-            "value": { "web": "#e1fdf3" },
+            "value": {
+                "web": "#e1fdf3",
+                "ios": "UIColor(red: 0.882, green: 0.992, blue: 0.953, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Green 200",
             "id": "color__green-200",
-            "value": { "web": "#c6f7da" },
+            "value": {
+                "web": "#c6f7da",
+                "ios": "UIColor(red: 0.776, green: 0.969, blue: 0.855, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Green 300",
             "id": "color__green-300",
-            "value": { "web": "#73e4a2" },
-            "type": "color"
+            "value": {
+                "web": "#73e4a2",
+                "ios": "UIColor(red: 0.451, green: 0.894, blue: 0.635, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Green",
             "id": "color__green",
-            "value": { "web": "#2db783" },
+            "value": {
+                "web": "#2db783",
+                "ios": "UIColor(red: 0.176, green: 0.718, blue: 0.514, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Green 500",
             "id": "color__green-500",
-            "value": { "web": "#109e78" },
-            "type": "color"
+            "value": {
+                "web": "#109e78",
+                "ios": "UIColor(red: 0.063, green: 0.620, blue: 0.471, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Green 600",
             "id": "color__green-600",
-            "value": { "web": "#0f6648" },
+            "value": {
+                "web": "#0f6648",
+                "ios": "UIColor(red: 0.059, green: 0.400, blue: 0.282, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Yellow 100",
             "id": "color__yellow-100",
-            "value": { "web": "#fdf7e7" },
+            "value": {
+                "web": "#fdf7e7",
+                "ios": "UIColor(red: 0.992, green: 0.969, blue: 0.906, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Yellow 200",
             "id": "color__yellow-200",
-            "value": { "web": "#ffebb3" },
+            "value": {
+                "web": "#ffebb3",
+                "ios": "UIColor(red: 0.992, green: 0.969, blue: 0.906, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Yellow 300",
             "id": "color__yellow-300",
-            "value": { "web": "#ffdd80" },
-            "type": "color"
+            "value": {
+                "web": "#ffdd80",
+                "ios": "UIColor(red: 1.000, green: 0.867, blue: 0.502, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Yellow",
             "id": "color__yellow",
-            "value": { "web": "#febe14" },
+            "value": {
+                "web": "#febe14",
+                "ios": "UIColor(red: 0.996, green: 0.745, blue: 0.078, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Yellow 500",
             "id": "color__yellow-500",
-            "value": { "web": "#d48300" },
-            "type": "color"
+            "value": {
+                "web": "#d48300",
+                "ios": "UIColor(red: 0.831, green: 0.514, blue: 0.000, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Yellow 600",
             "id": "color__yellow-600",
-            "value": { "web": "#8a5500" },
+            "value": {
+                "web": "#8a5500",
+                "ios": "UIColor(red: 0.541, green: 0.333, blue: 0.000, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Red 100",
             "id": "color__red-100",
-            "value": { "web": "#ffeff0" },
+            "value": {
+                "web": "#ffeff0",
+                "ios": "UIColor(red: 1.000, green: 0.937, blue: 0.941, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Red 200",
             "id": "color__red-200",
-            "value": { "web": "#ffd9d9" },
+            "value": {
+                "web": "#ffd9d9",
+                "ios": "UIColor(red: 1.000, green: 0.851, blue: 0.851, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Red 300",
             "id": "color__red-300",
-            "value": { "web": "#ffb0b0" },
-            "type": "color"
+            "value": {
+                "web": "#ffb0b0",
+                "ios": "UIColor(red: 1.000, green: 0.690, blue: 0.690, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Red",
             "id": "color__red",
-            "value": { "web": "#ff5a5f" },
+            "value": {
+                "web": "#ff5a5f",
+                "ios": "UIColor(red: 1.000, green: 0.353, blue: 0.373, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Red 500",
             "id": "color__red-500",
-            "value": { "web": "#cc3553" },
-            "type": "color"
+            "value": {
+                "web": "#cc3553",
+                "ios": "UIColor(red: 0.800, green: 0.208, blue: 0.325, alpha: 1.000)"
+            },
+            "type": "color",
+            "private": true
         },
         {
             "name": "Red 600",
             "id": "color__red-600",
-            "value": { "web": "#76012c" },
+            "value": {
+                "web": "#76012c",
+                "ios": "UIColor(red: 0.463, green: 0.004, blue: 0.173, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Black 300",
             "id": "color__black-300",
-            "value": { "web": "#676d73" },
+            "value": {
+                "web": "#676d73",
+                "ios": "UIColor(red: 0.404, green: 0.427, blue: 0.451, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Black",
             "id": "color__black",
-            "value": { "web": "#2f3033" },
+            "value": {
+                "web": "#2f3033",
+                "ios": "UIColor(red: 0.184, green: 0.188, blue: 0.200, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Gray 200",
             "id": "color__gray-200",
-            "value": { "web": "#fafafa" },
+            "value": {
+                "web": "#fafafa",
+                "ios": "UIColor(red: 0.980, green: 0.980, blue: 0.980, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Gray 300",
             "id": "color__gray-300",
-            "value": { "web": "#e9eced" },
+            "value": {
+                "web": "#e9eced",
+                "ios": "UIColor(red: 0.914, green: 0.925, blue: 0.929, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "Gray",
             "id": "color__gray",
-            "value": { "web": "#d3d4d5" },
+            "value": {
+                "web": "#d3d4d5",
+                "ios": "UIColor(red: 0.827, green: 0.831, blue: 0.835, alpha: 1.000)"
+            },
             "type": "color"
         },
         {
             "name": "White",
             "id": "color__white",
-            "value": { "web": "#ffffff" },
+            "value": {
+                "web": "#ffffff",
+                "ios": "UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)"
+            },
             "type": "color"
         }
     ]

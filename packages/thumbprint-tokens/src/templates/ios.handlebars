@@ -1,0 +1,15 @@
+import UIKit.UIColor
+
+public struct Tokens {
+    {{#each this}}
+    {{#if value.ios}}
+    {{#if description}}
+    /// {{description}}
+    {{/if}}
+    {{#if deprecated}}
+    @available(*, deprecated)
+    {{/if}}
+    public static let {{formatId this}}: {{{formatValue this}}}
+    {{/if}}
+    {{/each}}
+}

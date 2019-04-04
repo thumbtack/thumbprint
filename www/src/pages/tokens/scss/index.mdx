@@ -13,7 +13,10 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 
 export const pageQuery = graphql`
     {
-        allThumbprintToken(sort: { order: ASC, fields: [name] }) {
+        allThumbprintToken(
+            sort: { order: ASC, fields: [name] }
+            filter: { tokens: { elemMatch: { value: { web: { ne: null } } } } }
+        ) {
             edges {
                 node {
                     name
@@ -50,6 +53,11 @@ export const pageQuery = graphql`
         section => section.node.name === 'Deprecated',
         'node.name',
     ]).map(({ node: section }) => (
-        <TokenSection section={section} idTransform={id => `$tp-${id}`} key={section.name} />
+        <TokenSection
+            section={section}
+            idTransform={id => `$tp-${id}`}
+            key={section.name}
+            platform="web"
+        />
     ))}
 </div>

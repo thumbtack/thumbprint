@@ -9,6 +9,7 @@ const outputs = [
     { slug: 'javascript-cjs', distName: 'index.js' },
     { slug: 'javascript-es', distName: 'index.js' },
     { slug: 'scss', distName: '_index.scss' },
+    { slug: 'ios', distName: 'index.swift' },
 ];
 
 const compile = (output, tokens) => {
