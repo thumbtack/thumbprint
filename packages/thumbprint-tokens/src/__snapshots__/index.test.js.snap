@@ -1202,3 +1202,62 @@ $tp-wrap__no-pad-width: 1010px;
 $tp-z-index__modal: 200;
 "
 `;
+
+exports[`outputted iOS matches snapshot 1`] = `
+"import UIKit.UIColor
+
+public struct Color {
+    public static let colorBlue100: UIColor(red: 0.918, green: 0.965, blue: 0.980, alpha: 1.000)
+    public static let colorBlue200: UIColor(red: 0.702, green: 0.922, blue: 1.000, alpha: 1.000)
+    public static let colorBlue300: UIColor(red: 0.475, green: 0.824, blue: 0.949, alpha: 1.000)
+    public static let colorBlue: UIColor(red: 0.000, green: 0.624, blue: 0.851, alpha: 1.000)
+    public static let colorBlue500: UIColor(red: 0.000, green: 0.498, blue: 0.678, alpha: 1.000)
+    public static let colorBlue600: UIColor(red: 0.000, green: 0.353, blue: 0.478, alpha: 1.000)
+    public static let colorIndigo100: UIColor(red: 0.910, green: 0.945, blue: 0.992, alpha: 1.000)
+    public static let colorIndigo200: UIColor(red: 0.800, green: 0.882, blue: 1.000, alpha: 1.000)
+    public static let colorIndigo300: UIColor(red: 0.588, green: 0.761, blue: 1.000, alpha: 1.000)
+    public static let colorIndigo: UIColor(red: 0.349, green: 0.408, blue: 0.886, alpha: 1.000)
+    public static let colorIndigo500: UIColor(red: 0.310, green: 0.329, blue: 0.702, alpha: 1.000)
+    public static let colorIndigo600: UIColor(red: 0.220, green: 0.235, blue: 0.502, alpha: 1.000)
+    public static let colorPurple100: UIColor(red: 0.961, green: 0.937, blue: 1.000, alpha: 1.000)
+    public static let colorPurple200: UIColor(red: 0.875, green: 0.800, blue: 1.000, alpha: 1.000)
+    public static let colorPurple300: UIColor(red: 0.827, green: 0.729, blue: 1.000, alpha: 1.000)
+    public static let colorPurple: UIColor(red: 0.663, green: 0.498, blue: 0.941, alpha: 1.000)
+    public static let colorPurple500: UIColor(red: 0.541, green: 0.369, blue: 0.839, alpha: 1.000)
+    public static let colorPurple600: UIColor(red: 0.314, green: 0.125, blue: 0.584, alpha: 1.000)
+    public static let colorGreen100: UIColor(red: 0.882, green: 0.992, blue: 0.953, alpha: 1.000)
+    public static let colorGreen200: UIColor(red: 0.776, green: 0.969, blue: 0.855, alpha: 1.000)
+    public static let colorGreen300: UIColor(red: 0.451, green: 0.894, blue: 0.635, alpha: 1.000)
+    public static let colorGreen: UIColor(red: 0.176, green: 0.718, blue: 0.514, alpha: 1.000)
+    public static let colorGreen500: UIColor(red: 0.063, green: 0.620, blue: 0.471, alpha: 1.000)
+    public static let colorGreen600: UIColor(red: 0.059, green: 0.400, blue: 0.282, alpha: 1.000)
+    public static let colorYellow100: UIColor(red: 0.992, green: 0.969, blue: 0.906, alpha: 1.000)
+    public static let colorYellow200: UIColor(red: 0.992, green: 0.969, blue: 0.906, alpha: 1.000)
+    public static let colorYellow300: UIColor(red: 1.000, green: 0.867, blue: 0.502, alpha: 1.000)
+    public static let colorYellow: UIColor(red: 0.996, green: 0.745, blue: 0.078, alpha: 1.000)
+    public static let colorYellow500: UIColor(red: 0.831, green: 0.514, blue: 0.000, alpha: 1.000)
+    public static let colorYellow600: UIColor(red: 0.541, green: 0.333, blue: 0.000, alpha: 1.000)
+    public static let colorRed100: UIColor(red: 1.000, green: 0.937, blue: 0.941, alpha: 1.000)
+    public static let colorRed200: UIColor(red: 1.000, green: 0.851, blue: 0.851, alpha: 1.000)
+    public static let colorRed300: UIColor(red: 1.000, green: 0.690, blue: 0.690, alpha: 1.000)
+    public static let colorRed: UIColor(red: 1.000, green: 0.353, blue: 0.373, alpha: 1.000)
+    public static let colorRed500: UIColor(red: 0.800, green: 0.208, blue: 0.325, alpha: 1.000)
+    public static let colorRed600: UIColor(red: 0.463, green: 0.004, blue: 0.173, alpha: 1.000)
+    public static let colorBlack300: UIColor(red: 0.404, green: 0.427, blue: 0.451, alpha: 1.000)
+    public static let colorBlack: UIColor(red: 0.184, green: 0.188, blue: 0.200, alpha: 1.000)
+    public static let colorGray200: UIColor(red: 0.980, green: 0.980, blue: 0.980, alpha: 1.000)
+    public static let colorGray300: UIColor(red: 0.914, green: 0.925, blue: 0.929, alpha: 1.000)
+    public static let colorGray: UIColor(red: 0.827, green: 0.831, blue: 0.835, alpha: 1.000)
+    public static let colorWhite: UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
+}
+
+public struct Space {
+    public static let space1: CGFloat = 4.0
+    public static let space2: CGFloat = 8.0
+    public static let space3: CGFloat = 16.0
+    public static let space4: CGFloat = 24.0
+    public static let space5: CGFloat = 32.0
+    public static let space6: CGFloat = 48.0
+}
+"
+`;

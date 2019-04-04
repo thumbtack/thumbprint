@@ -6,10 +6,9 @@ module.exports = [
     { name: 'formatId', value: ({ id }) => camelCase(id) },
     {
         name: 'formatSectionName',
-        value: ({ name }) => {
+        value: ({ name }) =>
             // Changes 'Border Radius' to 'BorderRadius'.
-            return name.replace(/\s/g, '');
-        },
+            name.replace(/\s/g, ''),
     },
     {
         name: 'eachSectionWithPlatformTokens',

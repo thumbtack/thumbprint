@@ -20,3 +20,8 @@ it('outputted SCSS matches snapshot', () => {
     const output = fs.readFileSync('packages/thumbprint-tokens/dist/scss/_index.scss', 'utf-8');
     expect(output).toMatchSnapshot();
 });
+
+it('outputted iOS matches snapshot', () => {
+    const output = fs.readFileSync('packages/thumbprint-tokens/dist/ios/index.swift', 'utf-8');
+    expect(output).toMatchSnapshot();
+});
