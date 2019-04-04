@@ -1,7 +1,8 @@
 import UIKit.UIColor
 
-public struct Tokens {
-    {{#each this}}
+{{#eachSectionWithPlatformTokens this}}
+public struct {{formatSectionName this}} {
+    {{#each tokens}}
     {{#if value.ios}}
     {{#if description}}
     /// {{description}}
@@ -13,3 +14,7 @@ public struct Tokens {
     {{/if}}
     {{/each}}
 }
+{{#unless @last}}
+
+{{/unless}}
+{{/eachSectionWithPlatformTokens}}

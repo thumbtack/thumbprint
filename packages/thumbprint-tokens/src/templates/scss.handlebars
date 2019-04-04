@@ -1,4 +1,5 @@
 {{#each this}}
+{{#each tokens}}
 {{#if value.web}}
 {{#if description}}
 // {{description}}
@@ -8,4 +9,5 @@
 {{/if}}
 {{formatId this}}: {{{formatValue this}}};
 {{/if}}
+{{/each}}
 {{/each}}

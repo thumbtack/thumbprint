@@ -1,6 +1,29 @@
-const { camelCase } = require('lodash');
+const handlebars = require('handlebars');
+const { camelCase, toLower, startCase } = require('lodash');
 
-module.exports = {
-    formatValue: ({ value }) => value.ios,
-    formatId: ({ id }) => camelCase(id),
-};
+module.exports = [
+    { name: 'formatValue', value: ({ value }) => value.ios },
+    { name: 'formatId', value: ({ id }) => camelCase(id) },
+    { name: 'formatSectionName', value: ({ name }) => startCase(toLower(name)).replace(/\s/g, '') },
+    {
+        name: 'eachSectionWithPlatformTokens',
+        value(sections, options) {
+            if (!sections || sections.length === 0) {
+                return options.inverse(this);
+            }
+
+            const data = options.data ? handlebars.createFrame(options.data) : undefined;
+            const result = [];
+
+            const filteredSections = sections.filter(s => s.tokens.some(t => t.value.ios));
+
+            for (let i = 0; i < filteredSections.length; i += 1) {
+                data.index = i;
+                data.last = i === filteredSections.length - 1;
+                result.push(options.fn(filteredSections[i], { data }));
+            }
+
+            return result.join('');
+        },
+    },
+];
