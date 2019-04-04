@@ -95,6 +95,11 @@ You can use the `tp-input-icon` classes to include a [Thumbprint Icon](/icons/) 
 </div>
 ```
 
+## Date inputs
+
+Because of browser UI inconsistencies we do not use <code>type='date'</code> and instead suggest
+using a separate text <code>input</code> or <code>select</code> elements to gather this information from users.
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
