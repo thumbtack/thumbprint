@@ -1,12 +1,21 @@
 const handlebars = require('handlebars');
-const { camelCase, toLower, startCase } = require('lodash');
+const { camelCase } = require('lodash');
 
 module.exports = [
     { name: 'formatValue', value: ({ value }) => value.ios },
     { name: 'formatId', value: ({ id }) => camelCase(id) },
-    { name: 'formatSectionName', value: ({ name }) => startCase(toLower(name)).replace(/\s/g, '') },
+    {
+        name: 'formatSectionName',
+        value: ({ name }) => {
+            // Changes 'Border Radius' to 'BorderRadius'.
+            return name.replace(/\s/g, '');
+        },
+    },
     {
         name: 'eachSectionWithPlatformTokens',
+        /**
+         * Filters the sections so that we only loop over ones that have iOS tokens.
+         */
         value(sections, options) {
             if (!sections || sections.length === 0) {
                 return options.inverse(this);
