@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `function.scss` that contained the `tp-spacer` function.
+
 ## 0.3.1 - 2019-04-02
 
 ### Changed

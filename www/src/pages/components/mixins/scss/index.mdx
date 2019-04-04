@@ -1,6 +1,6 @@
 ---
-title: Mixins & functions
-description: Responsive mixins and a spacer function.
+title: Mixins
+description: Responsive mixins.
 ---
 
 import { graphql, Link } from 'gatsby';
@@ -77,33 +77,6 @@ To prevent this our Sass mixin `tp-respond-above` adds `1` to the `min-width` me
     color: blue; /* Applies "color:blue" at 700px and below*/
 }
 ```
-
-## Functions
-
-<DeprecatedComponentAlert>
-    This package and <InlineCode>tp-spacer</InlineCode> were deprecated on September 11 in favor of
-    margin and padding classes from <Link to="/atomic/">Thumbprint Atomic</Link> or tokens from{' '}
-    <Link to="/tokens/#section-space">Thumbprint Tokens</Link>.
-</DeprecatedComponentAlert>
-
-### Usage
-
-When using margin or padding vales in your Sass use the `tp-spacer(N)` function where N is an increment of `0.5`. Our base spacer unit is `8px`.
-
-You should default to using the spacer function whenever possible but when building components that internally require small, precise spacing it is okay not to use the spacer function.
-
-```scss
-@import '@thumbtack/thumbprint-scss/mixins';
-
-.my-component {
-    margin-bottom: tp-spacer(2); // equivalent to 16px
-    padding: 0 tp-spacer(2.5); // equivalent to 20px
-}
-```
-
-### HTML Classes
-
-For spacing classes to use in your HTML see [Thumbprint Atomic](/atomic/).
 
 <ComponentFooter data={props.data} />
 
