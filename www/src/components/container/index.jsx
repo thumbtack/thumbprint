@@ -319,7 +319,7 @@ class Container extends React.Component {
                                                                 '/components/mixins/scss/'
                                                             }
                                                         >
-                                                            Mixins &amp; functions
+                                                            Mixins
                                                         </SideNavSectionGroupLink>
                                                     </SideNavSectionGroup>
                                                     <SideNavSectionGroup>
