@@ -3,59 +3,53 @@
     "tokens": [
         {
             "name": "Large",
-            "id": "tp-breakpoint__large",
-            "type": "breakpoint",
-            "value": "1025px"
+            "id": "breakpoint__large",
+            "value": { "web": "1025px" }
         },
         {
             "name": "Large (Value)",
-            "id": "tp-breakpoint__large__value",
-            "value": 1025
+            "id": "breakpoint__large__value",
+            "value": { "web": 1025 }
         },
         {
             "name": "Medium",
-            "id": "tp-breakpoint__medium",
-            "type": "breakpoint",
-            "value": "700px"
+            "id": "breakpoint__medium",
+            "value": { "web": "700px" }
         },
         {
             "name": "Medium (Value)",
-            "id": "tp-breakpoint__medium__value",
-            "value": 700
+            "id": "breakpoint__medium__value",
+            "value": { "web": 700 }
         },
         {
             "name": "Small",
-            "id": "tp-breakpoint__small",
-            "type": "breakpoint",
-            "value": "481px"
+            "id": "breakpoint__small",
+            "value": { "web": "481px" }
         },
         {
             "name": "Small (Value)",
-            "id": "tp-breakpoint__small__value",
-            "value": 481
+            "id": "breakpoint__small__value",
+            "value": { "web": 481 }
         },
         {
             "name": "Split View Medium",
-            "id": "tp-breakpoint__split-view__medium",
-            "type": "breakpoint",
-            "value": "1060px"
+            "id": "breakpoint__split-view__medium",
+            "value": { "web": "1060px" }
         },
         {
             "name": "Split View Medium (Value)",
-            "id": "tp-breakpoint__split-view__medium__value",
-            "value": 1060
+            "id": "breakpoint__split-view__medium__value",
+            "value": { "web": 1060 }
         },
         {
             "name": "Split View Small",
-            "id": "tp-breakpoint__split-view__small",
-            "type": "breakpoint",
-            "value": "769px"
+            "id": "breakpoint__split-view__small",
+            "value": { "web": "769px" }
         },
         {
             "name": "Split View Small (Value)",
-            "id": "tp-breakpoint__split-view__small__value",
-            "type": "breakpoint",
-            "value": 769
+            "id": "breakpoint__split-view__small__value",
+            "value": { "web": 769 }
         }
     ]
 }

@@ -2,12 +2,41 @@
 
 ## Unreleased
 
+-   [Patch] Fix `ButtonRow` so that it displays the primary call to action on top when the button row is stacked.
+
+## 0.5.1 - 2019-04-02
+
+### Fixed
+
+-   [Patch] Revert change that replaces `lazysizes` with internal image component because it was not working well within carousels.
+
+## 0.5.0 - 2019-04-01
+
+### Added
+
+-   [Minor] `ModalDefaultAnimatedWrapper` now has a prop called `shouldPageScrollAboveSmall` that defaults to `true`. If `true`, the modal will be allowed to grow taller than the viewport above `small` breakpoints. If `false`, the modal height will limited by the viewport height at all breakpoints. This is a backwards compatible change since the default value remains the same as the previous behavior.
+
+### Changed
+
+-   [Patch] The `isSticky` prop in `ModalDefaultFooter` will now affect modals at all breakpoints. Previously, only the small breakpoint was affected. (#135)
+
+## 0.4.0 - 2019-03-29
+
+### Added
+
+-   [Minor] `Select`'s `onChange` function now sends the original event as a second argument (#188)
+-   [Minor] `Select` now supports `onBlur` and `onFocus` props
+-   [Minor] `Textarea` now supports a `name` prop
+
+## 0.3.0 - 2019-03-28
+
 ### Added
 
 -   [Minor] Add `BlockList` component. (#70)
 
 ### Changed
 
+-   [Patch] Convert all `tp-spacer` instances to `tp-space__*` or hardcoded values. (#159)
 -   [Patch] Create internal image component for lazy-loading images. This removes the dependency on `lazysizes`.
 
 ## 0.2.6 - 2019-03-26

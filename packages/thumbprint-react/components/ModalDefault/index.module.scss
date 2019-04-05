@@ -1,8 +1,8 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 @import '~@thumbtack/thumbprint-scss/mixins';
 
-$header-height-small: tp-spacer(7);
-$header-height-large: tp-spacer(8);
+$header-height-small: 56px;
+$header-height-large: $tp-space__6;
 
 // These values are duplicated in the JavaScript.
 $transition-open-duration: 300ms;
@@ -15,7 +15,7 @@ $width-medium: 632px;
 $width-wide: 1400px;
 
 .curtain {
-    padding: tp-spacer(0);
+    padding: 0;
     // ModalCurtain closing transition on small screens.
     transition: opacity 0ms $easing $transition-close-duration,
         visibility $transition-close-duration $easing;
@@ -26,7 +26,7 @@ $width-wide: 1400px;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: tp-spacer(4);
+        padding: $tp-space__5;
         background-color: rgba(0, 0, 0, 0.8);
 
         // ModalCurtain closing on medium and large screens.
@@ -42,8 +42,18 @@ $width-wide: 1400px;
 
 .wrapper {
     width: 100%;
+
+    // At the small breakpoint, the modal is always 100% height and the page can not scroll.
+    // The modal itself must handle any vertical overflow.
     height: 100%;
     display: flex;
+
+    // Prevent the modal from growing taller than the page. This is primarly needed for modals
+    // with sticky footers to not grow larger than the viewport when viewed above the small
+    // breakpoint. We rely on `max-height` for that scenario so the modal is never taller than its
+    // contents.
+    max-height: 100%;
+
     transform: translate(0, 100%);
     // Wrapper close transition on small screens.
     transition: transform $transition-close-duration $easing;
@@ -55,8 +65,19 @@ $width-wide: 1400px;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        display: block;
+        // We don't force a `height: 100%` here because we don't want the modal to be taller than
+        // its contents.
         height: auto;
+
+        // If desired, we allow the modal to grow vertically beyond the height of the viewport. If
+        // the modal is tall enough, this will make the page scroll. Without this, the modal won't
+        // grow taller than the viewport and the modal contents itself will scroll.
+        &ShouldPageScrollAboveSmall {
+            display: block;
+            max-height: initial;
+        }
+
+        // Center the modal horizontally and vertically.
         margin: auto;
         transition: none;
         // Even if the curtain animates, the modal wrapper will appear and disappear immediately on
@@ -116,12 +137,14 @@ $width-wide: 1400px;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
-    @include tp-respond-above($tp-breakpoint__small) {
-        padding: 0 tp-spacer(4) tp-spacer(5);
-    }
-
     &Sticky {
         flex: 1 1 auto;
+    }
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        &NotSticky {
+            padding: 0 $tp-space__5 40px;
+        }
     }
 }
 
@@ -139,19 +162,23 @@ $width-wide: 1400px;
     order: -1;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        border-bottom: none;
-        min-height: $header-height-large;
+        // The close button should always have a line underneath if at the small breakpoint or if
+        // the modal is sticky.
+        &NotSticky {
+            border-bottom: none;
+            min-height: $header-height-large;
+        }
     }
 
     &Icon {
         // Increase click target of the button to make it easier to tap.
-        margin: tp-spacer(2);
+        margin: $tp-space__3;
     }
 }
 
 .modalHeader {
     // This value works well even if `ModalDefaultContent` isn't used in the modal.
-    margin-bottom: tp-spacer(1.5);
+    margin-bottom: 12px;
 }
 
 .modalTitle {
@@ -167,20 +194,20 @@ $width-wide: 1400px;
 }
 
 .modalTitle + .modalDescription {
-    margin-top: tp-spacer(1);
+    margin-top: $tp-space__2;
 }
 
 .modalContent {
     // Add top padding, not bottom margin, because top padding is built into the `ModalDefaultFooter` due
     // to a top-border on mobile when sticky. Using padding prevents the margins from collapsing
     // with the margin from `ModalDefaultHeader`.
-    padding-top: tp-spacer(1.5);
+    padding-top: 12px;
 }
 
 .modalFooterFluid {
-    padding: tp-spacer(3) 0 0 0;
+    padding: $tp-space__4 0 0 0;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: tp-spacer(4) 0 0 0;
+        padding: $tp-space__5 0 0 0;
     }
 }

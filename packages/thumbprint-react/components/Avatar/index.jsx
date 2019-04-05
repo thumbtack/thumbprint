@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { LazyImage } from '../Image/index.jsx';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
@@ -34,40 +33,55 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-const EntityAvatar = ({ imageUrl, size, initial, fullName }) => {
-    const assistiveText = fullName ? `Avatar for ${fullName}` : '';
+class EntityAvatar extends React.Component {
+    componentDidMount() {
+        // These imports are only needed client-side and allow for lazy-loading images. They should
+        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
+        // of Webpack that Gatsby uses.
+        // https://github.com/gatsbyjs/gatsby/issues/461
+        // https://github.com/thumbtack/thumbprint-archive/issues/960
+        /* eslint-disable global-require */
+        require('lazysizes');
+        // `ls.attrchange.js` re-renders the image when the props change:
+        // https://github.com/aFarkas/lazysizes/issues/339
+        require('lazysizes/plugins/attrchange/ls.attrchange.js');
+        // `ls.object-fit.js` polyfills the object-fit and the object-position property
+        // in non supporting browsers i.e. IE 11.
+        require('lazysizes/plugins/object-fit/ls.object-fit.js');
+        /* eslint-enable */
+    }
 
-    return (
-        <div
-            className={classNames(styles.root, {
-                [styles.rootSmall]: size === 'small',
-                [styles.rootMedium]: size === 'medium',
-                [styles.rootLarge]: size === 'large',
-                [styles.rootXlarge]: size === 'xlarge',
-            })}
-        >
-            {imageUrl ? (
-                <LazyImage src={imageUrl} alt={assistiveText}>
-                    {({ src, alt }) => (
-                        <img
-                            className={`${styles.baseAvatar} ${styles.squareAvatar}`}
-                            src={src}
-                            alt={alt}
-                            title={alt}
-                        />
-                    )}
-                </LazyImage>
-            ) : (
-                <span
-                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                    title={assistiveText}
-                >
-                    {initial}
-                </span>
-            )}
-        </div>
-    );
-};
+    render() {
+        const { imageUrl, size, initial, fullName } = this.props;
+
+        return (
+            <div
+                className={classNames(styles.root, {
+                    [styles.rootSmall]: size === 'small',
+                    [styles.rootMedium]: size === 'medium',
+                    [styles.rootLarge]: size === 'large',
+                    [styles.rootXlarge]: size === 'xlarge',
+                })}
+            >
+                {imageUrl ? (
+                    <img
+                        className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
+                        data-src={imageUrl}
+                        alt={fullName && `Avatar for ${fullName}`}
+                        title={fullName && `Avatar for ${fullName}`}
+                    />
+                ) : (
+                    <span
+                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        title={fullName && `Avatar for ${fullName}`}
+                    >
+                        {initial}
+                    </span>
+                )}
+            </div>
+        );
+    }
+}
 
 EntityAvatar.propTypes = {
     /**
@@ -96,46 +110,56 @@ EntityAvatar.defaultProps = {
     size: 'medium',
 };
 
-const Avatar = props => {
-    const { imageUrl, fullName, initials, size } = props;
-    const assistiveText = fullName && `Avatar for ${fullName}`;
+export default class Avatar extends React.Component {
+    componentDidMount() {
+        // These imports are only needed client-side and allow for lazy-loading images. They should
+        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
+        // of Webpack that Gatsby uses.
+        // https://github.com/gatsbyjs/gatsby/issues/461
+        // https://github.com/thumbtack/thumbprint-archive/issues/960
+        /* eslint-disable global-require */
+        require('lazysizes');
+        // `ls.attrchange.js` re-renders the image when the props change:
+        // https://github.com/aFarkas/lazysizes/issues/339
+        require('lazysizes/plugins/attrchange/ls.attrchange.js');
+        // `ls.object-fit.js` polyfills the object-fit and the object-position property
+        // in non supporting browsers i.e. IE 11.
+        require('lazysizes/plugins/object-fit/ls.object-fit.js');
+        /* eslint-enable */
+    }
 
-    return (
-        <div
-            className={classNames(styles.root, {
-                [styles.rootXsmall]: size === 'xsmall',
-                [styles.rootSmall]: size === 'small',
-                [styles.rootMedium]: size === 'medium',
-                [styles.rootLarge]: size === 'large',
-                [styles.rootXlarge]: size === 'xlarge',
-            })}
-        >
-            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-
-            {imageUrl ? (
-                <LazyImage src={imageUrl} alt={assistiveText}>
-                    {({ src, alt }) => (
-                        <img
-                            className={`${styles.baseAvatar} ${styles.circleAvatar}`}
-                            src={src}
-                            alt={alt}
-                            title={alt}
-                        />
-                    )}
-                </LazyImage>
-            ) : (
-                <span
-                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                    title={assistiveText}
-                >
-                    {initials}
-                </span>
-            )}
-        </div>
-    );
-};
-
-export default Avatar;
+    render() {
+        const { props } = this;
+        return (
+            <div
+                className={classNames(styles.root, {
+                    [styles.rootXsmall]: props.size === 'xsmall',
+                    [styles.rootSmall]: props.size === 'small',
+                    [styles.rootMedium]: props.size === 'medium',
+                    [styles.rootLarge]: props.size === 'large',
+                    [styles.rootXlarge]: props.size === 'xlarge',
+                })}
+            >
+                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+                {props.imageUrl ? (
+                    <img
+                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
+                        data-src={props.imageUrl}
+                        alt={props.fullName && `Avatar for ${props.fullName}`}
+                        title={props.fullName && `Avatar for ${props.fullName}`}
+                    />
+                ) : (
+                    <span
+                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                        title={props.fullName && `Avatar for ${props.fullName}`}
+                    >
+                        {props.initials}
+                    </span>
+                )}
+            </div>
+        );
+    }
+}
 
 Avatar.propTypes = {
     /**
