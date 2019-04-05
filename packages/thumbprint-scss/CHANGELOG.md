@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `function.scss` that contained the `tp-spacer` function which used a unit of `8` to output a pixel value. To upgrade, first replace any instances of `tp-spacer(*)` that have an equivalent [space token](https://thumbprint.design/tokens/scss/#section-space). Then replace any remaining instances with a hardcoded pixel value. For example, `tp-spacer(1)` would be `$tp-space__2`, `tp-spacer(1.5)` would be `12px` as it has no equivalent space token.
+
 ## 0.3.1 - 2019-04-02
 
 ### Changed
