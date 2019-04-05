@@ -2,7 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
 -   [Patch] Fix `ButtonRow` so that it displays the primary call to action on top when the button row is stacked.
+-   [Patch] Replace `tpSpacerUnit` with `tpSpace3` to remove dependencies on the deprecated spacer unit.
 
 ## 0.5.1 - 2019-04-02
 
