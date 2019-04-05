@@ -1,7 +1,10 @@
 import UIKit.UIColor
 
 {{#eachSectionWithPlatformTokens this}}
-public struct {{formatSectionName this}} {
+{{#if description}}
+/// {{description}}
+{{/if}}
+public enum {{formatSectionName this}} {
     {{#each tokens}}
     {{#if value.ios}}
     {{#if description}}
