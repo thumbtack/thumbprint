@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `onMouseOver` prop to the `Button` component.
+
 ### Changed
 
 -   [Patch] Fix `ButtonRow` so that it displays the primary call to action on top when the button row is stacked.
