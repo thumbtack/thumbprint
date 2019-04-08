@@ -35,7 +35,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
-        "@reach/rect": "^0.2.0",
+        "@rehooks/component-size": "^1.0.2",
         "@thumbtack/thumbprint-scss": "^0.3.1",
         "@thumbtack/thumbprint-tokens": "^6.3.2",
         "classnames": "^2.2.6",

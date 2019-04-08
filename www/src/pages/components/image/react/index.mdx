@@ -10,6 +10,13 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Examples
 
+### Magic Image
+
+```jsx
+<MagicImage id="350357374752325652" format="jpeg" isLazyLoaded />
+```
+
+<!--
 ### `ResponsiveImage` with Image Service
 
 This example gets an image from Thumbtack's image service and loads it in `jpeg` and `webp`.
@@ -19,21 +26,19 @@ This example gets an image from Thumbtack's image service and loads it in `jpeg`
     {({ ref, sizes, src, srcSet, className }) => (
         <>
             <picture ref={ref} className={className}>
-                {srcSet && (
-                    <>
-                        <source type="image/webp" sizes={sizes} srcSet={srcSet.webp} />
-                        <source type="image/jpeg" sizes={sizes} srcSet={srcSet.jpeg} />
-                    </>
-                )}
+                {srcSet &&
+                    srcSet.map(s => (
+                        <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
+                    ))}
                 <img src={src} sizes={sizes} alt="" />
             </picture>
             <p className="mt3">Image width: {sizes}</p>
         </>
     )}
 </ResponsiveImage>
-```
+``` -->
 
-### Single image from the Image Service
+<!-- ### Single image from the Image Service
 
 This example gets a single image from Thumbtack's image service.
 
@@ -50,6 +55,37 @@ This example lazy-loads an image from `placeimg.com`.
     {({ src, alt }) => <img src={src} alt={alt} />}
 </LazyImage>
 ```
+ -->
+
+<!-- ### Lazy-loaded responsive image
+
+```jsx
+<LazyImage srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}>
+    {(p, isVisible) =>
+        isVisible && (
+            <ResponsiveImage {...p}>
+                {({ ref, sizes, src, srcSet, className }) => (
+                    <>
+                        <picture ref={ref} className={className}>
+                            {srcSet &&
+                                srcSet.map(s => (
+                                    <source
+                                        type={s.type}
+                                        sizes={sizes}
+                                        srcSet={s.srcSet}
+                                        key={s.type}
+                                    />
+                                ))}
+                            <img src={src} sizes={sizes} alt="" />
+                        </picture>
+                        <p className="mt3">Image width: {sizes}</p>
+                    </>
+                )}
+            </ResponsiveImage>
+        )
+    }
+</LazyImage>
+``` -->
 
 <ComponentFooter data={props.data} />
 
