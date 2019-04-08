@@ -1,6 +1,6 @@
 {
     "name": "www",
-    "version": "0.0.51",
+    "version": "0.0.52",
     "private": true,
     "scripts": {
         "build": "gatsby build",
@@ -10,8 +10,8 @@
         "@mdx-js/mdx": "0.16.6",
         "@mdx-js/tag": "0.16.6",
         "@thumbtack/thumbprint-icons": "^2.8.1",
-        "@thumbtack/thumbprint-react": "^0.5.1",
-        "@thumbtack/thumbprint-scss": "^0.3.1",
+        "@thumbtack/thumbprint-react": "^0.5.2",
+        "@thumbtack/thumbprint-scss": "^1.0.0",
         "classnames": "^2.2.5",
         "clickable-box": "^0.1.0",
         "docsearch.js": "^2.6.2",
