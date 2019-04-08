@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.3.3 - 2019-04-08
+
 -   [Minor] Add supported platforms to each token (#198)
 
 ## 6.3.2 - 2019-04-02

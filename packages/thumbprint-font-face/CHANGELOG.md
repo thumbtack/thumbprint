@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.2 - 2019-04-08
+
 ### Changed
 
 -   [Minor] Add `font-display: swap` and local fallback fonts (#189).
