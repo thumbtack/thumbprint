@@ -2,9 +2,11 @@
 
 ## Unreleased
 
+## 0.5.3 - 2019-04-09
+
 ### Added
 
--   [Minor] Add `onMouseOver` prop to the `Button` component.
+-   [Minor] Add `onMouseOver` prop to the `Button` component. (#209)
 
 ## 0.5.2 - 2019-04-08
 
