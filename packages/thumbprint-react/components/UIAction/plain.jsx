@@ -71,6 +71,11 @@ Plain.propTypes = {
      */
     onMouseEnter: PropTypes.func,
     /**
+     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
+     * fires each time a child element receives focus.
+     */
+    onMouseOver: PropTypes.func,
+    /**
      * Function that runs when the button receives focus.
      */
     onFocus: PropTypes.func,
@@ -102,6 +107,7 @@ Plain.defaultProps = {
     shouldOpenInNewTab: false,
     onClick: null,
     onMouseEnter: undefined,
+    onMouseOver: undefined,
     onFocus: undefined,
     onMouseLeave: undefined,
     onBlur: undefined,

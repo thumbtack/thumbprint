@@ -160,6 +160,16 @@ describe('Plain', () => {
             expect(onMouseEnter).toHaveBeenCalledTimes(1);
         });
 
+        test('`onMouseOver` runs when button is clicked on', () => {
+            const onMouseOver = jest.fn();
+            // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+            const wrapper = mount(<Plain onMouseOver={onMouseOver}>Goose</Plain>);
+
+            expect(onMouseOver).toHaveBeenCalledTimes(0);
+            wrapper.simulate('mouseover');
+            expect(onMouseOver).toHaveBeenCalledTimes(1);
+        });
+
         test('`onMouseLeave` runs when button is clicked on', () => {
             const onMouseLeave = jest.fn();
             const wrapper = mount(<Plain onMouseLeave={onMouseLeave}>Goose</Plain>);
@@ -406,13 +416,23 @@ describe('Themed', () => {
             expect(onClick).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseEnter` runs when button is clicked on', () => {
+        test('`onMouseEnter` runs when button receives `mouseenter` event', () => {
             const onMouseEnter = jest.fn();
             const wrapper = mount(<Themed onMouseEnter={onMouseEnter}>Goose</Themed>);
 
             expect(onMouseEnter).toHaveBeenCalledTimes(0);
             wrapper.simulate('mouseenter');
             expect(onMouseEnter).toHaveBeenCalledTimes(1);
+        });
+
+        test('`onMouseOver` runs when button receives `mouseover` event', () => {
+            const onMouseOver = jest.fn();
+            // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+            const wrapper = mount(<Themed onMouseOver={onMouseOver}>Goose</Themed>);
+
+            expect(onMouseOver).toHaveBeenCalledTimes(0);
+            wrapper.simulate('mouseover');
+            expect(onMouseOver).toHaveBeenCalledTimes(1);
         });
 
         test('`onMouseLeave` runs when button is clicked on', () => {

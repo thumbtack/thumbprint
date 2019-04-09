@@ -49,14 +49,15 @@ test('`onClick` runs when button is clicked on', () => {
     testComponent(TextButton);
 });
 
-test('`onClick` runs when button is clicked on', () => {
+test('`onMouseOver` runs when button is moused over', () => {
     const testComponent = Component => {
-        const onClick = jest.fn();
-        const wrapper = mount(<Component onClick={onClick}>Goose</Component>);
+        const onMouseOver = jest.fn();
+        // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+        const wrapper = mount(<Component onMouseOver={onMouseOver}>Goose</Component>);
 
-        expect(onClick).toHaveBeenCalledTimes(0);
-        wrapper.simulate('click');
-        expect(onClick).toHaveBeenCalledTimes(1);
+        expect(onMouseOver).toHaveBeenCalledTimes(0);
+        wrapper.simulate('mouseover');
+        expect(onMouseOver).toHaveBeenCalledTimes(1);
     };
 
     testComponent(Button);
