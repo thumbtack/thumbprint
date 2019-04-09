@@ -13,10 +13,9 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ### Magic Image
 
 ```jsx
-<MagicImage id="350357374752325652" format="jpeg" isLazyLoaded />
+<MagicImage id="350357374752325652" />
 ```
 
-<!--
 ### `ResponsiveImage` with Image Service
 
 This example gets an image from Thumbtack's image service and loads it in `jpeg` and `webp`.
@@ -36,9 +35,9 @@ This example gets an image from Thumbtack's image service and loads it in `jpeg`
         </>
     )}
 </ResponsiveImage>
-``` -->
+```
 
-<!-- ### Single image from the Image Service
+### Single image from the Image Service
 
 This example gets a single image from Thumbtack's image service.
 
@@ -55,9 +54,8 @@ This example lazy-loads an image from `placeimg.com`.
     {({ src, alt }) => <img src={src} alt={alt} />}
 </LazyImage>
 ```
- -->
 
-<!-- ### Lazy-loaded responsive image
+### Lazy-loaded responsive image
 
 ```jsx
 <LazyImage srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}>
@@ -85,7 +83,7 @@ This example lazy-loads an image from `placeimg.com`.
         )
     }
 </LazyImage>
-``` -->
+```
 
 <ComponentFooter data={props.data} />
 

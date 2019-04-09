@@ -104,6 +104,8 @@ const ResponsiveImage = ({ srcSet, children }) => {
     const { width } = useComponentSize(ref);
 
     return children({
+        // TODO: Skip the `getClosestSrcBySize` computation if the user's browser supports
+        // responsive images.
         src: width ? getClosestSrcBySize(srcSet, width) : undefined,
         srcSet: width ? srcSetToString(srcSet) : undefined,
         sizes: width ? `${width}px` : undefined,
@@ -150,46 +152,76 @@ LazyImage.propTypes = {
     children: PropTypes.func.isRequired,
 };
 
-const MagicImage = ({ id, format, alt, width, isLazyLoaded, ...rest }) => {
+const MagicImage = ({ id, format, width, isLazyLoaded, alt, ...rest }) => {
     // The image is responsive if no width is passed in.
-    const isResponsive = !!width;
+    const isResponsive = !width;
 
-    // We use the fancy `ResponsiveImage` component if the image is responsive.
-    const Component = isResponsive ? 'img' : ResponsiveImage;
+    if (isResponsive && isLazyLoaded) {
+        return (
+            <LazyImage srcSet={getImageServiceSrcSet(id, [format])}>
+                {(p, shouldLoadImage) => {
+                    if (!shouldLoadImage) {
+                        return null;
+                    }
 
-    let children;
-    let childProps;
+                    return (
+                        <ResponsiveImage {...p}>
+                            {({ ref, sizes, src, srcSet, className }) => (
+                                <picture {...rest} ref={ref} className={className}>
+                                    {srcSet &&
+                                        srcSet.map(s => (
+                                            <source
+                                                type={s.type}
+                                                sizes={sizes}
+                                                srcSet={s.srcSet}
+                                                key={s.type}
+                                            />
+                                        ))}
+                                    <img src={src} sizes={sizes} alt={alt} />
+                                </picture>
+                            )}
+                        </ResponsiveImage>
+                    );
+                }}
+            </LazyImage>
+        );
+    }
 
     if (isResponsive) {
-        childProps = {
-            srcSet: getImageServiceSrcSet(id, [format]),
-            // Responsive images
-            children: ({ ref, sizes, src, srcSet, className }) => (
-                <picture ref={ref} className={className} {...rest}>
-                    {srcSet &&
-                        srcSet.map(s => (
-                            <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
-                        ))}
-                    <img src={src} sizes={sizes} alt={alt} />
-                </picture>
-            ),
-        };
-    } else {
-        childProps = { src: getImageServiceSrc({ id, format, width }), alt, ...rest };
+        return (
+            <ResponsiveImage srcSet={getImageServiceSrcSet(id, [format])}>
+                {(ref, sizes, src, srcSet, className) => (
+                    <picture {...rest} ref={ref} className={className}>
+                        {srcSet &&
+                            srcSet.map(s => (
+                                <source
+                                    type={s.type}
+                                    sizes={sizes}
+                                    srcSet={s.srcSet}
+                                    key={s.type}
+                                />
+                            ))}
+                        <img src={src} sizes={sizes} alt={alt} />
+                    </picture>
+                )}
+            </ResponsiveImage>
+        );
     }
 
     if (isLazyLoaded) {
-        const { children: c, ...r } = childProps;
-        children = (
-            <LazyImage {...r}>
-                {(p, shouldLoadImage) => shouldLoadImage && <Component children={c} {...p} />}
+        return (
+            <LazyImage {...rest} src={getImageServiceSrc({ id, format, width })}>
+                {p => <img {...p} alt={alt} />}
             </LazyImage>
         );
-    } else {
-        children = <Component {...childProps} />;
     }
 
-    return children;
+    return <img {...rest} src={getImageServiceSrc({ id, format, width })} alt={alt} />;
+};
+
+MagicImage.defaultProps = {
+    isLazyLoaded: true,
+    format: 'jpeg',
 };
 
 // eslint-disable-next-line import/prefer-default-export
