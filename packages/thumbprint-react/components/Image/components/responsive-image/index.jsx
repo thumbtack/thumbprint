@@ -79,8 +79,8 @@ const ResponsiveImage = ({ srcSet, children }) => {
     return children({
         // TODO: Skip the `getClosestSrcBySize` computation if the user's browser supports
         // responsive images.
-        src: width ? getClosestSrcBySize(srcSet, width) : undefined,
-        srcSet: width ? srcSetToString(srcSet) : [],
+        src: width && srcSet ? getClosestSrcBySize(srcSet, width) : undefined,
+        srcSet: width && srcSet ? srcSetToString(srcSet) : [],
         sizes: width ? `${width}px` : undefined,
         className: 'db w-100',
         ref,
