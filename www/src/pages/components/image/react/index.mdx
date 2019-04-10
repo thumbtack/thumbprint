@@ -13,7 +13,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ### Magic Image
 
 ```jsx
-<MagicImage id="350357374752325652" />
+<MagicImage id="350357374752325652" aspectRatio={864 / 1600} />
 ```
 
 ### `ResponsiveImage` with Image Service
@@ -25,10 +25,9 @@ This example gets an image from Thumbtack's image service and loads it in `jpeg`
     {({ ref, sizes, src, srcSet, className }) => (
         <>
             <picture ref={ref} className={className}>
-                {srcSet &&
-                    srcSet.map(s => (
-                        <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
-                    ))}
+                {srcSet.map(s => (
+                    <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
+                ))}
                 <img src={src} sizes={sizes} alt="" />
             </picture>
             <p className="mt3">Image width: {sizes}</p>
@@ -65,15 +64,14 @@ This example lazy-loads an image from `placeimg.com`.
                 {({ ref, sizes, src, srcSet, className }) => (
                     <>
                         <picture ref={ref} className={className}>
-                            {srcSet &&
-                                srcSet.map(s => (
-                                    <source
-                                        type={s.type}
-                                        sizes={sizes}
-                                        srcSet={s.srcSet}
-                                        key={s.type}
-                                    />
-                                ))}
+                            {srcSet.map(s => (
+                                <source
+                                    type={s.type}
+                                    sizes={sizes}
+                                    srcSet={s.srcSet}
+                                    key={s.type}
+                                />
+                            ))}
                             <img src={src} sizes={sizes} alt="" />
                         </picture>
                         <p className="mt3">Image width: {sizes}</p>
