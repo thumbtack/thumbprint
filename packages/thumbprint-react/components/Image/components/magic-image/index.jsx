@@ -5,12 +5,19 @@ import ResponsiveImage from '../responsive-image/index.jsx';
 import getImageServiceSrc from '../../utils/get-image-service-src';
 import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
 
+// Possible States:
+// • Lazy-loaded with Responsive and Aspect Ratio
+// • Lazy-loaded with Responsive
+// • Responsive
+// • Lazy-loaded with Aspect Ratio
+// • Lazy-loaded
+
 const MagicImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest }) => {
     // The image is responsive if no width is passed in.
     const isResponsive = !width;
     const srcSet = isResponsive ? getImageServiceSrcSet(id, [format]) : undefined;
 
-    if (isResponsive && isLazyLoaded) {
+    if (isLazyLoaded && isResponsive && aspectRatio) {
         return (
             <AspectRatio ratio={aspectRatio}>
                 {({ childStyles }) => (
@@ -49,6 +56,36 @@ const MagicImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest
         );
     }
 
+    if (isResponsive && isLazyLoaded) {
+        return (
+            <LazyImage srcSet={srcSet}>
+                {(p, shouldLoadImage) => {
+                    if (!shouldLoadImage) {
+                        return null;
+                    }
+
+                    return (
+                        <ResponsiveImage srcSet={srcSet}>
+                            {({ ref, sizes, src, srcSet: innerSrcSet, className }) => (
+                                <picture {...rest} ref={ref} className={className}>
+                                    {innerSrcSet.map(s => (
+                                        <source
+                                            type={s.type}
+                                            sizes={sizes}
+                                            srcSet={s.srcSet}
+                                            key={s.type}
+                                        />
+                                    ))}
+                                    <img src={src} sizes={sizes} alt={alt} />
+                                </picture>
+                            )}
+                        </ResponsiveImage>
+                    );
+                }}
+            </LazyImage>
+        );
+    }
+
     if (isResponsive) {
         return (
             <ResponsiveImage srcSet={srcSet}>
@@ -61,6 +98,18 @@ const MagicImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest
                     </picture>
                 )}
             </ResponsiveImage>
+        );
+    }
+
+    if (isLazyLoaded && aspectRatio) {
+        return (
+            <AspectRatio>
+                {({ childStyles }) => (
+                    <LazyImage {...rest} src={getImageServiceSrc({ id, format, width })}>
+                        {p => <img {...p} alt={alt} styles={childStyles} />}
+                    </LazyImage>
+                )}
+            </AspectRatio>
         );
     }
 
