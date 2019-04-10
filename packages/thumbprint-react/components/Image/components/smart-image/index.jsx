@@ -12,7 +12,7 @@ import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
 // • Lazy-loaded with Aspect Ratio
 // • Lazy-loaded
 
-const MagicImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest }) => {
+const SmartImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest }) => {
     // The image is responsive if no width is passed in.
     const isResponsive = !width;
     const srcSet = isResponsive ? getImageServiceSrcSet(id, [format]) : undefined;
@@ -124,9 +124,9 @@ const MagicImage = ({ id, format, width, isLazyLoaded, alt, aspectRatio, ...rest
     return <img {...rest} src={getImageServiceSrc({ id, format, width })} alt={alt} />;
 };
 
-MagicImage.defaultProps = {
+SmartImage.defaultProps = {
     isLazyLoaded: true,
     format: 'jpeg',
 };
 
-export default MagicImage;
+export default SmartImage;

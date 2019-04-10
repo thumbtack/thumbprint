@@ -8,7 +8,7 @@ export { default as DatePicker } from './components/DatePicker/index.jsx';
 export { default as FormNote } from './components/FormNote/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index.jsx';
 export {
-    MagicImage,
+    SmartImage,
     LazyImage,
     ResponsiveImage,
     getImageServiceSrc,
