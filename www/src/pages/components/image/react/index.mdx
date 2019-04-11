@@ -10,10 +10,12 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Examples
 
-### Magic Image
+### `SmartImage`
+
+The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size. If the `aspectRatio` property is provided, it can [prevent the browser from "jumping"](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) when the once the image loads.
 
 ```jsx
-<SmartImage id="350357374752325652" aspectRatio={1600 / 864} />
+<SmartImage id="350357374752325652" lazyLoad={{ aspectRatio: 1600 / 864 }} />
 ```
 
 ### `ResponsiveImage` with Image Service
@@ -22,16 +24,13 @@ This example gets an image from Thumbtack's image service and loads it in `jpeg`
 
 ```jsx
 <ResponsiveImage srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}>
-    {({ ref, sizes, src, srcSet, className }) => (
-        <>
-            <picture ref={ref} className={className}>
-                {srcSet.map(s => (
-                    <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
-                ))}
-                <img src={src} sizes={sizes} alt="" />
-            </picture>
-            <p className="mt3">Image width: {sizes}</p>
-        </>
+    {({ ref, sizes, src, srcSet, style }) => (
+        <picture ref={ref} style={style}>
+            {srcSet.map(s => (
+                <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
+            ))}
+            <img src={src} sizes={sizes} alt="" />
+        </picture>
     )}
 </ResponsiveImage>
 ```
@@ -61,18 +60,15 @@ This example lazy-loads an image from `placeimg.com`.
     srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}
     aspectRatio={1600 / 864}
 >
-    {({ src: placeholderSrc, srcSet: innerSrcSet }) => (
-        <ResponsiveImage srcSet={innerSrcSet}>
-            {({ ref, sizes, src, srcSet, className }) => (
-                <>
-                    <picture ref={ref} className={className}>
-                        {srcSet.map(s => (
-                            <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
-                        ))}
-                        <img src={src ? src : placeholderSrc} sizes={sizes} alt="" />
-                    </picture>
-                    <p className="mt3">Image width: {sizes}</p>
-                </>
+    {({ src: lazyLoadSrc, srcSet: lazyLoadSrcSet }) => (
+        <ResponsiveImage srcSet={lazyLoadSrcSet}>
+            {({ ref, sizes, src, srcSet, style }) => (
+                <picture ref={ref} style={style}>
+                    {srcSet.map(s => (
+                        <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
+                    ))}
+                    <img src={src || lazyLoadSrc} sizes={sizes} alt="" />
+                </picture>
             )}
         </ResponsiveImage>
     )}

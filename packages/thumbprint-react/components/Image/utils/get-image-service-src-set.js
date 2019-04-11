@@ -3,6 +3,10 @@ import getImageServiceSrc from './get-image-service-src';
 const getImageServiceSrcSet = (id, formats) => {
     const o = {};
 
+    if (formats.includes('jpeg') && !formats.includes('webp')) {
+        formats.push('webp');
+    }
+
     formats.forEach(format => {
         o[format] = {
             120: getImageServiceSrc({ id, format, width: 120 }),

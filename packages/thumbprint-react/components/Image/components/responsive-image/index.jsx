@@ -70,6 +70,11 @@ const getClosestSrcBySize = (srcSet, width) => {
     return srcSet.jpeg[selectedSize];
 };
 
+const browserSupportsResponsiveImages = () => {
+    const img = document.createElement('img');
+    return 'sizes' in img;
+};
+
 const ResponsiveImage = ({ srcSet, children }) => {
     const ref = useRef(null);
 
@@ -77,12 +82,13 @@ const ResponsiveImage = ({ srcSet, children }) => {
     const { width } = useComponentSize(ref);
 
     return children({
-        // TODO: Skip the `getClosestSrcBySize` computation if the user's browser supports
-        // responsive images.
-        src: width && srcSet ? getClosestSrcBySize(srcSet, width) : undefined,
+        src:
+            width && srcSet && !browserSupportsResponsiveImages()
+                ? getClosestSrcBySize(srcSet, width)
+                : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
         srcSet: width && srcSet ? srcSetToString(srcSet) : [],
         sizes: width ? `${width}px` : undefined,
-        className: 'db w-100',
+        style: { width: '100%', display: 'block' },
         ref,
     });
 };
@@ -90,14 +96,11 @@ const ResponsiveImage = ({ srcSet, children }) => {
 ResponsiveImage.propTypes = {
     srcSet: PropTypes.shape({
         webp: PropTypes.shape({}),
-        jpeg: PropTypes.shape({}).isRequired,
+        jpeg: PropTypes.shape({}),
+        png: PropTypes.shape({}),
+        gif: PropTypes.shape({}),
     }).isRequired,
     children: PropTypes.func.isRequired,
-    // isFullWidth: PropTypes.bool,
-};
-
-ResponsiveImage.defaultProps = {
-    // isFullWidth: false,
 };
 
 export default ResponsiveImage;
