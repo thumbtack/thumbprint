@@ -221,3 +221,6 @@ https://thumbprint.thumbtack.com/* https://thumbprint.design/:splat 301!
 
 # Combine mixins and functions documentation
 /components/functions/scss /components/mixins/scss
+
+# Use tabs and actual pages for token languages instead of a select dropdown
+/tokens /tokens/scss

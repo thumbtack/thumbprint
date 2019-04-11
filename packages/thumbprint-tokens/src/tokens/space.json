@@ -4,42 +4,42 @@
         {
             "name": "Space",
             "id": "space__1",
-            "value": "4px"
+            "value": { "web": "4px" }
         },
         {
             "name": "Space",
             "id": "space__2",
-            "value": "8px"
+            "value": { "web": "8px" }
         },
         {
             "name": "Space",
             "id": "space__3",
-            "value": "16px"
+            "value": { "web": "16px" }
         },
         {
             "name": "Space",
             "id": "space__4",
-            "value": "24px"
+            "value": { "web": "24px" }
         },
         {
             "name": "Space",
             "id": "space__5",
-            "value": "32px"
+            "value": { "web": "32px" }
         },
         {
             "name": "Space",
             "id": "space__6",
-            "value": "64px"
+            "value": { "web": "64px" }
         },
         {
             "name": "Space",
             "id": "space__7",
-            "value": "128px"
+            "value": { "web": "128px" }
         },
         {
             "name": "Space",
             "id": "space__8",
-            "value": "256px"
+            "value": { "web": "256px" }
         }
     ]
 }

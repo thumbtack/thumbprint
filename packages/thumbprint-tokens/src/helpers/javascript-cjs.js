@@ -2,11 +2,13 @@ const { camelCase, isNumber } = require('lodash');
 
 module.exports = {
     formatValue: ({ value }) => {
-        if (isNumber(value)) {
-            return value;
+        const { web: webValue } = value;
+
+        if (isNumber(webValue)) {
+            return webValue;
         }
 
-        return `"${value}"`;
+        return `"${webValue}"`;
     },
     formatId: ({ id }) => camelCase(`tp-${id}`),
 };

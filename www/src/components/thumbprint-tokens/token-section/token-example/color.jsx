@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InlineCode } from '../../mdx';
+import { InlineCode } from '../../../mdx';
 
 const DisplayColor = ({ value }) => (
     <table className="w-100">

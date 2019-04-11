@@ -66,13 +66,18 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-transformer-json`,
+            resolve: 'gatsby-transformer-json',
             options: {
-                typeName: `Json`,
+                typeName: ({ node }) => {
+                    if (node.relativePath.startsWith('thumbprint-tokens/src/tokens/')) {
+                        return 'ThumbprintToken';
+                    }
+
+                    return 'Json';
+                },
             },
         },
         'gatsby-transformer-thumbprint-atomic',
-        'gatsby-transformer-thumbprint-tokens',
         {
             resolve: 'gatsby-transformer-react-docgen',
             options: {

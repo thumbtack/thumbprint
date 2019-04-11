@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { tpSpacerUnit } from '@thumbtack/thumbprint-tokens';
+import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 import assign from 'lodash/assign';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -47,7 +47,7 @@ const PositionedTooltip = ({
     <Popper
         placement={position}
         modifiers={{
-            offset: { offset: `0, ${tpSpacerUnit * 2}px` },
+            offset: { offset: `0, ${tpSpace3}` },
             preventOverflow: { boundariesElement: 'window' },
         }}
         positionFixed={false}

@@ -5,7 +5,7 @@
         {
             "name": "Modal",
             "id": "z-index__modal",
-            "value": 200
+            "value": { "web": 200 }
         }
     ]
 }

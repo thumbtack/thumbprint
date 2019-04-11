@@ -8,6 +8,7 @@ const getCommonProps = props => ({
     type: props.type,
     children: props.children,
     onMouseEnter: props.onMouseEnter,
+    onMouseOver: props.onMouseOver,
     onFocus: props.onFocus,
     onMouseLeave: props.onMouseLeave,
     onBlur: props.onBlur,
@@ -42,6 +43,11 @@ TextButton.propTypes = {
      * Function that runs when the user hovers on the button.
      */
     onMouseEnter: PropTypes.func,
+    /**
+     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
+     * fires each time a child element receives focus.
+     */
+    onMouseOver: PropTypes.func,
     /**
      * Function that runs when the button receives focus.
      */
@@ -81,6 +87,7 @@ TextButton.defaultProps = {
     theme: 'primary',
     onClick: null,
     onMouseEnter: undefined,
+    onMouseOver: undefined,
     onFocus: undefined,
     onMouseLeave: undefined,
     onBlur: undefined,
@@ -138,6 +145,11 @@ Button.propTypes = {
      */
     onMouseEnter: PropTypes.func,
     /**
+     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
+     * fires each time a child element receives focus.
+     */
+    onMouseOver: PropTypes.func,
+    /**
      * Function that runs when the button receives focus.
      */
     onFocus: PropTypes.func,
@@ -177,6 +189,7 @@ Button.defaultProps = {
     icon: undefined,
     onClick: undefined,
     onMouseEnter: undefined,
+    onMouseOver: undefined,
     onFocus: undefined,
     onMouseLeave: undefined,
     onBlur: undefined,
