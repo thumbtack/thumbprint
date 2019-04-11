@@ -53,7 +53,7 @@ const SmartImage = ({ id, format, width, lazyLoad, alt }) => {
 
     if (shouldLazyLoad) {
         return (
-            <LazyImage src={getImageServiceSrc({ id, format, width })}>
+            <LazyImage src={getImageServiceSrc({ id, format, width })} aspectRatio={aspectRatio}>
                 {p => <img {...p} alt={alt} />}
             </LazyImage>
         );
