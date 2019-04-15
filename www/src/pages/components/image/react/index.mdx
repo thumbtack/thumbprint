@@ -15,7 +15,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size. If the `aspectRatio` property is provided, it can [prevent the browser from "jumping"](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) when the once the image loads.
 
 ```jsx
-<SmartImage id="350357374752325652" lazyLoad={{ aspectRatio: 1600 / 864 }} />
+<SmartImage id="350357374752325652" lazyLoad={{ aspectRatio: 780 / 421 }} />
 ```
 
 ### `ResponsiveImage` with Image Service
@@ -60,14 +60,20 @@ This example lazy-loads an image from `placeimg.com`.
     srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}
     aspectRatio={1600 / 864}
 >
-    {({ src: lazyLoadSrc, srcSet: lazyLoadSrcSet }) => (
-        <ResponsiveImage srcSet={lazyLoadSrcSet}>
+    {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
+        <ResponsiveImage srcSet={lazyImageSrcSet}>
             {({ ref, sizes, src, srcSet, style }) => (
-                <picture ref={ref} style={style}>
+                <picture>
                     {srcSet.map(s => (
                         <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
                     ))}
-                    <img src={src || lazyLoadSrc} sizes={sizes} alt="" />
+                    <img
+                        src={startedLoading ? src : lazyImageSrc}
+                        sizes={sizes}
+                        alt=""
+                        style={style}
+                        ref={ref}
+                    />
                 </picture>
             )}
         </ResponsiveImage>
