@@ -70,7 +70,7 @@ const getClosestSrcBySize = (srcSet, width) => {
     return srcSet.jpeg[selectedSize];
 };
 
-const browserSupportsResponsiveImages = () => {
+const checkBrowserSupport = () => {
     const img = document.createElement('img');
     return 'sizes' in img;
 };
@@ -81,13 +81,15 @@ const ResponsiveImage = ({ srcSet, children }) => {
     // Width of the image.
     const { width } = useComponentSize(ref);
 
+    const isSupported = checkBrowserSupport();
+
     return children({
         src:
-            width && srcSet && !browserSupportsResponsiveImages()
+            width && srcSet && !isSupported
                 ? getClosestSrcBySize(srcSet, width)
                 : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-        srcSet: width && srcSet ? srcSetToString(srcSet) : [],
-        sizes: width ? `${width}px` : undefined,
+        srcSet: width && srcSet && isSupported ? srcSetToString(srcSet) : [],
+        sizes: width && isSupported ? `${width}px` : undefined,
         style: { width: '100%', display: 'block' },
         ref,
     });

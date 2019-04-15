@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import LazyImage from '../lazy-image/index.jsx';
 import ResponsiveImage from '../responsive-image/index.jsx';
+import Image from '../image';
 import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
+// const validAspectRatios = {
+//     '1x1': true,
+//     '3x2': true,
+//     '7x3': true,
+//     '8x5': true,
+// };
 
-const SmartImage = ({ id, format, lazyLoad, alt }) => {
-    // The image is responsive if no width is passed in.
+const SmartImage = ({ id, format, lazyLoad, objectFit, alt }) => {
     const shouldLazyLoad = !!lazyLoad;
     const srcSet = getImageServiceSrcSet(id, [format]);
 
@@ -15,7 +21,13 @@ const SmartImage = ({ id, format, lazyLoad, alt }) => {
             <LazyImage srcSet={srcSet} aspectRatio={aspectRatio}>
                 {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
                     <ResponsiveImage srcSet={lazyImageSrcSet}>
-                        {({ ref, sizes, src, srcSet: responsiveImageSrcSet, style }) => (
+                        {({
+                            ref,
+                            sizes,
+                            src: responsiveImageSrc,
+                            srcSet: responsiveImageSrcSet,
+                            style: responsiveImageStyle,
+                        }) => (
                             <picture>
                                 {responsiveImageSrcSet.map(s => (
                                     <source
@@ -25,12 +37,13 @@ const SmartImage = ({ id, format, lazyLoad, alt }) => {
                                         key={s.type}
                                     />
                                 ))}
-                                <img
-                                    src={startedLoading ? src : lazyImageSrc}
+                                <Image
+                                    src={startedLoading ? responsiveImageSrc : lazyImageSrc}
                                     sizes={sizes}
                                     alt={alt}
                                     ref={ref}
-                                    style={style}
+                                    style={responsiveImageStyle}
+                                    objectFit={objectFit}
                                 />
                             </picture>
                         )}
@@ -47,7 +60,7 @@ const SmartImage = ({ id, format, lazyLoad, alt }) => {
                     {innerSrcSet.map(s => (
                         <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
                     ))}
-                    <img src={src} sizes={sizes} alt={alt} style={style} />
+                    <Image src={src} sizes={sizes} alt={alt} style={style} objectFit={objectFit} />
                 </picture>
             )}
         </ResponsiveImage>

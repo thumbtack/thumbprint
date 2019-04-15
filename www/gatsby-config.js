@@ -62,6 +62,7 @@ module.exports = {
                     'regexpu-core',
                     'unicode-match-property-ecmascript',
                     'unicode-match-property-value-ecmascript',
+                    '@rehooks/component-size',
                 ],
             },
         },

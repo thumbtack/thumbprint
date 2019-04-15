@@ -15,7 +15,11 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size. If the `aspectRatio` property is provided, it can [prevent the browser from "jumping"](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) when the once the image loads.
 
 ```jsx
-<SmartImage id="350357374752325652" lazyLoad={{ aspectRatio: 780 / 421 }} />
+<SmartImage
+    id="350357374752325652"
+    lazyLoad={{ aspectRatio: 780 / 421 }}
+    objectFit={{ height: 200, style: 'cover' }}
+/>
 ```
 
 ### `ResponsiveImage` with Image Service
