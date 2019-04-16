@@ -146,6 +146,10 @@ $width-wide: 1400px;
             padding: 0 $tp-space__5 40px;
         }
     }
+
+    &FullBleed {
+        padding: 0 !important;
+    }
 }
 
 .closeButton {

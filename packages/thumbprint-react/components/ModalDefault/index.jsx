@@ -203,6 +203,10 @@ const modalDefaultPropTypes = {
      */
     shouldCloseOnCurtainClick: PropTypes.bool,
     /**
+     * Should the modal contents extend to the edge (cancels padding)
+     */
+    isFullBleed: PropTypes.bool,
+    /**
      * Should the modal appear open.
      */
     isOpen: PropTypes.bool,
@@ -216,6 +220,7 @@ const modalDefaultDefaultProps = {
     children: undefined,
     onOpenFinish: undefined,
     onCloseFinish: undefined,
+    isFullBleed: false,
     isOpen: false,
     shouldHideCloseButton: false,
     shouldCloseOnCurtainClick: true,
@@ -322,6 +327,7 @@ class ModalDefault extends React.Component {
     render() {
         const {
             children,
+            isFullBleed,
             isOpen,
             onCloseClick,
             onCloseFinish,
@@ -361,6 +367,7 @@ class ModalDefault extends React.Component {
                             [styles.contents]: true,
                             [styles.contentsSticky]: hasStickyFooter,
                             [styles.contentsNotSticky]: !hasStickyFooter,
+                            [styles.contentsFullBleed]: isFullBleed,
                         })}
                     >
                         {children}

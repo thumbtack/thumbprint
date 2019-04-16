@@ -2,6 +2,7 @@
 
 exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\` is true 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -319,6 +320,7 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
 
 exports[`ModalDefault renders a basic modal 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -524,6 +526,7 @@ exports[`ModalDefault renders a basic modal 1`] = `
 
 exports[`ModalDefault renders a basic modal with content 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -897,6 +900,7 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
 
 exports[`ModalDefault renders a narrow modal 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1152,6 +1156,7 @@ exports[`ModalDefault renders a narrow modal 1`] = `
 
 exports[`ModalDefault renders a wide modal 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1457,6 +1462,7 @@ exports[`ModalDefault renders a wide modal 1`] = `
 
 exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is false 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1929,6 +1935,7 @@ exports[`ModalDefaultFooter renders a non-sticky footer 1`] = `
 
 exports[`ModalDefaultFooter renders a sticky footer 1`] = `
 <ModalDefault
+  isFullBleed={false}
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}

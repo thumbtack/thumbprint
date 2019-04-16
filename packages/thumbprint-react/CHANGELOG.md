@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Minor] Add `isFullBleed` prop to the `ModalDefault` component. (#194)
+
 ## 0.5.3 - 2019-04-09
 
 ### Added
