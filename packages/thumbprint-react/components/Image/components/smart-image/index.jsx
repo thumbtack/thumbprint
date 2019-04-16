@@ -1,4 +1,5 @@
-import React, { lazy } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import LazyImage from '../lazy-image/index.jsx';
 import ResponsiveImage from '../responsive-image/index.jsx';
 import Image from '../image';
@@ -68,7 +69,7 @@ const SmartImage = ({ id, format, lazyLoad, objectFit, alt }) => {
 };
 
 SmartImage.propTypes = {
-    lazyLoad: {},
+    lazyLoad: PropTypes.shape({}),
     format: 'jpeg',
 };
 
