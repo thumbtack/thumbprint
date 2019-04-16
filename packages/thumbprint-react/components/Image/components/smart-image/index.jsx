@@ -5,39 +5,25 @@ import ResponsiveImage from '../responsive-image/index.jsx';
 import Image from '../image/index.jsx';
 import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
 
-const aspectRatioNumberToString = {
-    [1 / 1]: '1-1',
-    [3 / 2]: '3-2',
-    [7 / 3]: '7-3',
-    [8 / 5]: '8-5',
-};
+const getImageServiceAspectRatio = aspectRatio => {
+    const validRatios = {
+        '1:1': true,
+        '3:2': true,
+        '7:3': true,
+        '8:5': true,
+    };
 
-const aspectRatioStringToNumber = {
-    '1-1': 1 / 1,
-    '3-2': 3 / 2,
-    '7-3': 7 / 3,
-    '8-5': 8 / 5,
+    return validRatios[aspectRatio] && aspectRatio.replace(':', '-');
 };
 
 const SmartImage = ({ id, format, lazyLoad, aspectRatio, objectFit, alt }) => {
     const shouldLazyLoad = !!lazyLoad;
 
-    let imageServiceRatio;
-    let lazyImageRatio;
-
-    if (typeof aspectRatio === 'string') {
-        imageServiceRatio = aspectRatio;
-        lazyImageRatio = aspectRatioStringToNumber[aspectRatio];
-    } else if (aspectRatioNumberToString[aspectRatio]) {
-        imageServiceRatio = aspectRatioNumberToString[aspectRatio];
-        lazyImageRatio = aspectRatio;
-    }
-
-    const srcSet = getImageServiceSrcSet(id, [format], imageServiceRatio);
+    const srcSet = getImageServiceSrcSet(id, [format], getImageServiceAspectRatio(aspectRatio));
 
     if (shouldLazyLoad) {
         return (
-            <LazyImage srcSet={srcSet} aspectRatio={lazyImageRatio}>
+            <LazyImage srcSet={srcSet} aspectRatio={aspectRatio}>
                 {({ src: lazyImageSrc }, startedLoading) => (
                     <ResponsiveImage srcSet={startedLoading ? srcSet : {}}>
                         {({
@@ -94,10 +80,7 @@ const SmartImage = ({ id, format, lazyLoad, aspectRatio, objectFit, alt }) => {
 };
 
 SmartImage.propTypes = {
-    aspectRatio: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.oneOf(['1-1', '3-2', '7-3', '8-5']),
-    ]),
+    aspectRatio: PropTypes.string,
     lazyLoad: PropTypes.shape({}),
     format: PropTypes.oneOf(['jpeg', 'png', 'gif']),
 };

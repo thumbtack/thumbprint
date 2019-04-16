@@ -27,7 +27,7 @@ The `SmartImage` component loads an image from Thumbtack's Image Service. By def
 ### With a supported `aspectRatio`
 
 ```jsx
-<SmartImage id="350357374752325652" aspectRatio={1 / 1} />
+<SmartImage id="350357374752325652" aspectRatio="1:1" />
 ```
 
 ### With lazy-loading turned off
@@ -72,7 +72,7 @@ This example gets a single image from Thumbtack's image service.
 This example lazy-loads an image from `placeimg.com`.
 
 ```jsx
-<LazyImage src="https://placeimg.com/640/480/nature" aspectRatio={640 / 480} alt="Photo of nature">
+<LazyImage src="https://placeimg.com/640/480/nature" aspectRatio="640:480" alt="Photo of nature">
     {({ src, alt }) => <img src={src} alt={alt} className="w-100" />}
 </LazyImage>
 ```
@@ -82,7 +82,7 @@ This example lazy-loads an image from `placeimg.com`.
 ````jsx
 <LazyImage
     srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}
-    aspectRatio={1600 / 864}
+    aspectRatio="1600:864"
 >
     {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
         <ResponsiveImage srcSet={startedLoading ? lazyImageSrcSet : {}}>
