@@ -17,7 +17,7 @@ const Image = ({ src, objectFit, style: styleProp, alt, innerRef, ...rest }) => 
         style.backgroundSize = objectFit;
         style.backgroundPosition = 'center center';
 
-        return <div style={style} ariaLabel={alt} {...rest} ref={innerRef} />;
+        return <div style={style} aria-label={alt} {...rest} ref={innerRef} />;
     }
 
     return <img src={src} alt={alt} style={style} {...rest} ref={innerRef} />;
@@ -25,7 +25,7 @@ const Image = ({ src, objectFit, style: styleProp, alt, innerRef, ...rest }) => 
 
 Image.propTypes = {
     objectFit: PropTypes.shape({
-        height: PropTypes.string,
+        height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         style: PropTypes.oneOf(['cover']),
     }),
 };

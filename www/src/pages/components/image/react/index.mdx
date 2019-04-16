@@ -8,29 +8,41 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## Examples
+## `SmartImage`
 
-### `SmartImage`
+The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size.
 
-The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size. If the `aspectRatio` property is provided, it can [prevent the browser from "jumping"](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) when the once the image loads.
+### With just an Image Service `id`
 
 ```jsx
 <SmartImage id="350357374752325652" />
 ```
 
+### With a custom `objectFit`
+
 ```jsx
-<SmartImage
-    id="350357374752325652"
-    objectFit={{ height: 200, style: 'cover' }}
-    aspectRatio={628 / 200}
-/>
+<SmartImage id="350357374752325652" objectFit={{ height: 200, style: 'cover' }} />
 ```
+
+### With a supported `aspectRatio`
 
 ```jsx
 <SmartImage id="350357374752325652" aspectRatio={1 / 1} />
 ```
 
-### `ResponsiveImage` with Image Service
+### With lazy-loading turned off
+
+```jsx
+<SmartImage id="356206765797793818" lazyLoad={null} />
+```
+
+### With a `png`
+
+```jsx
+<SmartImage id="356301205135450141" format="png" />
+```
+
+<!-- ### `ResponsiveImage` with Image Service
 
 This example gets an image from Thumbtack's image service and loads it in `jpeg` and `webp`.
 
@@ -67,13 +79,13 @@ This example lazy-loads an image from `placeimg.com`.
 
 ### Lazy-loaded responsive image
 
-```jsx
+````jsx
 <LazyImage
     srcSet={getImageServiceSrcSet('350357374752325652', ['jpeg', 'webp'])}
     aspectRatio={1600 / 864}
 >
     {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
-        <ResponsiveImage srcSet={lazyImageSrcSet}>
+        <ResponsiveImage srcSet={startedLoading ? lazyImageSrcSet : {}}>
             {({ ref, sizes, src, srcSet, style }) => (
                 <picture>
                     {srcSet.map(s => (
@@ -91,7 +103,7 @@ This example lazy-loads an image from `placeimg.com`.
         </ResponsiveImage>
     )}
 </LazyImage>
-```
+``` -->
 
 <ComponentFooter data={props.data} />
 

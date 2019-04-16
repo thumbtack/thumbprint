@@ -38,8 +38,8 @@ const SmartImage = ({ id, format, lazyLoad, aspectRatio, objectFit, alt }) => {
     if (shouldLazyLoad) {
         return (
             <LazyImage srcSet={srcSet} aspectRatio={lazyImageRatio}>
-                {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
-                    <ResponsiveImage srcSet={lazyImageSrcSet}>
+                {({ src: lazyImageSrc }, startedLoading) => (
+                    <ResponsiveImage srcSet={startedLoading ? srcSet : {}}>
                         {({
                             ref,
                             sizes,
@@ -75,11 +75,18 @@ const SmartImage = ({ id, format, lazyLoad, aspectRatio, objectFit, alt }) => {
     return (
         <ResponsiveImage srcSet={srcSet}>
             {({ ref, sizes, src, srcSet: innerSrcSet, style }) => (
-                <picture ref={ref}>
+                <picture>
                     {innerSrcSet.map(s => (
                         <source type={s.type} sizes={sizes} srcSet={s.srcSet} key={s.type} />
                     ))}
-                    <Image src={src} sizes={sizes} alt={alt} style={style} objectFit={objectFit} />
+                    <Image
+                        src={src}
+                        sizes={sizes}
+                        alt={alt}
+                        style={style}
+                        objectFit={objectFit}
+                        ref={ref}
+                    />
                 </picture>
             )}
         </ResponsiveImage>
@@ -92,7 +99,7 @@ SmartImage.propTypes = {
         PropTypes.oneOf(['1-1', '3-2', '7-3', '8-5']),
     ]),
     lazyLoad: PropTypes.shape({}),
-    format: 'jpeg',
+    format: PropTypes.oneOf(['jpeg', 'png', 'gif']),
 };
 
 SmartImage.defaultProps = {
