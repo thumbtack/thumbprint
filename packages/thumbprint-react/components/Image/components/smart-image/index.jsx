@@ -4,22 +4,40 @@ import LazyImage from '../lazy-image/index.jsx';
 import ResponsiveImage from '../responsive-image/index.jsx';
 import Image from '../image/index.jsx';
 import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
-// const validAspectRatios = {
-//     '1x1': true,
-//     '3x2': true,
-//     '7x3': true,
-//     '8x5': true,
-// };
 
-const SmartImage = ({ id, format, lazyLoad, objectFit, alt }) => {
+const aspectRatioNumberToString = {
+    [1 / 1]: '1-1',
+    [3 / 2]: '3-2',
+    [7 / 3]: '7-3',
+    [8 / 5]: '8-5',
+};
+
+const aspectRatioStringToNumber = {
+    '1-1': 1 / 1,
+    '3-2': 3 / 2,
+    '7-3': 7 / 3,
+    '8-5': 8 / 5,
+};
+
+const SmartImage = ({ id, format, lazyLoad, aspectRatio, objectFit, alt }) => {
     const shouldLazyLoad = !!lazyLoad;
-    const srcSet = getImageServiceSrcSet(id, [format]);
 
-    const aspectRatio = lazyLoad && lazyLoad.aspectRatio;
+    let imageServiceRatio;
+    let lazyImageRatio;
+
+    if (typeof aspectRatio === 'string') {
+        imageServiceRatio = aspectRatio;
+        lazyImageRatio = aspectRatioStringToNumber[aspectRatio];
+    } else if (aspectRatioNumberToString[aspectRatio]) {
+        imageServiceRatio = aspectRatioNumberToString[aspectRatio];
+        lazyImageRatio = aspectRatio;
+    }
+
+    const srcSet = getImageServiceSrcSet(id, [format], imageServiceRatio);
 
     if (shouldLazyLoad) {
         return (
-            <LazyImage srcSet={srcSet} aspectRatio={aspectRatio}>
+            <LazyImage srcSet={srcSet} aspectRatio={lazyImageRatio}>
                 {({ src: lazyImageSrc, srcSet: lazyImageSrcSet }, startedLoading) => (
                     <ResponsiveImage srcSet={lazyImageSrcSet}>
                         {({
@@ -69,11 +87,16 @@ const SmartImage = ({ id, format, lazyLoad, objectFit, alt }) => {
 };
 
 SmartImage.propTypes = {
+    aspectRatio: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.oneOf(['1-1', '3-2', '7-3', '8-5']),
+    ]),
     lazyLoad: PropTypes.shape({}),
     format: 'jpeg',
 };
 
 SmartImage.defaultProps = {
+    aspectRatio: undefined,
     lazyLoad: {},
     format: 'jpeg',
 };
