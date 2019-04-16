@@ -23,6 +23,15 @@ const Image = ({ src, objectFit, style: styleProp, alt, innerRef, ...rest }) => 
     return <img src={src} alt={alt} style={style} {...rest} ref={innerRef} />;
 };
 
-Image.propTypes = {};
+Image.propTypes = {
+    objectFit: PropTypes.shape({
+        height: PropTypes.string,
+        style: PropTypes.oneOf(['cover']),
+    }),
+};
+
+Image.defaultProps = {
+    objectFit: {},
+};
 
 export default forwardRef((props, ref) => <Image {...props} innerRef={ref} />);

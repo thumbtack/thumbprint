@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LazyImage from '../lazy-image/index.jsx';
 import ResponsiveImage from '../responsive-image/index.jsx';
-import Image from '../image';
+import Image from '../image/index.jsx';
 import getImageServiceSrcSet from '../../utils/get-image-service-src-set';
 // const validAspectRatios = {
 //     '1x1': true,
