@@ -87,8 +87,12 @@ const getClosestSrcBySize = (srcSet, width) => {
 };
 
 const checkBrowserSupport = () => {
-    const img = document.createElement('img');
-    return 'sizes' in img;
+    if (typeof window !== 'undefined') {
+        const img = document && document.createElement('img');
+        return 'sizes' in img;
+    }
+
+    return false;
 };
 
 const ResponsiveImage = ({ srcSet, children }) => {

@@ -1,14 +1,20 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
+const supportsObjectFit = () => {
+    if (typeof window !== 'undefined' && window.document && window.document.createElement) {
+        return 'objectFit' in document.documentElement.style === true;
+    }
+
+    return false;
+};
+
 const Image = ({ src, objectFit, style: styleProp, alt, innerRef, ...rest }) => {
     const { height, style: objectFitStyle } = objectFit;
 
     const style = Object.assign({}, styleProp, { width: '100%', height });
 
-    const supportsObjectFit = 'objectFit' in document.documentElement.style === true;
-
-    if (objectFitStyle && supportsObjectFit) {
+    if (objectFitStyle && supportsObjectFit()) {
         style.objectFit = objectFitStyle;
     } else if (objectFitStyle && height) {
         // This is for browsers that don't support the object-fit. A height is required in this
