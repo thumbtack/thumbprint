@@ -1,0 +1,20 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dotDone {
+    background: $tp-color__blue;
+}
+
+.dotInProgress {
+    border: 3px solid $tp-color__yellow;
+}
+
+.dotToDo {
+    background: $tp-color__gray;
+}

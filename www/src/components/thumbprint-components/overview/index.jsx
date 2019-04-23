@@ -1,0 +1,129 @@
+/* eslint-disable import/prefer-default-export */
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import styles from './index.module.scss';
+
+export const Dot = ({ status }) => {
+    const statusMap = {
+        'in-progress': 'In progress',
+        'to-do': 'To-do',
+        done: 'Done',
+        status: 'Status',
+    };
+
+    return (
+        <>
+            <div
+                aria-label={statusMap[status]}
+                className={classNames({
+                    [styles.dot]: true,
+                    [styles.dotDone]: status === 'done',
+                    [styles.dotInProgress]: status === 'in-progress',
+                    [styles.dotToDo]: status === 'to-do' || status === 'n/a',
+                })}
+            />
+            {/* <Text size={2}>{statusMap[status]}</Text> */}
+        </>
+    );
+};
+
+export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) => (
+    <>
+        <tr className="bt b-gray-300 tl">
+            <th rowSpan={5} className="pr2 pv2">
+                {name}
+            </th>
+            <th className="normal bl b-gray-300 ph2 pv1">Usage</th>
+            <td className="bl b-gray-300 pa2 tc bw-2">
+                <Dot status={usage.design} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={usage.development} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={usage.documentation} />
+            </td>
+            <td rowSpan={5} className="bl b-gray-300 pa2">
+                {note}
+            </td>
+        </tr>
+        <tr className="bt b-gray-300 tl">
+            <th className="normal bl b-gray-300 ph2 pv1">React</th>
+            <td className="bl b-gray-300 pa2 tc bw-2">
+                <Dot status={react.design} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={react.development} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={react.documentation} />
+            </td>
+        </tr>
+        <tr className="bt b-gray-300 tl">
+            <th className="normal bl b-gray-300 ph2 pv1">SCSS</th>
+            <td className="bl b-gray-300 pa2 tc bw-2">
+                <Dot status={scss.design} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={scss.development} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={scss.documentation} />
+            </td>
+        </tr>
+        <tr className="bt b-gray-300 tl">
+            <th className="normal bl b-gray-300 ph2 pv1">iOS</th>
+            <td className="bl b-gray-300 pa2 tc bw-2">
+                <Dot status={ios.design} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={ios.development} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={ios.documentation} />
+            </td>
+        </tr>
+        <tr className="bt b-gray-300 tl">
+            <th className="normal bl b-gray-300 ph2 pv1">Android</th>
+            <td className="bl b-gray-300 pa2 tc bw-2">
+                <Dot status={android.design} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={android.development} />
+            </td>
+            <td className="bl b-gray-300 pa2 tc">
+                <Dot status={android.documentation} />
+            </td>
+        </tr>
+    </>
+);
+
+ComponentRow.propTypes = {
+    name: PropTypes.string.isRequired,
+    usage: PropTypes.shape({
+        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        documentation: PropTypes.string,
+    }).isRequired,
+    react: PropTypes.shape({
+        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        documentation: PropTypes.string,
+    }).isRequired,
+    scss: PropTypes.shape({
+        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        documentation: PropTypes.string,
+    }).isRequired,
+    ios: PropTypes.shape({
+        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        documentation: PropTypes.string,
+    }).isRequired,
+    android: PropTypes.shape({
+        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
+        documentation: PropTypes.string,
+    }).isRequired,
+};
