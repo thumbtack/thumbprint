@@ -46,7 +46,7 @@ export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) =
             <td className="pa2 tc">
                 <Dot status={usage.documentation} />
             </td>
-            <td rowSpan={5} className="pa2 v-top black-300">
+            <td rowSpan={5} className="pv2 ph4 v-top black-300">
                 <Text size={2} className="mw6">
                     {note}
                 </Text>
