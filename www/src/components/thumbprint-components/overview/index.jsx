@@ -30,8 +30,8 @@ export const Dot = ({ status }) => {
 
 export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) => (
     <>
-        <tr className="bb b-gray-300 bw-2 tl">
-            <th rowSpan={5} className="pr2 pv2 v-top">
+        <tr className="tl bb b-gray-300">
+            <th rowSpan={5} className="pr2 pv2 v-top bb b-gray-300 bw-2">
                 {name}
             </th>
             <th className="normal ph2 pv1">
@@ -46,7 +46,7 @@ export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) =
             <td className="pa2 tc">
                 <Dot status={usage.documentation} />
             </td>
-            <td rowSpan={5} className="pv2 ph4 v-top black-300">
+            <td rowSpan={5} className="pv2 ph4 v-top black-300 bb b-gray-300 bw-2">
                 <Text size={2} className="mw6">
                     {note}
                 </Text>
