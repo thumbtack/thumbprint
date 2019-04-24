@@ -5,27 +5,39 @@ import classNames from 'classnames';
 import { Text } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
+const documentationStatus = PropTypes.oneOf([
+    'to-do',
+    'wont-do',
+    'done',
+    'in-progress',
+    'deprecated',
+    '',
+]);
+
 export const Dot = ({ status }) => {
     const statusMap = {
         'in-progress': 'In progress',
         'to-do': 'To-do',
+        'wont-do': "Won't do",
+        deprecated: 'Deprecated',
         done: 'Done',
-        status: 'Status',
     };
 
     return (
-        <>
-            <div
-                aria-label={statusMap[status]}
-                className={classNames({
-                    [styles.dot]: true,
-                    [styles.dotDone]: status === 'done',
-                    [styles.dotInProgress]: status === 'in-progress',
-                    [styles.dotToDo]: status === 'to-do' || status === 'n/a',
-                })}
-            />
-        </>
+        <div
+            aria-label={statusMap[status]}
+            className={classNames({
+                [styles.dot]: true,
+                [styles.dotDone]: status === 'done',
+                [styles.dotInProgress]: status === 'in-progress',
+                [styles.dotToDo]: status === 'to-do' || status === 'wont-do',
+            })}
+        />
     );
+};
+
+Dot.propTypes = {
+    status: documentationStatus.isRequired,
 };
 
 export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) => (
@@ -114,28 +126,28 @@ export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) =
 ComponentRow.propTypes = {
     name: PropTypes.string.isRequired,
     usage: PropTypes.shape({
-        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        documentation: PropTypes.string,
+        design: documentationStatus.isRequired,
+        development: documentationStatus.isRequired,
+        documentation: documentationStatus.isRequired,
     }).isRequired,
     react: PropTypes.shape({
-        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        documentation: PropTypes.string,
+        design: documentationStatus.isRequired,
+        development: documentationStatus.isRequired,
+        documentation: documentationStatus.isRequired,
     }).isRequired,
     scss: PropTypes.shape({
-        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        documentation: PropTypes.string,
+        design: documentationStatus.isRequired,
+        development: documentationStatus.isRequired,
+        documentation: documentationStatus.isRequired,
     }).isRequired,
     ios: PropTypes.shape({
-        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        documentation: PropTypes.string,
+        design: documentationStatus.isRequired,
+        development: documentationStatus.isRequired,
+        documentation: documentationStatus.isRequired,
     }).isRequired,
     android: PropTypes.shape({
-        design: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        development: PropTypes.oneOf(['to-do', 'n/a', 'done', 'in-progress', '']),
-        documentation: PropTypes.string,
+        design: documentationStatus.isRequired,
+        development: documentationStatus.isRequired,
+        documentation: documentationStatus.isRequired,
     }).isRequired,
 };
