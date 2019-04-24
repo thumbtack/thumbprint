@@ -5,26 +5,61 @@ description: Our components and roadmap.
 
 import { Text } from '@thumbtack/thumbprint-react';
 import { ComponentRow } from 'components/thumbprint-components/overview';
+import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 
 <table className="w-100">
     <thead className="tl">
         <tr>
-            <th className="pv2 pb1 v-top">
+            {/*
+                The `boxShadow` is used instead of `border` because of:
+                https://stackoverflow.com/q/41882616/316602
+            */}
+            <th
+                className="pv2 pb1 v-top top0 bg-white"
+                style={{ position: 'sticky', boxShadow: '0px 2px 0px 0px ' + tpColorGray300 }}
+            >
                 <Text size={2}>Component</Text>
             </th>
-            <th className="pt2 ph2 pb1 v-top">
+            <th
+                className="pt2 ph2 pb1 v-top top0 bg-white"
+                style={{ position: 'sticky', boxShadow: '0px 2px 0px 0px ' + tpColorGray300 }}
+            >
                 <Text size={2}>Platforms</Text>
             </th>
-            <th className="pt2 ph3 pb1 v-top" style={{ width: '1%' }}>
+            <th
+                className="pt2 ph3 pb1 v-top top0 bg-white"
+                style={{
+                    width: '1%',
+                    position: 'sticky',
+                    boxShadow: '0px 2px 0px 0px ' + tpColorGray300,
+                }}
+            >
                 <Text size={2}>Design</Text>
             </th>
-            <th className="pt2 ph3 pb1 v-top" style={{ width: '1%' }}>
+            <th
+                className="pt2 ph3 pb1 v-top top0 bg-white"
+                style={{
+                    width: '1%',
+                    position: 'sticky',
+                    boxShadow: '0px 2px 0px 0px ' + tpColorGray300,
+                }}
+            >
                 <Text size={2}>Dev</Text>
             </th>
-            <th className="pt2 ph3 pb1 v-top" style={{ width: '1%' }}>
+            <th
+                className="pt2 ph3 pb1 v-top top0 bg-white"
+                style={{
+                    width: '1%',
+                    position: 'sticky',
+                    boxShadow: '0px 2px 0px 0px ' + tpColorGray300,
+                }}
+            >
                 <Text size={2}>Docs</Text>
             </th>
-            <th className="pt2 ph2 pb1 v-top">
+            <th
+                className="pt2 ph2 pb1 v-top top0 bg-white"
+                style={{ position: 'sticky', boxShadow: '0px 2px 0px 0px ' + tpColorGray300 }}
+            >
                 <Text size={2}>Notes</Text>
             </th>
         </tr>
