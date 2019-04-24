@@ -16,6 +16,9 @@ import { ScrollMarkerContainer } from 'react-scroll-marker';
 import ClickableBox from 'clickable-box';
 import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
+// Polyfill for focus visible CSS
+// https://caniuse.com/#feat=css-focus-visible
+import 'focus-visible';
 import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
 import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
