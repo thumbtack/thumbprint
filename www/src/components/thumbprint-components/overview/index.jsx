@@ -30,7 +30,9 @@ export const Dot = ({ status }) => {
                 [styles.dot]: true,
                 [styles.dotDone]: status === 'done',
                 [styles.dotInProgress]: status === 'in-progress',
-                [styles.dotToDo]: status === 'to-do' || status === 'wont-do',
+                [styles.dotToDo]: status === 'to-do',
+                [styles.dotWontDo]: status === 'wont-do',
+                [styles.dotDeprecated]: status === 'deprecated',
             })}
         />
     );

@@ -8,13 +8,21 @@
 }
 
 .dotDone {
-    background: $tp-color__blue;
+    background: $tp-color__green;
 }
 
 .dotInProgress {
-    border: 3px solid $tp-color__yellow;
+    border: 2px solid $tp-color__yellow;
 }
 
 .dotToDo {
+    border: 2px solid $tp-color__blue;
+}
+
+.dotWontDo {
     background: $tp-color__gray;
+}
+
+.dotDeprecated {
+    background: $tp-color__red-300;
 }

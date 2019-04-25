@@ -4,8 +4,41 @@ description: Our components and the platforms they're available in.
 ---
 
 import { Text } from '@thumbtack/thumbprint-react';
-import { ComponentRow } from 'components/thumbprint-components/overview';
+import { ComponentRow, Dot } from 'components/thumbprint-components/overview';
 import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
+
+<ul aria-hidden="true" className="flex black-300 mb4">
+    <li className="mr4 flex items-center">
+        <Dot status="done" />{' '}
+        <Text size={2} className="ml2">
+            Done
+        </Text>
+    </li>
+    <li className="mr4 flex items-center">
+        <Dot status="in-progress" />{' '}
+        <Text size={2} className="ml2">
+            In Progress
+        </Text>
+    </li>
+    <li className="mr4 flex items-center">
+        <Dot status="to-do" />{' '}
+        <Text size={2} className="ml2">
+            To-do
+        </Text>
+    </li>
+    <li className="mr4 flex items-center">
+        <Dot status="wont-do" />{' '}
+        <Text size={2} className="ml2">
+            Not applicable
+        </Text>
+    </li>
+    <li className="mr4 flex items-center">
+        <Dot status="deprecated" />{' '}
+        <Text size={2} className="ml2">
+            Deprecated
+        </Text>
+    </li>
+</ul>
 
 <table className="w-100">
     <thead className="tl">
