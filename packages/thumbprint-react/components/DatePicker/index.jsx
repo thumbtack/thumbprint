@@ -65,7 +65,7 @@ export default class DatePicker extends React.Component {
     }
 
     render() {
-        const { disabledDays, lastMonth } = this.props;
+        const { disabledDays, lastMonth, onMonthChange, modifiers } = this.props;
         const { selectedDays } = this.state;
 
         return (
@@ -77,6 +77,8 @@ export default class DatePicker extends React.Component {
                     initialMonth={selectedDays[0]}
                     selectedDays={selectedDays}
                     onDayClick={this.handleChange}
+                    onMonthChange={onMonthChange}
+                    modifiers={modifiers}
                 />
             </div>
         );
@@ -88,6 +90,8 @@ DatePicker.defaultProps = {
     allowMultiSelection: false,
     disabledDays: { before: new Date() },
     lastMonth: null,
+    onMonthChange: undefined,
+    modifiers: undefined,
 };
 
 DatePicker.propTypes = {
@@ -118,4 +122,16 @@ DatePicker.propTypes = {
      * interact with the days after it.
      */
     lastMonth: PropTypes.instanceOf(Date),
+    /**
+     * Callback that is triggered when the user navigates to a different month using the navigation
+     * buttons or via keyboard. The function receives a single Javascript Date object indicating
+     * the new on-screen month.
+     */
+    onMonthChange: PropTypes.func,
+    /**
+     * Allows for custom styles and interaction with day cells in the calendar. See
+     * https://github.com/gpbl/react-day-picker/blob/v6.2.1/docs/docs/modifiers.md for supported
+     * inputs and behavior.
+     */
+    modifiers: PropTypes.shape({}),
 };

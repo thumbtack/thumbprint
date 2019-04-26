@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `onMonthChange` and `modifiers` props to the `DatePicker` component.
+
 ## 0.5.3 - 2019-04-09
 
 ### Added

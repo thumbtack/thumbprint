@@ -211,3 +211,96 @@ describe('user is able to select a date in the past if disabled days is disabled
         expect(onChange).toHaveBeenCalledWith([selectedDate, dateFromPrevMonth]);
     });
 });
+
+describe('`onMonthChange` callback should be called on month change', () => {
+    const onChange = jest.fn();
+    const year = 2057;
+    const month = 9;
+    const selectedDate = new Date(year, month);
+
+    test('when next month is clicked', () => {
+        const onMonthChange = jest.fn();
+        const wrapper = mount(
+            <DatePicker value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
+        );
+
+        const nextMonthButton = wrapper.find('.DayPicker-NavButton--next');
+        nextMonthButton.simulate('click');
+
+        expect(onMonthChange).toHaveBeenCalledTimes(1);
+        const newMonth = onMonthChange.mock.calls[0][0];
+        expect(newMonth.getFullYear()).toBe(year);
+        expect(newMonth.getMonth()).toBe(month + 1);
+    });
+
+    test('when previous month is clicked', () => {
+        const onMonthChange = jest.fn();
+        const wrapper = mount(
+            <DatePicker value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
+        );
+
+        const prevMonthButton = wrapper.find('.DayPicker-NavButton--prev');
+        prevMonthButton.simulate('click');
+
+        expect(onMonthChange).toHaveBeenCalledTimes(1);
+        const newMonth = onMonthChange.mock.calls[0][0];
+        expect(newMonth.getFullYear()).toBe(year);
+        expect(newMonth.getMonth()).toBe(month - 1);
+    });
+});
+
+describe('`modifiers` prop appends BEM styled class name for applicable dates', () => {
+    const modifierPrefix = '.DayPicker-Day--';
+    const onChange = jest.fn();
+    const year = 2057;
+    const month = 8;
+    const day = 3;
+    const selectedDate = new Date(year, month, day);
+    const renderWithModifiers = modifiers =>
+        mount(<DatePicker value={selectedDate} onChange={onChange} modifiers={modifiers} />);
+
+    test('on single date', () => {
+        const modifierName = 'my-modifier-name';
+        const matchingDay = 25;
+        const modifiers = { [modifierName]: new Date(year, month, matchingDay) };
+        const wrapper = renderWithModifiers(modifiers);
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
+        expect(modifiedDays).toHaveLength(1);
+        expect(modifiedDays.first().text()).toEqual(String(matchingDay));
+    });
+
+    test('on boolean function', () => {
+        const modifierName = 'another-modifier-name';
+        const matchingDay = 19;
+        const modifiers = {
+            [modifierName]: dayToModify =>
+                dayToModify.getFullYear() === year &&
+                dayToModify.getMonth() === month &&
+                dayToModify.getDate() === matchingDay,
+        };
+        const wrapper = renderWithModifiers(modifiers);
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
+        expect(modifiedDays).toHaveLength(1);
+        expect(modifiedDays.first().text()).toEqual(String(matchingDay));
+    });
+
+    test('on range', () => {
+        const modifierName = 'third-mod-name';
+        // Modify 6 days from 10th through 12th.
+        const modifiers = {
+            [modifierName]: {
+                from: new Date(year, month, 10),
+                to: new Date(year, month, 12),
+            },
+        };
+        const wrapper = renderWithModifiers(modifiers);
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
+        expect(modifiedDays).toHaveLength(3);
+        expect(modifiedDays.at(0).text()).toEqual('10');
+        expect(modifiedDays.at(1).text()).toEqual('11');
+        expect(modifiedDays.at(2).text()).toEqual('12');
+    });
+});
