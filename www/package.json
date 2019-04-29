@@ -29,7 +29,7 @@
         "gatsby-remark-smartypants": "^2.0.0",
         "gatsby-source-filesystem": "^2.0.0",
         "gatsby-transformer-json": "^2.1.8",
-        "gatsby-transformer-react-docgen": "^3.0.0",
+        "gatsby-transformer-react-docgen": "^4.0.1",
         "invariant": "^2.2.4",
         "lodash": "^4.17.4",
         "mousetrap": "^1.6.2",
