@@ -12,13 +12,17 @@ process.on('unhandledRejection', error => {
 });
 
 const getHash = async dir => {
-    const { hash } = await hashElement(dir, {
+    const yarnLockLocation = path.join(dir, '../../yarn.lock');
+
+    const { hash: hashPackageFolder } = await hashElement(dir, {
         folders: {
             exclude: ['.cache', 'dist'],
         },
     });
 
-    return hash;
+    const { hash: hashYarnLock } = await hashElement(yarnLockLocation);
+
+    return hashPackageFolder + hashYarnLock;
 };
 
 /**
