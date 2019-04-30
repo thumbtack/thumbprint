@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Text } from '@thumbtack/thumbprint-react';
+import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
 const documentationStatus = PropTypes.oneOf([
@@ -13,7 +14,7 @@ const documentationStatus = PropTypes.oneOf([
     'deprecated',
 ]);
 
-export const Dot = ({ status }) => {
+const Dot = ({ status }) => {
     const statusMap = {
         'in-progress': 'In progress',
         'to-do': 'To-do',
@@ -40,6 +41,41 @@ export const Dot = ({ status }) => {
 Dot.propTypes = {
     status: documentationStatus.isRequired,
 };
+
+export const Legend = () => (
+    <ul aria-hidden="true" className="flex black-300 mb2">
+        <li className="mr4 flex items-center">
+            <Dot status="done" />{' '}
+            <Text size={2} className="ml2">
+                Done
+            </Text>
+        </li>
+        <li className="mr4 flex items-center">
+            <Dot status="in-progress" />{' '}
+            <Text size={2} className="ml2">
+                In Progress
+            </Text>
+        </li>
+        <li className="mr4 flex items-center">
+            <Dot status="to-do" />{' '}
+            <Text size={2} className="ml2">
+                To-do
+            </Text>
+        </li>
+        <li className="mr4 flex items-center">
+            <Dot status="wont-do" />{' '}
+            <Text size={2} className="ml2">
+                Not applicable
+            </Text>
+        </li>
+        <li className="mr4 flex items-center">
+            <Dot status="deprecated" />{' '}
+            <Text size={2} className="ml2">
+                Deprecated
+            </Text>
+        </li>
+    </ul>
+);
 
 export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) => (
     <>
@@ -151,4 +187,79 @@ ComponentRow.propTypes = {
         development: documentationStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
+};
+
+export const ComponentTable = ({ children }) => (
+    <table className="w-100">
+        <thead className="tl">
+            <tr>
+                {/*
+                The `boxShadow` is used instead of `border` because of:
+                https://stackoverflow.com/q/41882616/316602
+            */}
+                <th
+                    className="pt3 pr2 pb2 v-top top0 bg-white"
+                    style={{
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Component</Text>
+                </th>
+                <th
+                    className="pt3 ph2 pb2 v-top top0 bg-white"
+                    style={{
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Platforms</Text>
+                </th>
+                <th
+                    className="pt3 ph3 pb2 v-top top0 bg-white"
+                    style={{
+                        width: '1%',
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Design</Text>
+                </th>
+                <th
+                    className="pt3 ph3 pb2 v-top top0 bg-white"
+                    style={{
+                        width: '1%',
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Dev</Text>
+                </th>
+                <th
+                    className="pt3 ph3 pb2 v-top top0 bg-white"
+                    style={{
+                        width: '1%',
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Docs</Text>
+                </th>
+                <th
+                    className="pt3 ph4 pb2 v-top top0 bg-white"
+                    style={{
+                        position: 'sticky',
+                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
+                    }}
+                >
+                    <Text size={2}>Notes</Text>
+                </th>
+            </tr>
+        </thead>
+        <tbody>{children}</tbody>
+    </table>
+);
+
+ComponentTable.propTypes = {
+    children: PropTypes.node.isRequired,
 };
