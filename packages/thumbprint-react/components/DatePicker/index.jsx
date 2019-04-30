@@ -65,8 +65,23 @@ export default class DatePicker extends React.Component {
     }
 
     render() {
-        const { disabledDays, lastMonth, onMonthChange, modifiers } = this.props;
+        const {
+            disabledDays,
+            lastMonth,
+            onMonthChange,
+            daysThemeDotIndicator,
+            daysThemeStrikeout,
+        } = this.props;
         const { selectedDays } = this.state;
+        const modifiers = {};
+
+        if (typeof daysThemeDotIndicator === 'function') {
+            Object.assign(modifiers, { 'theme-dot': daysThemeDotIndicator });
+        }
+
+        if (typeof daysThemeStrikeout === 'function') {
+            Object.assign(modifiers, { 'theme-strikeout': daysThemeStrikeout });
+        }
 
         return (
             <div className={styles.root}>
@@ -91,7 +106,8 @@ DatePicker.defaultProps = {
     disabledDays: { before: new Date() },
     lastMonth: null,
     onMonthChange: undefined,
-    modifiers: undefined,
+    daysThemeDotIndicator: undefined,
+    daysThemeStrikeout: undefined,
 };
 
 DatePicker.propTypes = {
@@ -129,9 +145,13 @@ DatePicker.propTypes = {
      */
     onMonthChange: PropTypes.func,
     /**
-     * Allows for custom styles and interaction with day cells in the calendar. See
-     * https://github.com/gpbl/react-day-picker/blob/v6.2.1/docs/docs/modifiers.md for supported
-     * inputs and behavior.
+     * Applies a dot indicator below the numeric day in the calendar's day cell if the function
+     * returns true for a given Javascript Date,
      */
-    modifiers: PropTypes.shape({}),
+    daysThemeDotIndicator: PropTypes.func,
+    /**
+     * Applies a strikeout treatment on the numeric day in the calendar's day cell if the function
+     * returns true for a given Javascript Date,
+     */
+    daysThemeStrikeout: PropTypes.func,
 };

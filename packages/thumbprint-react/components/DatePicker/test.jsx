@@ -249,58 +249,63 @@ describe('`onMonthChange` callback should be called on month change', () => {
     });
 });
 
-describe('`modifiers` prop appends BEM styled class name for applicable dates', () => {
+describe('applying themes to DatePicker day cells', () => {
     const modifierPrefix = '.DayPicker-Day--';
     const onChange = jest.fn();
     const year = 2057;
     const month = 8;
     const day = 3;
     const selectedDate = new Date(year, month, day);
-    const renderWithModifiers = modifiers =>
-        mount(<DatePicker value={selectedDate} onChange={onChange} modifiers={modifiers} />);
 
-    test('on single date', () => {
-        const modifierName = 'my-modifier-name';
-        const matchingDay = 25;
-        const modifiers = { [modifierName]: new Date(year, month, matchingDay) };
-        const wrapper = renderWithModifiers(modifiers);
+    const isMatchingDate = (calDate, expectedDate) =>
+        calDate.getFullYear() === expectedDate.getFullYear() &&
+        calDate.getMonth() === expectedDate.getMonth() &&
+        calDate.getDate() === expectedDate.getDate();
 
-        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
-        expect(modifiedDays).toHaveLength(1);
-        expect(modifiedDays.first().text()).toEqual(String(matchingDay));
+    test('`daysThemeDotIndicator` applies modifier styles for dot indicators', () => {
+        const testDay1 = 5;
+        const testDay2 = 16;
+        const jsDate1 = new Date(year, month, testDay1);
+        const jsDate2 = new Date(year, month, testDay2);
+        const themeFunction = calDate =>
+            isMatchingDate(calDate, jsDate1) || isMatchingDate(calDate, jsDate2);
+        const wrapper = mount(
+            <DatePicker
+                value={selectedDate}
+                onChange={onChange}
+                daysThemeDotIndicator={themeFunction}
+            />,
+        );
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-dot`);
+        expect(modifiedDays).toHaveLength(2);
+        expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
+        expect(modifiedDays.at(1).text()).toEqual(String(testDay2));
     });
 
-    test('on boolean function', () => {
-        const modifierName = 'another-modifier-name';
-        const matchingDay = 19;
-        const modifiers = {
-            [modifierName]: dayToModify =>
-                dayToModify.getFullYear() === year &&
-                dayToModify.getMonth() === month &&
-                dayToModify.getDate() === matchingDay,
-        };
-        const wrapper = renderWithModifiers(modifiers);
+    test('`daysThemeStrikeout` applies modifier styles for strikeout', () => {
+        const testDay1 = 2;
+        const testDay2 = 12;
+        const testDay3 = 22;
+        const jsDate1 = new Date(year, month, testDay1);
+        const jsDate2 = new Date(year, month, testDay2);
+        const jsDate3 = new Date(year, month, testDay3);
+        const themeFunction = calDate =>
+            isMatchingDate(calDate, jsDate1) ||
+            isMatchingDate(calDate, jsDate2) ||
+            isMatchingDate(calDate, jsDate3);
+        const wrapper = mount(
+            <DatePicker
+                value={selectedDate}
+                onChange={onChange}
+                daysThemeStrikeout={themeFunction}
+            />,
+        );
 
-        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
-        expect(modifiedDays).toHaveLength(1);
-        expect(modifiedDays.first().text()).toEqual(String(matchingDay));
-    });
-
-    test('on range', () => {
-        const modifierName = 'third-mod-name';
-        // Modify 6 days from 10th through 12th.
-        const modifiers = {
-            [modifierName]: {
-                from: new Date(year, month, 10),
-                to: new Date(year, month, 12),
-            },
-        };
-        const wrapper = renderWithModifiers(modifiers);
-
-        const modifiedDays = wrapper.find(`${modifierPrefix}${modifierName}`);
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-strikeout`);
         expect(modifiedDays).toHaveLength(3);
-        expect(modifiedDays.at(0).text()).toEqual('10');
-        expect(modifiedDays.at(1).text()).toEqual('11');
-        expect(modifiedDays.at(2).text()).toEqual('12');
+        expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
+        expect(modifiedDays.at(1).text()).toEqual(String(testDay2));
+        expect(modifiedDays.at(2).text()).toEqual(String(testDay3));
     });
 });
