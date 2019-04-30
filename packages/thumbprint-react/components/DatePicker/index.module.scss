@@ -171,8 +171,9 @@
     text-decoration: none;
 }
 
-.root :global(.DayPicker-Day--theme-dot) {
+.root :global(.DayPicker-Day--theme-dot:not(.DayPicker-Day--outside)) {
     position: relative;
+
     &::after {
         content: '\00B7';
         display: inline-block;

@@ -76,11 +76,11 @@ export default class DatePicker extends React.Component {
         const modifiers = {};
 
         if (typeof daysThemeDotIndicator === 'function') {
-            Object.assign(modifiers, { 'theme-dot': daysThemeDotIndicator });
+            modifiers['theme-dot'] = daysThemeDotIndicator;
         }
 
         if (typeof daysThemeStrikeout === 'function') {
-            Object.assign(modifiers, { 'theme-strikeout': daysThemeStrikeout });
+            modifiers['theme-strikeout'] = daysThemeStrikeout;
         }
 
         return (
