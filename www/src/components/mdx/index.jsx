@@ -138,7 +138,7 @@ export const Code = p => {
     );
 };
 
-export const Table = p => <table {...p} className="mb5 w-100" />;
+export const Table = p => <table {...p} className="mb5 w-100 black-300" />;
 
 export const TH = p => <th {...p} className="ph2 pb2 bb b-gray-300 tl" />;
 
