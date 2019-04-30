@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
