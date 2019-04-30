@@ -11,7 +11,6 @@ const documentationStatus = PropTypes.oneOf([
     'done',
     'in-progress',
     'deprecated',
-    '',
 ]);
 
 export const Dot = ({ status }) => {
