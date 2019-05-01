@@ -158,7 +158,7 @@ const Container = ({ children, location, activeSection }) => {
                                 flex: isSidebarOpen,
                             })}
                         >
-                            <div className="pa4 flex-none z-1 bg-gray-200">
+                            <div className="ph3 pv4 flex-none z-1 bg-gray-200 bb b-gray-300">
                                 <Link to="/" className="db mb3">
                                     <img
                                         src={thumbprintLogo}
@@ -365,18 +365,29 @@ const Container = ({ children, location, activeSection }) => {
                                             level={2}
                                             isActive={pathname.startsWith('/tokens/javascript/')}
                                         >
-                                            {map(allTokens.edges, ({ node }) => (
+                                            <SideNavGroup level={3}>
+                                                {map(allTokens.edges, ({ node }) => (
+                                                    <SideNavLink
+                                                        title={node.name}
+                                                        to={`/tokens/javascript/#${generateSlug({
+                                                            level: 'section',
+                                                            children: node.name,
+                                                        })}`}
+                                                        key={node.name}
+                                                        level={3}
+                                                    />
+                                                ))}
+                                            </SideNavGroup>
+                                            <SideNavGroup level={3}>
                                                 <SideNavLink
-                                                    title={node.name}
+                                                    title="Deprecated"
                                                     to={`/tokens/javascript/#${generateSlug({
                                                         level: 'section',
-                                                        children: node.name,
+                                                        children: 'deprecated',
                                                     })}`}
-                                                    key={node.name}
                                                     level={3}
-                                                    isActive={false}
                                                 />
-                                            ))}
+                                            </SideNavGroup>
                                         </SideNavLink>
                                     </SideNavGroup>
                                 </SideNavLink>

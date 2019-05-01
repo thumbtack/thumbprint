@@ -47,7 +47,7 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
     const getLinkClasses = hasActiveClass =>
         classNames({
             'db flex-1 black': true,
-            'pv2 ph4': level === 1,
+            'pv2 ph3': level === 1,
             'pv1 ph4': level === 2,
             'pv1 ph5': level === 3,
             b: hasActiveClass && (!children || level === 1),
