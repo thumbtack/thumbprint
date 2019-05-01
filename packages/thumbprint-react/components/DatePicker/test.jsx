@@ -211,3 +211,103 @@ describe('user is able to select a date in the past if disabled days is disabled
         expect(onChange).toHaveBeenCalledWith([selectedDate, dateFromPrevMonth]);
     });
 });
+
+describe('`onMonthChange` callback should be called on month change', () => {
+    const onChange = () => {};
+    const year = 2057;
+    const month = 9;
+    const selectedDate = new Date(year, month);
+
+    test('when next month is clicked', () => {
+        const onMonthChange = jest.fn();
+        const wrapper = mount(
+            <DatePicker value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
+        );
+
+        const nextMonthButton = wrapper.find('.DayPicker-NavButton--next');
+        nextMonthButton.simulate('click');
+
+        expect(onMonthChange).toHaveBeenCalledTimes(1);
+        const newMonth = onMonthChange.mock.calls[0][0];
+        expect(newMonth.getFullYear()).toBe(year);
+        expect(newMonth.getMonth()).toBe(month + 1);
+    });
+
+    test('when previous month is clicked', () => {
+        const onMonthChange = jest.fn();
+        const wrapper = mount(
+            <DatePicker value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
+        );
+
+        const prevMonthButton = wrapper.find('.DayPicker-NavButton--prev');
+        prevMonthButton.simulate('click');
+
+        expect(onMonthChange).toHaveBeenCalledTimes(1);
+        const newMonth = onMonthChange.mock.calls[0][0];
+        expect(newMonth.getFullYear()).toBe(year);
+        expect(newMonth.getMonth()).toBe(month - 1);
+    });
+});
+
+describe('applying themes to DatePicker day cells', () => {
+    const modifierPrefix = '.DayPicker-Day--';
+    const onChange = () => {};
+    const year = 2057;
+    const month = 8;
+    const day = 3;
+    const selectedDate = new Date(year, month, day);
+
+    const areDatesEqual = (calDate, expectedDate) =>
+        calDate.getFullYear() === expectedDate.getFullYear() &&
+        calDate.getMonth() === expectedDate.getMonth() &&
+        calDate.getDate() === expectedDate.getDate();
+
+    test('`daysThemeDotIndicator` applies modifier styles for dot indicators', () => {
+        const testDay1 = 5;
+        const testDay2 = 16;
+        const jsDate1 = new Date(year, month, testDay1);
+        const jsDate2 = new Date(year, month, testDay2);
+
+        const wrapper = mount(
+            <DatePicker
+                value={selectedDate}
+                onChange={onChange}
+                daysThemeDotIndicator={calDate =>
+                    areDatesEqual(calDate, jsDate1) || areDatesEqual(calDate, jsDate2)
+                }
+            />,
+        );
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-dot`);
+        expect(modifiedDays).toHaveLength(2);
+        expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
+        expect(modifiedDays.at(1).text()).toEqual(String(testDay2));
+    });
+
+    test('`daysThemeStrikeout` applies modifier styles for strikeout', () => {
+        const testDay1 = 2;
+        const testDay2 = 12;
+        const testDay3 = 22;
+        const jsDate1 = new Date(year, month, testDay1);
+        const jsDate2 = new Date(year, month, testDay2);
+        const jsDate3 = new Date(year, month, testDay3);
+
+        const wrapper = mount(
+            <DatePicker
+                value={selectedDate}
+                onChange={onChange}
+                daysThemeStrikeout={calDate =>
+                    areDatesEqual(calDate, jsDate1) ||
+                    areDatesEqual(calDate, jsDate2) ||
+                    areDatesEqual(calDate, jsDate3)
+                }
+            />,
+        );
+
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-strikeout`);
+        expect(modifiedDays).toHaveLength(3);
+        expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
+        expect(modifiedDays.at(1).text()).toEqual(String(testDay2));
+        expect(modifiedDays.at(2).text()).toEqual(String(testDay3));
+    });
+});
