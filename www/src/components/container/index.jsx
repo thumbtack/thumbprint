@@ -206,7 +206,7 @@ const Container = ({ children, location, activeSection }) => {
                                     to="/overview/about/"
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="About"
                                             level={2}
@@ -240,7 +240,7 @@ const Container = ({ children, location, activeSection }) => {
                                     to={allGuides.edges[0].node.path}
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         {map(allGuides.edges, ({ node }) => (
                                             <SideNavLink
                                                 title={node.context.frontmatter.title}
@@ -259,7 +259,7 @@ const Container = ({ children, location, activeSection }) => {
                                     to="/components/overview/"
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="Overview"
                                             level={2}
@@ -279,7 +279,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname === '/components/mixins/scss/'}
                                         />
                                     </SideNavGroup>
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         {map(allComponents.group, group => (
                                             <SideNavLink
                                                 title={group.fieldValue}
@@ -297,7 +297,7 @@ const Container = ({ children, location, activeSection }) => {
                                     to="/atomic/"
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="Usage"
                                             level={2}
@@ -306,8 +306,8 @@ const Container = ({ children, location, activeSection }) => {
                                         />
                                     </SideNavGroup>
 
-                                    <SideNavGroup>
-                                        {map(allAtomic.headings, ({ value }, index) => (
+                                    <SideNavGroup level={2}>
+                                        {map(allAtomic.headings, ({ value }) => (
                                             <SideNavLink
                                                 title={value}
                                                 level={2}
@@ -328,74 +328,57 @@ const Container = ({ children, location, activeSection }) => {
                                     to="/tokens/scss/"
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="SCSS"
                                             to="/tokens/scss/"
                                             level={2}
-                                            isActive={false}
+                                            isActive={pathname.startsWith('/tokens/scss/')}
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {map(allTokens.edges, ({ node }) => (
+                                                    <SideNavLink
+                                                        title={node.name}
+                                                        to={`/tokens/scss/#${generateSlug({
+                                                            level: 'section',
+                                                            children: node.name,
+                                                        })}`}
+                                                        key={node.name}
+                                                        level={3}
+                                                    />
+                                                ))}
+                                            </SideNavGroup>
+                                            <SideNavGroup level={3}>
+                                                <SideNavLink
+                                                    title="Deprecated"
+                                                    to={`/tokens/scss/#${generateSlug({
+                                                        level: 'section',
+                                                        children: 'deprecated',
+                                                    })}`}
+                                                    level={3}
+                                                />
+                                            </SideNavGroup>
+                                        </SideNavLink>
+                                        <SideNavLink
+                                            title="JavaScript"
+                                            to="/tokens/javascript/"
+                                            level={2}
+                                            isActive={pathname.startsWith('/tokens/javascript/')}
                                         >
                                             {map(allTokens.edges, ({ node }) => (
                                                 <SideNavLink
                                                     title={node.name}
-                                                    to="/tokens/scss/"
+                                                    to={`/tokens/javascript/#${generateSlug({
+                                                        level: 'section',
+                                                        children: node.name,
+                                                    })}`}
                                                     key={node.name}
                                                     level={3}
                                                     isActive={false}
                                                 />
                                             ))}
                                         </SideNavLink>
-                                        <SideNavLink
-                                            title="JavaScript"
-                                            to="/tokens/javascript/"
-                                            level={2}
-                                            isActive={false}
-                                        >
-                                            {map(allTokens.edges, ({ node }) => (
-                                                <p key={node.name}>{node.name}</p>
-                                            ))}
-                                        </SideNavLink>
-                                        <SideNavLink
-                                            title="iOS"
-                                            to="/tokens/ios/"
-                                            level={2}
-                                            isActive={false}
-                                        />
                                     </SideNavGroup>
-
-                                    {/* <SideNavGroup>
-                                        {map(allTokens.edges, ({ node }, index) => (
-                                            <SideNavLink
-
-                                            to={`/tokens/scss/#${generateSlug({
-                                                level={2}
-                                                    level: 'section',
-                                                    children: node.name,
-                                                })}`}
-                                                key={node.name}
-                                                isActive={pathname === false}
-                                            >
-                                                {node.name}
-                                            </SideNavLink>
-
-                                            level={2}
-                                        ))}
-                                    </SideNavGroup>
-                                    <SideNavGroup>
-                                        <SideNavLink
-
-                                        to={`/tokens/#${generateSlug({
-                                            level={2}
-                                                level: 'section',
-                                                children: 'deprecated',
-                                            })}`}
-                                            isActive={pathname === false}
-                                        >
-                                            Deprecated
-                                        </SideNavLink>
-
-                                        level={2}
-                                    </SideNavGroup> */}
                                 </SideNavLink>
 
                                 <SideNavLink
@@ -411,7 +394,7 @@ const Container = ({ children, location, activeSection }) => {
                                     to="/updates/notes/"
                                     level={1}
                                 >
-                                    <SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="Release Notes"
                                             level={2}

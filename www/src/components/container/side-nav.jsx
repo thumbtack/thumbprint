@@ -16,19 +16,44 @@ SideNav.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-const SideNavGroup = ({ children }) => (
-    <li className={styles.sideNavGroup}>
+const SideNavGroup = ({ children, level }) => (
+    <li
+        className={classNames({
+            [styles.sideNavGroup]: true,
+            [styles.sideNavGroupLevel2]: level === 2,
+            [styles.sideNavGroupLevel3]: level === 3,
+        })}
+    >
         <ul>{children}</ul>
     </li>
 );
 
 SideNavGroup.propTypes = {
     children: PropTypes.node.isRequired,
+    level: PropTypes.oneOf([2, 3]).isRequired,
 };
 
 const SideNavLink = ({ to, children, level, title, isActive }) => {
     const [isExpanded, setIsExpanded] = useState(isActive);
     const [isExpandButtonHovered, setIsExpandButtonHovered] = useState(false);
+
+    // Gets `color` from a path like `/tokens/#section-color`.
+    const hash = to.split('#') ? to.split('#')[1] : null;
+
+    /**
+     * This function exists to share code between the `Link` component instances when wrapped in
+     * `ScrollMarkerLink` and when used on its own.
+     */
+    const getLinkClasses = hasActiveClass =>
+        classNames({
+            'db flex-1 black': true,
+            'pv2 ph4': level === 1,
+            'pv1 ph4': level === 2,
+            'pv1 ph5': level === 3,
+            b: hasActiveClass && (!children || level === 1),
+            [styles.sideNavLinkBlueActiveIndicator]:
+                hasActiveClass && (level === 3 || (level === 2 && !children)),
+        });
 
     return (
         <Text elementName="li" size={2}>
@@ -38,21 +63,23 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
                     'hover-bg-gray-200': !isExpandButtonHovered,
                 })}
             >
-                <Link
-                    className={classNames({
-                        'db flex-1 black': true,
-                        'pv2 ph4': level === 1,
-                        'pv1 ph4': level === 2,
-                        'pv1 ph5': level === 3,
-                        b: isActive || level === 1,
-                        [styles.sideNavLinkBlueActiveIndicator]:
-                            isActive && (level === 3 || (level === 2 && !children)),
-                    })}
-                    aria-current={isActive}
-                    to={to}
-                >
-                    {title}
-                </Link>
+                {hash ? (
+                    <ScrollMarkerLink id={hash}>
+                        {({ isActive: isHashActive, onClick }) => (
+                            <Link
+                                className={getLinkClasses(isHashActive)}
+                                onClick={onClick}
+                                to={to}
+                            >
+                                {title}
+                            </Link>
+                        )}
+                    </ScrollMarkerLink>
+                ) : (
+                    <Link className={getLinkClasses(isActive)} aria-current={isActive} to={to}>
+                        {title}
+                    </Link>
+                )}
                 {children && (
                     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
                     <ClickableBox

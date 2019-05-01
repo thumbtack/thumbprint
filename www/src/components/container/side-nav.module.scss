@@ -6,17 +6,33 @@
 }
 
 .sideNavGroup:not(:last-of-type) {
-    margin-bottom: $tp-space__3;
     position: relative;
 
     &:after {
         content: '';
         position: absolute;
+        height: 1px;
+        background: $tp-color__gray-300;
+    }
+}
+
+.sideNavGroupLevel2:not(:last-of-type) {
+    margin-bottom: $tp-space__3;
+
+    &:after {
         left: $tp-space__4;
         right: $tp-space__4;
         bottom: -($tp-space__2);
-        height: 1px;
-        background: $tp-color__gray-300;
+    }
+}
+
+.sideNavGroupLevel3:not(:last-of-type) {
+    margin-bottom: $tp-space__2;
+
+    &:after {
+        left: $tp-space__5;
+        right: $tp-space__5;
+        bottom: -($tp-space__1);
     }
 }
 
