@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.6.0 - 2019-05-01
+
+### Added
+
+-   [Minor] Add `onMonthChange`, `daysThemeDotIndicator`, and `daysThemeStrikeout` props to the `DatePicker` component.
+
 ## 0.5.3 - 2019-04-09
 
 ### Added

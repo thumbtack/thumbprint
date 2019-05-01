@@ -166,6 +166,84 @@ class DatePickerExample extends React.Component {
 }
 ```
 
+### Adding a "dot" indicator with `daysThemeDotIndicator`
+
+Pass a function for this prop that returns true for any date where a dot indicator should appear.
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: new Date(),
+        };
+
+        this.onChange = this.onChange.bind(this);
+        this.isMonday = this.isMonday.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    isMonday(date) {
+        return date.getDay() === 1;
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <DatePicker
+                value={value}
+                onChange={this.onChange}
+                daysThemeDotIndicator={this.isMonday}
+            />
+        );
+    }
+}
+```
+
+### Strikeout the date with `daysThemeStrikeout`
+
+Pass a function for this prop that returns true for any date where the number should be crossed out.
+
+```jsx
+class DatePickerExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: new Date(),
+        };
+
+        this.onChange = this.onChange.bind(this);
+        this.isFriday = this.isFriday.bind(this);
+    }
+
+    onChange(newDate) {
+        this.setState({
+            value: newDate,
+        });
+    }
+
+    isFriday(date) {
+        return date.getDay() === 5;
+    }
+
+    render() {
+        const { value } = this.state;
+
+        return (
+            <DatePicker value={value} onChange={this.onChange} daysThemeStrikeout={this.isFriday} />
+        );
+    }
+}
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
