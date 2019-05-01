@@ -19,7 +19,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 // Polyfill for focus visible CSS
 // https://caniuse.com/#feat=css-focus-visible
 import 'focus-visible';
-import SideNav, { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink } from './side-nav';
+import SideNav, { SideNavLink, SideNavGroup } from './side-nav';
 import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
 import getComponentsLinkProps from './get-component-link-props';
@@ -200,189 +200,244 @@ const Container = ({ children, location, activeSection }) => {
                             </ClickableBox>
 
                             <SideNav pathName={pathname} hash={hash}>
-                                <SideNavSection
+                                <SideNavLink
                                     title="Overview"
                                     isActive={activeSection === 'Overview'}
+                                    to="/overview/about/"
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
+                                    <SideNavGroup>
+                                        <SideNavLink
+                                            title="About"
+                                            level={2}
                                             to="/overview/about/"
                                             isActive={pathname === '/overview/about/'}
-                                        >
-                                            About
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Accessibility"
+                                            level={2}
                                             to="/overview/accessibility/"
                                             isActive={pathname === '/overview/accessibility/'}
-                                        >
-                                            Accessibility
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Contributing"
+                                            level={2}
                                             to="/overview/contributing/"
                                             isActive={pathname === '/overview/contributing/'}
-                                        >
-                                            Contributing
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Developers"
+                                            level={2}
                                             to="/overview/developers/"
                                             isActive={pathname === '/overview/developers/'}
-                                        >
-                                            Developers
-                                        </SideNavSectionGroupLink>
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                        />
+                                    </SideNavGroup>
+                                </SideNavLink>
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Guidelines"
                                     isActive={activeSection === 'Guidelines'}
+                                    to={allGuides.edges[0].node.path}
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
+                                    <SideNavGroup>
                                         {map(allGuides.edges, ({ node }) => (
-                                            <SideNavSectionGroupLink
+                                            <SideNavLink
+                                                title={node.context.frontmatter.title}
+                                                level={2}
                                                 to={node.path}
                                                 key={node.path}
                                                 isActive={node.path === pathname}
-                                            >
-                                                {node.context.frontmatter.title}
-                                            </SideNavSectionGroupLink>
+                                            />
                                         ))}
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                    </SideNavGroup>
+                                </SideNavLink>
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Components"
                                     isActive={activeSection === 'Components'}
+                                    to="/components/overview/"
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
+                                    <SideNavGroup>
+                                        <SideNavLink
+                                            title="Overview"
+                                            level={2}
                                             to="/components/overview/"
                                             isActive={pathname === '/components/overview/'}
-                                        >
-                                            Overview
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Global CSS"
+                                            level={2}
                                             to="/components/global-css/scss/"
                                             isActive={pathname === '/components/global-css/scss/'}
-                                        >
-                                            Global CSS
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Mixins"
+                                            level={2}
                                             to="/components/mixins/scss/"
                                             isActive={pathname === '/components/mixins/scss/'}
-                                        >
-                                            Mixins
-                                        </SideNavSectionGroupLink>
-                                    </SideNavSectionGroup>
-                                    <SideNavSectionGroup>
+                                        />
+                                    </SideNavGroup>
+                                    <SideNavGroup>
                                         {map(allComponents.group, group => (
-                                            <SideNavSectionGroupLink
+                                            <SideNavLink
+                                                title={group.fieldValue}
+                                                level={2}
                                                 key={group.edges[0].node.path}
                                                 {...getComponentsLinkProps(group.edges, pathname)}
-                                            >
-                                                {group.fieldValue}
-                                            </SideNavSectionGroupLink>
+                                            />
                                         ))}
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                    </SideNavGroup>
+                                </SideNavLink>
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Atomic"
                                     isActive={activeSection === 'Atomic'}
+                                    to="/atomic/"
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
+                                    <SideNavGroup>
+                                        <SideNavLink
+                                            title="Usage"
+                                            level={2}
                                             to="/atomic/usage/"
                                             isActive={pathname === '/atomic/usage/'}
-                                        >
-                                            Usage
-                                        </SideNavSectionGroupLink>
-                                    </SideNavSectionGroup>
+                                        />
+                                    </SideNavGroup>
 
-                                    <SideNavSectionGroup>
+                                    <SideNavGroup>
                                         {map(allAtomic.headings, ({ value }, index) => (
-                                            <SideNavSectionGroupLink
+                                            <SideNavLink
+                                                title={value}
+                                                level={2}
                                                 to={`/atomic/#${generateSlug({
                                                     level: 'section',
                                                     children: value,
                                                 })}`}
-                                                isFirstHashLink={index === 0}
                                                 isActive={false}
                                                 key={value}
-                                            >
-                                                {value}
-                                            </SideNavSectionGroupLink>
+                                            />
                                         ))}
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                    </SideNavGroup>
+                                </SideNavLink>
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Tokens"
                                     isActive={activeSection === 'Tokens'}
+                                    to="/tokens/scss/"
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
+                                    <SideNavGroup>
+                                        <SideNavLink
+                                            title="SCSS"
+                                            to="/tokens/scss/"
+                                            level={2}
+                                            isActive={false}
+                                        >
+                                            {map(allTokens.edges, ({ node }) => (
+                                                <SideNavLink
+                                                    title={node.name}
+                                                    to="/tokens/scss/"
+                                                    key={node.name}
+                                                    level={3}
+                                                    isActive={false}
+                                                />
+                                            ))}
+                                        </SideNavLink>
+                                        <SideNavLink
+                                            title="JavaScript"
+                                            to="/tokens/javascript/"
+                                            level={2}
+                                            isActive={false}
+                                        >
+                                            {map(allTokens.edges, ({ node }) => (
+                                                <p key={node.name}>{node.name}</p>
+                                            ))}
+                                        </SideNavLink>
+                                        <SideNavLink
+                                            title="iOS"
+                                            to="/tokens/ios/"
+                                            level={2}
+                                            isActive={false}
+                                        />
+                                    </SideNavGroup>
+
+                                    {/* <SideNavGroup>
                                         {map(allTokens.edges, ({ node }, index) => (
-                                            <SideNavSectionGroupLink
-                                                to={`/tokens/scss/#${generateSlug({
+                                            <SideNavLink
+
+                                            to={`/tokens/scss/#${generateSlug({
+                                                level={2}
                                                     level: 'section',
                                                     children: node.name,
                                                 })}`}
                                                 key={node.name}
                                                 isActive={pathname === false}
-                                                isFirstHashLink={index === 0}
                                             >
                                                 {node.name}
-                                            </SideNavSectionGroupLink>
+                                            </SideNavLink>
+
+                                            level={2}
                                         ))}
-                                    </SideNavSectionGroup>
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
-                                            to={`/tokens/#${generateSlug({
+                                    </SideNavGroup>
+                                    <SideNavGroup>
+                                        <SideNavLink
+
+                                        to={`/tokens/#${generateSlug({
+                                            level={2}
                                                 level: 'section',
                                                 children: 'deprecated',
                                             })}`}
                                             isActive={pathname === false}
                                         >
                                             Deprecated
-                                        </SideNavSectionGroupLink>
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                        </SideNavLink>
 
-                                <SideNavSection
+                                        level={2}
+                                    </SideNavGroup> */}
+                                </SideNavLink>
+
+                                <SideNavLink
                                     title="Icons"
                                     to="/icons/"
                                     isActive={activeSection === 'Icons'}
+                                    level={1}
                                 />
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Updates"
                                     isActive={activeSection === 'Updates'}
+                                    to="/updates/notes/"
+                                    level={1}
                                 >
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
-                                            to="/updates/graveyard/"
-                                            isActive={pathname === '/updates/graveyard/'}
-                                        >
-                                            Graveyard
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                    <SideNavGroup>
+                                        <SideNavLink
+                                            title="Release Notes"
+                                            level={2}
                                             to="/updates/notes/"
                                             isActive={pathname.startsWith('/updates/notes/')}
-                                        >
-                                            Release Notes
-                                        </SideNavSectionGroupLink>
-                                        <SideNavSectionGroupLink
+                                        />
+                                        <SideNavLink
+                                            title="Graveyard"
+                                            level={2}
+                                            to="/updates/graveyard/"
+                                            isActive={pathname === '/updates/graveyard/'}
+                                        />
+                                        <SideNavLink
+                                            title="Roadmap"
+                                            level={2}
                                             to="/updates/roadmap/"
                                             isActive={pathname === '/updates/roadmap/'}
-                                        >
-                                            Roadmap
-                                        </SideNavSectionGroupLink>
-                                    </SideNavSectionGroup>
-                                </SideNavSection>
+                                        />
+                                    </SideNavGroup>
+                                </SideNavLink>
 
-                                <SideNavSection
+                                <SideNavLink
                                     title="Help"
                                     to="/help/"
                                     isActive={activeSection === 'Help'}
+                                    level={1}
                                 />
                             </SideNav>
                         </div>
