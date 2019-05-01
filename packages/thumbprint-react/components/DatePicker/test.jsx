@@ -213,7 +213,7 @@ describe('user is able to select a date in the past if disabled days is disabled
 });
 
 describe('`onMonthChange` callback should be called on month change', () => {
-    const onChange = jest.fn();
+    const onChange = () => {};
     const year = 2057;
     const month = 9;
     const selectedDate = new Date(year, month);
@@ -251,7 +251,7 @@ describe('`onMonthChange` callback should be called on month change', () => {
 
 describe('applying themes to DatePicker day cells', () => {
     const modifierPrefix = '.DayPicker-Day--';
-    const onChange = jest.fn();
+    const onChange = () => {};
     const year = 2057;
     const month = 8;
     const day = 3;
