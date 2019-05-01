@@ -257,7 +257,7 @@ describe('applying themes to DatePicker day cells', () => {
     const day = 3;
     const selectedDate = new Date(year, month, day);
 
-    const isMatchingDate = (calDate, expectedDate) =>
+    const areDatesEqual = (calDate, expectedDate) =>
         calDate.getFullYear() === expectedDate.getFullYear() &&
         calDate.getMonth() === expectedDate.getMonth() &&
         calDate.getDate() === expectedDate.getDate();
@@ -267,13 +267,14 @@ describe('applying themes to DatePicker day cells', () => {
         const testDay2 = 16;
         const jsDate1 = new Date(year, month, testDay1);
         const jsDate2 = new Date(year, month, testDay2);
-        const themeFunction = calDate =>
-            isMatchingDate(calDate, jsDate1) || isMatchingDate(calDate, jsDate2);
+
         const wrapper = mount(
             <DatePicker
                 value={selectedDate}
                 onChange={onChange}
-                daysThemeDotIndicator={themeFunction}
+                daysThemeDotIndicator={calDate =>
+                    areDatesEqual(calDate, jsDate1) || areDatesEqual(calDate, jsDate2)
+                }
             />,
         );
 
@@ -290,15 +291,16 @@ describe('applying themes to DatePicker day cells', () => {
         const jsDate1 = new Date(year, month, testDay1);
         const jsDate2 = new Date(year, month, testDay2);
         const jsDate3 = new Date(year, month, testDay3);
-        const themeFunction = calDate =>
-            isMatchingDate(calDate, jsDate1) ||
-            isMatchingDate(calDate, jsDate2) ||
-            isMatchingDate(calDate, jsDate3);
+
         const wrapper = mount(
             <DatePicker
                 value={selectedDate}
                 onChange={onChange}
-                daysThemeStrikeout={themeFunction}
+                daysThemeStrikeout={calDate =>
+                    areDatesEqual(calDate, jsDate1) ||
+                    areDatesEqual(calDate, jsDate2) ||
+                    areDatesEqual(calDate, jsDate3)
+                }
             />,
         );
 
