@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
@@ -246,7 +246,10 @@ const getSectionByPathname = pathname => {
 const MDX = props => {
     const { children, location, pageContext } = props;
 
-    const isComponentPage = location.pathname.startsWith('/components/');
+    // Add the platform name to the page title when on a page within `components/` that has a
+    // platform.
+    const isComponentPage =
+        location.pathname.startsWith('/components/') && getPlatformByPathname(location.pathname);
 
     const pageTitle = isComponentPage ? (
         <span>

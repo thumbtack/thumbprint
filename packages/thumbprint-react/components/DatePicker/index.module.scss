@@ -170,3 +170,27 @@
 .root :global(.DayPicker-Weekday) abbr {
     text-decoration: none;
 }
+
+.root :global(.DayPicker-Day--theme-dot:not(.DayPicker-Day--outside)) {
+    position: relative;
+
+    &::after {
+        content: '\00B7';
+        display: inline-block;
+        color: $tp-color__blue;
+        font-size: 48px;
+        position: absolute;
+        right: 13px;
+        top: -6px;
+    }
+
+    @media screen and (max-width: 350px) {
+        &::after {
+            right: 9px;
+        }
+    }
+}
+
+.root :global(.DayPicker-Day--theme-strikeout) {
+    text-decoration: line-through;
+}
