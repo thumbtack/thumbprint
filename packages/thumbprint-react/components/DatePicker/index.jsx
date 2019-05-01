@@ -145,7 +145,7 @@ DatePicker.propTypes = {
      */
     onMonthChange: PropTypes.func,
     /**
-     * Applies a blue dot indicator below the numeric day in the calendar's day cell if the 
+     * Applies a blue dot indicator below the numeric day in the calendar's day cell if the
      * function returns `true` for a given JavaScript `Date`.
      */
     daysThemeDotIndicator: PropTypes.func,
