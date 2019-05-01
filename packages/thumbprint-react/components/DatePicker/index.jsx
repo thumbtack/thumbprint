@@ -140,18 +140,18 @@ DatePicker.propTypes = {
     lastMonth: PropTypes.instanceOf(Date),
     /**
      * Callback that is triggered when the user navigates to a different month using the navigation
-     * buttons or via keyboard. The function receives a single Javascript Date object indicating
+     * buttons or keyboard. The function receives a single JavaScript `Date` object indicating
      * the new on-screen month.
      */
     onMonthChange: PropTypes.func,
     /**
-     * Applies a dot indicator below the numeric day in the calendar's day cell if the function
-     * returns true for a given Javascript Date,
+     * Applies a blue dot indicator below the numeric day in the calendar's day cell if the 
+     * function returns `true` for a given JavaScript `Date`.
      */
     daysThemeDotIndicator: PropTypes.func,
     /**
      * Applies a strikeout treatment on the numeric day in the calendar's day cell if the function
-     * returns true for a given Javascript Date,
+     * returns `true` for a given JavaScript `Date`.
      */
     daysThemeStrikeout: PropTypes.func,
 };
