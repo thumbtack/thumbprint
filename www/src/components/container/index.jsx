@@ -74,7 +74,11 @@ const Container = ({ children, location, activeSection }) => {
                 filter: {
                     path: {
                         glob: "/components/*/*/"
-                        nin: ["/components/global-css/scss/", "/components/mixins/scss/"]
+                        nin: [
+                            "/components/overview/"
+                            "/components/global-css/scss/"
+                            "/components/mixins/scss/"
+                        ]
                     }
                     context: { frontmatter: { unlisted: { ne: true } } }
                 }
@@ -250,6 +254,12 @@ const Container = ({ children, location, activeSection }) => {
                                     isActive={activeSection === 'Components'}
                                 >
                                     <SideNavSectionGroup>
+                                        <SideNavSectionGroupLink
+                                            to="/components/overview/"
+                                            isActive={pathname === '/components/overview/'}
+                                        >
+                                            Overview
+                                        </SideNavSectionGroupLink>
                                         <SideNavSectionGroupLink
                                             to="/components/global-css/scss/"
                                             isActive={pathname === '/components/global-css/scss/'}
