@@ -9,7 +9,9 @@ export { default as FormNote } from './components/FormNote/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index.jsx';
 export {
     SmartImage,
+    SmarterImage,
     LazyImage,
+    ImageServiceProvider,
     ResponsiveImage,
     getImageServiceSrc,
     getImageServiceSrcSet,

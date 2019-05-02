@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Badge from './subcomponents/badge.jsx';
+import { SmarterImage } from '../Image';
 import styles from './index.module.scss';
 
 const CheckIcon = () => (
@@ -33,55 +34,38 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-class EntityAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
+const EntityAvatar = props => {
+    const { imageUrl, size, initial, fullName } = props;
 
-    render() {
-        const { imageUrl, size, initial, fullName } = this.props;
-
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootSmall]: size === 'small',
-                    [styles.rootMedium]: size === 'medium',
-                    [styles.rootLarge]: size === 'large',
-                    [styles.rootXlarge]: size === 'xlarge',
-                })}
-            >
-                {imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
-                        data-src={imageUrl}
-                        alt={fullName && `Avatar for ${fullName}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    >
-                        {initial}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+        >
+            {imageUrl ? (
+                <SmarterImage
+                    src={imageUrl}
+                    className={`${styles.baseAvatar} ${styles.squareAvatar}`}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    aspectRatio={1 / 1}
+                    objectFit="cover"
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initial}
+                </span>
+            )}
+        </div>
+    );
+};
 
 EntityAvatar.propTypes = {
     /**
@@ -110,55 +94,39 @@ EntityAvatar.defaultProps = {
     size: 'medium',
 };
 
-export default class Avatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
+export default function Avatar(props) {
+    const { size, fullName, imageUrl, initials } = props;
 
-    render() {
-        const { props } = this;
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: props.size === 'xsmall',
-                    [styles.rootSmall]: props.size === 'small',
-                    [styles.rootMedium]: props.size === 'medium',
-                    [styles.rootLarge]: props.size === 'large',
-                    [styles.rootXlarge]: props.size === 'xlarge',
-                })}
-            >
-                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-                {props.imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
-                        data-src={props.imageUrl}
-                        alt={props.fullName && `Avatar for ${props.fullName}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    >
-                        {props.initials}
-                    </span>
-                )}
-            </div>
-        );
-    }
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+        >
+            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+            {imageUrl ? (
+                <SmarterImage
+                    src={imageUrl}
+                    className={`${styles.baseAvatar} ${styles.circleAvatar}`}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    aspectRatio={1 / 1}
+                    objectFit="cover"
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initials}
+                </span>
+            )}
+        </div>
+    );
 }
 
 Avatar.propTypes = {
