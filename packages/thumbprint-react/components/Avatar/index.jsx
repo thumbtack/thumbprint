@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Badge from './subcomponents/badge.jsx';
-import { SmarterImage } from '../Image';
+import { SmarterImage } from '../Image/index.jsx';
 import styles from './index.module.scss';
 
 const CheckIcon = () => (
@@ -53,7 +53,6 @@ const EntityAvatar = props => {
                     alt={fullName && `Avatar for ${fullName}`}
                     title={fullName && `Avatar for ${fullName}`}
                     aspectRatio={1 / 1}
-                    objectFit="cover"
                 />
             ) : (
                 <span
@@ -107,7 +106,6 @@ export default function Avatar(props) {
                 [styles.rootXlarge]: size === 'xlarge',
             })}
         >
-            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
             {imageUrl ? (
                 <SmarterImage
                     src={imageUrl}
@@ -115,7 +113,6 @@ export default function Avatar(props) {
                     alt={fullName && `Avatar for ${fullName}`}
                     title={fullName && `Avatar for ${fullName}`}
                     aspectRatio={1 / 1}
-                    objectFit="cover"
                 />
             ) : (
                 <span
@@ -125,6 +122,7 @@ export default function Avatar(props) {
                     {initials}
                 </span>
             )}
+            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
         </div>
     );
 }

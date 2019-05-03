@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SmarterImage } from '../Image';
+import { SmarterImage } from '../Image/index.jsx';
 import styles from './index.module.scss';
 
-const ServiceCardImage = ({ url, alt }) => (
+const ServiceCardImage = ({ url, sources, alt }) => (
     <SmarterImage
         src={url}
+        sources={sources}
         className={styles.image}
         aspectRatio={8 / 5}
-        objectFit="cover"
         alt={alt}
     />
 );
