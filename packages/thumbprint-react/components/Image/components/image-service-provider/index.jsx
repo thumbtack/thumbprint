@@ -1,3 +1,5 @@
+import { useState, useCallback } from 'react';
+
 const getImageServiceSrc = ({ id, format, width, aspectRatio }) => {
     if (aspectRatio) {
         return `https://d1vg1gqh4nkuns.cloudfront.net/i/${id}/width/${width}/aspect/${aspectRatio}.${format}`;
@@ -20,8 +22,9 @@ const getImageServiceSources = ({ id, format, aspectRatio }) => {
     const formatsToLoad = [format];
 
     if (format === 'jpeg') {
-        // TODO confirm w/ if we want pngs to also include webp
-        formatsToLoad.push('webp');
+        // `webp` should go first since the order of `sources` determines what
+        // the browser tries to load.
+        formatsToLoad.unshift('webp');
     }
 
     formatsToLoad.forEach(currentFormat => {
@@ -44,16 +47,30 @@ const getImageServiceSources = ({ id, format, aspectRatio }) => {
     return sources;
 };
 
+const getNextValidWidth = containerWidth => {
+    let i = 0;
+
+    while (sizes[i] < containerWidth) {
+        i += 1;
+    }
+
+    return sizes[i];
+};
+
 const ImageServiceProvider = ({ id, children, aspectRatio, format }) => {
     const sources = getImageServiceSources({ id, format, aspectRatio });
+    const [width, setWidth] = useState(0);
 
-    // We use the largest size by default so that the `noscript` includes the highest resolution
-    // image for Google to crawl. Users in browsers that support responsive images will always get
-    // the correct size for their viewport and device pixel density.
-    const largestSize = sizes[sizes.length - 1];
-    const src = getImageServiceSrc({ id, width: largestSize, format, aspectRatio });
+    const ref = useCallback(node => {
+        if (node !== null) {
+            setWidth(node.clientWidth);
+        }
+    }, []);
 
-    return children({ sources, src, aspectRatio: validRatiosToFraction[aspectRatioProp] });
+    const widthToUseForSrc = width ? getNextValidWidth(width) : sizes[0];
+    const src = getImageServiceSrc({ id, width: widthToUseForSrc, format, aspectRatio });
+
+    return children({ sources, src, aspectRatio: validRatiosToFraction[aspectRatio], ref });
 };
 
 ImageServiceProvider.defaultProps = {

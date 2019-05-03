@@ -13,7 +13,9 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ### Extra Large
 
 ```jsx
-<Avatar imageUrl="https://randomuser.me/api/portraits/women/74.jpg" size="xlarge" />
+<ImageServiceProvider id="345363404503711769" aspectRatio="1-1">
+    {({ src, sources }) => <Avatar imageUrl={src} sources={sources} size="xlarge" />}
+</ImageServiceProvider>
 ```
 
 ### Large

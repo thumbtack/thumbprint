@@ -35,7 +35,7 @@ const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) 
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
 const EntityAvatar = props => {
-    const { imageUrl, size, initial, fullName } = props;
+    const { imageUrl, size, sources, initial, fullName } = props;
 
     return (
         <div
@@ -49,6 +49,7 @@ const EntityAvatar = props => {
             {imageUrl ? (
                 <SmarterImage
                     src={imageUrl}
+                    sources={sources}
                     className={`${styles.baseAvatar} ${styles.squareAvatar}`}
                     alt={fullName && `Avatar for ${fullName}`}
                     title={fullName && `Avatar for ${fullName}`}
@@ -94,7 +95,7 @@ EntityAvatar.defaultProps = {
 };
 
 export default function Avatar(props) {
-    const { size, fullName, imageUrl, initials } = props;
+    const { size, fullName, sources, imageUrl, initials } = props;
 
     return (
         <div
@@ -109,6 +110,7 @@ export default function Avatar(props) {
             {imageUrl ? (
                 <SmarterImage
                     src={imageUrl}
+                    sources={sources}
                     className={`${styles.baseAvatar} ${styles.circleAvatar}`}
                     alt={fullName && `Avatar for ${fullName}`}
                     title={fullName && `Avatar for ${fullName}`}

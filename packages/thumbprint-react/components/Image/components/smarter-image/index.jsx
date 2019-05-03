@@ -1,12 +1,12 @@
-import React, { useState, forwardRef, useLayoutEffect, useRef, useEffect } from 'react';
+import React, { useState, forwardRef, useLayoutEffect, useEffect } from 'react';
 import { Waypoint } from 'react-waypoint';
 import warning from 'warning';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const LazyImage = ({ children, src: srcProp, sources: sourcesProp, onEnter, alt, ...rest }) => {
     const [shouldLoadImage, setShouldLoadImage] = useState(false);
 
-    const src = shouldLoadImage ? srcProp : src;
+    const src = shouldLoadImage ? srcProp : undefined;
 
     const sources = shouldLoadImage ? sourcesProp : [];
 
@@ -47,13 +47,14 @@ const Picture = forwardRef((props, ref) => {
     );
 });
 
-const shouldPolyfillObjectFit = () =>
-    document &&
-    document.documentElement &&
-    document.documentElement.style &&
-    'objectFit' in document.documentElement.style === true;
+// const shouldPolyfillObjectFit = () =>
+//     typeof window !== 'undefined' &&
+//     document.documentElement &&
+//     document.documentElement.style &&
+//     'objectFit' in document.documentElement.style === true;
 
-const SmarterImage = props => {
+const SmarterImage = forwardRef((props, outerRef) => {
+    return <div>hi</div>;
     const {
         src,
         sources,
@@ -67,20 +68,28 @@ const SmarterImage = props => {
         alt,
         ...rest
     } = props;
+
+    console.log('***********');
+    console.log('shouldPolyfillObjectFit', shouldPolyfillObjectFit());
+
     const [sizes, setSizes] = useState('0px');
     const [hasImageStartedLoading, setHasImageStartedLoading] = useState(disableLazyLoading);
     const shouldObjectFit = height || aspectRatio;
-
-    const outerRef = useRef();
+    const [node, setRef] = useState(null);
 
     warning(
         (!height && !aspectRatio) || (height && !aspectRatio) || (!height && aspectRatio),
         'You can pass either a `height` or `aspectRatio` to the `SmarterImage` component, but not both.',
     );
 
-    useEffect(() => {
-        setSizes(`${outerRef.current.clientWidth}px`);
-    }, []);
+    useEffect(
+        () => {
+            if (node) {
+                setSizes(`${node.clientWidth}px`);
+            }
+        },
+        [node],
+    );
 
     useLayoutEffect(
         () => {
@@ -88,10 +97,10 @@ const SmarterImage = props => {
             // using a `height` or `aspectRatio`. The `hasImageStartedLoading` variable ensures
             // that we don't try to polyfill the image before the `src` exists. This can happy
             // when we lazy-load.
-            if (shouldObjectFit && hasImageStartedLoading && shouldPolyfillObjectFit()) {
+            if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
                 // TODO move the object fit support outside and don't add the weird font family thing in non IE
                 import('object-fit-images').then(({ default: ObjectFitImages }) =>
-                    ObjectFitImages(outerRef.current.querySelector('img')),
+                    ObjectFitImages(node.querySelector('img')),
                 );
             }
         },
@@ -168,24 +177,74 @@ const SmarterImage = props => {
     }
 
     return (
-        <div {...containerProps} ref={outerRef}>
+        <div
+            {...containerProps}
+            ref={el => {
+                setRef(el);
+
+                if (outerRef) {
+                    outerRef(el);
+                }
+            }}
+        >
             {picture}
         </div>
     );
-};
+});
 
-// SmarterImage.propTypes = {
-//     height: PropTypes.string,
-//     aspectRatio: PropTypes.number,
-//     objectFit: PropTypes.oneOf(['cover', 'contain']),
-//     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
-// };
+SmarterImage.propTypes = {
+    /**
+     * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
+     * users on browsers that don't support responsive images. If `sources` is not provided, this
+     * image will be lazy-loaded unless `disableLazyLoading` is `true`.
+     */
+    src: PropTypes.string.isRequired,
+    /**
+     * Allows the browser to choose the best file format and image size based on the device screen
+     * density and the width of the rendered image.
+     */
+    sources: PropTypes.arrayOf(
+        PropTypes.shape({
+            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
+                .isRequired,
+            srcSet: PropTypes.string.isRequired,
+        }),
+    ),
+    alt: PropTypes.string,
+    /**
+     * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
+     * used to control how the image is cropped.
+     */
+    height: PropTypes.string,
+    /**
+     * Crops the image to a specific aspect ratio and creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/)
+     * for the image. The placeholder prevents the browser scroll from jumping when the image is
+     * lazy-loaded.
+     */
+    aspectRatio: PropTypes.number,
+    /**
+     * Provides control over how an image should be resized to fit the container. This controls the
+     * `object-fit` CSS property. It is only useful if `height` or `aspectRatio` are used to
+     * "crop" an image.
+     */
+    objectFit: PropTypes.oneOf(['cover', 'contain']),
+    /**
+     * Provides control over how an image aligned in the container. This controls the
+     * `object-position` CSS property. It is only useful if `height` or `aspectRatio` are used to
+     * "crop" an image.
+     */
+    objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
+    disableLazyLoading: PropTypes.bool,
+};
 
 SmarterImage.defaultProps = {
     sources: [],
     alt: '',
+    height: undefined,
+    aspectRatio: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
+    disableLazyLoading: false,
 };
 
 export default SmarterImage;

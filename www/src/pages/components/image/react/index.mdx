@@ -12,13 +12,14 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ```jsx
 <ImageServiceProvider id="356206765797793818" aspectRatio="1-1">
-    {({ src, sources, aspectRatio }) => (
+    {({ src, sources, aspectRatio, ref }) => (
         <SmarterImage
             src={src}
             sources={sources}
             aspectRatio={aspectRatio}
             style={{ border: '10px solid' }}
             className="b-gray"
+            ref={ref}
         />
     )}
 </ImageServiceProvider>
