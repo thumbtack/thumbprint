@@ -26,8 +26,7 @@ const LazyImage = ({ children, src: srcProp, sources: sourcesProp, onEnter, alt,
 
             {srcProp && (
                 <noscript>
-                    {/* TODO Should we make src prop required? */}
-                    <img src={srcProp} alt={alt} />
+                    <Picture src={srcProp} sources={sourcesProp} alt={alt} />
                 </noscript>
             )}
         </>
@@ -47,11 +46,11 @@ const Picture = forwardRef((props, ref) => {
     );
 });
 
-// const shouldPolyfillObjectFit = () =>
-//     typeof window !== 'undefined' &&
-//     document.documentElement &&
-//     document.documentElement.style &&
-//     'objectFit' in document.documentElement.style === true;
+const shouldPolyfillObjectFit = () =>
+    typeof window !== 'undefined' &&
+    document.documentElement &&
+    document.documentElement.style &&
+    'objectFit' in document.documentElement.style === true;
 
 const SmarterImage = forwardRef((props, outerRef) => {
     const {
@@ -87,21 +86,21 @@ const SmarterImage = forwardRef((props, outerRef) => {
         [node],
     );
 
-    // useEffect(
-    //     () => {
-    //         // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
-    //         // using a `height` or `aspectRatio`. The `hasImageStartedLoading` variable ensures
-    //         // that we don't try to polyfill the image before the `src` exists. This can happy
-    //         // when we lazy-load.
-    //         if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
-    //             // TODO move the object fit support outside and don't add the weird font family thing in non IE
-    //             import('object-fit-images').then(({ default: ObjectFitImages }) =>
-    //                 ObjectFitImages(node.querySelector('img')),
-    //             );
-    //         }
-    //     },
-    //     [hasImageStartedLoading],
-    // );
+    useEffect(
+        () => {
+            // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
+            // using a `height` or `aspectRatio`. The `hasImageStartedLoading` variable ensures
+            // that we don't try to polyfill the image before the `src` exists. This can happy
+            // when we lazy-load.
+            if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
+                // TODO move the object fit support outside and don't add the weird font family thing in non IE
+                import('object-fit-images').then(({ default: ObjectFitImages }) =>
+                    ObjectFitImages(node.querySelector('img')),
+                );
+            }
+        },
+        [hasImageStartedLoading],
+    );
 
     let picture;
 
@@ -122,10 +121,10 @@ const SmarterImage = forwardRef((props, outerRef) => {
             objectPosition,
         };
 
-        // if (shouldPolyfillObjectFit()) {
-        //     // Weird, but this is how the polyfill knows what to do with the image in IE.
-        //     pictureProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
-        // }
+        if (shouldPolyfillObjectFit()) {
+            // Weird, but this is how the polyfill knows what to do with the image in IE.
+            pictureProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
+        }
     }
 
     if (height) {

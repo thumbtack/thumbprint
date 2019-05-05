@@ -30,6 +30,7 @@ exports.sourceNodes = ({ actions }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
+            symlinks: false,
             modules: [path.resolve(__dirname, 'src'), 'node_modules'],
             alias: {
                 // Use Thumbprint React and SCSS source files when `import`'ing
