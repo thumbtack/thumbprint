@@ -8598,6 +8598,11 @@ interpret@^0.6.4:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-0.6.6.tgz#fecd7a18e7ce5ca6abfb953e1f86213a49f1625b"
 
+intersection-observer@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.6.0.tgz#d64aae04211b4cec051537168f5fa670a4acc770"
+  integrity sha512-WUVAqGJr08yh73XKe1JhylQ9BiBIytrkt8SH5Knu7Uy44ij5cICi6PbVLIbV/D2eIx9LJVkGBo9WF80R4VXJ+w==
+
 into-stream@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6"
@@ -13348,6 +13353,14 @@ react-hot-loader@^4.6.2:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-intersection-observer@^8.23.0:
+  version "8.23.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.23.0.tgz#1533aaf39cc70300ff8ca37e6551d2d68a589cd0"
+  integrity sha512-kHXfxhGKvVDNkrvmh9CKCnAWvJBigyB7oSDzMXL54weFDwwI4WfTr58YauZ0RRPkGzoD/hYEuzfS1wipXn23fA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    invariant "^2.2.4"
+
 react-is@^16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
@@ -14488,6 +14501,11 @@ scroll-behavior@^0.9.9:
   dependencies:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
+
+scrollparent@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/scrollparent/-/scrollparent-2.0.1.tgz#715d5b9cc57760fb22bdccc3befb5bfe06b1a317"
+  integrity sha1-cV1bnMV3YPsivczDvvtb/gaxoxc=
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"

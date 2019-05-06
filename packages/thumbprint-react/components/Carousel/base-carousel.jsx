@@ -97,6 +97,7 @@ class BaseCarousel extends React.Component {
                         transitionProperty: 'transform',
                         transitionDuration: isAnimating && `${animationDuration}ms`,
                         width: `calc(100% + ${spacing})`,
+                        overflowX: 'auto',
                     }}
                 >
                     {React.Children.map(children, (child, i) => (

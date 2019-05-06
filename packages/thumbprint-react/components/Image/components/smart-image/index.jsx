@@ -1,28 +1,60 @@
 import React, { useState, forwardRef, useEffect } from 'react';
-import { Waypoint } from 'react-waypoint';
+import { InView } from 'react-intersection-observer';
 import warning from 'warning';
 import PropTypes from 'prop-types';
+import scrollparent from 'scrollparent';
 
-const LazyImage = ({ children, src: srcProp, sources: sourcesProp, onEnter, alt, ...rest }) => {
+const canUseDOM = !!(
+    typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement
+);
+
+const LazyImage = ({
+    children,
+    src: srcProp,
+    sources: sourcesProp,
+    root,
+    onEnter,
+    alt,
+    ...rest
+}) => {
     const [shouldLoadImage, setShouldLoadImage] = useState(false);
 
-    const src = shouldLoadImage ? srcProp : undefined;
+    // We track this as state because the polyfill is loaded asynchronously in browsers that need
+    // it. Storing it in state allows us to trigger a re-render once the polyfill is loaded.
+    const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(
+        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
+    );
 
+    // Loads the polyfill and indicates the browser now supports Intersection Observer.
+    if (canUseDOM && !isIntersectionObserverSupported) {
+        import('intersection-observer').then(() => {
+            setIsIntersectionObserverSupported(true);
+        });
+    }
+
+    const src = shouldLoadImage ? srcProp : undefined;
     const sources = shouldLoadImage ? sourcesProp : [];
 
     return (
         <>
-            <Waypoint
-                onEnter={() => {
-                    setShouldLoadImage(true);
-                    onEnter(true);
-                }}
-                // Start loading slightly before the user scrolls to the image
-                topOffset={-100}
-                bottomOffset={-100}
-            >
-                {children({ src, sources, alt, ...rest })}
-            </Waypoint>
+            {isIntersectionObserverSupported && (
+                <InView
+                    threshold={0}
+                    root={root}
+                    rootMargin="100px"
+                    onChange={inView => {
+                        console.log({ inView });
+                        if (inView) {
+                            setShouldLoadImage(true);
+                            onEnter(true);
+                        }
+                    }}
+                >
+                    {({ ref }) => children({ src, sources, alt, ref, ...rest })}
+                </InView>
+            )}
 
             {srcProp && (
                 <noscript>
@@ -47,7 +79,7 @@ const Picture = forwardRef((props, ref) => {
 });
 
 const shouldPolyfillObjectFit = () =>
-    typeof window !== 'undefined' &&
+    canUseDOM &&
     document.documentElement &&
     document.documentElement.style &&
     'objectFit' in document.documentElement.style === true;
@@ -94,12 +126,12 @@ const SmartImage = forwardRef((props, outerRef) => {
             // when we lazy-load.
             if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
                 // TODO move the object fit support outside and don't add the weird font family thing in non IE
-                import('object-fit-images').then(({ default: ObjectFitImages }) =>
-                    ObjectFitImages(node.querySelector('img')),
-                );
+                import('object-fit-images').then(({ default: ObjectFitImages }) => {
+                    ObjectFitImages(node.querySelector('img'));
+                });
             }
         },
-        [hasImageStartedLoading],
+        [shouldObjectFit, hasImageStartedLoading],
     );
 
     let picture;
@@ -109,10 +141,17 @@ const SmartImage = forwardRef((props, outerRef) => {
         sources,
         sizes,
         alt,
-        style: { width: '100%', display: 'block' },
+        style: { width: '100%', height: '100%', display: 'block' },
     };
 
-    const containerProps = { ...rest, style };
+    const containerProps = {
+        ...rest,
+        style: {
+            ...style,
+            // Allows the container to behave like an image would.
+            overflow: 'hidden',
+        },
+    };
 
     if (shouldObjectFit) {
         pictureProps.style = {
@@ -159,9 +198,15 @@ const SmartImage = forwardRef((props, outerRef) => {
     if (disableLazyLoading) {
         picture = <Picture {...pictureProps} />;
     } else {
+        const parent = canUseDOM && scrollparent(node);
+        // If `scrollparent` doesn't find a custom scroll parent, then we just send `undefined` so
+        // that Intersection Observer just uses the default `window`.
+        const root = parent && parent.nodeName === 'HTML' ? null : parent;
+
         picture = (
             <LazyImage
                 {...pictureProps}
+                root={root}
                 onEnter={() => {
                     setHasImageStartedLoading(true);
                 }}
