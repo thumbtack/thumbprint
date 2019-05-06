@@ -30,6 +30,13 @@ exports.sourceNodes = ({ actions }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
+            // This prevents Webpack from following symlinks in production.
+            // It's a workaround for a bug that is popping up in our
+            // production build in IE 11. This should be removed when we
+            // eventually drop support for IE 11 or something changes in
+            // Webpack or Gatsby that makes us not need this line.
+            // https://github.com/thumbtack/thumbprint/issues/230
+            symlinks: process.env.NODE_ENV !== 'production',
             modules: [path.resolve(__dirname, 'src'), 'node_modules'],
             alias: {
                 // Use Thumbprint React and SCSS source files when `import`'ing
