@@ -8,12 +8,12 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## `SmarterImage`
+## `SmartImage`
 
 ```jsx
 <ImageServiceProvider id="356206765797793818" aspectRatio="1-1">
     {({ src, sources, aspectRatio, ref }) => (
-        <SmarterImage
+        <SmartImage
             src={src}
             sources={sources}
             aspectRatio={aspectRatio}
@@ -29,7 +29,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="356301205135450141" format="png">
     {({ src, sources }) => (
-        <SmarterImage
+        <SmartImage
             src={src}
             sources={sources}
             style={{ border: '10px solid' }}
@@ -49,7 +49,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <!--
 ```jsx
-<SmarterImage
+<SmartImage
     sources={[
         {
             type: 'image/webp',
@@ -74,7 +74,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ``` -->
 
 <!-- ```jsx
-<SmarterImage
+<SmartImage
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.webp"
     aspectRatio={627 / 418}
     style={{ border: '10px solid' }}

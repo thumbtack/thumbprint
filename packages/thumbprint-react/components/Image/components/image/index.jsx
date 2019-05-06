@@ -52,7 +52,7 @@ const shouldPolyfillObjectFit = () =>
     document.documentElement.style &&
     'objectFit' in document.documentElement.style === true;
 
-const SmarterImage = forwardRef((props, outerRef) => {
+const SmartImage = forwardRef((props, outerRef) => {
     const {
         src,
         sources,
@@ -74,7 +74,7 @@ const SmarterImage = forwardRef((props, outerRef) => {
 
     warning(
         (!height && !aspectRatio) || (height && !aspectRatio) || (!height && aspectRatio),
-        'You can pass either a `height` or `aspectRatio` to the `SmarterImage` component, but not both.',
+        'You can pass either a `height` or `aspectRatio` to the `SmartImage` component, but not both.',
     );
 
     useEffect(
@@ -187,7 +187,7 @@ const SmarterImage = forwardRef((props, outerRef) => {
     );
 });
 
-SmarterImage.propTypes = {
+SmartImage.propTypes = {
     /**
      * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
      * users on browsers that don't support responsive images. If `sources` is not provided, this
@@ -229,10 +229,13 @@ SmarterImage.propTypes = {
      * "crop" an image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
+    /**
+     * Opt-out of lazy-loading the image.
+     */
     disableLazyLoading: PropTypes.bool,
 };
 
-SmarterImage.defaultProps = {
+SmartImage.defaultProps = {
     sources: [],
     alt: '',
     height: undefined,
@@ -242,4 +245,4 @@ SmarterImage.defaultProps = {
     disableLazyLoading: false,
 };
 
-export default SmarterImage;
+export default SmartImage;
