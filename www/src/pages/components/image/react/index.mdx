@@ -25,6 +25,37 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </ImageServiceProvider>
 ```
 
+```jsx
+<ImageServiceProvider id="302055784058904755">
+    {({ src, sources, ref }) => (
+        <SmartImage src={src} sources={sources} aspectRatio="780:406" ref={ref} />
+    )}
+</ImageServiceProvider>
+```
+
+```jsx
+<ImageServiceProvider id="302055784058904755">
+    {({ src, sources, ref }) => (
+        <SmartImage src={src} sources={sources} height="200px" objectPosition="top" ref={ref} />
+    )}
+</ImageServiceProvider>
+```
+
+```jsx
+<ImageServiceProvider id="356301205135450141" format="png">
+    {({ src, sources }) => (
+        <SmartImage
+            src={src}
+            sources={sources}
+            style={{ border: '10px solid' }}
+            aspectRatio="768:432"
+            objectPosition="right"
+            className="b-gray mh6"
+        />
+    )}
+</ImageServiceProvider>
+```
+
 <!--
 ```jsx
 <ImageServiceProvider id="356301205135450141" format="png">
