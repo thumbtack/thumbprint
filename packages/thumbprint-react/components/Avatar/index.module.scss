@@ -50,8 +50,14 @@
 
 .circleAvatar {
     border-radius: 50%;
+    // Fix for weird Safari bug.
+    // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .squareAvatar {
     border-radius: 4px;
+    // Fix for weird Safari bug.
+    // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }

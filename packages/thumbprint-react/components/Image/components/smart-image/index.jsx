@@ -30,7 +30,6 @@ const LazyImage = ({
     // Loads the polyfill and indicates the browser now supports Intersection Observer.
     if (canUseDOM && !isIntersectionObserverSupported) {
         import('intersection-observer').then(() => {
-            IntersectionObserver.prototype.POLL_INTERVAL = 100;
             setIsIntersectionObserverSupported(true);
         });
     }
@@ -46,7 +45,6 @@ const LazyImage = ({
                     root={root}
                     rootMargin="100px"
                     onChange={inView => {
-                        console.log({ inView });
                         if (inView) {
                             setShouldLoadImage(true);
                             onEnter(true);
@@ -200,9 +198,10 @@ const SmartImage = forwardRef((props, outerRef) => {
         picture = <Picture {...pictureProps} />;
     } else {
         const parent = canUseDOM && scrollparent(node);
-        // If `scrollparent` doesn't find a custom scroll parent, then we just send `undefined` so
+        // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
         // that Intersection Observer just uses the default `window`.
-        const root = parent && parent.nodeName === 'HTML' ? null : parent;
+        const root =
+            parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
         picture = (
             <LazyImage
