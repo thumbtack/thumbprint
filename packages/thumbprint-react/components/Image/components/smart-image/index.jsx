@@ -30,6 +30,7 @@ const LazyImage = ({
     // Loads the polyfill and indicates the browser now supports Intersection Observer.
     if (canUseDOM && !isIntersectionObserverSupported) {
         import('intersection-observer').then(() => {
+            IntersectionObserver.prototype.POLL_INTERVAL = 100;
             setIsIntersectionObserverSupported(true);
         });
     }
