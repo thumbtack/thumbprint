@@ -61,6 +61,17 @@ ServiceCardImage.propTypes = {
      */
     url: PropTypes.string.isRequired,
     /**
+     * Allows the browser to choose the best file format and image size based on the device screen
+     * density and the width of the rendered image.
+     */
+    sources: PropTypes.arrayOf(
+        PropTypes.shape({
+            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
+                .isRequired,
+            srcSet: PropTypes.string.isRequired,
+        }),
+    ),
+    /**
      * Image alt tag that's passed to `aria-label` for better accessibility.
      */
     alt: PropTypes.string,
@@ -68,6 +79,7 @@ ServiceCardImage.propTypes = {
 
 ServiceCardImage.defaultProps = {
     alt: undefined,
+    sources: undefined,
 };
 
 ServiceCardTitle.propTypes = {
