@@ -10,6 +10,18 @@ const canUseDOM = !!(
     window.document.createElement
 );
 
+/**
+ * Converts `"8:5"` to `8/5`.
+ */
+const aspectRatioStringToFloat = aspectRatio => {
+    if (!aspectRatio) {
+        return null;
+    }
+
+    const arr = aspectRatio.split(':');
+    return parseFloat(arr[0]) / parseFloat(arr[1]);
+};
+
 const LazyImage = ({
     children,
     src: srcProp,
@@ -81,7 +93,7 @@ const shouldPolyfillObjectFit = () =>
     canUseDOM &&
     document.documentElement &&
     document.documentElement.style &&
-    'objectFit' in document.documentElement.style === true;
+    'objectFit' in document.documentElement.style !== true;
 
 const SmartImage = forwardRef((props, outerRef) => {
     const {
@@ -90,7 +102,7 @@ const SmartImage = forwardRef((props, outerRef) => {
         style,
         disableLazyLoading,
         height,
-        aspectRatio,
+        aspectRatio: aspectRatioProp,
         objectFit,
         objectPosition,
         width,
@@ -98,6 +110,7 @@ const SmartImage = forwardRef((props, outerRef) => {
         ...rest
     } = props;
 
+    const aspectRatio = aspectRatioStringToFloat(aspectRatioProp);
     const [sizes, setSizes] = useState('0px');
     const [hasImageStartedLoading, setHasImageStartedLoading] = useState(disableLazyLoading);
     const shouldObjectFit = height || aspectRatio;
@@ -261,7 +274,7 @@ SmartImage.propTypes = {
      * for the image. The placeholder prevents the browser scroll from jumping when the image is
      * lazy-loaded.
      */
-    aspectRatio: PropTypes.number,
+    aspectRatio: PropTypes.string,
     /**
      * Provides control over how an image should be resized to fit the container. This controls the
      * `object-fit` CSS property. It is only useful if `height` or `aspectRatio` are used to

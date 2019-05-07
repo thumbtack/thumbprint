@@ -11,7 +11,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ## `SmartImage`
 
 ```jsx
-<ImageServiceProvider id="356206765797793818" aspectRatio="1-1">
+<ImageServiceProvider id="356206765797793818" aspectRatio="1:1">
     {({ src, sources, aspectRatio, ref }) => (
         <SmartImage
             src={src}
@@ -33,7 +33,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
             src={src}
             sources={sources}
             style={{ border: '10px solid' }}
-            aspectRatio={768 / 432}
+            aspectRatio="768:432"
             objectPosition="right"
             className="b-gray mh6"
         />
@@ -62,7 +62,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
                 'https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/120.jpeg 120w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/320.jpeg 320w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/400.jpeg 400w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/640.jpeg 640w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/768.jpeg 768w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg 1024w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1366.jpeg 1366w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1600.jpeg 1600w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.jpeg 1920w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2200.jpeg 2200w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2350.jpeg 2350w, https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2560.jpeg 2560w',
         },
     ]}
-    aspectRatio={647 / 431}
+    aspectRatio="647:431"
     style={{
         border: '10px solid #dedede',
         // height: '200px'
@@ -76,7 +76,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 <!-- ```jsx
 <SmartImage
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.webp"
-    aspectRatio={627 / 418}
+    aspectRatio="627:418"
     style={{ border: '10px solid' }}
     className="b-gray"
 />

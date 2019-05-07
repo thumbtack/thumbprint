@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import warning from 'warning';
 
 const getImageServiceSrc = ({ id, format, width, aspectRatio }) => {
     if (aspectRatio) {
@@ -10,11 +11,15 @@ const getImageServiceSrc = ({ id, format, width, aspectRatio }) => {
 
 const sizes = [120, 320, 400, 640, 768, 1024, 1366, 1600, 1920, 2200, 2350, 2560];
 
-const validRatiosToFraction = {
-    '1-1': 1 / 1,
-    '3-2': 3 / 2,
-    '7-3': 7 / 3,
-    '8-5': 8 / 5,
+/**
+ * Used for converting developer provided aspect ratios into the format that
+ * with the image service.
+ */
+const aspectRatioMap = {
+    '1:1': '1-1',
+    '3:2': '3-2',
+    '7:3': '7-3',
+    '8:5': '8-5',
 };
 
 const getImageServiceSources = ({ id, format, aspectRatio }) => {
@@ -58,7 +63,31 @@ const getNextValidWidth = containerWidth => {
 };
 
 const ImageServiceProvider = ({ id, children, aspectRatio, format }) => {
-    const sources = getImageServiceSources({ id, format, aspectRatio });
+    // If an `aspectRatio` is provided and it is not valid, don't render the
+    // image and print a console error instead.
+    if (aspectRatio && !aspectRatioMap[aspectRatio]) {
+        const aspectRatioList = Object.keys(aspectRatioMap)
+            .map(k => `• ${k}`)
+            .join('\n');
+
+        warning(
+            false,
+            `The provided \`aspectRatio\` ${aspectRatio} is not supported by the Image Service. Valid values are:\n\n${aspectRatioList}`,
+        );
+
+        return null;
+    }
+
+    const imageServiceAspectRatio = aspectRatioMap[aspectRatio];
+
+    const sources = getImageServiceSources({
+        id,
+        format,
+        aspectRatio: imageServiceAspectRatio,
+    });
+
+    // We track the width so that we can offer the correctly sized image in
+    // browsers that don't support responsive images.
     const [width, setWidth] = useState(0);
 
     const ref = useCallback(node => {
@@ -67,10 +96,16 @@ const ImageServiceProvider = ({ id, children, aspectRatio, format }) => {
         }
     }, []);
 
-    const widthToUseForSrc = width ? getNextValidWidth(width) : sizes[0];
-    const src = getImageServiceSrc({ id, width: widthToUseForSrc, format, aspectRatio });
+    const widthToUseForSrc = width ? getNextValidWidth(width) : sizes[5];
 
-    return children({ sources, src, aspectRatio: validRatiosToFraction[aspectRatio], ref });
+    const src = getImageServiceSrc({
+        id,
+        width: widthToUseForSrc,
+        format,
+        aspectRatio: imageServiceAspectRatio,
+    });
+
+    return children({ sources, src, aspectRatio, ref });
 };
 
 ImageServiceProvider.defaultProps = {

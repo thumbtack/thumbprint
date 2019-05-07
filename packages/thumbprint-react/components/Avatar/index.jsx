@@ -50,7 +50,7 @@ const EntityAvatar = ({ imageUrl, size, initial, sources, fullName }) => (
                 sources={sources}
                 alt={fullName && `Avatar for ${fullName}`}
                 title={fullName && `Avatar for ${fullName}`}
-                aspectRatio={1 / 1}
+                aspectRatio="1:1"
             />
         ) : (
             <span
@@ -122,7 +122,7 @@ const Avatar = props => {
                     sources={sources}
                     alt={fullName && `Avatar for ${fullName}`}
                     title={fullName && `Avatar for ${fullName}`}
-                    aspectRatio={1 / 1}
+                    aspectRatio="1:1"
                 />
             ) : (
                 <span
