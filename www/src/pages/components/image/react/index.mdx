@@ -42,6 +42,14 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```
 
 ```jsx
+<ImageServiceProvider id="302055784058904755">
+    {({ src, sources, ref }) => (
+        <SmartImage src={src} sources={sources} height="200px" objectFit="contain" ref={ref} />
+    )}
+</ImageServiceProvider>
+```
+
+```jsx
 <ImageServiceProvider id="356301205135450141" format="png">
     {({ src, sources }) => (
         <SmartImage
