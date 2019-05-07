@@ -35,7 +35,6 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
-        "@rehooks/component-size": "^1.0.2",
         "@thumbtack/thumbprint-scss": "^1.0.0",
         "@thumbtack/thumbprint-tokens": "^6.3.3",
         "classnames": "^2.2.6",
@@ -52,7 +51,6 @@
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
-        "react-waypoint": "^9.0.1",
         "rotate-array": "^1.1.0",
         "scrollparent": "^2.0.1",
         "warning": "^4.0.2"
