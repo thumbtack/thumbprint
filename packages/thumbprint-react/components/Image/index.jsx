@@ -1,14 +1,10 @@
 import React, { useState, forwardRef, useEffect } from 'react';
-import { InView } from 'react-intersection-observer';
 import warning from 'warning';
 import PropTypes from 'prop-types';
 import scrollparent from 'scrollparent';
-
-const canUseDOM = !!(
-    typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement
-);
+import Picture from './components/picture.jsx';
+import LazyImage from './components/lazy-image.jsx';
+import canUseDOM from '../../utils/can-use-dom';
 
 /**
  * Converts `"8:5"` to `8/5`.
@@ -20,78 +16,6 @@ const aspectRatioStringToFloat = aspectRatio => {
 
     const arr = aspectRatio.split(':');
     return parseFloat(arr[0]) / parseFloat(arr[1]);
-};
-
-const Picture = forwardRef((props, ref) => {
-    const { src, sources, sizes, alt, style, ...rest } = props;
-
-    return (
-        <picture>
-            {sources.map(({ type, srcSet }) => (
-                <source type={type} srcSet={srcSet} key={type} sizes={sizes} />
-            ))}
-            <img src={src} alt={alt} style={style} ref={ref} {...rest} />
-        </picture>
-    );
-});
-
-// Needed because of the `forwardRef`.
-Picture.displayName = 'Picture';
-
-const LazyImage = ({
-    children,
-    src: srcProp,
-    sources: sourcesProp,
-    root,
-    onEnter,
-    alt,
-    ...rest
-}) => {
-    const [shouldLoadImage, setShouldLoadImage] = useState(false);
-
-    // We track this as state because the polyfill is loaded asynchronously in browsers that need
-    // it. Storing it in state allows us to trigger a re-render once the polyfill is loaded.
-    const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(
-        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
-    );
-
-    // Loads the polyfill and indicates the browser now supports Intersection Observer.
-    if (canUseDOM && !isIntersectionObserverSupported) {
-        import('intersection-observer').then(() => {
-            if (typeof window.IntersectionObserver !== 'undefined') {
-                setIsIntersectionObserverSupported(true);
-            }
-        });
-    }
-
-    const src = shouldLoadImage ? srcProp : undefined;
-    const sources = shouldLoadImage ? sourcesProp : [];
-
-    return (
-        <>
-            {isIntersectionObserverSupported && (
-                <InView
-                    threshold={0}
-                    root={root}
-                    rootMargin="100px"
-                    onChange={inView => {
-                        if (inView) {
-                            setShouldLoadImage(true);
-                            onEnter(true);
-                        }
-                    }}
-                >
-                    {({ ref }) => children({ src, sources, alt, ref, ...rest })}
-                </InView>
-            )}
-
-            {srcProp && (
-                <noscript>
-                    <Picture src={srcProp} sources={sourcesProp} alt={alt} />
-                </noscript>
-            )}
-        </>
-    );
 };
 
 const shouldPolyfillObjectFit = () =>
