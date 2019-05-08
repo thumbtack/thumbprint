@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Image } from '../Image/index.jsx';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
@@ -34,34 +33,55 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-const EntityAvatar = ({ imageUrl, size, initial, sources, fullName }) => (
-    <div
-        className={classNames(styles.root, {
-            [styles.rootSmall]: size === 'small',
-            [styles.rootMedium]: size === 'medium',
-            [styles.rootLarge]: size === 'large',
-            [styles.rootXlarge]: size === 'xlarge',
-        })}
-    >
-        {imageUrl ? (
-            <Image
-                className={styles.squareAvatar}
-                src={imageUrl}
-                sources={sources}
-                alt={fullName && `Avatar for ${fullName}`}
-                title={fullName && `Avatar for ${fullName}`}
-                aspectRatio="1:1"
-            />
-        ) : (
-            <span
-                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                title={fullName && `Avatar for ${fullName}`}
+class EntityAvatar extends React.Component {
+    componentDidMount() {
+        // These imports are only needed client-side and allow for lazy-loading images. They should
+        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
+        // of Webpack that Gatsby uses.
+        // https://github.com/gatsbyjs/gatsby/issues/461
+        // https://github.com/thumbtack/thumbprint-archive/issues/960
+        /* eslint-disable global-require */
+        require('lazysizes');
+        // `ls.attrchange.js` re-renders the image when the props change:
+        // https://github.com/aFarkas/lazysizes/issues/339
+        require('lazysizes/plugins/attrchange/ls.attrchange.js');
+        // `ls.object-fit.js` polyfills the object-fit and the object-position property
+        // in non supporting browsers i.e. IE 11.
+        require('lazysizes/plugins/object-fit/ls.object-fit.js');
+        /* eslint-enable */
+    }
+
+    render() {
+        const { imageUrl, size, initial, fullName } = this.props;
+
+        return (
+            <div
+                className={classNames(styles.root, {
+                    [styles.rootSmall]: size === 'small',
+                    [styles.rootMedium]: size === 'medium',
+                    [styles.rootLarge]: size === 'large',
+                    [styles.rootXlarge]: size === 'xlarge',
+                })}
             >
-                {initial}
-            </span>
-        )}
-    </div>
-);
+                {imageUrl ? (
+                    <img
+                        className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
+                        data-src={imageUrl}
+                        alt={fullName && `Avatar for ${fullName}`}
+                        title={fullName && `Avatar for ${fullName}`}
+                    />
+                ) : (
+                    <span
+                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        title={fullName && `Avatar for ${fullName}`}
+                    >
+                        {initial}
+                    </span>
+                )}
+            </div>
+        );
+    }
+}
 
 EntityAvatar.propTypes = {
     /**
@@ -69,17 +89,6 @@ EntityAvatar.propTypes = {
      * precendence over `initials` if both are supplied.
      */
     imageUrl: PropTypes.string,
-    /**
-     * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
-     */
-    sources: PropTypes.arrayOf(
-        PropTypes.shape({
-            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
-                .isRequired,
-            srcSet: PropTypes.string.isRequired,
-        }),
-    ),
     /**
      * The entity's initial. This should be passed in as a one character string.
      */
@@ -96,46 +105,61 @@ EntityAvatar.propTypes = {
 
 EntityAvatar.defaultProps = {
     imageUrl: undefined,
-    sources: undefined,
     initial: undefined,
     fullName: undefined,
     size: 'medium',
 };
 
-const Avatar = props => {
-    const { size, imageUrl, fullName, sources, initials } = props;
+export default class Avatar extends React.Component {
+    componentDidMount() {
+        // These imports are only needed client-side and allow for lazy-loading images. They should
+        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
+        // of Webpack that Gatsby uses.
+        // https://github.com/gatsbyjs/gatsby/issues/461
+        // https://github.com/thumbtack/thumbprint-archive/issues/960
+        /* eslint-disable global-require */
+        require('lazysizes');
+        // `ls.attrchange.js` re-renders the image when the props change:
+        // https://github.com/aFarkas/lazysizes/issues/339
+        require('lazysizes/plugins/attrchange/ls.attrchange.js');
+        // `ls.object-fit.js` polyfills the object-fit and the object-position property
+        // in non supporting browsers i.e. IE 11.
+        require('lazysizes/plugins/object-fit/ls.object-fit.js');
+        /* eslint-enable */
+    }
 
-    return (
-        <div
-            className={classNames(styles.root, {
-                [styles.rootXsmall]: size === 'xsmall',
-                [styles.rootSmall]: size === 'small',
-                [styles.rootMedium]: size === 'medium',
-                [styles.rootLarge]: size === 'large',
-                [styles.rootXlarge]: size === 'xlarge',
-            })}
-        >
-            {imageUrl ? (
-                <Image
-                    className={`${styles.circleAvatar}`}
-                    src={imageUrl}
-                    sources={sources}
-                    alt={fullName && `Avatar for ${fullName}`}
-                    title={fullName && `Avatar for ${fullName}`}
-                    aspectRatio="1:1"
-                />
-            ) : (
-                <span
-                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                    title={fullName && `Avatar for ${fullName}`}
-                >
-                    {initials}
-                </span>
-            )}
-            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-        </div>
-    );
-};
+    render() {
+        const { props } = this;
+        return (
+            <div
+                className={classNames(styles.root, {
+                    [styles.rootXsmall]: props.size === 'xsmall',
+                    [styles.rootSmall]: props.size === 'small',
+                    [styles.rootMedium]: props.size === 'medium',
+                    [styles.rootLarge]: props.size === 'large',
+                    [styles.rootXlarge]: props.size === 'xlarge',
+                })}
+            >
+                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+                {props.imageUrl ? (
+                    <img
+                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
+                        data-src={props.imageUrl}
+                        alt={props.fullName && `Avatar for ${props.fullName}`}
+                        title={props.fullName && `Avatar for ${props.fullName}`}
+                    />
+                ) : (
+                    <span
+                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                        title={props.fullName && `Avatar for ${props.fullName}`}
+                    >
+                        {props.initials}
+                    </span>
+                )}
+            </div>
+        );
+    }
+}
 
 Avatar.propTypes = {
     /**
@@ -143,17 +167,6 @@ Avatar.propTypes = {
      * precendence over `initials` if both are supplied.
      */
     imageUrl: PropTypes.string,
-    /**
-     * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
-     */
-    sources: PropTypes.arrayOf(
-        PropTypes.shape({
-            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
-                .isRequired,
-            srcSet: PropTypes.string.isRequired,
-        }),
-    ),
     /**
      * The user's initials. This should be passed in as a two character string
      * for best results.
@@ -184,7 +197,6 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
     imageUrl: undefined,
-    sources: undefined,
     initials: undefined,
     fullName: undefined,
     size: 'medium',
@@ -193,5 +205,4 @@ Avatar.defaultProps = {
     isOnline: undefined,
 };
 
-export default Avatar;
 export { EntityAvatar };

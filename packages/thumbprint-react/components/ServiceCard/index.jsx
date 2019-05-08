@@ -1,12 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Image } from '../Image/index.jsx';
 import styles from './index.module.scss';
 
-const ServiceCardImage = ({ url, sources, alt }) => (
-    <Image className={styles.image} sources={sources} aspectRatio="8:5" src={url} alt={alt} />
-);
+class ServiceCardImage extends React.Component {
+    componentDidMount() {
+        // These imports are only needed client-side and allow for lazy-loading images. They should
+        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
+        // of Webpack that Gatsby uses.
+        // https://github.com/gatsbyjs/gatsby/issues/461
+        // https://github.com/thumbtack/thumbprint-archive/issues/960
+        /* eslint-disable global-require */
+        require('lazysizes/plugins/unveilhooks/ls.unveilhooks');
+        require('lazysizes');
+        // `ls.attrchange.js` re-renders the image when the props change:
+        // https://github.com/aFarkas/lazysizes/issues/339
+        require('lazysizes/plugins/attrchange/ls.attrchange.js');
+        /* eslint-enable */
+    }
+
+    render() {
+        const { url, alt } = this.props;
+
+        return (
+            <div className={`${styles.image} lazyload`} data-bg={url} role="img" aria-label={alt} />
+        );
+    }
+}
 
 function ServiceCardTitle({ children }) {
     return (
@@ -55,17 +75,6 @@ ServiceCardImage.propTypes = {
      */
     url: PropTypes.string.isRequired,
     /**
-     * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
-     */
-    sources: PropTypes.arrayOf(
-        PropTypes.shape({
-            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
-                .isRequired,
-            srcSet: PropTypes.string.isRequired,
-        }),
-    ),
-    /**
      * Image alt tag that's passed to `aria-label` for better accessibility.
      */
     alt: PropTypes.string,
@@ -73,7 +82,6 @@ ServiceCardImage.propTypes = {
 
 ServiceCardImage.defaultProps = {
     alt: undefined,
-    sources: undefined,
 };
 
 ServiceCardTitle.propTypes = {
