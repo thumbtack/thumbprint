@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
 import ServiceCard, { ServiceCardImage, ServiceCardTitle, ServiceCardDescription } from './index';
 
 describe('ServiceCard', () => {
