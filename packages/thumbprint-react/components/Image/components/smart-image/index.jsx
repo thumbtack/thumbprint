@@ -22,6 +22,22 @@ const aspectRatioStringToFloat = aspectRatio => {
     return parseFloat(arr[0]) / parseFloat(arr[1]);
 };
 
+const Picture = forwardRef((props, ref) => {
+    const { src, sources, sizes, alt, style, ...rest } = props;
+
+    return (
+        <picture>
+            {sources.map(({ type, srcSet }) => (
+                <source type={type} srcSet={srcSet} key={type} sizes={sizes} />
+            ))}
+            <img src={src} alt={alt} style={style} ref={ref} {...rest} />
+        </picture>
+    );
+});
+
+// Needed because of the `forwardRef`.
+Picture.displayName = 'Picture';
+
 const LazyImage = ({
     children,
     src: srcProp,
@@ -42,7 +58,9 @@ const LazyImage = ({
     // Loads the polyfill and indicates the browser now supports Intersection Observer.
     if (canUseDOM && !isIntersectionObserverSupported) {
         import('intersection-observer').then(() => {
-            setIsIntersectionObserverSupported(true);
+            if (typeof window.IntersectionObserver !== 'undefined') {
+                setIsIntersectionObserverSupported(true);
+            }
         });
     }
 
@@ -75,19 +93,6 @@ const LazyImage = ({
         </>
     );
 };
-
-const Picture = forwardRef((props, ref) => {
-    const { src, sources, sizes, alt, style, ...rest } = props;
-
-    return (
-        <picture>
-            {sources.map(({ type, srcSet }) => (
-                <source type={type} srcSet={srcSet} key={type} sizes={sizes} />
-            ))}
-            <img src={src} alt={alt} style={style} ref={ref} {...rest} />
-        </picture>
-    );
-});
 
 const shouldPolyfillObjectFit = () =>
     canUseDOM &&
@@ -299,5 +304,8 @@ SmartImage.defaultProps = {
     objectPosition: 'center',
     disableLazyLoading: false,
 };
+
+// Needed because of the `forwardRef`.
+SmartImage.displayName = 'SmartImage';
 
 export default SmartImage;

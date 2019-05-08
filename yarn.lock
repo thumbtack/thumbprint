@@ -2471,6 +2471,13 @@ babel-plugin-dynamic-import-node@^1.2.0:
   dependencies:
     babel-plugin-syntax-dynamic-import "^6.18.0"
 
+babel-plugin-dynamic-import-node@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-node/-/babel-plugin-dynamic-import-node-2.2.0.tgz#c0adfb07d95f4a4495e9aaac6ec386c4d7c2524e"
+  integrity sha512-fP899ELUnTaBcIzmrW7nniyqqdYWrWuJUyPWHxFa/c7r7hS6KC8FscNfLlBNIoPSc55kYMGEEKjPjJGCLbE1qA==
+  dependencies:
+    object.assign "^4.1.0"
+
 babel-plugin-espower@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-espower/-/babel-plugin-espower-2.4.0.tgz#9f92c080e9adfe73f69baed7ab3e24f649009373"
@@ -9951,11 +9958,6 @@ lazy-cache@^1.0.3:
 lazy-req@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lazy-req/-/lazy-req-1.1.0.tgz#bdaebead30f8d824039ce0ce149d4daa07ba1fac"
-
-lazysizes@^4.1.5:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-4.1.5.tgz#37c5a34aab03d11285f9ff29919b2e664941a32b"
-  integrity sha512-ttO/1WiM7xQyyc9QWtmErltnsli21HYh59AqSQJKpjsUoykUG+vAZqp9zGr52/hHg2ICIBm8XyB0RHvATnOw9w==
 
 lcid@^1.0.0:
   version "1.0.0"
