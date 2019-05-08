@@ -66,7 +66,6 @@ const Image = forwardRef((props, outerRef) => {
             // that we don't try to polyfill the image before the `src` exists. This can happy
             // when we lazy-load.
             if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
-                // TODO move the object fit support outside and don't add the weird font family thing in non IE
                 import('object-fit-images').then(({ default: ObjectFitImages }) => {
                     ObjectFitImages(node.querySelector('img'));
                 });
