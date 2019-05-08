@@ -21,7 +21,7 @@ test('adds the `fullName` as `title` text', () => {
     const wrapperWithInitials = mount(<Avatar fullName="Duck Goose" title="DG" />);
 
     expect(wrapper.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
-    expect(wrapperWithImage.find('SmartImage').prop('title')).toContain('Duck Goose');
+    expect(wrapperWithImage.find('Image').prop('title')).toContain('Duck Goose');
     expect(wrapperWithInitials.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
 
     expect(wrapper).toMatchSnapshot();
@@ -31,7 +31,7 @@ test('adds the `fullName` as `title` text', () => {
 
 test('adds the `fullName` as `alt` text when image is provided', () => {
     const wrapper = mount(<Avatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />);
-    expect(wrapper.find('SmartImage').prop('alt')).toContain('Duck Goose');
+    expect(wrapper.find('Image').prop('alt')).toContain('Duck Goose');
     expect(wrapper).toMatchSnapshot();
 });
 

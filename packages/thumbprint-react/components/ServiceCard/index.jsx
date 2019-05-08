@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SmartImage } from '../Image/index.jsx';
+import { Image } from '../Image/index.jsx';
 import styles from './index.module.scss';
 
 const ServiceCardImage = ({ url, sources, alt }) => (
-    <SmartImage className={styles.image} sources={sources} aspectRatio="8:5" src={url} alt={alt} />
+    <Image className={styles.image} sources={sources} aspectRatio="8:5" src={url} alt={alt} />
 );
 
 function ServiceCardTitle({ children }) {

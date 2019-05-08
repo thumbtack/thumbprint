@@ -69,7 +69,7 @@ exports[`ServiceCardImage render works 1`] = `
   alt="duck duck goose"
   url="https://www.thumbtack.com/image.png"
 >
-  <SmartImage
+  <Image
     alt="duck duck goose"
     aspectRatio="8:5"
     className="image"
@@ -121,7 +121,7 @@ exports[`ServiceCardImage render works 1`] = `
         </noscript>
       </LazyImage>
     </div>
-  </SmartImage>
+  </Image>
 </ServiceCardImage>
 `;
 

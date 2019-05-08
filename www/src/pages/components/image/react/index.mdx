@@ -8,12 +8,12 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## `SmartImage`
+## `Image`
 
 ```jsx
 <ImageServiceProvider id="356206765797793818" aspectRatio="1:1">
     {({ src, sources, aspectRatio, ref }) => (
-        <SmartImage
+        <Image
             src={src}
             sources={sources}
             aspectRatio={aspectRatio}
@@ -28,7 +28,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="302055784058904755">
     {({ src, sources, ref }) => (
-        <SmartImage src={src} sources={sources} aspectRatio="780:406" ref={ref} />
+        <Image src={src} sources={sources} aspectRatio="780:406" ref={ref} />
     )}
 </ImageServiceProvider>
 ```
@@ -36,7 +36,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="302055784058904755">
     {({ src, sources, ref }) => (
-        <SmartImage src={src} sources={sources} height="200px" objectPosition="top" ref={ref} />
+        <Image src={src} sources={sources} height="200px" objectPosition="top" ref={ref} />
     )}
 </ImageServiceProvider>
 ```
@@ -44,7 +44,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="302055784058904755">
     {({ src, sources, ref }) => (
-        <SmartImage src={src} sources={sources} height="200px" objectFit="contain" ref={ref} />
+        <Image src={src} sources={sources} height="200px" objectFit="contain" ref={ref} />
     )}
 </ImageServiceProvider>
 ```
@@ -52,7 +52,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="356301205135450141" format="png">
     {({ src, sources }) => (
-        <SmartImage
+        <Image
             src={src}
             sources={sources}
             style={{ border: '10px solid' }}
@@ -65,11 +65,11 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```
 
 ```jsx
-<SmartImage src="https://media.giphy.com/media/3o7qE8co3YAzNUoAW4/giphy.gif" aspectRatio="48:46" />
+<Image src="https://media.giphy.com/media/3o7qE8co3YAzNUoAW4/giphy.gif" aspectRatio="48:46" />
 ```
 
 ```jsx
-<SmartImage
+<Image
     src="https://i.giphy.com/media/3ohs7KViF6rA4aan5u/giphy.gif"
     disableLazyLoading
     aspectRatio="480:354"
@@ -80,7 +80,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 <ImageServiceProvider id="356301205135450141" format="png">
     {({ src, sources }) => (
-        <SmartImage
+        <Image
             src={src}
             sources={sources}
             style={{ border: '10px solid' }}
@@ -100,7 +100,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <!--
 ```jsx
-<SmartImage
+<Image
     sources={[
         {
             type: 'image/webp',
@@ -125,7 +125,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ``` -->
 
 <!-- ```jsx
-<SmartImage
+<Image
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.webp"
     aspectRatio="627:418"
     style={{ border: '10px solid' }}
@@ -133,38 +133,38 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 />
 ``` -->
 
-<!-- ## `SmartImage`
+<!-- ## `Image`
 
-The `SmartImage` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size.
+The `Image` component loads an image from Thumbtack's Image Service. By default, it lazy-loads the image and [uses responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) to load the best size.
 
 ### With just an Image Service `id`
 
 ```jsx
-<SmartImage id="350357374752325652" />
+<Image id="350357374752325652" />
 ```
 
 ### With a custom `objectFit`
 
 ```jsx
-<SmartImage id="350357374752325652" objectFit={{ height: 200, style: 'cover' }} />
+<Image id="350357374752325652" objectFit={{ height: 200, style: 'cover' }} />
 ```
 
 ### With a supported `aspectRatio`
 
 ```jsx
-<SmartImage id="350357374752325652" aspectRatio="1:1" />
+<Image id="350357374752325652" aspectRatio="1:1" />
 ```
 
 ### With lazy-loading turned off
 
 ```jsx
-<SmartImage id="356206765797793818" lazyLoad={null} />
+<Image id="356206765797793818" lazyLoad={null} />
 ```
 
 ### With a `png`
 
 ```jsx
-<SmartImage id="356301205135450141" format="png" />
+<Image id="356301205135450141" format="png" />
 ``` -->
 
 <!-- ### `ResponsiveImage` with Image Service

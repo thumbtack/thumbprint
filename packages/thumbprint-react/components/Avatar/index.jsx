@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SmartImage } from '../Image/index.jsx';
+import { Image } from '../Image/index.jsx';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
@@ -44,7 +44,7 @@ const EntityAvatar = ({ imageUrl, size, initial, sources, fullName }) => (
         })}
     >
         {imageUrl ? (
-            <SmartImage
+            <Image
                 className={styles.squareAvatar}
                 src={imageUrl}
                 sources={sources}
@@ -116,7 +116,7 @@ const Avatar = props => {
             })}
         >
             {imageUrl ? (
-                <SmartImage
+                <Image
                     className={`${styles.circleAvatar}`}
                     src={imageUrl}
                     sources={sources}
