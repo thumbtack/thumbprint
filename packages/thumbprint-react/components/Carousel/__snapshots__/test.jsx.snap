@@ -38,7 +38,6 @@ exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(-29.999999999999982%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -153,7 +152,6 @@ exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(-19.999999999999996%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -268,7 +266,6 @@ exports[`\`spacing\` no spacing 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -383,7 +380,6 @@ exports[`\`spacing\` spacing in ems 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -498,7 +494,6 @@ exports[`\`spacing\` spacing in pixels 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -613,7 +608,6 @@ exports[`\`visibleCount\` one and a half visible items 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -728,7 +722,6 @@ exports[`\`visibleCount\` one visible item 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -843,7 +836,6 @@ exports[`\`visibleCount\` three visible items 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
@@ -958,7 +950,6 @@ exports[`renders a carousel 1`] = `
               className="wrapper"
               style={
                 Object {
-                  "overflowX": "auto",
                   "transform": "translateX(0%)",
                   "transitionDuration": false,
                   "transitionProperty": "transform",
