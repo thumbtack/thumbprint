@@ -15,16 +15,19 @@ describe('ModalDefault', () => {
     test('renders a basic modal', () => {
         const wrapper = mount(<ModalDefault onCloseClick={noop} />);
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('renders a narrow modal', () => {
         const wrapper = mount(<ModalDefault width="narrow" onCloseClick={noop} />);
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('renders a wide modal', () => {
         const wrapper = mount(<ModalDefault width="wide" onCloseClick={noop} />);
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('renders a basic modal with content', () => {
@@ -35,18 +38,21 @@ describe('ModalDefault', () => {
             </ModalDefault>,
         );
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('does not show the close button if `shouldHideCloseButton` is true', () => {
         const wrapper = mount(<ModalDefault onCloseClick={noop} shouldHideCloseButton />);
         expect(wrapper.find('NavigationCloseSmall').exists()).toBe(false);
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('shows the close button if `shouldHideCloseButton` is false', () => {
         const wrapper = mount(<ModalDefault onCloseClick={noop} shouldHideCloseButton={false} />);
         expect(wrapper.find('NavigationCloseSmall').exists()).toBe(true);
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 
     test('closes when clicking on the curtain if `shouldCloseOnCurtainClick`', () => {
@@ -55,11 +61,14 @@ describe('ModalDefault', () => {
             <ModalDefault isOpen onCloseClick={onCloseClick} shouldCloseOnCurtainClick />,
         );
 
+        jest.runAllTimers();
+
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
         wrapper.find('[data-test="thumbprint-modal-curtain"]').simulate('click');
 
         expect(onCloseClick).toHaveBeenCalledTimes(1);
+        wrapper.unmount();
     });
 
     test('does not close when clicking on the curtain if `shouldCloseOnCurtainClick` is false', () => {
@@ -68,11 +77,14 @@ describe('ModalDefault', () => {
             <ModalDefault isOpen onCloseClick={onCloseClick} shouldCloseOnCurtainClick={false} />,
         );
 
+        jest.runAllTimers();
+
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
         wrapper.find('[data-test="thumbprint-modal-curtain"]').simulate('click');
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
+        wrapper.unmount();
     });
 
     test('calls `onOpenFinish` when opening is finished', () => {
@@ -88,6 +100,22 @@ describe('ModalDefault', () => {
         jest.runAllTimers();
 
         expect(onOpenFinish).toHaveBeenCalledTimes(1);
+        wrapper.unmount();
+    });
+
+    test('calls `onOpenFinish` when opened on mount', () => {
+        const onOpenFinish = jest.fn();
+
+        expect(onOpenFinish).toHaveBeenCalledTimes(0);
+
+        const wrapper = mount(
+            <ModalDefault isOpen onCloseClick={noop} onOpenFinish={onOpenFinish} />,
+        );
+
+        jest.runAllTimers();
+
+        expect(onOpenFinish).toHaveBeenCalledTimes(1);
+        wrapper.unmount();
     });
 
     test('calls `onCloseFinish` when closing is finished', () => {
@@ -103,6 +131,7 @@ describe('ModalDefault', () => {
         jest.runAllTimers();
 
         expect(onCloseFinish).toHaveBeenCalledTimes(1);
+        wrapper.unmount();
     });
 });
 
@@ -147,5 +176,6 @@ describe('ModalDefaultFooter', () => {
             </ModalDefault>,
         );
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 });
