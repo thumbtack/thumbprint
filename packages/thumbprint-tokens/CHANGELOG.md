@@ -6,6 +6,10 @@
 
 -   [Patch] Remove the "name" field from tokens in their source files. This does not affect the outputted code.
 
+### Removed
+
+-   [Major] Remove [all deprecated tokens](https://5cd4668b225c50000ac4a441--thumbprint.netlify.com/tokens/scss/). They should be replaced with newer tokens or the values should be hardcoded.
+
 ## 6.3.3 - 2019-04-08
 
 -   [Minor] Add supported platforms to each token (#198)
