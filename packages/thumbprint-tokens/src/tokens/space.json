@@ -32,6 +32,31 @@
         {
             "id": "space__8",
             "value": { "web": "256px" }
+        },
+        {
+            "id": "spacer__unit",
+            "value": { "web": "8" },
+            "deprecated": true
+        },
+        {
+            "id": "form__input__padding__all",
+            "value": { "web": "6px 12px" },
+            "deprecated": true
+        },
+        {
+            "id": "form__input__padding__sides",
+            "value": { "web": "12px" },
+            "deprecated": true
+        },
+        {
+            "id": "form__input__padding__ends",
+            "value": { "web": "6px" },
+            "deprecated": true
+        },
+        {
+            "id": "form__input__line-height",
+            "value": { "web": "1.5" },
+            "deprecated": true
         }
     ]
 }

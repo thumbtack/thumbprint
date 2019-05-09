@@ -195,6 +195,266 @@
             "group": "Body 3",
             "id": "font__body__3__line-height",
             "value": { "web": "18px" }
+        },
+        {
+            "id": "font__super__1__size",
+            "value": { "web": "56px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__super__1__line-height",
+            "value": { "web": "1.1" },
+            "deprecated": true
+        },
+        {
+            "id": "font__super__1__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__super__1__responsive__size",
+            "value": { "web": "64px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__super__1__responsive__line-height",
+            "value": { "web": "1.1" },
+            "deprecated": true
+        },
+        {
+            "id": "font__super__1__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__size",
+            "value": { "web": "32px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__line-height",
+            "value": { "web": "1.3" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__responsive__size",
+            "value": { "web": "48px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__responsive__line-height",
+            "value": { "web": "1.1" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__1__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__size",
+            "value": { "web": "30px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__line-height",
+            "value": { "web": "1.3" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__responsive__size",
+            "value": { "web": "40px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__responsive__line-height",
+            "value": { "web": "1.2" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__2__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__size",
+            "value": { "web": "24px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__line-height",
+            "value": { "web": "1.4" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__responsive__size",
+            "value": { "web": "32px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__responsive__line-height",
+            "value": { "web": "1.3" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__3__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__size",
+            "value": { "web": "20px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__line-height",
+            "value": { "web": "1.4" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__responsive__size",
+            "value": { "web": "24px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__responsive__line-height",
+            "value": { "web": "1.4" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__4__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__size",
+            "value": { "web": "16px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__responsive__size",
+            "value": { "web": "20px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__responsive__line-height",
+            "value": { "web": "1.5" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__5__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__size",
+            "value": { "web": "14px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__responsive__size",
+            "value": { "web": "16px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__responsive__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__heading__6__responsive__weight",
+            "value": { "web": "500" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__1__size",
+            "value": { "web": "20px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__1__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__1__responsive__size",
+            "value": { "web": "24px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__1__responsive__line-height",
+            "value": { "web": "1.5" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__2__size",
+            "value": { "web": "16px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__2__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__3__size",
+            "value": { "web": "14px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__3__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__4__size",
+            "value": { "web": "12px" },
+            "deprecated": true
+        },
+        {
+            "id": "font__text__4__line-height",
+            "value": { "web": "1.6" },
+            "deprecated": true
         }
     ]
 }
