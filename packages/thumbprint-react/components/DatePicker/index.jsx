@@ -65,8 +65,23 @@ export default class DatePicker extends React.Component {
     }
 
     render() {
-        const { disabledDays, lastMonth } = this.props;
+        const {
+            disabledDays,
+            lastMonth,
+            onMonthChange,
+            daysThemeDotIndicator,
+            daysThemeStrikeout,
+        } = this.props;
         const { selectedDays } = this.state;
+        const modifiers = {};
+
+        if (typeof daysThemeDotIndicator === 'function') {
+            modifiers['theme-dot'] = daysThemeDotIndicator;
+        }
+
+        if (typeof daysThemeStrikeout === 'function') {
+            modifiers['theme-strikeout'] = daysThemeStrikeout;
+        }
 
         return (
             <div className={styles.root}>
@@ -77,6 +92,8 @@ export default class DatePicker extends React.Component {
                     initialMonth={selectedDays[0]}
                     selectedDays={selectedDays}
                     onDayClick={this.handleChange}
+                    onMonthChange={onMonthChange}
+                    modifiers={modifiers}
                 />
             </div>
         );
@@ -88,6 +105,9 @@ DatePicker.defaultProps = {
     allowMultiSelection: false,
     disabledDays: { before: new Date() },
     lastMonth: null,
+    onMonthChange: undefined,
+    daysThemeDotIndicator: undefined,
+    daysThemeStrikeout: undefined,
 };
 
 DatePicker.propTypes = {
@@ -118,4 +138,20 @@ DatePicker.propTypes = {
      * interact with the days after it.
      */
     lastMonth: PropTypes.instanceOf(Date),
+    /**
+     * Callback that is triggered when the user navigates to a different month using the navigation
+     * buttons or keyboard. The function receives a single JavaScript `Date` object indicating
+     * the new on-screen month.
+     */
+    onMonthChange: PropTypes.func,
+    /**
+     * Applies a blue dot indicator below the numeric day in the calendar's day cell if the
+     * function returns `true` for a given JavaScript `Date`.
+     */
+    daysThemeDotIndicator: PropTypes.func,
+    /**
+     * Applies a strikeout treatment on the numeric day in the calendar's day cell if the function
+     * returns `true` for a given JavaScript `Date`.
+     */
+    daysThemeStrikeout: PropTypes.func,
 };

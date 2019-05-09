@@ -5,7 +5,7 @@ module.exports = {
         'prettier',
         'prettier/react',
     ],
-    plugins: ['jest'],
+    plugins: ['jest', 'react-hooks'],
     env: {
         browser: true,
         node: true,
