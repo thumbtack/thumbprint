@@ -2,13 +2,11 @@
     "name": "Deprecated",
     "tokens": [
         {
-            "name": "Spacer",
             "id": "spacer__unit",
             "value": { "web": "8" },
             "deprecated": true
         },
         {
-            "name": "Slate",
             "id": "color__ui__slate",
             "value": { "web": "#6d7273" },
             "type": "color",
@@ -16,7 +14,6 @@
             "description": "Maps to Black 300"
         },
         {
-            "name": "Base",
             "id": "color__ui__base",
             "value": { "web": "#e6f0f2" },
             "type": "color",
@@ -24,7 +21,6 @@
             "description": "Maps to Gray 300"
         },
         {
-            "name": "Main",
             "id": "color__ui__main",
             "value": { "web": "#0abae6" },
             "type": "color",
@@ -32,7 +28,6 @@
             "description": "Maps to Blue"
         },
         {
-            "name": "Celebrate",
             "id": "color__ui__celebrate",
             "value": { "web": "#fbe002" },
             "type": "color",
@@ -40,7 +35,6 @@
             "description": "Maps to Yellow"
         },
         {
-            "name": "Betterment",
             "id": "color__ui__betterment",
             "value": { "web": "#455fcf" },
             "type": "color",
@@ -48,7 +42,6 @@
             "description": "Maps to Indigo"
         },
         {
-            "name": "Crafy",
             "id": "color__ui__crafty",
             "value": { "web": "#8b71de" },
             "type": "color",
@@ -56,7 +49,6 @@
             "description": "Maps to Purple"
         },
         {
-            "name": "Faint",
             "id": "color__ui__faint",
             "value": { "web": "#f7fafb" },
             "type": "color",
@@ -64,7 +56,6 @@
             "description": "Maps to Gray 200"
         },
         {
-            "name": "Light",
             "id": "color__ui__light",
             "value": { "web": "#f0f6f7" },
             "type": "color",
@@ -72,7 +63,6 @@
             "description": "Maps to Gray 300"
         },
         {
-            "name": "Pale",
             "id": "color__ui__pale",
             "value": { "web": "#ced6d9" },
             "type": "color",
@@ -80,7 +70,6 @@
             "description": "Maps to Gray"
         },
         {
-            "name": "Muted",
             "id": "color__ui__muted",
             "value": { "web": "#858b8c" },
             "type": "color",
@@ -88,7 +77,6 @@
             "description": "Maps to Black 300"
         },
         {
-            "name": "Dark",
             "id": "color__ui__dark",
             "value": { "web": "#333333" },
             "type": "color",
@@ -96,7 +84,6 @@
             "description": "Maps to Black"
         },
         {
-            "name": "Black",
             "id": "color__ui__black",
             "value": { "web": "#000000" },
             "type": "color",
@@ -104,7 +91,6 @@
             "description": "Maps to Black"
         },
         {
-            "name": "White",
             "id": "color__ui__white",
             "value": { "web": "#ffffff" },
             "type": "color",
@@ -112,7 +98,6 @@
             "description": "Maps to White"
         },
         {
-            "name": "Sky",
             "id": "color__ui__sky",
             "value": { "web": "#3f93f3" },
             "type": "color",
@@ -120,7 +105,6 @@
             "description": "Maps to Blue"
         },
         {
-            "name": "Sky Light",
             "id": "color__ui__sky_light",
             "value": { "web": "#70acf1" },
             "type": "color",
@@ -128,7 +112,6 @@
             "description": "Maps to Blue 300"
         },
         {
-            "name": "Sky Faint",
             "id": "color__ui__sky-faint",
             "value": { "web": "#94beee" },
             "type": "color",
@@ -136,7 +119,6 @@
             "description": "Maps to Blue 400"
         },
         {
-            "name": "Sky Dark",
             "id": "color__ui__sky-dark",
             "value": { "web": "#287ddd" },
             "type": "color",
@@ -144,7 +126,6 @@
             "description": "Maps to Blue 500"
         },
         {
-            "name": "Good News",
             "id": "color__ui__good-news",
             "value": { "web": "#3ac392" },
             "type": "color",
@@ -152,7 +133,6 @@
             "description": "Maps to Green"
         },
         {
-            "name": "Good News Light",
             "id": "color__ui__good-news-light",
             "value": { "web": "#62cca7" },
             "type": "color",
@@ -160,7 +140,6 @@
             "description": "Maps to Green 300"
         },
         {
-            "name": "Good News Faint",
             "id": "color__ui__good-news-faint",
             "value": { "web": "#93dbc2" },
             "type": "color",
@@ -168,7 +147,6 @@
             "description": "Maps to Green 200"
         },
         {
-            "name": "Bad News",
             "id": "color__ui__bad-news",
             "value": { "web": "#f16a4f" },
             "type": "color",
@@ -176,7 +154,6 @@
             "description": "Maps to Red"
         },
         {
-            "name": "Bad News Light",
             "id": "color__ui__bad-news-light",
             "value": { "web": "#f28974" },
             "type": "color",
@@ -184,7 +161,6 @@
             "description": "Maps to Red 300"
         },
         {
-            "name": "Bad News Faint",
             "id": "color__ui__bad-news-faint",
             "value": { "web": "#f2a494" },
             "type": "color",
@@ -192,7 +168,6 @@
             "description": "Maps to Red 200"
         },
         {
-            "name": "Brand",
             "id": "color__ui__brand",
             "value": { "web": "#f27802" },
             "type": "color",
@@ -200,7 +175,6 @@
             "description": "Maps to Blue or Indigo"
         },
         {
-            "name": "Brand Light",
             "id": "color__ui__brand-light",
             "value": { "web": "#f0913a" },
             "type": "color",
@@ -208,7 +182,6 @@
             "description": "Maps to Blue 200 or Indigo 200"
         },
         {
-            "name": "Brand Faint",
             "id": "color__ui__brand-faint",
             "value": { "web": "#f0a86e" },
             "type": "color",
@@ -216,7 +189,6 @@
             "description": "Maps to Blue 300 or Indigo 300"
         },
         {
-            "name": "Gold",
             "id": "color__ui__gold",
             "value": { "web": "#ff9f02" },
             "type": "color",
@@ -224,7 +196,6 @@
             "description": "Maps to Yellow"
         },
         {
-            "name": "Gold Light",
             "id": "color__ui__gold-light",
             "value": { "web": "#ffb742" },
             "type": "color",
@@ -232,7 +203,6 @@
             "description": "Maps to Yellow 300"
         },
         {
-            "name": "Gold Faint",
             "id": "color__ui__gold-faint",
             "value": { "web": "#ffcb78" },
             "type": "color",
@@ -240,7 +210,6 @@
             "description": "Maps to Yellow 200"
         },
         {
-            "name": "Base",
             "id": "color__text__base",
             "description": "Maps to Black",
             "value": { "web": "#333333" },
@@ -248,7 +217,6 @@
             "deprecated": true
         },
         {
-            "name": "Dark",
             "id": "color__text__dark",
             "value": { "web": "#333333" },
             "type": "color",
@@ -256,7 +224,6 @@
             "description": "Maps to Black"
         },
         {
-            "name": "Slate",
             "id": "color__text__slate",
             "value": { "web": "#6d7273" },
             "type": "color",
@@ -264,7 +231,6 @@
             "description": "Maps to Black 300"
         },
         {
-            "name": "Main",
             "id": "color__text__main",
             "value": { "web": "#08aed7" },
             "type": "color",
@@ -272,7 +238,6 @@
             "description": "Maps to Blue"
         },
         {
-            "name": "Celebrate",
             "id": "color__text__celebrate",
             "value": { "web": "#fbe002" },
             "type": "color",
@@ -280,7 +245,6 @@
             "description": "Maps to Yellow"
         },
         {
-            "name": "Betterment",
             "id": "color__text__betterment",
             "value": { "web": "#455fcf" },
             "type": "color",
@@ -288,7 +252,6 @@
             "description": "Maps to Indigo"
         },
         {
-            "name": "Crafty",
             "id": "color__text__crafty",
             "value": { "web": "#8b71de" },
             "type": "color",
@@ -296,7 +259,6 @@
             "description": "Maps to Purple"
         },
         {
-            "name": "Muted",
             "id": "color__text__muted",
             "value": { "web": "#858b8c" },
             "type": "color",
@@ -304,7 +266,6 @@
             "description": "Maps to Black 300"
         },
         {
-            "name": "Pale",
             "id": "color__text__pale",
             "value": { "web": "#ced6d9" },
             "type": "color",
@@ -312,7 +273,6 @@
             "description": "Maps to Gray"
         },
         {
-            "name": "Good News",
             "id": "color__text__good-news",
             "value": { "web": "#3ac392" },
             "type": "color",
@@ -320,7 +280,6 @@
             "description": "Maps to Green"
         },
         {
-            "name": "Brand",
             "id": "color__text__brand",
             "value": { "web": "#f27802" },
             "type": "color",
@@ -328,7 +287,6 @@
             "description": "Maps to Blue or Indigo"
         },
         {
-            "name": "Sky",
             "id": "color__text__sky",
             "value": { "web": "#3f93f3" },
             "type": "color",
@@ -336,7 +294,6 @@
             "description": "Maps to Blue"
         },
         {
-            "name": "Sky Dark",
             "id": "color__text__sky-dark",
             "value": { "web": "#287ddd" },
             "type": "color",
@@ -344,7 +301,6 @@
             "description": "Maps to Blue 500"
         },
         {
-            "name": "Bad News",
             "id": "color__text__bad-news",
             "value": { "web": "#f16a4f" },
             "type": "color",
@@ -352,7 +308,6 @@
             "description": "Maps to Red"
         },
         {
-            "name": "Bad News Light",
             "id": "color__text__bad-news-light",
             "value": { "web": "#f28974" },
             "type": "color",
@@ -360,7 +315,6 @@
             "description": "Maps to Red 300"
         },
         {
-            "name": "White",
             "id": "color__text__white",
             "value": { "web": "#ffffff" },
             "type": "color",
@@ -368,7 +322,6 @@
             "description": "Maps to White"
         },
         {
-            "name": "Base",
             "description": "Maps to Blue",
             "id": "color__link__base",
             "value": { "web": "#3f93f3" },
@@ -376,7 +329,6 @@
             "deprecated": true
         },
         {
-            "name": "Light",
             "id": "color__link__light",
             "value": { "web": "#70acf1" },
             "type": "color",
@@ -384,7 +336,6 @@
             "description": "Maps to Blue 300"
         },
         {
-            "name": "Faint",
             "id": "color__link__faint",
             "value": { "web": "#94beee" },
             "type": "color",
@@ -392,7 +343,6 @@
             "description": "Maps to Blue 200"
         },
         {
-            "name": "Bad News",
             "id": "color__link__bad-news",
             "value": { "web": "#f16a4f" },
             "type": "color",
@@ -400,7 +350,6 @@
             "description": "Maps to Red"
         },
         {
-            "name": "White",
             "id": "color__link__white",
             "value": { "web": "#ffffff" },
             "type": "color",
@@ -408,385 +357,321 @@
             "description": "Maps to White"
         },
         {
-            "name": "Super 1 Font Size",
             "id": "font__super__1__size",
             "value": { "web": "56px" },
             "deprecated": true
         },
         {
-            "name": "Super 1 Line Height",
             "id": "font__super__1__line-height",
             "value": { "web": "1.1" },
             "deprecated": true
         },
         {
-            "name": "Super 1 Weight",
             "id": "font__super__1__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Super 1 Responsive Font Size",
             "id": "font__super__1__responsive__size",
             "value": { "web": "64px" },
             "deprecated": true
         },
         {
-            "name": "Super 1 Responsive Line Height",
             "id": "font__super__1__responsive__line-height",
             "value": { "web": "1.1" },
             "deprecated": true
         },
         {
-            "name": "Super 1 Responsive Weight",
             "id": "font__super__1__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Font Size",
             "id": "font__heading__1__size",
             "value": { "web": "32px" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Line Height",
             "id": "font__heading__1__line-height",
             "value": { "web": "1.3" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Weight",
             "id": "font__heading__1__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Responsive Font Size",
             "id": "font__heading__1__responsive__size",
             "value": { "web": "48px" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Responsive Line Height",
             "id": "font__heading__1__responsive__line-height",
             "value": { "web": "1.1" },
             "deprecated": true
         },
         {
-            "name": "Heading 1 Responsive Weight",
             "id": "font__heading__1__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Font Size",
             "id": "font__heading__2__size",
             "value": { "web": "30px" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Line Height",
             "id": "font__heading__2__line-height",
             "value": { "web": "1.3" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Weight",
             "id": "font__heading__2__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Responsive",
             "id": "font__heading__2__responsive__size",
             "value": { "web": "40px" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Responsive Line Height",
             "id": "font__heading__2__responsive__line-height",
             "value": { "web": "1.2" },
             "deprecated": true
         },
         {
-            "name": "Heading 2 Responsive Weight",
             "id": "font__heading__2__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Font Size",
             "id": "font__heading__3__size",
             "value": { "web": "24px" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Line Height",
             "id": "font__heading__3__line-height",
             "value": { "web": "1.4" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Weight",
             "id": "font__heading__3__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Responsive Font Size",
             "id": "font__heading__3__responsive__size",
             "value": { "web": "32px" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Responsive Line Height",
             "id": "font__heading__3__responsive__line-height",
             "value": { "web": "1.3" },
             "deprecated": true
         },
         {
-            "name": "Heading 3 Responsive Weight",
             "id": "font__heading__3__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Font Size",
             "id": "font__heading__4__size",
             "value": { "web": "20px" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Line Height",
             "id": "font__heading__4__line-height",
             "value": { "web": "1.4" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Weight",
             "id": "font__heading__4__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Responsive Font Size",
             "id": "font__heading__4__responsive__size",
             "value": { "web": "24px" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Responsive Line Height",
             "id": "font__heading__4__responsive__line-height",
             "value": { "web": "1.4" },
             "deprecated": true
         },
         {
-            "name": "Heading 4 Responsive Weight",
             "id": "font__heading__4__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Font Size",
             "id": "font__heading__5__size",
             "value": { "web": "16px" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Line Height",
             "id": "font__heading__5__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Weight",
             "id": "font__heading__5__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Responsive Font Size",
             "id": "font__heading__5__responsive__size",
             "value": { "web": "20px" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Responsive Line Height",
             "id": "font__heading__5__responsive__line-height",
             "value": { "web": "1.5" },
             "deprecated": true
         },
         {
-            "name": "Heading 5 Responsive Weight",
             "id": "font__heading__5__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Font Size",
             "id": "font__heading__6__size",
             "value": { "web": "14px" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Line Height",
             "id": "font__heading__6__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Weight",
             "id": "font__heading__6__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Responsive Font Size",
             "id": "font__heading__6__responsive__size",
             "value": { "web": "16px" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Responsive Line Height",
             "id": "font__heading__6__responsive__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Heading 6 Responsive Weight",
             "id": "font__heading__6__responsive__weight",
             "value": { "web": "500" },
             "deprecated": true
         },
         {
-            "name": "Text 1 Font Size",
             "id": "font__text__1__size",
             "value": { "web": "20px" },
             "deprecated": true
         },
         {
-            "name": "Text 1 Line Height",
             "id": "font__text__1__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Text 1 Responsive Font Size",
             "id": "font__text__1__responsive__size",
             "value": { "web": "24px" },
             "deprecated": true
         },
         {
-            "name": "Text 1 Responsive Line Height",
             "id": "font__text__1__responsive__line-height",
             "value": { "web": "1.5" },
             "deprecated": true
         },
         {
-            "name": "Text 2 Font Size",
             "id": "font__text__2__size",
             "value": { "web": "16px" },
             "deprecated": true
         },
         {
-            "name": "Text 2 Line Height",
             "id": "font__text__2__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Text 3 Font Size",
             "id": "font__text__3__size",
             "value": { "web": "14px" },
             "deprecated": true
         },
         {
-            "name": "Text 3 Line Height",
             "id": "font__text__3__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Text 4 Font Size",
             "id": "font__text__4__size",
             "value": { "web": "12px" },
             "deprecated": true
         },
         {
-            "name": "Text 4 Line Height",
             "id": "font__text__4__line-height",
             "value": { "web": "1.6" },
             "deprecated": true
         },
         {
-            "name": "Input Padding All",
             "id": "form__input__padding__all",
             "value": { "web": "6px 12px" },
             "deprecated": true
         },
         {
-            "name": "Input Padding Sides",
             "id": "form__input__padding__sides",
             "value": { "web": "12px" },
             "deprecated": true
         },
         {
-            "name": "Input Padding Ends",
             "id": "form__input__padding__ends",
             "value": { "web": "6px" },
             "deprecated": true
         },
         {
-            "name": "Input Padding Line Height",
             "id": "form__input__line-height",
             "value": { "web": "1.5" },
             "deprecated": true
         },
         {
-            "name": "Large",
             "id": "wrap-snap__large",
             "value": { "web": "946px" },
             "deprecated": true
         },
         {
-            "name": "Medium",
             "id": "wrap-snap__medium",
             "value": { "web": "668px" },
             "deprecated": true
         },
         {
-            "name": "Small",
             "id": "wrap-snap__small",
             "value": { "web": "449px" },
             "deprecated": true
         },
         {
-            "name": "Avatar: Extra Small",
             "id": "avatar__size__xsmall",
             "value": { "web": "20px" },
             "deprecated": true
         },
         {
-            "name": "Avatar: Small",
             "id": "avatar__size__small",
             "value": { "web": "32px" },
             "deprecated": true
         },
         {
-            "name": "Avatar: Medium",
             "id": "avatar__size__medium",
             "value": { "web": "48px" },
             "deprecated": true
         },
         {
-            "name": "Avatar: Large",
             "id": "avatar__size__large",
             "value": { "web": "72px" },
             "deprecated": true
         },
         {
-            "name": "Avatar: Extra Large",
             "id": "avatar__size__xlarge",
             "value": { "web": "124px" },
             "deprecated": true

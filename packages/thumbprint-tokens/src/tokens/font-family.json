@@ -2,12 +2,10 @@
     "name": "Font Family",
     "tokens": [
         {
-            "name": "Base",
             "id": "font__family__base",
             "value": { "web": "Mark, Avenir, Helvetica, Arial, sans-serif" }
         },
         {
-            "name": "Monospace",
             "id": "font__family__monospace",
             "value": { "web": "'Source Code Pro', monospace" }
         }

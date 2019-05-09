@@ -3,235 +3,196 @@
     "tokens": [
         {
             "group": "Title 1",
-            "name": "Title 1 Font Size",
             "id": "font__title__1__size",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 1",
-            "name": "Title 1 Line Height",
             "id": "font__title__1__line-height",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 1",
-            "name": "Title 1 Weight",
             "id": "font__title__1__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 1",
-            "name": "Title 1 Responsive Font Size",
             "id": "font__title__1__responsive__size",
             "value": { "web": "40px" }
         },
         {
             "group": "Title 1",
-            "name": "Title 1 Responsive Line Height",
             "id": "font__title__1__responsive__line-height",
             "value": { "web": "44px" }
         },
         {
             "group": "Title 1",
-            "name": "Title 1 Responsive Weight",
             "id": "font__title__1__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Font Size",
             "id": "font__title__2__size",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Line Height",
             "id": "font__title__2__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Weight",
             "id": "font__title__2__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Responsive Font Size",
             "id": "font__title__2__responsive__size",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Responsive Line Height",
             "id": "font__title__2__responsive__line-height",
             "value": { "web": "40px" }
         },
         {
             "group": "Title 2",
-            "name": "Title 2 Responsive Weight",
             "id": "font__title__2__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Font Size",
             "id": "font__title__3__size",
             "value": { "web": "22px" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Line Height",
             "id": "font__title__3__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Weight",
             "id": "font__title__3__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Responsive Font Size",
             "id": "font__title__3__responsive__size",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Responsive Line Height",
             "id": "font__title__3__responsive__line-height",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 3",
-            "name": "Title 3 Responsive Weight",
             "id": "font__title__3__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 4",
-            "name": "Title 4 Font Size",
             "id": "font__title__4__size",
             "value": { "web": "20px" }
         },
         {
             "group": "Title 4",
-            "name": "Title 4 Line Height",
             "id": "font__title__4__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 4",
-            "name": "Title 4 Weight",
             "id": "font__title__4__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 5",
-            "name": "Title 5 Font Size",
             "id": "font__title__5__size",
             "value": { "web": "18px" }
         },
         {
             "group": "Title 5",
-            "name": "Title 5 Line Height",
             "id": "font__title__5__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 5",
-            "name": "Title 5 Weight",
             "id": "font__title__5__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 6",
-            "name": "Title 6 Font Size",
             "id": "font__title__6__size",
             "value": { "web": "16px" }
         },
         {
             "group": "Title 6",
-            "name": "Title 6 Line Height",
             "id": "font__title__6__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 6",
-            "name": "Title 6 Weight",
             "id": "font__title__6__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 7",
-            "name": "Title 7 Font Size",
             "id": "font__title__7__size",
             "value": { "web": "14px" }
         },
         {
             "group": "Title 7",
-            "name": "title 7 Line Height",
             "id": "font__title__7__line-height",
             "value": { "web": "20px" }
         },
         {
             "group": "Title 7",
-            "name": "Title 7 Weight",
             "id": "font__title__7__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 8",
-            "name": "Title 8 Font Size",
             "id": "font__title__8__size",
             "value": { "web": "12px" }
         },
         {
             "group": "Title 8",
-            "name": "Title 8 Line Height",
             "id": "font__title__8__line-height",
             "value": { "web": "18px" }
         },
         {
             "group": "Title 8",
-            "name": "Title 8 Weight",
             "id": "font__title__8__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Body 1",
-            "name": "Body 1 Font Size",
             "id": "font__body__1__size",
             "value": { "web": "16px" }
         },
         {
             "group": "Body 1",
-            "name": "Body 1 Line Height",
             "id": "font__body__1__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Body 2",
-            "name": "Body 2 Font Size",
             "id": "font__body__2__size",
             "value": { "web": "14px" }
         },
         {
             "group": "Body 2",
-            "name": "Body 2 Line Height",
             "id": "font__body__2__line-height",
             "value": { "web": "20px" }
         },
         {
             "group": "Body 3",
-            "name": "Body 3 Font Size",
             "id": "font__body__3__size",
             "value": { "web": "12px" }
         },
         {
             "group": "Body 3",
-            "name": "Body 3 Line Height",
             "id": "font__body__3__line-height",
             "value": { "web": "18px" }
         }
