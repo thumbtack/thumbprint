@@ -8,21 +8,6 @@
         {
             "id": "wrap__no-pad-width",
             "value": { "web": "1010px" }
-        },
-        {
-            "id": "wrap-snap__large",
-            "value": { "web": "946px" },
-            "deprecated": true
-        },
-        {
-            "id": "wrap-snap__medium",
-            "value": { "web": "668px" },
-            "deprecated": true
-        },
-        {
-            "id": "wrap-snap__small",
-            "value": { "web": "449px" },
-            "deprecated": true
         }
     ]
 }
