@@ -61,6 +61,8 @@ describe('ModalDefault', () => {
             <ModalDefault isOpen onCloseClick={onCloseClick} shouldCloseOnCurtainClick />,
         );
 
+        jest.runAllTimers();
+
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
         wrapper.find('[data-test="thumbprint-modal-curtain"]').simulate('click');
@@ -74,6 +76,8 @@ describe('ModalDefault', () => {
         const wrapper = mount(
             <ModalDefault isOpen onCloseClick={onCloseClick} shouldCloseOnCurtainClick={false} />,
         );
+
+        jest.runAllTimers();
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
@@ -92,6 +96,21 @@ describe('ModalDefault', () => {
         expect(onOpenFinish).toHaveBeenCalledTimes(0);
 
         wrapper.setProps({ isOpen: true });
+
+        jest.runAllTimers();
+
+        expect(onOpenFinish).toHaveBeenCalledTimes(1);
+        wrapper.unmount();
+    });
+
+    test('calls `onOpenFinish` when opened on mount', () => {
+        const onOpenFinish = jest.fn();
+
+        expect(onOpenFinish).toHaveBeenCalledTimes(0);
+
+        const wrapper = mount(
+            <ModalDefault isOpen onCloseClick={noop} onOpenFinish={onOpenFinish} />,
+        );
 
         jest.runAllTimers();
 
@@ -157,5 +176,6 @@ describe('ModalDefaultFooter', () => {
             </ModalDefault>,
         );
         expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
     });
 });
