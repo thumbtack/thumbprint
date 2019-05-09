@@ -14,8 +14,18 @@ const aspectRatioStringToFloat = aspectRatio => {
         return null;
     }
 
-    const arr = aspectRatio.split(':');
-    return parseFloat(arr[0]) / parseFloat(arr[1]);
+    let decimalAspectRatio;
+
+    try {
+        const arr = aspectRatio.split(':');
+        decimalAspectRatio = parseFloat(arr[0]) / parseFloat(arr[1]);
+    } catch (error) {
+        throw Error(
+            'The `Image` component `aspectRatio` prop must be a string of two numbers separated by a colon. Example: "8:5"',
+        );
+    }
+
+    return decimalAspectRatio;
 };
 
 const shouldPolyfillObjectFit = () =>
@@ -215,6 +225,9 @@ Image.propTypes = {
      * "crop" an image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
+    /**
+     * Loads the image immediately rather than waiting for the user to scroll to it.
+     */
     disableLazyLoading: PropTypes.bool,
 };
 
