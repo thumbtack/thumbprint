@@ -6,28 +6,6 @@ import Picture from './components/picture.jsx';
 import LazyImage from './components/lazy-image.jsx';
 import canUseDOM from '../../utils/can-use-dom';
 
-/**
- * Converts `"8:5"` to `8/5`.
- */
-const aspectRatioStringToFloat = aspectRatio => {
-    if (!aspectRatio) {
-        return null;
-    }
-
-    let decimalAspectRatio;
-
-    try {
-        const arr = aspectRatio.split(':');
-        decimalAspectRatio = parseFloat(arr[0]) / parseFloat(arr[1]);
-    } catch (error) {
-        throw Error(
-            'The `Image` component `aspectRatio` prop must be a string of two numbers separated by a colon. Example: "8:5"',
-        );
-    }
-
-    return decimalAspectRatio;
-};
-
 const shouldPolyfillObjectFit = () =>
     canUseDOM &&
     document.documentElement &&
@@ -41,7 +19,7 @@ const Image = forwardRef((props, outerRef) => {
         style,
         disableLazyLoading,
         height,
-        aspectRatio: aspectRatioProp,
+        containerAspectRatio,
         objectFit,
         objectPosition,
         width,
@@ -49,15 +27,16 @@ const Image = forwardRef((props, outerRef) => {
         ...rest
     } = props;
 
-    const aspectRatio = aspectRatioStringToFloat(aspectRatioProp);
     const [sizes, setSizes] = useState('0px');
     const [hasImageStartedLoading, setHasImageStartedLoading] = useState(disableLazyLoading);
-    const shouldObjectFit = height || aspectRatio;
+    const shouldObjectFit = height || containerAspectRatio;
     const [node, setRef] = useState(null);
 
     warning(
-        (!height && !aspectRatio) || (height && !aspectRatio) || (!height && aspectRatio),
-        'You can pass either a `height` or `aspectRatio` to the `Image` component, but not both.',
+        (!height && !containerAspectRatio) ||
+            (height && !containerAspectRatio) ||
+            (!height && containerAspectRatio),
+        'You can pass either a `height` or `containerAspectRatio` to the `Image` component, but not both.',
     );
 
     useEffect(
@@ -72,7 +51,7 @@ const Image = forwardRef((props, outerRef) => {
     useEffect(
         () => {
             // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
-            // using a `height` or `aspectRatio`. The `hasImageStartedLoading` variable ensures
+            // using a `height` or `containerAspectRatio`. The `hasImageStartedLoading` variable ensures
             // that we don't try to polyfill the image before the `src` exists. This can happy
             // when we lazy-load.
             if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
@@ -120,12 +99,12 @@ const Image = forwardRef((props, outerRef) => {
         pictureProps.style.height = height;
     }
 
-    if (aspectRatio) {
+    if (containerAspectRatio) {
         // This ensures that the image always renders at that apsect ratio and that lazy-loaded
         // images don't cause the browser scroll to jump once the image has loaded. It uses the
         // following technique: https://css-tricks.com/aspect-ratio-boxes/
         const h = 100000;
-        const w = h * aspectRatio;
+        const w = h * containerAspectRatio;
 
         containerProps.style = {
             ...containerProps.style,
@@ -212,16 +191,16 @@ Image.propTypes = {
      * for the image. The placeholder prevents the browser scroll from jumping when the image is
      * lazy-loaded.
      */
-    aspectRatio: PropTypes.string,
+    containerAspectRatio: PropTypes.number,
     /**
      * Provides control over how an image should be resized to fit the container. This controls the
-     * `object-fit` CSS property. It is only useful if `height` or `aspectRatio` are used to
+     * `object-fit` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
      * "crop" an image.
      */
     objectFit: PropTypes.oneOf(['cover', 'contain']),
     /**
      * Provides control over how an image aligned in the container. This controls the
-     * `object-position` CSS property. It is only useful if `height` or `aspectRatio` are used to
+     * `object-position` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
      * "crop" an image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
@@ -235,7 +214,7 @@ Image.defaultProps = {
     sources: [],
     alt: '',
     height: undefined,
-    aspectRatio: undefined,
+    containerAspectRatio: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
     disableLazyLoading: false,
