@@ -45,6 +45,11 @@ class Transition extends React.Component {
         this.clearExistingTimeout = this.clearExistingTimeout.bind(this);
 
         this.currentTimeout = null;
+
+        // Call `onEntered` If the modal is immediately open when it mounts.
+        if (inProp) {
+            this.onEntered();
+        }
     }
 
     componentDidUpdate(prevProps) {
