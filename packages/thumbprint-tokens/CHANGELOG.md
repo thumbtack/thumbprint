@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Remove the "name" field from tokens in their source files. This does not affect the outputted code.
+
 ## 6.3.3 - 2019-04-08
 
 -   [Minor] Add supported platforms to each token (#198)
