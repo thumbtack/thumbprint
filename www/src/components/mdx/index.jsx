@@ -247,8 +247,6 @@ const getSectionByPathname = pathname => {
 const MDX = props => {
     const { children, location, pageContext } = props;
 
-    debugger;
-
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
     const isComponentPage =
