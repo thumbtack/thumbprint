@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Image } from '../Image/index.jsx';
+import Image from '../Image/index.jsx';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
