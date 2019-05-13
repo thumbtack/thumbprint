@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use `Image` component `ServiceCardImage` and `Avatar` instead of lazysizes.
+
 ## 0.7.0 - 2019-05-09
 
 ### Added
