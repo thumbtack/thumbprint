@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
-import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
+import { Title, Text, Link, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
 import InternalMDXRenderer from 'gatsby-mdx/mdx-renderer';
 import { isString } from 'lodash';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { ContentActionsEditSmall } from '@thumbtack/thumbprint-icons';
 import invariant from 'invariant';
 import Wrap from '../wrap';
 import PageHeader from '../page-header';
@@ -246,6 +247,8 @@ const getSectionByPathname = pathname => {
 const MDX = props => {
     const { children, location, pageContext } = props;
 
+    debugger;
+
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
     const isComponentPage =
@@ -277,6 +280,15 @@ const MDX = props => {
                             description={pageContext.frontmatter.description}
                         />
                         <MDXRenderer>{children}</MDXRenderer>
+                        <Text elementName="footer" size={2} className="bt b-gray-300 pt3 mt6">
+                            <Link
+                                iconLeft={<ContentActionsEditSmall />}
+                                theme="secondary"
+                                to="https://github.com/thumbtack/thumbprint/edit/master/www/src/pages/components/button/usage/index.mdx"
+                            >
+                                Edit this page
+                            </Link>
+                        </Text>
                     </React.Fragment>
                 )}
             </Wrap>
