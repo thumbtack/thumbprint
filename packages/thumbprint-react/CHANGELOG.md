@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.7.0 - 2019-05-09
+
+### Added
+
+-   [Minor] Create an `Image` component.
+
+### Fixed
+
+-   [Patch] Call `onOpenFinish` when the modal is immediately open as it is mounted.
+
 ## 0.6.0 - 2019-05-01
 
 ### Added

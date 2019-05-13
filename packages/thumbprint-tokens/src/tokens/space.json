@@ -2,42 +2,34 @@
     "name": "Space",
     "tokens": [
         {
-            "name": "Space",
             "id": "space__1",
             "value": { "web": "4px" }
         },
         {
-            "name": "Space",
             "id": "space__2",
             "value": { "web": "8px" }
         },
         {
-            "name": "Space",
             "id": "space__3",
             "value": { "web": "16px" }
         },
         {
-            "name": "Space",
             "id": "space__4",
             "value": { "web": "24px" }
         },
         {
-            "name": "Space",
             "id": "space__5",
             "value": { "web": "32px" }
         },
         {
-            "name": "Space",
             "id": "space__6",
             "value": { "web": "64px" }
         },
         {
-            "name": "Space",
             "id": "space__7",
             "value": { "web": "128px" }
         },
         {
-            "name": "Space",
             "id": "space__8",
             "value": { "web": "256px" }
         }

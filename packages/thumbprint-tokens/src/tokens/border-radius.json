@@ -2,22 +2,18 @@
     "name": "Border Radius",
     "tokens": [
         {
-            "name": "Base",
             "id": "border__radius__base",
             "value": { "web": "4px" }
         },
         {
-            "name": "Big",
             "id": "border__radius__big",
             "value": { "web": "6px" }
         },
         {
-            "name": "Full",
             "id": "border__radius__full",
             "value": { "web": "50%" }
         },
         {
-            "name": "Sides",
             "id": "border__radius__sides",
             "value": { "web": "9999px" }
         }
