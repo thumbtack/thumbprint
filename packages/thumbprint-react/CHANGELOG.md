@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.7.1 - 2019-05-15
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency. This doesn't affect the outputted code.
+
 ### Fixed
 
 -   [Patch] Support `width` classes and inline styles in the `Image` component. (#238)
