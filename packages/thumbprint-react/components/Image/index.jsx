@@ -22,7 +22,6 @@ const Image = forwardRef((props, outerRef) => {
         containerAspectRatio,
         objectFit,
         objectPosition,
-        width,
         alt,
         ...rest
     } = props;
@@ -82,6 +81,8 @@ const Image = forwardRef((props, outerRef) => {
         },
     };
 
+    const aspectRatioBoxProps = {};
+
     if (shouldObjectFit) {
         pictureProps.style = {
             ...pictureProps.style,
@@ -108,9 +109,11 @@ const Image = forwardRef((props, outerRef) => {
 
         containerProps.style = {
             ...containerProps.style,
-            paddingTop: `${(h / w) * 100}%`,
-            overflow: 'hidden',
             position: 'relative',
+        };
+
+        aspectRatioBoxProps.style = {
+            paddingTop: `${(h / w) * 100}%`,
         };
 
         pictureProps.style = {
@@ -157,6 +160,9 @@ const Image = forwardRef((props, outerRef) => {
                 }
             }}
         >
+            {/* This `div` holds the space set by `containerAspectRatio`. */}
+            {Object.keys(aspectRatioBoxProps).length > 0 && <div {...aspectRatioBoxProps} />}
+
             {picture}
         </div>
     );
