@@ -18,6 +18,26 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 />
 ```
 
+### Two side-by-side images
+
+```jsx
+<div className="flex">
+    <Image
+        src="https://d1vg1gqh4nkuns.cloudfront.net/i/302056478120263859/width/1024.jpeg"
+        alt="Photo of a sprinker"
+        containerAspectRatio={768 / 400}
+        style={{ width: '50%' }}
+        className="mr1"
+    />
+    <Image
+        src="https://d1vg1gqh4nkuns.cloudfront.net/i/327896627728072894/width/1024.jpeg"
+        alt="Photo of grass with concrete steps"
+        containerAspectRatio={768 / 400}
+        className="ml1 w-50"
+    />
+</div>
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`

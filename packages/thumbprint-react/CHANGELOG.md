@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Support `width` classes and inline styles in the `Image` component. (#238)
+
 ## 0.7.0 - 2019-05-09
 
 ### Added
