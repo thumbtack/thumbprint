@@ -50,7 +50,7 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
             'pv2 ph3': level === 1,
             'pv1 ph4': level === 2,
             'pv1 ph5': level === 3,
-            b: hasActiveClass && (!children || level === 1),
+            b: (hasActiveClass && !children) || level === 1,
             [styles.sideNavLinkBlueActiveIndicator]:
                 hasActiveClass && (level === 3 || (level === 2 && !children)),
         });

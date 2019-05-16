@@ -155,7 +155,7 @@ const Container = ({ children, location, activeSection }) => {
                                 flex: isSidebarOpen,
                             })}
                         >
-                            <div className="ph3 pv4 flex-none z-1 bg-gray-200">
+                            <div className="ph3 pv4 flex-none z-1 bb b-gray-300 bg-gray-200">
                                 <Link to="/" className="db mb3">
                                     <img
                                         src={thumbprintLogo}
