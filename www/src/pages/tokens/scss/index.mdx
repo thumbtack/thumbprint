@@ -6,7 +6,6 @@ description: Design variables that power Thumbtack’s UI.
 import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
 import classNames from 'classnames';
 import { graphql } from 'gatsby';
-import { sortBy } from 'lodash';
 import PackageTable from 'components/package-table';
 import TabNav from 'components/thumbprint-tokens/tab-nav';
 import TokenSection from 'components/thumbprint-tokens/token-section';
@@ -21,8 +20,6 @@ export const pageQuery = graphql`
                     tokens {
                         id
                         type
-                        description
-                        deprecated
                         value {
                             web
                         }
@@ -44,11 +41,7 @@ export const pageQuery = graphql`
 />
 
 <div>
-    {sortBy(props.data.allThumbprintToken.edges, [
-        // Display "Deprecated" as the last section
-        section => section.node.name === 'Deprecated',
-        'node.name',
-    ]).map(({ node: section }) => (
+    {props.data.allThumbprintToken.edges.map(({ node: section }) => (
         <TokenSection section={section} idTransform={id => `$tp-${id}`} key={section.name} />
     ))}
 </div>
