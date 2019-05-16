@@ -45,10 +45,7 @@ const Container = ({ children, location, activeSection }) => {
                     value
                 }
             }
-            allTokens: allThumbprintToken(
-                sort: { order: ASC, fields: [name] }
-                filter: { name: { ne: "Deprecated" } }
-            ) {
+            allTokens: allThumbprintToken(sort: { order: ASC, fields: [name] }) {
                 edges {
                     node {
                         name
@@ -348,16 +345,6 @@ const Container = ({ children, location, activeSection }) => {
                                                     />
                                                 ))}
                                             </SideNavGroup>
-                                            <SideNavGroup level={3}>
-                                                <SideNavLink
-                                                    title="Deprecated"
-                                                    to={`/tokens/scss/#${generateSlug({
-                                                        level: 'section',
-                                                        children: 'deprecated',
-                                                    })}`}
-                                                    level={3}
-                                                />
-                                            </SideNavGroup>
                                         </SideNavLink>
                                         <SideNavLink
                                             title="JavaScript"
@@ -377,16 +364,6 @@ const Container = ({ children, location, activeSection }) => {
                                                         level={3}
                                                     />
                                                 ))}
-                                            </SideNavGroup>
-                                            <SideNavGroup level={3}>
-                                                <SideNavLink
-                                                    title="Deprecated"
-                                                    to={`/tokens/javascript/#${generateSlug({
-                                                        level: 'section',
-                                                        children: 'deprecated',
-                                                    })}`}
-                                                    level={3}
-                                                />
                                             </SideNavGroup>
                                         </SideNavLink>
                                     </SideNavGroup>

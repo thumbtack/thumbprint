@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove all deprecated tokens. Old values can be found on [a previous version of the Thumbprint site](https://5cdc5c977a1bb7000855f899--thumbprint.netlify.com/tokens/scss/).
+
 ## 6.3.4 - 2019-05-15
 
 ### Changed
