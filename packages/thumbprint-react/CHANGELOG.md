@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Remove references to deprecated tokens.
+
 ## 0.7.1 - 2019-05-15
 
 ### Changed
