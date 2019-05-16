@@ -2,17 +2,14 @@
     "name": "Line Height",
     "tokens": [
         {
-            "name": "Base",
             "id": "font__line-height__base",
             "value": { "web": "1.6" }
         },
         {
-            "name": "Tight",
             "id": "font__line-height__tight",
             "value": { "web": "1.4" }
         },
         {
-            "name": "Loose",
             "id": "font__line-height__loose",
             "value": { "web": "1.9" }
         }
