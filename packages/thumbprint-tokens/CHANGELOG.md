@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Patch] Rename a handful of SCSS and JavaScipt token names.
+-   [Patch] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
 
 ### Removed
 
