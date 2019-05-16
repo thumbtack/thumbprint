@@ -19,11 +19,11 @@
         }
 
         &:first-child {
-            border-radius: $tp-border__radius__base 0 0 $tp-border__radius__base;
+            border-radius: $tp-border-radius__base 0 0 $tp-border-radius__base;
         }
 
         &:last-child {
-            border-radius: 0 $tp-border__radius__base $tp-border__radius__base 0;
+            border-radius: 0 $tp-border-radius__base $tp-border-radius__base 0;
         }
     }
 

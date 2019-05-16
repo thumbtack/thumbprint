@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+
 ## 0.1.5 - 2019-05-15
 
 ### Changed

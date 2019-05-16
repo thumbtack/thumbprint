@@ -57,13 +57,13 @@ $button-border-width: 2px;
     overflow: visible;
 
     &RoundedBordersLeft {
-        border-top-left-radius: $tp-border__radius__base;
-        border-bottom-left-radius: $tp-border__radius__base;
+        border-top-left-radius: $tp-border-radius__base;
+        border-bottom-left-radius: $tp-border-radius__base;
     }
 
     &RoundedBordersRight {
-        border-top-right-radius: $tp-border__radius__base;
-        border-bottom-right-radius: $tp-border__radius__base;
+        border-top-right-radius: $tp-border-radius__base;
+        border-bottom-right-radius: $tp-border-radius__base;
     }
 
     &HasNoRightBorder {

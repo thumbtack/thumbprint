@@ -4,13 +4,13 @@
 // highly specific selector in Thumbtack's website.
 // https://github.com/thumbtack/thumbprint-archive/issues/244
 .root.root.root {
-    font-family: $tp-font__family__base;
+    font-family: $tp-font-family__base;
     font-size: $tp-font__body__1__size;
     line-height: $tp-font__body__1__line-height;
     width: 100%;
     border-width: 1px;
     border-style: solid;
-    border-radius: $tp-border__radius__base;
+    border-radius: $tp-border-radius__base;
     padding: 10px 14px;
     vertical-align: middle;
     resize: vertical;
