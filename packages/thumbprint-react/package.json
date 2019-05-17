@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "0.6.0",
+    "version": "0.7.2",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -35,20 +35,24 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
-        "@thumbtack/thumbprint-scss": "^1.0.0",
-        "@thumbtack/thumbprint-tokens": "^6.3.3",
+        "@thumbtack/thumbprint-scss": "^1.0.2",
+        "@thumbtack/thumbprint-tokens": "^7.0.0",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
         "focus-trap-react": "^6.0.0",
+        "intersection-observer": "^0.6.0",
         "lazysizes": "^4.1.5",
         "lodash": "^4.17.11",
         "no-scroll": "^2.1.0",
+        "object-fit-images": "^3.2.4",
         "react-day-picker": "6.2.1",
         "react-displace": "^2.3.0",
+        "react-intersection-observer": "^8.23.0",
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
         "rotate-array": "^1.1.0",
+        "scrollparent": "^2.0.1",
         "warning": "^4.0.2"
     },
     "devDependencies": {

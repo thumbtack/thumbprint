@@ -30,17 +30,17 @@
     padding-right: $tp-space__3;
 
     @include tp-respond-above($tp-breakpoint__small) {
-        max-width: $tp-wrap-snap__small;
+        max-width: 449px;
         padding-left: 0; // Padding only applies to small size and below.
         padding-right: 0; // Padding only applies to small size and below.
     }
 
     @include tp-respond-above($tp-breakpoint__medium) {
-        max-width: $tp-wrap-snap__medium;
+        max-width: 668px;
     }
 
     @include tp-respond-above($tp-breakpoint__large) {
-        max-width: $tp-wrap-snap__large;
+        max-width: 946px;
     }
 }
 

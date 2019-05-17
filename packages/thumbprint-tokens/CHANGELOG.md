@@ -2,7 +2,25 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
+
+## 7.0.0 - 2019-05-17
+
+### Removed
+
+-   [Major] Remove all deprecated tokens. Old values can be found on [a previous version of the Thumbprint site](https://5cdc5c977a1bb7000855f899--thumbprint.netlify.com/tokens/scss/).
+
+## 6.3.4 - 2019-05-15
+
+### Changed
+
+-   [Patch] Remove the "name" field from tokens in their source files. This does not affect the outputted code.
+
 ## 6.3.3 - 2019-04-08
+
+### Changed
 
 -   [Minor] Add supported platforms to each token (#198)
 

@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+
+## 0.7.2 - 2019-05-17
+
+### Changed
+
+-   [Patch] Remove references to deprecated tokens.
+
+## 0.7.1 - 2019-05-15
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency. This doesn't affect the outputted code.
+
+### Fixed
+
+-   [Patch] Support `width` classes and inline styles in the `Image` component. (#238)
+
+## 0.7.0 - 2019-05-09
+
+### Added
+
+-   [Minor] Create an `Image` component.
+
+### Fixed
+
+-   [Patch] Call `onOpenFinish` when the modal is immediately open as it is mounted.
+
 ## 0.6.0 - 2019-05-01
 
 ### Added

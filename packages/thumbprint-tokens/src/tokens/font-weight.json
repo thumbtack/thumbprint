@@ -2,13 +2,11 @@
     "name": "Font Weight",
     "tokens": [
         {
-            "name": "Normal",
-            "id": "font__weight__normal",
+            "id": "font-weight__normal",
             "value": { "web": "400" }
         },
         {
-            "name": "Bold",
-            "id": "font__weight__bold",
+            "id": "font-weight__bold",
             "value": { "web": "700" }
         }
     ]

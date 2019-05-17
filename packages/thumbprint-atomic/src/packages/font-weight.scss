@@ -2,39 +2,39 @@
 @import '~@thumbtack/thumbprint-scss/mixins';
 
 .normal {
-    font-weight: $tp-font__weight__normal !important;
+    font-weight: $tp-font-weight__normal !important;
 }
 
 .b {
-    font-weight: $tp-font__weight__bold !important;
+    font-weight: $tp-font-weight__bold !important;
 }
 
 @include tp-respond-above($tp-breakpoint__small) {
     .s_normal {
-        font-weight: $tp-font__weight__normal !important;
+        font-weight: $tp-font-weight__normal !important;
     }
 
     .s_b {
-        font-weight: $tp-font__weight__bold !important;
+        font-weight: $tp-font-weight__bold !important;
     }
 }
 
 @include tp-respond-above($tp-breakpoint__medium) {
     .m_normal {
-        font-weight: $tp-font__weight__normal !important;
+        font-weight: $tp-font-weight__normal !important;
     }
 
     .m_b {
-        font-weight: $tp-font__weight__bold !important;
+        font-weight: $tp-font-weight__bold !important;
     }
 }
 
 @include tp-respond-above($tp-breakpoint__large) {
     .l_normal {
-        font-weight: $tp-font__weight__normal !important;
+        font-weight: $tp-font-weight__normal !important;
     }
 
     .l_b {
-        font-weight: $tp-font__weight__bold !important;
+        font-weight: $tp-font-weight__bold !important;
     }
 }

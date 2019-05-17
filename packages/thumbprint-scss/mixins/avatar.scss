@@ -1,13 +1,13 @@
 // Mixins
 
 @mixin tp-avatar--xsmall($important: null) {
-    width: $tp-avatar__size__xsmall $important;
-    height: $tp-avatar__size__xsmall $important;
+    width: 20px $important;
+    height: 20px $important;
 }
 
 @mixin tp-avatar--small($important: null) {
-    width: $tp-avatar__size__small $important;
-    height: $tp-avatar__size__small $important;
+    width: 32px $important;
+    height: 32px $important;
 
     .tp-avatar__badge {
         font-size: 10px $important;
@@ -19,8 +19,8 @@
 }
 
 @mixin tp-avatar--medium($important: null) {
-    width: $tp-avatar__size__medium $important;
-    height: $tp-avatar__size__medium $important;
+    width: 48px $important;
+    height: 48px $important;
 
     .tp-avatar__badge {
         font-size: 10px $important;
@@ -32,8 +32,8 @@
 }
 
 @mixin tp-avatar--large($important: null) {
-    width: $tp-avatar__size__large $important;
-    height: $tp-avatar__size__large $important;
+    width: 72px $important;
+    height: 72px $important;
 
     .tp-avatar__badge {
         font-size: 12px $important;
@@ -44,8 +44,8 @@
 }
 
 @mixin tp-avatar--xlarge($important: null) {
-    width: $tp-avatar__size__xlarge $important;
-    height: $tp-avatar__size__xlarge $important;
+    width: 124px $important;
+    height: 124px $important;
 
     .tp-avatar__badge {
         font-size: 15px $important;

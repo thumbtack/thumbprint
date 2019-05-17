@@ -45,10 +45,7 @@ const Container = ({ children, location, activeSection }) => {
                     value
                 }
             }
-            allTokens: allThumbprintToken(
-                sort: { order: ASC, fields: [name] }
-                filter: { name: { ne: "Deprecated" } }
-            ) {
+            allTokens: allThumbprintToken(sort: { order: ASC, fields: [name] }) {
                 edges {
                     node {
                         name
@@ -333,17 +330,6 @@ const Container = ({ children, location, activeSection }) => {
                                                 {node.name}
                                             </SideNavSectionGroupLink>
                                         ))}
-                                    </SideNavSectionGroup>
-                                    <SideNavSectionGroup>
-                                        <SideNavSectionGroupLink
-                                            to={`/tokens/#${generateSlug({
-                                                level: 'section',
-                                                children: 'deprecated',
-                                            })}`}
-                                            isActive={pathname === false}
-                                        >
-                                            Deprecated
-                                        </SideNavSectionGroupLink>
                                     </SideNavSectionGroup>
                                 </SideNavSection>
 
