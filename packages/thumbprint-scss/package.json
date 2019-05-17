@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-scss",
     "description": "CSS and Sass mixins for building Thumbtack UI",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "components.css",
     "style": "components.css",
@@ -30,7 +30,7 @@
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
-        "@thumbtack/thumbprint-tokens": "^6.3.4",
+        "@thumbtack/thumbprint-tokens": "^7.0.0",
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
         "fs-extra": "^7.0.1",
