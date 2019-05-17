@@ -2,12 +2,15 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+
 ## 0.7.2 - 2019-05-17
 
 ### Changed
 
 -   [Patch] Remove references to deprecated tokens.
--   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
 
 ## 0.7.1 - 2019-05-15
 
