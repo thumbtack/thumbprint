@@ -6,6 +6,12 @@
 
 -   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
 
+## 1.0.3 - 2019-05-17
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency. This doesn't affect the outputted code.
+
 ## 1.0.2 - 2019-04-08
 
 ### Changed
