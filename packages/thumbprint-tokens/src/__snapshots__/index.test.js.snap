@@ -366,7 +366,8 @@ $tp-z-index__modal: 200;
 exports[`outputted iOS matches snapshot 1`] = `
 "import UIKit.UIColor
 
-public struct Color {
+/// These are the colors we use at Thumbtack.
+public enum Color {
     public static let colorBlue100: UIColor(red: 0.918, green: 0.965, blue: 0.980, alpha: 1.000)
     public static let colorBlue200: UIColor(red: 0.702, green: 0.922, blue: 1.000, alpha: 1.000)
     public static let colorBlue300: UIColor(red: 0.475, green: 0.824, blue: 0.949, alpha: 1.000)
@@ -411,7 +412,7 @@ public struct Color {
     public static let colorWhite: UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
 }
 
-public struct Space {
+public enum Space {
     public static let space1: CGFloat = 4.0
     public static let space2: CGFloat = 8.0
     public static let space3: CGFloat = 16.0
