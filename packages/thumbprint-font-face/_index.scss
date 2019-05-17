@@ -8,7 +8,7 @@
         font-family: 'Mark';
         font-weight: 400;
         font-display: swap;
-        src: local('#{$tp-font__family__base}'),
+        src: local('#{$tp-font-family__base}'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset.woff2) format('woff2'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset.woff) format('woff');
     }
@@ -17,7 +17,7 @@
         font-family: 'Mark';
         font-weight: 700;
         font-display: swap;
-        src: local('#{$tp-font__family__base}'),
+        src: local('#{$tp-font-family__base}'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff2) format('woff2'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff) format('woff');
     }

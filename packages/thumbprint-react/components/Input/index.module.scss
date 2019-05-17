@@ -42,11 +42,11 @@ $icon-padding: 16px;
     // This only affects Firefox and Edge, normalizing the behavior across browsers.
     min-width: 0;
     color: inherit;
-    font-family: $tp-font__family__base;
+    font-family: $tp-font-family__base;
     vertical-align: middle;
     height: auto;
     background: transparent;
-    border-radius: $tp-border__radius__base;
+    border-radius: $tp-border-radius__base;
     z-index: 2;
     position: relative;
     width: 100%;
@@ -109,13 +109,13 @@ $icon-padding: 16px;
     border: $border-width solid;
 
     &RoundedBordersLeft {
-        border-top-left-radius: $tp-border__radius__base;
-        border-bottom-left-radius: $tp-border__radius__base;
+        border-top-left-radius: $tp-border-radius__base;
+        border-bottom-left-radius: $tp-border-radius__base;
     }
 
     &RoundedBordersRight {
-        border-top-right-radius: $tp-border__radius__base;
-        border-bottom-right-radius: $tp-border__radius__base;
+        border-top-right-radius: $tp-border-radius__base;
+        border-bottom-right-radius: $tp-border-radius__base;
     }
 
     &HasNoRightBorder {

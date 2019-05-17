@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
+
 ## 7.0.0 - 2019-05-17
 
 ### Removed

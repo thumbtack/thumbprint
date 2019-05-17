@@ -27,12 +27,12 @@
 }
 
 .tr:first-child td {
-    font-weight: $tp-font__weight__bold;
+    font-weight: $tp-font-weight__bold;
     color: inherit;
 }
 
 .isQuarter {
-    font-weight: $tp-font__weight__bold;
+    font-weight: $tp-font-weight__bold;
     padding-top: 32px;
 
     & ~ td {
