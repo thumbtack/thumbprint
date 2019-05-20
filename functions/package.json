@@ -1,5 +1,5 @@
 {
-    "name": "@thumbtack/functions",
+    "name": "@thumbtack/netlify-functions",
     "private": true,
     "version": "0.0.0",
     "author": "Daniel O'Connor <daniel@danoc.me>",
