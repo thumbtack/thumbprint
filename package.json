@@ -92,6 +92,7 @@
     },
     "workspaces": [
         "packages/*",
+        "functions/*",
         "www"
     ],
     "husky": {

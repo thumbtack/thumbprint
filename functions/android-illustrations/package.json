@@ -1,0 +1,14 @@
+{
+    "name": "@thumbtack/android-illustrations",
+    "private": true,
+    "version": "0.0.0",
+    "author": "Daniel O'Connor <daniel@danoc.me>",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "imagemin": "^6.1.0",
+        "imagemin-optipng": "^6.0.0",
+        "jimp": "^0.6.4",
+        "jszip": "^3.2.1",
+        "request-promise": "^4.2.4"
+    }
+}
