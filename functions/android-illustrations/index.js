@@ -29,7 +29,7 @@ exports.handler = async event => {
         throw new Error('You must provide an Image Service ID as a query parameter called `id`.');
     }
 
-    const sourceImageURL = 'https://d1vg1gqh4nkuns.cloudfront.net/i/' + id;
+    const sourceImageURL = `https://d1vg1gqh4nkuns.cloudfront.net/i/${id}`;
     let sourceImageBuffer;
 
     try {
