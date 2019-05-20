@@ -2,15 +2,15 @@
     "name": "Letter Spacing",
     "tokens": [
         {
-            "id": "letter-spacing__loose",
+            "id": "loose",
             "value": { "web": "1px" }
         },
         {
-            "id": "letter-spacing__tight",
+            "id": "tight",
             "value": { "web": "-1px" }
         },
         {
-            "id": "letter-spacing__extra-tight",
+            "id": "extra-tight",
             "value": { "web": "-2px" }
         }
     ]

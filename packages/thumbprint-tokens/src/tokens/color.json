@@ -3,212 +3,212 @@
     "description": "These are the colors we use at Thumbtack.",
     "tokens": [
         {
-            "id": "color__blue-100",
+            "id": "blue-100",
             "value": { "web": "#eaf6fa" },
             "type": "color"
         },
         {
-            "id": "color__blue-200",
+            "id": "blue-200",
             "value": { "web": "#b3ebff" },
             "type": "color"
         },
         {
-            "id": "color__blue-300",
+            "id": "blue-300",
             "value": { "web": "#79d2f2" },
             "type": "color"
         },
         {
-            "id": "color__blue",
+            "id": "blue",
             "value": { "web": "#009fd9" },
             "type": "color"
         },
         {
-            "id": "color__blue-500",
+            "id": "blue-500",
             "value": { "web": "#007fad" },
             "type": "color"
         },
         {
-            "id": "color__blue-600",
+            "id": "blue-600",
             "value": { "web": "#005a7a" },
             "type": "color"
         },
         {
-            "id": "color__indigo-100",
+            "id": "indigo-100",
             "value": { "web": "#e8f1fd" },
             "type": "color"
         },
         {
-            "id": "color__indigo-200",
+            "id": "indigo-200",
             "value": { "web": "#cce1ff" },
             "type": "color"
         },
         {
-            "id": "color__indigo-300",
+            "id": "indigo-300",
             "value": { "web": "#96c2ff" },
             "type": "color"
         },
         {
-            "id": "color__indigo",
+            "id": "indigo",
             "value": { "web": "#5968e2" },
             "type": "color"
         },
         {
-            "id": "color__indigo-500",
+            "id": "indigo-500",
             "value": { "web": "#4f54b3" },
             "type": "color"
         },
         {
-            "id": "color__indigo-600",
+            "id": "indigo-600",
             "value": { "web": "#383c80" },
             "type": "color"
         },
         {
-            "id": "color__purple-100",
+            "id": "purple-100",
             "value": { "web": "#f5efff" },
             "type": "color"
         },
         {
-            "id": "color__purple-200",
+            "id": "purple-200",
             "value": { "web": "#dfccff" },
             "type": "color"
         },
         {
-            "id": "color__purple-300",
+            "id": "purple-300",
             "value": { "web": "#d3baff" },
             "type": "color"
         },
         {
-            "id": "color__purple",
+            "id": "purple",
             "value": { "web": "#a97ff0" },
             "type": "color"
         },
         {
-            "id": "color__purple-500",
+            "id": "purple-500",
             "value": { "web": "#8a5ed6" },
             "type": "color"
         },
         {
-            "id": "color__purple-600",
+            "id": "purple-600",
             "value": { "web": "#502095" },
             "type": "color"
         },
         {
-            "id": "color__green-100",
+            "id": "green-100",
             "value": { "web": "#e1fdf3" },
             "type": "color"
         },
         {
-            "id": "color__green-200",
+            "id": "green-200",
             "value": { "web": "#c6f7da" },
             "type": "color"
         },
         {
-            "id": "color__green-300",
+            "id": "green-300",
             "value": { "web": "#73e4a2" },
             "type": "color"
         },
         {
-            "id": "color__green",
+            "id": "green",
             "value": { "web": "#2db783" },
             "type": "color"
         },
         {
-            "id": "color__green-500",
+            "id": "green-500",
             "value": { "web": "#109e78" },
             "type": "color"
         },
         {
-            "id": "color__green-600",
+            "id": "green-600",
             "value": { "web": "#0f6648" },
             "type": "color"
         },
         {
-            "id": "color__yellow-100",
+            "id": "yellow-100",
             "value": { "web": "#fdf7e7" },
             "type": "color"
         },
         {
-            "id": "color__yellow-200",
+            "id": "yellow-200",
             "value": { "web": "#ffebb3" },
             "type": "color"
         },
         {
-            "id": "color__yellow-300",
+            "id": "yellow-300",
             "value": { "web": "#ffdd80" },
             "type": "color"
         },
         {
-            "id": "color__yellow",
+            "id": "yellow",
             "value": { "web": "#febe14" },
             "type": "color"
         },
         {
-            "id": "color__yellow-500",
+            "id": "yellow-500",
             "value": { "web": "#d48300" },
             "type": "color"
         },
         {
-            "id": "color__yellow-600",
+            "id": "yellow-600",
             "value": { "web": "#8a5500" },
             "type": "color"
         },
         {
-            "id": "color__red-100",
+            "id": "red-100",
             "value": { "web": "#ffeff0" },
             "type": "color"
         },
         {
-            "id": "color__red-200",
+            "id": "red-200",
             "value": { "web": "#ffd9d9" },
             "type": "color"
         },
         {
-            "id": "color__red-300",
+            "id": "red-300",
             "value": { "web": "#ffb0b0" },
             "type": "color"
         },
         {
-            "id": "color__red",
+            "id": "red",
             "value": { "web": "#ff5a5f" },
             "type": "color"
         },
         {
-            "id": "color__red-500",
+            "id": "red-500",
             "value": { "web": "#cc3553" },
             "type": "color"
         },
         {
-            "id": "color__red-600",
+            "id": "red-600",
             "value": { "web": "#76012c" },
             "type": "color"
         },
         {
-            "id": "color__black-300",
+            "id": "black-300",
             "value": { "web": "#676d73" },
             "type": "color"
         },
         {
-            "id": "color__black",
+            "id": "black",
             "value": { "web": "#2f3033" },
             "type": "color"
         },
         {
-            "id": "color__gray-200",
+            "id": "gray-200",
             "value": { "web": "#fafafa" },
             "type": "color"
         },
         {
-            "id": "color__gray-300",
+            "id": "gray-300",
             "value": { "web": "#e9eced" },
             "type": "color"
         },
         {
-            "id": "color__gray",
+            "id": "gray",
             "value": { "web": "#d3d4d5" },
             "type": "color"
         },
         {
-            "id": "color__white",
+            "id": "white",
             "value": { "web": "#ffffff" },
             "type": "color"
         }
