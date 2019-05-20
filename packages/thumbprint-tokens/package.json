@@ -22,7 +22,8 @@
         "fs-extra": "^5.0.0",
         "glob": "^7.1.2",
         "handlebars": "^4.1.1",
-        "lodash": "^4.17.4"
+        "lodash": "^4.17.4",
+        "number-to-words": "^1.2.4"
     },
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"

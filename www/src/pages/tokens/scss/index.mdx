@@ -12,7 +12,10 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 
 export const pageQuery = graphql`
     {
-        allThumbprintToken(sort: { order: ASC, fields: [name] }) {
+        allThumbprintToken(
+            sort: { order: ASC, fields: [name] }
+            filter: { tokens: { elemMatch: { value: { web: { ne: null } } } } }
+        ) {
             edges {
                 node {
                     name
@@ -49,6 +52,7 @@ export const pageQuery = graphql`
                 return `$tp-${sectionName}__${id}`;
             }}
             key={section.name}
+            platform="web"
         />
     ))}
 </div>

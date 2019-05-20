@@ -3,24 +3,20 @@ import PropTypes from 'prop-types';
 import Color from './color';
 import { InlineCode } from '../../../mdx';
 
-const TokenExample = props => {
-    let children;
+const TokenExample = ({ children, platform, type }) => {
+    let value = <InlineCode theme="plain">{children}</InlineCode>;
 
-    switch (props.type) {
-        case 'color':
-            children = <Color value={props.children} />;
-            break;
-        default:
-            children = <InlineCode theme="plain">{props.children}</InlineCode>;
-            break;
+    if (type === 'color') {
+        value = <Color value={children} platform={platform} />;
     }
 
-    return <div>{children}</div>;
+    return <div>{value}</div>;
 };
 
 TokenExample.propTypes = {
     type: PropTypes.string,
     children: PropTypes.node.isRequired,
+    platform: PropTypes.string.isRequired,
 };
 
 TokenExample.defaultProps = {

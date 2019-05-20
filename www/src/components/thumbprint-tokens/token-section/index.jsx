@@ -7,7 +7,7 @@ import TokenExample from './token-example';
 import Tag from '../../tag';
 import { H2, P, InlineCode } from '../../mdx';
 
-const TokenSection = ({ section, idTransform }) => {
+const TokenSection = ({ section, idTransform, platform }) => {
     const groupedTokens = groupBy(section.tokens, 'group');
 
     return (
@@ -22,49 +22,62 @@ const TokenSection = ({ section, idTransform }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {map(groupedTokens, (group, groupName) => (
-                        <tr className="bb b-gray-300" key={groupName}>
-                            <td colSpan="2">
-                                <table className="w-100 collapse tp-body-2">
-                                    <tbody>
-                                        {map(group, (token, index) => (
-                                            <tr
-                                                key={token.id}
-                                                className={classNames({
-                                                    'bb b-gray-300':
-                                                        groupName === 'null' &&
-                                                        index !== group.length - 1,
-                                                })}
-                                            >
-                                                <td className="tl pv2" data-algolia="include">
-                                                    {token.deprecated && (
-                                                        <Tag type="deprecated" className="mr2" />
-                                                    )}
-                                                    <InlineCode theme="plain" shouldCopyToClipboard>
-                                                        {idTransform(token.id)}
-                                                    </InlineCode>
-                                                    {token.description && (
-                                                        <Text
-                                                            elementName="span"
-                                                            size={2}
-                                                            className="ml3 black-300"
+                    {map(groupedTokens, (group, groupName) => {
+                        const tokens = group.filter(token => token.value[platform]);
+
+                        return (
+                            <tr className="bb b-gray-300" key={groupName}>
+                                <td colSpan="2">
+                                    <table className="w-100 collapse tp-body-2">
+                                        <tbody>
+                                            {tokens.map((token, index) => (
+                                                <tr
+                                                    key={token.id}
+                                                    className={classNames({
+                                                        'bb b-gray-300':
+                                                            groupName === 'null' &&
+                                                            index !== tokens.length - 1,
+                                                    })}
+                                                >
+                                                    <td className="tl pv2" data-algolia="include">
+                                                        {token.deprecated && (
+                                                            <Tag
+                                                                type="deprecated"
+                                                                className="mr2"
+                                                            />
+                                                        )}
+                                                        <InlineCode
+                                                            theme="plain"
+                                                            shouldCopyToClipboard
                                                         >
-                                                            {token.description}
-                                                        </Text>
-                                                    )}
-                                                </td>
-                                                <td className="tr pv2">
-                                                    <TokenExample type={token.type}>
-                                                        {token.value.web}
-                                                    </TokenExample>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    ))}
+                                                            {idTransform(token.id)}
+                                                        </InlineCode>
+                                                        {token.description && (
+                                                            <Text
+                                                                elementName="span"
+                                                                size={2}
+                                                                className="ml3 black-300"
+                                                            >
+                                                                {token.description}
+                                                            </Text>
+                                                        )}
+                                                    </td>
+                                                    <td className="tr pv2">
+                                                        <TokenExample
+                                                            type={token.type}
+                                                            platform={platform}
+                                                        >
+                                                            {token.value[platform]}
+                                                        </TokenExample>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>
@@ -78,6 +91,7 @@ TokenSection.propTypes = {
      * for that platform.
      */
     idTransform: PropTypes.func.isRequired,
+    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
 };
 
 export default TokenSection;
