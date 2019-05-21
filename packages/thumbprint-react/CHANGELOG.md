@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+-   [Patch] Update `DatePicker` component design to increase touch target.
 
 ### Fixed
 
