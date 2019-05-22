@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
+-   [Patch] Change the internals of how tokens are stored and generated. This does not affect the outputted code.
 
 ## 7.0.0 - 2019-05-17
 

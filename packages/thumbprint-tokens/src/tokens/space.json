@@ -2,35 +2,35 @@
     "name": "Space",
     "tokens": [
         {
-            "id": "space__1",
+            "id": "1",
             "value": { "web": "4px" }
         },
         {
-            "id": "space__2",
+            "id": "2",
             "value": { "web": "8px" }
         },
         {
-            "id": "space__3",
+            "id": "3",
             "value": { "web": "16px" }
         },
         {
-            "id": "space__4",
+            "id": "4",
             "value": { "web": "24px" }
         },
         {
-            "id": "space__5",
+            "id": "5",
             "value": { "web": "32px" }
         },
         {
-            "id": "space__6",
+            "id": "6",
             "value": { "web": "64px" }
         },
         {
-            "id": "space__7",
+            "id": "7",
             "value": { "web": "128px" }
         },
         {
-            "id": "space__8",
+            "id": "8",
             "value": { "web": "256px" }
         }
     ]

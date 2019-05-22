@@ -2,15 +2,15 @@
     "name": "Line Height",
     "tokens": [
         {
-            "id": "line-height__base",
+            "id": "base",
             "value": { "web": "1.6" }
         },
         {
-            "id": "line-height__tight",
+            "id": "tight",
             "value": { "web": "1.4" }
         },
         {
-            "id": "line-height__loose",
+            "id": "loose",
             "value": { "web": "1.9" }
         }
     ]
