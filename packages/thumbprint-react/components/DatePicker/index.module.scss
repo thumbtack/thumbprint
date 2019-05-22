@@ -175,19 +175,17 @@
     position: relative;
 
     &::after {
-        content: '\00B7';
-        display: inline-block;
-        color: $tp-color__blue;
-        font-size: 48px;
+        content: '';
         position: absolute;
-        right: 13px;
-        top: -6px;
-    }
-
-    @media screen and (max-width: 350px) {
-        &::after {
-            right: 9px;
-        }
+        left: 0;
+        right: 0;
+        bottom: 4px;
+        width: 6px;
+        height: 6px;
+        margin: 0 auto;
+        display: inline-block;
+        border-radius: 50%;
+        background: $tp-color__blue;
     }
 }
 
