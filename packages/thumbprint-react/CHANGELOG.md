@@ -4,11 +4,11 @@
 
 ### Changed
 
--   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+-   [Patch] Update some token names that were renamed. This doesn't affect the outputted code. (#244)
 
 ### Fixed
 
--   [Patch] Update dot centering on `DatePicker` component.
+-   [Patch] Update dot centering on `DatePicker` component to work better at all breakpoints.
 
 ## 0.7.2 - 2019-05-17
 
