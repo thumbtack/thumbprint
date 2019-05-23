@@ -4,7 +4,7 @@
 
 ### Added
 
--   [Minor] Add quick fade in of images onload.
+-   [Minor] Add quick fade in transition to the `Image` component. (#243)
 
 ### Changed
 
