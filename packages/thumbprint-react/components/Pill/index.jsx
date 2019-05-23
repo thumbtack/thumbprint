@@ -42,5 +42,5 @@ Pill.propTypes = {
 
 Pill.defaultProps = {
     icon: undefined,
-    color: 'gray',
+    color: undefined,
 };
