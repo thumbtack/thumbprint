@@ -16,7 +16,6 @@
     position: relative;
     user-select: none;
     flex-direction: row;
-    padding: 1rem 0;
 }
 
 .root :global(.DayPicker-Month) {
@@ -30,21 +29,16 @@
     position: absolute;
     left: 0;
     right: 0;
-    padding: 0 0.5rem;
-    top: 1rem;
 }
 
 .root :global(.DayPicker-NavButton) {
-    top: 0;
-    border: 0;
     position: absolute;
     width: 75px;
-    height: 1.5rem;
+    height: 44px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 .root :global(.DayPicker-NavButton--prev) {
@@ -63,10 +57,9 @@
 
 .root :global(.DayPicker-Caption) {
     display: table-caption;
-    height: 1.5rem;
+    margin: 10px 0;
     text-align: center;
     font-weight: 400;
-    margin-bottom: 16px;
 }
 
 .root :global(.DayPicker-Weekdays) {
