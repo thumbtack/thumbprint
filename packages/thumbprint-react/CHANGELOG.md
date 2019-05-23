@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add quick fade in of images onload.
+
 ### Changed
 
 -   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
