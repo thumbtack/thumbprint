@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add Pill component.
+
 ### Changed
 
 -   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
