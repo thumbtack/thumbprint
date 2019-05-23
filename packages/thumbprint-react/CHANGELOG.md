@@ -4,7 +4,7 @@
 
 ### Added
 
--   [Minor] Add Pill component.
+-   [Minor] Add Pill component (#251)
 
 ### Changed
 
