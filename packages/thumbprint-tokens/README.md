@@ -16,14 +16,14 @@ All tokens live within a `tokens/*.json` file. Token files follow the following 
     "description": "These are the colors we use at Thumbtack.",
     "tokens": [
         {
-            "id": "color__blue",
+            "id": "blue",
             "value": {
                 "web": "#009fd9"
             },
             "type": "color"
         },
         {
-            "id": "color__celebrate",
+            "id": "celebrate",
             "value": {
                 "web": "#fbe002"
             },

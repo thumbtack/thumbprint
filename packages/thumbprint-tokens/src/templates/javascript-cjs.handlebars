@@ -1,11 +1,13 @@
-{{#each this}}
-{{#if value.web}}
-{{#if description}}
-// {{description}}
+{{#each this as |section|}}
+{{#each section.tokens as |token|}}
+{{#if token.value.web}}
+{{#if token.description}}
+// {{token.description}}
 {{/if}}
-{{#if deprecated}}
+{{#if token.deprecated}}
 // @deprecated
 {{/if}}
-exports.{{formatId this}} = {{{formatValue this}}};
+exports.{{formatId section token}} = {{{formatValue token}}};
 {{/if}}
+{{/each}}
 {{/each}}

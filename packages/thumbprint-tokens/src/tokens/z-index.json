@@ -3,7 +3,7 @@
     "description": "Values to help stack Thumbprint UI components.",
     "tokens": [
         {
-            "id": "z-index__modal",
+            "id": "modal",
             "value": { "web": 200 }
         }
     ]

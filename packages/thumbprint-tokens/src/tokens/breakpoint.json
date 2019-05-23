@@ -2,43 +2,43 @@
     "name": "Breakpoint",
     "tokens": [
         {
-            "id": "breakpoint__large",
+            "id": "large",
             "value": { "web": "1025px" }
         },
         {
-            "id": "breakpoint__large__value",
+            "id": "large__value",
             "value": { "web": 1025 }
         },
         {
-            "id": "breakpoint__medium",
+            "id": "medium",
             "value": { "web": "700px" }
         },
         {
-            "id": "breakpoint__medium__value",
+            "id": "medium__value",
             "value": { "web": 700 }
         },
         {
-            "id": "breakpoint__small",
+            "id": "small",
             "value": { "web": "481px" }
         },
         {
-            "id": "breakpoint__small__value",
+            "id": "small__value",
             "value": { "web": 481 }
         },
         {
-            "id": "breakpoint__split-view__medium",
+            "id": "split-view__medium",
             "value": { "web": "1060px" }
         },
         {
-            "id": "breakpoint__split-view__medium__value",
+            "id": "split-view__medium__value",
             "value": { "web": 1060 }
         },
         {
-            "id": "breakpoint__split-view__small",
+            "id": "split-view__small",
             "value": { "web": "769px" }
         },
         {
-            "id": "breakpoint__split-view__small__value",
+            "id": "split-view__small__value",
             "value": { "web": 769 }
         }
     ]
