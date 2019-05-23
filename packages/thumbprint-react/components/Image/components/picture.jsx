@@ -4,11 +4,7 @@ import styles from './picture.module.scss';
 const Picture = forwardRef((props, ref) => {
     const { src, sources, sizes, alt, style, ...rest } = props;
 
-    const [loadedClass, setClass] = useState(null);
-
-    function handleOnLoad() {
-        setClass(styles.imageLoaded);
-    }
+    const [isLoaded, setIsLoaded] = useState(false);
 
     return (
         <picture>
@@ -21,8 +17,10 @@ const Picture = forwardRef((props, ref) => {
                 style={style}
                 ref={ref}
                 {...rest}
-                onLoad={handleOnLoad}
-                className={`${styles.imageLoading} ${loadedClass}`}
+                onLoad={() => {
+                    setIsLoaded(true);
+                }}
+                className={isLoaded ? styles.imageLoaded : styles.imageLoading}
             />
         </picture>
     );
