@@ -65,7 +65,7 @@ exports[`renders icon 1`] = `
 </Pill>
 `;
 
-exports[`sets color them 1`] = `
+exports[`sets color theme 1`] = `
 <Pill
   color="red"
 >
