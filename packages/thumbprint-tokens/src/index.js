@@ -3,6 +3,9 @@ const path = require('path');
 const glob = require('glob');
 const fse = require('fs-extra');
 const handlebars = require('handlebars');
+// This import temporarily exists to help ease the migration from Tokens v7 to v8.
+// https://github.com/thumbtack/thumbprint/pull/242
+const tempTokens = require('./temp-tokens');
 
 const outputs = [
     { slug: 'javascript-cjs', distName: 'index.js' },
@@ -21,7 +24,7 @@ const compile = (output, tokens) => {
         handlebars.registerHelper(name, value);
     });
 
-    return handlebars.compile(template)(tokens);
+    return handlebars.compile(template)(tokens) + tempTokens[output];
 };
 
 (() => {

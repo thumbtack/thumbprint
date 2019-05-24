@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Temporarily bring back removed Tokens to make it easier to migrate to `8.0.0`.
+
 ## 8.0.0 - 2019-05-24
 
 ### Changed
