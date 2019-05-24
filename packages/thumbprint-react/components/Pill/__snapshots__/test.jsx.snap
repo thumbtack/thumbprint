@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders content that is passed in 1`] = `
+<Pill>
+  <div
+    className="root"
+  >
+    <div
+      className="content"
+    >
+      <span>
+        goose
+      </span>
+    </div>
+  </div>
+</Pill>
+`;
+
+exports[`renders icon 1`] = `
+<Pill
+  icon={
+    <ContentModifierLightningTiny
+      fill="currentColor"
+      height="14"
+      viewBox="0 0 14 14"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  }
+>
+  <div
+    className="root"
+  >
+    <div
+      className="content"
+    >
+      <span
+        className="iconWrap"
+      >
+        <ContentModifierLightningTiny
+          fill="currentColor"
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <svg
+            fill="currentColor"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.968 10.08l.897-2.855a.751.751 0 0 0-.715-.975H4.14L6.604 2.5h3.019L8.101 5.123A.748.748 0 0 0 8.75 6.25h.898l-4.68 3.83zm7.488-4.832a.748.748 0 0 0-.706-.498h-1.698l1.523-2.623A.752.752 0 0 0 10.925 1H6.201a.75.75 0 0 0-.628.338l-3.45 5.25A.75.75 0 0 0 2.75 7.75h1.378l-1.344 4.275a.749.749 0 0 0 1.19.806l8.25-6.75a.749.749 0 0 0 .232-.833z"
+            />
+          </svg>
+        </ContentModifierLightningTiny>
+      </span>
+      <span>
+        goose
+      </span>
+    </div>
+  </div>
+</Pill>
+`;
+
+exports[`sets color theme 1`] = `
+<Pill
+  color="red"
+>
+  <div
+    className="root pillRed"
+  >
+    <div
+      className="content"
+    >
+      <span>
+        goose
+      </span>
+    </div>
+  </div>
+</Pill>
+`;

@@ -6,6 +6,10 @@
 
 -   [Patch] Update `DatePicker` component design to increase touch target.
 
+### Added
+
+-   [Minor] Add Pill component (#251)
+
 ## 0.7.3 - 2019-05-24
 
 ### Changed

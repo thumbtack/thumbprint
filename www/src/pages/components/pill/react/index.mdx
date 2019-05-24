@@ -1,0 +1,65 @@
+---
+title: Pill
+description: Small labels that help qualify information.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Pill variations
+
+### Default
+
+```jsx
+<Pill>Available</Pill>
+```
+
+### Icon & color
+
+```jsx
+<Pill color="red" icon={<ContentModifierTrophyTiny />}>
+    In high demand
+</Pill>
+```
+
+### Multiple
+
+```jsx
+<div>
+    <span className="mr2">
+        <Pill color="blue">Highly rated</Pill>
+    </span>
+    <span>
+        <Pill color="green" icon={<ContentModifierLightningTiny />}>
+            Fast response
+        </Pill>
+    </span>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/pill/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Pill/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
