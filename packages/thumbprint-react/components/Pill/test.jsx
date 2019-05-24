@@ -15,7 +15,7 @@ test('renders icon', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('sets color them', () => {
+test('sets color theme', () => {
     const wrapper = mount(<Pill color="red">goose</Pill>);
     expect(wrapper.find('.root').hasClass('pillRed'));
     expect(wrapper).toMatchSnapshot();
