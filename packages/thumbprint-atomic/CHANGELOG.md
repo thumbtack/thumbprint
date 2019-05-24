@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.2.6 - 2019-05-24
+
 ### Changed
 
 -   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
