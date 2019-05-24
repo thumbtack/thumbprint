@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 8.0.0 - 2019-05-24
+
 ### Changed
 
 -   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
