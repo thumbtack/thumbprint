@@ -33,3 +33,7 @@ Lastly, there are the occasional layouts where values must be hardcoded. For ins
 ## Non-React projects
 
 If you cannot use React but want to include Thumbprint styling, for example, integrations with third party tools or HTML prototyping, we have a CSS-only option. Contact us on Slack and we'll determine how best to help.
+
+## Component deviations
+
+In some cases, like an experiment or a permanent one-off variation, you may want to change the appearance or behavior of Thumbprint component in an unsupported way. In this case you should avoid altering the Thumbprint SCSS or React components in your project and instead create a custom component. This is because future changes to the Thumbprint component could break altered instances.
