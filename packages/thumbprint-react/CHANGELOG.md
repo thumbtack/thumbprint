@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Add quick fade in transition to the `Image` component. (#243)
 -   [Minor] Add Pill component (#251)
 
 ## 0.7.3 - 2019-05-24
