@@ -2,8 +2,8 @@ import React, { useState, forwardRef, useEffect } from 'react';
 import warning from 'warning';
 import PropTypes from 'prop-types';
 import scrollparent from 'scrollparent';
+import { useInView } from 'react-intersection-observer';
 import Picture from './components/picture.jsx';
-import LazyImage from './components/lazy-image.jsx';
 import canUseDOM from '../../utils/can-use-dom';
 
 const shouldPolyfillObjectFit = () =>
@@ -28,7 +28,14 @@ const Image = forwardRef((props, outerRef) => {
     const [sizes, setSizes] = useState('0px');
     const [hasImageStartedLoading, setHasImageStartedLoading] = useState(false);
     const shouldObjectFit = height || containerAspectRatio;
-    const [node, setRef] = useState(null);
+    const [containerRef, setContainerRef] = useState(null);
+
+    const parent = canUseDOM && scrollparent(containerRef);
+    // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
+    // that Intersection Observer just uses the default `window`.
+    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
+
+    const [inViewRef, inView] = useInView({ root, rootMargin: '100px' });
 
     warning(
         (!height && !containerAspectRatio) ||
@@ -39,11 +46,11 @@ const Image = forwardRef((props, outerRef) => {
 
     useEffect(
         () => {
-            if (node) {
-                setSizes(`${node.clientWidth}px`);
+            if (containerRef) {
+                setSizes(`${containerRef.clientWidth}px`);
             }
         },
-        [node],
+        [containerRef],
     );
 
     useEffect(
@@ -52,14 +59,34 @@ const Image = forwardRef((props, outerRef) => {
             // using a `height` or `containerAspectRatio`. The `hasImageStartedLoading` variable ensures
             // that we don't try to polyfill the image before the `src` exists. This can happy
             // when we lazy-load.
-            if (shouldObjectFit && node && hasImageStartedLoading && shouldPolyfillObjectFit()) {
+            if (
+                shouldObjectFit &&
+                containerRef &&
+                hasImageStartedLoading &&
+                shouldPolyfillObjectFit()
+            ) {
                 import('object-fit-images').then(({ default: ObjectFitImages }) => {
-                    ObjectFitImages(node.querySelector('img'));
+                    ObjectFitImages(containerRef.querySelector('img'));
                 });
             }
         },
         [shouldObjectFit, hasImageStartedLoading],
     );
+
+    // We track this as state because the polyfill is loaded asynchronously in browsers that need
+    // it. Storing it in state allows us to trigger a re-render once the polyfill is loaded.
+    const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(
+        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
+    );
+
+    // Loads the polyfill and indicates the browser now supports Intersection Observer.
+    if (canUseDOM && !isIntersectionObserverSupported) {
+        import('intersection-observer').then(() => {
+            if (typeof window.IntersectionObserver !== 'undefined') {
+                setIsIntersectionObserverSupported(true);
+            }
+        });
+    }
 
     const pictureProps = {
         src,
@@ -124,28 +151,16 @@ const Image = forwardRef((props, outerRef) => {
         };
     }
 
-    const parent = canUseDOM && scrollparent(node);
-    // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
-    // that Intersection Observer just uses the default `window`.
-    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
-
-    const picture = (
-        <LazyImage
-            {...pictureProps}
-            root={root}
-            onEnter={() => {
-                setHasImageStartedLoading(true);
-            }}
-        >
-            {lazyImageProps => <Picture {...lazyImageProps} />}
-        </LazyImage>
-    );
+    if (inView && !hasImageStartedLoading) {
+        setHasImageStartedLoading(true);
+    }
 
     return (
         <div
             {...containerProps}
             ref={el => {
-                setRef(el);
+                setContainerRef(el);
+                inViewRef(el);
 
                 if (outerRef) {
                     outerRef(el);
@@ -155,7 +170,11 @@ const Image = forwardRef((props, outerRef) => {
             {/* This `div` holds the space set by `containerAspectRatio`. */}
             {Object.keys(aspectRatioBoxProps).length > 0 && <div {...aspectRatioBoxProps} />}
 
-            {picture}
+            {inView && <Picture {...pictureProps} />}
+
+            <noscript>
+                <Picture src={src} sources={sources} alt={alt} />
+            </noscript>
         </div>
     );
 });
