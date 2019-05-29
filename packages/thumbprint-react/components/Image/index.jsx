@@ -170,7 +170,7 @@ const Image = forwardRef((props, outerRef) => {
             {/* This `div` holds the space set by `containerAspectRatio`. */}
             {Object.keys(aspectRatioBoxProps).length > 0 && <div {...aspectRatioBoxProps} />}
 
-            {inView && <Picture {...pictureProps} />}
+            {hasImageStartedLoading && <Picture {...pictureProps} />}
 
             <noscript>
                 <Picture src={src} sources={sources} alt={alt} />
