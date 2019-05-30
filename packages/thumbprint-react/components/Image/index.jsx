@@ -66,9 +66,15 @@ const Image = forwardRef((props, outerRef) => {
         triggerOnce: true,
     });
 
+    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState(
+        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
+    );
+
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
     if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
-        import('intersection-observer');
+        import('intersection-observer').then(() => {
+            setBrowserSupportIntersectionObserver(true);
+        });
     }
 
     // --------------------------------------------------------------------------------------------
@@ -157,7 +163,12 @@ const Image = forwardRef((props, outerRef) => {
                 // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
                 // element.
                 setContainerRef(el);
-                inViewRef(el);
+
+                // We don't want to turn on the `react-intersection-observer` functionality until
+                // the polyfill is done loading.
+                if (browserSupportIntersectionObserver) {
+                    inViewRef(el);
+                }
 
                 // `outerRef` is the potential forwarded `ref` passed in from a consumer.
                 if (outerRef) {
