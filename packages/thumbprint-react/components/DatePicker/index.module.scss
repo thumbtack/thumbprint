@@ -7,6 +7,7 @@
 
 .root :global(.DayPicker) {
     display: inline-block;
+    text-align: left;
 }
 
 .root :global(.DayPicker-wrapper) {
@@ -36,6 +37,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 28px;
+    cursor: pointer;
 }
 
 .root :global(.DayPicker-NavButton--prev) {
@@ -55,8 +57,10 @@
 }
 
 .root :global(.DayPicker-Caption) {
+    // 24px (line-height) + 12px (margin-top/bottom) * 2 = 48px, which should match the size of
+    // NavButton
     display: table-caption;
-    margin: 10px 0;
+    margin: 12px 0;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
@@ -93,6 +97,7 @@
     color: $tp-color__black;
     border: 1px solid $tp-color__gray;
     text-align: center;
+    cursor: pointer;
     vertical-align: middle;
     font-size: 14px;
     line-height: 20px;
@@ -104,16 +109,21 @@
 
 .root :global(.DayPicker-Day--disabled) {
     color: $tp-color__gray;
-}
-
-.root :global(.DayPicker-Day--selected) {
-    color: $tp-color__black;
-    font-weight: 700;
-    border: 2px solid $tp-color__blue;
+    cursor: default;
 }
 
 .root :global(.DayPicker-Day--outside) {
+    cursor: default;
     border: 0;
+}
+
+.root :global(.DayPicker-Day--selected) {
+    color: $tp-color__white;
+    background-color: $tp-color__blue;
+}
+
+.root :global(.DayPicker-Day--selected.DayPicker-Day--outside) {
+    background-color: transparent;
 }
 
 .root :global(.DayPicker-Footer) {
@@ -141,6 +151,12 @@
         display: inline-block;
         border-radius: 50%;
         background: $tp-color__blue;
+    }
+}
+
+.root :global(.DayPicker-Day--theme-dot.DayPicker-Day--selected) {
+    &::after {
+        background: $tp-color__white;
     }
 }
 
