@@ -6,12 +6,6 @@ import { useInView } from 'react-intersection-observer';
 import Picture from './components/picture.jsx';
 import canUseDOM from '../../utils/can-use-dom';
 
-const shouldPolyfillObjectFit = () =>
-    canUseDOM &&
-    document.documentElement &&
-    document.documentElement.style &&
-    'objectFit' in document.documentElement.style !== true;
-
 const Image = forwardRef((props, outerRef) => {
     const {
         src,
@@ -25,17 +19,32 @@ const Image = forwardRef((props, outerRef) => {
         ...rest
     } = props;
 
-    const [sizes, setSizes] = useState('0px');
-    const [hasImageStartedLoading, setHasImageStartedLoading] = useState(false);
-    const shouldObjectFit = height || containerAspectRatio;
+    // The outermost DOM node that this component references. We use `useState` instead of
+    // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
     const [containerRef, setContainerRef] = useState(null);
 
+    // IntersectionObserver's `root` property identifies the element whose bounds are treated as
+    // the bounding box of the viewport for this element. By default, it uses `window`. Instead
+    // of using the default, we use the nearest scrollable parent. This is the same approach that
+    // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
+    // https://git.io/fj00H
     const parent = canUseDOM && scrollparent(containerRef);
-    // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
-    // that Intersection Observer just uses the default `window`.
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
-    const [inViewRef, inView] = useInView({ root, rootMargin: '100px' });
+    // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
+    // load the image.
+    const [inViewRef, shouldLoadImage] = useInView({
+        root,
+        rootMargin: '100px',
+        triggerOnce: true,
+    });
+
+    const shouldObjectFit = height || containerAspectRatio;
+    const shouldPolyfillObjectFit =
+        canUseDOM &&
+        document.documentElement &&
+        document.documentElement.style &&
+        'objectFit' in document.documentElement.style !== true;
 
     warning(
         (!height && !containerAspectRatio) ||
@@ -46,61 +55,39 @@ const Image = forwardRef((props, outerRef) => {
 
     useEffect(
         () => {
-            if (containerRef) {
-                setSizes(`${containerRef.clientWidth}px`);
-            }
-        },
-        [containerRef],
-    );
-
-    useEffect(
-        () => {
             // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
-            // using a `height` or `containerAspectRatio`. The `hasImageStartedLoading` variable ensures
+            // using a `height` or `containerAspectRatio`. The `shouldLoadImage` variable ensures
             // that we don't try to polyfill the image before the `src` exists. This can happy
             // when we lazy-load.
-            if (
-                shouldObjectFit &&
-                containerRef &&
-                hasImageStartedLoading &&
-                shouldPolyfillObjectFit()
-            ) {
+            if (shouldObjectFit && containerRef && shouldLoadImage && shouldPolyfillObjectFit) {
                 import('object-fit-images').then(({ default: ObjectFitImages }) => {
                     ObjectFitImages(containerRef.querySelector('img'));
                 });
             }
         },
-        [shouldObjectFit, hasImageStartedLoading],
+        [shouldObjectFit, shouldLoadImage],
     );
 
-    // We track this as state because the polyfill is loaded asynchronously in browsers that need
-    // it. Storing it in state allows us to trigger a re-render once the polyfill is loaded.
-    const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(
-        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
-    );
-
-    // Loads the polyfill and indicates the browser now supports Intersection Observer.
-    if (canUseDOM && !isIntersectionObserverSupported) {
-        import('intersection-observer').then(() => {
-            if (typeof window.IntersectionObserver !== 'undefined') {
-                setIsIntersectionObserverSupported(true);
-            }
-        });
+    // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
+    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
+        import('intersection-observer');
     }
 
     const pictureProps = {
         src,
         sources,
-        sizes,
         alt,
         style: { width: '100%', height: '100%', display: 'block' },
+        sizes: containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px',
     };
 
     const containerProps = {
         ...rest,
         style: {
             ...style,
-            // Allows the container to behave like an image would.
+            // Allows the container to behave like an image would. Without this, something like
+            // passing a `border-radius` in `className` or `style` would not work since the
+            // container is a `div`, not an `img`.
             overflow: 'hidden',
         },
     };
@@ -114,7 +101,7 @@ const Image = forwardRef((props, outerRef) => {
             objectPosition,
         };
 
-        if (shouldPolyfillObjectFit()) {
+        if (shouldPolyfillObjectFit) {
             // Weird, but this is how the polyfill knows what to do with the image in IE.
             pictureProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
         }
@@ -151,10 +138,6 @@ const Image = forwardRef((props, outerRef) => {
         };
     }
 
-    if (inView && !hasImageStartedLoading) {
-        setHasImageStartedLoading(true);
-    }
-
     return (
         <div
             {...containerProps}
@@ -170,7 +153,7 @@ const Image = forwardRef((props, outerRef) => {
             {/* This `div` holds the space set by `containerAspectRatio`. */}
             {Object.keys(aspectRatioBoxProps).length > 0 && <div {...aspectRatioBoxProps} />}
 
-            {hasImageStartedLoading && <Picture {...pictureProps} />}
+            {shouldLoadImage && <Picture {...pictureProps} />}
 
             <noscript>
                 <Picture src={src} sources={sources} alt={alt} />
