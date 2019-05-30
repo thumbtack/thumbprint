@@ -3,197 +3,197 @@
     "tokens": [
         {
             "group": "Title 1",
-            "id": "font__title__1__size",
+            "id": "title__1__size",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 1",
-            "id": "font__title__1__line-height",
+            "id": "title__1__line-height",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 1",
-            "id": "font__title__1__weight",
+            "id": "title__1__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 1",
-            "id": "font__title__1__responsive__size",
+            "id": "title__1__responsive__size",
             "value": { "web": "40px" }
         },
         {
             "group": "Title 1",
-            "id": "font__title__1__responsive__line-height",
+            "id": "title__1__responsive__line-height",
             "value": { "web": "44px" }
         },
         {
             "group": "Title 1",
-            "id": "font__title__1__responsive__weight",
+            "id": "title__1__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__size",
+            "id": "title__2__size",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__line-height",
+            "id": "title__2__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__weight",
+            "id": "title__2__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__responsive__size",
+            "id": "title__2__responsive__size",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__responsive__line-height",
+            "id": "title__2__responsive__line-height",
             "value": { "web": "40px" }
         },
         {
             "group": "Title 2",
-            "id": "font__title__2__responsive__weight",
+            "id": "title__2__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__size",
+            "id": "title__3__size",
             "value": { "web": "22px" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__line-height",
+            "id": "title__3__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__weight",
+            "id": "title__3__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__responsive__size",
+            "id": "title__3__responsive__size",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__responsive__line-height",
+            "id": "title__3__responsive__line-height",
             "value": { "web": "32px" }
         },
         {
             "group": "Title 3",
-            "id": "font__title__3__responsive__weight",
+            "id": "title__3__responsive__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 4",
-            "id": "font__title__4__size",
+            "id": "title__4__size",
             "value": { "web": "20px" }
         },
         {
             "group": "Title 4",
-            "id": "font__title__4__line-height",
+            "id": "title__4__line-height",
             "value": { "web": "28px" }
         },
         {
             "group": "Title 4",
-            "id": "font__title__4__weight",
+            "id": "title__4__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 5",
-            "id": "font__title__5__size",
+            "id": "title__5__size",
             "value": { "web": "18px" }
         },
         {
             "group": "Title 5",
-            "id": "font__title__5__line-height",
+            "id": "title__5__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 5",
-            "id": "font__title__5__weight",
+            "id": "title__5__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 6",
-            "id": "font__title__6__size",
+            "id": "title__6__size",
             "value": { "web": "16px" }
         },
         {
             "group": "Title 6",
-            "id": "font__title__6__line-height",
+            "id": "title__6__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Title 6",
-            "id": "font__title__6__weight",
+            "id": "title__6__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 7",
-            "id": "font__title__7__size",
+            "id": "title__7__size",
             "value": { "web": "14px" }
         },
         {
             "group": "Title 7",
-            "id": "font__title__7__line-height",
+            "id": "title__7__line-height",
             "value": { "web": "20px" }
         },
         {
             "group": "Title 7",
-            "id": "font__title__7__weight",
+            "id": "title__7__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Title 8",
-            "id": "font__title__8__size",
+            "id": "title__8__size",
             "value": { "web": "12px" }
         },
         {
             "group": "Title 8",
-            "id": "font__title__8__line-height",
+            "id": "title__8__line-height",
             "value": { "web": "18px" }
         },
         {
             "group": "Title 8",
-            "id": "font__title__8__weight",
+            "id": "title__8__weight",
             "value": { "web": "700" }
         },
         {
             "group": "Body 1",
-            "id": "font__body__1__size",
+            "id": "body__1__size",
             "value": { "web": "16px" }
         },
         {
             "group": "Body 1",
-            "id": "font__body__1__line-height",
+            "id": "body__1__line-height",
             "value": { "web": "24px" }
         },
         {
             "group": "Body 2",
-            "id": "font__body__2__size",
+            "id": "body__2__size",
             "value": { "web": "14px" }
         },
         {
             "group": "Body 2",
-            "id": "font__body__2__line-height",
+            "id": "body__2__line-height",
             "value": { "web": "20px" }
         },
         {
             "group": "Body 3",
-            "id": "font__body__3__size",
+            "id": "body__3__size",
             "value": { "web": "12px" }
         },
         {
             "group": "Body 3",
-            "id": "font__body__3__line-height",
+            "id": "body__3__line-height",
             "value": { "web": "18px" }
         }
     ]

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const _ = require('lodash');
 const path = require('path');
 const glob = require('glob');
 const fse = require('fs-extra');
@@ -15,9 +14,12 @@ const compile = (output, tokens) => {
     const template = fse.readFileSync(require.resolve(`./templates/${output}.handlebars`), 'utf-8');
 
     // eslint-disable-next-line import/no-dynamic-require, global-require
-    const { formatValue, formatId } = require(`./helpers/${output}`);
-    handlebars.registerHelper('formatValue', formatValue);
-    handlebars.registerHelper('formatId', formatId);
+    const helpers = require(`./helpers/${output}`);
+
+    // Dynamically register the helpers for each `template`.
+    helpers.forEach(({ name, value }) => {
+        handlebars.registerHelper(name, value);
+    });
 
     return handlebars.compile(template)(tokens);
 };
@@ -26,9 +28,9 @@ const compile = (output, tokens) => {
     const files = glob.sync(path.resolve(__dirname, './tokens/*.json'));
 
     const allFiles = files.map(file => fse.readFileSync(file).toString());
-    const allFilesJSON = allFiles.map(fileText => JSON.parse(fileText));
-    // All of the tokens in a flat array.
-    const allTokens = _.flatten(allFilesJSON.map(fileJSON => fileJSON.tokens));
+
+    // All of the files and tokens as a big array.
+    const allTokens = allFiles.map(fileText => JSON.parse(fileText));
 
     outputs.forEach(({ slug, distName }) => {
         const contents = compile(slug, allTokens);

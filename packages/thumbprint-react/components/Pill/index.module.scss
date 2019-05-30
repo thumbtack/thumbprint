@@ -1,0 +1,60 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    height: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 12px;
+    background: $tp-color__gray-300;
+    color: $tp-color__black;
+    display: inline-block;
+    font-size: $tp-font__body__2__size;
+    font-weight: $tp-font-weight__bold;
+    overflow: hidden;
+}
+
+.iconWrap {
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    margin-right: $tp-space__1;
+
+    svg {
+        display: block;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.pillGreen {
+    background: $tp-color__green-100;
+    color: $tp-color__green-600;
+}
+
+.pillRed {
+    background: $tp-color__red-100;
+    color: $tp-color__red-600;
+}
+
+.pillIndigo {
+    background: $tp-color__indigo-100;
+    color: $tp-color__indigo-600;
+}
+
+.pillBlue {
+    background: $tp-color__blue-100;
+    color: $tp-color__blue-600;
+}
+
+.pillYellow {
+    background: $tp-color__yellow-100;
+    color: $tp-color__yellow-600;
+}
+
+.pillPurple {
+    background: $tp-color__purple-100;
+    color: $tp-color__purple-600;
+}

@@ -2,9 +2,18 @@
 
 ## Unreleased
 
+## 8.0.1 - 2019-05-28
+
+### Changed
+
+-   [Patch] Temporarily bring back removed Tokens to make it easier to migrate to `8.0.0`.
+
+## 8.0.0 - 2019-05-24
+
 ### Changed
 
 -   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
+-   [Patch] Change the internals of how tokens are stored and generated. This does not affect the outputted code.
 
 ## 7.0.0 - 2019-05-17
 
