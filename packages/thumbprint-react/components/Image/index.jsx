@@ -23,6 +23,33 @@ const Image = forwardRef((props, outerRef) => {
     // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
     const [containerRef, setContainerRef] = useState(null);
 
+    // --------------------------------------------------------------------------------------------
+    // Inline styles for container `div` and `Picture` component
+    // --------------------------------------------------------------------------------------------
+
+    const pictureProps = {
+        src,
+        sources,
+        alt,
+        style: { width: '100%', height: height || '100%', display: 'block' },
+        sizes: containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px',
+    };
+
+    const containerProps = {
+        ...rest,
+        style: {
+            ...style,
+            // Allows the container to behave like an image would. Without this, something like
+            // passing a `border-radius` in `className` or `style` would not work since the
+            // container is a `div`, not an `img`.
+            overflow: 'hidden',
+        },
+    };
+
+    // --------------------------------------------------------------------------------------------
+    // Lazy-loading: library setup and polyfill
+    // --------------------------------------------------------------------------------------------
+
     // IntersectionObserver's `root` property identifies the element whose bounds are treated as
     // the bounding box of the viewport for this element. By default, it uses `window`. Instead
     // of using the default, we use the nearest scrollable parent. This is the same approach that
@@ -38,6 +65,15 @@ const Image = forwardRef((props, outerRef) => {
         rootMargin: '100px',
         triggerOnce: true,
     });
+
+    // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
+    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
+        import('intersection-observer');
+    }
+
+    // --------------------------------------------------------------------------------------------
+    // Object Fit: polyfill and CSS styles
+    // --------------------------------------------------------------------------------------------
 
     const shouldObjectFit = height || containerAspectRatio;
     const shouldPolyfillObjectFit =
@@ -68,32 +104,6 @@ const Image = forwardRef((props, outerRef) => {
         [shouldObjectFit, shouldLoadImage],
     );
 
-    // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
-    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
-        import('intersection-observer');
-    }
-
-    const pictureProps = {
-        src,
-        sources,
-        alt,
-        style: { width: '100%', height: '100%', display: 'block' },
-        sizes: containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px',
-    };
-
-    const containerProps = {
-        ...rest,
-        style: {
-            ...style,
-            // Allows the container to behave like an image would. Without this, something like
-            // passing a `border-radius` in `className` or `style` would not work since the
-            // container is a `div`, not an `img`.
-            overflow: 'hidden',
-        },
-    };
-
-    const aspectRatioBoxProps = {};
-
     if (shouldObjectFit) {
         pictureProps.style = {
             ...pictureProps.style,
@@ -107,9 +117,11 @@ const Image = forwardRef((props, outerRef) => {
         }
     }
 
-    if (height) {
-        pictureProps.style.height = height;
-    }
+    // --------------------------------------------------------------------------------------------
+    // Aspect Ratio Boxes
+    // --------------------------------------------------------------------------------------------
+
+    const aspectRatioBoxProps = {};
 
     if (containerAspectRatio) {
         // This ensures that the image always renders at that apsect ratio and that lazy-loaded
@@ -142,9 +154,12 @@ const Image = forwardRef((props, outerRef) => {
         <div
             {...containerProps}
             ref={el => {
+                // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
+                // element.
                 setContainerRef(el);
                 inViewRef(el);
 
+                // `outerRef` is the potential forwarded `ref` passed in from a consumer.
                 if (outerRef) {
                     outerRef(el);
                 }
