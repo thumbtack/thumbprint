@@ -93,18 +93,28 @@
 }
 
 .root :global(.DayPicker-Day) {
+    $cell-side: 48px;
+    $line-height: 20px;
+    $border-size: 1px;
+
+    // IE11 does not seem to recognize the cell dimensions for absolutely positioning the dot
+    // without the padding to fill the vertical space.
+    $vertical-padding: ($cell-side - $line-height) / 2 - $border-size;
+
     display: table-cell;
     color: $tp-color__black;
-    border: 1px solid $tp-color__gray;
+    border: $border-size solid $tp-color__gray;
     text-align: center;
     cursor: pointer;
     vertical-align: middle;
     font-size: 14px;
-    line-height: 20px;
+    line-height: $line-height;
     font-weight: 400;
-    height: 48px;
-    width: 48px;
+    height: $cell-side;
+    width: $cell-side;
     min-width: 44px;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
 }
 
 .root :global(.DayPicker-Day--disabled) {
