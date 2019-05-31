@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Patch] Update `DatePicker` component design.
+-   [Major] Update `DatePicker` component design.
 
 ## 1.0.0 - 2019-05-28
 
