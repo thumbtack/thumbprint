@@ -6,7 +6,9 @@ const Picture = props => {
 
     // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
     // onto the `img` tag. While this makes the code messier, it is needed to work around a bug in
-    // Safari.
+    // Safari:
+    // - https://bugs.webkit.org/show_bug.cgi?id=190031
+    // - https://bugs.webkit.org/show_bug.cgi?id=177068
     const webpSource = sources.find(s => s.type === 'image/webp');
     const imgTagSource = sources.find(s => s.type === 'image/jpeg' || s.type === 'image/png');
 
