@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Update `DatePicker` component design.
+
 ## 1.0.0 - 2019-05-28
 
 ### Added
