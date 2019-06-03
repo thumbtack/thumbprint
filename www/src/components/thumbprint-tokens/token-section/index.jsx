@@ -7,7 +7,7 @@ import TokenExample from './token-example';
 import Tag from '../../tag';
 import { H2, P, InlineCode } from '../../mdx';
 
-const TokenSection = ({ section, idTransform }) => {
+const TokenSection = ({ section, idTransform, valueTransform }) => {
     const groupedTokens = groupBy(section.tokens, 'group');
 
     return (
@@ -31,6 +31,7 @@ const TokenSection = ({ section, idTransform }) => {
                                             <tr
                                                 key={token.id}
                                                 className={classNames({
+                                                    'v-top': true,
                                                     'bb b-gray-300':
                                                         groupName === 'null' &&
                                                         index !== group.length - 1,
@@ -54,8 +55,11 @@ const TokenSection = ({ section, idTransform }) => {
                                                     )}
                                                 </td>
                                                 <td className="tr pv2">
-                                                    <TokenExample type={token.type}>
-                                                        {token.value.web}
+                                                    <TokenExample
+                                                        type={token.type}
+                                                        value={token.value}
+                                                    >
+                                                        {valueTransform(token.value)}
                                                     </TokenExample>
                                                 </td>
                                             </tr>
@@ -78,6 +82,11 @@ TokenSection.propTypes = {
      * for that platform.
      */
     idTransform: PropTypes.func.isRequired,
+    /**
+     * Function that gets run on the token `value`, transforming the object into the value for
+     * that platform.
+     */
+    valueTransform: PropTypes.func.isRequired,
 };
 
 export default TokenSection;

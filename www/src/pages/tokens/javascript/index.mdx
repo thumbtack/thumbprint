@@ -46,6 +46,7 @@ export const pageQuery = graphql`
         <TokenSection
             section={section}
             idTransform={id => camelCase(`tp-${section.name}-${id}`)}
+            valueTransform={value => value.web}
             key={section.name}
         />
     ))}

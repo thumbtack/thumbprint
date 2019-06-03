@@ -1,50 +1,41 @@
-const handlebars = require('handlebars');
+const handlebars = require('handlebars/dist/cjs/handlebars');
 const { camelCase } = require('lodash');
 const { toWords } = require('number-to-words');
+// The path in the handlebars import allows us to use this file with webpack:
+// https://github.com/wycats/handlebars.js/issues/1174
 
-module.exports = [
-    { name: 'formatValue', value: ({ value }) => value.ios },
-    {
-        name: 'formatId',
-        value: ({ id }) => {
-            // Check if the `id` is a number
-            if (parseInt(id, 10).toString() === id) {
-                // Covert numerical strings to the written out word. "1", for example, becomes
-                // "one".
-                return toWords(parseInt(id, 10));
-            }
+module.exports = {
+    formatId: ({ id }) => {
+        // Check if the `id` is a number
+        if (parseInt(id, 10).toString() === id) {
+            // Covert numerical strings to the written out word. "1", for example, becomes
+            // "one".
+            return toWords(parseInt(id, 10));
+        }
 
-            return camelCase(id);
-        },
+        return camelCase(id);
     },
-    {
-        name: 'formatSectionName',
-        value: ({ name }) =>
-            // Changes 'Border Radius' to 'BorderRadius'.
-            name.replace(/\s/g, ''),
+    formatValue: ({ value }) => value.ios,
+    formatSectionName: ({ name }) => {
+        // Changes 'Border Radius' to 'BorderRadius'.
+        return name.replace(/\s/g, '');
     },
-    {
-        name: 'eachSectionWithPlatformTokens',
-        /**
-         * Filters the sections so that we only loop over ones that have iOS tokens.
-         */
-        value(sections, options) {
-            if (!sections || sections.length === 0) {
-                return options.inverse(this);
-            }
+    eachSectionWithPlatformTokens: function eachSectionWithPlatformTokens(sections, options) {
+        if (!sections || sections.length === 0) {
+            return options.inverse(this);
+        }
 
-            const data = options.data ? handlebars.createFrame(options.data) : undefined;
-            const result = [];
+        const data = options.data ? handlebars.createFrame(options.data) : undefined;
+        const result = [];
 
-            const filteredSections = sections.filter(s => s.tokens.some(t => t.value.ios));
+        const filteredSections = sections.filter(s => s.tokens.some(t => t.value.ios));
 
-            for (let i = 0; i < filteredSections.length; i += 1) {
-                data.index = i;
-                data.last = i === filteredSections.length - 1;
-                result.push(options.fn(filteredSections[i], { data }));
-            }
+        for (let i = 0; i < filteredSections.length; i += 1) {
+            data.index = i;
+            data.last = i === filteredSections.length - 1;
+            result.push(options.fn(filteredSections[i], { data }));
+        }
 
-            return result.join('');
-        },
+        return result.join('');
     },
-];
+};

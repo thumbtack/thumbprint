@@ -48,6 +48,7 @@ export const pageQuery = graphql`
                 const sectionName = section.name.replace(/\s+/g, '-').toLowerCase();
                 return `$tp-${sectionName}__${id}`;
             }}
+            valueTransform={value => value.web}
             key={section.name}
         />
     ))}
