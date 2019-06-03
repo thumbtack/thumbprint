@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 8.0.2 - 2019-06-03
+
+### Changed
+
+-   [Patch] Remove the temporary tokens added in `8.0.1`.
+
 ## 8.0.1 - 2019-05-28
 
 ### Changed
