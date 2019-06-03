@@ -50,9 +50,9 @@ function ServiceCardDescription({ iconColor, icon, children }) {
     );
 }
 
-export default function ServiceCard({ url, children }) {
+export default function ServiceCard({ url, onClick, target, children }) {
     return (
-        <a href={url} className={styles.root}>
+        <a href={url} onClick={onClick} target={target} className={styles.root}>
             {children}
         </a>
     );
@@ -64,9 +64,22 @@ ServiceCard.propTypes = {
      */
     url: PropTypes.string.isRequired,
     /**
+     * Handler for click events
+     */
+    onClick: PropTypes.func,
+    /**
+     * Target attribute for the link
+     */
+    target: PropTypes.string,
+    /**
      * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
      */
     children: PropTypes.node.isRequired,
+};
+
+ServiceCard.defaultProps = {
+    onClick: null,
+    target: null,
 };
 
 ServiceCardImage.propTypes = {
