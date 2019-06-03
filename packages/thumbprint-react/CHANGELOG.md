@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 2.0.0 - 2019-06-03
+
+### Changed
+
+-   [Major] Update `DatePicker` component design.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
 ## 1.0.0 - 2019-05-28
 
 ### Added

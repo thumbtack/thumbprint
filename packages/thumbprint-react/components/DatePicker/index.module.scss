@@ -7,22 +7,15 @@
 
 .root :global(.DayPicker) {
     display: inline-block;
+    text-align: left;
 }
 
 .root :global(.DayPicker-wrapper) {
-    margin: 0 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
     user-select: none;
-    flex-direction: row;
-    padding: 1rem 0;
-
-    @media screen and (max-width: 410px) {
-        margin-left: 3rem;
-        margin-right: 3rem;
-    }
 }
 
 .root :global(.DayPicker-Month) {
@@ -30,63 +23,47 @@
     border-collapse: collapse;
     border-spacing: 0;
     user-select: none;
-    margin: 0 1rem;
-
-    @media screen and (max-width: 410px) {
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 .root :global(.DayPicker-NavBar) {
     position: absolute;
-    left: 0;
     right: 0;
-    padding: 0 0.5rem;
-    top: 1rem;
 }
 
 .root :global(.DayPicker-NavButton) {
-    top: 130px;
-    border: 1px solid $tp-color__gray;
-    position: absolute;
-    width: 40px;
-    height: 90px;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10px;
+    background-size: 28px;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 .root :global(.DayPicker-NavButton--prev) {
-    left: -4rem;
-    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5wcmV2PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9InByZXYiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzLjM5MzE5MywgMjUuMDAwMDAwKSBzY2FsZSgtMSwgMSkgdHJhbnNsYXRlKC0xMy4zOTMxOTMsIC0yNS4wMDAwMDApIHRyYW5zbGF0ZSgwLjg5MzE5MywgMC4wMDAwMDApIiBmaWxsPSIjNTY1QTVDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAsNDkuMTIzNzMzMSBMMCw0NS4zNjc0MzQ1IEwyMC4xMzE4NDU5LDI0LjcyMzA2MTIgTDAsNC4yMzEzODMxNCBMMCwwLjQ3NTA4NDQ1OSBMMjUsMjQuNzIzMDYxMiBMMCw0OS4xMjM3MzMxIEwwLDQ5LjEyMzczMzEgWiIgaWQ9InJpZ2h0IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K');
-
-    @media screen and (max-width: 410px) {
-        left: -3rem;
-    }
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyZjMwMzMiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4IiBkYXRhLXRodW1icHJpbnQtaWQ9Im5hdmlnYXRpb24tY2FyZXQtbGVmdCI+IDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE3LjIzNjQyMDgsMjEuNjQ1NzQ3IEw5LDE0IEwxNy4yNzUwNTc3LDYuMzExMTg3NDEgQzE3LjQ1NzI0NzYsNi4xMTk1MDIzMSAxNy43MTQ2NjgyLDYgMTgsNiBDMTguNTUyMjg0Nyw2IDE5LDYuNDQ3NzE1MjUgMTksNyBDMTksNy4yNDk0OTM0NyAxOC45MDg2MzIsNy40Nzc2NDY4IDE4Ljc1NzUzMDksNy42NTI4MjUwNSBMMTIsMTQgTDE4LjY5OTA0ODQsMjAuMjg0OTI1MSBDMTguODg1NTc0MywyMC40ODUwNDY0IDE5LDIwLjcxOTc4MTYgMTksMjEgQzE5LDIxLjU1MjI4NDcgMTguNTUyMjg0NywyMiAxOCwyMiBDMTcuNjkzODYyLDIyIDE3LjQ2MzM5NDIsMjEuODQ4NjYzMyAxNy4yMzY0MjA4LDIxLjY0NTc0NyBaIj48L3BhdGg+IDwvc3ZnPgo=');
 }
 
 .root :global(.DayPicker-NavButton--next) {
-    right: -4rem;
-    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5uZXh0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9Im5leHQiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTUxNDUxLCAwLjAwMDAwMCkiIGZpbGw9IiM1NjVBNUMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCw0OS4xMjM3MzMxIEwwLDQ1LjM2NzQzNDUgTDIwLjEzMTg0NTksMjQuNzIzMDYxMiBMMCw0LjIzMTM4MzE0IEwwLDAuNDc1MDg0NDU5IEwyNSwyNC43MjMwNjEyIEwwLDQ5LjEyMzczMzEgTDAsNDkuMTIzNzMzMSBaIiBpZD0icmlnaHQiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=');
-
-    @media screen and (max-width: 410px) {
-        right: -3rem;
-    }
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiMyZjMwMzMiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4IiBkYXRhLXRodW1icHJpbnQtaWQ9Im5hdmlnYXRpb24tY2FyZXQtcmlnaHQiPiA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4yMzY0MjA4LDIxLjY0NTc0NyBMOSwxNCBMMTcuMjc1MDU3Nyw2LjMxMTE4NzQxIEMxNy40NTcyNDc2LDYuMTE5NTAyMzEgMTcuNzE0NjY4Miw2IDE4LDYgQzE4LjU1MjI4NDcsNiAxOSw2LjQ0NzcxNTI1IDE5LDcgQzE5LDcuMjQ5NDkzNDcgMTguOTA4NjMyLDcuNDc3NjQ2OCAxOC43NTc1MzA5LDcuNjUyODI1MDUgTDEyLDE0IEwxOC42OTkwNDg0LDIwLjI4NDkyNTEgQzE4Ljg4NTU3NDMsMjAuNDg1MDQ2NCAxOSwyMC43MTk3ODE2IDE5LDIxIEMxOSwyMS41NTIyODQ3IDE4LjU1MjI4NDcsMjIgMTgsMjIgQzE3LjY5Mzg2MiwyMiAxNy40NjMzOTQyLDIxLjg0ODY2MzMgMTcuMjM2NDIwOCwyMS42NDU3NDcgWiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMjggMCkiPjwvcGF0aD4gPC9zdmc+Cg==');
 }
 
-.root :global(.DayPicker-NavButton--interactionDisabled) {
-    display: none;
+.root :global(.DayPicker-NavButton--prev.DayPicker-NavButton--interactionDisabled) {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNkM2Q0ZDUiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4IiBkYXRhLXRodW1icHJpbnQtaWQ9Im5hdmlnYXRpb24tY2FyZXQtbGVmdCI+IDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE3LjIzNjQyMDgsMjEuNjQ1NzQ3IEw5LDE0IEwxNy4yNzUwNTc3LDYuMzExMTg3NDEgQzE3LjQ1NzI0NzYsNi4xMTk1MDIzMSAxNy43MTQ2NjgyLDYgMTgsNiBDMTguNTUyMjg0Nyw2IDE5LDYuNDQ3NzE1MjUgMTksNyBDMTksNy4yNDk0OTM0NyAxOC45MDg2MzIsNy40Nzc2NDY4IDE4Ljc1NzUzMDksNy42NTI4MjUwNSBMMTIsMTQgTDE4LjY5OTA0ODQsMjAuMjg0OTI1MSBDMTguODg1NTc0MywyMC40ODUwNDY0IDE5LDIwLjcxOTc4MTYgMTksMjEgQzE5LDIxLjU1MjI4NDcgMTguNTUyMjg0NywyMiAxOCwyMiBDMTcuNjkzODYyLDIyIDE3LjQ2MzM5NDIsMjEuODQ4NjYzMyAxNy4yMzY0MjA4LDIxLjY0NTc0NyBaIj48L3BhdGg+IDwvc3ZnPgo=');
+}
+
+.root :global(.DayPicker-NavButton--next.DayPicker-NavButton--interactionDisabled) {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNkM2Q0ZDUiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI4IDI4IiBkYXRhLXRodW1icHJpbnQtaWQ9Im5hdmlnYXRpb24tY2FyZXQtcmlnaHQiPiA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4yMzY0MjA4LDIxLjY0NTc0NyBMOSwxNCBMMTcuMjc1MDU3Nyw2LjMxMTE4NzQxIEMxNy40NTcyNDc2LDYuMTE5NTAyMzEgMTcuNzE0NjY4Miw2IDE4LDYgQzE4LjU1MjI4NDcsNiAxOSw2LjQ0NzcxNTI1IDE5LDcgQzE5LDcuMjQ5NDkzNDcgMTguOTA4NjMyLDcuNDc3NjQ2OCAxOC43NTc1MzA5LDcuNjUyODI1MDUgTDEyLDE0IEwxOC42OTkwNDg0LDIwLjI4NDkyNTEgQzE4Ljg4NTU3NDMsMjAuNDg1MDQ2NCAxOSwyMC43MTk3ODE2IDE5LDIxIEMxOSwyMS41NTIyODQ3IDE4LjU1MjI4NDcsMjIgMTgsMjIgQzE3LjY5Mzg2MiwyMiAxNy40NjMzOTQyLDIxLjg0ODY2MzMgMTcuMjM2NDIwOCwyMS42NDU3NDcgWiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMjggMCkiPjwvcGF0aD4gPC9zdmc+Cg==');
 }
 
 .root :global(.DayPicker-Caption) {
+    // 24px (line-height) + 12px (margin-top/bottom) * 2 = 48px, which should match the size of
+    // NavButton
     display: table-caption;
-    height: 1.5rem;
-    text-align: center;
-    font-weight: 400;
-    margin-bottom: 16px;
+    margin: 12px 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
 }
 
 .root :global(.DayPicker-Weekdays) {
@@ -99,10 +76,11 @@
 
 .root :global(.DayPicker-Weekday) {
     display: table-cell;
-    padding: 0.5rem;
-    font-size: 0.875em;
     text-align: center;
-    font-weight: 400;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
     color: $tp-color__black-300;
 }
 
@@ -115,21 +93,28 @@
 }
 
 .root :global(.DayPicker-Day) {
+    $cell-side: 48px;
+    $line-height: 20px;
+    $border-size: 1px;
+
+    // IE11 does not seem to recognize the cell dimensions for absolutely positioning the dot
+    // without the padding to fill the vertical space.
+    $vertical-padding: ($cell-side - $line-height) / 2 - $border-size;
+
     display: table-cell;
-    padding: 0.5rem;
     color: $tp-color__black;
-    border: 1px solid $tp-color__gray;
+    border: $border-size solid $tp-color__gray;
     text-align: center;
     cursor: pointer;
     vertical-align: middle;
+    font-size: 14px;
+    line-height: $line-height;
     font-weight: 400;
-    height: 46px;
-    width: 46px;
-
-    @media screen and (max-width: 350px) {
-        width: 30px;
-        padding: 0.3rem;
-    }
+    height: $cell-side;
+    width: $cell-side;
+    min-width: 44px;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
 }
 
 .root :global(.DayPicker-Day--disabled) {
@@ -139,7 +124,7 @@
 
 .root :global(.DayPicker-Day--outside) {
     cursor: default;
-    border: none;
+    border: 0;
 }
 
 .root :global(.DayPicker-Day--selected) {
@@ -151,20 +136,10 @@
     background-color: transparent;
 }
 
-.root :global(.DayPicker-WeekNumber) {
-    display: table-cell;
-    padding: 0.5rem;
-    text-align: right;
-    vertical-align: middle;
-    min-width: 1rem;
-    font-size: 0.75em;
-    cursor: pointer;
-}
-
 .root :global(.DayPicker-Footer) {
     display: table-caption;
     caption-side: bottom;
-    padding-top: 0.5rem;
+    padding-top: 8px;
 }
 
 .root :global(.DayPicker-Weekday) abbr {
@@ -186,6 +161,12 @@
         display: inline-block;
         border-radius: 50%;
         background: $tp-color__blue;
+    }
+}
+
+.root :global(.DayPicker-Day--theme-dot.DayPicker-Day--selected) {
+    &::after {
+        background: $tp-color__white;
     }
 }
 
