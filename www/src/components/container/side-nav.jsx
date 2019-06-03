@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Text } from '@thumbtack/thumbprint-react';
@@ -16,145 +16,121 @@ SideNav.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-class SideNavSection extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isExpanded: props.isActive,
-        };
-
-        this.toggleIsExpanded = this.toggleIsExpanded.bind(this);
-    }
-
-    toggleIsExpanded() {
-        this.setState(prevState => ({
-            isExpanded: !prevState.isExpanded,
-        }));
-    }
-
-    render() {
-        const { title, children, to } = this.props;
-        const { isExpanded } = this.state;
-
-        const textSize = 2;
-        const textClasses = 'db hover-bg-gray-200 pv2 ph4 flex b black pointer';
-
-        return (
-            <Text elementName="li" size={textSize}>
-                {to ? (
-                    <Link className={textClasses} to={to}>
-                        {title}
-                    </Link>
-                ) : (
-                    <React.Fragment>
-                        <ClickableBox
-                            className={classNames(textClasses, styles.sideNavClickableBox)}
-                            onClick={this.toggleIsExpanded}
-                        >
-                            {title}
-
-                            {isExpanded ? (
-                                <NavigationCaretUpSmall className="ml-auto black-300" />
-                            ) : (
-                                <NavigationCaretDownSmall className="ml-auto black-300" />
-                            )}
-                        </ClickableBox>
-
-                        <ul hidden={!isExpanded} className="pb1">
-                            {children}
-                        </ul>
-                    </React.Fragment>
-                )}
-            </Text>
-        );
-    }
-}
-
-SideNavSection.propTypes = {
-    children: PropTypes.node,
-    title: PropTypes.string.isRequired,
-    to: PropTypes.string,
-    /**
-     * True if the currently viewed page is within this section.
-     */
-    isActive: PropTypes.bool.isRequired,
-};
-
-SideNavSection.defaultProps = {
-    children: undefined,
-    to: undefined,
-};
-
-const SideNavSectionGroup = ({ children }) => (
-    <li className={styles.sideNavSectionGroup}>
+const SideNavGroup = ({ children, level }) => (
+    <li
+        className={classNames({
+            [styles.sideNavGroup]: true,
+            [styles.sideNavGroupLevel2]: level === 2,
+            [styles.sideNavGroupLevel3]: level === 3,
+        })}
+    >
         <ul>{children}</ul>
     </li>
 );
 
-SideNavSectionGroup.propTypes = {
+SideNavGroup.propTypes = {
     children: PropTypes.node.isRequired,
+    level: PropTypes.oneOf([2, 3]).isRequired,
 };
 
-const SideNavSectionGroupLink = props => {
-    const { to, children, isActive, isFirstHashLink } = props;
+const SideNavLink = ({ to, children, level, title, isActive }) => {
+    const [isExpanded, setIsExpanded] = useState(isActive);
+    const [isExpandButtonHovered, setIsExpandButtonHovered] = useState(false);
 
-    // Get `color` from a path like `/tokens/#section-color`.
+    // Gets `color` from a path like `/tokens/#section-color`.
     const hash = to.split('#') ? to.split('#')[1] : null;
 
-    const getClasses = shouldApplyActiveStyles =>
+    /**
+     * This function exists to share code between the `Link` component instances when wrapped in
+     * `ScrollMarkerLink` and when used on its own.
+     */
+    const getLinkClasses = hasActiveClass =>
         classNames({
-            'db hover-bg-gray-200 pv1 ph5 black': true,
-            b: shouldApplyActiveStyles,
-            [styles.sideNavSectionGroupIsActive]: shouldApplyActiveStyles,
+            'db flex-1 black': true,
+            'pv2 ph3': level === 1,
+            'pv1 ph4': level === 2,
+            'pv1 ph5': level === 3,
+            b: (hasActiveClass && !children) || level === 1,
+            [styles.sideNavLinkBlueActiveIndicator]:
+                hasActiveClass && (level === 3 || (level === 2 && !children)),
         });
 
     return (
-        <li className="relative">
-            {hash ? (
-                <ScrollMarkerLink id={hash}>
-                    {({ isActive: isHashActive, onClick }) => (
-                        <Link
-                            className={getClasses(isHashActive)}
-                            onClick={onClick}
-                            // We want to link the first hash link to the page, not a section,
-                            // since we don't have any link to pages like Atomic or Tokens. By
-                            // linking directly to the section, the user would have to scroll up
-                            // to see the page header with useful information.
-                            to={isFirstHashLink ? to.replace(`#${hash}`, '') : to}
-                        >
-                            {children}
-                        </Link>
-                    )}
-                </ScrollMarkerLink>
-            ) : (
-                <Link className={getClasses(isActive)} aria-current={isActive} to={to}>
+        <Text elementName="li" size={2}>
+            <div
+                className={classNames({
+                    'relative flex': true,
+                    'hover-bg-gray-200': !isExpandButtonHovered,
+                })}
+            >
+                {hash ? (
+                    <ScrollMarkerLink id={hash}>
+                        {({ isActive: isHashActive, onClick }) => (
+                            <Link
+                                className={getLinkClasses(isHashActive)}
+                                onClick={onClick}
+                                to={to}
+                            >
+                                {title}
+                            </Link>
+                        )}
+                    </ScrollMarkerLink>
+                ) : (
+                    <Link className={getLinkClasses(isActive)} aria-current={isActive} to={to}>
+                        {title}
+                    </Link>
+                )}
+                {children && (
+                    // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+                    <ClickableBox
+                        className={classNames({
+                            'db hover-bg-gray-200 ph3 flex b pointer': true,
+                            pv2: level === 1,
+                            pv1: level === 2 || level === 3,
+                            [styles.sideNavClickableBox]: true,
+                        })}
+                        onClick={() => {
+                            setIsExpanded(!isExpanded);
+                        }}
+                        onMouseOver={() => {
+                            setIsExpandButtonHovered(true);
+                        }}
+                        onMouseLeave={() => {
+                            setIsExpandButtonHovered(false);
+                        }}
+                    >
+                        {isExpanded ? (
+                            <NavigationCaretUpSmall className="ml-auto black-300" />
+                        ) : (
+                            <NavigationCaretDownSmall className="ml-auto black-300" />
+                        )}
+                    </ClickableBox>
+                )}
+            </div>
+            {children && (
+                <ul hidden={!isExpanded} className="pb1">
                     {children}
-                </Link>
+                </ul>
             )}
-        </li>
+        </Text>
     );
 };
 
-SideNavSectionGroupLink.propTypes = {
-    children: PropTypes.node.isRequired,
+SideNavLink.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node,
     to: PropTypes.string.isRequired,
+    level: PropTypes.oneOf([1, 2, 3]).isRequired,
     /**
      * Indicates the current page (or section of a page). This should be fase if it is a hash link
      * since the active section will depend on the user's scrolling.
      */
     isActive: PropTypes.bool.isRequired,
-    /**
-     * If true, this link will link send users to the top of the page, not the first section. We do
-     * this so users have a way to see the header since there is no other link that will take them
-     * to the top of the page.
-     */
-    isFirstHashLink: PropTypes.bool,
 };
 
-SideNavSectionGroupLink.defaultProps = {
-    isFirstHashLink: false,
+SideNavLink.defaultProps = {
+    children: undefined,
 };
 
 export default SideNav;
-export { SideNavSection, SideNavSectionGroup, SideNavSectionGroupLink };
+export { SideNavLink, SideNavGroup };
