@@ -17,7 +17,6 @@ describe('ServiceCard', () => {
             </ServiceCard>,
         );
         expect(wrapper.find('a').prop('target')).toBe('_blank');
-        expect(wrapper).toMatchSnapshot();
     });
     test('renders an href with a click handler', () => {
         const onClick = jest.fn();
@@ -28,7 +27,6 @@ describe('ServiceCard', () => {
         );
         wrapper.find('a').simulate('click');
         expect(onClick).toHaveBeenCalled();
-        expect(wrapper).toMatchSnapshot();
     });
 });
 
