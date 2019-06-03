@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Refactor the internals of the `Image` component.
+
 ## 2.0.0 - 2019-06-03
 
 ### Changed

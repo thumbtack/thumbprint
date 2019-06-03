@@ -4,6 +4,7 @@ import Image from './index';
 
 jest.mock('react-intersection-observer', () => ({
     InView: ({ children }) => children({ inView: true, ref: null }),
+    useInView: () => [() => {}, true],
 }));
 
 beforeEach(() => {
