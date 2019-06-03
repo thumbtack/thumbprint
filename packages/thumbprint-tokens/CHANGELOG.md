@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+## 8.0.2 - 2019-06-03
+
+### Changed
+
+-   [Patch] Remove the temporary tokens added in `8.0.1`.
+
+## 8.0.1 - 2019-05-28
+
+### Changed
+
+-   [Patch] Temporarily bring back removed Tokens to make it easier to migrate to `8.0.0`.
+
+## 8.0.0 - 2019-05-24
+
+### Changed
+
+-   [Major] Rename [a handful of SCSS and JavaScipt tokens](https://github.com/thumbtack/thumbprint/pull/242).
+-   [Patch] Change the internals of how tokens are stored and generated. This does not affect the outputted code.
+
+## 7.0.0 - 2019-05-17
+
 ### Removed
 
 -   [Major] Remove all deprecated tokens. Old values can be found on [a previous version of the Thumbprint site](https://5cdc5c977a1bb7000855f899--thumbprint.netlify.com/tokens/scss/).

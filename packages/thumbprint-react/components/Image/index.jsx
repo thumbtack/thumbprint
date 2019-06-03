@@ -17,7 +17,6 @@ const Image = forwardRef((props, outerRef) => {
         src,
         sources,
         style,
-        disableLazyLoading,
         height,
         containerAspectRatio,
         objectFit,
@@ -27,7 +26,7 @@ const Image = forwardRef((props, outerRef) => {
     } = props;
 
     const [sizes, setSizes] = useState('0px');
-    const [hasImageStartedLoading, setHasImageStartedLoading] = useState(disableLazyLoading);
+    const [hasImageStartedLoading, setHasImageStartedLoading] = useState(false);
     const shouldObjectFit = height || containerAspectRatio;
     const [node, setRef] = useState(null);
 
@@ -61,8 +60,6 @@ const Image = forwardRef((props, outerRef) => {
         },
         [shouldObjectFit, hasImageStartedLoading],
     );
-
-    let picture;
 
     const pictureProps = {
         src,
@@ -127,27 +124,22 @@ const Image = forwardRef((props, outerRef) => {
         };
     }
 
-    if (disableLazyLoading) {
-        picture = <Picture {...pictureProps} />;
-    } else {
-        const parent = canUseDOM && scrollparent(node);
-        // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
-        // that Intersection Observer just uses the default `window`.
-        const root =
-            parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
+    const parent = canUseDOM && scrollparent(node);
+    // If `scrollparent` doesn't find a custom scroll parent, then we just send `null` so
+    // that Intersection Observer just uses the default `window`.
+    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
-        picture = (
-            <LazyImage
-                {...pictureProps}
-                root={root}
-                onEnter={() => {
-                    setHasImageStartedLoading(true);
-                }}
-            >
-                {lazyImageProps => <Picture {...lazyImageProps} />}
-            </LazyImage>
-        );
-    }
+    const picture = (
+        <LazyImage
+            {...pictureProps}
+            root={root}
+            onEnter={() => {
+                setHasImageStartedLoading(true);
+            }}
+        >
+            {lazyImageProps => <Picture {...lazyImageProps} />}
+        </LazyImage>
+    );
 
     return (
         <div
@@ -172,7 +164,7 @@ Image.propTypes = {
     /**
      * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
      * users on browsers that don't support responsive images. If `sources` is not provided, this
-     * image will be lazy-loaded unless `disableLazyLoading` is `true`.
+     * image will be lazy-loaded.
      */
     src: PropTypes.string.isRequired,
     /**
@@ -210,10 +202,6 @@ Image.propTypes = {
      * "crop" an image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
-    /**
-     * Loads the image immediately rather than waiting for the user to scroll to it.
-     */
-    disableLazyLoading: PropTypes.bool,
 };
 
 Image.defaultProps = {
@@ -223,7 +211,6 @@ Image.defaultProps = {
     containerAspectRatio: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
-    disableLazyLoading: false,
 };
 
 // Needed because of the `forwardRef`.

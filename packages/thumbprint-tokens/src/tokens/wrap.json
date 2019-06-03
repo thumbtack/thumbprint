@@ -2,11 +2,11 @@
     "name": "Wrap",
     "tokens": [
         {
-            "id": "wrap__max-width",
+            "id": "max-width",
             "value": { "web": "946px" }
         },
         {
-            "id": "wrap__no-pad-width",
+            "id": "no-pad-width",
             "value": { "web": "1010px" }
         }
     ]

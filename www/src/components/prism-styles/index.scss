@@ -4,7 +4,7 @@
 // relate to Gatsby MDX and `react-live` code samples.
 .gatsby-highlight {
     border: 2px solid $tp-color__gray-300;
-    border-radius: $tp-border__radius__base;
+    border-radius: $tp-border-radius__base;
     overflow-y: auto;
 }
 
@@ -17,7 +17,7 @@ code.prism-code,
 pre.prism-code {
     font-size: $tp-font__body__2__size;
     color: $tp-color__black;
-    font-family: $tp-font__family__monospace;
+    font-family: $tp-font-family__monospace;
     font-weight: 500;
     text-align: left;
     white-space: pre;
@@ -130,7 +130,7 @@ pre.prism-code {
 
 .token.important,
 .token.bold {
-    font-weight: $tp-font__weight__bold;
+    font-weight: $tp-font-weight__bold;
 }
 .token.italic {
     font-style: italic;

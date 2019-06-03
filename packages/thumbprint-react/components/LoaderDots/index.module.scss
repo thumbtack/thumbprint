@@ -9,7 +9,7 @@
 }
 
 .dot {
-    border-radius: $tp-border__radius__full;
+    border-radius: $tp-border-radius__full;
     animation: tp-loader-animation-1 1.3s infinite ease-in;
     opacity: 0;
     -moz-transform: rotate(0.1deg); // Fixes small rendering bug in FF;

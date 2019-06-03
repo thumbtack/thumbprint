@@ -45,7 +45,7 @@ export const pageQuery = graphql`
     {props.data.allThumbprintToken.edges.map(({ node: section }) => (
         <TokenSection
             section={section}
-            idTransform={id => camelCase(`tp-${id}`)}
+            idTransform={id => camelCase(`tp-${section.name}-${id}`)}
             key={section.name}
         />
     ))}

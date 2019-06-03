@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+## 3.2.8 - 2019-06-03
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 3.2.7 - 2019-05-28
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 3.2.6 - 2019-05-24
+
+### Changed
+
+-   [Patch] Update some token names that were renamed. This doesn't affect the outputted code.
+
+## 3.2.5 - 2019-05-17
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency. This doesn't affect the outputted code.
+
 ## 3.2.4 - 2019-05-15
 
 ### Changed
