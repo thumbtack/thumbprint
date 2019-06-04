@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.1.0 - 2019-06-04
+
 ### Added
 
 -   [Minor] Add `onClick` prop to `ServiceCard`.
