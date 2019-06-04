@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
-import getAnchorProps from '../UIAction/get-anchor-props';
 
 class ServiceCardImage extends React.Component {
     componentDidMount() {
@@ -51,9 +50,14 @@ function ServiceCardDescription({ iconColor, icon, children }) {
     );
 }
 
-export default function ServiceCard({ url, children, ...props }) {
+export default function ServiceCard({ url, children, onClick, shouldOpenInNewTab }) {
     return (
-        <a {...getAnchorProps({ to: url, ...props })} className={styles.root}>
+        <a
+            href={url}
+            onClick={onClick}
+            target={shouldOpenInNewTab ? '_blank' : '_self'}
+            className={styles.root}
+        >
             {children}
         </a>
     );
@@ -76,15 +80,10 @@ ServiceCard.propTypes = {
      * Opens the URL in a new tab when clicked.
      */
     shouldOpenInNewTab: PropTypes.bool,
-    /**
-     * Disables click behavior
-     */
-    isDisabled: PropTypes.bool,
 };
 
 ServiceCard.defaultProps = {
     onClick: null,
-    isDisabled: false,
     shouldOpenInNewTab: false,
 };
 

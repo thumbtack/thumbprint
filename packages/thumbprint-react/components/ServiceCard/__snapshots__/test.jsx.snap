@@ -2,7 +2,6 @@
 
 exports[`ServiceCard renders an href when supplied 1`] = `
 <ServiceCard
-  isDisabled={false}
   onClick={null}
   shouldOpenInNewTab={false}
   url="https://www.thumbtack.com/k/massage/near-me/"
