@@ -34,31 +34,37 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
 
-const BACKGROUND_COLOURS = [
-    tokens.tpColorIndigo600,
-    tokens.tpColorGreen600,
-    tokens.tpColorYellow600,
-    tokens.tpColorRed600,
-    tokens.tpColorPurple600,
-    tokens.tpColorBlue600,
+const STYLES = [
+    {
+        color: tokens.tpColorIndigo600,
+        backgroundColor: tokens.tpColorIndigo100,
+    },
+    {
+        color: tokens.tpColorGreen600,
+        backgroundColor: tokens.tpColorGreen100,
+    },
+    {
+        color: tokens.tpColorYellow600,
+        backgroundColor: tokens.tpColorYellow100,
+    },
+    {
+        color: tokens.tpColorRed600,
+        backgroundColor: tokens.tpColorRed100,
+    },
+    {
+        color: tokens.tpColorPurple600,
+        backgroundColor: tokens.tpColorPurple100,
+    },
+    {
+        color: tokens.tpColorBlue600,
+        backgroundColor: tokens.tpColorBlue100,
+    },
 ];
 
-const TEXT_COLOURS = [
-    tokens.tpColorIndigo100,
-    tokens.tpColorGreen100,
-    tokens.tpColorYellow100,
-    tokens.tpColorRed100,
-    tokens.tpColorPurple100,
-    tokens.tpColorBlue100,
-];
-
-const getBackgroundColour = initials =>
+const getStyle = initials =>
     initials
-        ? BACKGROUND_COLOURS[initials.charCodeAt(0) % BACKGROUND_COLOURS.length]
-        : tokens.tpColorGray200;
-
-const getTextColour = initials =>
-    initials ? TEXT_COLOURS[initials.charCodeAt(0) % TEXT_COLOURS.length] : tokens.tpColorWhite;
+        ? STYLES[initials.charCodeAt(0) % STYLES.length]
+        : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
 class EntityAvatar extends React.Component {
     componentDidMount() {
@@ -100,10 +106,7 @@ class EntityAvatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                        style={{
-                            backgroundColor: getBackgroundColour(initial),
-                            color: getTextColour(initial),
-                        }}
+                        style={getStyle(initial)}
                         title={fullName && `Avatar for ${fullName}`}
                     >
                         {initial}
@@ -182,10 +185,7 @@ export default class Avatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        style={{
-                            backgroundColor: getBackgroundColour(props.initials),
-                            color: getTextColour(props.initials),
-                        }}
+                        style={getStyle(props.initials)}
                         title={props.fullName && `Avatar for ${props.fullName}`}
                     >
                         {props.initials}
