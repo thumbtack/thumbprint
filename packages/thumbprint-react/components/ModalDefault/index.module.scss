@@ -204,6 +204,13 @@ $width-wide: 1400px;
     padding-top: 12px;
 }
 
+// The double selectors in this file ensure that consumers using the `className` prop can't easily
+// overwrite the styles that we want to enforce in the component.
+.modalContentFullBleed.modalContentFullBleed {
+    margin: 0 -32px !important;
+    padding: 0 32px !important;
+}
+
 .modalFooterFluid {
     padding: $tp-space__4 0 0 0;
 

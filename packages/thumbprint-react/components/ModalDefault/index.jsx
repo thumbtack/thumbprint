@@ -160,6 +160,21 @@ const modalContentPropTypes = {
     children: PropTypes.node.isRequired,
 };
 
+const modalContentFullBleedPropTypes = {
+    /**
+     * Content (usually a form) that makes up the main part of the modal.
+     */
+    children: PropTypes.node.isRequired,
+    /**
+     * Allows the React `className` prop to be passed through to the rendered element.
+     */
+    className: PropTypes.string.isRequired,
+    /**
+     * Allows the React `style` prop to be passed through to the rendered element.
+     */
+    style: PropTypes.shape().isRequired,
+};
+
 const modalFooterPropTypes = {
     /**
      * Content (ususally buttons) to render within the footer.
@@ -239,6 +254,14 @@ ModalDefaultDescription.propTypes = modalDescriptionPropTypes;
 const ModalDefaultContent = ({ children }) => <div className={styles.modalContent}>{children}</div>;
 
 ModalDefaultContent.propTypes = modalContentPropTypes;
+
+const ModalDefaultContentFullBleed = ({ children, className, style }) => (
+    <div className={classNames(className, styles.modalContentFullBleed)} style={style}>
+        {children}
+    </div>
+);
+
+ModalDefaultContentFullBleed.propTypes = modalContentFullBleedPropTypes;
 
 class ModalDefaultFooter extends React.Component {
     constructor(props) {
@@ -407,6 +430,7 @@ export {
     ModalDefaultTitle,
     ModalDefaultDescription,
     ModalDefaultContent,
+    ModalDefaultContentFullBleed,
     ModalDefaultFooter,
     ModalDefaultAnimatedWrapper,
 };
