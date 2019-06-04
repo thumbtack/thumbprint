@@ -65,6 +65,10 @@ ServiceCard.propTypes = {
      */
     url: PropTypes.string.isRequired,
     /**
+     * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
+     */
+    children: PropTypes.node.isRequired,
+    /**
      * Handler for click events
      */
     onClick: PropTypes.func,
@@ -76,10 +80,6 @@ ServiceCard.propTypes = {
      * Disables click behavior
      */
     isDisabled: PropTypes.bool,
-    /**
-     * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
-     */
-    children: PropTypes.node.isRequired,
 };
 
 ServiceCard.defaultProps = {
