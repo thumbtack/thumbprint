@@ -10,6 +10,24 @@ describe('ServiceCard', () => {
         expect(wrapper.find('a').prop('href')).toBe('https://www.thumbtack.com/k/massage/near-me/');
         expect(wrapper).toMatchSnapshot();
     });
+    test('renders an href with the proper target', () => {
+        const wrapper = mount(
+            <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/" shouldOpenInNewTab>
+                Lorem
+            </ServiceCard>,
+        );
+        expect(wrapper.find('a').prop('target')).toBe('_blank');
+    });
+    test('renders an href with a click handler', () => {
+        const onClick = jest.fn();
+        const wrapper = mount(
+            <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/" onClick={onClick}>
+                Lorem
+            </ServiceCard>,
+        );
+        wrapper.find('a').simulate('click');
+        expect(onClick).toHaveBeenCalled();
+    });
 });
 
 describe('ServiceCardImage', () => {

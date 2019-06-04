@@ -2,11 +2,15 @@
 
 exports[`ServiceCard renders an href when supplied 1`] = `
 <ServiceCard
+  onClick={null}
+  shouldOpenInNewTab={false}
   url="https://www.thumbtack.com/k/massage/near-me/"
 >
   <a
     className="root"
     href="https://www.thumbtack.com/k/massage/near-me/"
+    onClick={null}
+    target="_self"
   >
     Lorem
   </a>
