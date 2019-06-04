@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Minor] Add dynamic colours to initials avatars.
+
 ### Changed
 
 -   [Patch] Refactor the internals of the `Image` component.

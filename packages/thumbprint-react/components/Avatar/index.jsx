@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
@@ -32,6 +33,29 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
+
+const BACKGROUND_COLOURS = [
+    tokens.tpColorIndigo600,
+    tokens.tpColorGreen600,
+    tokens.tpColorYellow600,
+    tokens.tpColorRed600,
+    tokens.tpColorPurple600,
+    tokens.tpColorBlue600,
+];
+
+const TEXT_COLOURS = [
+    tokens.tpColorIndigo100,
+    tokens.tpColorGreen100,
+    tokens.tpColorYellow100,
+    tokens.tpColorRed100,
+    tokens.tpColorPurple100,
+    tokens.tpColorBlue100,
+];
+
+const getBackgroundColour = initials =>
+    BACKGROUND_COLOURS[initials.charCodeAt(0) % BACKGROUND_COLOURS.length];
+
+const getTextColour = initials => TEXT_COLOURS[initials.charCodeAt(0) % TEXT_COLOURS.length];
 
 class EntityAvatar extends React.Component {
     componentDidMount() {
@@ -73,6 +97,10 @@ class EntityAvatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        style={{
+                            backgroundColor: getBackgroundColour(initial),
+                            color: getTextColour(initial),
+                        }}
                         title={fullName && `Avatar for ${fullName}`}
                     >
                         {initial}
@@ -151,6 +179,10 @@ export default class Avatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                        style={{
+                            backgroundColor: getBackgroundColour(props.initials),
+                            color: getTextColour(props.initials),
+                        }}
                         title={props.fullName && `Avatar for ${props.fullName}`}
                     >
                         {props.initials}
