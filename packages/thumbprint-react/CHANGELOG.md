@@ -2,7 +2,9 @@
 
 ## Unreleased
 
--   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`.
+### Added
+
+-   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
 
 ## 2.1.0 - 2019-06-04
 
