@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
+import getAnchorProps from '../UIAction/get-anchor-props';
 
 class ServiceCardImage extends React.Component {
     componentDidMount() {
@@ -50,9 +51,9 @@ function ServiceCardDescription({ iconColor, icon, children }) {
     );
 }
 
-export default function ServiceCard({ url, onClick, target, children }) {
+export default function ServiceCard({ url, children, ...props }) {
     return (
-        <a href={url} onClick={onClick} target={target} className={styles.root}>
+        <a {...getAnchorProps({ to: url, ...props })} className={styles.root}>
             {children}
         </a>
     );
@@ -68,9 +69,13 @@ ServiceCard.propTypes = {
      */
     onClick: PropTypes.func,
     /**
-     * Target attribute for the link
+     * Opens the URL in a new tab when clicked.
      */
-    target: PropTypes.string,
+    shouldOpenInNewTab: PropTypes.bool,
+    /**
+     * Disables click behavior
+     */
+    isDisabled: PropTypes.bool,
     /**
      * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
      */
@@ -79,7 +84,8 @@ ServiceCard.propTypes = {
 
 ServiceCard.defaultProps = {
     onClick: null,
-    target: null,
+    isDisabled: false,
+    shouldOpenInNewTab: false,
 };
 
 ServiceCardImage.propTypes = {

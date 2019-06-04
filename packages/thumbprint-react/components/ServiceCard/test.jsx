@@ -12,7 +12,7 @@ describe('ServiceCard', () => {
     });
     test('renders an href with the proper target', () => {
         const wrapper = mount(
-            <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/" target="_blank">
+            <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/" shouldOpenInNewTab>
                 Lorem
             </ServiceCard>,
         );

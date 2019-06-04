@@ -7,6 +7,7 @@
 -   [Patch] Refactor the internals of the `Image` component.
 -   [Minor] Add `onClick` prop to `ServiceCard`.
 -   [Minor] Add `target` prop to `ServiceCard`.
+-   [Minor] Add `isDisabled` prop to `ServiceCard`.
 
 ## 2.0.0 - 2019-06-03
 

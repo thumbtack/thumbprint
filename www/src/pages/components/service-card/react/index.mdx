@@ -42,6 +42,27 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </div>
 ```
 
+## With optional props for anchor
+
+```jsx
+<div style={{ maxWidth: '300px' }}>
+    <ServiceCard
+        url="https://www.thumbtack.com/k/massage/near-me/"
+        shouldOpenInNewTab
+        onClick={e => console.log(e)}
+        isDisabled={false}
+    >
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription>
+            Let us help you keep your lawn green and your garden happy and healthy.
+        </ServiceCardDescription>
+    </ServiceCard>
+</div
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
@@ -66,3 +87,4 @@ export const pageQuery = graphql`
         }
     }
 `;
+```
