@@ -78,6 +78,9 @@
             "name": "Daniel O'Connor",
             "email": "daniel@danoc.me",
             "url": "https://danoc.me/"
+        },
+        {
+            "name": "Giles Lavelle"
         }
     ],
     "license": "Apache-2.0",
