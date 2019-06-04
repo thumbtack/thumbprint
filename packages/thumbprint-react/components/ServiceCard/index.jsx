@@ -50,9 +50,14 @@ function ServiceCardDescription({ iconColor, icon, children }) {
     );
 }
 
-export default function ServiceCard({ url, children }) {
+export default function ServiceCard({ url, children, onClick, shouldOpenInNewTab }) {
     return (
-        <a href={url} className={styles.root}>
+        <a
+            href={url}
+            onClick={onClick}
+            target={shouldOpenInNewTab ? '_blank' : '_self'}
+            className={styles.root}
+        >
             {children}
         </a>
     );
@@ -67,6 +72,19 @@ ServiceCard.propTypes = {
      * Accepts content of `ServiceCardImage`, `ServiceCardTitle`, `ServiceCardDescription`.
      */
     children: PropTypes.node.isRequired,
+    /**
+     * Handler for click events
+     */
+    onClick: PropTypes.func,
+    /**
+     * Opens the URL in a new tab when clicked.
+     */
+    shouldOpenInNewTab: PropTypes.bool,
+};
+
+ServiceCard.defaultProps = {
+    onClick: null,
+    shouldOpenInNewTab: false,
 };
 
 ServiceCardImage.propTypes = {

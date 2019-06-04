@@ -4,6 +4,13 @@
 
 -   [Minor] Add dynamic colours to initials avatars.
 
+## 2.1.0 - 2019-06-04
+
+### Added
+
+-   [Minor] Add `onClick` prop to `ServiceCard`.
+-   [Minor] Add `shouldOpenInNewTab` prop to `ServiceCard`.
+
 ### Changed
 
 -   [Patch] Refactor the internals of the `Image` component.
