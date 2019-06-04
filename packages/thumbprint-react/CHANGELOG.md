@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `onClick` prop to `ServiceCard`.
+-   [Minor] Add `shouldOpenInNewTab` prop to `ServiceCard`.
+
 ### Changed
 
 -   [Patch] Refactor the internals of the `Image` component.
--   [Minor] Add `onClick` prop to `ServiceCard`.
--   [Minor] Add `shouldOpenInNewTab` prop to `ServiceCard`.
 
 ## 2.0.0 - 2019-06-03
 
