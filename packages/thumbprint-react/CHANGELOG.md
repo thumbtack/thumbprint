@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+
 ## 2.1.0 - 2019-06-04
 
 ### Added

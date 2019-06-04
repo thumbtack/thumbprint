@@ -27,6 +27,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar squareAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       N
     </span>
@@ -85,6 +91,12 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
@@ -125,6 +137,12 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
@@ -143,6 +161,12 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       NC
     </span>
@@ -162,6 +186,12 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
@@ -180,6 +210,12 @@ exports[`does not render a badge by default 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -199,6 +235,12 @@ exports[`does not render a badge by default 2`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -218,6 +260,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -237,6 +285,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -256,6 +310,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -276,6 +336,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -303,6 +369,12 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
 </Avatar>
@@ -340,6 +412,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -379,6 +457,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -406,6 +490,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -434,6 +524,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -473,6 +569,12 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -512,6 +614,12 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
@@ -570,6 +678,12 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
 </Avatar>
@@ -594,6 +708,12 @@ exports[`renders notification dot without checkmark SVG when \`isChecked\` and \
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
 </Avatar>
@@ -611,6 +731,12 @@ exports[`renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       NC
     </span>
