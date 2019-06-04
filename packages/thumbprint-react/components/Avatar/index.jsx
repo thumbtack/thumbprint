@@ -53,9 +53,12 @@ const TEXT_COLOURS = [
 ];
 
 const getBackgroundColour = initials =>
-    BACKGROUND_COLOURS[initials.charCodeAt(0) % BACKGROUND_COLOURS.length];
+    initials
+        ? BACKGROUND_COLOURS[initials.charCodeAt(0) % BACKGROUND_COLOURS.length]
+        : tokens.tpColorGray200;
 
-const getTextColour = initials => TEXT_COLOURS[initials.charCodeAt(0) % TEXT_COLOURS.length];
+const getTextColour = initials =>
+    initials ? TEXT_COLOURS[initials.charCodeAt(0) % TEXT_COLOURS.length] : tokens.tpColorWhite;
 
 class EntityAvatar extends React.Component {
     componentDidMount() {
