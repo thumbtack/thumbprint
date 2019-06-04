@@ -4,7 +4,11 @@ description: Display user images and badges on Thumbtack.
 ---
 
 import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
@@ -81,6 +85,11 @@ When a user does not have an image, an `Avatar` can display the user’s initial
 ```
 
 ## Avatar Badges
+
+<DeprecatedComponentAlert>
+    Avatar badges are deprecated. Status indicators such as "online" status, hired checkmarks, and
+    notification alerts should be implemented as separate elements placed next to the avatar.
+</DeprecatedComponentAlert>
 
 Badges can be added to avatars to denote information including hired status and unread notifications. These badges cannot be used on the `xsmall` variation.
 
