@@ -2,7 +2,9 @@
 
 ## Unreleased
 
--   [Minor] Add dynamic colours to initials avatars.
+### Changed
+
+-   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
 
 ## 2.1.0 - 2019-06-04
 
