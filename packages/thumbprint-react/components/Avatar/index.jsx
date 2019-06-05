@@ -144,7 +144,7 @@ EntityAvatar.defaultProps = {
     size: 'medium',
 };
 
-export default class Avatar extends React.Component {
+class UserAvatar extends React.Component {
     componentDidMount() {
         // These imports are only needed client-side and allow for lazy-loading images. They should
         // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
@@ -196,7 +196,7 @@ export default class Avatar extends React.Component {
     }
 }
 
-Avatar.propTypes = {
+UserAvatar.propTypes = {
     /**
      * HTTPS URL that points a user's avatar. The `imageURL` will take
      * precendence over `initials` if both are supplied.
@@ -230,7 +230,7 @@ Avatar.propTypes = {
     isOnline: PropTypes.bool,
 };
 
-Avatar.defaultProps = {
+UserAvatar.defaultProps = {
     imageUrl: undefined,
     initials: undefined,
     fullName: undefined,
@@ -240,4 +240,4 @@ Avatar.defaultProps = {
     isOnline: undefined,
 };
 
-export { EntityAvatar };
+export { UserAvatar, EntityAvatar };

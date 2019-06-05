@@ -1,37 +1,37 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Avatar, { EntityAvatar } from './index';
+import { UserAvatar, EntityAvatar } from './index';
 
 test('renders an image when the user has one', () => {
-    const wrapper = mount(<Avatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
+    const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
     expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
     expect(wrapper).toMatchSnapshot();
 });
 
 test('adds lazyload class for lazysizes to work', () => {
-    const wrapper = mount(<Avatar imageUrl="//www.placecage.com/130/130" />);
+    const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" />);
     expect(wrapper.find('.lazyload')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('does not add lazyload class if an image is not provided', () => {
-    const wrapper = mount(<Avatar initials="NC" />);
+    const wrapper = mount(<UserAvatar initials="NC" />);
     expect(wrapper.find('.lazyload')).toHaveLength(0);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('renders the initials when the user has no image', () => {
-    const wrapper = mount(<Avatar initials="NC" />);
+    const wrapper = mount(<UserAvatar initials="NC" />);
     expect(wrapper.find('.initialsAvatar').text()).toBe('NC');
     expect(wrapper).toMatchSnapshot();
 });
 
 test('adds the `fullName` as `title` text', () => {
-    const wrapper = mount(<Avatar fullName="Duck Goose" />);
+    const wrapper = mount(<UserAvatar fullName="Duck Goose" />);
     const wrapperWithImage = mount(
-        <Avatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
+        <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
     );
-    const wrapperWithInitials = mount(<Avatar fullName="Duck Goose" title="DG" />);
+    const wrapperWithInitials = mount(<UserAvatar fullName="Duck Goose" title="DG" />);
 
     expect(wrapper.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
     expect(wrapperWithImage.find('.baseAvatar').prop('title')).toContain('Duck Goose');
@@ -43,22 +43,24 @@ test('adds the `fullName` as `title` text', () => {
 });
 
 test('adds the `fullName` as `alt` text when image is provided', () => {
-    const wrapper = mount(<Avatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />);
+    const wrapper = mount(
+        <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
+    );
     expect(wrapper.find('.baseAvatar').prop('alt')).toContain('Duck Goose');
     expect(wrapper).toMatchSnapshot();
 });
 
 test('does not add the `fullName` as `alt` text when no image is provided', () => {
-    const wrapper = mount(<Avatar fullName="Duck Goose" />);
+    const wrapper = mount(<UserAvatar fullName="Duck Goose" />);
     expect(wrapper.find('.initialsAvatar').prop('alt')).toBeUndefined();
     expect(wrapper).toMatchSnapshot();
 });
 
 test('does not render a badge when `size` is `xsmall`', () => {
-    const wrapperA = mount(<Avatar size="xsmall" initials="DK" />);
-    const wrapperB = mount(<Avatar size="xsmall" isChecked initials="DK" />);
-    const wrapperC = mount(<Avatar size="xsmall" hasUnreadNotifications initials="DK" />);
-    const wrapperD = mount(<Avatar size="xsmall" isOnline initials="DK" />);
+    const wrapperA = mount(<UserAvatar size="xsmall" initials="DK" />);
+    const wrapperB = mount(<UserAvatar size="xsmall" isChecked initials="DK" />);
+    const wrapperC = mount(<UserAvatar size="xsmall" hasUnreadNotifications initials="DK" />);
+    const wrapperD = mount(<UserAvatar size="xsmall" isOnline initials="DK" />);
 
     expect(wrapperA.find('.badge').exists()).toBe(false);
     expect(wrapperB.find('.badge').exists()).toBe(false);
@@ -71,20 +73,20 @@ test('does not render a badge when `size` is `xsmall`', () => {
 });
 
 test('does not render a badge by default', () => {
-    const wrapperNoSize = mount(<Avatar initials="DK" />);
+    const wrapperNoSize = mount(<UserAvatar initials="DK" />);
     expect(wrapperNoSize.find('.badge').exists()).toBe(false);
     expect(wrapperNoSize).toMatchSnapshot();
 
-    const wrapperWithSize = mount(<Avatar size="large" initials="DK" />);
+    const wrapperWithSize = mount(<UserAvatar size="large" initials="DK" />);
     expect(wrapperWithSize.find('.badge').exists()).toBe(false);
     expect(wrapperWithSize).toMatchSnapshot();
 });
 
 test('renders a badge if size is larger than `xsmall` and valid badge prop is supplied', () => {
-    const wrapperA = mount(<Avatar isChecked initials="DK" />);
-    const wrapperB = mount(<Avatar size="medium" isChecked initials="DK" />);
-    const wrapperC = mount(<Avatar size="medium" hasUnreadNotifications initials="DK" />);
-    const wrapperD = mount(<Avatar size="medium" isOnline initials="DK" />);
+    const wrapperA = mount(<UserAvatar isChecked initials="DK" />);
+    const wrapperB = mount(<UserAvatar size="medium" isChecked initials="DK" />);
+    const wrapperC = mount(<UserAvatar size="medium" hasUnreadNotifications initials="DK" />);
+    const wrapperD = mount(<UserAvatar size="medium" isOnline initials="DK" />);
 
     expect(wrapperA.find('.badge').exists()).toBe(true);
     expect(wrapperB.find('.badge').exists()).toBe(true);
@@ -97,7 +99,7 @@ test('renders a badge if size is larger than `xsmall` and valid badge prop is su
 });
 
 test('renders an SVG when `isChecked` is true', () => {
-    const wrapper = mount(<Avatar size="medium" isChecked initials="DK" />);
+    const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
     expect(
         wrapper
             .find('.badge')
@@ -108,7 +110,7 @@ test('renders an SVG when `isChecked` is true', () => {
 });
 
 test('renders an SVG when `isChecked` is true', () => {
-    const wrapper = mount(<Avatar size="medium" isChecked initials="DK" />);
+    const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
     expect(
         wrapper
             .find('.badge')
@@ -119,13 +121,13 @@ test('renders an SVG when `isChecked` is true', () => {
 });
 
 test('renders `isOnline` when `isOnline` is true', () => {
-    const wrapper = mount(<Avatar isOnline />);
+    const wrapper = mount(<UserAvatar isOnline />);
     expect(wrapper.find('.badge').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('renders notification dot without checkmark SVG when `isChecked` and `hasUnreadNotifications` are true', () => {
-    const wrapper = mount(<Avatar isChecked hasUnreadNotifications />);
+    const wrapper = mount(<UserAvatar isChecked hasUnreadNotifications />);
     expect(wrapper.find('.badge').exists()).toBe(true);
     expect(
         wrapper
@@ -137,7 +139,7 @@ test('renders notification dot without checkmark SVG when `isChecked` and `hasUn
 });
 
 test('renders checkmark SVG when `isChecked` and `isOnline` are true', () => {
-    const wrapper = mount(<Avatar isChecked isOnline />);
+    const wrapper = mount(<UserAvatar isChecked isOnline />);
     expect(wrapper.find('.badge').exists()).toBe(true);
     expect(
         wrapper
