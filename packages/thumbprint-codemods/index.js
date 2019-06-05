@@ -11,17 +11,17 @@ const codemods = {
 const cli = meow({
     help: `
 Usage
-  $ npx @thumbtack/thumbprint-codemods '<glob>' --codemod '<codemod-name>'
+  $ npx @thumbtack/thumbprint-codemods <files> --codemod '<codemod-name>'
 
 Options
-  <glob>         [required] Glob of files you want to migrate (\`node_modules\` is automatically ignored).
+  <files>        [required] Files you want to migrate.
   codemod        [required] Name of the codemod to run.
   -d, --dry-run  Don't write anything, just show what files would have been changed.
   --version      Prints the version.
   --help         Prints this message.
 
 Examples
-  $ npx @thumbtack/thumbprint-codemods '**/*.js' --codemod 'button-secondary-to-tertiary'
+  $ npx @thumbtack/thumbprint-codemods **/*.jsx --codemod 'button-secondary-to-tertiary'
   `.trim(),
     flags: {
         'dry-run': {
