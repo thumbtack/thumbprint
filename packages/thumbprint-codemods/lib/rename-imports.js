@@ -4,6 +4,13 @@ module.exports = function renameImports(ast, j, importSource, importMap) {
     const imports = ast.find(j.ImportDeclaration, { source: { value: importSource } });
     const importsByName = {};
 
+    function memberExpression(ident, ...members) {
+        return members.reduce(
+            (expr, member) => j.memberExpression(expr, j.identifier(member)),
+            j.identifier(ident),
+        );
+    }
+
     imports.forEach(decl => {
         j(decl)
             .find(j.ImportSpecifier)
@@ -11,11 +18,6 @@ module.exports = function renameImports(ast, j, importSource, importMap) {
                 importsByName[spec.node.imported.name] = spec;
             });
     });
-
-    for (const [from, to] of Object.entries(importMap)) {
-        const idents = to.split('.');
-        rewriteImport(from, idents[0], idents.slice(1));
-    }
 
     function rewriteImport(from, to, members) {
         imports.forEach(decl => {
@@ -28,6 +30,7 @@ module.exports = function renameImports(ast, j, importSource, importMap) {
                         j(spec).remove();
                     } else {
                         // otherwise, we can safely rename this one to the new identifier
+                        // eslint-disable-next-line no-param-reassign
                         spec.node.imported.name = to;
                         importsByName[to] = spec;
                     }
@@ -40,9 +43,8 @@ module.exports = function renameImports(ast, j, importSource, importMap) {
             .replaceWith(memberExpression(to, ...members));
     }
 
-    function memberExpression(ident, ...members) {
-        return members.reduce((expr, member) => {
-            return j.memberExpression(expr, j.identifier(member));
-        }, j.identifier(ident));
-    }
+    Object.entries(importMap).forEach(([from, to]) => {
+        const idents = to.split('.');
+        rewriteImport(from, idents[0], idents.slice(1));
+    });
 };
