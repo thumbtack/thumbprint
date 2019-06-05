@@ -93,6 +93,17 @@ test('applies `labelPadding` as padding on the label', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('applies className corresponding to `radioVerticalAlign` on the label', () => {
+    const wrapper = mount(
+        <Radio name="duck" radioVerticalAlign="top" onChange={jest.fn()}>
+            Goose
+        </Radio>,
+    );
+
+    expect(wrapper.find('label').hasClass('.rootRadioVerticalAlignTop'));
+    expect(wrapper).toMatchSnapshot();
+});
+
 test('calls `onChange` function when supplied', () => {
     const onChange = jest.fn();
 

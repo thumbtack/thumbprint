@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
+
 ### Changed
 
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
