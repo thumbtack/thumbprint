@@ -218,16 +218,14 @@ export default class Tooltip extends React.Component {
             clearTimeout(this.closeTimeout);
         }
 
-        setTimeout(() => {
-            this.setState(
-                {
-                    isOpen: true,
-                },
-                () => {
-                    document.addEventListener('keyup', this.handleKeyUp);
-                },
-            );
-        }, 500);
+        this.setState(
+            {
+                isOpen: true,
+            },
+            () => {
+                document.addEventListener('keyup', this.handleKeyUp);
+            },
+        );
     }
 
     handleKeyUp(event) {
