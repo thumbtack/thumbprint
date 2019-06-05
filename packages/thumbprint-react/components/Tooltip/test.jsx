@@ -293,7 +293,13 @@ test('Events from PositionedTooltip do not propagate to parent container when `c
     expect(jestOnClick).toHaveBeenCalledTimes(0);
     wrapper.find('button').simulate('mouseenter');
     expect(jestOnClick).toHaveBeenCalledTimes(0);
-    wrapper.find('PositionedTooltip').simulate('click');
+    jest.runAllTimers();
+    wrapper
+        // Need to manually call `update` here because `setState` is called asynchronously in the
+        // `show` method.
+        .update()
+        .find('PositionedTooltip')
+        .simulate('click');
     expect(jestOnClick).toHaveBeenCalledTimes(0);
 });
 
@@ -324,7 +330,13 @@ test('Events from PositionedTooltip do propagate to parent container when `conta
     expect(jestOnClick).toHaveBeenCalledTimes(0);
     wrapper.find('button').simulate('mouseenter');
     expect(jestOnClick).toHaveBeenCalledTimes(0);
-    wrapper.find('PositionedTooltip').simulate('click');
+    jest.runAllTimers();
+    wrapper
+        // Need to manually call `update` here because `setState` is called asynchronously in the
+        // `show` method.
+        .update()
+        .find('PositionedTooltip')
+        .simulate('click');
     expect(jestOnClick).toHaveBeenCalledTimes(1);
 });
 
@@ -354,6 +366,9 @@ describe('non-touch devices', () => {
         expect(wrapper.state('isOpen')).toBe(false);
 
         button.simulate('mouseenter');
+        expect(wrapper.state('isOpen')).toBe(false);
+
+        jest.runAllTimers();
         expect(wrapper.state('isOpen')).toBe(true);
 
         button.simulate('mouseleave');

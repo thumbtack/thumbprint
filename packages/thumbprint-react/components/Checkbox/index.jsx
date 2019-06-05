@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
 import styles from './index.module.scss';
@@ -96,6 +97,7 @@ const getFunctionalState = ({ isDisabled, hasError }) => {
 };
 
 const Checkbox = ({
+    checkboxVerticalAlign,
     children,
     dataTest,
     hasError,
@@ -118,7 +120,10 @@ const Checkbox = ({
     return (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label
-            className={styles.root}
+            className={classNames(styles.root, {
+                [styles.rootCheckboxVerticalAlignTop]: checkboxVerticalAlign === 'top',
+                [styles.rootCheckboxVerticalAlignCenter]: checkboxVerticalAlign === 'center',
+            })}
             style={{ cursor: labelCursor[functionalState], padding: labelPadding }}
         >
             <input
@@ -212,6 +217,10 @@ Checkbox.propTypes = {
      * applied internally to the `<input />` element.
      */
     dataTest: PropTypes.string,
+    /**
+     * Determines how the checkbox input will be vertically aligned relative to `props.children`.
+     */
+    checkboxVerticalAlign: PropTypes.oneOf(['top', 'center']),
 };
 
 Checkbox.defaultProps = {
@@ -224,6 +233,7 @@ Checkbox.defaultProps = {
     labelPadding: '14px 0',
     isIndeterminate: false,
     dataTest: undefined,
+    checkboxVerticalAlign: 'center',
 };
 
 export default Checkbox;

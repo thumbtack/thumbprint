@@ -230,6 +230,43 @@ class RadioExample extends React.Component {
 }
 ```
 
+Radio input by default is vertically center-aligned with `children`. If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `radioVerticalAlign` prop as `top`.
+
+```jsx
+class RadioExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isChecked: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(isChecked) {
+        this.setState({
+            isChecked,
+        });
+    }
+
+    render() {
+        const { isChecked } = this.state;
+
+        return (
+            <Radio isChecked={isChecked} onChange={this.onChange} radioVerticalAlign="top">
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
+                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
+                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
+                    mauris in arcu maximus placerat.
+                </Text>
+            </Radio>
+        );
+    }
+}
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
