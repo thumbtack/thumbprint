@@ -46,10 +46,29 @@ import {
 
 ## Avatars without images
 
-When a user does not have an image, an `Avatar` can display the user’s initials instead.
+When a user does not have an image, an `Avatar` can display the user’s initials instead. The initals are assigned to a color based on the first letter in the `initials` prop.
 
 ```jsx
-<Avatar initials="JK" />
+<div className="flex">
+    <div className="mr2">
+        <Avatar initials="AA" size="large" />
+    </div>
+    <div className="mr2">
+        <Avatar initials="BA" size="large" />
+    </div>
+    <div className="mr2">
+        <Avatar initials="CA" size="large" />
+    </div>
+    <div className="mr2">
+        <Avatar initials="DA" size="large" />
+    </div>
+    <div className="mr2">
+        <Avatar initials="EA" size="large" />
+    </div>
+    <div>
+        <Avatar initials="HA" size="large" />
+    </div>
+</div>
 ```
 
 ## EntityAvatar
@@ -78,10 +97,29 @@ When a user does not have an image, an `Avatar` can display the user’s initial
 <EntityAvatar imageUrl="https://www.placecage.com/640/480" size="small" />
 ```
 
-### Initial
+### Initials
 
 ```jsx
-<EntityAvatar initial="J" size="medium" />
+<div className="flex">
+    <div className="mr2">
+        <EntityAvatar initial="A" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="B" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="C" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="D" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="E" size="large" />
+    </div>
+    <div>
+        <EntityAvatar initial="F" size="large" />
+    </div>
+</div>
 ```
 
 ## Avatar Badges

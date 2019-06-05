@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 
@@ -32,6 +33,38 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
 
 const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
+
+const STYLES = [
+    {
+        color: tokens.tpColorIndigo600,
+        backgroundColor: tokens.tpColorIndigo100,
+    },
+    {
+        color: tokens.tpColorGreen600,
+        backgroundColor: tokens.tpColorGreen100,
+    },
+    {
+        color: tokens.tpColorYellow600,
+        backgroundColor: tokens.tpColorYellow100,
+    },
+    {
+        color: tokens.tpColorRed600,
+        backgroundColor: tokens.tpColorRed100,
+    },
+    {
+        color: tokens.tpColorPurple600,
+        backgroundColor: tokens.tpColorPurple100,
+    },
+    {
+        color: tokens.tpColorBlue600,
+        backgroundColor: tokens.tpColorBlue100,
+    },
+];
+
+const getStyle = initials =>
+    initials
+        ? STYLES[initials.charCodeAt(0) % STYLES.length]
+        : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
 class EntityAvatar extends React.Component {
     componentDidMount() {
@@ -73,6 +106,7 @@ class EntityAvatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        style={getStyle(initial)}
                         title={fullName && `Avatar for ${fullName}`}
                     >
                         {initial}
@@ -151,6 +185,7 @@ export default class Avatar extends React.Component {
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                        style={getStyle(props.initials)}
                         title={props.fullName && `Avatar for ${props.fullName}`}
                     >
                         {props.initials}
