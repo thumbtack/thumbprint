@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
+
 ### Changed
 
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
