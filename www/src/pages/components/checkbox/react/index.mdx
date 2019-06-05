@@ -255,6 +255,43 @@ class CheckboxExample extends React.Component {
 }
 ```
 
+Checkbox input by default is vertically center-aligned with `children`. If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `checkboxVerticalAlign` prop as `top`.
+
+```jsx
+class CheckboxExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isChecked: undefined,
+        };
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(isChecked) {
+        this.setState({
+            isChecked,
+        });
+    }
+
+    render() {
+        const { isChecked } = this.state;
+
+        return (
+            <Checkbox isChecked={isChecked} onChange={this.onChange} checkboxVerticalAlign="top">
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
+                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
+                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
+                    mauris in arcu maximus placerat.
+                </Text>
+            </Checkbox>
+        );
+    }
+}
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`

@@ -71,6 +71,17 @@ test('applies `labelPadding` as padding on the label', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('applies className corresponding to `checkboxVerticalAlign` on the label', () => {
+    const wrapper = mount(
+        <Checkbox checkboxVerticalAlign="top" onChange={jest.fn()}>
+            Goose
+        </Checkbox>,
+    );
+
+    expect(wrapper.find('label').hasClass('.rootCheckboxVerticalAlignTop'));
+    expect(wrapper).toMatchSnapshot();
+});
+
 test('renders `hasError` state', () => {
     const wrapperA = mount(
         <Checkbox isChecked hasError onChange={jest.fn()}>
