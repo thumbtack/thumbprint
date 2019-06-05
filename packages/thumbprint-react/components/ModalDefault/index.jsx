@@ -168,11 +168,16 @@ const modalContentFullBleedPropTypes = {
     /**
      * Allows the React `className` prop to be passed through to the rendered element.
      */
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     /**
      * Allows the React `style` prop to be passed through to the rendered element.
      */
-    style: PropTypes.shape().isRequired,
+    style: PropTypes.shape(),
+};
+
+const modalContentFullBleedDefaultProps = {
+    className: '',
+    style: {},
 };
 
 const modalFooterPropTypes = {
@@ -262,6 +267,7 @@ const ModalDefaultContentFullBleed = ({ children, className, style }) => (
 );
 
 ModalDefaultContentFullBleed.propTypes = modalContentFullBleedPropTypes;
+ModalDefaultContentFullBleed.defaultProps = modalContentFullBleedDefaultProps;
 
 class ModalDefaultFooter extends React.Component {
     constructor(props) {
