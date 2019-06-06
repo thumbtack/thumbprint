@@ -108,6 +108,28 @@ $button-border-width: 2px;
         }
     }
 
+    &ThemeSecondary {
+        color: $tp-color__blue;
+        background-color: $tp-color__white;
+        border-color: $tp-color__gray;
+
+        &[disabled] {
+            color: $tp-color__blue-300;
+            background-color: $tp-color__white;
+            border-color: $tp-color__gray;
+        }
+
+        &:not([disabled]):hover {
+            color: $tp-color__blue;
+        }
+
+        &:focus {
+            color: $tp-color__blue;
+            background-color: $tp-color__white;
+            border-color: $tp-color__blue;
+        }
+    }
+
     &ThemeTertiary {
         color: $tp-color__black-300;
         background-color: $tp-color__white;

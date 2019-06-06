@@ -17,15 +17,15 @@ These are the available `Button` styles for use on light background colors.
 ```jsx
 <ButtonRow>
     <Button>Primary</Button>
+    <Button theme="secondary">Secondary</Button>
     <Button theme="tertiary">Tertiary</Button>
     <Button theme="caution">Caution</Button>
 </ButtonRow>
 ```
 
-<Alert type="warning" title="Where's the secondary theme?">
-    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
-    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
-    <InlineCode>secondary</InlineCode> button.{' '}
+<Alert type="warning" title="Why is the secondary theme different?">
+    The former <InlineCode>secondary</InlineCode> theme is has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>.{' '}
     <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
 </Alert>
 
@@ -44,6 +44,9 @@ Buttons are `large` by default. The `size` prop allows you to render a `small` b
 ```jsx
 <ButtonRow>
     <Button size="small">Primary</Button>
+    <Button size="small" theme="secondary">
+        Secondary
+    </Button>
     <Button size="small" theme="tertiary">
         Tertiary
     </Button>
@@ -61,6 +64,9 @@ The `isDisabled` prop visually and functionally disables the button.
 <ButtonRow>
     <Button isDisabled theme="primary">
         Primary
+    </Button>
+    <Button isDisabled theme="secondary">
+        Secondary
     </Button>
     <Button isDisabled theme="tertiary">
         Tertiary
@@ -103,11 +109,14 @@ The `icon` prop accepts any small icon from [Thumbprint Icons](/icons/).
 
 ## Button with loading indicator
 
-These loading indicators should be used when buttons are processing. They are avialble in the `primary` and `tertiary` button themes.
+These loading indicators should be used when buttons are processing. They are avialble in the `primary`, `secondary`, and `tertiary` button themes.
 
 ```jsx
 <ButtonRow>
     <Button isLoading>Send Quote</Button>
+    <Button theme="secondary" isLoading>
+        Send Quote
+    </Button>
     <Button theme="tertiary" isLoading>
         Send Quote
     </Button>
