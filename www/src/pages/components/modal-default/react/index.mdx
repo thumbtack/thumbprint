@@ -5,6 +5,7 @@ description: A basic and commonly used modal.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
 
 <ComponentHeader data={props.data} />
 
@@ -443,7 +444,17 @@ class ModalDefaultDemoNarrow extends React.Component {
 
 ### Full bleed modal
 
-You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that reaches the edge of the modal. This is useful for setting your own background colour, for example.
+You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal.
+This is useful for setting your own background colour or section borders, for example.
+
+<Alert type="warning" title="Warning" className="mt5">
+    This component provides the same amount of padding as the modal itself, so it can't be used to
+    render child elements that touch the edge of the modal – only to set the background or other
+    styles. This is to make sure that everything in the modal has consistent padding at all
+    breakpoints. Interfaces like horizontally scrolling lists that reach the edge of their container
+    are not suitable for use inside a modal, and you should work with your designer to find an
+    alternative.
+</Alert>
 
 ```jsx
 class ModalDefaultDemoFullBleed extends React.Component {
