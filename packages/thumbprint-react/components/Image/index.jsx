@@ -43,6 +43,9 @@ const Image = forwardRef((props, outerRef) => {
             // passing a `border-radius` in `className` or `style` would not work since the
             // container is a `div`, not an `img`.
             overflow: 'hidden',
+            // Setting a `min-height` makes the lazy-loading work in cases where the `Image` parent
+            // has a `0px` height.
+            minHeight: '1px',
         },
     };
 

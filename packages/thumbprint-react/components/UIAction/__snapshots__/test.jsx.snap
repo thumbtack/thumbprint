@@ -1741,7 +1741,7 @@ exports[`Themed renders secondary theme 1`] = `
   width="auto"
 >
   <button
-    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
     disabled={false}
     onClick={null}
     type="button"
@@ -1769,7 +1769,7 @@ exports[`Themed renders secondary theme 2`] = `
   width="auto"
 >
   <button
-    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
     disabled={true}
     onClick={null}
     type="button"
@@ -1854,6 +1854,62 @@ exports[`Themed renders solid theme 2`] = `
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSolid themedButtonWidthAuto"
+    disabled={true}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexWrapper flexWrapperSizeLarge"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders tertiary theme 1`] = `
+<ForwardRef
+  icon={null}
+  isDisabled={false}
+  isLoading={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  size="large"
+  theme="tertiary"
+  to={null}
+  type="button"
+  width="auto"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexWrapper flexWrapperSizeLarge"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders tertiary theme 2`] = `
+<ForwardRef
+  icon={null}
+  isDisabled={true}
+  isLoading={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  size="large"
+  theme="tertiary"
+  to={null}
+  type="button"
+  width="auto"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
     disabled={true}
     onClick={null}
     type="button"

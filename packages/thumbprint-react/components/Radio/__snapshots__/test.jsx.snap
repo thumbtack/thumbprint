@@ -10,9 +10,10 @@ exports[`adds \`dataTest\` prop 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -73,9 +74,10 @@ exports[`adds \`disabled\` attribute 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "default",
@@ -135,13 +137,77 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
   labelPadding="10px 20px"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
         "padding": "10px 20px",
+      }
+    }
+  >
+    <input
+      checked={false}
+      className="input"
+      disabled={false}
+      id={null}
+      name="duck"
+      onChange={[Function]}
+      type="radio"
+    />
+    <svg
+      className="radioImage"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="#ffffff"
+        fillRule="evenodd"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="9"
+          stroke="#d3d4d5"
+          strokeWidth="2"
+        />
+      </g>
+    </svg>
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Radio>
+`;
+
+exports[`applies className corresponding to \`radioVerticalAlign\` on the label 1`] = `
+<Radio
+  hasError={false}
+  id={null}
+  isChecked={false}
+  isDisabled={false}
+  labelPadding="14px 0"
+  name="duck"
+  onChange={[MockFunction]}
+  radioVerticalAlign="top"
+>
+  <label
+    className="root rootRadioVerticalAlignTop"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
       }
     }
   >
@@ -197,9 +263,10 @@ exports[`if no \`children\` are passed in 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -249,9 +316,10 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -317,9 +385,10 @@ exports[`is not checked by default 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -379,9 +448,10 @@ exports[`renders \`children\` passed in 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -441,9 +511,10 @@ exports[`renders \`hasError\` state 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -503,9 +574,10 @@ exports[`renders \`hasError\` state 2`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -571,9 +643,10 @@ exports[`renders \`input\` within \`label\` 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",
@@ -633,9 +706,10 @@ exports[`renders radio input 1`] = `
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
+  radioVerticalAlign="center"
 >
   <label
-    className="root"
+    className="root rootRadioVerticalAlignCenter"
     style={
       Object {
         "cursor": "pointer",

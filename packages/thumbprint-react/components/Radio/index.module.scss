@@ -3,7 +3,14 @@
 .root {
     position: relative;
     display: flex;
-    align-items: center;
+
+    &RadioVerticalAlignTop {
+        align-items: flex-start;
+    }
+
+    &RadioVerticalAlignCenter {
+        align-items: center;
+    }
 }
 
 .input {
@@ -21,8 +28,17 @@
 .radioImage {
     width: 20px;
     height: 20px;
-    margin-top: -1px;
     border-radius: $tp-border-radius__full;
+
+    // Margin that makes the input appear decently aligned against
+    // various Thumbprint <Text> sizes
+    .rootRadioVerticalAlignTop & {
+        margin-top: 1px;
+    }
+
+    .rootRadioVerticalAlignCenter & {
+        margin-top: -1px;
+    }
 }
 
 .text {
