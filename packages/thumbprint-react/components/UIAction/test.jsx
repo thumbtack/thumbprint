@@ -485,6 +485,17 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
+    test('renders tertiary theme', () => {
+        const wrapperA = mount(<Themed theme="tertiary">Goose</Themed>);
+        const wrapperB = mount(
+            <Themed theme="tertiary" isDisabled>
+                Goose
+            </Themed>,
+        );
+        expect(wrapperA).toMatchSnapshot();
+        expect(wrapperB).toMatchSnapshot();
+    });
+
     test('renders caution theme', () => {
         const wrapperA = mount(<Themed theme="caution">Goose</Themed>);
         const wrapperB = mount(

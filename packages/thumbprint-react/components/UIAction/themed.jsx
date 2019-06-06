@@ -88,7 +88,8 @@ const Themed = React.forwardRef((props, ref) => {
                                 [styles.themedButtonHasNoRightBorder]:
                                     isWithinInputRow && !isLastInputRowChild,
                                 [styles.themedButtonThemePrimary]: props.theme === 'primary',
-                                [styles.themedButtonThemeSecondary]: props.theme === 'secondary',
+                                [styles.themedButtonThemeTertiary]:
+                                    props.theme === 'secondary' || props.theme === 'tertiary',
                                 [styles.themedButtonThemeCaution]: props.theme === 'caution',
                                 [styles.themedButtonThemeSolid]: props.theme === 'solid',
                                 [styles.themedButtonWidthAuto]:
@@ -181,7 +182,7 @@ Themed.propTypes = {
     /**
      * Controls the button's background, text, and border color.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'caution', 'solid']),
+    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'caution', 'solid']),
     /**
      * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
      */
