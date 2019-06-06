@@ -14,6 +14,9 @@ $width-narrow: 416px;
 $width-medium: 632px;
 $width-wide: 1400px;
 
+$contents-padding-small: 20px;
+$contents-padding-large: $tp-space__5;
+
 .curtain {
     padding: 0;
     // ModalCurtain closing transition on small screens.
@@ -133,7 +136,7 @@ $width-wide: 1400px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding: 20px 20px $tp-space__5;
+    padding: $contents-padding-small $contents-padding-small $tp-space__5;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
@@ -143,7 +146,7 @@ $width-wide: 1400px;
 
     @include tp-respond-above($tp-breakpoint__small) {
         &NotSticky {
-            padding: 0 $tp-space__5 40px;
+            padding: 0 $contents-padding-large 40px;
         }
     }
 }
@@ -202,6 +205,22 @@ $width-wide: 1400px;
     // to a top-border on mobile when sticky. Using padding prevents the margins from collapsing
     // with the margin from `ModalDefaultHeader`.
     padding-top: 12px;
+}
+
+// The double selectors in this file ensure that consumers using the `className` prop can't easily
+// overwrite the styles that we want to enforce in the component.
+.modalContentFullBleed.modalContentFullBleed {
+    margin-left: -$contents-padding-small !important;
+    margin-right: -$contents-padding-small !important;
+    padding-left: $contents-padding-small !important;
+    padding-right: $contents-padding-small !important;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        margin-left: -$contents-padding-large !important;
+        margin-right: -$contents-padding-large !important;
+        padding-left: $contents-padding-large !important;
+        padding-right: $contents-padding-large !important;
+    }
 }
 
 .modalFooterFluid {
