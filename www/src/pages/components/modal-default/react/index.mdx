@@ -445,7 +445,7 @@ class ModalDefaultDemoNarrow extends React.Component {
 ### Full bleed modal
 
 You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal.
-This is useful for setting your own background colour or section borders, for example.
+This is useful for setting your own background color or section borders, for example.
 
 <Alert type="warning" title="Warning" className="mt5">
     This component provides the same amount of padding as the modal itself, so it can't be used to
@@ -495,32 +495,31 @@ class ModalDefaultDemoFullBleed extends React.Component {
                     </ModalDefaultHeader>
 
                     <ModalDefaultContent>
-                        <ol className="tp-form-fields">
-                            <li className="tp-form-field__item">
-                                <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
-                                    <option value="default">Choose one&hellip;</option>
-                                </Select>
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                        </ol>
-
                         <ModalDefaultContentFullBleed
                             style={{
-                                backgroundColor: 'red',
+                                backgroundColor: tokens.tpColorGray200,
+                                borderTop: `1px solid ${tokens.tpColorGray}`,
+                                borderBottom: `1px solid ${tokens.tpColorGray}`,
                                 paddingTop: '20px',
                                 paddingBottom: '20px',
-                                color: 'white',
                             }}
                         >
-                            <div>I go full bleed</div>
+                            <ol className="tp-form-fields">
+                                <li className="tp-form-field__item">
+                                    <Label>License type</Label>
+                                    <Select value="default" isFullWidth onChange={() => {}}>
+                                        <option value="default">Choose one&hellip;</option>
+                                    </Select>
+                                </li>
+                                <li className="tp-form-field__item">
+                                    <Label for="example-license-number">License number</Label>
+                                    <Input
+                                        id="example-license-number"
+                                        onChange={() => {}}
+                                        placeholder="XX-XXXX-XXXX"
+                                    />
+                                </li>
+                            </ol>
                         </ModalDefaultContentFullBleed>
                     </ModalDefaultContent>
 
