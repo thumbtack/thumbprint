@@ -78,7 +78,7 @@ test('applies className corresponding to `checkboxVerticalAlign` on the label', 
         </Checkbox>,
     );
 
-    expect(wrapper.find('label').hasClass('.rootCheckboxVerticalAlignTop'));
+    expect(wrapper.find('label').hasClass('rootCheckboxVerticalAlignTop'));
     expect(wrapper).toMatchSnapshot();
 });
 
