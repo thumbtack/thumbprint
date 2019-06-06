@@ -4,6 +4,11 @@ module.exports = function renameImports(ast, j, importSource, importMap) {
     const imports = ast.find(j.ImportDeclaration, { source: { value: importSource } });
     const importsByName = {};
 
+    // Skip file if there is no Thumbprint React import
+    if (imports.size() === 0) {
+        return;
+    }
+
     function memberExpression(ident, ...members) {
         return members.reduce(
             (expr, member) => j.memberExpression(expr, j.identifier(member)),
