@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.0 - 2019-06-06
+
 ### Added
 
 -   [Minor] Add codemod for `Button` `secondary` to `tertiary` migration. (#89)
