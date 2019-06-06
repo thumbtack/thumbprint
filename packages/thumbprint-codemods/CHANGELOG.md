@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Allow codemod CLI to be run from any directory.
+
 ## 0.2.0 - 2019-06-06
 
 ### Added
