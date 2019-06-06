@@ -1741,7 +1741,7 @@ exports[`Themed renders secondary theme 1`] = `
   width="auto"
 >
   <button
-    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
     disabled={false}
     onClick={null}
     type="button"
@@ -1769,7 +1769,7 @@ exports[`Themed renders secondary theme 2`] = `
   width="auto"
 >
   <button
-    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
     disabled={true}
     onClick={null}
     type="button"
