@@ -2,6 +2,15 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ServiceCard, { ServiceCardImage, ServiceCardTitle, ServiceCardDescription } from './index';
 
+jest.mock('react-intersection-observer', () => ({
+    InView: ({ children }) => children({ inView: true, ref: null }),
+    useInView: () => [() => {}, true],
+}));
+
+beforeEach(() => {
+    window.IntersectionObserver = true;
+});
+
 describe('ServiceCard', () => {
     test('renders an href when supplied', () => {
         const wrapper = mount(
@@ -31,23 +40,11 @@ describe('ServiceCard', () => {
 });
 
 describe('ServiceCardImage', () => {
-    test('renders an aria-label when supplied by alt', () => {
-        const wrapper = mount(<ServiceCardImage alt="Lorem" url="" />);
-        expect(wrapper.find('.image').prop('aria-label')).toBe('Lorem');
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    test('adds lazyload class for lazysizes to work', () => {
-        const wrapper = mount(<ServiceCardImage alt="Lorem" url="" />);
-        expect(wrapper.find('.lazyload')).toHaveLength(1);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    test('renders an background image when supplied', () => {
+    test('render works', () => {
         const wrapper = mount(
-            <ServiceCardImage alt="" url="https://www.thumbtack.com/image.png" />,
+            <ServiceCardImage alt="duck duck goose" url="https://www.thumbtack.com/image.png" />,
         );
-        expect(wrapper.find('.image').prop('data-bg')).toBe('https://www.thumbtack.com/image.png');
+
         expect(wrapper).toMatchSnapshot();
     });
 });
