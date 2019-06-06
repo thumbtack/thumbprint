@@ -88,8 +88,8 @@ const Themed = React.forwardRef((props, ref) => {
                                 [styles.themedButtonHasNoRightBorder]:
                                     isWithinInputRow && !isLastInputRowChild,
                                 [styles.themedButtonThemePrimary]: props.theme === 'primary',
-                                [styles.themedButtonThemeTertiary]:
-                                    props.theme === 'secondary' || props.theme === 'tertiary',
+                                [styles.themedButtonThemeTertiary]: props.theme === 'tertiary',
+                                [styles.themedButtonThemeSecondary]: props.theme === 'secondary',
                                 [styles.themedButtonThemeCaution]: props.theme === 'caution',
                                 [styles.themedButtonThemeSolid]: props.theme === 'solid',
                                 [styles.themedButtonWidthAuto]:
