@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Major] Add new `secondary` theme `Button` and `ThemedLink` style. This style now has blue text. Consumers should replace old `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 -   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
 
 ## 2.2.0 - 2019-06-05

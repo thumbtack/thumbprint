@@ -115,6 +115,9 @@ These are the available `ThemedLink` styles for use on light background colors.
     <ThemedLink theme="primary" to="https://example.com/">
         Primary
     </ThemedLink>
+    <ThemedLink theme="secondary" to="https://example.com/">
+        Secondary
+    </ThemedLink>
     <ThemedLink theme="tertiary" to="https://example.com/">
         Tertiary
     </ThemedLink>
@@ -124,10 +127,9 @@ These are the available `ThemedLink` styles for use on light background colors.
 </ButtonRow>
 ```
 
-<Alert type="warning" title="Where's the secondary theme?">
-    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
-    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
-    <InlineCode>secondary</InlineCode> button.{' '}
+<Alert type="warning" title="Why is the secondary theme different?">
+    The former <InlineCode>secondary</InlineCode> theme is has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>.{' '}
     <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
 </Alert>
 
@@ -150,6 +152,9 @@ The `ThemedLink` component also has a `small` variation.
     <ThemedLink theme="primary" size="small" to="https://example.com/">
         Primary
     </ThemedLink>
+    <ThemedLink theme="secondary" size="small" to="https://example.com/">
+        Secondary
+    </ThemedLink>
     <ThemedLink theme="tertiary" size="small" to="https://example.com/">
         Tertiary
     </ThemedLink>
@@ -167,6 +172,9 @@ The `isDisabled` prop visually and functionally disables the link.
 <ButtonRow>
     <ThemedLink isDisabled theme="primary" to="https://example.com/">
         Primary
+    </ThemedLink>
+    <ThemedLink isDisabled theme="secondary" to="https://example.com/">
+        Secondary
     </ThemedLink>
     <ThemedLink isDisabled theme="tertiary" to="https://example.com/">
         Tertiary

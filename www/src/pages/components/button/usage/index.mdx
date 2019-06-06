@@ -16,16 +16,18 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Buttons change width depending on the content inside of them and have three variations: Primary, Tertiary and Caution.
 
-<ButtonRow>
-    <Button>Primary</Button>
-    <Button theme="tertiary">Tertiary</Button>
-    <Button theme="caution">Caution</Button>
-</ButtonRow>
+<div className="mb3">
+    <ButtonRow>
+        <Button>Primary</Button>
+        <Button theme="tertiary">Tertiary</Button>
+        <Button theme="secondary">Secondary</Button>
+        <Button theme="caution">Caution</Button>
+    </ButtonRow>
+</div>
 
-<Alert type="warning" title="Where's the secondary theme?" className="mt5">
-    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
-    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
-    <InlineCode>secondary</InlineCode> button.{' '}
+<Alert type="warning" title="Why is the secondary theme different?">
+    The former <InlineCode>secondary</InlineCode> theme is has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>.{' '}
     <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
 </Alert>
 
@@ -97,6 +99,9 @@ Used when an action is not yet possible.
 
 <ButtonRow>
     <Button isDisabled>Primary</Button>
+    <Button isDisabled theme="secondary">
+        Secondary
+    </Button>
     <Button isDisabled theme="tertiary">
         Tertiary
     </Button>
