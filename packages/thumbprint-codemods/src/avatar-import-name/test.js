@@ -58,7 +58,7 @@ const App = (props) => (
         <Button />
         <Input />
     </div>
- )`),
+)`),
         ).toBe(`
 import React from 'react';
 import { UserAvatar, Button, Input } from '@thumbtack/thumbprint-react';
