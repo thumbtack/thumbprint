@@ -5,6 +5,8 @@ description: Clickable elements used to perform actions.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
@@ -15,10 +17,17 @@ These are the available `Button` styles for use on light background colors.
 ```jsx
 <ButtonRow>
     <Button>Primary</Button>
-    <Button theme="secondary">Secondary</Button>
+    <Button theme="tertiary">Tertiary</Button>
     <Button theme="caution">Caution</Button>
 </ButtonRow>
 ```
+
+<Alert type="warning" title="Where's the secondary theme?">
+    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
+    <InlineCode>secondary</InlineCode> button.{' '}
+    <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
+</Alert>
 
 ### Use on dark backgrounds
 
@@ -35,8 +44,8 @@ Buttons are `large` by default. The `size` prop allows you to render a `small` b
 ```jsx
 <ButtonRow>
     <Button size="small">Primary</Button>
-    <Button size="small" theme="secondary">
-        Secondary
+    <Button size="small" theme="tertiary">
+        Tertiary
     </Button>
     <Button size="small" theme="caution">
         Caution
@@ -53,8 +62,8 @@ The `isDisabled` prop visually and functionally disables the button.
     <Button isDisabled theme="primary">
         Primary
     </Button>
-    <Button isDisabled theme="secondary">
-        Secondary
+    <Button isDisabled theme="tertiary">
+        Tertiary
     </Button>
     <Button isDisabled theme="caution">
         Caution
@@ -94,12 +103,12 @@ The `icon` prop accepts any small icon from [Thumbprint Icons](/icons/).
 
 ## Button with loading indicator
 
-These loading indicators should be used when buttons are processing. They are avialble in the `primary` and `secondary` button themes.
+These loading indicators should be used when buttons are processing. They are avialble in the `primary` and `tertiary` button themes.
 
 ```jsx
 <ButtonRow>
     <Button isLoading>Send Quote</Button>
-    <Button theme="secondary" isLoading>
+    <Button theme="tertiary" isLoading>
         Send Quote
     </Button>
 </ButtonRow>

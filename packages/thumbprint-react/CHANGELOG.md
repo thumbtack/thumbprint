@@ -4,13 +4,25 @@
 
 ### Added
 
+-   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
+
+## 2.2.0 - 2019-06-05
+
+### Added
+
 -   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
+-   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 
 ### Changed
 
 -   [Major] Rename `Avatar` component to `UserAvatar`. (#25)
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+-   [Patch] Use `Image` component instead of lazysizes in `ServiceCardImage`.
+
+### Fixed
+
+-   [Patch] Add `1px` min-height to the Image component root element to improve lazy-loading.
 
 ## 2.1.0 - 2019-06-04
 

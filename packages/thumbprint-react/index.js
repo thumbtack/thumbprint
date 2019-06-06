@@ -22,6 +22,7 @@ export {
     ModalDefaultTitle,
     ModalDefaultDescription,
     ModalDefaultContent,
+    ModalDefaultContentFullBleed,
     ModalDefaultFooter,
     ModalDefaultAnimatedWrapper,
 } from './components/ModalDefault/index.jsx';
