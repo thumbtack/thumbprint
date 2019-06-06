@@ -130,7 +130,7 @@ describe('should skip and throw console error', () => {
              </div>
          )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
         expect(console.error).toHaveBeenCalledTimes(1);
     });
 
@@ -144,8 +144,62 @@ describe('should skip and throw console error', () => {
              </div>
          )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
         expect(console.error).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('output should change but also throw a console error', () => {
+    test('`theme` defined outside the `Button` and within another `Button`', () => {
+        const codeBefore = `import React from 'react';
+         import { Button, Input } from '@thumbtack/thumbprint-react';
+         const theme = "secondary";
+         const App = (props) => (
+             <div>
+                 <Button theme={theme} />
+                 <Button theme="secondary" />
+                 <Input />
+             </div>
+         )`;
+
+        const codeAfter = `import React from 'react';
+         import { Button, Input } from '@thumbtack/thumbprint-react';
+         const theme = "secondary";
+         const App = (props) => (
+             <div>
+                 <Button theme={theme} />
+                 <Button theme="tertiary" />
+                 <Input />
+             </div>
+         )`;
+
+        expect(transform(codeBefore)).toBe(codeAfter);
+        expect(console.error).toHaveBeenCalledTimes(1);
+    });
+
+    test('props are spread and also has a secondary button', () => {
+        const codeBefore = `import React from 'react';
+         import { Button, Input } from '@thumbtack/thumbprint-react';
+         const App = (props) => (
+             <div>
+                 <Button {...props} theme="secondary"/>
+                 <Button {...props} />
+                 <Input />
+             </div>
+         )`;
+
+        const codeAfter = `import React from 'react';
+         import { Button, Input } from '@thumbtack/thumbprint-react';
+         const App = (props) => (
+             <div>
+                 <Button {...props} theme="tertiary"/>
+                 <Button {...props} />
+                 <Input />
+             </div>
+         )`;
+
+        expect(transform(codeBefore)).toBe(codeAfter);
+        expect(console.error).toHaveBeenCalledTimes(2);
     });
 });
 

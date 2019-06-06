@@ -66,8 +66,6 @@ module.exports = (file, api) => {
                 file.path
             }`,
         );
-
-        return root.toSource();
     }
 
     // We can't convert a `Button` automatically if the `theme` is an
@@ -78,7 +76,6 @@ module.exports = (file, api) => {
                 file.path
             }`,
         );
-        return root.toSource();
     }
 
     // Skip file if all of the buttons are non-secondary.

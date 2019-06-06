@@ -3,7 +3,14 @@
 .root {
     position: relative;
     display: flex;
-    align-items: center;
+
+    &CheckboxVerticalAlignTop {
+        align-items: flex-start;
+    }
+
+    &CheckboxVerticalAlignCenter {
+        align-items: center;
+    }
 }
 
 .input {
@@ -28,6 +35,12 @@
     align-items: center;
     justify-content: center;
     flex: none;
+
+    // Margin that makes the input appear decently aligned against
+    // various Thumbprint <Text> sizes
+    .rootCheckboxVerticalAlignTop & {
+        margin-top: 1px;
+    }
 }
 
 .text {
