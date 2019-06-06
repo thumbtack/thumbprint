@@ -6,21 +6,30 @@ description: Clickable elements used to perform actions.
 import { graphql } from 'gatsby';
 import { Button, TextButton, ButtonRow } from '@thumbtack/thumbprint-react';
 import { ContentModifierMessageSmall } from '@thumbtack/thumbprint-icons';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
 ## Types
 
-Buttons change width depending on the content inside of them and have three variations: Primary, Secondary and Caution.
+Buttons change width depending on the content inside of them and have three variations: Primary, Tertiary and Caution.
 
 <ButtonRow>
     <Button>Primary</Button>
-    <Button theme="secondary">Secondary</Button>
+    <Button theme="tertiary">Tertiary</Button>
     <Button theme="caution">Caution</Button>
 </ButtonRow>
 
-### Solid
+<Alert type="warning" title="Where's the secondary theme?" className="mt5">
+    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
+    <InlineCode>secondary</InlineCode> button.{' '}
+    <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
+</Alert>
+
+#### Solid
 
 These buttons may only be used on top of a “Base Color” such as blue or indigo or on top of a photo.
 
@@ -32,7 +41,7 @@ These buttons may only be used on top of a “Base Color” such as blue or indi
 
 ### Sizes
 
-There are two button sizes, Large and Small. Almost always, the Large size should be used. Secondary buttons should mostly be used in the Small size, and Tertiary may not be used at the Large size.
+There are two button sizes, Large and Small. Almost always, the Large size should be used. Tertiary buttons should mostly be used in the Small size, and Tertiary may not be used at the Large size.
 
 <div className="grid mw8">
     <div className="col-6">
@@ -55,7 +64,7 @@ There are two button sizes, Large and Small. Almost always, the Large size shoul
 
 ### Full width
 
-Most commonly used for mobile, full width buttons may only use the Primary & Secondary styles. They can’t be in a container over `480px` wide and can’t be smaller than `300px`. They also should only be used on white backgrounds. Padding is set to `24px` around the button
+Most commonly used for mobile, full width buttons may only use the Primary & Tertiary styles. They can’t be in a container over `480px` wide and can’t be smaller than `300px`. They also should only be used on white backgrounds. Padding is set to `24px` around the button
 
 <div className="mw6">
     <Button width="full">Large</Button>
@@ -88,8 +97,8 @@ Used when an action is not yet possible.
 
 <ButtonRow>
     <Button isDisabled>Primary</Button>
-    <Button isDisabled theme="secondary">
-        Secondary
+    <Button isDisabled theme="tertiary">
+        Tertiary
     </Button>
     <Button isDisabled theme="caution">
         Caution
@@ -102,7 +111,7 @@ Multiple related actions can be grouped in a row with default horizontal spacing
 
 <ButtonRow>
     <Button>Save</Button>
-    <Button theme="secondary">Skip</Button>
+    <Button theme="tertiary">Skip</Button>
 </ButtonRow>
 
 ## Copy
