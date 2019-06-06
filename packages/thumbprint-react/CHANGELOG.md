@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.2.0 - 2019-06-05
+
 ### Added
 
 -   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
@@ -12,6 +14,7 @@
 
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+-   [Patch] Use `Image` component instead of lazysizes in `ServiceCardImage`.
 
 ### Fixed
 
