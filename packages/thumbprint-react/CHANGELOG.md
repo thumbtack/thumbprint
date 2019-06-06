@@ -11,6 +11,10 @@
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
 
+### Fixed
+
+-   [Patch] Add `1px` min-height to the Image component root element to improve lazy-loading.
+
 ## 2.1.0 - 2019-06-04
 
 ### Added
