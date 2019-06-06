@@ -2,16 +2,16 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add a new named export called `UserAvatar` that refers to the same component as the old `Avatar. This is the preferred name going forward. The default`Avatar` export will be removed in a future breaking change. (#25)
+
 ## 3.0.0 - 2019-06-06
 
 ### Added
 
 -   [Major] Add new `secondary` theme `Button` and `ThemedLink` style. This style now has blue text. Consumers should replace old `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 -   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
-
-### Changed
-
--   [Major] Rename `Avatar` component to `UserAvatar`. (#25)
 
 ## 2.2.0 - 2019-06-05
 
