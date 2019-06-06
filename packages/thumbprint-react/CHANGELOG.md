@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
+
 ## 2.2.0 - 2019-06-05
 
 ### Added
 
--   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
 -   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
 -   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
 
