@@ -2,11 +2,15 @@
 /* eslint-disable no-console, global-require */
 const meow = require('meow');
 const execa = require('execa');
+const globby = require('globby');
+const { keyBy } = require('lodash');
 
-// The list of codemods that we support.
-const codemods = {
-    'button-secondary-to-tertiary': require.resolve('./src/button-secondary-to-tertiary/index'),
-};
+// The list of codemods that we support. Looks like this:
+// {
+//    'avatar-import-name': './src/avatar-import-name/index.js',
+//    'button-secondary-to-tertiary': './src/button-secondary-to-tertiary/index.js'
+// }
+const codemods = keyBy(globby.sync('./src/*/index.js'), path => path.split('/')[2]);
 
 const cli = meow({
     help: `
@@ -15,7 +19,7 @@ Usage
 
 Options
   <files>        [required] Files you want to migrate.
-  codemod        [required] Name of the codemod to run.
+  --codemod      [required] Name of the codemod to run.
   -d, --dry-run  Don't write anything, just show what files would have been changed.
   --version      Prints the version.
   --help         Prints this message.
@@ -41,20 +45,14 @@ if (cli.input.length === 0) {
     return;
 }
 
-if (!cli.flags.codemod) {
-    throw Error('The `codemod` argument is required.');
-}
-
 // Throw an error if the codemod name isn't valid
-if (!codemods[cli.flags.codemod]) {
+if (!cli.flags.codemod || !codemods[cli.flags.codemod]) {
     const validCodeModsList = Object.keys(codemods)
         .map(c => `• ${c}`)
         .join('\n');
 
     throw Error(
-        `'${
-            cli.flags.codemod
-        }' is not a valid codemod. Valid options include:\n\n${validCodeModsList}`,
+        `The \`codemod\` argument is required and must be one of these:\n\n${validCodeModsList}\n`,
     );
 }
 
