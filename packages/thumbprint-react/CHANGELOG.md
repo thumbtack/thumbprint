@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.2.0 - 2019-06-05
+
 ### Added
 
 -   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
