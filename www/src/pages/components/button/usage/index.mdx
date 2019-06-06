@@ -16,12 +16,14 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Buttons change width depending on the content inside of them and have three variations: Primary, Tertiary and Caution.
 
-<ButtonRow>
-    <Button>Primary</Button>
-    <Button theme="tertiary">Tertiary</Button>
-    <Button theme="secondary">Secondary</Button>
-    <Button theme="caution">Caution</Button>
-</ButtonRow>
+<div className="mb3">
+    <ButtonRow>
+        <Button>Primary</Button>
+        <Button theme="tertiary">Tertiary</Button>
+        <Button theme="secondary">Secondary</Button>
+        <Button theme="caution">Caution</Button>
+    </ButtonRow>
+</div>
 
 <Alert type="warning" title="Why is the secondary theme different?">
     The former <InlineCode>secondary</InlineCode> theme is has been renamed to{' '}
