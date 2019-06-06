@@ -13,10 +13,7 @@ import Tag from '../tag';
 const getChangelogURLFromPackageHomepageURL = homepageURL => {
     const parsedUrl = urlParse(homepageURL);
 
-    return pathJoin(
-        `${parsedUrl.protocol}//${parsedUrl.host}${parsedUrl.pathname}`,
-        'CHANGELOG.md',
-    );
+    return pathJoin(`https://github.com/${parsedUrl.pathname}`, 'CHANGELOG.md');
 };
 
 const PackageTable = ({ version, deprecated, packageName, importStatement, sourceDirectory }) => {

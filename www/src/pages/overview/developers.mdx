@@ -37,3 +37,20 @@ If you cannot use React but want to include Thumbprint styling, for example, int
 ## Component deviations
 
 In some cases, like an experiment or a permanent one-off variation, you may want to change the appearance or behavior of Thumbprint component in an unsupported way. In this case you should avoid altering the Thumbprint SCSS or React components in your project and instead create a custom component. This is because future changes to the Thumbprint component could break altered instances.
+
+## Package updates
+
+### Changelogs
+
+All released and unreleased changes to our React, SCSS, and Atomic packages are tracked in their respective `CHANGELOG.md` files and is the best resource to determine the current status of the package.
+
+-   [React Changelog](https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/CHANGELOG.md)
+-   [SCSS Changelog](https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-scss/CHANGELOG.md)
+-   [Atomic Changelog](https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-atomic/CHANGELOG.md)
+-   [Icons Changelog](https://github.com/thumbtack/thumbprint-icons/blob/master/CHANGELOG.md)
+
+Unreleased changes are often [published to npm](https://github.com/thumbtack/thumbprint/blob/master/RELEASING.md) within a day or two of merging into their packages.
+
+### Consumer updates
+
+In most cases Design Systems team will update the package in our primary website, thumbtack.com, within a day or two of being published to npm. We handle this task because there are often migrations of varying complexity that we have the best context on. However, on occasion we may ask developers to do the update if the package’s changes are closely tied to a project they are working on.

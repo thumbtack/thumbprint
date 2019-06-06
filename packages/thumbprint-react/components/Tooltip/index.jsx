@@ -9,6 +9,12 @@ import styles from './index.module.scss';
 
 const ESC_KEY = 27;
 
+// Timeout in milliseconds to wait before showing the tooltip after the user hovers. This prevents
+// tooltips from flickering in and out when the user moves their cursor rapidly over the launcher.
+// Higher values are more likely to prevent flickering, but increased the perceived lag when the
+// user _is_ trying to open the tooltip.
+const OPEN_TIMEOUT = 100;
+
 class WhenChildrenChange extends React.Component {
     componentDidUpdate(prevProps) {
         const { children, do: doProp } = this.props;
@@ -141,6 +147,7 @@ export default class Tooltip extends React.Component {
         this.onFocus = this.onFocus.bind(this);
 
         this.closeTimeout = null;
+        this.openTimeout = null;
     }
 
     componentDidMount() {
@@ -162,11 +169,18 @@ export default class Tooltip extends React.Component {
 
         // By default this adds a small delay before closing to improve the user experience.
         this.closeTimeout = setTimeout(this.hide, closeDelayLength);
+
+        if (this.openTimeout) {
+            // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
+            // tooltip from showing after the user is no longer hovering over the launcher.
+            clearTimeout(this.openTimeout);
+        }
     }
 
     onMouseEnter() {
         if (!doesWindowSupportTouch()) {
-            this.show();
+            // Trigger the tooltip to show after a small delay to prevent flickering.
+            this.openTimeout = setTimeout(this.show, OPEN_TIMEOUT);
         }
     }
 
