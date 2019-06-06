@@ -8,19 +8,17 @@ The CLI and the `thumbprint-react-consolidation` codemod are forked from [`segme
 
 ```
 Usage
-  $ npx @thumbtack/thumbprint-codemods '<glob>' --codemod '<codemod-name>'
+  $ npx @thumbtack/thumbprint-codemods <files> --codemod '<codemod-name>'
 
 Options
-  <glob>         [required] Glob of files you want to migrate (\`node_modules\` is automatically ignored).
-  codemod        [required] Name of the codemod to run.
+  <files>        [required] Files you want to migrate (\`node_modules\` is automatically ignored).
+  --codemod      [required] Name of the codemod to run.
   -d, --dry-run  Don't write anything, just show what files would have been changed.
   --version      Prints the version.
   --help         Prints this message.
 
 Examples
-  $ npx @thumbtack/thumbprint-codemods '<glob>' --codemod 'thumbprint-react-consolidation'
+  $ npx @thumbtack/thumbprint-codemods **/*.jsx --codemod 'button-secondary-to-tertiary'
 ```
 
-| Name                                                                                                                                                   | Description                                                                             | Date    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- | ------- |
-| [`thumbprint-react-consolidation`](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-cdemods/src/thumbprint-react-consolidation) | Changes `@thumbtack/tp-ui-react-*` imports into a `@thumbtack/thumbprint-react` import. | 2019-01 |
+You can find a list of the [codemods in the `src` directory](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-codemods/src). The directory names (`button-secondary-to-tertiary`, for example) are also the codemod names.
