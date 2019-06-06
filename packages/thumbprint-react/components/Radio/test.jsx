@@ -100,7 +100,7 @@ test('applies className corresponding to `radioVerticalAlign` on the label', () 
         </Radio>,
     );
 
-    expect(wrapper.find('label').hasClass('.rootRadioVerticalAlignTop'));
+    expect(wrapper.find('label').hasClass('rootRadioVerticalAlignTop'));
     expect(wrapper).toMatchSnapshot();
 });
 
