@@ -13,6 +13,7 @@
 
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+-   [Patch] Use `Image` component instead of lazysizes in `ServiceCardImage`.
 
 ### Fixed
 
