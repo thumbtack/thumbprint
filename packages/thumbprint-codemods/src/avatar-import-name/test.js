@@ -71,3 +71,25 @@ const App = (props) => (
 )`);
     });
 });
+
+describe('output should not change', () => {
+    test('Thumbprint is imported but `Avatar` is not', () => {
+        const code = `
+import React from 'react';
+import { EntityAvatar } from '@thumbtack/thumbprint-react';
+const App = (props) => (
+    <EntityAvatar />
+)`;
+        expect(transform(code)).toBe(code);
+    });
+
+    test("Thumbprint is not imported but there's another component called `Avatar`", () => {
+        const code = `
+import React from 'react';
+import Avatar from '../my-avatar.jsx';
+const App = (props) => (
+    <Avatar />
+)`;
+        expect(transform(code)).toBe(code);
+    });
+});
