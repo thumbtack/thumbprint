@@ -86,6 +86,7 @@ exports[`ServiceCardImage render works 1`] = `
       className="image"
       style={
         Object {
+          "minHeight": "1px",
           "overflow": "hidden",
           "position": "relative",
         }
