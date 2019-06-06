@@ -5,6 +5,8 @@ description: Color and style variations for anchor links.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
@@ -113,14 +115,21 @@ These are the available `ThemedLink` styles for use on light background colors.
     <ThemedLink theme="primary" to="https://example.com/">
         Primary
     </ThemedLink>
-    <ThemedLink theme="secondary" to="https://example.com/">
-        Secondary
+    <ThemedLink theme="tertiary" to="https://example.com/">
+        Tertiary
     </ThemedLink>
     <ThemedLink theme="caution" to="https://example.com/">
         Caution
     </ThemedLink>
 </ButtonRow>
 ```
+
+<Alert type="warning" title="Where's the secondary theme?">
+    The <InlineCode>secondary</InlineCode> theme has been renamed to{' '}
+    <InlineCode>tertiary</InlineCode>. This is to prep for a redesigned{' '}
+    <InlineCode>secondary</InlineCode> button.{' '}
+    <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
+</Alert>
 
 ### Use on dark backgrounds
 
@@ -141,8 +150,8 @@ The `ThemedLink` component also has a `small` variation.
     <ThemedLink theme="primary" size="small" to="https://example.com/">
         Primary
     </ThemedLink>
-    <ThemedLink theme="secondary" size="small" to="https://example.com/">
-        Secondary
+    <ThemedLink theme="tertiary" size="small" to="https://example.com/">
+        Tertiary
     </ThemedLink>
     <ThemedLink theme="caution" size="small" to="https://example.com/">
         Caution
@@ -159,8 +168,8 @@ The `isDisabled` prop visually and functionally disables the link.
     <ThemedLink isDisabled theme="primary" to="https://example.com/">
         Primary
     </ThemedLink>
-    <ThemedLink isDisabled theme="secondary" to="https://example.com/">
-        Secondary
+    <ThemedLink isDisabled theme="tertiary" to="https://example.com/">
+        Tertiary
     </ThemedLink>
     <ThemedLink isDisabled theme="caution" to="https://example.com/">
         Caution
