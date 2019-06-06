@@ -5,6 +5,7 @@ description: A basic and commonly used modal.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
 
 <ComponentHeader data={props.data} />
 
@@ -425,6 +426,101 @@ class ModalDefaultDemoNarrow extends React.Component {
                                 />
                             </li>
                         </ol>
+                    </ModalDefaultContent>
+
+                    <ModalDefaultFooter>
+                        <ButtonRow justify="right">
+                            <Button onClick={this.closeModal} width="full-below-small">
+                                Submit
+                            </Button>
+                        </ButtonRow>
+                    </ModalDefaultFooter>
+                </ModalDefault>
+            </React.Fragment>
+        );
+    }
+}
+```
+
+### Full bleed modal
+
+You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal.
+This is useful for setting your own background color or section borders, for example.
+
+<Alert type="warning" title="Warning" className="mt5">
+    This component provides the same amount of padding as the modal itself, so it can't be used to
+    render child elements that touch the edge of the modal – only to set the background or other
+    styles. This is to make sure that everything in the modal has consistent padding at all
+    breakpoints. Interfaces like horizontally scrolling lists that reach the edge of their container
+    are not suitable for use inside a modal, and you should work with your designer to find an
+    alternative.
+</Alert>
+
+```jsx
+class ModalDefaultDemoFullBleed extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isOpen: false,
+        };
+
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+    }
+
+    closeModal() {
+        this.setState({ isOpen: false });
+    }
+
+    openModal() {
+        this.setState({ isOpen: true });
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Button onClick={this.openModal}>Open modal</Button>
+                <ModalDefault
+                    isOpen={this.state.isOpen}
+                    width="narrow"
+                    onCloseClick={this.closeModal}
+                >
+                    <ModalDefaultHeader>
+                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                        <ModalDefaultDescription>
+                            Licenses add credibility to your business and provide more trust for
+                            customers.
+                        </ModalDefaultDescription>
+                    </ModalDefaultHeader>
+
+                    <ModalDefaultContent>
+                        <ModalDefaultContentFullBleed
+                            style={{
+                                backgroundColor: tokens.tpColorGray200,
+                                borderTop: `1px solid ${tokens.tpColorGray}`,
+                                borderBottom: `1px solid ${tokens.tpColorGray}`,
+                                paddingTop: '20px',
+                                paddingBottom: '20px',
+                            }}
+                        >
+                            <ol className="tp-form-fields">
+                                <li className="tp-form-field__item">
+                                    <Label>License type</Label>
+                                    <Select value="default" isFullWidth onChange={() => {}}>
+                                        <option value="default">Choose one&hellip;</option>
+                                    </Select>
+                                </li>
+                                <li className="tp-form-field__item">
+                                    <Label for="example-license-number">License number</Label>
+                                    <Input
+                                        id="example-license-number"
+                                        onChange={() => {}}
+                                        placeholder="XX-XXXX-XXXX"
+                                    />
+                                </li>
+                            </ol>
+                        </ModalDefaultContentFullBleed>
                     </ModalDefaultContent>
 
                     <ModalDefaultFooter>

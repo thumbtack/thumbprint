@@ -4,7 +4,8 @@
 
 ### Added
 
--   [Major] Add new `secondary` theme Button and ThemedLink style. This style now has blue text. Consumers should replace old `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
+-   [Major] Add new `secondary` theme `Button` and `ThemedLink` style. This style now has blue text. Consumers should replace old `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
+-   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
 
 ## 2.2.0 - 2019-06-05
 
@@ -17,6 +18,7 @@
 
 -   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
 -   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+-   [Patch] Use `Image` component instead of lazysizes in `ServiceCardImage`.
 
 ### Fixed
 
