@@ -35,6 +35,52 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
             }
           }
         />
+        <Picture
+          alt=""
+          sizes="0px"
+          sources={Array []}
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "bottom": 0,
+              "display": "block",
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <picture>
+            <img
+              alt=""
+              className="imageLoading"
+              onLoad={[Function]}
+              sizes="0px"
+              src="//www.placecage.com/130/130"
+              style={
+                Object {
+                  "bottom": 0,
+                  "display": "block",
+                  "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+                  "height": "100%",
+                  "left": 0,
+                  "objectFit": "cover",
+                  "objectPosition": "center",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            />
+          </picture>
+        </Picture>
         <noscript>
           <Picture
             alt=""
@@ -110,6 +156,52 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
             }
           }
         />
+        <Picture
+          alt="Avatar for Duck Goose"
+          sizes="0px"
+          sources={Array []}
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "bottom": 0,
+              "display": "block",
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <picture>
+            <img
+              alt="Avatar for Duck Goose"
+              className="imageLoading"
+              onLoad={[Function]}
+              sizes="0px"
+              src="//www.placecage.com/130/130"
+              style={
+                Object {
+                  "bottom": 0,
+                  "display": "block",
+                  "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+                  "height": "100%",
+                  "left": 0,
+                  "objectFit": "cover",
+                  "objectPosition": "center",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            />
+          </picture>
+        </Picture>
         <noscript>
           <Picture
             alt="Avatar for Duck Goose"
@@ -186,6 +278,52 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
             }
           }
         />
+        <Picture
+          alt="Avatar for Duck Goose"
+          sizes="0px"
+          sources={Array []}
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "bottom": 0,
+              "display": "block",
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <picture>
+            <img
+              alt="Avatar for Duck Goose"
+              className="imageLoading"
+              onLoad={[Function]}
+              sizes="0px"
+              src="//www.placecage.com/130/130"
+              style={
+                Object {
+                  "bottom": 0,
+                  "display": "block",
+                  "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+                  "height": "100%",
+                  "left": 0,
+                  "objectFit": "cover",
+                  "objectPosition": "center",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            />
+          </picture>
+        </Picture>
         <noscript>
           <Picture
             alt="Avatar for Duck Goose"
@@ -714,6 +852,52 @@ exports[`renders an image when the user has one 1`] = `
             }
           }
         />
+        <Picture
+          alt=""
+          sizes="0px"
+          sources={Array []}
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "bottom": 0,
+              "display": "block",
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": "100%",
+            }
+          }
+        >
+          <picture>
+            <img
+              alt=""
+              className="imageLoading"
+              onLoad={[Function]}
+              sizes="0px"
+              src="//www.placecage.com/130/130"
+              style={
+                Object {
+                  "bottom": 0,
+                  "display": "block",
+                  "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+                  "height": "100%",
+                  "left": 0,
+                  "objectFit": "cover",
+                  "objectPosition": "center",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            />
+          </picture>
+        </Picture>
         <noscript>
           <Picture
             alt=""

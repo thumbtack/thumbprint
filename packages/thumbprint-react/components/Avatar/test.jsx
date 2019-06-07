@@ -2,6 +2,15 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
+jest.mock('react-intersection-observer', () => ({
+    InView: ({ children }) => children({ inView: true, ref: null }),
+    useInView: () => [() => {}, true],
+}));
+
+beforeEach(() => {
+    window.IntersectionObserver = true;
+});
+
 test('renders an image when the user has one', () => {
     const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
     expect(wrapper).toMatchSnapshot();
