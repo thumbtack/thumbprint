@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.1.0 - 2019-06-06
+
 ### Added
 
 -   [Minor] Add a new named export called `UserAvatar` that refers to the same component as the old `Avatar`. This is the preferred name going forward. The default `Avatar` export will be removed in a future breaking change. (#25)
