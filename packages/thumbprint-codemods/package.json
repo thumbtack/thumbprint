@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-codemods",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "bin": {
         "thumbprint-codemods": "./index.js"
     },
