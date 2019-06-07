@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.2 - 2019-06-06
+
 ### Fixed
 
 -   [Patch] Remove empty space from codemod `execa` call that was causing it to fail.
