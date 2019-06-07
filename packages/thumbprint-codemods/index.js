@@ -22,17 +22,17 @@ const codemods = keyBy(globbedCodemods, p => {
 const cli = meow({
     help: `
 Usage
-  $ npx @thumbtack/thumbprint-codemods <files> --codemod '<codemod-name>'
+  $ npx @thumbtack/thumbprint-codemods <folder> --codemod '<codemod-name>'
 
 Options
-  <files>        [required] Files you want to migrate.
+  <folder>       [required] Folder that you recursively want to migrate.
   --codemod      [required] Name of the codemod to run.
   -d, --dry-run  Don't write anything, just show what files would have been changed.
   --version      Prints the version.
   --help         Prints this message.
 
 Examples
-  $ npx @thumbtack/thumbprint-codemods **/*.jsx --codemod 'button-secondary-to-tertiary'
+  $ npx @thumbtack/thumbprint-codemods ./path/to/folder --codemod 'button-secondary-to-tertiary'
   `.trim(),
     flags: {
         'dry-run': {
@@ -63,7 +63,14 @@ if (!cli.flags.codemod || !codemods[cli.flags.codemod]) {
     );
 }
 
-const commandArgs = ['jscodeshift', ...cli.input, '-t', codemods[cli.flags.codemod]];
+const commandArgs = [
+    'jscodeshift',
+    ...cli.input,
+    '--extensions',
+    'js,jsx',
+    '-t',
+    codemods[cli.flags.codemod],
+];
 
 if (cli.flags.dryRun) {
     commandArgs.push('-d');
