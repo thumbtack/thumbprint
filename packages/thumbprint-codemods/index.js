@@ -63,12 +63,14 @@ if (!cli.flags.codemod || !codemods[cli.flags.codemod]) {
     );
 }
 
-const p = execa('jscodeshift', [
-    ...cli.input,
-    '-t',
-    codemods[cli.flags.codemod],
-    cli.flags.dryRun ? '-d' : ' ',
-]);
+const commandArgs = ['jscodeshift', ...cli.input, '-t', codemods[cli.flags.codemod]];
+
+if (cli.flags.dryRun) {
+    commandArgs.push('-d');
+}
+
+// Use `npx` since the person may not have jscodeshift installed globally.
+const p = execa('npx', commandArgs);
 
 p.stdout.pipe(process.stdout);
 p.stderr.pipe(process.stderr);

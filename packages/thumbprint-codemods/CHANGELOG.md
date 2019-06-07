@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Remove empty space from codemod `execa` call that was causing it to fail.
+-   [Patch] Use `npx jscodeshift` instead of just `jscodeshift` when running.
+
 ## 0.2.1 - 2019-06-06
 
 ### Fixed
