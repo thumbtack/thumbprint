@@ -4,33 +4,33 @@
     position: relative;
 }
 
-.rootXsmall {
-    width: 20px;
-    height: 20px;
-    font-size: 8px;
-}
-
-.rootSmall {
+.rootXSmall {
     width: 32px;
     height: 32px;
     font-size: $tp-font__body__3__size;
 }
 
-.rootMedium {
+.rootSmall {
     width: 48px;
     height: 48px;
     font-size: $tp-font__body__3__size;
 }
 
-.rootLarge {
+.rootMedium {
     width: 72px;
     height: 72px;
     font-size: $tp-font__body__2__size;
 }
 
+.rootLarge {
+    width: 104px;
+    height: 104px;
+    font-size: $tp-font__title__4__size;
+}
+
 .rootXlarge {
-    width: 124px;
-    height: 124px;
+    width: 140px;
+    height: 140px;
     font-size: $tp-font__title__4__size;
 }
 
