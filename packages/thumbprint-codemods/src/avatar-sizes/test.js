@@ -100,7 +100,7 @@ describe('output should change but also throw a console error', () => {
         expect(console.error).toHaveBeenCalledTimes(1);
     });
 
-    test.only('props are spread and also has a large size', () => {
+    test('props are spread and also has a large size', () => {
         const codeBefore = `import React from 'react';
         import { Avatar, Input } from '@thumbtack/thumbprint-react';
         const App = (props) => (
@@ -142,6 +142,29 @@ describe('output should change but also throw a console error', () => {
                 <Avatar size="xlarge" />
                 <Avatar size="medium" />
             </>
+        )`;
+
+        expect(transform(codeBefore)).toBe(codeAfter);
+        expect(console.error).toHaveBeenCalledTimes(1);
+    });
+
+    test('throws error if props are spread after a size is defined', () => {
+        const codeBefore = `import React from 'react';
+        import { Avatar, Input } from '@thumbtack/thumbprint-react';
+        const App = (props) => (
+            <div>
+                <Avatar size="large" {...props} />
+                <Input />
+            </div>
+        )`;
+
+        const codeAfter = `import React from 'react';
+        import { Avatar, Input } from '@thumbtack/thumbprint-react';
+        const App = (props) => (
+            <div>
+                <Avatar size="medium" {...props} />
+                <Input />
+            </div>
         )`;
 
         expect(transform(codeBefore)).toBe(codeAfter);
