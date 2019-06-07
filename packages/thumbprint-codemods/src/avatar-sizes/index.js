@@ -1,4 +1,22 @@
 /* eslint-disable no-console */
+const usesSpreadProps = (collection, j) =>
+    collection.some(
+        node =>
+            j(node)
+                .find(j.JSXSpreadAttribute)
+                .size() > 0,
+    );
+
+const usesExpressionAsPropValue = (collection, j) =>
+    collection.some(
+        node =>
+            j(node)
+                .find(j.JSXAttribute, {
+                    name: { name: 'size' },
+                    value: { type: 'JSXExpressionContainer' },
+                })
+                .size() > 0,
+    );
 
 const usesXLargeSize = (collection, j) =>
     collection.some(
@@ -41,7 +59,25 @@ module.exports = (file, api) => {
         openingElement: { name: { name: localSpecifier } },
     });
 
-    // Check to see if any use the "xlarge" size. If so, show an error and skip the file.
+    // Check to see if any use the spread props. If so, show an error and skip this instance of Avatar.
+    if (usesSpreadProps(avatars, j)) {
+        console.error(
+            `⚠️  Could not automatically convert a \`Avatar\` that spreads its props. Please manually update the \`Avatar\` at:\n${
+                file.path
+            }`,
+        );
+    }
+
+    // We can't convert a `Avatar` automatically if the `size` is an expression like `size={size}`.
+    if (usesExpressionAsPropValue(avatars, j)) {
+        console.error(
+            `⚠️  Could not automatically convert \`Avatar\`s that use expressions in \`size\`. Please update:\n${
+                file.path
+            }`,
+        );
+    }
+
+    // Check to see if any use the "xlarge" size. If so, show an error and skip this instance of Avatar.
     if (usesXLargeSize(avatars, j)) {
         console.error(
             `⚠️  Could not automatically convert an \`Avatar\` that uses the "xlarge" size. Please manually update the \`Avatar\` at:\n${
