@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.3 - 2019-06-06
+
 ### Changed
 
 -   [Patch] Add support for passing in folders, not only globs.
