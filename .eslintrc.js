@@ -6,7 +6,7 @@ module.exports = {
         'prettier',
         'prettier/react',
     ],
-    plugins: ['jest', 'react-hooks'],
+    plugins: ['jest', 'react-hooks', 'compat'],
     env: {
         browser: true,
         node: true,
@@ -26,6 +26,12 @@ module.exports = {
                 // Disabled because rollup requires us to be explicit about the file extension.
                 // https://github.com/rollup/rollup/issues/1052#issuecomment-260065475
                 'import/extensions': 'off',
+            },
+        },
+        {
+            files: ['packages/thumbprint-react/**/*'],
+            rules: {
+                'compat/compat': 'error',
             },
         },
     ],
