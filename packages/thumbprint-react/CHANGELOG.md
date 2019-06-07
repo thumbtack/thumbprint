@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use `Image` component in `Avatar` instead of `lazysizes`. (#69)
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed
