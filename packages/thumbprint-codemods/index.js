@@ -4,13 +4,20 @@ const meow = require('meow');
 const execa = require('execa');
 const globby = require('globby');
 const { keyBy } = require('lodash');
+const path = require('path');
+
+// `path.join` and `__dirname` are needed so that this script can be run from other folders.
+const globbedCodemods = globby.sync(path.join(__dirname, './src/*/index.js'));
 
 // The list of codemods that we support. Looks like this:
 // {
 //    'avatar-import-name': './src/avatar-import-name/index.js',
 //    'button-secondary-to-tertiary': './src/button-secondary-to-tertiary/index.js'
 // }
-const codemods = keyBy(globby.sync('./src/*/index.js'), path => path.split('/')[2]);
+const codemods = keyBy(globbedCodemods, p => {
+    const pathSplitArr = p.split('/');
+    return pathSplitArr[pathSplitArr.length - 2];
+});
 
 const cli = meow({
     help: `
