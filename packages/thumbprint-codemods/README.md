@@ -8,17 +8,17 @@ The CLI and the `thumbprint-react-consolidation` codemod are forked from [`segme
 
 ```
 Usage
-  $ npx @thumbtack/thumbprint-codemods <files> --codemod '<codemod-name>'
+  $ npx @thumbtack/thumbprint-codemods <folder> --codemod '<codemod-name>'
 
 Options
-  <files>        [required] Files you want to migrate (\`node_modules\` is automatically ignored).
+  <folder>       [required] Folder that you recursively want to migrate.
   --codemod      [required] Name of the codemod to run.
   -d, --dry-run  Don't write anything, just show what files would have been changed.
   --version      Prints the version.
   --help         Prints this message.
 
 Examples
-  $ npx @thumbtack/thumbprint-codemods **/*.jsx --codemod 'button-secondary-to-tertiary'
+  $ npx @thumbtack/thumbprint-codemods ./path/to/folder --codemod 'button-secondary-to-tertiary'
 ```
 
 You can find a list of the [codemods in the `src` directory](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-codemods/src). The directory names (`button-secondary-to-tertiary`, for example) are also the codemod names.
