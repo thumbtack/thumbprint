@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import find from 'lodash/find';
 import styles from './picture.module.scss';
 
 const Picture = props => {
@@ -9,8 +10,8 @@ const Picture = props => {
     // Safari:
     // - https://bugs.webkit.org/show_bug.cgi?id=190031
     // - https://bugs.webkit.org/show_bug.cgi?id=177068
-    const webpSource = sources.find(s => s.type === 'image/webp');
-    const imgTagSource = sources.find(s => s.type === 'image/jpeg' || s.type === 'image/png');
+    const webpSource = find(sources, s => s.type === 'image/webp');
+    const imgTagSource = find(sources, s => s.type === 'image/jpeg' || s.type === 'image/png');
 
     const [isLoaded, setIsLoaded] = useState(false);
 
