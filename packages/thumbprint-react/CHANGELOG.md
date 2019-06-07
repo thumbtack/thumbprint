@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.1.1 - 2019-06-07
+
 ### Fixed
 
 -   [Patch] Fix `Image` component in IE 11.
