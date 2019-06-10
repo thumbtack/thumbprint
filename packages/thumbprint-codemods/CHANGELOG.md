@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add codemod for `Avatar`'s `size` prop breaking change migration. (#25)
+
 ## 0.2.3 - 2019-06-06
 
 ### Changed
