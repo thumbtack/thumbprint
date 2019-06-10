@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes.
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed
