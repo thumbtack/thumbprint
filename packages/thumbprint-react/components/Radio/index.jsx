@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
 import styles from './index.module.scss';
@@ -67,6 +68,7 @@ const Radio = ({
     labelPadding,
     name,
     onChange,
+    radioVerticalAlign,
 }) => {
     const uiState = getUIState({ isChecked, isDisabled, hasError });
 
@@ -78,7 +80,10 @@ const Radio = ({
     return (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label
-            className={styles.root}
+            className={classNames(styles.root, {
+                [styles.rootRadioVerticalAlignTop]: radioVerticalAlign === 'top',
+                [styles.rootRadioVerticalAlignCenter]: radioVerticalAlign === 'center',
+            })}
             style={{ padding: labelPadding, cursor: labelCursor[uiState] }}
         >
             <input
@@ -160,6 +165,10 @@ Radio.propTypes = {
      * applied internally to the `<input />` element.
      */
     dataTest: PropTypes.string,
+    /**
+     * Determines how the radio button input will be vertically aligned relative to `props.children`.
+     */
+    radioVerticalAlign: PropTypes.oneOf(['top', 'center']),
 };
 
 Radio.defaultProps = {
@@ -170,6 +179,7 @@ Radio.defaultProps = {
     hasError: false,
     labelPadding: '14px 0',
     dataTest: undefined,
+    radioVerticalAlign: 'center',
 };
 
 export default Radio;

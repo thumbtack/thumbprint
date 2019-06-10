@@ -4,7 +4,11 @@ description: Display user images and badges on Thumbtack.
 ---
 
 import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
@@ -13,39 +17,58 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ### Extra Large
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" size="xlarge" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" size="xlarge" />
 ```
 
 ### Large
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" size="large" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" size="large" />
 ```
 
 ### Medium
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" size="medium" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" size="medium" />
 ```
 
 ### Small
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" size="small" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" size="small" />
 ```
 
 ### Extra Small
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" size="xsmall" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" size="xsmall" />
 ```
 
 ## Avatars without images
 
-When a user does not have an image, an `Avatar` can display the user’s initials instead.
+When a user does not have an image, an `Avatar` can display the user’s initials instead. The initals are assigned to a color based on the first letter in the `initials` prop.
 
 ```jsx
-<Avatar initials="JK" />
+<div className="flex">
+    <div className="mr2">
+        <UserAvatar initials="AA" size="large" />
+    </div>
+    <div className="mr2">
+        <UserAvatar initials="BA" size="large" />
+    </div>
+    <div className="mr2">
+        <UserAvatar initials="CA" size="large" />
+    </div>
+    <div className="mr2">
+        <UserAvatar initials="DA" size="large" />
+    </div>
+    <div className="mr2">
+        <UserAvatar initials="EA" size="large" />
+    </div>
+    <div>
+        <UserAvatar initials="HA" size="large" />
+    </div>
+</div>
 ```
 
 ## EntityAvatar
@@ -74,32 +97,56 @@ When a user does not have an image, an `Avatar` can display the user’s initial
 <EntityAvatar imageUrl="https://www.placecage.com/640/480" size="small" />
 ```
 
-### Initial
+### Initials
 
 ```jsx
-<EntityAvatar initial="J" size="medium" />
+<div className="flex">
+    <div className="mr2">
+        <EntityAvatar initial="A" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="B" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="C" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="D" size="large" />
+    </div>
+    <div className="mr2">
+        <EntityAvatar initial="E" size="large" />
+    </div>
+    <div>
+        <EntityAvatar initial="F" size="large" />
+    </div>
+</div>
 ```
 
 ## Avatar Badges
+
+<DeprecatedComponentAlert>
+    Avatar badges are deprecated. Status indicators such as "online" status, hired checkmarks, and
+    notification alerts should be implemented as separate elements placed next to the avatar.
+</DeprecatedComponentAlert>
 
 Badges can be added to avatars to denote information including hired status and unread notifications. These badges cannot be used on the `xsmall` variation.
 
 ### Checked
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" isChecked size="xlarge" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="xlarge" />
 ```
 
 ### Notification
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" hasUnreadNotifications size="xlarge" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" hasUnreadNotifications size="xlarge" />
 ```
 
 ### Online
 
 ```jsx
-<Avatar imageUrl="https://www.placecage.com/640/480" isOnline size="medium" />
+<UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="medium" />
 ```
 
 <ComponentFooter data={props.data} />

@@ -1,4 +1,4 @@
-export { default as Avatar, EntityAvatar } from './components/Avatar/index.jsx';
+export { default as Avatar, UserAvatar, EntityAvatar } from './components/Avatar/index.jsx';
 export { default as Button, TextButton } from './components/Button/index.jsx';
 export { default as ButtonRow } from './components/ButtonRow/index.jsx';
 export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
@@ -22,6 +22,7 @@ export {
     ModalDefaultTitle,
     ModalDefaultDescription,
     ModalDefaultContent,
+    ModalDefaultContentFullBleed,
     ModalDefaultFooter,
     ModalDefaultAnimatedWrapper,
 } from './components/ModalDefault/index.jsx';

@@ -8,34 +8,99 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## `Image`
+## `Image` with `src` and `sources`
+
+Browsers that [support responsive images](https://caniuse.com/#feat=picture) will load the best image from the options available in the `sources` prop. Other browsers will load the image in the `src` prop.
+
+Images are always lazy-loaded. The `containerAspectRatio` prop is recommended to reserve space for the lazy-loaded image. This avoids [content reflow](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) issue that causes the page to "jump" as the image gets loaded.
 
 ```jsx
 <Image
-    src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg"
-    alt="Photo of a cat lying down"
-    containerAspectRatio={823 / 548}
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/768.jpeg"
+    containerAspectRatio={728 / 485}
+    sources={[
+        {
+            type: 'image/webp',
+            srcSet: `
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/120.webp 120w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/320.webp 320w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/400.webp 400w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/640.webp 640w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/768.webp 768w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.webp 1024w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1366.webp 1366w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1600.webp 1600w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.webp 1920w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2200.webp 2200w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2350.webp 2350w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2560.webp 2560w
+            `,
+        },
+        {
+            type: 'image/jpeg',
+            srcSet: `
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/120.jpeg 120w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/320.jpeg 320w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/400.jpeg 400w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/640.jpeg 640w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/768.jpeg 768w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg 1024w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1366.jpeg 1366w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1600.jpeg 1600w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1920.jpeg 1920w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2200.jpeg 2200w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2350.jpeg 2350w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/2560.jpeg 2560w
+            `,
+        },
+    ]}
+    alt="Cat laying in the sun"
 />
 ```
 
-### Two side-by-side images
+## Two side-by-side images
+
+The image component accepts `style` and `className` props. This example uses both to place two `Image` components side-by-side.
 
 ```jsx
 <div className="flex">
     <Image
-        src="https://d1vg1gqh4nkuns.cloudfront.net/i/302056478120263859/width/1024.jpeg"
-        alt="Photo of a sprinker"
+        src="https://d1vg1gqh4nkuns.cloudfront.net/i/323483178133774346/width/1024.jpeg"
+        alt="Sprinker and flowers"
         containerAspectRatio={768 / 400}
         style={{ width: '50%' }}
         className="mr1"
     />
     <Image
         src="https://d1vg1gqh4nkuns.cloudfront.net/i/327896627728072894/width/1024.jpeg"
-        alt="Photo of grass with concrete steps"
+        alt="Grass with concrete steps"
         containerAspectRatio={768 / 400}
         className="ml1 w-50"
     />
 </div>
+```
+
+## Cropped images with `height` and `containerAspectRatio` props
+
+This example uses the `height` prop to "crop" the image. By default, the cropped image is vertically centered with `object-position: center center`.
+
+```jsx
+<Image
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
+    alt="Office building with large table and chairs"
+    height="230px"
+/>
+```
+
+This photo of a cat is cropped with the `containerAspectRatio` prop. By default, the image is `1024` x `640` pixels. The `objectPosition` controls how the image is aligned within the cropped container.
+
+```jsx
+<Image
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/323475841931862023/width/1024.jpeg"
+    alt="Cat laying on its back"
+    containerAspectRatio={1.2 / 1}
+    objectPosition="right"
+/>
 ```
 
 <ComponentFooter data={props.data} />
