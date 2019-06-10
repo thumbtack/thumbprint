@@ -98,6 +98,8 @@ $icon-padding: 16px;
     }
 
     &Error {
+        // This must be three separate rules, not a comma-separated list, to avoid the different
+        // vendor prefixes conflicting.
         &::-webkit-input-placeholder {
             color: $tp-color__red;
         }
