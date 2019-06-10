@@ -1,16 +1,18 @@
 import React, { useState, forwardRef, useEffect } from 'react';
+import find from 'lodash/find';
+import classNames from 'classnames';
 import warning from 'warning';
 import PropTypes from 'prop-types';
 import scrollparent from 'scrollparent';
 import { useInView } from 'react-intersection-observer';
-import Picture from './components/picture.jsx';
 import canUseDOM from '../../utils/can-use-dom';
+import styles from './index.module.scss';
+import { join } from 'path';
 
 const Image = forwardRef((props, outerRef) => {
     const {
         src,
         sources,
-        style,
         height,
         containerAspectRatio,
         objectFit,
@@ -24,30 +26,11 @@ const Image = forwardRef((props, outerRef) => {
     const [containerRef, setContainerRef] = useState(null);
 
     // --------------------------------------------------------------------------------------------
-    // Inline styles for container `div` and `Picture` component
+    // Sizes
     // --------------------------------------------------------------------------------------------
 
-    const pictureProps = {
-        src,
-        sources,
-        alt,
-        style: { width: '100%', height: height || '100%', display: 'block' },
-        sizes: containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px',
-    };
-
-    const containerProps = {
-        ...rest,
-        style: {
-            ...style,
-            // Allows the container to behave like an image would. Without this, something like
-            // passing a `border-radius` in `className` or `style` would not work since the
-            // container is a `div`, not an `img`.
-            overflow: 'hidden',
-            // Setting a `min-height` makes the lazy-loading work in cases where the `Image` parent
-            // has a `0px` height.
-            minHeight: '1px',
-        },
-    };
+    const sizes =
+        containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -84,6 +67,8 @@ const Image = forwardRef((props, outerRef) => {
     // Object Fit: polyfill and CSS styles
     // --------------------------------------------------------------------------------------------
 
+    const objectFitProps = {};
+
     const shouldObjectFit = height || containerAspectRatio;
     const shouldPolyfillObjectFit =
         canUseDOM &&
@@ -114,20 +99,18 @@ const Image = forwardRef((props, outerRef) => {
     );
 
     if (shouldObjectFit) {
-        pictureProps.style = {
-            ...pictureProps.style,
+        objectFitProps.style = {
             objectFit,
             objectPosition,
         };
-
         if (shouldPolyfillObjectFit) {
             // Weird, but this is how the polyfill knows what to do with the image in IE.
-            pictureProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
+            objectFitProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
         }
     }
 
     // --------------------------------------------------------------------------------------------
-    // Aspect Ratio Boxes
+    // Image Aspect Ratio
     // --------------------------------------------------------------------------------------------
 
     const aspectRatioBoxProps = {};
@@ -139,112 +122,93 @@ const Image = forwardRef((props, outerRef) => {
         const h = 100000;
         const w = h * containerAspectRatio;
 
-        containerProps.style = {
-            ...containerProps.style,
-            position: 'relative',
-        };
-
         aspectRatioBoxProps.style = {
             paddingTop: `${(h / w) * 100}%`,
-        };
-
-        pictureProps.style = {
-            ...pictureProps.style,
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            height: '100%',
+            height: 0,
         };
     }
 
+    // --------------------------------------------------------------------------------------------
+    // Sources and scrSets
+    // --------------------------------------------------------------------------------------------
+
+    // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
+    // onto the `img` tag. While this makes the code messier, it is needed to work around a bug in
+    // Safari:
+    // - https://bugs.webkit.org/show_bug.cgi?id=190031
+    // - https://bugs.webkit.org/show_bug.cgi?id=177068
+    const webpSource = find(sources, s => s.type === 'image/webp');
+    const imgTagSource = find(sources, s => s.type === 'image/jpeg' || s.type === 'image/png');
+
+    // --------------------------------------------------------------------------------------------
+    // Image loaded fade in
+    // --------------------------------------------------------------------------------------------
+
+    const [isLoaded, setIsLoaded] = useState(false);
+
     return (
-        <div
-            {...containerProps}
-            ref={el => {
-                // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
-                // element.
-                setContainerRef(el);
+        <>
+            <picture
+                {...rest}
+                className={classNames({
+                    [styles.picture]: true,
+                    [props.className]: props.className,
+                })}
+                ref={el => {
+                    // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
+                    // element.
+                    setContainerRef(el);
 
-                // We don't want to turn on the `react-intersection-observer` functionality until
-                // the polyfill is done loading.
-                if (browserSupportIntersectionObserver) {
-                    inViewRef(el);
-                }
+                    // We don't want to turn on the `react-intersection-observer` functionality until
+                    // the polyfill is done loading.
+                    if (browserSupportIntersectionObserver) {
+                        inViewRef(el);
+                    }
 
-                // `outerRef` is the potential forwarded `ref` passed in from a consumer.
-                if (outerRef) {
-                    outerRef(el);
-                }
-            }}
-        >
-            {/* This `div` holds the space set by `containerAspectRatio`. */}
-            {Object.keys(aspectRatioBoxProps).length > 0 && <div {...aspectRatioBoxProps} />}
-
-            {shouldLoadImage && <Picture {...pictureProps} />}
-
+                    // `outerRef` is the potential forwarded `ref` passed in from a consumer.
+                    if (outerRef) {
+                        outerRef(el);
+                    }
+                }}
+            >
+                {webpSource && (
+                    <source
+                        type={webpSource.type}
+                        srcSet={shouldLoadImage ? webpSource.srcSet : undefined}
+                        sizes={sizes}
+                    />
+                )}
+                <img
+                    // The order of `sizes`, `srcSet`, and `src` is important to work around a bug in
+                    // Safari. Once the bug is fixed, we should simplify this by using `src` on the
+                    // `img` tag and using `source` tags.
+                    sizes={sizes}
+                    srcSet={shouldLoadImage && imgTagSource ? imgTagSource.srcSet : undefined}
+                    src={shouldLoadImage ? src : undefined}
+                    height={height}
+                    alt={alt}
+                    style={{
+                        ...objectFitProps.style,
+                        ...(isLoaded ? {} : aspectRatioBoxProps.style),
+                    }}
+                    onLoad={() => {
+                        setIsLoaded(true);
+                    }}
+                    className={classNames({
+                        [styles.image]: true,
+                        [styles.imageLoading]: true,
+                        [styles.imageLoaded]: isLoaded,
+                    })}
+                />
+            </picture>
             <noscript>
-                <Picture src={src} sources={sources} alt={alt} />
+                <picture>
+                    {webpSource && <source srcSet={webpSource.srcSet} type={webpSource.type} />}
+                    <img src={src} alt={alt} srcSet={imgTagSource && imgTagSource.srcSet} />
+                </picture>
             </noscript>
-        </div>
+        </>
     );
 });
-
-Image.propTypes = {
-    /**
-     * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
-     * users on browsers that don't support responsive images. If `sources` is not provided, this
-     * image will be lazy-loaded.
-     */
-    src: PropTypes.string.isRequired,
-    /**
-     * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
-     */
-    sources: PropTypes.arrayOf(
-        PropTypes.shape({
-            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
-                .isRequired,
-            srcSet: PropTypes.string.isRequired,
-        }),
-    ),
-    alt: PropTypes.string,
-    /**
-     * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
-     * used to control how the image is cropped.
-     */
-    height: PropTypes.string,
-    /**
-     * Crops the image to a specific aspect ratio and creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/)
-     * for the image. The placeholder prevents the browser scroll from jumping when the image is
-     * lazy-loaded.
-     */
-    containerAspectRatio: PropTypes.number,
-    /**
-     * Provides control over how an image should be resized to fit the container. This controls the
-     * `object-fit` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
-     * "crop" an image.
-     */
-    objectFit: PropTypes.oneOf(['cover', 'contain']),
-    /**
-     * Provides control over how an image aligned in the container. This controls the
-     * `object-position` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
-     * "crop" an image.
-     */
-    objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
-};
-
-Image.defaultProps = {
-    sources: [],
-    alt: '',
-    height: undefined,
-    containerAspectRatio: undefined,
-    objectFit: 'cover',
-    objectPosition: 'center',
-};
-
-// Needed because of the `forwardRef`.
-Image.displayName = 'Image';
 
 export default Image;
