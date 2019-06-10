@@ -19,6 +19,18 @@
     &--bad-news {
         border-color: $tp-color__red;
         color: $tp-color__red;
+
+        &::-webkit-input-placeholder {
+            color: $tp-color__red;
+        }
+
+        &::-moz-placeholder {
+            color: $tp-color__red;
+        }
+
+        &:-ms-input-placeholder {
+            color: $tp-color__red;
+        }
     }
 
     &[disabled],

@@ -141,6 +141,18 @@ $icon-padding: 16px;
         &Error {
             background-color: $tp-color__white;
             border-color: $tp-color__red;
+
+            &::-webkit-input-placeholder {
+                color: $tp-color__red !important;
+            }
+
+            &::-moz-placeholder {
+                color: $tp-color__red !important;
+            }
+
+            &:-ms-input-placeholder {
+                color: $tp-color__red !important;
+            }
         }
     }
 }

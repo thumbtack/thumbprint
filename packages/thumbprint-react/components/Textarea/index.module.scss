@@ -43,5 +43,17 @@
         border-color: $tp-color__red;
         color: $tp-color__red;
         background-color: $tp-color__white;
+
+        &::-webkit-input-placeholder {
+            color: $tp-color__red;
+        }
+
+        &::-moz-placeholder {
+            color: $tp-color__red;
+        }
+
+        &:-ms-input-placeholder {
+            color: $tp-color__red;
+        }
     }
 }

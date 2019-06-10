@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Make `Input` and `Textarea` placeholder red when in error mode. (#216)
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed
