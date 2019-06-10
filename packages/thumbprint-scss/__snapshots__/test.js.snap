@@ -1703,6 +1703,7 @@ _:-ms-fullscreen {
   min-height: 104px;
 }
 .tp-textarea:focus {
+  color: #2f3033;
   border-color: #009fd9;
 }
 .tp-textarea--bad-news {

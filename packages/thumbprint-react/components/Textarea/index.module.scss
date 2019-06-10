@@ -18,6 +18,7 @@
     min-height: 104px;
 
     &:focus {
+        color: $tp-color__black;
         border-color: $tp-color__blue;
     }
 
