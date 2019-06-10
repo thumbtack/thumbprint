@@ -96,6 +96,22 @@ $icon-padding: 16px;
             padding: 13px 16px;
         }
     }
+
+    &Error {
+        // This must be three separate rules, not a comma-separated list, to avoid the different
+        // vendor prefixes conflicting.
+        &::-webkit-input-placeholder {
+            color: $tp-color__red;
+        }
+
+        &::-moz-placeholder {
+            color: $tp-color__red;
+        }
+
+        &:-ms-input-placeholder {
+            color: $tp-color__red;
+        }
+    }
 }
 
 .inputStyles {
