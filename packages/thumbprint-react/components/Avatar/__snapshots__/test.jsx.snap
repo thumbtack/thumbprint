@@ -27,6 +27,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar squareAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       N
     </span>
@@ -35,7 +41,7 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 `;
 
 exports[`adds lazyload class for lazysizes to work 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
@@ -49,11 +55,11 @@ exports[`adds lazyload class for lazysizes to work 1`] = `
       data-src="//www.placecage.com/130/130"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
-<Avatar
+<UserAvatar
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
@@ -70,11 +76,11 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
       title="Avatar for Duck Goose"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 1`] = `
-<Avatar
+<UserAvatar
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
@@ -85,14 +91,20 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 2`] = `
-<Avatar
+<UserAvatar
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
@@ -109,11 +121,11 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
       title="Avatar for Duck Goose"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 3`] = `
-<Avatar
+<UserAvatar
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
@@ -125,14 +137,20 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not add lazyload class if an image is not provided 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
@@ -143,15 +161,21 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       NC
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
-<Avatar
+<UserAvatar
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
@@ -162,14 +186,20 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
       title="Avatar for Duck Goose"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge by default 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
@@ -180,15 +210,21 @@ exports[`does not render a badge by default 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge by default 2`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
@@ -199,15 +235,21 @@ exports[`does not render a badge by default 2`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
@@ -218,15 +260,21 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
@@ -237,15 +285,21 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={true}
   initials="DK"
   isChecked={false}
@@ -256,15 +310,21 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
@@ -276,15 +336,21 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   isChecked={false}
   isOnline={true}
@@ -303,13 +369,19 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
@@ -340,15 +412,21 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 2`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
@@ -379,15 +457,21 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 3`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={true}
   initials="DK"
   isChecked={false}
@@ -406,15 +490,21 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 4`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
@@ -434,15 +524,21 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders an SVG when \`isChecked\` is true 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
@@ -473,15 +569,21 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders an SVG when \`isChecked\` is true 2`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
@@ -512,15 +614,21 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
     >
       DK
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders an image when the user has one 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
@@ -535,11 +643,11 @@ exports[`renders an image when the user has one 1`] = `
       data-src="//www.placecage.com/130/130"
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   isChecked={true}
   isOnline={true}
@@ -570,13 +678,19 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders notification dot without checkmark SVG when \`isChecked\` and \`hasUnreadNotifications\` are true 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={true}
   isChecked={true}
   size="medium"
@@ -594,13 +708,19 @@ exports[`renders notification dot without checkmark SVG when \`isChecked\` and \
     </Badge>
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
     />
   </div>
-</Avatar>
+</UserAvatar>
 `;
 
 exports[`renders the initials when the user has no image 1`] = `
-<Avatar
+<UserAvatar
   hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
@@ -611,9 +731,15 @@ exports[`renders the initials when the user has no image 1`] = `
   >
     <span
       className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#e8f1fd",
+          "color": "#383c80",
+        }
+      }
     >
       NC
     </span>
   </div>
-</Avatar>
+</UserAvatar>
 `;

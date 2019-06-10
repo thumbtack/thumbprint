@@ -2,6 +2,60 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
+
+## 3.1.1 - 2019-06-07
+
+### Fixed
+
+-   [Patch] Fix `Image` component in IE 11.
+
+## 3.1.0 - 2019-06-06
+
+### Added
+
+-   [Minor] Add a new named export called `UserAvatar` that refers to the same component as the old `Avatar`. This is the preferred name going forward. The default `Avatar` export will be removed in a future breaking change. (#25)
+
+## 3.0.0 - 2019-06-06
+
+### Added
+
+-   [Major] Add new `secondary` theme `Button` and `ThemedLink` style. This style now has blue text. Consumers should replace old `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
+-   [Minor] Export a new component `ModalDefaultContentFullBleed` that allows full-bleed content for the `ModalDefault`. (#194)
+
+### Changed
+
+-   [Patch] Use `Image` component instead of lazysizes in `ServiceCardImage`.
+
+## 2.2.0 - 2019-06-05
+
+### Added
+
+-   [Minor] Add `checkboxVerticalAlign` prop to `Checkbox` and `radioVerticalAlign` prop to `Radio` (#266)
+-   [Minor] Add `tertiary` theme that is the same as our `secondary` style. `secondary` will soon be redesigned to have blue text. Consumers should replace `theme="secondary"` with `theme="tertiary"` to avoid and visual changes. (#89)
+
+### Changed
+
+-   [Patch] Add small delay before showing tooltip after hovering to prevent flickering. (#158)
+-   [Patch] Redesign the avatar with initials design to use dynamic colours. (#25)
+
+### Fixed
+
+-   [Patch] Add `1px` min-height to the Image component root element to improve lazy-loading.
+
+## 2.1.0 - 2019-06-04
+
+### Added
+
+-   [Minor] Add `onClick` prop to `ServiceCard`.
+-   [Minor] Add `shouldOpenInNewTab` prop to `ServiceCard`.
+
+### Changed
+
+-   [Patch] Refactor the internals of the `Image` component.
+
 ## 2.0.0 - 2019-06-03
 
 ### Changed

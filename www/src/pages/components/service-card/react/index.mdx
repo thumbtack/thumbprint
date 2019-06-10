@@ -11,25 +11,64 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ## With icon
 
 ```jsx
-<div style={{ maxWidth: '300px' }}>
-    <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
-        <ServiceCardImage
-            alt="Sprinkler and Irrigation System Repair and Maintenance"
-            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
-        />
-        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
-        <ServiceCardDescription icon={<ContentModifierMapPinSmall />}>
-            67 Pros near you
-        </ServiceCardDescription>
-    </ServiceCard>
+<div style={{ display: 'flex' }}>
+    <div style={{ maxWidth: 300, margin: 8 }}>
+        <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+            <ServiceCardImage
+                alt="Sprinkler and Irrigation System Repair and Maintenance"
+                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+            />
+            <ServiceCardTitle>
+                Sprinkler and Irrigation System Repair and Maintenance
+            </ServiceCardTitle>
+            <ServiceCardDescription icon={<ContentModifierMapPinSmall />}>
+                67 Pros near you
+            </ServiceCardDescription>
+        </ServiceCard>
+    </div>
+    <div style={{ maxWidth: 300, margin: 8 }}>
+        <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+            <ServiceCardImage
+                alt="Sprinkler and Irrigation System Repair and Maintenance"
+                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+            />
+            <ServiceCardTitle>
+                Sprinkler and Irrigation System Repair and Maintenance
+            </ServiceCardTitle>
+            <ServiceCardDescription icon={<MetaCategoryPersonalSmall />}>
+                Let us help you keep your lawn green and your garden happy and healthy.
+            </ServiceCardDescription>
+        </ServiceCard>
+    </div>
 </div>
 ```
 
 ## Without icon
 
 ```jsx
-<div style={{ maxWidth: '300px' }}>
+<div style={{ maxWidth: 300 }}>
     <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+        <ServiceCardImage
+            alt="Sprinkler and Irrigation System Repair and Maintenance"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+        />
+        <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
+        <ServiceCardDescription>
+            Let us help you keep your lawn green and your garden happy and healthy.
+        </ServiceCardDescription>
+    </ServiceCard>
+</div>
+```
+
+## With optional props for anchor
+
+```jsx
+<div style={{ maxWidth: 300 }}>
+    <ServiceCard
+        url="https://www.thumbtack.com/k/massage/near-me/"
+        shouldOpenInNewTab
+        onClick={e => console.log(e)}
+    >
         <ServiceCardImage
             alt="Sprinkler and Irrigation System Repair and Maintenance"
             url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
