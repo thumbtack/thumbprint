@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Patch] Refactor out common logic from `avatar-sizes` and `button-secondary-to-tertiary` codemods.
+
 ## 0.2.3 - 2019-06-06
 
 ### Changed
