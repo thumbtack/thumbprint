@@ -6,6 +6,10 @@
 
 -   [Patch] Use `Image` component in `Avatar` instead of `lazysizes`. (#69)
 
+### Fixed
+
+-   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed
