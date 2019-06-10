@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed

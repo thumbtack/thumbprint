@@ -4,6 +4,7 @@ import DayPicker, { DateUtils, PropTypes as DayPickerPropTypes } from 'react-day
 
 import get from 'lodash/get';
 import map from 'lodash/map';
+import findIndex from 'lodash/findIndex';
 
 import styles from './index.module.scss';
 
@@ -46,7 +47,7 @@ export default class DatePicker extends React.Component {
 
         if (allowMultiSelection) {
             if (selected) {
-                const selectedIndex = newSelectedDays.findIndex(selectedDay =>
+                const selectedIndex = findIndex(newSelectedDays, selectedDay =>
                     DateUtils.isSameDay(selectedDay, day),
                 );
                 newSelectedDays.splice(selectedIndex, 1);
