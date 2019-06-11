@@ -90,7 +90,7 @@ class EntityAvatar extends React.Component {
         return (
             <div
                 className={classNames(styles.root, {
-                    [styles.rootXSmall]: size === 'xsmall',
+                    [styles.rootXsmall]: size === 'xsmall',
                     [styles.rootSmall]: size === 'small',
                     [styles.rootMedium]: size === 'medium',
                     [styles.rootLarge]: size === 'large',
