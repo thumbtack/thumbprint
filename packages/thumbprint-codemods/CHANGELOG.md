@@ -5,6 +5,8 @@
 ### Added
 
 -   [Minor] Add codemod for `Avatar`'s `size` prop breaking change migration. (#25)
+-   [Minor] Update Avatar size codemod to support `EntityAvatar`. (#25)
+-   [Patch] Refactor out common logic from `avatar-sizes` and `button-secondary-to-tertiary` codemods.
 
 ## 0.2.3 - 2019-06-06
 
