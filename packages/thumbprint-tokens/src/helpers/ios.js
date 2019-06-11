@@ -47,4 +47,10 @@ module.exports = [
             return result.join('');
         },
     },
+    {
+        name: 'ifEquals',
+        value(arg1, arg2, options) {
+            return arg1 === arg2 ? options.fn(this) : options.inverse(this);
+        },
+    },
 ];

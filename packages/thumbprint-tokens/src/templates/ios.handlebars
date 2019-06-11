@@ -5,15 +5,18 @@ import UIKit.UIColor
 /// {{description}}
 {{/if}}
 public enum {{formatSectionName this}} {
-    {{#each tokens}}
-    {{#if value.ios}}
-    {{#if description}}
-    /// {{description}}
+    {{#each tokens as |token|}}
+    {{#if token.value.ios}}
+    {{#if token.description}}
+    /// {{token.description}}
     {{/if}}
-    {{#if deprecated}}
+    {{#ifEquals token.type "color"}}
+    /// Maps to {{token.value.web}}
+    {{/ifEquals}}
+    {{#if token.deprecated}}
     @available(*, deprecated)
     {{/if}}
-    public static let {{formatId this}}: {{{formatValue this}}}
+    public static let {{formatId token}}: {{{formatValue token}}}
     {{/if}}
     {{/each}}
 }
