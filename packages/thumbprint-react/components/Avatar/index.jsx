@@ -85,7 +85,7 @@ class EntityAvatar extends React.Component {
     }
 
     render() {
-        const { imageUrl, size, initial, fullName } = this.props;
+        const { imageUrl, size, width, initial, fullName } = this.props;
 
         return (
             <div
@@ -95,6 +95,7 @@ class EntityAvatar extends React.Component {
                     [styles.rootLarge]: size === 'large',
                     [styles.rootXlarge]: size === 'xlarge',
                 })}
+                style={width ? { width, height: width } : {}}
             >
                 {imageUrl ? (
                     <img
@@ -135,6 +136,11 @@ EntityAvatar.propTypes = {
      * The set of avatar sizes that we support.
      */
     size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+    /**
+     * [HIDDEN] the width of the avatar in pixels. Overrides `size` if present. Should not be used unless
+     * absolutely necessary.
+     */
+    width: PropTypes.number,
 };
 
 EntityAvatar.defaultProps = {
@@ -142,6 +148,7 @@ EntityAvatar.defaultProps = {
     initial: undefined,
     fullName: undefined,
     size: 'medium',
+    width: undefined,
 };
 
 // TODO(giles): remove this default export once website has been updated to refer only to UserAvatar
@@ -165,6 +172,7 @@ export default class UserAvatar extends React.Component {
 
     render() {
         const { props } = this;
+
         return (
             <div
                 className={classNames(styles.root, {
@@ -174,6 +182,7 @@ export default class UserAvatar extends React.Component {
                     [styles.rootLarge]: props.size === 'large',
                     [styles.rootXlarge]: props.size === 'xlarge',
                 })}
+                style={props.width ? { width: props.width, height: props.width } : {}}
             >
                 {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
                 {props.imageUrl ? (
@@ -229,6 +238,11 @@ UserAvatar.propTypes = {
      * Displays a badge if the user is online.
      */
     isOnline: PropTypes.bool,
+    /**
+     * [HIDDEN] the width of the avatar in pixels. Overrides `size` if present. Should not be used unless
+     * absolutely necessary.
+     */
+    width: PropTypes.number,
 };
 
 UserAvatar.defaultProps = {
@@ -239,6 +253,7 @@ UserAvatar.defaultProps = {
     isChecked: false,
     hasUnreadNotifications: false,
     isOnline: undefined,
+    width: undefined,
 };
 
 export { UserAvatar, EntityAvatar };

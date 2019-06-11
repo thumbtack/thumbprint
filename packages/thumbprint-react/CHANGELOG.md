@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add a new hidden custom `width` prop to both Avatar components to override `size`.
+
 ## 3.1.2 - 2019-06-11
 
 ### Fixed
