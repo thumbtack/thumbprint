@@ -9,11 +9,13 @@ import canUseDOM from '../../utils/can-use-dom';
 import styles from './index.module.scss';
 
 // --------------------------------------------------------------------------------------------
-// Process steps
-// 1. Picture is rendered with src, srcSet, with a padding-top placholder on the image.
-// 2. "sizes" is calculated on initial render to determine width of image.
+// Steps in rendering Image
+//
+// 1. Picture is rendered without src, srcSets, and with a padding-top placholder on the image
+// based on the aspectRatio or containerAspectRatio.
+// 2. The "sizes" attr is calculated on initial render to determine width of image.
 // 3. When lazyload is triggered the src and scrSet props are populated based on the sizes value.
-// 4. The image onLoad event removes padding-top placholder and fades in image.
+// 4. The image onLoad event removes padding-top placholder and fades in the image.
 // --------------------------------------------------------------------------------------------
 
 const Image = forwardRef((props, outerRef) => {
@@ -37,6 +39,10 @@ const Image = forwardRef((props, outerRef) => {
     // Sizes
     // --------------------------------------------------------------------------------------------
 
+    // Used by srcSet to determine which image in the list will be requested. Unless the image
+    // is full width this value has to be calculated client-side because we don't know the
+    // viewport width.
+
     const sizes =
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
@@ -49,6 +55,7 @@ const Image = forwardRef((props, outerRef) => {
     // of using the default, we use the nearest scrollable parent. This is the same approach that
     // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
     // https://git.io/fj00H
+
     const parent = canUseDOM && scrollparent(containerRef);
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
@@ -145,6 +152,7 @@ const Image = forwardRef((props, outerRef) => {
     // Safari:
     // - https://bugs.webkit.org/show_bug.cgi?id=190031
     // - https://bugs.webkit.org/show_bug.cgi?id=177068
+
     const webpSource = find(sources, s => s.type === 'image/webp');
     const imgTagSource = find(sources, s => s.type === 'image/jpeg' || s.type === 'image/png');
 
@@ -179,6 +187,7 @@ const Image = forwardRef((props, outerRef) => {
                 {webpSource && (
                     <source
                         type={webpSource.type}
+                        // Only add this attribute if lazyload has been triggered.
                         srcSet={shouldLoadImage ? webpSource.srcSet : undefined}
                         sizes={sizes}
                     />
@@ -188,14 +197,20 @@ const Image = forwardRef((props, outerRef) => {
                     // Safari. Once the bug is fixed, we should simplify this by using `src` on the
                     // `img` tag and using `source` tags.
                     sizes={sizes}
+                    // Only add this attribute if lazyload has been triggered.
                     srcSet={shouldLoadImage && imgTagSource ? imgTagSource.srcSet : undefined}
+                    // Only add this attribute if lazyload has been triggered.
                     src={shouldLoadImage ? src : undefined}
+                    // Height is generally only used for full-width hero images.
                     height={height}
                     alt={alt}
+                    // Adds object fit values if specified and adds/removes placeholder padding.
                     style={{
                         ...(shouldObjectFit ? objectFitProps.style : {}),
                         ...(isLoaded ? {} : aspectRatioBoxProps.style),
                     }}
+                    // Once loaded we remove the placeholder and add a class to transition the
+                    // opacity from 0 to 1.
                     onLoad={() => {
                         setIsLoaded(true);
                     }}
