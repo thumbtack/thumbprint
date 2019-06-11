@@ -7,7 +7,14 @@ import scrollparent from 'scrollparent';
 import { useInView } from 'react-intersection-observer';
 import canUseDOM from '../../utils/can-use-dom';
 import styles from './index.module.scss';
-import { join } from 'path';
+
+// --------------------------------------------------------------------------------------------
+// Process steps
+// 1. Picture is rendered with src, srcSet, with a padding-top placholder on the image.
+// 2. "sizes" is calculated on initial render to determine width of image.
+// 3. When lazyload is triggered the src and scrSet props are populated based on the sizes value.
+// 4. The image onLoad event removes padding-top placholder and fades in image.
+// --------------------------------------------------------------------------------------------
 
 const Image = forwardRef((props, outerRef) => {
     const {
@@ -18,6 +25,7 @@ const Image = forwardRef((props, outerRef) => {
         objectFit,
         objectPosition,
         alt,
+        className,
         ...rest
     } = props;
 
@@ -150,10 +158,7 @@ const Image = forwardRef((props, outerRef) => {
         <>
             <picture
                 {...rest}
-                className={classNames({
-                    [styles.picture]: true,
-                    [props.className]: props.className,
-                })}
+                className={classNames(styles.picture, className)}
                 ref={el => {
                     // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
                     // element.
@@ -188,7 +193,7 @@ const Image = forwardRef((props, outerRef) => {
                     height={height}
                     alt={alt}
                     style={{
-                        ...objectFitProps.style,
+                        ...(shouldObjectFit ? objectFitProps.style : {}),
                         ...(isLoaded ? {} : aspectRatioBoxProps.style),
                     }}
                     onLoad={() => {
@@ -210,5 +215,61 @@ const Image = forwardRef((props, outerRef) => {
         </>
     );
 });
+
+Image.propTypes = {
+    /**
+     * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
+     * users on browsers that don't support responsive images. If `sources` is not provided, this
+     * image will be lazy-loaded.
+     */
+    src: PropTypes.string.isRequired,
+    /**
+     * Allows the browser to choose the best file format and image size based on the device screen
+     * density and the width of the rendered image.
+     */
+    sources: PropTypes.arrayOf(
+        PropTypes.shape({
+            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
+                .isRequired,
+            srcSet: PropTypes.string.isRequired,
+        }),
+    ),
+    alt: PropTypes.string,
+    /**
+     * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
+     * used to control how the image is cropped.
+     */
+    height: PropTypes.string,
+    /**
+     * Crops the image to a specific aspect ratio and creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/)
+     * for the image. The placeholder prevents the browser scroll from jumping when the image is
+     * lazy-loaded.
+     */
+    containerAspectRatio: PropTypes.number,
+    /**
+     * Provides control over how an image should be resized to fit the container. This controls the
+     * `object-fit` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
+     * "crop" an image.
+     */
+    objectFit: PropTypes.oneOf(['cover', 'contain']),
+    /**
+     * Provides control over how an image aligned in the container. This controls the
+     * `object-position` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
+     * "crop" an image.
+     */
+    objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
+};
+
+Image.defaultProps = {
+    sources: [],
+    alt: '',
+    height: undefined,
+    containerAspectRatio: undefined,
+    objectFit: 'cover',
+    objectPosition: 'center',
+};
+
+// Needed because of the `forwardRef`.
+Image.displayName = 'Image';
 
 export default Image;
