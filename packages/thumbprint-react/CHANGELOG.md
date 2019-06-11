@@ -44,7 +44,7 @@
 
 ### Changed
 
--   [Patch] Simplify `Image` component by removing placeholder `div` and CSS positing so the component behaves more predictably.
+-   [Patch] Simplify `Image` component by removing placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
 
 ## 3.1.1 - 2019-06-07
 
