@@ -6,6 +6,12 @@
 
 -   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)
 
+### Fixed
+
+-   [Patch] Make `Input` and `Textarea` placeholder red when in error mode. (#216)
+-   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
+-   [Patch] Make `Textarea` text black when there is an error but component is focused. (#298)
+
 ## 3.1.1 - 2019-06-07
 
 ### Fixed
