@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably.
+
 ## 5.0.0 - 2019-06-13
 
 ### Removed
