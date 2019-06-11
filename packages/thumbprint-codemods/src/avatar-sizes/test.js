@@ -185,6 +185,6 @@ describe('output should not change', () => {
             </>
         )`;
 
-        expect(transform(code)).toBeNull();
+        expect(transform(code)).toBe(code);
     });
 });
