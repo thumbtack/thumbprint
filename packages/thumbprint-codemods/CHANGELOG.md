@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fixed a bug in avatar-sizes codemod where files were being modified even if they did not contain an Avatar. Also internally tidied up library functions to make API consistent.
+
 ## 0.3.0 - 2019-06-11
 
 ### Added

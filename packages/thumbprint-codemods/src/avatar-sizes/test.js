@@ -190,6 +190,6 @@ describe('output should not change', () => {
             </>
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 });
