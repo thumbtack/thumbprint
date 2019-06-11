@@ -16,39 +16,34 @@ const checkXLargeSize = (avatars, j, file) => {
     // Check to see if any use the "xlarge" size. If so, show an error and skip this instance of Avatar.
     if (usesXLargeSize(avatars, j)) {
         console.error(
-            `⚠️  Could not automatically convert an \`Avatar\` that uses the "xlarge" size. Please manually update the \`Avatar\` at:\n${
+            `⚠️  Could not automatically convert an \`Avatar\` or \`EntityAvatar\` that uses the "xlarge" size. Please manually update the component at:\n${
                 file.path
             }\n to use either "xlarge" or "large" based on your design requirements`,
         );
     }
 };
 
+const propsMap = [
+    {
+        oldValue: 'large',
+        newValue: 'medium',
+    },
+    {
+        oldValue: 'medium',
+        newValue: 'small',
+    },
+    {
+        oldValue: 'small',
+        newValue: 'xsmall',
+    },
+];
+
 module.exports = (file, api) => {
     const j = api.jscodeshift;
     const ast = j(file.source);
 
-    changePropValues(
-        file,
-        api,
-        ast,
-        'Avatar',
-        'size',
-        [
-            {
-                oldValue: 'large',
-                newValue: 'medium',
-            },
-            {
-                oldValue: 'medium',
-                newValue: 'small',
-            },
-            {
-                oldValue: 'small',
-                newValue: 'xsmall',
-            },
-        ],
-        [checkXLargeSize],
-    );
+    changePropValues(file, api, ast, 'Avatar', 'size', propsMap, [checkXLargeSize]);
+    changePropValues(file, api, ast, 'EntityAvatar', 'size', propsMap, [checkXLargeSize]);
 
     return ast.toSource();
 };
