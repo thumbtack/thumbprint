@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`
+
 ### Fixed
 
 -   [Patch] Make `Input` and `Textarea` placeholder red when in error mode. (#216)
