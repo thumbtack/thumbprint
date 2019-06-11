@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 // Steps in rendering Image
 //
 // 1. Picture is rendered without src, srcSets, and with a padding-top placholder on the <img>
-// based on the aspectRatio or containerAspectRatio.
+// based on the containerAspectRatio.
 // 2. The "sizes" attr is calculated on initial render to determine width of image.
 // 3. When lazyload is triggered the src and scrSet props are populated based on the sizes value.
 // 4. The image onLoad event removes padding-top placholder and fades in the image.
@@ -143,7 +143,7 @@ const Image = forwardRef((props, outerRef) => {
     }
 
     // --------------------------------------------------------------------------------------------
-    // Sources and scrSets
+    // Sources and srcSets
     // --------------------------------------------------------------------------------------------
 
     // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
@@ -167,7 +167,7 @@ const Image = forwardRef((props, outerRef) => {
                 {...rest}
                 className={classNames(styles.picture, className)}
                 ref={el => {
-                    // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
+                    // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
                     // element.
                     setContainerRef(el);
 
