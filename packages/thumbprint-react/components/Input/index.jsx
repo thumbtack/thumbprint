@@ -204,6 +204,7 @@ class Input extends React.Component {
                 <input
                     className={classNames({
                         [styles.input]: true,
+                        [styles.inputError]: uiState === 'error',
                         [styles.inputSizeSmall]: size === 'small',
                         [styles.inputSizeLarge]: size === 'large',
                     })}
