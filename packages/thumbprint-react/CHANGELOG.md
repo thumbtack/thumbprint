@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes.
+-   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)
 
 ## 3.1.1 - 2019-06-07
 
