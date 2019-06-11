@@ -127,7 +127,8 @@ const Image = forwardRef((props, outerRef) => {
     // Image Aspect Ratio
     // --------------------------------------------------------------------------------------------
 
-    const aspectRatioBoxProps = {};
+    const aspectRatioParentStyle = {};
+    const aspectRatioChildStyle = {};
 
     if (containerAspectRatio) {
         // This ensures that the image always renders at that apsect ratio and that lazy-loaded
@@ -136,9 +137,15 @@ const Image = forwardRef((props, outerRef) => {
         const h = 100000;
         const w = h * containerAspectRatio;
 
-        aspectRatioBoxProps.style = {
+        aspectRatioParentStyle.style = {
             paddingTop: `${(h / w) * 100}%`,
-            height: 0,
+            position: 'relative',
+        };
+
+        aspectRatioChildStyle.style = {
+            position: 'absolute',
+            top: 0,
+            height: '100%',
         };
     }
 
@@ -165,6 +172,7 @@ const Image = forwardRef((props, outerRef) => {
         <>
             <picture
                 {...rest}
+                style={aspectRatioParentStyle.style}
                 className={classNames(styles.picture, className)}
                 ref={el => {
                     // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
@@ -206,7 +214,7 @@ const Image = forwardRef((props, outerRef) => {
                     // Adds object fit values if specified and adds/removes placeholder padding.
                     style={{
                         ...(shouldObjectFit ? objectFitProps.style : {}),
-                        ...(isLoaded ? {} : aspectRatioBoxProps.style),
+                        ...aspectRatioChildStyle.style,
                     }}
                     // Once loaded we remove the placeholder and add a class to transition the
                     // opacity from 0 to 1.
