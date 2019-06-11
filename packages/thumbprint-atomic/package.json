@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-atomic",
     "description": "Atomic classes for building Thumbtack UI",
-    "version": "3.2.8",
+    "version": "3.2.9",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/atomic.css",
     "style": "dist/atomic.css",
@@ -20,7 +20,7 @@
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
-        "@thumbtack/thumbprint-scss": "^1.0.5",
+        "@thumbtack/thumbprint-scss": "^1.0.6",
         "@thumbtack/thumbprint-tokens": "^8.0.2",
         "autoprefixer": "^9.0.1",
         "css-mqpacker": "^7.0.0",
