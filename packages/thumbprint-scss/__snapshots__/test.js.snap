@@ -1147,6 +1147,15 @@ a .tp-img {
   color: #ff5a5f;
   border-color: #ff5a5f;
 }
+.tp-text-input--bad-news::-webkit-input-placeholder {
+  color: #ff5a5f;
+}
+.tp-text-input--bad-news::-moz-placeholder {
+  color: #ff5a5f;
+}
+.tp-text-input--bad-news:-ms-input-placeholder {
+  color: #ff5a5f;
+}
 .tp-text-input--disabled,
 .tp-text-input[disabled] {
   background-color: #fafafa;
@@ -1694,10 +1703,20 @@ _:-ms-fullscreen {
   min-height: 104px;
 }
 .tp-textarea:focus {
+  color: #2f3033;
   border-color: #009fd9;
 }
 .tp-textarea--bad-news {
   border-color: #ff5a5f;
+  color: #ff5a5f;
+}
+.tp-textarea--bad-news::-webkit-input-placeholder {
+  color: #ff5a5f;
+}
+.tp-textarea--bad-news::-moz-placeholder {
+  color: #ff5a5f;
+}
+.tp-textarea--bad-news:-ms-input-placeholder {
   color: #ff5a5f;
 }
 .tp-textarea--disabled,
