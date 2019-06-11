@@ -17,7 +17,7 @@ module.exports = (file, api) => {
     const j = api.jscodeshift;
     const ast = j(file.source);
 
-    changePropValues(
+    const res = changePropValues(
         file,
         api,
         ast,
@@ -31,6 +31,10 @@ module.exports = (file, api) => {
         ],
         [usesSecondaryButtons],
     );
+
+    if (res === null) {
+        return null;
+    }
 
     return ast.toSource();
 };

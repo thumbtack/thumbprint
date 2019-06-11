@@ -26,6 +26,8 @@ const usesExpressionAsPropValue = (instances, j, propName) =>
  * @param propName the string name of the prop to transform, eg. "theme"
  * @param valuesMap an array of { oldValue, newValue } pairs to update values of the given prop
  * @param extraChecks an optional array of functions to run to perform extra checks on the file
+ *
+ * @returns null if the file was not modified, or the modified AST if it was
  */
 module.exports = (file, api, ast, componentName, propName, valuesMap, extraChecks = []) => {
     const j = api.jscodeshift;
@@ -36,7 +38,7 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
 
     // Skip file if there is no Thumbprint React import
     if (thumbprintReactImport.size() === 0) {
-        return;
+        return null;
     }
 
     const specifier = thumbprintReactImport
@@ -45,7 +47,7 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
 
     // Skip file if the component is not imported
     if (!specifier) {
-        return;
+        return null;
     }
 
     // Get the variable name used for the component
@@ -79,7 +81,7 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
         const result = check(instances, j, file);
 
         if (result === false) {
-            return;
+            return null;
         }
     }
 
@@ -101,4 +103,6 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
 
         j(path).replaceWith(node);
     });
+
+    return ast;
 };
