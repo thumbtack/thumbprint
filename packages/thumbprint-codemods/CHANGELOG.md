@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.2 - 2019-06-12
+
 ### Fixed
 
 -   [Patch] Exit instead of returning in the CLI.

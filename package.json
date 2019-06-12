@@ -4,7 +4,7 @@
         "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && cd www && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn start",
         "updated": "lerna updated",
         "bootstrap": "lerna run prepublishOnly",
-        "publish": "git checkout master && git pull && yarn test && yarn build:dist && lerna publish",
+        "publish": "git checkout master && git pull && yarn && yarn test && yarn build:dist && lerna publish",
         "build:docs": "yarn run bootstrap && cd www && yarn build",
         "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
         "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
