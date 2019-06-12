@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Allow custom pixel values in avatar size prop. (#25)
+
 ### Removed
 
 -   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)

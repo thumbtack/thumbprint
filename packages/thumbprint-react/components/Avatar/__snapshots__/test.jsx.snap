@@ -8,6 +8,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <img
       className="baseAvatar squareAvatar lazyload"
@@ -24,6 +25,7 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar squareAvatar"
@@ -48,6 +50,7 @@ exports[`adds lazyload class for lazysizes to work 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -66,6 +69,7 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <img
       alt="Avatar for Duck Goose"
@@ -85,6 +89,7 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -109,6 +114,7 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <img
       alt="Avatar for Duck Goose"
@@ -129,6 +135,7 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -152,6 +159,7 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -176,6 +184,7 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -199,6 +208,7 @@ exports[`does not render a badge by default 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -223,6 +233,7 @@ exports[`does not render a badge by default 2`] = `
 >
   <div
     className="root rootLarge"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -247,6 +258,7 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
 >
   <div
     className="root rootXsmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -271,6 +283,7 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
 >
   <div
     className="root rootXsmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -296,6 +309,7 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
 >
   <div
     className="root rootXsmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -320,6 +334,7 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -350,6 +365,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -394,6 +410,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootMedium"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -439,6 +456,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootMedium"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -471,6 +489,7 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
 >
   <div
     className="root rootMedium"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -515,6 +534,7 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
 >
   <div
     className="root rootMedium"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -560,6 +580,7 @@ exports[`renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -577,6 +598,7 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <Badge
       background="green"
@@ -619,6 +641,7 @@ exports[`renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
+    style={Object {}}
   >
     <span
       className="initialsAvatar circleAvatar"
