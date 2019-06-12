@@ -222,7 +222,7 @@ UserAvatar.propTypes = {
      * The set of avatar sizes that we support.
      */
     size: PropTypes.oneOfType([
-        PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
         PropTypes.number,
     ]),
     /**
