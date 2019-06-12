@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 4.0.1 - 2019-06-13
+
+-   [Patch] Fix incorrect PropTypes for Avatar component.
+
 ## 4.0.0 - 2019-06-12
 
 ### Added
