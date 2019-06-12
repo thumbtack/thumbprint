@@ -88,6 +88,7 @@ class EntityAvatar extends React.Component {
         return (
             <div
                 className={classNames(styles.root, {
+                    [styles.rootXsmall]: size === 'xsmall',
                     [styles.rootSmall]: size === 'small',
                     [styles.rootMedium]: size === 'medium',
                     [styles.rootLarge]: size === 'large',
@@ -132,14 +133,14 @@ EntityAvatar.propTypes = {
     /**
      * The set of avatar sizes that we support.
      */
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 };
 
 EntityAvatar.defaultProps = {
     imageUrl: undefined,
     initial: undefined,
     fullName: undefined,
-    size: 'medium',
+    size: 'small',
 };
 
 // TODO(giles): remove this default export once website has been updated to refer only to UserAvatar
@@ -228,7 +229,7 @@ UserAvatar.defaultProps = {
     imageUrl: undefined,
     initials: undefined,
     fullName: undefined,
-    size: 'medium',
+    size: 'small',
     isChecked: false,
     isOnline: undefined,
 };

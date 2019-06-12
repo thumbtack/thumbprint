@@ -4,10 +4,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 <EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar squareAvatar lazyload"
@@ -20,10 +20,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 <EntityAvatar
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar squareAvatar"
@@ -44,10 +44,10 @@ exports[`adds lazyload class for lazysizes to work 1`] = `
 <UserAvatar
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -62,10 +62,10 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       alt="Avatar for Duck Goose"
@@ -81,10 +81,10 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
 <UserAvatar
   fullName="Duck Goose"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -105,10 +105,10 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       alt="Avatar for Duck Goose"
@@ -124,11 +124,11 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 <UserAvatar
   fullName="Duck Goose"
   isChecked={false}
-  size="medium"
+  size="small"
   title="DG"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -148,10 +148,10 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
 <UserAvatar
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -172,10 +172,10 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 <UserAvatar
   fullName="Duck Goose"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -195,10 +195,10 @@ exports[`does not render a badge by default 1`] = `
 <UserAvatar
   initials="DK"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -316,17 +316,17 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 <UserAvatar
   isChecked={false}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarSmallBadge"
+        className="badge badgeGreen smallAvatarSmallBadge"
       />
     </Badge>
     <span
@@ -346,17 +346,17 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 <UserAvatar
   initials="DK"
   isChecked={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -556,10 +556,10 @@ exports[`renders an image when the user has one 1`] = `
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -573,17 +573,17 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 <UserAvatar
   isChecked={true}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -615,10 +615,10 @@ exports[`renders the initials when the user has no image 1`] = `
 <UserAvatar
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
