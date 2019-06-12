@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Remove unused CSS from `ServiceCardImage`.
+
 ## 3.1.2 - 2019-06-11
 
 ### Fixed
