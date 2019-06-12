@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-scss",
     "description": "CSS and Sass mixins for building Thumbtack UI",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "components.css",
     "style": "components.css",

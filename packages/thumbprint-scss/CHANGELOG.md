@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.0.6 - 2019-06-11
+
+### Changed
+
+-   [Patch] Make `Textarea` text black when there is an error but component is focused. (#298)
+
 ## 1.0.5 - 2019-06-03
 
 ### Changed

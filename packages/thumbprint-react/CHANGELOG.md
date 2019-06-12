@@ -4,7 +4,9 @@
 
 ### Removed
 
--   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)
+
+## 3.1.2 - 2019-06-11
 
 ### Fixed
 

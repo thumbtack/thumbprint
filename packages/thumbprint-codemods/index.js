@@ -49,7 +49,7 @@ Examples
 // A glob is required
 if (cli.input.length === 0) {
     cli.showHelp();
-    return;
+    process.exit();
 }
 
 // Throw an error if the codemod name isn't valid
