@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.0.0 - 2019-06-12
+
 ### Added
 
 -   [Minor] Allow custom pixel values in avatar size prop. (#25)
