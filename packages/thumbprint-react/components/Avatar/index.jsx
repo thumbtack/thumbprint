@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
@@ -85,7 +86,7 @@ class EntityAvatar extends React.Component {
     }
 
     render() {
-        const { imageUrl, size, width, initial, fullName } = this.props;
+        const { imageUrl, size, initial, fullName } = this.props;
 
         return (
             <div
@@ -95,7 +96,7 @@ class EntityAvatar extends React.Component {
                     [styles.rootLarge]: size === 'large',
                     [styles.rootXlarge]: size === 'xlarge',
                 })}
-                style={width ? { width, height: width } : {}}
+                style={isNumber(size) ? { width: size, height: size } : {}}
             >
                 {imageUrl ? (
                     <img
@@ -135,12 +136,10 @@ EntityAvatar.propTypes = {
     /**
      * The set of avatar sizes that we support.
      */
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-    /**
-     * [HIDDEN] the width of the avatar in pixels. Overrides `size` if present. Should not be used unless
-     * absolutely necessary.
-     */
-    width: PropTypes.number,
+    size: PropTypes.oneOfType(
+        PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+        PropTypes.number,
+    ),
 };
 
 EntityAvatar.defaultProps = {
@@ -182,7 +181,7 @@ export default class UserAvatar extends React.Component {
                     [styles.rootLarge]: props.size === 'large',
                     [styles.rootXlarge]: props.size === 'xlarge',
                 })}
-                style={props.width ? { width: props.width, height: props.width } : {}}
+                style={isNumber(props.size) ? { width: props.size, height: props.size } : {}}
             >
                 {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
                 {props.imageUrl ? (
@@ -224,7 +223,10 @@ UserAvatar.propTypes = {
     /**
      * The set of avatar sizes that we support.
      */
-    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    size: PropTypes.oneOfType(
+        PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+        PropTypes.number,
+    ),
     /**
      * Displays a badge of a checkmark next to the `Avatar`.
      */
@@ -238,11 +240,6 @@ UserAvatar.propTypes = {
      * Displays a badge if the user is online.
      */
     isOnline: PropTypes.bool,
-    /**
-     * [HIDDEN] the width of the avatar in pixels. Overrides `size` if present. Should not be used unless
-     * absolutely necessary.
-     */
-    width: PropTypes.number,
 };
 
 UserAvatar.defaultProps = {
