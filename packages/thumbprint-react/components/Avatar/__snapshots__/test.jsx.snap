@@ -9,10 +9,38 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
-      className="baseAvatar squareAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <Image
+      alt=""
+      className="squareAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
+    >
+      <picture
+        className="picture squareAvatar"
+      >
+        <img
+          alt=""
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </EntityAvatar>
 `;
@@ -40,24 +68,6 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 </EntityAvatar>
 `;
 
-exports[`adds lazyload class for lazysizes to work 1`] = `
-<UserAvatar
-  hasUnreadNotifications={false}
-  imageUrl="//www.placecage.com/130/130"
-  isChecked={false}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-  >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
-  </div>
-</UserAvatar>
-`;
-
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
@@ -69,12 +79,40 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
+    <Image
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
       title="Avatar for Duck Goose"
-    />
+    >
+      <picture
+        className="picture circleAvatar"
+        title="Avatar for Duck Goose"
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
@@ -114,12 +152,40 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
   <div
     className="root rootMedium"
   >
-    <img
+    <Image
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
       title="Avatar for Duck Goose"
-    />
+    >
+      <picture
+        className="picture circleAvatar"
+        title="Avatar for Duck Goose"
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
@@ -145,31 +211,6 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       }
       title="Avatar for Duck Goose"
     />
-  </div>
-</UserAvatar>
-`;
-
-exports[`does not add lazyload class if an image is not provided 1`] = `
-<UserAvatar
-  hasUnreadNotifications={false}
-  initials="NC"
-  isChecked={false}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#e8f1fd",
-          "color": "#383c80",
-        }
-      }
-    >
-      NC
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -638,10 +679,38 @@ exports[`renders an image when the user has one 1`] = `
   <div
     className="root rootMedium"
   >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <Image
+      alt=""
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
+    >
+      <picture
+        className="picture circleAvatar"
+      >
+        <img
+          alt=""
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
