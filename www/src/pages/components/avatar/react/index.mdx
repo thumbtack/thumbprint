@@ -49,24 +49,24 @@ import {
 When a user does not have an image, an `Avatar` can display the user’s initials instead. The initals are assigned to a color based on the first letter in the `initials` prop.
 
 ```jsx
-<div className="flex">
+<div className="flex items-center">
     <div className="mr2">
-        <UserAvatar initials="AA" size="large" />
+        <UserAvatar initials="AA" size="xlarge" />
     </div>
     <div className="mr2">
         <UserAvatar initials="BA" size="large" />
     </div>
     <div className="mr2">
-        <UserAvatar initials="CA" size="large" />
+        <UserAvatar initials="CA" size="medium" />
     </div>
     <div className="mr2">
-        <UserAvatar initials="DA" size="large" />
+        <UserAvatar initials="DA" size="small" />
     </div>
     <div className="mr2">
-        <UserAvatar initials="EA" size="large" />
+        <UserAvatar initials="EA" size="xsmall" />
     </div>
     <div>
-        <UserAvatar initials="HA" size="large" />
+        <UserAvatar initials="HA" size="xsmall" />
     </div>
 </div>
 ```
@@ -95,6 +95,12 @@ When a user does not have an image, an `Avatar` can display the user’s initial
 
 ```jsx
 <EntityAvatar imageUrl="https://www.placecage.com/640/480" size="small" />
+```
+
+### Extra Small
+
+```jsx
+<EntityAvatar imageUrl="https://www.placecage.com/640/480" size="xsmall" />
 ```
 
 ### Initials

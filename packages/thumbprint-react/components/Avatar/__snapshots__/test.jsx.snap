@@ -4,10 +4,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 <EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar squareAvatar lazyload"
@@ -20,10 +20,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 <EntityAvatar
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar squareAvatar"
@@ -45,10 +45,10 @@ exports[`adds lazyload class for lazysizes to work 1`] = `
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -64,10 +64,10 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       alt="Avatar for Duck Goose"
@@ -84,10 +84,10 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -109,10 +109,10 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
   hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       alt="Avatar for Duck Goose"
@@ -129,11 +129,11 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
   title="DG"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -154,10 +154,10 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
   hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -179,10 +179,10 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
   fullName="Duck Goose"
   hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -203,10 +203,10 @@ exports[`does not render a badge by default 1`] = `
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -354,17 +354,17 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
   hasUnreadNotifications={false}
   isChecked={false}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarSmallBadge"
+        className="badge badgeGreen smallAvatarSmallBadge"
       />
     </Badge>
     <span
@@ -385,17 +385,17 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
   hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -633,10 +633,10 @@ exports[`renders an image when the user has one 1`] = `
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <img
       className="baseAvatar circleAvatar lazyload"
@@ -651,17 +651,17 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
   hasUnreadNotifications={false}
   isChecked={true}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -693,17 +693,17 @@ exports[`renders notification dot without checkmark SVG when \`isChecked\` and \
 <UserAvatar
   hasUnreadNotifications={true}
   isChecked={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <Badge
       background="red"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeRed mediumAvatarSmallBadge"
+        className="badge badgeRed smallAvatarSmallBadge"
       />
     </Badge>
     <span
@@ -724,10 +724,10 @@ exports[`renders the initials when the user has no image 1`] = `
   hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
   >
     <span
       className="initialsAvatar circleAvatar"
