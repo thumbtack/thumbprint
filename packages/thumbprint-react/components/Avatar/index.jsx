@@ -242,7 +242,6 @@ UserAvatar.defaultProps = {
     size: 'small',
     isChecked: false,
     isOnline: undefined,
-    width: undefined,
 };
 
 export { UserAvatar, EntityAvatar };

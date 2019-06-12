@@ -4,7 +4,7 @@
 
 ### Added
 
--   [Minor] Add a new hidden custom `width` prop to both Avatar components to override `size`.
+-   [Minor] Allow custom pixel values in avatar size prop. (#25)
 
 ### Removed
 
