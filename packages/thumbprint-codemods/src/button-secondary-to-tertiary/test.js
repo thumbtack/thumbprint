@@ -130,7 +130,7 @@ describe('should be unchanged and throw console error', () => {
             </div>
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
         expect(console.error).toHaveBeenCalledTimes(1);
     });
 
@@ -144,7 +144,7 @@ describe('should be unchanged and throw console error', () => {
             </div>
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
         expect(console.error).toHaveBeenCalledTimes(1);
     });
 });
@@ -214,7 +214,7 @@ describe('output should not change', () => {
             </>
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 
     test('`Button` with `tertiary` theme', () => {
@@ -224,7 +224,7 @@ describe('output should not change', () => {
             <Button theme="tertiary" />
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 
     test('file using an `Input` from Thumbprint', () => {
@@ -234,7 +234,7 @@ describe('output should not change', () => {
             <Input theme="secondary" />
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 
     test('file not using Thumbprint React', () => {
@@ -244,21 +244,20 @@ describe('output should not change', () => {
             <Button theme="secondary" />
         )`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 
     test('file without a `Button`', () => {
         const code = `import React from 'react';
-        export default Component => (
+        export default Component =>
             class extends React.Component {
                 render() {
                     return (
                         <div />
                     );
                 }
-            }
-        );`;
+            };`;
 
-        expect(transform(code)).toBe(code);
+        expect(transform(code)).toBeNull();
     });
 });
