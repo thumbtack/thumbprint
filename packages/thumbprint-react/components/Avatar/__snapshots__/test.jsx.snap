@@ -4,10 +4,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 <EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <img
@@ -21,10 +21,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 <EntityAvatar
   initial="N"
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -44,13 +44,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 
 exports[`adds lazyload class for lazysizes to work 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <img
@@ -64,13 +63,12 @@ exports[`adds lazyload class for lazysizes to work 1`] = `
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
-  hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <img
@@ -86,12 +84,11 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 exports[`adds the \`fullName\` as \`title\` text 1`] = `
 <UserAvatar
   fullName="Duck Goose"
-  hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -111,13 +108,12 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
 exports[`adds the \`fullName\` as \`title\` text 2`] = `
 <UserAvatar
   fullName="Duck Goose"
-  hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <img
@@ -133,13 +129,12 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 exports[`adds the \`fullName\` as \`title\` text 3`] = `
 <UserAvatar
   fullName="Duck Goose"
-  hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
   title="DG"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -158,13 +153,12 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 
 exports[`does not add lazyload class if an image is not provided 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -185,12 +179,11 @@ exports[`does not add lazyload class if an image is not provided 1`] = `
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
-  hasUnreadNotifications={false}
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -209,13 +202,12 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 
 exports[`does not render a badge by default 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span
@@ -235,7 +227,6 @@ exports[`does not render a badge by default 1`] = `
 
 exports[`does not render a badge by default 2`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
   size="large"
@@ -261,7 +252,6 @@ exports[`does not render a badge by default 2`] = `
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
   size="xsmall"
@@ -287,7 +277,6 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
   size="xsmall"
@@ -313,33 +302,6 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
 
 exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
 <UserAvatar
-  hasUnreadNotifications={true}
-  initials="DK"
-  isChecked={false}
-  size="xsmall"
->
-  <div
-    className="root rootXsmall"
-    style={Object {}}
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
-  </div>
-</UserAvatar>
-`;
-
-exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
-<UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
   isOnline={true}
@@ -366,21 +328,20 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 4`] = `
 
 exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   isChecked={false}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarSmallBadge"
+        className="badge badgeGreen smallAvatarSmallBadge"
       />
     </Badge>
     <span
@@ -398,21 +359,20 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -444,7 +404,6 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 2`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
   size="medium"
@@ -490,41 +449,6 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 
 exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 3`] = `
 <UserAvatar
-  hasUnreadNotifications={true}
-  initials="DK"
-  isChecked={false}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-    style={Object {}}
-  >
-    <Badge
-      background="red"
-      size="medium"
-    >
-      <div
-        className="badge badgeRed mediumAvatarSmallBadge"
-      />
-    </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
-  </div>
-</UserAvatar>
-`;
-
-exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 4`] = `
-<UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={false}
   isOnline={true}
@@ -559,7 +483,6 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 
 exports[`renders an SVG when \`isChecked\` is true 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
   size="medium"
@@ -605,7 +528,6 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
 
 exports[`renders an SVG when \`isChecked\` is true 2`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="DK"
   isChecked={true}
   size="medium"
@@ -651,14 +573,13 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
 
 exports[`renders an image when the user has one 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <img
@@ -671,21 +592,20 @@ exports[`renders an image when the user has one 1`] = `
 
 exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   isChecked={true}
   isOnline={true}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <Badge
       background="green"
-      size="medium"
+      size="small"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge badgeGreen smallAvatarLargeBadge"
       >
         <CheckIcon>
           <svg
@@ -713,46 +633,14 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 </UserAvatar>
 `;
 
-exports[`renders notification dot without checkmark SVG when \`isChecked\` and \`hasUnreadNotifications\` are true 1`] = `
-<UserAvatar
-  hasUnreadNotifications={true}
-  isChecked={true}
-  size="medium"
->
-  <div
-    className="root rootMedium"
-    style={Object {}}
-  >
-    <Badge
-      background="red"
-      size="medium"
-    >
-      <div
-        className="badge badgeRed mediumAvatarSmallBadge"
-      />
-    </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
-        }
-      }
-    />
-  </div>
-</UserAvatar>
-`;
-
 exports[`renders the initials when the user has no image 1`] = `
 <UserAvatar
-  hasUnreadNotifications={false}
   initials="NC"
   isChecked={false}
-  size="medium"
+  size="small"
 >
   <div
-    className="root rootMedium"
+    className="root rootSmall"
     style={Object {}}
   >
     <span

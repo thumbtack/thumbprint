@@ -59,17 +59,14 @@ test('does not add the `fullName` as `alt` text when no image is provided', () =
 test('does not render a badge when `size` is `xsmall`', () => {
     const wrapperA = mount(<UserAvatar size="xsmall" initials="DK" />);
     const wrapperB = mount(<UserAvatar size="xsmall" isChecked initials="DK" />);
-    const wrapperC = mount(<UserAvatar size="xsmall" hasUnreadNotifications initials="DK" />);
-    const wrapperD = mount(<UserAvatar size="xsmall" isOnline initials="DK" />);
+    const wrapperC = mount(<UserAvatar size="xsmall" isOnline initials="DK" />);
 
     expect(wrapperA.find('.badge').exists()).toBe(false);
     expect(wrapperB.find('.badge').exists()).toBe(false);
     expect(wrapperC.find('.badge').exists()).toBe(false);
-    expect(wrapperD.find('.badge').exists()).toBe(false);
     expect(wrapperA).toMatchSnapshot();
     expect(wrapperB).toMatchSnapshot();
     expect(wrapperC).toMatchSnapshot();
-    expect(wrapperD).toMatchSnapshot();
 });
 
 test('does not render a badge by default', () => {
@@ -85,17 +82,14 @@ test('does not render a badge by default', () => {
 test('renders a badge if size is larger than `xsmall` and valid badge prop is supplied', () => {
     const wrapperA = mount(<UserAvatar isChecked initials="DK" />);
     const wrapperB = mount(<UserAvatar size="medium" isChecked initials="DK" />);
-    const wrapperC = mount(<UserAvatar size="medium" hasUnreadNotifications initials="DK" />);
-    const wrapperD = mount(<UserAvatar size="medium" isOnline initials="DK" />);
+    const wrapperC = mount(<UserAvatar size="medium" isOnline initials="DK" />);
 
     expect(wrapperA.find('.badge').exists()).toBe(true);
     expect(wrapperB.find('.badge').exists()).toBe(true);
     expect(wrapperC.find('.badge').exists()).toBe(true);
-    expect(wrapperD.find('.badge').exists()).toBe(true);
     expect(wrapperA).toMatchSnapshot();
     expect(wrapperB).toMatchSnapshot();
     expect(wrapperC).toMatchSnapshot();
-    expect(wrapperD).toMatchSnapshot();
 });
 
 test('renders an SVG when `isChecked` is true', () => {
@@ -123,18 +117,6 @@ test('renders an SVG when `isChecked` is true', () => {
 test('renders `isOnline` when `isOnline` is true', () => {
     const wrapper = mount(<UserAvatar isOnline />);
     expect(wrapper.find('.badge').exists()).toBe(true);
-    expect(wrapper).toMatchSnapshot();
-});
-
-test('renders notification dot without checkmark SVG when `isChecked` and `hasUnreadNotifications` are true', () => {
-    const wrapper = mount(<UserAvatar isChecked hasUnreadNotifications />);
-    expect(wrapper.find('.badge').exists()).toBe(true);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(false);
     expect(wrapper).toMatchSnapshot();
 });
 

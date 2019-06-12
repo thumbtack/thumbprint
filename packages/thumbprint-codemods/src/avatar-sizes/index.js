@@ -42,8 +42,15 @@ module.exports = (file, api) => {
     const j = api.jscodeshift;
     const ast = j(file.source);
 
-    changePropValues(file, api, ast, 'Avatar', 'size', propsMap, [checkXLargeSize]);
-    changePropValues(file, api, ast, 'EntityAvatar', 'size', propsMap, [checkXLargeSize]);
+    const res1 = changePropValues(file, api, ast, 'Avatar', 'size', propsMap, [checkXLargeSize]);
+    const res2 = changePropValues(file, api, ast, 'EntityAvatar', 'size', propsMap, [
+        checkXLargeSize,
+    ]);
+
+    // Skip the file if neither transformation did anything
+    if (res1 === null && res2 === null) {
+        return null;
+    }
 
     return ast.toSource();
 };
