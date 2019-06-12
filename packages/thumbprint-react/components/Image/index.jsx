@@ -172,7 +172,7 @@ const Image = forwardRef((props, outerRef) => {
         <>
             <picture
                 {...rest}
-                style={aspectRatioParentStyle.style}
+                style={{ ...rest.style, ...aspectRatioParentStyle.style }}
                 className={classNames(styles.picture, className)}
                 ref={el => {
                     // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
