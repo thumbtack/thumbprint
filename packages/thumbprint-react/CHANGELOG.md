@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 4.0.0 - 2019-06-12
+
+### Added
+
+-   [Minor] Allow custom pixel values in avatar size prop. (#25)
+
+### Removed
+
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)
+
+### Changed
+
+-   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)
+
 ## 3.1.2 - 2019-06-11
 
 ### Fixed
