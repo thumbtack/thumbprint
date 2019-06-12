@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)
+
 ### Changed
 
 -   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)

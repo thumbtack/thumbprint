@@ -14,14 +14,12 @@ const CheckIcon = () => (
     </svg>
 );
 
-const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) => {
+const getBadgeProps = ({ size, isChecked, isOnline }) => {
     const props = {
         size,
     };
 
-    if (hasUnreadNotifications) {
-        props.background = 'red';
-    } else if (isChecked) {
+    if (isChecked) {
         props.children = <CheckIcon />;
         props.background = 'green';
     } else if (isOnline) {
@@ -31,8 +29,8 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     return props;
 };
 
-const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
-    size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
+const shouldShowBadge = ({ size, isChecked, isOnline }) =>
+    size !== 'xsmall' && (isChecked || isOnline);
 
 const STYLES = [
     {
@@ -222,11 +220,6 @@ UserAvatar.propTypes = {
      */
     isChecked: PropTypes.bool,
     /**
-     * Should be true if the user has unread notifications. Displays a badge
-     * as an indication.
-     */
-    hasUnreadNotifications: PropTypes.bool,
-    /**
      * Displays a badge if the user is online.
      */
     isOnline: PropTypes.bool,
@@ -238,7 +231,6 @@ UserAvatar.defaultProps = {
     fullName: undefined,
     size: 'small',
     isChecked: false,
-    hasUnreadNotifications: false,
     isOnline: undefined,
 };
 
