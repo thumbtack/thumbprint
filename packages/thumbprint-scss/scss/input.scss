@@ -25,6 +25,20 @@
     &--bad-news {
         color: $tp-color__red;
         border-color: $tp-color__red;
+
+        // This must be three separate rules, not a comma-separated list, to avoid the different
+        // vendor prefixes conflicting.
+        &::-webkit-input-placeholder {
+            color: $tp-color__red;
+        }
+
+        &::-moz-placeholder {
+            color: $tp-color__red;
+        }
+
+        &:-ms-input-placeholder {
+            color: $tp-color__red;
+        }
     }
 
     &[disabled],

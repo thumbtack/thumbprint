@@ -4,7 +4,33 @@
 
 ### Fixed
 
+-   [Patch] Remove unused CSS from `ServiceCardImage`.
+
+## 4.0.1 - 2019-06-13
+
+-   [Patch] Fix incorrect PropTypes for Avatar component.
+
+## 4.0.0 - 2019-06-12
+
+### Added
+
+-   [Minor] Allow custom pixel values in avatar size prop. (#25)
+
+### Removed
+
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)
+
+### Changed
+
+-   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)
+
+## 3.1.2 - 2019-06-11
+
+### Fixed
+
+-   [Patch] Make `Input` and `Textarea` placeholder red when in error mode. (#216)
 -   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
+-   [Patch] Make `Textarea` text black when there is an error but component is focused. (#298)
 
 ## 3.1.1 - 2019-06-07
 

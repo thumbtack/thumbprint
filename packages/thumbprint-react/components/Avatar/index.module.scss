@@ -5,33 +5,33 @@
 }
 
 .rootXsmall {
-    width: 20px;
-    height: 20px;
-    font-size: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 10px; // Non-standard
 }
 
 .rootSmall {
-    width: 32px;
-    height: 32px;
-    font-size: $tp-font__body__3__size;
+    width: 48px;
+    height: 48px;
+    font-size: $tp-font__title__6__size;
 }
 
 .rootMedium {
-    width: 48px;
-    height: 48px;
-    font-size: $tp-font__body__3__size;
+    width: 72px;
+    height: 72px;
+    font-size: $tp-font__title__4__size;
 }
 
 .rootLarge {
-    width: 72px;
-    height: 72px;
-    font-size: $tp-font__body__2__size;
+    width: 100px;
+    height: 100px;
+    font-size: $tp-font__title__2__size;
 }
 
 .rootXlarge {
-    width: 124px;
-    height: 124px;
-    font-size: $tp-font__title__4__size;
+    width: 140px;
+    height: 140px;
+    font-size: 32px; // Non-standard
 }
 
 // baseAvatar is a collection of styles common to all avatars.
