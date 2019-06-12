@@ -42,8 +42,8 @@ const Image = forwardRef((props, outerRef) => {
     // Used by srcSet to determine which image in the list will be requested. This value has to
     // be calculated client-side because we don't know the client's viewport width.
 
-    const sizes =
-        containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
+    const width = containerRef && containerRef.clientWidth;
+    const sizes = width ? `${width}px` : '0px';
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -128,6 +128,8 @@ const Image = forwardRef((props, outerRef) => {
     // --------------------------------------------------------------------------------------------
 
     const aspectRatioBoxProps = {};
+    // This is the `height / width`. For a `16 / 9` image, the value would be `0.5625`.
+    let ratio;
 
     if (containerAspectRatio) {
         // This ensures that the image always renders at that apsect ratio and that lazy-loaded
@@ -135,9 +137,10 @@ const Image = forwardRef((props, outerRef) => {
         // following technique: https://css-tricks.com/aspect-ratio-boxes/
         const h = 100000;
         const w = h * containerAspectRatio;
+        ratio = h / w;
 
         aspectRatioBoxProps.style = {
-            paddingTop: `${(h / w) * 100}%`,
+            paddingTop: `${ratio * 100}%`,
             height: 0,
         };
     }
@@ -200,8 +203,9 @@ const Image = forwardRef((props, outerRef) => {
                     srcSet={shouldLoadImage && imgTagSource ? imgTagSource.srcSet : undefined}
                     // Only add this attribute if lazyload has been triggered.
                     src={shouldLoadImage ? src : undefined}
-                    // Height is generally only used for full-width hero images.
-                    height={height}
+                    // We prefer the user defined height. If none is provided, we calculate a
+                    // height based on provided aspect ratio.
+                    height={height || ratio * width || undefined}
                     alt={alt}
                     // Adds object fit values if specified and adds/removes placeholder padding.
                     style={{
