@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Remove unused CSS from `ServiceCardImage`.
+
 ## 4.0.1 - 2019-06-13
 
 -   [Patch] Fix incorrect PropTypes for Avatar component.
