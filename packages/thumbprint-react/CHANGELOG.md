@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.0 - 2019-06-13
+
 ### Removed
 
 -   [Major] Remove `Avatar` alias for the `UserAvatar` component. Use the [`avatar-import-name` codemod](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-codemods/src/avatar-import-name) to migrate. (#25)
