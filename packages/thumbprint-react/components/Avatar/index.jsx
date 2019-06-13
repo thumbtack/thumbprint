@@ -148,8 +148,7 @@ EntityAvatar.defaultProps = {
     size: 'small',
 };
 
-// TODO(giles): remove this default export once website has been updated to refer only to UserAvatar
-export default class UserAvatar extends React.Component {
+class UserAvatar extends React.Component {
     componentDidMount() {
         // These imports are only needed client-side and allow for lazy-loading images. They should
         // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version

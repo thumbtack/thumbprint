@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] `Avatar` alias for `UserAvatar`.
+
 ### Fixed
 
 -   [Patch] Remove unused CSS from `ServiceCardImage`.
