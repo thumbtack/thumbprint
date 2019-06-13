@@ -5,6 +5,8 @@
 ### Changed
 
 -   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
+-   [Major] Remove `object-fit` CSS from `Image` that was previously being added when the `containerAspectRatio` was present. This prop now only adds placeholder spacing on the `<img>` which is removed onload.
+-   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
 
 ## 5.0.0 - 2019-06-13
 
