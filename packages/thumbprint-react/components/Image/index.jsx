@@ -168,7 +168,7 @@ const Image = forwardRef((props, outerRef) => {
                 {...rest}
                 className={classNames(styles.picture, className)}
                 ref={el => {
-                    // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
+                    // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
                     // element.
                     setContainerRef(el);
 
