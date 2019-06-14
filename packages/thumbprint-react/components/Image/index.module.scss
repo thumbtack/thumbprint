@@ -10,13 +10,9 @@
 
 .imageLoading {
     opacity: 0;
-    // Hides flash of 'alt' text causing spacing issue to placeholder before image loads.
-    overflow: hidden;
 }
 
 .imageLoaded {
     opacity: 1;
     transition: opacity 300ms;
-    // Restores default overflow behavor of image.
-    overflow: visible;
 }
