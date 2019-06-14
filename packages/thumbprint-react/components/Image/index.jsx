@@ -84,7 +84,7 @@ const Image = forwardRef((props, outerRef) => {
 
     const objectFitProps = {};
 
-    const shouldObjectFit = height;
+    const shouldObjectFit = !!height;
     const shouldPolyfillObjectFit =
         canUseDOM &&
         document.documentElement &&
