@@ -5,8 +5,14 @@ description: Display service image with title and description.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="note" title="8:5 aspect ratio">
+    This component uses a placeholder that expects an image in an 8:5 aspect ratio. If a different
+    aspect ratio is used the mismatch will cause a layout shift when the image loads.
+</Alert>
 
 ## With icon
 
@@ -16,7 +22,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
         <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
             <ServiceCardImage
                 alt="Sprinkler and Irrigation System Repair and Maintenance"
-                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
             />
             <ServiceCardTitle>
                 Sprinkler and Irrigation System Repair and Maintenance
@@ -30,7 +36,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
         <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
             <ServiceCardImage
                 alt="Sprinkler and Irrigation System Repair and Maintenance"
-                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+                url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
             />
             <ServiceCardTitle>
                 Sprinkler and Irrigation System Repair and Maintenance
@@ -50,7 +56,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
     <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
         <ServiceCardImage
             alt="Sprinkler and Irrigation System Repair and Maintenance"
-            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/small/standard/hero"
+            url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
         />
         <ServiceCardTitle>Sprinkler and Irrigation System Repair and Maintenance</ServiceCardTitle>
         <ServiceCardDescription>

@@ -1,3 +1,13 @@
+.image,
+.picture {
+    display: block;
+    width: 100%;
+}
+
+.picture {
+    overflow: hidden;
+}
+
 .imageLoading {
     opacity: 0;
 }

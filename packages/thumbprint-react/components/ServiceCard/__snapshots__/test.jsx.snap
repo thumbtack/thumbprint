@@ -82,77 +82,26 @@ exports[`ServiceCardImage render works 1`] = `
     sources={Array []}
     src="https://www.thumbtack.com/image.png"
   >
-    <div
-      className="image"
-      style={
-        Object {
-          "minHeight": "1px",
-          "overflow": "hidden",
-          "position": "relative",
-        }
-      }
+    <picture
+      className="picture image"
     >
-      <div
+      <img
+        alt="duck duck goose"
+        className="image imageLoading"
+        onLoad={[Function]}
+        sizes="0px"
+        src="https://www.thumbtack.com/image.png"
         style={
           Object {
+            "height": 0,
             "paddingTop": "62.5%",
           }
         }
       />
-      <Picture
-        alt="duck duck goose"
-        sizes="0px"
-        sources={Array []}
-        src="https://www.thumbtack.com/image.png"
-        style={
-          Object {
-            "bottom": 0,
-            "display": "block",
-            "fontFamily": "\\"object-fit: cover; object-position: center\\"",
-            "height": "100%",
-            "left": 0,
-            "objectFit": "cover",
-            "objectPosition": "center",
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-            "width": "100%",
-          }
-        }
-      >
-        <picture>
-          <img
-            alt="duck duck goose"
-            className="imageLoading"
-            onLoad={[Function]}
-            sizes="0px"
-            src="https://www.thumbtack.com/image.png"
-            style={
-              Object {
-                "bottom": 0,
-                "display": "block",
-                "fontFamily": "\\"object-fit: cover; object-position: center\\"",
-                "height": "100%",
-                "left": 0,
-                "objectFit": "cover",
-                "objectPosition": "center",
-                "position": "absolute",
-                "right": 0,
-                "top": 0,
-                "width": "100%",
-              }
-            }
-          />
-        </picture>
-      </Picture>
-      <noscript>
-        <Picture
-          alt="duck duck goose"
-          sources={Array []}
-          src="https://www.thumbtack.com/image.png"
-        />
-      </noscript>
-    </div>
+    </picture>
+    <noscript>
+      <picture />
+    </noscript>
   </Image>
 </ServiceCardImage>
 `;
