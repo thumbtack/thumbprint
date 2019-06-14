@@ -39,23 +39,28 @@ describe('calls `onChange` with the correct date', () => {
     });
 
     test('multi date selection', () => {
+        function DatePickerExample({ firstDate, onChange }) {
+            const [value, setValue] = useState(firstDate);
+
+            return (
+                <DatePicker
+                    value={value}
+                    onChange={newValue => {
+                        onChange(newValue);
+                        setValue(newValue);
+                    }}
+                    allowMultiSelection
+                />
+            );
+        }
+
         const firstDate = new Date('2057-09-03T07:00:00.000Z');
         const secondDate = new Date('2057-09-15T07:00:00.000Z');
         const thirdDate = new Date('2057-09-22T07:00:00.000Z');
 
         const onChange = jest.fn();
 
-        // function DatePickerExample() {
-        //     const [value, setValue] = useState(firstDate);
-
-        //     onChange = jest.fn(setValue);
-
-        //     return <DatePicker value={value} onChange={onChange} allowMultiSelection />;
-        // }
-
-        const wrapper = mount(
-            <DatePicker value={firstDate} onChange={onChange} allowMultiSelection />,
-        );
+        const wrapper = mount(<DatePickerExample firstDate={firstDate} onChange={onChange} />);
 
         const allDays = wrapper.find('.DayPicker-Day');
 
