@@ -22,17 +22,11 @@ const sizeClasses = {
     },
 };
 
-const getBadgeSize = children => {
-    if (children) {
-        return 'large';
-    }
-
-    return 'small';
-};
+const getBadgeSize = children => (children ? 'large' : 'small');
 
 const propTypes = {
-    background: PropTypes.oneOf(['red', 'green']).isRequired,
     size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).isRequired,
+    shape: PropTypes.oneOf(['round', 'square']).isRequired,
     children: PropTypes.node,
 };
 
@@ -44,17 +38,18 @@ const defaultProps = {
  * `Badge` appears on the top-right corner of an `Avatar`. It is used to either
  * show a checkmark or an indicator that there are unread notifications.
  */
-export default function Badge({ background, size, children }) {
+export default function Badge({ size, shape, children }) {
     return (
         <div
             className={classNames(
                 styles.badge,
                 {
-                    [styles.badgeRed]: background === 'red',
-                    [styles.badgeGreen]: background === 'green',
+                    [styles.badgeRound]: shape === 'round',
+                    [styles.badgeSquare]: shape === 'square',
                 },
                 sizeClasses[size][getBadgeSize(children)],
             )}
+            style={shape === 'square' ? { top: 0, right: 0 } : {}}
         >
             {children}
         </div>

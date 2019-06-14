@@ -15,21 +15,6 @@ const CheckIcon = () => (
     </svg>
 );
 
-const getBadgeProps = ({ size, isChecked, isOnline }) => {
-    const props = {
-        size,
-    };
-
-    if (isChecked) {
-        props.children = <CheckIcon />;
-        props.background = 'green';
-    } else if (isOnline) {
-        props.background = 'green';
-    }
-
-    return props;
-};
-
 const shouldShowBadge = ({ size, isChecked, isOnline }) =>
     size !== 'xsmall' && (isChecked || isOnline);
 
@@ -84,7 +69,8 @@ class EntityAvatar extends React.Component {
     }
 
     render() {
-        const { imageUrl, size, initial, fullName } = this.props;
+        const { props } = this;
+        const { imageUrl, size, initial, fullName, isChecked } = props;
 
         return (
             <div
@@ -97,6 +83,11 @@ class EntityAvatar extends React.Component {
                 })}
                 style={isNumber(size) ? { width: size, height: size } : {}}
             >
+                {shouldShowBadge(props) && (
+                    <Badge size={size} shape="square">
+                        {isChecked && <CheckIcon />}
+                    </Badge>
+                )}
                 {imageUrl ? (
                     <img
                         className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
@@ -139,6 +130,10 @@ EntityAvatar.propTypes = {
         PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
         PropTypes.number,
     ]),
+    /**
+     * Displays a badge if the user is online.
+     */
+    isOnline: PropTypes.bool,
 };
 
 EntityAvatar.defaultProps = {
@@ -180,7 +175,11 @@ class UserAvatar extends React.Component {
                 })}
                 style={isNumber(props.size) ? { width: props.size, height: props.size } : {}}
             >
-                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
+                {shouldShowBadge(props) && (
+                    <Badge size={props.size} shape="round">
+                        {props.isChecked && <CheckIcon />}
+                    </Badge>
+                )}
                 {props.imageUrl ? (
                     <img
                         className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}

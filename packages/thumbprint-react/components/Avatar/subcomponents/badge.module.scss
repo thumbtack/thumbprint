@@ -3,24 +3,24 @@
 .badge {
     color: $tp-color__white;
     position: absolute;
-    border-radius: 50%;
     border: 2px solid $tp-color__white;
     font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $tp-color__green;
 
     svg {
         fill: currentColor;
     }
 }
 
-.badgeRed {
-    background-color: $tp-color__red;
+.badgeRound {
+    border-radius: $tp-border-radius__full;
 }
 
-.badgeGreen {
-    background-color: $tp-color__green;
+.badgeSquare {
+    border-radius: $tp-border-radius__base;
 }
 
 // Ideally we'd use fewer hard-coded pixels here in favor of percentage-based
