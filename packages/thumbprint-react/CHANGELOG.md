@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Rewrite `DatePicker` to be a fully controlled component. (#12)
+
 ## 5.0.0 - 2019-06-13
 
 ### Removed

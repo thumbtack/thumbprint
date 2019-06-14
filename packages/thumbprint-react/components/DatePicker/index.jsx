@@ -8,97 +8,72 @@ import findIndex from 'lodash/findIndex';
 
 import styles from './index.module.scss';
 
-import { validateProps, normaliseValue } from './utilities';
-
-const getStateFromProps = value => ({
-    selectedDays: normaliseValue(value),
-});
+import { validateProps, normaliseValue, roundToStartOfDay } from './utilities';
 
 /**
  * Thin wrapper around `react-day-picker` that renders a calendar.
  */
-export default class DatePicker extends React.Component {
-    constructor(props) {
-        super(props);
+export default function DatePicker(props) {
+    validateProps(props);
 
-        validateProps(props);
+    const {
+        value,
+        onChange,
+        disabledDays,
+        lastMonth,
+        allowMultiSelection,
+        onMonthChange,
+        daysThemeDotIndicator,
+        daysThemeStrikeout,
+    } = props;
 
-        const { value } = this.props;
-        this.state = getStateFromProps(value);
+    const selectedDays = normaliseValue(value);
 
-        this.handleChange = this.handleChange.bind(this);
+    const modifiers = {};
+
+    if (typeof daysThemeDotIndicator === 'function') {
+        modifiers['theme-dot'] = daysThemeDotIndicator;
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState(getStateFromProps(nextProps.value));
+    if (typeof daysThemeStrikeout === 'function') {
+        modifiers['theme-strikeout'] = daysThemeStrikeout;
     }
 
-    // Internal change handler to update our record of multiple selected dates. Also calls the
-    // external `onChange` callback with all the selected dates if one is provided.
-    handleChange(day, { selected, disabled }) {
-        if (disabled) {
-            return;
-        }
+    return (
+        <div className={styles.root}>
+            <DayPicker
+                disabledDays={disabledDays}
+                fromMonth={get(disabledDays, 'before', null)}
+                toMonth={lastMonth}
+                initialMonth={selectedDays[0]}
+                selectedDays={selectedDays}
+                onMonthChange={onMonthChange}
+                modifiers={modifiers}
+                onDayClick={(day, { selected, disabled }) => {
+                    if (disabled) {
+                        return;
+                    }
 
-        const { selectedDays } = this.state;
-        const { allowMultiSelection, onChange } = this.props;
+                    let newSelectedDays = normaliseValue(value);
 
-        let newSelectedDays = selectedDays;
+                    if (allowMultiSelection) {
+                        if (selected) {
+                            const selectedIndex = findIndex(newSelectedDays, selectedDay =>
+                                DateUtils.isSameDay(selectedDay, day),
+                            );
+                            newSelectedDays.splice(selectedIndex, 1);
+                        } else {
+                            newSelectedDays.push(day);
+                        }
+                    } else {
+                        newSelectedDays = [day];
+                    }
 
-        if (allowMultiSelection) {
-            if (selected) {
-                const selectedIndex = findIndex(newSelectedDays, selectedDay =>
-                    DateUtils.isSameDay(selectedDay, day),
-                );
-                newSelectedDays.splice(selectedIndex, 1);
-            } else {
-                newSelectedDays.push(day);
-            }
-        } else {
-            newSelectedDays = [day];
-        }
-
-        this.setState({ selectedDays: newSelectedDays }, () =>
-            onChange(
-                map(newSelectedDays, d => new Date(d.getFullYear(), d.getMonth(), d.getDate())),
-            ),
-        );
-    }
-
-    render() {
-        const {
-            disabledDays,
-            lastMonth,
-            onMonthChange,
-            daysThemeDotIndicator,
-            daysThemeStrikeout,
-        } = this.props;
-        const { selectedDays } = this.state;
-        const modifiers = {};
-
-        if (typeof daysThemeDotIndicator === 'function') {
-            modifiers['theme-dot'] = daysThemeDotIndicator;
-        }
-
-        if (typeof daysThemeStrikeout === 'function') {
-            modifiers['theme-strikeout'] = daysThemeStrikeout;
-        }
-
-        return (
-            <div className={styles.root}>
-                <DayPicker
-                    disabledDays={disabledDays}
-                    fromMonth={get(disabledDays, 'before', null)}
-                    toMonth={lastMonth}
-                    initialMonth={selectedDays[0]}
-                    selectedDays={selectedDays}
-                    onDayClick={this.handleChange}
-                    onMonthChange={onMonthChange}
-                    modifiers={modifiers}
-                />
-            </div>
-        );
-    }
+                    onChange(map(newSelectedDays, roundToStartOfDay));
+                }}
+            />
+        </div>
+    );
 }
 
 DatePicker.defaultProps = {
