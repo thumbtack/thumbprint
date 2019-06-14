@@ -143,7 +143,7 @@ const Image = forwardRef((props, outerRef) => {
     }
 
     // --------------------------------------------------------------------------------------------
-    // Sources and srrSets
+    // Sources and srcSets
     // --------------------------------------------------------------------------------------------
 
     // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
@@ -167,7 +167,7 @@ const Image = forwardRef((props, outerRef) => {
                 {...rest}
                 className={classNames(styles.picture, className)}
                 ref={el => {
-                    // Using a callback `ref` on this `div` allows us to have multiple `ref`s on one
+                    // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
                     // element.
                     setContainerRef(el);
 
