@@ -144,7 +144,7 @@ const Image = forwardRef((props, outerRef) => {
     }
 
     // --------------------------------------------------------------------------------------------
-    // Sources and scrSets
+    // Sources and srcSets
     // --------------------------------------------------------------------------------------------
 
     // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
