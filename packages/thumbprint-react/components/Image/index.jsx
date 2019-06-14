@@ -39,9 +39,8 @@ const Image = forwardRef((props, outerRef) => {
     // Sizes
     // --------------------------------------------------------------------------------------------
 
-    // Used by srcSet to determine which image in the list will be requested. Unless the image
-    // is full width this value has to be calculated client-side because we don't know the
-    // viewport width.
+    // Used by srcSet to determine which image in the list will be requested. This value has to be
+    // calculated client-side because we don't know the viewport width.
 
     const sizes =
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
@@ -144,7 +143,7 @@ const Image = forwardRef((props, outerRef) => {
     }
 
     // --------------------------------------------------------------------------------------------
-    // Sources and scrSets
+    // Sources and srrSets
     // --------------------------------------------------------------------------------------------
 
     // We separate `webp` from the `jpeg`/`png` so that we can apply the `imgTagSource` directly
