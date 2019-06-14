@@ -39,12 +39,21 @@ describe('calls `onChange` with the correct date', () => {
     });
 
     test('multi date selection', () => {
+        // Wrapper component to allow us to write integration tests for a controlled component.
+        //
+        // Don't need to write proptypes for a one-off wrapper used inside a test
+        // eslint-disable-next-line react/prop-types
         function DatePickerExample({ firstDate, onChange }) {
             const [value, setValue] = useState(firstDate);
 
             return (
                 <DatePicker
                     value={value}
+                    // We need to call these two functions separately here. `onChange` is the
+                    // external reference to `jest.fn` that lets us make assertions about how this
+                    // function was called. `setValue` is the React Hook that actually updates the
+                    // state so we can track changes over the whole integration test.
+                    // TODO: maybe extract this out or revisit if this becomes a common pattern
                     onChange={newValue => {
                         onChange(newValue);
                         setValue(newValue);
