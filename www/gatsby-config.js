@@ -73,7 +73,14 @@ module.exports = {
                         return 'ThumbprintToken';
                     }
 
-                    return 'Json';
+                    if (
+                        node.relativePath === 'thumbprint-scss/package.json' ||
+                        node.relativePath === 'thumbprint-react/package.json'
+                    ) {
+                        return 'ThumbprintComponent';
+                    }
+
+                    return 'DefaultJson';
                 },
             },
         },
