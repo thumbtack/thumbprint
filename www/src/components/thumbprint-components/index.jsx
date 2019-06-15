@@ -14,7 +14,7 @@ export const query = graphql`
     fragment PlatformNavFragment on SitePage {
         path
     }
-    fragment PackageTableFragment on Json {
+    fragment PackageTableFragment on ThumbprintComponent {
         name
         version
         homepage

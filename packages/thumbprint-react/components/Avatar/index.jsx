@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
 import Image from '../Image/index.jsx';
 
 const dimensions = {
-    xsmall: '20px',
-    small: '32px',
-    medium: '48px',
-    large: '72px',
-    xlarge: '124px',
+    xsmall: '32px',
+    small: '48px',
+    medium: '72px',
+    large: '100px',
+    xlarge: '140px',
 };
 
 const CheckIcon = () => (
@@ -23,14 +24,12 @@ const CheckIcon = () => (
     </svg>
 );
 
-const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) => {
+const getBadgeProps = ({ size, isChecked, isOnline }) => {
     const props = {
         size,
     };
 
-    if (hasUnreadNotifications) {
-        props.background = 'red';
-    } else if (isChecked) {
+    if (isChecked) {
         props.children = <CheckIcon />;
         props.background = 'green';
     } else if (isOnline) {
@@ -40,8 +39,8 @@ const getBadgeProps = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
     return props;
 };
 
-const shouldShowBadge = ({ size, hasUnreadNotifications, isChecked, isOnline }) =>
-    size !== 'xsmall' && (hasUnreadNotifications || isChecked || isOnline);
+const shouldShowBadge = ({ size, isChecked, isOnline }) =>
+    size !== 'xsmall' && (isChecked || isOnline);
 
 const STYLES = [
     {
@@ -79,11 +78,13 @@ function EntityAvatar({ imageUrl, size, initial, fullName }) {
     return (
         <div
             className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
                 [styles.rootSmall]: size === 'small',
                 [styles.rootMedium]: size === 'medium',
                 [styles.rootLarge]: size === 'large',
                 [styles.rootXlarge]: size === 'xlarge',
             })}
+            style={isNumber(size) ? { width: size, height: size } : {}}
         >
             {imageUrl ? (
                 <Image
@@ -123,19 +124,22 @@ EntityAvatar.propTypes = {
     /**
      * The set of avatar sizes that we support.
      */
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+    size: PropTypes.oneOfType([
+        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+        PropTypes.number,
+    ]),
 };
 
 EntityAvatar.defaultProps = {
     imageUrl: undefined,
     initial: undefined,
     fullName: undefined,
-    size: 'medium',
+    size: 'small',
 };
 
-// TODO(giles): remove this default export once website has been updated to refer only to UserAvatar
-export default function UserAvatar(props) {
-    const { size, imageUrl, fullName, initials } = props;
+function UserAvatar(props) {
+    const { size, fullName, imageUrl, initials } = props;
+
     return (
         <div
             className={classNames(styles.root, {
@@ -145,6 +149,7 @@ export default function UserAvatar(props) {
                 [styles.rootLarge]: size === 'large',
                 [styles.rootXlarge]: size === 'xlarge',
             })}
+            style={isNumber(size) ? { width: size, height: size } : {}}
         >
             {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
             {imageUrl ? (
@@ -186,16 +191,14 @@ UserAvatar.propTypes = {
     /**
      * The set of avatar sizes that we support.
      */
-    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    size: PropTypes.oneOfType([
+        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+        PropTypes.number,
+    ]),
     /**
      * Displays a badge of a checkmark next to the `Avatar`.
      */
     isChecked: PropTypes.bool,
-    /**
-     * Should be true if the user has unread notifications. Displays a badge
-     * as an indication.
-     */
-    hasUnreadNotifications: PropTypes.bool,
     /**
      * Displays a badge if the user is online.
      */
@@ -206,9 +209,8 @@ UserAvatar.defaultProps = {
     imageUrl: undefined,
     initials: undefined,
     fullName: undefined,
-    size: 'medium',
+    size: 'small',
     isChecked: false,
-    hasUnreadNotifications: false,
     isOnline: undefined,
 };
 

@@ -93,10 +93,7 @@ exports[`ServiceCardImage render works 1`] = `
         src="https://www.thumbtack.com/image.png"
         style={
           Object {
-            "fontFamily": "\\"object-fit: cover; object-position: center\\"",
             "height": 0,
-            "objectFit": "cover",
-            "objectPosition": "center",
             "paddingTop": "62.5%",
           }
         }

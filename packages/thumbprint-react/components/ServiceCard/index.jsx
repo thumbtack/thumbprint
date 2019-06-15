@@ -75,12 +75,12 @@ ServiceCard.defaultProps = {
 
 ServiceCardImage.propTypes = {
     /**
-     * URL pointing to image to be displayed.
+     * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
      */
     url: PropTypes.string.isRequired,
     /**
      * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
+     * density and the width of the rendered image. Images must have an aspect ratio of 8:5.
      */
     sources: PropTypes.arrayOf(
         PropTypes.shape({

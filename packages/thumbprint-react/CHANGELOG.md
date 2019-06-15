@@ -2,6 +2,41 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
+-   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
+-   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
+-   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
+
+## 5.0.0 - 2019-06-13
+
+### Removed
+
+-   [Major] Remove `Avatar` alias for the `UserAvatar` component. Use the [`avatar-import-name` codemod](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-codemods/src/avatar-import-name) to migrate. (#25)
+
+### Fixed
+
+-   [Patch] Remove unused CSS from `ServiceCardImage`.
+
+## 4.0.1 - 2019-06-13
+
+-   [Patch] Fix incorrect PropTypes for Avatar component.
+
+## 4.0.0 - 2019-06-12
+
+### Added
+
+-   [Minor] Allow custom pixel values in avatar size prop. (#25)
+
+### Removed
+
+-   [Major] Remove `hasUnreadNotifications` prop from `UserAvatar`. (#25)
+
+### Changed
+
+-   [Major] Update dimensions of `EntityAvatar` and `UserAvatar` at all sizes. (#25)
+
 ## 3.1.2 - 2019-06-11
 
 ### Fixed

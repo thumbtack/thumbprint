@@ -39,8 +39,8 @@ const Image = forwardRef((props, outerRef) => {
     // Sizes
     // --------------------------------------------------------------------------------------------
 
-    // Used by srcSet to determine which image in the list will be requested. This value has to
-    // be calculated client-side because we don't know the client's viewport width.
+    // Used by srcSet to determine which image in the list will be requested. This value has to be
+    // calculated client-side because we don't know the viewport width.
 
     const sizes =
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
@@ -83,7 +83,7 @@ const Image = forwardRef((props, outerRef) => {
 
     const objectFitProps = {};
 
-    const shouldObjectFit = height || containerAspectRatio;
+    const shouldObjectFit = !!height;
     const shouldPolyfillObjectFit =
         canUseDOM &&
         document.documentElement &&
@@ -124,15 +124,15 @@ const Image = forwardRef((props, outerRef) => {
     }
 
     // --------------------------------------------------------------------------------------------
-    // Image Aspect Ratio
+    // Image Aspect Ratio used for image placeholder
     // --------------------------------------------------------------------------------------------
 
     const aspectRatioBoxProps = {};
 
     if (containerAspectRatio) {
-        // This ensures that the image always renders at that apsect ratio and that lazy-loaded
-        // images don't cause the browser scroll to jump once the image has loaded. It uses the
-        // following technique: https://css-tricks.com/aspect-ratio-boxes/
+        // This ensures that lazy-loaded images don't cause the browser scroll to jump once the
+        // image has loaded. It uses the following technique:
+        // https://css-tricks.com/aspect-ratio-boxes/
         const h = 100000;
         const w = h * containerAspectRatio;
 
@@ -255,21 +255,18 @@ Image.propTypes = {
      */
     height: PropTypes.string,
     /**
-     * Crops the image to a specific aspect ratio and creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/)
-     * for the image. The placeholder prevents the browser scroll from jumping when the image is
-     * lazy-loaded.
+     * Creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/) for the image.
+     * The placeholder prevents the browser scroll from jumping when the image is lazy-loaded.
      */
     containerAspectRatio: PropTypes.number,
     /**
-     * Provides control over how an image should be resized to fit the container. This controls the
-     * `object-fit` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
-     * "crop" an image.
+     * Provides control over how the image should be resized to fit the container. This controls the
+     * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
      */
     objectFit: PropTypes.oneOf(['cover', 'contain']),
     /**
-     * Provides control over how an image aligned in the container. This controls the
-     * `object-position` CSS property. It is only useful if `height` or `containerAspectRatio` are used to
-     * "crop" an image.
+     * Provides control over how the image position in the container. This controls the
+     * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
 };
