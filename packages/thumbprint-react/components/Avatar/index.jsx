@@ -74,38 +74,36 @@ const getStyle = initials =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
-function EntityAvatar({ imageUrl, size, initial, fullName }) {
-    return (
-        <div
-            className={classNames(styles.root, {
-                [styles.rootXsmall]: size === 'xsmall',
-                [styles.rootSmall]: size === 'small',
-                [styles.rootMedium]: size === 'medium',
-                [styles.rootLarge]: size === 'large',
-                [styles.rootXlarge]: size === 'xlarge',
-            })}
-            style={isNumber(size) ? { width: size, height: size } : {}}
-        >
-            {imageUrl ? (
-                <Image
-                    className={styles.squareAvatar}
-                    src={imageUrl}
-                    alt={fullName && `Avatar for ${fullName}`}
-                    title={fullName && `Avatar for ${fullName}`}
-                    height={dimensions[size]}
-                />
-            ) : (
-                <span
-                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                    style={getStyle(initial)}
-                    title={fullName && `Avatar for ${fullName}`}
-                >
-                    {initial}
-                </span>
-            )}
-        </div>
-    );
-}
+const EntityAvatar = ({ imageUrl, size, initial, fullName }) => (
+    <div
+        className={classNames(styles.root, {
+            [styles.rootXsmall]: size === 'xsmall',
+            [styles.rootSmall]: size === 'small',
+            [styles.rootMedium]: size === 'medium',
+            [styles.rootLarge]: size === 'large',
+            [styles.rootXlarge]: size === 'xlarge',
+        })}
+        style={isNumber(size) ? { width: size, height: size } : {}}
+    >
+        {imageUrl ? (
+            <Image
+                className={styles.squareAvatar}
+                src={imageUrl}
+                alt={fullName && `Avatar for ${fullName}`}
+                title={fullName && `Avatar for ${fullName}`}
+                height={dimensions[size]}
+            />
+        ) : (
+            <span
+                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                style={getStyle(initial)}
+                title={fullName && `Avatar for ${fullName}`}
+            >
+                {initial}
+            </span>
+        )}
+    </div>
+);
 
 EntityAvatar.propTypes = {
     /**
@@ -137,7 +135,7 @@ EntityAvatar.defaultProps = {
     size: 'small',
 };
 
-function UserAvatar(props) {
+const UserAvatar = props => {
     const { size, fullName, imageUrl, initials } = props;
 
     return (
@@ -171,7 +169,7 @@ function UserAvatar(props) {
             )}
         </div>
     );
-}
+};
 
 UserAvatar.propTypes = {
     /**
