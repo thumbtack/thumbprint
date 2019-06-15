@@ -8,6 +8,7 @@
 -   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
 -   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
 -   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
+-   [Patch] Use `Image` component within `Avatar`.
 
 ## 5.0.0 - 2019-06-13
 
@@ -44,10 +45,6 @@
 -   [Patch] Make `Input` and `Textarea` placeholder red when in error mode. (#216)
 -   [Patch] Fix `DatePicker` multi-selection bug in IE 11.
 -   [Patch] Make `Textarea` text black when there is an error but component is focused. (#298)
-
-### Changed
-
--   [Patch] Simplify `Image` component by removing placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
 
 ## 3.1.1 - 2019-06-07
 
