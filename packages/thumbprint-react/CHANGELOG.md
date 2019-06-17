@@ -6,6 +6,11 @@
 
 -   [Patch] Use `Image` component within `Avatar`. (#69)
 
+### Added
+
+-   [Minor] Add support for `isOnline` prop to `EntityAvatar`. (#25)
+-   [Minor] Enable avatar badges at extra small size. (#318)
+
 ## 6.0.0 - 2019-06-17
 
 ### Changed

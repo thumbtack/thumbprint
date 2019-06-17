@@ -24,24 +24,6 @@ const CheckIcon = () => (
     </svg>
 );
 
-const getBadgeProps = ({ size, isChecked, isOnline }) => {
-    const props = {
-        size,
-    };
-
-    if (isChecked) {
-        props.children = <CheckIcon />;
-        props.background = 'green';
-    } else if (isOnline) {
-        props.background = 'green';
-    }
-
-    return props;
-};
-
-const shouldShowBadge = ({ size, isChecked, isOnline }) =>
-    size !== 'xsmall' && (isChecked || isOnline);
-
 const STYLES = [
     {
         color: tokens.tpColorIndigo600,
@@ -74,7 +56,7 @@ const getStyle = initials =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
-const EntityAvatar = ({ imageUrl, size, initial, fullName }) => (
+const EntityAvatar = ({ imageUrl, size, initial, fullName, isOnline }) => (
     <div
         className={classNames(styles.root, {
             [styles.rootXsmall]: size === 'xsmall',
@@ -86,15 +68,13 @@ const EntityAvatar = ({ imageUrl, size, initial, fullName }) => (
         style={
             isNumber(size)
                 ? { width: size, height: size }
-                : {
-                      width: dimensions[size],
-                      height: dimensions[size],
-                  }
+                : { width: dimensions[size], height: dimensions[size] }
         }
     >
+        {isOnline && <Badge size={size} type="entity" />}
         {imageUrl ? (
             <Image
-                className={styles.squareAvatar}
+                className={styles.circleAvatar}
                 src={imageUrl}
                 alt={fullName && `Avatar for ${fullName}`}
                 title={fullName && `Avatar for ${fullName}`}
@@ -133,6 +113,10 @@ EntityAvatar.propTypes = {
         PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
         PropTypes.number,
     ]),
+    /**
+     * Displays a badge if the user is online.
+     */
+    isOnline: PropTypes.bool,
 };
 
 EntityAvatar.defaultProps = {
@@ -140,50 +124,48 @@ EntityAvatar.defaultProps = {
     initial: undefined,
     fullName: undefined,
     size: 'small',
+    isOnline: false,
 };
 
-const UserAvatar = props => {
-    const { size, fullName, imageUrl, initials } = props;
-
-    return (
-        <div
-            className={classNames(styles.root, {
-                [styles.rootXsmall]: size === 'xsmall',
-                [styles.rootSmall]: size === 'small',
-                [styles.rootMedium]: size === 'medium',
-                [styles.rootLarge]: size === 'large',
-                [styles.rootXlarge]: size === 'xlarge',
-            })}
-            style={
-                isNumber(size)
-                    ? { width: size, height: size }
-                    : {
-                          width: dimensions[size],
-                          height: dimensions[size],
-                      }
-            }
-        >
-            {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-            {imageUrl ? (
-                <Image
-                    className={styles.circleAvatar}
-                    src={imageUrl}
-                    alt={fullName && `Avatar for ${fullName}`}
-                    title={fullName && `Avatar for ${fullName}`}
-                    height={dimensions[size]}
-                />
-            ) : (
-                <span
-                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                    style={getStyle(initials)}
-                    title={fullName && `Avatar for ${fullName}`}
-                >
-                    {initials}
-                </span>
-            )}
-        </div>
-    );
-};
+const UserAvatar = ({ imageUrl, size, initials, fullName, isOnline, isChecked }) => (
+    <div
+        className={classNames(styles.root, {
+            [styles.rootXsmall]: size === 'xsmall',
+            [styles.rootSmall]: size === 'small',
+            [styles.rootMedium]: size === 'medium',
+            [styles.rootLarge]: size === 'large',
+            [styles.rootXlarge]: size === 'xlarge',
+        })}
+        style={
+            isNumber(size)
+                ? { width: size, height: size }
+                : { width: dimensions[size], height: dimensions[size] }
+        }
+    >
+        {(isOnline || isChecked) && (
+            <Badge size={size} type="user">
+                {isChecked && <CheckIcon />}
+            </Badge>
+        )}
+        {imageUrl ? (
+            <Image
+                className={styles.circleAvatar}
+                src={imageUrl}
+                alt={fullName && `Avatar for ${fullName}`}
+                title={fullName && `Avatar for ${fullName}`}
+                height={dimensions[size]}
+            />
+        ) : (
+            <span
+                className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                style={getStyle(initials)}
+                title={fullName && `Avatar for ${fullName}`}
+            >
+                {initials}
+            </span>
+        )}
+    </div>
+);
 
 UserAvatar.propTypes = {
     /**
@@ -208,7 +190,7 @@ UserAvatar.propTypes = {
         PropTypes.number,
     ]),
     /**
-     * Displays a badge of a checkmark next to the `Avatar`.
+     * @deprecated: Displays a badge of a checkmark next to the `Avatar`.
      */
     isChecked: PropTypes.bool,
     /**

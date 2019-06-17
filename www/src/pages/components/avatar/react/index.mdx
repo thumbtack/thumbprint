@@ -131,22 +131,75 @@ When a user does not have an image, an `Avatar` can display the user’s initial
 ## Avatar Badges
 
 <DeprecatedComponentAlert>
-    Avatar badges are deprecated. Status indicators such as "online" status, hired checkmarks, and
-    notification alerts should be implemented as separate elements placed next to the avatar.
+    The checked badge is deprecated. To indicate hired status of a user, show this information
+    separately next to the avatar. Only the online badge is supported by both components. Checked is
+    only supported by UserAvatar.
 </DeprecatedComponentAlert>
 
-Badges can be added to avatars to denote information including hired status and unread notifications. These badges cannot be used on the `xsmall` variation.
+Badges can be added to avatars to denote information including hired status and online status.
 
 ### Checked
 
 ```jsx
-<UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="xlarge" />
+<div className="flex items-center mb4">
+    <div className="mr2">
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="xlarge" />
+    </div>
+    <div className="mr2">
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="large" />
+    </div>
+    <div className="mr2">
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="medium" />
+    </div>
+    <div className="mr2">
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="small" />
+    </div>
+    <div className="mr2">
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" isChecked size="xsmall" />
+    </div>
+</div>
 ```
 
 ### Online
 
 ```jsx
-<UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="medium" />
+<div>
+    <div className="flex items-center mb4">
+        <div className="mr2">
+            <UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="xlarge" />
+        </div>
+        <div className="mr2">
+            <UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="large" />
+        </div>
+        <div className="mr2">
+            <UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="medium" />
+        </div>
+        <div className="mr2">
+            <UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="small" />
+        </div>
+        <div className="mr2">
+            <UserAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="xsmall" />
+        </div>
+    </div>
+
+    <div className="flex items-center">
+        <div className="mr2">
+            <EntityAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="xlarge" />
+        </div>
+        <div className="mr2">
+            <EntityAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="large" />
+        </div>
+        <div className="mr2">
+            <EntityAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="medium" />
+        </div>
+        <div className="mr2">
+            <EntityAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="small" />
+        </div>
+        <div className="mr2">
+            <EntityAvatar imageUrl="https://www.placecage.com/640/480" isOnline size="xsmall" />
+        </div>
+    </div>
+</div>
 ```
 
 <ComponentFooter data={props.data} />
