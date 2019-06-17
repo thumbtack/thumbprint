@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Patch] `Image` now uses `overflow:hidden` to prevent incorrect image height due to `alt` text. (#239)
+
 ## 6.0.0 - 2019-06-17
 
 ### Changed
