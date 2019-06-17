@@ -71,10 +71,9 @@ const EntityAvatar = ({ imageUrl, size, initial, fullName, isOnline }) => (
                 : { width: dimensions[size], height: dimensions[size] }
         }
     >
-        {isOnline && <Badge size={size} type="entity" />}
         {imageUrl ? (
             <Image
-                className={styles.circleAvatar}
+                className={styles.squareAvatar}
                 src={imageUrl}
                 alt={fullName && `Avatar for ${fullName}`}
                 title={fullName && `Avatar for ${fullName}`}
@@ -89,6 +88,7 @@ const EntityAvatar = ({ imageUrl, size, initial, fullName, isOnline }) => (
                 {initial}
             </span>
         )}
+        {isOnline && <Badge size={size} type="entity" />}
     </div>
 );
 
@@ -142,11 +142,6 @@ const UserAvatar = ({ imageUrl, size, initials, fullName, isOnline, isChecked })
                 : { width: dimensions[size], height: dimensions[size] }
         }
     >
-        {(isOnline || isChecked) && (
-            <Badge size={size} type="user">
-                {isChecked && <CheckIcon />}
-            </Badge>
-        )}
         {imageUrl ? (
             <Image
                 className={styles.circleAvatar}
@@ -163,6 +158,11 @@ const UserAvatar = ({ imageUrl, size, initials, fullName, isOnline, isChecked })
             >
                 {initials}
             </span>
+        )}
+        {(isOnline || isChecked) && (
+            <Badge size={size} type="user">
+                {isChecked && <CheckIcon />}
+            </Badge>
         )}
     </div>
 );
