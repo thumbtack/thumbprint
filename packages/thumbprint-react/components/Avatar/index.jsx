@@ -15,24 +15,6 @@ const CheckIcon = () => (
     </svg>
 );
 
-const getBadgeProps = ({ size, isChecked, isOnline }) => {
-    const props = {
-        size,
-    };
-
-    if (isChecked) {
-        props.children = <CheckIcon />;
-        props.background = 'green';
-    } else if (isOnline) {
-        props.background = 'green';
-    }
-
-    return props;
-};
-
-const shouldShowBadge = ({ size, isChecked, isOnline }) =>
-    size !== 'xsmall' && (isChecked || isOnline);
-
 const STYLES = [
     {
         color: tokens.tpColorIndigo600,
@@ -84,7 +66,7 @@ class EntityAvatar extends React.Component {
     }
 
     render() {
-        const { imageUrl, size, initial, fullName } = this.props;
+        const { imageUrl, size, initial, fullName, isOnline } = this.props;
 
         return (
             <div
@@ -97,6 +79,7 @@ class EntityAvatar extends React.Component {
                 })}
                 style={isNumber(size) ? { width: size, height: size } : {}}
             >
+                {isOnline && <Badge size={size} type="entity" />}
                 {imageUrl ? (
                     <img
                         className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
@@ -139,6 +122,10 @@ EntityAvatar.propTypes = {
         PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
         PropTypes.number,
     ]),
+    /**
+     * Displays a badge if the user is online.
+     */
+    isOnline: PropTypes.bool,
 };
 
 EntityAvatar.defaultProps = {
@@ -146,6 +133,7 @@ EntityAvatar.defaultProps = {
     initial: undefined,
     fullName: undefined,
     size: 'small',
+    isOnline: false,
 };
 
 class UserAvatar extends React.Component {
@@ -167,34 +155,38 @@ class UserAvatar extends React.Component {
     }
 
     render() {
-        const { props } = this;
+        const { imageUrl, size, initials, fullName, isOnline, isChecked } = this.props;
 
         return (
             <div
                 className={classNames(styles.root, {
-                    [styles.rootXsmall]: props.size === 'xsmall',
-                    [styles.rootSmall]: props.size === 'small',
-                    [styles.rootMedium]: props.size === 'medium',
-                    [styles.rootLarge]: props.size === 'large',
-                    [styles.rootXlarge]: props.size === 'xlarge',
+                    [styles.rootXsmall]: size === 'xsmall',
+                    [styles.rootSmall]: size === 'small',
+                    [styles.rootMedium]: size === 'medium',
+                    [styles.rootLarge]: size === 'large',
+                    [styles.rootXlarge]: size === 'xlarge',
                 })}
-                style={isNumber(props.size) ? { width: props.size, height: props.size } : {}}
+                style={isNumber(size) ? { width: size, height: size } : {}}
             >
-                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-                {props.imageUrl ? (
+                {(isOnline || isChecked) && (
+                    <Badge size={size} type="user">
+                        {isChecked && <CheckIcon />}
+                    </Badge>
+                )}
+                {imageUrl ? (
                     <img
                         className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
-                        data-src={props.imageUrl}
-                        alt={props.fullName && `Avatar for ${props.fullName}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
+                        data-src={imageUrl}
+                        alt={fullName && `Avatar for ${fullName}`}
+                        title={fullName && `Avatar for ${fullName}`}
                     />
                 ) : (
                     <span
                         className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        style={getStyle(props.initials)}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
+                        style={getStyle(initials)}
+                        title={fullName && `Avatar for ${fullName}`}
                     >
-                        {props.initials}
+                        {initials}
                     </span>
                 )}
             </div>
@@ -225,7 +217,7 @@ UserAvatar.propTypes = {
         PropTypes.number,
     ]),
     /**
-     * Displays a badge of a checkmark next to the `Avatar`.
+     * @deprecated: Displays a badge of a checkmark next to the `Avatar`.
      */
     isChecked: PropTypes.bool,
     /**
