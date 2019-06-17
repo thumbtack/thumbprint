@@ -8,7 +8,12 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Image
       alt=""
@@ -53,7 +58,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar squareAvatar"
