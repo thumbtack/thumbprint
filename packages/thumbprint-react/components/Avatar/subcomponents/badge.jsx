@@ -45,15 +45,8 @@ const defaultProps = {
 export default function Badge({ size, shape, children }) {
     return (
         <div
-            className={classNames(
-                styles.badge,
-                {
-                    [styles.badgeRound]: shape === 'round',
-                    [styles.badgeSquare]: shape === 'square',
-                },
-                sizeClasses[size][getBadgeSize(children)],
-            )}
-            style={shape === 'square' ? { top: 0, right: 0 } : {}}
+            className={classNames(styles.badge, sizeClasses[size][getBadgeSize(children)])}
+            style={shape === 'square' ? { top: 3, right: 3 } : {}}
         >
             {children}
         </div>

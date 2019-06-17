@@ -9,18 +9,11 @@
     justify-content: center;
     align-items: center;
     background-color: $tp-color__green;
+    border-radius: $tp-border-radius__full;
 
     svg {
         fill: currentColor;
     }
-}
-
-.badgeRound {
-    border-radius: $tp-border-radius__full;
-}
-
-.badgeSquare {
-    border-radius: $tp-border-radius__base;
 }
 
 // Ideally we'd use fewer hard-coded pixels here in favor of percentage-based
