@@ -2,9 +2,13 @@
 
 ## Unreleased
 
-### Changed
+### Added
 
 -   [Minor] Add support for `isOnline` prop to `EntityAvatar`. (#25)
+-   [Minor] Enable avatar badges at extra small size. (#318)
+
+### Changed
+
 -   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
 -   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
 -   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
