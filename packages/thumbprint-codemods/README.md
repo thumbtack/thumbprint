@@ -1,8 +1,6 @@
-# thumbprint-codemods
+# Thumbprint Codemods
 
 This package is a collection of codemods that assist with breaking changes in Thumbprint.
-
-The CLI and the `thumbprint-react-consolidation` codemod are forked from [`segment-migration`](https://github.com/segmentio/evergreen-migration) and customized for Thumbtack's needs.
 
 ## Usage
 
