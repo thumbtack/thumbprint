@@ -4,6 +4,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 <EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
+  isOnline={false}
   size="small"
 >
   <div
@@ -21,6 +22,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 <EntityAvatar
   initial="N"
+  isOnline={false}
   size="small"
 >
   <div
@@ -250,82 +252,6 @@ exports[`does not render a badge by default 2`] = `
 </UserAvatar>
 `;
 
-exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
-<UserAvatar
-  initials="DK"
-  isChecked={false}
-  size="xsmall"
->
-  <div
-    className="root rootXsmall"
-    style={Object {}}
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
-  </div>
-</UserAvatar>
-`;
-
-exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
-<UserAvatar
-  initials="DK"
-  isChecked={true}
-  size="xsmall"
->
-  <div
-    className="root rootXsmall"
-    style={Object {}}
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
-  </div>
-</UserAvatar>
-`;
-
-exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
-<UserAvatar
-  initials="DK"
-  isChecked={false}
-  isOnline={true}
-  size="xsmall"
->
-  <div
-    className="root rootXsmall"
-    style={Object {}}
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
-  </div>
-</UserAvatar>
-`;
-
 exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 <UserAvatar
   isChecked={false}
@@ -337,11 +263,12 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="small"
     >
       <div
-        className="badge badgeGreen smallAvatarSmallBadge"
+        className="badge smallAvatarSmallBadge"
+        style={Object {}}
       />
     </Badge>
     <span
@@ -357,7 +284,7 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 </UserAvatar>
 `;
 
-exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 1`] = `
+exports[`renders a badge if valid badge prop is supplied 1`] = `
 <UserAvatar
   initials="DK"
   isChecked={true}
@@ -368,11 +295,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="small"
     >
       <div
-        className="badge badgeGreen smallAvatarLargeBadge"
+        className="badge smallAvatarLargeBadge"
+        style={Object {}}
       >
         <CheckIcon>
           <svg
@@ -402,7 +330,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 </UserAvatar>
 `;
 
-exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 2`] = `
+exports[`renders a badge if valid badge prop is supplied 2`] = `
 <UserAvatar
   initials="DK"
   isChecked={true}
@@ -413,11 +341,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="medium"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge mediumAvatarLargeBadge"
+        style={Object {}}
       >
         <CheckIcon>
           <svg
@@ -447,7 +376,7 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 </UserAvatar>
 `;
 
-exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop is supplied 3`] = `
+exports[`renders a badge if valid badge prop is supplied 3`] = `
 <UserAvatar
   initials="DK"
   isChecked={false}
@@ -459,11 +388,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="medium"
     >
       <div
-        className="badge badgeGreen mediumAvatarSmallBadge"
+        className="badge mediumAvatarSmallBadge"
+        style={Object {}}
       />
     </Badge>
     <span
@@ -492,11 +422,12 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="medium"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge mediumAvatarLargeBadge"
+        style={Object {}}
       >
         <CheckIcon>
           <svg
@@ -537,11 +468,12 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="medium"
     >
       <div
-        className="badge badgeGreen mediumAvatarLargeBadge"
+        className="badge mediumAvatarLargeBadge"
+        style={Object {}}
       >
         <CheckIcon>
           <svg
@@ -601,11 +533,12 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
     style={Object {}}
   >
     <Badge
-      background="green"
+      shape="round"
       size="small"
     >
       <div
-        className="badge badgeGreen smallAvatarLargeBadge"
+        className="badge smallAvatarLargeBadge"
+        style={Object {}}
       >
         <CheckIcon>
           <svg
