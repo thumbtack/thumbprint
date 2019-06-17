@@ -217,7 +217,7 @@ UserAvatar.propTypes = {
         PropTypes.number,
     ]),
     /**
-     * DEPRECATED: Displays a badge of a checkmark next to the `Avatar`.
+     * @deprecated: Displays a badge of a checkmark next to the `Avatar`.
      */
     isChecked: PropTypes.bool,
     /**
