@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import styles from './badge.module.scss';
 
 const sizeClasses = {
+    xsmall: {
+        small: styles.smallAvatarSmallBadge,
+        large: styles.smallAvatarLargeBadge,
+    },
     small: {
         small: styles.smallAvatarSmallBadge,
         large: styles.smallAvatarLargeBadge,
@@ -25,7 +29,7 @@ const sizeClasses = {
 const getBadgeSize = children => (children ? 'large' : 'small');
 
 const propTypes = {
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).isRequired,
+    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).isRequired,
     shape: PropTypes.oneOf(['round', 'square']).isRequired,
     children: PropTypes.node,
 };

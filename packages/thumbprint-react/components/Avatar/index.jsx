@@ -15,8 +15,7 @@ const CheckIcon = () => (
     </svg>
 );
 
-const shouldShowBadge = ({ size, isChecked, isOnline }) =>
-    size !== 'xsmall' && (isChecked || isOnline);
+const shouldShowBadge = ({ isChecked, isOnline }) => isChecked || isOnline;
 
 const STYLES = [
     {
