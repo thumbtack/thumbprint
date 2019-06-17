@@ -3,129 +3,17 @@
 .badge {
     color: $tp-color__white;
     position: absolute;
-    border-radius: 50%;
     border: 2px solid $tp-color__white;
     font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $tp-color__green;
+    border-radius: $tp-border-radius__full;
 
     svg {
         fill: currentColor;
-    }
-}
-
-.badgeRed {
-    background-color: $tp-color__red;
-}
-
-.badgeGreen {
-    background-color: $tp-color__green;
-}
-
-// Ideally we'd use fewer hard-coded pixels here in favor of percentage-based
-// units. More context on GitHub:
-// https://github.com/thumbtack/thumbprint-archive/pull/272/files/41f6e09f6ff75d4aaf529c739c725ba101c812b5#diff-529d3da96dee7012bfd704a87a88ad33
-.smallAvatarSmallBadge {
-    $diameter: 12px;
-    right: -2px;
-    top: 0;
-    width: $diameter;
-    height: $diameter;
-
-    svg {
-        width: 0;
-        height: 0;
-    }
-}
-
-.smallAvatarLargeBadge {
-    $diameter: 17px;
-    width: $diameter;
-    height: $diameter;
-    top: -2px;
-    right: -4px;
-
-    svg {
-        width: 7px;
-        height: 9px;
-    }
-}
-
-.mediumAvatarSmallBadge {
-    $diameter: 14px;
-    width: $diameter;
-    height: $diameter;
-    top: 0;
-    right: 1px;
-
-    svg {
-        width: 0;
-        height: 0;
-    }
-}
-
-.mediumAvatarLargeBadge {
-    $diameter: 20px;
-    width: $diameter;
-    height: $diameter;
-    top: -2px;
-    right: -2px;
-
-    svg {
-        width: 8px;
-        height: 10px;
-    }
-}
-
-.largeAvatarSmallBadge {
-    $diameter: 18px;
-    width: $diameter;
-    height: $diameter;
-    top: 0;
-    right: 5px;
-
-    svg {
-        width: 0;
-        height: 0;
-    }
-}
-
-.largeAvatarLargeBadge {
-    $diameter: 24px;
-    width: $diameter;
-    height: $diameter;
-    top: 0;
-    right: 0;
-
-    svg {
-        width: 10px;
-        height: 13px;
-    }
-}
-
-.xlargeAvatarSmallBadge {
-    $diameter: 24px;
-    width: $diameter;
-    height: $diameter;
-    top: 0;
-    right: 14px;
-
-    svg {
-        width: 0;
-        height: 0;
-    }
-}
-
-.xlargeAvatarLargeBadge {
-    $diameter: 30px;
-    width: $diameter;
-    height: $diameter;
-    top: 0;
-    right: 6px;
-
-    svg {
-        width: 12px;
-        height: 16px;
+        width: 50%;
+        height: 50%;
     }
 }
