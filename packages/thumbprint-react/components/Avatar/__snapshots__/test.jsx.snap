@@ -263,12 +263,19 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="small"
+      type="user"
     >
       <div
-        className="badge smallAvatarSmallBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 12,
+            "right": -2,
+            "top": 1,
+            "width": 12,
+          }
+        }
       />
     </Badge>
     <span
@@ -295,12 +302,19 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="small"
+      type="user"
     >
       <div
-        className="badge smallAvatarLargeBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 17,
+            "right": -4,
+            "top": -2,
+            "width": 17,
+          }
+        }
       >
         <CheckIcon>
           <svg
@@ -341,12 +355,19 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="medium"
+      type="user"
     >
       <div
-        className="badge mediumAvatarLargeBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 20,
+            "right": -2,
+            "top": -2,
+            "width": 20,
+          }
+        }
       >
         <CheckIcon>
           <svg
@@ -388,12 +409,19 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="medium"
+      type="user"
     >
       <div
-        className="badge mediumAvatarSmallBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 14,
+            "right": 2,
+            "top": 2,
+            "width": 14,
+          }
+        }
       />
     </Badge>
     <span
@@ -422,12 +450,19 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="medium"
+      type="user"
     >
       <div
-        className="badge mediumAvatarLargeBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 20,
+            "right": -2,
+            "top": -2,
+            "width": 20,
+          }
+        }
       >
         <CheckIcon>
           <svg
@@ -468,12 +503,19 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="medium"
+      type="user"
     >
       <div
-        className="badge mediumAvatarLargeBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 20,
+            "right": -2,
+            "top": -2,
+            "width": 20,
+          }
+        }
       >
         <CheckIcon>
           <svg
@@ -533,12 +575,19 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
     style={Object {}}
   >
     <Badge
-      shape="round"
       size="small"
+      type="user"
     >
       <div
-        className="badge smallAvatarLargeBadge"
-        style={Object {}}
+        className="badge"
+        style={
+          Object {
+            "height": 17,
+            "right": -4,
+            "top": -2,
+            "width": 17,
+          }
+        }
       >
         <CheckIcon>
           <svg
