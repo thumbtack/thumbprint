@@ -27,7 +27,6 @@ const ComponentFooter = ({ data }) => {
                     <ul>
                         {component.props.map(prop => {
                             const deprecated = find(prop.doclets, o => o.tag === 'deprecated');
-                            console.log({ deprecated });
 
                             return (
                                 <li className="bb b-gray-300 pv3" key={prop.name}>
