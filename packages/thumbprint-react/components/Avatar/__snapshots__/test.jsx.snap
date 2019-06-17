@@ -89,7 +89,12 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Image
       alt="Avatar for Duck Goose"
@@ -137,7 +142,12 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -162,7 +172,12 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Image
       alt="Avatar for Duck Goose"
@@ -211,7 +226,12 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -235,7 +255,12 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -259,7 +284,12 @@ exports[`does not render a badge by default 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -284,7 +314,12 @@ exports[`does not render a badge by default 2`] = `
 >
   <div
     className="root rootLarge"
-    style={Object {}}
+    style={
+      Object {
+        "height": "100px",
+        "width": "100px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -309,7 +344,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 1`] = `
 >
   <div
     className="root rootXsmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "32px",
+        "width": "32px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -334,7 +374,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 2`] = `
 >
   <div
     className="root rootXsmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "32px",
+        "width": "32px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -360,7 +405,12 @@ exports[`does not render a badge when \`size\` is \`xsmall\` 3`] = `
 >
   <div
     className="root rootXsmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "32px",
+        "width": "32px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -385,7 +435,12 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -416,7 +471,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -461,7 +521,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -507,7 +572,12 @@ exports[`renders a badge if size is larger than \`xsmall\` and valid badge prop 
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -540,7 +610,12 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -585,7 +660,12 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -631,7 +711,12 @@ exports[`renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Image
       alt=""
@@ -677,7 +762,12 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <Badge
       background="green"
@@ -720,7 +810,12 @@ exports[`renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"

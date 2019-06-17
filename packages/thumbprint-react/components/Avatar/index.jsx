@@ -154,7 +154,14 @@ const UserAvatar = props => {
                 [styles.rootLarge]: size === 'large',
                 [styles.rootXlarge]: size === 'xlarge',
             })}
-            style={isNumber(size) ? { width: size, height: size } : {}}
+            style={
+                isNumber(size)
+                    ? { width: size, height: size }
+                    : {
+                          width: dimensions[size],
+                          height: dimensions[size],
+                      }
+            }
         >
             {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
             {imageUrl ? (
