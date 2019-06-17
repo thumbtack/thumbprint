@@ -42,7 +42,7 @@ describe('ServiceCard', () => {
 describe('ServiceCardImage', () => {
     test('render works', () => {
         const wrapper = mount(
-            <ServiceCardImage alt="duck duck goose" url="https://www.thumbtack.com/image.png" />,
+            <ServiceCardImage alt="duck duck goose" src="https://www.thumbtack.com/image.png" />,
         );
 
         expect(wrapper).toMatchSnapshot();

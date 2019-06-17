@@ -105,7 +105,7 @@ export const pageQuery = graphql`
             }
         }
         # Get package information by NPM package name.
-        packageTable: json(name: { eq: "@thumbtack/thumbprint-react" }) {
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
             ...PackageTableFragment
         }
         # Get component props by path to component file.
