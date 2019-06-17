@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Patch] Use `Image` component within `Avatar`.
+-   [Patch] Use `Image` component within `Avatar`. (#69)
 
 ## 6.0.0 - 2019-06-17
 
