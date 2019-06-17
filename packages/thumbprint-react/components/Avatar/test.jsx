@@ -56,19 +56,6 @@ test('does not add the `fullName` as `alt` text when no image is provided', () =
     expect(wrapper).toMatchSnapshot();
 });
 
-test('does not render a badge when `size` is `xsmall`', () => {
-    const wrapperA = mount(<UserAvatar size="xsmall" initials="DK" />);
-    const wrapperB = mount(<UserAvatar size="xsmall" isChecked initials="DK" />);
-    const wrapperC = mount(<UserAvatar size="xsmall" isOnline initials="DK" />);
-
-    expect(wrapperA.find('.badge').exists()).toBe(false);
-    expect(wrapperB.find('.badge').exists()).toBe(false);
-    expect(wrapperC.find('.badge').exists()).toBe(false);
-    expect(wrapperA).toMatchSnapshot();
-    expect(wrapperB).toMatchSnapshot();
-    expect(wrapperC).toMatchSnapshot();
-});
-
 test('does not render a badge by default', () => {
     const wrapperNoSize = mount(<UserAvatar initials="DK" />);
     expect(wrapperNoSize.find('.badge').exists()).toBe(false);
@@ -79,7 +66,7 @@ test('does not render a badge by default', () => {
     expect(wrapperWithSize).toMatchSnapshot();
 });
 
-test('renders a badge if size is larger than `xsmall` and valid badge prop is supplied', () => {
+test('renders a badge if valid badge prop is supplied', () => {
     const wrapperA = mount(<UserAvatar isChecked initials="DK" />);
     const wrapperB = mount(<UserAvatar size="medium" isChecked initials="DK" />);
     const wrapperC = mount(<UserAvatar size="medium" isOnline initials="DK" />);

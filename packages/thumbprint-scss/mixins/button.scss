@@ -47,17 +47,17 @@
 @mixin tp-button--secondary($important: null) {
     background-color: $tp-color__white $important;
     border-color: $tp-color__gray $important;
-    color: $tp-color__black-300 $important;
+    color: $tp-color__blue $important;
 
     &:hover,
     &:active {
-        color: $tp-color__black-300 $important;
+        color: $tp-color__blue $important;
     }
 
     &:focus {
-        color: $tp-color__black-300 $important;
+        color: $tp-color__blue-500 $important;
         background-color: $tp-color__white $important;
-        border-color: $tp-color__black-300 $important;
+        border-color: $tp-color__gray $important;
     }
 }
 
@@ -169,7 +169,7 @@
         border-color: $tp-color__blue-300 $important;
 
         &.tp-button--secondary {
-            color: $tp-color__gray $important;
+            color: $tp-color__blue-300 $important;
             background-color: $tp-color__white $important;
             border-color: $tp-color__gray $important;
         }
