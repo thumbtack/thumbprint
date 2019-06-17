@@ -4,11 +4,16 @@
 
 ### Changed
 
--   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
+-   [Patch] Use `Image` component within `Avatar`.
+
+## 6.0.0 - 2019-06-17
+
+### Changed
+
 -   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
 -   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
 -   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
--   [Patch] Use `Image` component within `Avatar`.
+-   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
 -   [Minor] `ServiceCardImage` prop `src` added to replace `src`.
 -   [Patch] `ServiceCardImage` prop `url` deprecated.
 
@@ -23,6 +28,8 @@
 -   [Patch] Remove unused CSS from `ServiceCardImage`.
 
 ## 4.0.1 - 2019-06-13
+
+### Fixed
 
 -   [Patch] Fix incorrect PropTypes for Avatar component.
 
