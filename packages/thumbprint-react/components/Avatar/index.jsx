@@ -79,7 +79,7 @@ class EntityAvatar extends React.Component {
                 })}
                 style={isNumber(size) ? { width: size, height: size } : {}}
             >
-                {isOnline && <Badge size={size} shape="square" />}
+                {isOnline && <Badge size={size} type="entity" />}
                 {imageUrl ? (
                     <img
                         className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
@@ -169,7 +169,7 @@ class UserAvatar extends React.Component {
                 style={isNumber(size) ? { width: size, height: size } : {}}
             >
                 {(isOnline || isChecked) && (
-                    <Badge size={size} shape="round">
+                    <Badge size={size} type="user">
                         {isChecked && <CheckIcon />}
                     </Badge>
                 )}

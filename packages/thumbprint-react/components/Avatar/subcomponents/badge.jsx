@@ -1,36 +1,89 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import styles from './badge.module.scss';
 
+// TODO(giles): remove all "checked" configs once we delete the isChecked prop
 const sizeClasses = {
     xsmall: {
-        small: styles.smallAvatarSmallBadge,
-        large: styles.smallAvatarLargeBadge,
+        userOnline: {
+            top: 0,
+            right: -2,
+            size: 12,
+        },
+        userChecked: {
+            top: -2,
+            right: -4,
+            size: 17,
+        },
+        entityOnline: {
+            size: 12,
+        },
     },
     small: {
-        small: styles.smallAvatarSmallBadge,
-        large: styles.smallAvatarLargeBadge,
+        userOnline: {
+            top: 1,
+            right: -2,
+            size: 12,
+        },
+        userChecked: {
+            top: -2,
+            right: -4,
+            size: 17,
+        },
+        entityOnline: {
+            size: 12,
+        },
     },
     medium: {
-        small: styles.mediumAvatarSmallBadge,
-        large: styles.mediumAvatarLargeBadge,
+        userOnline: {
+            top: 2,
+            right: 2,
+            size: 14,
+        },
+        userChecked: {
+            top: -2,
+            right: -2,
+            size: 20,
+        },
+        entityOnline: {
+            size: 14,
+        },
     },
     large: {
-        small: styles.largeAvatarSmallBadge,
-        large: styles.largeAvatarLargeBadge,
+        userOnline: {
+            top: 4,
+            right: 5,
+            size: 18,
+        },
+        userChecked: {
+            top: 0,
+            right: 0,
+            size: 24,
+        },
+        entityOnline: {
+            size: 18,
+        },
     },
     xlarge: {
-        small: styles.xlargeAvatarSmallBadge,
-        large: styles.xlargeAvatarLargeBadge,
+        userOnline: {
+            top: 0,
+            right: 14,
+            size: 24,
+        },
+        userChecked: {
+            top: 0,
+            right: 6,
+            size: 30,
+        },
+        entityOnline: {
+            size: 24,
+        },
     },
 };
 
-const getBadgeSize = children => (children ? 'large' : 'small');
-
 const propTypes = {
     size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).isRequired,
-    shape: PropTypes.oneOf(['round', 'square']).isRequired,
+    type: PropTypes.oneOf(['user', 'entity']).isRequired,
     children: PropTypes.node,
 };
 
@@ -42,15 +95,35 @@ const defaultProps = {
  * `Badge` appears on the top-right corner of an `Avatar`. It is used to either
  * show a checkmark or an indicator that there are unread notifications.
  */
-export default function Badge({ size, shape, children }) {
+export default function Badge({ size, type, children }) {
+    let badgeType = 'entityOnline';
+
+    if (type === 'user') {
+        if (children) {
+            badgeType = 'userChecked';
+        } else {
+            badgeType = 'userOnline';
+        }
+    }
+
+    const styleConfig = sizeClasses[size][badgeType];
+
     return (
         <div
-            className={classNames(styles.badge, sizeClasses[size][getBadgeSize(children)])}
-            style={shape === 'square' ? { top: 3, right: 3 } : {}}
+            className={styles.badge}
+            style={{
+                // EntityAvatar badges stick out by one third of their diameter.
+                // UserAvatar badges have custom positions in the style object.
+                top: badgeType === 'entityOnline' ? -(styleConfig.size / 3) : styleConfig.top,
+                right: badgeType === 'entityOnline' ? -(styleConfig.size / 3) : styleConfig.right,
+                width: styleConfig.size,
+                height: styleConfig.size,
+            }}
         >
             {children}
         </div>
     );
 }
+
 Badge.propTypes = propTypes;
 Badge.defaultProps = defaultProps;
