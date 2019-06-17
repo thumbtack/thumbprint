@@ -75,8 +75,8 @@ ServiceCard.defaultProps = {
 
 ServiceCardImage.propTypes = {
     /**
-     * DEPRECATED - URL pointing to image to be displayed. This image must have an aspect
-     * ratio of 8:5.
+     * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
+     * @deprecated Use `src` instead of `url`.
      */
     url: PropTypes.string,
     /**
