@@ -8,6 +8,8 @@
 -   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
 -   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
 -   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
+-   [Minor] `ServiceCardImage` prop `src` added to replace `src`.
+-   [Patch] `ServiceCardImage` prop `url` deprecated.
 
 ## 5.0.0 - 2019-06-13
 

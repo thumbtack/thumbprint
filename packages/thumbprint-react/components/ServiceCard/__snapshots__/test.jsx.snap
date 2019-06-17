@@ -71,7 +71,7 @@ exports[`ServiceCardDescription renders icon color 1`] = `
 exports[`ServiceCardImage render works 1`] = `
 <ServiceCardImage
   alt="duck duck goose"
-  url="https://www.thumbtack.com/image.png"
+  src="https://www.thumbtack.com/image.png"
 >
   <Image
     alt="duck duck goose"
