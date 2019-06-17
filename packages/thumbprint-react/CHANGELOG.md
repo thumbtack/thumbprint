@@ -9,6 +9,8 @@
 -   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
 -   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
 -   [Patch] Use `Image` component within `Avatar`.
+-   [Minor] `ServiceCardImage` prop `src` added to replace `src`.
+-   [Patch] `ServiceCardImage` prop `url` deprecated.
 
 ## 5.0.0 - 2019-06-13
 
