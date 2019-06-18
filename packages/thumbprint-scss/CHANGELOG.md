@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.0.0 - 2019-06-18
+
 ### Changed
 
 -   [Major] Update the "secondary" style of `Button` to the new design. Existing uses of `tp-button--secondary` should be updated to use `tp-button--tertiary`. (#89)
