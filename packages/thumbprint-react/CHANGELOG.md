@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `onError` function to `Image` component so broken image icon is properly displayed.
+
 ## 6.1.0 - 2019-06-18
 
 ### Changed
