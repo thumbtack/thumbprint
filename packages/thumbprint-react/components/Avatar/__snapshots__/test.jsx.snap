@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EntityAvatar renders an image when the user has one 1`] = `
-<ForwardRef
+<EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
   isOnline={false}
@@ -49,11 +49,11 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
       </noscript>
     </Image>
   </div>
-</ForwardRef>
+</EntityAvatar>
 `;
 
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
-<ForwardRef
+<EntityAvatar
   initial="N"
   isOnline={false}
   size="small"
@@ -79,11 +79,11 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
       N
     </span>
   </div>
-</ForwardRef>
+</EntityAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
-<ForwardRef
+<UserAvatar
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
@@ -133,11 +133,11 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
       </noscript>
     </Image>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 1`] = `
-<ForwardRef
+<UserAvatar
   fullName="Duck Goose"
   isChecked={false}
   size="small"
@@ -162,11 +162,11 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
       title="Avatar for Duck Goose"
     />
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 2`] = `
-<ForwardRef
+<UserAvatar
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
   isChecked={false}
@@ -216,11 +216,11 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
       </noscript>
     </Image>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`adds the \`fullName\` as \`title\` text 3`] = `
-<ForwardRef
+<UserAvatar
   fullName="Duck Goose"
   isChecked={false}
   size="small"
@@ -246,11 +246,11 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       title="Avatar for Duck Goose"
     />
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
-<ForwardRef
+<UserAvatar
   fullName="Duck Goose"
   isChecked={false}
   size="small"
@@ -275,11 +275,11 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
       title="Avatar for Duck Goose"
     />
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`does not render a badge by default 1`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={false}
   size="small"
@@ -305,11 +305,11 @@ exports[`does not render a badge by default 1`] = `
       DK
     </span>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`does not render a badge by default 2`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={false}
   size="large"
@@ -335,11 +335,11 @@ exports[`does not render a badge by default 2`] = `
       DK
     </span>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
-<ForwardRef
+<UserAvatar
   isChecked={false}
   isOnline={true}
   size="small"
@@ -379,11 +379,11 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
       />
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders a badge if valid badge prop is supplied 1`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={true}
   size="small"
@@ -437,11 +437,11 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
       </div>
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders a badge if valid badge prop is supplied 2`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={true}
   size="medium"
@@ -495,11 +495,11 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
       </div>
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders a badge if valid badge prop is supplied 3`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={false}
   isOnline={true}
@@ -542,11 +542,11 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
       />
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders an SVG when \`isChecked\` is true 1`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={true}
   size="medium"
@@ -600,11 +600,11 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
       </div>
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders an SVG when \`isChecked\` is true 2`] = `
-<ForwardRef
+<UserAvatar
   initials="DK"
   isChecked={true}
   size="medium"
@@ -658,11 +658,11 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
       </div>
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders an image when the user has one 1`] = `
-<ForwardRef
+<UserAvatar
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
   isChecked={false}
@@ -710,11 +710,11 @@ exports[`renders an image when the user has one 1`] = `
       </noscript>
     </Image>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] = `
-<ForwardRef
+<UserAvatar
   isChecked={true}
   isOnline={true}
   size="small"
@@ -766,11 +766,11 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
       </div>
     </Badge>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;
 
 exports[`renders the initials when the user has no image 1`] = `
-<ForwardRef
+<UserAvatar
   initials="NC"
   isChecked={false}
   size="small"
@@ -796,5 +796,5 @@ exports[`renders the initials when the user has no image 1`] = `
       NC
     </span>
   </div>
-</ForwardRef>
+</UserAvatar>
 `;

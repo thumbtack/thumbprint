@@ -111,6 +111,9 @@ ServiceCardImage.defaultProps = {
     src: undefined,
 };
 
+// Needed because of the `forwardRef`.
+ServiceCardImage.displayName = 'ServiceCardImage';
+
 ServiceCardTitle.propTypes = {
     /**
      * Service title.

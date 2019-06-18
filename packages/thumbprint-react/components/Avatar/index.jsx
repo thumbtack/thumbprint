@@ -132,6 +132,9 @@ EntityAvatar.defaultProps = {
     isOnline: false,
 };
 
+// Needed because of the `forwardRef`.
+EntityAvatar.displayName = 'EntityAvatar';
+
 const UserAvatar = forwardRef((props, outerRef) => {
     const { imageUrl, size, initials, fullName, isOnline, isChecked } = props;
 
@@ -217,5 +220,8 @@ UserAvatar.defaultProps = {
     isChecked: false,
     isOnline: undefined,
 };
+
+// Needed because of the `forwardRef`.
+UserAvatar.displayName = 'UserAvatar';
 
 export { UserAvatar, EntityAvatar };
