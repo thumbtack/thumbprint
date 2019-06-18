@@ -18,7 +18,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
   >
     <Image
       alt=""
-      className="circleAvatar"
+      className="squareAvatar"
       height="48px"
       objectFit="cover"
       objectPosition="center"
@@ -26,7 +26,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
       src="//www.placecage.com/130/130"
     >
       <picture
-        className="picture circleAvatar"
+        className="picture squareAvatar"
       >
         <img
           alt=""
@@ -353,6 +353,15 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
+    />
     <Badge
       size="small"
       type="user"
@@ -369,15 +378,6 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
         }
       />
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
-        }
-      }
-    />
   </div>
 </UserAvatar>
 `;
@@ -397,6 +397,17 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="small"
       type="user"
@@ -425,17 +436,6 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -455,6 +455,17 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -483,17 +494,6 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -514,6 +514,17 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -530,17 +541,6 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
         }
       />
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -560,6 +560,17 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -588,17 +599,6 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -618,6 +618,17 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -646,17 +657,6 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -728,6 +728,15 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
       }
     }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
+    />
     <Badge
       size="small"
       type="user"
@@ -756,15 +765,6 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
-        }
-      }
-    />
   </div>
 </UserAvatar>
 `;
