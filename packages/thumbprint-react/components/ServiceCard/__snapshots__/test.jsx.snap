@@ -94,6 +94,7 @@ exports[`ServiceCardImage render works 1`] = `
         style={
           Object {
             "height": 0,
+            "overflow": "hidden",
             "paddingTop": "62.5%",
           }
         }

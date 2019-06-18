@@ -138,6 +138,7 @@ const Image = forwardRef((props, outerRef) => {
 
         aspectRatioBoxProps.style = {
             paddingTop: `${(h / w) * 100}%`,
+            overflow: 'hidden', // Prevents alt text from taking up space before `src` is populated
             height: 0,
         };
     }
