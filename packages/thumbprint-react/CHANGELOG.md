@@ -11,6 +11,7 @@
 -   [Patch] `Image` now uses `overflow:hidden` to prevent incorrect image height prior to loading due to `alt` text. (#239)
 -   [Minor] Add support for `isOnline` prop to `EntityAvatar`. (#25)
 -   [Minor] Enable avatar badges at extra small size. (#318)
+-   [Minor] Add `onError` function to `Image` component so broken image icon is properly display.
 
 ## 6.0.0 - 2019-06-17
 
