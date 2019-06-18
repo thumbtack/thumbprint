@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Make `ServiceCardImage`, `UserAvatar`, and `EntityAvatar` forward a ref to `Image`. (#324)
 -   [Minor] Add `onError` function to `Image` component so broken image icon is properly displayed.
 
 ## 6.1.0 - 2019-06-18
