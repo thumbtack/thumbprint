@@ -62,7 +62,7 @@ const Image = forwardRef((props, outerRef) => {
     // load the image.
     const [inViewRef, shouldLoadImage] = useInView({
         root,
-        rootMargin: '100px',
+        rootMargin: '400px',
         triggerOnce: true,
     });
 

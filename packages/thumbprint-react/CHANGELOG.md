@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Use `Image` component within `Avatar`. (#69)
+-   [Patch] Increased lazy load threshold value from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
 
 ### Added
 
