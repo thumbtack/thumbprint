@@ -5,6 +5,15 @@ import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
+import Image from '../Image/index.jsx';
+
+const dimensions = {
+    xsmall: '32px',
+    small: '48px',
+    medium: '72px',
+    large: '100px',
+    xlarge: '140px',
+};
 
 const CheckIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 13">
@@ -47,59 +56,41 @@ const getStyle = initials =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
-class EntityAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
-
-    render() {
-        const { imageUrl, size, initial, fullName, isOnline } = this.props;
-
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: size === 'xsmall',
-                    [styles.rootSmall]: size === 'small',
-                    [styles.rootMedium]: size === 'medium',
-                    [styles.rootLarge]: size === 'large',
-                    [styles.rootXlarge]: size === 'xlarge',
-                })}
-                style={isNumber(size) ? { width: size, height: size } : {}}
+const EntityAvatar = ({ imageUrl, size, initial, fullName, isOnline }) => (
+    <div
+        className={classNames(styles.root, {
+            [styles.rootXsmall]: size === 'xsmall',
+            [styles.rootSmall]: size === 'small',
+            [styles.rootMedium]: size === 'medium',
+            [styles.rootLarge]: size === 'large',
+            [styles.rootXlarge]: size === 'xlarge',
+        })}
+        style={
+            isNumber(size)
+                ? { width: size, height: size }
+                : { width: dimensions[size], height: dimensions[size] }
+        }
+    >
+        {imageUrl ? (
+            <Image
+                className={styles.squareAvatar}
+                src={imageUrl}
+                alt={fullName && `Avatar for ${fullName}`}
+                title={fullName && `Avatar for ${fullName}`}
+                height={dimensions[size]}
+            />
+        ) : (
+            <span
+                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                style={getStyle(initial)}
+                title={fullName && `Avatar for ${fullName}`}
             >
-                {isOnline && <Badge size={size} type="entity" />}
-                {imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
-                        data-src={imageUrl}
-                        alt={fullName && `Avatar for ${fullName}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                        style={getStyle(initial)}
-                        title={fullName && `Avatar for ${fullName}`}
-                    >
-                        {initial}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+                {initial}
+            </span>
+        )}
+        {isOnline && <Badge size={size} type="entity" />}
+    </div>
+);
 
 EntityAvatar.propTypes = {
     /**
@@ -136,63 +127,45 @@ EntityAvatar.defaultProps = {
     isOnline: false,
 };
 
-class UserAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
-
-    render() {
-        const { imageUrl, size, initials, fullName, isOnline, isChecked } = this.props;
-
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: size === 'xsmall',
-                    [styles.rootSmall]: size === 'small',
-                    [styles.rootMedium]: size === 'medium',
-                    [styles.rootLarge]: size === 'large',
-                    [styles.rootXlarge]: size === 'xlarge',
-                })}
-                style={isNumber(size) ? { width: size, height: size } : {}}
+const UserAvatar = ({ imageUrl, size, initials, fullName, isOnline, isChecked }) => (
+    <div
+        className={classNames(styles.root, {
+            [styles.rootXsmall]: size === 'xsmall',
+            [styles.rootSmall]: size === 'small',
+            [styles.rootMedium]: size === 'medium',
+            [styles.rootLarge]: size === 'large',
+            [styles.rootXlarge]: size === 'xlarge',
+        })}
+        style={
+            isNumber(size)
+                ? { width: size, height: size }
+                : { width: dimensions[size], height: dimensions[size] }
+        }
+    >
+        {imageUrl ? (
+            <Image
+                className={styles.circleAvatar}
+                src={imageUrl}
+                alt={fullName && `Avatar for ${fullName}`}
+                title={fullName && `Avatar for ${fullName}`}
+                height={dimensions[size]}
+            />
+        ) : (
+            <span
+                className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                style={getStyle(initials)}
+                title={fullName && `Avatar for ${fullName}`}
             >
-                {(isOnline || isChecked) && (
-                    <Badge size={size} type="user">
-                        {isChecked && <CheckIcon />}
-                    </Badge>
-                )}
-                {imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
-                        data-src={imageUrl}
-                        alt={fullName && `Avatar for ${fullName}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        style={getStyle(initials)}
-                        title={fullName && `Avatar for ${fullName}`}
-                    >
-                        {initials}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+                {initials}
+            </span>
+        )}
+        {(isOnline || isChecked) && (
+            <Badge size={size} type="user">
+                {isChecked && <CheckIcon />}
+            </Badge>
+        )}
+    </div>
+);
 
 UserAvatar.propTypes = {
     /**

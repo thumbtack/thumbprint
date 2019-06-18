@@ -9,12 +9,45 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
-    <img
-      className="baseAvatar squareAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <Image
+      alt=""
+      className="squareAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
+    >
+      <picture
+        className="picture squareAvatar"
+      >
+        <img
+          alt=""
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </EntityAvatar>
 `;
@@ -27,7 +60,12 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar squareAvatar"
@@ -44,24 +82,6 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 </EntityAvatar>
 `;
 
-exports[`adds lazyload class for lazysizes to work 1`] = `
-<UserAvatar
-  imageUrl="//www.placecage.com/130/130"
-  isChecked={false}
-  size="small"
->
-  <div
-    className="root rootSmall"
-    style={Object {}}
-  >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
-  </div>
-</UserAvatar>
-`;
-
 exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
@@ -71,14 +91,47 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
-    <img
+    <Image
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
       title="Avatar for Duck Goose"
-    />
+    >
+      <picture
+        className="picture circleAvatar"
+        title="Avatar for Duck Goose"
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
@@ -91,7 +144,12 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -116,14 +174,47 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
-    <img
+    <Image
       alt="Avatar for Duck Goose"
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
       title="Avatar for Duck Goose"
-    />
+    >
+      <picture
+        className="picture circleAvatar"
+        title="Avatar for Duck Goose"
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
@@ -137,7 +228,12 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -153,31 +249,6 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 </UserAvatar>
 `;
 
-exports[`does not add lazyload class if an image is not provided 1`] = `
-<UserAvatar
-  initials="NC"
-  isChecked={false}
-  size="small"
->
-  <div
-    className="root rootSmall"
-    style={Object {}}
-  >
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#e8f1fd",
-          "color": "#383c80",
-        }
-      }
-    >
-      NC
-    </span>
-  </div>
-</UserAvatar>
-`;
-
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
@@ -186,7 +257,12 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -210,7 +286,12 @@ exports[`does not render a badge by default 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -235,7 +316,12 @@ exports[`does not render a badge by default 2`] = `
 >
   <div
     className="root rootLarge"
-    style={Object {}}
+    style={
+      Object {
+        "height": "100px",
+        "width": "100px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"
@@ -260,8 +346,22 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
+    />
     <Badge
       size="small"
       type="user"
@@ -278,15 +378,6 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
         }
       />
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
-        }
-      }
-    />
   </div>
 </UserAvatar>
 `;
@@ -299,8 +390,24 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="small"
       type="user"
@@ -329,17 +436,6 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -352,8 +448,24 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -382,17 +494,6 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -406,8 +507,24 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -424,17 +541,6 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
         }
       />
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -447,8 +553,24 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -477,17 +599,6 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -500,8 +611,24 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
 >
   <div
     className="root rootMedium"
-    style={Object {}}
+    style={
+      Object {
+        "height": "72px",
+        "width": "72px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+    >
+      DK
+    </span>
     <Badge
       size="medium"
       type="user"
@@ -530,17 +657,6 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
-        }
-      }
-    >
-      DK
-    </span>
   </div>
 </UserAvatar>
 `;
@@ -554,12 +670,45 @@ exports[`renders an image when the user has one 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
-    <img
-      className="baseAvatar circleAvatar lazyload"
-      data-src="//www.placecage.com/130/130"
-    />
+    <Image
+      alt=""
+      className="circleAvatar"
+      height="48px"
+      objectFit="cover"
+      objectPosition="center"
+      sources={Array []}
+      src="//www.placecage.com/130/130"
+    >
+      <picture
+        className="picture circleAvatar"
+      >
+        <img
+          alt=""
+          className="image imageLoading"
+          height="48px"
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <picture />
+      </noscript>
+    </Image>
   </div>
 </UserAvatar>
 `;
@@ -572,8 +721,22 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "background": "#fafafa",
+          "text": "#2f3033",
+        }
+      }
+    />
     <Badge
       size="small"
       type="user"
@@ -602,15 +765,6 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
         </CheckIcon>
       </div>
     </Badge>
-    <span
-      className="initialsAvatar circleAvatar"
-      style={
-        Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
-        }
-      }
-    />
   </div>
 </UserAvatar>
 `;
@@ -623,7 +777,12 @@ exports[`renders the initials when the user has no image 1`] = `
 >
   <div
     className="root rootSmall"
-    style={Object {}}
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
   >
     <span
       className="initialsAvatar circleAvatar"

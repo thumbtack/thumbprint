@@ -2,21 +2,17 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
+jest.mock('react-intersection-observer', () => ({
+    InView: ({ children }) => children({ inView: true, ref: null }),
+    useInView: () => [() => {}, true],
+}));
+
+beforeEach(() => {
+    window.IntersectionObserver = true;
+});
+
 test('renders an image when the user has one', () => {
     const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
-    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
-    expect(wrapper).toMatchSnapshot();
-});
-
-test('adds lazyload class for lazysizes to work', () => {
-    const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" />);
-    expect(wrapper.find('.lazyload')).toHaveLength(1);
-    expect(wrapper).toMatchSnapshot();
-});
-
-test('does not add lazyload class if an image is not provided', () => {
-    const wrapper = mount(<UserAvatar initials="NC" />);
-    expect(wrapper.find('.lazyload')).toHaveLength(0);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -34,7 +30,7 @@ test('adds the `fullName` as `title` text', () => {
     const wrapperWithInitials = mount(<UserAvatar fullName="Duck Goose" title="DG" />);
 
     expect(wrapper.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
-    expect(wrapperWithImage.find('.baseAvatar').prop('title')).toContain('Duck Goose');
+    expect(wrapperWithImage.find('Image').prop('title')).toContain('Duck Goose');
     expect(wrapperWithInitials.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
 
     expect(wrapper).toMatchSnapshot();
@@ -46,7 +42,7 @@ test('adds the `fullName` as `alt` text when image is provided', () => {
     const wrapper = mount(
         <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
     );
-    expect(wrapper.find('.baseAvatar').prop('alt')).toContain('Duck Goose');
+    expect(wrapper.find('Image').prop('alt')).toContain('Duck Goose');
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -121,7 +117,6 @@ test('renders checkmark SVG when `isChecked` and `isOnline` are true', () => {
 
 test('EntityAvatar renders an image when the user has one', () => {
     const wrapper = mount(<EntityAvatar imageUrl="//www.placecage.com/130/130" initial="N" />);
-    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
     expect(wrapper).toMatchSnapshot();
 });
 
