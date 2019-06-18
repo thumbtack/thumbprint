@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.1.0 - 2019-06-18
+
 ### Changed
 
 -   [Patch] Use `Image` component within `Avatar`. (#69)

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 3.2.10 - 2019-06-18
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint SCSS dependency.
+
 ## 3.2.9 - 2019-06-11
 
 ### Changed
