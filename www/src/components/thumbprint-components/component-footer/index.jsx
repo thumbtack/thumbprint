@@ -63,27 +63,25 @@ const ComponentFooter = ({ data }) => {
                                     <div className="flex">
                                         {prop.type && (
                                             <Text
-                                                className="black-300 mr4 w-50 s_w-40 m_w-30 m_w-20"
+                                                className="mr4 w-50 s_w-40 m_w-30 m_w-20"
                                                 elementName="div"
                                             >
-                                                <InlineCode theme="plain">Type</InlineCode>
-                                                <div className="b">
-                                                    <PropType
-                                                        type={prop.type.name}
-                                                        value={prop.type.value}
-                                                    />
-                                                </div>
+                                                <div className="b">Type</div>
+                                                <PropType
+                                                    type={prop.type.name}
+                                                    value={prop.type.value}
+                                                />
                                             </Text>
                                         )}
                                         {get(prop.defaultValue, 'value') && (
-                                            <Text className="black-300" elementName="div">
-                                                <InlineCode theme="plain">Default</InlineCode>
-                                                <div className="indigo b">
+                                            <div>
+                                                <div className="b">Default</div>
+                                                <div className="black-300">
                                                     <InlineCode theme="plain">
                                                         {get(prop.defaultValue, 'value')}
                                                     </InlineCode>
                                                 </div>
-                                            </Text>
+                                            </div>
                                         )}
                                     </div>
                                 </li>
