@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isNumber from 'lodash/isNumber';
@@ -56,41 +56,46 @@ const getStyle = initials =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
-const EntityAvatar = ({ imageUrl, size, initial, fullName, isOnline }) => (
-    <div
-        className={classNames(styles.root, {
-            [styles.rootXsmall]: size === 'xsmall',
-            [styles.rootSmall]: size === 'small',
-            [styles.rootMedium]: size === 'medium',
-            [styles.rootLarge]: size === 'large',
-            [styles.rootXlarge]: size === 'xlarge',
-        })}
-        style={
-            isNumber(size)
-                ? { width: size, height: size }
-                : { width: dimensions[size], height: dimensions[size] }
-        }
-    >
-        {imageUrl ? (
-            <Image
-                className={styles.squareAvatar}
-                src={imageUrl}
-                alt={fullName && `Avatar for ${fullName}`}
-                title={fullName && `Avatar for ${fullName}`}
-                height={dimensions[size]}
-            />
-        ) : (
-            <span
-                className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                style={getStyle(initial)}
-                title={fullName && `Avatar for ${fullName}`}
-            >
-                {initial}
-            </span>
-        )}
-        {isOnline && <Badge size={size} type="entity" />}
-    </div>
-);
+const EntityAvatar = forwardRef((props, outerRef) => {
+    const { imageUrl, size, initial, fullName, isOnline } = props;
+
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+            style={
+                isNumber(size)
+                    ? { width: size, height: size }
+                    : { width: dimensions[size], height: dimensions[size] }
+            }
+        >
+            {imageUrl ? (
+                <Image
+                    className={styles.squareAvatar}
+                    src={imageUrl}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    height={dimensions[size]}
+                    ref={outerRef}
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                    style={getStyle(initial)}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initial}
+                </span>
+            )}
+            {isOnline && <Badge size={size} type="entity" />}
+        </div>
+    );
+});
 
 EntityAvatar.propTypes = {
     /**
@@ -127,45 +132,53 @@ EntityAvatar.defaultProps = {
     isOnline: false,
 };
 
-const UserAvatar = ({ imageUrl, size, initials, fullName, isOnline, isChecked }) => (
-    <div
-        className={classNames(styles.root, {
-            [styles.rootXsmall]: size === 'xsmall',
-            [styles.rootSmall]: size === 'small',
-            [styles.rootMedium]: size === 'medium',
-            [styles.rootLarge]: size === 'large',
-            [styles.rootXlarge]: size === 'xlarge',
-        })}
-        style={
-            isNumber(size)
-                ? { width: size, height: size }
-                : { width: dimensions[size], height: dimensions[size] }
-        }
-    >
-        {imageUrl ? (
-            <Image
-                className={styles.circleAvatar}
-                src={imageUrl}
-                alt={fullName && `Avatar for ${fullName}`}
-                title={fullName && `Avatar for ${fullName}`}
-                height={dimensions[size]}
-            />
-        ) : (
-            <span
-                className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                style={getStyle(initials)}
-                title={fullName && `Avatar for ${fullName}`}
-            >
-                {initials}
-            </span>
-        )}
-        {(isOnline || isChecked) && (
-            <Badge size={size} type="user">
-                {isChecked && <CheckIcon />}
-            </Badge>
-        )}
-    </div>
-);
+// Needed because of the `forwardRef`.
+EntityAvatar.displayName = 'EntityAvatar';
+
+const UserAvatar = forwardRef((props, outerRef) => {
+    const { imageUrl, size, initials, fullName, isOnline, isChecked } = props;
+
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+            style={
+                isNumber(size)
+                    ? { width: size, height: size }
+                    : { width: dimensions[size], height: dimensions[size] }
+            }
+        >
+            {imageUrl ? (
+                <Image
+                    className={styles.circleAvatar}
+                    src={imageUrl}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    height={dimensions[size]}
+                    ref={outerRef}
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                    style={getStyle(initials)}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initials}
+                </span>
+            )}
+            {(isOnline || isChecked) && (
+                <Badge size={size} type="user">
+                    {isChecked && <CheckIcon />}
+                </Badge>
+            )}
+        </div>
+    );
+});
 
 UserAvatar.propTypes = {
     /**
@@ -207,5 +220,8 @@ UserAvatar.defaultProps = {
     isChecked: false,
     isOnline: undefined,
 };
+
+// Needed because of the `forwardRef`.
+UserAvatar.displayName = 'UserAvatar';
 
 export { UserAvatar, EntityAvatar };

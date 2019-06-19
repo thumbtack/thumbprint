@@ -157,10 +157,11 @@ const Image = forwardRef((props, outerRef) => {
     const imgTagSource = find(sources, s => s.type === 'image/jpeg' || s.type === 'image/png');
 
     // --------------------------------------------------------------------------------------------
-    // Image loaded fade in
+    // Image load and error states
     // --------------------------------------------------------------------------------------------
 
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     return (
         <>
@@ -207,17 +208,21 @@ const Image = forwardRef((props, outerRef) => {
                     // Adds object fit values if specified and adds/removes placeholder padding.
                     style={{
                         ...(shouldObjectFit ? objectFitProps.style : {}),
-                        ...(isLoaded ? {} : aspectRatioBoxProps.style),
+                        ...(isLoaded || isError ? {} : aspectRatioBoxProps.style),
                     }}
                     // Once loaded we remove the placeholder and add a class to transition the
                     // opacity from 0 to 1.
                     onLoad={() => {
                         setIsLoaded(true);
                     }}
+                    onError={() => {
+                        setIsError(true);
+                    }}
                     className={classNames({
                         [styles.image]: true,
                         [styles.imageLoading]: true,
                         [styles.imageLoaded]: isLoaded,
+                        [styles.imageError]: isError,
                     })}
                 />
             </picture>

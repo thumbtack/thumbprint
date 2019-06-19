@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Fix border color of disabled `Button` with "caution" theme. (#325)
+
 ## 2.0.0 - 2019-06-18
 
 ### Changed

@@ -4,7 +4,12 @@
 
 ### Changed
 
--   [Patch] Increased lazy load threshold value from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
+-   [Patch] Increased lazy load threshold in `Image` component from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
+
+### Added
+
+-   [Minor] Make `ServiceCardImage`, `UserAvatar`, and `EntityAvatar` forward a ref to `Image`. (#324)
+-   [Minor] Add `onError` function to `Image` component so broken image icon is properly displayed.
 
 ## 6.1.0 - 2019-06-18
 

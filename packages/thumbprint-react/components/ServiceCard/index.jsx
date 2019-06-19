@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image/index.jsx';
 import styles from './index.module.scss';
 
-const ServiceCardImage = ({ url, src, sources, alt }) => (
-    <Image
-        className={styles.image}
-        sources={sources}
-        containerAspectRatio={8 / 5}
-        src={url || src} // `url` deprecated
-        alt={alt}
-    />
-);
+const ServiceCardImage = forwardRef((props, outerRef) => {
+    const { url, src, sources, alt } = props;
+    return (
+        <Image
+            className={styles.image}
+            sources={sources}
+            containerAspectRatio={8 / 5}
+            src={url || src} // `url` deprecated
+            alt={alt}
+            ref={outerRef}
+        />
+    );
+});
 
 function ServiceCardTitle({ children }) {
     return (
@@ -106,6 +110,9 @@ ServiceCardImage.defaultProps = {
     url: undefined,
     src: undefined,
 };
+
+// Needed because of the `forwardRef`.
+ServiceCardImage.displayName = 'ServiceCardImage';
 
 ServiceCardTitle.propTypes = {
     /**
