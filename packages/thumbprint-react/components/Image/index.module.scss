@@ -1,0 +1,22 @@
+.image,
+.picture {
+    display: block;
+    width: 100%;
+}
+
+.picture {
+    overflow: hidden;
+}
+
+.imageLoading {
+    opacity: 0;
+}
+
+.imageLoaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.imageError {
+    opacity: 1;
+}

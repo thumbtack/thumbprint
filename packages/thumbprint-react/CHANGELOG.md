@@ -2,11 +2,51 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Increased lazy load threshold in `Image` component from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
+
+### Added
+
+-   [Minor] Make `ServiceCardImage`, `UserAvatar`, and `EntityAvatar` forward a ref to `Image`. (#324)
+-   [Minor] Add `onError` function to `Image` component so broken image icon is properly displayed.
+
+## 6.1.0 - 2019-06-18
+
+### Changed
+
+-   [Patch] Use `Image` component within `Avatar`. (#69)
+
+### Added
+
+-   [Patch] `Image` now uses `overflow:hidden` to prevent incorrect image height prior to loading due to `alt` text. (#239)
+-   [Minor] Add support for `isOnline` prop to `EntityAvatar`. (#25)
+-   [Minor] Enable avatar badges at extra small size. (#318)
+
+## 6.0.0 - 2019-06-17
+
+### Changed
+
+-   [Major] Only include `object-fit` CSS in `Image` when `height` is provided. That CSS was previously being added when the `containerAspectRatio` was present. `containerAspectRatio` now only adds placeholder spacing on the `<img>` which is removed `onload`.
+-   [Major] Remove CSS that enforced aspect ratio in `ServiceCardImage` due to changes in `Image` component that no longer support this use case.
+-   [Major] `ServiceCardImage` requires an image in the 8:5 aspect ratio to render correctly.
+-   [Patch] Simplify `Image` component by remove placeholder `div` and CSS positing so the component behaves more predictably. Fixes double download bug in Edge 18.
+-   [Minor] `ServiceCardImage` prop `src` added to replace `src`.
+-   [Patch] `ServiceCardImage` prop `url` deprecated.
+
+## 5.0.0 - 2019-06-13
+
+### Removed
+
+-   [Major] Remove `Avatar` alias for the `UserAvatar` component. Use the [`avatar-import-name` codemod](https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-codemods/src/avatar-import-name) to migrate. (#25)
+
 ### Fixed
 
 -   [Patch] Remove unused CSS from `ServiceCardImage`.
 
 ## 4.0.1 - 2019-06-13
+
+### Fixed
 
 -   [Patch] Fix incorrect PropTypes for Avatar component.
 

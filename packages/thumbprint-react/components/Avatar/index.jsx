@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
 import styles from './index.module.scss';
+import Image from '../Image/index.jsx';
+
+const dimensions = {
+    xsmall: '32px',
+    small: '48px',
+    medium: '72px',
+    large: '100px',
+    xlarge: '140px',
+};
 
 const CheckIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 13">
@@ -14,24 +23,6 @@ const CheckIcon = () => (
         />
     </svg>
 );
-
-const getBadgeProps = ({ size, isChecked, isOnline }) => {
-    const props = {
-        size,
-    };
-
-    if (isChecked) {
-        props.children = <CheckIcon />;
-        props.background = 'green';
-    } else if (isOnline) {
-        props.background = 'green';
-    }
-
-    return props;
-};
-
-const shouldShowBadge = ({ size, isChecked, isOnline }) =>
-    size !== 'xsmall' && (isChecked || isOnline);
 
 const STYLES = [
     {
@@ -65,58 +56,46 @@ const getStyle = initials =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { text: tokens.tpColorBlack, background: tokens.tpColorGray200 };
 
-class EntityAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
+const EntityAvatar = forwardRef((props, outerRef) => {
+    const { imageUrl, size, initial, fullName, isOnline } = props;
 
-    render() {
-        const { imageUrl, size, initial, fullName } = this.props;
-
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: size === 'xsmall',
-                    [styles.rootSmall]: size === 'small',
-                    [styles.rootMedium]: size === 'medium',
-                    [styles.rootLarge]: size === 'large',
-                    [styles.rootXlarge]: size === 'xlarge',
-                })}
-                style={isNumber(size) ? { width: size, height: size } : {}}
-            >
-                {imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.squareAvatar} lazyload`}
-                        data-src={imageUrl}
-                        alt={fullName && `Avatar for ${fullName}`}
-                        title={fullName && `Avatar for ${fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
-                        style={getStyle(initial)}
-                        title={fullName && `Avatar for ${fullName}`}
-                    >
-                        {initial}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+            style={
+                isNumber(size)
+                    ? { width: size, height: size }
+                    : { width: dimensions[size], height: dimensions[size] }
+            }
+        >
+            {imageUrl ? (
+                <Image
+                    className={styles.squareAvatar}
+                    src={imageUrl}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    height={dimensions[size]}
+                    ref={outerRef}
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                    style={getStyle(initial)}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initial}
+                </span>
+            )}
+            {isOnline && <Badge size={size} type="entity" />}
+        </div>
+    );
+});
 
 EntityAvatar.propTypes = {
     /**
@@ -139,6 +118,10 @@ EntityAvatar.propTypes = {
         PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
         PropTypes.number,
     ]),
+    /**
+     * Displays a badge if the user is online.
+     */
+    isOnline: PropTypes.bool,
 };
 
 EntityAvatar.defaultProps = {
@@ -146,62 +129,56 @@ EntityAvatar.defaultProps = {
     initial: undefined,
     fullName: undefined,
     size: 'small',
+    isOnline: false,
 };
 
-// TODO(giles): remove this default export once website has been updated to refer only to UserAvatar
-export default class UserAvatar extends React.Component {
-    componentDidMount() {
-        // These imports are only needed client-side and allow for lazy-loading images. They should
-        // be changed to `import()` once Gatsby 2 launches. We're currently limited by the version
-        // of Webpack that Gatsby uses.
-        // https://github.com/gatsbyjs/gatsby/issues/461
-        // https://github.com/thumbtack/thumbprint-archive/issues/960
-        /* eslint-disable global-require */
-        require('lazysizes');
-        // `ls.attrchange.js` re-renders the image when the props change:
-        // https://github.com/aFarkas/lazysizes/issues/339
-        require('lazysizes/plugins/attrchange/ls.attrchange.js');
-        // `ls.object-fit.js` polyfills the object-fit and the object-position property
-        // in non supporting browsers i.e. IE 11.
-        require('lazysizes/plugins/object-fit/ls.object-fit.js');
-        /* eslint-enable */
-    }
+// Needed because of the `forwardRef`.
+EntityAvatar.displayName = 'EntityAvatar';
 
-    render() {
-        const { props } = this;
+const UserAvatar = forwardRef((props, outerRef) => {
+    const { imageUrl, size, initials, fullName, isOnline, isChecked } = props;
 
-        return (
-            <div
-                className={classNames(styles.root, {
-                    [styles.rootXsmall]: props.size === 'xsmall',
-                    [styles.rootSmall]: props.size === 'small',
-                    [styles.rootMedium]: props.size === 'medium',
-                    [styles.rootLarge]: props.size === 'large',
-                    [styles.rootXlarge]: props.size === 'xlarge',
-                })}
-                style={isNumber(props.size) ? { width: props.size, height: props.size } : {}}
-            >
-                {shouldShowBadge(props) && <Badge {...getBadgeProps(props)} />}
-                {props.imageUrl ? (
-                    <img
-                        className={`${styles.baseAvatar} ${styles.circleAvatar} lazyload`}
-                        data-src={props.imageUrl}
-                        alt={props.fullName && `Avatar for ${props.fullName}`}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    />
-                ) : (
-                    <span
-                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
-                        style={getStyle(props.initials)}
-                        title={props.fullName && `Avatar for ${props.fullName}`}
-                    >
-                        {props.initials}
-                    </span>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <div
+            className={classNames(styles.root, {
+                [styles.rootXsmall]: size === 'xsmall',
+                [styles.rootSmall]: size === 'small',
+                [styles.rootMedium]: size === 'medium',
+                [styles.rootLarge]: size === 'large',
+                [styles.rootXlarge]: size === 'xlarge',
+            })}
+            style={
+                isNumber(size)
+                    ? { width: size, height: size }
+                    : { width: dimensions[size], height: dimensions[size] }
+            }
+        >
+            {imageUrl ? (
+                <Image
+                    className={styles.circleAvatar}
+                    src={imageUrl}
+                    alt={fullName && `Avatar for ${fullName}`}
+                    title={fullName && `Avatar for ${fullName}`}
+                    height={dimensions[size]}
+                    ref={outerRef}
+                />
+            ) : (
+                <span
+                    className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                    style={getStyle(initials)}
+                    title={fullName && `Avatar for ${fullName}`}
+                >
+                    {initials}
+                </span>
+            )}
+            {(isOnline || isChecked) && (
+                <Badge size={size} type="user">
+                    {isChecked && <CheckIcon />}
+                </Badge>
+            )}
+        </div>
+    );
+});
 
 UserAvatar.propTypes = {
     /**
@@ -226,7 +203,7 @@ UserAvatar.propTypes = {
         PropTypes.number,
     ]),
     /**
-     * Displays a badge of a checkmark next to the `Avatar`.
+     * @deprecated: Displays a badge of a checkmark next to the `Avatar`.
      */
     isChecked: PropTypes.bool,
     /**
@@ -243,5 +220,8 @@ UserAvatar.defaultProps = {
     isChecked: false,
     isOnline: undefined,
 };
+
+// Needed because of the `forwardRef`.
+UserAvatar.displayName = 'UserAvatar';
 
 export { UserAvatar, EntityAvatar };

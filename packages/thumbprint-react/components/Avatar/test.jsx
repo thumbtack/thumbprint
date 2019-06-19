@@ -2,21 +2,17 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
+jest.mock('react-intersection-observer', () => ({
+    InView: ({ children }) => children({ inView: true, ref: null }),
+    useInView: () => [() => {}, true],
+}));
+
+beforeEach(() => {
+    window.IntersectionObserver = true;
+});
+
 test('renders an image when the user has one', () => {
     const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
-    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
-    expect(wrapper).toMatchSnapshot();
-});
-
-test('adds lazyload class for lazysizes to work', () => {
-    const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" />);
-    expect(wrapper.find('.lazyload')).toHaveLength(1);
-    expect(wrapper).toMatchSnapshot();
-});
-
-test('does not add lazyload class if an image is not provided', () => {
-    const wrapper = mount(<UserAvatar initials="NC" />);
-    expect(wrapper.find('.lazyload')).toHaveLength(0);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -34,7 +30,7 @@ test('adds the `fullName` as `title` text', () => {
     const wrapperWithInitials = mount(<UserAvatar fullName="Duck Goose" title="DG" />);
 
     expect(wrapper.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
-    expect(wrapperWithImage.find('.baseAvatar').prop('title')).toContain('Duck Goose');
+    expect(wrapperWithImage.find('Image').prop('title')).toContain('Duck Goose');
     expect(wrapperWithInitials.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
 
     expect(wrapper).toMatchSnapshot();
@@ -46,7 +42,7 @@ test('adds the `fullName` as `alt` text when image is provided', () => {
     const wrapper = mount(
         <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
     );
-    expect(wrapper.find('.baseAvatar').prop('alt')).toContain('Duck Goose');
+    expect(wrapper.find('Image').prop('alt')).toContain('Duck Goose');
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -54,19 +50,6 @@ test('does not add the `fullName` as `alt` text when no image is provided', () =
     const wrapper = mount(<UserAvatar fullName="Duck Goose" />);
     expect(wrapper.find('.initialsAvatar').prop('alt')).toBeUndefined();
     expect(wrapper).toMatchSnapshot();
-});
-
-test('does not render a badge when `size` is `xsmall`', () => {
-    const wrapperA = mount(<UserAvatar size="xsmall" initials="DK" />);
-    const wrapperB = mount(<UserAvatar size="xsmall" isChecked initials="DK" />);
-    const wrapperC = mount(<UserAvatar size="xsmall" isOnline initials="DK" />);
-
-    expect(wrapperA.find('.badge').exists()).toBe(false);
-    expect(wrapperB.find('.badge').exists()).toBe(false);
-    expect(wrapperC.find('.badge').exists()).toBe(false);
-    expect(wrapperA).toMatchSnapshot();
-    expect(wrapperB).toMatchSnapshot();
-    expect(wrapperC).toMatchSnapshot();
 });
 
 test('does not render a badge by default', () => {
@@ -79,7 +62,7 @@ test('does not render a badge by default', () => {
     expect(wrapperWithSize).toMatchSnapshot();
 });
 
-test('renders a badge if size is larger than `xsmall` and valid badge prop is supplied', () => {
+test('renders a badge if valid badge prop is supplied', () => {
     const wrapperA = mount(<UserAvatar isChecked initials="DK" />);
     const wrapperB = mount(<UserAvatar size="medium" isChecked initials="DK" />);
     const wrapperC = mount(<UserAvatar size="medium" isOnline initials="DK" />);
@@ -134,7 +117,6 @@ test('renders checkmark SVG when `isChecked` and `isOnline` are true', () => {
 
 test('EntityAvatar renders an image when the user has one', () => {
     const wrapper = mount(<EntityAvatar imageUrl="//www.placecage.com/130/130" initial="N" />);
-    expect(wrapper.find('.baseAvatar').prop('data-src')).toBe('//www.placecage.com/130/130');
     expect(wrapper).toMatchSnapshot();
 });
 

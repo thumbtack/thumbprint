@@ -15,7 +15,6 @@ const ReactCodeBlock = props => {
             scope={{ tokens, ...thumbprintReact, ...thumbprintIcons }}
             mountStylesheet={false}
             className="relative"
-            data-focus-visible-added
         >
             <React.StrictMode>
                 <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />

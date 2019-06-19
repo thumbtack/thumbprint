@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image/index.jsx';
 import styles from './index.module.scss';
 
-const ServiceCardImage = ({ url, sources, alt }) => (
-    <Image
-        className={styles.image}
-        sources={sources}
-        containerAspectRatio={8 / 5}
-        src={url}
-        alt={alt}
-    />
-);
+const ServiceCardImage = forwardRef((props, outerRef) => {
+    const { url, src, sources, alt } = props;
+    return (
+        <Image
+            className={styles.image}
+            sources={sources}
+            containerAspectRatio={8 / 5}
+            src={url || src} // `url` deprecated
+            alt={alt}
+            ref={outerRef}
+        />
+    );
+});
 
 function ServiceCardTitle({ children }) {
     return (
@@ -75,12 +79,17 @@ ServiceCard.defaultProps = {
 
 ServiceCardImage.propTypes = {
     /**
-     * URL pointing to image to be displayed.
+     * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
+     * @deprecated Use `src` instead of `url`.
      */
-    url: PropTypes.string.isRequired,
+    url: PropTypes.string,
+    /**
+     * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
+     */
+    src: PropTypes.string,
     /**
      * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
+     * density and the width of the rendered image. Images must have an aspect ratio of 8:5.
      */
     sources: PropTypes.arrayOf(
         PropTypes.shape({
@@ -98,7 +107,12 @@ ServiceCardImage.propTypes = {
 ServiceCardImage.defaultProps = {
     alt: undefined,
     sources: undefined,
+    url: undefined,
+    src: undefined,
 };
+
+// Needed because of the `forwardRef`.
+ServiceCardImage.displayName = 'ServiceCardImage';
 
 ServiceCardTitle.propTypes = {
     /**
