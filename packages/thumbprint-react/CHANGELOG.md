@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add an initial version of a `Popover` component with only the visuals implemented. This is not ready for use, and is not displayed in the documentation.
+
 ### Changed
 
 -   [Patch] Increased lazy load threshold in `Image` component from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).

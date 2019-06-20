@@ -1,0 +1,68 @@
+---
+title: Popover
+description: Advanced tooltip for showing detailed content
+unlisted: true
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Popover
+
+### Default
+
+```jsx
+<Popover
+    isOpen
+    onCloseClick={() => {
+        console.log(`Popover: onCloseClick`);
+    }}
+    nubbinPosition="top"
+>
+    <PopoverTitle>New Feature!</PopoverTitle>
+
+    <PopoverBody>You can now estimate jobs from your settings.</PopoverBody>
+
+    <ButtonRow>
+        <PopoverPrimaryButton
+            onClick={() => {
+                console.log(`PopoverPrimaryButton: onClick`);
+            }}
+        >
+            Next
+        </PopoverPrimaryButton>
+        <PopoverSecondaryButton
+            onClick={() => {
+                console.log(`PopoverSecondaryButton: onClick`);
+            }}
+        >
+            Previous
+        </PopoverSecondaryButton>
+    </ButtonRow>
+</Popover>
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/popover/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Popover/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

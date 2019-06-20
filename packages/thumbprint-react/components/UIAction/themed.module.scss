@@ -196,6 +196,18 @@ $button-border-width: 2px;
         }
     }
 
+    &ThemePopover {
+        color: $tp-color__white;
+        background-color: $tp-color__indigo;
+        border-color: $tp-color__indigo;
+
+        &:focus {
+            color: $tp-color__white;
+            background-color: $tp-color__indigo-500;
+            border-color: $tp-color__indigo-500;
+        }
+    }
+
     &:focus {
         outline: none;
     }
