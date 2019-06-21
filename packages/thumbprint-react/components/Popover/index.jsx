@@ -54,10 +54,10 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick }) => (
                 <div
                     className={classNames({
                         [styles.nubbin]: true,
-                        [styles.nubbinTop]: startsWith(position, 'bottom'),
-                        [styles.nubbinBottom]: startsWith(position, 'top'),
-                        [styles.nubbinLeft]: startsWith(position, 'right'),
-                        [styles.nubbinRight]: startsWith(position, 'left'),
+                        [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                        [styles.nubbinBottom]: startsWith(placement, 'top'),
+                        [styles.nubbinLeft]: startsWith(placement, 'right'),
+                        [styles.nubbinRight]: startsWith(placement, 'left'),
                     })}
                     ref={arrowProps.ref}
                     style={arrowProps.style}
