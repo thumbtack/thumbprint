@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.2.0 - 2019-06-20
+
 ### Changed
 
 -   [Patch] Increased lazy load threshold in `Image` component from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
