@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
-import onClickOutside from 'react-onclickoutside';
 import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
@@ -17,6 +16,8 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 import styles from './index.module.scss';
 
 const ESC_KEY = 27;
+
+// === Internal component ===
 
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
@@ -67,6 +68,8 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick }) => (
     </Popper>
 );
 
+// === Main export ===
+
 const Popover = ({ children, launcher, position, isOpen, onCloseClick, container }) => {
     // Appends the tooltip right before `</body>` when true.
     const shouldDisplace = container === 'body';
@@ -83,8 +86,6 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick, container
             document.removeEventListener('keyup', handleKeyUp);
         };
     });
-
-    Popover.handleClickOutside = onCloseClick;
 
     const popoverContent = (
         <PopoverContent position={position} isOpen={isOpen} onCloseClick={onCloseClick}>
@@ -154,11 +155,9 @@ Popover.defaultProps = {
     container: 'body',
 };
 
-const clickOutsideConfig = {
-    handleClickOutside: () => Popover.handleClickOutside,
-};
+export default Popover;
 
-export default onClickOutside(Popover, clickOutsideConfig);
+// === Sub-components ===
 
 const PopoverTitle = ({ children }) => <div className={styles.popoverTitle}>{children}</div>;
 
@@ -195,8 +194,8 @@ PopoverPrimaryButton.propTypes = {
     onClick: PropTypes.func.isRequired,
 };
 
-const PopoverSecondaryButton = ({ children, onClick }) => (
-    <Themed size="small" onClick={onClick} theme="popover-secondary">
+const PopoverSecondaryButton = ({ children, onClick, to }) => (
+    <Themed size="small" onClick={onClick} to={to} theme="popover-secondary" shouldOpenInNewTab>
         {children}
     </Themed>
 );
@@ -207,9 +206,18 @@ PopoverSecondaryButton.propTypes = {
      */
     children: PropTypes.string.isRequired,
     /**
-     * Function called when the button is clicked.
+     * Function called when the button is clicked, or link to visit.
      */
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
+    /**
+     * Link to visit when the button is clicked. It will be opened in a new tab.
+     */
+    to: PropTypes.string,
+};
+
+PopoverSecondaryButton.defaultProps = {
+    onClick: undefined,
+    to: undefined,
 };
 
 export { PopoverTitle, PopoverBody, PopoverPrimaryButton, PopoverSecondaryButton };
