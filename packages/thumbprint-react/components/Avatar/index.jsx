@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import ErrorBoundary from 'react-error-boundary';
 import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge.jsx';
@@ -75,14 +76,16 @@ const EntityAvatar = forwardRef((props, outerRef) => {
             }
         >
             {imageUrl ? (
-                <Image
-                    className={styles.squareAvatar}
-                    src={imageUrl}
-                    alt={fullName && `Avatar for ${fullName}`}
-                    title={fullName && `Avatar for ${fullName}`}
-                    height={dimensions[size]}
-                    ref={outerRef}
-                />
+                <ErrorBoundary>
+                    <Image
+                        className={styles.squareAvatar}
+                        src={imageUrl}
+                        alt={fullName && `Avatar for ${fullName}`}
+                        title={fullName && `Avatar for ${fullName}`}
+                        height={dimensions[size]}
+                        ref={outerRef}
+                    />
+                </ErrorBoundary>
             ) : (
                 <span
                     className={`${styles.initialsAvatar} ${styles.squareAvatar}`}

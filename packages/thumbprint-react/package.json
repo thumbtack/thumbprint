@@ -46,6 +46,7 @@
         "object-fit-images": "^3.2.4",
         "react-day-picker": "6.2.1",
         "react-displace": "^2.3.0",
+        "react-error-boundary": "^1.2.5",
         "react-intersection-observer": "^8.23.0",
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",

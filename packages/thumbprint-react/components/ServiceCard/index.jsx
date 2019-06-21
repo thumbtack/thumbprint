@@ -1,20 +1,23 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import ErrorBoundary from 'react-error-boundary';
 import Image from '../Image/index.jsx';
 import styles from './index.module.scss';
 
 const ServiceCardImage = forwardRef((props, outerRef) => {
     const { url, src, sources, alt } = props;
     return (
-        <Image
-            className={styles.image}
-            sources={sources}
-            containerAspectRatio={8 / 5}
-            src={url || src} // `url` deprecated
-            alt={alt}
-            ref={outerRef}
-        />
+        <ErrorBoundary>
+            <Image
+                className={styles.image}
+                sources={sources}
+                containerAspectRatio={8 / 5}
+                src={url || src} // `url` deprecated
+                alt={alt}
+                ref={outerRef}
+            />
+        </ErrorBoundary>
     );
 });
 
