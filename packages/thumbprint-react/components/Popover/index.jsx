@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 import onClickOutside from 'react-onclickoutside';
 import startsWith from 'lodash/startsWith';
 
-import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 
 import canUseDOM from '../../utils/can-use-dom';
 
@@ -17,7 +18,59 @@ import styles from './index.module.scss';
 
 const ESC_KEY = 27;
 
-const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
+// Internal component only. Proptypes are defined for the main component `Popover` at the end of the
+// file.
+// eslint-disable-next-line react/prop-types
+const PopoverContent = ({ position, isOpen, children, onCloseClick }) => (
+    <Popper
+        placement={position}
+        modifiers={{
+            offset: { offset: `0, ${tokens.tpSpace2}` },
+            preventOverflow: { boundariesElement: 'window' },
+        }}
+        positionFixed={false}
+    >
+        {({ ref, style, placement, arrowProps }) => (
+            <div
+                ref={ref}
+                className={classNames({
+                    [styles.root]: true,
+                    [styles.open]: isOpen,
+                })}
+                style={style}
+                data-placement={placement}
+            >
+                {children}
+
+                <div className={styles.closeButton}>
+                    <TextButton
+                        accessibilityLabel="Close popover"
+                        iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
+                        theme="inherit"
+                        onClick={onCloseClick}
+                    />
+                </div>
+
+                <div
+                    className={classNames({
+                        [styles.nubbin]: true,
+                        [styles.nubbinTop]: startsWith(position, 'bottom'),
+                        [styles.nubbinBottom]: startsWith(position, 'top'),
+                        [styles.nubbinLeft]: startsWith(position, 'right'),
+                        [styles.nubbinRight]: startsWith(position, 'left'),
+                    })}
+                    ref={arrowProps.ref}
+                    style={arrowProps.style}
+                />
+            </div>
+        )}
+    </Popper>
+);
+
+const Popover = ({ children, launcher, position, isOpen, onCloseClick, container }) => {
+    // Appends the tooltip right before `</body>` when true.
+    const shouldDisplace = container === 'body';
+
     const handleKeyUp = event => {
         if (event.keyCode === ESC_KEY) {
             onCloseClick();
@@ -33,63 +86,26 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
 
     Popover.handleClickOutside = () => onCloseClick();
 
+    const popoverContent = (
+        <PopoverContent position={position} isOpen={isOpen} onCloseClick={onCloseClick}>
+            {children}
+        </PopoverContent>
+    );
+
     return (
         <Manager>
             <Reference>{({ ref }) => launcher({ ref })}</Reference>
-            <Popper
-                placement={position}
-                modifiers={{
-                    offset: { offset: `0, ${tpSpace3}` },
-                    preventOverflow: { boundariesElement: 'window' },
-                }}
-                positionFixed={false}
-            >
-                {({ ref, style, placement, arrowProps }) =>
-                    canUseDOM && (
-                        <div
-                            ref={ref}
-                            className={classNames({
-                                [styles.root]: true,
-                                [styles.open]: isOpen,
-                            })}
-                            style={style}
-                            data-placement={placement}
-                        >
-                            {children}
-
-                            <div className={styles.closeButton}>
-                                <TextButton
-                                    accessibilityLabel="Close popover"
-                                    iconLeft={
-                                        <NavigationCloseTiny className={styles.closeButtonIcon} />
-                                    }
-                                    theme="inherit"
-                                    onClick={onCloseClick}
-                                />
-                            </div>
-
-                            <div
-                                className={classNames({
-                                    [styles.nubbin]: true,
-                                    [styles.nubbinTop]: startsWith(position, 'bottom'),
-                                    [styles.nubbinBottom]: startsWith(position, 'top'),
-                                    [styles.nubbinLeft]: startsWith(position, 'right'),
-                                    [styles.nubbinRight]: startsWith(position, 'left'),
-                                })}
-                                ref={arrowProps.ref}
-                                style={arrowProps.style}
-                            />
-                        </div>
-                    )
-                }
-            </Popper>
+            {canUseDOM &&
+                (shouldDisplace
+                    ? ReactDOM.createPortal(popoverContent, document.body)
+                    : popoverContent)}
         </Manager>
     );
 };
 
 Popover.propTypes = {
     /**
-     * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`.
+     * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
      */
     children: PropTypes.node,
     /**
@@ -123,11 +139,19 @@ Popover.propTypes = {
      * in your parent component
      */
     onCloseClick: PropTypes.func.isRequired,
+    /**
+     * By default popovers will render right before the `</body>` tag.
+     * Setting the `container` to `inline` causes the tooltip to remain where it was added to the
+     * DOM.
+     * This option is helpful to work around z-index and positioning issues.
+     */
+    container: PropTypes.oneOf(['inline', 'body']),
 };
 
 Popover.defaultProps = {
     children: null,
     position: 'top',
+    container: 'body',
 };
 
 const clickOutsideConfig = {

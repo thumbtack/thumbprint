@@ -15,7 +15,8 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ```jsx
 function PopoverDemo() {
-    const [isOpen, setIsOpen] = React.useState();
+    const [isOpen, setIsOpen] = React.useState(true);
+    const position = 'top';
 
     return (
         <div
@@ -41,7 +42,7 @@ function PopoverDemo() {
                 onCloseClick={() => {
                     setIsOpen(false);
                 }}
-                position="top"
+                position={position}
             >
                 <PopoverTitle>New Feature!</PopoverTitle>
 
@@ -73,7 +74,8 @@ function PopoverDemo() {
 
 ```jsx
 function PopoverDemo() {
-    const [isOpen, setIsOpen] = React.useState();
+    const [isOpen, setIsOpen] = React.useState(true);
+    const position = 'bottom';
 
     return (
         <div
@@ -99,7 +101,7 @@ function PopoverDemo() {
                 onCloseClick={() => {
                     setIsOpen(false);
                 }}
-                position="bottom-start"
+                position={position}
             >
                 <PopoverTitle>New Feature!</PopoverTitle>
 

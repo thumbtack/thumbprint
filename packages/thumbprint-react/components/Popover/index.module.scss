@@ -64,14 +64,14 @@
     }
 
     &Left {
-        transform: rotate(-90deg);
-        left: -8px;
+        transform: rotate(90deg);
+        left: -20px;
         border-top-color: $tp-color__white;
     }
 
     &Right {
-        transform: rotate(90deg);
-        right: -8px;
+        transform: rotate(-90deg);
+        right: -20px;
         border-top-color: $tp-color__white;
     }
 }
