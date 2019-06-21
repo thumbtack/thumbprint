@@ -25,7 +25,7 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick }) => (
     <Popper
         placement={position}
         modifiers={{
-            offset: { offset: `0, ${tokens.tpSpace2}` },
+            offset: { offset: `0, ${tokens.tpSpace3}` },
             preventOverflow: { boundariesElement: 'window' },
         }}
         positionFixed={false}
