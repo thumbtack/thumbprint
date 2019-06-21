@@ -23,10 +23,10 @@ jest.mock('popper.js', () => {
 
 test('renders content that is passed in', () => {
     const wrapper = mount(
-        <Popover isOpen onCloseClick={() => {}} launcher={() => {}}>
-            goose
+        <Popover isOpen={false} onCloseClick={() => {}} launcher={() => null}>
+            Goose
         </Popover>,
     );
-    expect(wrapper.text()).toBe('goose');
+    expect(wrapper.text()).toBe('Goose');
     expect(wrapper).toMatchSnapshot();
 });
