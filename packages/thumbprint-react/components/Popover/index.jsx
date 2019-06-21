@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Manager, Reference, Popper } from 'react-popper';
+
+import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 
 import { TextButton } from '../Button/index.jsx';
 import { Themed, Plain } from '../UIAction/index.jsx';
@@ -8,32 +11,53 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-const Popover = ({ children, nubbinPosition, isOpen, onCloseClick }) => (
-    <div
-        className={classNames({
-            [styles.root]: true,
-            [styles.open]: isOpen,
-        })}
-    >
-        {children}
+const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => (
+    <Manager>
+        <Reference>{({ ref }) => launcher({ ref })}</Reference>
+        <Popper
+            placement={position}
+            modifiers={{
+                offset: { offset: `0, ${tpSpace3}` },
+                preventOverflow: { boundariesElement: 'window' },
+            }}
+            positionFixed={false}
+        >
+            {({ ref, style, placement, arrowProps }) => (
+                <div
+                    ref={ref}
+                    className={classNames({
+                        [styles.root]: true,
+                        [styles.open]: isOpen,
+                    })}
+                    style={style}
+                    data-placement={placement}
+                >
+                    {children}
 
-        <div className={styles.closeButton}>
-            <TextButton
-                accessibilityLabel="Close popover"
-                iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
-                theme="inherit"
-                onClick={onCloseClick}
-            />
-        </div>
+                    <div className={styles.closeButton}>
+                        <TextButton
+                            accessibilityLabel="Close popover"
+                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
+                            theme="inherit"
+                            onClick={onCloseClick}
+                        />
+                    </div>
 
-        <div
-            className={classNames({
-                [styles.nubbin]: true,
-                [styles.nubbinTop]: nubbinPosition === 'top',
-                [styles.nubbinBottom]: nubbinPosition === 'bottom',
-            })}
-        />
-    </div>
+                    <div
+                        className={classNames({
+                            [styles.nubbin]: true,
+                            [styles.nubbinTop]: position === 'bottom',
+                            [styles.nubbinBottom]: position === 'top',
+                            [styles.nubbinLeft]: position === 'right',
+                            [styles.nubbinRight]: position === 'left',
+                        })}
+                        ref={arrowProps.ref}
+                        style={arrowProps.style}
+                    />
+                </div>
+            )}
+        </Popper>
+    </Manager>
 );
 
 Popover.propTypes = {
@@ -42,10 +66,15 @@ Popover.propTypes = {
      */
     children: PropTypes.node,
     /**
-     * Position of the nubbin relative to the popover.
-     * TODO(giles): add the other 10 positions here
+     * A function that renders JSX and receives an object with `ref`.
+     * All of these props must be added to the component within the render prop.
      */
-    nubbinPosition: PropTypes.oneOf(['top', 'bottom']),
+    launcher: PropTypes.func.isRequired,
+    /**
+     * Position of popover relative to the launcher.
+     * TODO(giles): add the other positions here
+     */
+    position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     /**
      * Whether or not the popover is visible.
      */
@@ -59,7 +88,7 @@ Popover.propTypes = {
 
 Popover.defaultProps = {
     children: null,
-    nubbinPosition: 'top',
+    position: 'top',
 };
 
 const PopoverTitle = ({ children }) => <div className={styles.popoverTitle}>{children}</div>;

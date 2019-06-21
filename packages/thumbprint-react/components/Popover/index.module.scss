@@ -61,4 +61,16 @@
         bottom: -8px;
         border-top-color: $tp-color__white;
     }
+
+    &Left {
+        transform: rotate(-90deg);
+        left: -8px;
+        border-top-color: $tp-color__white;
+    }
+
+    &Right {
+        transform: rotate(90deg);
+        right: -8px;
+        border-top-color: $tp-color__white;
+    }
 }

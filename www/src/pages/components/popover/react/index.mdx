@@ -14,34 +14,59 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ### Default
 
 ```jsx
-<Popover
-    isOpen
-    onCloseClick={() => {
-        console.log(`Popover: onCloseClick`);
-    }}
-    nubbinPosition="top"
->
-    <PopoverTitle>New Feature!</PopoverTitle>
+function PopoverDemo() {
+    const [isOpen, setIsOpen] = React.useState();
 
-    <PopoverBody>You can now estimate jobs from your settings.</PopoverBody>
-
-    <ButtonRow>
-        <PopoverPrimaryButton
-            onClick={() => {
-                console.log(`PopoverPrimaryButton: onClick`);
+    return (
+        <div
+            style={{
+                minHeight: '300px',
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'center',
             }}
         >
-            Next
-        </PopoverPrimaryButton>
-        <PopoverSecondaryButton
-            onClick={() => {
-                console.log(`PopoverSecondaryButton: onClick`);
-            }}
-        >
-            Previous
-        </PopoverSecondaryButton>
-    </ButtonRow>
-</Popover>
+            <Popover
+                launcher={({ ref }) => (
+                    <Button
+                        ref={ref}
+                        onClick={() => {
+                            setIsOpen(!isOpen);
+                        }}
+                    >
+                        Open Popover
+                    </Button>
+                )}
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                position="top"
+            >
+                <PopoverTitle>New Feature!</PopoverTitle>
+
+                <PopoverBody>You can now estimate jobs from your settings.</PopoverBody>
+
+                <ButtonRow>
+                    <PopoverPrimaryButton
+                        onClick={() => {
+                            console.log(`PopoverPrimaryButton: onClick`);
+                        }}
+                    >
+                        Next
+                    </PopoverPrimaryButton>
+                    <PopoverSecondaryButton
+                        onClick={() => {
+                            console.log(`PopoverSecondaryButton: onClick`);
+                        }}
+                    >
+                        Previous
+                    </PopoverSecondaryButton>
+                </ButtonRow>
+            </Popover>
+        </div>
+    );
+}
 ```
 
 export const pageQuery = graphql`
