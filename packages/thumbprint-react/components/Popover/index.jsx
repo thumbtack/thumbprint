@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -12,54 +12,73 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => (
-    <Manager>
-        <Reference>{({ ref }) => launcher({ ref })}</Reference>
-        <Popper
-            placement={position}
-            modifiers={{
-                offset: { offset: `0, ${tpSpace3}` },
-                preventOverflow: { boundariesElement: 'window' },
-            }}
-            positionFixed={false}
-        >
-            {({ ref, style, placement, arrowProps }) => (
-                <div
-                    ref={ref}
-                    className={classNames({
-                        [styles.root]: true,
-                        [styles.open]: isOpen,
-                    })}
-                    style={style}
-                    data-placement={placement}
-                >
-                    {children}
+const ESC_KEY = 27;
 
-                    <div className={styles.closeButton}>
-                        <TextButton
-                            accessibilityLabel="Close popover"
-                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
-                            theme="inherit"
-                            onClick={onCloseClick}
+const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
+    const handleKeyUp = event => {
+        if (event.keyCode === ESC_KEY) {
+            onCloseClick();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keyup', handleKeyUp);
+        return () => {
+            document.removeEventListener('keyup', handleKeyUp);
+        };
+    });
+
+    return (
+        <Manager>
+            <Reference>{({ ref }) => launcher({ ref })}</Reference>
+            <Popper
+                placement={position}
+                modifiers={{
+                    offset: { offset: `0, ${tpSpace3}` },
+                    preventOverflow: { boundariesElement: 'window' },
+                }}
+                positionFixed={false}
+            >
+                {({ ref, style, placement, arrowProps }) => (
+                    <div
+                        ref={ref}
+                        className={classNames({
+                            [styles.root]: true,
+                            [styles.open]: isOpen,
+                        })}
+                        style={style}
+                        data-placement={placement}
+                    >
+                        {children}
+
+                        <div className={styles.closeButton}>
+                            <TextButton
+                                accessibilityLabel="Close popover"
+                                iconLeft={
+                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
+                                }
+                                theme="inherit"
+                                onClick={onCloseClick}
+                            />
+                        </div>
+
+                        <div
+                            className={classNames({
+                                [styles.nubbin]: true,
+                                [styles.nubbinTop]: startsWith(position, 'bottom'),
+                                [styles.nubbinBottom]: startsWith(position, 'top'),
+                                [styles.nubbinLeft]: startsWith(position, 'right'),
+                                [styles.nubbinRight]: startsWith(position, 'left'),
+                            })}
+                            ref={arrowProps.ref}
+                            style={arrowProps.style}
                         />
                     </div>
-
-                    <div
-                        className={classNames({
-                            [styles.nubbin]: true,
-                            [styles.nubbinTop]: startsWith(position, 'bottom'),
-                            [styles.nubbinBottom]: startsWith(position, 'top'),
-                            [styles.nubbinLeft]: startsWith(position, 'right'),
-                            [styles.nubbinRight]: startsWith(position, 'left'),
-                        })}
-                        ref={arrowProps.ref}
-                        style={arrowProps.style}
-                    />
-                </div>
-            )}
-        </Popper>
-    </Manager>
-);
+                )}
+            </Popper>
+        </Manager>
+    );
+};
 
 Popover.propTypes = {
     /**
