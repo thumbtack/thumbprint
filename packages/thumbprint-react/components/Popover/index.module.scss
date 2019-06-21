@@ -33,8 +33,10 @@
 
 .closeButton {
     position: absolute;
-    top: $tp-space__2;
-    right: $tp-space__2;
+    top: 0;
+    right: 0;
+    // Increase click target of the button to make it easier to tap.
+    padding: $tp-space__2;
 }
 
 .nubbin {
