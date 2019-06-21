@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
+import startsWith from 'lodash/startsWith';
 
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 
 import { TextButton } from '../Button/index.jsx';
-import { Themed, Plain } from '../UIAction/index.jsx';
+import { Themed } from '../UIAction/index.jsx';
 import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
@@ -46,10 +47,10 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => (
                     <div
                         className={classNames({
                             [styles.nubbin]: true,
-                            [styles.nubbinTop]: position === 'bottom',
-                            [styles.nubbinBottom]: position === 'top',
-                            [styles.nubbinLeft]: position === 'right',
-                            [styles.nubbinRight]: position === 'left',
+                            [styles.nubbinTop]: startsWith(position, 'bottom'),
+                            [styles.nubbinBottom]: startsWith(position, 'top'),
+                            [styles.nubbinLeft]: startsWith(position, 'right'),
+                            [styles.nubbinRight]: startsWith(position, 'left'),
                         })}
                         ref={arrowProps.ref}
                         style={arrowProps.style}
@@ -72,9 +73,21 @@ Popover.propTypes = {
     launcher: PropTypes.func.isRequired,
     /**
      * Position of popover relative to the launcher.
-     * TODO(giles): add the other positions here
      */
-    position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+    position: PropTypes.oneOf([
+        'top-start',
+        'top',
+        'top-end',
+        'bottom-start',
+        'bottom',
+        'bottom-end',
+        'left-start',
+        'left',
+        'left-end',
+        'right-start',
+        'right',
+        'right-end',
+    ]),
     /**
      * Whether or not the popover is visible.
      */
@@ -111,7 +124,7 @@ PopoverBody.propTypes = {
 
 const PopoverPrimaryButton = ({ children, onClick }) => (
     <div className={styles.popoverButton}>
-        <Themed size="small" onClick={onClick} theme="popover">
+        <Themed size="small" onClick={onClick} theme="popover-primary">
             {children}
         </Themed>
     </div>
@@ -130,9 +143,9 @@ PopoverPrimaryButton.propTypes = {
 
 const PopoverSecondaryButton = ({ children, onClick }) => (
     <div className={styles.popoverButton}>
-        <Plain size="small" onClick={onClick} theme="secondary">
+        <Themed size="small" onClick={onClick} theme="popover-secondary">
             {children}
-        </Plain>
+        </Themed>
     </div>
 );
 

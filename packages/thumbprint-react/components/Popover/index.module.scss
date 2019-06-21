@@ -2,6 +2,7 @@
 @import '~@thumbtack/thumbprint-scss/mixins';
 
 .root {
+    background: $tp-color__white;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     padding: $tp-space__3 $tp-space__4;
     border-radius: $tp-border-radius__base;
