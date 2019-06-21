@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Manager, Reference, Popper } from 'react-popper';
+import { Popper } from 'react-popper';
 import startsWith from 'lodash/startsWith';
 
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
@@ -14,7 +14,7 @@ import styles from './index.module.scss';
 
 const ESC_KEY = 27;
 
-const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
+const Popover = ({ children, target, position, isOpen, onCloseClick }) => {
     const handleKeyUp = event => {
         if (event.keyCode === ESC_KEY) {
             onCloseClick();
@@ -29,54 +29,50 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
     });
 
     return (
-        <Manager>
-            <Reference>{({ ref }) => launcher({ ref })}</Reference>
-            <Popper
-                placement={position}
-                modifiers={{
-                    offset: { offset: `0, ${tpSpace3}` },
-                    preventOverflow: { boundariesElement: 'window' },
-                }}
-                positionFixed={false}
-            >
-                {({ ref, style, placement, arrowProps }) => (
-                    <div
-                        ref={ref}
-                        className={classNames({
-                            [styles.root]: true,
-                            [styles.open]: isOpen,
-                        })}
-                        style={style}
-                        data-placement={placement}
-                    >
-                        {children}
+        <Popper
+            referenceElement={target && target.current ? target.current : target}
+            placement={position}
+            modifiers={{
+                offset: { offset: `0, ${tpSpace3}` },
+                preventOverflow: { boundariesElement: 'window' },
+            }}
+            positionFixed={false}
+        >
+            {({ ref, style, placement, arrowProps }) => (
+                <div
+                    ref={ref}
+                    className={classNames({
+                        [styles.root]: true,
+                        [styles.open]: isOpen,
+                    })}
+                    style={style}
+                    data-placement={placement}
+                >
+                    {children}
 
-                        <div className={styles.closeButton}>
-                            <TextButton
-                                accessibilityLabel="Close popover"
-                                iconLeft={
-                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
-                                }
-                                theme="inherit"
-                                onClick={onCloseClick}
-                            />
-                        </div>
-
-                        <div
-                            className={classNames({
-                                [styles.nubbin]: true,
-                                [styles.nubbinTop]: startsWith(position, 'bottom'),
-                                [styles.nubbinBottom]: startsWith(position, 'top'),
-                                [styles.nubbinLeft]: startsWith(position, 'right'),
-                                [styles.nubbinRight]: startsWith(position, 'left'),
-                            })}
-                            ref={arrowProps.ref}
-                            style={arrowProps.style}
+                    <div className={styles.closeButton}>
+                        <TextButton
+                            accessibilityLabel="Close popover"
+                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
+                            theme="inherit"
+                            onClick={onCloseClick}
                         />
                     </div>
-                )}
-            </Popper>
-        </Manager>
+
+                    <div
+                        className={classNames({
+                            [styles.nubbin]: true,
+                            [styles.nubbinTop]: startsWith(position, 'bottom'),
+                            [styles.nubbinBottom]: startsWith(position, 'top'),
+                            [styles.nubbinLeft]: startsWith(position, 'right'),
+                            [styles.nubbinRight]: startsWith(position, 'left'),
+                        })}
+                        ref={arrowProps.ref}
+                        style={arrowProps.style}
+                    />
+                </div>
+            )}
+        </Popper>
     );
 };
 
@@ -86,10 +82,12 @@ Popover.propTypes = {
      */
     children: PropTypes.node,
     /**
-     * A function that renders JSX and receives an object with `ref`.
-     * All of these props must be added to the component within the render prop.
+     * An HTML DOM node or `ref` with `.current`.
      */
-    launcher: PropTypes.func.isRequired,
+    target: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+    ]).isRequired,
     /**
      * Position of popover relative to the launcher.
      */

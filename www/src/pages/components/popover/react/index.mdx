@@ -16,6 +16,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 ```jsx
 function PopoverDemo() {
     const [isOpen, setIsOpen] = React.useState();
+    const ref = React.useRef();
 
     return (
         <div
@@ -26,17 +27,16 @@ function PopoverDemo() {
                 justifyContent: 'center',
             }}
         >
+            <button
+                ref={ref}
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                }}
+            >
+                Open Popover
+            </button>
             <Popover
-                launcher={({ ref }) => (
-                    <Button
-                        ref={ref}
-                        onClick={() => {
-                            setIsOpen(!isOpen);
-                        }}
-                    >
-                        Open Popover
-                    </Button>
-                )}
+                target={ref}
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
