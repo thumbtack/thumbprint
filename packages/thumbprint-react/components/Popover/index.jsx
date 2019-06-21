@@ -84,7 +84,7 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick, container
         };
     });
 
-    Popover.handleClickOutside = () => onCloseClick();
+    Popover.handleClickOutside = onCloseClick;
 
     const popoverContent = (
         <PopoverContent position={position} isOpen={isOpen} onCloseClick={onCloseClick}>
@@ -107,7 +107,7 @@ Popover.propTypes = {
     /**
      * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
      */
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
     /**
      * A function that renders JSX and receives an object with `ref`.
      * All of these props must be added to the component within the render prop.
@@ -133,7 +133,7 @@ Popover.propTypes = {
     /**
      * Whether or not the popover is visible.
      */
-    isOpen: PropTypes.bool.isRequired,
+    isOpen: PropTypes.bool,
     /**
      * Function called when the close button is clicked. You should cause this to set `isOpen=false`
      * in your parent component
@@ -149,7 +149,7 @@ Popover.propTypes = {
 };
 
 Popover.defaultProps = {
-    children: null,
+    isOpen: false,
     position: 'top',
     container: 'body',
 };
@@ -175,15 +175,13 @@ PopoverBody.propTypes = {
     /**
      * The body description text for the popover.
      */
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 const PopoverPrimaryButton = ({ children, onClick }) => (
-    <div className={styles.popoverButton}>
-        <Themed size="small" onClick={onClick} theme="popover-primary">
-            {children}
-        </Themed>
-    </div>
+    <Themed size="small" onClick={onClick} theme="popover-primary">
+        {children}
+    </Themed>
 );
 
 PopoverPrimaryButton.propTypes = {
@@ -198,11 +196,9 @@ PopoverPrimaryButton.propTypes = {
 };
 
 const PopoverSecondaryButton = ({ children, onClick }) => (
-    <div className={styles.popoverButton}>
-        <Themed size="small" onClick={onClick} theme="popover-secondary">
-            {children}
-        </Themed>
-    </div>
+    <Themed size="small" onClick={onClick} theme="popover-secondary">
+        {children}
+    </Themed>
 );
 
 PopoverSecondaryButton.propTypes = {

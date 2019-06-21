@@ -214,7 +214,7 @@ $button-border-width: 2px;
         background-color: $tp-color__white;
         border-color: $tp-color__white;
         padding: 0 10px;
-        font-weight: 400;
+        font-weight: $tp-font-weight__normal;
 
         &:focus {
             color: $tp-color__black;
