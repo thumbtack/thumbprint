@@ -2,9 +2,12 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
+import onClickOutside from 'react-onclickoutside';
 import startsWith from 'lodash/startsWith';
 
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
+
+import canUseDOM from '../../utils/can-use-dom';
 
 import { TextButton } from '../Button/index.jsx';
 import { Themed } from '../UIAction/index.jsx';
@@ -28,6 +31,8 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
         };
     });
 
+    Popover.handleClickOutside = () => onCloseClick();
+
     return (
         <Manager>
             <Reference>{({ ref }) => launcher({ ref })}</Reference>
@@ -39,42 +44,44 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick }) => {
                 }}
                 positionFixed={false}
             >
-                {({ ref, style, placement, arrowProps }) => (
-                    <div
-                        ref={ref}
-                        className={classNames({
-                            [styles.root]: true,
-                            [styles.open]: isOpen,
-                        })}
-                        style={style}
-                        data-placement={placement}
-                    >
-                        {children}
+                {({ ref, style, placement, arrowProps }) =>
+                    canUseDOM && (
+                        <div
+                            ref={ref}
+                            className={classNames({
+                                [styles.root]: true,
+                                [styles.open]: isOpen,
+                            })}
+                            style={style}
+                            data-placement={placement}
+                        >
+                            {children}
 
-                        <div className={styles.closeButton}>
-                            <TextButton
-                                accessibilityLabel="Close popover"
-                                iconLeft={
-                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
-                                }
-                                theme="inherit"
-                                onClick={onCloseClick}
+                            <div className={styles.closeButton}>
+                                <TextButton
+                                    accessibilityLabel="Close popover"
+                                    iconLeft={
+                                        <NavigationCloseTiny className={styles.closeButtonIcon} />
+                                    }
+                                    theme="inherit"
+                                    onClick={onCloseClick}
+                                />
+                            </div>
+
+                            <div
+                                className={classNames({
+                                    [styles.nubbin]: true,
+                                    [styles.nubbinTop]: startsWith(position, 'bottom'),
+                                    [styles.nubbinBottom]: startsWith(position, 'top'),
+                                    [styles.nubbinLeft]: startsWith(position, 'right'),
+                                    [styles.nubbinRight]: startsWith(position, 'left'),
+                                })}
+                                ref={arrowProps.ref}
+                                style={arrowProps.style}
                             />
                         </div>
-
-                        <div
-                            className={classNames({
-                                [styles.nubbin]: true,
-                                [styles.nubbinTop]: startsWith(position, 'bottom'),
-                                [styles.nubbinBottom]: startsWith(position, 'top'),
-                                [styles.nubbinLeft]: startsWith(position, 'right'),
-                                [styles.nubbinRight]: startsWith(position, 'left'),
-                            })}
-                            ref={arrowProps.ref}
-                            style={arrowProps.style}
-                        />
-                    </div>
-                )}
+                    )
+                }
             </Popper>
         </Manager>
     );
@@ -122,6 +129,12 @@ Popover.defaultProps = {
     children: null,
     position: 'top',
 };
+
+const clickOutsideConfig = {
+    handleClickOutside: () => Popover.handleClickOutside,
+};
+
+export default onClickOutside(Popover, clickOutsideConfig);
 
 const PopoverTitle = ({ children }) => <div className={styles.popoverTitle}>{children}</div>;
 
@@ -178,7 +191,5 @@ PopoverSecondaryButton.propTypes = {
      */
     onClick: PropTypes.func.isRequired,
 };
-
-export default Popover;
 
 export { PopoverTitle, PopoverBody, PopoverPrimaryButton, PopoverSecondaryButton };
