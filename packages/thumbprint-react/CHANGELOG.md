@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add an initial version of a `Popover` component with only the visuals implemented. This is not ready for use, and is not displayed in the documentation.
+
 ## 6.2.0 - 2019-06-20
 
 ### Changed
@@ -12,7 +16,6 @@
 
 -   [Minor] Make `ServiceCardImage`, `UserAvatar`, and `EntityAvatar` forward a ref to `Image`. (#324)
 -   [Minor] Add `onError` function to `Image` component so broken image icon is properly displayed.
--   [Minor] Add an initial version of a `Popover` component with only the visuals implemented. This is not ready for use, and is not displayed in the documentation.
 
 ## 6.1.0 - 2019-06-18
 
