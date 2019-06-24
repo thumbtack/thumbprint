@@ -97,7 +97,7 @@ exports[`renders a popover 1`] = `
           >
             <FocusTrap
               _createFocusTrap={[Function]}
-              active={false}
+              active={true}
               focusTrapOptions={
                 Object {
                   "clickOutsideDeactivates": true,
