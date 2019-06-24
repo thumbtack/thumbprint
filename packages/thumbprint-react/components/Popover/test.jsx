@@ -21,12 +21,34 @@ jest.mock('popper.js', () => {
     return Popper;
 });
 
-test('renders content that is passed in', () => {
+test('renders a popover', () => {
+    const onCloseClick = jest.fn();
     const wrapper = mount(
-        <Popover isOpen={false} onCloseClick={() => {}} launcher={() => null}>
+        <Popover isOpen onCloseClick={onCloseClick} launcher={() => null}>
             Goose
         </Popover>,
     );
-    expect(wrapper.text()).toBe('Goose');
+
     expect(wrapper).toMatchSnapshot();
+});
+
+test('initially traps focus to the first focusable element', () => {
+    jest.useFakeTimers();
+
+    const onCloseClick = jest.fn();
+    const wrapper = mount(
+        <Popover isOpen onCloseClick={onCloseClick} launcher={() => null}>
+            <button type="button" id="hi">
+                Hi
+            </button>
+        </Popover>,
+    );
+
+    // Run setTimeouts() in <FocusTrap> to completion
+    jest.runAllTimers();
+
+    const button = wrapper.find('#hi');
+    expect(button.is(':focus')).toBe(true);
+
+    jest.useRealTimers();
 });

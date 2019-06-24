@@ -1,53 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders content that is passed in 1`] = `
-<OnClickOutside(Popover)
-  eventTypes={
-    Array [
-      "mousedown",
-      "touchstart",
-    ]
-  }
-  excludeScrollbar={false}
-  isOpen={false}
+exports[`renders a popover 1`] = `
+<Popover
+  accessibilityLabel="Popover"
+  container="body"
+  isOpen={true}
   launcher={[Function]}
-  onCloseClick={[Function]}
-  outsideClickIgnoreClass="ignore-react-onclickoutside"
-  preventDefault={false}
-  stopPropagation={false}
+  onCloseClick={[MockFunction]}
+  position="top"
 >
-  <Popover
-    container="body"
-    disableOnClickOutside={[Function]}
-    enableOnClickOutside={[Function]}
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    isOpen={false}
-    launcher={[Function]}
-    onCloseClick={[Function]}
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    position="top"
-    preventDefault={false}
-    stopPropagation={false}
-    wrappedRef={[Function]}
-  >
-    <Manager>
-      <Reference>
-        <InnerReference
-          getReferenceRef={[Function]}
-        />
-      </Reference>
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              class="root"
-              style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-            >
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      />
+    </Reference>
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Popover"
+            class="root open"
+            role="dialog"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+          >
+            <div>
               Goose
               <div
                 class="closeButton"
@@ -79,19 +56,36 @@ exports[`renders content that is passed in 1`] = `
                 class="nubbin"
               />
             </div>
-          </body>
-        }
+          </div>
+        </body>
+      }
+    >
+      <PopoverContent
+        accessibilityLabel="Popover"
+        isOpen={true}
+        onCloseClick={[MockFunction]}
+        position="top"
       >
-        <PopoverContent
-          isOpen={false}
-          onCloseClick={[Function]}
-          position="top"
+        <Popper
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
         >
-          <Popper
+          <InnerPopper
+            eventsEnabled={true}
             modifiers={
               Object {
                 "offset": Object {
-                  "offset": "0, 8px",
+                  "offset": "0, 16px",
                 },
                 "preventOverflow": Object {
                   "boundariesElement": "window",
@@ -101,23 +95,20 @@ exports[`renders content that is passed in 1`] = `
             placement="top"
             positionFixed={false}
           >
-            <InnerPopper
-              eventsEnabled={true}
-              modifiers={
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={false}
+              focusTrapOptions={
                 Object {
-                  "offset": Object {
-                    "offset": "0, 8px",
-                  },
-                  "preventOverflow": Object {
-                    "boundariesElement": "window",
-                  },
+                  "clickOutsideDeactivates": true,
                 }
               }
-              placement="top"
-              positionFixed={false}
+              paused={false}
             >
               <div
-                className="root"
+                aria-label="Popover"
+                className="root open"
+                role="dialog"
                 style={
                   Object {
                     "left": 0,
@@ -128,26 +119,10 @@ exports[`renders content that is passed in 1`] = `
                   }
                 }
               >
-                Goose
-                <div
-                  className="closeButton"
-                >
-                  <ForwardRef
-                    accessibilityLabel="Close popover"
-                    iconLeft={
-                      <NavigationCloseTiny
-                        className="closeButtonIcon"
-                        fill="currentColor"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        width="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                      />
-                    }
-                    isDisabled={false}
-                    onClick={[Function]}
-                    theme="inherit"
-                    type="button"
+                <div>
+                  Goose
+                  <div
+                    className="closeButton"
                   >
                     <ForwardRef
                       accessibilityLabel="Close popover"
@@ -162,22 +137,13 @@ exports[`renders content that is passed in 1`] = `
                         />
                       }
                       isDisabled={false}
-                      onClick={[Function]}
-                      shouldOpenInNewTab={false}
+                      onClick={[MockFunction]}
                       theme="inherit"
-                      to={null}
                       type="button"
                     >
-                      <button
-                        aria-label="Close popover"
-                        className="plain plainThemeInherit"
-                        disabled={false}
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <span
-                          className="flexCenter"
-                        >
+                      <ForwardRef
+                        accessibilityLabel="Close popover"
+                        iconLeft={
                           <NavigationCloseTiny
                             className="closeButtonIcon"
                             fill="currentColor"
@@ -185,8 +151,26 @@ exports[`renders content that is passed in 1`] = `
                             viewBox="0 0 14 14"
                             width="14"
                             xmlns="http://www.w3.org/2000/svg"
+                          />
+                        }
+                        isDisabled={false}
+                        onClick={[MockFunction]}
+                        shouldOpenInNewTab={false}
+                        theme="inherit"
+                        to={null}
+                        type="button"
+                      >
+                        <button
+                          aria-label="Close popover"
+                          className="plain plainThemeInherit"
+                          disabled={false}
+                          onClick={[MockFunction]}
+                          type="button"
+                        >
+                          <span
+                            className="flexCenter"
                           >
-                            <svg
+                            <NavigationCloseTiny
                               className="closeButtonIcon"
                               fill="currentColor"
                               height="14"
@@ -194,26 +178,35 @@ exports[`renders content that is passed in 1`] = `
                               width="14"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M3.4346,2.24614 C3.10642,1.91795 2.57432,1.91795 2.24614,2.24614 C1.91795,2.57432 1.91795,3.10642 2.24614,3.4346 L5.8116,7.00006 L2.24627,10.5654 C1.91808,10.8936 1.91808,11.4257 2.24627,11.7539 C2.57445,12.082 3.10655,12.082 3.43473,11.7539 L7.00006,8.18853 L10.5654,11.7539 C10.8936,12.082 11.4257,12.082 11.7539,11.7539 C12.082,11.4257 12.082,10.8936 11.7539,10.5654 L8.18853,7.00006 L11.754,3.4346 C12.0822,3.10642 12.0822,2.57433 11.754,2.24614 C11.4258,1.91795 10.8937,1.91795 10.5655,2.24614 L7.00006,5.8116 L3.4346,2.24614 Z"
-                              />
-                            </svg>
-                          </NavigationCloseTiny>
-                        </span>
-                      </button>
+                              <svg
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="14"
+                                viewBox="0 0 14 14"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.4346,2.24614 C3.10642,1.91795 2.57432,1.91795 2.24614,2.24614 C1.91795,2.57432 1.91795,3.10642 2.24614,3.4346 L5.8116,7.00006 L2.24627,10.5654 C1.91808,10.8936 1.91808,11.4257 2.24627,11.7539 C2.57445,12.082 3.10655,12.082 3.43473,11.7539 L7.00006,8.18853 L10.5654,11.7539 C10.8936,12.082 11.4257,12.082 11.7539,11.7539 C12.082,11.4257 12.082,10.8936 11.7539,10.5654 L8.18853,7.00006 L11.754,3.4346 C12.0822,3.10642 12.0822,2.57433 11.754,2.24614 C11.4258,1.91795 10.8937,1.91795 10.5655,2.24614 L7.00006,5.8116 L3.4346,2.24614 Z"
+                                />
+                              </svg>
+                            </NavigationCloseTiny>
+                          </span>
+                        </button>
+                      </ForwardRef>
                     </ForwardRef>
-                  </ForwardRef>
+                  </div>
+                  <div
+                    className="nubbin"
+                    style={Object {}}
+                  />
                 </div>
-                <div
-                  className="nubbin"
-                  style={Object {}}
-                />
               </div>
-            </InnerPopper>
-          </Popper>
-        </PopoverContent>
-      </Portal>
-    </Manager>
-  </Popover>
-</OnClickOutside(Popover)>
+            </FocusTrap>
+          </InnerPopper>
+        </Popper>
+      </PopoverContent>
+    </Portal>
+  </Manager>
+</Popover>
 `;
