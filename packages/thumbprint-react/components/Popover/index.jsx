@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
+import FocusTrap from 'focus-trap-react';
 import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
@@ -22,55 +23,79 @@ const ESC_KEY = 27;
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
 // eslint-disable-next-line react/prop-types
-const PopoverContent = ({ position, isOpen, children, onCloseClick }) => (
-    <Popper
-        placement={position}
-        modifiers={{
-            offset: { offset: `0, ${tokens.tpSpace3}` },
-            preventOverflow: { boundariesElement: 'window' },
-        }}
-        positionFixed={false}
-    >
-        {({ ref, style, placement, arrowProps }) => (
-            <div
-                ref={ref}
-                className={classNames({
-                    [styles.root]: true,
-                    [styles.open]: isOpen,
-                })}
-                style={style}
-                data-placement={placement}
-            >
-                {children}
+const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilityLabel }) => {
+    return (
+        <Popper
+            placement={position}
+            modifiers={{
+                offset: { offset: `0, ${tokens.tpSpace3}` },
+                preventOverflow: { boundariesElement: 'window' },
+            }}
+            positionFixed={false}
+        >
+            {({ ref: popperRef, style, placement, arrowProps }) => (
+                <FocusTrap
+                    // TODO(set this to `isOpen`)
+                    active={false}
+                    focusTrapOptions={{
+                        clickOutsideDeactivates: false,
+                        // Set initial focus to the popover content itself instead of focusing on the first
+                        // focusable element by default.
+                        // initialFocus: () => popperRef.current,
+                    }}
+                >
+                    <div
+                        ref={popperRef}
+                        className={classNames({
+                            [styles.root]: true,
+                            [styles.open]: isOpen,
+                        })}
+                        style={style}
+                        data-placement={placement}
+                        role="dialog"
+                        aria-label={accessibilityLabel}
+                    >
+                        {children}
 
-                <div className={styles.closeButton}>
-                    <TextButton
-                        accessibilityLabel="Close popover"
-                        iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
-                        theme="inherit"
-                        onClick={onCloseClick}
-                    />
-                </div>
+                        <div className={styles.closeButton}>
+                            <TextButton
+                                accessibilityLabel="Close popover"
+                                iconLeft={
+                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
+                                }
+                                theme="inherit"
+                                onClick={onCloseClick}
+                            />
+                        </div>
 
-                <div
-                    className={classNames({
-                        [styles.nubbin]: true,
-                        [styles.nubbinTop]: startsWith(placement, 'bottom'),
-                        [styles.nubbinBottom]: startsWith(placement, 'top'),
-                        [styles.nubbinLeft]: startsWith(placement, 'right'),
-                        [styles.nubbinRight]: startsWith(placement, 'left'),
-                    })}
-                    ref={arrowProps.ref}
-                    style={arrowProps.style}
-                />
-            </div>
-        )}
-    </Popper>
-);
+                        <div
+                            className={classNames({
+                                [styles.nubbin]: true,
+                                [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                                [styles.nubbinBottom]: startsWith(placement, 'top'),
+                                [styles.nubbinLeft]: startsWith(placement, 'right'),
+                                [styles.nubbinRight]: startsWith(placement, 'left'),
+                            })}
+                            ref={arrowProps.ref}
+                            style={arrowProps.style}
+                        />
+                    </div>
+                </FocusTrap>
+            )}
+        </Popper>
+    );
+};
 
 // === Main export ===
-
-const Popover = ({ children, launcher, position, isOpen, onCloseClick, container }) => {
+const Popover = ({
+    children,
+    launcher,
+    position,
+    isOpen,
+    onCloseClick,
+    container,
+    accessibilityLabel,
+}) => {
     // Appends the tooltip right before `</body>` when true.
     const shouldDisplace = container === 'body';
 
@@ -85,10 +110,15 @@ const Popover = ({ children, launcher, position, isOpen, onCloseClick, container
         return () => {
             document.removeEventListener('keyup', handleKeyUp);
         };
-    });
+    }, []);
 
     const popoverContent = (
-        <PopoverContent position={position} isOpen={isOpen} onCloseClick={onCloseClick}>
+        <PopoverContent
+            position={position}
+            isOpen={isOpen}
+            onCloseClick={onCloseClick}
+            accessibilityLabel={accessibilityLabel}
+        >
             {children}
         </PopoverContent>
     );
@@ -147,12 +177,17 @@ Popover.propTypes = {
      * This option is helpful to work around z-index and positioning issues.
      */
     container: PropTypes.oneOf(['inline', 'body']),
+    /**
+     * Accessibility title used to describe the content of the popover to screen readers.
+     */
+    accessibilityLabel: PropTypes.string,
 };
 
 Popover.defaultProps = {
     isOpen: false,
     position: 'top',
     container: 'body',
+    accessibilityLabel: 'Popover',
 };
 
 export default Popover;

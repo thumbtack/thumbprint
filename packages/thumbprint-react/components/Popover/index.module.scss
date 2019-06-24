@@ -9,11 +9,13 @@
     border-top: 4px solid $tp-color__indigo;
     position: relative;
     max-width: 300px;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .open {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .popoverTitle {
@@ -35,8 +37,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    // Increase click target of the button to make it easier to tap.
-    padding: $tp-space__2;
+
+    &Icon {
+        // Increase click target of the button to make it easier to tap.
+        margin: $tp-space__2;
+    }
 }
 
 .nubbin {
