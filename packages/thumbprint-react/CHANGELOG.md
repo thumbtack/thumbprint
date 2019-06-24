@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.2.1 - 2019-06-24
+
 ### Changed
 
 -   [Patch] Revert lazy load threshold in `Image` component from `400px` to `100px`. The larger value loads more images than desired on mobile.
