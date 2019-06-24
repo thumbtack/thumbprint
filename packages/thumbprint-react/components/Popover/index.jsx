@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -23,38 +23,29 @@ const ESC_KEY = 27;
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
 // eslint-disable-next-line react/prop-types
-const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilityLabel }) => {
-    return (
-        <Popper
-            placement={position}
-            modifiers={{
-                offset: { offset: `0, ${tokens.tpSpace3}` },
-                preventOverflow: { boundariesElement: 'window' },
-            }}
-            positionFixed={false}
-        >
-            {({ ref: popperRef, style, placement, arrowProps }) => (
-                <FocusTrap
-                    // TODO(set this to `isOpen`)
-                    active={false}
-                    focusTrapOptions={{
-                        clickOutsideDeactivates: false,
-                        // Set initial focus to the popover content itself instead of focusing on the first
-                        // focusable element by default.
-                        // initialFocus: () => popperRef.current,
-                    }}
+const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilityLabel }) => (
+    <Popper
+        placement={position}
+        modifiers={{
+            offset: { offset: `0, ${tokens.tpSpace3}` },
+            preventOverflow: { boundariesElement: 'window' },
+        }}
+        positionFixed={false}
+    >
+        {({ ref: popperRef, style, placement, arrowProps }) => (
+            <FocusTrap active={isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+                <div
+                    ref={popperRef}
+                    className={classNames({
+                        [styles.root]: true,
+                        [styles.open]: isOpen,
+                    })}
+                    style={style}
+                    data-placement={placement}
+                    role="dialog"
+                    aria-label={accessibilityLabel}
                 >
-                    <div
-                        ref={popperRef}
-                        className={classNames({
-                            [styles.root]: true,
-                            [styles.open]: isOpen,
-                        })}
-                        style={style}
-                        data-placement={placement}
-                        role="dialog"
-                        aria-label={accessibilityLabel}
-                    >
+                    <div>
                         {children}
 
                         <div className={styles.closeButton}>
@@ -80,11 +71,11 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilit
                             style={arrowProps.style}
                         />
                     </div>
-                </FocusTrap>
-            )}
-        </Popper>
-    );
-};
+                </div>
+            </FocusTrap>
+        )}
+    </Popper>
+);
 
 // === Main export ===
 const Popover = ({
