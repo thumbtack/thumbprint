@@ -109,7 +109,7 @@ const Image = forwardRef((props, outerRef) => {
                 });
             }
         },
-        [shouldObjectFit, shouldLoadImage],
+        [shouldObjectFit, containerRef, shouldLoadImage, shouldPolyfillObjectFit],
     );
 
     if (shouldObjectFit) {
