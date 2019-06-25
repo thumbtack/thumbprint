@@ -2,9 +2,8 @@
 
 ## Unreleased
 
-### Changed
-
 -   [Patch] Simplify `<noscript>` output in `Image` component by removing `<picture>` and `srcSet` and using only `<img alt="..." src="..." />`.
+-   [Minor] Add the new `Popover` component.
 
 ## 6.2.1 - 2019-06-24
 
