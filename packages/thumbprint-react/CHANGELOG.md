@@ -4,6 +4,8 @@
 
 -   [Patch] Simplify `<noscript>` output in `Image` component by removing `<picture>` and `srcSet` and using only `<img alt="..." src="..." />`.
 -   [Minor] Add the new `Popover` component.
+-   [Patch] Refactor out shared ESC listener logic from popover and modal curtain.
+-   [Patch] Refactor ModalCurtain to be a function component using hooks.
 
 ## 6.2.1 - 2019-06-24
 

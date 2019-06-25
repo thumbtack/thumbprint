@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -9,14 +9,13 @@ import startsWith from 'lodash/startsWith';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 
 import canUseDOM from '../../utils/can-use-dom';
+import useCloseOnEscape from '../../utils/use-close-on-escape';
 
 import { TextButton } from '../Button/index.jsx';
 import { Themed } from '../UIAction/index.jsx';
 import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
-
-const ESC_KEY = 27;
 
 // === Internal component ===
 
@@ -91,24 +90,7 @@ const Popover = ({
     // issues
     const shouldDisplace = container === 'body';
 
-    // Set up a listener to handle closing when ESC is pressed
-    // TODO(giles): refactor this out into a generic hook with its own tests that can be shared
-    // with modal and other overlay components.
-    useEffect(
-        () => {
-            const handleKeyUp = event => {
-                if (event.keyCode === ESC_KEY) {
-                    onCloseClick();
-                }
-            };
-
-            document.addEventListener('keyup', handleKeyUp);
-            return () => {
-                document.removeEventListener('keyup', handleKeyUp);
-            };
-        },
-        [onCloseClick],
-    );
+    useCloseOnEscape(onCloseClick);
 
     const popoverContent = (
         <PopoverContent

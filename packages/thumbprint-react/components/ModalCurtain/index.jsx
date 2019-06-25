@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import FocusTrap from 'focus-trap-react';
+
 import NoScroll from './components/no-scroll.jsx';
-import EscListener from './components/esc-listener.jsx';
+
+import useCloseOnEscape from '../../utils/use-close-on-escape';
+
 import styles from './index.module.scss';
 
 const propTypes = {
@@ -54,89 +57,66 @@ const defaultProps = {
     shouldCloseOnEscape: true,
 };
 
-export default class ModalCurtain extends React.Component {
-    constructor(props) {
-        super(props);
+export default function ModalCurtain({
+    stage,
+    shouldCloseOnEscape,
+    accessibilityLabel,
+    onCloseClick,
+    children,
+}) {
+    const [isClient, setIsClient] = useState(false);
+    const modalWrapperNode = useRef(null);
 
-        this.state = {
-            isClient: false,
-        };
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
-        this.modalWrapperNode = null;
-    }
+    const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
+    const shouldRenderEscListener = shouldCloseOnEscape && isEnteringOrEntered;
+    const shouldRenderNoScroll = isEnteringOrEntered;
 
-    componentDidMount() {
-        this.setState({ isClient: true });
-    }
+    useCloseOnEscape(shouldRenderEscListener ? onCloseClick : () => {});
 
-    render() {
-        const { isClient } = this.state;
-        const { shouldCloseOnEscape, accessibilityLabel, onCloseClick, children } = this.props;
+    if (!isClient) return null;
 
-        if (!isClient) return null;
+    return ReactDOM.createPortal(
+        <FocusTrap
+            active={stage === 'entered'}
+            focusTrapOptions={{
+                clickOutsideDeactivates: true,
+                // Set initial focus to the modal wrapper itself instead of focusing on the first
+                // ocusable element by default
+                initialFocus: () => modalWrapperNode,
+            }}
+        >
+            {/* Use tabIndex="-1" to allow programmatic focus (as initialFocus node for <FocusTrap>)
+            but not be tabbable by user. */}
+            <div role="dialog" aria-label={accessibilityLabel} tabIndex="-1" ref={modalWrapperNode}>
+                {shouldRenderNoScroll && <NoScroll />}
 
-        const { stage } = this.props;
-
-        const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
-        const shouldRenderEscListener = shouldCloseOnEscape && isEnteringOrEntered;
-        const shouldRenderNoScroll = isEnteringOrEntered;
-
-        return ReactDOM.createPortal(
-            <FocusTrap
-                active={stage === 'entered'}
-                focusTrapOptions={{
-                    clickOutsideDeactivates: true,
-                    // Set initial focus to the modal wrapper itself instead of
-                    // focusing on the first focusable element by default
-                    initialFocus: () => this.modalWrapperNode,
-                }}
-            >
-                {/**
-                    Use tabIndex="-1" to allow programmatic focus (as initialFocus node for <FocusTrap>)
-                    but not be tabbable by user.
-                */}
-                <div
-                    role="dialog"
-                    aria-label={accessibilityLabel}
-                    tabIndex="-1"
-                    ref={div => {
-                        this.modalWrapperNode = div;
-                    }}
-                >
-                    {shouldRenderEscListener && <EscListener onEscPress={onCloseClick} />}
-
-                    {shouldRenderNoScroll && <NoScroll />}
-
-                    {/**
-                        This component uses the render prop pattern. `children` expects a function
-                        and receives an object that contains `curtainOnClick` and
-                        `curtainClassName`.
-
-                        While using those two properties is optional, they provide helpful
-                        functionality.
-                    */}
-                    {children &&
-                        children({
-                            curtainOnClick: event => {
-                                // Ensures that the click event happened on the element that has the
-                                // `onClick`. This prevents clicks deep within `children` from bubbling
-                                // up and closing the ModalCurtain.
-                                if (event.target === event.currentTarget) {
-                                    onCloseClick();
-                                }
-                            },
-                            curtainClassName: classNames({
-                                [styles.root]: true,
-                                [styles.rootOpen]: isEnteringOrEntered,
-                            }),
-                        })}
-                </div>
-            </FocusTrap>,
-            document.body,
-        );
-    }
+                {/* This component uses the render prop pattern. `children` expects a function and
+                receives an object that contains `curtainOnClick` and `curtainClassName`.
+                While using those two properties is optional, they provide helpful functionality. */}
+                {children &&
+                    children({
+                        curtainOnClick: event => {
+                            // Ensures that the click event happened on the element that has the
+                            // `onClick`. This prevents clicks deep within `children` from bubbling
+                            // up and closing the ModalCurtain.
+                            if (event.target === event.currentTarget) {
+                                onCloseClick();
+                            }
+                        },
+                        curtainClassName: classNames({
+                            [styles.root]: true,
+                            [styles.rootOpen]: isEnteringOrEntered,
+                        }),
+                    })}
+            </div>
+        </FocusTrap>,
+        document.body,
+    );
 }
 
 ModalCurtain.propTypes = propTypes;
-
 ModalCurtain.defaultProps = defaultProps;

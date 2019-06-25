@@ -152,9 +152,6 @@ exports[`renders modal in \`entered\` stage 1`] = `
         role="dialog"
         tabIndex="-1"
       >
-        <EscListener
-          onEscPress={[Function]}
-        />
         <NoScroll />
       </div>
     </FocusTrap>
@@ -206,9 +203,6 @@ exports[`renders modal in \`entering\` stage 1`] = `
         role="dialog"
         tabIndex="-1"
       >
-        <EscListener
-          onEscPress={[Function]}
-        />
         <NoScroll />
       </div>
     </FocusTrap>
