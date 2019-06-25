@@ -196,6 +196,33 @@ $button-border-width: 2px;
         }
     }
 
+    &ThemePopoverPrimary {
+        color: $tp-color__white;
+        background-color: $tp-color__indigo;
+        border-color: $tp-color__indigo;
+        padding: 0 10px;
+
+        &:focus {
+            color: $tp-color__white;
+            background-color: $tp-color__indigo-500;
+            border-color: $tp-color__indigo-500;
+        }
+    }
+
+    &ThemePopoverSecondary {
+        color: $tp-color__black-300;
+        background-color: $tp-color__white;
+        border-color: $tp-color__white;
+        padding: 0 10px;
+        font-weight: $tp-font-weight__normal;
+
+        &:focus {
+            color: $tp-color__black;
+            background-color: $tp-color__white;
+            border-color: $tp-color__white;
+        }
+    }
+
     &:focus {
         outline: none;
     }

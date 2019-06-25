@@ -27,6 +27,13 @@ export {
     ModalDefaultAnimatedWrapper,
 } from './components/ModalDefault/index.jsx';
 export { default as ModalStandard } from './components/ModalStandard/index.jsx';
+export {
+    default as Popover,
+    PopoverTitle,
+    PopoverBody,
+    PopoverPrimaryButton,
+    PopoverSecondaryButton,
+} from './components/Popover/index.jsx';
 export { default as ProgressBar } from './components/ProgressBar/index.jsx';
 export { default as ProgressBarBase } from './components/ProgressBarBase/index.jsx';
 export { default as Pill } from './components/Pill/index.jsx';

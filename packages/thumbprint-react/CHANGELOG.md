@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add the new `Popover` component.
+
 ## 6.2.1 - 2019-06-24
 
 ### Changed
