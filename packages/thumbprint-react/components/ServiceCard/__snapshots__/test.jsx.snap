@@ -102,7 +102,10 @@ exports[`ServiceCardImage render works 1`] = `
       />
     </picture>
     <noscript>
-      <picture />
+      <img
+        alt="duck duck goose"
+        src="https://www.thumbtack.com/image.png"
+      />
     </noscript>
   </Image>
 </ServiceCardImage>

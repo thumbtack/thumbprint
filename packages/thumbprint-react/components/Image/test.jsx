@@ -19,7 +19,8 @@ test('puts `alt` on the `img` tag', () => {
         />,
     );
 
-    expect(wrapper.find('img').prop('alt')).toBe('goose');
+    expect(wrapper.find('picture img').prop('alt')).toBe('goose');
+    expect(wrapper.find('noscript img').prop('alt')).toBe('goose');
 });
 
 test('forwards props to the outermost element', () => {

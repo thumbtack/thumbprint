@@ -227,10 +227,7 @@ const Image = forwardRef((props, outerRef) => {
                 />
             </picture>
             <noscript>
-                <picture>
-                    {webpSource && <source srcSet={webpSource.srcSet} type={webpSource.type} />}
-                    <img src={src} alt={alt} srcSet={imgTagSource && imgTagSource.srcSet} />
-                </picture>
+                <img src={src} alt={alt} />
             </noscript>
         </>
     );
