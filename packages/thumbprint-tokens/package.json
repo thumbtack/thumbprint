@@ -29,6 +29,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-tokens/",
     "dependencies": {
+        "jszip": "^3.2.1",
         "number-to-words": "^1.2.4"
     }
 }
