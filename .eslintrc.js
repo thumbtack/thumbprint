@@ -18,6 +18,10 @@ module.exports = {
         // Disabled because some packages contain subcomponents. Our documentation system currently
         // requires that they be defined in one file.
         'react/no-multi-comp': 'off',
+
+        // React hooks
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     overrides: [
         {
