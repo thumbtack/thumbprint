@@ -87,21 +87,28 @@ const Popover = ({
     container,
     accessibilityLabel,
 }) => {
-    // Appends the tooltip right before `</body>` when true.
+    // Appends the tooltip right before `</body>` when true. Used to prevent z-index and positioning
+    // issues
     const shouldDisplace = container === 'body';
 
-    const handleKeyUp = event => {
-        if (event.keyCode === ESC_KEY) {
-            onCloseClick();
-        }
-    };
+    // Set up a listener to handle closing when ESC is pressed
+    // TODO(giles): refactor this out into a generic hook with its own tests that can be shared
+    // with modal and other overlay components.
+    useEffect(
+        () => {
+            const handleKeyUp = event => {
+                if (event.keyCode === ESC_KEY) {
+                    onCloseClick();
+                }
+            };
 
-    useEffect(() => {
-        document.addEventListener('keyup', handleKeyUp);
-        return () => {
-            document.removeEventListener('keyup', handleKeyUp);
-        };
-    }, []);
+            document.addEventListener('keyup', handleKeyUp);
+            return () => {
+                document.removeEventListener('keyup', handleKeyUp);
+            };
+        },
+        [onCloseClick],
+    );
 
     const popoverContent = (
         <PopoverContent
@@ -158,7 +165,7 @@ Popover.propTypes = {
     isOpen: PropTypes.bool,
     /**
      * Function called when the close button is clicked. You should cause this to set `isOpen=false`
-     * in your parent component
+     * in your parent component.
      */
     onCloseClick: PropTypes.func.isRequired,
     /**
