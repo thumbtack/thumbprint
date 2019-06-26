@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -7,6 +6,7 @@ import NoScroll from './components/no-scroll.jsx';
 
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
+import ConditionalPortal from '../../utils/ConditionalPortal';
 
 import styles from './index.module.scss';
 
@@ -84,41 +84,40 @@ export default function ModalCurtain({
         initialFocus: wrapperRef,
     });
 
-    if (!isClient) return null;
+    return (
+        <ConditionalPortal shouldDisplace>
+            {/* Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
+            but not be tabbable by user. */}
+            <div
+                role="dialog"
+                aria-label={accessibilityLabel}
+                tabIndex="-1"
+                ref={el => {
+                    setWrapperRef(el);
+                }}
+            >
+                {shouldDisableScrolling && <NoScroll />}
 
-    return ReactDOM.createPortal(
-        // Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
-        // but not be tabbable by user.
-        <div
-            role="dialog"
-            aria-label={accessibilityLabel}
-            tabIndex="-1"
-            ref={el => {
-                setWrapperRef(el);
-            }}
-        >
-            {shouldDisableScrolling && <NoScroll />}
-
-            {/* This component uses the render prop pattern. `children` expects a function and
+                {/* This component uses the render prop pattern. `children` expects a function and
                 receives an object that contains `curtainOnClick` and `curtainClassName`.
                 While using those two properties is optional, they provide helpful functionality. */}
-            {children &&
-                children({
-                    curtainOnClick: event => {
-                        // Ensures that the click event happened on the element that has the
-                        // `onClick`. This prevents clicks deep within `children` from bubbling
-                        // up and closing the ModalCurtain.
-                        if (event.target === event.currentTarget) {
-                            onCloseClick();
-                        }
-                    },
-                    curtainClassName: classNames({
-                        [styles.root]: true,
-                        [styles.rootOpen]: isEnteringOrEntered,
-                    }),
-                })}
-        </div>,
-        document.body,
+                {children &&
+                    children({
+                        curtainOnClick: event => {
+                            // Ensures that the click event happened on the element that has the
+                            // `onClick`. This prevents clicks deep within `children` from bubbling
+                            // up and closing the ModalCurtain.
+                            if (event.target === event.currentTarget) {
+                                onCloseClick();
+                            }
+                        },
+                        curtainClassName: classNames({
+                            [styles.root]: true,
+                            [styles.rootOpen]: isEnteringOrEntered,
+                        }),
+                    })}
+            </div>
+        </ConditionalPortal>
     );
 }
 

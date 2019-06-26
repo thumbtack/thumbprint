@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -7,6 +6,7 @@ import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
 
+import ConditionalPortal from '../../utils/ConditionalPortal';
 import canUseDOM from '../../utils/can-use-dom';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
@@ -21,14 +21,15 @@ import styles from './index.module.scss';
 
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
-// eslint-disable-next-line react/prop-types
 function PopoverContent({
+    /* eslint-disable react/prop-types */
     position,
     isOpen,
     children,
     onCloseClick,
     accessibilityLabel,
     setWrapperRef,
+    /* eslint-enable react/prop-types */
 }) {
     return (
         <Popper
@@ -99,10 +100,8 @@ const Popover = ({
     // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example
     const [wrapperRef, setWrapperRef] = useState(null);
 
-    const shouldTrapFocus = canUseDOM && wrapperRef && isOpen;
+    const shouldTrapFocus = canUseDOM && wrapperRef;
     const shouldBindEscListener = canUseDOM && isOpen;
-
-    console.log(shouldTrapFocus);
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
     useFocusTrap(wrapperRef, shouldTrapFocus, {
@@ -112,25 +111,22 @@ const Popover = ({
         initialFocus: wrapperRef,
     });
 
-    const popoverContent = (
-        <PopoverContent
-            position={position}
-            isOpen={isOpen}
-            onCloseClick={onCloseClick}
-            accessibilityLabel={accessibilityLabel}
-            setWrapperRef={setWrapperRef}
-        >
-            {children}
-        </PopoverContent>
-    );
-
     return (
         <Manager>
             <Reference>{({ ref }) => launcher({ ref })}</Reference>
-            {canUseDOM &&
-                (shouldDisplace
-                    ? ReactDOM.createPortal(popoverContent, document.body)
-                    : popoverContent)}
+            <ConditionalPortal shouldDisplace={shouldDisplace}>
+                {canUseDOM && (
+                    <PopoverContent
+                        position={position}
+                        isOpen={isOpen}
+                        onCloseClick={onCloseClick}
+                        accessibilityLabel={accessibilityLabel}
+                        setWrapperRef={setWrapperRef}
+                    >
+                        {children}
+                    </PopoverContent>
+                )}
+            </ConditionalPortal>
         </Manager>
     );
 };

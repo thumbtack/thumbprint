@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
+import ConditionalPortal from '../../utils/ConditionalPortal';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 
 import styles from './index.module.scss';
@@ -133,12 +134,10 @@ PositionedTooltip.defaultProps = {
 // TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
 // component and the main export here is still a class. Remove if we can refactor the entire Tooltip
 // to be a function component using hooks.
-function EscapeableTooltip({ isOpen, shouldDisplace, isClient, hide, children }) {
+function EscapeableTooltip({ isOpen, isClient, hide, children }) {
     useCloseOnEscape(hide, true);
 
-    if (!isClient && !children && !isOpen) return null;
-
-    return shouldDisplace ? ReactDOM.createPortal(children, document.body) : children;
+    return children;
 }
 
 export default class Tooltip extends React.Component {
@@ -248,26 +247,23 @@ export default class Tooltip extends React.Component {
                     }
                 </Reference>
 
-                <EscapeableTooltip
-                    isOpen={isOpen}
-                    isClient={isClient}
-                    shouldDisplace={shouldDisplace}
-                    hide={this.hide}
-                >
-                    {isClient && (
-                        <PositionedTooltip
-                            show={this.show}
-                            hide={this.hide}
-                            onMouseLeave={this.onMouseLeave}
-                            position={position}
-                            theme={theme}
-                            shouldDisplace={shouldDisplace}
-                            supportsTouch={doesWindowSupportTouch()}
-                            zIndex={zIndex}
-                        >
-                            {text}
-                        </PositionedTooltip>
-                    )}
+                <EscapeableTooltip isOpen={isOpen} isClient={isClient} hide={this.hide}>
+                    <ConditionalPortal shouldDisplace={isClient && shouldDisplace}>
+                        {isClient && isOpen && (
+                            <PositionedTooltip
+                                show={this.show}
+                                hide={this.hide}
+                                onMouseLeave={this.onMouseLeave}
+                                position={position}
+                                theme={theme}
+                                supportsTouch={doesWindowSupportTouch()}
+                                zIndex={zIndex}
+                                shouldDisplace={shouldDisplace}
+                            >
+                                {text}
+                            </PositionedTooltip>
+                        )}
+                    </ConditionalPortal>
                 </EscapeableTooltip>
             </Manager>
         );
