@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
 
-import ConditionalPortal from '../../utils/ConditionalPortal';
+import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 
 import styles from './index.module.scss';

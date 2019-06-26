@@ -6,7 +6,7 @@ import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
 
-import ConditionalPortal from '../../utils/ConditionalPortal';
+import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
 import canUseDOM from '../../utils/can-use-dom';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
