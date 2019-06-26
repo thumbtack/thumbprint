@@ -47,8 +47,8 @@ test('initially traps focus to the first focusable element', () => {
     // Run setTimeouts() in <FocusTrap> to completion
     jest.runAllTimers();
 
-    const button = wrapper.find('#hi');
-    expect(button.is(':focus')).toBe(true);
+    const modalWrapper = wrapper.find('[role="dialog"]');
+    expect(modalWrapper.is(':focus')).toBe(true);
 
     jest.useRealTimers();
 });

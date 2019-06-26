@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
-import FocusTrap from 'focus-trap-react';
 import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
 
 import canUseDOM from '../../utils/can-use-dom';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
+import useFocusTrap from '../../utils/use-focus-trap';
 
 import { TextButton } from '../Button/index.jsx';
 import { Themed } from '../UIAction/index.jsx';
@@ -22,27 +22,37 @@ import styles from './index.module.scss';
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
 // eslint-disable-next-line react/prop-types
-const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilityLabel }) => (
-    <Popper
-        placement={position}
-        modifiers={{
-            offset: { offset: `0, ${tokens.tpSpace3}` },
-            preventOverflow: { boundariesElement: 'window' },
-        }}
-        positionFixed={false}
-    >
-        {({ ref: popperRef, style, placement, arrowProps }) => (
-            <FocusTrap active={isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+function PopoverContent({
+    position,
+    isOpen,
+    children,
+    onCloseClick,
+    accessibilityLabel,
+    setWrapperRef,
+}) {
+    return (
+        <Popper
+            placement={position}
+            modifiers={{
+                offset: { offset: `0, ${tokens.tpSpace3}` },
+                preventOverflow: { boundariesElement: 'window' },
+            }}
+            positionFixed={false}
+        >
+            {({ ref: popperRef, style, placement, arrowProps }) => (
                 <div
-                    ref={popperRef}
+                    role="dialog"
+                    aria-label={accessibilityLabel}
+                    ref={el => {
+                        setWrapperRef(el);
+                        popperRef(el);
+                    }}
                     className={classNames({
                         [styles.root]: true,
                         [styles.open]: isOpen,
                     })}
                     style={style}
                     data-placement={placement}
-                    role="dialog"
-                    aria-label={accessibilityLabel}
                 >
                     {children}
 
@@ -67,10 +77,10 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilit
                         style={arrowProps.style}
                     />
                 </div>
-            </FocusTrap>
-        )}
-    </Popper>
-);
+            )}
+        </Popper>
+    );
+}
 
 // === Main export ===
 const Popover = ({
@@ -86,7 +96,21 @@ const Popover = ({
     // issues
     const shouldDisplace = container === 'body';
 
-    useCloseOnEscape(onCloseClick, isOpen);
+    // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example
+    const [wrapperRef, setWrapperRef] = useState(null);
+
+    const shouldTrapFocus = canUseDOM && wrapperRef && isOpen;
+    const shouldBindEscListener = canUseDOM && isOpen;
+
+    console.log(shouldTrapFocus);
+
+    useCloseOnEscape(onCloseClick, shouldBindEscListener);
+    useFocusTrap(wrapperRef, shouldTrapFocus, {
+        clickOutsideDeactivates: true,
+        // Set initial focus to the modal wrapper itself instead of focusing on the first
+        // focusable element by default
+        initialFocus: wrapperRef,
+    });
 
     const popoverContent = (
         <PopoverContent
@@ -94,6 +118,7 @@ const Popover = ({
             isOpen={isOpen}
             onCloseClick={onCloseClick}
             accessibilityLabel={accessibilityLabel}
+            setWrapperRef={setWrapperRef}
         >
             {children}
         </PopoverContent>
