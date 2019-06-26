@@ -30,7 +30,6 @@ exports[`adds \`zIndex\` 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={true}
     >
       <ConditionalPortal
         shouldDisplace={true}
@@ -166,7 +165,6 @@ exports[`renders a closed tooltip 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={false}
     >
       <ConditionalPortal
         shouldDisplace={true}
@@ -209,7 +207,6 @@ exports[`renders an inline tooltip 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={true}
     >
       <ConditionalPortal
         shouldDisplace={false}
@@ -326,7 +323,6 @@ exports[`renders an open tooltip 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={true}
     >
       <ConditionalPortal
         shouldDisplace={true}
@@ -461,7 +457,6 @@ exports[`renders an open tooltip with \`bottom\` placement 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={true}
     >
       <ConditionalPortal
         shouldDisplace={true}
@@ -596,7 +591,6 @@ exports[`renders an open tooltip with a \`light\` theme 1`] = `
     <EscapeableTooltip
       hide={[Function]}
       isClient={true}
-      isOpen={true}
     >
       <ConditionalPortal
         shouldDisplace={true}

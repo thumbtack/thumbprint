@@ -26,6 +26,7 @@ exports[`renders a popover 1`] = `
               class="root open"
               role="dialog"
               style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+              tabindex="-1"
             >
               Goose
               <div
@@ -110,6 +111,7 @@ exports[`renders a popover 1`] = `
                     "top": 0,
                   }
                 }
+                tabIndex="-1"
               >
                 Goose
                 <div
