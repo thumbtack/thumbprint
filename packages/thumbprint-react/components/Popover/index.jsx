@@ -44,6 +44,7 @@ function PopoverContent({
                 <div
                     role="dialog"
                     aria-label={accessibilityLabel}
+                    tabIndex="-1"
                     ref={el => {
                         setWrapperRef(el);
                         popperRef(el);
