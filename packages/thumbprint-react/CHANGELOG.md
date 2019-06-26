@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Minor] Add `muted` theme to tertiary `Button` loading state to match the button's text color.
+
 ## 6.3.0 - 2019-06-26
 
 -   [Patch] Simplify `<noscript>` output in `Image` component by removing `<picture>` and `srcSet` and using only `<img alt="..." src="..." />`.
