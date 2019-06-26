@@ -41,6 +41,8 @@ function PopoverContent({
             positionFixed={false}
         >
             {({ ref: popperRef, style, placement, arrowProps }) => (
+                // Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
+                // but not be tabbable by user.
                 <div
                     role="dialog"
                     aria-label={accessibilityLabel}
