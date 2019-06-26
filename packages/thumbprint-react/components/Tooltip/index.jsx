@@ -5,9 +5,10 @@ import assign from 'lodash/assign';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
-import styles from './index.module.scss';
 
-const ESC_KEY = 27;
+import useCloseOnEscape from '../../utils/use-close-on-escape';
+
+import styles from './index.module.scss';
 
 // Timeout in milliseconds to wait before showing the tooltip after the user hovers. This prevents
 // tooltips from flickering in and out when the user moves their cursor rapidly over the launcher.
@@ -129,6 +130,19 @@ PositionedTooltip.defaultProps = {
     zIndex: undefined,
 };
 
+// TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
+// component and the main export here is still a class. Remove if we can refactor the entire Tooltip
+// to be a function component using hooks.
+function EscapeableTooltip({ positionedTooltip, isOpen, shouldDisplace, hide }) {
+    useCloseOnEscape(hide);
+
+    if (!positionedTooltip && isOpen) return null;
+
+    return shouldDisplace
+        ? ReactDOM.createPortal(positionedTooltip, document.body)
+        : positionedTooltip;
+}
+
 export default class Tooltip extends React.Component {
     constructor(props) {
         super(props);
@@ -140,7 +154,6 @@ export default class Tooltip extends React.Component {
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
-        this.handleKeyUp = this.handleKeyUp.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onClick = this.onClick.bind(this);
@@ -203,14 +216,7 @@ export default class Tooltip extends React.Component {
     }
 
     hide() {
-        this.setState(
-            {
-                isOpen: false,
-            },
-            () => {
-                document.removeEventListener('keyup', this.handleKeyUp);
-            },
-        );
+        this.setState({ isOpen: false });
     }
 
     show() {
@@ -218,20 +224,7 @@ export default class Tooltip extends React.Component {
             clearTimeout(this.closeTimeout);
         }
 
-        this.setState(
-            {
-                isOpen: true,
-            },
-            () => {
-                document.addEventListener('keyup', this.handleKeyUp);
-            },
-        );
-    }
-
-    handleKeyUp(event) {
-        if (event.keyCode === ESC_KEY) {
-            this.hide();
-        }
+        this.setState({ isOpen: true });
     }
 
     render() {
@@ -272,11 +265,12 @@ export default class Tooltip extends React.Component {
                     }
                 </Reference>
 
-                {positionedTooltip &&
-                    isOpen &&
-                    (shouldDisplace
-                        ? ReactDOM.createPortal(positionedTooltip, document.body)
-                        : positionedTooltip)}
+                <EscapeableTooltip
+                    positionedTooltip={positionedTooltip}
+                    isOpen={isOpen}
+                    shouldDisplace={shouldDisplace}
+                    hide={this.hide}
+                />
             </Manager>
         );
     }

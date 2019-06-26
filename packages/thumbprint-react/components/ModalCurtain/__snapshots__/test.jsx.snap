@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders \`accessibilityLabel\` 1`] = `
+exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
 <ModalCurtain
   accessibilityLabel="goosegoosegoose"
   onCloseClick={[Function]}
@@ -49,7 +49,8 @@ exports[`renders \`accessibilityLabel\` 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -64,7 +65,7 @@ exports[`renders \`accessibilityLabel\` 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders a basic curtain 1`] = `
+exports[`ModalCurtain renders a basic curtain 1`] = `
 <ModalCurtain
   accessibilityLabel="Modal"
   onCloseClick={[Function]}
@@ -88,7 +89,8 @@ exports[`renders a basic curtain 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -103,7 +105,7 @@ exports[`renders a basic curtain 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders modal in \`entered\` stage 1`] = `
+exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
 <ModalCurtain
   accessibilityLabel="Modal"
   onCloseClick={[Function]}
@@ -142,7 +144,8 @@ exports[`renders modal in \`entered\` stage 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -159,7 +162,7 @@ exports[`renders modal in \`entered\` stage 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders modal in \`entering\` stage 1`] = `
+exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
 <ModalCurtain
   accessibilityLabel="Modal"
   onCloseClick={[Function]}
@@ -193,7 +196,8 @@ exports[`renders modal in \`entering\` stage 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -210,7 +214,7 @@ exports[`renders modal in \`entering\` stage 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders modal in \`exited\` stage 1`] = `
+exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
 <ModalCurtain
   accessibilityLabel="Modal"
   onCloseClick={[Function]}
@@ -239,7 +243,8 @@ exports[`renders modal in \`exited\` stage 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -254,7 +259,7 @@ exports[`renders modal in \`exited\` stage 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders modal in \`exiting\` stage 1`] = `
+exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
 <ModalCurtain
   accessibilityLabel="Modal"
   onCloseClick={[Function]}
@@ -298,7 +303,8 @@ exports[`renders modal in \`exiting\` stage 1`] = `
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
+          "fallbackFocus": "body",
+          "initialFocus": null,
         }
       }
       paused={false}
@@ -313,7 +319,7 @@ exports[`renders modal in \`exiting\` stage 1`] = `
 </ModalCurtain>
 `;
 
-exports[`renders text that is passed in 1`] = `
+exports[`ModalCurtain renders text that is passed in 1`] = `
 <div>
   <button
     type="button"
@@ -361,21 +367,6 @@ exports[`renders text that is passed in 1`] = `
             aria-label="Modal"
             role="dialog"
             tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          >
-            <button
-              data-test-id="goose"
-              type="button"
-            />
-          </div>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
           >
             Goose
           </div>
@@ -388,7 +379,8 @@ exports[`renders text that is passed in 1`] = `
         focusTrapOptions={
           Object {
             "clickOutsideDeactivates": true,
-            "initialFocus": [Function],
+            "fallbackFocus": "body",
+            "initialFocus": null,
           }
         }
         paused={false}

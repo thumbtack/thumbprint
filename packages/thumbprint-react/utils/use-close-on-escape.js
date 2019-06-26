@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 const ESC_KEY = 27;
+const EVENT_NAME = 'keyup';
 
 export default function useCloseOnEscape(doClose) {
     useEffect(
@@ -12,10 +13,10 @@ export default function useCloseOnEscape(doClose) {
                 }
             };
 
-            document.addEventListener('keyup', handleKeyUp);
+            document.addEventListener(EVENT_NAME, handleKeyUp);
 
             return () => {
-                document.removeEventListener('keyup', handleKeyUp);
+                document.removeEventListener(EVENT_NAME, handleKeyUp);
             };
         },
         [doClose],

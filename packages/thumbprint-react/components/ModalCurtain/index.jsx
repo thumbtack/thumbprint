@@ -65,7 +65,7 @@ export default function ModalCurtain({
     children,
 }) {
     const [isClient, setIsClient] = useState(false);
-    const modalWrapperNode = useRef(null);
+    const wrapperRef = useRef(null);
 
     useEffect(() => {
         setIsClient(true);
@@ -85,13 +85,14 @@ export default function ModalCurtain({
             focusTrapOptions={{
                 clickOutsideDeactivates: true,
                 // Set initial focus to the modal wrapper itself instead of focusing on the first
-                // ocusable element by default
-                initialFocus: () => modalWrapperNode,
+                // focusable element by default
+                initialFocus: wrapperRef.current,
+                fallbackFocus: 'body',
             }}
         >
             {/* Use tabIndex="-1" to allow programmatic focus (as initialFocus node for <FocusTrap>)
             but not be tabbable by user. */}
-            <div role="dialog" aria-label={accessibilityLabel} tabIndex="-1" ref={modalWrapperNode}>
+            <div role="dialog" aria-label={accessibilityLabel} tabIndex="-1" ref={wrapperRef}>
                 {shouldRenderNoScroll && <NoScroll />}
 
                 {/* This component uses the render prop pattern. `children` expects a function and
