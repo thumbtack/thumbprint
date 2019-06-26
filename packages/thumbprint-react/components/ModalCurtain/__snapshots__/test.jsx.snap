@@ -43,24 +43,11 @@ exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="goosegoosegoose"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
+    <div
+      aria-label="goosegoosegoose"
+      role="dialog"
+      tabIndex="-1"
+    />
   </Portal>
 </ModalCurtain>
 `;
@@ -83,24 +70,11 @@ exports[`ModalCurtain renders a basic curtain 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
+    <div
+      aria-label="Modal"
+      role="dialog"
+      tabIndex="-1"
+    />
   </Portal>
 </ModalCurtain>
 `;
@@ -138,26 +112,13 @@ exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
+    <div
+      aria-label="Modal"
+      role="dialog"
+      tabIndex="-1"
     >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      >
-        <NoScroll />
-      </div>
-    </FocusTrap>
+      <NoScroll />
+    </div>
   </Portal>
 </ModalCurtain>
 `;
@@ -190,26 +151,13 @@ exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
+    <div
+      aria-label="Modal"
+      role="dialog"
+      tabIndex="-1"
     >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      >
-        <NoScroll />
-      </div>
-    </FocusTrap>
+      <NoScroll />
+    </div>
   </Portal>
 </ModalCurtain>
 `;
@@ -237,24 +185,11 @@ exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
+    <div
+      aria-label="Modal"
+      role="dialog"
+      tabIndex="-1"
+    />
   </Portal>
 </ModalCurtain>
 `;
@@ -297,24 +232,11 @@ exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
       </body>
     }
   >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "fallbackFocus": "body",
-          "initialFocus": null,
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
+    <div
+      aria-label="Modal"
+      role="dialog"
+      tabIndex="-1"
+    />
   </Portal>
 </ModalCurtain>
 `;
@@ -367,32 +289,34 @@ exports[`ModalCurtain renders text that is passed in 1`] = `
             aria-label="Modal"
             role="dialog"
             tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          >
+            <button
+              data-test-id="goose"
+              type="button"
+            />
+          </div>
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
           >
             Goose
           </div>
         </body>
       }
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={false}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-            "fallbackFocus": "body",
-            "initialFocus": null,
-          }
-        }
-        paused={false}
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
       >
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabIndex="-1"
-        >
-          Goose
-        </div>
-      </FocusTrap>
+        Goose
+      </div>
     </Portal>
   </ModalCurtain>
 </div>

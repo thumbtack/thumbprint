@@ -44,32 +44,28 @@ const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilit
                     role="dialog"
                     aria-label={accessibilityLabel}
                 >
-                    <div>
-                        {children}
+                    {children}
 
-                        <div className={styles.closeButton}>
-                            <TextButton
-                                accessibilityLabel="Close popover"
-                                iconLeft={
-                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
-                                }
-                                theme="inherit"
-                                onClick={onCloseClick}
-                            />
-                        </div>
-
-                        <div
-                            className={classNames({
-                                [styles.nubbin]: true,
-                                [styles.nubbinTop]: startsWith(placement, 'bottom'),
-                                [styles.nubbinBottom]: startsWith(placement, 'top'),
-                                [styles.nubbinLeft]: startsWith(placement, 'right'),
-                                [styles.nubbinRight]: startsWith(placement, 'left'),
-                            })}
-                            ref={arrowProps.ref}
-                            style={arrowProps.style}
+                    <div className={styles.closeButton}>
+                        <TextButton
+                            accessibilityLabel="Close popover"
+                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
+                            theme="inherit"
+                            onClick={onCloseClick}
                         />
                     </div>
+
+                    <div
+                        className={classNames({
+                            [styles.nubbin]: true,
+                            [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                            [styles.nubbinBottom]: startsWith(placement, 'top'),
+                            [styles.nubbinLeft]: startsWith(placement, 'right'),
+                            [styles.nubbinRight]: startsWith(placement, 'left'),
+                        })}
+                        ref={arrowProps.ref}
+                        style={arrowProps.style}
+                    />
                 </div>
             </FocusTrap>
         )}
@@ -90,7 +86,7 @@ const Popover = ({
     // issues
     const shouldDisplace = container === 'body';
 
-    useCloseOnEscape(onCloseClick);
+    useCloseOnEscape(onCloseClick, isOpen);
 
     const popoverContent = (
         <PopoverContent

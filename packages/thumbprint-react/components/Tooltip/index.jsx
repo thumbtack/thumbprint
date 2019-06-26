@@ -133,14 +133,12 @@ PositionedTooltip.defaultProps = {
 // TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
 // component and the main export here is still a class. Remove if we can refactor the entire Tooltip
 // to be a function component using hooks.
-function EscapeableTooltip({ positionedTooltip, isOpen, shouldDisplace, hide }) {
-    useCloseOnEscape(hide);
+function EscapeableTooltip({ isOpen, shouldDisplace, isClient, hide, children }) {
+    useCloseOnEscape(hide, true);
 
-    if (!positionedTooltip && isOpen) return null;
+    if (!isClient && !children && !isOpen) return null;
 
-    return shouldDisplace
-        ? ReactDOM.createPortal(positionedTooltip, document.body)
-        : positionedTooltip;
+    return shouldDisplace ? ReactDOM.createPortal(children, document.body) : children;
 }
 
 export default class Tooltip extends React.Component {
@@ -234,21 +232,6 @@ export default class Tooltip extends React.Component {
         // Appends the tooltip right before `</body>` when true.
         const shouldDisplace = container === 'body';
 
-        const positionedTooltip = isClient && (
-            <PositionedTooltip
-                show={this.show}
-                hide={this.hide}
-                onMouseLeave={this.onMouseLeave}
-                position={position}
-                theme={theme}
-                shouldDisplace={shouldDisplace}
-                supportsTouch={doesWindowSupportTouch()}
-                zIndex={zIndex}
-            >
-                {text}
-            </PositionedTooltip>
-        );
-
         return (
             <Manager>
                 <Reference>
@@ -266,11 +249,26 @@ export default class Tooltip extends React.Component {
                 </Reference>
 
                 <EscapeableTooltip
-                    positionedTooltip={positionedTooltip}
                     isOpen={isOpen}
+                    isClient={isClient}
                     shouldDisplace={shouldDisplace}
                     hide={this.hide}
-                />
+                >
+                    {isClient && (
+                        <PositionedTooltip
+                            show={this.show}
+                            hide={this.hide}
+                            onMouseLeave={this.onMouseLeave}
+                            position={position}
+                            theme={theme}
+                            shouldDisplace={shouldDisplace}
+                            supportsTouch={doesWindowSupportTouch()}
+                            zIndex={zIndex}
+                        >
+                            {text}
+                        </PositionedTooltip>
+                    )}
+                </EscapeableTooltip>
             </Manager>
         );
     }

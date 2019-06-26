@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FocusTrap from 'focus-trap-react';
 
 import NoScroll from './components/no-scroll.jsx';
 
 import useCloseOnEscape from '../../utils/use-close-on-escape';
+import useFocusTrap from '../../utils/use-focus-trap';
 
 import styles from './index.module.scss';
 
@@ -65,56 +65,59 @@ export default function ModalCurtain({
     children,
 }) {
     const [isClient, setIsClient] = useState(false);
-    const wrapperRef = useRef(null);
+    const [wrapperRef, setWrapperRef] = useState(null);
 
     useEffect(() => {
         setIsClient(true);
     }, []);
 
     const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
-    const shouldRenderEscListener = shouldCloseOnEscape && isEnteringOrEntered;
-    const shouldRenderNoScroll = isEnteringOrEntered;
+    const shouldBindEscListener = isClient && shouldCloseOnEscape && isEnteringOrEntered;
+    const shouldTrapFocus = isClient && wrapperRef && stage === 'entered';
+    const shouldDisableScrolling = isEnteringOrEntered;
 
-    useCloseOnEscape(shouldRenderEscListener ? onCloseClick : () => {});
+    useCloseOnEscape(onCloseClick, shouldBindEscListener);
+    useFocusTrap(wrapperRef, shouldTrapFocus, {
+        clickOutsideDeactivates: true,
+        // Set initial focus to the modal wrapper itself instead of focusing on the first
+        // focusable element by default
+        initialFocus: wrapperRef,
+    });
 
     if (!isClient) return null;
 
     return ReactDOM.createPortal(
-        <FocusTrap
-            active={stage === 'entered'}
-            focusTrapOptions={{
-                clickOutsideDeactivates: true,
-                // Set initial focus to the modal wrapper itself instead of focusing on the first
-                // focusable element by default
-                initialFocus: wrapperRef.current,
-                fallbackFocus: 'body',
+        // Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
+        // but not be tabbable by user.
+        <div
+            role="dialog"
+            aria-label={accessibilityLabel}
+            tabIndex="-1"
+            ref={el => {
+                setWrapperRef(el);
             }}
         >
-            {/* Use tabIndex="-1" to allow programmatic focus (as initialFocus node for <FocusTrap>)
-            but not be tabbable by user. */}
-            <div role="dialog" aria-label={accessibilityLabel} tabIndex="-1" ref={wrapperRef}>
-                {shouldRenderNoScroll && <NoScroll />}
+            {shouldDisableScrolling && <NoScroll />}
 
-                {/* This component uses the render prop pattern. `children` expects a function and
+            {/* This component uses the render prop pattern. `children` expects a function and
                 receives an object that contains `curtainOnClick` and `curtainClassName`.
                 While using those two properties is optional, they provide helpful functionality. */}
-                {children &&
-                    children({
-                        curtainOnClick: event => {
-                            // Ensures that the click event happened on the element that has the
-                            // `onClick`. This prevents clicks deep within `children` from bubbling
-                            // up and closing the ModalCurtain.
-                            if (event.target === event.currentTarget) {
-                                onCloseClick();
-                            }
-                        },
-                        curtainClassName: classNames({
-                            [styles.root]: true,
-                            [styles.rootOpen]: isEnteringOrEntered,
-                        }),
-                    })}
-            </div>
-        </FocusTrap>,
+            {children &&
+                children({
+                    curtainOnClick: event => {
+                        // Ensures that the click event happened on the element that has the
+                        // `onClick`. This prevents clicks deep within `children` from bubbling
+                        // up and closing the ModalCurtain.
+                        if (event.target === event.currentTarget) {
+                            onCloseClick();
+                        }
+                    },
+                    curtainClassName: classNames({
+                        [styles.root]: true,
+                        [styles.rootOpen]: isEnteringOrEntered,
+                    }),
+                })}
+        </div>,
         document.body,
     );
 }
