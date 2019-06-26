@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 import assign from 'lodash/assign';
 import PropTypes from 'prop-types';
@@ -134,8 +133,8 @@ PositionedTooltip.defaultProps = {
 // TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
 // component and the main export here is still a class. Remove if we can refactor the entire Tooltip
 // to be a function component using hooks.
-function EscapeableTooltip({ isOpen, isClient, hide, children }) {
-    useCloseOnEscape(hide, true);
+function EscapeableTooltip({ isClient, hide, children }) {
+    useCloseOnEscape(hide, isClient);
 
     return children;
 }
@@ -247,7 +246,7 @@ export default class Tooltip extends React.Component {
                     }
                 </Reference>
 
-                <EscapeableTooltip isOpen={isOpen} isClient={isClient} hide={this.hide}>
+                <EscapeableTooltip isClient={isClient} hide={this.hide}>
                     <ConditionalPortal shouldDisplace={isClient && shouldDisplace}>
                         {isClient && isOpen && (
                             <PositionedTooltip
