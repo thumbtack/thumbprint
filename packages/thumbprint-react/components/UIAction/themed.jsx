@@ -12,6 +12,7 @@ import styles from './themed.module.scss';
 const loaderDotsTheme = {
     primary: 'inverse',
     secondary: 'brand',
+    tertiary: 'muted',
 };
 
 const withIcon = (children, { icon }) => {
