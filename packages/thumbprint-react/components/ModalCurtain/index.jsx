@@ -65,7 +65,7 @@ export default function ModalCurtain({
     children,
 }) {
     const [isClient, setIsClient] = useState(false);
-    const [wrapperRef, setWrapperRef] = useState(null);
+    const [wrapperEl, setWrapperEl] = useState(null);
 
     useEffect(() => {
         setIsClient(true);
@@ -73,15 +73,15 @@ export default function ModalCurtain({
 
     const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
     const shouldBindEscListener = isClient && shouldCloseOnEscape && isEnteringOrEntered;
-    const shouldTrapFocus = isClient && wrapperRef && stage === 'entered';
+    const shouldTrapFocus = isClient && wrapperEl && stage === 'entered';
     const shouldDisableScrolling = isEnteringOrEntered;
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
-    useFocusTrap(wrapperRef, shouldTrapFocus, {
+    useFocusTrap(wrapperEl, shouldTrapFocus, {
         clickOutsideDeactivates: true,
         // Set initial focus to the modal wrapper itself instead of focusing on the first
         // focusable element by default
-        initialFocus: wrapperRef,
+        initialFocus: wrapperEl,
     });
 
     return (
@@ -92,8 +92,8 @@ export default function ModalCurtain({
                 role="dialog"
                 aria-label={accessibilityLabel}
                 tabIndex="-1"
-                ref={el => {
-                    setWrapperRef(el);
+                ref={element => {
+                    setWrapperEl(element);
                 }}
             >
                 {shouldDisableScrolling && <NoScroll />}

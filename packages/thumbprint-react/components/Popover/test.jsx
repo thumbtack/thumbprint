@@ -44,7 +44,7 @@ test('initially traps focus to wrapper, not the focusable child', () => {
         </Popover>,
     );
 
-    // Run setTimeouts() in <FocusTrap> to completion
+    // Run setTimeouts() in focus-trap to completion
     jest.runAllTimers();
 
     const modalWrapper = wrapper.find('[role="dialog"]');

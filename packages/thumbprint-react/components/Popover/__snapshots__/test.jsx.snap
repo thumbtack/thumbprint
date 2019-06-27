@@ -67,7 +67,7 @@ exports[`renders a popover 1`] = `
           isOpen={true}
           onCloseClick={[MockFunction]}
           position="top"
-          setWrapperRef={[Function]}
+          setWrapperEl={[Function]}
         >
           <Popper
             modifiers={

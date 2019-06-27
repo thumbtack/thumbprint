@@ -103,7 +103,7 @@ describe('ModalCurtain', () => {
             </ModalCurtain>,
         );
 
-        // Run setTimeouts() in <FocusTrap> to completion
+        // Run setTimeouts() in focus-trap to completion
         jest.runAllTimers();
 
         const modalWrapper = wrapper.find('[role="dialog"]');

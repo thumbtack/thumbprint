@@ -28,7 +28,7 @@ function PopoverContent({
     children,
     onCloseClick,
     accessibilityLabel,
-    setWrapperRef,
+    setWrapperEl,
     /* eslint-enable react/prop-types */
 }) {
     return (
@@ -48,7 +48,7 @@ function PopoverContent({
                     aria-label={accessibilityLabel}
                     tabIndex="-1"
                     ref={el => {
-                        setWrapperRef(el);
+                        setWrapperEl(el);
                         popperRef(el);
                     }}
                     className={classNames({
@@ -101,17 +101,17 @@ const Popover = ({
     const shouldDisplace = container === 'body';
 
     // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example
-    const [wrapperRef, setWrapperRef] = useState(null);
+    const [wrapperEl, setWrapperEl] = useState(null);
 
-    const shouldTrapFocus = canUseDOM && wrapperRef;
+    const shouldTrapFocus = canUseDOM && wrapperEl;
     const shouldBindEscListener = canUseDOM && isOpen;
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
-    useFocusTrap(wrapperRef, shouldTrapFocus, {
+    useFocusTrap(wrapperEl, shouldTrapFocus, {
         clickOutsideDeactivates: true,
         // Set initial focus to the modal wrapper itself instead of focusing on the first
         // focusable element by default
-        initialFocus: wrapperRef,
+        initialFocus: wrapperEl,
     });
 
     return (
@@ -124,7 +124,7 @@ const Popover = ({
                         isOpen={isOpen}
                         onCloseClick={onCloseClick}
                         accessibilityLabel={accessibilityLabel}
-                        setWrapperRef={setWrapperRef}
+                        setWrapperEl={setWrapperEl}
                     >
                         {children}
                     </PopoverContent>

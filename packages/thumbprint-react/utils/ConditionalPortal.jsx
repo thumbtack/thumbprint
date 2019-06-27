@@ -12,10 +12,10 @@ export default function ConditionalPortal({ shouldDisplace, children }) {
 }
 
 ConditionalPortal.propTypes = {
-    shouldDisplace: PropTypes.bool.isRequired,
-    children: PropTypes.node,
+    shouldDisplace: PropTypes.bool,
+    children: PropTypes.node.isRequired,
 };
 
 ConditionalPortal.defaultProps = {
-    children: undefined,
+    shouldDisplace: false,
 };
