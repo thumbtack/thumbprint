@@ -62,7 +62,7 @@ const Image = forwardRef((props, outerRef) => {
     // load the image.
     const [inViewRef, shouldLoadImage] = useInView({
         root,
-        rootMargin: '400px',
+        rootMargin: '100px',
         triggerOnce: true,
     });
 
@@ -109,7 +109,7 @@ const Image = forwardRef((props, outerRef) => {
                 });
             }
         },
-        [shouldObjectFit, shouldLoadImage],
+        [shouldObjectFit, containerRef, shouldLoadImage, shouldPolyfillObjectFit],
     );
 
     if (shouldObjectFit) {
@@ -227,10 +227,7 @@ const Image = forwardRef((props, outerRef) => {
                 />
             </picture>
             <noscript>
-                <picture>
-                    {webpSource && <source srcSet={webpSource.srcSet} type={webpSource.type} />}
-                    <img src={src} alt={alt} srcSet={imgTagSource && imgTagSource.srcSet} />
-                </picture>
+                <img src={src} alt={alt} />
             </noscript>
         </>
     );

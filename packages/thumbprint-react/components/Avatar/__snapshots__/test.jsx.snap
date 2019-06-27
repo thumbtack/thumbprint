@@ -46,7 +46,10 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
         />
       </picture>
       <noscript>
-        <picture />
+        <img
+          alt=""
+          src="//www.placecage.com/130/130"
+        />
       </noscript>
     </Image>
   </div>
@@ -131,7 +134,10 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
         />
       </picture>
       <noscript>
-        <picture />
+        <img
+          alt="Avatar for Duck Goose"
+          src="//www.placecage.com/130/130"
+        />
       </noscript>
     </Image>
   </div>
@@ -215,7 +221,10 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
         />
       </picture>
       <noscript>
-        <picture />
+        <img
+          alt="Avatar for Duck Goose"
+          src="//www.placecage.com/130/130"
+        />
       </noscript>
     </Image>
   </div>
@@ -710,7 +719,10 @@ exports[`renders an image when the user has one 1`] = `
         />
       </picture>
       <noscript>
-        <picture />
+        <img
+          alt=""
+          src="//www.placecage.com/130/130"
+        />
       </noscript>
     </Image>
   </div>
