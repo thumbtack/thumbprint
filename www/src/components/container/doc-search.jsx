@@ -24,6 +24,19 @@ class DocSearch extends React.Component {
             apiKey: 'e5314d1bc146a7d26433a00e2031794c',
             indexName: 'thumbprint',
             inputSelector: `#${this.inputSelector}`,
+            transformData(suggestions) {
+                if (process.env.NODE_ENV === 'production') {
+                    return suggestions;
+                }
+
+                return suggestions.map(suggestion => ({
+                    ...suggestion,
+                    url: suggestion.url.replace(
+                        'https://thumbprint.design/',
+                        'http://localhost:8090/',
+                    ),
+                }));
+            },
         });
     }
 
