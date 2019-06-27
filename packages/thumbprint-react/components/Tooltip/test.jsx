@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import Tooltip from './index';
 
@@ -80,7 +80,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('adds `zIndex`', () => {
+    test('adds zIndex', () => {
         const wrapper = mount(
             <Tooltip text="Goose" zIndex={123}>
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -110,41 +110,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('does not render tooltip when rendered on the server', () => {
-        const component = (
-            <Tooltip text="Goose">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
-                    <button
-                        ref={ref}
-                        onMouseEnter={onMouseEnter}
-                        onClick={onClick}
-                        onFocus={onFocus}
-                        onMouseLeave={onMouseLeave}
-                        onBlur={onBlur}
-                        aria-label={ariaLabel}
-                        type="button"
-                    >
-                        Duck
-                    </button>
-                )}
-            </Tooltip>
-        );
-
-        // See if `test-id` exists when rendered client-side before asserting it doesn't exist on SSR.
-        const clientSide = mount(component);
-        const button = clientSide.find('button');
-        button.simulate('focus');
-        jest.runAllTimers();
-        expect(clientSide.find('[data-test-id="tooltip"]')).toHaveLength(1);
-
-        const ssrHTML = ReactDOMServer.renderToStaticMarkup(component);
-        expect(ssrHTML).not.toContain('data-test-id="tooltip"');
-
-        button.simulate('blur');
-        jest.runAllTimers();
-    });
-
-    test('renders an open tooltip with `bottom` placement', () => {
+    test('renders an open tooltip with bottom placement', () => {
         const wrapper = mount(
             <Tooltip text="Goose" position="bottom">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -172,7 +138,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('renders an open tooltip with a `light` theme', () => {
+    test('renders an open tooltip with a light theme', () => {
         const wrapper = mount(
             <Tooltip text="Goose" theme="light">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -228,7 +194,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('Pressing the `Esc` key closes the tooltip', () => {
+    test('Pressing the Esc key closes the tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose" container="inline">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -255,8 +221,9 @@ describe('Tooltip', () => {
         button.simulate('focus');
         expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
-        const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
-        document.dispatchEvent(event);
+        act(() => {
+            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: ESC_KEY }));
+        });
 
         expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
     });
@@ -289,7 +256,7 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(1);
     });
 
-    test('Events from tooltip body do not propagate to parent container when `container` is `body`', () => {
+    test('Events from tooltip body do not propagate to parent container when container is body', () => {
         const jestOnClick = jest.fn();
 
         const wrapper = mount(
@@ -318,15 +285,15 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(0);
         jest.runAllTimers();
         wrapper
-            // Need to manually call `update` here because `setState` is called asynchronously in the
-            // `show` method.
+            // Need to manually call update here because setState is called asynchronously in the
+            // show method.
             .update()
             .find('[role="tooltip"]')
             .simulate('click');
         expect(jestOnClick).toHaveBeenCalledTimes(0);
     });
 
-    test('Events from tooltip body do propagate to parent container when `container` is `inline`', () => {
+    test('Events from tooltip body do propagate to parent container when container is inline', () => {
         const jestOnClick = jest.fn();
 
         const wrapper = mount(
@@ -355,8 +322,8 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(0);
         jest.runAllTimers();
         wrapper
-            // Need to manually call `update` here because `setState` is called asynchronously in the
-            // `show` method.
+            // Need to manually call update here because setState is called asynchronously in the
+            // show method.
             .update()
             .find('[role="tooltip"]')
             .simulate('click');
@@ -364,7 +331,7 @@ describe('Tooltip', () => {
     });
 
     describe('non-touch devices', () => {
-        test('`mouseenter` and `mouseleave` open and close the tooltip', () => {
+        test('mouseenter and mouseleave open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -391,15 +358,19 @@ describe('Tooltip', () => {
             button.simulate('mouseenter');
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
 
-            jest.runAllTimers();
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('mouseleave');
-            jest.runAllTimers();
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('`focus` and `blur` open and close the tooltip', () => {
+        test('focus and blur open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -431,7 +402,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test("`click` doesn't do anything", () => {
+        test("click doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -459,7 +430,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test("`click` on tooltip body doesn't do anything", () => {
+        test("click on tooltip body doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -499,7 +470,7 @@ describe('Tooltip', () => {
             delete global.window.ontouchstart;
         });
 
-        test('`click` opens the tooltip on first click and closes on second', () => {
+        test('click opens the tooltip on first click and closes on second', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -531,7 +502,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test("`focus` doesn't do anything", () => {
+        test("focus doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -559,7 +530,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('`blur` closes the tooltip', () => {
+        test('blur closes the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -580,16 +551,17 @@ describe('Tooltip', () => {
             );
 
             const button = wrapper.find('button');
-            button.simulate('focus');
-            jest.runAllTimers();
+            button.simulate('click');
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('blur');
-            jest.runAllTimers();
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('`mouseleave` closes the tooltip after a 200ms delay', () => {
+        test('mouseleave closes the tooltip after a 200ms delay', () => {
             const delayLength = 200;
 
             const wrapper = mount(
@@ -612,16 +584,18 @@ describe('Tooltip', () => {
             );
 
             const button = wrapper.find('button');
-            button.simulate('focus');
-            jest.runAllTimers();
+
+            button.simulate('click');
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('mouseleave');
-            jest.advanceTimersByTime(delayLength);
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('`mouseleave` closes the tooltip immediately if `closeDelayLength` is `0`', () => {
+        test('mouseleave closes the tooltip immediately if closeDelayLength is 0', () => {
             const delayLength = 0;
 
             const wrapper = mount(
@@ -646,15 +620,16 @@ describe('Tooltip', () => {
             const button = wrapper.find('button');
 
             button.simulate('click');
-            jest.runAllTimers();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('mouseleave');
-            jest.advanceTimersByTime(delayLength);
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test("`mouseenter` doesn't do anything", () => {
+        test("mouseenter doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -682,7 +657,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('`click` on tooltip body would close it', () => {
+        test('click on tooltip body would close it', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
