@@ -2,7 +2,7 @@
 
 > Design variables that power Thumbtack’s UI.
 
-Thumbprint Tokens are published as JavaScript and SCSS.
+Thumbprint Tokens are published as JavaScript, SCSS, and Swift.
 
 ## API
 
@@ -18,7 +18,8 @@ All tokens live within a `tokens/*.json` file. Token files follow the following 
         {
             "id": "blue",
             "value": {
-                "web": "#009fd9"
+                "web": "#009fd9",
+                "ios": "UIColor = UIColor(red: 0.0, green: 0.62352943, blue: 0.8509804, alpha: 1.0)"
             },
             "type": "color"
         },
@@ -66,6 +67,10 @@ The value of the token in each platform that the token supports
 ##### `value.web`
 
 `string` or `number`
+
+##### `value.ios`
+
+`string`
 
 #### `type`
 
