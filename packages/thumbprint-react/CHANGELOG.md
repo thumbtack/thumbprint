@@ -2,16 +2,30 @@
 
 ## Unreleased
 
+### Added
+
 -   [Patch] Create new hook for registering an ESC listener.
 -   [Patch] Create new hook for trapping focus.
 -   [Patch] Create new utility component for conditionally using portals.
+
+### Changed
+
 -   [Patch] Refactor ModalCurtain to be a function component and use hooks.
 -   [Patch] Refactor Tooltip to use the new hooks.
 -   [Patch] Refactor Popover to use the new hooks.
 
+### Fixed
+
+-   [Patch] Add `muted` theme to tertiary `Button` loading state to match the button's text color. (#352)
+
 ## 6.3.0 - 2019-06-26
 
+### Changed
+
 -   [Patch] Simplify `<noscript>` output in `Image` component by removing `<picture>` and `srcSet` and using only `<img alt="..." src="..." />`.
+
+### Added
+
 -   [Minor] Add the new `Popover` component.
 
 ## 6.2.1 - 2019-06-24
