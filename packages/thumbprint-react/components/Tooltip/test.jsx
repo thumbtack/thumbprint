@@ -224,6 +224,7 @@ describe('Tooltip', () => {
         act(() => {
             document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: ESC_KEY }));
         });
+        wrapper.update();
 
         expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
     });
@@ -361,12 +362,14 @@ describe('Tooltip', () => {
             act(() => {
                 jest.runAllTimers();
             });
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('mouseleave');
             act(() => {
                 jest.runAllTimers();
             });
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
@@ -398,7 +401,9 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
             button.simulate('blur');
-            jest.runAllTimers();
+            act(() => {
+                jest.runAllTimers();
+            });
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
@@ -593,6 +598,7 @@ describe('Tooltip', () => {
             act(() => {
                 jest.runAllTimers();
             });
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
@@ -625,10 +631,9 @@ describe('Tooltip', () => {
 
             button.simulate('mouseleave');
             act(() => {
-                jest.runAllTimers();
+                jest.advanceTimersByTime(delayLength);
             });
-            console.log('Now we assert');
-            console.log(wrapper.find('[role="tooltip"]'));
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
