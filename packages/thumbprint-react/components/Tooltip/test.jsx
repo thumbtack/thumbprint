@@ -281,10 +281,15 @@ describe('Tooltip', () => {
                 </Tooltip>
             </div>,
         );
+
         expect(jestOnClick).toHaveBeenCalledTimes(0);
         wrapper.find('button').simulate('mouseenter');
         expect(jestOnClick).toHaveBeenCalledTimes(0);
-        jest.runAllTimers();
+
+        act(() => {
+            jest.runAllTimers();
+        });
+
         wrapper
             // Need to manually call update here because setState is called asynchronously in the
             // show method.
@@ -321,7 +326,11 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(0);
         wrapper.find('button').simulate('mouseenter');
         expect(jestOnClick).toHaveBeenCalledTimes(0);
-        jest.runAllTimers();
+
+        act(() => {
+            jest.runAllTimers();
+        });
+
         wrapper
             // Need to manually call update here because setState is called asynchronously in the
             // show method.
