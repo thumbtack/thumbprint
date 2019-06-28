@@ -583,6 +583,7 @@ describe('Tooltip', () => {
                 </Tooltip>,
             );
 
+            expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
             const button = wrapper.find('button');
 
             button.simulate('click');
@@ -626,6 +627,8 @@ describe('Tooltip', () => {
             act(() => {
                 jest.runAllTimers();
             });
+            console.log('Now we assert');
+            console.log(wrapper.find('[role="tooltip"]'));
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 

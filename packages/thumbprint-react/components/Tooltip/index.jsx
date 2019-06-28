@@ -62,7 +62,10 @@ export default function Tooltip({
         setIsOpen(true);
     };
 
-    const hide = () => setIsOpen(false);
+    const hide = () => {
+        console.log('hide!');
+        setIsOpen(false);
+    };
 
     const onFocus = () => {
         if (!doesWindowSupportTouch()) {
@@ -78,6 +81,7 @@ export default function Tooltip({
     };
 
     const onMouseLeave = () => {
+        console.log('mouseleave!');
         // By default this adds a small delay before closing to improve the user experience.
         setCloseTimeout(setTimeout(hide, closeDelayLength));
 
@@ -102,6 +106,8 @@ export default function Tooltip({
 
     // Appends the tooltip right before `</body>` when true.
     const shouldDisplace = container === 'body';
+
+    console.log('render with isopen =', isOpen);
 
     return (
         <Manager>
