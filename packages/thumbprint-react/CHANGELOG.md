@@ -13,6 +13,7 @@
 -   [Patch] Refactor ModalCurtain to be a function component and use hooks.
 -   [Patch] Refactor Tooltip to use the new hooks.
 -   [Patch] Refactor Popover to use the new hooks.
+-   [Patch] Refactor Tooltip to be a functional component and update its tests.
 
 ### Fixed
 
