@@ -17,76 +17,6 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-// === Internal component ===
-
-// Internal component only. Proptypes are defined for the main component `Popover` at the end of the
-// file.
-function PopoverContent({
-    /* eslint-disable react/prop-types */
-    position,
-    isOpen,
-    children,
-    onCloseClick,
-    accessibilityLabel,
-    setWrapperEl,
-    /* eslint-enable react/prop-types */
-}) {
-    return (
-        <Popper
-            placement={position}
-            modifiers={{
-                offset: { offset: `0, ${tokens.tpSpace3}` },
-                preventOverflow: { boundariesElement: 'window' },
-            }}
-            positionFixed={false}
-        >
-            {({ ref: popperRef, style, placement, arrowProps }) => (
-                // Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
-                // but not be tabbable by user.
-                <div
-                    role="dialog"
-                    aria-label={accessibilityLabel}
-                    tabIndex="-1"
-                    ref={el => {
-                        setWrapperEl(el);
-                        popperRef(el);
-                    }}
-                    className={classNames({
-                        [styles.root]: true,
-                        [styles.open]: isOpen,
-                    })}
-                    style={style}
-                    data-placement={placement}
-                >
-                    {children}
-
-                    <div className={styles.closeButton}>
-                        <TextButton
-                            accessibilityLabel="Close popover"
-                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
-                            theme="inherit"
-                            onClick={onCloseClick}
-                        />
-                    </div>
-
-                    <div
-                        className={classNames({
-                            [styles.nubbin]: true,
-                            [styles.nubbinTop]: startsWith(placement, 'bottom'),
-                            [styles.nubbinBottom]: startsWith(placement, 'top'),
-                            [styles.nubbinLeft]: startsWith(placement, 'right'),
-                            [styles.nubbinRight]: startsWith(placement, 'left'),
-                        })}
-                        ref={arrowProps.ref}
-                        style={arrowProps.style}
-                    />
-                </div>
-            )}
-        </Popper>
-    );
-}
-
-// === Main export ===
 const Popover = ({
     children,
     launcher,
@@ -97,10 +27,10 @@ const Popover = ({
     accessibilityLabel,
 }) => {
     // Appends the tooltip right before `</body>` when true. Used to prevent z-index and positioning
-    // issues
+    // issues.
     const shouldDisplace = container === 'body';
 
-    // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example
+    // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example.
     const [wrapperEl, setWrapperEl] = useState(null);
 
     const shouldTrapFocus = canUseDOM && wrapperEl;
@@ -110,7 +40,7 @@ const Popover = ({
     useFocusTrap(wrapperEl, shouldTrapFocus, {
         clickOutsideDeactivates: true,
         // Set initial focus to the modal wrapper itself instead of focusing on the first
-        // focusable element by default
+        // focusable element by default.
         initialFocus: wrapperEl,
     });
 
@@ -119,15 +49,61 @@ const Popover = ({
             <Reference>{({ ref }) => launcher({ ref })}</Reference>
             <ConditionalPortal shouldDisplace={shouldDisplace}>
                 {canUseDOM && (
-                    <PopoverContent
-                        position={position}
-                        isOpen={isOpen}
-                        onCloseClick={onCloseClick}
-                        accessibilityLabel={accessibilityLabel}
-                        setWrapperEl={setWrapperEl}
+                    <Popper
+                        placement={position}
+                        modifiers={{
+                            offset: { offset: `0, ${tokens.tpSpace3}` },
+                            preventOverflow: { boundariesElement: 'window' },
+                        }}
+                        positionFixed={false}
                     >
-                        {children}
-                    </PopoverContent>
+                        {({ ref: popperRef, style, placement, arrowProps }) => (
+                            // Use tabIndex="-1" to allow programmatic focus (as initialFocus node
+                            // for focus-trap) but not be tabbable by user.
+                            <div
+                                role="dialog"
+                                aria-label={accessibilityLabel}
+                                tabIndex="-1"
+                                ref={el => {
+                                    setWrapperEl(el);
+                                    popperRef(el);
+                                }}
+                                className={classNames({
+                                    [styles.root]: true,
+                                    [styles.open]: isOpen,
+                                })}
+                                style={style}
+                                data-placement={placement}
+                            >
+                                {children}
+
+                                <div className={styles.closeButton}>
+                                    <TextButton
+                                        accessibilityLabel="Close popover"
+                                        iconLeft={
+                                            <NavigationCloseTiny
+                                                className={styles.closeButtonIcon}
+                                            />
+                                        }
+                                        theme="inherit"
+                                        onClick={onCloseClick}
+                                    />
+                                </div>
+
+                                <div
+                                    className={classNames({
+                                        [styles.nubbin]: true,
+                                        [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                                        [styles.nubbinBottom]: startsWith(placement, 'top'),
+                                        [styles.nubbinLeft]: startsWith(placement, 'right'),
+                                        [styles.nubbinRight]: startsWith(placement, 'left'),
+                                    })}
+                                    ref={arrowProps.ref}
+                                    style={arrowProps.style}
+                                />
+                            </div>
+                        )}
+                    </Popper>
                 )}
             </ConditionalPortal>
         </Manager>
