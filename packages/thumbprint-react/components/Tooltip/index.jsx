@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 import assign from 'lodash/assign';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
-import styles from './index.module.scss';
 
-const ESC_KEY = 27;
+import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
+import useCloseOnEscape from '../../utils/use-close-on-escape';
+
+import styles from './index.module.scss';
 
 // Timeout in milliseconds to wait before showing the tooltip after the user hovers. This prevents
 // tooltips from flickering in and out when the user moves their cursor rapidly over the launcher.
@@ -129,6 +130,15 @@ PositionedTooltip.defaultProps = {
     zIndex: undefined,
 };
 
+// TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
+// component and the main export here is still a class. Remove if we can refactor the entire Tooltip
+// to be a function component using hooks.
+function EscapeableTooltip({ isClient, hide, children }) {
+    useCloseOnEscape(hide, isClient);
+
+    return children;
+}
+
 export default class Tooltip extends React.Component {
     constructor(props) {
         super(props);
@@ -140,7 +150,6 @@ export default class Tooltip extends React.Component {
 
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
-        this.handleKeyUp = this.handleKeyUp.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onClick = this.onClick.bind(this);
@@ -203,14 +212,7 @@ export default class Tooltip extends React.Component {
     }
 
     hide() {
-        this.setState(
-            {
-                isOpen: false,
-            },
-            () => {
-                document.removeEventListener('keyup', this.handleKeyUp);
-            },
-        );
+        this.setState({ isOpen: false });
     }
 
     show() {
@@ -218,20 +220,7 @@ export default class Tooltip extends React.Component {
             clearTimeout(this.closeTimeout);
         }
 
-        this.setState(
-            {
-                isOpen: true,
-            },
-            () => {
-                document.addEventListener('keyup', this.handleKeyUp);
-            },
-        );
-    }
-
-    handleKeyUp(event) {
-        if (event.keyCode === ESC_KEY) {
-            this.hide();
-        }
+        this.setState({ isOpen: true });
     }
 
     render() {
@@ -240,21 +229,6 @@ export default class Tooltip extends React.Component {
 
         // Appends the tooltip right before `</body>` when true.
         const shouldDisplace = container === 'body';
-
-        const positionedTooltip = isClient && (
-            <PositionedTooltip
-                show={this.show}
-                hide={this.hide}
-                onMouseLeave={this.onMouseLeave}
-                position={position}
-                theme={theme}
-                shouldDisplace={shouldDisplace}
-                supportsTouch={doesWindowSupportTouch()}
-                zIndex={zIndex}
-            >
-                {text}
-            </PositionedTooltip>
-        );
 
         return (
             <Manager>
@@ -272,11 +246,24 @@ export default class Tooltip extends React.Component {
                     }
                 </Reference>
 
-                {positionedTooltip &&
-                    isOpen &&
-                    (shouldDisplace
-                        ? ReactDOM.createPortal(positionedTooltip, document.body)
-                        : positionedTooltip)}
+                <EscapeableTooltip isClient={isClient} hide={this.hide}>
+                    <ConditionalPortal shouldDisplace={isClient && shouldDisplace}>
+                        {isClient && isOpen && (
+                            <PositionedTooltip
+                                show={this.show}
+                                hide={this.hide}
+                                onMouseLeave={this.onMouseLeave}
+                                position={position}
+                                theme={theme}
+                                supportsTouch={doesWindowSupportTouch()}
+                                zIndex={zIndex}
+                                shouldDisplace={shouldDisplace}
+                            >
+                                {text}
+                            </PositionedTooltip>
+                        )}
+                    </ConditionalPortal>
+                </EscapeableTooltip>
             </Manager>
         );
     }

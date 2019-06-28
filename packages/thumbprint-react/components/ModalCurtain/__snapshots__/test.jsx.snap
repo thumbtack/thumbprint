@@ -1,334 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders \`accessibilityLabel\` 1`] = `
+exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
 <ModalCurtain
   accessibilityLabel="goosegoosegoose"
   onCloseClick={[Function]}
   shouldCloseOnEscape={true}
   stage="exited"
 >
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="goosegoosegoose"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="goosegoosegoose"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders a basic curtain 1`] = `
-<ModalCurtain
-  accessibilityLabel="Modal"
-  onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="exited"
->
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders modal in \`entered\` stage 1`] = `
-<ModalCurtain
-  accessibilityLabel="Modal"
-  onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="entered"
->
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      >
-        <EscListener
-          onEscPress={[Function]}
-        />
-        <NoScroll />
-      </div>
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders modal in \`entering\` stage 1`] = `
-<ModalCurtain
-  accessibilityLabel="Modal"
-  onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="entering"
->
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      >
-        <EscListener
-          onEscPress={[Function]}
-        />
-        <NoScroll />
-      </div>
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders modal in \`exited\` stage 1`] = `
-<ModalCurtain
-  accessibilityLabel="Modal"
-  onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="exited"
->
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders modal in \`exiting\` stage 1`] = `
-<ModalCurtain
-  accessibilityLabel="Modal"
-  onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="exiting"
->
-  <Portal
-    containerInfo={
-      <body>
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabindex="-1"
-        />
-      </body>
-    }
-  >
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={false}
-      focusTrapOptions={
-        Object {
-          "clickOutsideDeactivates": true,
-          "initialFocus": [Function],
-        }
-      }
-      paused={false}
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex="-1"
-      />
-    </FocusTrap>
-  </Portal>
-</ModalCurtain>
-`;
-
-exports[`renders text that is passed in 1`] = `
-<div>
-  <button
-    type="button"
-  />
-  <ModalCurtain
-    accessibilityLabel="Modal"
-    onCloseClick={[Function]}
-    shouldCloseOnEscape={true}
-    stage="exited"
+  <ConditionalPortal
+    shouldDisplace={true}
   >
     <Portal
       containerInfo={
@@ -363,6 +43,63 @@ exports[`renders text that is passed in 1`] = `
             role="dialog"
             tabindex="-1"
           />
+        </body>
+      }
+    >
+      <div
+        aria-label="goosegoosegoose"
+        role="dialog"
+        tabIndex="-1"
+      />
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders a basic curtain 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exited"
+>
+  <ConditionalPortal
+    shouldDisplace={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+        </body>
+      }
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
+      />
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="entered"
+>
+  <ConditionalPortal
+    shouldDisplace={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
           <div
             aria-label="Modal"
             role="dialog"
@@ -372,32 +109,233 @@ exports[`renders text that is passed in 1`] = `
             aria-label="Modal"
             role="dialog"
             tabindex="-1"
-          >
-            <button
-              data-test-id="goose"
-              type="button"
-            />
-          </div>
+          />
           <div
             aria-label="Modal"
             role="dialog"
             tabindex="-1"
-          >
-            Goose
-          </div>
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
         </body>
       }
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={false}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-            "initialFocus": [Function],
-          }
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
+      >
+        <NoScroll />
+      </div>
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="entering"
+>
+  <ConditionalPortal
+    shouldDisplace={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+        </body>
+      }
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
+      >
+        <NoScroll />
+      </div>
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exited"
+>
+  <ConditionalPortal
+    shouldDisplace={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+        </body>
+      }
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
+      />
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
+<ModalCurtain
+  accessibilityLabel="Modal"
+  onCloseClick={[Function]}
+  shouldCloseOnEscape={true}
+  stage="exiting"
+>
+  <ConditionalPortal
+    shouldDisplace={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+          <div
+            aria-label="Modal"
+            role="dialog"
+            tabindex="-1"
+          />
+        </body>
+      }
+    >
+      <div
+        aria-label="Modal"
+        role="dialog"
+        tabIndex="-1"
+      />
+    </Portal>
+  </ConditionalPortal>
+</ModalCurtain>
+`;
+
+exports[`ModalCurtain renders text that is passed in 1`] = `
+<div>
+  <button
+    type="button"
+  />
+  <ModalCurtain
+    accessibilityLabel="Modal"
+    onCloseClick={[Function]}
+    shouldCloseOnEscape={true}
+    stage="exited"
+  >
+    <ConditionalPortal
+      shouldDisplace={true}
+    >
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="goosegoosegoose"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            />
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            >
+              <button
+                data-test-id="goose"
+                type="button"
+              />
+            </div>
+            <div
+              aria-label="Modal"
+              role="dialog"
+              tabindex="-1"
+            >
+              Goose
+            </div>
+          </body>
         }
-        paused={false}
       >
         <div
           aria-label="Modal"
@@ -406,8 +344,8 @@ exports[`renders text that is passed in 1`] = `
         >
           Goose
         </div>
-      </FocusTrap>
-    </Portal>
+      </Portal>
+    </ConditionalPortal>
   </ModalCurtain>
 </div>
 `;

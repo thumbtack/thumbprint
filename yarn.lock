@@ -7011,7 +7011,7 @@ focus-trap-react@^6.0.0:
   dependencies:
     focus-trap "^4.0.2"
 
-focus-trap@^4.0.2:
+focus-trap@4.0.2, focus-trap@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-4.0.2.tgz#4ee2b96547c9ea0e4252a2d4b2cca68944194663"
   integrity sha512-HtLjfAK7Hp2qbBtLS6wEznID1mPT+48ZnP2nkHzgjpL4kroYHg0CdqJ5cTXk+UO5znAxF5fRUkhdyfgrhh8Lzw==

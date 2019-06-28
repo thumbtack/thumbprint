@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Manager, Reference, Popper } from 'react-popper';
-import FocusTrap from 'focus-trap-react';
 import startsWith from 'lodash/startsWith';
 
 import * as tokens from '@thumbtack/thumbprint-tokens';
 
+import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
 import canUseDOM from '../../utils/can-use-dom';
+import useCloseOnEscape from '../../utils/use-close-on-escape';
+import useFocusTrap from '../../utils/use-focus-trap';
 
 import { TextButton } from '../Button/index.jsx';
 import { Themed } from '../UIAction/index.jsx';
@@ -16,66 +17,74 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-const ESC_KEY = 27;
-
 // === Internal component ===
 
 // Internal component only. Proptypes are defined for the main component `Popover` at the end of the
 // file.
-// eslint-disable-next-line react/prop-types
-const PopoverContent = ({ position, isOpen, children, onCloseClick, accessibilityLabel }) => (
-    <Popper
-        placement={position}
-        modifiers={{
-            offset: { offset: `0, ${tokens.tpSpace3}` },
-            preventOverflow: { boundariesElement: 'window' },
-        }}
-        positionFixed={false}
-    >
-        {({ ref: popperRef, style, placement, arrowProps }) => (
-            <FocusTrap active={isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+function PopoverContent({
+    /* eslint-disable react/prop-types */
+    position,
+    isOpen,
+    children,
+    onCloseClick,
+    accessibilityLabel,
+    setWrapperEl,
+    /* eslint-enable react/prop-types */
+}) {
+    return (
+        <Popper
+            placement={position}
+            modifiers={{
+                offset: { offset: `0, ${tokens.tpSpace3}` },
+                preventOverflow: { boundariesElement: 'window' },
+            }}
+            positionFixed={false}
+        >
+            {({ ref: popperRef, style, placement, arrowProps }) => (
+                // Use tabIndex="-1" to allow programmatic focus (as initialFocus node for focus-trap)
+                // but not be tabbable by user.
                 <div
-                    ref={popperRef}
+                    role="dialog"
+                    aria-label={accessibilityLabel}
+                    tabIndex="-1"
+                    ref={el => {
+                        setWrapperEl(el);
+                        popperRef(el);
+                    }}
                     className={classNames({
                         [styles.root]: true,
                         [styles.open]: isOpen,
                     })}
                     style={style}
                     data-placement={placement}
-                    role="dialog"
-                    aria-label={accessibilityLabel}
                 >
-                    <div>
-                        {children}
+                    {children}
 
-                        <div className={styles.closeButton}>
-                            <TextButton
-                                accessibilityLabel="Close popover"
-                                iconLeft={
-                                    <NavigationCloseTiny className={styles.closeButtonIcon} />
-                                }
-                                theme="inherit"
-                                onClick={onCloseClick}
-                            />
-                        </div>
-
-                        <div
-                            className={classNames({
-                                [styles.nubbin]: true,
-                                [styles.nubbinTop]: startsWith(placement, 'bottom'),
-                                [styles.nubbinBottom]: startsWith(placement, 'top'),
-                                [styles.nubbinLeft]: startsWith(placement, 'right'),
-                                [styles.nubbinRight]: startsWith(placement, 'left'),
-                            })}
-                            ref={arrowProps.ref}
-                            style={arrowProps.style}
+                    <div className={styles.closeButton}>
+                        <TextButton
+                            accessibilityLabel="Close popover"
+                            iconLeft={<NavigationCloseTiny className={styles.closeButtonIcon} />}
+                            theme="inherit"
+                            onClick={onCloseClick}
                         />
                     </div>
+
+                    <div
+                        className={classNames({
+                            [styles.nubbin]: true,
+                            [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                            [styles.nubbinBottom]: startsWith(placement, 'top'),
+                            [styles.nubbinLeft]: startsWith(placement, 'right'),
+                            [styles.nubbinRight]: startsWith(placement, 'left'),
+                        })}
+                        ref={arrowProps.ref}
+                        style={arrowProps.style}
+                    />
                 </div>
-            </FocusTrap>
-        )}
-    </Popper>
-);
+            )}
+        </Popper>
+    );
+}
 
 // === Main export ===
 const Popover = ({
@@ -91,43 +100,36 @@ const Popover = ({
     // issues
     const shouldDisplace = container === 'body';
 
-    // Set up a listener to handle closing when ESC is pressed
-    // TODO(giles): refactor this out into a generic hook with its own tests that can be shared
-    // with modal and other overlay components.
-    useEffect(
-        () => {
-            const handleKeyUp = event => {
-                if (event.keyCode === ESC_KEY) {
-                    onCloseClick();
-                }
-            };
+    // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example
+    const [wrapperEl, setWrapperEl] = useState(null);
 
-            document.addEventListener('keyup', handleKeyUp);
-            return () => {
-                document.removeEventListener('keyup', handleKeyUp);
-            };
-        },
-        [onCloseClick],
-    );
+    const shouldTrapFocus = canUseDOM && wrapperEl;
+    const shouldBindEscListener = canUseDOM && isOpen;
 
-    const popoverContent = (
-        <PopoverContent
-            position={position}
-            isOpen={isOpen}
-            onCloseClick={onCloseClick}
-            accessibilityLabel={accessibilityLabel}
-        >
-            {children}
-        </PopoverContent>
-    );
+    useCloseOnEscape(onCloseClick, shouldBindEscListener);
+    useFocusTrap(wrapperEl, shouldTrapFocus, {
+        clickOutsideDeactivates: true,
+        // Set initial focus to the modal wrapper itself instead of focusing on the first
+        // focusable element by default
+        initialFocus: wrapperEl,
+    });
 
     return (
         <Manager>
             <Reference>{({ ref }) => launcher({ ref })}</Reference>
-            {canUseDOM &&
-                (shouldDisplace
-                    ? ReactDOM.createPortal(popoverContent, document.body)
-                    : popoverContent)}
+            <ConditionalPortal shouldDisplace={shouldDisplace}>
+                {canUseDOM && (
+                    <PopoverContent
+                        position={position}
+                        isOpen={isOpen}
+                        onCloseClick={onCloseClick}
+                        accessibilityLabel={accessibilityLabel}
+                        setWrapperEl={setWrapperEl}
+                    >
+                        {children}
+                    </PopoverContent>
+                )}
+            </ConditionalPortal>
         </Manager>
     );
 };

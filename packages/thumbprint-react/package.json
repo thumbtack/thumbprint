@@ -39,6 +39,7 @@
         "@thumbtack/thumbprint-tokens": "^8.0.2",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
+        "focus-trap": "4.0.2",
         "focus-trap-react": "^6.0.0",
         "intersection-observer": "^0.6.0",
         "lodash": "^4.17.11",
