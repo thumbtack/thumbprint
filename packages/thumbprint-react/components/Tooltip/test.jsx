@@ -80,7 +80,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('adds zIndex', () => {
+    test('adds `zIndex`', () => {
         const wrapper = mount(
             <Tooltip text="Goose" zIndex={123}>
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -110,7 +110,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('renders an open tooltip with bottom placement', () => {
+    test('renders an open tooltip with `bottom` placement', () => {
         const wrapper = mount(
             <Tooltip text="Goose" position="bottom">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -138,7 +138,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('renders an open tooltip with a light theme', () => {
+    test('renders an open tooltip with a `light` theme', () => {
         const wrapper = mount(
             <Tooltip text="Goose" theme="light">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -194,7 +194,7 @@ describe('Tooltip', () => {
         jest.runAllTimers();
     });
 
-    test('Pressing the Esc key closes the tooltip', () => {
+    test('Pressing the `Esc` key closes the tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose" container="inline">
                 {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -257,7 +257,7 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(1);
     });
 
-    test('Events from tooltip body do not propagate to parent container when container is body', () => {
+    test('Events from PositionedTooltip do not propagate to parent container when `container` is `body`', () => {
         const jestOnClick = jest.fn();
 
         const wrapper = mount(
@@ -299,7 +299,7 @@ describe('Tooltip', () => {
         expect(jestOnClick).toHaveBeenCalledTimes(0);
     });
 
-    test('Events from tooltip body do propagate to parent container when container is inline', () => {
+    test('Events from PositionedTooltip do propagate to parent container when `container` is `inline`', () => {
         const jestOnClick = jest.fn();
 
         const wrapper = mount(
@@ -341,7 +341,7 @@ describe('Tooltip', () => {
     });
 
     describe('non-touch devices', () => {
-        test('mouseenter and mouseleave open and close the tooltip', () => {
+        test('`mouseenter` and `mouseleave` open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -382,7 +382,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('focus and blur open and close the tooltip', () => {
+        test('`focus` and `blur` open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -484,7 +484,7 @@ describe('Tooltip', () => {
             delete global.window.ontouchstart;
         });
 
-        test('click opens the tooltip on first click and closes on second', () => {
+        test('`click` opens the tooltip on first click and closes on second', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -544,7 +544,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('blur closes the tooltip', () => {
+        test('`blur` closes the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
@@ -575,7 +575,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('mouseleave closes the tooltip after a 200ms delay', () => {
+        test('`mouseleave` closes the tooltip after a 200ms delay', () => {
             const delayLength = 200;
 
             const wrapper = mount(
@@ -611,7 +611,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('mouseleave closes the tooltip immediately if closeDelayLength is 0', () => {
+        test('`mouseleave` closes the tooltip immediately if `closeDelayLength` is `0`', () => {
             const delayLength = 0;
 
             const wrapper = mount(
@@ -674,7 +674,7 @@ describe('Tooltip', () => {
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
-        test('click on tooltip body would close it', () => {
+        test('`click` on PositionedTooltip would close it', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
                     {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
