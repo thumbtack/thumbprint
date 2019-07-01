@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -14,7 +13,13 @@ export default function ConditionalPortal({ shouldDisplace, children }) {
         return null;
     }
 
-    return canUseDOM && shouldDisplace ? ReactDOM.createPortal(children, document.body) : children;
+    return (
+        <React.Fragment>
+            {canUseDOM && shouldDisplace
+                ? ReactDOM.createPortal(children, document.body)
+                : children}
+        </React.Fragment>
+    );
 }
 
 ConditionalPortal.propTypes = {
