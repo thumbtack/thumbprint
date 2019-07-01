@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 8.1.0 - 2019-07-01
+
 ### Added
 
 -   [Minor] Add iOS output and publish as the `ThumbprintTokens` CocoaPod.

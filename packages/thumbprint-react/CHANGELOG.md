@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 6.3.2 - 2019-07-01
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
 ## 6.3.1 - 2019-07-01
 
 ### Added
