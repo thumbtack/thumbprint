@@ -33,8 +33,7 @@
                 "web": "#79d2f2",
                 "ios": "UIColor = UIColor(red: 0.4745098, green: 0.8235294, blue: 0.9490196, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "blue",
@@ -56,8 +55,7 @@
                 "web": "#007fad",
                 "ios": "UIColor = UIColor(red: 0.0, green: 0.49803922, blue: 0.6784314, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "blue-600",
@@ -101,8 +99,7 @@
                 "web": "#96c2ff",
                 "ios": "UIColor = UIColor(red: 0.5882353, green: 0.7607843, blue: 1.0, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "indigo",
@@ -124,8 +121,7 @@
                 "web": "#4f54b3",
                 "ios": "UIColor = UIColor(red: 0.30980393, green: 0.32941177, blue: 0.7019608, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "indigo-600",
@@ -169,8 +165,7 @@
                 "web": "#d3baff",
                 "ios": "UIColor = UIColor(red: 0.827451, green: 0.7294118, blue: 1.0, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "purple",
@@ -192,8 +187,7 @@
                 "web": "#8a5ed6",
                 "ios": "UIColor = UIColor(red: 0.5411765, green: 0.36862746, blue: 0.8392157, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "purple-600",
@@ -237,8 +231,7 @@
                 "web": "#73e4a2",
                 "ios": "UIColor = UIColor(red: 0.4509804, green: 0.89411765, blue: 0.63529414, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "green",
@@ -260,8 +253,7 @@
                 "web": "#109e78",
                 "ios": "UIColor = UIColor(red: 0.0627451, green: 0.61960787, blue: 0.47058824, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "green-600",
@@ -305,8 +297,7 @@
                 "web": "#ffdd80",
                 "ios": "UIColor = UIColor(red: 1.0, green: 0.8666667, blue: 0.5019608, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "yellow",
@@ -328,8 +319,7 @@
                 "web": "#d48300",
                 "ios": "UIColor = UIColor(red: 0.83137256, green: 0.5137255, blue: 0.0, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "yellow-600",
@@ -373,8 +363,7 @@
                 "web": "#ffb0b0",
                 "ios": "UIColor = UIColor(red: 1.0, green: 0.6901961, blue: 0.6901961, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "red",
@@ -396,8 +385,7 @@
                 "web": "#cc3553",
                 "ios": "UIColor = UIColor(red: 0.8, green: 0.20784314, blue: 0.3254902, alpha: 1.0)"
             },
-            "type": "color",
-            "private": true
+            "type": "color"
         },
         {
             "id": "red-600",
