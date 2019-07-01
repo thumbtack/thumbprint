@@ -38,7 +38,7 @@ module.exports = {
             // Since this code must run in IE11, it has stricter constraints than other parts of
             // this repo.
             files: ['packages/thumbprint-react/**/*'],
-            excludedFiles: ['test.jsx', '*.config.js'],
+            excludedFiles: ['*test.jsx', '*.config.js'],
             rules: {
                 // Check for uses of browser/DOM APIs that are not available in our supported browsers.
                 'compat/compat': 'error',

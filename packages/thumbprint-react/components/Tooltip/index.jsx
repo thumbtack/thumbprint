@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 import assign from 'lodash/assign';
 import PropTypes from 'prop-types';
@@ -7,6 +7,7 @@ import { Manager, Reference, Popper } from 'react-popper';
 
 import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
+import canUseDOM from '../../utils/can-use-dom';
 
 import styles from './index.module.scss';
 
@@ -40,233 +41,150 @@ WhenChildrenChange.propTypes = {
 
 const doesWindowSupportTouch = () => typeof window !== 'undefined' && 'ontouchstart' in window;
 
-const PositionedTooltip = ({
+export default function Tooltip({
+    container,
     position,
     theme,
-    show,
-    onMouseLeave,
     zIndex,
-    shouldDisplace,
-    hide,
+    text,
     children,
-    supportsTouch,
-}) => (
-    <Popper
-        placement={position}
-        modifiers={{
-            offset: { offset: `0, ${tpSpace3}` },
-            preventOverflow: { boundariesElement: 'window' },
-        }}
-        positionFixed={false}
-    >
-        {({ ref, style, placement, arrowProps, scheduleUpdate }) => (
-            // This function is documented within `react-popper`:
-            // https://github.com/FezVrasta/react-popper
-            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-            <div
-                role="tooltip"
-                data-test-id="tooltip"
-                className={classNames({
-                    [styles.tooltip]: true,
-                    [styles.tooltipDark]: theme === 'dark',
-                    [styles.tooltipLight]: theme === 'light',
-                })}
-                ref={ref}
-                style={assign({}, style, { zIndex })}
-                data-placement={placement}
-                onMouseEnter={show}
-                onMouseLeave={onMouseLeave}
-                onClick={event => {
-                    // This is to ensure the default event propagation is
-                    // stopped when the tooltip is created by portals.
-                    // https://reactjs.org/docs/portals.html#event-bubbling-through-portals
-                    // https://github.com/facebook/react/issues/11387
-                    if (shouldDisplace) {
-                        event.stopPropagation();
-                    }
-                    // This is to ensure the tooltip would be closed if it's
-                    // clicked in touch screen devices so it could easier
-                    // to be toggled off.
-                    if (supportsTouch) {
-                        hide();
-                    }
-                }}
-            >
-                {/*
-                        We need to let the popper instance know when the contents of the
-                        tooltip change, so it can reposition itself.
-                        https://github.com/thumbtack/thumbprint-archive/issues/1033
-                     */}
-                <WhenChildrenChange do={scheduleUpdate}>{children}</WhenChildrenChange>
-                <div
-                    className={classNames({
-                        [styles.nubbin]: true,
-                        [styles.nubbinTop]: placement === 'top',
-                        [styles.nubbinBottom]: placement === 'bottom',
-                        [styles.nubbinDark]: theme === 'dark',
-                        [styles.nubbinLight]: theme === 'light',
-                    })}
-                    ref={arrowProps.ref}
-                    style={arrowProps.style}
-                />
-            </div>
-        )}
-    </Popper>
-);
+    closeDelayLength,
+}) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [openTimeout, setOpenTimeout] = useState(null);
+    const [closeTimeout, setCloseTimeout] = useState(null);
 
-PositionedTooltip.propTypes = {
-    children: PropTypes.string.isRequired,
-    show: PropTypes.func.isRequired,
-    hide: PropTypes.func.isRequired,
-    position: PropTypes.string.isRequired,
-    theme: PropTypes.string.isRequired,
-    onMouseLeave: PropTypes.func.isRequired,
-    shouldDisplace: PropTypes.bool.isRequired,
-    supportsTouch: PropTypes.bool.isRequired,
-    zIndex: PropTypes.number,
-};
-
-PositionedTooltip.defaultProps = {
-    zIndex: undefined,
-};
-
-// TODO(giles): this intermediary wrapper is needed because hooks can only be used in function
-// component and the main export here is still a class. Remove if we can refactor the entire Tooltip
-// to be a function component using hooks.
-function EscapeableTooltip({ isClient, hide, children }) {
-    useCloseOnEscape(hide, isClient);
-
-    return children;
-}
-
-export default class Tooltip extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isOpen: false,
-            isClient: false,
-        };
-
-        this.show = this.show.bind(this);
-        this.hide = this.hide.bind(this);
-        this.onMouseLeave = this.onMouseLeave.bind(this);
-        this.onMouseEnter = this.onMouseEnter.bind(this);
-        this.onClick = this.onClick.bind(this);
-        this.onFocus = this.onFocus.bind(this);
-
-        this.closeTimeout = null;
-        this.openTimeout = null;
-    }
-
-    componentDidMount() {
-        this.setState({
-            // Allows us to only render the tooltip on the client. It wont work with SSR since
-            // there is no document. Pattern comes from these pages:
-            // https://reactjs.org/docs/react-dom.html#hydrate
-            // https://github.com/facebook/react/issues/11169
-            isClient: true,
-        });
-    }
-
-    componentWillUnmount() {
-        this.hide();
-    }
-
-    onMouseLeave() {
-        const { closeDelayLength } = this.props;
-
-        // By default this adds a small delay before closing to improve the user experience.
-        this.closeTimeout = setTimeout(this.hide, closeDelayLength);
-
-        if (this.openTimeout) {
-            // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
-            // tooltip from showing after the user is no longer hovering over the launcher.
-            clearTimeout(this.openTimeout);
+    const show = () => {
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
         }
-    }
 
-    onMouseEnter() {
+        setIsOpen(true);
+    };
+
+    const hide = () => {
+        setIsOpen(false);
+    };
+
+    const onFocus = () => {
+        if (!doesWindowSupportTouch()) {
+            show();
+        }
+    };
+
+    const onMouseEnter = () => {
         if (!doesWindowSupportTouch()) {
             // Trigger the tooltip to show after a small delay to prevent flickering.
-            this.openTimeout = setTimeout(this.show, OPEN_TIMEOUT);
+            setOpenTimeout(setTimeout(show, OPEN_TIMEOUT));
         }
-    }
+    };
 
-    onFocus() {
-        if (!doesWindowSupportTouch()) {
-            this.show();
+    const onMouseLeave = () => {
+        // By default this adds a small delay before closing to improve the user experience.
+        setCloseTimeout(setTimeout(hide, closeDelayLength));
+
+        if (openTimeout) {
+            // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
+            // tooltip from showing after the user is no longer hovering over the launcher.
+            clearTimeout(openTimeout);
         }
-    }
+    };
 
-    onClick() {
-        const { isOpen } = this.state;
-
+    const onClick = () => {
         if (doesWindowSupportTouch()) {
             if (isOpen) {
-                this.hide();
+                hide();
             } else {
-                this.show();
+                show();
             }
         }
-    }
+    };
 
-    hide() {
-        this.setState({ isOpen: false });
-    }
+    useCloseOnEscape(hide, canUseDOM);
 
-    show() {
-        if (this.closeTimeout) {
-            clearTimeout(this.closeTimeout);
-        }
+    // Appends the tooltip right before `</body>` when true.
+    const shouldDisplace = container === 'body';
 
-        this.setState({ isOpen: true });
-    }
+    return (
+        <Manager>
+            <Reference>
+                {({ ref }) =>
+                    children({
+                        ref,
+                        onMouseEnter,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur: hide,
+                        onClick,
+                        ariaLabel: text,
+                    })
+                }
+            </Reference>
 
-    render() {
-        const { container, position, theme, zIndex, text, children } = this.props;
-        const { isClient, isOpen } = this.state;
-
-        // Appends the tooltip right before `</body>` when true.
-        const shouldDisplace = container === 'body';
-
-        return (
-            <Manager>
-                <Reference>
-                    {({ ref }) =>
-                        children({
-                            ref,
-                            onMouseEnter: this.onMouseEnter,
-                            onFocus: this.onFocus,
-                            onMouseLeave: this.onMouseLeave,
-                            onBlur: this.hide,
-                            onClick: this.onClick,
-                            ariaLabel: text,
-                        })
-                    }
-                </Reference>
-
-                <EscapeableTooltip isClient={isClient} hide={this.hide}>
-                    <ConditionalPortal shouldDisplace={isClient && shouldDisplace}>
-                        {isClient && isOpen && (
-                            <PositionedTooltip
-                                show={this.show}
-                                hide={this.hide}
-                                onMouseLeave={this.onMouseLeave}
-                                position={position}
-                                theme={theme}
-                                supportsTouch={doesWindowSupportTouch()}
-                                zIndex={zIndex}
-                                shouldDisplace={shouldDisplace}
+            <ConditionalPortal shouldDisplace={canUseDOM && shouldDisplace}>
+                {canUseDOM && isOpen && (
+                    <Popper
+                        placement={position}
+                        modifiers={{
+                            offset: { offset: `0, ${tpSpace3}` },
+                            preventOverflow: { boundariesElement: 'window' },
+                        }}
+                        positionFixed={false}
+                    >
+                        {({ ref, style, placement, arrowProps, scheduleUpdate }) => (
+                            // This function is documented within `react-popper`:
+                            // https://github.com/FezVrasta/react-popper
+                            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+                            <div
+                                role="tooltip"
+                                data-test-id="tooltip"
+                                className={classNames({
+                                    [styles.tooltip]: true,
+                                    [styles.tooltipDark]: theme === 'dark',
+                                    [styles.tooltipLight]: theme === 'light',
+                                })}
+                                ref={ref}
+                                style={assign({}, style, { zIndex })}
+                                data-placement={placement}
+                                onMouseEnter={show}
+                                onMouseLeave={onMouseLeave}
+                                onClick={event => {
+                                    // This is to ensure the default event propagation is stopped when the tooltip
+                                    // is created by portals.
+                                    // https://reactjs.org/docs/portals.html#event-bubbling-through-portals
+                                    // https://github.com/facebook/react/issues/11387
+                                    if (shouldDisplace) {
+                                        event.stopPropagation();
+                                    }
+                                    // This is to ensure the tooltip would be closed if it's clicked in touch screen
+                                    // devices so it could easier to be toggled off.
+                                    if (doesWindowSupportTouch()) {
+                                        hide();
+                                    }
+                                }}
                             >
-                                {text}
-                            </PositionedTooltip>
+                                {/* We need to let the popper instance know when the contents of the tooltip change,
+                                so it can reposition itself.
+                                https://github.com/thumbtack/thumbprint-archive/issues/1033 */}
+                                <WhenChildrenChange do={scheduleUpdate}>{text}</WhenChildrenChange>
+                                <div
+                                    className={classNames({
+                                        [styles.nubbin]: true,
+                                        [styles.nubbinTop]: placement === 'top',
+                                        [styles.nubbinBottom]: placement === 'bottom',
+                                        [styles.nubbinDark]: theme === 'dark',
+                                        [styles.nubbinLight]: theme === 'light',
+                                    })}
+                                    ref={arrowProps.ref}
+                                    style={arrowProps.style}
+                                />
+                            </div>
                         )}
-                    </ConditionalPortal>
-                </EscapeableTooltip>
-            </Manager>
-        );
-    }
+                    </Popper>
+                )}
+            </ConditionalPortal>
+        </Manager>
+    );
 }
 
 Tooltip.propTypes = {
