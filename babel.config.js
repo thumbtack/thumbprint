@@ -7,6 +7,17 @@ module.exports = {
     ],
     env: {
         test: {
+            // Allow async functions to work with tests.
+            presets: [
+                [
+                    '@babel/preset-env',
+                    {
+                        targets: {
+                            node: 'current',
+                        },
+                    },
+                ],
+            ],
             plugins: [
                 // Allows Jest to understand dynamic imports. This won't be
                 // needed once we're on Node v10.

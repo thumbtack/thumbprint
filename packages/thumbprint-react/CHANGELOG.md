@@ -5,6 +5,53 @@
 ### Changed
 
 -   [Major] Rewrite `DatePicker` to be a fully controlled component. (#12)
+-   [Patch] Update description of Avatar prop.
+
+## 6.3.2 - 2019-07-01
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 6.3.1 - 2019-07-01
+
+### Added
+
+-   [Patch] Create new hook for registering an ESC listener.
+-   [Patch] Create new hook for trapping focus.
+-   [Patch] Create new utility component for conditionally using portals.
+
+### Changed
+
+-   [Patch] Refactor ModalCurtain to be a function component and use hooks.
+-   [Patch] Refactor Tooltip to use the new hooks.
+-   [Patch] Refactor Popover to use the new hooks.
+-   [Patch] Refactor Tooltip to be a functional component and update its tests.
+
+### Fixed
+
+-   [Patch] Add `muted` theme to tertiary `Button` loading state to match the button's text color. (#352)
+
+## 6.3.0 - 2019-06-26
+
+### Changed
+
+-   [Patch] Simplify `<noscript>` output in `Image` component by removing `<picture>` and `srcSet` and using only `<img alt="..." src="..." />`.
+
+### Added
+
+-   [Minor] Add the new `Popover` component.
+
+## 6.2.1 - 2019-06-24
+
+### Changed
+
+-   [Patch] Revert lazy load threshold in `Image` component from `400px` to `100px`. The larger value loads more images than desired on mobile.
+
+## 6.2.0 - 2019-06-20
+
+### Changed
+
 -   [Patch] Increased lazy load threshold in `Image` component from `100px` to `400px` to bring it more in line with the default of lazy loading libraries like [lazysizes](https://github.com/aFarkas/lazysizes#js-api).
 
 ### Added

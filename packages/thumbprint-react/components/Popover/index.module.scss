@@ -1,0 +1,85 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+.root {
+    background: $tp-color__white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: $tp-space__3 $tp-space__4;
+    border-radius: $tp-border-radius__base;
+    border-top: 4px solid $tp-color__indigo;
+    position: relative;
+    max-width: 300px;
+    visibility: hidden;
+    opacity: 0;
+    outline: none;
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popoverTitle {
+    font-size: $tp-font__title__7__size;
+    line-height: $tp-font__title__7__line-height;
+    font-weight: $tp-font__title__7__weight;
+    color: $tp-color__black;
+    margin-bottom: $tp-space__2;
+}
+
+.popoverBody {
+    font-size: $tp-font__body__2__size;
+    line-height: $tp-font__body__2__line-height;
+    color: $tp-color__black;
+    margin-bottom: $tp-space__3;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &Icon {
+        // Increase click target of the button to make it easier to tap.
+        margin: $tp-space__2;
+    }
+}
+
+.nubbin {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: $tp-space__2;
+    // Create an arrow with CSS.
+    border-width: $tp-space__2 $tp-space__2 0 $tp-space__2;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &Top {
+        transform: scale(-1);
+        top: -12px;
+        border-top-color: $tp-color__indigo;
+    }
+
+    &Bottom {
+        transform: scale(1);
+        bottom: -8px;
+        border-top-color: $tp-color__white;
+    }
+
+    &Left {
+        transform: rotate(90deg);
+        left: -20px;
+        border-top-color: $tp-color__white;
+    }
+
+    &Right {
+        transform: rotate(-90deg);
+        right: -20px;
+        border-top-color: $tp-color__white;
+    }
+}

@@ -18,6 +18,10 @@ module.exports = {
         // Disabled because some packages contain subcomponents. Our documentation system currently
         // requires that they be defined in one file.
         'react/no-multi-comp': 'off',
+
+        // React hooks
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     overrides: [
         {
@@ -34,7 +38,7 @@ module.exports = {
             // Since this code must run in IE11, it has stricter constraints than other parts of
             // this repo.
             files: ['packages/thumbprint-react/**/*'],
-            excludedFiles: ['test.jsx', '*.config.js'],
+            excludedFiles: ['*test.jsx', '*.config.js'],
             rules: {
                 // Check for uses of browser/DOM APIs that are not available in our supported browsers.
                 'compat/compat': 'error',

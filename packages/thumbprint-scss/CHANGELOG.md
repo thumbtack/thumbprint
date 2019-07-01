@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 2.0.2 - 2019-07-01
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 2.0.1 - 2019-06-20
+
 ### Changed
 
 -   [Patch] Fix border color of disabled `Button` with "caution" theme. (#325)

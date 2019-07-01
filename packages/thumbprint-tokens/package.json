@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-tokens",
     "description": "Design variables that power Thumbtack’s UI.",
-    "version": "8.0.2",
+    "version": "8.1.0",
     "main": "dist/javascript-cjs/index.js",
     "module": "dist/javascript-esm/index.js",
     "sideEffects": false,
@@ -27,5 +27,9 @@
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"
     },
-    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-tokens/"
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-tokens/",
+    "dependencies": {
+        "jszip": "^3.2.1",
+        "number-to-words": "^1.2.4"
+    }
 }

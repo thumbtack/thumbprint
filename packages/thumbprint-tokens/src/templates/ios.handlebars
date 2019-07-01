@@ -1,0 +1,23 @@
+import UIKit.UIColor
+
+{{#eachSectionWithPlatformTokens this}}
+{{#if description}}
+/// {{description}}
+{{/if}}
+public enum {{formatSectionName this}} {
+    {{#each tokens as |token|}}
+    {{#if token.value.ios}}
+    {{#if token.description.ios}}
+    /// {{token.description.ios}}
+    {{/if}}
+    {{#if token.deprecated}}
+    @available(*, deprecated)
+    {{/if}}
+    public static let {{formatId token}}: {{{formatValue token}}}
+    {{/if}}
+    {{/each}}
+}
+{{#unless @last}}
+
+{{/unless}}
+{{/eachSectionWithPlatformTokens}}

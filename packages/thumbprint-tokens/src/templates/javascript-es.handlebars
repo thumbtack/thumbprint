@@ -1,8 +1,8 @@
 {{#each this as |section|}}
 {{#each section.tokens as |token|}}
 {{#if token.value.web}}
-{{#if token.description}}
-// {{token.description}}
+{{#if token.description.web}}
+// {{token.description.web}}
 {{/if}}
 {{#if token.deprecated}}
 // @deprecated
