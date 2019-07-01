@@ -19,6 +19,8 @@ This list ordered based on experience releasing packages and contributing to Thu
 The following users have credentials to publish the `ThumbprintTokens` CocoaPod:
 
 1. [Daniel O’Connor](https://github.com/danoc)
+2. [Tom Genoni](https://github.com/tomgenoni)
+3. [Giles Lavelle](https://github.com/lavelle)
 
 ## Check to see if you have credentials to publish to npm
 
