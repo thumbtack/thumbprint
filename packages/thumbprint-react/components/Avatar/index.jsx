@@ -108,7 +108,7 @@ EntityAvatar.propTypes = {
      */
     initial: PropTypes.string,
     /**
-     * The user's full name. This is used as `title` and `alt` text.
+     * The entity's full name. This is used as `title` and `alt` text.
      */
     fullName: PropTypes.string,
     /**
