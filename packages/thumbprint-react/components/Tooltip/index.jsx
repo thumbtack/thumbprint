@@ -121,7 +121,7 @@ export default function Tooltip({
                 }
             </Reference>
 
-            <ConditionalPortal shouldDisplace={canUseDOM && shouldDisplace}>
+            <ConditionalPortal shouldDisplace={shouldDisplace}>
                 {canUseDOM && isOpen && (
                     <Popper
                         placement={position}
