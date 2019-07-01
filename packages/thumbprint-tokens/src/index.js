@@ -11,14 +11,14 @@ const outputs = [
     { slug: 'scss', distName: '_index.scss' },
     {
         slug: 'ios',
-        distName: 'index.swift',
+        distName: 'ThumbprintTokens.swift',
         // Packages the iOS dist into a zip file.
         postWrite: async distPath => {
             // Prep the zip file.
             const zip = new JSZip();
 
             // Add files to the folder.
-            zip.file('index.swift', fse.readFileSync(distPath, 'utf-8'));
+            zip.file('ThumbprintTokens.swift', fse.readFileSync(distPath, 'utf-8'));
             zip.file('LICENSE.txt', fse.readFileSync('../../LICENSE', 'utf-8'));
 
             // Save the zip file.

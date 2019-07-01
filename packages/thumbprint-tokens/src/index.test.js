@@ -27,7 +27,7 @@ it('outputted iOS matches snapshot', async () => {
     // can compare the token file as a string.
     const zipBuffer = fs.readFileSync('packages/thumbprint-tokens/dist/ios.zip');
     const files = await JSZip.loadAsync(zipBuffer);
-    const output = await files.file('index.swift').async('string');
+    const output = await files.file('ThumbprintTokens.swift').async('string');
 
     expect(output).toMatchSnapshot();
 });
