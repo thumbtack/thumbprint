@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update description of Avatar prop.
+
 ## 6.3.2 - 2019-07-01
 
 ### Changed
