@@ -22,7 +22,7 @@ export default function ConditionalPortal({ shouldDisplace, children }) {
 
 ConditionalPortal.propTypes = {
     /**
-     * Whether or not the contents should be displaced to the end of the <body>, or rendered inline.
+     * Whether or not the contents should be displaced to the end of the `<body>`, or rendered inline.
      */
     shouldDisplace: PropTypes.bool,
     /**
