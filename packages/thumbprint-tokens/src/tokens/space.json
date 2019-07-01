@@ -3,27 +3,45 @@
     "tokens": [
         {
             "id": "1",
-            "value": { "web": "4px" }
+            "description": {
+                "ios": "Space 1 – 4.0pt"
+            },
+            "value": { "web": "4px", "ios": "CGFloat = 4.0" }
         },
         {
             "id": "2",
-            "value": { "web": "8px" }
+            "description": {
+                "ios": "Space 2 – 8.0pt"
+            },
+            "value": { "web": "8px", "ios": "CGFloat = 8.0" }
         },
         {
             "id": "3",
-            "value": { "web": "16px" }
+            "description": {
+                "ios": "Space 3 – 16.0pt"
+            },
+            "value": { "web": "16px", "ios": "CGFloat = 16.0" }
         },
         {
             "id": "4",
-            "value": { "web": "24px" }
+            "description": {
+                "ios": "Space 4 – 24.0pt"
+            },
+            "value": { "web": "24px", "ios": "CGFloat = 24.0" }
         },
         {
             "id": "5",
-            "value": { "web": "32px" }
+            "description": {
+                "ios": "Space 5 – 32.0pt"
+            },
+            "value": { "web": "32px", "ios": "CGFloat = 32.0" }
         },
         {
             "id": "6",
-            "value": { "web": "64px" }
+            "description": {
+                "ios": "Space 6 – 48.0pt"
+            },
+            "value": { "web": "64px", "ios": "CGFloat = 48.0" }
         },
         {
             "id": "7",
