@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.3.1 - 2019-07-01
+
 ### Added
 
 -   [Patch] Create new hook for registering an ESC listener.
