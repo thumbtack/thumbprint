@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update `ConditionalPortal` to explicitly allow and handle null contents. (#357)
+
 ## 6.3.2 - 2019-07-01
 
 ### Changed
