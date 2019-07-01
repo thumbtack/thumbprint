@@ -32,7 +32,7 @@ test('renders a popover', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('initially traps focus to the first focusable element', () => {
+test('initially traps focus to wrapper, not the focusable child', () => {
     jest.useFakeTimers();
 
     const onCloseClick = jest.fn();
@@ -44,11 +44,14 @@ test('initially traps focus to the first focusable element', () => {
         </Popover>,
     );
 
-    // Run setTimeouts() in <FocusTrap> to completion
+    // Run setTimeouts() in focus-trap to completion
     jest.runAllTimers();
 
+    const modalWrapper = wrapper.find('[role="dialog"]');
+    expect(modalWrapper.is(':focus')).toBe(true);
+
     const button = wrapper.find('#hi');
-    expect(button.is(':focus')).toBe(true);
+    expect(button.is(':focus')).toBe(false);
 
     jest.useRealTimers();
 });

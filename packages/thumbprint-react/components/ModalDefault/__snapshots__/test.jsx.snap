@@ -30,48 +30,40 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
-                      />
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
-                      />
+                        class="container"
+                      >
+                        <div
+                          class="contents contentsNotSticky"
+                        />
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -100,8 +92,8 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -138,72 +130,64 @@ exports[`ModalDefault renders a basic modal 1`] = `
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
-                      />
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
+                        class="container"
                       >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
+                        <div
+                          class="contents contentsNotSticky"
+                        />
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
                         >
-                          <span
-                            class="flexCenter"
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -305,8 +289,8 @@ exports[`ModalDefault renders a basic modal 1`] = `
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -343,81 +327,73 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
+                        class="container"
                       >
-                        <p>
-                          Hi there!
-                        </p>
-                        <button
-                          type="button"
+                        <div
+                          class="contents contentsNotSticky"
                         >
-                          Submit
-                        </button>
-                      </div>
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
-                      >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
-                        >
-                          <span
-                            class="flexCenter"
+                          <p>
+                            Hi there!
+                          </p>
+                          <button
+                            type="button"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            Submit
+                          </button>
+                        </div>
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
+                          >
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -528,8 +504,8 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -566,72 +542,64 @@ exports[`ModalDefault renders a narrow modal 1`] = `
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
-                      />
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
+                        class="container"
                       >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
+                        <div
+                          class="contents contentsNotSticky"
+                        />
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
                         >
-                          <span
-                            class="flexCenter"
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -733,8 +701,8 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -771,72 +739,64 @@ exports[`ModalDefault renders a wide modal 1`] = `
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
-                      />
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
+                        class="container"
                       >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
+                        <div
+                          class="contents contentsNotSticky"
+                        />
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
                         >
-                          <span
-                            class="flexCenter"
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -938,8 +898,8 @@ exports[`ModalDefault renders a wide modal 1`] = `
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -976,72 +936,64 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
                     >
                       <div
-                        class="contents contentsNotSticky"
-                      />
-                      <div />
-                      <div
-                        class="closeButton closeButtonNotSticky"
+                        class="container"
                       >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
+                        <div
+                          class="contents contentsNotSticky"
+                        />
+                        <div />
+                        <div
+                          class="closeButton closeButtonNotSticky"
                         >
-                          <span
-                            class="flexCenter"
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -1143,8 +1095,8 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>
@@ -1213,78 +1165,70 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
         shouldCloseOnEscape={true}
         stage="exited"
       >
-        <Portal
-          containerInfo={
-            <body>
-              <div
-                aria-label="Modal"
-                role="dialog"
-                tabindex="-1"
-              >
+        <ConditionalPortal
+          shouldDisplace={true}
+        >
+          <Portal
+            containerInfo={
+              <body>
                 <div
-                  class="root curtain"
-                  data-test="thumbprint-modal-curtain"
+                  aria-label="Modal"
+                  role="dialog"
+                  tabindex="-1"
                 >
                   <div
-                    class="wrapper wrapperMedium"
+                    class="root curtain"
+                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="container"
+                      class="wrapper wrapperMedium"
                     >
                       <div
-                        class="contents contentsSticky"
-                      />
-                      <div>
-                        <div
-                          class="root"
-                        >
-                          Goose
-                        </div>
-                      </div>
-                      <div
-                        class="closeButton"
+                        class="container"
                       >
-                        <button
-                          aria-label="Close modal"
-                          class="plain plainThemeInherit"
-                          type="button"
-                        >
-                          <span
-                            class="flexCenter"
+                        <div
+                          class="contents contentsSticky"
+                        />
+                        <div>
+                          <div
+                            class="root"
                           >
-                            <svg
-                              class="closeButtonIcon"
-                              fill="currentColor"
-                              height="18"
-                              viewBox="0 0 18 18"
-                              width="18"
-                              xmlns="http://www.w3.org/2000/svg"
+                            Goose
+                          </div>
+                        </div>
+                        <div
+                          class="closeButton"
+                        >
+                          <button
+                            aria-label="Close modal"
+                            class="plain plainThemeInherit"
+                            type="button"
+                          >
+                            <span
+                              class="flexCenter"
                             >
-                              <path
-                                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                                fill-rule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                class="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                  fill-rule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </body>
-          }
-        >
-          <FocusTrap
-            _createFocusTrap={[Function]}
-            active={false}
-            focusTrapOptions={
-              Object {
-                "clickOutsideDeactivates": true,
-                "initialFocus": [Function],
-              }
+              </body>
             }
-            paused={false}
           >
             <div
               aria-label="Modal"
@@ -1412,8 +1356,8 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                 </div>
               </div>
             </div>
-          </FocusTrap>
-        </Portal>
+          </Portal>
+        </ConditionalPortal>
       </ModalCurtain>
     </Transition>
   </ModalDefaultAnimatedWrapper>

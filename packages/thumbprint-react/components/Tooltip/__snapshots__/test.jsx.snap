@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`adds \`zIndex\` 1`] = `
+exports[`Tooltip adds \`zIndex\` 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="body"
@@ -27,32 +27,25 @@ exports[`adds \`zIndex\` 1`] = `
         </button>
       </InnerReference>
     </Reference>
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            class="tooltip tooltipDark"
-            data-test-id="tooltip"
-            role="tooltip"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 123;"
-          >
-            Goose
-            <div
-              class="nubbin nubbinDark"
-            />
-          </div>
-        </body>
-      }
+    <ConditionalPortal
+      shouldDisplace={true}
     >
-      <PositionedTooltip
-        hide={[Function]}
-        onMouseLeave={[Function]}
-        position="top"
-        shouldDisplace={true}
-        show={[Function]}
-        supportsTouch={false}
-        theme="dark"
-        zIndex={123}
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              class="tooltip tooltipDark"
+              data-test-id="tooltip"
+              role="tooltip"
+              style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 123;"
+            >
+              Goose
+              <div
+                class="nubbin nubbinDark"
+              />
+            </div>
+          </body>
+        }
       >
         <Popper
           modifiers={
@@ -121,13 +114,13 @@ exports[`adds \`zIndex\` 1`] = `
             </div>
           </InnerPopper>
         </Popper>
-      </PositionedTooltip>
-    </Portal>
+      </Portal>
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
 
-exports[`renders a closed tooltip 1`] = `
+exports[`Tooltip renders a closed tooltip 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="body"
@@ -153,11 +146,18 @@ exports[`renders a closed tooltip 1`] = `
         </button>
       </InnerReference>
     </Reference>
+    <ConditionalPortal
+      shouldDisplace={true}
+    >
+      <Portal
+        containerInfo={<body />}
+      />
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
 
-exports[`renders an inline tooltip 1`] = `
+exports[`Tooltip renders an inline tooltip 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="inline"
@@ -183,14 +183,8 @@ exports[`renders an inline tooltip 1`] = `
         </button>
       </InnerReference>
     </Reference>
-    <PositionedTooltip
-      hide={[Function]}
-      onMouseLeave={[Function]}
-      position="top"
+    <ConditionalPortal
       shouldDisplace={false}
-      show={[Function]}
-      supportsTouch={false}
-      theme="dark"
     >
       <Popper
         modifiers={
@@ -259,12 +253,12 @@ exports[`renders an inline tooltip 1`] = `
           </div>
         </InnerPopper>
       </Popper>
-    </PositionedTooltip>
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
 
-exports[`renders an open tooltip 1`] = `
+exports[`Tooltip renders an open tooltip 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="body"
@@ -290,31 +284,25 @@ exports[`renders an open tooltip 1`] = `
         </button>
       </InnerReference>
     </Reference>
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            class="tooltip tooltipDark"
-            data-test-id="tooltip"
-            role="tooltip"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-          >
-            Goose
-            <div
-              class="nubbin nubbinDark"
-            />
-          </div>
-        </body>
-      }
+    <ConditionalPortal
+      shouldDisplace={true}
     >
-      <PositionedTooltip
-        hide={[Function]}
-        onMouseLeave={[Function]}
-        position="top"
-        shouldDisplace={true}
-        show={[Function]}
-        supportsTouch={false}
-        theme="dark"
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              class="tooltip tooltipDark"
+              data-test-id="tooltip"
+              role="tooltip"
+              style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+            >
+              Goose
+              <div
+                class="nubbin nubbinDark"
+              />
+            </div>
+          </body>
+        }
       >
         <Popper
           modifiers={
@@ -383,13 +371,13 @@ exports[`renders an open tooltip 1`] = `
             </div>
           </InnerPopper>
         </Popper>
-      </PositionedTooltip>
-    </Portal>
+      </Portal>
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
 
-exports[`renders an open tooltip with \`bottom\` placement 1`] = `
+exports[`Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="body"
@@ -415,31 +403,25 @@ exports[`renders an open tooltip with \`bottom\` placement 1`] = `
         </button>
       </InnerReference>
     </Reference>
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            class="tooltip tooltipDark"
-            data-test-id="tooltip"
-            role="tooltip"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-          >
-            Goose
-            <div
-              class="nubbin nubbinDark"
-            />
-          </div>
-        </body>
-      }
+    <ConditionalPortal
+      shouldDisplace={true}
     >
-      <PositionedTooltip
-        hide={[Function]}
-        onMouseLeave={[Function]}
-        position="bottom"
-        shouldDisplace={true}
-        show={[Function]}
-        supportsTouch={false}
-        theme="dark"
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              class="tooltip tooltipDark"
+              data-test-id="tooltip"
+              role="tooltip"
+              style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+            >
+              Goose
+              <div
+                class="nubbin nubbinDark"
+              />
+            </div>
+          </body>
+        }
       >
         <Popper
           modifiers={
@@ -508,13 +490,13 @@ exports[`renders an open tooltip with \`bottom\` placement 1`] = `
             </div>
           </InnerPopper>
         </Popper>
-      </PositionedTooltip>
-    </Portal>
+      </Portal>
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
 
-exports[`renders an open tooltip with a \`light\` theme 1`] = `
+exports[`Tooltip renders an open tooltip with a \`light\` theme 1`] = `
 <Tooltip
   closeDelayLength={200}
   container="body"
@@ -540,31 +522,25 @@ exports[`renders an open tooltip with a \`light\` theme 1`] = `
         </button>
       </InnerReference>
     </Reference>
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            class="tooltip tooltipLight"
-            data-test-id="tooltip"
-            role="tooltip"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-          >
-            Goose
-            <div
-              class="nubbin nubbinLight"
-            />
-          </div>
-        </body>
-      }
+    <ConditionalPortal
+      shouldDisplace={true}
     >
-      <PositionedTooltip
-        hide={[Function]}
-        onMouseLeave={[Function]}
-        position="top"
-        shouldDisplace={true}
-        show={[Function]}
-        supportsTouch={false}
-        theme="light"
+      <Portal
+        containerInfo={
+          <body>
+            <div
+              class="tooltip tooltipLight"
+              data-test-id="tooltip"
+              role="tooltip"
+              style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+            >
+              Goose
+              <div
+                class="nubbin nubbinLight"
+              />
+            </div>
+          </body>
+        }
       >
         <Popper
           modifiers={
@@ -633,8 +609,8 @@ exports[`renders an open tooltip with a \`light\` theme 1`] = `
             </div>
           </InnerPopper>
         </Popper>
-      </PositionedTooltip>
-    </Portal>
+      </Portal>
+    </ConditionalPortal>
   </Manager>
 </Tooltip>
 `;
