@@ -16,7 +16,7 @@ export default function ConditionalPortal({ shouldDisplace, children }) {
     return (
         <React.Fragment>
             {canUseDOM && shouldDisplace
-                ? ReactDOM.createPortal({ children }, document.body)
+                ? ReactDOM.createPortal(children, document.body)
                 : children}
         </React.Fragment>
     );
