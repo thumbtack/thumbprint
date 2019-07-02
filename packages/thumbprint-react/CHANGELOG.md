@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Major] Rewrite `DatePicker` to be a fully controlled component. (#12)
+-   [Patch] Update `ConditionalPortal` to explicitly allow and handle null contents. (#357)
 -   [Patch] Update description of Avatar prop.
 
 ## 6.3.2 - 2019-07-01

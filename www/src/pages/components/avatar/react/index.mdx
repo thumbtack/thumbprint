@@ -17,7 +17,14 @@ import {
 Avatars are available as two components: `UserAvatar` and `EntityAvatar`.
 
 ```jsx
-<UserAvatar imageUrl="https://www.placecage.com/640/480" size="xlarge" />
+<div className="flex">
+    <div className="mr3">
+        <EntityAvatar imageUrl="https://www.placecage.com/640/480" size="xlarge" />
+    </div>
+    <div>
+        <UserAvatar imageUrl="https://www.placecage.com/640/480" size="xlarge" />
+    </div>
+</div>
 ```
 
 `UserAvatar` is for people or users whereas `EntityAvatar` is for companies, businesses, or services.

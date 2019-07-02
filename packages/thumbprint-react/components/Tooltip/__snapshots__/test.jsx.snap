@@ -148,11 +148,7 @@ exports[`Tooltip renders a closed tooltip 1`] = `
     </Reference>
     <ConditionalPortal
       shouldDisplace={true}
-    >
-      <Portal
-        containerInfo={<body />}
-      />
-    </ConditionalPortal>
+    />
   </Manager>
 </Tooltip>
 `;
