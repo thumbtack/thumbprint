@@ -6,6 +6,7 @@
 
 -   [Patch] Update `ConditionalPortal` to explicitly allow and handle null contents. (#357)
 -   [Patch] Update description of Avatar prop.
+-   [Patch] Fix bug in `use-focus-trap` that caused it to refocus every render. (#366)
 
 ## 6.3.2 - 2019-07-01
 
