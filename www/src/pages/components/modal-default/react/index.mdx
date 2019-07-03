@@ -24,10 +24,12 @@ class ModalDefaultDemoBasic extends React.Component {
 
         this.state = {
             isOpen: false,
+            licenseType: '',
         };
 
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.setLicenseType = this.setLicenseType.bind(this);
     }
 
     closeModal() {
@@ -36,6 +38,10 @@ class ModalDefaultDemoBasic extends React.Component {
 
     openModal() {
         this.setState({ isOpen: true });
+    }
+
+    setLicenseType(value) {
+        this.setState({ licenseType: value });
     }
 
     onCloseFinish() {
@@ -76,8 +82,9 @@ class ModalDefaultDemoBasic extends React.Component {
                                 <Label for="example-license-number">License number</Label>
                                 <Input
                                     id="example-license-number"
-                                    onChange={() => {}}
+                                    onChange={this.setLicenseType}
                                     placeholder="XX-XXXX-XXXX"
+                                    value={this.state.licenseType}
                                 />
                             </li>
                         </ol>
