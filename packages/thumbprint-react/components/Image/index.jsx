@@ -28,6 +28,7 @@ const Image = forwardRef((props, outerRef) => {
         objectPosition,
         alt,
         className,
+        fadeIn,
         ...rest
     } = props;
 
@@ -210,8 +211,6 @@ const Image = forwardRef((props, outerRef) => {
                         ...(shouldObjectFit ? objectFitProps.style : {}),
                         ...(isLoaded || isError ? {} : aspectRatioBoxProps.style),
                     }}
-                    // Once loaded we remove the placeholder and add a class to transition the
-                    // opacity from 0 to 1.
                     onLoad={() => {
                         setIsLoaded(true);
                     }}
@@ -220,9 +219,12 @@ const Image = forwardRef((props, outerRef) => {
                     }}
                     className={classNames({
                         [styles.image]: true,
-                        [styles.imageLoading]: true,
-                        [styles.imageLoaded]: isLoaded,
-                        [styles.imageError]: isError,
+                        // Sets opacity to 0
+                        [styles.imageFadeInStart]: fadeIn,
+                        // Sets opacity to 1 with short transition
+                        [styles.imageFadeInEnd]: fadeIn && isLoaded,
+                        // If fadeIn is true and there's an loading error set opacity to 1.
+                        [styles.imageError]: fadeIn && isError,
                     })}
                 />
             </picture>
@@ -272,6 +274,10 @@ Image.propTypes = {
      * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
+    /**
+     * Fades the image in onload using opacity.
+     */
+    fadeIn: PropTypes.bool,
 };
 
 Image.defaultProps = {
@@ -281,6 +287,7 @@ Image.defaultProps = {
     containerAspectRatio: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
+    fadeIn: false,
 };
 
 // Needed because of the `forwardRef`.

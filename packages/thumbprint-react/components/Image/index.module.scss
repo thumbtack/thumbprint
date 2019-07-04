@@ -8,11 +8,11 @@
     overflow: hidden;
 }
 
-.imageLoading {
+.imageFadeInStart {
     opacity: 0;
 }
 
-.imageLoaded {
+.imageFadeInEnd {
     opacity: 1;
     transition: opacity 300ms;
 }

@@ -80,6 +80,19 @@ The image component accepts `style` and `className` props. This example uses bot
 </div>
 ```
 
+## Fade In
+
+This example uses the `fadeIn` prop to fade-in the image over 300ms using opacity.
+
+```jsx
+<Image
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/327896627728072894/width/1024.jpeg"
+    alt="Grass with concrete steps"
+    containerAspectRatio={400 / 250}
+    fadeIn
+/>
+```
+
 ## Cropped images with `height`
 
 This example uses the `height` prop to "crop" the image. By default, the cropped image is vertically centered with `object-position: center center`.
