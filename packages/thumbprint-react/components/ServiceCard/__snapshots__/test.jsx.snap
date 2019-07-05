@@ -88,7 +88,7 @@ exports[`ServiceCardImage render works 1`] = `
     >
       <img
         alt="duck duck goose"
-        className="image"
+        className="imageStart"
         onError={[Function]}
         onLoad={[Function]}
         sizes="0px"

@@ -31,7 +31,7 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
       >
         <img
           alt=""
-          className="image"
+          className="imageStart"
           height="48px"
           onError={[Function]}
           onLoad={[Function]}
@@ -120,7 +120,7 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
       >
         <img
           alt="Avatar for Duck Goose"
-          className="image"
+          className="imageStart"
           height="48px"
           onError={[Function]}
           onLoad={[Function]}
@@ -208,7 +208,7 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
       >
         <img
           alt="Avatar for Duck Goose"
-          className="image"
+          className="imageStart"
           height="48px"
           onError={[Function]}
           onLoad={[Function]}
@@ -707,7 +707,7 @@ exports[`renders an image when the user has one 1`] = `
       >
         <img
           alt=""
-          className="image"
+          className="imageStart"
           height="48px"
           onError={[Function]}
           onLoad={[Function]}

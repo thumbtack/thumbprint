@@ -139,7 +139,7 @@ const Image = forwardRef((props, outerRef) => {
 
         aspectRatioBoxProps.style = {
             paddingTop: `${(h / w) * 100}%`,
-            overflow: 'hidden', // Prevents alt text from taking up space before `src` is populated
+            overflow: 'hidden', // Prevents alt text fvsrom taking up space before `src` is populated
             height: 0,
         };
     }
@@ -218,13 +218,12 @@ const Image = forwardRef((props, outerRef) => {
                         setIsError(true);
                     }}
                     className={classNames({
-                        [styles.image]: true,
-                        // Sets opacity to 0
-                        [styles.imageFadeInStart]: fadeIn,
-                        // Sets opacity to 1 with short transition
-                        [styles.imageFadeInEnd]: fadeIn && isLoaded,
-                        // If fadeIn is true and there's an loading error set opacity to 1.
-                        [styles.imageError]: fadeIn && isError,
+                        // Opacity to 0, prevents flash of alt text when `height` prop used
+                        [styles.imageStart]: true,
+                        // Fade in transition if fadeIn `prop` prop used
+                        [styles.imageFadeIn]: fadeIn,
+                        // Opacity to 1 to reveal image or show alt text on error
+                        [styles.imageEnd]: isLoaded || isError,
                     })}
                 />
             </picture>
