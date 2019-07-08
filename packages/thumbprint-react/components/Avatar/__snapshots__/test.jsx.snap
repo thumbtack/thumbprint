@@ -19,7 +19,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
     <Image
       alt=""
       className="squareAvatar"
-      fadeIn={false}
       height="48px"
       objectFit="cover"
       objectPosition="center"
@@ -106,7 +105,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
     <Image
       alt="Avatar for Duck Goose"
       className="circleAvatar"
-      fadeIn={false}
       height="48px"
       objectFit="cover"
       objectPosition="center"
@@ -194,7 +192,6 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
     <Image
       alt="Avatar for Duck Goose"
       className="circleAvatar"
-      fadeIn={false}
       height="48px"
       objectFit="cover"
       objectPosition="center"
@@ -695,7 +692,6 @@ exports[`renders an image when the user has one 1`] = `
     <Image
       alt=""
       className="circleAvatar"
-      fadeIn={false}
       height="48px"
       objectFit="cover"
       objectPosition="center"

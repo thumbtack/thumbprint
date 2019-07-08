@@ -15,7 +15,8 @@ import styles from './index.module.scss';
 // based on the containerAspectRatio.
 // 2. The "sizes" attr is calculated on initial render to determine width of image.
 // 3. When lazyload is triggered the src and scrSet props are populated based on the sizes value.
-// 4. The image onLoad event removes padding-top placholder and fades in the image.
+// 4. The image is set to opacity:0 to start to prevent flash of alt text
+// 5. The image onLoad and onError events remove padding-top placholder and sets opacity to 1.
 // --------------------------------------------------------------------------------------------
 
 const Image = forwardRef((props, outerRef) => {
@@ -28,7 +29,6 @@ const Image = forwardRef((props, outerRef) => {
         objectPosition,
         alt,
         className,
-        fadeIn,
         ...rest
     } = props;
 
@@ -220,8 +220,6 @@ const Image = forwardRef((props, outerRef) => {
                     className={classNames({
                         // Opacity to 0, prevents flash of alt text when `height` prop used
                         [styles.imageStart]: true,
-                        // Fade in transition if fadeIn `prop` prop used
-                        [styles.imageFadeIn]: fadeIn,
                         // Opacity to 1 to reveal image or show alt text on error
                         [styles.imageEnd]: isLoaded || isError,
                     })}
@@ -273,10 +271,6 @@ Image.propTypes = {
      * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
      */
     objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
-    /**
-     * Fades the image in onload using opacity.
-     */
-    fadeIn: PropTypes.bool,
 };
 
 Image.defaultProps = {
@@ -286,7 +280,6 @@ Image.defaultProps = {
     containerAspectRatio: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
-    fadeIn: false,
 };
 
 // Needed because of the `forwardRef`.

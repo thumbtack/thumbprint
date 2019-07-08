@@ -77,7 +77,6 @@ exports[`ServiceCardImage render works 1`] = `
     alt="duck duck goose"
     className="image"
     containerAspectRatio={1.6}
-    fadeIn={false}
     objectFit="cover"
     objectPosition="center"
     sources={Array []}
