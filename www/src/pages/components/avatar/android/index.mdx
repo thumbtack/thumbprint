@@ -1,0 +1,26 @@
+---
+title: Avatar
+description: Display user images and badges on Thumbtack.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan, purus tincidunt ornare pulvinar, velit quam tempor mi, at interdum est libero sed ex. Sed sollicitudin eu ligula a viverra. Sed vitae tincidunt leo, eget fermentum ex. Vivamus justo lacus, auctor sollicitudin semper sit amet, ultricies at nunc.
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
