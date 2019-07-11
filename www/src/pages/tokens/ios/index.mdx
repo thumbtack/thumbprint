@@ -3,7 +3,7 @@ title: Tokens
 description: Design variables that power Thumbtack’s UI.
 ---
 
-import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
+import { version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
 import {
     formatId,
     formatValue,
@@ -44,7 +44,13 @@ export const pageQuery = graphql`
 
 <TabNav />
 
-<PackageTable version={version} packageName={name} sourceDirectory={homepage} />
+<PackageTable
+    version={version}
+    packageName="ThumbprintTokens"
+    sourceDirectory={homepage}
+    platform="ios"
+    importStatement="import ThumbprintTokens"
+/>
 
 <div>
     {props.data.allThumbprintToken.nodes.map(section => (
