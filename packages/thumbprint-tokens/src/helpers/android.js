@@ -32,12 +32,6 @@ module.exports = [
         },
     },
     {
-        name: 'formatSectionName',
-        value: ({ name }) =>
-            // Changes 'Border Radius' to 'BorderRadius'.
-            name.replace(/\s/g, ''),
-    },
-    {
         name: 'getTag',
         value: getTag,
     },
