@@ -4,6 +4,10 @@ description: Design variables that power Thumbtack’s UI.
 ---
 
 import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
+import {
+    formatId,
+    formatValue,
+} from '../../../../../packages/thumbprint-tokens/src/helpers/scss.js';
 import classNames from 'classnames';
 import { graphql } from 'gatsby';
 import PackageTable from 'components/package-table';
@@ -13,18 +17,16 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 export const pageQuery = graphql`
     {
         allThumbprintToken(sort: { order: ASC, fields: [name] }) {
-            edges {
-                node {
-                    name
-                    description
-                    tokens {
-                        id
-                        type
-                        value {
-                            web
-                        }
-                        group
+            nodes {
+                name
+                description
+                tokens {
+                    id
+                    type
+                    value {
+                        web
                     }
+                    group
                 }
             }
         }
@@ -41,14 +43,13 @@ export const pageQuery = graphql`
 />
 
 <div>
-    {props.data.allThumbprintToken.edges.map(({ node: section }) => (
+    {props.data.allThumbprintToken.nodes.map(section => (
         <TokenSection
             section={section}
-            idTransform={id => {
-                const sectionName = section.name.replace(/\s+/g, '-').toLowerCase();
-                return `$tp-${sectionName}__${id}`;
-            }}
+            formatId={id => formatId(section, { id })}
+            formatValue={value => formatValue(value)}
             key={section.name}
+            platform="web"
         />
     ))}
 </div>

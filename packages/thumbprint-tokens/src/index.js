@@ -39,8 +39,10 @@ const compile = (output, tokens) => {
     const helpers = require(`./helpers/${output}`);
 
     // Dynamically register the helpers for each `template`.
-    helpers.forEach(({ name, value }) => {
-        handlebars.registerHelper(name, value);
+    const helperNames = Object.keys(helpers);
+
+    helperNames.forEach(currentHelper => {
+        handlebars.registerHelper(currentHelper, helpers[currentHelper]);
     });
 
     return handlebars.compile(template)(tokens);
