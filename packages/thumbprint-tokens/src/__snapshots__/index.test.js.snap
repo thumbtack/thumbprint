@@ -1,5 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`outputted Android matches snapshot 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<resources>
+    <color name=\\"blue_100\\">#eaf6fa</color>
+    <color name=\\"blue_200\\">#b3ebff</color>
+    <color name=\\"blue_300\\">#79d2f2</color>
+    <color name=\\"blue\\">#009fd9</color>
+    <color name=\\"blue_500\\">#007fad</color>
+    <color name=\\"blue_600\\">#005a7a</color>
+    <color name=\\"indigo_100\\">#e8f1fd</color>
+    <color name=\\"indigo_200\\">#cce1ff</color>
+    <color name=\\"indigo_300\\">#96c2ff</color>
+    <color name=\\"indigo\\">#5968e2</color>
+    <color name=\\"indigo_500\\">#4f54b3</color>
+    <color name=\\"indigo_600\\">#383c80</color>
+    <color name=\\"purple_100\\">#f5efff</color>
+    <color name=\\"purple_200\\">#dfccff</color>
+    <color name=\\"purple_300\\">#d3baff</color>
+    <color name=\\"purple\\">#a97ff0</color>
+    <color name=\\"purple_500\\">#8a5ed6</color>
+    <color name=\\"purple_600\\">#502095</color>
+    <color name=\\"green_100\\">#e1fdf3</color>
+    <color name=\\"green_200\\">#c6f7da</color>
+    <color name=\\"green_300\\">#73e4a2</color>
+    <color name=\\"green\\">#2db783</color>
+    <color name=\\"green_500\\">#109e78</color>
+    <color name=\\"green_600\\">#0f6648</color>
+    <color name=\\"yellow_100\\">#fdf7e7</color>
+    <color name=\\"yellow_200\\">#ffebb3</color>
+    <color name=\\"yellow_300\\">#ffdd80</color>
+    <color name=\\"yellow\\">#febe14</color>
+    <color name=\\"yellow_500\\">#d48300</color>
+    <color name=\\"yellow_600\\">#8a5500</color>
+    <color name=\\"red_100\\">#ffeff0</color>
+    <color name=\\"red_200\\">#ffd9d9</color>
+    <color name=\\"red_300\\">#ffb0b0</color>
+    <color name=\\"red\\">#ff5a5f</color>
+    <color name=\\"red_500\\">#cc3553</color>
+    <color name=\\"red_600\\">#76012c</color>
+    <color name=\\"black_300\\">#676d73</color>
+    <color name=\\"black\\">#2f3033</color>
+    <color name=\\"gray_200\\">#fafafa</color>
+    <color name=\\"gray_300\\">#e9eced</color>
+    <color name=\\"gray\\">#d3d4d5</color>
+    <color name=\\"white\\">#ffffff</color>
+    <dimen name=\\"space_1\\">4dp</dimen>
+    <dimen name=\\"space_2\\">8dp</dimen>
+    <dimen name=\\"space_3\\">16dp</dimen>
+    <dimen name=\\"space_4\\">24dp</dimen>
+    <dimen name=\\"space_5\\">32dp</dimen>
+    <dimen name=\\"space_6\\">48dp</dimen>
+</resources>
+"
+`;
+
 exports[`outputted CommonJS matches snapshot 1`] = `
 "exports.tpBorderRadiusBase = \\"4px\\";
 exports.tpBorderRadiusBig = \\"6px\\";
