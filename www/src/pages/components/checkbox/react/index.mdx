@@ -175,6 +175,34 @@ function CheckboxExample() {
 }
 ```
 
+## Using classes
+
+These example use React Hooks, but if you want to use the old class-based components, you can do that.
+
+```jsx
+class CheckboxExample extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isChecked: undefined,
+        };
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(isChecked) {
+        this.setState({ isChecked });
+    }
+
+    render() {
+        return (
+            <Checkbox isChecked={this.state.isChecked} onChange={this.onChange}>
+                Send me promotional emails
+            </Checkbox>
+        );
+    }
+}
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
