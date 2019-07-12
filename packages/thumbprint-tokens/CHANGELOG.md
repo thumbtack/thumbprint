@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Create an Android output.
+
 ### Changed
 
 -   [Patch] Refactor source files to document iOS tokens. This does not affect the "dist" files.
