@@ -4,7 +4,7 @@ import UIKit.UIColor
 {{#if description}}
 /// {{description}}
 {{/if}}
-public enum {{formatSectionName this}} {
+public enum {{formatSectionName this.name}} {
     {{#each tokens as |token|}}
     {{#if token.value.ios}}
     {{#if token.description.ios}}
@@ -13,7 +13,7 @@ public enum {{formatSectionName this}} {
     {{#if token.deprecated}}
     @available(*, deprecated)
     {{/if}}
-    public static let {{formatId token}}: {{{formatValue token}}}
+    public static let {{formatId token.id}}: {{{formatValue token.value}}}
     {{/if}}
     {{/each}}
 }
