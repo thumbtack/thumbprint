@@ -27,7 +27,7 @@ exports.sourceNodes = ({ actions }) => {
     createTypes(typeDefs);
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, loaders }) => {
     actions.setWebpackConfig({
         resolve: {
             // This prevents Webpack from following symlinks in production.
@@ -54,6 +54,18 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                         ? path.resolve(__dirname, '../packages/thumbprint-scss/components.scss')
                         : '@thumbtack/thumbprint-scss',
             },
+        },
+        module: {
+            rules: [
+                {
+                    // We want to prevent `handlebars` from getting imported because it uses `fs`,
+                    // a dependency that doesn't work well with Gatsby. `handlebars` is not
+                    // actually needed. It is getting imported becuase we import functions from
+                    // `packages/thumbprint-tokens/src/helpers/ios.js` in our iOS MDX file.
+                    test: /handlebars/,
+                    use: loaders.null(),
+                },
+            ],
         },
     });
 };

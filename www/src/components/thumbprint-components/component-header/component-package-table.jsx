@@ -13,6 +13,7 @@ const ComponentPackageTable = ({ version, name, homepage, components }) => (
         version={version}
         packageName={name}
         sourceDirectory={homepage}
+        platform="web"
         importStatement={
             components
                 ? getImportStatement({
