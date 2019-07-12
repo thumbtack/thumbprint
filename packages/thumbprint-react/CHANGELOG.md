@@ -2,10 +2,13 @@
 
 ## Unreleased
 
+## 6.4.0 - 2019-07-09
+
 ### Changed
 
 -   [Patch] Update `ConditionalPortal` to explicitly allow and handle null contents. (#357)
 -   [Patch] Update description of Avatar prop.
+-   [Minor] Remove fade-in from `Image`. (#368)
 
 ## 6.3.2 - 2019-07-01
 

@@ -15,7 +15,8 @@ import styles from './index.module.scss';
 // based on the containerAspectRatio.
 // 2. The "sizes" attr is calculated on initial render to determine width of image.
 // 3. When lazyload is triggered the src and scrSet props are populated based on the sizes value.
-// 4. The image onLoad event removes padding-top placholder and fades in the image.
+// 4. The image is set to opacity:0 to start to prevent flash of alt text
+// 5. The image onLoad and onError events remove padding-top placholder and sets opacity to 1.
 // --------------------------------------------------------------------------------------------
 
 const Image = forwardRef((props, outerRef) => {
@@ -210,8 +211,6 @@ const Image = forwardRef((props, outerRef) => {
                         ...(shouldObjectFit ? objectFitProps.style : {}),
                         ...(isLoaded || isError ? {} : aspectRatioBoxProps.style),
                     }}
-                    // Once loaded we remove the placeholder and add a class to transition the
-                    // opacity from 0 to 1.
                     onLoad={() => {
                         setIsLoaded(true);
                     }}
@@ -219,10 +218,10 @@ const Image = forwardRef((props, outerRef) => {
                         setIsError(true);
                     }}
                     className={classNames({
-                        [styles.image]: true,
-                        [styles.imageLoading]: true,
-                        [styles.imageLoaded]: isLoaded,
-                        [styles.imageError]: isError,
+                        // Opacity to 0, prevents flash of alt text when `height` prop used
+                        [styles.imageStart]: true,
+                        // Opacity to 1 to reveal image or show alt text on error
+                        [styles.imageEnd]: isLoaded || isError,
                     })}
                 />
             </picture>
