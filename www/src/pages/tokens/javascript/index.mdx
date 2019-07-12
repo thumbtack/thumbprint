@@ -4,6 +4,7 @@ description: Design variables that power Thumbtack’s UI.
 ---
 
 import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
+import { formatId } from '../../../../../packages/thumbprint-tokens/src/helpers/javascript-es.js';
 import classNames from 'classnames';
 import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
@@ -14,18 +15,16 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 export const pageQuery = graphql`
     {
         allThumbprintToken(sort: { order: ASC, fields: [name] }) {
-            edges {
-                node {
-                    name
-                    description
-                    tokens {
-                        id
-                        type
-                        value {
-                            web
-                        }
-                        group
+            nodes {
+                name
+                description
+                tokens {
+                    id
+                    type
+                    value {
+                        web
                     }
+                    group
                 }
             }
         }
@@ -38,15 +37,18 @@ export const pageQuery = graphql`
     version={version}
     packageName={name}
     sourceDirectory={homepage}
+    platform="web"
     importStatement="import * as tokens from '@thumbtack/thumbprint-tokens';"
 />
 
 <div>
-    {props.data.allThumbprintToken.edges.map(({ node: section }) => (
+    {props.data.allThumbprintToken.nodes.map(section => (
         <TokenSection
             section={section}
-            idTransform={id => camelCase(`tp-${section.name}-${id}`)}
+            formatId={id => formatId(section, { id })}
+            formatValue={value => value.web}
             key={section.name}
+            platform="web"
         />
     ))}
 </div>

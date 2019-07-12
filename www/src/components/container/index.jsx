@@ -42,11 +42,20 @@ const Container = ({ children, location, activeSection }) => {
                     value
                 }
             }
-            allTokens: allThumbprintToken(sort: { order: ASC, fields: [name] }) {
-                edges {
-                    node {
-                        name
-                    }
+            allWebTokens: allThumbprintToken(
+                filter: { tokens: { elemMatch: { value: { web: { ne: null } } } } }
+                sort: { fields: name }
+            ) {
+                nodes {
+                    name
+                }
+            }
+            allIosTokens: allThumbprintToken(
+                filter: { tokens: { elemMatch: { value: { ios: { ne: null } } } } }
+                sort: { fields: name }
+            ) {
+                nodes {
+                    name
                 }
             }
             allGuides: allSitePage(
@@ -94,7 +103,7 @@ const Container = ({ children, location, activeSection }) => {
         }
     `);
 
-    const { allAtomic, allGuides, allTokens, allComponents } = data;
+    const { allAtomic, allGuides, allWebTokens, allIosTokens, allComponents } = data;
     const { pathname, hash } = location;
 
     return (
@@ -323,7 +332,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/scss/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allTokens.edges, ({ node }) => (
+                                                {map(allWebTokens.nodes, node => (
                                                     <SideNavLink
                                                         title={node.name}
                                                         to={`/tokens/scss/#${generateSlug({
@@ -343,10 +352,30 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/javascript/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allTokens.edges, ({ node }) => (
+                                                {map(allWebTokens.nodes, node => (
                                                     <SideNavLink
                                                         title={node.name}
                                                         to={`/tokens/javascript/#${generateSlug({
+                                                            level: 'section',
+                                                            children: node.name,
+                                                        })}`}
+                                                        key={node.name}
+                                                        level={3}
+                                                    />
+                                                ))}
+                                            </SideNavGroup>
+                                        </SideNavLink>
+                                        <SideNavLink
+                                            title="iOS"
+                                            to="/tokens/ios/"
+                                            level={2}
+                                            isActive={pathname.startsWith('/tokens/ios/')}
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {map(allIosTokens.nodes, node => (
+                                                    <SideNavLink
+                                                        title={node.name}
+                                                        to={`/tokens/ios/#${generateSlug({
                                                             level: 'section',
                                                             children: node.name,
                                                         })}`}

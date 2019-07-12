@@ -16,11 +16,28 @@ const getChangelogURLFromPackageHomepageURL = homepageURL => {
     return pathJoin(`https://github.com/${parsedUrl.pathname}`, 'CHANGELOG.md');
 };
 
-const PackageTable = ({ version, deprecated, packageName, importStatement, sourceDirectory }) => {
+const PackageTable = ({
+    version,
+    deprecated,
+    packageName,
+    importStatement,
+    sourceDirectory,
+    platform,
+}) => {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
     const name = packageName;
     const isStable = startsWith(version, '0');
+
+    let installVersion;
+
+    if (platform === 'ios') {
+        // Changes `X.Y.Z` to `X.Y` since iOS Podfiles only care about the first two numbers.
+        const splitVersion = version.split('.');
+        installVersion = `${splitVersion[0]}.${splitVersion[1]}`;
+    } else {
+        installVersion = version;
+    }
 
     // Allow users to easily create an issue on GitHub.
     const repoURL = 'https://github.com/thumbtack/thumbprint/';
@@ -59,9 +76,16 @@ const PackageTable = ({ version, deprecated, packageName, importStatement, sourc
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            <InlineCode theme="plain" shouldCopyToClipboard>
-                                {`yarn add ${name} ${isStable ? '--exact' : ''}`}
-                            </InlineCode>
+                            {platform === 'web' && (
+                                <InlineCode theme="plain" shouldCopyToClipboard>
+                                    {`yarn add ${name} ${isStable ? '--exact' : ''}`}
+                                </InlineCode>
+                            )}
+                            {platform === 'ios' && (
+                                <InlineCode theme="plain" shouldCopyToClipboard>
+                                    {`pod '${name}', '~> ${installVersion}'`}
+                                </InlineCode>
+                            )}
                         </td>
                     </tr>
 
@@ -85,6 +109,7 @@ PackageTable.propTypes = {
     version: PropTypes.string.isRequired,
     deprecated: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     packageName: PropTypes.string.isRequired,
+    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
     importStatement: PropTypes.string,
     sourceDirectory: PropTypes.string.isRequired,
 };
