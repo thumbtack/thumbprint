@@ -23,9 +23,11 @@ export default function useFocusTrap(element, isActive) {
         () => {
             // If we've already created a trap, toggle it based on the isActive status
             if (trap) {
+                console.log('toggling existing trap', isActive);
                 toggleTrap(trap, isActive);
                 // Otherwise, if there's no trap, but there is a valid element that needs to be trapped
             } else if (element) {
+                console.log('making new trap');
                 // Create the trap and store a reference to it
                 const newTrap = createFocusTrap(element, {
                     clickOutsideDeactivates: true,
@@ -34,6 +36,7 @@ export default function useFocusTrap(element, isActive) {
                     initialFocus: element,
                 });
                 setTrap(newTrap);
+                console.log('toggling it', isActive);
                 // And toggle it based on isActive status
                 toggleTrap(newTrap, isActive);
             }
@@ -41,6 +44,7 @@ export default function useFocusTrap(element, isActive) {
             // When the component unmounts, we deactivate the trap, if there is one
             return () => {
                 if (trap) {
+                    console.log('Deactivating trap');
                     trap.deactivate();
                 }
             };

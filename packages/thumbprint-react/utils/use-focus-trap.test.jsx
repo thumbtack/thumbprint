@@ -11,11 +11,11 @@ jest.useFakeTimers();
 
 function FocusableThing() {
     const [wrapperEl, setWrapperEl] = useState(null);
-    useFocusTrap(wrapperEl, true);
+    useFocusTrap(wrapperEl, !!wrapperEl);
 
     return (
-        <div ref={el => setWrapperEl(el)}>
-            <input type="text" />
+        <div ref={el => setWrapperEl(el)} tabIndex="-1">
+            <input type="text" tabIndex="0" />
         </div>
     );
 }
@@ -38,10 +38,14 @@ describe('useFocusTrap', () => {
 
         // Press Tab to switch focus to the input
         act(() => {
-            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: TAB_KEY }));
+            document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: TAB_KEY }));
+            input.simulate('focus');
+            // jest.runAllTimers();
         });
-        container.update();
-        expect(input.is(':focus')).toBe(true);
+
+        // container.update();
+        console.log(document.activeElement.tagName);
+        expect(input.getDOMNode()).toBe(document.activeElement);
         expect(input.getDOMNode().value).toBe('');
 
         // Type a letter
