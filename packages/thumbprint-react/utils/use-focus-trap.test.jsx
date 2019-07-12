@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
+import { act, Simulate } from 'react-dom/test-utils';
 
 import useFocusTrap from './use-focus-trap';
 
@@ -31,6 +31,7 @@ describe('useFocusTrap', () => {
         const container = mount(<FocusableThing />);
 
         act(() => {
+            // Run setTimeouts() in focus-trap to completion
             jest.runAllTimers();
         });
         container.update();
@@ -44,20 +45,35 @@ describe('useFocusTrap', () => {
 
         // Press Tab to switch focus to the input
         act(() => {
-            document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: TAB_KEY }));
-            input.simulate('click');
+            wrapper
+                .getDOMNode()
+                .dispatchEvent(
+                    new KeyboardEvent('keyup', { keyCode: TAB_KEY, which: TAB_KEY, key: 'Tab' }),
+                );
+            // Simulate.keyPress(document, { keyCode: TAB_KEY, which: TAB_KEY, key: 'Tab' });
+            // Simulate.keyPress(document, { keyCode: TAB_KEY, which: TAB_KEY, key: 'Tab' });
+            // input.simulate('click');
             // jest.runAllTimers();
         });
 
-        // container.update();
+        container.update();
         console.log(document.activeElement.tagName);
         input = container.find('input');
+<<<<<<< HEAD
         // expect(input.getDOMNode()).toBe(document.activeElement);
+=======
+        // expect(input.is(':focus')).toBe(true);
+        expect(input.getDOMNode()).toBe(document.activeElement);
+>>>>>>> blubbo blabadobo
         expect(input.getDOMNode().value).toBe('');
 
         // Type a letter
         act(() => {
+<<<<<<< HEAD
             document.dispatchEvent(
+=======
+            input.dispatchEvent(
+>>>>>>> blubbo blabadobo
                 new KeyboardEvent('keyup', { key: 'a', which: A_KEY, keyCode: A_KEY }),
             );
             input.simulate('keypress', { key: 'a', which: A_KEY, keyCode: A_KEY });
