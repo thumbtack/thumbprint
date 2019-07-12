@@ -3,12 +3,14 @@ title: Tokens
 description: Design variables that power Thumbtack’s UI.
 ---
 
-import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
+import { version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
 import {
     formatId,
     formatValue,
-} from '../../../../../packages/thumbprint-tokens/src/helpers/scss.js';
+    formatSectionName,
+} from '../../../../../packages/thumbprint-tokens/src/helpers/ios.js';
 import classNames from 'classnames';
+import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
 import PackageTable from 'components/package-table';
 import TabNav from 'components/thumbprint-tokens/tab-nav';
@@ -16,14 +18,21 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 
 export const pageQuery = graphql`
     {
-        allThumbprintToken(sort: { order: ASC, fields: [name] }) {
+        allThumbprintToken(
+            filter: { tokens: { elemMatch: { value: { ios: { ne: null } } } } }
+            sort: { fields: name }
+        ) {
             nodes {
                 name
                 description
                 tokens {
                     id
                     type
+                    description {
+                        ios
+                    }
                     value {
+                        ios
                         web
                     }
                     group
@@ -37,20 +46,20 @@ export const pageQuery = graphql`
 
 <PackageTable
     version={version}
-    packageName={name}
+    packageName="ThumbprintTokens"
     sourceDirectory={homepage}
-    platform="web"
-    importStatement={`@import "@thumbtack/thumbprint-tokens/dist/scss/_index";`}
+    platform="ios"
+    importStatement="import ThumbprintTokens"
 />
 
 <div>
     {props.data.allThumbprintToken.nodes.map(section => (
         <TokenSection
             section={section}
-            formatId={id => formatId(section, { id })}
-            formatValue={value => formatValue(value)}
+            formatId={id => `${formatSectionName(section.name)}.${formatId(id)}`}
+            formatValue={value => formatValue(value).replace('UIColor = ', '')}
             key={section.name}
-            platform="web"
+            platform="ios"
         />
     ))}
 </div>
