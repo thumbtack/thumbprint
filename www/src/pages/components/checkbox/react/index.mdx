@@ -15,32 +15,13 @@ Checkboxes can be checked, unchecked, or in an indeterminate state.
 The `isChecked` prop determines if a checkbox is checked.
 
 ```jsx
-class CheckboxExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Checkbox isChecked={isChecked} onChange={this.onChange}>
-                Send me promotional emails
-            </Checkbox>
-        );
-    }
+function CheckboxExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
+    return (
+        <Checkbox isChecked={isChecked} onChange={setIsChecked}>
+            Send me promotional emails
+        </Checkbox>
+    );
 }
 ```
 
@@ -48,64 +29,43 @@ class CheckboxExample extends React.Component {
 
 This an example of how to use many `Checkbox` components at once.
 
-Here are a few points to note:
-
--   Each `Checkbox` receives an `id`. This `id` is then passed as the second argument to `onChange`. The first argument is whether the checkbox should be checked or unchecked.
--   The checked checkboxes are stored within `this.state`.
--   `isChecked` checks to see if the `id` exists within `this.state` and is `true`.
-
 ```jsx
-class CheckboxExample extends React.Component {
-    constructor(props) {
-        super(props);
+function CheckboxExample() {
+    const [isMorningChecked, setIsMorningChecked] = React.useState(true);
+    const [isAfternoonChecked, setIsAfternoonChecked] = React.useState(true);
+    const [isEveningChecked, setIsEveningChecked] = React.useState(true);
 
-        this.state = {
-            morning: true,
-            afternoon: true,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked, newValue) {
-        this.setState({
-            [newValue]: isChecked,
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <Checkbox
-                    id="morning"
-                    isChecked={this.state['morning']}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Morning
-                </Checkbox>
-                <Checkbox
-                    id="afternoon"
-                    isChecked={this.state['afternoon']}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Afternoon
-                </Checkbox>
-                <Checkbox
-                    id="evening"
-                    isChecked={this.state['evening']}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Evening
-                </Checkbox>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Checkbox
+                id="morning"
+                isChecked={isMorningChecked}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={setIsMorningChecked}
+            >
+                Morning
+            </Checkbox>
+            <Checkbox
+                id="afternoon"
+                isChecked={isAfternoonChecked}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={setIsAfternoonChecked}
+            >
+                Afternoon
+            </Checkbox>
+            <Checkbox
+                id="evening"
+                isChecked={isEveningChecked}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={setIsEveningChecked}
+            >
+                Evening
+            </Checkbox>
+        </div>
+    );
 }
 ```
 
@@ -114,42 +74,24 @@ class CheckboxExample extends React.Component {
 [Indeterminate checkboxes](https://css-tricks.com/indeterminate-checkboxes/) are used when not all items in a field are selected.
 
 ```jsx
-class CheckboxExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Checkbox
-                isIndeterminate={isChecked === undefined}
-                isChecked={isChecked}
-                onChange={this.onChange}
-            >
-                Select all cities
-            </Checkbox>
-        );
-    }
+function CheckboxExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
+    return (
+        <Checkbox
+            isIndeterminate={isChecked === undefined}
+            isChecked={isChecked}
+            onChange={setIsChecked}
+        >
+            Select all cities
+        </Checkbox>
+    );
 }
 ```
 
 ## Disabled checkboxes
 
-The `isDisabled` prop visually and functionally disabled the radio button. It also visually disables the related label.
+The `isDisabled` prop visually and functionally disabled the radio button.
+It also visually disables the related label.
 
 ```jsx
 <React.Fragment>
@@ -169,123 +111,92 @@ The `isDisabled` prop visually and functionally disabled the radio button. It al
 
 The `hasError` prop can be used to visually represent an error.
 
-This prop only changes the checkbox’s color. It should be used alongside an error message that helps users advance through the form.
+This prop only changes the checkbox’s color.
+It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-class CheckboxExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Checkbox isChecked={isChecked} hasError onChange={this.onChange}>
-                I accept the Terms of Service
-            </Checkbox>
-        );
-    }
+function CheckboxExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
+    return (
+        <Checkbox isChecked={isChecked} hasError onChange={setIsChecked}>
+            I accept the Terms of Service
+        </Checkbox>
+    );
 }
 ```
 
 ## Multi-column content
 
-It’s possible to provide complex UIs to the `children` prop. Clicking on the content will select the related checkbox.
+It’s possible to provide complex UIs to the `children` prop.
+Clicking on the content will select the related checkbox.
 
-This example puts the label content within `children`. It’s also possible to not provide `children` as `undefined` and use a custom `label` instead. In that case, you must use `Checkbox`’s `id` prop.
+This example puts the label content within `children`.
+It’s also possible to not provide `children` as `undefined` and use a custom `label` instead.
+In that case, you must use `Checkbox`’s `id` prop.
 
 ```jsx
-class CheckboxExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Checkbox isChecked={isChecked} onChange={this.onChange}>
-                <div style={{ display: 'flex' }}>
-                    <div style={{ flex: 'none' }}>
-                        <UserAvatar imageUrl="https://randomuser.me/api/portraits/women/63.jpg" />
-                    </div>
-                    <div
-                        style={{
-                            paddingLeft: '16px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flex: '1 0 0%',
-                        }}
-                    >
-                        <div>
-                            <span style={{ fontWeight: 700 }}>Austin Entertainment LLC.</span>
-                            <p>DJs, photo booths, and photography for all of your event needs.</p>
-                        </div>
-                        <div style={{ fontWeight: 700, marginLeft: 'auto' }}>$120/hr</div>
-                    </div>
+function CheckboxExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
+    return (
+        <Checkbox isChecked={isChecked} onChange={setIsChecked}>
+            <div className="flex">
+                <div className="flex-none">
+                    <UserAvatar imageUrl="https://randomuser.me/api/portraits/women/63.jpg" />
                 </div>
-            </Checkbox>
-        );
-    }
+                <div className="pl4 flex items-center" style={{ flex: '1 0 0%' }}>
+                    <div>
+                        <span className="b">Austin Entertainment LLC.</span>
+                        <p>DJs, photo booths, and photography for all of your event needs.</p>
+                    </div>
+                    <div className="b ml-auto">$120/hr</div>
+                </div>
+            </div>
+        </Checkbox>
+    );
 }
 ```
 
-Checkbox input by default is vertically center-aligned with `children`. If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `checkboxVerticalAlign` prop as `top`.
+Checkbox input by default is vertically center-aligned with `children`.
+If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `checkboxVerticalAlign` prop as `top`.
+
+```jsx
+function CheckboxExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
+    return (
+        <Checkbox isChecked={isChecked} onChange={setIsChecked} checkboxVerticalAlign="top">
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec
+                eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat metus a,
+                commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare mauris in arcu
+                maximus placerat.
+            </Text>
+        </Checkbox>
+    );
+}
+```
+
+## Using classes
+
+These example use React Hooks, but if you want to use the old class-based components, you can do that.
 
 ```jsx
 class CheckboxExample extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             isChecked: undefined,
         };
-
         this.onChange = this.onChange.bind(this);
     }
 
     onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
+        this.setState({ isChecked });
     }
 
     render() {
-        const { isChecked } = this.state;
-
         return (
-            <Checkbox isChecked={isChecked} onChange={this.onChange} checkboxVerticalAlign="top">
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
-                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
-                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
-                    mauris in arcu maximus placerat.
-                </Text>
+            <Checkbox isChecked={this.state.isChecked} onChange={this.onChange}>
+                Send me promotional emails
             </Checkbox>
         );
     }
