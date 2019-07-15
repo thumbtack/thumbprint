@@ -1,17 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Color from './color';
+import className from 'classnames';
 import { InlineCode } from '../../../mdx';
 
-const TokenExample = props => {
+const TokenExample = ({ data, displayText, type }) => {
+    const shouldRenderAsTwoLines = displayText.length > 30;
     let children;
 
-    switch (props.type) {
+    switch (type) {
         case 'color':
-            children = <Color value={props.children} />;
+            children = (
+                <table className="w-100">
+                    <tbody>
+                        <tr>
+                            <td
+                                className={className({
+                                    flex: true,
+                                    'tr items-center justify-end': !shouldRenderAsTwoLines,
+                                    'flex-column items-end black-300': shouldRenderAsTwoLines,
+                                })}
+                            >
+                                <div
+                                    className={className({
+                                        'h2 w4 ba b-gray-300': true,
+                                        mr4: !shouldRenderAsTwoLines,
+                                        mb1: shouldRenderAsTwoLines,
+                                    })}
+                                    style={{ backgroundColor: data }}
+                                />
+                                <InlineCode theme="plain">{displayText}</InlineCode>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            );
             break;
         default:
-            children = <InlineCode theme="plain">{props.children}</InlineCode>;
+            children = <InlineCode theme="plain">{displayText}</InlineCode>;
             break;
     }
 
@@ -20,7 +45,8 @@ const TokenExample = props => {
 
 TokenExample.propTypes = {
     type: PropTypes.string,
-    children: PropTypes.node.isRequired,
+    data: PropTypes.string.isRequired,
+    displayText: PropTypes.node.isRequired,
 };
 
 TokenExample.defaultProps = {
