@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { mount } from 'enzyme';
 import DatePicker from './index';
 
@@ -39,37 +39,14 @@ describe('calls `onChange` with the correct date', () => {
     });
 
     test('multi date selection', () => {
-        // Wrapper component to allow us to write integration tests for a controlled component.
-        //
-        // Don't need to write proptypes for a one-off wrapper used inside a test
-        // eslint-disable-next-line react/prop-types
-        function DatePickerExample({ firstDate, onChange }) {
-            const [value, setValue] = useState(firstDate);
-
-            return (
-                <DatePicker
-                    value={value}
-                    // We need to call these two functions separately here. `onChange` is the
-                    // external reference to `jest.fn` that lets us make assertions about how this
-                    // function was called. `setValue` is the React Hook that actually updates the
-                    // state so we can track changes over the whole integration test.
-                    // TODO: maybe extract this out or revisit if this becomes a common pattern
-                    onChange={newValue => {
-                        onChange(newValue);
-                        setValue(newValue);
-                    }}
-                    allowMultiSelection
-                />
-            );
-        }
-
+        const onChange = jest.fn();
         const firstDate = new Date('2057-09-03T07:00:00.000Z');
         const secondDate = new Date('2057-09-15T07:00:00.000Z');
         const thirdDate = new Date('2057-09-22T07:00:00.000Z');
 
-        const onChange = jest.fn();
-
-        const wrapper = mount(<DatePickerExample firstDate={firstDate} onChange={onChange} />);
+        const wrapper = mount(
+            <DatePicker onChange={onChange} value={firstDate} allowMultiSelection />,
+        );
 
         const allDays = wrapper.find('.DayPicker-Day');
 

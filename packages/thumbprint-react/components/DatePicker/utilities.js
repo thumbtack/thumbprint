@@ -21,10 +21,6 @@ export function normaliseValue(value) {
     return map(castArray(value), day => new Date(day));
 }
 
-export function roundToStartOfDay(date) {
-    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
-}
-
 // Validate the `props` object and throw errors if there are any inconsistencies.
 export function validateProps(props) {
     const days = normaliseValue(props.value);
