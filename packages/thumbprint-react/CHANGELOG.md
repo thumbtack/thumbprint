@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 6.4.2 - 2019-07-15
+
+### Fixed
+
+-   [Patch] Revert Datepicker breaking change that was accidentally released in 6.4.1
+
 ## 6.4.1 - 2019-07-15
 
 ### Fixed
