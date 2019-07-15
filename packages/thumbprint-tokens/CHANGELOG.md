@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 8.1.1 - 2019-07-15
+
 ### Changed
 
 -   [Patch] Refactor source files to document iOS tokens. This does not affect the "dist" files.
