@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Major] Rewrite `DatePicker` to be a fully controlled component. (#12)
+
 ### Fixed
 
 -   [Patch] Fix bug in `use-focus-trap` that caused it to refocus every render. (#366)
