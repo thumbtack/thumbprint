@@ -18,82 +18,67 @@ Modals can be opened or closed with a `isOpen` prop.
 The `ModalDefault` has a curtain (backdrop) at medium and large breakpoints. It appears fullscreen on small devices.
 
 ```jsx
-class ModalDefaultDemoBasic extends React.Component {
-    constructor() {
-        super();
+function ModalDefaultDemoBasic() {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                    <ModalDefaultDescription>
+                        Licenses add credibility to your business and provide more trust for
+                        customers.
+                    </ModalDefaultDescription>
+                </ModalDefaultHeader>
 
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
+                <ModalDefaultContent>
+                    <ol className="tp-form-fields">
+                        <li className="tp-form-field__item">
+                            <Label>License type</Label>
+                            <Select value="default" isFullWidth onChange={() => {}}>
+                                <option value="default">Choose one&hellip;</option>
+                            </Select>
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                    </ol>
+                </ModalDefaultContent>
 
-    closeModal() {
-        this.setState({ isOpen: false });
-    }
-
-    openModal() {
-        this.setState({ isOpen: true });
-    }
-
-    onCloseFinish() {
-        console.log('ModalDefault: `onCloseFinish`');
-    }
-
-    onOpenFinish() {
-        console.log('ModalDefault: `onOpenFinish`');
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Button onClick={this.openModal}>Open modal</Button>
-                <ModalDefault
-                    isOpen={this.state.isOpen}
-                    onCloseClick={this.closeModal}
-                    onCloseFinish={this.onCloseFinish}
-                    onOpenFinish={this.onOpenFinish}
-                >
-                    <ModalDefaultHeader>
-                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                        <ModalDefaultDescription>
-                            Licenses add credibility to your business and provide more trust for
-                            customers.
-                        </ModalDefaultDescription>
-                    </ModalDefaultHeader>
-
-                    <ModalDefaultContent>
-                        <ol className="tp-form-fields">
-                            <li className="tp-form-field__item">
-                                <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
-                                    <option value="default">Choose one&hellip;</option>
-                                </Select>
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                        </ol>
-                    </ModalDefaultContent>
-
-                    <ModalDefaultFooter>
-                        <ButtonRow justify="right">
-                            <Button onClick={this.closeModal} width="full-below-small">
-                                Submit
-                            </Button>
-                        </ButtonRow>
-                    </ModalDefaultFooter>
-                </ModalDefault>
-            </React.Fragment>
-        );
-    }
+                <ModalDefaultFooter>
+                    <ButtonRow justify="right">
+                        <Button onClick={this.closeModal} width="full-below-small">
+                            Submit
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
 }
 ```
 
@@ -102,133 +87,131 @@ class ModalDefaultDemoBasic extends React.Component {
 This modal has a sticky footer that is always visible. The sticky footer is set by using the `isSticky` prop on the `ModalDefaultFooter` component.
 
 ```jsx
-class ModalDefaultDemoStickyTall extends React.Component {
-    constructor() {
-        super();
+function ModalDefaultDemoStickyTall() {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                    <ModalDefaultDescription>
+                        Licenses add credibility to your business and provide more trust for
+                        customers.
+                    </ModalDefaultDescription>
+                </ModalDefaultHeader>
 
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
+                <ModalDefaultContent>
+                    <ol className="tp-form-fields">
+                        <li className="tp-form-field__item">
+                            <Label>License type</Label>
+                            <Select value="default" isFullWidth onChange={() => {}}>
+                                <option value="default">Choose one&hellip;</option>
+                            </Select>
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                    </ol>
+                </ModalDefaultContent>
 
-    closeModal() {
-        this.setState({ isOpen: false });
-    }
-
-    openModal() {
-        this.setState({ isOpen: true });
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Button onClick={this.openModal}>Open modal</Button>
-                <ModalDefault isOpen={this.state.isOpen} onCloseClick={this.closeModal}>
-                    <ModalDefaultHeader>
-                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                        <ModalDefaultDescription>
-                            Licenses add credibility to your business and provide more trust for
-                            customers.
-                        </ModalDefaultDescription>
-                    </ModalDefaultHeader>
-
-                    <ModalDefaultContent>
-                        <ol className="tp-form-fields">
-                            <li className="tp-form-field__item">
-                                <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
-                                    <option value="default">Choose one&hellip;</option>
-                                </Select>
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                        </ol>
-                    </ModalDefaultContent>
-
-                    <ModalDefaultFooter isSticky>
-                        <ButtonRow justify="right">
-                            <Button onClick={this.closeModal} width="full-below-small">
-                                Submit
-                            </Button>
-                        </ButtonRow>
-                    </ModalDefaultFooter>
-                </ModalDefault>
-            </React.Fragment>
-        );
-    }
+                <ModalDefaultFooter isSticky>
+                    <ButtonRow justify="right">
+                        <Button onClick={this.closeModal} width="full-below-small">
+                            Submit
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
 }
 ```
 
@@ -237,133 +220,131 @@ class ModalDefaultDemoStickyTall extends React.Component {
 This modal does not have a default, non-sticky footer. You'll have to scroll to view the button within the `ModalDefaultFooter`.
 
 ```jsx
-class ModalDefaultDemoTall extends React.Component {
-    constructor() {
-        super();
+function ModalDefaultDemoTall() {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                    <ModalDefaultDescription>
+                        Licenses add credibility to your business and provide more trust for
+                        customers.
+                    </ModalDefaultDescription>
+                </ModalDefaultHeader>
 
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
+                <ModalDefaultContent>
+                    <ol className="tp-form-fields">
+                        <li className="tp-form-field__item">
+                            <Label>License type</Label>
+                            <Select value="default" isFullWidth onChange={() => {}}>
+                                <option value="default">Choose one&hellip;</option>
+                            </Select>
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                    </ol>
+                </ModalDefaultContent>
 
-    closeModal() {
-        this.setState({ isOpen: false });
-    }
-
-    openModal() {
-        this.setState({ isOpen: true });
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Button onClick={this.openModal}>Open modal</Button>
-                <ModalDefault isOpen={this.state.isOpen} onCloseClick={this.closeModal}>
-                    <ModalDefaultHeader>
-                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                        <ModalDefaultDescription>
-                            Licenses add credibility to your business and provide more trust for
-                            customers.
-                        </ModalDefaultDescription>
-                    </ModalDefaultHeader>
-
-                    <ModalDefaultContent>
-                        <ol className="tp-form-fields">
-                            <li className="tp-form-field__item">
-                                <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
-                                    <option value="default">Choose one&hellip;</option>
-                                </Select>
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                        </ol>
-                    </ModalDefaultContent>
-
-                    <ModalDefaultFooter>
-                        <ButtonRow justify="right">
-                            <Button onClick={this.closeModal} width="full-below-small">
-                                Submit
-                            </Button>
-                        </ButtonRow>
-                    </ModalDefaultFooter>
-                </ModalDefault>
-            </React.Fragment>
-        );
-    }
+                <ModalDefaultFooter>
+                    <ButtonRow justify="right">
+                        <Button onClick={this.closeModal} width="full-below-small">
+                            Submit
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
 }
 ```
 
@@ -372,73 +353,68 @@ class ModalDefaultDemoTall extends React.Component {
 It's possible to render narrow modals with the `width` prop.
 
 ```jsx
-class ModalDefaultDemoNarrow extends React.Component {
-    constructor() {
-        super();
+function ModalDefaultDemoNarrow() {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                width="narrow"
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                    <ModalDefaultDescription>
+                        Licenses add credibility to your business and provide more trust for
+                        customers.
+                    </ModalDefaultDescription>
+                </ModalDefaultHeader>
 
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
+                <ModalDefaultContent>
+                    <ol className="tp-form-fields">
+                        <li className="tp-form-field__item">
+                            <Label>License type</Label>
+                            <Select value="default" isFullWidth onChange={() => {}}>
+                                <option value="default">Choose one&hellip;</option>
+                            </Select>
+                        </li>
+                        <li className="tp-form-field__item">
+                            <Label for="example-license-number">License number</Label>
+                            <Input
+                                id="example-license-number"
+                                onChange={() => {}}
+                                placeholder="XX-XXXX-XXXX"
+                            />
+                        </li>
+                    </ol>
+                </ModalDefaultContent>
 
-    closeModal() {
-        this.setState({ isOpen: false });
-    }
-
-    openModal() {
-        this.setState({ isOpen: true });
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Button onClick={this.openModal}>Open modal</Button>
-                <ModalDefault
-                    isOpen={this.state.isOpen}
-                    width="narrow"
-                    onCloseClick={this.closeModal}
-                >
-                    <ModalDefaultHeader>
-                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                        <ModalDefaultDescription>
-                            Licenses add credibility to your business and provide more trust for
-                            customers.
-                        </ModalDefaultDescription>
-                    </ModalDefaultHeader>
-
-                    <ModalDefaultContent>
-                        <ol className="tp-form-fields">
-                            <li className="tp-form-field__item">
-                                <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
-                                    <option value="default">Choose one&hellip;</option>
-                                </Select>
-                            </li>
-                            <li className="tp-form-field__item">
-                                <Label for="example-license-number">License number</Label>
-                                <Input
-                                    id="example-license-number"
-                                    onChange={() => {}}
-                                    placeholder="XX-XXXX-XXXX"
-                                />
-                            </li>
-                        </ol>
-                    </ModalDefaultContent>
-
-                    <ModalDefaultFooter>
-                        <ButtonRow justify="right">
-                            <Button onClick={this.closeModal} width="full-below-small">
-                                Submit
-                            </Button>
-                        </ButtonRow>
-                    </ModalDefaultFooter>
-                </ModalDefault>
-            </React.Fragment>
-        );
-    }
+                <ModalDefaultFooter>
+                    <ButtonRow justify="right">
+                        <Button onClick={this.closeModal} width="full-below-small">
+                            Submit
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
 }
 ```
 
@@ -457,83 +433,77 @@ This is useful for setting your own background color or section borders, for exa
 </Alert>
 
 ```jsx
-class ModalDefaultDemoFullBleed extends React.Component {
-    constructor() {
-        super();
+function ModalDefaultDemoFullBleed() {
+    const [isOpen, setIsOpen] = React.useState(false);
 
-        this.state = {
-            isOpen: false,
-        };
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
+                    <ModalDefaultDescription>
+                        Licenses add credibility to your business and provide more trust for
+                        customers.
+                    </ModalDefaultDescription>
+                </ModalDefaultHeader>
 
-        this.closeModal = this.closeModal.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
+                <ModalDefaultContent>
+                    <ModalDefaultContentFullBleed
+                        style={{
+                            backgroundColor: tokens.tpColorGray200,
+                            borderTop: `1px solid ${tokens.tpColorGray}`,
+                            borderBottom: `1px solid ${tokens.tpColorGray}`,
+                            paddingTop: '20px',
+                            paddingBottom: '20px',
+                        }}
+                    >
+                        <ol className="tp-form-fields">
+                            <li className="tp-form-field__item">
+                                <Label>License type</Label>
+                                <Select value="default" isFullWidth onChange={() => {}}>
+                                    <option value="default">Choose one&hellip;</option>
+                                </Select>
+                            </li>
+                            <li className="tp-form-field__item">
+                                <Label for="example-license-number">License number</Label>
+                                <Input
+                                    id="example-license-number"
+                                    onChange={() => {}}
+                                    placeholder="XX-XXXX-XXXX"
+                                />
+                            </li>
+                        </ol>
+                    </ModalDefaultContentFullBleed>
+                </ModalDefaultContent>
 
-    closeModal() {
-        this.setState({ isOpen: false });
-    }
-
-    openModal() {
-        this.setState({ isOpen: true });
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Button onClick={this.openModal}>Open modal</Button>
-                <ModalDefault
-                    isOpen={this.state.isOpen}
-                    width="narrow"
-                    onCloseClick={this.closeModal}
-                >
-                    <ModalDefaultHeader>
-                        <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                        <ModalDefaultDescription>
-                            Licenses add credibility to your business and provide more trust for
-                            customers.
-                        </ModalDefaultDescription>
-                    </ModalDefaultHeader>
-
-                    <ModalDefaultContent>
-                        <ModalDefaultContentFullBleed
-                            style={{
-                                backgroundColor: tokens.tpColorGray200,
-                                borderTop: `1px solid ${tokens.tpColorGray}`,
-                                borderBottom: `1px solid ${tokens.tpColorGray}`,
-                                paddingTop: '20px',
-                                paddingBottom: '20px',
-                            }}
-                        >
-                            <ol className="tp-form-fields">
-                                <li className="tp-form-field__item">
-                                    <Label>License type</Label>
-                                    <Select value="default" isFullWidth onChange={() => {}}>
-                                        <option value="default">Choose one&hellip;</option>
-                                    </Select>
-                                </li>
-                                <li className="tp-form-field__item">
-                                    <Label for="example-license-number">License number</Label>
-                                    <Input
-                                        id="example-license-number"
-                                        onChange={() => {}}
-                                        placeholder="XX-XXXX-XXXX"
-                                    />
-                                </li>
-                            </ol>
-                        </ModalDefaultContentFullBleed>
-                    </ModalDefaultContent>
-
-                    <ModalDefaultFooter>
-                        <ButtonRow justify="right">
-                            <Button onClick={this.closeModal} width="full-below-small">
-                                Submit
-                            </Button>
-                        </ButtonRow>
-                    </ModalDefaultFooter>
-                </ModalDefault>
-            </React.Fragment>
-        );
-    }
+                <ModalDefaultFooter>
+                    <ButtonRow justify="right">
+                        <Button onClick={this.closeModal} width="full-below-small">
+                            Submit
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
 }
 ```
 
