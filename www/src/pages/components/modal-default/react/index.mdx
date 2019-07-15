@@ -20,6 +20,7 @@ The `ModalDefault` has a curtain (backdrop) at medium and large breakpoints. It 
 ```jsx
 function ModalDefaultDemoBasic() {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [licenseText, setLicenseText] = React.useState('');
 
     return (
         <React.Fragment>
@@ -62,8 +63,9 @@ function ModalDefaultDemoBasic() {
                             <Label for="example-license-number">License number</Label>
                             <Input
                                 id="example-license-number"
-                                onChange={() => {}}
+                                onChange={setLicenseText}
                                 placeholder="XX-XXXX-XXXX"
+                                value={licenseText}
                             />
                         </li>
                     </ol>

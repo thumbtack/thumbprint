@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix bug in `use-focus-trap` that caused it to refocus every render. (#366)
+
 ## 6.4.0 - 2019-07-09
 
 ### Changed
