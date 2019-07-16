@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix bug in `DatePicker` where string dates were parsed in UTC instead of local timezone.
+
 ## 7.0.0 - 2019-07-15
 
 ### Changed
