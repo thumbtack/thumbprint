@@ -92,7 +92,11 @@ DatePicker.propTypes = {
      * or a string representing a date, and either a single object or an array of such objects
      * can be provided.
      */
-    value: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string, PropTypes.array]),
+    value: PropTypes.oneOfType([
+        PropTypes.instanceOf(Date),
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string])),
+    ]),
     /**
      * Callback that is triggered when the user selects a date. The function receives an array of
      * a JavaScript Date objects for each of the currently selected dates.

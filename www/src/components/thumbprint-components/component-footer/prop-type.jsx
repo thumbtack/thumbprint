@@ -16,6 +16,16 @@ const EnumPropType = ({ value }) => {
     );
 };
 
+const InstanceOfPropType = ({ value }) => (
+    <pre>
+        <InlineCode theme="plain">{`instanceOf(${value})`}</InlineCode>
+    </pre>
+);
+
+InstanceOfPropType.propTypes = {
+    value: PropTypes.string.isRequired,
+};
+
 EnumPropType.propTypes = {
     value: PropTypes.arrayOf(
         PropTypes.shape({
@@ -33,20 +43,15 @@ DefaultPropType.propTypes = {
 const UnionPropType = ({ value }) => (
     <div>
         <Text size={1} className="mb1">
-            This prop has {value.length} types:
+            This prop can be one of the following {value.length} types:
         </Text>
+
         <ul className={styles.unionPropType}>
-            {value.map(type => {
-                let component;
-
-                if (type.name === 'enum') {
-                    component = <EnumPropType value={type.value} />;
-                } else {
-                    component = <DefaultPropType value={type.name} />;
-                }
-
-                return <li key={type.name}>{component}</li>;
-            })}
+            {value.map(type => (
+                <li key={type.name}>
+                    <PropType value={type.value} type={type.name} />
+                </li>
+            ))}
         </ul>
     </div>
 );
@@ -65,6 +70,8 @@ const PropType = ({ type, value }) => {
         component = <EnumPropType value={value} />;
     } else if (type === 'union') {
         component = <UnionPropType value={value} />;
+    } else if (type === 'instanceOf') {
+        component = <InstanceOfPropType value={value} />;
     } else {
         component = <DefaultPropType value={type} />;
     }
