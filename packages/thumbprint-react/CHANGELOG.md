@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.0.1 - 2019-07-16
+
 ### Fixed
 
 -   [Patch] Fix bug in `DatePicker` where string dates were parsed in UTC instead of local timezone.
