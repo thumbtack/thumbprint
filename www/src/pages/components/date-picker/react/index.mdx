@@ -15,88 +15,46 @@ The `DatePicker` can optionally have an initial date selected.
 ### No initial date selected
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return <DatePicker value={value} onChange={this.onChange} />;
-    }
+    return <DatePicker value={value} onChange={setValue} />;
 }
 ```
 
 ### With an initial date selected
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(new Date());
 
-        this.state = {
-            value: new Date(),
-        };
+    return <DatePicker value={value} onChange={setValue} />;
+}
+```
 
-        this.onChange = this.onChange.bind(this);
-    }
+### Using strings to set the date
 
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
+You can pass the date as a string that can be parsed to a `Date` object.
 
-    render() {
-        const { value } = this.state;
+```jsx
+function DatePickerExample() {
+    const [value, setValue] = React.useState('2019-07-16');
 
-        return <DatePicker value={value} onChange={this.onChange} />;
-    }
+    return <DatePicker value={value} onChange={setValue} />;
 }
 ```
 
 ### Multiple date selection
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState([
+        new Date(),
+        new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 2),
+        new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 5),
+    ]);
 
-        this.state = {
-            value: [
-                new Date(),
-                new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 2),
-                new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 5),
-            ],
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return <DatePicker value={value} onChange={this.onChange} allowMultiSelection />;
-    }
+    return <DatePicker value={value} onChange={setValue} allowMultiSelection />;
 }
 ```
 
@@ -105,28 +63,10 @@ class DatePickerExample extends React.Component {
 The `DatePicker` disables past days by default. This can be enabled by setting `disabledDays` to `null`.
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(new Date());
 
-        this.state = {
-            value: new Date(),
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return <DatePicker value={value} onChange={this.onChange} disabledDays={null} />;
-    }
+    return <DatePicker value={value} onChange={setValue} disabledDays={null} />;
 }
 ```
 
@@ -135,34 +75,16 @@ class DatePickerExample extends React.Component {
 Users won’t be able to navigate or interact with the days after `lastMonth`.
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(new Date());
 
-        this.state = {
-            value: new Date(),
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <DatePicker
-                value={value}
-                lastMonth={new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 60)}
-                onChange={this.onChange}
-            />
-        );
-    }
+    return (
+        <DatePicker
+            value={value}
+            onChange={setValue}
+            lastMonth={new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 60)}
+        />
+    );
 }
 ```
 
@@ -171,39 +93,12 @@ class DatePickerExample extends React.Component {
 Pass a function for this prop that returns true for any date where a dot indicator should appear.
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(new Date());
 
-        this.state = {
-            value: new Date(),
-        };
+    const isMonday = date => date.getDay() === 1;
 
-        this.onChange = this.onChange.bind(this);
-        this.isMonday = this.isMonday.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    isMonday(date) {
-        return date.getDay() === 1;
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <DatePicker
-                value={value}
-                onChange={this.onChange}
-                daysThemeDotIndicator={this.isMonday}
-            />
-        );
-    }
+    return <DatePicker value={value} onChange={setValue} daysThemeDotIndicator={isMonday} />;
 }
 ```
 
@@ -212,35 +107,12 @@ class DatePickerExample extends React.Component {
 Pass a function for this prop that returns true for any date where the number should be crossed out.
 
 ```jsx
-class DatePickerExample extends React.Component {
-    constructor(props) {
-        super(props);
+function DatePickerExample() {
+    const [value, setValue] = React.useState(new Date());
 
-        this.state = {
-            value: new Date(),
-        };
+    const isFriday = date => date.getDay() === 5;
 
-        this.onChange = this.onChange.bind(this);
-        this.isFriday = this.isFriday.bind(this);
-    }
-
-    onChange(newDate) {
-        this.setState({
-            value: newDate,
-        });
-    }
-
-    isFriday(date) {
-        return date.getDay() === 5;
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <DatePicker value={value} onChange={this.onChange} daysThemeStrikeout={this.isFriday} />
-        );
-    }
+    return <DatePicker value={value} onChange={setValue} daysThemeStrikeout={isFriday} />;
 }
 ```
 

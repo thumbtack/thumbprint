@@ -5,6 +5,7 @@ import map from 'lodash/map';
 import isBefore from 'date-fns/is_before';
 import isToday from 'date-fns/is_today';
 import endOfDay from 'date-fns/end_of_day';
+import parse from 'date-fns/parse';
 
 // Throws an error `message` with a prefix showing that it comes from the DatePicker.
 function throwError(message) {
@@ -18,7 +19,7 @@ export function hasAnyPastDays(dates, cutoff = new Date()) {
 
 // Normalise the `value` prop to always be an array of dates.
 export function normaliseValue(value) {
-    return map(castArray(value), day => new Date(day));
+    return map(castArray(value), parse);
 }
 
 export function roundToStartOfDay(date) {
