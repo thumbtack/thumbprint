@@ -125,11 +125,12 @@ SideNavLink.propTypes = {
      * Indicates the current page (or section of a page). This should be fase if it is a hash link
      * since the active section will depend on the user's scrolling.
      */
-    isActive: PropTypes.bool.isRequired,
+    isActive: PropTypes.bool,
 };
 
 SideNavLink.defaultProps = {
     children: undefined,
+    isActive: false,
 };
 
 export default SideNav;
