@@ -8,6 +8,8 @@ description = "Design variables that power Thumbtack’s UI."
 version = "0.0.0"
 buildDir = file("${projectDir}/dist/android")
 
+defaultTasks("build")
+
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
     id("org.jetbrains.kotlin.jvm").version("1.3.31")
@@ -18,6 +20,10 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 
 dependencies {
@@ -29,6 +35,12 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    implementation("com.github.srs:gradle-node-plugin:1.3.1")
+}
+
+tasks.register<Exec>("build") {
+    commandLine("yarn", "start")
 }
 
 publishing {
