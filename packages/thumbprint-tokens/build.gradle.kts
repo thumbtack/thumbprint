@@ -8,7 +8,7 @@ description = "Design variables that power Thumbtack’s UI."
 version = "0.0.0"
 buildDir = file("${projectDir}/dist/android")
 
-defaultTasks("build")
+defaultTasks("buildDist")
 
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
@@ -39,7 +39,7 @@ dependencies {
     implementation("com.github.srs:gradle-node-plugin:1.3.1")
 }
 
-tasks.register<Exec>("build") {
+tasks.register<Exec>("buildDist") {
     commandLine("yarn", "start")
 }
 
