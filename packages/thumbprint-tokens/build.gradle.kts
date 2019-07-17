@@ -43,10 +43,16 @@ tasks.register<Exec>("buildDist") {
     commandLine("yarn", "start")
 }
 
+tasks.register<Jar>("tokensJar") {
+    dependsOn("buildDist")
+    from("${projectDir}/dist/android/index.xml")
+    archiveClassifier.set("tokens")
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            artifact(file("${projectDir}/dist/android/index.xml"))
+            artifact(tasks["tokensJar"])
         }
     }
 }
