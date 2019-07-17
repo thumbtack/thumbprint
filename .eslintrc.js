@@ -33,6 +33,14 @@ module.exports = {
             },
         },
         {
+            files: ['www/**/*'],
+            rules: {
+                // A lot of our internal components that power the docs don't have proper PropTypes.
+                // Uncomment this if we ever want to go back in and clean them up.
+                'react/prop-types': 'off',
+            },
+        },
+        {
             // Rules that should be applied only to code that gets bundled into our thumbprint-react
             // client library and shipped to browsers.
             // Since this code must run in IE11, it has stricter constraints than other parts of
