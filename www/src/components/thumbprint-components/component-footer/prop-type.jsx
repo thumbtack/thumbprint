@@ -57,10 +57,12 @@ const UnionPropType = ({ value }) => (
 );
 
 UnionPropType.propTypes = {
-    value: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        value: PropTypes.array,
-    }).isRequired,
+    value: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+        }),
+    ).isRequired,
 };
 
 const PropType = ({ type, value }) => {
@@ -81,7 +83,11 @@ const PropType = ({ type, value }) => {
 
 PropType.propTypes = {
     type: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.string]),
+    value: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.arrayOf(PropTypes.object),
+        PropTypes.string,
+    ]),
 };
 
 PropType.defaultProps = {

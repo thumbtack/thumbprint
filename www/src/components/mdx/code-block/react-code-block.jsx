@@ -16,12 +16,15 @@ const ReactCodeBlock = props => {
             mountStylesheet={false}
             className="relative"
         >
-            <React.StrictMode>
-                <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
-            </React.StrictMode>
+            {/* NOTE(giles): We removed the strict mode check here, because ReactLive uses unsafe
+            lifecycle methods in its implementation. We can add it back if they ever remove those
+            methods */}
+            <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
+
             <div className={classes.codeContainer}>
                 <LiveEditor className={classes.code} />
             </div>
+
             <pre>
                 <LiveError
                     className="pa3 bl bb br b-gray-300 bw-2 overflow-auto"
