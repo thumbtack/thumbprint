@@ -77,12 +77,7 @@ export default function ModalCurtain({
     const shouldDisableScrolling = isEnteringOrEntered;
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
-    useFocusTrap(wrapperEl, shouldTrapFocus, {
-        clickOutsideDeactivates: true,
-        // Set initial focus to the modal wrapper itself instead of focusing on the first
-        // focusable element by default
-        initialFocus: wrapperEl,
-    });
+    useFocusTrap(wrapperEl, shouldTrapFocus);
 
     return (
         <ConditionalPortal shouldDisplace>

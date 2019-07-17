@@ -1,22 +1,15 @@
-.image,
 .picture {
     display: block;
     width: 100%;
-}
-
-.picture {
     overflow: hidden;
 }
 
-.imageLoading {
+.imageStart {
+    display: block;
+    width: 100%;
     opacity: 0;
 }
 
-.imageLoaded {
-    opacity: 1;
-    transition: opacity 300ms;
-}
-
-.imageError {
+.imageEnd {
     opacity: 1;
 }

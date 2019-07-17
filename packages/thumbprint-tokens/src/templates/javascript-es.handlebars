@@ -7,7 +7,7 @@
 {{#if token.deprecated}}
 // @deprecated
 {{/if}}
-export var {{formatId section token}} = {{{formatValue token}}};
+export var {{formatId section token}} = {{{formatValue token.value}}};
 {{/if}}
 {{/each}}
 {{/each}}

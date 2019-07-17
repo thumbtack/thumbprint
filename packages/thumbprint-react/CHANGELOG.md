@@ -2,10 +2,37 @@
 
 ## Unreleased
 
+## 7.0.1 - 2019-07-16
+
+### Fixed
+
+-   [Patch] Fix bug in `DatePicker` where string dates were parsed in UTC instead of local timezone.
+
+## 7.0.0 - 2019-07-15
+
+### Changed
+
+-   [Major] Rewrite `DatePicker` to be a fully controlled component. (#12)
+
+## 6.4.2 - 2019-07-15
+
+### Fixed
+
+-   [Patch] Revert Datepicker breaking change that was accidentally released in 6.4.1
+
+## 6.4.1 - 2019-07-15
+
+### Fixed
+
+-   [Patch] Fix bug in `use-focus-trap` that caused it to refocus every render. (#366)
+
+## 6.4.0 - 2019-07-09
+
 ### Changed
 
 -   [Patch] Update `ConditionalPortal` to explicitly allow and handle null contents. (#357)
 -   [Patch] Update description of Avatar prop.
+-   [Minor] Remove fade-in from `Image`. (#368)
 
 ## 6.3.2 - 2019-07-01
 

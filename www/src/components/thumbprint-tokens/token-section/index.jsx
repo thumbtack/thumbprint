@@ -7,8 +7,12 @@ import TokenExample from './token-example';
 import Tag from '../../tag';
 import { H2, P, InlineCode } from '../../mdx';
 
-const TokenSection = ({ section, idTransform }) => {
-    const groupedTokens = groupBy(section.tokens, 'group');
+const TokenSection = ({ section, formatId, formatValue, platform }) => {
+    // Filter out tokens that are not part of this platform.
+    const currentPlatformTokens = section.tokens.filter(token => token.value[platform]);
+
+    // Group tokens based on their optional `group` field.
+    const groupedTokens = groupBy(currentPlatformTokens, 'group');
 
     return (
         <div key={section.name}>
@@ -41,22 +45,24 @@ const TokenSection = ({ section, idTransform }) => {
                                                         <Tag type="deprecated" className="mr2" />
                                                     )}
                                                     <InlineCode theme="plain" shouldCopyToClipboard>
-                                                        {idTransform(token.id)}
+                                                        {formatId(token.id)}
                                                     </InlineCode>
-                                                    {token.description && (
-                                                        <Text
-                                                            elementName="span"
-                                                            size={2}
-                                                            className="ml3 black-300"
-                                                        >
-                                                            {token.description}
-                                                        </Text>
-                                                    )}
+                                                    {token.description &&
+                                                        token.description[platform] && (
+                                                            <Text
+                                                                size={3}
+                                                                className="black-300 mt1"
+                                                            >
+                                                                {token.description[platform]}
+                                                            </Text>
+                                                        )}
                                                 </td>
                                                 <td className="tr pv2">
-                                                    <TokenExample type={token.type}>
-                                                        {token.value.web}
-                                                    </TokenExample>
+                                                    <TokenExample
+                                                        type={token.type}
+                                                        data={token.value.web}
+                                                        displayText={formatValue(token.value)}
+                                                    />
                                                 </td>
                                             </tr>
                                         ))}
@@ -73,11 +79,17 @@ const TokenSection = ({ section, idTransform }) => {
 
 TokenSection.propTypes = {
     section: PropTypes.shape({}).isRequired,
+    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
     /**
      * Function that gets run on the token `id`, transforming the string into the variable name
      * for that platform.
      */
-    idTransform: PropTypes.func.isRequired,
+    formatId: PropTypes.func.isRequired,
+    /**
+     * Function that gets run on the token `value`, transforming the string into the variable name
+     * for that platform.
+     */
+    formatValue: PropTypes.func.isRequired,
 };
 
 export default TokenSection;
