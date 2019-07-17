@@ -13,7 +13,14 @@ defaultTasks("buildDist")
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
     id("org.jetbrains.kotlin.jvm").version("1.3.31")
+    id("com.moowork.node").version("1.3.1")
     `maven-publish`
+}
+
+node {
+    // Set the work directory for Yarn
+    // yarnWorkDir = file("${project.projectDir}/../../")
+    nodeModulesDir = file("${project.projectDir}../../../")
 }
 
 repositories {
@@ -39,13 +46,9 @@ dependencies {
     implementation("com.github.srs:gradle-node-plugin:1.3.1")
 }
 
-tasks.register<Exec>("buildDist") {
-    commandLine("which", "yarn")
-    commandLine("yarn", "start")
-}
-
 tasks.register<Jar>("tokensJar") {
-    dependsOn("buildDist")
+    dependsOn("yarn")
+    dependsOn("yarn_start")
     from("${projectDir}/dist/android/index.xml")
     archiveClassifier.set("tokens")
 }
@@ -53,7 +56,7 @@ tasks.register<Jar>("tokensJar") {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-
+            groupId = "com.github.thumbtack"
             artifact(tasks["tokensJar"])
         }
     }
