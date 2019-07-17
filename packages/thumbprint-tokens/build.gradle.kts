@@ -40,6 +40,7 @@ dependencies {
 }
 
 tasks.register<Exec>("buildDist") {
+    commandLine("which", "yarn")
     commandLine("yarn", "start")
 }
 
@@ -52,6 +53,7 @@ tasks.register<Jar>("tokensJar") {
 publishing {
     publications {
         create<MavenPublication>("maven") {
+
             artifact(tasks["tokensJar"])
         }
     }
