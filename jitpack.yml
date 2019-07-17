@@ -1,3 +1,4 @@
 before_install:
-    - echo "hi"
+    - yarn
     - cd packages/thumbprint-tokens
+    - yarn start
