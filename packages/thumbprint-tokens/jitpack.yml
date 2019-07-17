@@ -1,2 +1,3 @@
 before_install:
+    - echo "hi"
     - cd packages/thumbprint-tokens
