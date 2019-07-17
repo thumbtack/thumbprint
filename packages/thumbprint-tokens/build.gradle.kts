@@ -21,6 +21,7 @@ node {
     // Set the work directory for Yarn
     // yarnWorkDir = file("${project.projectDir}/../../")
     nodeModulesDir = file("${project.projectDir}../../../")
+    download = true
 }
 
 repositories {
