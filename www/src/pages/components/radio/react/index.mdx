@@ -13,32 +13,14 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 The `isChecked` prop determines when this controlled component is checked.
 
 ```jsx
-class RadioExample extends React.Component {
-    constructor(props) {
-        super(props);
+function RadioExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
 
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Radio isChecked={isChecked} name="example-basic" onChange={this.onChange}>
-                Long Distance Moving
-            </Radio>
-        );
-    }
+    return (
+        <Radio isChecked={isChecked} name="example-basic" onChange={v => setIsChecked(v)}>
+            Long Distance Moving
+        </Radio>
+    );
 }
 ```
 
@@ -49,66 +31,51 @@ This an example of how to use many `Radio` components at once.
 Here are a few points to note:
 
 -   Each `Radio` receives an `id`. This `id` is then passed as the second argument to `onChange`.
--   The selected radio button is stored in `this.state`.
--   `isChecked` performs a comparison to see if the `id` matches the value in `this.state.selected`.
+-   The selected radio button is stored in the `selectedId` variable from `React.useState()`.
+-   `isChecked` performs a comparison to see if the `id` matches the value of `selectedId`.
 
 ```jsx
-class RadioExample extends React.Component {
-    constructor(props) {
-        super(props);
+function RadioExample() {
+    const [selectedId, setSelectedId] = React.useState('long-distance');
 
-        this.state = {
-            selected: 'long-distance',
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked, newValue) {
-        this.setState({
-            selected: isChecked ? newValue : null,
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <Radio
-                    id="long-distance"
-                    isChecked={this.state.selected === 'long-distance'}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Long Distance Moving
-                </Radio>
-                <Radio
-                    id="furniture-moving"
-                    isChecked={this.state.selected === 'furniture-moving'}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Furniture Moving and Heavy Lifting
-                </Radio>
-                <Radio
-                    id="pool-table"
-                    isChecked={this.state.selected === 'pool-table'}
-                    name="example-full"
-                    labelPadding="4px 0"
-                    onChange={this.onChange}
-                >
-                    Pool Table Moving
-                </Radio>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Radio
+                id="long-distance"
+                isChecked={selectedId === 'long-distance'}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={(isChecked, id) => setSelectedId(id)}
+            >
+                Long Distance Moving
+            </Radio>
+            <Radio
+                id="furniture-moving"
+                isChecked={selectedId === 'furniture-moving'}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={(isChecked, id) => setSelectedId(id)}
+            >
+                Furniture Moving and Heavy Lifting
+            </Radio>
+            <Radio
+                id="pool-table"
+                isChecked={selectedId === 'pool-table'}
+                name="example-full"
+                labelPadding="4px 0"
+                onChange={(isChecked, id) => setSelectedId(id)}
+            >
+                Pool Table Moving
+            </Radio>
+        </div>
+    );
 }
 ```
 
 ## Disabled radio buttons
 
-The `isDisabled` prop visually and functionally disabled the radio button. It also visually disables the related label.
+The `isDisabled` prop visually and functionally disabled the radio button.
+It also visually disables the related label.
 
 ```jsx
 <React.Fragment>
@@ -140,130 +107,79 @@ The `isDisabled` prop visually and functionally disabled the radio button. It al
 
 The `hasError` prop can be used to visually represent an error.
 
-This prop only changes the radio button’s color. It should be used alongside an error message that helps users advance through the form.
+This prop only changes the radio button’s color.
+It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-class RadioExample extends React.Component {
-    constructor(props) {
-        super(props);
+function RadioExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
 
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Radio isChecked={isChecked} hasError name="example-error" onChange={this.onChange}>
-                Long Distance Moving
-            </Radio>
-        );
-    }
+    return (
+        <Radio isChecked={isChecked} hasError name="example-error" onChange={v => setIsChecked(v)}>
+            Long Distance Moving
+        </Radio>
+    );
 }
 ```
 
 ## Multi-column content
 
-It’s possible to provide complex UIs to the `children` prop. Clicking on the content will select the related radio button.
+It’s possible to provide complex UIs to the `children` prop.
+Clicking on the content will select the related radio button.
 
-This example puts the label content within `children`. It’s also possible to not provide `children` as `undefined` and use a custom `label` instead. In that case, you must use `Radio`’s `id` prop.
+This example puts the label content within `children`.
+It’s also possible to not provide `children` as `undefined` and use a custom `label` instead.
+In that case, you must use `Radio`’s `id` prop.
 
 ```jsx
-class RadioExample extends React.Component {
-    constructor(props) {
-        super(props);
+function RadioExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
 
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Radio
-                isChecked={isChecked}
-                name="example-multi-column-content"
-                onChange={this.onChange}
-            >
-                <div style={{ display: 'flex' }}>
-                    <div style={{ flex: 'none' }}>
-                        <UserAvatar imageUrl="https://randomuser.me/api/portraits/women/63.jpg" />
-                    </div>
-                    <div
-                        style={{
-                            paddingLeft: '16px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            flex: '1 0 0%',
-                        }}
-                    >
-                        <div>
-                            <span style={{ fontWeight: 700 }}>Austin Entertainment LLC.</span>
-                            <p>DJs, photo booths, and photography for all of your event needs.</p>
-                        </div>
-                        <div style={{ fontWeight: 700, marginLeft: 'auto' }}>$120/hr</div>
-                    </div>
+    return (
+        <Radio
+            isChecked={isChecked}
+            name="example-multi-column-content"
+            onChange={v => setIsChecked(v)}
+        >
+            <div className="flex">
+                <div className="flex-none">
+                    <UserAvatar imageUrl="https://randomuser.me/api/portraits/women/63.jpg" />
                 </div>
-            </Radio>
-        );
-    }
+                <div className="flex items-center pl4" style={{ flex: '1 0 0%' }}>
+                    <div>
+                        <span className="b">Austin Entertainment LLC.</span>
+                        <p>DJs, photo booths, and photography for all of your event needs.</p>
+                    </div>
+                    <div className="b ml-auto">$120/hr</div>
+                </div>
+            </div>
+        </Radio>
+    );
 }
 ```
 
-Radio input by default is vertically center-aligned with `children`. If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `radioVerticalAlign` prop as `top`.
+Radio input by default is vertically center-aligned with `children`.
+If `children` prop spans over multiple lines and you want it to align at the top, it is possible to provide `radioVerticalAlign` prop as `top`.
 
 ```jsx
-class RadioExample extends React.Component {
-    constructor(props) {
-        super(props);
+function RadioExample() {
+    const [isChecked, setIsChecked] = React.useState(undefined);
 
-        this.state = {
-            isChecked: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(isChecked) {
-        this.setState({
-            isChecked,
-        });
-    }
-
-    render() {
-        const { isChecked } = this.state;
-
-        return (
-            <Radio isChecked={isChecked} onChange={this.onChange} radioVerticalAlign="top">
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est
-                    nec eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat
-                    metus a, commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare
-                    mauris in arcu maximus placerat.
-                </Text>
-            </Radio>
-        );
-    }
+    return (
+        <Radio
+            name="vertical-align"
+            isChecked={isChecked}
+            onChange={v => setIsChecked(v)}
+            radioVerticalAlign="top"
+        >
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus est nec
+                eros congue, ac dapibus ipsum cursus. Quisque at odio viverra, consequat metus a,
+                commodo ipsum. Donec sodales sapien in luctus sodales. Vivamus ornare mauris in arcu
+                maximus placerat.
+            </Text>
+        </Radio>
+    );
 }
 ```
 
