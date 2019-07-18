@@ -11,24 +11,19 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Examples
 
-The `ModalCurtain` component makes it easy to create an accessible overlay that contains content and covers the page.
-It contains a few powerful features:
+The `ModalCurtain` component makes it easy to create an accessible overlay that contains content and covers the page. It contains a few powerful features:
 
--   **Focus trap:** Move the browser's focus to the first interactive element within the `children`.
-    Trap the focus within the `ModalCurtain` while it is open, preventing users from accidentally tabbing to the page underneath.
+-   **Focus trap:** Move the browser's focus to the first interactive element within the `children`. Trap the focus within the `ModalCurtain` while it is open, preventing users from accidentally tabbing to the page underneath.
 -   **Scroll lock:** Prevent the page from scrolling while the `ModalCurtain` is open.
--   **Append to the body tag:** Move the HTML to end of the DOM, right before the `</body>` tag.
-    This greatly decreases the chance of running into z-index issues.
+-   **Append to the body tag:** Move the HTML to end of the DOM, right before the `</body>` tag. This greatly decreases the chance of running into z-index issues.
 -   **Listen for Esc key press:** Run a function to close the `ModalCurtain` if the user presses Esc.
 -   **Close on `ModalCurtain` click:** Make it easy to close the modal if the `ModalCurtain` is clicked on.
 
-The `ModalCurtain` component CSS handles positioning, overflow, z-index, visibility, and opacity.
-It does not include background colors, padding, transitions, or other opinionated styles since the component was designed to be versatile.
+The `ModalCurtain` component CSS handles positioning, overflow, z-index, visibility, and opacity. It does not include background colors, padding, transitions, or other opinionated styles since the component was designed to be versatile.
 
 ### `ModalCurtain` with a basic modal
 
-This example contains a `ModalCurtain` with a basic modal and no transition.
-Because there is no transition, the `stage` prop only cycles between `entered` and `exited`.
+This example contains a `ModalCurtain` with a basic modal and no transition. Because there is no transition, the `stage` prop only cycles between `entered` and `exited`.
 
 ```jsx
 function ModalCurtainDemo() {
@@ -74,8 +69,7 @@ function ModalCurtainDemo() {
 
 ### `ModalCurtain` with a full screen takeover
 
-The `ModalCurtain` component works well for full-screen takeovers.
-This example doesn't use `curtainOnClick` since we don't want to close the curtain when clicking on the backdrop.
+The `ModalCurtain` component works well for full-screen takeovers. This example doesn't use `curtainOnClick` since we don't want to close the curtain when clicking on the backdrop.
 
 ```jsx
 function ModalCurtainDemo() {

@@ -2,3 +2,4 @@ printWidth: 100
 tabWidth: 4
 trailingComma: all
 singleQuote: true
+proseWrap: never
