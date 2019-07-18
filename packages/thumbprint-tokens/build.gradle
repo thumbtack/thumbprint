@@ -50,8 +50,12 @@ android {
     }
 }
 
-publishToMavenLocal.dependsOn 'yarn'
-publishToMavenLocal.dependsOn 'yarn_start'
+task buildDist(type: YarnTask) {
+  args = ['run', 'build:dist']
+}
+
+buildDist.dependsOn 'yarn'
+build.dependsOn 'buildDist'
 
 publishing {
     publications {
