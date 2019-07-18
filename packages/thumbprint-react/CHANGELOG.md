@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Major] Update `DatePicker` props validation to be more stringent.
+
 ## 7.0.1 - 2019-07-16
 
 ### Fixed
