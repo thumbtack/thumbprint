@@ -43,7 +43,7 @@ tasks.register<Jar>("tokensJar") {
     dependsOn("yarn")
     dependsOn("yarn_start")
     from("${projectDir}/dist/android/index.xml")
-    into("res/values")
+    into("src/main/res/values")
 }
 
 publishing {
