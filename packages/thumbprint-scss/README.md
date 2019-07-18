@@ -42,6 +42,12 @@ For projects that want to compile Thumbprint CSS components along with other SCS
 @import '[node_modules path]/@thumbtack/thumbprint-scss/components
 ```
 
+You can import a single component (`button.css`, for example) with:
+
+```scss
+@import '[node_modules path]/@thumbtack/thumbprint-scss/button
+```
+
 ## Use in JavaScript
 
 You can import all Thumbprint components (classes starting with `tp-*`) in JavaScript with this import:
