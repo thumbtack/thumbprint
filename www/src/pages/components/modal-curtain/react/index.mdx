@@ -44,9 +44,8 @@ function ModalCurtainDemo() {
             >
                 {({ curtainClassName, curtainOnClick }) => (
                     <div
-                        className={curtainClassName}
                         onClick={curtainOnClick}
-                        className="pa4"
+                        className={`${curtainClassName} pa4`}
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
                     >
                         <div className="bg-white ma-auto pa4 mw7">
@@ -105,7 +104,7 @@ function ModalCurtainDemo() {
                             et molestie aliquam, odio purus rhoncus sem, a sodales ipsum nisi ac
                             nibh. Nunc in dapibus mauris. Pellentesque rhoncus id arcu at auctor.
                             <div className="mt4">
-                                <Button onClick={() => setIsOpen(true)}>Close Modal</Button>
+                                <Button onClick={() => setIsOpen(false)}>Close Modal</Button>
                             </div>
                         </div>
                     </div>
