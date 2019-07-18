@@ -53,6 +53,10 @@
             background-color: $tp-color__white;
             border-color: $tp-color__red;
             color: $tp-color__red;
+
+            &:focus {
+                border-color: $tp-color__red;
+            }
         }
 
         &Default {
