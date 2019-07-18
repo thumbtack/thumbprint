@@ -47,11 +47,11 @@ dependencies {
     implementation("com.github.srs:gradle-node-plugin:1.3.1")
 }
 
+
 tasks.register<Jar>("tokensJar") {
     dependsOn("yarn")
     dependsOn("yarn_start")
     from("${projectDir}/dist/android/index.xml")
-    archiveClassifier.set("tokens")
 }
 
 publishing {
