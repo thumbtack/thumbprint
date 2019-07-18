@@ -57,6 +57,7 @@ publishing {
     publications {
         myPublicationName(MavenPublication) {
             groupId = 'com.github.thumbtack'
+            artifact("${buildDir}/outputs/aar/thumbprint-release.aar")
         }
     }
 }
