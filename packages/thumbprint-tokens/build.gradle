@@ -17,8 +17,6 @@ plugins {
 
 apply plugin: 'com.android.library'
 
-group='com.github.thumbtack.thumbprint'
-
 node {
     nodeModulesDir = file("${project.projectDir}../../../")
     download = true
