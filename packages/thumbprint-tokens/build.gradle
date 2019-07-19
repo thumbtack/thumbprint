@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: 'com.android.library'
 
-group='com.github.thumbtack'
+group='com.github.thumbtack.thumbprint'
 
 node {
     nodeModulesDir = file("${project.projectDir}../../../")
@@ -60,7 +60,7 @@ preBuild.dependsOn 'buildThumbprintDistFiles'
 publishing {
     publications {
         myPublicationName(MavenPublication) {
-            groupId = 'com.github.thumbtack'
+            groupId = 'com.github.thumbtack.thumbprint'
             artifact("${buildDir}/outputs/aar/thumbprint-release.aar")
         }
     }
