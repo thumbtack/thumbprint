@@ -55,7 +55,7 @@ task buildDist(type: YarnTask) {
 }
 
 buildDist.dependsOn 'yarn'
-build.dependsOn 'buildDist'
+preBuild.dependsOn 'buildDist'
 
 publishing {
     publications {
