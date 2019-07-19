@@ -45,6 +45,7 @@ android {
     }
     sourceSets {
         main.res.srcDirs = ["${projectDir}/dist/android/index.xml"]
+        main.manifest.srcFile "${projectDir}/AndroidManifest.xml"
     }
 }
 
@@ -58,7 +59,7 @@ preBuild.dependsOn 'buildThumbprintDistFiles'
 publishing {
     publications {
         myPublicationName(MavenPublication) {
-            groupId = 'com.github.thumbtack.thumbprint'
+            groupId = 'com.github.thumbtack'
             artifact("${buildDir}/outputs/aar/thumbprint-release.aar")
         }
     }
