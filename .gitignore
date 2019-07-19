@@ -1,4 +1,3 @@
-# Custom for Thumbprint
 dist
 tmp
 aws.json
@@ -6,14 +5,10 @@ www/public
 .cache
 packages/thumbprint-icons/www
 
-## These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
-## importing these have short and easy to remember import paths.
+# These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
+# importing these have short and easy to remember import paths.
 packages/thumbprint-scss/*.css
 packages/thumbprint-scss/*.css.map
-
-## Ignore Gradle project-specific cache directory
-.gradle
-packages/thumbprint-tokens/build
 
 # Created by https://www.gitignore.io/api/osx,node,intellij+all
 
