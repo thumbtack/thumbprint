@@ -50,12 +50,12 @@ android {
     }
 }
 
-task buildDist(type: YarnTask) {
+task buildThumbprintDistFiles(type: YarnTask) {
   args = ['run', 'build:dist']
 }
 
-buildDist.dependsOn 'yarn'
-preBuild.dependsOn 'buildDist'
+buildThumbprintDistFiles.dependsOn 'yarn'
+preBuild.dependsOn 'buildThumbprintDistFiles'
 
 publishing {
     publications {
