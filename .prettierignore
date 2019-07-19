@@ -5,12 +5,19 @@ tmp
 svg
 .git
 .cache
+
 # These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
 # importing these have short and easy to remember import paths.
 packages/thumbprint-scss/*.css
 packages/thumbprint-scss/*.css.map
+
+# Ignore Gradle project-specific cache directory
+.gradle
+packages/thumbprint-tokens/build
+
 # Ignore `dist` files created by the Thumbprint documentation.
 www/public
 www/.cache
+
 # Prevent Yarn and Prettier from conflicting.
 package.json
