@@ -10,41 +10,26 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Basic textarea
 
-`Textarea` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
+`Textarea` is a controlled component.
+This means that the visible text will always match the contents of the `value` prop.
 
-In this example, notice how `value` is stored within `this.state`. The `onChange` function will set the new `value` when the user enters or removes a character in the textarea.
+In this example, notice how `value` is stored within `this.state`.
+The `onChange` function will set the new `value` when the user enters or removes a character in the textarea.
 
 ```jsx
-class TextareaExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            value: '',
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(newValue) {
-        this.setState({
-            value: newValue,
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <Label text="Business description">
-                    <Textarea
-                        value={this.state.value}
-                        placeholder="Tell us about your business"
-                        onChange={this.onChange}
-                    />
-                </Label>
-            </div>
-        );
-    }
+function TextareaExample() {
+    const [value, setValue] = React.useState('');
+    return (
+        <div>
+            <Label text="Business description">
+                <Textarea
+                    value={value}
+                    placeholder="Tell us about your business"
+                    onChange={v => setValue(v)}
+                />
+            </Label>
+        </div>
+    );
 }
 ```
 
@@ -53,35 +38,16 @@ class TextareaExample extends React.Component {
 The `isDisabled` prop disables the `Textarea` visually and functionally.
 
 ```jsx
-class TextareaExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <Textarea
-                isDisabled
-                placeholder="Tell us about your business"
-                onChange={this.onChange}
-                value={value}
-            />
-        );
-    }
+function TextareaExample() {
+    const [value, setValue] = React.useState('');
+    return (
+        <Textarea
+            isDisabled
+            placeholder="Tell us about your business"
+            onChange={v => setValue(v)}
+            value={value}
+        />
+    );
 }
 ```
 
@@ -90,35 +56,18 @@ class TextareaExample extends React.Component {
 The `hasError` prop only changes the textarea’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-class TextareaExample extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            value: 'We provide DJ services in Austin and have been in business for 25 years.',
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <Textarea
-                hasError
-                placeholder="Tell us about your business"
-                value={value}
-                onChange={this.onChange}
-            />
-        );
-    }
+function TextareaExample() {
+    const [value, setValue] = React.useState(
+        'We provide DJ services in Austin and have been in business for 25 years.',
+    );
+    return (
+        <Textarea
+            hasError
+            placeholder="Tell us about your business"
+            onChange={v => setValue(v)}
+            value={value}
+        />
+    );
 }
 ```
 
