@@ -13,26 +13,20 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 The `Carousel` component is a low-level controlled component. It displays multiple items in a row and animates when the `selectedIndex` changes. It is infinite by default and the contents are draggable by touch devices.
 
 ```jsx
-class CarouselDemo extends React.Component {
-    constructor() {
-        this.state = {
-            selectedIndex: 0,
-        };
+function CarouselDemo() {
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-        this.onSelectedIndexChange = this.onSelectedIndexChange.bind(this);
+    function onSelectedIndexChange(newIndex) {
+        setSelectedIndex(Math.round(newIndex));
     }
 
-    onSelectedIndexChange(newIndex) {
-        this.setState({ selectedIndex: Math.round(newIndex) });
-    }
-
-    render() {
-        return (
+    return (
+        <React.Fragment>
             <Carousel
                 visibleCount={3}
                 spacing="16px"
-                selectedIndex={this.state.selectedIndex}
-                onSelectedIndexChange={this.onSelectedIndexChange}
+                selectedIndex={selectedIndex}
+                onSelectedIndexChange={onSelectedIndexChange}
             >
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
@@ -63,8 +57,11 @@ class CarouselDemo extends React.Component {
                     <ServiceCardTitle>Massage Therapy</ServiceCardTitle>
                 </ServiceCard>
             </Carousel>
-        );
-    }
+            <Button size="small" onClick={() => setSelectedIndex(selectedIndex + 1)}>
+                Next item
+            </Button>
+        </React.Fragment>
+    );
 }
 ```
 
