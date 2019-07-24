@@ -12,49 +12,29 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 `Input` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
 
-In this example, notice how `value` is stored within `this.state`. The `onChange` function will set the new `value` when the user enters or removes a character in the input.
+In this example, notice how `value` is stored in a `useState` variable. The `onChange` function will set the new `value` when the user enters or removes a character in the input.
 
 ```jsx
-class ClearableInput extends React.Component {
-    constructor() {
-        super();
+function ClearableInput() {
+    const [value, setValue] = React.useState('1355 Market St.');
 
-        this.state = {
-            inputText: '1355 Market St.',
-        };
-    }
-
-    render() {
-        return (
-            <div>
-                <Label for="example-28402">Street address</Label>
-                <Input
-                    id="example-28402"
-                    value={this.state.inputText}
-                    placeholder="Enter an address"
-                    innerLeft={
-                        <InputIcon>
-                            <ContentModifierMapPinMedium />
-                        </InputIcon>
-                    }
-                    innerRight={
-                        <InputClearButton
-                            onClick={() => {
-                                this.setState({
-                                    inputText: '',
-                                });
-                            }}
-                        />
-                    }
-                    onChange={text => {
-                        this.setState({
-                            inputText: text,
-                        });
-                    }}
-                />
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Label for="example-1">Street address</Label>
+            <Input
+                id="example-1"
+                value={value}
+                placeholder="Enter an address"
+                innerLeft={
+                    <InputIcon>
+                        <ContentModifierMapPinMedium />
+                    </InputIcon>
+                }
+                innerRight={<InputClearButton onClick={() => setValue('')} />}
+                onChange={setValue}
+            />
+        </div>
+    );
 }
 ```
 
@@ -65,63 +45,24 @@ Inputs are available in two sizes: `small` and `large`. `large` is the default s
 ### Small input
 
 ```jsx
-class InputExample extends React.Component {
-    constructor(props) {
-        super(props);
+function InputExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <Input
-                size="small"
-                value={value}
-                placeholder="example@example.com"
-                onChange={this.onChange}
-            />
-        );
-    }
+    return (
+        <Input size="small" value={value} placeholder="example@example.com" onChange={setValue} />
+    );
 }
 ```
 
 ### Large input
 
 ```jsx
-class InputExample extends React.Component {
-    constructor(props) {
-        super(props);
+function InputExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return <Input value={value} placeholder="example@example.com" onChange={this.onChange} />;
-    }
+    return (
+        <Input size="large" value={value} placeholder="example@example.com" onChange={setValue} />
+    );
 }
 ```
 
@@ -130,35 +71,10 @@ class InputExample extends React.Component {
 The `isDisabled` prop disables the `Input` visually and functionally.
 
 ```jsx
-class InputExample extends React.Component {
-    constructor(props) {
-        super(props);
+function InputExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <Input
-                isDisabled
-                placeholder="example@example.com"
-                value={value}
-                onChange={this.onChange}
-            />
-        );
-    }
+    return <Input isDisabled value={value} placeholder="example@example.com" onChange={setValue} />;
 }
 ```
 
@@ -167,35 +83,10 @@ class InputExample extends React.Component {
 The `hasError` prop only changes the input’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-class InputExample extends React.Component {
-    constructor(props) {
-        super(props);
+function InputExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <Input
-                hasError
-                placeholder="example@example.com"
-                value={value}
-                onChange={this.onChange}
-            />
-        );
-    }
+    return <Input hasError value={value} placeholder="example@example.com" onChange={setValue} />;
 }
 ```
 
@@ -204,33 +95,15 @@ class InputExample extends React.Component {
 You can use the [`InputRow` component](/components/input-row/react/) to attach a `Button` to an `Input`.
 
 ```jsx
-class InputExample extends React.Component {
-    constructor(props) {
-        super(props);
+function InputExample() {
+    const [value, setValue] = React.useState(undefined);
 
-        this.state = {
-            value: undefined,
-        };
-
-        this.onChange = this.onChange.bind(this);
-    }
-
-    onChange(value) {
-        this.setState({
-            value,
-        });
-    }
-
-    render() {
-        const { value } = this.state;
-
-        return (
-            <InputRow widthRatios={[1, null]}>
-                <Input placeholder="Enter a zip code" onChange={this.onChange} value={value} />
-                <Button>Find a pro</Button>
-            </InputRow>
-        );
-    }
+    return (
+        <InputRow widthRatios={[1, null]}>
+            <Input placeholder="Enter a zip code" onChange={setValue} value={value} />
+            <Button>Find a pro</Button>
+        </InputRow>
+    );
 }
 ```
 
