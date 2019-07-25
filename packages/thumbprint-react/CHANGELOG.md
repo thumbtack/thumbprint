@@ -5,6 +5,7 @@
 ### Fixed
 
 -   [Major] Update `DatePicker` props validation to be more stringent.
+-   [Patch] Fix border colour of focused `Select` in an error state.
 
 ## 7.0.1 - 2019-07-16
 
