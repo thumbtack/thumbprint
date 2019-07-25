@@ -51,12 +51,13 @@
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
         "rotate-array": "^1.1.0",
         "scrollparent": "^2.0.1",
         "warning": "^4.0.2"
     },
     "devDependencies": {
-        "rollup": "^1.1.0",
+        "rollup": "1.11.0",
         "rollup-plugin-babel": "^4.2.0",
         "rollup-plugin-cpy": "^1.1.0",
         "rollup-plugin-typescript": "^1.0.1",

@@ -66,6 +66,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "remark-cli": "^5.0.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-typescript": "^1.0.1",
         "stylelint": "^9.10.1",
         "stylelint-config-prettier": "^4.0.0",

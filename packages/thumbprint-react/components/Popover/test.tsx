@@ -6,6 +6,7 @@ import Popover from './index';
 // https://github.com/FezVrasta/popper.js/issues/478#issuecomment-341494703
 jest.mock(
     'popper.js',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (): any => {
         const PopperJS = jest.requireActual('popper.js');
 
@@ -17,7 +18,7 @@ jest.mock(
                 };
             }
 
-            static placements: any;
+            public static placements: typeof PopperJS.placements;
         }
 
         Popper.placements = PopperJS.placements;
