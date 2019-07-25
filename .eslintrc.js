@@ -45,6 +45,10 @@ module.exports = {
                 extensions: ['.jsx', '.tsx'],
             },
         ],
+        // Upgrade from warning to error
+        '@typescript-eslint/no-unused-vars': 'error',
+        '@typescript-eslint/no-explicit-any': 'error',
+        '@typescript-eslint/explicit-function-return-type': 'error',
     },
     overrides: [
         {

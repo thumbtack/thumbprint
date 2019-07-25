@@ -1,29 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-const propTypes = {
+interface PropTypes {
     /**
      * Text within the form note.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Renders the form note as red text.
      */
-    hasError: PropTypes.bool,
-};
+    hasError?: boolean;
+}
 
-const defaultProps = {
-    children: null,
-    hasError: false,
-};
-
-export default function FormNote({ hasError, children }) {
+export default function FormNote({ hasError = false, children = null }: PropTypes): JSX.Element {
     return (
         <div className={classNames(styles.root, { [styles.rootError]: hasError })}>{children}</div>
     );
 }
-
-FormNote.propTypes = propTypes;
-FormNote.defaultProps = defaultProps;

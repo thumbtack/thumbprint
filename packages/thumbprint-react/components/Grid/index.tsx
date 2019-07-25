@@ -4,7 +4,10 @@ import warning from 'warning';
 
 import styles from './index.module.scss';
 
-const { Provider, Consumer } = React.createContext(undefined);
+const { Provider, Consumer } = React.createContext({
+    gutter: 'normal',
+    isWithinGrid: false,
+});
 
 interface ColumnPropTypes {
     /**
@@ -47,7 +50,7 @@ export function GridColumn({
 }: ColumnPropTypes): JSX.Element {
     return (
         <Consumer>
-            {({ gutter, isWithinGrid } = {}): JSX.Element => {
+            {({ gutter, isWithinGrid }): JSX.Element => {
                 warning(isWithinGrid, '`GridColumn` must be an immediate child of a `Grid`');
 
                 return (

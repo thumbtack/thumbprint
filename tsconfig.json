@@ -18,6 +18,6 @@
         "typeRoots": ["./node_modules/@types", "./typings"],
         "esModuleInterop": true
     },
-    "include": ["packages/**/*"],
-    "exclude": ["node_modules", "dist"]
+    "include": ["packages/**/*.tsx", "typings/**/*.ts"],
+    "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
 }

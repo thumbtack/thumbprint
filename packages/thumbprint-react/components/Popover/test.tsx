@@ -4,27 +4,32 @@ import Popover from './index';
 
 // https://github.com/thumbtack/thumbprint/issues/72
 // https://github.com/FezVrasta/popper.js/issues/478#issuecomment-341494703
-jest.mock('popper.js', () => {
-    const PopperJS = jest.requireActual('popper.js');
+jest.mock(
+    'popper.js',
+    (): any => {
+        const PopperJS = jest.requireActual('popper.js');
 
-    class Popper {
-        constructor() {
-            return {
-                destroy: () => {},
-                scheduleUpdate: () => {},
-            };
+        class Popper {
+            public constructor() {
+                return {
+                    destroy: (): void => {},
+                    scheduleUpdate: (): void => {},
+                };
+            }
+
+            static placements: any;
         }
-    }
 
-    Popper.placements = PopperJS.placements;
+        Popper.placements = PopperJS.placements;
 
-    return Popper;
-});
+        return Popper;
+    },
+);
 
-test('renders a popover', () => {
+test('renders a popover', (): void => {
     const onCloseClick = jest.fn();
     const wrapper = mount(
-        <Popover isOpen onCloseClick={onCloseClick} launcher={() => null}>
+        <Popover isOpen onCloseClick={onCloseClick} launcher={(): null => null}>
             Goose
         </Popover>,
     );
@@ -32,12 +37,12 @@ test('renders a popover', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('initially traps focus to wrapper, not the focusable child', () => {
+test('initially traps focus to wrapper, not the focusable child', (): void => {
     jest.useFakeTimers();
 
     const onCloseClick = jest.fn();
     const wrapper = mount(
-        <Popover isOpen onCloseClick={onCloseClick} launcher={() => null}>
+        <Popover isOpen onCloseClick={onCloseClick} launcher={(): null => null}>
             <button type="button" id="hi">
                 Hi
             </button>

@@ -1,7 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import path from 'path';
 import copy from 'rollup-plugin-cpy';
-import typescript from 'rollup-plugin-typescript';
 
 import { dependencies, peerDependencies } from './package.json';
 
@@ -27,10 +26,6 @@ const getConfig = format => {
                     parents: true,
                 },
             }),
-            // typescript({
-            //     include: ['*.tsx', '*.ts'],
-            //     tsconfig: '../../tsconfig.json',
-            // }),
         ],
         preserveModules: true,
         external: id =>
