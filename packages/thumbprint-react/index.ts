@@ -1,4 +1,4 @@
-export { UserAvatar, EntityAvatar } from './components/Avatar/index.jsx';
+export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index.jsx';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
@@ -7,7 +7,7 @@ export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as DatePicker } from './components/DatePicker/index.jsx';
 export { default as FormNote } from './components/FormNote/index';
 export { Grid, GridColumn } from './components/Grid/index';
-export { default as Image } from './components/Image/index.jsx';
+export { default as Image } from './components/Image/index';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index.jsx';

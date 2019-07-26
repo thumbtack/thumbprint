@@ -50,8 +50,10 @@ module.exports = {
         ],
         // Upgrade from warning to error
         '@typescript-eslint/no-unused-vars': 'error',
-        '@typescript-eslint/no-explicit-any': 'error',
         '@typescript-eslint/explicit-function-return-type': 'error',
+
+        // Disable for now, eventually we should go back and enable
+        '@typescript-eslint/no-explicit-any': 'off',
     },
     overrides: [
         {

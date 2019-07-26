@@ -202,6 +202,8 @@ class Input extends React.Component {
                 )}
 
                 <input
+                    // eslint-disable-next-line jsx-a11y/no-autofocus
+                    autoFocus={shouldFocusOnPageLoad}
                     className={classNames({
                         [styles.input]: true,
                         [styles.inputError]: uiState === 'error',
@@ -212,8 +214,6 @@ class Input extends React.Component {
                     readOnly={isReadOnly}
                     required={isRequired}
                     placeholder={placeholder}
-                    // eslint-disable-next-line jsx-a11y/no-autofocus
-                    autoFocus={shouldFocusOnPageLoad}
                     name={name}
                     type={type}
                     value={value}

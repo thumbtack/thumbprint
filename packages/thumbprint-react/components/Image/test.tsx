@@ -5,8 +5,8 @@ import Image from './index';
 jest.mock(
     'react-intersection-observer',
     (): any => ({
-        InView: ({ children }) => children({ inView: true, ref: null }),
-        useInView: () => [() => {}, true],
+        InView: ({ children }): any => children({ inView: true, ref: null }),
+        useInView: (): [(() => any), boolean] => [(): any => {}, true],
     }),
 );
 
