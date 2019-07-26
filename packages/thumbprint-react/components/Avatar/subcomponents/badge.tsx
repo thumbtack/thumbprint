@@ -1,9 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './badge.module.scss';
 
+interface ConfigItem {
+    top?: number;
+    right?: number;
+    size: number;
+}
+
+type BadgeType = 'userOnline' | 'userChecked' | 'entityOnline';
+
 // TODO(giles): remove all "checked" configs once we delete the isChecked prop
-const sizeClasses = {
+const sizeClasses: {
+    xsmall: {
+        userOnline: ConfigItem;
+        userChecked: ConfigItem;
+        entityOnline: ConfigItem;
+    };
+    small: {
+        userOnline: ConfigItem;
+        userChecked: ConfigItem;
+        entityOnline: ConfigItem;
+    };
+    medium: {
+        userOnline: ConfigItem;
+        userChecked: ConfigItem;
+        entityOnline: ConfigItem;
+    };
+    large: {
+        userOnline: ConfigItem;
+        userChecked: ConfigItem;
+        entityOnline: ConfigItem;
+    };
+    xlarge: {
+        userOnline: ConfigItem;
+        userChecked: ConfigItem;
+        entityOnline: ConfigItem;
+    };
+} = {
     xsmall: {
         userOnline: {
             top: 0,
@@ -81,22 +114,18 @@ const sizeClasses = {
     },
 };
 
-const propTypes = {
-    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).isRequired,
-    type: PropTypes.oneOf(['user', 'entity']).isRequired,
-    children: PropTypes.node,
-};
-
-const defaultProps = {
-    children: undefined,
-};
+interface PropTypes {
+    size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    type: 'user' | 'entity';
+    children?: React.ReactNode;
+}
 
 /**
  * `Badge` appears on the top-right corner of an `Avatar`. It is used to either
  * show a checkmark or an indicator that there are unread notifications.
  */
-export default function Badge({ size, type, children }) {
-    let badgeType = 'entityOnline';
+export default function Badge({ size, type, children }: PropTypes): JSX.Element {
+    let badgeType: BadgeType = 'entityOnline';
 
     if (type === 'user') {
         if (children) {
@@ -106,7 +135,7 @@ export default function Badge({ size, type, children }) {
         }
     }
 
-    const styleConfig = sizeClasses[size][badgeType];
+    const styleConfig: ConfigItem = sizeClasses[size][badgeType];
 
     return (
         <div
@@ -124,6 +153,3 @@ export default function Badge({ size, type, children }) {
         </div>
     );
 }
-
-Badge.propTypes = propTypes;
-Badge.defaultProps = defaultProps;

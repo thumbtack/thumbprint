@@ -1418,6 +1418,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/scrollparent@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/scrollparent/-/scrollparent-2.0.0.tgz#06ff3ec33c5d4f036e363457fa0ab332a97de4c1"
+  integrity sha512-4y2BAXLZV4nu27LjWWlWqeY2TXfgKeGNcrWXBrQojr+0PguxRgNXCr1cvREH2uBLxyGNPkRTgfh50SUNUivHEg==
+
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
