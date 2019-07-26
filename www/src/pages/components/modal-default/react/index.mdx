@@ -73,7 +73,7 @@ function ModalDefaultDemoBasic() {
 
                 <ModalDefaultFooter>
                     <ButtonRow justify="right">
-                        <Button onClick={this.closeModal} width="full-below-small">
+                        <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
@@ -206,7 +206,7 @@ function ModalDefaultDemoStickyTall() {
 
                 <ModalDefaultFooter isSticky>
                     <ButtonRow justify="right">
-                        <Button onClick={this.closeModal} width="full-below-small">
+                        <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
@@ -339,7 +339,7 @@ function ModalDefaultDemoTall() {
 
                 <ModalDefaultFooter>
                     <ButtonRow justify="right">
-                        <Button onClick={this.closeModal} width="full-below-small">
+                        <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
@@ -409,7 +409,7 @@ function ModalDefaultDemoNarrow() {
 
                 <ModalDefaultFooter>
                     <ButtonRow justify="right">
-                        <Button onClick={this.closeModal} width="full-below-small">
+                        <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
@@ -497,7 +497,7 @@ function ModalDefaultDemoFullBleed() {
 
                 <ModalDefaultFooter>
                     <ButtonRow justify="right">
-                        <Button onClick={this.closeModal} width="full-below-small">
+                        <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
