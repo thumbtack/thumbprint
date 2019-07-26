@@ -129,6 +129,114 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 </UserAvatar>
 `;
 
+exports[`adds the \`fullName\` as \`title\` text 1`] = `
+<UserAvatar
+  fullName="Duck Goose"
+>
+  <div
+    className="root rootSmall"
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "color": "#2f3033",
+        }
+      }
+      title="Avatar for Duck Goose"
+    />
+  </div>
+</UserAvatar>
+`;
+
+exports[`adds the \`fullName\` as \`title\` text 2`] = `
+<UserAvatar
+  fullName="Duck Goose"
+  imageUrl="//www.placecage.com/130/130"
+>
+  <div
+    className="root rootSmall"
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
+  >
+    <Image
+      alt="Avatar for Duck Goose"
+      className="circleAvatar"
+      height="48px"
+      src="//www.placecage.com/130/130"
+    >
+      <picture
+        className="picture circleAvatar"
+      >
+        <img
+          alt="Avatar for Duck Goose"
+          className="imageStart"
+          height="48px"
+          onError={[Function]}
+          onLoad={[Function]}
+          sizes="0px"
+          src="//www.placecage.com/130/130"
+          style={
+            Object {
+              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
+              "objectFit": "cover",
+              "objectPosition": "center",
+            }
+          }
+        />
+      </picture>
+      <noscript>
+        <img
+          alt="Avatar for Duck Goose"
+          src="//www.placecage.com/130/130"
+        />
+      </noscript>
+    </Image>
+  </div>
+</UserAvatar>
+`;
+
+exports[`adds the \`fullName\` as \`title\` text 3`] = `
+<UserAvatar
+  fullName="Duck Goose"
+  initials="DG"
+>
+  <div
+    className="root rootSmall"
+    style={
+      Object {
+        "height": "48px",
+        "width": "48px",
+      }
+    }
+  >
+    <span
+      className="initialsAvatar circleAvatar"
+      style={
+        Object {
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
+        }
+      }
+      title="Avatar for Duck Goose"
+    >
+      DG
+    </span>
+  </div>
+</UserAvatar>
+`;
+
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"

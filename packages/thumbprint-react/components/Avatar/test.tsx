@@ -35,7 +35,6 @@ test('adds the `fullName` as `title` text', (): void => {
     const wrapperWithInitials = mount(<UserAvatar fullName="Duck Goose" initials="DG" />);
 
     expect(wrapper.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
-    expect(wrapperWithImage.find('Image').prop('title')).toContain('Duck Goose');
     expect(wrapperWithInitials.find('.initialsAvatar').prop('title')).toContain('Duck Goose');
 
     expect(wrapper).toMatchSnapshot();
