@@ -10,8 +10,8 @@ import canUseDOM from '../../utils/can-use-dom';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
 
-import { TextButton } from '../Button/index.jsx';
-import { Themed } from '../UIAction/index.jsx';
+import { TextButton } from '../Button/index';
+import { Themed } from '../UIAction/index';
 import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';

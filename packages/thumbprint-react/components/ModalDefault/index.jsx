@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'lodash/noop';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
-import { TextButton } from '../Button/index.jsx';
+import { TextButton } from '../Button/index';
 import StickyFooter from './components/sticky-footer.jsx';
 import Transition from './components/transition.jsx';
 import ModalCurtain from '../ModalCurtain/index.jsx';

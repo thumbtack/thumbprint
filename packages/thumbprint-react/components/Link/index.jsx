@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import { Themed, Plain } from '../UIAction/index.jsx';
+import { Themed, Plain } from '../UIAction/index';
 
 const getCommonLinkProps = props => {
     warning(

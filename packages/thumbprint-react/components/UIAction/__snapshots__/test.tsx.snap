@@ -1,0 +1,1346 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external links to handle security vulnerability 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://www.thumbtack.com/foo"
+>
+  <a
+    className="plain"
+    href="https://www.thumbtack.com/foo"
+    rel="noopener"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 2`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="/foo"
+>
+  <a
+    className="plain"
+    href="/foo"
+    rel="noopener"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 3`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="#foo"
+>
+  <a
+    className="plain"
+    href="#foo"
+    rel="noopener"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> adds attribute to open link in new tab 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 1`] = `
+<ForwardRef
+  to="https://www.thumbtack.com/foo"
+>
+  <a
+    className="plain"
+    href="https://www.thumbtack.com/foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 2`] = `
+<ForwardRef
+  to="/foo"
+>
+  <a
+    className="plain"
+    href="/foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 3`] = `
+<ForwardRef
+  to="#foo"
+>
+  <a
+    className="plain"
+    href="#foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 4`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> removes \`href\` if link is disabled 1`] = `
+<ForwardRef
+  isDisabled={true}
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    disabled={true}
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> renders \`children\` passed in 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> renders \`to\` prop as \`href\` 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> renders a anchor tag when a \`to\` is provided 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> renders a anchor tag when both \`to\` and \`onClick\` are provided 1`] = `
+<ForwardRef
+  onClick={[Function]}
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    onClick={[Function]}
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <button> renders a button when an \`onClick\` is provided 1`] = `
+<ForwardRef
+  onClick={[Function]}
+>
+  <button
+    className="plain"
+    onClick={[Function]}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain <button> renders button of type \`button\` 1`] = `
+<ForwardRef
+  onClick={[Function]}
+>
+  <button
+    className="plain"
+    onClick={[Function]}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain <button> renders children passed in 1`] = `
+<ForwardRef>
+  <button
+    className="plain"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain adds \`dataTest\` prop 1`] = `
+<ForwardRef
+  dataTest="Duck"
+>
+  <button
+    className="plain"
+    data-test="Duck"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain adds \`dataTest\` prop 2`] = `
+<ForwardRef
+  dataTest="Duck"
+  to="#"
+>
+  <a
+    className="plain"
+    data-test="Duck"
+    href="#"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain adds proper accessibility attribute 1`] = `
+<ForwardRef
+  accessibilityLabel="Duck"
+>
+  <button
+    aria-label="Duck"
+    className="plain"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders icon that is passed in 1`] = `
+<ForwardRef
+  iconLeft={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <button
+    className="plain"
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <svg>
+        Duck
+      </svg>
+      <span
+        className="textContainer"
+      >
+        Goose
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders inherit theme 1`] = `
+<ForwardRef
+  theme="inherit"
+>
+  <button
+    className="plain plainThemeInherit"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders inherit theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="inherit"
+>
+  <button
+    className="plain plainThemeInherit"
+    disabled={true}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders primary theme 1`] = `
+<ForwardRef
+  theme="primary"
+>
+  <button
+    className="plain plainThemePrimary"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders primary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="primary"
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={true}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders secondary theme 1`] = `
+<ForwardRef
+  theme="secondary"
+>
+  <button
+    className="plain plainThemeSecondary"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders secondary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="secondary"
+>
+  <button
+    className="plain plainThemeSecondary"
+    disabled={true}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders tertiary theme 1`] = `
+<ForwardRef
+  theme="tertiary"
+>
+  <button
+    className="plain plainThemeTertiary"
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders tertiary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="tertiary"
+>
+  <button
+    className="plain plainThemeTertiary"
+    disabled={true}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://www.thumbtack.com/foo"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://www.thumbtack.com/foo"
+    rel="noopener"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 2`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="/foo"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="/foo"
+    rel="noopener"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 3`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="#foo"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="#foo"
+    rel="noopener"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel\` attribute to handle security vulnerability 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds attribute to open link in new tab 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 1`] = `
+<ForwardRef
+  to="https://www.thumbtack.com/foo"
+>
+  <a
+    className="plain"
+    href="https://www.thumbtack.com/foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 2`] = `
+<ForwardRef
+  to="/foo"
+>
+  <a
+    className="plain"
+    href="/foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 3`] = `
+<ForwardRef
+  to="#foo"
+>
+  <a
+    className="plain"
+    href="#foo"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 4`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="plain"
+    href="https://example.com/"
+    target="_self"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> removes \`href\` if link is disabled 1`] = `
+<ForwardRef
+  isDisabled={true}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    disabled={true}
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> renders \`children\` passed in 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> renders \`to\` prop as \`href\` 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> renders a anchor tag when a \`to\` is provided 1`] = `
+<ForwardRef
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> renders an anchor tag when both \`to\` and \`onClick\` are provided 1`] = `
+<ForwardRef
+  onClick={[Function]}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    href="https://example.com/"
+    onClick={[Function]}
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <button> renders a button when an \`onClick\` is provided 1`] = `
+<ForwardRef
+  onClick={[Function]}
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed <button> renders button of type \`button\` 1`] = `
+<ForwardRef
+  onClick={[Function]}
+>
+  <button
+    className="plain"
+    onClick={[Function]}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed <button> renders button of type \`submit\` if provided 1`] = `
+<ForwardRef
+  onClick={[Function]}
+  type="submit"
+>
+  <button
+    className="plain"
+    onClick={[Function]}
+    type="submit"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed <button> renders children passed in 1`] = `
+<ForwardRef>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed adds \`dataTest\` prop 1`] = `
+<ForwardRef
+  dataTest="Duck"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    data-test="Duck"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed adds \`dataTest\` prop 2`] = `
+<ForwardRef
+  dataTest="Duck"
+  to="#"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    data-test="Duck"
+    href="#"
+    target="_self"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed adds proper accessibility attribute 1`] = `
+<ForwardRef
+  accessibilityLabel="Duck"
+>
+  <button
+    aria-label="Duck"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed disables button when it is disabled 1`] = `
+<ForwardRef
+  isDisabled={true}
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Duck
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed disables button when it is disabled and loading 1`] = `
+<ForwardRef
+  isDisabled={true}
+  isLoading={true}
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      <span
+        className="loaderContainer"
+      >
+        <span
+          className="absoluteCenter"
+        >
+          <LoaderDots
+            assistiveText="Loading"
+            size="small"
+            theme="inverse"
+          >
+            <ul
+              className="root"
+              role="status"
+            >
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="hiddenText"
+              >
+                Loading
+              </li>
+            </ul>
+          </LoaderDots>
+        </span>
+        <span
+          className="hidden"
+        >
+          Duck
+        </span>
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed disables button while it is loading 1`] = `
+<ForwardRef
+  isLoading={true}
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      <span
+        className="loaderContainer"
+      >
+        <span
+          className="absoluteCenter"
+        >
+          <LoaderDots
+            assistiveText="Loading"
+            size="small"
+            theme="inverse"
+          >
+            <ul
+              className="root"
+              role="status"
+            >
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="hiddenText"
+              >
+                Loading
+              </li>
+            </ul>
+          </LoaderDots>
+        </span>
+        <span
+          className="hidden"
+        >
+          Duck
+        </span>
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders caution theme 1`] = `
+<ForwardRef
+  theme="caution"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeCaution"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders caution theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="caution"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeCaution"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders full width button 1`] = `
+<ForwardRef
+  width="full"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonWidthFull"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders full width button on small screens 1`] = `
+<ForwardRef
+  width="full-below-small"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonWidthFullBelowSmall"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders full width button when used within \`InputRow\` 1`] = `
+<InputRow>
+  <div
+    className="root"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef>
+        <button
+          className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonWidthFull"
+          type="button"
+        >
+          <span
+            className="flexWrapper"
+          >
+            Duck
+          </span>
+        </button>
+      </ForwardRef>
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <ForwardRef>
+        <button
+          className="themedButton themedButtonRoundedBordersRight themedButtonWidthFull"
+          type="button"
+        >
+          <span
+            className="flexWrapper"
+          >
+            Goose
+          </span>
+        </button>
+      </ForwardRef>
+    </div>
+  </div>
+</InputRow>
+`;
+
+exports[`Themed renders icon that is passed in 1`] = `
+<ForwardRef
+  icon={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      <span
+        className="flexCenter"
+      >
+        <span
+          className="iconContainer iconContainerHasChildren"
+        >
+          <svg>
+            Duck
+          </svg>
+        </span>
+        Goose
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders large button 1`] = `
+<ForwardRef>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders loading indicator 1`] = `
+<ForwardRef
+  isLoading={true}
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      <span
+        className="loaderContainer"
+      >
+        <span
+          className="absoluteCenter"
+        >
+          <LoaderDots
+            assistiveText="Loading"
+            size="small"
+            theme="inverse"
+          >
+            <ul
+              className="root"
+              role="status"
+            >
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="dot dotThemeInverse dotSizeSmall"
+              />
+              <li
+                className="hiddenText"
+              >
+                Loading
+              </li>
+            </ul>
+          </LoaderDots>
+        </span>
+        <span
+          className="hidden"
+        >
+          Duck
+        </span>
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders primary theme 1`] = `
+<ForwardRef
+  theme="primary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders primary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="primary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders secondary theme 1`] = `
+<ForwardRef
+  theme="secondary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders secondary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="secondary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders small button 1`] = `
+<ForwardRef
+  size="small"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper flexWrapperSizeSmall"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders solid theme 1`] = `
+<ForwardRef
+  theme="solid"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSolid"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders solid theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="solid"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSolid"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders tertiary theme 1`] = `
+<ForwardRef
+  theme="tertiary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders tertiary theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="tertiary"
+>
+  <button
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary"
+    disabled={true}
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      Goose
+    </span>
+  </button>
+</ForwardRef>
+`;
+
+exports[`Themed renders themed \`UIAction\` with an icon and no text 1`] = `
+<ForwardRef
+  accessibilityLabel="Duck"
+  icon={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <button
+    aria-label="Duck"
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
+    type="button"
+  >
+    <span
+      className="flexWrapper"
+    >
+      <span
+        className="flexCenter"
+      >
+        <span
+          className="iconContainer"
+        >
+          <svg>
+            Duck
+          </svg>
+        </span>
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;

@@ -3,35 +3,17 @@
 exports[`adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
-  isDisabled={false}
-  isLoading={false}
-  size="large"
-  theme="primary"
-  type="button"
-  width="auto"
 >
   <ForwardRef
     dataTest="Duck"
-    icon={null}
-    isDisabled={false}
-    isLoading={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    size="large"
-    theme="primary"
-    to={null}
-    type="button"
-    width="auto"
   >
     <button
-      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
       data-test="Duck"
-      disabled={false}
-      onClick={null}
       type="button"
     >
       <span
-        className="flexWrapper flexWrapperSizeLarge"
+        className="flexWrapper"
       >
         Goose
       </span>
@@ -43,27 +25,13 @@ exports[`adds \`dataTest\` prop 1`] = `
 exports[`adds \`dataTest\` prop 2`] = `
 <ForwardRef
   dataTest="Duck"
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  theme="primary"
-  type="button"
 >
   <ForwardRef
     dataTest="Duck"
-    iconLeft={null}
-    isDisabled={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    theme="primary"
-    to={null}
-    type="button"
   >
     <button
-      className="plain plainThemePrimary"
+      className="plain"
       data-test="Duck"
-      disabled={false}
-      onClick={null}
       type="button"
     >
       Goose
@@ -73,34 +41,14 @@ exports[`adds \`dataTest\` prop 2`] = `
 `;
 
 exports[`renders button of type \`button\` by default 1`] = `
-<ForwardRef
-  isDisabled={false}
-  isLoading={false}
-  size="large"
-  theme="primary"
-  type="button"
-  width="auto"
->
-  <ForwardRef
-    icon={null}
-    isDisabled={false}
-    isLoading={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    size="large"
-    theme="primary"
-    to={null}
-    type="button"
-    width="auto"
-  >
+<ForwardRef>
+  <ForwardRef>
     <button
-      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
-      disabled={false}
-      onClick={null}
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
       type="button"
     >
       <span
-        className="flexWrapper flexWrapperSizeLarge"
+        className="flexWrapper"
       >
         Goose
       </span>
@@ -110,26 +58,10 @@ exports[`renders button of type \`button\` by default 1`] = `
 `;
 
 exports[`renders button of type \`button\` by default 2`] = `
-<ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  theme="primary"
-  type="button"
->
-  <ForwardRef
-    iconLeft={null}
-    isDisabled={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    theme="primary"
-    to={null}
-    type="button"
-  >
+<ForwardRef>
+  <ForwardRef>
     <button
-      className="plain plainThemePrimary"
-      disabled={false}
-      onClick={null}
+      className="plain"
       type="button"
     >
       Goose
@@ -140,33 +72,17 @@ exports[`renders button of type \`button\` by default 2`] = `
 
 exports[`renders button of type \`submit\` when \`type\` is set 1`] = `
 <ForwardRef
-  isDisabled={false}
-  isLoading={false}
-  size="large"
-  theme="primary"
   type="submit"
-  width="auto"
 >
   <ForwardRef
-    icon={null}
-    isDisabled={false}
-    isLoading={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    size="large"
-    theme="primary"
-    to={null}
     type="submit"
-    width="auto"
   >
     <button
-      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
-      disabled={false}
-      onClick={null}
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
       type="submit"
     >
       <span
-        className="flexWrapper flexWrapperSizeLarge"
+        className="flexWrapper"
       >
         Goose
       </span>
@@ -177,25 +93,13 @@ exports[`renders button of type \`submit\` when \`type\` is set 1`] = `
 
 exports[`renders button of type \`submit\` when \`type\` is set 2`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  theme="primary"
   type="submit"
 >
   <ForwardRef
-    iconLeft={null}
-    isDisabled={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    theme="primary"
-    to={null}
     type="submit"
   >
     <button
-      className="plain plainThemePrimary"
-      disabled={false}
-      onClick={null}
+      className="plain"
       type="submit"
     >
       Goose
@@ -205,34 +109,14 @@ exports[`renders button of type \`submit\` when \`type\` is set 2`] = `
 `;
 
 exports[`renders children passed in 1`] = `
-<ForwardRef
-  isDisabled={false}
-  isLoading={false}
-  size="large"
-  theme="primary"
-  type="button"
-  width="auto"
->
-  <ForwardRef
-    icon={null}
-    isDisabled={false}
-    isLoading={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    size="large"
-    theme="primary"
-    to={null}
-    type="button"
-    width="auto"
-  >
+<ForwardRef>
+  <ForwardRef>
     <button
-      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
-      disabled={false}
-      onClick={null}
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
       type="button"
     >
       <span
-        className="flexWrapper flexWrapperSizeLarge"
+        className="flexWrapper"
       >
         Goose
       </span>
@@ -242,26 +126,10 @@ exports[`renders children passed in 1`] = `
 `;
 
 exports[`renders children passed in 2`] = `
-<ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  theme="primary"
-  type="button"
->
-  <ForwardRef
-    iconLeft={null}
-    isDisabled={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    theme="primary"
-    to={null}
-    type="button"
-  >
+<ForwardRef>
+  <ForwardRef>
     <button
-      className="plain plainThemePrimary"
-      disabled={false}
-      onClick={null}
+      className="plain"
       type="button"
     >
       Goose
@@ -277,12 +145,6 @@ exports[`renders icon that is passed in 1`] = `
       Duck
     </svg>
   }
-  isDisabled={false}
-  isLoading={false}
-  size="large"
-  theme="primary"
-  type="button"
-  width="auto"
 >
   <ForwardRef
     icon={
@@ -290,24 +152,13 @@ exports[`renders icon that is passed in 1`] = `
         Duck
       </svg>
     }
-    isDisabled={false}
-    isLoading={false}
-    onClick={null}
-    shouldOpenInNewTab={false}
-    size="large"
-    theme="primary"
-    to={null}
-    type="button"
-    width="auto"
   >
     <button
-      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
-      disabled={false}
-      onClick={null}
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight"
       type="button"
     >
       <span
-        className="flexWrapper flexWrapperSizeLarge"
+        className="flexWrapper"
       >
         <span
           className="flexCenter"
