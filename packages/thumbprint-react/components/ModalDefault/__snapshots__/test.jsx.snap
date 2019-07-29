@@ -239,12 +239,15 @@ exports[`ModalDefault renders a basic modal 1`] = `
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >
@@ -447,12 +450,15 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >
@@ -637,12 +643,15 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >
@@ -827,12 +836,15 @@ exports[`ModalDefault renders a wide modal 1`] = `
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >
@@ -1017,12 +1029,15 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >
@@ -1271,12 +1286,15 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                               xmlns="http://www.w3.org/2000/svg"
                             />
                           }
+                          isDisabled={false}
                           onClick={[Function]}
                           theme="inherit"
+                          type="button"
                         >
                           <button
                             aria-label="Close modal"
                             className="plain plainThemeInherit"
+                            disabled={false}
                             onClick={[Function]}
                             type="button"
                           >

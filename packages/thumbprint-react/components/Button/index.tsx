@@ -17,7 +17,7 @@ interface CommonProps {
     accessibilityLabel?: string;
 }
 
-const getCommonProps = (props): CommonProps => ({
+const getCommonProps = (props: CommonProps): CommonProps => ({
     onClick: props.onClick,
     isDisabled: props.isDisabled,
     type: props.type,
@@ -32,8 +32,42 @@ const getCommonProps = (props): CommonProps => ({
 });
 
 const TextButton = React.forwardRef<HTMLElement, TextButtonPropTypes>(
-    (props, ref): JSX.Element => (
-        <Plain {...getCommonProps(props)} theme={props.theme} iconLeft={props.iconLeft} ref={ref} />
+    (
+        {
+            children,
+            iconLeft,
+            isDisabled = false,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            accessibilityLabel,
+            theme = 'primary',
+            type = 'button',
+            dataTest,
+        },
+        ref,
+    ): JSX.Element => (
+        <Plain
+            {...getCommonProps({
+                onClick,
+                isDisabled,
+                type,
+                children,
+                onMouseEnter,
+                onMouseOver,
+                onFocus,
+                onMouseLeave,
+                onBlur,
+                accessibilityLabel,
+                dataTest,
+            })}
+            theme={theme}
+            iconLeft={iconLeft}
+            ref={ref}
+        />
     ),
 );
 
@@ -97,23 +131,47 @@ interface TextButtonPropTypes {
     dataTest?: string;
 }
 
-// TextButton.defaultProps = {
-//     isDisabled: false,
-//     iconLeft: null,
-//     theme: 'primary',
-//     onClick: null,
-//     type: 'button',
-// };
-
 const Button = React.forwardRef<HTMLElement, ButtonPropTypes>(
-    (props, ref): JSX.Element => (
+    (
+        {
+            children,
+            isDisabled = false,
+            isLoading = false,
+            icon,
+            accessibilityLabel,
+            type = 'button',
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            theme = 'primary',
+            size = 'large',
+            width = 'auto',
+            dataTest,
+        },
+        ref,
+    ): JSX.Element => (
         <Themed
-            {...getCommonProps(props)}
-            icon={props.icon}
-            isLoading={props.isLoading}
-            theme={props.theme}
-            size={props.size}
-            width={props.width}
+            {...getCommonProps({
+                onClick,
+                isDisabled,
+                type,
+                children,
+                onMouseEnter,
+                onMouseOver,
+                onFocus,
+                onMouseLeave,
+                onBlur,
+                accessibilityLabel,
+                dataTest,
+            })}
+            icon={icon}
+            isLoading={isLoading}
+            theme={theme}
+            size={size}
+            width={width}
             ref={ref}
         />
     ),
@@ -191,15 +249,6 @@ interface ButtonPropTypes {
      */
     dataTest?: string;
 }
-
-// Button.defaultProps = {
-//     type: 'button',
-//     isDisabled: false,
-//     isLoading: false,
-//     theme: 'primary',
-//     size: 'large',
-//     width: 'auto',
-// };
 
 export default Button;
 export { TextButton };

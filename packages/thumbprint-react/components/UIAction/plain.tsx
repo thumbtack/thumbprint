@@ -6,41 +6,60 @@ import getButtonProps from './get-button-props';
 import styles from './plain.module.scss';
 
 const Plain = React.forwardRef<HTMLElement, PropTypes>(
-    (props, ref): JSX.Element => {
+    (
+        {
+            children,
+            isDisabled = false,
+            to,
+            iconLeft,
+            theme = 'primary',
+            type = 'button',
+            shouldOpenInNewTab = false,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            accessibilityLabel,
+            dataTest,
+        },
+        ref,
+    ): JSX.Element => {
         warning(
-            props.children || props.accessibilityLabel || (props.iconLeft && props.children),
+            children || accessibilityLabel || (iconLeft && children),
             'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` is provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
-        const children = props.iconLeft ? (
+        const newChildren = iconLeft ? (
             <span className={styles.flexCenter}>
-                {props.iconLeft}
-                {props.children && <span className={styles.textContainer}>{props.children}</span>}
+                {iconLeft}
+                {children && <span className={styles.textContainer}>{children}</span>}
             </span>
         ) : (
-            props.children
+            children
         );
 
         const commonProps = {
-            disabled: props.isDisabled,
-            children,
+            disabled: isDisabled,
+            children: newChildren,
             className: classNames({
                 [styles.plain]: true,
-                [styles.plainThemePrimary]: props.theme === 'primary',
-                [styles.plainThemeSecondary]: props.theme === 'secondary',
-                [styles.plainThemeTertiary]: props.theme === 'tertiary',
-                [styles.plainThemeInherit]: props.theme === 'inherit',
+                [styles.plainThemePrimary]: theme === 'primary',
+                [styles.plainThemeSecondary]: theme === 'secondary',
+                [styles.plainThemeTertiary]: theme === 'tertiary',
+                [styles.plainThemeInherit]: theme === 'inherit',
             }),
-            'aria-label': props.accessibilityLabel,
-            'data-test': props.dataTest,
+            'aria-label': accessibilityLabel,
+            'data-test': dataTest,
             ref,
         };
 
-        if (props.to) {
+        if (to) {
             return (
                 <a // eslint-disable-line jsx-a11y/anchor-has-content
                     {...commonProps}
-                    {...getAnchorProps(props)}
+                    {...getAnchorProps({ isDisabled, shouldOpenInNewTab, to, onClick })}
                     ref={ref as React.Ref<HTMLAnchorElement>}
                 />
             );
@@ -49,7 +68,15 @@ const Plain = React.forwardRef<HTMLElement, PropTypes>(
         return (
             <button // eslint-disable-line react/button-has-type
                 {...commonProps}
-                {...getButtonProps(props)}
+                {...getButtonProps({
+                    onClick,
+                    type,
+                    onMouseEnter,
+                    onMouseOver,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                })}
                 ref={ref as React.Ref<HTMLButtonElement>}
             />
         );
@@ -111,14 +138,5 @@ interface PropTypes {
      */
     dataTest?: string;
 }
-
-// Plain.defaultProps = {
-//     isDisabled: false,
-//     iconLeft: null,
-//     to: null,
-//     theme: 'primary',
-//     shouldOpenInNewTab: false,
-//     onClick: null,
-// };
 
 export default Plain;

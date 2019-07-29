@@ -72,14 +72,47 @@ const withFlexWrapper = (
 );
 
 const Themed = React.forwardRef<HTMLElement, PropTypes>(
-    (props: PropTypes, ref): JSX.Element => {
+    (
+        {
+            children,
+            isDisabled = false,
+            isLoading = false,
+            icon,
+            type = 'button',
+            to,
+            shouldOpenInNewTab = false,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            accessibilityLabel,
+            size = 'large',
+            theme = 'primary',
+            width = 'auto',
+            dataTest,
+        }: PropTypes,
+        ref,
+    ): JSX.Element => {
         warning(
-            props.children || props.accessibilityLabel || (props.icon && props.children),
+            children || accessibilityLabel || (icon && children),
             'The prop `accessibilityLabel` must be provided to the button or link when `icon` is provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
-        const element = props.to ? 'a' : 'button';
-        const elementProps = element === 'a' ? getAnchorProps(props) : getButtonProps(props);
+        const element = to ? 'a' : 'button';
+        const elementProps =
+            element === 'a'
+                ? getAnchorProps({ isDisabled, shouldOpenInNewTab, to, onClick })
+                : getButtonProps({
+                      onClick,
+                      type,
+                      onMouseEnter,
+                      onMouseOver,
+                      onFocus,
+                      onMouseLeave,
+                      onBlur,
+                  });
 
         return (
             <InputRowContext.Consumer>
@@ -89,7 +122,7 @@ const Themed = React.forwardRef<HTMLElement, PropTypes>(
                         merge(
                             {},
                             {
-                                disabled: props.isLoading || props.isDisabled,
+                                disabled: isLoading || isDisabled,
                                 className: classNames({
                                     [styles.themedButton]: true,
                                     [styles.themedButtonRoundedBordersLeft]:
@@ -98,25 +131,24 @@ const Themed = React.forwardRef<HTMLElement, PropTypes>(
                                         isLastInputRowChild || !isWithinInputRow,
                                     [styles.themedButtonHasNoRightBorder]:
                                         isWithinInputRow && !isLastInputRowChild,
-                                    [styles.themedButtonThemePrimary]: props.theme === 'primary',
-                                    [styles.themedButtonThemeTertiary]: props.theme === 'tertiary',
-                                    [styles.themedButtonThemeSecondary]:
-                                        props.theme === 'secondary',
-                                    [styles.themedButtonThemeCaution]: props.theme === 'caution',
-                                    [styles.themedButtonThemeSolid]: props.theme === 'solid',
+                                    [styles.themedButtonThemePrimary]: theme === 'primary',
+                                    [styles.themedButtonThemeTertiary]: theme === 'tertiary',
+                                    [styles.themedButtonThemeSecondary]: theme === 'secondary',
+                                    [styles.themedButtonThemeCaution]: theme === 'caution',
+                                    [styles.themedButtonThemeSolid]: theme === 'solid',
                                     [styles.themedButtonThemePopoverPrimary]:
-                                        props.theme === 'popover-primary',
+                                        theme === 'popover-primary',
                                     [styles.themedButtonThemePopoverSecondary]:
-                                        props.theme === 'popover-secondary',
+                                        theme === 'popover-secondary',
                                     [styles.themedButtonWidthAuto]:
-                                        props.width === 'auto' && !isWithinInputRow,
+                                        width === 'auto' && !isWithinInputRow,
                                     [styles.themedButtonWidthFull]:
-                                        props.width === 'full' || isWithinInputRow,
+                                        width === 'full' || isWithinInputRow,
                                     [styles.themedButtonWidthFullBelowSmall]:
-                                        props.width === 'full-below-small' && !isWithinInputRow,
+                                        width === 'full-below-small' && !isWithinInputRow,
                                 }),
-                                'aria-label': props.accessibilityLabel,
-                                'data-test': props.dataTest,
+                                'aria-label': accessibilityLabel,
+                                'data-test': dataTest,
                                 ref,
                             },
                             elementProps,
@@ -126,7 +158,10 @@ const Themed = React.forwardRef<HTMLElement, PropTypes>(
                          * icons with text, adds a loading indicator, and adds a flex wrapper to
                          * the button.
                          */
-                        withFlexWrapper(withLoader(withIcon(props.children, props), props), props),
+                        withFlexWrapper(
+                            withLoader(withIcon(children, { icon }), { isLoading, theme }),
+                            { size },
+                        ),
                     )
                 }
             </InputRowContext.Consumer>
@@ -222,20 +257,5 @@ interface PropTypes {
      */
     dataTest?: string;
 }
-
-// Themed.defaultProps = {
-//     children: undefined,
-//     type: 'button',
-//     isDisabled: false,
-//     isLoading: false,
-//     icon: null,
-//     to: null,
-//     shouldOpenInNewTab: false,
-//     onClick: null,
-//     theme: 'primary',
-//     size: 'large',
-//     width: 'auto',
-//     dataTest: undefined,
-// };
 
 export default Themed;

@@ -256,13 +256,21 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef>
+        <ForwardRef
+          isDisabled={false}
+          isLoading={false}
+          size="large"
+          theme="primary"
+          type="button"
+          width="auto"
+        >
           <button
-            className="themedButton themedButtonRoundedBordersRight themedButtonWidthFull"
+            className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
             type="button"
           >
             <span
-              className="flexWrapper"
+              className="flexWrapper flexWrapperSizeLarge"
             >
               Duck
             </span>
@@ -288,13 +296,21 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef>
+        <ForwardRef
+          isDisabled={false}
+          isLoading={false}
+          size="large"
+          theme="primary"
+          type="button"
+          width="auto"
+        >
           <button
-            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonWidthFull"
+            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
             type="button"
           >
             <span
-              className="flexWrapper"
+              className="flexWrapper flexWrapperSizeLarge"
             >
               Duck
             </span>
@@ -363,13 +379,21 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef>
+        <ForwardRef
+          isDisabled={false}
+          isLoading={false}
+          size="large"
+          theme="primary"
+          type="button"
+          width="auto"
+        >
           <button
-            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonWidthFull"
+            className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
             type="button"
           >
             <span
-              className="flexWrapper"
+              className="flexWrapper flexWrapperSizeLarge"
             >
               Duck
             </span>
@@ -481,13 +505,21 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef>
+        <ForwardRef
+          isDisabled={false}
+          isLoading={false}
+          size="large"
+          theme="primary"
+          type="button"
+          width="auto"
+        >
           <button
-            className="themedButton themedButtonRoundedBordersRight themedButtonWidthFull"
+            className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
+            disabled={false}
             type="button"
           >
             <span
-              className="flexWrapper"
+              className="flexWrapper flexWrapperSizeLarge"
             >
               Duck
             </span>

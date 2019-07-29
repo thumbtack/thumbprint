@@ -7,7 +7,7 @@
         "publish": "git checkout master && git pull && yarn && yarn test && yarn build:dist && lerna publish",
         "build:docs": "yarn run bootstrap && cd www && yarn build",
         "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
-        "format": "prettier \"**/*.{js,jsx,css,scss,json,md,mdx,html}\" --write",
+        "format": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,json,md,mdx,html}\" --write",
         "test": "yarn bootstrap && yarn test:lint && yarn test:jest && yarn test:prettier && yarn test:typecheck",
         "test:jest": "TZ=America/Los_Angeles jest",
         "test:jest:watch": "yarn bootstrap && yarn test:jest --watch",
