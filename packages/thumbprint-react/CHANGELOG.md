@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 7.0.1 - 2019-07-30
+
+### Changed
+
+-   [Minor] Add new `HorizontalRule` react component.
+
+### Fixed
+
+-   [Patch] Fix bug in `DatePicker` where string dates were parsed in UTC instead of local timezone.
+
 ### Fixed
 
 -   [Patch] Fix border colour of focused `Select` in an error state.

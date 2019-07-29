@@ -12,7 +12,7 @@ test('renders dotted horizontal rule', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('renders black horizontal rule', () => {
-    const wrapper = mount(<HorizontalRule color="black" />);
+test('renders gray-300 horizontal rule', () => {
+    const wrapper = mount(<HorizontalRule color="gray-300" />);
     expect(wrapper).toMatchSnapshot();
 });
