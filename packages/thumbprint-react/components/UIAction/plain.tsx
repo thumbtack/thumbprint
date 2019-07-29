@@ -38,8 +38,7 @@ const Plain = React.forwardRef<HTMLElement, PropTypes>(
 
         if (props.to) {
             return (
-                // eslint-disable-next-line jsx-a11y/anchor-has-content
-                <a
+                <a // eslint-disable-line jsx-a11y/anchor-has-content
                     {...commonProps}
                     {...getAnchorProps(props)}
                     ref={ref as React.Ref<HTMLAnchorElement>}
@@ -48,8 +47,7 @@ const Plain = React.forwardRef<HTMLElement, PropTypes>(
         }
 
         return (
-            // eslint-disable-next-line react/button-has-type
-            <button
+            <button // eslint-disable-line react/button-has-type
                 {...commonProps}
                 {...getButtonProps(props)}
                 ref={ref as React.Ref<HTMLButtonElement>}
