@@ -16,6 +16,7 @@ const sortPlatforms = ({ node }) => {
         usage: 1,
         react: 2,
         scss: 3,
+        android: 4,
     };
 
     const { path } = node;
@@ -30,6 +31,7 @@ const getPlatformDisplayName = path => {
         usage: 'Usage',
         react: 'React',
         scss: 'SCSS',
+        android: 'Android',
     };
 
     return displayName[getPlatformSlugByPath(path)];
