@@ -10,7 +10,7 @@ Thumbprint is documented at [thumbprint.design](https://thumbprint.design/).
 
 [![Screenshot of Thumbprint documentation](https://i.imgur.com/ioUtLO5.png)](https://thumbprint.design/)
 
-The documentation is hosted on Netlify and built with [Gatsby](https://www.gatsbyjs.org/) and [Gatsby MDX](https://github.com/ChristopherBiscardi/gatsby-mdx).
+The documentation is hosted on Netlify and built with [Gatsby](https://www.gatsbyjs.org/) and [Gatsby MDX](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx).
 
 ## Overview
 
