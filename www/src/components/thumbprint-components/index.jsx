@@ -24,9 +24,7 @@ export const query = graphql`
             displayName
             description {
                 childMdx {
-                    code {
-                        body
-                    }
+                    body
                 }
             }
             doclets
@@ -40,9 +38,7 @@ export const query = graphql`
                 }
                 description {
                     childMdx {
-                        code {
-                            body
-                        }
+                        body
                     }
                 }
                 type {

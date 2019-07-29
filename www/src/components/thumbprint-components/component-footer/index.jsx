@@ -21,7 +21,7 @@ const ComponentFooter = ({ data }) => {
                     <H3>{component.displayName}</H3>
                     {component.description && (
                         <div className="mb3">
-                            <MDXRenderer>{component.description.childMdx.code.body}</MDXRenderer>
+                            <MDXRenderer>{component.description.childMdx.body}</MDXRenderer>
                         </div>
                     )}
                     <ul>
@@ -50,7 +50,7 @@ const ComponentFooter = ({ data }) => {
                                     <div className="black-300 mw8 mb2">
                                         {prop.description && (
                                             <MDXRenderer>
-                                                {prop.description.childMdx.code.body}
+                                                {prop.description.childMdx.body}
                                             </MDXRenderer>
                                         )}
 
