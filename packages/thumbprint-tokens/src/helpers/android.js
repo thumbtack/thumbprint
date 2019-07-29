@@ -19,18 +19,18 @@ module.exports = {
     formatId: (section, token) => {
         // Add a prefix so that the names don't conflict with existing code in the consumer's
         // codebases.
-        const prefixedToken = `tp_${token.id}`;
+        const prefix = `tp_`;
         const formattedSection = section.name.replace(/\s+/g, '_').toLowerCase();
-        const formattedToken = prefixedToken.replace(/-/g, '_');
+        const formattedToken = token.id.replace(/-/g, '_');
 
         // This conditional ensures that `<color name="red_300">#ffb0b0</color>` doesn't get
         // printed as `<color name="color_red_300">#ffb0b0</color>` since including the type
         // in the name is redundant in such a case.
         if (token.type === getTag(token.type)) {
-            return formattedToken;
+            return prefix + formattedToken;
         }
 
-        return `tp_${formattedSection}_${formattedToken}`;
+        return `${prefix}${formattedSection}_${formattedToken}`;
     },
 
     getTag,
