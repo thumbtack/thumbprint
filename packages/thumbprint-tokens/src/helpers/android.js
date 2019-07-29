@@ -17,8 +17,11 @@ module.exports = {
     formatValue: ({ value }) => value.android,
 
     formatId: (section, token) => {
+        // Add a prefix so that the names don't conflict with existing code in the consumer's
+        // codebases.
+        const prefixedToken = `tp_${token.id}`;
         const formattedSection = section.name.replace(/\s+/g, '_').toLowerCase();
-        const formattedToken = token.id.replace(/-/g, '_');
+        const formattedToken = prefixedToken.replace(/-/g, '_');
 
         // This conditional ensures that `<color name="red_300">#ffb0b0</color>` doesn't get
         // printed as `<color name="color_red_300">#ffb0b0</color>` since including the type
@@ -27,7 +30,7 @@ module.exports = {
             return formattedToken;
         }
 
-        return `${formattedSection}_${formattedToken}`;
+        return `tp_${formattedSection}_${formattedToken}`;
     },
 
     getTag,
