@@ -2,7 +2,6 @@
 
 ## Unreleased
 
-
 ### Changed
 
 -   [Minor] Add new `HorizontalRule` react component.
