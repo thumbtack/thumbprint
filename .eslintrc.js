@@ -54,6 +54,9 @@ module.exports = {
 
         // Disable for now, eventually we should go back and enable
         '@typescript-eslint/no-explicit-any': 'off',
+
+        // TODO: don't add this
+        'react/button-has-type': 'off',
     },
     overrides: [
         {
