@@ -7,12 +7,12 @@ const propTypes = {
     /**
      * Renders the horizontal rule with the thumbtack styles.
      */
-    lineStyle: PropTypes.oneOf(['original', 'dotted', 'dashed']),
+    lineStyle: PropTypes.oneOf(['solid', 'dotted', 'dashed']),
     color: PropTypes.oneOf(['gray', 'gray-300']),
 };
 
 const defaultProps = {
-    lineStyle: 'original',
+    lineStyle: 'solid',
     color: 'gray',
 };
 
