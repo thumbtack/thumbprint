@@ -3,7 +3,7 @@
 exports[`renders default horizontal rule 1`] = `
 <HorizontalRule
   color="gray"
-  lineStyle="original"
+  lineStyle="solid"
 >
   <hr
     className="root"
@@ -25,7 +25,7 @@ exports[`renders dotted horizontal rule 1`] = `
 exports[`renders gray-300 horizontal rule 1`] = `
 <HorizontalRule
   color="gray-300"
-  lineStyle="original"
+  lineStyle="solid"
 >
   <hr
     className="root gray300"
