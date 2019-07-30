@@ -1,0 +1,38 @@
+---
+title: Avatar
+description: Display user images and badges on Thumbtack.
+---
+
+import Alert from 'components/alert';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import { graphql } from 'gatsby';
+
+<ComponentHeader data={props.data} />
+
+<Alert type="warning" title="iOS components are not currently open source">
+    While this component's source code is private, we've made the documentation public for those
+    interested in how we design and document our mobile components.
+</Alert>
+
+## hi santi!
+
+this is where you put the markdown things. images can be siblings of this. see `www/src/pages/components/avatar` for how to reference images in markdown
+
+```swift
+codecodecode
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
