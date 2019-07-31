@@ -8,7 +8,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## Horizontal Rule Styles
+## `HorizontalRule` line styles
 
 ### Basic
 
@@ -34,10 +34,13 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 </React.Fragment>
 ```
 
-### Gray-300
+## Colors
+
+`HorizontalRule` default to Thumbtack's `gray` color. You can use `gray-300` instead by setting the `color` prop.
 
 ```jsx
 <React.Fragment>
+    <HorizontalRule />
     <HorizontalRule color="gray-300" />
 </React.Fragment>
 ```
