@@ -4,10 +4,10 @@
 {{#each section.tokens as |token|}}
 {{#if token.value.android}}
 {{#if token.description.android}}
-<!-- {{token.description.android}} -->
+    <!-- {{token.description.android}} -->
 {{/if}}
 {{#if token.deprecated}}
-// @deprecated
+    <!-- Deprecated -->
 {{/if}}
     <{{getTag token.type}} name="{{formatId section token}}">{{{formatValue token}}}</{{getTag token.type}}>
 {{/if}}

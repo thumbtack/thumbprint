@@ -17,6 +17,9 @@ module.exports = {
     formatValue: ({ value }) => value.android,
 
     formatId: (section, token) => {
+        // Add a prefix so that the names don't conflict with existing code in the consumer's
+        // codebases.
+        const prefix = `tp_`;
         const formattedSection = section.name.replace(/\s+/g, '_').toLowerCase();
         const formattedToken = token.id.replace(/-/g, '_');
 
@@ -24,10 +27,10 @@ module.exports = {
         // printed as `<color name="color_red_300">#ffb0b0</color>` since including the type
         // in the name is redundant in such a case.
         if (token.type === getTag(token.type)) {
-            return formattedToken;
+            return prefix + formattedToken;
         }
 
-        return `${formattedSection}_${formattedToken}`;
+        return `${prefix}${formattedSection}_${formattedToken}`;
     },
 
     getTag,

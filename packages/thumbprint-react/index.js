@@ -6,6 +6,7 @@ export { default as Carousel } from './components/Carousel/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as DatePicker } from './components/DatePicker/index.jsx';
 export { default as FormNote } from './components/FormNote/index.jsx';
+export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index.jsx';
 export { default as Image } from './components/Image/index.jsx';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
