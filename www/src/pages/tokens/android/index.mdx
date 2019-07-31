@@ -7,8 +7,7 @@ import { version, homepage } from '../../../../../packages/thumbprint-tokens/pac
 import {
     formatId,
     formatValue,
-    formatSectionName,
-} from '../../../../../packages/thumbprint-tokens/src/helpers/ios.js';
+} from '../../../../../packages/thumbprint-tokens/src/helpers/android.js';
 import classNames from 'classnames';
 import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
@@ -19,7 +18,7 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 export const pageQuery = graphql`
     {
         allThumbprintToken(
-            filter: { tokens: { elemMatch: { value: { ios: { ne: null } } } } }
+            filter: { tokens: { elemMatch: { value: { android: { ne: null } } } } }
             sort: { fields: name }
         ) {
             nodes {
@@ -28,11 +27,8 @@ export const pageQuery = graphql`
                 tokens {
                     id
                     type
-                    description {
-                        ios
-                    }
                     value {
-                        ios
+                        android
                         web
                     }
                     group
@@ -46,20 +42,20 @@ export const pageQuery = graphql`
 
 <PackageTable
     version={version}
-    packageName="ThumbprintTokens"
+    packageName="com.github.thumbtack:thumbprint"
     sourceDirectory={homepage}
-    platform="ios"
-    importStatement="import ThumbprintTokens"
+    platform="android"
+    importStatement="import com.github.thumbtack.thumbprint.tokens.R"
 />
 
 <div>
     {props.data.allThumbprintToken.nodes.map(section => (
         <TokenSection
             section={section}
-            formatId={({ id }) => `${formatSectionName(section.name)}.${formatId(id)}`}
-            formatValue={value => formatValue(value).replace('UIColor = ', '')}
+            formatId={token => formatId(section, token)}
+            formatValue={value => formatValue({ value })}
             key={section.name}
-            platform="ios"
+            platform="android"
         />
     ))}
 </div>

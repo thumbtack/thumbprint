@@ -47,7 +47,7 @@ export const pageQuery = graphql`
     {props.data.allThumbprintToken.nodes.map(section => (
         <TokenSection
             section={section}
-            formatId={id => formatId(section, { id })}
+            formatId={({ id }) => formatId(section, { id })}
             formatValue={value => formatValue(value)}
             key={section.name}
             platform="web"

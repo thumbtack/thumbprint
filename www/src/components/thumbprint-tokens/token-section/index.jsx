@@ -45,7 +45,7 @@ const TokenSection = ({ section, formatId, formatValue, platform }) => {
                                                         <Tag type="deprecated" className="mr2" />
                                                     )}
                                                     <InlineCode theme="plain" shouldCopyToClipboard>
-                                                        {formatId(token.id)}
+                                                        {formatId(token)}
                                                     </InlineCode>
                                                     {token.description &&
                                                         token.description[platform] && (
@@ -79,7 +79,7 @@ const TokenSection = ({ section, formatId, formatValue, platform }) => {
 
 TokenSection.propTypes = {
     section: PropTypes.shape({}).isRequired,
-    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
+    platform: PropTypes.oneOf(['web', 'ios', 'android']).isRequired,
     /**
      * Function that gets run on the token `id`, transforming the string into the variable name
      * for that platform.
