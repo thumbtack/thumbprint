@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Create an Android output.
+
 ## 8.1.1 - 2019-07-15
 
 ### Changed

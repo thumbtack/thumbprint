@@ -86,11 +86,12 @@ The value of the token in each platform that the token supports
 
 `string`
 
-Used for rich documentation on [thumbprint.design/tokens](https://thumbprint.design/tokens/).
+Used for generating the outputted files and displaying examples on [thumbprint.design/tokens](https://thumbprint.design/tokens/).
 
 Valid values include:
 
 -   `color`
+-   `size`
 
 #### `deprecated`
 
