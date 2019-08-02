@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 7.1.0 - 2019-07-31
+
+### Changed
+
+-   [Minor] Add new `HorizontalRule` react component.
+
 ### Fixed
 
 -   [Patch] Fix border colour of focused `Select` in an error state.
