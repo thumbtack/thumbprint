@@ -1,0 +1,21 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    border: 0;
+    height: 0;
+    border-top: 1px solid $tp-color__gray;
+    margin-top: $tp-space__2 - 1px;
+    margin-bottom: $tp-space__2;
+}
+
+.dotted {
+    border-top-style: dotted;
+}
+
+.dashed {
+    border-top-style: dashed;
+}
+
+.gray300 {
+    border-top-color: $tp_color__gray-300;
+}

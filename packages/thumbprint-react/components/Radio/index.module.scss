@@ -20,7 +20,7 @@
     width: 1px;
     height: 1px;
 
-    &:focus ~ .radio-image {
+    &:focus ~ .radioImage {
         box-shadow: 0 0 0px 4px $tp-color__gray-300;
     }
 }
