@@ -1,0 +1,71 @@
+---
+title: Horizontal Rule
+description: Dividers that separate sections of content.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## `HorizontalRule` line styles
+
+### Basic
+
+```jsx
+<React.Fragment>
+    <HorizontalRule />
+</React.Fragment>
+```
+
+### Dotted
+
+```jsx
+<React.Fragment>
+    <HorizontalRule lineStyle="dotted" />
+</React.Fragment>
+```
+
+### Dashed
+
+```jsx
+<React.Fragment>
+    <HorizontalRule lineStyle="dashed" />
+</React.Fragment>
+```
+
+## Colors
+
+`HorizontalRule` default to Thumbtack's `gray` color. You can use `gray-300` instead by setting the `color` prop.
+
+```jsx
+<React.Fragment>
+    <HorizontalRule />
+    <HorizontalRule color="gray-300" />
+</React.Fragment>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/horizontal-rule/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/HorizontalRule/index.jsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
