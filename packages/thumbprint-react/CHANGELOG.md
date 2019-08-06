@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Restore border color of focused `Radio` input.
+
 ## 7.1.0 - 2019-07-31
 
 ### Changed
