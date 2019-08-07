@@ -5,10 +5,11 @@ import DayPicker, { DateUtils, PropTypes as DayPickerPropTypes } from 'react-day
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
+import startOfDay from 'date-fns/start_of_day';
 
 import styles from './index.module.scss';
 
-import { validateProps, normaliseValue, roundToStartOfDay } from './utilities';
+import { validateProps, normaliseValue } from './utilities';
 
 /**
  * Thin wrapper around `react-day-picker` that renders a calendar.
@@ -69,7 +70,7 @@ export default function DatePicker(props) {
                         newSelectedDays = [day];
                     }
 
-                    onChange(map(newSelectedDays, roundToStartOfDay));
+                    onChange(map(newSelectedDays, startOfDay));
                 }}
             />
         </div>
