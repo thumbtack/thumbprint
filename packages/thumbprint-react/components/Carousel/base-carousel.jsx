@@ -19,6 +19,7 @@ class BaseCarousel extends React.Component {
              */
             prevSelectedIndex: props.selectedIndex,
             isAnimating: false,
+            isSuspensed: false,
         };
 
         this.setAnimating = this.setAnimating.bind(this);
@@ -39,13 +40,23 @@ class BaseCarousel extends React.Component {
         this.setState(
             {
                 isAnimating: true,
+                isSuspensed: false,
             },
             () => {
                 setTimeout(() => {
                     this.setState({
                         isAnimating: false,
+                        isSuspensed: true,
                         prevSelectedIndex: selectedIndex,
                     });
+
+                    // We suspend the CSS animation property for a very brief window before
+                    // re-enabling. This gap allows the component to re-render the new list
+                    // without the items "sliding" back into place. Once the new items are set up,
+                    // we re-enable the animation property ready for the next transition.
+                    setTimeout(() => {
+                        this.setState({ isSuspensed: false });
+                    }, 50);
                 }, animationDuration);
             },
         );
@@ -61,7 +72,7 @@ class BaseCarousel extends React.Component {
 
     render() {
         const { children, selectedIndex, animationDuration, visibleCount, spacing } = this.props;
-        const { isAnimating, prevSelectedIndex } = this.state;
+        const { isAnimating, isSuspensed, prevSelectedIndex } = this.state;
 
         const itemWidth = 1 / visibleCount;
 
@@ -94,8 +105,7 @@ class BaseCarousel extends React.Component {
                     className={styles.wrapper}
                     style={{
                         transform: `translateX(${translateX}%)`,
-                        transitionProperty: 'transform',
-                        transitionDuration: isAnimating && `${animationDuration}ms`,
+                        transition: isSuspensed ? 'none' : `transform ${animationDuration}ms ease`,
                         width: `calc(100% + ${spacing})`,
                     }}
                 >
@@ -167,7 +177,7 @@ BaseCarousel.propTypes = {
      */
     visibleCount: PropTypes.number,
     /**
-     * The amount space separating each item.
+     * The amount of space separating each item.
      */
     spacing: PropTypes.string,
     /**

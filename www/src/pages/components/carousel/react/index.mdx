@@ -57,9 +57,15 @@ function CarouselDemo() {
                     <ServiceCardTitle>Massage Therapy</ServiceCardTitle>
                 </ServiceCard>
             </Carousel>
-            <Button size="small" onClick={() => setSelectedIndex(selectedIndex + 1)}>
-                Next item
-            </Button>
+
+            <ButtonRow>
+                <Button size="small" onClick={() => setSelectedIndex(selectedIndex - 1)}>
+                    Prev
+                </Button>
+                <Button size="small" onClick={() => setSelectedIndex(selectedIndex + 1)}>
+                    Next
+                </Button>
+            </ButtonRow>
         </React.Fragment>
     );
 }
