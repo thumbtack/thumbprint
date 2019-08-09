@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix bug in `Carousel` where transition animation was not working.
+
 ## 8.0.0 - 2019-08-08
 
 ### Fixed
@@ -9,7 +13,6 @@
 -   [Major] Update `DatePicker` props validation to be more stringent. It now throws a JavaScript error for any provided `value`s that collide with the `disabledDays`, whether `before` or `after`. Previously only `before` was checked, and only when it was before the current day. For consumers who are not passing in erroneous input, these new checks will have no effect, but it may reveal existing bugs and so all consumers should be tested manually when upgrading.
 -   [Patch] Restore border color of focused `Radio` input.
 -   [Patch] Refactor `Carousel` component to be a SFC with Hooks.
--   [Patch] Fix bug in `Carousel` where transition animation was not working.
 
 ## 7.1.0 - 2019-07-31
 
