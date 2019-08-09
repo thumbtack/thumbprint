@@ -6,6 +6,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
   disabledDays={null}
   lastMonth={null}
   onChange={[Function]}
+  onMonthChange={[Function]}
   value="Tue Sep 16 2017 14:39:00 GMT+0100 (BST)"
 >
   <div
@@ -73,7 +74,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
       enableOutsideDays={false}
       fixedWeeks={false}
       fromMonth={null}
-      initialMonth={2019-08-09T20:56:03.411Z}
+      initialMonth={2019-08-09T21:22:05.882Z}
       labels={
         Object {
           "nextMonth": "Next Month",
@@ -142,6 +143,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
       }
       numberOfMonths={1}
       onDayClick={[Function]}
+      onMonthChange={[Function]}
       pagedNavigation={false}
       renderDay={[Function]}
       reverseMonths={false}
@@ -312,7 +314,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
             firstDayOfWeek={0}
             fixedWeeks={false}
             fromMonth={null}
-            initialMonth={2019-08-09T20:56:03.411Z}
+            initialMonth={2019-08-09T21:22:05.882Z}
             key="0"
             labels={
               Object {
@@ -383,6 +385,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
             numberOfMonths={1}
             onDayClick={[Function]}
             onDayKeyDown={[Function]}
+            onMonthChange={[Function]}
             pagedNavigation={false}
             renderDay={[Function]}
             reverseMonths={false}
