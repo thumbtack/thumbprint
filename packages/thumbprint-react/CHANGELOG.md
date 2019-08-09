@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
+
+### Removed
+
+-   [Major] Remove the `initialMonth` prop from `DatePicker` in favour of `month`.
+
+### Changed
+
+-   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
+
 ## 8.0.1 - 2019-08-08
 
 ### Fixed
