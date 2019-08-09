@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix bug in `Carousel` where transition animation was not working.
+
 ## 8.0.0 - 2019-08-08
 
 ### Fixed
