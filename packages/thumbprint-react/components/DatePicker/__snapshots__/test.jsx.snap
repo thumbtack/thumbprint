@@ -74,7 +74,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
       enableOutsideDays={false}
       fixedWeeks={false}
       fromMonth={null}
-      initialMonth={2019-08-09T21:22:05.882Z}
+      initialMonth={2017-09-16T13:39:00.000Z}
       labels={
         Object {
           "nextMonth": "Next Month",
@@ -314,7 +314,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
             firstDayOfWeek={0}
             fixedWeeks={false}
             fromMonth={null}
-            initialMonth={2019-08-09T21:22:05.882Z}
+            initialMonth={2017-09-16T13:39:00.000Z}
             key="0"
             labels={
               Object {

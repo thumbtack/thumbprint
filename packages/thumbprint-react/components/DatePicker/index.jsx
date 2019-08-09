@@ -48,6 +48,7 @@ export default function DatePicker(props) {
                 fromMonth={get(disabledDays, 'before', null)}
                 toMonth={lastMonth}
                 month={month || selectedDays[0]}
+                initialMonth={month || selectedDays[0]}
                 selectedDays={selectedDays}
                 onMonthChange={onMonthChange}
                 modifiers={modifiers}
