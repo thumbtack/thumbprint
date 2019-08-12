@@ -10,6 +10,10 @@
 
 -   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
 
+### Fixed
+
+-   [Patch] Update `react-day-picker` dependency to 7.3.2. (#150)
+
 ## 8.0.1 - 2019-08-08
 
 ### Fixed
