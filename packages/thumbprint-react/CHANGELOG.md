@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
+
+### Changed
+
+-   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
+
 ### Fixed
 
 -   [Patch] Update `react-day-picker` dependency to 7.3.2. (#150)

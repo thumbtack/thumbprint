@@ -7,6 +7,7 @@ test('renders a basic date picker with past date selection allowed', () => {
         <DatePicker
             disabledDays={null}
             onChange={() => {}}
+            onMonthChange={() => {}}
             value="Tue Sep 16 2017 14:39:00 GMT+0100 (BST)"
         />,
     );
@@ -16,10 +17,13 @@ test('renders a basic date picker with past date selection allowed', () => {
 describe('calls `onChange` with the correct date', () => {
     test('single date selection', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
         // This test will break in 2057. ¯\_(ツ)_/¯
         const value = 'Tue Sep 3 2057 14:39:00 GMT+0100 (BST)';
 
-        const wrapper = mount(<DatePicker onChange={onChange} value={value} />);
+        const wrapper = mount(
+            <DatePicker onChange={onChange} onMonthChange={onMonthChange} value={value} />,
+        );
 
         const allDays = wrapper.find('.DayPicker-Day');
 
@@ -39,6 +43,8 @@ describe('calls `onChange` with the correct date', () => {
     });
 
     test('multi date selection', () => {
+        const onMonthChange = jest.fn();
+
         // Wrapper component to allow us to write integration tests for a controlled component.
         //
         // Don't need to write proptypes for a one-off wrapper used inside a test
@@ -58,6 +64,7 @@ describe('calls `onChange` with the correct date', () => {
                         onChange(newValue);
                         setValue(newValue);
                     }}
+                    onMonthChange={onMonthChange}
                     allowMultiSelection
                 />
             );
@@ -94,11 +101,14 @@ describe('user tries to unselect a date that was already selected', () => {
         // Note: This behavior is inconsistent with `allowMultiSelection`. The two should probably
         // be consistent, but, until then, this test enforces the odd behavior.
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         // The 3rd of September is already chosen.
         const firstDate = new Date('2057-09-03T07:00:00.000Z');
 
-        const wrapper = mount(<DatePicker onChange={onChange} value={firstDate} />);
+        const wrapper = mount(
+            <DatePicker onChange={onChange} onMonthChange={onMonthChange} value={firstDate} />,
+        );
 
         const allDays = wrapper.find('.DayPicker-Day');
 
@@ -112,12 +122,18 @@ describe('user tries to unselect a date that was already selected', () => {
 
     test('multi date selection allows them to unselect the date', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         // The 3rd of September is already chosen.
         const firstDate = new Date('2057-09-03T07:00:00.000Z');
 
         const wrapper = mount(
-            <DatePicker onChange={onChange} value={firstDate} allowMultiSelection />,
+            <DatePicker
+                onChange={onChange}
+                value={firstDate}
+                onMonthChange={onMonthChange}
+                allowMultiSelection
+            />,
         );
 
         const allDays = wrapper.find('.DayPicker-Day');
@@ -134,13 +150,19 @@ describe('user tries to unselect a date that was already selected', () => {
 describe('user tries to click on a disabled date', () => {
     test('single date selection', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         const selectedDate = new Date('2057-09-03T07:00:00.000Z');
         // The 10th is disabled.
         const disabledDate = new Date('2057-09-10T07:00:00.000Z');
 
         const wrapper = mount(
-            <DatePicker onChange={onChange} value={selectedDate} disabledDays={disabledDate} />,
+            <DatePicker
+                onChange={onChange}
+                onMonthChange={onMonthChange}
+                value={selectedDate}
+                disabledDays={disabledDate}
+            />,
         );
 
         const allDays = wrapper.find('.DayPicker-Day');
@@ -154,6 +176,7 @@ describe('user tries to click on a disabled date', () => {
 
     test('multi date selection', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         const selectedDate = new Date('2057-09-03T07:00:00.000Z');
         // The 10th is disabled.
@@ -162,6 +185,7 @@ describe('user tries to click on a disabled date', () => {
         const wrapper = mount(
             <DatePicker
                 onChange={onChange}
+                onMonthChange={onMonthChange}
                 value={selectedDate}
                 disabledDays={disabledDate}
                 allowMultiSelection
@@ -181,13 +205,19 @@ describe('user tries to click on a disabled date', () => {
 describe('user is able to select a date in the past if disabled days is disabled', () => {
     test('single date selection', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         // We use the year 2000 since these must be days from the past.
         const selectedDate = new Date('2000-09-03T07:00:00.000Z');
         const dateFromPrevMonth = new Date('2000-08-10T07:00:00.000Z');
 
         const wrapper = mount(
-            <DatePicker onChange={onChange} value={selectedDate} disabledDays={null} />,
+            <DatePicker
+                onChange={onChange}
+                onMonthChange={onMonthChange}
+                value={selectedDate}
+                disabledDays={null}
+            />,
         );
 
         // Go back a month.
@@ -206,6 +236,7 @@ describe('user is able to select a date in the past if disabled days is disabled
 
     test('multi date selection', () => {
         const onChange = jest.fn();
+        const onMonthChange = jest.fn();
 
         // We use the year 2000 since these must be days from the past.
         const selectedDate = new Date('2000-09-03T07:00:00.000Z');
@@ -214,6 +245,7 @@ describe('user is able to select a date in the past if disabled days is disabled
         const wrapper = mount(
             <DatePicker
                 onChange={onChange}
+                onMonthChange={onMonthChange}
                 value={selectedDate}
                 disabledDays={null}
                 allowMultiSelection
@@ -275,6 +307,7 @@ describe('`onMonthChange` callback should be called on month change', () => {
 describe('applying themes to DatePicker day cells', () => {
     const modifierPrefix = '.DayPicker-Day--';
     const onChange = () => {};
+    const onMonthChange = jest.fn();
     const year = 2057;
     const month = 8;
     const day = 3;
@@ -295,6 +328,7 @@ describe('applying themes to DatePicker day cells', () => {
             <DatePicker
                 value={selectedDate}
                 onChange={onChange}
+                onMonthChange={onMonthChange}
                 daysThemeDotIndicator={calDate =>
                     areDatesEqual(calDate, jsDate1) || areDatesEqual(calDate, jsDate2)
                 }
@@ -319,6 +353,7 @@ describe('applying themes to DatePicker day cells', () => {
             <DatePicker
                 value={selectedDate}
                 onChange={onChange}
+                onMonthChange={onMonthChange}
                 daysThemeStrikeout={calDate =>
                     areDatesEqual(calDate, jsDate1) ||
                     areDatesEqual(calDate, jsDate2) ||

@@ -6,6 +6,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
   disabledDays={null}
   lastMonth={null}
   onChange={[Function]}
+  onMonthChange={[Function]}
   value="Tue Sep 16 2017 14:39:00 GMT+0100 (BST)"
 >
   <div
@@ -112,6 +113,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
         }
       }
       modifiers={Object {}}
+      month={2017-09-16T13:39:00.000Z}
       navbarElement={
         <Navbar
           classNames={
@@ -154,6 +156,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
       }
       numberOfMonths={1}
       onDayClick={[Function]}
+      onMonthChange={[Function]}
       pagedNavigation={false}
       renderDay={[Function]}
       renderWeek={[Function]}
@@ -415,6 +418,7 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
               numberOfMonths={1}
               onDayClick={[Function]}
               onDayKeyDown={[Function]}
+              onMonthChange={[Function]}
               pagedNavigation={false}
               renderDay={[Function]}
               renderWeek={[Function]}
