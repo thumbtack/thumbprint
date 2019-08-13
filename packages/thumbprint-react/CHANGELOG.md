@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.0.0 - 2019-08-13
+
 ### Added
 
 -   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
