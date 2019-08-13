@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Refactor `BaseCarousel` to be a SFC with Hooks.
+
 ## 9.0.0 - 2019-08-13
 
 ### Added
