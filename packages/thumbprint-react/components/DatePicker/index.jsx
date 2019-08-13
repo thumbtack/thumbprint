@@ -21,6 +21,7 @@ export default function DatePicker(props) {
         value,
         onChange,
         disabledDays,
+        month,
         lastMonth,
         allowMultiSelection,
         onMonthChange,
@@ -46,7 +47,8 @@ export default function DatePicker(props) {
                 disabledDays={disabledDays}
                 fromMonth={get(disabledDays, 'before', null)}
                 toMonth={lastMonth}
-                initialMonth={selectedDays[0]}
+                month={month || selectedDays[0]}
+                initialMonth={month || selectedDays[0]}
                 selectedDays={selectedDays}
                 onMonthChange={onMonthChange}
                 modifiers={modifiers}
@@ -79,10 +81,10 @@ export default function DatePicker(props) {
 
 DatePicker.defaultProps = {
     value: [],
+    month: undefined,
     allowMultiSelection: false,
     disabledDays: { before: new Date() },
     lastMonth: null,
-    onMonthChange: undefined,
     daysThemeDotIndicator: undefined,
     daysThemeStrikeout: undefined,
 };
@@ -99,10 +101,22 @@ DatePicker.propTypes = {
         PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string])),
     ]),
     /**
-     * Callback that is triggered when the user selects a date. The function receives an array of
+     * Date object representing the month that is currently displayed by the calendar. If omitted
+     * it will default to the first date in the `value` prop. You should update it in response to
+     * the `onMonthChange` prop.
+     */
+    month: PropTypes.instanceOf(Date),
+    /**
+     * Callback that is triggered when th user selects a date. The function receives an array of
      * a JavaScript Date objects for each of the currently selected dates.
      */
     onChange: PropTypes.func.isRequired,
+    /**
+     * Callback that is triggered when the user navigates to a different month using the navigation
+     * buttons or keyboard. The function receives a single JavaScript `Date` object indicating
+     * the new on-screen month.
+     */
+    onMonthChange: PropTypes.func.isRequired,
     /**
      * Boolean that determines whether or not the user is allowed to select more than one date at
      * a time. Defaults to `false`.
@@ -119,12 +133,6 @@ DatePicker.propTypes = {
      * interact with the days after it.
      */
     lastMonth: PropTypes.instanceOf(Date),
-    /**
-     * Callback that is triggered when the user navigates to a different month using the navigation
-     * buttons or keyboard. The function receives a single JavaScript `Date` object indicating
-     * the new on-screen month.
-     */
-    onMonthChange: PropTypes.func,
     /**
      * Applies a blue dot indicator below the numeric day in the calendar's day cell if the
      * function returns `true` for a given JavaScript `Date`.

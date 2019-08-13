@@ -6,6 +6,20 @@
 
 -   [Patch] Refactor `BaseCarousel` to be a SFC with Hooks.
 
+## 9.0.0 - 2019-08-13
+
+### Added
+
+-   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
+
+### Changed
+
+-   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
+
+### Fixed
+
+-   [Patch] Update `react-day-picker` dependency to 7.3.2. (#150)
+
 ## 8.0.1 - 2019-08-08
 
 ### Fixed
