@@ -22,7 +22,7 @@ const ReactCodeBlock = props => {
             <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
 
             <div className={classes.codeContainer}>
-                <LiveEditor className={classes.code} />
+                <LiveEditor className={classes.code} ignoreTabKey />
             </div>
 
             <pre>

@@ -18,7 +18,7 @@ The URL for each page in our documentation maps exactly to a file in [`src/pages
 
 ### Working with MDX files
 
-[MDX](https://mdxjs.com/) is a file format that allows you to render JSX within Markdown documents. Thumbprint uses [`gatsby-mdx`](https://github.com/ChristopherBiscardi/gatsby-mdx) to create the pages.
+[MDX](https://mdxjs.com/) is a file format that allows you to render JSX within Markdown documents. Thumbprint uses [`gatsby-plugin-mdx`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx) to create the pages.
 
 Each MDX file starts with front matter. Here's an example from our button component documentation:
 

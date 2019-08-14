@@ -104,6 +104,7 @@ const Checkbox = ({
     id,
     isChecked,
     isDisabled,
+    isRequired,
     isIndeterminate,
     labelPadding,
     name,
@@ -136,6 +137,7 @@ const Checkbox = ({
                 checked={isChecked}
                 onChange={e => onChange(e.target.checked, id)}
                 disabled={isDisabled}
+                isRequired={isRequired}
             />
 
             <div
@@ -193,6 +195,10 @@ Checkbox.propTypes = {
      */
     id: PropTypes.string,
     /**
+     * Adds the `required` HTML attribute.
+     */
+    isRequired: PropTypes.bool,
+    /**
      * Checkboxes on a page with the same name will be grouped together when sent to the server.
      * The browser will only send the value of checkboxes that are checked.
      */
@@ -228,6 +234,7 @@ Checkbox.defaultProps = {
     children: null,
     id: null,
     isChecked: false,
+    isRequired: false,
     hasError: false,
     name: null,
     labelPadding: '14px 0',

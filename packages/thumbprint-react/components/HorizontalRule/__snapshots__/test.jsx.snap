@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders default horizontal rule 1`] = `
+<HorizontalRule
+  color="gray"
+  lineStyle="solid"
+>
+  <hr
+    className="root"
+  />
+</HorizontalRule>
+`;
+
+exports[`renders dotted horizontal rule 1`] = `
+<HorizontalRule
+  color="gray"
+  lineStyle="dashed"
+>
+  <hr
+    className="root dashed"
+  />
+</HorizontalRule>
+`;
+
+exports[`renders gray-300 horizontal rule 1`] = `
+<HorizontalRule
+  color="gray-300"
+  lineStyle="solid"
+>
+  <hr
+    className="root gray300"
+  />
+</HorizontalRule>
+`;

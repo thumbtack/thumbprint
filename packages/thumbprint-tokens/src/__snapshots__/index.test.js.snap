@@ -1,5 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`outputted Android matches snapshot 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<resources>
+    <color name=\\"tp_blue_100\\">#eaf6fa</color>
+    <color name=\\"tp_blue_200\\">#b3ebff</color>
+    <color name=\\"tp_blue_300\\">#79d2f2</color>
+    <color name=\\"tp_blue\\">#009fd9</color>
+    <color name=\\"tp_blue_500\\">#007fad</color>
+    <color name=\\"tp_blue_600\\">#005a7a</color>
+    <color name=\\"tp_indigo_100\\">#e8f1fd</color>
+    <color name=\\"tp_indigo_200\\">#cce1ff</color>
+    <color name=\\"tp_indigo_300\\">#96c2ff</color>
+    <color name=\\"tp_indigo\\">#5968e2</color>
+    <color name=\\"tp_indigo_500\\">#4f54b3</color>
+    <color name=\\"tp_indigo_600\\">#383c80</color>
+    <color name=\\"tp_purple_100\\">#f5efff</color>
+    <color name=\\"tp_purple_200\\">#dfccff</color>
+    <color name=\\"tp_purple_300\\">#d3baff</color>
+    <color name=\\"tp_purple\\">#a97ff0</color>
+    <color name=\\"tp_purple_500\\">#8a5ed6</color>
+    <color name=\\"tp_purple_600\\">#502095</color>
+    <color name=\\"tp_green_100\\">#e1fdf3</color>
+    <color name=\\"tp_green_200\\">#c6f7da</color>
+    <color name=\\"tp_green_300\\">#73e4a2</color>
+    <color name=\\"tp_green\\">#2db783</color>
+    <color name=\\"tp_green_500\\">#109e78</color>
+    <color name=\\"tp_green_600\\">#0f6648</color>
+    <color name=\\"tp_yellow_100\\">#fdf7e7</color>
+    <color name=\\"tp_yellow_200\\">#ffebb3</color>
+    <color name=\\"tp_yellow_300\\">#ffdd80</color>
+    <color name=\\"tp_yellow\\">#febe14</color>
+    <color name=\\"tp_yellow_500\\">#d48300</color>
+    <color name=\\"tp_yellow_600\\">#8a5500</color>
+    <color name=\\"tp_red_100\\">#ffeff0</color>
+    <color name=\\"tp_red_200\\">#ffd9d9</color>
+    <color name=\\"tp_red_300\\">#ffb0b0</color>
+    <color name=\\"tp_red\\">#ff5a5f</color>
+    <color name=\\"tp_red_500\\">#cc3553</color>
+    <color name=\\"tp_red_600\\">#76012c</color>
+    <color name=\\"tp_black_300\\">#676d73</color>
+    <color name=\\"tp_black\\">#2f3033</color>
+    <color name=\\"tp_gray_200\\">#fafafa</color>
+    <color name=\\"tp_gray_300\\">#e9eced</color>
+    <color name=\\"tp_gray\\">#d3d4d5</color>
+    <color name=\\"tp_white\\">#ffffff</color>
+    <dimen name=\\"tp_space_1\\">4dp</dimen>
+    <dimen name=\\"tp_space_2\\">8dp</dimen>
+    <dimen name=\\"tp_space_3\\">16dp</dimen>
+    <dimen name=\\"tp_space_4\\">24dp</dimen>
+    <dimen name=\\"tp_space_5\\">32dp</dimen>
+    <dimen name=\\"tp_space_6\\">48dp</dimen>
+</resources>
+"
+`;
+
 exports[`outputted CommonJS matches snapshot 1`] = `
 "exports.tpBorderRadiusBase = \\"4px\\";
 exports.tpBorderRadiusBig = \\"6px\\";
