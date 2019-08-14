@@ -2,6 +2,46 @@
 
 ## Unreleased
 
+## 9.0.1 - 2019-08-13
+
+### Changed
+
+-   [Patch] Refactor `BaseCarousel` to be a SFC with Hooks.
+
+## 9.0.0 - 2019-08-13
+
+### Added
+
+-   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
+
+### Changed
+
+-   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
+
+### Fixed
+
+-   [Patch] Update `react-day-picker` dependency to 7.3.2. (#150)
+
+## 8.0.1 - 2019-08-08
+
+### Fixed
+
+-   [Patch] Fix bug in `Carousel` where transition animation was not working.
+
+## 8.0.0 - 2019-08-08
+
+### Fixed
+
+-   [Major] Update `DatePicker` props validation to be more stringent. It now throws a JavaScript error for any provided `value`s that collide with the `disabledDays`, whether `before` or `after`. Previously only `before` was checked, and only when it was before the current day. For consumers who are not passing in erroneous input, these new checks will have no effect, but it may reveal existing bugs and so all consumers should be tested manually when upgrading.
+-   [Patch] Restore border color of focused `Radio` input.
+-   [Patch] Refactor `Carousel` component to be a SFC with Hooks.
+
+## 7.1.0 - 2019-07-31
+
+### Changed
+
+-   [Minor] Add new `HorizontalRule` react component.
+
 ### Fixed
 
 -   [Patch] Fix border colour of focused `Select` in an error state.

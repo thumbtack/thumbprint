@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+{{#each this as |section|}}
+{{#each section.tokens as |token|}}
+{{#if token.value.android}}
+{{#if token.description.android}}
+    <!-- {{token.description.android}} -->
+{{/if}}
+{{#if token.deprecated}}
+    <!-- Deprecated -->
+{{/if}}
+    <{{getTag token.type}} name="{{formatId section token}}">{{{formatValue token}}}</{{getTag token.type}}>
+{{/if}}
+{{/each}}
+{{/each}}
+</resources>

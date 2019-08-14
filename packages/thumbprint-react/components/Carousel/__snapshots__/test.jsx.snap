@@ -39,8 +39,7 @@ exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
               style={
                 Object {
                   "transform": "translateX(-29.999999999999982%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -97,6 +96,134 @@ exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
                   Object {
                     "order": 1,
                     "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
                     "width": "100%",
                   }
                 }
@@ -153,8 +280,7 @@ exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
               style={
                 Object {
                   "transform": "translateX(-19.999999999999996%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -211,6 +337,134 @@ exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
                   Object {
                     "order": 0,
                     "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
                     "width": "100%",
                   }
                 }
@@ -267,8 +521,7 @@ exports[`\`spacing\` no spacing 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -333,6 +586,134 @@ exports[`\`spacing\` no spacing 1`] = `
                   4
                 </div>
               </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
             </ul>
           </div>
         </BaseCarousel>
@@ -381,8 +762,7 @@ exports[`\`spacing\` spacing in ems 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 2em)",
                 }
               }
@@ -447,6 +827,134 @@ exports[`\`spacing\` spacing in ems 1`] = `
                   4
                 </div>
               </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "2em",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
             </ul>
           </div>
         </BaseCarousel>
@@ -495,8 +1003,7 @@ exports[`\`spacing\` spacing in pixels 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 10px)",
                 }
               }
@@ -561,6 +1068,134 @@ exports[`\`spacing\` spacing in pixels 1`] = `
                   4
                 </div>
               </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "10px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
             </ul>
           </div>
         </BaseCarousel>
@@ -609,8 +1244,7 @@ exports[`\`visibleCount\` one and a half visible items 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -667,6 +1301,134 @@ exports[`\`visibleCount\` one and a half visible items 1`] = `
                   Object {
                     "order": 3,
                     "paddingRight": "0px",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "66.66666666666666%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
                     "width": "66.66666666666666%",
                   }
                 }
@@ -723,8 +1485,7 @@ exports[`\`visibleCount\` one visible item 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -781,6 +1542,134 @@ exports[`\`visibleCount\` one visible item 1`] = `
                   Object {
                     "order": 3,
                     "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
                     "width": "100%",
                   }
                 }
@@ -837,8 +1726,7 @@ exports[`\`visibleCount\` three visible items 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -903,6 +1791,134 @@ exports[`\`visibleCount\` three visible items 1`] = `
                   4
                 </div>
               </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 4,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="5/.1"
+                style={
+                  Object {
+                    "order": 5,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.2"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="7/.3"
+                style={
+                  Object {
+                    "order": 7,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-800%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
+              <li
+                className="item"
+                key="4/.0"
+                style={
+                  Object {
+                    "order": 8,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  1
+                </div>
+              </li>
+              <li
+                className="item"
+                key="6/.1"
+                style={
+                  Object {
+                    "order": 10,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  2
+                </div>
+              </li>
+              <li
+                className="item"
+                key="8/.2"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  3
+                </div>
+              </li>
+              <li
+                className="item"
+                key="10/.3"
+                style={
+                  Object {
+                    "order": 14,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-400%)",
+                    "width": "33.33333333333333%",
+                  }
+                }
+              >
+                <div>
+                  4
+                </div>
+              </li>
             </ul>
           </div>
         </BaseCarousel>
@@ -951,8 +1967,7 @@ exports[`renders a carousel 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -964,6 +1979,34 @@ exports[`renders a carousel 1`] = `
                   Object {
                     "order": 0,
                     "paddingRight": "0px",
+                    "width": "100%",
+                  }
+                }
+              >
+                gooose
+              </li>
+              <li
+                className="item"
+                key="6/.0"
+                style={
+                  Object {
+                    "order": 6,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-1200%)",
+                    "width": "100%",
+                  }
+                }
+              >
+                gooose
+              </li>
+              <li
+                className="item"
+                key="6/.0"
+                style={
+                  Object {
+                    "order": 12,
+                    "paddingRight": "0px",
+                    "transform": "translateX(-600%)",
                     "width": "100%",
                   }
                 }
