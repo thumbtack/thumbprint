@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.0.2 - 2019-08-19
+
 ### Changed
 
 -   [Patch] Fix a bug in `BaseCarousel` caused by previous refactor. (#427)
