@@ -1,17 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import rotate from 'rotate-array';
 import range from 'lodash/range';
 import styles from './base-carousel.module.scss';
-
-// Utility function from https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state
-function usePrevious(value) {
-    const ref = useRef();
-    useEffect(() => {
-        ref.current = value;
-    });
-    return ref.current;
-}
 
 export default function BaseCarousel({
     children,
@@ -26,38 +17,35 @@ export default function BaseCarousel({
     const [isAnimating, setIsAnimating] = useState(false);
     const [isSuspensed, setIsSuspensed] = useState(false);
 
-    const prevSelectedIndexProp = usePrevious(selectedIndex);
-
-    function setAnimating() {
-        setIsAnimating(true);
-        setIsSuspensed(false);
-
-        setTimeout(() => {
-            setIsAnimating(false);
-            setIsSuspensed(true);
-            setPrevSelectedIndex(selectedIndex);
-
-            // We suspend the CSS animation property for a very brief window before
-            // re-enabling. This gap allows the component to re-render the new list
-            // without the items "sliding" back into place. Once the new items are set up,
-            // we re-enable the animation property ready for the next transition.
-            setTimeout(() => {
-                setIsSuspensed(false);
-            }, 50);
-        }, animationDuration);
-    }
-
     function reorder(items) {
         // The `prevSelectedIndex` doesn't update until the animation is done, so we want to
         // use that ordering until the animation is complete.
         return rotate(items, -1 * Math.floor(prevSelectedIndex));
     }
 
-    useEffect(() => {
-        if (selectedIndex !== prevSelectedIndexProp) {
-            setAnimating();
-        }
-    });
+    useEffect(
+        () => {
+            if (selectedIndex !== prevSelectedIndex) {
+                setIsAnimating(true);
+                setIsSuspensed(false);
+
+                setTimeout(() => {
+                    setIsAnimating(false);
+                    setIsSuspensed(true);
+                    setPrevSelectedIndex(selectedIndex);
+
+                    // We suspend the CSS animation property for a very brief window before
+                    // re-enabling. This gap allows the component to re-render the new list
+                    // without the items "sliding" back into place. Once the new items are set up,
+                    // we re-enable the animation property ready for the next transition.
+                    setTimeout(() => {
+                        setIsSuspensed(false);
+                    }, 50);
+                }, animationDuration);
+            }
+        },
+        [animationDuration, prevSelectedIndex, selectedIndex],
+    );
 
     const itemWidth = 1 / visibleCount;
 
@@ -74,8 +62,10 @@ export default function BaseCarousel({
     // transition is occuring.
     const translateX = itemWidth * (adjustedIndex + fractionalIndexOffset) * -100;
 
+    const numChildren = React.Children.count(children);
+
     // An array of the flex order of the items.
-    const orderedChildren = reorder(range(children.length));
+    const childOrders = reorder(range(numChildren));
 
     // Sometimes we need to duplicate the children so that the carousel can display properly.
     // This is especially needed when animating. Imagine that a 4-item card with 3 visible
@@ -101,7 +91,7 @@ export default function BaseCarousel({
                         style={{
                             width: `${itemWidth * 100}%`,
                             paddingRight: spacing,
-                            order: orderedChildren[i],
+                            order: childOrders[i],
                         }}
                     >
                         {child}
@@ -110,15 +100,15 @@ export default function BaseCarousel({
 
                 {/* Temporary elements that appear to the left. */}
                 {shouldRenderDuplicateChildren &&
-                    React.Children.map(children, (child, i) => (
+                    React.Children.map(children, (child, index) => (
                         <li
-                            key={orderedChildren.length + i}
+                            key={numChildren + index}
                             className={styles.item}
                             style={{
                                 width: `${itemWidth * 100}%`,
                                 paddingRight: spacing,
-                                order: orderedChildren[i] + orderedChildren.length,
-                                transform: `translateX(${children.length * -200}%)`,
+                                order: childOrders[index] + numChildren,
+                                transform: `translateX(${numChildren * -200}%)`,
                             }}
                         >
                             {child}
@@ -127,15 +117,15 @@ export default function BaseCarousel({
 
                 {/* Temporary elements that appear to the right. */}
                 {shouldRenderDuplicateChildren &&
-                    React.Children.map(children, (child, i) => (
+                    React.Children.map(children, (child, index) => (
                         <li
-                            key={orderedChildren.length + i * 2}
+                            key={numChildren + index * 2}
                             className={styles.item}
                             style={{
                                 width: `${itemWidth * 100}%`,
                                 paddingRight: spacing,
-                                order: (orderedChildren[i] + orderedChildren.length) * 2,
-                                transform: `translateX(${children.length * -100}%)`,
+                                order: (childOrders[index] + numChildren) * 2,
+                                transform: `translateX(${numChildren * -100}%)`,
                             }}
                         >
                             {child}
