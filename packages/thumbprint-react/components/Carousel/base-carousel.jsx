@@ -11,6 +11,8 @@ export default function BaseCarousel({
     visibleCount,
     spacing,
 }) {
+    // When animating, `prevSelectedIndex` is the value of `selectedIndex` before the
+    // animation began. Once the animation is complete, it becomes the same as `selectedIndex`.
     const [prevSelectedIndex, setPrevSelectedIndex] = useState(selectedIndex);
     const [isAnimating, setIsAnimating] = useState(false);
     const [isSuspensed, setIsSuspensed] = useState(false);
