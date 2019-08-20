@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Minor] Add `forceSizes` prop to `Image` to manually supply the `sizes` attribute. (#426)
+-   [Minor] Add `disableLazyLoading` prop to `Image` to disable the default lazy-loading behavior. (#426)
+
 ## 9.0.2 - 2019-08-19
 
 ### Changed

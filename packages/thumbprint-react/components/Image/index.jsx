@@ -30,6 +30,7 @@ const Image = forwardRef((props, outerRef) => {
         alt,
         className,
         forceSizes,
+        disableLazyLoading,
         ...rest
     } = props;
 
@@ -41,18 +42,15 @@ const Image = forwardRef((props, outerRef) => {
     // Sizes
     // --------------------------------------------------------------------------------------------
 
-    // Used by srcSet to determine which image in the list will be requested. If `forceSizes` is
-    // not true, this value has to be calculated client-side because we don't know the viewport
-    // width.
+    // Used by srcSet to determine which image in the list will be requested. This value has to be
+    // calculated client-side because we don't know the viewport width.
 
-    function getSizes() {
-        if (forceSizes) {
-            return forceSizes;
-        }
-        return containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
-    }
+    const computeSizes = () =>
+        containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
-    const sizes = getSizes();
+    // If `forceSizes` is supplied use that value, otherwise use the computed width.
+
+    const sizes = forceSizes || computeSizes();
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -69,7 +67,7 @@ const Image = forwardRef((props, outerRef) => {
 
     // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
     // load the image.
-    const [inViewRef, shouldLoadImage] = useInView({
+    const [inViewRef, isInView] = useInView({
         root,
         rootMargin: '100px',
         triggerOnce: true,
@@ -85,6 +83,9 @@ const Image = forwardRef((props, outerRef) => {
             setBrowserSupportIntersectionObserver(true);
         });
     }
+
+    // If `disableLazyLoading` is true, bypass lazy loading and load the image.
+    const shouldLoadImage = isInView || disableLazyLoading;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
@@ -270,12 +271,13 @@ Image.propTypes = {
      */
     containerAspectRatio: PropTypes.number,
     /**
-     * Overrides the default calculation of the "sizes" attribute. This should only be used
-     * if the consumer is confident of the rendered size of the image.
+     * Overrides the default calculation of the `sizes` attribute. Generally only useful for
+     * images that are server-side rendered. See https://mzl.la/2Hh6neO for allowable values.
      */
     forceSizes: PropTypes.string,
     /**
-     * Disables lazyloading.
+     * Disables default lazy-loading behavior. Used in rare situations where images that appear
+     * above the fold need to load instantly or are server-side rendered.
      */
     disableLazyLoading: PropTypes.bool,
     /**
@@ -296,6 +298,7 @@ Image.defaultProps = {
     height: undefined,
     containerAspectRatio: undefined,
     forceSizes: undefined,
+    disableLazyLoading: false,
     objectFit: 'cover',
     objectPosition: 'center',
 };
