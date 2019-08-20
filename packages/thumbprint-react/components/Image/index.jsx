@@ -29,6 +29,7 @@ const Image = forwardRef((props, outerRef) => {
         objectPosition,
         alt,
         className,
+        forceSizes,
         ...rest
     } = props;
 
@@ -40,11 +41,18 @@ const Image = forwardRef((props, outerRef) => {
     // Sizes
     // --------------------------------------------------------------------------------------------
 
-    // Used by srcSet to determine which image in the list will be requested. This value has to be
-    // calculated client-side because we don't know the viewport width.
+    // Used by srcSet to determine which image in the list will be requested. If `forceSizes` is
+    // not true, this value has to be calculated client-side because we don't know the viewport
+    // width.
 
-    const sizes =
-        containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
+    function getSizes() {
+        if (forceSizes) {
+            return forceSizes;
+        }
+        return containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
+    }
+
+    const sizes = getSizes();
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -262,6 +270,15 @@ Image.propTypes = {
      */
     containerAspectRatio: PropTypes.number,
     /**
+     * Overrides the default calculation of the "sizes" attribute. This should only be used
+     * if the consumer is confident of the rendered size of the image.
+     */
+    forceSizes: PropTypes.string,
+    /**
+     * Disables lazyloading.
+     */
+    disableLazyLoading: PropTypes.bool,
+    /**
      * Provides control over how the image should be resized to fit the container. This controls the
      * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
      */
@@ -278,6 +295,7 @@ Image.defaultProps = {
     alt: '',
     height: undefined,
     containerAspectRatio: undefined,
+    forceSizes: undefined,
     objectFit: 'cover',
     objectPosition: 'center',
 };
