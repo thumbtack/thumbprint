@@ -30,17 +30,25 @@ For best results, change the version number to the [latest version of the packag
 
 ## Use in SCSS
 
-This is required if using breakpoints or component mixins in your SCSS.
+This is required if using breakpoints or component mixins in your SCSS:
 
 ```scss
 @import '[node_modules path]/@thumbtack/thumbprint-scss/mixins
 ```
 
-For projects that want to compile Thumbprint CSS components along with other SCSS files, include the CSS file.
+For projects that want to compile Thumbprint CSS components along with other SCSS files, include this CSS file:
 
 ```scss
 @import '[node_modules path]/@thumbtack/thumbprint-scss/components
 ```
+
+You can import a single component (`button.css`, for example) with:
+
+```scss
+@import '[node_modules path]/@thumbtack/thumbprint-scss/button
+```
+
+> **Tip:** You can use Sass's `includePaths` or [`node-sass-tilde-importer`](https://www.npmjs.com/package/node-sass-tilde-importer) if you don't want to include `[node_modules path]/` in the imports.
 
 ## Use in JavaScript
 

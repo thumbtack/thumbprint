@@ -1,76 +1,50 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Swipeable from 'react-swipeable';
 import BaseCarousel from './base-carousel.jsx';
 
-class Carousel extends React.Component {
-    constructor(props) {
-        super(props);
+export default function Carousel({
+    children,
+    spacing,
+    visibleCount,
+    selectedIndex,
+    onSelectedIndexChange,
+}) {
+    const [dragIndexOffset, setDragIndexOffset] = useState(0);
+    const isDragging = dragIndexOffset !== 0;
+    const containerRef = useRef();
 
-        this.state = {
-            dragIndexOffset: 0,
-        };
-
-        this.onDrag = this.onDrag.bind(this);
-        this.onDragEnd = this.onDragEnd.bind(this);
-
-        this.containerRef = React.createRef();
-    }
-
-    onDrag(deltaX) {
-        const size = this.containerRef.current && this.containerRef.current.getBoundingClientRect();
-
-        const { visibleCount } = this.props;
+    function onDrag(deltaX) {
+        const size = containerRef.current && containerRef.current.getBoundingClientRect();
 
         // Set the `dragIndexOffset` so that the carousel can visually move before we send
         // the new index to the parent.
-        const dragIndexOffset = (deltaX / size.width) * visibleCount;
-
-        this.setState({
-            dragIndexOffset,
-        });
+        setDragIndexOffset((deltaX / size.width) * visibleCount);
     }
 
-    onDragEnd() {
-        const { selectedIndex, onSelectedIndexChange } = this.props;
-        const { dragIndexOffset } = this.state;
-
-        const newSelectedIndex = selectedIndex + dragIndexOffset;
-
-        onSelectedIndexChange(newSelectedIndex);
-
-        this.setState({
-            dragIndexOffset: 0,
-        });
+    function onDragEnd() {
+        onSelectedIndexChange(selectedIndex + dragIndexOffset);
+        setDragIndexOffset(0);
     }
 
-    render() {
-        const { children, spacing, visibleCount, selectedIndex } = this.props;
-        const { dragIndexOffset } = this.state;
-
-        const isDragging = dragIndexOffset !== 0;
-
-        return (
-            <div ref={this.containerRef}>
-                <Swipeable
-                    preventDefaultTouchmoveEvent
-                    onSwiping={(_, deltaX) => {
-                        this.onDrag(deltaX);
-                    }}
-                    onSwiped={this.onDragEnd}
+    return (
+        <div ref={containerRef}>
+            <Swipeable
+                preventDefaultTouchmoveEvent
+                onSwiping={(_, deltaX) => onDrag(deltaX)}
+                onSwiped={onDragEnd}
+            >
+                <BaseCarousel
+                    selectedIndex={selectedIndex + dragIndexOffset}
+                    visibleCount={visibleCount}
+                    spacing={spacing}
+                    animationDuration={isDragging ? 0 : undefined}
                 >
-                    <BaseCarousel
-                        selectedIndex={selectedIndex + dragIndexOffset}
-                        visibleCount={visibleCount}
-                        spacing={spacing}
-                        animationDuration={isDragging ? 0 : undefined}
-                    >
-                        {children}
-                    </BaseCarousel>
-                </Swipeable>
-            </div>
-        );
-    }
+                    {children}
+                </BaseCarousel>
+            </Swipeable>
+        </div>
+    );
 }
 
 Carousel.propTypes = {
@@ -102,5 +76,3 @@ Carousel.defaultProps = {
     visibleCount: 1,
     spacing: '0px',
 };
-
-export default Carousel;

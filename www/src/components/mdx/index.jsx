@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
-import InternalMDXRenderer from 'gatsby-mdx/mdx-renderer';
+import InternalMDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { isString } from 'lodash';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import invariant from 'invariant';

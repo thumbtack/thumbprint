@@ -22,6 +22,11 @@ it('outputted SCSS matches snapshot', () => {
     expect(output).toMatchSnapshot();
 });
 
+it('outputted Android matches snapshot', () => {
+    const output = fs.readFileSync('packages/thumbprint-tokens/dist/android/index.xml', 'utf-8');
+    expect(output).toMatchSnapshot();
+});
+
 it('outputted iOS matches snapshot', async () => {
     // The output is stored as a `zip`, but we unzip it for the purpose of this test so that we
     // can compare the token file as a string.

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
+exports[`Carousel \`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={2.3}
@@ -39,8 +39,7 @@ exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
               style={
                 Object {
                   "transform": "translateX(-29.999999999999982%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -114,7 +113,7 @@ exports[`\`selectedIndex\` supports decimal \`selectedIndex\` values 1`] = `
 </Carousel>
 `;
 
-exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
+exports[`Carousel \`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={-0.8}
@@ -153,8 +152,7 @@ exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
               style={
                 Object {
                   "transform": "translateX(-19.999999999999996%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -228,7 +226,7 @@ exports[`\`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
 </Carousel>
 `;
 
-exports[`\`spacing\` no spacing 1`] = `
+exports[`Carousel \`spacing\` no spacing 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -267,8 +265,7 @@ exports[`\`spacing\` no spacing 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -342,7 +339,7 @@ exports[`\`spacing\` no spacing 1`] = `
 </Carousel>
 `;
 
-exports[`\`spacing\` spacing in ems 1`] = `
+exports[`Carousel \`spacing\` spacing in ems 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -381,8 +378,7 @@ exports[`\`spacing\` spacing in ems 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 2em)",
                 }
               }
@@ -456,7 +452,7 @@ exports[`\`spacing\` spacing in ems 1`] = `
 </Carousel>
 `;
 
-exports[`\`spacing\` spacing in pixels 1`] = `
+exports[`Carousel \`spacing\` spacing in pixels 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -495,8 +491,7 @@ exports[`\`spacing\` spacing in pixels 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 10px)",
                 }
               }
@@ -570,7 +565,7 @@ exports[`\`spacing\` spacing in pixels 1`] = `
 </Carousel>
 `;
 
-exports[`\`visibleCount\` one and a half visible items 1`] = `
+exports[`Carousel \`visibleCount\` one and a half visible items 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -609,8 +604,7 @@ exports[`\`visibleCount\` one and a half visible items 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -684,7 +678,7 @@ exports[`\`visibleCount\` one and a half visible items 1`] = `
 </Carousel>
 `;
 
-exports[`\`visibleCount\` one visible item 1`] = `
+exports[`Carousel \`visibleCount\` one visible item 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -723,8 +717,7 @@ exports[`\`visibleCount\` one visible item 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -798,7 +791,7 @@ exports[`\`visibleCount\` one visible item 1`] = `
 </Carousel>
 `;
 
-exports[`\`visibleCount\` three visible items 1`] = `
+exports[`Carousel \`visibleCount\` three visible items 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -837,8 +830,7 @@ exports[`\`visibleCount\` three visible items 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
@@ -912,7 +904,7 @@ exports[`\`visibleCount\` three visible items 1`] = `
 </Carousel>
 `;
 
-exports[`renders a carousel 1`] = `
+exports[`Carousel renders a carousel 1`] = `
 <Carousel
   onSelectedIndexChange={[Function]}
   selectedIndex={0}
@@ -951,8 +943,7 @@ exports[`renders a carousel 1`] = `
               style={
                 Object {
                   "transform": "translateX(0%)",
-                  "transitionDuration": false,
-                  "transitionProperty": "transform",
+                  "transition": "transform 400ms ease",
                   "width": "calc(100% + 0px)",
                 }
               }
