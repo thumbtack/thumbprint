@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add shadow tokens for web.
+
+### Deprecated
+
+-   [Patch] Deprecate `shadow-card` token for web. It has been replaced by `shadow-100`, `shadow-200`, `shadow-300`, and `shadow-400`
+
 ## 8.2.0 - 2019-07-31
 
 ### Added
