@@ -277,7 +277,7 @@ Image.propTypes = {
      * Disables lazyloading and overrides the default calculation of the `sizes` attribute.
      * Primarily for use in server-side rendering. See https://mzl.la/2Hh6neO for allowable values.
      */
-    forceEarlyRender: PropTypes.string,
+    forceEarlyRender: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     /**
      * Provides control over how the image should be resized to fit the container. This controls the
      * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
