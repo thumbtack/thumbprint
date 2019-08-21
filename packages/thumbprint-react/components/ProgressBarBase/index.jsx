@@ -11,6 +11,7 @@ const ProgressBarBase = ({ width }) => (
             aria-valuenow={width}
             aria-valuemin="0"
             aria-valuemax="100"
+            aria-label="Progress bar"
         />
     </div>
 );

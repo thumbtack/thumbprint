@@ -19,6 +19,17 @@ module.exports = {
         // requires that they be defined in one file.
         'react/no-multi-comp': 'off',
 
+        // This was added in a newer version of ESLint, but we've disabled it since there are
+        // already several instances of it. We may want to turn it back on in future as prop
+        // spreading makes things harder to grep, debug, and reason about.
+        'react/jsx-props-no-spreading': 'off',
+
+        // Enforce the more explicit <React.Fragment> over <> since it's easier to grep for
+        'react/jsx-fragments': ['error', 'element'],
+
+        'react/no-array-index-key': 'off',
+        'react/prop-types': 'off',
+
         // React hooks
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
@@ -30,14 +41,24 @@ module.exports = {
                 // Disabled because rollup requires us to be explicit about the file extension.
                 // https://github.com/rollup/rollup/issues/1052#issuecomment-260065475
                 'import/extensions': 'off',
+
+                // We may want to export multiple components from a single package
+                'max-classes-per-file': 'off',
             },
         },
         {
-            files: ['www/**/*'],
+            files: ['www/**/*.jsx'],
             rules: {
                 // A lot of our internal components that power the docs don't have proper PropTypes.
                 // Uncomment this if we ever want to go back in and clean them up.
                 'react/prop-types': 'off',
+            },
+        },
+        {
+            files: 'packages/**/*test.jsx',
+            rules: {
+                // Don't enforce accessibility rules for unit tests, since no user ever sees them.
+                'jsx-a11y/control-has-associated-label': 'off',
             },
         },
         {
