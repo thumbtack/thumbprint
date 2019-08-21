@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
-import '../../prism-styles/index.scss';
+import prismTheme from './prism-theme';
+import styles from './index.module.scss';
 
 const CodeBlock = props => {
     const { language, shouldRender, theme, children } = props;
@@ -23,14 +24,16 @@ const CodeBlock = props => {
             )}
             <div className={classes.codeContainer}>
                 <Highlight
-                    code={children}
+                    {...defaultProps}
+                    code={children.trim()}
                     language={language}
-                    theme={null}
-                    className={classes.code}
-                    Prism={defaultProps.Prism}
+                    theme={prismTheme}
                 >
                     {({ className, style, tokens: codeTokens, getLineProps, getTokenProps }) => (
-                        <pre className={`${className} ${classes.code}`} style={style}>
+                        <pre
+                            className={`${className} ${styles.code} ${styles.codeHTML}`}
+                            style={style}
+                        >
                             {codeTokens.map((line, i) => (
                                 <div {...getLineProps({ line, key: i })}>
                                     {line.map((token, key) => (
