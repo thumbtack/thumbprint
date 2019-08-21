@@ -95,7 +95,7 @@ This example uses the `height` prop to "crop" the image. By default, the cropped
 
 ## Forcing early render
 
-In some cases, like server-side rendering, you want the HTML to be complete without the need for client-side javascript. The `forceEarlyRender` prop overrides the default `Image` behavior that would both calculate the `sizes` attribute and lazy load the image.
+The `Image` component behavior uses JavaScript to lazy load the image and and calculate the `sizes` attribute. While this is beneficial in most cases, it also means that the image will not start downloading until the client-side JavaScript is parsed and the image is scrolled into view. The `forceEarlyRender` prop allows developers to turn off lazy loading and the `sizes` calculation so that the image can load as soon as possible. This is useful for "above-the-fold" images with a predictable width in server-side-rendered environments.
 
 In this responsive image example `sizes` is set to `760px`, matching the expected render size, and this triggers a single request for the `768w` webp or jpeg image. See the section [Resolution switching: Different sizes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes) for allowable values.
 
