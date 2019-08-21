@@ -275,7 +275,7 @@ Image.propTypes = {
     containerAspectRatio: PropTypes.number,
     /**
      * Disables lazy-loading and overrides the default calculation of the `sizes` attribute.
-     * Primarily for important images in a server-side rendered environment that must be 
+     * Primarily for important images in a server-side rendered environment that must be
      * loaded before JavaScript is parsed and executed on the client. The value gets used
      * as the `sizes` attribute. [See allowable values](https://mzl.la/2Hh6neO).
      */
