@@ -2,9 +2,15 @@
 
 ## Unreleased
 
-### Changed
+### Added
 
 -   [Minor] Add `forceEarlyRender` prop to `Image` to disable the default lazy-loading behavior and override the `sizes` attribute. (#426)
+
+## 9.0.3 - 2019-08-21
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 9.0.2 - 2019-08-19
 
