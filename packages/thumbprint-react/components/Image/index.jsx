@@ -78,7 +78,9 @@ const Image = forwardRef((props, outerRef) => {
     );
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
-    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
+    // Bypassed if `disableLazyLoading` is true, otherwise `onLoad` doesn't fire in
+    // non-supporting browsers.
+    if (!disableLazyLoading && canUseDOM && typeof window.IntersectionObserver === 'undefined') {
         import('intersection-observer').then(() => {
             setBrowserSupportIntersectionObserver(true);
         });
