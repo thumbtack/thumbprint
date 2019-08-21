@@ -29,8 +29,7 @@ const Image = forwardRef((props, outerRef) => {
         objectPosition,
         alt,
         className,
-        forceSizes,
-        disableLazyLoading,
+        forceEarlyRender,
         ...rest
     } = props;
 
@@ -48,9 +47,9 @@ const Image = forwardRef((props, outerRef) => {
     const computeSizes = () =>
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
-    // If `forceSizes` is supplied use that value, otherwise use the computed width.
+    // If `forceEarlyRender` is supplied use that value, otherwise use the computed width.
 
-    const sizes = forceSizes || computeSizes();
+    const sizes = forceEarlyRender || computeSizes();
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -84,8 +83,8 @@ const Image = forwardRef((props, outerRef) => {
         });
     }
 
-    // If `disableLazyLoading` is true, bypass lazy loading and load the image.
-    const shouldLoadImage = isInView || disableLazyLoading;
+    // If `forceEarlyRender` is true, bypass lazy loading and load the image.
+    const shouldLoadImage = isInView || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
@@ -216,9 +215,12 @@ const Image = forwardRef((props, outerRef) => {
                     height={height}
                     alt={alt}
                     // Adds object fit values if specified and adds/removes placeholder padding.
+                    // For SSR we want this to fire instantly.
                     style={{
                         ...(shouldObjectFit ? objectFitProps.style : {}),
-                        ...(isLoaded || isError ? {} : aspectRatioBoxProps.style),
+                        ...(isLoaded || isError || forceEarlyRender
+                            ? {}
+                            : aspectRatioBoxProps.style),
                     }}
                     onLoad={() => {
                         setIsLoaded(true);
@@ -230,7 +232,8 @@ const Image = forwardRef((props, outerRef) => {
                         // Opacity to 0, prevents flash of alt text when `height` prop used
                         [styles.imageStart]: true,
                         // Opacity to 1 to reveal image or show alt text on error
-                        [styles.imageEnd]: isLoaded || isError,
+                        // For SSR we want this to fire instantly.
+                        [styles.imageEnd]: isLoaded || isError || forceEarlyRender,
                     })}
                 />
             </picture>
@@ -271,15 +274,10 @@ Image.propTypes = {
      */
     containerAspectRatio: PropTypes.number,
     /**
-     * Overrides the default calculation of the `sizes` attribute. Generally only useful for
-     * images that are server-side rendered. See https://mzl.la/2Hh6neO for allowable values.
+     * Disables lazyloading and overrides the default calculation of the `sizes` attribute.
+     * Primarily for use in server-side rendering. See https://mzl.la/2Hh6neO for allowable values.
      */
-    forceSizes: PropTypes.string,
-    /**
-     * Disables default lazy-loading behavior. Used in rare situations where images that appear
-     * above the fold need to load instantly or are server-side rendered.
-     */
-    disableLazyLoading: PropTypes.bool,
+    forceEarlyRender: PropTypes.string,
     /**
      * Provides control over how the image should be resized to fit the container. This controls the
      * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
@@ -297,8 +295,7 @@ Image.defaultProps = {
     alt: '',
     height: undefined,
     containerAspectRatio: undefined,
-    forceSizes: undefined,
-    disableLazyLoading: false,
+    forceEarlyRender: false,
     objectFit: 'cover',
     objectPosition: 'center',
 };
