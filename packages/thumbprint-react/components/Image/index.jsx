@@ -274,7 +274,7 @@ Image.propTypes = {
      */
     containerAspectRatio: PropTypes.number,
     /**
-     * Disables lazyloading and overrides the default calculation of the `sizes` attribute.
+     * Disables lazy-loading and overrides the default calculation of the `sizes` attribute.
      * Primarily for use in server-side rendering. See https://mzl.la/2Hh6neO for allowable values.
      */
     forceEarlyRender: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
