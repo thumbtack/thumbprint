@@ -1,10 +1,16 @@
 # Changelog
 
+## Unreleased
+
 ## 9.1.0 - 2019-08-22
 
 ### Added
 
 -   [Minor] Add `forceEarlyRender` prop to `Image` to disable the default lazy-loading behavior and override the `sizes` attribute. (#426)
+
+### Fixed
+
+-   [Patch] Fixed missing `Unreleased` header in CHANGELOG.
 
 ## 9.0.3 - 2019-08-21
 
