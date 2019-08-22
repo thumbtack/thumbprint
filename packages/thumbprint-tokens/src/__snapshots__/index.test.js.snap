@@ -161,6 +161,11 @@ exports.tpLetterSpacingExtraTight = \\"-2px\\";
 exports.tpLineHeightBase = \\"1.6\\";
 exports.tpLineHeightTight = \\"1.4\\";
 exports.tpLineHeightLoose = \\"1.9\\";
+exports.tpShadow100 = \\"0px 1px 3px rgba(0, 0, 0, 0.1)\\";
+exports.tpShadow200 = \\"0px 2px 4px rgba(0, 0, 0, 0.15)\\";
+exports.tpShadow300 = \\"0px 2px 7px rgba(0, 0, 0, 0.15)\\";
+exports.tpShadow400 = \\"0px 2px 10px rgba(0, 0, 0, 0.2)\\";
+// @deprecated
 exports.tpShadowCard = \\"0 -1px 1px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.16)\\";
 exports.tpSpace1 = \\"4px\\";
 exports.tpSpace2 = \\"8px\\";
@@ -282,6 +287,11 @@ export var tpLetterSpacingExtraTight = \\"-2px\\";
 export var tpLineHeightBase = \\"1.6\\";
 export var tpLineHeightTight = \\"1.4\\";
 export var tpLineHeightLoose = \\"1.9\\";
+export var tpShadow100 = \\"0px 1px 3px rgba(0, 0, 0, 0.1)\\";
+export var tpShadow200 = \\"0px 2px 4px rgba(0, 0, 0, 0.15)\\";
+export var tpShadow300 = \\"0px 2px 7px rgba(0, 0, 0, 0.15)\\";
+export var tpShadow400 = \\"0px 2px 10px rgba(0, 0, 0, 0.2)\\";
+// @deprecated
 export var tpShadowCard = \\"0 -1px 1px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.16)\\";
 export var tpSpace1 = \\"4px\\";
 export var tpSpace2 = \\"8px\\";
@@ -403,6 +413,11 @@ $tp-letter-spacing__extra-tight: -2px;
 $tp-line-height__base: 1.6;
 $tp-line-height__tight: 1.4;
 $tp-line-height__loose: 1.9;
+$tp-shadow__100: 0px 1px 3px rgba(0, 0, 0, 0.1);
+$tp-shadow__200: 0px 2px 4px rgba(0, 0, 0, 0.15);
+$tp-shadow__300: 0px 2px 7px rgba(0, 0, 0, 0.15);
+$tp-shadow__400: 0px 2px 10px rgba(0, 0, 0, 0.2);
+// @deprecated
 $tp-shadow__card: 0 -1px 1px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
 $tp-space__1: 4px;
 $tp-space__2: 8px;
