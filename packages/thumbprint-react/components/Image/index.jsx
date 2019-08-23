@@ -237,9 +237,11 @@ const Image = forwardRef((props, outerRef) => {
                     })}
                 />
             </picture>
-            <noscript>
-                <img src={src} alt={alt} />
-            </noscript>
+            {!forceEarlyRender && (
+                <noscript>
+                    <img src={src} alt={alt} />
+                </noscript>
+            )}
         </>
     );
 });
