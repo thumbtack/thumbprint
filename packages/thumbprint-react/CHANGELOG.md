@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Prevent noscript image when `forceEarlyRender` prop is used.
+
 ## 9.1.0 - 2019-08-22
 
 ### Added
