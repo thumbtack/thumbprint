@@ -16,9 +16,7 @@ const checkXLargeSize = (avatars, j, file) => {
     // Check to see if any use the "xlarge" size. If so, show an error and skip this instance of Avatar.
     if (usesXLargeSize(avatars, j)) {
         console.error(
-            `⚠️  Could not automatically convert an \`Avatar\` or \`EntityAvatar\` that uses the "xlarge" size. Please manually update the component at:\n${
-                file.path
-            }\n to use either "xlarge" or "large" based on your design requirements`,
+            `⚠️  Could not automatically convert an \`Avatar\` or \`EntityAvatar\` that uses the "xlarge" size. Please manually update the component at:\n${file.path}\n to use either "xlarge" or "large" based on your design requirements`,
         );
     }
 };

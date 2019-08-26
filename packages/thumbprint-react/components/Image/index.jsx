@@ -106,20 +106,17 @@ const Image = forwardRef((props, outerRef) => {
         'You can pass either a `height` or `containerAspectRatio` to the `Image` component, but not both.',
     );
 
-    useEffect(
-        () => {
-            // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
-            // using a `height` or `containerAspectRatio`. The `shouldLoadImage` variable ensures
-            // that we don't try to polyfill the image before the `src` exists. This can happy
-            // when we lazy-load.
-            if (shouldObjectFit && containerRef && shouldLoadImage && shouldPolyfillObjectFit) {
-                import('object-fit-images').then(({ default: ObjectFitImages }) => {
-                    ObjectFitImages(containerRef.querySelector('img'));
-                });
-            }
-        },
-        [shouldObjectFit, containerRef, shouldLoadImage, shouldPolyfillObjectFit],
-    );
+    useEffect(() => {
+        // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
+        // using a `height` or `containerAspectRatio`. The `shouldLoadImage` variable ensures
+        // that we don't try to polyfill the image before the `src` exists. This can happy
+        // when we lazy-load.
+        if (shouldObjectFit && containerRef && shouldLoadImage && shouldPolyfillObjectFit) {
+            import('object-fit-images').then(({ default: ObjectFitImages }) => {
+                ObjectFitImages(containerRef.querySelector('img'));
+            });
+        }
+    }, [shouldObjectFit, containerRef, shouldLoadImage, shouldPolyfillObjectFit]);
 
     if (shouldObjectFit) {
         objectFitProps.style = {
