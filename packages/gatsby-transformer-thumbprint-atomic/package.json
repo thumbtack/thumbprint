@@ -7,6 +7,6 @@
         "lodash": "^4.17.10",
         "node-sass": "^4.11.0",
         "node-sass-tilde-importer": "1.0.0",
-        "prettier": "1.14.3"
+        "prettier": "1.18.2"
     }
 }

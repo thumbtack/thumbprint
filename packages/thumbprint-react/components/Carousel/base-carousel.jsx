@@ -23,29 +23,26 @@ export default function BaseCarousel({
         return rotate(items, -1 * Math.floor(prevSelectedIndex));
     }
 
-    useEffect(
-        () => {
-            if (selectedIndex !== prevSelectedIndex) {
-                setIsAnimating(true);
-                setIsSuspensed(false);
+    useEffect(() => {
+        if (selectedIndex !== prevSelectedIndex) {
+            setIsAnimating(true);
+            setIsSuspensed(false);
 
+            setTimeout(() => {
+                setIsAnimating(false);
+                setIsSuspensed(true);
+                setPrevSelectedIndex(selectedIndex);
+
+                // We suspend the CSS animation property for a very brief window before
+                // re-enabling. This gap allows the component to re-render the new list
+                // without the items "sliding" back into place. Once the new items are set up,
+                // we re-enable the animation property ready for the next transition.
                 setTimeout(() => {
-                    setIsAnimating(false);
-                    setIsSuspensed(true);
-                    setPrevSelectedIndex(selectedIndex);
-
-                    // We suspend the CSS animation property for a very brief window before
-                    // re-enabling. This gap allows the component to re-render the new list
-                    // without the items "sliding" back into place. Once the new items are set up,
-                    // we re-enable the animation property ready for the next transition.
-                    setTimeout(() => {
-                        setIsSuspensed(false);
-                    }, 50);
-                }, animationDuration);
-            }
-        },
-        [animationDuration, prevSelectedIndex, selectedIndex],
-    );
+                    setIsSuspensed(false);
+                }, 50);
+            }, animationDuration);
+        }
+    }, [animationDuration, prevSelectedIndex, selectedIndex]);
 
     const itemWidth = 1 / visibleCount;
 
