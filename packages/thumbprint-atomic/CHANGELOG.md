@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `box-shadow` classes based on the shadow tokens.
+
 ## 3.2.15 - 2019-08-21
 
 ### Changed
