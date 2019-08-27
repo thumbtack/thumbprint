@@ -11849,10 +11849,10 @@ node-releases@^1.1.25:
   dependencies:
     semver "^5.3.0"
 
-node-sass-tilde-importer@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/node-sass-tilde-importer/-/node-sass-tilde-importer-1.0.0.tgz#653d048a270464a1865ef9a99cc80ee2d80f9c97"
-  integrity sha1-ZT0EiicEZKGGXvmpnMgO4tgPnJc=
+node-sass-tilde-importer@2.0.0-alpha.1:
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/node-sass-tilde-importer/-/node-sass-tilde-importer-2.0.0-alpha.1.tgz#137de41296eeeba87ba6dd19ddb62799868d94aa"
+  integrity sha512-XRnPx+wxbFyl546rxaQ/NAEZ8v1mfrvqvKpipdxrlxdrNYOiqg1rQT2Cp6J3293ZeqE+fqL1p4sHlOckTKFneg==
   dependencies:
     find-parent-dir "^0.3.0"
 
