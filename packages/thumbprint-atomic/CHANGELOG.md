@@ -6,6 +6,10 @@
 
 -   [Minor] Add `box-shadow` classes based on the shadow tokens.
 
+### Changed
+
+-   [Patch] Upgrade `node-sass-tilde-importer`, a `devDependency`. This does not affect the outputted code.
+
 ## 3.2.15 - 2019-08-21
 
 ### Changed
