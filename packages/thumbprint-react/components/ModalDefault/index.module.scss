@@ -14,6 +14,10 @@ $width-narrow: 416px;
 $width-medium: 632px;
 $width-wide: 1400px;
 
+$height-short: 300px;
+$height-medium: 600px;
+$height-tall: 900px;
+
 $contents-padding-small: 20px;
 $contents-padding-large: $tp-space__5;
 
@@ -122,6 +126,24 @@ $contents-padding-large: $tp-space__5;
             max-width: 100%;
         }
     }
+
+    &HeightShort {
+        @include tp-respond-above($tp-breakpoint__small) {
+            height: $height-short;
+        }
+    }
+
+    &HeightMedium {
+        @include tp-respond-above($tp-breakpoint__small) {
+            height: $height-medium;
+        }
+    }
+
+    &HeightTall {
+        @include tp-respond-above($tp-breakpoint__small) {
+            height: $height-tall;
+        }
+    }
 }
 
 .container {
@@ -130,6 +152,12 @@ $contents-padding-large: $tp-space__5;
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    // When heightAboveSmall prop is provided to fix the wrapper height, set
+    // height to 100% to inherit the height from the wrapper
+    &FixedHeight {
+        height: 100%;
+    }
 }
 
 .contents {

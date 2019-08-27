@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Minor] Add `heightAboveSmall` to `ModalDefault` and `ModalDefaultAnimatedWrapper`
+
 ### Changed
 
 -   [Patch] Code formatting tweaks due to Prettier version bump.

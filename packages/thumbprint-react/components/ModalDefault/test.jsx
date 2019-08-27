@@ -30,6 +30,50 @@ describe('ModalDefault', () => {
         wrapper.unmount();
     });
 
+    test('renders a short height modal', () => {
+        const wrapper = mount(<ModalDefault isOpen onCloseClick={noop} heightAboveSmall="short" />);
+        expect(
+            wrapper.find('[data-test="thumbprint-modal-wrapper"]').hasClass('wrapperHeightShort'),
+        );
+        expect(
+            wrapper
+                .find('[data-test="thumbprint-modal-container"]')
+                .hasClass('containerFixedHeight'),
+        );
+        expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
+    });
+
+    test('renders a medium height modal', () => {
+        const wrapper = mount(
+            <ModalDefault isOpen onCloseClick={noop} heightAboveSmall="medium" />,
+        );
+        expect(
+            wrapper.find('[data-test="thumbprint-modal-wrapper"]').hasClass('wrapperHeightMedium'),
+        );
+        expect(
+            wrapper
+                .find('[data-test="thumbprint-modal-container"]')
+                .hasClass('containerFixedHeight'),
+        );
+        expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
+    });
+
+    test('renders a tall height modal', () => {
+        const wrapper = mount(<ModalDefault isOpen onCloseClick={noop} heightAboveSmall="tall" />);
+        expect(
+            wrapper.find('[data-test="thumbprint-modal-wrapper"]').hasClass('wrapperHeightTall'),
+        );
+        expect(
+            wrapper
+                .find('[data-test="thumbprint-modal-container"]')
+                .hasClass('containerFixedHeight'),
+        );
+        expect(wrapper).toMatchSnapshot();
+        wrapper.unmount();
+    });
+
     test('renders a basic modal with content', () => {
         const wrapper = mount(
             <ModalDefault onCloseClick={noop}>

@@ -35,6 +35,7 @@ const ModalDefaultAnimatedWrapper = ({
     onOpenFinish,
     shouldCloseOnCurtainClick,
     width,
+    heightAboveSmall,
     shouldPageScrollAboveSmall,
 }) => (
     <Transition
@@ -66,13 +67,19 @@ const ModalDefaultAnimatedWrapper = ({
                                 [styles.wrapperWide]: width === 'wide',
                                 [styles.wrapperNarrow]: width === 'narrow',
                                 [styles.wrapperMedium]: width === 'medium',
+                                [styles.wrapperHeightShort]: heightAboveSmall === 'short',
+                                [styles.wrapperHeightMedium]: heightAboveSmall === 'medium',
+                                [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
                                 [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
+                            data-test="thumbprint-modal-wrapper"
                         >
                             <div
                                 className={classNames({
                                     [styles.container]: true,
+                                    [styles.containerFixedHeight]: !!heightAboveSmall,
                                 })}
+                                data-test="thumbprint-modal-container"
                             >
                                 {children}
                             </div>
@@ -119,6 +126,11 @@ ModalDefaultAnimatedWrapper.propTypes = {
      * Sets the max-width of the modal container.
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    /**
+     * Sets the fixed height of the modal container above small viewport
+     * If not specified modal height will be determined by its content
+     */
+    heightAboveSmall: PropTypes.oneOf(['short', 'medium', 'tall']),
 };
 
 ModalDefaultAnimatedWrapper.defaultProps = {
@@ -129,6 +141,7 @@ ModalDefaultAnimatedWrapper.defaultProps = {
     shouldCloseOnCurtainClick: true,
     shouldPageScrollAboveSmall: true,
     width: 'medium',
+    heightAboveSmall: undefined,
 };
 
 const modalHeaderPropTypes = {
@@ -230,6 +243,11 @@ const modalDefaultPropTypes = {
      * Sets the max-width of the modal container.
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    /**
+     * Sets the fixed height of the modal container above small viewport
+     * If not specified modal height will be determined by its content
+     */
+    heightAboveSmall: PropTypes.oneOf(['short', 'medium', 'tall']),
 };
 
 const modalDefaultDefaultProps = {
@@ -240,6 +258,7 @@ const modalDefaultDefaultProps = {
     shouldHideCloseButton: false,
     shouldCloseOnCurtainClick: true,
     width: 'medium',
+    heightAboveSmall: undefined,
 };
 
 const ModalDefaultHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
@@ -358,6 +377,7 @@ class ModalDefault extends React.Component {
             shouldCloseOnCurtainClick,
             shouldHideCloseButton,
             width,
+            heightAboveSmall,
         } = this.props;
 
         const { hasStickyFooter } = this.state;
@@ -370,6 +390,7 @@ class ModalDefault extends React.Component {
                 shouldCloseOnCurtainClick={shouldCloseOnCurtainClick}
                 isOpen={isOpen}
                 width={width}
+                heightAboveSmall={heightAboveSmall}
                 // We allow the modal to grow taller than the page only if
                 // there is no sticky footer. This means that the page can
                 // scroll vertically when the modal contents are tall enough.
