@@ -1025,7 +1025,7 @@ exports[`ModalDefault renders a short height modal 1`] = `
                     data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="wrapper wrapperOpen wrapperMedium wrapperHeightShort wrapperShouldPageScrollAboveSmall"
+                      class="wrapper wrapperOpen wrapperMedium wrapperShouldPageScrollAboveSmall"
                       data-test="thumbprint-modal-wrapper"
                     >
                       <div
@@ -1086,7 +1086,7 @@ exports[`ModalDefault renders a short height modal 1`] = `
                 onClick={[Function]}
               >
                 <div
-                  className="wrapper wrapperOpen wrapperMedium wrapperHeightShort wrapperShouldPageScrollAboveSmall"
+                  className="wrapper wrapperOpen wrapperMedium wrapperShouldPageScrollAboveSmall"
                   data-test="thumbprint-modal-wrapper"
                 >
                   <div

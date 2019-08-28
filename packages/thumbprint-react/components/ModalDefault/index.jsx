@@ -67,7 +67,6 @@ const ModalDefaultAnimatedWrapper = ({
                                 [styles.wrapperWide]: width === 'wide',
                                 [styles.wrapperNarrow]: width === 'narrow',
                                 [styles.wrapperMedium]: width === 'medium',
-                                [styles.wrapperHeightShort]: heightAboveSmall === 'short',
                                 [styles.wrapperHeightMedium]: heightAboveSmall === 'medium',
                                 [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
                                 [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
@@ -131,7 +130,7 @@ ModalDefaultAnimatedWrapper.propTypes = {
      * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
+    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
 ModalDefaultAnimatedWrapper.defaultProps = {
@@ -249,7 +248,7 @@ const modalDefaultPropTypes = {
      * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
+    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
 const modalDefaultDefaultProps = {

@@ -14,7 +14,6 @@ $width-narrow: 416px;
 $width-medium: 632px;
 $width-wide: 1400px;
 
-$height-short: 300px;
 $height-medium: 600px;
 $height-tall: 900px;
 
@@ -124,12 +123,6 @@ $contents-padding-large: $tp-space__5;
         // entire screen.
         @include tp-respond-below($tp-breakpoint__small) {
             max-width: 100%;
-        }
-    }
-
-    &HeightShort {
-        @include tp-respond-above($tp-breakpoint__small) {
-            height: $height-short;
         }
     }
 
