@@ -1,0 +1,88 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+.shadow-none {
+    box-shadow: none !important;
+}
+
+.shadow-100 {
+    box-shadow: $tp-shadow__100 !important;
+}
+
+.shadow-200 {
+    box-shadow: $tp-shadow__200 !important;
+}
+
+.shadow-300 {
+    box-shadow: $tp-shadow__300 !important;
+}
+
+.shadow-400 {
+    box-shadow: $tp-shadow__400 !important;
+}
+
+@include tp-respond-above($tp-breakpoint__small) {
+    .s_shadow-none {
+        box-shadow: none !important;
+    }
+
+    .s_shadow-100 {
+        box-shadow: $tp-shadow__100 !important;
+    }
+
+    .s_shadow-200 {
+        box-shadow: $tp-shadow__200 !important;
+    }
+
+    .s_shadow-300 {
+        box-shadow: $tp-shadow__300 !important;
+    }
+
+    .s_shadow-400 {
+        box-shadow: $tp-shadow__400 !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__medium) {
+    .m_shadow-none {
+        box-shadow: none !important;
+    }
+
+    .m_shadow-100 {
+        box-shadow: $tp-shadow__100 !important;
+    }
+
+    .m_shadow-200 {
+        box-shadow: $tp-shadow__200 !important;
+    }
+
+    .m_shadow-300 {
+        box-shadow: $tp-shadow__300 !important;
+    }
+
+    .m_shadow-400 {
+        box-shadow: $tp-shadow__400 !important;
+    }
+}
+
+@include tp-respond-above($tp-breakpoint__large) {
+    .l_shadow-none {
+        box-shadow: none !important;
+    }
+
+    .l_shadow-100 {
+        box-shadow: $tp-shadow__100 !important;
+    }
+
+    .l_shadow-200 {
+        box-shadow: $tp-shadow__200 !important;
+    }
+
+    .l_shadow-300 {
+        box-shadow: $tp-shadow__300 !important;
+    }
+
+    .l_shadow-400 {
+        box-shadow: $tp-shadow__400 !important;
+    }
+}
