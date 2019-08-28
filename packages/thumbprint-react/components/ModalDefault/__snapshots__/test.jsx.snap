@@ -1825,7 +1825,7 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsSticky"
+                          class="contents"
                         />
                         <div>
                           <div
@@ -1887,7 +1887,7 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsSticky"
+                      className="contents"
                     >
                       <ModalDefaultFooter
                         isSticky={true}

@@ -168,9 +168,7 @@ $contents-padding-large: $tp-space__5;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
-    &Sticky {
-        flex: 1 1 auto;
-    }
+    flex: 1 1 auto;
 
     @include tp-respond-above($tp-breakpoint__small) {
         &NotSticky {

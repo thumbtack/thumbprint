@@ -409,7 +409,6 @@ class ModalDefault extends React.Component {
                     <div
                         className={classNames({
                             [styles.contents]: true,
-                            [styles.contentsSticky]: hasStickyFooter,
                             [styles.contentsNotSticky]: !hasStickyFooter,
                         })}
                     >
