@@ -128,7 +128,7 @@ ModalDefaultAnimatedWrapper.propTypes = {
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
     /**
      * Sets height of the modal container above small viewport.
-     * If `auto` (default), the modal height will be determined by its content
+     * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
     heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
@@ -246,7 +246,7 @@ const modalDefaultPropTypes = {
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
     /**
      * Sets height of the modal container above small viewport.
-     * If `auto` (default), the modal height will be determined by its content
+     * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
     heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
