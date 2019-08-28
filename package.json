@@ -12,8 +12,7 @@
         "test:jest": "TZ=America/Los_Angeles jest",
         "test:jest:watch": "yarn run bootstrap && yarn test:jest --watch",
         "test:prettier": "./scripts/test-prettier.sh",
-        "test:lint": "yarn test:lint:md && yarn test:lint:css && yarn test:lint:js",
-        "test:lint:md": "remark \"packages/*/CHANGELOG.md\" --frail --quiet",
+        "test:lint": "yarn test:lint:css && yarn test:lint:js",
         "test:lint:css": "stylelint \"**/*.scss\" \"**/*.css\" --ignore-path .gitignore",
         "test:lint:js": "eslint . --ignore-path .gitignore --ext .jsx --ext .js"
     },
@@ -22,7 +21,6 @@
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/preset-env": "^7.1.0",
         "@babel/preset-react": "^7.0.0",
-        "@thumbtack/changelog-lint": "^0.1.0",
         "babel-core": "^7.0.0-bridge.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.0.0",
@@ -54,7 +52,6 @@
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "remark-cli": "^5.0.0",
         "stylelint": "^10.1.0",
         "stylelint-config-prettier": "^5.2.0",
         "stylelint-config-recommended-scss": "^3.3.0",
@@ -90,11 +87,6 @@
         "url": "https://github.com/thumbtack/thumbprint/issues"
     },
     "homepage": "https://github.com/thumbtack/thumbprint#readme",
-    "remarkConfig": {
-        "plugins": [
-            "@thumbtack/changelog-lint"
-        ]
-    },
     "workspaces": [
         "packages/*",
         "www"
