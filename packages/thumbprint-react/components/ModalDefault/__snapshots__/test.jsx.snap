@@ -2,6 +2,7 @@
 
 exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\` is true 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -9,6 +10,7 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
   width="medium"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -54,8 +56,12 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -86,8 +92,12 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -106,6 +116,7 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
 
 exports[`ModalDefault renders a basic modal 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -113,6 +124,7 @@ exports[`ModalDefault renders a basic modal 1`] = `
   width="medium"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -158,8 +170,12 @@ exports[`ModalDefault renders a basic modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -214,8 +230,12 @@ exports[`ModalDefault renders a basic modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -307,6 +327,7 @@ exports[`ModalDefault renders a basic modal 1`] = `
 
 exports[`ModalDefault renders a basic modal with content 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -314,6 +335,7 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
   width="medium"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -359,16 +381,20 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
+                          class="contents"
                         >
-                          <p>
-                            Hi there!
-                          </p>
-                          <button
-                            type="button"
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
                           >
-                            Submit
-                          </button>
+                            <p>
+                              Hi there!
+                            </p>
+                            <button
+                              type="button"
+                            >
+                              Submit
+                            </button>
+                          </div>
                         </div>
                         <div />
                         <div
@@ -424,16 +450,20 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
+                      className="contents"
                     >
-                      <p>
-                        Hi there!
-                      </p>
-                      <button
-                        type="button"
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
                       >
-                        Submit
-                      </button>
+                        <p>
+                          Hi there!
+                        </p>
+                        <button
+                          type="button"
+                        >
+                          Submit
+                        </button>
+                      </div>
                     </div>
                     <div />
                     <div
@@ -580,8 +610,12 @@ exports[`ModalDefault renders a medium height modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -637,8 +671,12 @@ exports[`ModalDefault renders a medium height modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -730,6 +768,7 @@ exports[`ModalDefault renders a medium height modal 1`] = `
 
 exports[`ModalDefault renders a narrow modal 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -737,6 +776,7 @@ exports[`ModalDefault renders a narrow modal 1`] = `
   width="narrow"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -782,8 +822,12 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -838,8 +882,12 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -985,8 +1033,12 @@ exports[`ModalDefault renders a short height modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -1042,8 +1094,12 @@ exports[`ModalDefault renders a short height modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -1189,8 +1245,12 @@ exports[`ModalDefault renders a tall height modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -1246,8 +1306,12 @@ exports[`ModalDefault renders a tall height modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -1339,6 +1403,7 @@ exports[`ModalDefault renders a tall height modal 1`] = `
 
 exports[`ModalDefault renders a wide modal 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1346,6 +1411,7 @@ exports[`ModalDefault renders a wide modal 1`] = `
   width="wide"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -1391,8 +1457,12 @@ exports[`ModalDefault renders a wide modal 1`] = `
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -1447,8 +1517,12 @@ exports[`ModalDefault renders a wide modal 1`] = `
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -1540,6 +1614,7 @@ exports[`ModalDefault renders a wide modal 1`] = `
 
 exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is false 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1547,6 +1622,7 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
   width="medium"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -1592,8 +1668,12 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                         data-test="thumbprint-modal-container"
                       >
                         <div
-                          class="contents contentsNotSticky"
-                        />
+                          class="contents"
+                        >
+                          <div
+                            class="contentsPadding contentsPaddingNotSticky"
+                          />
+                        </div>
                         <div />
                         <div
                           class="closeButton closeButtonNotSticky"
@@ -1648,8 +1728,12 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                     data-test="thumbprint-modal-container"
                   >
                     <div
-                      className="contents contentsNotSticky"
-                    />
+                      className="contents"
+                    >
+                      <div
+                        className="contentsPadding contentsPaddingNotSticky"
+                      />
+                    </div>
                     <div />
                     <div
                       className="closeButton closeButtonNotSticky"
@@ -1773,6 +1857,7 @@ exports[`ModalDefaultFooter renders a non-sticky footer 1`] = `
 
 exports[`ModalDefaultFooter renders a sticky footer 1`] = `
 <ModalDefault
+  heightAboveSmall="auto"
   isOpen={false}
   onCloseClick={[Function]}
   shouldCloseOnCurtainClick={true}
@@ -1780,6 +1865,7 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
   width="medium"
 >
   <ModalDefaultAnimatedWrapper
+    heightAboveSmall="auto"
     isOpen={false}
     onCloseClick={[Function]}
     shouldCloseOnCurtainClick={true}
@@ -1826,7 +1912,11 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                       >
                         <div
                           class="contents"
-                        />
+                        >
+                          <div
+                            class="contentsPadding"
+                          />
+                        </div>
                         <div>
                           <div
                             class="root"
@@ -1889,31 +1979,35 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                     <div
                       className="contents"
                     >
-                      <ModalDefaultFooter
-                        isSticky={true}
+                      <div
+                        className="contentsPadding"
                       >
-                        <Portal
-                          containerInfo={
-                            <div>
+                        <ModalDefaultFooter
+                          isSticky={true}
+                        >
+                          <Portal
+                            containerInfo={
+                              <div>
+                                <div
+                                  class="root"
+                                >
+                                  Goose
+                                </div>
+                              </div>
+                            }
+                          >
+                            <StickyFooter
+                              setSticky={[Function]}
+                            >
                               <div
-                                class="root"
+                                className="root"
                               >
                                 Goose
                               </div>
-                            </div>
-                          }
-                        >
-                          <StickyFooter
-                            setSticky={[Function]}
-                          >
-                            <div
-                              className="root"
-                            >
-                              Goose
-                            </div>
-                          </StickyFooter>
-                        </Portal>
-                      </ModalDefaultFooter>
+                            </StickyFooter>
+                          </Portal>
+                        </ModalDefaultFooter>
+                      </div>
                     </div>
                     <div />
                     <div

@@ -77,7 +77,7 @@ const ModalDefaultAnimatedWrapper = ({
                             <div
                                 className={classNames({
                                     [styles.container]: true,
-                                    [styles.containerFixedHeight]: !!heightAboveSmall,
+                                    [styles.containerFixedHeight]: heightAboveSmall !== 'auto',
                                 })}
                                 data-test="thumbprint-modal-container"
                             >
@@ -127,10 +127,11 @@ ModalDefaultAnimatedWrapper.propTypes = {
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
     /**
-     * Sets the fixed height of the modal container above small viewport
-     * If not specified modal height will be determined by its content
+     * Sets height of the modal container above small viewport.
+     * If `auto` (default), the modal height will be determined by its content
+     * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['short', 'medium', 'tall']),
+    heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
 };
 
 ModalDefaultAnimatedWrapper.defaultProps = {
@@ -141,7 +142,7 @@ ModalDefaultAnimatedWrapper.defaultProps = {
     shouldCloseOnCurtainClick: true,
     shouldPageScrollAboveSmall: true,
     width: 'medium',
-    heightAboveSmall: undefined,
+    heightAboveSmall: 'auto',
 };
 
 const modalHeaderPropTypes = {
@@ -244,10 +245,11 @@ const modalDefaultPropTypes = {
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
     /**
-     * Sets the fixed height of the modal container above small viewport
-     * If not specified modal height will be determined by its content
+     * Sets height of the modal container above small viewport.
+     * If `auto` (default), the modal height will be determined by its content
+     * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['short', 'medium', 'tall']),
+    heightAboveSmall: PropTypes.oneOf(['auto', 'short', 'medium', 'tall']),
 };
 
 const modalDefaultDefaultProps = {
@@ -258,7 +260,7 @@ const modalDefaultDefaultProps = {
     shouldHideCloseButton: false,
     shouldCloseOnCurtainClick: true,
     width: 'medium',
-    heightAboveSmall: undefined,
+    heightAboveSmall: 'auto',
 };
 
 const ModalDefaultHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
@@ -406,13 +408,18 @@ class ModalDefault extends React.Component {
                         setSticky: this.setSticky,
                     }}
                 >
-                    <div
-                        className={classNames({
-                            [styles.contents]: true,
-                            [styles.contentsNotSticky]: !hasStickyFooter,
-                        })}
-                    >
-                        {children}
+                    <div className={styles.contents}>
+                        {/*
+                            Extra nested <div> to prevent bottom padding from being collapsed
+                            in Firefox and Edge (See #376)
+                        */}
+                        <div
+                            className={classNames(styles.contentsPadding, {
+                                [styles.contentsPaddingNotSticky]: !hasStickyFooter,
+                            })}
+                        >
+                            {children}
+                        </div>
                     </div>
                     {/*
                         If a user uses `<ModalDefaultFooter isSticky />`, it gets

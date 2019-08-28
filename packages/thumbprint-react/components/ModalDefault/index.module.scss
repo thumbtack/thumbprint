@@ -164,11 +164,18 @@ $contents-padding-large: $tp-space__5;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding: $contents-padding-small $contents-padding-small $tp-space__5;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
     flex: 1 1 auto;
+}
+
+.contentsPadding {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+
+    padding: $contents-padding-small $contents-padding-small $tp-space__5;
 
     @include tp-respond-above($tp-breakpoint__small) {
         &NotSticky {
