@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+### Added
+
 -   [Minor] Add `heightAboveSmall` to `ModalDefault` and `ModalDefaultAnimatedWrapper`
 
 ### Changed
