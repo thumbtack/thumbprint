@@ -9,8 +9,8 @@ Though truncation should be used infrequently there are situations where the use
 
 In Thumbtack products there are four types of truncation in use:
 
-1. Strings that are one line long with no UI action to expand what's been truncated.
-2. Strings between two and three lines long with no UI action to expand what's been truncated.
+1. Strings that are one line long with no UI action to expand the truncated text.
+2. Strings between two and three lines long with no UI action to expand the truncated text.
 3. Long blocks of text, like user reviews, that can be expanded with a "Read more" link.
 4. Lists of items that are extended with a "Show more" link.
 
@@ -46,13 +46,13 @@ In this case a few lines of well-supported CSS is sufficient. The `truncate` cla
 
 #### Web
 
-This type of truncation is a bit more complicated with no one perfect solution. There are a number of Sass and JavaScript approaches but they are buggy or convoluted. In this case we recommend a Sass approach that uses `line-height` tokens to calculate a `max-height`.
+This type of truncation is more complicated with no one perfect solution. There are a number of Sass and JavaScript approaches but they are often convoluted and limited. In this case we recommend a Sass approach that uses `line-height` tokens to calculate a `max-height`.
 
 ```scss
 .multiline {
-    font-size: $tp-font__title__3__size;
-    line-height: $tp-font__title__3__line-height;
-    max-height: $tp-font__title__3__line-height * 2; // Needed by non-Webkit browsers
+    font-size: $tp-font__title__3__size; // Needed for IE 11
+    line-height: $tp-font__title__3__line-height; // Needed for IE 11
+    max-height: $tp-font__title__3__line-height * 2; // Needed for IE 11
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -60,8 +60,8 @@ This type of truncation is a bit more complicated with no one perfect solution. 
 }
 ```
 
--   Users of Webkit-based browsers will see an ellipsis if the text overflows the number of lines specified in `-webkit-line-clamp`.
--   Non-WebKit browsers, like Firefox, will see no ellipsis and the text will cut off at the last word that fits. Though this is not ideal the drawbacks of the alternatives outweigh their benefits.
+-   Most users will see an ellipsis if the text overflows the number of lines specified in `-webkit-line-clamp`.
+-   Non-supporting browsers, like IE 11, will see no ellipsis and the text will cut off at the last word that fits.
 
 ### 3. "Read more"
 
@@ -69,7 +69,7 @@ This type of truncation is a bit more complicated with no one perfect solution. 
     <img src="./read-more.png" alt="Read more example" width="614" />
 </div>
 
-Because the Sass pattern for multiline truncation describe above relies on a `max-height` calculation, it can visually break if the size of the text container changes unexpectedly. To insulate against this we recommend the following:
+Because the Sass pattern for multiline truncation described above relies on a `max-height` calculation, it can visually break if the size of the text container changes unexpectedly. To insulate against this we recommend the following:
 
 -   Truncate the string using a word count.
 -   If the word count threshold is met, append an ellipsis to the string.
