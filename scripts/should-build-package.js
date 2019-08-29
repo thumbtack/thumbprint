@@ -42,7 +42,8 @@ const getHash = async dir => {
         // Grab only parts of `argv` that are needed.
         const command = process.argv.slice(3);
 
-        const { stdout, stderr } = await execa.shell(`${command.join(' ')}`, {
+        const { stdout, stderr } = await execa(`${command.join(' ')}`, {
+            shell: true,
             // Maintain output colors
             stdio: 'inherit',
         });
