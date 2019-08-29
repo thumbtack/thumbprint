@@ -19,7 +19,7 @@
     "author": "Daniel O'Connor <daniel@danoc.me>",
     "license": "Apache-2.0",
     "devDependencies": {
-        "fs-extra": "^5.0.0",
+        "fs-extra": "^8.1.0",
         "glob": "^7.1.2",
         "handlebars": "^4.1.1",
         "lodash": "^4.17.4"

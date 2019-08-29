@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade `fs-extra`, a `devDependency`. This does not affect the outputted code.
+
 ## 8.3.0 - 2019-08-21
 
 ### Added
