@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Code formatting tweaks due to Prettier version bump.
+-   [Patch] Upgrade dependencies.
 
 ## 0.3.2 - 2019-06-12
 

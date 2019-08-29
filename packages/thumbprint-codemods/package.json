@@ -26,10 +26,10 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-codemods/",
     "dependencies": {
-        "execa": "^1.0.0",
-        "globby": "^9.2.0",
+        "execa": "^2.0.4",
+        "globby": "^10.0.1",
         "jscodeshift": "^0.6.4",
         "lodash": "^4.17.11",
-        "meow": "^4.0.0"
+        "meow": "^5.0.0"
     }
 }
