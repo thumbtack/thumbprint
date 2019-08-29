@@ -26,7 +26,7 @@
         "css-mqpacker": "^7.0.0",
         "cssnano": "^4.1.0",
         "node-sass": "^4.9.2",
-        "node-sass-tilde-importer": "1.0.0",
+        "node-sass-tilde-importer": "2.0.0-alpha.1",
         "postcss-cli": "^6.1.1"
     }
 }

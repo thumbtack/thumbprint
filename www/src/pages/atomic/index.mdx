@@ -292,6 +292,31 @@ Border widths are set to `1px` by default, these classes increase border width.
 
 <Table atomicClasses={getClasses(props, 'border-width')} />
 
+## Box Shadow
+
+<div className="pa3 ba b-gray-300 mb4 tp-body-2">
+    <div className="grid">
+        <div className="m_col-3 mb3 m_mb0">
+            <div className="h5 mb1 shadow-100" />
+            <InlineCode theme="plain">shadow-100</InlineCode>
+        </div>
+        <div className="m_col-3 mb3 m_mb0">
+            <div className="h5 mb1 shadow-200" />
+            <InlineCode theme="plain">shadow-100</InlineCode>
+        </div>
+        <div className="m_col-3 mb3 m_mb0">
+            <div className="h5 mb1 shadow-300" />
+            <InlineCode theme="plain">shadow-100</InlineCode>
+        </div>
+        <div className="m_col-3">
+            <div className="h5 mb1 shadow-400" />
+            <InlineCode theme="plain">shadow-100</InlineCode>
+        </div>
+    </div>
+</div>
+
+<Table atomicClasses={getClasses(props, 'box-shadow')} />
+
 ## Color
 
 -   Colors for text, links, and backgrounds.

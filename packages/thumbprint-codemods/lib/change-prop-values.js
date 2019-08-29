@@ -61,18 +61,14 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
     // Check to see if any use the spread props. If so, show an error and skip this instance.
     if (usesSpreadProps(instances, j)) {
         console.error(
-            `⚠️  Could not automatically convert a \`${componentName}\` that spreads its props. Please manually update the \`${componentName}\` at:\n${
-                file.path
-            }`,
+            `⚠️  Could not automatically convert a \`${componentName}\` that spreads its props. Please manually update the \`${componentName}\` at:\n${file.path}`,
         );
     }
 
     // We can't convert a component automatically if the props are expression like `foo={bar}`.
     if (usesExpressionAsPropValue(instances, j, propName)) {
         console.error(
-            `⚠️  Could not automatically convert a \`${componentName}\` that uses expressions in its props. Please update:\n${
-                file.path
-            }`,
+            `⚠️  Could not automatically convert a \`${componentName}\` that uses expressions in its props. Please update:\n${file.path}`,
         );
     }
 

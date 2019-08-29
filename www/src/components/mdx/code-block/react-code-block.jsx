@@ -5,29 +5,30 @@ import * as thumbprintIcons from '@thumbtack/thumbprint-icons';
 import * as thumbprintReact from '@thumbtack/thumbprint-react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { previewThemes, classes } from './styles';
+import styles from './index.module.scss';
+import prismTheme from './prism-theme';
 
 const ReactCodeBlock = props => {
     const { children, theme } = props;
 
     return (
         <LiveProvider
-            code={children}
+            code={children.trim()}
             scope={{ tokens, ...thumbprintReact, ...thumbprintIcons }}
-            mountStylesheet={false}
             className="relative"
+            theme={prismTheme}
         >
-            {/* NOTE(giles): We removed the strict mode check here, because ReactLive uses unsafe
-            lifecycle methods in its implementation. We can add it back if they ever remove those
-            methods */}
-            <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
+            <React.StrictMode>
+                <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
+            </React.StrictMode>
 
             <div className={classes.codeContainer}>
-                <LiveEditor className={classes.code} ignoreTabKey />
+                <LiveEditor className={`${styles.code} ${styles.codeJSX}`} ignoreTabKey />
             </div>
 
             <pre>
                 <LiveError
-                    className="pa3 bl bb br b-gray-300 bw-2 overflow-auto"
+                    className="pa3 ba b-gray-300 bw-2 overflow-auto"
                     style={{
                         fontSize: tokens.tpFontBody2Size,
                         backgroundColor: tokens.tpColorRed100,
@@ -39,8 +40,8 @@ const ReactCodeBlock = props => {
 };
 
 ReactCodeBlock.propTypes = {
-    theme: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
+    theme: PropTypes.oneOf(['dark', 'light', 'white']).isRequired,
 };
 
 export default ReactCodeBlock;
