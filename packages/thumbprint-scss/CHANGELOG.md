@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Upgrade `node-sass-tilde-importer`, a `devDependency`. This does not affect the outputted code.
+-   [Patch] Upgrade `fs-extra`, a `devDependency`. This does not affect the outputted code.
 
 ## 2.0.5 - 2019-08-21
 
