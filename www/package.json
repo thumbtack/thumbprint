@@ -4,6 +4,7 @@
     "private": true,
     "scripts": {
         "build": "gatsby build",
+        "serve": "gatsby serve",
         "start": "gatsby develop --port 8090"
     },
     "dependencies": {
