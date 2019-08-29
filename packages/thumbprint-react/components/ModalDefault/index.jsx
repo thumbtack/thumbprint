@@ -60,27 +60,38 @@ const ModalDefaultAnimatedWrapper = ({
                         onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
                         data-test="thumbprint-modal-curtain"
                     >
+                        {/*
+                            Extra nested <div> to prevent bottom padding from being ignored
+                            in Firefox and Edge
+                            (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
+                        */}
                         <div
-                            className={classNames({
-                                [styles.wrapper]: true,
-                                [styles.wrapperOpen]: isOpen,
-                                [styles.wrapperWide]: width === 'wide',
-                                [styles.wrapperNarrow]: width === 'narrow',
-                                [styles.wrapperMedium]: width === 'medium',
-                                [styles.wrapperHeightMedium]: heightAboveSmall === 'medium',
-                                [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
-                                [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
+                            className={classNames(styles.curtainPadding, {
+                                [styles.curtainPaddingShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
-                            data-test="thumbprint-modal-wrapper"
                         >
                             <div
                                 className={classNames({
-                                    [styles.container]: true,
-                                    [styles.containerFixedHeight]: heightAboveSmall !== 'auto',
+                                    [styles.wrapper]: true,
+                                    [styles.wrapperOpen]: isOpen,
+                                    [styles.wrapperWide]: width === 'wide',
+                                    [styles.wrapperNarrow]: width === 'narrow',
+                                    [styles.wrapperMedium]: width === 'medium',
+                                    [styles.wrapperHeightMedium]: heightAboveSmall === 'medium',
+                                    [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
+                                    [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                                 })}
-                                data-test="thumbprint-modal-container"
+                                data-test="thumbprint-modal-wrapper"
                             >
-                                {children}
+                                <div
+                                    className={classNames({
+                                        [styles.container]: true,
+                                        [styles.containerFixedHeight]: heightAboveSmall !== 'auto',
+                                    })}
+                                    data-test="thumbprint-modal-container"
+                                >
+                                    {children}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -409,8 +420,9 @@ class ModalDefault extends React.Component {
                 >
                     <div className={styles.contents}>
                         {/*
-                            Extra nested <div> to prevent bottom padding from being collapsed
-                            in Firefox and Edge (See #376)
+                            Extra nested <div> to prevent bottom padding from being ignored
+                            in Firefox and Edge
+                            (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
                         */}
                         <div
                             className={classNames(styles.contentsPadding, {
