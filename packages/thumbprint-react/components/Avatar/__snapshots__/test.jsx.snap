@@ -39,7 +39,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
           src="//www.placecage.com/130/130"
           style={
             Object {
-              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
               "objectFit": "cover",
               "objectPosition": "center",
             }
@@ -128,7 +127,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
           src="//www.placecage.com/130/130"
           style={
             Object {
-              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
               "objectFit": "cover",
               "objectPosition": "center",
             }
@@ -216,7 +214,6 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
           src="//www.placecage.com/130/130"
           style={
             Object {
-              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
               "objectFit": "cover",
               "objectPosition": "center",
             }
@@ -715,7 +712,6 @@ exports[`renders an image when the user has one 1`] = `
           src="//www.placecage.com/130/130"
           style={
             Object {
-              "fontFamily": "\\"object-fit: cover; object-position: center\\"",
               "objectFit": "cover",
               "objectPosition": "center",
             }
