@@ -59,8 +59,8 @@ $contents-padding-large: $tp-space__5;
     @include tp-respond-above($tp-breakpoint__small) {
         padding: $tp-space__5;
 
-        height: auto;
         &ShouldPageScrollAboveSmall {
+            height: auto;
             max-height: initial;
         }
     }
@@ -92,15 +92,14 @@ $contents-padding-large: $tp-space__5;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        // We don't force a `height: 100%` here because we don't want the modal to be taller than
-        // its contents.
-        height: auto;
-
         // If desired, we allow the modal to grow vertically beyond the height of the viewport. If
         // the modal is tall enough, this will make the page scroll. Without this, the modal won't
         // grow taller than the viewport and the modal contents itself will scroll.
         &ShouldPageScrollAboveSmall {
             display: block;
+            // We don't force a `height: 100%` here because we don't want the modal to be taller than
+            // its contents.
+            height: auto;
             max-height: initial;
         }
 
