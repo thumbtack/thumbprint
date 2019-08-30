@@ -57,18 +57,22 @@ const ModalDefaultAnimatedWrapper = ({
                             [styles.curtain]: true,
                             [styles.curtainOpen]: isOpen,
                         })}
-                        onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
-                        data-test="thumbprint-modal-curtain"
                     >
                         {/*
-                            Extra nested <div> to prevent bottom padding from being ignored
-                            in Firefox and Edge
+                            Extra nested <div> to prevent curtain's 
+                            bottom padding from being ignored in Firefox and Edge
                             (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
+
+                            onClick listener is attached to this innermost node
+                            that constitutes curtain
                         */}
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <div
-                            className={classNames(styles.curtainPadding, {
-                                [styles.curtainPaddingShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
+                            className={classNames(styles.curtainInner, {
+                                [styles.curtainInnerShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
+                            onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
+                            data-test="thumbprint-modal-curtain"
                         >
                             <div
                                 className={classNames({

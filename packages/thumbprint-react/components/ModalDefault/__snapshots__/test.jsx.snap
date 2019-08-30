@@ -45,10 +45,10 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -84,11 +84,11 @@ exports[`ModalDefault does not show the close button if \`shouldHideCloseButton\
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -167,10 +167,10 @@ exports[`ModalDefault renders a basic modal 1`] = `
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -230,11 +230,11 @@ exports[`ModalDefault renders a basic modal 1`] = `
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -386,10 +386,10 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -458,11 +458,11 @@ exports[`ModalDefault renders a basic modal with content 1`] = `
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -623,10 +623,10 @@ exports[`ModalDefault renders a medium height modal 1`] = `
                 >
                   <div
                     class="root rootOpen curtain curtainOpen"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperOpen wrapperMedium wrapperHeightMedium wrapperShouldPageScrollAboveSmall"
@@ -687,11 +687,11 @@ exports[`ModalDefault renders a medium height modal 1`] = `
               <NoScroll />
               <div
                 className="root rootOpen curtain curtainOpen"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperOpen wrapperMedium wrapperHeightMedium wrapperShouldPageScrollAboveSmall"
@@ -843,10 +843,10 @@ exports[`ModalDefault renders a narrow modal 1`] = `
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
@@ -906,11 +906,11 @@ exports[`ModalDefault renders a narrow modal 1`] = `
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
@@ -1062,10 +1062,10 @@ exports[`ModalDefault renders a tall height modal 1`] = `
                 >
                   <div
                     class="root rootOpen curtain curtainOpen"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperOpen wrapperMedium wrapperHeightTall wrapperShouldPageScrollAboveSmall"
@@ -1126,11 +1126,11 @@ exports[`ModalDefault renders a tall height modal 1`] = `
               <NoScroll />
               <div
                 className="root rootOpen curtain curtainOpen"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperOpen wrapperMedium wrapperHeightTall wrapperShouldPageScrollAboveSmall"
@@ -1282,10 +1282,10 @@ exports[`ModalDefault renders a wide modal 1`] = `
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
@@ -1345,11 +1345,11 @@ exports[`ModalDefault renders a wide modal 1`] = `
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
@@ -1501,10 +1501,10 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                      class="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -1564,11 +1564,11 @@ exports[`ModalDefault shows the close button if \`shouldHideCloseButton\` is fal
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding curtainPaddingShouldPageScrollAboveSmall"
+                  className="curtainInner curtainInnerShouldPageScrollAboveSmall"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
@@ -1752,10 +1752,10 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
                 >
                   <div
                     class="root curtain"
-                    data-test="thumbprint-modal-curtain"
                   >
                     <div
-                      class="curtainPadding"
+                      class="curtainInner"
+                      data-test="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium"
@@ -1821,11 +1821,11 @@ exports[`ModalDefaultFooter renders a sticky footer 1`] = `
             >
               <div
                 className="root curtain"
-                data-test="thumbprint-modal-curtain"
-                onClick={[Function]}
               >
                 <div
-                  className="curtainPadding"
+                  className="curtainInner"
+                  data-test="thumbprint-modal-curtain"
+                  onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium"
