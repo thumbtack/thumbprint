@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.1.2 - 2019-09-03
+
 ### Changed
 
 -   [Patch] Code formatting tweaks due to Prettier version bump.
