@@ -422,7 +422,7 @@ function ModalDefaultDemoNarrow() {
 
 ### Modal with fixed height
 
-To fix keep the height of the modal (including top row with close button and sticky footer) such that it remains consistent as modal content changes, you can apply `heightAboveSmall` prop. When used in conjunction with `<ModalFooter isSticky>`, while this sets a height above [the `small` breakpoint](https://thumbprint.design/guide/product/breakpoints/), the modal's height will not expand beyond the height of the viewport.
+To keep the height of the modal (including top row with close button and sticky footer) fixed such that it remains consistent as modal content changes, you can apply `heightAboveSmall` prop. It only applies when the viewport is above [the `small` breakpoint](https://thumbprint.design/guide/product/breakpoints/); modals always stretch 100% of the viewport under small breakpoint. When used with `<ModalFooter isSticky>`, the modal will not expand beyond the height of the viewport to maintain a sticky footer (i.e. the modal's height will be the max of the provided height and the viewport height).
 
 ```jsx
 function ModalDefaultDemoFixedHeight() {

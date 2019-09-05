@@ -68,7 +68,8 @@ const ModalDefaultAnimatedWrapper = ({
                         */}
                         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <div
-                            className={classNames(styles.curtainInner, {
+                            className={classNames({
+                                [styles.curtainInner]: true,
                                 [styles.curtainInnerShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
                             onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
@@ -90,7 +91,6 @@ const ModalDefaultAnimatedWrapper = ({
                                 <div
                                     className={classNames({
                                         [styles.container]: true,
-                                        [styles.containerFixedHeight]: heightAboveSmall !== 'auto',
                                     })}
                                     data-test="thumbprint-modal-container"
                                 >

@@ -633,7 +633,7 @@ exports[`ModalDefault renders a medium height modal 1`] = `
                         data-test="thumbprint-modal-wrapper"
                       >
                         <div
-                          class="container containerFixedHeight"
+                          class="container"
                           data-test="thumbprint-modal-container"
                         >
                           <div
@@ -698,7 +698,7 @@ exports[`ModalDefault renders a medium height modal 1`] = `
                     data-test="thumbprint-modal-wrapper"
                   >
                     <div
-                      className="container containerFixedHeight"
+                      className="container"
                       data-test="thumbprint-modal-container"
                     >
                       <div
@@ -1072,7 +1072,7 @@ exports[`ModalDefault renders a tall height modal 1`] = `
                         data-test="thumbprint-modal-wrapper"
                       >
                         <div
-                          class="container containerFixedHeight"
+                          class="container"
                           data-test="thumbprint-modal-container"
                         >
                           <div
@@ -1137,7 +1137,7 @@ exports[`ModalDefault renders a tall height modal 1`] = `
                     data-test="thumbprint-modal-wrapper"
                   >
                     <div
-                      className="container containerFixedHeight"
+                      className="container"
                       data-test="thumbprint-modal-container"
                     >
                       <div

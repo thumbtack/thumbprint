@@ -61,7 +61,7 @@ $contents-padding-large: $tp-space__5;
 
         height: auto;
         &ShouldPageScrollAboveSmall {
-            max-height: initial;
+            max-height: none;
         }
     }
 }
@@ -75,9 +75,8 @@ $contents-padding-large: $tp-space__5;
     display: flex;
 
     // Prevent the modal from growing taller than the page. This is primarly needed for modals
-    // with sticky footers or fixed height (with heigthAboveSmall prop) to not grow larger
-    // than the viewport when viewed above the small breakpoint.
-    // We rely on `max-height` for that scenario so the modal is never taller than its
+    // with sticky footers to not grow larger than the viewport when viewed above the small
+    // breakpoint. We rely on `max-height` for that scenario so the modal is never taller than its
     // contents.
     max-height: 100%;
 
@@ -100,8 +99,7 @@ $contents-padding-large: $tp-space__5;
         // the modal is tall enough, this will make the page scroll. Without this, the modal won't
         // grow taller than the viewport and the modal contents itself will scroll.
         &ShouldPageScrollAboveSmall {
-            display: block;
-            max-height: initial;
+            max-height: none;
         }
 
         // Center the modal horizontally and vertically.
@@ -166,12 +164,6 @@ $contents-padding-large: $tp-space__5;
     width: 100%;
     display: flex;
     flex-direction: column;
-
-    // When heightAboveSmall prop is provided to fix the wrapper height, set
-    // height to 100% to inherit the height from the wrapper
-    &FixedHeight {
-        height: 100%;
-    }
 }
 
 .contents {
