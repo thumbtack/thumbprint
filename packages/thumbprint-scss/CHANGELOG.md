@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade `p-map`, a `devDependency`. This does not affect the outputted code.
+
 ## 2.0.6 - 2019-09-03
 
 ### Changed

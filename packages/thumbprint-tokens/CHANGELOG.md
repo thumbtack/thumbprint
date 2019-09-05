@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade `handlebars`, a `devDependency`. This does not affect the outputted code.
+
 ## 8.3.1 - 2019-09-03
 
 ### Changed

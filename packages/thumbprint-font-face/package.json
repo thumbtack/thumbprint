@@ -32,6 +32,6 @@
     },
     "devDependencies": {
         "node-sass-tilde-importer": "2.0.0-alpha.1",
-        "tmp": "^0.0.33"
+        "tmp": "^0.1.0"
     }
 }

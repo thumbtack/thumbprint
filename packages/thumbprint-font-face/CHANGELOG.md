@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade `tmp`, a `devDependency`. This does not affect the outputted code.
+
 ## 1.0.11 - 2019-09-03
 
 ### Changed
