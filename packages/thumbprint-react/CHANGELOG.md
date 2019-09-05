@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `heightAboveSmall` to `ModalDefault` and `ModalDefaultAnimatedWrapper`. (#433)
+
+### Changed
+
+-   [Patch] Fix bottom padding in `ModalDefault` for Firefox and Edge (#376)
+
 ## 9.1.2 - 2019-09-03
 
 ### Changed

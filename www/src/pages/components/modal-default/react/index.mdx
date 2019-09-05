@@ -420,6 +420,146 @@ function ModalDefaultDemoNarrow() {
 }
 ```
 
+### Modal with fixed height
+
+To keep the height of the modal (including top row with close button and sticky footer) fixed such that it remains consistent as modal content changes, you can apply `heightAboveSmall` prop. It only applies when the viewport is above [the `small` breakpoint](https://thumbprint.design/guide/product/breakpoints/); modals always stretch 100% of the viewport under small breakpoint. When used with `<ModalFooter isSticky>`, the modal will not expand beyond the height of the viewport to maintain a sticky footer (i.e. the modal's height will be the max of the provided height and the viewport height).
+
+```jsx
+function ModalDefaultDemoFixedHeight() {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [showIntroScreen, setShowIntroScreen] = React.useState(true);
+
+    return (
+        <React.Fragment>
+            <Button
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalDefault
+                isOpen={isOpen}
+                onCloseClick={() => {
+                    setIsOpen(false);
+                }}
+                onCloseFinish={() => {
+                    console.log('ModalDefault onCloseFinish');
+                }}
+                onOpenFinish={() => {
+                    console.log('ModalDefault onOpenFinish');
+                }}
+                heightAboveSmall="medium"
+            >
+                <ModalDefaultHeader>
+                    <ModalDefaultTitle>
+                        {showIntroScreen ? 'First screen' : 'Second screen'}
+                    </ModalDefaultTitle>
+                </ModalDefaultHeader>
+
+                <ModalDefaultContent>
+                    {showIntroScreen ? (
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                                erat, sed diam voluptua.
+                            </p>
+                            <p>
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                                amet.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                                erat, sed diam voluptua.
+                            </p>
+                            <p>
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                                amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua.
+                            </p>
+                        </div>
+                    ) : (
+                        <div>
+                            <p>
+                                Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                imperdiet doming id quod mazim placerat facer possim assum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat.
+                            </p>
+                            <p>
+                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                            </p>
+                            <p>
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+                                molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+                                vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                                luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat.
+                            </p>
+                            <p>
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+                                amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua.
+                            </p>
+                            <p>
+                                Nam liber tempor cum soluta nobis eleifend option congue nihil
+                                imperdiet doming id quod mazim placerat facer possim assum.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                                ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                        </div>
+                    )}
+                </ModalDefaultContent>
+
+                <ModalDefaultFooter isSticky>
+                    <ButtonRow justify="right" isStackedBelowSmall>
+                        {!showIntroScreen && (
+                            <Button
+                                onClick={() => setShowIntroScreen(true)}
+                                width="full-below-small"
+                                theme="secondary"
+                            >
+                                Go back
+                            </Button>
+                        )}
+                        <Button
+                            onClick={
+                                showIntroScreen
+                                    ? () => setShowIntroScreen(false)
+                                    : () => setIsOpen(false)
+                            }
+                            width="full-below-small"
+                        >
+                            {showIntroScreen ? 'Next' : 'Submit'}
+                        </Button>
+                    </ButtonRow>
+                </ModalDefaultFooter>
+            </ModalDefault>
+        </React.Fragment>
+    );
+}
+```
+
 ### Full bleed modal
 
 You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal. This is useful for setting your own background color or section borders, for example.

@@ -14,11 +14,13 @@ $width-narrow: 416px;
 $width-medium: 632px;
 $width-wide: 1400px;
 
+$height-medium: 600px;
+$height-tall: 900px;
+
 $contents-padding-small: 20px;
 $contents-padding-large: $tp-space__5;
 
 .curtain {
-    padding: 0;
     // ModalCurtain closing transition on small screens.
     transition: opacity 0ms $easing $transition-close-duration,
         visibility $transition-close-duration $easing;
@@ -29,7 +31,6 @@ $contents-padding-large: $tp-space__5;
     }
 
     @include tp-respond-above($tp-breakpoint__small) {
-        padding: $tp-space__5;
         background-color: rgba(0, 0, 0, 0.8);
 
         // ModalCurtain closing on medium and large screens.
@@ -39,6 +40,28 @@ $contents-padding-large: $tp-space__5;
         &Open {
             // ModalCurtain opening on medium and large screens.
             transition: opacity $transition-open-duration $easing;
+        }
+    }
+}
+
+.curtainInner {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; // Stretch to fit parent
+
+    // Height/max-height are the same as .wrapper's height and max-height
+    // They need to be explicitly specified in this node (i.e. .wrapper's containing block)
+    // such that percentage-based height on .wrapper can be properly derived
+    height: 100%;
+    max-height: 100%;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: $tp-space__5;
+
+        height: auto;
+        &ShouldPageScrollAboveSmall {
+            max-height: none;
         }
     }
 }
@@ -76,8 +99,7 @@ $contents-padding-large: $tp-space__5;
         // the modal is tall enough, this will make the page scroll. Without this, the modal won't
         // grow taller than the viewport and the modal contents itself will scroll.
         &ShouldPageScrollAboveSmall {
-            display: block;
-            max-height: initial;
+            max-height: none;
         }
 
         // Center the modal horizontally and vertically.
@@ -122,6 +144,18 @@ $contents-padding-large: $tp-space__5;
             max-width: 100%;
         }
     }
+
+    &HeightMedium {
+        @include tp-respond-above($tp-breakpoint__small) {
+            height: $height-medium;
+        }
+    }
+
+    &HeightTall {
+        @include tp-respond-above($tp-breakpoint__small) {
+            height: $height-tall;
+        }
+    }
 }
 
 .container {
@@ -136,13 +170,18 @@ $contents-padding-large: $tp-space__5;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding: $contents-padding-small $contents-padding-small $tp-space__5;
     // Momentum scrolling on iOS.
     -webkit-overflow-scrolling: touch;
 
-    &Sticky {
-        flex: 1 1 auto;
-    }
+    flex: 1 1 auto;
+}
+
+.contentsPadding {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+
+    padding: $contents-padding-small $contents-padding-small $tp-space__5;
 
     @include tp-respond-above($tp-breakpoint__small) {
         &NotSticky {
