@@ -8,8 +8,13 @@
 
 ### Changed
 
--   [Patch] Code formatting tweaks due to Prettier version bump.
 -   [Patch] Fix bottom padding in `ModalDefault` for Firefox and Edge (#376)
+
+## 9.1.2 - 2019-09-03
+
+### Changed
+
+-   [Patch] Code formatting tweaks due to Prettier version bump.
 
 ## 9.1.1 - 2019-08-23
 

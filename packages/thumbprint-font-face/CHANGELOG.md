@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.11 - 2019-09-03
+
 ### Changed
 
 -   [Patch] Upgrade `node-sass-tilde-importer`, a `devDependency`. This does not affect the outputted code.
