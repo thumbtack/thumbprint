@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.2.0 - 2019-09-05
+
 ### Added
 
 -   [Minor] Add `heightAboveSmall` to `ModalDefault` and `ModalDefaultAnimatedWrapper`. (#433)
