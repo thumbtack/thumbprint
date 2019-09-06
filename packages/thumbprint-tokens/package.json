@@ -21,7 +21,7 @@
     "devDependencies": {
         "fs-extra": "^8.1.0",
         "glob": "^7.1.2",
-        "handlebars": "^4.1.1",
+        "handlebars": "^4.2.0",
         "lodash": "^4.17.4"
     },
     "bugs": {
@@ -29,7 +29,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-tokens/",
     "dependencies": {
-        "jszip": "^3.2.1",
+        "jszip": "^3.2.2",
         "number-to-words": "^1.2.4"
     }
 }
