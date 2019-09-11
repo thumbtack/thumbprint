@@ -9,17 +9,28 @@ import styles from './plain.module.scss';
 const Plain = React.forwardRef((props, ref) => {
     warning(
         props.children || props.accessibilityLabel || (props.iconLeft && props.children),
-        'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` is provided but `children` is not. This helps users on screen readers navigate our content.',
+        'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` or `iconRight` are provided but `children` is not. This helps users on screen readers navigate our content.',
     );
 
-    const children = props.iconLeft ? (
-        <span className={styles.flexCenter}>
-            {props.iconLeft}
-            {props.children && <span className={styles.textContainer}>{props.children}</span>}
-        </span>
-    ) : (
-        props.children
-    );
+    let { children } = props;
+
+    if (props.iconLeft) {
+        children = (
+            <span className={styles.flexCenter}>
+                {props.iconLeft}
+                {props.children && <span className={styles.textContainer}>{props.children}</span>}
+            </span>
+        );
+    }
+
+    if (props.iconRight) {
+        children = (
+            <span className={styles.flexCenter}>
+                {props.children && <span className={styles.textContainer}>{props.children}</span>}
+                {props.iconRight}
+            </span>
+        );
+    }
 
     const commonProps = {
         disabled: props.isDisabled,
@@ -52,10 +63,13 @@ Plain.propTypes = {
      */
     to: PropTypes.string,
     /**
-     * Icon from [Thumbprint Icons](/icons/) to render left of the
-     * text.
+     * Icon from [Thumbprint Icons](/icons/) to render left of the text.
      */
     iconLeft: PropTypes.node,
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right of the text.
+     */
+    iconRight: PropTypes.node,
     /**
      * Sets the text color.
      */
