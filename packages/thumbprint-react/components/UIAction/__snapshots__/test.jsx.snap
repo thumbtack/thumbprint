@@ -426,41 +426,6 @@ exports[`Plain adds proper accessibility attribute 1`] = `
 </ForwardRef>
 `;
 
-exports[`Plain renders icon that is passed in 1`] = `
-<ForwardRef
-  iconLeft={
-    <svg>
-      Duck
-    </svg>
-  }
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
->
-  <button
-    className="plain plainThemePrimary"
-    disabled={false}
-    onClick={null}
-    type="button"
-  >
-    <span
-      className="flexCenter"
-    >
-      <svg>
-        Duck
-      </svg>
-      <span
-        className="textContainer"
-      >
-        Goose
-      </span>
-    </span>
-  </button>
-</ForwardRef>
-`;
-
 exports[`Plain renders inherit theme 1`] = `
 <ForwardRef
   iconLeft={null}
@@ -501,6 +466,41 @@ exports[`Plain renders inherit theme 2`] = `
 </ForwardRef>
 `;
 
+exports[`Plain renders left icon that is passed in 1`] = `
+<ForwardRef
+  iconLeft={
+    <svg>
+      Duck
+    </svg>
+  }
+  isDisabled={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  theme="primary"
+  to={null}
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <svg>
+        Duck
+      </svg>
+      <span
+        className="textContainer"
+      >
+        Goose
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
 exports[`Plain renders primary theme 1`] = `
 <ForwardRef
   iconLeft={null}
@@ -537,6 +537,42 @@ exports[`Plain renders primary theme 2`] = `
     type="button"
   >
     Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders right icon that is passed in 1`] = `
+<ForwardRef
+  iconLeft={null}
+  iconRight={
+    <svg>
+      Duck
+    </svg>
+  }
+  isDisabled={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  theme="primary"
+  to={null}
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <span
+        className="textContainer"
+      >
+        Goose
+      </span>
+      <svg>
+        Duck
+      </svg>
+    </span>
   </button>
 </ForwardRef>
 `;

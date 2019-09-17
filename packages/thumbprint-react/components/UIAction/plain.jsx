@@ -14,19 +14,23 @@ const Plain = React.forwardRef((props, ref) => {
 
     let { children } = props;
 
-    if (props.iconLeft) {
+    if (props.iconLeft || props.iconRight) {
         children = (
             <span className={styles.flexCenter}>
                 {props.iconLeft}
-                {props.children && <span className={styles.textContainer}>{props.children}</span>}
-            </span>
-        );
-    }
 
-    if (props.iconRight) {
-        children = (
-            <span className={styles.flexCenter}>
-                {props.children && <span className={styles.textContainer}>{props.children}</span>}
+                {props.children && (
+                    <span
+                        className={classNames({
+                            [styles.textContainer]: true,
+                            [styles.textContainerLeft]: props.iconLeft,
+                            [styles.textContainerRight]: props.iconRight,
+                        })}
+                    >
+                        {props.children}
+                    </span>
+                )}
+
                 {props.iconRight}
             </span>
         );
