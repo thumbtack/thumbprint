@@ -256,6 +256,17 @@ describe('Plain', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    test('left and right icons can be used together', () => {
+        const wrapper = mount(
+            <Plain iconLeft={<svg>Swan</svg>} iconRight={<svg>Duck</svg>}>
+                Goose
+            </Plain>,
+        );
+        expect(wrapper.find('svg')).toHaveLength(2);
+        expect(wrapper.text()).toBe('SwanGooseDuck');
+        expect(wrapper).toMatchSnapshot();
+    });
+
     test('adds proper accessibility attribute', () => {
         const wrapper = mount(<Plain accessibilityLabel="Duck">Goose</Plain>);
         expect(wrapper.find('button').prop('aria-label')).toEqual('Duck');
