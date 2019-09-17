@@ -426,9 +426,14 @@ exports[`Plain adds proper accessibility attribute 1`] = `
 </ForwardRef>
 `;
 
-exports[`Plain renders icon that is passed in 1`] = `
+exports[`Plain left and right icons can be used together 1`] = `
 <ForwardRef
   iconLeft={
+    <svg>
+      Swan
+    </svg>
+  }
+  iconRight={
     <svg>
       Duck
     </svg>
@@ -449,13 +454,16 @@ exports[`Plain renders icon that is passed in 1`] = `
       className="flexCenter"
     >
       <svg>
-        Duck
+        Swan
       </svg>
       <span
-        className="textContainer"
+        className="textContainer textContainerLeft textContainerRight"
       >
         Goose
       </span>
+      <svg>
+        Duck
+      </svg>
     </span>
   </button>
 </ForwardRef>
@@ -501,6 +509,41 @@ exports[`Plain renders inherit theme 2`] = `
 </ForwardRef>
 `;
 
+exports[`Plain renders left icon that is passed in 1`] = `
+<ForwardRef
+  iconLeft={
+    <svg>
+      Duck
+    </svg>
+  }
+  isDisabled={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  theme="primary"
+  to={null}
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <svg>
+        Duck
+      </svg>
+      <span
+        className="textContainer textContainerLeft"
+      >
+        Goose
+      </span>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
 exports[`Plain renders primary theme 1`] = `
 <ForwardRef
   iconLeft={null}
@@ -537,6 +580,42 @@ exports[`Plain renders primary theme 2`] = `
     type="button"
   >
     Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders right icon that is passed in 1`] = `
+<ForwardRef
+  iconLeft={null}
+  iconRight={
+    <svg>
+      Duck
+    </svg>
+  }
+  isDisabled={false}
+  onClick={null}
+  shouldOpenInNewTab={false}
+  theme="primary"
+  to={null}
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <span
+        className="textContainer textContainerRight"
+      >
+        Goose
+      </span>
+      <svg>
+        Duck
+      </svg>
+    </span>
   </button>
 </ForwardRef>
 `;

@@ -242,10 +242,28 @@ describe('Plain', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders icon that is passed in', () => {
+    test('renders left icon that is passed in', () => {
         const wrapper = mount(<Plain iconLeft={<svg>Duck</svg>}>Goose</Plain>);
         expect(wrapper.find('svg')).toHaveLength(1);
         expect(wrapper.text()).toBe('DuckGoose');
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('renders right icon that is passed in', () => {
+        const wrapper = mount(<Plain iconRight={<svg>Duck</svg>}>Goose</Plain>);
+        expect(wrapper.find('svg')).toHaveLength(1);
+        expect(wrapper.text()).toBe('GooseDuck');
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('left and right icons can be used together', () => {
+        const wrapper = mount(
+            <Plain iconLeft={<svg>Swan</svg>} iconRight={<svg>Duck</svg>}>
+                Goose
+            </Plain>,
+        );
+        expect(wrapper.find('svg')).toHaveLength(2);
+        expect(wrapper.text()).toBe('SwanGooseDuck');
         expect(wrapper).toMatchSnapshot();
     });
 
