@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 1.0.12 - 2019-09-17
+
 ### Changed
 
 -   [Patch] Upgrade `tmp`, a `devDependency`. This does not affect the outputted code.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 1.0.11 - 2019-09-03
 

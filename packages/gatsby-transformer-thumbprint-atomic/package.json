@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/gatsby-transformer-thumbprint-atomic",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "private": true,
     "dependencies": {
         "gonzales-pe": "^4.2.4",
