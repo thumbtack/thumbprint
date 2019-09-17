@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 2.0.7 - 2019-09-17
+
 ### Changed
 
 -   [Patch] Upgrade `p-map`, a `devDependency`. This does not affect the outputted code.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 2.0.6 - 2019-09-03
 
