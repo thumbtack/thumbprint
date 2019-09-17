@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `iconLeft` prop to `TextButton`. (#436)
+
 ## 9.2.0 - 2019-09-05
 
 ### Added

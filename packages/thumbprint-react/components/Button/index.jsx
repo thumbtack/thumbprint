@@ -17,7 +17,13 @@ const getCommonProps = props => ({
 });
 
 const TextButton = React.forwardRef((props, ref) => (
-    <Plain {...getCommonProps(props)} theme={props.theme} iconLeft={props.iconLeft} ref={ref} />
+    <Plain
+        {...getCommonProps(props)}
+        theme={props.theme}
+        iconLeft={props.iconLeft}
+        iconRight={props.iconRight}
+        ref={ref}
+    />
 ));
 
 TextButton.propTypes = {
@@ -29,6 +35,10 @@ TextButton.propTypes = {
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `TextButton`.
      */
     iconLeft: PropTypes.node,
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right of the text within `TextButton`.
+     */
+    iconRight: PropTypes.node,
     /**
      * Visually and functionally disables the button. We discourage the use of this prop since it
      * is difficult to visually indicate that a link is disabled. Consider not rendering the
