@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-font-face",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "main": "_index.scss",
     "repository": {
         "type": "git",
@@ -28,7 +28,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-font-face/#readme",
     "dependencies": {
-        "@thumbtack/thumbprint-tokens": "^8.3.1"
+        "@thumbtack/thumbprint-tokens": "^8.3.2"
     },
     "devDependencies": {
         "node-sass-tilde-importer": "2.0.0-alpha.1",
