@@ -4,6 +4,7 @@ exports[`adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -12,6 +13,7 @@ exports[`adds \`dataTest\` prop 1`] = `
   <ForwardRef
     dataTest="Duck"
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={false}
@@ -77,6 +79,7 @@ exports[`adds \`dataTest\` prop 2`] = `
 exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={true}
   theme="primary"
@@ -84,6 +87,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={true}
@@ -147,6 +151,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability 2`] = `
 exports[`adds attribute to open link in new tab 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={true}
   theme="primary"
@@ -154,6 +159,7 @@ exports[`adds attribute to open link in new tab 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={true}
@@ -217,6 +223,7 @@ exports[`adds attribute to open link in new tab 2`] = `
 exports[`removes \`href\` if link is disabled 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={true}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -224,6 +231,7 @@ exports[`removes \`href\` if link is disabled 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={true}
     onClick={null}
     shouldOpenInNewTab={false}
@@ -285,6 +293,7 @@ exports[`removes \`href\` if link is disabled 2`] = `
 exports[`renders \`children\` passed in 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -292,6 +301,7 @@ exports[`renders \`children\` passed in 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={false}
@@ -353,6 +363,7 @@ exports[`renders \`children\` passed in 2`] = `
 exports[`renders \`to\` prop as \`href\` 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -360,6 +371,7 @@ exports[`renders \`to\` prop as \`href\` 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={false}
@@ -421,6 +433,7 @@ exports[`renders \`to\` prop as \`href\` 2`] = `
 exports[`renders a anchor tag when a \`to\` is provided 1`] = `
 <ForwardRef
   iconLeft={null}
+  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -428,6 +441,7 @@ exports[`renders a anchor tag when a \`to\` is provided 1`] = `
 >
   <ForwardRef
     iconLeft={null}
+    iconRight={null}
     isDisabled={false}
     onClick={null}
     shouldOpenInNewTab={false}
