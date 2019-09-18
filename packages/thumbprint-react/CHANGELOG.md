@@ -2,11 +2,15 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `iconRight` prop to `Link`. (#436)
+
 ## 9.3.0 - 2019-09-17
 
 ### Added
 
--   [Minor] Add `iconLeft` prop to `TextButton`. (#436)
+-   [Minor] Add `iconRight` prop to `TextButton`. (#436)
 
 ## 9.2.0 - 2019-09-05
 
