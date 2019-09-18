@@ -64,8 +64,6 @@ const Image = forwardRef((props, outerRef) => {
     const parent = canUseDOM && containerRef && scrollparent(containerRef);
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
-    // console.log(root, rootnew);
-
     // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
     // load the image.
     const [inViewRef, isInView] = useInView({
