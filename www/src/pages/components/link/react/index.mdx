@@ -41,7 +41,7 @@ These links render as white text with an underline. They work well on dark backg
 </div>
 ```
 
-### Link with an icon
+### Link with an icon to the left
 
 The `Link` component provides a `iconLeft` prop to help vertically position icons alongside text.
 
@@ -51,9 +51,19 @@ The `Link` component provides a `iconLeft` prop to help vertically position icon
 </Link>
 ```
 
-### Link with icon that inherits color of parent
+### Link with an icon to the right
 
-This link inherits the color of its parent with `theme=&quot;inherit&quot;`.
+The `Link` component also allows an icon to the right of the text.
+
+```jsx
+<Link iconRight={<ContentActionsPhoneCallSmall />} to="https://example.com/">
+    Call this Pro
+</Link>
+```
+
+### Link with an icon that inherits color of parent
+
+This link inherits the color of its parent with `theme="inherit"`.
 
 ```jsx theme=dark
 <div style={{ color: tokens.tpColorWhite }}>
