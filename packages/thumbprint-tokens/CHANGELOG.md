@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+## 8.3.2 - 2019-09-17
+
+### Changed
+
+-   [Patch] Upgrade `handlebars`, a `devDependency`. This does not affect the outputted code.
+
+## 8.3.1 - 2019-09-03
+
+### Changed
+
+-   [Patch] Upgrade `fs-extra`, a `devDependency`. This does not affect the outputted code.
+
+## 8.3.0 - 2019-08-21
+
+### Added
+
+-   [Minor] Add shadow tokens for web.
+
+### Deprecated
+
+-   [Patch] Deprecate `shadow-card` token for web. It has been replaced by `shadow-100`, `shadow-200`, `shadow-300`, and `shadow-400`
+
+## 8.2.0 - 2019-07-31
+
+### Added
+
+-   [Minor] Create an Android output.
+
 ## 8.1.1 - 2019-07-15
 
 ### Changed

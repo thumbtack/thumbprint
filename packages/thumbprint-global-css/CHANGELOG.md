@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+## 0.1.15 - 2019-09-17
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 0.1.14 - 2019-09-03
+
+### Changed
+
+-   [Patch] Upgrade `node-sass-tilde-importer`, a `devDependency`. This does not affect the outputted code.
+
+## 0.1.13 - 2019-08-21
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 0.1.12 - 2019-07-31
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
 ## 0.1.11 - 2019-07-15
 
 ### Changed

@@ -35,6 +35,7 @@ const ModalDefaultAnimatedWrapper = ({
     onOpenFinish,
     shouldCloseOnCurtainClick,
     width,
+    heightAboveSmall,
     shouldPageScrollAboveSmall,
 }) => (
     <Transition
@@ -56,25 +57,45 @@ const ModalDefaultAnimatedWrapper = ({
                             [styles.curtain]: true,
                             [styles.curtainOpen]: isOpen,
                         })}
-                        onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
-                        data-test="thumbprint-modal-curtain"
                     >
+                        {/*
+                            Extra nested <div> to prevent curtain's 
+                            bottom padding from being ignored in Firefox and Edge
+                            (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
+
+                            onClick listener is attached to this innermost node
+                            that constitutes curtain
+                        */}
+                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <div
                             className={classNames({
-                                [styles.wrapper]: true,
-                                [styles.wrapperOpen]: isOpen,
-                                [styles.wrapperWide]: width === 'wide',
-                                [styles.wrapperNarrow]: width === 'narrow',
-                                [styles.wrapperMedium]: width === 'medium',
-                                [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
+                                [styles.curtainInner]: true,
+                                [styles.curtainInnerShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
+                            onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
+                            data-test="thumbprint-modal-curtain"
                         >
                             <div
                                 className={classNames({
-                                    [styles.container]: true,
+                                    [styles.wrapper]: true,
+                                    [styles.wrapperOpen]: isOpen,
+                                    [styles.wrapperWide]: width === 'wide',
+                                    [styles.wrapperNarrow]: width === 'narrow',
+                                    [styles.wrapperMedium]: width === 'medium',
+                                    [styles.wrapperHeightMedium]: heightAboveSmall === 'medium',
+                                    [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
+                                    [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                                 })}
+                                data-test="thumbprint-modal-wrapper"
                             >
-                                {children}
+                                <div
+                                    className={classNames({
+                                        [styles.container]: true,
+                                    })}
+                                    data-test="thumbprint-modal-container"
+                                >
+                                    {children}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,6 +140,12 @@ ModalDefaultAnimatedWrapper.propTypes = {
      * Sets the max-width of the modal container.
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    /**
+     * Sets height of the modal container above small viewport.
+     * If `auto` (default), the modal height will be determined by its content.
+     * Otherwise, the modal height will be fixed at some constant px.
+     */
+    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
 ModalDefaultAnimatedWrapper.defaultProps = {
@@ -129,6 +156,7 @@ ModalDefaultAnimatedWrapper.defaultProps = {
     shouldCloseOnCurtainClick: true,
     shouldPageScrollAboveSmall: true,
     width: 'medium',
+    heightAboveSmall: 'auto',
 };
 
 const modalHeaderPropTypes = {
@@ -230,6 +258,12 @@ const modalDefaultPropTypes = {
      * Sets the max-width of the modal container.
      */
     width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    /**
+     * Sets height of the modal container above small viewport.
+     * If `auto` (default), the modal height will be determined by its content.
+     * Otherwise, the modal height will be fixed at some constant px.
+     */
+    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
 const modalDefaultDefaultProps = {
@@ -240,6 +274,7 @@ const modalDefaultDefaultProps = {
     shouldHideCloseButton: false,
     shouldCloseOnCurtainClick: true,
     width: 'medium',
+    heightAboveSmall: 'auto',
 };
 
 const ModalDefaultHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
@@ -358,6 +393,7 @@ class ModalDefault extends React.Component {
             shouldCloseOnCurtainClick,
             shouldHideCloseButton,
             width,
+            heightAboveSmall,
         } = this.props;
 
         const { hasStickyFooter } = this.state;
@@ -370,6 +406,7 @@ class ModalDefault extends React.Component {
                 shouldCloseOnCurtainClick={shouldCloseOnCurtainClick}
                 isOpen={isOpen}
                 width={width}
+                heightAboveSmall={heightAboveSmall}
                 // We allow the modal to grow taller than the page only if
                 // there is no sticky footer. This means that the page can
                 // scroll vertically when the modal contents are tall enough.
@@ -385,14 +422,19 @@ class ModalDefault extends React.Component {
                         setSticky: this.setSticky,
                     }}
                 >
-                    <div
-                        className={classNames({
-                            [styles.contents]: true,
-                            [styles.contentsSticky]: hasStickyFooter,
-                            [styles.contentsNotSticky]: !hasStickyFooter,
-                        })}
-                    >
-                        {children}
+                    <div className={styles.contents}>
+                        {/*
+                            Extra nested <div> to prevent bottom padding from being ignored
+                            in Firefox and Edge
+                            (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
+                        */}
+                        <div
+                            className={classNames(styles.contentsPadding, {
+                                [styles.contentsPaddingNotSticky]: !hasStickyFooter,
+                            })}
+                        >
+                            {children}
+                        </div>
                     </div>
                     {/*
                         If a user uses `<ModalDefaultFooter isSticky />`, it gets

@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-tokens",
     "description": "Design variables that power Thumbtack’s UI.",
-    "version": "8.1.1",
+    "version": "8.3.2",
     "main": "dist/javascript-cjs/index.js",
     "module": "dist/javascript-esm/index.js",
     "sideEffects": false,
@@ -19,9 +19,9 @@
     "author": "Daniel O'Connor <daniel@danoc.me>",
     "license": "Apache-2.0",
     "devDependencies": {
-        "fs-extra": "^5.0.0",
+        "fs-extra": "^8.1.0",
         "glob": "^7.1.2",
-        "handlebars": "^4.1.1",
+        "handlebars": "^4.2.0",
         "lodash": "^4.17.4"
     },
     "bugs": {
@@ -29,7 +29,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-tokens/",
     "dependencies": {
-        "jszip": "^3.2.1",
+        "jszip": "^3.2.2",
         "number-to-words": "^1.2.4"
     }
 }

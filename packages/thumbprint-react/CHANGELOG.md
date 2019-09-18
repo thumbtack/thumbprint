@@ -2,6 +2,102 @@
 
 ## Unreleased
 
+## 9.4.0 - 2019-09-18
+
+### Added
+
+-   [Minor] Add `iconRight` prop to `Link`. (#436)
+
+## 9.3.0 - 2019-09-17
+
+### Added
+
+-   [Minor] Add `iconRight` prop to `TextButton`. (#436)
+
+## 9.2.0 - 2019-09-05
+
+### Added
+
+-   [Minor] Add `heightAboveSmall` to `ModalDefault` and `ModalDefaultAnimatedWrapper`. (#433)
+
+### Changed
+
+-   [Patch] Fix bottom padding in `ModalDefault` for Firefox and Edge (#376)
+
+## 9.1.2 - 2019-09-03
+
+### Changed
+
+-   [Patch] Code formatting tweaks due to Prettier version bump.
+
+## 9.1.1 - 2019-08-23
+
+### Fixed
+
+-   [Patch] Prevent noscript image when `forceEarlyRender` prop is used.
+
+## 9.1.0 - 2019-08-22
+
+### Added
+
+-   [Minor] Add `forceEarlyRender` prop to `Image` to disable the default lazy-loading behavior and override the `sizes` attribute. (#426)
+
+### Fixed
+
+-   [Patch] Fixed missing `Unreleased` header in CHANGELOG.
+
+## 9.0.3 - 2019-08-21
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 9.0.2 - 2019-08-19
+
+### Changed
+
+-   [Patch] Fix a bug in `BaseCarousel` caused by previous refactor. (#427)
+
+## 9.0.1 - 2019-08-13
+
+### Changed
+
+-   [Patch] Refactor `BaseCarousel` to be a SFC with Hooks.
+
+## 9.0.0 - 2019-08-13
+
+### Added
+
+-   [Minor] Update `DatePicker` to accept a `month` prop to control the active month.
+
+### Changed
+
+-   [Major] Make the `onMonthChanged` prop from `DatePicker` required.
+
+### Fixed
+
+-   [Patch] Update `react-day-picker` dependency to 7.3.2. (#150)
+
+## 8.0.1 - 2019-08-08
+
+### Fixed
+
+-   [Patch] Fix bug in `Carousel` where transition animation was not working.
+
+## 8.0.0 - 2019-08-08
+
+### Fixed
+
+-   [Major] Update `DatePicker` props validation to be more stringent. It now throws a JavaScript error for any provided `value`s that collide with the `disabledDays`, whether `before` or `after`. Previously only `before` was checked, and only when it was before the current day. For consumers who are not passing in erroneous input, these new checks will have no effect, but it may reveal existing bugs and so all consumers should be tested manually when upgrading.
+-   [Patch] Restore border color of focused `Radio` input.
+-   [Patch] Refactor `Carousel` component to be a SFC with Hooks.
+
+## 7.1.0 - 2019-07-31
+
+### Changed
+
+-   [Minor] Add new `HorizontalRule` react component.
+
 ### Fixed
 
 -   [Patch] Fix border colour of focused `Select` in an error state.

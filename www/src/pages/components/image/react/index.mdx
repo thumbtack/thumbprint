@@ -4,6 +4,7 @@ description: Commonly used image styles.
 ---
 
 import { graphql } from 'gatsby';
+import Alert from 'components/alert';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
@@ -12,7 +13,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Browsers that [support responsive images](https://caniuse.com/#feat=picture) will load the best image from the options available in the `sources` prop. Other browsers will load the image in the `src` prop.
 
-Images are always lazy-loaded. The `containerAspectRatio` reserves space for the lazy-loaded image. This avoids [content reflow](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) issue that causes the page to "jump" as the image gets loaded.
+By default images are lazy-loaded. The `containerAspectRatio` reserves space for the lazy-loaded image. This avoids [content reflow](https://css-tricks.com/preventing-content-reflow-from-lazy-loaded-images/) issue that causes the page to “jump” as the image is loaded.
 
 ```jsx
 <Image
@@ -89,6 +90,44 @@ This example uses the `height` prop to "crop" the image. By default, the cropped
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
     alt="Office building with large table and chairs"
     height="230px"
+/>
+```
+
+## Forcing early render
+
+The `Image` component behavior uses JavaScript to lazy load the image and and calculate the `sizes` attribute. While this is beneficial in most cases, it also means that the image will not start downloading until the client-side JavaScript is parsed and the image is scrolled into view. The `forceEarlyRender` prop allows developers to turn off lazy loading and the `sizes` calculation so that the image can load as soon as possible. This is useful for "above-the-fold" images with a predictable width in server-side-rendered environments.
+
+In this responsive image example `sizes` is set to `760px`, matching the expected render size, and this triggers a single request for the `768w` webp or jpeg image. See the section [Resolution switching: Different sizes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Resolution_switching_Different_sizes) for allowable values.
+
+<Alert type="warning" title="Caution">
+    By default the Image component will lazy load and calculate the "sizes" attribute for you. An
+    incorrect "forceEarlyRender" value can negatively impact performance or image clarity.
+</Alert>
+
+```jsx
+<Image
+    forceEarlyRender="760px"
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/768.jpeg"
+    containerAspectRatio={728 / 485}
+    sources={[
+        {
+            type: 'image/webp',
+            srcSet: `
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/400.webp 400w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/640.webp 640w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/768.webp 768w,
+            `,
+        },
+        {
+            type: 'image/jpeg',
+            srcSet: `
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/400.jpeg 400w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/640.jpeg 640w,
+                https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/768.jpeg 768w,
+            `,
+        },
+    ]}
+    alt="People carrying boxes in truck"
 />
 ```
 

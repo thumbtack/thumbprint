@@ -13,58 +13,61 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 The `Carousel` component is a low-level controlled component. It displays multiple items in a row and animates when the `selectedIndex` changes. It is infinite by default and the contents are draggable by touch devices.
 
 ```jsx
-class CarouselDemo extends React.Component {
-    constructor() {
-        this.state = {
-            selectedIndex: 0,
-        };
+function CarouselDemo() {
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-        this.onSelectedIndexChange = this.onSelectedIndexChange.bind(this);
+    function onSelectedIndexChange(newIndex) {
+        setSelectedIndex(Math.round(newIndex));
     }
 
-    onSelectedIndexChange(newIndex) {
-        this.setState({ selectedIndex: Math.round(newIndex) });
-    }
-
-    render() {
-        return (
+    return (
+        <React.Fragment>
             <Carousel
                 visibleCount={3}
                 spacing="16px"
-                selectedIndex={this.state.selectedIndex}
-                onSelectedIndexChange={this.onSelectedIndexChange}
+                selectedIndex={selectedIndex}
+                onSelectedIndexChange={onSelectedIndexChange}
             >
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Personal Training"
                         url="https://d1vg1gqh4nkuns.cloudfront.net/i/328491711124668465/small/standard/hero"
                     />
-                    <ServiceCardTitle>Personal Training</ServiceCardTitle>
+                    <ServiceCardTitle>1. Personal Training</ServiceCardTitle>
                 </ServiceCard>
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Dog Training"
                         url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761411685384319/small/standard/hero"
                     />
-                    <ServiceCardTitle>Dog Training</ServiceCardTitle>
+                    <ServiceCardTitle>2. Dog Training</ServiceCardTitle>
                 </ServiceCard>
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Local Moving (under 50 miles)"
                         url="https://picsum.photos/666/417/?image=300"
                     />
-                    <ServiceCardTitle>Local Moving (under 50 miles)</ServiceCardTitle>
+                    <ServiceCardTitle>3. Local Moving</ServiceCardTitle>
                 </ServiceCard>
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Massage Therapy"
                         url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761720722374783/small/standard/hero"
                     />
-                    <ServiceCardTitle>Massage Therapy</ServiceCardTitle>
+                    <ServiceCardTitle>4. Massage Therapy</ServiceCardTitle>
                 </ServiceCard>
             </Carousel>
-        );
-    }
+
+            <ButtonRow>
+                <Button size="small" onClick={() => setSelectedIndex(selectedIndex - 1)}>
+                    Prev
+                </Button>
+                <Button size="small" onClick={() => setSelectedIndex(selectedIndex + 1)}>
+                    Next
+                </Button>
+            </ButtonRow>
+        </React.Fragment>
+    );
 }
 ```
 

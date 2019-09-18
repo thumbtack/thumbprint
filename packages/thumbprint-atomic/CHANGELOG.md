@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+## 3.3.1 - 2019-09-17
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 3.3.0 - 2019-09-03
+
+### Added
+
+-   [Minor] Add `box-shadow` classes based on the shadow tokens.
+
+### Changed
+
+-   [Patch] Upgrade `node-sass-tilde-importer`, a `devDependency`. This does not affect the outputted code.
+
+## 3.2.15 - 2019-08-21
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 3.2.14 - 2019-07-31
+
+### Changed
+
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
 ## 3.2.13 - 2019-07-15
 
 ### Changed
