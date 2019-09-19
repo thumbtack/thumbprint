@@ -42,6 +42,10 @@ To add or remove NPM packages from code in `packages/`, `cd` into the package's 
 
 Our documentation source code lives in [`www/`](https://github.com/thumbtack/thumbprint/tree/master/www). Take a look at [`www/README.md`](https://github.com/thumbtack/thumbprint/blob/master/www/README.md) to learn more.
 
+### Environment variables we use
+
+-   `CODA_API_TOKEN` – This is an API token from Coda that we use to display the component statuses on `thumbprint.design/components/overview`. It is not required for local development. To get it, message a Design Systems team member on Slack and store the value as an environment variable in `www/.env`.
+
 ### Submitting a pull request
 
 Here are a few things to keep in mind when creating a pull request:
