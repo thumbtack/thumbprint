@@ -36,6 +36,15 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-source-coda',
+            options: {
+                apiToken: process.env.CODA_API_TOKEN,
+                docId: 'bXyUQb2tJW',
+                tableIdOrName: 'Implementations',
+                useColumnNames: true,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-mdx',
             options: {
                 extensions: ['.mdx'],

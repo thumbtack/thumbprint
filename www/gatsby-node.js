@@ -3,11 +3,17 @@ const path = require('path');
 exports.sourceNodes = ({ actions }) => {
     const { createTypes } = actions;
 
-    // GraphQL requires that fields to have the same data type. We can't do
-    // that since some of our token values are numbers and some are strings.
+    // GraphQL requires that all queried fields exist and have the same data
+    // type. For Thumbprint Tokens, we can't do that since some of the token
+    // values are numbers and some are strings.
+    //
     // Adding the (partial) schema definition here tells Gatsby to treat the
     // fields in `ThumbprintTokenTokensValue` as a string even if it sees
     // one that is a number.
+    //
+    // The `CodaImplementationsTable` definitions allow developers to run the
+    // Thumbprint site locally without needing to set up a CODA API key. Read
+    // the `CONTRIBUTING.md` file if you'd like to set this up.
     const typeDefs = `
         type ThumbprintToken implements Node {
             tokens: [ThumbprintTokenTokens!]!
@@ -21,6 +27,22 @@ exports.sourceNodes = ({ actions }) => {
             web: String
             ios: String
             android: String
+        }
+
+        type CodaImplementationsTableDataValue {
+            Component: String
+            Platform: String
+            Design_status: String
+            Development_status: String
+            Documentation_status: String
+        }
+
+        type CodaImplementationsTableData {
+            values: CodaImplementationsTableDataValue
+        }
+
+        type CodaImplementationsTable implements Node {
+            data: CodaImplementationsTableData
         }
     `;
 
