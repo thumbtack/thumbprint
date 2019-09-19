@@ -48,6 +48,5 @@
         "sheetrock": "^1.1.4",
         "slugify": "^1.2.9",
         "warning": "^4.0.1"
-    },
-    "devDependencies": {}
+    }
 }
