@@ -3,305 +3,88 @@ title: Overview
 description: Our components and the platforms they're available in.
 ---
 
+import { graphql } from 'gatsby';
+import { keyBy } from 'lodash';
 import { Text } from '@thumbtack/thumbprint-react';
 import { Legend, ComponentRow, ComponentTable } from 'components/thumbprint-components/overview';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
-<Legend />
+export const pageQuery = graphql`
+    {
+        allCodaImplementationsTable {
+            group(field: data___values___Component) {
+                fieldValue
+                edges {
+                    node {
+                        data {
+                            values {
+                                Platform
+                                Design_status
+                                Development_status
+                                Documentation_status
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
-<ComponentTable>
-    <ComponentRow
-        name="Alert"
-        usage={{
-            design: 'to-do',
-            development: 'to-do',
-            documentation: 'to-do',
-        }}
-        react={{
-            design: 'to-do',
-            development: 'to-do',
-            documentation: 'to-do',
-        }}
-        scss={{
-            design: 'to-do',
-            development: 'done',
-            documentation: 'done',
-        }}
-        ios={{
-            design: 'to-do',
-            development: 'to-do',
-            documentation: 'to-do',
-        }}
-        android={{
-            design: 'to-do',
-            development: 'to-do',
-            documentation: 'to-do',
-        }}
-        note="The Alert component was created before the Design Systems team existed. It will be re-designed in the future."
-    />
-    <ComponentRow
-        name="Avatar"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Block List"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        scss={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Block List component was created before the Design Systems team existed. It may be re-designed or deprecated in the future."
-    />
-    <ComponentRow
-        name="Button"
-        usage={{ design: 'done', development: 'done', documentation: 'done' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'in-progress', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Button Row"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Carousel"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Checkbox"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Date Picker"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Dropdown"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        note="This component is called `Select` in React and SCSS. It will be renamed in the future."
-    />
-    <ComponentRow
-        name="Fieldset"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        scss={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Fieldset component was created before the Design Systems team existed. We may deprecate it in the future."
-    />
-    <ComponentRow
-        name="Form Note"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Grid"
-        usage={{ design: 'done', development: 'done', documentation: 'done' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'deprecated', development: 'deprecated', documentation: 'deprecated' }}
-        ios={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        android={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-    />
-    <ComponentRow
-        name="Horizontal Rule"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        scss={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Horizontal Rule component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-    <ComponentRow
-        name="Image"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        scss={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Image component handles lazy-loading and responsive images in React. The SCSS version is different and handles visual image styles."
-    />
-    <ComponentRow
-        name="Input (Text Field)"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        note="Will soon be renamed to Text Field for greater cross-platform consistency."
-    />
-    <ComponentRow
-        name="Input Row"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Label"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Link"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        android={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        note="This component is specific to web since web has a distinction between buttons and links (anchor tags)."
-    />
-    <ComponentRow
-        name="List"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Loader Dots"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Loader Dots component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-    <ComponentRow
-        name="Modal (Modal Default)"
-        usage={{ design: 'done', development: 'done', documentation: 'done' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="This component will be renamed to Modal in the future."
-    />
-    <ComponentRow
-        name="Modal Standard"
-        usage={{ design: 'deprecated', development: 'deprecated', documentation: 'deprecated' }}
-        react={{ design: 'deprecated', development: 'deprecated', documentation: 'deprecated' }}
-        scss={{ design: 'deprecated', development: 'deprecated', documentation: 'deprecated' }}
-        ios={{ design: 'deprecated', development: 'deprecated', documentation: 'deprecated' }}
-        android={{
-            design: 'deprecated',
-            development: 'deprecated',
-            documentation: 'deprecated',
-        }}
-        status="This component was deprecated in favor of Modal Default."
-    />
-    <ComponentRow
-        name="Pill"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'done', development: 'in-progress', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'in-progress', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Progress Bar"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'done', documentation: 'to-do' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Progress Bar component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-    <ComponentRow
-        name="Radio"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Service Card"
-        usage={{ design: 'done', development: 'done', documentation: 'done' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Star Rating"
-        usage={{ design: 'to-do', development: 'wont-do', documentation: 'to-do' }}
-        react={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        scss={{ design: 'to-do', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Star Rating component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-    <ComponentRow
-        name="Table"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        note="The Table component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-    <ComponentRow
-        name="Text Area"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'done' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Tooltip"
-        usage={{ design: 'done', development: 'done', documentation: 'done' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        ios={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        android={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Type"
-        usage={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'done', development: 'done', documentation: 'to-do' }}
-        android={{ design: 'done', development: 'to-do', documentation: 'to-do' }}
-    />
-    <ComponentRow
-        name="Wrap"
-        usage={{ design: 'to-do', development: 'to-do', documentation: 'to-do' }}
-        react={{ design: 'done', development: 'done', documentation: 'done' }}
-        scss={{ design: 'done', development: 'done', documentation: 'done' }}
-        ios={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        android={{ design: 'wont-do', development: 'wont-do', documentation: 'wont-do' }}
-        note="The Wrap component was created before the Design Systems team existed. We may re-design it in the future."
-    />
-</ComponentTable>
+<React.Fragment>
+    {props.data.allCodaImplementationsTable.group.length === 0 ? (
+        <Alert type="warning" title="Where are the components?">
+            You'll need to add <InlineCode>CODA_API_TOKEN</InlineCode> environment variable to a{' '}
+            <InlineCode>www/.env</InlineCode> file in order to see the component statuses while
+            developing locally. Read the{' '}
+            <a
+                href="https://github.com/thumbtack/thumbprint/blob/master/CONTRIBUTING.md"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                CONTRIBUTING.md
+            </a>{' '}
+            file for help.
+        </Alert>
+    ) : (
+        <React.Fragment>
+            <Legend />
+            <ComponentTable>
+                {props.data.allCodaImplementationsTable.group.map(group => {
+                    const platforms = keyBy(group.edges, 'node.data.values.Platform');
+                    return (
+                        <ComponentRow
+                            name={group.fieldValue}
+                            react={{
+                                design: platforms['React'].node.data.values.Design_status,
+                                development: platforms['React'].node.data.values.Development_status,
+                                documentation:
+                                    platforms['React'].node.data.values.Documentation_status,
+                            }}
+                            scss={{
+                                design: platforms['SCSS'].node.data.values.Design_status,
+                                development: platforms['SCSS'].node.data.values.Development_status,
+                                documentation:
+                                    platforms['SCSS'].node.data.values.Documentation_status,
+                            }}
+                            ios={{
+                                design: platforms['iOS'].node.data.values.Design_status,
+                                development: platforms['iOS'].node.data.values.Development_status,
+                                documentation:
+                                    platforms['iOS'].node.data.values.Documentation_status,
+                            }}
+                            android={{
+                                design: platforms['Android'].node.data.values.Design_status,
+                                development:
+                                    platforms['Android'].node.data.values.Development_status,
+                                documentation:
+                                    platforms['Android'].node.data.values.Documentation_status,
+                            }}
+                        />
+                    );
+                })}
+            </ComponentTable>
+        </React.Fragment>
+    )}
+</React.Fragment>
