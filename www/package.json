@@ -16,6 +16,7 @@
         "classnames": "^2.2.5",
         "clickable-box": "^1.0.0",
         "docsearch.js": "^2.6.2",
+        "dotenv": "^8.1.0",
         "gatsby": "^2.0.64",
         "gatsby-plugin-compile-es6-packages": "^2.1.0",
         "gatsby-plugin-google-analytics": "^2.0.0",

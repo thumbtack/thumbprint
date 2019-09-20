@@ -7,36 +7,26 @@ import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
 const documentationStatus = PropTypes.oneOf([
-    'to-do',
-    'wont-do',
-    'done',
-    'in-progress',
-    'deprecated',
+    'To-do',
+    'In progress',
+    'Not applicable',
+    'Deprecated',
+    'Done',
 ]);
 
-const Dot = ({ status }) => {
-    const statusMap = {
-        'in-progress': 'In progress',
-        'to-do': 'To-do',
-        'wont-do': "Won't do",
-        deprecated: 'Deprecated',
-        done: 'Done',
-    };
-
-    return (
-        <div
-            aria-label={statusMap[status]}
-            className={classNames({
-                [styles.dot]: true,
-                [styles.dotDone]: status === 'done',
-                [styles.dotInProgress]: status === 'in-progress',
-                [styles.dotToDo]: status === 'to-do',
-                [styles.dotWontDo]: status === 'wont-do',
-                [styles.dotDeprecated]: status === 'deprecated',
-            })}
-        />
-    );
-};
+const Dot = ({ status }) => (
+    <div
+        aria-label={status}
+        className={classNames({
+            [styles.dot]: true,
+            [styles.dotToDo]: status === 'To-do',
+            [styles.dotInProgress]: status === 'In progress',
+            [styles.dotDeprecated]: status === 'Deprecated',
+            [styles.dotNotApplicable]: status === 'Not applicable',
+            [styles.dotDone]: status === 'Done',
+        })}
+    />
+);
 
 Dot.propTypes = {
     status: documentationStatus.isRequired,
@@ -45,31 +35,31 @@ Dot.propTypes = {
 export const Legend = () => (
     <ul aria-hidden="true" className="flex black-300 mb2">
         <li className="mr4 flex items-center">
-            <Dot status="done" />{' '}
+            <Dot status="Done" />{' '}
             <Text size={2} className="ml2">
                 Done
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="in-progress" />{' '}
+            <Dot status="In progress" />{' '}
             <Text size={2} className="ml2">
                 In Progress
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="to-do" />{' '}
+            <Dot status="To-do" />{' '}
             <Text size={2} className="ml2">
                 To-do
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="wont-do" />{' '}
+            <Dot status="Not applicable" />{' '}
             <Text size={2} className="ml2">
                 Not applicable
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="deprecated" />{' '}
+            <Dot status="Deprecated" />{' '}
             <Text size={2} className="ml2">
                 Deprecated
             </Text>
@@ -77,31 +67,12 @@ export const Legend = () => (
     </ul>
 );
 
-export const ComponentRow = ({ name, usage, react, scss, ios, android, note }) => (
+export const ComponentRow = ({ name, react, scss, ios, android }) => (
     <>
         <tr className="tl bb b-gray-300">
-            <th rowSpan={5} className="pr2 pv2 v-top bb b-gray-300 bw-2">
+            <th rowSpan={4} className="pr2 pv2 v-top bb b-gray-300 bw-2">
                 {name}
             </th>
-            <th className="normal ph2 pv1">
-                <Text size={2}>Usage</Text>
-            </th>
-            <td className="pa2 tc">
-                <Dot status={usage.design} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={usage.development} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={usage.documentation} />
-            </td>
-            <td rowSpan={5} className="pv2 ph4 v-top black-300 bb b-gray-300 bw-2">
-                <Text size={2} className="mw6">
-                    {note}
-                </Text>
-            </td>
-        </tr>
-        <tr className="bb b-gray-300 tl">
             <th className="normal ph2 pv1">
                 <Text size={2}>React</Text>
             </th>
@@ -194,9 +165,9 @@ export const ComponentTable = ({ children }) => (
         <thead className="tl">
             <tr>
                 {/*
-                The `boxShadow` is used instead of `border` because of:
-                https://stackoverflow.com/q/41882616/316602
-            */}
+                    The `boxShadow` is used instead of `border` because of:
+                    https://stackoverflow.com/q/41882616/316602
+                 */}
                 <th
                     className="pt3 pr2 pb2 v-top top0 bg-white"
                     style={{
@@ -233,7 +204,7 @@ export const ComponentTable = ({ children }) => (
                         boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
                     }}
                 >
-                    <Text size={2}>Dev</Text>
+                    <Text size={2}>Development</Text>
                 </th>
                 <th
                     className="pt3 ph3 pb2 v-top top0 bg-white"
@@ -243,16 +214,7 @@ export const ComponentTable = ({ children }) => (
                         boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
                     }}
                 >
-                    <Text size={2}>Docs</Text>
-                </th>
-                <th
-                    className="pt3 ph4 pb2 v-top top0 bg-white"
-                    style={{
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Notes</Text>
+                    <Text size={2}>Documentation</Text>
                 </th>
             </tr>
         </thead>
