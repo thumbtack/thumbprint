@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<ButtonRow
+  dataTest="Duck"
+>
+  <div
+    className="root justifyLeft"
+    data-test="Duck"
+  />
+</ButtonRow>
+`;
+
+exports[`placement center 1`] = `
+<ButtonRow
+  justify="center"
+>
+  <div
+    className="root justifyCenter"
+  />
+</ButtonRow>
+`;
+
+exports[`placement default (left) 1`] = `
+<ButtonRow
+  justify="left"
+>
+  <div
+    className="root justifyLeft"
+  />
+</ButtonRow>
+`;
+
+exports[`placement right 1`] = `
+<ButtonRow
+  justify="right"
+>
+  <div
+    className="root justifyRight"
+  />
+</ButtonRow>
+`;
+
+exports[`renders content that is passed in 1`] = `
+<ButtonRow>
+  <div
+    className="root justifyLeft"
+  >
+    <div
+      className="item"
+      key=".0"
+    >
+      goose
+    </div>
+  </div>
+</ButtonRow>
+`;

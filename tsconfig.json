@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./dist",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve",
+        "lib": ["dom", "es2017"],
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "strict": true,
+        "typeRoots": ["./node_modules/@types", "./typings"],
+        "esModuleInterop": true
+    },
+    "include": ["packages/**/*.{js,jsx,ts,tsx}", "typings/**/*.ts"],
+    "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
+}
