@@ -9,7 +9,11 @@
     ],
     "sideEffects": false,
     "scripts": {
-        "prepublishOnly": "../../scripts/should-build-package.js -- rollup -c=./rollup.config.js"
+        "generateTypeDeclarations": "tsc --project ./tsconfig.types.json",
+        "buildJsFiles": "../../scripts/should-build-package.js -- rollup -c=./rollup.config.js",
+        "clear": "rm -rf dist",
+        "build": "yarn clear && yarn buildJsFiles && yarn generateTypeDeclarations && yarn generateTypeDeclarations --outDir ./dist/cjs",
+        "prepublishOnly": "yarn build"
     },
     "peerDependencies": {
         "prop-types": ">= 15.5.7 < 16.0.0-0",

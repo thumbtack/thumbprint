@@ -9,7 +9,7 @@ const getConfig = format => {
     const dest = path.join('dist', format);
 
     return {
-        input: 'index.js',
+        input: 'index.ts',
         output: {
             dir: dest,
             format,

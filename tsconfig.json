@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
-        "declaration": true,
-        "declarationDir": "./dist",
+        "declaration": false,
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "jsx": "preserve",
