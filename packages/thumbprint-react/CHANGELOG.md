@@ -2,15 +2,15 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Replace slow `scrollparent` NPM package with faster script. (#416)
+
 ## 9.4.0 - 2019-09-18
 
 ### Added
 
 -   [Minor] Add `iconRight` prop to `Link`. (#436)
-
-### Fixed
-
--   [Patch] Replace slow `scrollparent` NPM package with faster script. (#416)
 
 ## 9.3.0 - 2019-09-17
 
