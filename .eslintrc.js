@@ -4,7 +4,6 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        // project: ['./tsconfig.json'],
     },
     extends: [
         'airbnb',
@@ -51,12 +50,6 @@ module.exports = {
         // Upgrade from warning to error
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/explicit-function-return-type': 'error',
-
-        // Disable for now, eventually we should go back and enable
-        '@typescript-eslint/no-explicit-any': 'off',
-
-        // TODO: don't add this
-        'react/button-has-type': 'off',
     },
     overrides: [
         {

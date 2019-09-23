@@ -1,3 +1,5 @@
 {
+    // Prefer the locally-installed version of TypeScript to any that are installed globally, to
+    // avoid issues with people installing different versions.
     "typescript.tsdk": "node_modules/typescript/lib"
 }

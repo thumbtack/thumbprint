@@ -14,7 +14,7 @@
         "preserveConstEnums": true,
         "removeComments": false,
         "skipLibCheck": true,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "sourceMap": true,
         "strict": true,
         "typeRoots": ["./node_modules/@types", "./typings"],
