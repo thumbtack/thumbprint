@@ -409,12 +409,6 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/updates/notes/')}
                                         />
                                         <SideNavLink
-                                            title="Graveyard"
-                                            level={2}
-                                            to="/updates/graveyard/"
-                                            isActive={pathname === '/updates/graveyard/'}
-                                        />
-                                        <SideNavLink
                                             title="Roadmap"
                                             level={2}
                                             to="/updates/roadmap/"
