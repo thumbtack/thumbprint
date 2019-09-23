@@ -3,7 +3,11 @@ import { mount } from 'enzyme';
 import getScrollParent from './get-scroll-parent';
 
 test('defaults to `document.body`', () => {
-    const wrapper = mount(<div>goose</div>);
+    const wrapper = mount(
+        <div>
+            <p>goose</p>
+        </div>,
+    );
     expect(getScrollParent(wrapper.getDOMNode())).toBe(document.body);
 });
 
