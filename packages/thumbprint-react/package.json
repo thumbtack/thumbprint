@@ -9,7 +9,11 @@
     ],
     "sideEffects": false,
     "scripts": {
-        "prepublishOnly": "../../scripts/should-build-package.js -- rollup -c=./rollup.config.js"
+        "buildTypeDecls": "tsc --project ./tsconfig.types.json",
+        "buildJsFiles": "rollup -c=./rollup.config.js",
+        "clear": "rm -rf dist",
+        "build": "yarn clear && yarn buildJsFiles && yarn buildTypeDecls && yarn buildTypeDecls --outDir ./dist/cjs",
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn build"
     },
     "peerDependencies": {
         "prop-types": ">= 15.5.7 < 16.0.0-0",
@@ -55,8 +59,12 @@
         "warning": "^4.0.2"
     },
     "devDependencies": {
-        "rollup": "^1.1.0",
+        "rollup": "^1.11.0",
         "rollup-plugin-babel": "^4.2.0",
-        "rollup-plugin-cpy": "^1.1.0"
+        "rollup-plugin-cpy": "^1.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-typescript": "^1.0.1",
+        "tslib": "^1.10.0",
+        "typescript": "^3.6.3"
     }
 }

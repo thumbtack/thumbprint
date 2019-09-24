@@ -8,6 +8,7 @@ module.exports = {
         siteUrl: 'https://thumbprint.design',
     },
     plugins: [
+        'gatsby-plugin-typescript',
         'gatsby-plugin-react-helmet',
         {
             resolve: 'gatsby-source-filesystem',
@@ -17,7 +18,16 @@ module.exports = {
                 // Ignore these files because they make up ~70% of the file nodes. This was causing
                 // Gatsby to run out of memory on Netlify deploys.
                 // https://github.com/thumbtack/thumbprint-archive/issues/1093
-                ignore: ['**/dist', '**/.cache', '**/__snapshots__', '**/*.map'],
+                ignore: [
+                    '**/dist',
+                    '**/.cache',
+                    '**/__snapshots__',
+                    '**/*.map',
+                    // Ignore tsconfig files, since they have a .json extension but also allow
+                    // comments, which causes an error later in `gatsby-transformer-json` which
+                    // expects strict JSON only.
+                    '**/tsconfig*',
+                ],
             },
         },
         {
