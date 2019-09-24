@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.5.0 - 2019-09-24
+
 ### Added
 
 -   [Minor] Add `onKeyPress` prop to input.
