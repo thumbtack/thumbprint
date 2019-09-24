@@ -2,6 +2,7 @@
     "compilerOptions": {
         "declaration": false,
         "allowJs": true,
+        "checkJs": false,
         "allowSyntheticDefaultImports": true,
         "jsx": "preserve",
         "lib": ["dom", "es2017"],
@@ -18,8 +19,9 @@
         "sourceMap": true,
         "strict": true,
         "typeRoots": ["./node_modules/@types", "./typings"],
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
-    "include": ["packages/**/*.{js,jsx,ts,tsx}", "typings/**/*.ts"],
+    "include": ["packages/**/*", "typings/**/*"],
     "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
 }

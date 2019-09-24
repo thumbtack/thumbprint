@@ -5,6 +5,6 @@ declare module 'intersection-observer';
 declare module 'object-fit-images';
 
 declare module '*.module.scss' {
-    const classes: { [key: string]: string };
+    const classes: any;
     export default classes;
 }
