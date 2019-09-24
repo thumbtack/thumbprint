@@ -166,6 +166,7 @@ class Input extends React.Component {
             onBlur,
             onKeyDown,
             onKeyUp,
+            onKeyPress,
             shouldFocusOnPageLoad,
             dataTest,
             inputMode,
@@ -223,6 +224,7 @@ class Input extends React.Component {
                     onBlur={e => isFunction(onBlur) && onBlur(e)}
                     onKeyDown={e => isFunction(onKeyDown) && onKeyDown(e)}
                     onKeyUp={e => isFunction(onKeyUp) && onKeyUp(e)}
+                    onKeyPress={e => isFunction(onKeyPress) && onKeyPress(e)}
                     id={id}
                     ref={el => {
                         this.input = el;
@@ -369,6 +371,10 @@ Input.propTypes = {
      */
     onKeyUp: PropTypes.func,
     /**
+     * Fires when a valid key input is made.
+     */
+    onKeyPress: PropTypes.func,
+    /**
      * This tells the browser to give the input focus when the page is loaded. This can [only be
      * used once on a page](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus).
      */
@@ -403,6 +409,7 @@ Input.defaultProps = {
     onBlur: undefined,
     onKeyDown: undefined,
     onKeyUp: undefined,
+    onKeyPress: undefined,
     shouldFocusOnPageLoad: false,
     dataTest: undefined,
     inputMode: undefined,
