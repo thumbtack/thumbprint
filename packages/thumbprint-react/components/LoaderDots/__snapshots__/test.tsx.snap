@@ -3,8 +3,6 @@
 exports[`adds proper accessibility attributes 1`] = `
 <LoaderDots
   assistiveText="Goose"
-  size="medium"
-  theme="brand"
 >
   <ul
     className="root"
@@ -29,11 +27,7 @@ exports[`adds proper accessibility attributes 1`] = `
 `;
 
 exports[`has proper default attributes 1`] = `
-<LoaderDots
-  assistiveText="Loading"
-  size="medium"
-  theme="brand"
->
+<LoaderDots>
   <ul
     className="root"
     role="status"
@@ -58,9 +52,7 @@ exports[`has proper default attributes 1`] = `
 
 exports[`sets size attribute 1`] = `
 <LoaderDots
-  assistiveText="Loading"
   size="small"
-  theme="brand"
 >
   <ul
     className="root"
@@ -86,8 +78,6 @@ exports[`sets size attribute 1`] = `
 
 exports[`sets theme attribute 1`] = `
 <LoaderDots
-  assistiveText="Loading"
-  size="medium"
   theme="inverse"
 >
   <ul
@@ -114,8 +104,6 @@ exports[`sets theme attribute 1`] = `
 
 exports[`sets theme attribute 2`] = `
 <LoaderDots
-  assistiveText="Loading"
-  size="medium"
   theme="muted"
 >
   <ul
