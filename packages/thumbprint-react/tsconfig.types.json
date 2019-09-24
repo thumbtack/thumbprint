@@ -15,6 +15,6 @@
         "allowJs": false,
         "emitDeclarationOnly": true
     },
-    // TODO(giles): figure out how to include more than this one file here.
-    "files": ["components/ButtonRow/index.tsx"]
+    "include": ["components/**/*.tsx", "../../typings/**/*"],
+    "exclude": ["**/*test.tsx"]
 }
