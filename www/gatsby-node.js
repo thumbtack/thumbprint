@@ -69,7 +69,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
                 // each change.
                 '@thumbtack/thumbprint-react':
                     process.env.NODE_ENV === 'development'
-                        ? path.resolve(__dirname, '../packages/thumbprint-react/index.js')
+                        ? path.resolve(__dirname, '../packages/thumbprint-react/index.ts')
                         : '@thumbtack/thumbprint-react',
                 '@thumbtack/thumbprint-scss':
                     process.env.NODE_ENV === 'development'

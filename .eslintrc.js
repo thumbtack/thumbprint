@@ -1,11 +1,28 @@
 module.exports = {
-    parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
     extends: [
         'airbnb',
+        'plugin:@typescript-eslint/recommended',
         // Prettier must come last
         'prettier',
         'prettier/react',
+        'prettier/@typescript-eslint',
     ],
+    settings: {
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+            typescript: {
+                directory: './tsconfig.json',
+            },
+        },
+    },
     plugins: ['jest', 'react-hooks', 'compat', 'lodash'],
     env: {
         browser: true,
@@ -22,8 +39,26 @@ module.exports = {
         // React hooks
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+
+        // Typescript
+        'react/jsx-filename-extension': [
+            'error',
+            {
+                extensions: ['.jsx', '.tsx'],
+            },
+        ],
+        // Upgrade from warning to error
+        '@typescript-eslint/no-unused-vars': 'error',
+        '@typescript-eslint/explicit-function-return-type': 'error',
     },
     overrides: [
+        {
+            files: ['**/*.js', '**/*.jsx'],
+            rules: {
+                '@typescript-eslint/no-var-requires': 'off',
+                '@typescript-eslint/explicit-function-return-type': 'off',
+            },
+        },
         {
             files: ['packages/**/*'],
             rules: {
@@ -38,7 +73,7 @@ module.exports = {
             // Since this code must run in IE11, it has stricter constraints than other parts of
             // this repo.
             files: ['packages/thumbprint-react/**/*'],
-            excludedFiles: ['*test.jsx', '*.config.js'],
+            excludedFiles: ['*test.jsx', '*test.tsx', '*.config.js'],
             rules: {
                 // Check for uses of browser/DOM APIs that are not available in our supported browsers.
                 'compat/compat': 'error',

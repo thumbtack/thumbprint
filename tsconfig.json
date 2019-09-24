@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "allowJs": true,
+        "checkJs": false,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve",
+        "lib": ["dom", "es2017"],
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "strict": true,
+        "typeRoots": ["./node_modules/@types", "./typings"],
+        "esModuleInterop": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    },
+    "include": ["packages/**/*", "typings/**/*"],
+    "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
+}
