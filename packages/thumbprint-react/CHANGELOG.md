@@ -6,6 +6,10 @@
 
 -   [Patch] Rewrite `ButtonRow` component in TypeScript.
 
+### Fixed
+
+-   [Patch] Replace slow `scrollparent` NPM package with faster script. (#416)
+
 ## 9.4.0 - 2019-09-18
 
 ### Added

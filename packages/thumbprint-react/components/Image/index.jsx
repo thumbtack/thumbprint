@@ -3,8 +3,8 @@ import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
 import PropTypes from 'prop-types';
-import scrollparent from 'scrollparent';
 import { useInView } from 'react-intersection-observer';
+import scrollparent from './get-scroll-parent';
 import canUseDOM from '../../utils/can-use-dom';
 import styles from './index.module.scss';
 
@@ -61,7 +61,7 @@ const Image = forwardRef((props, outerRef) => {
     // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
     // https://git.io/fj00H
 
-    const parent = canUseDOM && scrollparent(containerRef);
+    const parent = canUseDOM && containerRef && scrollparent(containerRef);
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
     // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
