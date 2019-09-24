@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.4.1 - 2019-09-24
+
 ### Added
 
 -   [Patch] Rewrite `ButtonRow` component in TypeScript.
