@@ -19,8 +19,8 @@
         "sourceMap": true,
         "strict": true,
         "typeRoots": ["./node_modules/@types", "./typings"],
-        "esModuleInterop": true
-        // "plugins": [{ "name": "typescript-plugin-css-modules" }]
+        "esModuleInterop": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "include": ["packages/**/*", "typings/**/*"],
     "exclude": ["**/node_modules/**/*", "**/dist/**/*"]
