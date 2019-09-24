@@ -11,9 +11,7 @@ exports[`item renders content that is passed in 1`] = `
 `;
 
 exports[`renders content that is passed in 1`] = `
-<List
-  theme="bullet"
->
+<List>
   <ul
     className="root bullet"
   >

@@ -1,56 +1,56 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import warning from 'warning';
 
 import styles from './index.module.scss';
 
-const { Provider, Consumer } = React.createContext();
+const { Provider, Consumer } = React.createContext({
+    gutter: 'normal',
+    isWithinGrid: false,
+});
 
-const columnPropTypes = {
+interface ColumnPropTypes {
     /**
      * Column contents.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Default width of the column as a fraction of the grid out of 12, to be shown at all
      * breakpoints except those covered by the three optional props below.
      */
-    base: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    base?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `small`.
      */
-    aboveSmall: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    aboveSmall?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `medium`.
      */
-    aboveMedium: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    aboveMedium?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `large`.
      */
-    aboveLarge: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+    aboveLarge?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
+    dataTest?: string;
+}
 
-const columnDefaultProps = {
-    children: undefined,
-    base: 12,
-    aboveSmall: undefined,
-    aboveMedium: undefined,
-    aboveLarge: undefined,
-    dataTest: undefined,
-};
-
-export function GridColumn({ children, base, aboveSmall, aboveMedium, aboveLarge, dataTest }) {
+export function GridColumn({
+    children,
+    base = 12,
+    aboveSmall,
+    aboveMedium,
+    aboveLarge,
+    dataTest,
+}: ColumnPropTypes): JSX.Element {
     return (
         <Consumer>
-            {({ gutter, isWithinGrid } = {}) => {
+            {({ gutter, isWithinGrid }): JSX.Element => {
                 warning(isWithinGrid, '`GridColumn` must be an immediate child of a `Grid`');
 
                 return (
@@ -74,31 +74,22 @@ export function GridColumn({ children, base, aboveSmall, aboveMedium, aboveLarge
     );
 }
 
-GridColumn.propTypes = columnPropTypes;
-GridColumn.defaultProps = columnDefaultProps;
-
-const gridPropTypes = {
+interface GridPropTypes {
     /**
      * Grid contents.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Controls the amount of space between columns in the grid.
      */
-    gutter: PropTypes.oneOf(['normal', 'wide', 'flush']),
+    gutter?: 'normal' | 'wide' | 'flush';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
+    dataTest?: string;
+}
 
-const gridDefaultProps = {
-    children: undefined,
-    gutter: 'normal',
-    dataTest: undefined,
-};
-
-export function Grid({ children, gutter, dataTest }) {
+export function Grid({ children, gutter = 'normal', dataTest }: GridPropTypes): JSX.Element {
     return (
         <div
             className={classNames({
@@ -112,6 +103,3 @@ export function Grid({ children, gutter, dataTest }) {
         </div>
     );
 }
-
-Grid.propTypes = gridPropTypes;
-Grid.defaultProps = gridDefaultProps;

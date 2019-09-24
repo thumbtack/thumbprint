@@ -5,16 +5,16 @@ export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockL
 export { default as Carousel } from './components/Carousel/index.jsx';
 export { default as Checkbox } from './components/Checkbox/index.jsx';
 export { default as DatePicker } from './components/DatePicker/index.jsx';
-export { default as FormNote } from './components/FormNote/index.jsx';
+export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
-export { Grid, GridColumn } from './components/Grid/index.jsx';
+export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index.jsx';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index.jsx';
 export { default as Link, ThemedLink } from './components/Link/index.jsx';
-export { List, ListItem } from './components/List/index.jsx';
-export { default as LoaderDots } from './components/LoaderDots/index.jsx';
+export { List, ListItem } from './components/List/index';
+export { default as LoaderDots } from './components/LoaderDots/index';
 export { default as ModalBase } from './components/ModalBase/index.jsx';
 export { default as ModalCurtain } from './components/ModalCurtain/index.jsx';
 export {

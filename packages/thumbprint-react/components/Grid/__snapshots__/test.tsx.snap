@@ -3,7 +3,6 @@
 exports[`GridColumn adds \`dataTest\` prop 1`] = `
 <Grid
   dataTest="Duck"
-  gutter="normal"
 >
   <div
     className="grid"
@@ -25,15 +24,11 @@ exports[`GridColumn adds \`dataTest\` prop 1`] = `
 `;
 
 exports[`GridColumn column renders content that is passed in 1`] = `
-<Grid
-  gutter="normal"
->
+<Grid>
   <div
     className="grid"
   >
-    <GridColumn
-      base={12}
-    >
+    <GridColumn>
       <div
         className="col col12"
       >
@@ -45,9 +40,7 @@ exports[`GridColumn column renders content that is passed in 1`] = `
 `;
 
 exports[`GridColumn column renders content with custom widths 1`] = `
-<Grid
-  gutter="normal"
->
+<Grid>
   <div
     className="grid"
   >
@@ -68,9 +61,7 @@ exports[`GridColumn column renders content with custom widths 1`] = `
 `;
 
 exports[`grid renders content that is passed in 1`] = `
-<Grid
-  gutter="normal"
->
+<Grid>
   <div
     className="grid"
   >

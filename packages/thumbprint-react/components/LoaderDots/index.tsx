@@ -1,9 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-const LoaderDots = ({ assistiveText, size, theme }) => {
+interface PropTypes {
+    /**
+     * Text that describes the current status and is only visible to
+     * screenreaders.
+     */
+    assistiveText?: string;
+    /**
+     * Controls the size of the dots.
+     */
+    size?: 'small' | 'medium';
+    /**
+     * Changes the dot colors.
+     */
+    theme?: 'brand' | 'inverse' | 'muted';
+}
+
+export default function LoaderDots({
+    assistiveText = 'Loading',
+    size = 'medium',
+    theme = 'brand',
+}: PropTypes): JSX.Element {
     const dotClasses = classNames({
         [styles.dot]: true,
         [styles.dotThemeBrand]: theme === 'brand',
@@ -21,28 +40,4 @@ const LoaderDots = ({ assistiveText, size, theme }) => {
             <li className={styles.hiddenText}>{assistiveText}</li>
         </ul>
     );
-};
-
-LoaderDots.propTypes = {
-    /**
-     * Text that describes the current status and is only visible to
-     * screenreaders.
-     */
-    assistiveText: PropTypes.string,
-    /**
-     * Controls the size of the dots.
-     */
-    size: PropTypes.oneOf(['small', 'medium']),
-    /**
-     * Changes the dot colors.
-     */
-    theme: PropTypes.oneOf(['brand', 'inverse', 'muted']),
-};
-
-LoaderDots.defaultProps = {
-    assistiveText: 'Loading',
-    size: 'medium',
-    theme: 'brand',
-};
-
-export default LoaderDots;
+}
