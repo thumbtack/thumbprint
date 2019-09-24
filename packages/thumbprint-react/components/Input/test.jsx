@@ -192,6 +192,15 @@ describe('Input', () => {
         expect(onKeyUp).toHaveBeenCalledTimes(1);
     });
 
+    test('calls `onKeyPress` when a keypress event occurs', () => {
+        const onKeyPress = jest.fn();
+
+        const wrapper = mount(<Input onKeyPress={onKeyPress} onChange={jest.fn} />);
+
+        wrapper.find('input').simulate('keypress');
+        expect(onKeyPress).toHaveBeenCalledTimes(1);
+    });
+
     test('focuses the input when `focusInput` method is called', () => {
         const component = mount(<Input onChange={jest.fn} />);
 
