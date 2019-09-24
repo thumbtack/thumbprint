@@ -8,6 +8,8 @@
 -   [Patch] Rewrite `Grid` and `GridColumn` components in TypeScript.
 -   [Patch] Rewrite `LoaderDots` component in TypeScript.
 
+## 9.5.0 - 2019-09-24
+
 ### Added
 
 -   [Minor] Add `onKeyPress` prop to input.
