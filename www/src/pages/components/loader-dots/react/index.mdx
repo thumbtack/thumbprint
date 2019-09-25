@@ -62,7 +62,7 @@ export const pageQuery = graphql`
         }
         # Get component props by path to component file.
         reactComponentProps: file(
-            relativePath: { eq: "thumbprint-react/components/LoaderDots/index.jsx" }
+            relativePath: { eq: "thumbprint-react/components/LoaderDots/index.tsx" }
         ) {
             ...ReactComponentPropsFragment
         }
