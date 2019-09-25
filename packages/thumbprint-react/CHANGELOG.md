@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.5.1 - 2019-09-25
+
 ### Changed
 
 -   [Patch] Rewrite `FormNote` component in TypeScript.
