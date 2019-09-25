@@ -3,8 +3,6 @@ import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import Tooltip from './index';
 
-const ESC_KEY = 27;
-
 jest.useFakeTimers();
 
 // https://github.com/thumbtack/thumbprint/issues/72
@@ -13,10 +11,13 @@ jest.mock('popper.js', () => {
     const PopperJS = jest.requireActual('popper.js');
 
     class Popper {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        static placements: any;
+
         constructor() {
             return {
-                destroy: () => {},
-                scheduleUpdate: () => {},
+                destroy: (): void => {},
+                scheduleUpdate: (): void => {},
             };
         }
     }
@@ -30,7 +31,15 @@ describe('Tooltip', () => {
     test('renders a closed tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -53,7 +62,15 @@ describe('Tooltip', () => {
     test('renders an open tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -83,7 +100,15 @@ describe('Tooltip', () => {
     test('adds `zIndex`', () => {
         const wrapper = mount(
             <Tooltip text="Goose" zIndex={123}>
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -113,7 +138,15 @@ describe('Tooltip', () => {
     test('renders an open tooltip with `bottom` placement', () => {
         const wrapper = mount(
             <Tooltip text="Goose" position="bottom">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -141,7 +174,15 @@ describe('Tooltip', () => {
     test('renders an open tooltip with a `light` theme', () => {
         const wrapper = mount(
             <Tooltip text="Goose" theme="light">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -169,7 +210,15 @@ describe('Tooltip', () => {
     test('renders an inline tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose" container="inline">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -197,7 +246,15 @@ describe('Tooltip', () => {
     test('Pressing the `Esc` key closes the tooltip', () => {
         const wrapper = mount(
             <Tooltip text="Goose" container="inline">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
@@ -222,7 +279,17 @@ describe('Tooltip', () => {
         expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
 
         act(() => {
-            document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: ESC_KEY }));
+            // NOTE: it seems that Enzyme does not respond to the standard properties on
+            // `KeyboardEventInit`, either `code: 'Escape'` or `key: 'Escape'`. It only responds to
+            // the deprecated property `keyCode`, which is not in the type defintion. As such we
+            // have to cast the type here to prevent an error.
+            document.dispatchEvent(
+                new KeyboardEvent('keyup', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                } as KeyboardEventInit),
+            );
         });
         wrapper.update();
 
@@ -233,11 +300,19 @@ describe('Tooltip', () => {
         const jestOnClick = jest.fn();
         const wrapper = mount(
             <Tooltip text="Goose">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
-                        onClick={() => {
+                        onClick={(): void => {
                             onClick();
                             jestOnClick();
                         }}
@@ -264,7 +339,15 @@ describe('Tooltip', () => {
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={jestOnClick}>
                 <Tooltip text="Goose" container="body">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -306,7 +389,15 @@ describe('Tooltip', () => {
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div onClick={jestOnClick}>
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -344,7 +435,15 @@ describe('Tooltip', () => {
         test('`mouseenter` and `mouseleave` open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -385,7 +484,15 @@ describe('Tooltip', () => {
         test('`focus` and `blur` open and close the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -419,7 +526,15 @@ describe('Tooltip', () => {
         test("click doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -447,7 +562,15 @@ describe('Tooltip', () => {
         test("click on tooltip body doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -477,17 +600,27 @@ describe('Tooltip', () => {
 
     describe('touch devices', () => {
         beforeAll(() => {
-            global.window.ontouchstart = {};
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (global as any).window.ontouchstart = {};
         });
 
         afterAll(() => {
-            delete global.window.ontouchstart;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            delete (global as any).window.ontouchstart;
         });
 
         test('`click` opens the tooltip on first click and closes on second', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -519,7 +652,15 @@ describe('Tooltip', () => {
         test("focus doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -547,7 +688,15 @@ describe('Tooltip', () => {
         test('`blur` closes the tooltip', () => {
             const wrapper = mount(
                 <Tooltip text="Goose">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -580,7 +729,15 @@ describe('Tooltip', () => {
 
             const wrapper = mount(
                 <Tooltip text="Goose" closeDelayLength={delayLength}>
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -616,7 +773,15 @@ describe('Tooltip', () => {
 
             const wrapper = mount(
                 <Tooltip text="Goose" closeDelayLength={delayLength}>
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -649,7 +814,15 @@ describe('Tooltip', () => {
         test("mouseenter doesn't do anything", () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -677,7 +850,15 @@ describe('Tooltip', () => {
         test('`click` on PositionedTooltip would close it', () => {
             const wrapper = mount(
                 <Tooltip text="Goose" container="inline">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}
@@ -706,7 +887,15 @@ describe('Tooltip', () => {
     test("text can be changed while it's open", () => {
         const wrapper = mount(
             <Tooltip text="Goose" container="inline">
-                {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
                     <button
                         ref={ref}
                         onMouseEnter={onMouseEnter}
