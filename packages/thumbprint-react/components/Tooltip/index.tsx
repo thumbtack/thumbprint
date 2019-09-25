@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { tpSpace3 } from '@thumbtack/thumbprint-tokens';
 import assign from 'lodash/assign';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Manager, Reference, Popper } from 'react-popper';
+import { Manager, Reference, Popper, RefHandler } from 'react-popper';
 
 import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
@@ -17,8 +16,14 @@ import styles from './index.module.scss';
 // user _is_ trying to open the tooltip.
 const OPEN_TIMEOUT = 100;
 
-class WhenChildrenChange extends React.Component {
-    componentDidUpdate(prevProps) {
+interface WhenChildrenChangePropTypes {
+    children: React.ReactNode;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    do: () => any;
+}
+
+class WhenChildrenChange extends React.Component<WhenChildrenChangePropTypes> {
+    componentDidUpdate(prevProps: WhenChildrenChangePropTypes): null {
         const { children, do: doProp } = this.props;
 
         if (children !== prevProps.children) {
@@ -27,61 +32,109 @@ class WhenChildrenChange extends React.Component {
         return null;
     }
 
-    render() {
+    render(): React.ReactNode {
         const { children } = this.props;
 
         return children;
     }
 }
 
-WhenChildrenChange.propTypes = {
-    children: PropTypes.node.isRequired,
-    do: PropTypes.func.isRequired,
-};
+const doesWindowSupportTouch = (): boolean =>
+    typeof window !== 'undefined' && 'ontouchstart' in window;
 
-const doesWindowSupportTouch = () => typeof window !== 'undefined' && 'ontouchstart' in window;
+interface ChildrenPropTypes {
+    ref: RefHandler;
+    onMouseEnter: () => void;
+    onFocus: () => void;
+    onMouseLeave: () => void;
+    onBlur: () => void;
+    onClick: () => void;
+    ariaLabel: string;
+}
+
+interface TooltipPropTypes {
+    /**
+     * A function that renders JSX and receives an object with `ref`, `onMouseEnter`, `onFocus`,
+     * `onMouseLeave`, `onBlur`, `onClick`, and `ariaLabel`. All of these props must be added to
+     * the component within the render prop.
+     */
+    children: (args: ChildrenPropTypes) => JSX.Element;
+    /**
+     * Plain text that will appear within the tooltip. Links and formatted content are not allowed.
+     */
+    text: string;
+    /**
+     * Controls the look of the tooltip.
+     */
+    theme?: 'light' | 'dark';
+    /**
+     * Determines where the tooltip will attempt to position itself relative to the `children`. The
+     * tooltip will reposition itself to fit within the contianer.
+     */
+    position?: 'top' | 'bottom';
+    /**
+     * Number in milliseconds that determines how long to wait before closing the tooltip when the
+     * `onMouseLeave` event fires. A small delay prevents the tooltip from closing if the user
+     * moves their cursor from the button to the tooltip. This value should only be set to `0` when
+     * two or more tooltip components are used near each other.
+     */
+    closeDelayLength?: 0 | 200;
+    /**
+     * By default tooltips will render right before the `</body>` tag.
+     *
+     * Setting the `container` to `inline` causes the tooltip to remain where it was added to the
+     * DOM.
+     *
+     * This option is helpful to work around z-index and positioning issues.
+     */
+    container?: 'inline' | 'body';
+    /**
+     * Adds a `z-index` to the tooltip. Before using this prop, try to use `container="inline"`.
+     */
+    zIndex?: number;
+}
 
 export default function Tooltip({
-    container,
-    position,
-    theme,
+    container = 'body',
+    position = 'top',
+    theme = 'dark',
     zIndex,
     text,
     children,
-    closeDelayLength,
-}) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [openTimeout, setOpenTimeout] = useState(null);
-    const [closeTimeout, setCloseTimeout] = useState(null);
+    closeDelayLength = 200,
+}: TooltipPropTypes): JSX.Element {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [openTimeout, setOpenTimeout] = useState<number | undefined>(undefined);
+    const [closeTimeout, setCloseTimeout] = useState<number | undefined>(undefined);
 
-    const show = () => {
+    const show = (): void => {
         if (closeTimeout) {
-            clearTimeout(closeTimeout);
+            window.clearTimeout(closeTimeout);
         }
 
         setIsOpen(true);
     };
 
-    const hide = () => {
+    const hide = (): void => {
         setIsOpen(false);
     };
 
-    const onFocus = () => {
+    const onFocus = (): void => {
         if (!doesWindowSupportTouch()) {
             show();
         }
     };
 
-    const onMouseEnter = () => {
+    const onMouseEnter = (): void => {
         if (!doesWindowSupportTouch()) {
             // Trigger the tooltip to show after a small delay to prevent flickering.
-            setOpenTimeout(setTimeout(show, OPEN_TIMEOUT));
+            setOpenTimeout(window.setTimeout(show, OPEN_TIMEOUT));
         }
     };
 
-    const onMouseLeave = () => {
+    const onMouseLeave = (): void => {
         // By default this adds a small delay before closing to improve the user experience.
-        setCloseTimeout(setTimeout(hide, closeDelayLength));
+        setCloseTimeout(window.setTimeout(hide, closeDelayLength));
 
         if (openTimeout) {
             // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
@@ -90,7 +143,7 @@ export default function Tooltip({
         }
     };
 
-    const onClick = () => {
+    const onClick = (): void => {
         if (doesWindowSupportTouch()) {
             if (isOpen) {
                 hide();
@@ -108,7 +161,7 @@ export default function Tooltip({
     return (
         <Manager>
             <Reference>
-                {({ ref }) =>
+                {({ ref }): JSX.Element =>
                     children({
                         ref,
                         onMouseEnter,
@@ -131,7 +184,7 @@ export default function Tooltip({
                         }}
                         positionFixed={false}
                     >
-                        {({ ref, style, placement, arrowProps, scheduleUpdate }) => (
+                        {({ ref, style, placement, arrowProps, scheduleUpdate }): JSX.Element => (
                             // This function is documented within `react-popper`:
                             // https://github.com/FezVrasta/react-popper
                             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
@@ -148,7 +201,7 @@ export default function Tooltip({
                                 data-placement={placement}
                                 onMouseEnter={show}
                                 onMouseLeave={onMouseLeave}
-                                onClick={event => {
+                                onClick={(event): void => {
                                     // This is to ensure the default event propagation is stopped when the tooltip
                                     // is created by portals.
                                     // https://reactjs.org/docs/portals.html#event-bubbling-through-portals
@@ -186,53 +239,3 @@ export default function Tooltip({
         </Manager>
     );
 }
-
-Tooltip.propTypes = {
-    /**
-     * A function that renders JSX and receives an object with `ref`, `onMouseEnter`, `onFocus`,
-     * `onMouseLeave`, `onBlur`, `onClick`, and `ariaLabel`. All of these props must be added to
-     * the component within the render prop.
-     */
-    children: PropTypes.func.isRequired,
-    /**
-     * Plain text that will appear within the tooltip. Links and formatted content are not allowed.
-     */
-    text: PropTypes.string.isRequired,
-    /**
-     * Controls the look of the tooltip.
-     */
-    theme: PropTypes.oneOf(['light', 'dark']),
-    /**
-     * Determines where the tooltip will attempt to position itself relative to the `children`. The
-     * tooltip will reposition itself to fit within the contianer.
-     */
-    position: PropTypes.oneOf(['top', 'bottom']),
-    /**
-     * Number in milliseconds that determines how long to wait before closing the tooltip when the
-     * `onMouseLeave` event fires. A small delay prevents the tooltip from closing if the user
-     * moves their cursor from the button to the tooltip. This value should only be set to `0` when
-     * two or more tooltip components are used near each other.
-     */
-    closeDelayLength: PropTypes.oneOf([0, 200]),
-    /**
-     * By default tooltips will render right before the `</body>` tag.
-     *
-     * Setting the `container` to `inline` causes the tooltip to remain where it was added to the
-     * DOM.
-     *
-     * This option is helpful to work around z-index and positioning issues.
-     */
-    container: PropTypes.oneOf(['inline', 'body']),
-    /**
-     * Adds a `z-index` to the tooltip. Before using this prop, try to use `container="inline"`.
-     */
-    zIndex: PropTypes.number,
-};
-
-Tooltip.defaultProps = {
-    theme: 'dark',
-    position: 'top',
-    container: 'body',
-    zIndex: undefined,
-    closeDelayLength: 200,
-};

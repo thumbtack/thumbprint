@@ -2,11 +2,7 @@
 
 exports[`Tooltip adds \`zIndex\` 1`] = `
 <Tooltip
-  closeDelayLength={200}
-  container="body"
-  position="top"
   text="Goose"
-  theme="dark"
   zIndex={123}
 >
   <Manager>
@@ -122,11 +118,7 @@ exports[`Tooltip adds \`zIndex\` 1`] = `
 
 exports[`Tooltip renders a closed tooltip 1`] = `
 <Tooltip
-  closeDelayLength={200}
-  container="body"
-  position="top"
   text="Goose"
-  theme="dark"
 >
   <Manager>
     <Reference>
@@ -155,11 +147,8 @@ exports[`Tooltip renders a closed tooltip 1`] = `
 
 exports[`Tooltip renders an inline tooltip 1`] = `
 <Tooltip
-  closeDelayLength={200}
   container="inline"
-  position="top"
   text="Goose"
-  theme="dark"
 >
   <Manager>
     <Reference>
@@ -256,11 +245,7 @@ exports[`Tooltip renders an inline tooltip 1`] = `
 
 exports[`Tooltip renders an open tooltip 1`] = `
 <Tooltip
-  closeDelayLength={200}
-  container="body"
-  position="top"
   text="Goose"
-  theme="dark"
 >
   <Manager>
     <Reference>
@@ -375,11 +360,8 @@ exports[`Tooltip renders an open tooltip 1`] = `
 
 exports[`Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
 <Tooltip
-  closeDelayLength={200}
-  container="body"
   position="bottom"
   text="Goose"
-  theme="dark"
 >
   <Manager>
     <Reference>
@@ -494,9 +476,6 @@ exports[`Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
 
 exports[`Tooltip renders an open tooltip with a \`light\` theme 1`] = `
 <Tooltip
-  closeDelayLength={200}
-  container="body"
-  position="top"
   text="Goose"
   theme="light"
 >
