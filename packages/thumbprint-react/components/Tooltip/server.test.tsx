@@ -16,7 +16,15 @@ describe('Tooltip', () => {
         test('does not render tooltip when rendered on the server', () => {
             const component = (
                 <Tooltip text="Goose">
-                    {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+                    {({
+                        ref,
+                        onMouseEnter,
+                        onClick,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                        ariaLabel,
+                    }): JSX.Element => (
                         <button
                             ref={ref}
                             onMouseEnter={onMouseEnter}

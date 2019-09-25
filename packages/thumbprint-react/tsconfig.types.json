@@ -13,7 +13,12 @@
         "isolatedModules": false,
         "noEmit": false,
         "allowJs": false,
-        "emitDeclarationOnly": true
+        "emitDeclarationOnly": true,
+        // Disable this for now, because we're in the process of converting, and our TS code imports
+        // JS code, which implicitly has an `any` type because it has no type information.
+        // TODO: once we have converted the whole codebase, and there is no JS code, we can
+        // re-enable this rule.
+        "noImplicitAny": false
     },
     "include": ["components/**/*.tsx", "../../typings/**/*"],
     "exclude": ["**/*test.tsx"]

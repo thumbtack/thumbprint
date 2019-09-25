@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+## 9.5.1 - 2019-09-25
+
 ### Changed
 
 -   [Patch] Rewrite `FormNote` component in TypeScript.
 -   [Patch] Rewrite `Grid` and `GridColumn` components in TypeScript.
 -   [Patch] Rewrite `LoaderDots` component in TypeScript.
+-   [Patch] Rewrite `Tooltip` component in TypeScript.
 
 ## 9.5.0 - 2019-09-24
 
