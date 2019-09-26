@@ -14,8 +14,10 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
         useColumnNames,
     });
 
+    let listRowsRes;
+
     try {
-        const listRowsRes = await fetch(
+        listRowsRes = await fetch(
             // https://coda.io/developers/apis/v1beta1#operation/listRows
             `https://coda.io/apis/v1beta1/docs/${docId}/tables/${tableIdOrName}/rows?${qs}`,
             {
