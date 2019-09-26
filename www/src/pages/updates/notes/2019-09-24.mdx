@@ -1,0 +1,18 @@
+---
+title: September 24, 2019
+---
+
+## 📱 Native
+
+-   We've launched 3 new components on Android. These components are `Radio`, `ShadowCard`, and `Carousel`. (Brian T. and Dominic Z.)
+-   iOS now has a `ShadowCard` component. (Chris C.)
+-   The iOS navigation bar redesign has shipped. (Kevin B.)
+-   The `Button` component now supports icons that appear to the right of the text. (Bryan J.)
+
+## 🖥 Web
+
+-   Box shadow [tokens](https://thumbprint.design/tokens/scss/#section-shadow) and [Atomic classes](https://thumbprint.design/atomic/#section-box-shadow) have been added.
+-   We're converting Thumbprint to TypeScript. `FormNote`, `Grid`, and `LoaderDots` [have been converted](https://github.com/thumbtack/thumbprint/pull/466). (Giles L.)
+-   Our Image component now supports `forceEarlyRender` prop that disables lazy loading and hardcodes the `sizes` value. This can be helpful for above-the-fold images on server-side rendered pages.
+-   We've added a [`heightAboveSmall` prop to `ModalDefault`](https://thumbprint.design/components/modal-default/react/#example-modal-with-fixed-height) that lets developers customize the height of the modal at viewports larger than the `small` breakpoint. (Jichan P.)
+-   The `Button` and `Link` components now support an `iconRight` prop. Previously icons could only be added to the left of the text. (Giles L.)
