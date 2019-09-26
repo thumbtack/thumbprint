@@ -7,10 +7,7 @@ interface ConfigItem {
     size: number;
 }
 
-type BadgeType = 'userOnline' | 'userChecked' | 'entityOnline';
-
-// TODO(giles): remove all "checked" configs once we delete the isChecked prop
-const sizeClasses: {
+type SizeClassesType = {
     xsmall: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
@@ -36,7 +33,10 @@ const sizeClasses: {
         userChecked: ConfigItem;
         entityOnline: ConfigItem;
     };
-} = {
+};
+
+// TODO(giles): remove all "checked" configs once we delete the isChecked prop
+const sizeClasses: SizeClassesType = {
     xsmall: {
         userOnline: {
             top: 0,
@@ -113,6 +113,8 @@ const sizeClasses: {
         },
     },
 };
+
+type BadgeType = 'userOnline' | 'userChecked' | 'entityOnline';
 
 interface PropTypes {
     size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
