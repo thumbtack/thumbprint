@@ -4,7 +4,14 @@ import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge';
 import styles from './index.module.scss';
-import Image from '../Image/index';
+import _Image from '../Image/index';
+
+// TS is attempting to infer types from the React.forwardRef call inside `Image.jsx`, but because
+// Image does not have prop types in TypeScript yet, it is not working properly. Disable checking
+// for now, but remove this line when we rewrite Image to TS.
+// TODO(giles): rewrite Image and remove this line.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Image = _Image as any;
 
 const dimensions = {
     xsmall: '32px',
