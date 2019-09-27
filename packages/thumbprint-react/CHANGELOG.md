@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 9.5.2 - 2019-09-27
+
 ### Changed
 
 -   [Patch] Rewrite `Avatar` component in TypeScript.
+-   [Patch] Add TS declarations for main entry point (`index.ts`) so consumers of this library can access component type definitions.
 
 ## 9.5.1 - 2019-09-25
 
