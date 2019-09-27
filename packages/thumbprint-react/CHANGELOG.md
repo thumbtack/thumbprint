@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Avatar` component in TypeScript.
+
 ## 9.5.1 - 2019-09-25
 
 ### Changed
