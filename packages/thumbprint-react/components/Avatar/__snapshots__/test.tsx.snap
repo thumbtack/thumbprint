@@ -4,8 +4,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 <EntityAvatar
   imageUrl="//www.placecage.com/130/130"
   initial="N"
-  isOnline={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -59,8 +57,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
 exports[`EntityAvatar renders the initials when the user has no image 1`] = `
 <EntityAvatar
   initial="N"
-  isOnline={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -90,8 +86,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -111,11 +105,9 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
       objectPosition="center"
       sources={Array []}
       src="//www.placecage.com/130/130"
-      title="Avatar for Duck Goose"
     >
       <picture
         className="picture circleAvatar"
-        title="Avatar for Duck Goose"
       >
         <img
           alt="Avatar for Duck Goose"
@@ -147,8 +139,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
 exports[`adds the \`fullName\` as \`title\` text 1`] = `
 <UserAvatar
   fullName="Duck Goose"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -163,8 +153,8 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
+          "backgroundColor": "#fafafa",
+          "color": "#2f3033",
         }
       }
       title="Avatar for Duck Goose"
@@ -177,8 +167,6 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 <UserAvatar
   fullName="Duck Goose"
   imageUrl="//www.placecage.com/130/130"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -198,11 +186,9 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
       objectPosition="center"
       sources={Array []}
       src="//www.placecage.com/130/130"
-      title="Avatar for Duck Goose"
     >
       <picture
         className="picture circleAvatar"
-        title="Avatar for Duck Goose"
       >
         <img
           alt="Avatar for Duck Goose"
@@ -234,9 +220,7 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
 exports[`adds the \`fullName\` as \`title\` text 3`] = `
 <UserAvatar
   fullName="Duck Goose"
-  isChecked={false}
-  size="small"
-  title="DG"
+  initials="DG"
 >
   <div
     className="root rootSmall"
@@ -251,12 +235,14 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
+          "backgroundColor": "#fdf7e7",
+          "color": "#8a5500",
         }
       }
       title="Avatar for Duck Goose"
-    />
+    >
+      DG
+    </span>
   </div>
 </UserAvatar>
 `;
@@ -264,8 +250,6 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
 exports[`does not add the \`fullName\` as \`alt\` text when no image is provided 1`] = `
 <UserAvatar
   fullName="Duck Goose"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -280,8 +264,8 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
+          "backgroundColor": "#fafafa",
+          "color": "#2f3033",
         }
       }
       title="Avatar for Duck Goose"
@@ -293,8 +277,6 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
 exports[`does not render a badge by default 1`] = `
 <UserAvatar
   initials="DK"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -323,7 +305,6 @@ exports[`does not render a badge by default 1`] = `
 exports[`does not render a badge by default 2`] = `
 <UserAvatar
   initials="DK"
-  isChecked={false}
   size="large"
 >
   <div
@@ -352,9 +333,7 @@ exports[`does not render a badge by default 2`] = `
 
 exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
 <UserAvatar
-  isChecked={false}
   isOnline={true}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -369,8 +348,8 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
+          "backgroundColor": "#fafafa",
+          "color": "#2f3033",
         }
       }
     />
@@ -398,7 +377,6 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
 <UserAvatar
   initials="DK"
   isChecked={true}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -513,7 +491,6 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
 exports[`renders a badge if valid badge prop is supplied 3`] = `
 <UserAvatar
   initials="DK"
-  isChecked={false}
   isOnline={true}
   size="medium"
 >
@@ -677,8 +654,6 @@ exports[`renders an image when the user has one 1`] = `
 <UserAvatar
   imageUrl="//www.placecage.com/130/130"
   initials="NC"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -733,7 +708,6 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 <UserAvatar
   isChecked={true}
   isOnline={true}
-  size="small"
 >
   <div
     className="root rootSmall"
@@ -748,8 +722,8 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "background": "#fafafa",
-          "text": "#2f3033",
+          "backgroundColor": "#fafafa",
+          "color": "#2f3033",
         }
       }
     />
@@ -788,8 +762,6 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
 exports[`renders the initials when the user has no image 1`] = `
 <UserAvatar
   initials="NC"
-  isChecked={false}
-  size="small"
 >
   <div
     className="root rootSmall"
