@@ -8,6 +8,7 @@ module.exports = {
         siteUrl: 'https://thumbprint.design',
     },
     plugins: [
+        'gatsby-plugin-netlify-cms',
         'gatsby-plugin-typescript',
         'gatsby-plugin-react-helmet',
         {
