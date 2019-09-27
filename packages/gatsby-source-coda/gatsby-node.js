@@ -14,15 +14,21 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
         useColumnNames,
     });
 
-    const listRowsRes = await fetch(
-        // https://coda.io/developers/apis/v1beta1#operation/listRows
-        `https://coda.io/apis/v1beta1/docs/${docId}/tables/${tableIdOrName}/rows?${qs}`,
-        {
-            headers: {
-                Authorization: `Bearer ${apiToken}`,
+    let listRowsRes;
+
+    try {
+        listRowsRes = await fetch(
+            // https://coda.io/developers/apis/v1beta1#operation/listRows
+            `https://coda.io/apis/v1beta1/docs/${docId}/tables/${tableIdOrName}/rows?${qs}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${apiToken}`,
+                },
             },
-        },
-    );
+        );
+    } catch (error) {
+        throw Error(error);
+    }
 
     const data = await listRowsRes.json();
 
