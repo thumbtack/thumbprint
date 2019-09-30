@@ -20,6 +20,6 @@
         // re-enable this rule.
         "noImplicitAny": false
     },
-    "include": ["components/**/*.tsx", "../../typings/**/*"],
+    "include": ["index.ts", "components/**/*.tsx", "../../typings/**/*"],
     "exclude": ["**/*test.tsx"]
 }

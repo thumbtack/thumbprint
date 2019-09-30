@@ -1,4 +1,4 @@
-export { UserAvatar, EntityAvatar } from './components/Avatar/index.jsx';
+export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index.jsx';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
