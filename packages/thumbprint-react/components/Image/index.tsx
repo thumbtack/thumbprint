@@ -34,7 +34,7 @@ interface ImagePropTypes {
      * Allows the browser to choose the best file format and image size based on the device screen
      * density and the width of the rendered image.
      */
-    sources: ImageSource[];
+    sources?: ImageSource[];
     alt?: string;
     /**
      * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
@@ -52,33 +52,34 @@ interface ImagePropTypes {
      * loaded before JavaScript is parsed and executed on the client. The value gets used
      * as the `sizes` attribute. [See allowable values](https://mzl.la/2Hh6neO).
      */
-    forceEarlyRender?: boolean | string;
+    forceEarlyRender?: React.ImgHTMLAttributes<HTMLImageElement>['sizes'];
     /**
      * Provides control over how the image should be resized to fit the container. This controls the
      * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
      */
-    objectFit: 'cover' | 'contain';
+    objectFit?: 'cover' | 'contain';
     /**
      * Provides control over how the image position in the container. This controls the
      * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
      */
-    objectPosition: 'top' | 'center' | 'bottom' | 'left' | 'right';
+    objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
     className?: string;
 }
 
 type ObjectFitPropsType = {
     style?: {
+        // Not using React.CSSProperties types for these two, because we use a restricted subset.
         objectFit?: 'cover' | 'contain';
         objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
-        fontFamily?: string;
+        fontFamily?: React.CSSProperties['fontFamily'];
     };
 };
 
 type AspectRatioBoxPropsType = {
     style?: {
-        paddingTop?: string;
-        overflow?: string;
-        height?: number;
+        paddingTop?: React.CSSProperties['paddingTop'];
+        overflow?: React.CSSProperties['overflow'];
+        height?: React.CSSProperties['height'];
     };
 };
 
@@ -92,13 +93,13 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
         objectPosition = 'center',
         alt = '',
         className,
-        forceEarlyRender = false,
+        forceEarlyRender = null,
         ...rest
     } = props;
 
     // The outermost DOM node that this component references. We use `useState` instead of
     // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
-    const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
+    const [containerRef, setContainerRef] = useState<Element | null>(null);
 
     // --------------------------------------------------------------------------------------------
     // Sizes
@@ -110,9 +111,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
     const computeSizes = (): string =>
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
-    // If `forceEarlyRender` is supplied use that value, otherwise use the computed width.
-
-    const sizes = forceEarlyRender ? computeSizes() : '';
+    // If `forceEarlyRender` is truthy use that value, otherwise use the computed width.
+    const sizes = forceEarlyRender || computeSizes();
 
     // --------------------------------------------------------------------------------------------
     // Lazy-loading: library setup and polyfill
@@ -124,7 +124,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
     // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
     // https://git.io/fj00H
 
-    const parent = canUseDOM && containerRef && scrollparent(containerRef);
+    const parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
     // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
@@ -146,7 +146,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
         });
     }
 
-    // If `forceEarlyRender` is true, bypass lazy loading and load the image.
+    // If `forceEarlyRender` is truthy, bypass lazy loading and load the image.
     const shouldLoadImage = isInView || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
@@ -250,7 +250,10 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
 
                     // `outerRef` is the potential forwarded `ref` passed in from a consumer.
                     if (outerRef) {
-                        outerRef(el);
+                        // Not all refs are callable functions, so only try and call it if it is
+                        if (typeof outerRef === 'function') {
+                            outerRef(el);
+                        }
                     }
                 }}
             >

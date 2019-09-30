@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Image` component in TypeScript.
+
 ## 9.5.2 - 2019-09-27
 
 ### Changed
