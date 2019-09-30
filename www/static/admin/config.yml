@@ -6,9 +6,27 @@ media_folder: www/static/img
 public_folder: /img
 
 collections:
+    - name: 'components-usage'
+      label: 'Components (Usage)'
+      folder: 'www/src/cms/components-usage'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
     - name: 'components-ios'
       label: 'Components (iOS)'
       folder: 'www/src/cms/components-ios'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+    - name: 'components-android'
+      label: 'Components (Android)'
+      folder: 'www/src/cms/components-android'
       create: true
       slug: '{{slug}}'
       fields:
