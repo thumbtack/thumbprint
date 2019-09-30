@@ -200,6 +200,8 @@ const getPlatformByPathname = pathname => {
         react: 'React',
         scss: 'SCSS',
         usage: 'Usage',
+        ios: 'iOS',
+        android: 'Android',
     };
 
     const splitPathname = pathname.split('/');
@@ -244,7 +246,7 @@ const getSectionByPathname = pathname => {
 };
 
 const MDX = props => {
-    const { children, location, pageContext } = props;
+    const { children, location, pageContext, header } = props;
 
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
@@ -276,6 +278,7 @@ const MDX = props => {
                             metaTitle={metaTitle}
                             description={pageContext.frontmatter.description}
                         />
+                        {header}
                         <MDXRenderer>{children}</MDXRenderer>
                     </React.Fragment>
                 )}
@@ -288,6 +291,9 @@ MDX.propTypes = {
     children: PropTypes.node.isRequired,
     location: PropTypes.shape({}).isRequired,
     pageContext: PropTypes.shape({}).isRequired,
+    header: PropTypes.node,
 };
+
+MDX.defaultProps = { header: undefined };
 
 export default MDX;

@@ -91,3 +91,60 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
         },
     });
 };
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+    // Destructure the createPage function from the actions object
+    const { createPage } = actions;
+
+    const result = await graphql(`
+        query {
+            allFile(filter: { sourceInstanceName: { eq: "cms" } }) {
+                edges {
+                    node {
+                        id
+                        ext
+                        name
+                        relativeDirectory
+                        childMdx {
+                            id
+                            frontmatter {
+                                title
+                                description
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    if (result.errors) {
+        reporter.panicOnBuild("🚨  ERROR: Can't load MDX files used by Netlify CMS.");
+    }
+
+    // Create blog post pages.
+    const posts = result.data.allFile.edges;
+
+    // We'll call `createPage` for each result
+    posts.forEach(({ node }) => {
+        let slug;
+
+        if (node.relativeDirectory === 'components-ios') {
+            slug = `/components/${node.name}/ios/`;
+        } else {
+            reporter.panicOnBuild(
+                `🚨  ERROR: Can't generate a URL for the Markdown file in ${node.relativeDirectory}. Take a look at \`createPages\` in \`gatsby-node.js\`.`,
+            );
+        }
+
+        createPage({
+            path: slug,
+            component: path.resolve(`./src/components/cms/index.jsx`),
+            context: {
+                id: node.childMdx.id,
+                relatedComponentsGlob: '/components/avatar/*/',
+                isComponent: true,
+            },
+        });
+    });
+};

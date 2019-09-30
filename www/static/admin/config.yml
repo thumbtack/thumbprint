@@ -2,13 +2,13 @@ backend:
     name: git-gateway
     branch: master
 
-media_folder: static/img
+media_folder: www/static/img
 public_folder: /img
 
 collections:
     - name: 'components-ios'
       label: 'Components (iOS)'
-      folder: 'src/cms/components-ios'
+      folder: 'www/src/cms/components-ios'
       create: true
       slug: '{{slug}}'
       fields:
