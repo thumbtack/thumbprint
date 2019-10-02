@@ -2,14 +2,11 @@
 
 exports[`ServiceCard renders an href when supplied 1`] = `
 <ServiceCard
-  onClick={null}
-  shouldOpenInNewTab={false}
   url="https://www.thumbtack.com/k/massage/near-me/"
 >
   <a
     className="root"
     href="https://www.thumbtack.com/k/massage/near-me/"
-    onClick={null}
     target="_self"
   >
     Lorem
@@ -18,9 +15,7 @@ exports[`ServiceCard renders an href when supplied 1`] = `
 `;
 
 exports[`ServiceCardDescription renders a description when supplied 1`] = `
-<ServiceCardDescription
-  iconColor="blue"
->
+<ServiceCardDescription>
   <div
     className="descriptionWrap iconBlue"
   >
@@ -36,7 +31,6 @@ exports[`ServiceCardDescription renders a description when supplied 1`] = `
 exports[`ServiceCardDescription renders a icon and color is blue 1`] = `
 <ServiceCardDescription
   icon={<svg />}
-  iconColor="blue"
 >
   <div
     className="descriptionWrap iconBlue"

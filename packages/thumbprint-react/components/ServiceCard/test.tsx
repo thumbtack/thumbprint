@@ -2,14 +2,17 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ServiceCard, { ServiceCardImage, ServiceCardTitle, ServiceCardDescription } from './index';
 
-jest.mock('react-intersection-observer', () => ({
-    InView: ({ children }) => children({ inView: true, ref: null }),
-    useInView: () => [() => {}, true],
+/* eslint-disable @typescript-eslint/no-explicit-any */
+jest.mock('react-intersection-observer', (): any => ({
+    InView: ({ children }: { children: (arg1: any) => any }): any =>
+        children({ inView: true, ref: null }),
+    useInView: (): any => [(): any => {}, true],
 }));
 
-beforeEach(() => {
-    window.IntersectionObserver = true;
+beforeEach((): void => {
+    window.IntersectionObserver = true as any;
 });
+/* eslint-enable */
 
 describe('ServiceCard', () => {
     test('renders an href when supplied', () => {
