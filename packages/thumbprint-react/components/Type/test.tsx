@@ -93,12 +93,6 @@ describe('Text', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('can render a marquee', () => {
-        const wrapper = mount(<Text elementName="marquee">goose</Text>);
-        expect(wrapper.find('marquee')).toHaveLength(1);
-        expect(wrapper).toMatchSnapshot();
-    });
-
     test('supports `dataTest` prop', () => {
         const wrapper = mount(
             <Text dataTest="Duck" size={1}>

@@ -12,18 +12,6 @@ exports[`Text allows size to be customised 1`] = `
 </Text>
 `;
 
-exports[`Text can render a marquee 1`] = `
-<Text
-  elementName="marquee"
->
-  <marquee
-    className="text1"
-  >
-    goose
-  </marquee>
-</Text>
-`;
-
 exports[`Text can render a span 1`] = `
 <Text
   elementName="span"
