@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Wrap` component in TypeScript.
+
 ## 9.5.2 - 2019-09-27
 
 ### Changed
