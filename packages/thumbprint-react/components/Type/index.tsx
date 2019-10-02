@@ -73,7 +73,7 @@ interface TextPropTypes {
     /**
      * Name of the DOM element to render. Defaults to `p` for a paragraph tag.
      */
-    elementName?: string;
+    elementName?: keyof React.ReactHTML;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
