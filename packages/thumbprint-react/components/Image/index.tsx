@@ -249,11 +249,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
                     }
 
                     // `outerRef` is the potential forwarded `ref` passed in from a consumer.
-                    if (outerRef) {
-                        // Not all refs are callable functions, so only try and call it if it is
-                        if (typeof outerRef === 'function') {
-                            outerRef(el);
-                        }
+                    // Not all refs are callable functions, so only try and call it if it is.
+                    if (typeof outerRef === 'function') {
+                        outerRef(el);
                     }
                 }}
             >
