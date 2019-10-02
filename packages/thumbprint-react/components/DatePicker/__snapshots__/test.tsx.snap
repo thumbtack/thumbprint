@@ -2,9 +2,7 @@
 
 exports[`renders a basic date picker with past date selection allowed 1`] = `
 <DatePicker
-  allowMultiSelection={false}
   disabledDays={null}
-  lastMonth={null}
   onChange={[Function]}
   onMonthChange={[Function]}
   value="Tue Sep 16 2017 14:39:00 GMT+0100 (BST)"
@@ -170,7 +168,6 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
       showWeekDays={true}
       showWeekNumbers={false}
       tabIndex={0}
-      toMonth={null}
       weekdayElement={<Weekday />}
     >
       <div
@@ -432,7 +429,6 @@ exports[`renders a basic date picker with past date selection allowed 1`] = `
               showWeekDays={true}
               showWeekNumbers={false}
               tabIndex={0}
-              toMonth={null}
               weekdayElement={<Weekday />}
             >
               <div
