@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Patch] Rewrite `Image` component in TypeScript.
 -   [Patch] Rewrite `Wrap` component in TypeScript.
 
 ## 9.5.2 - 2019-09-27

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Image from '../Image/index.jsx';
+import Image from '../Image/index';
 import styles from './index.module.scss';
 
 const ServiceCardImage = forwardRef((props, outerRef) => {
