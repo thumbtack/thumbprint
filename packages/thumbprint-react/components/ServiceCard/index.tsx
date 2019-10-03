@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import classNames from 'classnames';
-import Image from '../Image/index.jsx';
+import Image from '../Image/index';
 import styles from './index.module.scss';
 
 type ImageSource = {
