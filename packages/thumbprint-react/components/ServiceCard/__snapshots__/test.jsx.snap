@@ -77,10 +77,6 @@ exports[`ServiceCardImage render works 1`] = `
     alt="duck duck goose"
     className="image"
     containerAspectRatio={1.6}
-    forceEarlyRender={false}
-    objectFit="cover"
-    objectPosition="center"
-    sources={Array []}
     src="https://www.thumbtack.com/image.png"
   >
     <picture
