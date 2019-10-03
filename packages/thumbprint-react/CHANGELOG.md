@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.5.3 - 2019-10-03
+
 ### Changed
 
 -   [Patch] Rewrite `StarRating` component in TypeScript.
