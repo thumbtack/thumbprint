@@ -54,6 +54,15 @@ module.exports = {
     },
     overrides: [
         {
+            files: ['**/*.ts', '**/*.tsx'],
+            rules: {
+                // Import plugin is not really needed for TS files, the TS compiler will throw an
+                // error for missing imports
+                'import/named': 'off',
+                'import/export': 'off',
+            },
+        },
+        {
             files: ['**/*.js', '**/*.jsx'],
             rules: {
                 '@typescript-eslint/no-var-requires': 'off',
