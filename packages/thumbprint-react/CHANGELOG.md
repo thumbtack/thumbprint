@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Patch] Rewrite `StarRating` component in TypeScript.
 -   [Patch] Rewrite `Text` and `Title` components in TypeScript.
 -   [Patch] Rewrite `Image` component in TypeScript.
 -   [Patch] Rewrite `Wrap` component in TypeScript.
