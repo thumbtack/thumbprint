@@ -49,5 +49,5 @@ export {
 export { default as StarRating } from './components/StarRating/index.jsx';
 export { default as Textarea } from './components/Textarea/index.jsx';
 export { default as Tooltip } from './components/Tooltip/index';
-export { Title, Text } from './components/Type/index.jsx';
+export { Title, Text } from './components/Type/index';
 export { default as Wrap } from './components/Wrap/index';

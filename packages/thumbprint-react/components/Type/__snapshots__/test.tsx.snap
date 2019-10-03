@@ -2,7 +2,6 @@
 
 exports[`Text allows size to be customised 1`] = `
 <Text
-  elementName="p"
   size={2}
 >
   <p
@@ -13,23 +12,9 @@ exports[`Text allows size to be customised 1`] = `
 </Text>
 `;
 
-exports[`Text can render a marquee 1`] = `
-<Text
-  elementName="marquee"
-  size={1}
->
-  <marquee
-    className="text1"
-  >
-    goose
-  </marquee>
-</Text>
-`;
-
 exports[`Text can render a span 1`] = `
 <Text
   elementName="span"
-  size={1}
 >
   <span
     className="text1"
@@ -40,10 +25,7 @@ exports[`Text can render a span 1`] = `
 `;
 
 exports[`Text renders a paragraph by default 1`] = `
-<Text
-  elementName="p"
-  size={1}
->
+<Text>
   <p
     className="text1"
   >
@@ -53,10 +35,7 @@ exports[`Text renders a paragraph by default 1`] = `
 `;
 
 exports[`Text renders content that is passed in 1`] = `
-<Text
-  elementName="p"
-  size={1}
->
+<Text>
   <p
     className="text1"
   >
@@ -68,8 +47,6 @@ exports[`Text renders content that is passed in 1`] = `
 exports[`Text supports \`className\` 1`] = `
 <Text
   className="white black blue"
-  elementName="p"
-  size={1}
 >
   <p
     className="text1 white black blue"
@@ -82,7 +59,6 @@ exports[`Text supports \`className\` 1`] = `
 exports[`Text supports \`dataTest\` prop 1`] = `
 <Text
   dataTest="Duck"
-  elementName="p"
   size={1}
 >
   <p
