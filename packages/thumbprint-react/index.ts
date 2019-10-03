@@ -8,7 +8,7 @@ export { default as DatePicker } from './components/DatePicker/index.jsx';
 export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index';
-export { default as Image } from './components/Image/index.jsx';
+export { default as Image } from './components/Image/index';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index.jsx';
@@ -49,5 +49,5 @@ export {
 export { default as StarRating } from './components/StarRating/index';
 export { default as Textarea } from './components/Textarea/index.jsx';
 export { default as Tooltip } from './components/Tooltip/index';
-export { Title, Text } from './components/Type/index.jsx';
-export { default as Wrap } from './components/Wrap/index.jsx';
+export { Title, Text } from './components/Type/index';
+export { default as Wrap } from './components/Wrap/index';
