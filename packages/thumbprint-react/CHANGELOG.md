@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 9.5.4 - 2019-10-07
+
+### Changed
+
+-   [Patch] Rewrite `Carousel` component in TypeScript.
+-   [Patch] Rewrite `DatePicker` component in TypeScript.
+
+## 9.5.3 - 2019-10-03
+
 ### Changed
 
 -   [Patch] Rewrite `StarRating` component in TypeScript.
