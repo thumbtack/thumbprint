@@ -45,7 +45,7 @@ export {
     ServiceCardDescription,
     ServiceCardTitle,
     ServiceCardImage,
-} from './components/ServiceCard/index.jsx';
+} from './components/ServiceCard/index';
 export { default as StarRating } from './components/StarRating/index';
 export { default as Textarea } from './components/Textarea/index.jsx';
 export { default as Tooltip } from './components/Tooltip/index';
