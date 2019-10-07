@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `ServiceCard` component in TypeScript.
+
 ## 9.5.4 - 2019-10-07
 
 ### Changed
@@ -17,7 +21,6 @@
 -   [Patch] Rewrite `Text` and `Title` components in TypeScript.
 -   [Patch] Rewrite `Image` component in TypeScript.
 -   [Patch] Rewrite `Wrap` component in TypeScript.
--   [Patch] Rewrite `ServiceCard` component in TypeScript.
 
 ## 9.5.2 - 2019-09-27
 
