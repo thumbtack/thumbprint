@@ -6,8 +6,8 @@ test('renders a basic date picker with past date selection allowed', () => {
     const wrapper = mount(
         <DatePicker
             disabledDays={null}
-            onChange={() => {}}
-            onMonthChange={() => {}}
+            onChange={(): void => {}}
+            onMonthChange={(): void => {}}
             value="Tue Sep 16 2017 14:39:00 GMT+0100 (BST)"
         />,
     );
@@ -49,8 +49,14 @@ describe('calls `onChange` with the correct date', () => {
         //
         // Don't need to write proptypes for a one-off wrapper used inside a test
         // eslint-disable-next-line react/prop-types
-        function DatePickerExample({ firstDate, onChange }) {
-            const [value, setValue] = useState(firstDate);
+        function DatePickerExample({
+            firstDate,
+            onChange,
+        }: {
+            firstDate: Date;
+            onChange: (dates: Date[]) => void;
+        }): JSX.Element {
+            const [value, setValue] = useState<Date[]>([firstDate]);
 
             return (
                 <DatePicker
@@ -60,7 +66,7 @@ describe('calls `onChange` with the correct date', () => {
                     // function was called. `setValue` is the React Hook that actually updates the
                     // state so we can track changes over the whole integration test.
                     // TODO: maybe extract this out or revisit if this becomes a common pattern
-                    onChange={newValue => {
+                    onChange={(newValue): void => {
                         onChange(newValue);
                         setValue(newValue);
                     }}
@@ -268,7 +274,7 @@ describe('user is able to select a date in the past if disabled days is disabled
 });
 
 describe('`onMonthChange` callback should be called on month change', () => {
-    const onChange = () => {};
+    const onChange = (): void => {};
     const year = 2057;
     const month = 9;
     const selectedDate = new Date(year, month);
@@ -306,14 +312,14 @@ describe('`onMonthChange` callback should be called on month change', () => {
 
 describe('applying themes to DatePicker day cells', () => {
     const modifierPrefix = '.DayPicker-Day--';
-    const onChange = () => {};
+    const onChange = (): void => {};
     const onMonthChange = jest.fn();
     const year = 2057;
     const month = 8;
     const day = 3;
     const selectedDate = new Date(year, month, day);
 
-    const areDatesEqual = (calDate, expectedDate) =>
+    const areDatesEqual = (calDate: Date, expectedDate: Date): boolean =>
         calDate.getFullYear() === expectedDate.getFullYear() &&
         calDate.getMonth() === expectedDate.getMonth() &&
         calDate.getDate() === expectedDate.getDate();
@@ -329,7 +335,7 @@ describe('applying themes to DatePicker day cells', () => {
                 value={selectedDate}
                 onChange={onChange}
                 onMonthChange={onMonthChange}
-                daysThemeDotIndicator={calDate =>
+                daysThemeDotIndicator={(calDate: Date): boolean =>
                     areDatesEqual(calDate, jsDate1) || areDatesEqual(calDate, jsDate2)
                 }
             />,
@@ -354,7 +360,7 @@ describe('applying themes to DatePicker day cells', () => {
                 value={selectedDate}
                 onChange={onChange}
                 onMonthChange={onMonthChange}
-                daysThemeStrikeout={calDate =>
+                daysThemeStrikeout={(calDate: Date): boolean =>
                     areDatesEqual(calDate, jsDate1) ||
                     areDatesEqual(calDate, jsDate2) ||
                     areDatesEqual(calDate, jsDate3)
