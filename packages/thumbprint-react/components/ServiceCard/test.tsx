@@ -2,17 +2,28 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ServiceCard, { ServiceCardImage, ServiceCardTitle, ServiceCardDescription } from './index';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-jest.mock('react-intersection-observer', (): any => ({
-    InView: ({ children }: { children: (arg1: any) => any }): any =>
-        children({ inView: true, ref: null }),
-    useInView: (): any => [(): any => {}, true],
-}));
+// TODO(giles): All this `react-intersection-observer` mocking stuff is used in a few unit test
+// suites (anything that uses our lazy-loading `Image`). Move to a shared utility so we don't have
+// all this noise at the top of every file.
+type UseInViewReturnType = [() => void, true];
+type InViewChildrenMockType = (arg1: { inView: true; ref: null }) => void;
+type ReactIntersectionObserverMockType = {
+    InView: ({ children }: { children: InViewChildrenMockType }) => void;
+    useInView: () => UseInViewReturnType;
+};
+
+jest.mock(
+    'react-intersection-observer',
+    (): ReactIntersectionObserverMockType => ({
+        InView: ({ children }: { children: InViewChildrenMockType }): void =>
+            children({ inView: true, ref: null }),
+        useInView: (): UseInViewReturnType => [(): void => {}, true],
+    }),
+);
 
 beforeEach((): void => {
-    window.IntersectionObserver = true as any;
+    window.IntersectionObserver = (true as unknown) as (typeof window.IntersectionObserver);
 });
-/* eslint-enable */
 
 describe('ServiceCard', () => {
     test('renders an href when supplied', () => {
