@@ -4,23 +4,46 @@ import rotate from 'rotate-array';
 import range from 'lodash/range';
 import styles from './base-carousel.module.scss';
 
+interface PropTypes {
+    /**
+     * The items in the carousel that appear horizontally.
+     */
+    children: React.ReactNode;
+    /**
+     * The index of the left-most item to display in the carousel. Supports all numbers.
+     */
+    selectedIndex?: number;
+    /**
+     * The duration of the animation (in milliseconds).
+     */
+    animationDuration?: number;
+    /**
+     * The number of items that are visible at once.
+     */
+    visibleCount?: number;
+    /**
+     * The amount space separating each item. Supports CSS values such as `8px` or `0.5em`.
+     */
+    spacing?: string;
+}
+
 export default function BaseCarousel({
     children,
-    selectedIndex,
-    animationDuration,
-    visibleCount,
-    spacing,
-}) {
+    selectedIndex = 0,
+    animationDuration = 400,
+    visibleCount = 1,
+    spacing = '0px',
+}: PropTypes): JSX.Element {
     // When animating, `prevSelectedIndex` is the value of `selectedIndex` before the
     // animation began. Once the animation is complete, it becomes the same as `selectedIndex`.
     const [prevSelectedIndex, setPrevSelectedIndex] = useState(selectedIndex);
     const [isAnimating, setIsAnimating] = useState(false);
     const [isSuspensed, setIsSuspensed] = useState(false);
 
-    function reorder(items) {
+    function reorder(items: number[]): number[] {
         // The `prevSelectedIndex` doesn't update until the animation is done, so we want to
         // use that ordering until the animation is complete.
-        return rotate(items, -1 * Math.floor(prevSelectedIndex));
+        return rotate<number>(items, -1 * Math.floor(prevSelectedIndex));
     }
 
     useEffect(() => {
@@ -132,34 +155,3 @@ export default function BaseCarousel({
         </div>
     );
 }
-
-BaseCarousel.propTypes = {
-    /**
-     * The items that render horizontally within the carousel.
-     */
-    children: PropTypes.node.isRequired,
-    /**
-     * The index of the left-most item to display in the carousel. Supports whole numbers and
-     * decimals.
-     */
-    selectedIndex: PropTypes.number,
-    /**
-     * The number of items that are visible at once.
-     */
-    visibleCount: PropTypes.number,
-    /**
-     * The amount of space separating each item.
-     */
-    spacing: PropTypes.string,
-    /**
-     * The duration of the animation (in milliseconds).
-     */
-    animationDuration: PropTypes.number,
-};
-
-BaseCarousel.defaultProps = {
-    selectedIndex: 0,
-    visibleCount: 1,
-    spacing: '0px',
-    animationDuration: 400,
-};
