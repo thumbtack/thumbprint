@@ -79,6 +79,8 @@ describe('DatePicker utilities', () => {
         test('throws an error when multiple selection is disabled and multiple initial dates are provided', () => {
             expect(() => {
                 validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
                     allowMultiSelection: false,
                     value: [new Date(), addDays(new Date(), 1)],
                 });
@@ -90,6 +92,8 @@ describe('DatePicker utilities', () => {
         test('throws an error when past selection is disabled and one or more initial dates are in the past', () => {
             expect(() => {
                 validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
                     allowMultiSelection: true,
                     disabledDays: { before: new Date() },
                     value: [new Date(), subDays(new Date(), 1)],
@@ -100,6 +104,8 @@ describe('DatePicker utilities', () => {
         test('throws an error when future selection is disabled and one or more initial dates are in the future', () => {
             expect(() => {
                 validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
                     allowMultiSelection: true,
                     disabledDays: { after: new Date() },
                     value: [addDays(new Date(), 1), addDays(new Date(), 2)],
