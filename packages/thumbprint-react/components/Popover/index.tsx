@@ -34,7 +34,7 @@ interface PopoverPropTypes {
      * A function that renders JSX and receives an object with `ref`.
      * All of these props must be added to the component within the render prop.
      */
-    launcher: ({ ref }: { ref: RefHandler }) => JSX.Element;
+    launcher: ({ ref }: { ref: RefHandler }) => React.ReactNode;
     /**
      * Position of popover relative to the launcher.
      */
@@ -97,7 +97,7 @@ export default function Popover({
 
     return (
         <Manager>
-            <Reference>{({ ref }): JSX.Element => launcher({ ref })}</Reference>
+            <Reference>{({ ref }): React.ReactNode => launcher({ ref })}</Reference>
             <ConditionalPortal shouldDisplace={shouldDisplace}>
                 {canUseDOM && (
                     <Popper

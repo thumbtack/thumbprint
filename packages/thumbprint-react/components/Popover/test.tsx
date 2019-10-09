@@ -4,28 +4,24 @@ import Popover from './index';
 
 // https://github.com/thumbtack/thumbprint/issues/72
 // https://github.com/FezVrasta/popper.js/issues/478#issuecomment-341494703
-jest.mock(
-    'popper.js',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (): any => {
-        const PopperJS = jest.requireActual('popper.js');
+jest.mock('popper.js', (): object => {
+    const PopperJS = jest.requireActual('popper.js');
 
-        class Popper {
-            public constructor() {
-                return {
-                    destroy: (): void => {},
-                    scheduleUpdate: (): void => {},
-                };
-            }
+    class Popper {
+        public static placements: typeof PopperJS.placements;
 
-            public static placements: typeof PopperJS.placements;
+        public constructor() {
+            return {
+                destroy: (): void => {},
+                scheduleUpdate: (): void => {},
+            };
         }
+    }
 
-        Popper.placements = PopperJS.placements;
+    Popper.placements = PopperJS.placements;
 
-        return Popper;
-    },
-);
+    return Popper;
+});
 
 test('renders a popover', (): void => {
     const onCloseClick = jest.fn();
