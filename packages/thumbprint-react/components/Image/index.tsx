@@ -35,6 +35,9 @@ interface ImagePropTypes {
      * density and the width of the rendered image.
      */
     sources?: ImageSource[];
+    /**
+     * Alt text describing the image to screen readers.
+     */
     alt?: string;
     /**
      * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
@@ -63,7 +66,14 @@ interface ImagePropTypes {
      * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
      */
     objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
+    /**
+     * String of CSS class name to be added to the `<picture>` tag.
+     */
     className?: string;
+    /**
+     * Ref passed from a parent component, to be set on the `<picture>` tag.
+     */
+    outerRef?: React.Ref<HTMLElement>;
 }
 
 type ObjectFitPropsType = {
@@ -83,20 +93,19 @@ type AspectRatioBoxPropsType = {
     };
 };
 
-const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
-    const {
-        src,
-        sources = [],
-        height,
-        containerAspectRatio,
-        objectFit = 'cover',
-        objectPosition = 'center',
-        alt = '',
-        className,
-        forceEarlyRender = null,
-        ...rest
-    } = props;
-
+function ImageWithoutRef({
+    src,
+    sources = [],
+    height,
+    containerAspectRatio,
+    objectFit = 'cover',
+    objectPosition = 'center',
+    alt = '',
+    className,
+    forceEarlyRender,
+    outerRef,
+    ...rest
+}: ImagePropTypes): JSX.Element {
     // The outermost DOM node that this component references. We use `useState` instead of
     // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
     const [containerRef, setContainerRef] = useState<Element | null>(null);
@@ -305,7 +314,11 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
             )}
         </>
     );
-});
+}
+
+const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => (
+    <ImageWithoutRef {...props} outerRef={outerRef} />
+));
 
 // Needed because of the `forwardRef`.
 Image.displayName = 'Image';
