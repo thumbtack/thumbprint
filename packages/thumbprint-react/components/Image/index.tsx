@@ -93,7 +93,7 @@ type AspectRatioBoxPropsType = {
     };
 };
 
-function ImageWithoutRef({
+function Image({
     src,
     sources = [],
     height,
@@ -316,11 +316,11 @@ function ImageWithoutRef({
     );
 }
 
-const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => (
-    <ImageWithoutRef {...props} outerRef={outerRef} />
+const ImageWithRefForwarding = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => (
+    <Image {...props} outerRef={outerRef} />
 ));
 
 // Needed because of the `forwardRef`.
-Image.displayName = 'Image';
+ImageWithRefForwarding.displayName = 'Image';
 
-export default Image;
+export default ImageWithRefForwarding;
