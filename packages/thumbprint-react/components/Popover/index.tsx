@@ -25,7 +25,55 @@ const TextButton = _TextButton as any;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Themed = _Themed as any;
 
-const Popover = ({
+interface PopoverPropTypes {
+    /**
+     * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
+     */
+    children: React.ReactNode;
+    /**
+     * A function that renders JSX and receives an object with `ref`.
+     * All of these props must be added to the component within the render prop.
+     */
+    launcher: ({ ref }: { ref: RefHandler }) => JSX.Element;
+    /**
+     * Position of popover relative to the launcher.
+     */
+    position?:
+        | 'top-start'
+        | 'top'
+        | 'top-end'
+        | 'bottom-start'
+        | 'bottom'
+        | 'bottom-end'
+        | 'left-start'
+        | 'left'
+        | 'left-end'
+        | 'right-start'
+        | 'right'
+        | 'right-end';
+    /**
+     * Whether or not the popover is visible.
+     */
+    isOpen?: boolean;
+    /**
+     * Function called when the close button is clicked. You should cause this to set `isOpen=false`
+     * in your parent component.
+     */
+    onCloseClick: () => void;
+    /**
+     * By default popovers will render right before the `</body>` tag.
+     * Setting the `container` to `inline` causes the tooltip to remain where it was added to the
+     * DOM.
+     * This option is helpful to work around z-index and positioning issues.
+     */
+    container?: 'inline' | 'body';
+    /**
+     * Accessibility title used to describe the content of the popover to screen readers.
+     */
+    accessibilityLabel?: string;
+}
+
+export default function Popover({
     children,
     launcher,
     onCloseClick,
@@ -33,7 +81,7 @@ const Popover = ({
     isOpen = false,
     container = 'body',
     accessibilityLabel = 'Popover',
-}: PropTypes): JSX.Element => {
+}: PopoverPropTypes): JSX.Element {
     // Appends the tooltip right before `</body>` when true. Used to prevent z-index and positioning
     // issues.
     const shouldDisplace = container === 'body';
@@ -111,85 +159,51 @@ const Popover = ({
             </ConditionalPortal>
         </Manager>
     );
-};
-
-interface PropTypes {
-    /**
-     * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
-     */
-    children: React.ReactNode;
-    /**
-     * A function that renders JSX and receives an object with `ref`.
-     * All of these props must be added to the component within the render prop.
-     */
-    launcher: ({ ref }: { ref: RefHandler }) => JSX.Element;
-    /**
-     * Position of popover relative to the launcher.
-     */
-    position?:
-        | 'top-start'
-        | 'top'
-        | 'top-end'
-        | 'bottom-start'
-        | 'bottom'
-        | 'bottom-end'
-        | 'left-start'
-        | 'left'
-        | 'left-end'
-        | 'right-start'
-        | 'right'
-        | 'right-end';
-    /**
-     * Whether or not the popover is visible.
-     */
-    isOpen?: boolean;
-    /**
-     * Function called when the close button is clicked. You should cause this to set `isOpen=false`
-     * in your parent component.
-     */
-    onCloseClick: () => void;
-    /**
-     * By default popovers will render right before the `</body>` tag.
-     * Setting the `container` to `inline` causes the tooltip to remain where it was added to the
-     * DOM.
-     * This option is helpful to work around z-index and positioning issues.
-     */
-    container?: 'inline' | 'body';
-    /**
-     * Accessibility title used to describe the content of the popover to screen readers.
-     */
-    accessibilityLabel?: string;
 }
 
-export default Popover;
+interface PopoverTitlePropTypes {
+    /**
+     * The contents of the title.
+     */
+    children: React.ReactNode;
+}
 
-// === Sub-components ===
-
-const PopoverTitle = ({ children }: { children: React.ReactNode }): JSX.Element => (
+const PopoverTitle = ({ children }: PopoverTitlePropTypes): JSX.Element => (
     <div className={styles.popoverTitle}>{children}</div>
 );
 
-const PopoverBody = ({ children }: { children: React.ReactNode }): JSX.Element => (
+interface PopoverBodyPropTypes {
+    /**
+     * The contents of the body.
+     */
+    children: React.ReactNode;
+}
+
+const PopoverBody = ({ children }: PopoverBodyPropTypes): JSX.Element => (
     <div className={styles.popoverBody}>{children}</div>
 );
+
+interface PopoverPrimaryButtonPropTypes {
+    /**
+     * The text of the button.
+     */
+    children: string;
+    /**
+     * The function to call when the button is clickec.
+     */
+    onClick: () => void;
+}
 
 const PopoverPrimaryButton = ({
     children,
     onClick,
-}: {
-    children: string;
-    onClick: () => void;
-}): JSX.Element => (
+}: PopoverPrimaryButtonPropTypes): JSX.Element => (
     <Themed size="small" onClick={onClick} theme="popover-primary">
         {children}
     </Themed>
 );
 
-const PopoverSecondaryButton = ({
-    children,
-    onClick,
-    to,
-}: {
+interface PopoverSecondaryButtonPropTypes {
     /**
      * The text for this button.
      */
@@ -202,7 +216,13 @@ const PopoverSecondaryButton = ({
      * Link to visit when the button is clicked. It will be opened in a new tab.
      */
     to?: string;
-}): JSX.Element => (
+}
+
+const PopoverSecondaryButton = ({
+    children,
+    onClick,
+    to,
+}: PopoverSecondaryButtonPropTypes): JSX.Element => (
     <Themed size="small" onClick={onClick} to={to} theme="popover-secondary" shouldOpenInNewTab>
         {children}
     </Themed>
