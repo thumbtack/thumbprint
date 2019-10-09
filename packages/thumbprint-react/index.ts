@@ -34,7 +34,7 @@ export {
     PopoverBody,
     PopoverPrimaryButton,
     PopoverSecondaryButton,
-} from './components/Popover/index.jsx';
+} from './components/Popover/index';
 export { default as ProgressBar } from './components/ProgressBar/index.jsx';
 export { default as ProgressBarBase } from './components/ProgressBarBase/index.jsx';
 export { default as Pill } from './components/Pill/index.jsx';
