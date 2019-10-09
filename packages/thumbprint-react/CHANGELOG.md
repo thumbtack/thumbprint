@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.5.5 - 2019-10-09
+
 ### Changed
 
 -   [Patch] Rewrite `ServiceCard` component in TypeScript.
