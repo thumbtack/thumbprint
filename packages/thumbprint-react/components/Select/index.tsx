@@ -65,7 +65,7 @@ interface PropTypes {
      * on `<select>` and controlled components](https://facebook.github.io/react/docs/forms.html#the-select-tag)
      * to learn more.
      */
-    value?: string;
+    value: string;
     /**
      * Function that is fired when the value of the select changes.
      */
@@ -88,7 +88,8 @@ interface PropTypes {
      */
     dataTest?: string;
     /**
-     * Adds `name` HTML attribute to element, indicating the property name associated with the selected value.
+     * Adds `name` HTML attribute to element, indicating the property name associated with the
+     * selected value.
      */
     name?: string;
 }
