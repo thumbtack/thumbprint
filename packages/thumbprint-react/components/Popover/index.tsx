@@ -189,7 +189,7 @@ interface PopoverPrimaryButtonPropTypes {
      */
     children: string;
     /**
-     * The function to call when the button is clickec.
+     * The function to call when the button is clicked.
      */
     onClick: () => void;
 }
@@ -205,13 +205,13 @@ const PopoverPrimaryButton = ({
 
 interface PopoverSecondaryButtonPropTypes {
     /**
-     * The text for this button.
+     * The text of the button.
      */
     children: string;
     /**
-     * Function called when the button is clicked, or link to visit.
+     * The function to call when the button is clicked.
      */
-    onClick: () => void;
+    onClick?: () => void;
     /**
      * Link to visit when the button is clicked. It will be opened in a new tab.
      */
