@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Popover` component in TypeScript.
+
 ## 9.5.5 - 2019-10-09
 
 ### Changed
