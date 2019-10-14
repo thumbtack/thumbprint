@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Enable `size` prop to properly pass through a `number` to the `Image` height. (#486)
+
 ### Changed
 
 -   [Patch] Rewrite `Checkbox` component in TypeScript.
