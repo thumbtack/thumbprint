@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Textarea` component in TypeScript.
+
 ## 9.5.6 - 2019-10-09
 
 ### Changed
