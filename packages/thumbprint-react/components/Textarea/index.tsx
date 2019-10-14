@@ -60,7 +60,7 @@ interface PropTypes {
     /**
      * The function that is called when the textarea value changes.
      *
-     * It receives two arguments?: `onChange(newValue, event)`.
+     * It receives two arguments: `onChange(newValue, event)`.
      *
      * The consumer of this component should use that data to update the `value` prop passed in to
      * this component.
