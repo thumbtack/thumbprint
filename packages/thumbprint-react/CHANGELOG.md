@@ -8,6 +8,20 @@
 
 ### Changed
 
+-   [Patch] Rewrite `Checkbox` component in TypeScript.
+-   [Patch] Rewrite `Textarea` component in TypeScript.
+
+## 9.5.6 - 2019-10-09
+
+### Changed
+
+-   [Patch] Rewrite `Popover` component in TypeScript.
+-   [Patch] Rewrite `Select` component in TypeScript.
+
+## 9.5.5 - 2019-10-09
+
+### Changed
+
 -   [Patch] Rewrite `ServiceCard` component in TypeScript.
 
 ## 9.5.4 - 2019-10-07

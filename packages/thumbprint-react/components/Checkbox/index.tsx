@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
@@ -72,7 +71,13 @@ const textColor = {
     default: 'inherit',
 };
 
-const getCheckedState = ({ isChecked, isIndeterminate }) => {
+type CheckedState = 'checked' | 'indeterminate' | 'unchecked';
+type FunctionalState = 'disabled' | 'error' | 'default';
+
+const getCheckedState = ({
+    isChecked,
+    isIndeterminate,
+}: Pick<PropTypes, 'isChecked' | 'isIndeterminate'>): CheckedState => {
     if (isChecked) {
         return 'checked';
     }
@@ -84,7 +89,10 @@ const getCheckedState = ({ isChecked, isIndeterminate }) => {
     return 'unchecked';
 };
 
-const getFunctionalState = ({ isDisabled, hasError }) => {
+const getFunctionalState = ({
+    isDisabled,
+    hasError,
+}: Pick<PropTypes, 'isDisabled' | 'hasError'>): FunctionalState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -96,19 +104,73 @@ const getFunctionalState = ({ isDisabled, hasError }) => {
     return 'default';
 };
 
-const Checkbox = ({
-    checkboxVerticalAlign,
+interface PropTypes {
+    /**
+     * Disables the input and the label.
+     */
+    isDisabled?: boolean;
+    /**
+     * Determines if the checkbox is checked.
+     */
+    isChecked?: boolean;
+    /**
+     * Makes the radio and text color red.
+     */
+    hasError?: boolean;
+    /**
+     * Text or elements that appear within the label. If `children` is not provided, the developer
+     * must use the `Radio`'s `id` prop to associate it with a custom `<label>` element.
+     */
+    children?: React.ReactNode;
+    /**
+     * The `id` is added to the checkbox as an HTML attribute and passed to the `onChange`
+     * function.
+     */
+    id?: string;
+    /**
+     * Checkboxes on a page with the same name will be grouped together when sent to the server.
+     * The browser will only send the value of checkboxes that are checked.
+     */
+    name?: string;
+    /**
+     * Determine that padding that gets applied to the label. This can be used
+     * to increase the label's click target. The value supplied should be a
+     * string with a unit such as `8px` or `8px 16px`.
+     */
+    labelPadding?: string;
+    /**
+     * Function that runs when a checkbox value changes. It receives the new boolean value and
+     * the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
+     */
+    onChange: (value: boolean, id?: string) => void;
+    /**
+     * Shows a horizontal line to represent an indeterminate input.
+     */
+    isIndeterminate?: boolean;
+    /**
+     * A selector hook into the React component for use in automated testing environments. It is
+     * applied internally to the `<input />` element.
+     */
+    dataTest?: string;
+    /**
+     * Determines how the checkbox input will be vertically aligned relative to `props.children`.
+     */
+    checkboxVerticalAlign?: 'top' | 'center';
+}
+
+export default function Checkbox({
+    checkboxVerticalAlign = 'center',
     children,
     dataTest,
-    hasError,
+    hasError = false,
     id,
-    isChecked,
-    isDisabled,
-    isIndeterminate,
-    labelPadding,
+    isChecked = false,
+    isDisabled = false,
+    isIndeterminate = false,
+    labelPadding = '14px 0',
     name,
     onChange,
-}) => {
+}: PropTypes): JSX.Element {
     const functionalState = getFunctionalState({ isDisabled, hasError });
     const checkedState = getCheckedState({ isChecked, isIndeterminate });
 
@@ -134,7 +196,7 @@ const Checkbox = ({
                 id={id}
                 name={name}
                 checked={isChecked}
-                onChange={e => onChange(e.target.checked, id)}
+                onChange={(event): void => onChange(event.target.checked, id)}
                 disabled={isDisabled}
             />
 
@@ -167,73 +229,4 @@ const Checkbox = ({
             )}
         </label>
     );
-};
-
-Checkbox.propTypes = {
-    /**
-     * Disables the input and the label.
-     */
-    isDisabled: PropTypes.bool,
-    /**
-     * Determines if the checkbox is checked.
-     */
-    isChecked: PropTypes.bool,
-    /**
-     * Makes the radio and text color red.
-     */
-    hasError: PropTypes.bool,
-    /**
-     * Text or elements that appear within the label. If `children` is not provided, the developer
-     * must use the `Radio`'s `id` prop to associate it with a custom `<label>` element.
-     */
-    children: PropTypes.node,
-    /**
-     * The `id` is added to the checkbox as an HTML attribute and passed to the `onChange`
-     * function.
-     */
-    id: PropTypes.string,
-    /**
-     * Checkboxes on a page with the same name will be grouped together when sent to the server.
-     * The browser will only send the value of checkboxes that are checked.
-     */
-    name: PropTypes.string,
-    /**
-     * Determine that padding that gets applied to the label. This can be used
-     * to increase the label's click target. The value supplied should be a
-     * string with a unit such as `8px` or `8px 16px`.
-     */
-    labelPadding: PropTypes.string,
-    /**
-     * Function that runs when a checkbox value changes. It receives the new boolean value and
-     * the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
-     */
-    onChange: PropTypes.func.isRequired,
-    /**
-     * Shows a horizontal line to represent an indeterminate input.
-     */
-    isIndeterminate: PropTypes.bool,
-    /**
-     * A selector hook into the React component for use in automated testing environments. It is
-     * applied internally to the `<input />` element.
-     */
-    dataTest: PropTypes.string,
-    /**
-     * Determines how the checkbox input will be vertically aligned relative to `props.children`.
-     */
-    checkboxVerticalAlign: PropTypes.oneOf(['top', 'center']),
-};
-
-Checkbox.defaultProps = {
-    isDisabled: false,
-    children: null,
-    id: null,
-    isChecked: false,
-    hasError: false,
-    name: null,
-    labelPadding: '14px 0',
-    isIndeterminate: false,
-    dataTest: undefined,
-    checkboxVerticalAlign: 'center',
-};
-
-export default Checkbox;
+}

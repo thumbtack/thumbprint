@@ -3,9 +3,6 @@
 exports[`adds \`dataTest\` prop 1`] = `
 <Textarea
   dataTest="Duck"
-  hasError={false}
-  isDisabled={false}
-  isRequired={false}
   onChange={[Function]}
   value="goose"
 >
@@ -22,9 +19,7 @@ exports[`adds \`dataTest\` prop 1`] = `
 
 exports[`adds \`disabled\` attribute 1`] = `
 <Textarea
-  hasError={false}
   isDisabled={true}
-  isRequired={false}
   onChange={[Function]}
   value="goose"
 >
@@ -40,10 +35,7 @@ exports[`adds \`disabled\` attribute 1`] = `
 
 exports[`adds \`id\` attribute 1`] = `
 <Textarea
-  hasError={false}
   id="Goose"
-  isDisabled={false}
-  isRequired={false}
   onChange={[Function]}
   value="goose"
 >
@@ -60,9 +52,6 @@ exports[`adds \`id\` attribute 1`] = `
 
 exports[`adds \`maxLength\` attribute 1`] = `
 <Textarea
-  hasError={false}
-  isDisabled={false}
-  isRequired={false}
   maxLength={100}
   onChange={[Function]}
   value="goose"
@@ -80,9 +69,6 @@ exports[`adds \`maxLength\` attribute 1`] = `
 
 exports[`adds \`name\` HTML attribute 1`] = `
 <Textarea
-  hasError={false}
-  isDisabled={false}
-  isRequired={false}
   name="duck"
   onChange={[Function]}
   value="goose"
@@ -100,8 +86,6 @@ exports[`adds \`name\` HTML attribute 1`] = `
 
 exports[`adds \`required\` attribute 1`] = `
 <Textarea
-  hasError={false}
-  isDisabled={false}
   isRequired={true}
   onChange={[Function]}
   value="goose"
@@ -118,9 +102,6 @@ exports[`adds \`required\` attribute 1`] = `
 
 exports[`adds placeholder 1`] = `
 <Textarea
-  hasError={false}
-  isDisabled={false}
-  isRequired={false}
   onChange={[Function]}
   placeholder="Goose"
   value="goose"
@@ -147,8 +128,6 @@ exports[`renders \`value\` as the \`value\` attribute 1`] = `
 exports[`renders an error state 1`] = `
 <Textarea
   hasError={true}
-  isDisabled={false}
-  isRequired={false}
   onChange={[Function]}
   value="goose"
 >
