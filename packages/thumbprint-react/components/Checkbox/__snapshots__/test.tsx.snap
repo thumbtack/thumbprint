@@ -21,6 +21,7 @@ exports[`adds \`dataTest\` prop 1`] = `
       data-test="Duck"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -67,6 +68,7 @@ exports[`adds \`disabled\` attribute 1`] = `
       className="input"
       disabled={true}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -114,6 +116,7 @@ exports[`adds \`name\` attribute 1`] = `
       disabled={false}
       name="ohhi"
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -160,6 +163,7 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -206,6 +210,7 @@ exports[`applies className corresponding to \`checkboxVerticalAlign\` on the lab
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -253,6 +258,7 @@ exports[`if no \`children\` are passed in 1`] = `
       disabled={false}
       id="no-children"
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -289,6 +295,7 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -355,6 +362,7 @@ exports[`is not checked by default 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -400,6 +408,7 @@ exports[`renders \`children\` passed in 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -447,6 +456,7 @@ exports[`renders \`hasError\` state 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -514,6 +524,7 @@ exports[`renders \`hasError\` state 2`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -559,6 +570,7 @@ exports[`renders \`input\` within \`label\` 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -604,6 +616,7 @@ exports[`renders checkbox input 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -651,6 +664,7 @@ exports[`renders indeterminate SVG when both \`isIndeterminate\` and \`isChecked
       className="input"
       disabled={false}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
