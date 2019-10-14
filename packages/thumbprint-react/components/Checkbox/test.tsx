@@ -67,7 +67,8 @@ test('applies `labelPadding` as padding on the label', () => {
             Goose
         </Checkbox>,
     );
-    expect(wrapper.find('label').prop('style').padding).toBe('10px 20px');
+
+    expect((wrapper.find('label').prop('style') || {}).padding).toBe('10px 20px');
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -135,10 +136,10 @@ test('calls `onChange` with correct values when `isIndeterminate` is true ', () 
     );
 
     wrapper.find('input').simulate('change', { target: { checked: false } });
-    expect(onChange).toHaveBeenCalledWith(false, null);
+    expect(onChange).toHaveBeenCalledWith(false, undefined);
 
     wrapper.find('input').simulate('change', { target: { checked: true } });
-    expect(onChange).toHaveBeenCalledWith(true, null);
+    expect(onChange).toHaveBeenCalledWith(true, undefined);
 });
 
 test('renders indeterminate SVG when both `isIndeterminate` and `isChecked` are true ', () => {

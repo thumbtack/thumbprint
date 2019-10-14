@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Checkbox` component in TypeScript.
+
 ## 9.5.6 - 2019-10-09
 
 ### Changed
