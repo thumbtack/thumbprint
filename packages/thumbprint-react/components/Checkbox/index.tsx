@@ -128,6 +128,10 @@ interface PropTypes {
      */
     id?: string;
     /**
+     * Adds the `required` HTML attribute.
+     */
+    isRequired?: boolean;
+    /**
      * Checkboxes on a page with the same name will be grouped together when sent to the server.
      * The browser will only send the value of checkboxes that are checked.
      */
@@ -168,6 +172,7 @@ export default function Checkbox({
     isDisabled = false,
     isIndeterminate = false,
     labelPadding = '14px 0',
+    isRequired = false,
     name,
     onChange,
 }: PropTypes): JSX.Element {
@@ -198,6 +203,7 @@ export default function Checkbox({
                 checked={isChecked}
                 onChange={(event): void => onChange(event.target.checked, id)}
                 disabled={isDisabled}
+                required={isRequired}
             />
 
             <div
