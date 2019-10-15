@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `isRequired` to `Radio` component.
+-   [Minor] Add `isRequired` to `Checkbox` component.
+
 ### Fixed
 
 -   [Patch] Add `line-height` to `Pill` to ensure alignment, prevent external value inheritance. (#494)
