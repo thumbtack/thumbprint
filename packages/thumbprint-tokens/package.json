@@ -1,15 +1,18 @@
 {
     "name": "@thumbtack/thumbprint-tokens",
     "description": "Design variables that power Thumbtack’s UI.",
-    "version": "8.3.2",
+    "version": "8.3.4-beta.0",
     "main": "dist/javascript-cjs/index.js",
-    "module": "dist/javascript-esm/index.js",
+    "module": "dist/javascript-es/index.js",
     "sideEffects": false,
     "files": [
         "dist"
     ],
     "scripts": {
-        "start": "./src/index.js",
+        "build": "./src/index.js",
+        "types": "tsc --project ./tsconfig.json",
+        "clear": "rm -rf dist",
+        "start": "yarn clear && yarn build && yarn types",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "publishConfig": {
