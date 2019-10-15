@@ -7,6 +7,7 @@ exports[`adds \`dataTest\` prop 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -29,6 +30,7 @@ exports[`adds \`dataTest\` prop 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -71,6 +73,7 @@ exports[`adds \`disabled\` attribute 1`] = `
   id={null}
   isChecked={false}
   isDisabled={true}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -92,6 +95,7 @@ exports[`adds \`disabled\` attribute 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -134,6 +138,7 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="10px 20px"
   name="duck"
   onChange={[MockFunction]}
@@ -155,6 +160,7 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -197,6 +203,7 @@ exports[`applies className corresponding to \`radioVerticalAlign\` on the label 
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -218,6 +225,7 @@ exports[`applies className corresponding to \`radioVerticalAlign\` on the label 
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -260,6 +268,7 @@ exports[`if no \`children\` are passed in 1`] = `
   id="no-children"
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -281,6 +290,7 @@ exports[`if no \`children\` are passed in 1`] = `
       id="no-children"
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -313,6 +323,7 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
   id={null}
   isChecked={true}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -334,6 +345,7 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -382,6 +394,7 @@ exports[`is not checked by default 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -403,6 +416,7 @@ exports[`is not checked by default 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -445,6 +459,7 @@ exports[`renders \`children\` passed in 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -466,6 +481,7 @@ exports[`renders \`children\` passed in 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -508,6 +524,7 @@ exports[`renders \`hasError\` state 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -529,6 +546,7 @@ exports[`renders \`hasError\` state 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -571,6 +589,7 @@ exports[`renders \`hasError\` state 2`] = `
   id={null}
   isChecked={true}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -592,6 +611,7 @@ exports[`renders \`hasError\` state 2`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -640,6 +660,7 @@ exports[`renders \`input\` within \`label\` 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -661,6 +682,7 @@ exports[`renders \`input\` within \`label\` 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg
@@ -703,6 +725,7 @@ exports[`renders radio input 1`] = `
   id={null}
   isChecked={false}
   isDisabled={false}
+  isRequired={false}
   labelPadding="14px 0"
   name="duck"
   onChange={[MockFunction]}
@@ -724,6 +747,7 @@ exports[`renders radio input 1`] = `
       id={null}
       name="duck"
       onChange={[Function]}
+      required={false}
       type="radio"
     />
     <svg

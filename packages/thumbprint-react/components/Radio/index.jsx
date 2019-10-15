@@ -65,6 +65,7 @@ const Radio = ({
     id,
     isChecked,
     isDisabled,
+    isRequired,
     labelPadding,
     name,
     onChange,
@@ -95,6 +96,7 @@ const Radio = ({
                 name={name}
                 disabled={isDisabled}
                 data-test={dataTest}
+                required={isRequired}
             />
 
             <svg
@@ -140,6 +142,10 @@ Radio.propTypes = {
      */
     isChecked: PropTypes.bool,
     /**
+     * Adds the `required` HTML attribute.
+     */
+    isRequired: PropTypes.bool,
+    /**
      * Makes the radio and text color red.
      */
     hasError: PropTypes.bool,
@@ -176,6 +182,7 @@ Radio.defaultProps = {
     id: null,
     isDisabled: false,
     isChecked: false,
+    isRequired: false,
     hasError: false,
     labelPadding: '14px 0',
     dataTest: undefined,
