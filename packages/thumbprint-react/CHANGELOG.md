@@ -4,8 +4,8 @@
 
 ### Added
 
--   [Patch] Add `isRequired` to `Radio` component.
--   [Patch] Add `isRequired` to `Checkbox` component.
+-   [Minor] Add `isRequired` to `Radio` component.
+-   [Minor] Add `isRequired` to `Checkbox` component.
 
 ### Fixed
 
