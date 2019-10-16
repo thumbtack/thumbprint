@@ -5,6 +5,7 @@ backend:
 media_folder: www/static/img
 public_folder: /img
 
+# Changes here should also be made in `createPages` within `gatsby-node.js`.
 collections:
     - name: 'components-usage'
       label: 'Components (Usage)'

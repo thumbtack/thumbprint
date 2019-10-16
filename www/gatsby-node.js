@@ -92,8 +92,10 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
     });
 };
 
+/**
+ * Create pages from the Markdown files created by Netlify CMS.
+ */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-    // Destructure the createPage function from the actions object
     const { createPage } = actions;
 
     const result = await graphql(`
@@ -101,17 +103,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             allFile(filter: { sourceInstanceName: { eq: "cms" } }) {
                 edges {
                     node {
-                        id
-                        ext
                         name
                         relativeDirectory
                         relativePath
                         childMdx {
                             id
-                            frontmatter {
-                                title
-                                description
-                            }
                         }
                     }
                 }
@@ -123,13 +119,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         reporter.panicOnBuild("Can't load MDX files used by Netlify CMS.");
     }
 
-    // Create blog post pages.
-    const posts = result.data.allFile.edges;
-
-    // We'll call `createPage` for each result
-    posts.forEach(({ node }) => {
+    result.data.allFile.edges.forEach(({ node }) => {
         let slug;
 
+        // These are all the collections that we use in Netlify CMS. The content also exists in
+        // `www/static/admin/config.yml`.
         if (node.relativeDirectory === 'components-ios') {
             slug = `/components/${node.name}/ios/`;
         } else if (node.relativeDirectory === 'components-android') {
