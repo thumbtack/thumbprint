@@ -3,4 +3,4 @@ title: Avatar
 description: Display user images and badges on Thumbtack.
 ---
 
-Documentation for Avatar on Android is coming soon.
+Usage rules for Avatar is coming soon.

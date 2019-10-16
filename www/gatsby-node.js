@@ -105,6 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         ext
                         name
                         relativeDirectory
+                        relativePath
                         childMdx {
                             id
                             frontmatter {
@@ -119,7 +120,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `);
 
     if (result.errors) {
-        reporter.panicOnBuild("🚨  ERROR: Can't load MDX files used by Netlify CMS.");
+        reporter.panicOnBuild("Can't load MDX files used by Netlify CMS.");
     }
 
     // Create blog post pages.
@@ -131,9 +132,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
         if (node.relativeDirectory === 'components-ios') {
             slug = `/components/${node.name}/ios/`;
+        } else if (node.relativeDirectory === 'components-android') {
+            slug = `/components/${node.name}/android/`;
+        } else if (node.relativeDirectory === 'components-usage') {
+            slug = `/components/${node.name}/usage/`;
         } else {
             reporter.panicOnBuild(
-                `🚨  ERROR: Can't generate a URL for the Markdown file in ${node.relativeDirectory}. Take a look at \`createPages\` in \`gatsby-node.js\`.`,
+                `Can't generate a URL for the Markdown file in \`${node.relativePath}\`. Take a look at \`createPages\` in \`gatsby-node.js\`.`,
             );
         }
 
