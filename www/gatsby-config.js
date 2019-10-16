@@ -8,6 +8,7 @@ module.exports = {
         siteUrl: 'https://thumbprint.design',
     },
     plugins: [
+        'gatsby-plugin-netlify-cms',
         'gatsby-plugin-typescript',
         'gatsby-plugin-react-helmet',
         {
@@ -40,6 +41,13 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'cms',
+                path: `${__dirname}/src/cms`,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-sass',
             options: {
                 importer: sassImporter,
@@ -57,7 +65,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-mdx',
             options: {
-                extensions: ['.mdx'],
+                extensions: ['.mdx', '.md'],
                 defaultLayouts: {
                     default: require.resolve('./src/components/mdx/index.jsx'),
                 },
