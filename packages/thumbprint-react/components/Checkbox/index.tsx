@@ -160,6 +160,11 @@ interface PropTypes {
      * Determines how the checkbox input will be vertically aligned relative to `props.children`.
      */
     checkboxVerticalAlign?: 'top' | 'center';
+    /**
+     * Determines the value that will be submitted if the checkbox is checked. The default value is
+     * `'on'`.
+     */
+    value?: string | string[] | number;
 }
 
 export default function Checkbox({
@@ -175,6 +180,7 @@ export default function Checkbox({
     isRequired = false,
     name,
     onChange,
+    value,
 }: PropTypes): JSX.Element {
     const functionalState = getFunctionalState({ isDisabled, hasError });
     const checkedState = getCheckedState({ isChecked, isIndeterminate });
@@ -204,6 +210,7 @@ export default function Checkbox({
                 onChange={(event): void => onChange(event.target.checked, id)}
                 disabled={isDisabled}
                 required={isRequired}
+                value={value}
             />
 
             <div
