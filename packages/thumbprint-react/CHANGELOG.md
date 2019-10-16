@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Add `value` to `Checkbox` component.
 -   [Minor] Add `isRequired` to `Radio` component.
 -   [Minor] Add `isRequired` to `Checkbox` component.
 
