@@ -1,6 +1,3 @@
-// TS config for generate type delcaration files only. This does not produce any JS code.
-// These .d.ts files are included in the dist directory along with the Rollup output, so that
-// types are available to consumers of the library.
 {
     "compilerOptions": {
         "rootDir": "dist/typescript",
