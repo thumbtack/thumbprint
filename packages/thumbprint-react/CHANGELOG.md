@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 9.6.0 - 2019-10-16
+
 ### Added
 
 -   [Minor] Add `value` to `Checkbox` component.
@@ -11,9 +13,6 @@
 ### Fixed
 
 -   [Patch] Add `line-height` to `Pill` to ensure alignment, prevent external value inheritance. (#494)
-
-### Fixed
-
 -   [Patch] Enable `size` prop to properly pass through a `number` to the `Image` height. (#486)
 
 ### Changed
