@@ -143,6 +143,54 @@ exports[`adds \`name\` attribute 1`] = `
 </Checkbox>
 `;
 
+exports[`adds \`value\` prop 1`] = `
+<Checkbox
+  onChange={[MockFunction]}
+  value="Duck"
+>
+  <label
+    className="root rootCheckboxVerticalAlignCenter"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+      value="Duck"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
 exports[`applies \`labelPadding\` as padding on the label 1`] = `
 <Checkbox
   labelPadding="10px 20px"

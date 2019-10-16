@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `value` to `Checkbox` component. (#501)
+
 ## 9.6.0 - 2019-10-16
 
 ### Added
