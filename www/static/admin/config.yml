@@ -5,7 +5,10 @@ backend:
 media_folder: www/static/img
 public_folder: /img
 
-# Changes here should also be made in `createPages` within `gatsby-node.js`.
+# Changes here should also be made in `createPages` within `gatsby-node.js`. Eventually, we'll be
+# able to keep the files in `www/src/pages` and use as the collection folder. That means that we
+# won't need the code in `gatsby-node.js`. This is the downstream issue:
+# https://github.com/netlify/netlify-cms/issues/513
 collections:
     - name: 'components-usage'
       label: 'Components (Usage)'

@@ -94,6 +94,7 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
 
 /**
  * Create pages from the Markdown files created by Netlify CMS.
+ *
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
