@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `value` to `Checkbox` component. (#501)
+
 ## 9.6.0 - 2019-10-16
 
 ### Added
 
--   [Minor] Add `value` to `Checkbox` component.
 -   [Minor] Add `isRequired` to `Radio` component.
 -   [Minor] Add `isRequired` to `Checkbox` component.
 
