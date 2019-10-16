@@ -6,6 +6,12 @@
 
 -   [Patch] Convert `Input` component to a function component with Hooks.
 
+## 9.7.0 - 2019-10-16
+
+### Added
+
+-   [Minor] Add `value` to `Checkbox` component. (#501)
+
 ## 9.6.0 - 2019-10-16
 
 ### Added
