@@ -2,7 +2,6 @@ import React, { useState, forwardRef, useEffect } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
-import PropTypes from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 import scrollparent from './get-scroll-parent';
 import canUseDOM from '../../utils/can-use-dom';
@@ -19,23 +18,88 @@ import styles from './index.module.scss';
 // 5. The image onLoad and onError events remove padding-top placholder and sets opacity to 1.
 // --------------------------------------------------------------------------------------------
 
-const Image = forwardRef((props, outerRef) => {
+type ImageSource = {
+    type: 'image/webp' | 'image/jpeg' | 'image/png' | 'image/gif';
+    srcSet: string;
+};
+
+interface ImagePropTypes {
+    /**
+     * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
+     * users on browsers that don't support responsive images. If `sources` is not provided, this
+     * image will be lazy-loaded.
+     */
+    src: string;
+    /**
+     * Allows the browser to choose the best file format and image size based on the device screen
+     * density and the width of the rendered image.
+     */
+    sources?: ImageSource[];
+    alt?: string;
+    /**
+     * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
+     * used to control how the image is cropped.
+     */
+    height?: string;
+    /**
+     * Creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/) for the image.
+     * The placeholder prevents the browser scroll from jumping when the image is lazy-loaded.
+     */
+    containerAspectRatio?: number;
+    /**
+     * Disables lazy-loading and overrides the default calculation of the `sizes` attribute.
+     * Primarily for important images in a server-side rendered environment that must be
+     * loaded before JavaScript is parsed and executed on the client. The value gets used
+     * as the `sizes` attribute. [See allowable values](https://mzl.la/2Hh6neO).
+     */
+    forceEarlyRender?: React.ImgHTMLAttributes<HTMLImageElement>['sizes'];
+    /**
+     * Provides control over how the image should be resized to fit the container. This controls the
+     * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
+     */
+    objectFit?: 'cover' | 'contain';
+    /**
+     * Provides control over how the image position in the container. This controls the
+     * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
+     */
+    objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
+    className?: string;
+}
+
+type ObjectFitPropsType = {
+    style?: {
+        // Not using React.CSSProperties types for these two, because we use a restricted subset.
+        objectFit?: 'cover' | 'contain';
+        objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
+        fontFamily?: React.CSSProperties['fontFamily'];
+    };
+};
+
+type AspectRatioBoxPropsType = {
+    style?: {
+        paddingTop?: React.CSSProperties['paddingTop'];
+        overflow?: React.CSSProperties['overflow'];
+        height?: React.CSSProperties['height'];
+    };
+};
+
+const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
     const {
         src,
-        sources,
+        sources = [],
         height,
         containerAspectRatio,
-        objectFit,
-        objectPosition,
-        alt,
+        objectFit = 'cover',
+        objectPosition = 'center',
+        alt = '',
         className,
-        forceEarlyRender,
+        forceEarlyRender = null,
         ...rest
     } = props;
 
     // The outermost DOM node that this component references. We use `useState` instead of
     // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
-    const [containerRef, setContainerRef] = useState(null);
+    const [containerRef, setContainerRef] = useState<Element | null>(null);
 
     // --------------------------------------------------------------------------------------------
     // Sizes
@@ -44,11 +108,10 @@ const Image = forwardRef((props, outerRef) => {
     // Used by srcSet to determine which image in the list will be requested. This value has to be
     // calculated client-side because we don't know the viewport width.
 
-    const computeSizes = () =>
+    const computeSizes = (): string =>
         containerRef && containerRef.clientWidth ? `${containerRef.clientWidth}px` : '0px';
 
-    // If `forceEarlyRender` is supplied use that value, otherwise use the computed width.
-
+    // If `forceEarlyRender` is truthy use that value, otherwise use the computed width.
     const sizes = forceEarlyRender || computeSizes();
 
     // --------------------------------------------------------------------------------------------
@@ -61,7 +124,7 @@ const Image = forwardRef((props, outerRef) => {
     // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
     // https://git.io/fj00H
 
-    const parent = canUseDOM && containerRef && scrollparent(containerRef);
+    const parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
     const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
 
     // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
@@ -83,14 +146,14 @@ const Image = forwardRef((props, outerRef) => {
         });
     }
 
-    // If `forceEarlyRender` is true, bypass lazy loading and load the image.
+    // If `forceEarlyRender` is truthy, bypass lazy loading and load the image.
     const shouldLoadImage = isInView || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
     // --------------------------------------------------------------------------------------------
 
-    const objectFitProps = {};
+    const objectFitProps: ObjectFitPropsType = {};
 
     const shouldObjectFit = !!height;
     const shouldPolyfillObjectFit =
@@ -133,7 +196,7 @@ const Image = forwardRef((props, outerRef) => {
     // Image Aspect Ratio used for image placeholder
     // --------------------------------------------------------------------------------------------
 
-    const aspectRatioBoxProps = {};
+    const aspectRatioBoxProps: AspectRatioBoxPropsType = {};
 
     if (containerAspectRatio) {
         // This ensures that lazy-loaded images don't cause the browser scroll to jump once the
@@ -174,7 +237,7 @@ const Image = forwardRef((props, outerRef) => {
             <picture
                 {...rest}
                 className={classNames(styles.picture, className)}
-                ref={el => {
+                ref={(el): void => {
                     // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
                     // element.
                     setContainerRef(el);
@@ -186,7 +249,8 @@ const Image = forwardRef((props, outerRef) => {
                     }
 
                     // `outerRef` is the potential forwarded `ref` passed in from a consumer.
-                    if (outerRef) {
+                    // Not all refs are callable functions, so only try and call it if it is.
+                    if (typeof outerRef === 'function') {
                         outerRef(el);
                     }
                 }}
@@ -219,10 +283,10 @@ const Image = forwardRef((props, outerRef) => {
                             ? {}
                             : aspectRatioBoxProps.style),
                     }}
-                    onLoad={() => {
+                    onLoad={(): void => {
                         setIsLoaded(true);
                     }}
-                    onError={() => {
+                    onError={(): void => {
                         setIsError(true);
                     }}
                     className={classNames({
@@ -242,64 +306,6 @@ const Image = forwardRef((props, outerRef) => {
         </>
     );
 });
-
-Image.propTypes = {
-    /**
-     * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
-     * users on browsers that don't support responsive images. If `sources` is not provided, this
-     * image will be lazy-loaded.
-     */
-    src: PropTypes.string.isRequired,
-    /**
-     * Allows the browser to choose the best file format and image size based on the device screen
-     * density and the width of the rendered image.
-     */
-    sources: PropTypes.arrayOf(
-        PropTypes.shape({
-            type: PropTypes.oneOf(['image/webp', 'image/jpeg', 'image/png', 'image/gif'])
-                .isRequired,
-            srcSet: PropTypes.string.isRequired,
-        }),
-    ),
-    alt: PropTypes.string,
-    /**
-     * Crops the image at the provided height. The `objectFit` and `objectPosition` props can be
-     * used to control how the image is cropped.
-     */
-    height: PropTypes.string,
-    /**
-     * Creates a [placeholder box](https://css-tricks.com/aspect-ratio-boxes/) for the image.
-     * The placeholder prevents the browser scroll from jumping when the image is lazy-loaded.
-     */
-    containerAspectRatio: PropTypes.number,
-    /**
-     * Disables lazy-loading and overrides the default calculation of the `sizes` attribute.
-     * Primarily for important images in a server-side rendered environment that must be
-     * loaded before JavaScript is parsed and executed on the client. The value gets used
-     * as the `sizes` attribute. [See allowable values](https://mzl.la/2Hh6neO).
-     */
-    forceEarlyRender: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-    /**
-     * Provides control over how the image should be resized to fit the container. This controls the
-     * `object-fit` CSS property. It is only useful if `height` is used to "crop" the image.
-     */
-    objectFit: PropTypes.oneOf(['cover', 'contain']),
-    /**
-     * Provides control over how the image position in the container. This controls the
-     * `object-position` CSS property. It is only useful if `height` is used to "crop" the image.
-     */
-    objectPosition: PropTypes.oneOf(['top', 'center', 'bottom', 'left', 'right']),
-};
-
-Image.defaultProps = {
-    sources: [],
-    alt: '',
-    height: undefined,
-    containerAspectRatio: undefined,
-    forceEarlyRender: false,
-    objectFit: 'cover',
-    objectPosition: 'center',
-};
 
 // Needed because of the `forwardRef`.
 Image.displayName = 'Image';

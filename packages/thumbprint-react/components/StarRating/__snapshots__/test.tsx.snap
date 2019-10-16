@@ -271,12 +271,7 @@ exports[`generates the correct title 1`] = `
 
 exports[`renders 0 star rating 1`] = `
 <StarRating
-  hoverRating={0}
-  onMouseLeave={[Function]}
-  onStarClick={[Function]}
-  onStarHover={[Function]}
   rating={0}
-  size="small"
 >
   <div
     className="root rootSizeSmall"
@@ -545,12 +540,7 @@ exports[`renders 0 star rating 1`] = `
 
 exports[`renders 2.5 star rating 1`] = `
 <StarRating
-  hoverRating={0}
-  onMouseLeave={[Function]}
-  onStarClick={[Function]}
-  onStarHover={[Function]}
   rating={2.5}
-  size="small"
 >
   <div
     className="root rootSizeSmall"
@@ -819,12 +809,7 @@ exports[`renders 2.5 star rating 1`] = `
 
 exports[`renders 3 star rating 1`] = `
 <StarRating
-  hoverRating={0}
-  onMouseLeave={[Function]}
-  onStarClick={[Function]}
-  onStarHover={[Function]}
   rating={3}
-  size="small"
 >
   <div
     className="root rootSizeSmall"
@@ -1093,12 +1078,7 @@ exports[`renders 3 star rating 1`] = `
 
 exports[`renders 10 star SVG elements in total 1`] = `
 <StarRating
-  hoverRating={0}
-  onMouseLeave={[Function]}
-  onStarClick={[Function]}
-  onStarHover={[Function]}
   rating={5}
-  size="small"
 >
   <div
     className="root rootSizeSmall"

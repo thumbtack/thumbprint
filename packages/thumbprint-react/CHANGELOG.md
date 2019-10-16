@@ -2,6 +2,58 @@
 
 ## Unreleased
 
+## 9.7.0 - 2019-10-16
+
+### Added
+
+-   [Minor] Add `value` to `Checkbox` component. (#501)
+
+## 9.6.0 - 2019-10-16
+
+### Added
+
+-   [Minor] Add `isRequired` to `Radio` component.
+-   [Minor] Add `isRequired` to `Checkbox` component.
+
+### Fixed
+
+-   [Patch] Add `line-height` to `Pill` to ensure alignment, prevent external value inheritance. (#494)
+-   [Patch] Enable `size` prop to properly pass through a `number` to the `Image` height. (#486)
+
+### Changed
+
+-   [Patch] Rewrite `Checkbox` component in TypeScript.
+-   [Patch] Rewrite `Textarea` component in TypeScript.
+
+## 9.5.6 - 2019-10-09
+
+### Changed
+
+-   [Patch] Rewrite `Popover` component in TypeScript.
+-   [Patch] Rewrite `Select` component in TypeScript.
+
+## 9.5.5 - 2019-10-09
+
+### Changed
+
+-   [Patch] Rewrite `ServiceCard` component in TypeScript.
+
+## 9.5.4 - 2019-10-07
+
+### Changed
+
+-   [Patch] Rewrite `Carousel` component in TypeScript.
+-   [Patch] Rewrite `DatePicker` component in TypeScript.
+
+## 9.5.3 - 2019-10-03
+
+### Changed
+
+-   [Patch] Rewrite `StarRating` component in TypeScript.
+-   [Patch] Rewrite `Text` and `Title` components in TypeScript.
+-   [Patch] Rewrite `Image` component in TypeScript.
+-   [Patch] Rewrite `Wrap` component in TypeScript.
+
 ## 9.5.2 - 2019-09-27
 
 ### Changed

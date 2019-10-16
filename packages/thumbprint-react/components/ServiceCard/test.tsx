@@ -2,13 +2,27 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ServiceCard, { ServiceCardImage, ServiceCardTitle, ServiceCardDescription } from './index';
 
-jest.mock('react-intersection-observer', () => ({
-    InView: ({ children }) => children({ inView: true, ref: null }),
-    useInView: () => [() => {}, true],
-}));
+// TODO(giles): All this `react-intersection-observer` mocking stuff is used in a few unit test
+// suites (anything that uses our lazy-loading `Image`). Move to a shared utility so we don't have
+// all this noise at the top of every file.
+type UseInViewReturnType = [() => void, true];
+type InViewChildrenMockType = (arg1: { inView: true; ref: null }) => void;
+type ReactIntersectionObserverMockType = {
+    InView: ({ children }: { children: InViewChildrenMockType }) => void;
+    useInView: () => UseInViewReturnType;
+};
 
-beforeEach(() => {
-    window.IntersectionObserver = true;
+jest.mock(
+    'react-intersection-observer',
+    (): ReactIntersectionObserverMockType => ({
+        InView: ({ children }: { children: InViewChildrenMockType }): void =>
+            children({ inView: true, ref: null }),
+        useInView: (): UseInViewReturnType => [(): void => {}, true],
+    }),
+);
+
+beforeEach((): void => {
+    window.IntersectionObserver = (true as unknown) as (typeof window.IntersectionObserver);
 });
 
 describe('ServiceCard', () => {

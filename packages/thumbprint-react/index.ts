@@ -2,13 +2,13 @@ export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index.jsx';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
-export { default as Carousel } from './components/Carousel/index.jsx';
-export { default as Checkbox } from './components/Checkbox/index.jsx';
-export { default as DatePicker } from './components/DatePicker/index.jsx';
+export { default as Carousel } from './components/Carousel/index';
+export { default as Checkbox } from './components/Checkbox/index';
+export { default as DatePicker } from './components/DatePicker/index';
 export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index';
-export { default as Image } from './components/Image/index.jsx';
+export { default as Image } from './components/Image/index';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index.jsx';
@@ -34,20 +34,20 @@ export {
     PopoverBody,
     PopoverPrimaryButton,
     PopoverSecondaryButton,
-} from './components/Popover/index.jsx';
+} from './components/Popover/index';
 export { default as ProgressBar } from './components/ProgressBar/index.jsx';
 export { default as ProgressBarBase } from './components/ProgressBarBase/index.jsx';
 export { default as Pill } from './components/Pill/index.jsx';
 export { default as Radio } from './components/Radio/index.jsx';
-export { default as Select } from './components/Select/index.jsx';
+export { default as Select } from './components/Select/index';
 export {
     default as ServiceCard,
     ServiceCardDescription,
     ServiceCardTitle,
     ServiceCardImage,
-} from './components/ServiceCard/index.jsx';
-export { default as StarRating } from './components/StarRating/index.jsx';
-export { default as Textarea } from './components/Textarea/index.jsx';
+} from './components/ServiceCard/index';
+export { default as StarRating } from './components/StarRating/index';
+export { default as Textarea } from './components/Textarea/index';
 export { default as Tooltip } from './components/Tooltip/index';
-export { Title, Text } from './components/Type/index.jsx';
-export { default as Wrap } from './components/Wrap/index.jsx';
+export { Title, Text } from './components/Type/index';
+export { default as Wrap } from './components/Wrap/index';
