@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-tokens",
     "description": "Design variables that power Thumbtack’s UI.",
-    "version": "8.3.4-beta.0",
+    "version": "8.3.2",
     "main": "dist/javascript-cjs/index.js",
     "module": "dist/javascript-es/index.js",
     "sideEffects": false,
@@ -9,11 +9,14 @@
         "dist"
     ],
     "scripts": {
-        "build": "./src/index.js",
-        "types": "tsc --project ./tsconfig.json",
+        "build:main": "./src/index.js",
+        "build:esm": "tsc --project ./tsconfig.json --module es2015 --target es2015 --outDir dist/javascript-es",
+        "build:cjs": "tsc --project ./tsconfig.json --module commonjs --target es5 --outDir dist/javascript-cjs",
+        "build": "yarn build:main && yarn build:esm && yarn build:cjs",
         "clear": "rm -rf dist",
-        "start": "yarn clear && yarn build && yarn types",
-        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+        "start": "yarn clear && yarn build",
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start",
+        "test": "jest"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
@@ -25,6 +28,7 @@
         "fs-extra": "^8.1.0",
         "glob": "^7.1.2",
         "handlebars": "^4.2.0",
+        "jest": "^24.9.0",
         "lodash": "^4.17.4"
     },
     "bugs": {

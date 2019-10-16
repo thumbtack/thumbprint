@@ -6,8 +6,7 @@ const JSZip = require('jszip');
 const handlebars = require('handlebars');
 
 const outputs = [
-    { slug: 'javascript-cjs', distName: 'index.js' },
-    { slug: 'javascript-es', distName: 'index.js' },
+    { slug: 'typescript', distName: 'index.ts' },
     { slug: 'scss', distName: '_index.scss' },
     { slug: 'android', distName: 'index.xml' },
     {

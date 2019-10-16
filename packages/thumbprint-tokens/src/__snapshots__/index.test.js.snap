@@ -56,7 +56,9 @@ exports[`outputted Android matches snapshot 1`] = `
 `;
 
 exports[`outputted CommonJS matches snapshot 1`] = `
-"exports.tpBorderRadiusBase = \\"4px\\";
+"\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", { value: true });
+exports.tpBorderRadiusBase = \\"4px\\";
 exports.tpBorderRadiusBig = \\"6px\\";
 exports.tpBorderRadiusFull = \\"50%\\";
 exports.tpBorderRadiusSides = \\"9999px\\";
