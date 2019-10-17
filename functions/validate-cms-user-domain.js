@@ -1,6 +1,9 @@
 exports.handler = (event, context, callback) => {
     const { body } = event;
 
+    console.log(body);
+    console.log(body.user);
+
     console.log(body.user.app_metadata.provider);
 
     if (!body.user.app_metadata && !body.app_metadata.provider !== 'google') {
