@@ -4,9 +4,16 @@
 
 ### Changed
 
--   [Patch] Convert `Input` component to a function component with Hooks.
+-   [Patch] Rewrite `Label` component in TypeScript.
 -   [Patch] Convert `Input` component to TypeScript.
 -   [Major] Change type of `maxLength` attribute of `Input` from `string` to `number`.
+
+## 9.7.1 - 2019-10-17
+
+### Changed
+
+-   [Patch] Convert `Input` component to a function component with Hooks.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 9.7.0 - 2019-10-16
 
