@@ -1,9 +1,9 @@
 exports.handler = (event, context, callback) => {
     const { body } = event;
 
-    console.log(body.app_metadata.provider);
+    console.log(body.user.app_metadata.provider);
 
-    if (!body.app_metadata && !body.app_metadata.provider !== 'google') {
+    if (!body.user.app_metadata && !body.app_metadata.provider !== 'google') {
         return { statusCode: 403, body: 'Only registrations through Google are allowed.' };
     }
 
