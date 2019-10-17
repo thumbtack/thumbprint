@@ -2,9 +2,13 @@
 
 ## Unreleased
 
+## 10.0.0 - 2019-10-17
+
 ### Changed
 
 -   [Patch] Rewrite `Label` component in TypeScript.
+-   [Patch] Convert `Input` component to TypeScript.
+-   [Major] Change type of `maxLength` attribute of `Input` from `string` to `number`.
 
 ## 9.7.1 - 2019-10-17
 

@@ -213,15 +213,7 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
       }
     >
       <Input
-        hasError={false}
-        isDisabled={false}
-        isReadOnly={false}
-        isRequired={false}
         onChange={[Function]}
-        shouldFocusOnPageLoad={false}
-        size="large"
-        type="text"
-        value=""
       >
         <div
           className="root rootUiStateDefault"
@@ -352,15 +344,7 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
       }
     >
       <Input
-        hasError={false}
-        isDisabled={false}
-        isReadOnly={false}
-        isRequired={false}
         onChange={[Function]}
-        shouldFocusOnPageLoad={false}
-        size="large"
-        type="text"
-        value=""
       >
         <div
           className="root rootUiStateDefault"
@@ -448,15 +432,7 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
       }
     >
       <Input
-        hasError={false}
-        isDisabled={false}
-        isReadOnly={false}
-        isRequired={false}
         onChange={[Function]}
-        shouldFocusOnPageLoad={false}
-        size="large"
-        type="text"
-        value=""
       >
         <div
           className="root rootUiStateDefault"
@@ -501,15 +477,7 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
       }
     >
       <Input
-        hasError={false}
-        isDisabled={false}
-        isReadOnly={false}
-        isRequired={false}
         onChange={[Function]}
-        shouldFocusOnPageLoad={false}
-        size="large"
-        type="text"
-        value=""
       >
         <div
           className="root rootUiStateDefault"
