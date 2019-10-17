@@ -7,6 +7,8 @@ const platformOrder = {
     usage: 1,
     react: 2,
     scss: 3,
+    ios: 4,
+    android: 5,
 };
 
 const getPlatformByPathname = pathname => {

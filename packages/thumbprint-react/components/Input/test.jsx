@@ -201,16 +201,26 @@ describe('Input', () => {
         expect(onKeyPress).toHaveBeenCalledTimes(1);
     });
 
-    test('focuses the input when `focusInput` method is called', () => {
-        const component = mount(<Input onChange={jest.fn} />);
+    test('focuses the input when `innerLeft` icon is clicked', () => {
+        const component = mount(
+            <Input onChange={jest.fn} innerLeft={<div data-test="Duck">Duck</div>} id="Goose" />,
+        );
 
-        const instance = component.instance();
-        // Spy on the DOM element's focus method
-        jest.spyOn(instance.input, 'focus');
+        const innerLeft = component.find('[data-test="Duck"]');
+        innerLeft.simulate('click');
 
-        instance.focusInput();
+        expect(document.activeElement.id).toBe('Goose');
+    });
 
-        expect(instance.input.focus).toHaveBeenCalled();
+    test('focuses the input when `innerRight` icon is clicked', () => {
+        const component = mount(
+            <Input onChange={jest.fn} innerRight={<div data-test="Duck">Duck</div>} id="Goose" />,
+        );
+
+        const innerRight = component.find('[data-test="Duck"]');
+        innerRight.simulate('click');
+
+        expect(document.activeElement.id).toBe('Goose');
     });
 
     test('adds `dataTest` prop', () => {

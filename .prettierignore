@@ -1,10 +1,3 @@
-coverage
-yarn.lock
-dist
-tmp
-svg
-.git
-.cache
 # These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers
 # importing these have short and easy to remember import paths.
 packages/thumbprint-scss/*.css
@@ -14,3 +7,13 @@ www/public
 www/.cache
 # Prevent Yarn and Prettier from conflicting.
 package.json
+# Ignore the Netlify CMS files because those are edited through a WYSIWYG interface.
+www/src/cms/**/*.md
+
+coverage
+yarn.lock
+dist
+tmp
+svg
+.git
+.cache

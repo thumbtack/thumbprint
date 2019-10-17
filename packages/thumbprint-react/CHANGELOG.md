@@ -6,6 +6,10 @@
 
 -   [Patch] Change z-index of icon container on `Input` to prevent overlap when input background has a color. (#498)
 
+### Changed
+
+-   [Patch] Convert `Input` component to a function component with Hooks.
+
 ## 9.7.0 - 2019-10-16
 
 ### Added
