@@ -1,16 +1,15 @@
 exports.handler = (event, context, callback) => {
     const { body } = event;
 
-    console.log(body);
-    console.log(body.user);
+    const data = JSON.parse(body);
 
-    console.log(body.user.app_metadata.provider);
+    console.log(data.user.app_metadata.provider);
 
-    if (!body.user.app_metadata && !body.app_metadata.provider !== 'google') {
+    if (!data.user.app_metadata && !data.app_metadata.provider !== 'google') {
         return { statusCode: 403, body: 'Only registrations through Google are allowed.' };
     }
 
-    const { email } = event.body.user;
+    const { email } = data.user;
 
     console.log(email);
 
