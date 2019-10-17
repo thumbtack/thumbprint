@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-global-css",
     "description": "Global reset, body, and anchor styling for building Thumbtack UI",
-    "version": "0.1.15",
+    "version": "0.1.16",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/thumbprint-global.css",
     "style": "dist/thumbprint-global.css",
@@ -20,7 +20,7 @@
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
-        "@thumbtack/thumbprint-tokens": "^8.3.2",
+        "@thumbtack/thumbprint-tokens": "^8.3.3",
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
         "node-sass": "^4.9.2",
