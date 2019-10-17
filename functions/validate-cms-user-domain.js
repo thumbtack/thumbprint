@@ -10,7 +10,9 @@ exports.handler = (event, context, callback) => {
     console.log(data.user.app_metadata.provider);
 
     if (data.user.app_metadata.provider !== 'google') {
-        return { statusCode: 403, body: 'Only registrations through Google are allowed.' };
+        console.log('FAIL THE REGISTRATION BC OF PROVIDER');
+
+        return { statusCode: 401, body: 'Only registrations through Google are allowed.' };
     }
 
     const { email } = data.user;
@@ -20,8 +22,9 @@ exports.handler = (event, context, callback) => {
     console.log(emailDomain);
 
     if (emailDomain !== 'thumbtack.com' || emailDomain !== 'ttc.thumbtack.com') {
+        console.log('FAIL THE REGISTRATION BC OF EMAIL');
         return {
-            statusCode: 403,
+            statusCode: 401,
             body: 'Only thumbtack.com and ttc.thumbtack.com accounts are allowed.',
         };
     }
