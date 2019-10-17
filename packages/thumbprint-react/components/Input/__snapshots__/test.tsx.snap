@@ -3,15 +3,7 @@
 exports[`Input adds \`autocomplete\` attribute 1`] = `
 <Input
   autoComplete="given-name"
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -42,15 +34,8 @@ exports[`Input adds \`autocomplete\` attribute 1`] = `
 
 exports[`Input adds \`autofocus\` attribute 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
   shouldFocusOnPageLoad={true}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -81,15 +66,7 @@ exports[`Input adds \`autofocus\` attribute 1`] = `
 exports[`Input adds \`dataTest\` prop 1`] = `
 <Input
   dataTest="Duck"
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -120,15 +97,8 @@ exports[`Input adds \`dataTest\` prop 1`] = `
 
 exports[`Input adds \`disabled\` attribute 1`] = `
 <Input
-  hasError={false}
   isDisabled={true}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDisabled"
@@ -158,16 +128,8 @@ exports[`Input adds \`disabled\` attribute 1`] = `
 
 exports[`Input adds \`id\` attribute 1`] = `
 <Input
-  hasError={false}
   id="Goose"
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -198,16 +160,8 @@ exports[`Input adds \`id\` attribute 1`] = `
 
 exports[`Input adds \`inputMode\` prop 1`] = `
 <Input
-  hasError={false}
   inputMode="numeric"
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -238,16 +192,8 @@ exports[`Input adds \`inputMode\` prop 1`] = `
 
 exports[`Input adds \`maxLength\` prop 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
-  maxLength="5"
+  maxLength={5}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -256,7 +202,7 @@ exports[`Input adds \`maxLength\` prop 1`] = `
       autoFocus={false}
       className="input inputSizeLarge"
       disabled={false}
-      maxLength="5"
+      maxLength={5}
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -278,16 +224,8 @@ exports[`Input adds \`maxLength\` prop 1`] = `
 
 exports[`Input adds \`pattern\` prop 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
   pattern="[0-9]{5}"
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -318,15 +256,8 @@ exports[`Input adds \`pattern\` prop 1`] = `
 
 exports[`Input adds \`readonly\` attribute 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
   isReadOnly={true}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateReadonly"
@@ -356,15 +287,8 @@ exports[`Input adds \`readonly\` attribute 1`] = `
 
 exports[`Input adds \`required\` attribute 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
   isRequired={true}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -394,16 +318,8 @@ exports[`Input adds \`required\` attribute 1`] = `
 
 exports[`Input adds name 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   name="my-input"
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -434,16 +350,8 @@ exports[`Input adds name 1`] = `
 
 exports[`Input adds placeholder 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
   placeholder="Name"
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -474,20 +382,12 @@ exports[`Input adds placeholder 1`] = `
 
 exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provided 1`] = `
 <Input
-  hasError={false}
   innerLeft={
     <div>
       Goose
     </div>
   }
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -525,16 +425,8 @@ exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provide
 
 exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = `
 <Input
-  hasError={false}
   innerLeft="Goose"
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -570,20 +462,12 @@ exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = 
 
 exports[`Input innerRight renders \`innerRight\` node when HTML element is provided 1`] = `
 <Input
-  hasError={false}
   innerRight={
     <div>
       Goose
     </div>
   }
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -621,16 +505,8 @@ exports[`Input innerRight renders \`innerRight\` node when HTML element is provi
 
 exports[`Input innerRight renders \`innerRight\` node when text is provided 1`] = `
 <Input
-  hasError={false}
   innerRight="Goose"
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -681,15 +557,8 @@ exports[`Input renders \`value\` as the input value 1`] = `
 
 exports[`Input renders email input when requested 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
   type="email"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -719,15 +588,8 @@ exports[`Input renders email input when requested 1`] = `
 
 exports[`Input renders large input 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
   size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -757,15 +619,8 @@ exports[`Input renders large input 1`] = `
 
 exports[`Input renders number input when requested 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
   type="number"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -795,15 +650,8 @@ exports[`Input renders number input when requested 1`] = `
 
 exports[`Input renders search input when requested 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
   type="search"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -833,15 +681,8 @@ exports[`Input renders search input when requested 1`] = `
 
 exports[`Input renders small input 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
   size="small"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -871,15 +712,8 @@ exports[`Input renders small input 1`] = `
 
 exports[`Input renders telephone input when requested 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
   type="tel"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -909,15 +743,7 @@ exports[`Input renders telephone input when requested 1`] = `
 
 exports[`Input renders text input by default 1`] = `
 <Input
-  hasError={false}
-  isDisabled={false}
-  isReadOnly={false}
-  isRequired={false}
   onChange={[Function]}
-  shouldFocusOnPageLoad={false}
-  size="large"
-  type="text"
-  value=""
 >
   <div
     className="root rootUiStateDefault"
@@ -951,10 +777,10 @@ exports[`InputClearButton includes \`aria-label\` on button to describe the SVG 
 >
   <InputIconContainer>
     <div
-      className="inputIconContainer"
+      className="inputIconContainer inputIconContainerPositionLeft"
     >
       <div
-        className=""
+        className="displayNone"
       >
         <button
           aria-label="Clear input"
@@ -995,10 +821,10 @@ exports[`InputClearButton renders an SVG icon 1`] = `
 >
   <InputIconContainer>
     <div
-      className="inputIconContainer"
+      className="inputIconContainer inputIconContainerPositionLeft"
     >
       <div
-        className=""
+        className="displayNone"
       >
         <button
           aria-label="Clear input"
@@ -1045,7 +871,12 @@ exports[`InputIcon applies color prop 1`] = `
     }
   >
     <div
-      className="inputIconContainer"
+      className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "LightGoldenRodYellow",
+        }
+      }
     >
       Goose
     </div>
@@ -1054,9 +885,7 @@ exports[`InputIcon applies color prop 1`] = `
 `;
 
 exports[`InputIcon renders children 1`] = `
-<InputIcon
-  color="inherit"
->
+<InputIcon>
   <InputIconContainer
     style={
       Object {
@@ -1065,7 +894,12 @@ exports[`InputIcon renders children 1`] = `
     }
   >
     <div
-      className="inputIconContainer"
+      className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
     >
       <svg>
         <title>

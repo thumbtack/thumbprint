@@ -9,7 +9,7 @@ export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index';
-export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
+export { default as Input, InputIcon, InputClearButton } from './components/Input/index';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index';
 export { default as Link, ThemedLink } from './components/Link/index.jsx';
