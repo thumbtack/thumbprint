@@ -1,4 +1,4 @@
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
     const { body } = event;
 
     const data = JSON.parse(body);
