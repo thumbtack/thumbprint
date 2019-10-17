@@ -872,6 +872,11 @@ exports[`InputIcon applies color prop 1`] = `
   >
     <div
       className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "LightGoldenRodYellow",
+        }
+      }
     >
       Goose
     </div>
@@ -890,6 +895,11 @@ exports[`InputIcon renders children 1`] = `
   >
     <div
       className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
     >
       <svg>
         <title>
