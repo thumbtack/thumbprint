@@ -209,7 +209,7 @@ describe('Input', () => {
         const innerLeft = component.find('[data-test="Duck"]');
         innerLeft.simulate('click');
 
-        expect(document.activeElement.id).toBe('Goose');
+        expect(document.activeElement ? document.activeElement.id : '').toBe('Goose');
     });
 
     test('focuses the input when `innerRight` icon is clicked', () => {
@@ -220,7 +220,7 @@ describe('Input', () => {
         const innerRight = component.find('[data-test="Duck"]');
         innerRight.simulate('click');
 
-        expect(document.activeElement.id).toBe('Goose');
+        expect(document.activeElement ? document.activeElement.id : '').toBe('Goose');
     });
 
     test('adds `dataTest` prop', () => {
@@ -242,8 +242,8 @@ describe('Input', () => {
     });
 
     test('adds `maxLength` prop', () => {
-        const wrapper = mount(<Input maxLength="5" onChange={noop} />);
-        expect(wrapper.find('input').prop('maxLength')).toEqual('5');
+        const wrapper = mount(<Input maxLength={5} onChange={noop} />);
+        expect(wrapper.find('input').prop('maxLength')).toEqual(5);
         expect(wrapper).toMatchSnapshot();
     });
 });
