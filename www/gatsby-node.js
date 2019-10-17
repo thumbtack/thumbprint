@@ -142,7 +142,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: path.resolve(`./src/components/cms/index.jsx`),
             context: {
                 id: node.childMdx.id,
-                relatedComponentsGlob: '/components/avatar/*/',
+                relatedComponentsGlob: `/components/${node.name}/*/`,
                 isComponent: true,
             },
         });
