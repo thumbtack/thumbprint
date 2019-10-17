@@ -2,4 +2,4 @@
 title: Carousel
 description: Grouped content that is navigated horizontally.
 ---
-Text to come soon.
+Text to come soon!
