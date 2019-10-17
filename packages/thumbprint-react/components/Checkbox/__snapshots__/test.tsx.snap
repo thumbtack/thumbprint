@@ -2,15 +2,7 @@
 
 exports[`adds \`dataTest\` prop 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
   dataTest="Duck"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -28,9 +20,8 @@ exports[`adds \`dataTest\` prop 1`] = `
       className="input"
       data-test="Duck"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -59,14 +50,7 @@ exports[`adds \`dataTest\` prop 1`] = `
 
 exports[`adds \`disabled\` attribute 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
   isDisabled={true}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -83,9 +67,8 @@ exports[`adds \`disabled\` attribute 1`] = `
       checked={false}
       className="input"
       disabled={true}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -114,13 +97,6 @@ exports[`adds \`disabled\` attribute 1`] = `
 
 exports[`adds \`name\` attribute 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
   name="ohhi"
   onChange={[MockFunction]}
 >
@@ -138,10 +114,58 @@ exports[`adds \`name\` attribute 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
       name="ohhi"
       onChange={[Function]}
+      required={false}
       type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
+exports[`adds \`value\` prop 1`] = `
+<Checkbox
+  onChange={[MockFunction]}
+  value="Duck"
+>
+  <label
+    className="root rootCheckboxVerticalAlignCenter"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+      value="Duck"
     />
     <div
       className="checkboxImage"
@@ -169,14 +193,7 @@ exports[`adds \`name\` attribute 1`] = `
 
 exports[`applies \`labelPadding\` as padding on the label 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
   labelPadding="10px 20px"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -193,9 +210,8 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -225,13 +241,6 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
 exports[`applies className corresponding to \`checkboxVerticalAlign\` on the label 1`] = `
 <Checkbox
   checkboxVerticalAlign="top"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -248,9 +257,8 @@ exports[`applies className corresponding to \`checkboxVerticalAlign\` on the lab
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -279,14 +287,7 @@ exports[`applies className corresponding to \`checkboxVerticalAlign\` on the lab
 
 exports[`if no \`children\` are passed in 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
   id="no-children"
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -304,8 +305,8 @@ exports[`if no \`children\` are passed in 1`] = `
       className="input"
       disabled={false}
       id="no-children"
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -324,14 +325,7 @@ exports[`if no \`children\` are passed in 1`] = `
 
 exports[`is checked when \`isChecked\` is set to true 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
   isChecked={true}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -348,9 +342,8 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
       checked={true}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -400,14 +393,6 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
 
 exports[`is not checked by default 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -424,9 +409,8 @@ exports[`is not checked by default 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -455,14 +439,6 @@ exports[`is not checked by default 1`] = `
 
 exports[`renders \`children\` passed in 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -479,9 +455,8 @@ exports[`renders \`children\` passed in 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -510,14 +485,8 @@ exports[`renders \`children\` passed in 1`] = `
 
 exports[`renders \`hasError\` state 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
   hasError={true}
-  id={null}
   isChecked={true}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -534,9 +503,8 @@ exports[`renders \`hasError\` state 1`] = `
       checked={true}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -586,14 +554,7 @@ exports[`renders \`hasError\` state 1`] = `
 
 exports[`renders \`hasError\` state 2`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
   hasError={true}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -610,9 +571,8 @@ exports[`renders \`hasError\` state 2`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -641,14 +601,6 @@ exports[`renders \`hasError\` state 2`] = `
 
 exports[`renders \`input\` within \`label\` 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -665,9 +617,8 @@ exports[`renders \`input\` within \`label\` 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -696,14 +647,6 @@ exports[`renders \`input\` within \`label\` 1`] = `
 
 exports[`renders checkbox input 1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
-  isChecked={false}
-  isDisabled={false}
-  isIndeterminate={false}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -720,9 +663,8 @@ exports[`renders checkbox input 1`] = `
       checked={false}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div
@@ -751,14 +693,8 @@ exports[`renders checkbox input 1`] = `
 
 exports[`renders indeterminate SVG when both \`isIndeterminate\` and \`isChecked\` are true  1`] = `
 <Checkbox
-  checkboxVerticalAlign="center"
-  hasError={false}
-  id={null}
   isChecked={true}
-  isDisabled={false}
   isIndeterminate={true}
-  labelPadding="14px 0"
-  name={null}
   onChange={[MockFunction]}
 >
   <label
@@ -775,9 +711,8 @@ exports[`renders indeterminate SVG when both \`isIndeterminate\` and \`isChecked
       checked={true}
       className="input"
       disabled={false}
-      id={null}
-      name={null}
       onChange={[Function]}
+      required={false}
       type="checkbox"
     />
     <div

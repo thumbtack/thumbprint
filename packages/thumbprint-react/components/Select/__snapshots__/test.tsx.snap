@@ -3,12 +3,7 @@
 exports[`adds \`dataTest\` prop 1`] = `
 <Select
   dataTest="Duck"
-  hasError={false}
-  isDisabled={false}
-  isFullWidth={false}
-  isRequired={false}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -51,12 +46,8 @@ exports[`adds \`dataTest\` prop 1`] = `
 
 exports[`adds \`disabled\` attribute 1`] = `
 <Select
-  hasError={false}
   isDisabled={true}
-  isFullWidth={false}
-  isRequired={false}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -98,13 +89,8 @@ exports[`adds \`disabled\` attribute 1`] = `
 
 exports[`adds \`id\` attribute 1`] = `
 <Select
-  hasError={false}
   id="Goose"
-  isDisabled={false}
-  isFullWidth={false}
-  isRequired={false}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -147,13 +133,8 @@ exports[`adds \`id\` attribute 1`] = `
 
 exports[`adds \`name\` HTML attribute 1`] = `
 <Select
-  hasError={false}
-  isDisabled={false}
-  isFullWidth={false}
-  isRequired={false}
   name="duck"
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -196,12 +177,8 @@ exports[`adds \`name\` HTML attribute 1`] = `
 
 exports[`adds \`required\` attribute 1`] = `
 <Select
-  hasError={false}
-  isDisabled={false}
-  isFullWidth={false}
   isRequired={true}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -244,11 +221,7 @@ exports[`adds \`required\` attribute 1`] = `
 exports[`renders an error state with \`hasError\` 1`] = `
 <Select
   hasError={true}
-  isDisabled={false}
-  isFullWidth={false}
-  isRequired={false}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div
@@ -290,12 +263,7 @@ exports[`renders an error state with \`hasError\` 1`] = `
 
 exports[`renders options that are passed in as \`children\` 1`] = `
 <Select
-  hasError={false}
-  isDisabled={false}
-  isFullWidth={false}
-  isRequired={false}
   onChange={[Function]}
-  size="large"
   value="goose"
 >
   <div

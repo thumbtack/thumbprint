@@ -9,6 +9,7 @@
     color: $tp-color__black;
     display: inline-block;
     font-size: $tp-font__body__2__size;
+    line-height: 23px; // Non-standard line-height to properly vertical align.
     font-weight: $tp-font-weight__bold;
     overflow: hidden;
 }

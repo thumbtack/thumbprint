@@ -4,14 +4,7 @@ import isNumber from 'lodash/isNumber';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import Badge from './subcomponents/badge';
 import styles from './index.module.scss';
-import _Image from '../Image/index';
-
-// TS is attempting to infer types from the React.forwardRef call inside `Image.jsx`, but because
-// Image does not have prop types in TypeScript yet, it is not working properly. Disable checking
-// for now, but remove this line when we rewrite Image to TS.
-// TODO(giles): rewrite Image and remove this line.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Image = _Image as any;
+import Image from '../Image/index';
 
 const dimensions = {
     xsmall: '32px',
@@ -91,7 +84,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
                         className={styles.squareAvatar}
                         src={imageUrl}
                         alt={fullName && `Avatar for ${fullName}`}
-                        height={typeof size === 'string' ? dimensions[size] : '0'}
+                        height={typeof size === 'string' ? dimensions[size] : `${size}px`}
                         ref={outerRef}
                     />
                 ) : (
@@ -162,7 +155,7 @@ const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
                         className={styles.circleAvatar}
                         src={imageUrl}
                         alt={fullName && `Avatar for ${fullName}`}
-                        height={typeof size === 'string' ? dimensions[size] : '0'}
+                        height={typeof size === 'string' ? dimensions[size] : `${size}px`}
                         ref={outerRef}
                     />
                 ) : (

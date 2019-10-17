@@ -91,3 +91,60 @@ exports.onCreateWebpackConfig = ({ actions, loaders }) => {
         },
     });
 };
+
+/**
+ * Create pages from the Markdown files created by Netlify CMS.
+ *
+ */
+exports.createPages = async ({ graphql, actions, reporter }) => {
+    const { createPage } = actions;
+
+    const result = await graphql(`
+        query {
+            allFile(filter: { sourceInstanceName: { eq: "cms" } }) {
+                edges {
+                    node {
+                        name
+                        relativeDirectory
+                        relativePath
+                        childMdx {
+                            id
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+    if (result.errors) {
+        reporter.panicOnBuild("Can't load MDX files used by Netlify CMS.");
+    }
+
+    result.data.allFile.edges.forEach(({ node }) => {
+        let slug;
+
+        // These are all the collections that we use in Netlify CMS. The content also exists in
+        // `www/static/admin/config.yml`.
+        if (node.relativeDirectory === 'components-ios') {
+            slug = `/components/${node.name}/ios/`;
+        } else if (node.relativeDirectory === 'components-android') {
+            slug = `/components/${node.name}/android/`;
+        } else if (node.relativeDirectory === 'components-usage') {
+            slug = `/components/${node.name}/usage/`;
+        } else {
+            reporter.panicOnBuild(
+                `Can't generate a URL for the Markdown file in \`${node.relativePath}\`. Take a look at \`createPages\` in \`gatsby-node.js\`.`,
+            );
+        }
+
+        createPage({
+            path: slug,
+            component: path.resolve(`./src/components/cms/index.jsx`),
+            context: {
+                id: node.childMdx.id,
+                relatedComponentsGlob: '/components/avatar/*/',
+                isComponent: true,
+            },
+        });
+    });
+};
