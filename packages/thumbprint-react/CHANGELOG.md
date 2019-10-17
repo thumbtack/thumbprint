@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Change z-index of icon container on `Input` to prevent overlap when input background has a color. (#498)
+
 ## 9.7.0 - 2019-10-16
 
 ### Added
