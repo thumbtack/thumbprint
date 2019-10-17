@@ -59,7 +59,7 @@ const BannerAlert = ({ children, messageType, dataTest }: BannerPropTypes): JSX.
         })}
         data-test={dataTest}
     >
-        <div className="text">{children}</div>
+        <div className={styles.text}>{children}</div>
     </div>
 );
 
@@ -96,10 +96,16 @@ const InPageAlert = ({ children, messageType, dataTest }: InPagePropTypes): JSX.
         })}
         data-test={dataTest}
     >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" className="icon">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            className={styles.icon}
+        >
             {ALERT_ICONS[messageType]}
         </svg>
-        <div className="text">{children}</div>
+        <div className={styles.text}>{children}</div>
     </div>
 );
 

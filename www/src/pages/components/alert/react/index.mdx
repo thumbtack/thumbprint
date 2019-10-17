@@ -1,0 +1,98 @@
+---
+title: Alert
+description: Vibrant alert messages used as page banners or within forms.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Banner alerts
+
+These alerts should be used at the very top of a page.
+
+```jsx
+<BannerAlert messageType="bad">
+    <p>An Alert!</p>
+</BannerAlert>
+```
+
+```jsx
+<BannerAlert messageType="good">
+    <p>An Alert!</p>
+</BannerAlert>
+```
+
+```jsx
+<BannerAlert messageType="warning">
+    <p>An Alert!</p>
+</BannerAlert>
+```
+
+```jsx
+<BannerAlert messageType="note">
+    <p>An Alert!</p>
+</BannerAlert>
+```
+
+## In-page alerts
+
+These alerts should be used inside other page elements, e.g. forms.
+
+```jsx
+<InPageAlert messageType="bad">
+    <p>
+        Your credit card is about to expire. To keep quoting on job requests please
+        <a href="https://example.com/">update your credit card now</a>.
+    </p>
+</InPageAlert>
+```
+
+```jsx
+<InPageAlert messageType="good">
+    <p>
+        Your credit card is about to expire. To keep quoting on job requests please
+        <a href="https://example.com/">update your credit card now</a>.
+    </p>
+</InPageAlert>
+```
+
+```jsx
+<InPageAlert messageType="warning">
+    <p>
+        Your credit card is about to expire. To keep quoting on job requests please
+        <a href="https://example.com/">update your credit card now</a>.
+    </p>
+</InPageAlert>
+```
+
+```jsx
+<InPageAlert messageType="note">
+    <p>
+        Your credit card is about to expire. To keep quoting on job requests please
+        <a href="https://example.com/">update your credit card now</a>.
+    </p>
+</InPageAlert>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/alert/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
+
+;
