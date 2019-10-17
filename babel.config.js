@@ -1,5 +1,15 @@
 module.exports = {
-    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/typescript'],
+    presets: [
+        [
+            '@babel/typescript',
+            {
+                allExtensions: true,
+                isTSX: true,
+            },
+        ],
+        '@babel/preset-env',
+        '@babel/preset-react',
+    ],
     plugins: [
         // Needed until `dynamic-import` becomes stage 4:
         // https://github.com/tc39/proposal-dynamic-import

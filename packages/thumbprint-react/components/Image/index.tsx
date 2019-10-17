@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
@@ -316,11 +316,18 @@ function Image({
     );
 }
 
-const ImageWithRefForwarding = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => (
-    <Image {...props} outerRef={outerRef} />
-));
+/**
+ * Test description
+ */
+const ImageWithRefForwarding = React.forwardRef<HTMLElement, ImagePropTypes>(
+    (props: ImagePropTypes, outerRef) => <Image {...props} outerRef={outerRef} />,
+);
 
-// Needed because of the `forwardRef`.
+// Needed because of the `React.forwardRef`.
 ImageWithRefForwarding.displayName = 'Image';
 
-export default ImageWithRefForwarding;
+// Works
+export default Image;
+
+// Doesn't work
+// export default ImageWithRefForwarding;
