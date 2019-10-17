@@ -11,7 +11,7 @@ export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index';
 export { default as Input, InputIcon, InputClearButton } from './components/Input/index.jsx';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
-export { default as Label } from './components/Label/index.jsx';
+export { default as Label } from './components/Label/index';
 export { default as Link, ThemedLink } from './components/Link/index.jsx';
 export { List, ListItem } from './components/List/index';
 export { default as LoaderDots } from './components/LoaderDots/index';

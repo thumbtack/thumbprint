@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Label` component in TypeScript.
+
 ## 9.7.1 - 2019-10-17
 
 ### Changed
