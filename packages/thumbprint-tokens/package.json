@@ -3,13 +3,18 @@
     "description": "Design variables that power Thumbtack’s UI.",
     "version": "8.3.2",
     "main": "dist/javascript-cjs/index.js",
-    "module": "dist/javascript-esm/index.js",
+    "module": "dist/javascript-es/index.js",
     "sideEffects": false,
     "files": [
         "dist"
     ],
     "scripts": {
-        "start": "./src/index.js",
+        "build:main": "./src/index.js",
+        "build:esm": "tsc --project ./tsconfig.json --module es2015 --target es2015 --outDir dist/javascript-es",
+        "build:cjs": "tsc --project ./tsconfig.json --module commonjs --target es5 --outDir dist/javascript-cjs",
+        "build": "yarn build:main && yarn build:esm && yarn build:cjs",
+        "clear": "rm -rf dist",
+        "start": "yarn clear && yarn build",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "publishConfig": {
