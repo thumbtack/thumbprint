@@ -6,6 +6,7 @@
 
 -   [Patch] Convert `Input` component to a function component with Hooks.
 -   [Patch] Convert `Input` component to TypeScript.
+-   [Minor] Change type of `maxLength` attribute of `Input` from `string` to `number`.
 
 ## 9.7.0 - 2019-10-16
 
