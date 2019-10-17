@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 9.7.1 - 2019-10-17
+
 ### Changed
 
 -   [Patch] Convert `Input` component to a function component with Hooks.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 9.7.0 - 2019-10-16
 

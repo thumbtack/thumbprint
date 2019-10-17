@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 8.3.3 - 2019-10-17
+
 ### Added
 
 -   [Minor] Add TypeScript definitions to the CJS and ESM tokens, and switch to using the TypeScript compiler to generate these files.
