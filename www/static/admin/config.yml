@@ -1,7 +1,6 @@
 backend:
-    name: github
-    repo: thumbtack/thumbprint
-    open_authoring: true
+    name: git-gateway
+    branch: master
 
 publish_mode: editorial_workflow
 
