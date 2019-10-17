@@ -3,6 +3,10 @@ exports.handler = (event, context, callback) => {
 
     const data = JSON.parse(body);
 
+    console.log('***************************');
+    console.log(typeof body, typeof data);
+    console.log(data.user);
+
     console.log(data.user.app_metadata.provider);
 
     if (!data.user.app_metadata && !data.app_metadata.provider !== 'google') {
