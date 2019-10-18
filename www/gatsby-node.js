@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     const result = await graphql(`
         query {
-            allFile(filter: { sourceInstanceName: { eq: "cms" }, ext: { eq: "md" } }) {
+            allFile(filter: { sourceInstanceName: { eq: "cms" }, ext: { eq: ".md" } }) {
                 edges {
                     node {
                         name
