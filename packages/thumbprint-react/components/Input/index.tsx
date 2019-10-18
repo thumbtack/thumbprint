@@ -284,6 +284,7 @@ export default function Input({
 }: InputPropTypes): JSX.Element {
     const uiState = getUIState({ isDisabled, isReadOnly, hasError });
     const inputEl = useRef<HTMLInputElement>(null);
+    console.log(innerLeft);
 
     const focusInput = (): void => {
         if (inputEl && inputEl.current) {
@@ -322,6 +323,7 @@ export default function Input({
                     [styles.inputError]: uiState === 'error',
                     [styles.inputSizeSmall]: size === 'small',
                     [styles.inputSizeLarge]: size === 'large',
+                    [styles.inputInnerLeft]: innerLeft,
                 })}
                 disabled={isDisabled}
                 readOnly={isReadOnly}
