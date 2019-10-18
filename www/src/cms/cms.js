@@ -1,8 +1,5 @@
-/**
- * The default export of `netlify-cms-app` is an object with all of the Netlify CMS
- * extension registration methods, such as `registerWidget` and
- * `registerPreviewTemplate`.
- */
 import CMS from 'netlify-cms-app';
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+import styles from '!css-loader!sass-loader!./preview.scss';
 
-CMS.registerPreviewStyle('https://unpkg.com/picnic@6.5.1/picnic.min.css');
+CMS.registerPreviewStyle(styles.toString(), { raw: true });
