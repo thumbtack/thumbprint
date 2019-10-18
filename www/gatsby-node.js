@@ -101,7 +101,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     const result = await graphql(`
         query {
-            allFile(filter: { sourceInstanceName: { eq: "cms" }, ext: { eq: "md" } }) {
+            allFile(filter: { sourceInstanceName: { eq: "cms" }, ext: { eq: ".md" } }) {
                 edges {
                     node {
                         name
@@ -136,6 +136,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 `Can't generate a URL for the Markdown file in \`${node.relativePath}\`. Take a look at \`createPages\` in \`gatsby-node.js\`.`,
             );
         }
+
+        console.log('*********************');
+
+        console.log(slug, node.name);
 
         createPage({
             path: slug,
