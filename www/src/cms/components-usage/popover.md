@@ -8,12 +8,7 @@ The default popover contains a header, a text description, and a button. This po
 
 Note: If the popover is a part of a series, the CTA copy should reflect this by saying something along the lines of  “Next” and “Done” to indicate progress in the series.
 
-<iframe
-  height="500"
-  width="100%"
-  src="https://www.figma.com/embed?embed_host=astra&url=https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A79"
-  allowfullscreen
-></iframe>
+https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A79
 
 ## As a series
 
@@ -21,12 +16,7 @@ Popovers are best used for tutorials and walkthroughs and thus need to be strung
 
 If a back button is needed, use the link variant to include a back button for the series.
 
-<iframe
-  height="500"
-  width="100%"
-  src="https://www.figma.com/embed?embed_host=astra&url=https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A120"
-  allowfullscreen
-></iframe>
+https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A120
 
 ## Behavior and Nubbin Positioning
 
@@ -34,20 +24,10 @@ Popovers are triggered during onboarding, any first time user experience, or an 
 
 The nubbin can be placed at the start, middle, or end of each of the 4 sides of the popover.
 
-<iframe
-  height="500"
-  width="100%"
-  src="https://www.figma.com/embed?embed_host=astra&url=https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A451"
-  allowfullscreen
-></iframe>
+https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A451
 
-## Variants 
+## Variants
 
 Popovers can contain a link next to the button to link to more information or to provide the user with a back affordance for series of popovers.
 
-<iframe
-  height="500"
-  width="100%"
-  src="https://www.figma.com/embed?embed_host=astra&url=https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A479"
-  allowfullscreen
-></iframe>
+https://www.figma.com/file/IIpX6OEvp1hInZADepr51Q/Thumbprint-Documentation?node-id=1%3A479

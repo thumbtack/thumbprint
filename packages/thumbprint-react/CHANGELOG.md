@@ -4,6 +4,7 @@
 
 ### Fixed
 
+-   [Patch] Adjust `Input` padding when `innerLeft` or `innerRight` exist to prevent overlap and provide better spacing. Reverting previous change to `z-index`. (#498)
 -   [Patch] Change z-index of icon container on `Input` to prevent overlap when input background has a color. (#498)
 
 ## 10.0.0 - 2019-10-17

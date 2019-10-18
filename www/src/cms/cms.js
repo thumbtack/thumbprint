@@ -1,11 +1,6 @@
-/**
- * The default export of `netlify-cms-app` is an object with all of the Netlify CMS
- * extension registration methods, such as `registerWidget` and
- * `registerPreviewTemplate`.
- */
 import CMS from 'netlify-cms-app';
-
-CMS.registerPreviewStyle('https://unpkg.com/picnic@6.5.1/picnic.min.css');
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+import styles from '!css-loader!sass-loader!./preview.scss';
 
 CMS.registerEditorComponent({
     id: 'figma',
@@ -20,3 +15,5 @@ CMS.registerEditorComponent({
     toPreview: obj =>
         `<iframe height="500" width="100%" src="https://www.figma.com/embed?embed_host=astra&url=${obj.id}" allowfullscreen></iframe>`,
 });
+
+CMS.registerPreviewStyle(styles.toString(), { raw: true });

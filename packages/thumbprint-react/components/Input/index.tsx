@@ -322,6 +322,8 @@ export default function Input({
                     [styles.inputError]: uiState === 'error',
                     [styles.inputSizeSmall]: size === 'small',
                     [styles.inputSizeLarge]: size === 'large',
+                    [styles.inputInnerLeft]: innerLeft,
+                    [styles.inputInnerRight]: innerRight,
                 })}
                 disabled={isDisabled}
                 readOnly={isReadOnly}

@@ -402,7 +402,7 @@ exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provide
     </div>
     <input
       autoFocus={false}
-      className="input inputSizeLarge"
+      className="input inputSizeLarge inputInnerLeft"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -439,7 +439,7 @@ exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = 
     </div>
     <input
       autoFocus={false}
-      className="input inputSizeLarge"
+      className="input inputSizeLarge inputInnerLeft"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -474,7 +474,7 @@ exports[`Input innerRight renders \`innerRight\` node when HTML element is provi
   >
     <input
       autoFocus={false}
-      className="input inputSizeLarge"
+      className="input inputSizeLarge inputInnerRight"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -513,7 +513,7 @@ exports[`Input innerRight renders \`innerRight\` node when text is provided 1`] 
   >
     <input
       autoFocus={false}
-      className="input inputSizeLarge"
+      className="input inputSizeLarge inputInnerRight"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
