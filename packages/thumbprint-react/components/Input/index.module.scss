@@ -113,8 +113,9 @@ $icon-padding: 16px;
         }
     }
 
-    // These two padding values prevent an overlap of the `innerLeft` icon and the input itself
-    // which can happen when the autofill functionality adds a backgroun-color to the input.
+    // These two padding values prevent an overlap of the `innerLeft`/`innerRight` icon and the
+    // input itself which can happen when the autofill functionality adds a backgroun-color to
+    // the input.
     &.inputInnerLeft {
         padding-left: 12px;
     }
