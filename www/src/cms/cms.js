@@ -7,14 +7,14 @@ CMS.registerEditorComponent({
     label: 'Figma',
     fields: [{ name: 'id', label: 'Figma URL', widget: 'string' }],
     // eslint-disable-next-line no-useless-escape
-    pattern: /<iframe height="500" width="100%" src="https:\/\/www.figma.com\/embed\?embed_host=astra&url=(https:\/\/([\w\.-]+\.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?)" allowfullscreen><\/iframe>$/,
+    pattern: /<iframe height="500" width="100%" src="https:\/\/www.figma.com\/embed\?embed_host=astra&url=(https:\/\/([\w\.-]+\.)?figma.com\/(file|proto)\/([0-9a-zA-Z]{22,128})(?:\/.*)?)" allowfullscreen frameborder="0"><\/iframe>$/,
     fromBlock: match => ({
         id: match[1],
     }),
     toBlock: obj =>
-        `<iframe height="500" width="100%" src="https://www.figma.com/embed?embed_host=astra&url=${obj.id}" allowfullscreen></iframe>`,
+        `<iframe height="500" width="100%" src="https://www.figma.com/embed?embed_host=astra&url=${obj.id}" allowfullscreen frameborder="0"></iframe>`,
     toPreview: obj =>
-        `<iframe height="500" width="100%" src="https://www.figma.com/embed?embed_host=astra&url=${obj.id}" allowfullscreen></iframe>`,
+        `<iframe height="500" width="100%" src="https://www.figma.com/embed?embed_host=astra&url=${obj.id}" allowfullscreen frameborder="0"></iframe>`,
 });
 
 CMS.registerPreviewStyle(styles.toString(), { raw: true });
