@@ -112,6 +112,17 @@ $icon-padding: 16px;
             color: $tp-color__red;
         }
     }
+
+    // These two padding values prevent an overlap of the `innerLeft`/`innerRight` icon and the
+    // input itself which can happen when the autofill functionality adds a backgroun-color to
+    // the input.
+    &.inputInnerLeft {
+        padding-left: 12px;
+    }
+
+    &.inputInnerRight {
+        padding-right: 12px;
+    }
 }
 
 .inputStyles {
@@ -183,7 +194,7 @@ $icon-padding: 16px;
 }
 
 .inputInnerElement {
-    z-index: 3;
+    z-index: 2;
     position: relative;
     cursor: text;
 }
@@ -195,9 +206,6 @@ $icon-padding: 16px;
 
     &Position {
         &Left {
-            // Create 12px of space between icon and text.
-            margin-right: -4px;
-
             &SizeSmall {
                 padding-left: $icon-padding;
             }
@@ -208,9 +216,6 @@ $icon-padding: 16px;
         }
 
         &Right {
-            // Create 12px of space between icon and text.
-            margin-left: -4px;
-
             &SizeSmall {
                 padding-right: $icon-padding;
             }
