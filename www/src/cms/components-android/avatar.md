@@ -50,3 +50,125 @@ fun bind(imageUrl: String? = null, initials: String? = null, isOnline: Boolean =
     ...
 }
 ```
+
+## Avatar sizes
+
+Both `UserAvatarView` and `EntityAvatarView` are available in five sizes ranging from `avatarExtraLarge` to `avatarExtraSmall`.
+
+![Avatar sizes](/img/android-avatar-sizes.png)
+
+```xml
+<com.thumbtack.thumbprint.views.UserAvatarView
+    style="@style/avatarExtraLarge"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.UserAvatarView
+    style="@style/avatarLarge"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.UserAvatarView
+    style="@style/avatarMedium"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.UserAvatarView
+    style="@style/avatarSmall"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.UserAvatarView
+    style="@style/avatarExtraSmall"/>
+```
+
+---
+
+```xml
+<com.thumbtack.thumbprint.views.EntityAvatarView
+    style="@style/avatarExtraLarge"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.EntityAvatarView
+    style="@style/avatarLarge"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.EntityAvatarView
+    style="@style/avatarMedium"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.EntityAvatarView
+    style="@style/avatarSmall"/>
+```
+
+```xml
+<com.thumbtack.thumbprint.views.EntityAvatarView
+    style="@style/avatarExtraSmall"/>
+```
+
+## Avatars without images
+
+Avatars without images can display the the user or entity’s initials instead. The initials and background colors are assigned based on the first letter in the `initials` parameter of the `.bind()` method.
+
+![Avatar Without Images](/img/android-avatar-without-images.png)
+
+```xml
+<LinearLayout
+    android:id="@+id/noImagesUser"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <com.thumbtack.thumbprint.views.UserAvatarView
+        style="@style/avatarMedium"/>
+        ...
+
+</LinearLayout>
+```
+
+```xml
+<LinearLayout
+    android:id="@+id/noImagesEntity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <com.thumbtack.thumbprint.views.EntityAvatarView
+        style="@style/avatarMedium"/>
+        ...
+
+</LinearLayout>
+```
+
+```java
+var letters = sequenceOf("A", "B", "C", "D", "E", "F").iterator()
+noImagesUser.forEachChild {
+    (it as? UserAvatarView)?.bind(imageUrl = null, initials = letters.next() + "A")
+}
+
+letters = sequenceOf("A", "B", "C", "D", "E", "F").iterator()
+noImagesEntity.forEachChild {
+    (it as? EntityAvatarView)?.bind(imageUrl = null, initials = letters.next())
+}
+```
+
+### Online
+
+This badge indicates that a user or entity is online. It can be set initially through the `.bind()` method, or dynamically through the `setIsOnline()` method.
+
+![Avatar badges](/img/avatar-android-online-indicator.png)
+
+```java
+badgesUser.forEachChild {
+    (it as? UserAvatarView)?.bind(imageUrl = NICOLAS_CAGE_URL, isOnline = true)
+}
+
+badgesEntity.forEachChild {
+    (it as? EntityAvatarView)?.bind(imageUrl = NICOLAS_CAGE_URL, isOnline = true)
+}
+```
