@@ -137,10 +137,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             );
         }
 
-        console.log('*********************');
-
-        console.log(slug, node.name);
-
         createPage({
             path: slug,
             component: path.resolve(`./src/components/cms/index.jsx`),
