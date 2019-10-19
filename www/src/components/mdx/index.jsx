@@ -159,6 +159,14 @@ export const HR = p => (
     <hr {...p} className="bt b-gray-300 mv4" style={{ height: '0', border: '0' }} />
 );
 
+export const Iframe = p => (
+    <iframe
+        {...p}
+        className="pa1 mb1 ba bw-2 br2 b-gray-300"
+        title="Image of component from Figma"
+    />
+);
+
 export const MDXRenderer = ({ children }) => {
     let renderedChildren = children;
 
@@ -184,6 +192,7 @@ export const MDXRenderer = ({ children }) => {
                 td: TD,
                 th: TH,
                 hr: HR,
+                iframe: Iframe,
             }}
         >
             {renderedChildren}
