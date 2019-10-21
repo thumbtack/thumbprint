@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Patch] Convert `Alert` component to React (TypeScript).
+-   [Minor] Convert `Alert` component to React (TypeScript).
 
 ### Fixed
 
