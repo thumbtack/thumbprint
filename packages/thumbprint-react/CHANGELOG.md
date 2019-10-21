@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Convert `Alert` component to React (TypeScript).
+
 ### Fixed
 
 -   [Patch] Add `line-height` to `Pill` to ensure alignment, prevent external value inheritance. (#494)
