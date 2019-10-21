@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 10.0.1 - 2019-10-21
+
 ### Fixed
 
 -   [Patch] Adjust `Input` padding when `innerLeft` or `innerRight` exist to prevent overlap and provide better spacing. Reverting previous change to `z-index`. (#498)
