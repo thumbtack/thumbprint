@@ -92,7 +92,11 @@ export const pageQuery = graphql`
         packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
             ...PackageTableFragment
         }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Alert/index.tsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
     }
 `;
-
-;
