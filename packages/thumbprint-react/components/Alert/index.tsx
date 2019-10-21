@@ -65,7 +65,7 @@ const BannerAlert = ({ children, messageType, dataTest }: BannerPropTypes): JSX.
 
 interface InPagePropTypes {
     /**
-     * Text within the alertt - expects jsx.
+     * Text within the alert - expects jsx.
      */
     children?: React.ReactNode;
     /**
