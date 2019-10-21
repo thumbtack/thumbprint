@@ -62,15 +62,10 @@ describe('BannerAlert', () => {
     test('renders children', () => {
         const wrapper = mount(
             <BannerAlert messageType="note">
-                <p>Alert content</p>
+                <p data-test-id="text">Alert content</p>
             </BannerAlert>,
         );
-        expect(
-            wrapper
-                .find('div')
-                .at(1)
-                .text(),
-        ).toBe('Alert content');
+        expect(wrapper.find('[data-test-id="text"]').text()).toBe('Alert content');
         expect(wrapper).toMatchSnapshot();
     });
 });
@@ -144,15 +139,10 @@ describe('InPageAlert', () => {
     test('renders children', () => {
         const wrapper = mount(
             <InPageAlert messageType="note">
-                <p>Alert content</p>
+                <p data-test-id="text">Alert content</p>
             </InPageAlert>,
         );
-        expect(
-            wrapper
-                .find('div')
-                .at(1)
-                .text(),
-        ).toBe('Alert content');
+        expect(wrapper.find('[data-test-id="text"]').text()).toBe('Alert content');
         expect(wrapper).toMatchSnapshot();
     });
 });

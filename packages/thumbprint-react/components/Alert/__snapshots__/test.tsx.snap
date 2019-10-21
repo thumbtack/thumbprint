@@ -10,7 +10,9 @@ exports[`BannerAlert renders children 1`] = `
     <div
       className="text"
     >
-      <p>
+      <p
+        data-test-id="text"
+      >
         Alert content
       </p>
     </div>
@@ -114,7 +116,9 @@ exports[`InPageAlert renders children 1`] = `
     <div
       className="text"
     >
-      <p>
+      <p
+        data-test-id="text"
+      >
         Alert content
       </p>
     </div>
