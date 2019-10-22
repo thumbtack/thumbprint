@@ -3,9 +3,9 @@ import { mount } from 'enzyme';
 import { BannerAlert, InPageAlert } from './index';
 
 describe('BannerAlert', () => {
-    test('renders messageType good', () => {
+    test('renders theme good', () => {
         const wrapper = mount(
-            <BannerAlert messageType="good">
+            <BannerAlert theme="good">
                 <p>Alert content</p>
             </BannerAlert>,
         );
@@ -13,13 +13,13 @@ describe('BannerAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('goodNews'),
+                .hasClass('good'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType bad', () => {
+    test('renders theme bad', () => {
         const wrapper = mount(
-            <BannerAlert messageType="bad">
+            <BannerAlert theme="bad">
                 <p>Alert content</p>
             </BannerAlert>,
         );
@@ -27,13 +27,13 @@ describe('BannerAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('badNews'),
+                .hasClass('bad'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType warning', () => {
+    test('renders theme warning', () => {
         const wrapper = mount(
-            <BannerAlert messageType="warning">
+            <BannerAlert theme="warning">
                 <p>Alert content</p>
             </BannerAlert>,
         );
@@ -45,9 +45,9 @@ describe('BannerAlert', () => {
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType note', () => {
+    test('renders theme note', () => {
         const wrapper = mount(
-            <BannerAlert messageType="note">
+            <BannerAlert theme="note">
                 <p>Alert content</p>
             </BannerAlert>,
         );
@@ -61,7 +61,7 @@ describe('BannerAlert', () => {
     });
     test('renders children', () => {
         const wrapper = mount(
-            <BannerAlert messageType="note">
+            <BannerAlert theme="note">
                 <p data-test-id="text">Alert content</p>
             </BannerAlert>,
         );
@@ -71,9 +71,9 @@ describe('BannerAlert', () => {
 });
 
 describe('InPageAlert', () => {
-    test('renders messageType good', () => {
+    test('renders theme good', () => {
         const wrapper = mount(
-            <InPageAlert messageType="good">
+            <InPageAlert theme="good">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -81,13 +81,13 @@ describe('InPageAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('goodNews'),
+                .hasClass('good'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType bad', () => {
+    test('renders theme bad', () => {
         const wrapper = mount(
-            <InPageAlert messageType="bad">
+            <InPageAlert theme="bad">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -95,13 +95,13 @@ describe('InPageAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('badNews'),
+                .hasClass('bad'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType warning', () => {
+    test('renders theme warning', () => {
         const wrapper = mount(
-            <InPageAlert messageType="warning">
+            <InPageAlert theme="warning">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -113,9 +113,9 @@ describe('InPageAlert', () => {
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders messageType note', () => {
+    test('renders theme note', () => {
         const wrapper = mount(
-            <InPageAlert messageType="note">
+            <InPageAlert theme="note">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -129,7 +129,7 @@ describe('InPageAlert', () => {
     });
     test('renders icon', () => {
         const wrapper = mount(
-            <InPageAlert messageType="good">
+            <InPageAlert theme="good">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -138,7 +138,7 @@ describe('InPageAlert', () => {
     });
     test('renders children', () => {
         const wrapper = mount(
-            <InPageAlert messageType="note">
+            <InPageAlert theme="note">
                 <p data-test-id="text">Alert content</p>
             </InPageAlert>,
         );

@@ -1,6 +1,6 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
-.tpAlert {
+.root {
     display: flex;
     font-size: $tp-font__body__2__size;
     line-height: $tp-font__body__2__line-height;
@@ -11,7 +11,7 @@
     font-weight: 700;
     border-radius: $tp-border-radius__base;
 
-    & a {
+    a {
         text-decoration: underline;
         cursor: pointer;
         color: $tp-color__white;
@@ -22,45 +22,45 @@
             opacity: 0.7;
         }
     }
+}
 
-    &.banner {
-        display: block;
-        text-align: center;
-        border-radius: 0;
-    }
+.banner {
+    display: block;
+    text-align: center;
+    border-radius: 0;
+}
 
-    &.goodNews {
-        background: $tp-color__green;
-    }
+.good {
+    background: $tp-color__green;
+}
 
-    &.badNews {
-        background: $tp-color__red;
-    }
+.bad {
+    background: $tp-color__red;
+}
 
-    &.warning {
-        background: $tp-color__yellow-200;
+.warning {
+    background: $tp-color__yellow-200;
+    color: $tp-color__yellow-600;
+
+    a,
+    a:hover {
         color: $tp-color__yellow-600;
-
-        a,
-        a:hover {
-            color: $tp-color__yellow-600;
-            fill: $tp-color__yellow-600;
-        }
+        fill: $tp-color__yellow-600;
     }
+}
 
-    &.note {
-        background: $tp-color__blue;
-    }
+.note {
+    background: $tp-color__blue;
+}
 
-    .text {
-        align-self: center;
-    }
+.text {
+    align-self: center;
+}
 
-    .icon {
-        fill: currentColor;
-        flex: none;
-        margin-right: 12px;
-        position: relative;
-        top: -1px;
-    }
+.icon {
+    fill: currentColor;
+    flex: none;
+    margin-right: 12px;
+    position: relative;
+    top: -1px;
 }
