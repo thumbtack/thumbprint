@@ -5,6 +5,7 @@
     font-size: $tp-font__body__2__size;
     line-height: $tp-font__body__2__line-height;
     text-align: left;
+    // Padding top and bottom of 12px to achieve 44px height of alert
     padding: 12px $tp-space__3;
     color: $tp-color__white;
     background: $tp-color__gray;
@@ -60,7 +61,9 @@
 .icon {
     fill: currentColor;
     flex: none;
+    // Margin right of 12px to align with the padding top and bottom
     margin-right: 12px;
     position: relative;
+    // aligns the icons optically
     top: -1px;
 }
