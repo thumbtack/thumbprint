@@ -109,6 +109,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                         relativePath
                         childMdx {
                             id
+                            frontmatter {
+                                title
+                                description
+                            }
                         }
                     }
                 }
@@ -144,6 +148,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id: node.childMdx.id,
                 relatedComponentsGlob: `/components/${node.name}/*/`,
                 isComponent: true,
+                frontmatter: {
+                    title: node.childMdx.frontmatter.title,
+                    description: node.childMdx.frontmatter.description,
+                },
             },
         });
     });
