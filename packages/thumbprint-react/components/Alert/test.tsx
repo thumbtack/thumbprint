@@ -45,9 +45,9 @@ describe('BannerAlert', () => {
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders theme note', () => {
+    test('renders theme info', () => {
         const wrapper = mount(
-            <BannerAlert theme="note">
+            <BannerAlert theme="info">
                 <p>Alert content</p>
             </BannerAlert>,
         );
@@ -55,13 +55,13 @@ describe('BannerAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('note'),
+                .hasClass('info'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
     test('renders children', () => {
         const wrapper = mount(
-            <BannerAlert theme="note">
+            <BannerAlert theme="info">
                 <p data-test-id="text">Alert content</p>
             </BannerAlert>,
         );
@@ -113,9 +113,9 @@ describe('InPageAlert', () => {
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
-    test('renders theme note', () => {
+    test('renders theme info', () => {
         const wrapper = mount(
-            <InPageAlert theme="note">
+            <InPageAlert theme="info">
                 <p>Alert content</p>
             </InPageAlert>,
         );
@@ -123,7 +123,7 @@ describe('InPageAlert', () => {
             wrapper
                 .find('div')
                 .at(0)
-                .hasClass('note'),
+                .hasClass('info'),
         ).toBe(true);
         expect(wrapper).toMatchSnapshot();
     });
@@ -138,7 +138,7 @@ describe('InPageAlert', () => {
     });
     test('renders children', () => {
         const wrapper = mount(
-            <InPageAlert theme="note">
+            <InPageAlert theme="info">
                 <p data-test-id="text">Alert content</p>
             </InPageAlert>,
         );

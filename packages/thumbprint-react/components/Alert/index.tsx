@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { AlertCheck, AlertNote, AlertWarning } from '../../icons/index.jsx';
+import { AlertCheck, AlertInfo, AlertWarning } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
@@ -12,7 +12,7 @@ interface BannerPropTypes {
     /**
      * Defines the style of the alert
      */
-    theme: 'good' | 'bad' | 'warning' | 'note';
+    theme: 'good' | 'bad' | 'warning' | 'info';
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
@@ -27,7 +27,7 @@ const BannerAlert = ({ children, theme, dataTest }: BannerPropTypes): JSX.Elemen
             [styles.good]: theme === 'good',
             [styles.bad]: theme === 'bad',
             [styles.warning]: theme === 'warning',
-            [styles.note]: theme === 'note',
+            [styles.info]: theme === 'info',
         })}
         data-test={dataTest}
     >
@@ -43,7 +43,7 @@ interface InPagePropTypes {
     /**
      * Defines the style of the alert
      */
-    theme: 'good' | 'bad' | 'warning' | 'note';
+    theme: 'good' | 'bad' | 'warning' | 'info';
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
@@ -54,7 +54,7 @@ const ALERT_ICONS = {
     good: <AlertCheck className={styles.icon} />,
     bad: <AlertWarning className={styles.icon} />,
     warning: <AlertWarning className={styles.icon} />,
-    note: <AlertNote className={styles.icon} />,
+    info: <AlertInfo className={styles.icon} />,
 };
 
 const InPageAlert = ({ children, theme, dataTest }: InPagePropTypes): JSX.Element => (
@@ -64,7 +64,7 @@ const InPageAlert = ({ children, theme, dataTest }: InPagePropTypes): JSX.Elemen
             [styles.good]: theme === 'good',
             [styles.bad]: theme === 'bad',
             [styles.warning]: theme === 'warning',
-            [styles.note]: theme === 'note',
+            [styles.info]: theme === 'info',
         })}
         data-test={dataTest}
     >

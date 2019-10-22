@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AlertNote = props => (
+const AlertInfo = props => (
     <svg {...props}>
         <path
             fillRule="evenodd"
@@ -9,7 +9,7 @@ const AlertNote = props => (
     </svg>
 );
 
-AlertNote.defaultProps = {
+AlertInfo.defaultProps = {
     xmlns: 'http://www.w3.org/2000/svg',
     fill: 'currentColor',
     width: '28',
@@ -17,4 +17,4 @@ AlertNote.defaultProps = {
     viewBox: '0 0 28 28',
 };
 
-export default AlertNote;
+export default AlertInfo;

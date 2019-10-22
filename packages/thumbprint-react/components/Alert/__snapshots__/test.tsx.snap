@@ -2,10 +2,10 @@
 
 exports[`BannerAlert renders children 1`] = `
 <BannerAlert
-  theme="note"
+  theme="info"
 >
   <div
-    className="root banner note"
+    className="root banner info"
   >
     <div
       className="text"
@@ -56,12 +56,12 @@ exports[`BannerAlert renders theme good 1`] = `
 </BannerAlert>
 `;
 
-exports[`BannerAlert renders theme note 1`] = `
+exports[`BannerAlert renders theme info 1`] = `
 <BannerAlert
-  theme="note"
+  theme="info"
 >
   <div
-    className="root banner note"
+    className="root banner info"
   >
     <div
       className="text"
@@ -94,12 +94,12 @@ exports[`BannerAlert renders theme warning 1`] = `
 
 exports[`InPageAlert renders children 1`] = `
 <InPageAlert
-  theme="note"
+  theme="info"
 >
   <div
-    className="root note"
+    className="root info"
   >
-    <AlertNote
+    <AlertInfo
       className="icon"
       fill="currentColor"
       height="28"
@@ -120,7 +120,7 @@ exports[`InPageAlert renders children 1`] = `
           fillRule="evenodd"
         />
       </svg>
-    </AlertNote>
+    </AlertInfo>
     <div
       className="text"
     >
@@ -254,14 +254,14 @@ exports[`InPageAlert renders theme good 1`] = `
 </InPageAlert>
 `;
 
-exports[`InPageAlert renders theme note 1`] = `
+exports[`InPageAlert renders theme info 1`] = `
 <InPageAlert
-  theme="note"
+  theme="info"
 >
   <div
-    className="root note"
+    className="root info"
   >
-    <AlertNote
+    <AlertInfo
       className="icon"
       fill="currentColor"
       height="28"
@@ -282,7 +282,7 @@ exports[`InPageAlert renders theme note 1`] = `
           fillRule="evenodd"
         />
       </svg>
-    </AlertNote>
+    </AlertInfo>
     <div
       className="text"
     >
