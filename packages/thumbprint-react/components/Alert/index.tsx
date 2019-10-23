@@ -12,28 +12,34 @@ interface BannerPropTypes {
     /**
      * Defines the style of the alert
      */
-    theme: 'good' | 'bad' | 'warning' | 'info';
+    theme?: 'good' | 'bad' | 'warning' | 'info';
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
     dataTest?: string;
 }
 
-const BannerAlert = ({ children, theme, dataTest }: BannerPropTypes): JSX.Element => (
-    <div
-        className={classNames({
-            [styles.root]: true,
-            [styles.banner]: true,
-            [styles.good]: theme === 'good',
-            [styles.bad]: theme === 'bad',
-            [styles.warning]: theme === 'warning',
-            [styles.info]: theme === 'info',
-        })}
-        data-test={dataTest}
-    >
-        <div className={styles.text}>{children}</div>
-    </div>
-);
+export function BannerAlert({
+    children = null,
+    theme = 'info',
+    dataTest,
+}: BannerPropTypes): JSX.Element {
+    return (
+        <div
+            className={classNames({
+                [styles.root]: true,
+                [styles.banner]: true,
+                [styles.good]: theme === 'good',
+                [styles.bad]: theme === 'bad',
+                [styles.warning]: theme === 'warning',
+                [styles.info]: theme === 'info',
+            })}
+            data-test={dataTest}
+        >
+            <div className={styles.text}>{children}</div>
+        </div>
+    );
+}
 
 interface InPagePropTypes {
     /**
@@ -43,7 +49,7 @@ interface InPagePropTypes {
     /**
      * Defines the style of the alert
      */
-    theme: 'good' | 'bad' | 'warning' | 'info';
+    theme?: 'good' | 'bad' | 'warning' | 'info';
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
@@ -57,20 +63,24 @@ const ALERT_ICONS = {
     info: <AlertInfo className={styles.icon} />,
 };
 
-const InPageAlert = ({ children, theme, dataTest }: InPagePropTypes): JSX.Element => (
-    <div
-        className={classNames({
-            [styles.root]: true,
-            [styles.good]: theme === 'good',
-            [styles.bad]: theme === 'bad',
-            [styles.warning]: theme === 'warning',
-            [styles.info]: theme === 'info',
-        })}
-        data-test={dataTest}
-    >
-        {ALERT_ICONS[theme]}
-        <div className={styles.text}>{children}</div>
-    </div>
-);
-
-export { BannerAlert, InPageAlert };
+export function InPageAlert({
+    children = null,
+    theme = 'info',
+    dataTest,
+}: InPagePropTypes): JSX.Element {
+    return (
+        <div
+            className={classNames({
+                [styles.root]: true,
+                [styles.good]: theme === 'good',
+                [styles.bad]: theme === 'bad',
+                [styles.warning]: theme === 'warning',
+                [styles.info]: theme === 'info',
+            })}
+            data-test={dataTest}
+        >
+            {ALERT_ICONS[theme]}
+            <div className={styles.text}>{children}</div>
+        </div>
+    );
+}
