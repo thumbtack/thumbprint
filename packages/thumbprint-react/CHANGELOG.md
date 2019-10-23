@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `Button` component in TypeScript.
+-   [Patch] Convert `Link` component to TypeScript.
+
 ## 10.0.1 - 2019-10-21
 
 ### Fixed
