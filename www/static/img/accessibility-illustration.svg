@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" class="db" viewBox="0 0 507 122">
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="440.31" cy="54.82" r="52.82" fill="#C8CDD1" fill-rule="nonzero" opacity=".31"/>
+    <path fill="#C8CDD1" fill-rule="nonzero" d="M342.53 77.16c-25.28 0-45.774 20.49-45.78 45.77h91.55c0-25.278-20.492-45.77-45.77-45.77z" opacity=".31"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M490.54 37.81a7.71 7.71 0 0 0-15.42 0v16.74h5.73a4 4 0 0 0 3.95 0h5.73l.01-16.74z"/>
+    <rect width="4.21" height="9.01" x="480.67" y="36.93" fill="#C1CBF0" fill-rule="nonzero"/>
+    <ellipse cx="482.83" cy="37.35" fill="#C1CBF0" fill-rule="nonzero" rx="4.8" ry="5.8"/>
+    <path fill="#EC6C58" fill-rule="nonzero" d="M474.57 47l-8.32 9.35a1.77 1.77 0 0 0 .23 2.56l9.66 7.57-4.3 11.25 1.78 43.29-6.53 1.8H477l7.44-41.53L498 122.86h8.41l-5.59-2.42L496.59 77l-5.5-11.75 7.68-5.44a1.77 1.77 0 0 0 .38-2.51l-7.58-9.93a5.94 5.94 0 0 0-4.7-2.33H479a5.91 5.91 0 0 0-4.43 1.96z"/>
+    <polygon fill="#CC5B45" fill-rule="nonzero" points="473.35 73.82 491.09 65.27 483.65 61.21 475.67 65.9"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M488.38 40.56s-2.21-4-5-4-4.77-1.12-5.74-3c-.58-1.13 3.73-2.5 3.73-2.5l3.8.52 3.39 2.42.86 1.7.38 2.76-.17 2.09-1.25.01z"/>
+    <circle cx="488.81" cy="54.86" r="4" fill="#C1CBF0" fill-rule="nonzero"/>
+    <path fill="#FFF" fill-rule="nonzero" d="M474.81 62.36a7.5 7.5 0 1 1 15 0"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M488.94 50.87a11.44 11.44 0 0 0-.13 1.55 11.7 11.7 0 0 0 1.58 6.11 4 4 0 0 0-1.45-7.66z"/>
+    <circle cx="480.67" cy="62.74" r="2.75" fill="#92A4E5" fill-rule="nonzero"/>
+    <path fill="#EC6C58" fill-rule="nonzero" d="M471.28 55.61l7.6 4.69a2.1 2.1 0 0 1 0 3.61l-3.31 2-5.13-4.38.84-5.92z"/>
+    <circle cx="484.88" cy="62.74" r="2.75" fill="#C1CBF0" fill-rule="nonzero"/>
+    <path fill="#EC6C58" fill-rule="nonzero" d="M494.21 54.71L486.29 61a1.15 1.15 0 0 0 .2 1.93l4.6 2.32 4-4.68-.88-5.86z"/>
+    <rect width="5.73" height="8.12" x="350.44" y="36.93" fill="#F4AA9F" fill-rule="nonzero"/>
+    <polygon fill="#6F87DC" fill-rule="nonzero" points="344.81 42.93 331.81 58.11 343.31 72.65 340.81 119.5 333.68 122.86 347.18 122.86 352.81 79.45 361.18 122.86 373.31 122.86 366.43 119.5 362.43 71.94 373.31 58.65 361.56 42.93"/>
+    <polygon fill="#4661CC" fill-rule="nonzero" points="343.31 72.65 344.81 42.93 331.81 58.11"/>
+    <polygon fill="#4661CC" fill-rule="nonzero" points="361.06 51.15 362.43 71.94 367.32 65.96"/>
+    <rect width="11.6" height="5.03" x="345.81" y="35.15" fill="#F4AA9F" fill-rule="nonzero"/>
+    <circle cx="351.61" cy="35.19" r="5.8" fill="#F4AA9F" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M357.34 34.3a5.79 5.79 0 0 0-10-3l10 3z"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M350.13 29.59a5.79 5.79 0 0 0-4.32 5.6l5.06-4-.74-1.6zm7.28 11.87v-3.69h-11.59v3.69a5.81 5.81 0 0 0 11.61 0h-.02z"/>
+    <rect width="3.05" height="2.66" x="347.65" y="39.43" fill="#F4AA9F" fill-rule="nonzero" rx="1.33"/>
+    <polygon fill="#FAE87E" fill-rule="nonzero" points="297.25 41.17 285.25 58.52 291.25 69.65 294.38 67.38 290.17 58.36 299 50.27"/>
+    <polygon fill="#D9BF14" fill-rule="nonzero" points="317.63 52.15 320.63 60.52 330.13 63.77 328.88 68.15 317.13 64.02 314.62 58.11"/>
+    <circle cx="307.91" cy="33.54" r="5.8" fill="#9E7767" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M302.51 35.66a5.78 5.78 0 0 1 5.4-7.92 5.83 5.83 0 0 1 3.71 1.34l-9.11 6.58z"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M298.81 27.22c-2.11-1-4.34-.6-5 .81-.66 1.41.53 3.34 2.63 4.3 2.1.96 6.58 1.64 7.23.23.65-1.41-2.76-4.37-4.86-5.34z"/>
+    <path fill="#9E7767" fill-rule="nonzero" d="M307.5 44.86a2.15 2.15 0 0 1-2.15-2.15v-5.6h4.29v5.6a2.15 2.15 0 0 1-2.14 2.15z"/>
+    <polygon fill="#F8DC3C" fill-rule="nonzero" points="300.12 63.77 297.25 42.17 314.68 42.17 317.63 52.15 312 63.27 315.88 74.4 312.56 119.5 320.19 122.86 308.5 122.86 308.5 119.5 306.54 79.45 300.65 120.36 304.85 122.86 297.19 122.86 295.88 73.02"/>
+    <circle cx="293.09" cy="68.75" r="2.19" fill="#9E7767" fill-rule="nonzero"/>
+    <polygon fill="#FFF" fill-rule="nonzero" points="302.07 42.17 311.9 42.17 307.3 57.94"/>
+    <polygon fill="#EC6C58" fill-rule="nonzero" points="306.98 44.19 306.34 42.17 308.73 42.17 308.05 44.19 309.03 51.99 307.3 57.94 305.31 51.93"/>
+    <circle cx="329.57" cy="65.91" r="2.19" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="395.04" cy="46.9" r="3" fill="#374A97" fill-rule="nonzero"/>
+    <polygon fill="#41AA83" fill-rule="nonzero" points="407.77 62.85 407.11 72.11 413.87 82.81 416.77 80.47"/>
+    <polygon fill="#41AA83" fill-rule="nonzero" points="405.07 106.44 398.94 106.44 399.78 119.42 399.78 122.78 411.47 122.78 403.85 119.42"/>
+    <polygon fill="#41AA83" fill-rule="nonzero" points="394.57 106.44 387.93 106.44 388.47 122.78 396.13 122.78 391.93 120.28"/>
+    <path fill="#F4AA9F" fill-rule="nonzero" d="M398.54 54.87a2.15 2.15 0 0 1-2.15-2.15v-5.6h4.29v5.6a2.15 2.15 0 0 1-2.15 2.15h.01z"/>
+    <circle cx="401.89" cy="45.14" r="5.8" fill="#F4AA9F" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M396.5 47.26a5.78 5.78 0 0 1 5.39-7.92 5.84 5.84 0 0 1 3.72 1.34l-9.11 6.58z"/>
+    <path fill="#46CF9D" fill-rule="nonzero" d="M406.76 56.59a5.74 5.74 0 0 0-5.59-4.41h-7a8.07 8.07 0 0 0-6.37 3.14 31.39 31.39 0 0 0-4.28 8.92c-1.83 5.4-2.77 20.94-2.77 20.94l3.81-.06 5.44-17.6-1.5 14.25-3.91 28.34 23.5-1.38.64-44-1.97-8.14z"/>
+    <circle cx="382.65" cy="84.96" r="2.19" fill="#F4AA9F" fill-rule="nonzero"/>
+    <circle cx="415.59" cy="82.09" r="2.19" fill="#F4AA9F" fill-rule="nonzero"/>
+    <path fill="#FFCC83" fill-rule="nonzero" d="M444.92 46a4 4 0 0 1 4 3.25l6.35 31.69-3.92 1.37-7.16-16.58"/>
+    <path fill="#D78A30" fill-rule="nonzero" d="M431.66 46a4 4 0 0 0-3.42 2.69l-9.88 28.71 2.79 2.71 9-13.88"/>
+    <polygon fill="#FFA525" fill-rule="nonzero" points="448.99 121.2 447.35 68.17 445 45.98 431.65 46.05 428.82 69.78 424.49 119.53 416.15 122.88 428.65 122.88 438.44 86.19 441.82 122.88 454.32 122.88"/>
+    <circle cx="419.07" cy="79.93" r="3.3" fill="#9E7767" fill-rule="nonzero"/>
+    <path fill="#9E7767" fill-rule="nonzero" d="M434.4 40.11h5.73v6.62a2.87 2.87 0 0 1-5.74 0v-6.62h.01z"/>
+    <circle cx="435.28" cy="40.47" r="5.62" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="434.69" cy="40.52" r="2.16" fill="#374A97" fill-rule="nonzero"/>
+    <rect width="2.81" height="1.41" x="430.94" y="39.63" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="429.73" cy="40.52" r="2.16" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="440.61" cy="41.44" r="1.87" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="453.78" cy="83.48" r="3.3" fill="#9E7767" fill-rule="nonzero"/>
+    <path stroke="#9E7767" stroke-width="2" d="M458.61 89.11v-2.29a2.55 2.55 0 0 0-2.55-2.55 2.55 2.55 0 0 0-2.54 2.55v36"/>
+    <circle cx="161.72" cy="58.15" r="52.82" fill="#C8CDD1" fill-rule="nonzero" opacity=".31"/>
+    <path fill="#C8CDD1" fill-rule="nonzero" d="M46.77 76.56C21.492 76.56 1 97.052 1 122.33h91.54c0-25.278-20.492-45.77-45.77-45.77z" opacity=".31"/>
+    <circle cx="103.04" cy="70.33" r="3" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="114.04" cy="70.33" r="3" fill="#374A97" fill-rule="nonzero"/>
+    <polyline fill="#EC6C58" fill-rule="nonzero" points="113.04 111.33 112.04 120.33 116.04 122.33 108.04 122.33 108.04 112.33"/>
+    <polyline fill="#EC6C58" fill-rule="nonzero" points="100.04 111.33 101.04 120.33 97.04 122.33 105.04 122.33 105.04 112.33"/>
+    <polyline fill="#EC6C58" fill-rule="nonzero" points="114.04 78.33 120.04 85.33 124.04 81.33 127.04 83.33 119.04 91.33 114.04 86.33"/>
+    <rect width="5.73" height="8.12" x="143.88" y="36.4" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="145.06" cy="34.66" r="5.8" fill="#9E7767" fill-rule="nonzero"/>
+    <polyline fill="#4661CC" fill-rule="nonzero" points="143.04 42.33 136.04 42.33 126.04 75.33 131.04 77.33 141.04 53.33"/>
+    <polygon fill="#6F87DC" fill-rule="nonzero" points="134.25 118.97 136.75 72.12 139.04 42.33 155.04 42.33 166.75 58.12 155.88 71.41 159.88 118.97 166.75 122.33 154.63 122.33 146.25 78.92 140.63 122.33 127.13 122.33"/>
+    <polygon fill="#4661CC" fill-rule="nonzero" points="154.5 50.62 155.88 71.41 160.77 65.43"/>
+    <circle cx="128.34" cy="77.03" r="3.3" fill="#9E7767" fill-rule="nonzero"/>
+    <rect width="5" height="8.12" x="105.04" y="68.87" fill="#9E7767" fill-rule="nonzero" transform="rotate(-180 107.54 72.93)"/>
+    <circle cx="109.04" cy="67.33" r="6" fill="#9E7767" fill-rule="nonzero"/>
+    <path fill="#F19284" fill-rule="nonzero" d="M101 76.33h10a4.3 4.3 0 0 1 4.29 4l1.77 32H95l6-36z"/>
+    <path fill="#F3A497" fill-rule="nonzero" d="M101.16 76.33H104l-5 22h-5l4.53-19.94a2.65 2.65 0 0 1 2.63-2.06z"/>
+    <circle cx="126.74" cy="81.03" r="2.7" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="96.74" cy="98.62" r="2.7" fill="#9E7767" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M103.4 65.29a6 6 0 0 1 11.28 0h-.64a6 6 0 0 1-5-2.69 6 6 0 0 1-5 2.69c-.22.04-.43.02-.64 0z"/>
+    <polygon fill="#4661CC" fill-rule="nonzero" points="137.27 65.33 157.04 65.33 157.04 69.33 136.97 69.33"/>
+    <circle cx="73.47" cy="52.13" r="5.2" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="77.47" cy="51.52" r="5.2" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="71.86" cy="43.13" r="7.8" fill="#374A97" fill-rule="nonzero"/>
+    <polygon fill="#F8DC3C" fill-rule="nonzero" points="59.66 52.33 75.67 52.33 75.67 84.33 76.67 119.33 82.67 122.33 72.67 122.33 64.66 84.33 56.66 74.33"/>
+    <path fill="#D9BF14" fill-rule="nonzero" d="M68.67 52.33h7l8 15 4.06-3.39a2.15 2.15 0 0 1 3.23.55l.73 1.22a2.15 2.15 0 0 1-.5 2.8l-7.09 5.67a2 2 0 0 1-2.67-.18l-8.76-9.63"/>
+    <circle cx="91.85" cy="64.14" r="2.19" fill="#9FAFE8" fill-rule="nonzero"/>
+    <path fill="#9FAFE8" fill-rule="nonzero" d="M68.17 54.32a2.87 2.87 0 0 1-2.82-2.86v-5.25h5.69v5.25a2.87 2.87 0 0 1-2.87 2.86z"/>
+    <circle cx="69.86" cy="44.47" r="5.8" fill="#9FAFE8" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M75.6 43.64a5.79 5.79 0 0 1-8.47-4.29 5.7 5.7 0 0 1 2.73-.69 5.8 5.8 0 0 1 5.74 4.98z"/>
+    <circle cx="63.47" cy="43.13" r="5.2" fill="#374A97" fill-rule="nonzero"/>
+    <path fill="#FBED9B" fill-rule="nonzero" d="M60.67 52.33l8 15 4.38-3.66a1.8 1.8 0 0 1 2.7.46l1.07 1.79a1.78 1.78 0 0 1-.49 2.37l-8.11 5.91a1.72 1.72 0 0 1-2.5-.55l-9.15-16.19a3.44 3.44 0 0 1 3-5.13h1.1z"/>
+    <circle cx="76.85" cy="64.14" r="2.19" fill="#9FAFE8" fill-rule="nonzero"/>
+    <polygon fill="#F8DC3C" fill-rule="nonzero" points="52.66 122.33 56.66 74.33 67.67 82.33 57.66 119.33 63.66 122.33"/>
+    <circle cx="63.47" cy="51.52" r="5.2" fill="#374A97" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M145.06 28.86a5.8 5.8 0 0 1 5.8 5.8 5.72 5.72 0 0 1-.55 2.45L144 31.33h-3.73a5.78 5.78 0 0 1 4.79-2.47z"/>
+    <polygon fill="#FFB751" fill-rule="nonzero" points="231.04 109.66 231.04 94.33 244.04 92.33 244.04 99.33 238.04 100.33 236.04 112.33 231.04 112.33 227.04 112.33"/>
+    <rect width="4" height="9" x="241.04" y="106.32" fill="#4661CC" fill-rule="nonzero" transform="rotate(-180 243.04 110.82)"/>
+    <rect width="4" height="19" x="248.54" y="94.83" fill="#4661CC" fill-rule="nonzero" transform="rotate(90 250.54 104.33)"/>
+    <rect width="14" height="3" x="226.04" y="111.32" fill="#4661CC" fill-rule="nonzero" transform="rotate(-180 233.04 112.82)"/>
+    <rect width="5.73" height="8.12" x="252.66" y="66.21" fill="#9E7767" fill-rule="nonzero"/>
+    <circle cx="254.72" cy="64.13" r="5.8" fill="#9E7767" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M256.14 58.51a5.8 5.8 0 0 1 4.21 7 5.92 5.92 0 0 1-1.14 2.25l-4.66-7.15-3.61-.91a5.75 5.75 0 0 1 5.2-1.19z"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M263.05 56.67c2.18-.77 4.36-.21 4.88 1.26.52 1.47-.83 3.28-3 4-2.17.72-6.71 1-7.23-.44-.52-1.44 3.16-4.05 5.35-4.82z"/>
+    <path fill="#FFA525" fill-rule="nonzero" d="M248 84.33h8l1-12h-3.33a4.33 4.33 0 0 0-4.23 3.67L248 84.33z"/>
+    <rect width="8" height="4" x="264.04" y="69.32" fill="#4661CC" fill-rule="nonzero" transform="rotate(-180 268.04 71.32)"/>
+    <rect width="32" height="4" x="246.04" y="83.33" fill="#4661CC" fill-rule="nonzero" transform="rotate(90 262.04 85.33)"/>
+    <rect width="17" height="23" x="244.04" y="86.33" fill="#4661CC" fill-rule="nonzero" transform="rotate(90 252.54 97.83)"/>
+    <rect width="4" height="19" x="248.54" y="81.83" fill="#4661CC" fill-rule="nonzero" transform="rotate(90 250.54 91.33)"/>
+    <circle cx="262.04" cy="108.83" r="13.5" fill="#374A97" fill-rule="nonzero"/>
+    <circle cx="241.54" cy="116.83" r="5.5" fill="#374A97" fill-rule="nonzero"/>
+    <path fill="#FFB751" fill-rule="nonzero" d="M254 84.33v-9a3 3 0 0 1 6 0v14h-20v-5h14z"/>
+    <circle cx="240.34" cy="86.03" r="3.3" fill="#9E7767" fill-rule="nonzero"/>
+    <polyline fill="#41AA83" fill-rule="nonzero" points="202.09 57.33 210.84 75.23 219.1 83.09 215.44 85.66 205.45 77.33 197.45 60.05"/>
+    <rect width="5.73" height="8.12" x="191.29" y="49.2" fill="#F4AA9F" fill-rule="nonzero" transform="rotate(-180 194.155 53.26)"/>
+    <circle cx="195.84" cy="45.47" r="7.14" fill="#F4AA9F" fill-rule="nonzero"/>
+    <path fill="#374A97" fill-rule="nonzero" d="M195.84 38.33a7.14 7.14 0 0 0-7.14 7.14 7 7 0 0 0 .68 3l7.72-7.11h4.58a7.11 7.11 0 0 0-5.84-3.03z"/>
+    <path fill="#46CF9D" fill-rule="nonzero" d="M198.73 55.33h-9.68a4.44 4.44 0 0 0-4.41 4l-2.6 26 1 37h13l-6-3 5-28 6 31h13l-8-5v-28l.21-.62a28.71 28.71 0 0 0 1.39-11l-1.08-15.05a7.84 7.84 0 0 0-7.83-7.33z"/>
+    <circle cx="217.74" cy="84.62" r="3.3" fill="#F4AA9F" fill-rule="nonzero"/>
+    <path fill="#9EE8CD" fill-rule="nonzero" d="M184.64 59.32a4.44 4.44 0 0 1 1.26-2.65l5.29 16.56 11.26 10.53-3.66 2.57-13-11-2.13-6.22.98-9.79z"/>
+    <circle cx="200.74" cy="85.03" r="3.3" fill="#F4AA9F" fill-rule="nonzero"/>
+  </g>
+</svg>
