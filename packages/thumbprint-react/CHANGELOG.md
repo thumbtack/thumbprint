@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Update Type syntax for `Image` and `ServiceCardImage` to fix missing API docs.
+
 ## 10.0.1 - 2019-10-21
 
 ### Fixed
