@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Update Type syntax for `Image` and `ServiceCardImage` to fix missing API docs.
+
 ### Added
 
 -   [Minor] Create `Alert` component in React (TypeScript).

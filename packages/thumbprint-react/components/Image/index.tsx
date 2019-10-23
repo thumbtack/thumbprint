@@ -83,7 +83,7 @@ type AspectRatioBoxPropsType = {
     };
 };
 
-const Image = forwardRef<HTMLElement, ImagePropTypes>((props, outerRef) => {
+const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, outerRef) => {
     const {
         src,
         sources = [],
