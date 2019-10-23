@@ -18,7 +18,7 @@ Prior to Thumbprint there were few usage rules for colors, many did not have suf
 
 Similar to the process with color, we significantly reduced the number of type sizes, removed the smallest sizes to improve readability, and divided them into "Title" and "Text" categories with options to output the appropriate heading level or element.
 
-### Size &amp; space
+### Size & space
 
 For users with poor vision, hand tremors, or simply big fingers it’s important that target sizes for buttons and other interactive elements are large enough to use efficiently.
 
