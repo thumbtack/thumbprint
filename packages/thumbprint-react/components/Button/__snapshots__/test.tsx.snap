@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTest\` prop 1`] = `
+<ForwardRef
+  dataTest="Duck"
+>
+  <ForwardRef
+    dataTest="Duck"
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="button"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      data-test="Duck"
+      disabled={false}
+      type="button"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`adds \`dataTest\` prop 2`] = `
+<ForwardRef
+  dataTest="Duck"
+>
+  <ForwardRef
+    dataTest="Duck"
+    isDisabled={false}
+    theme="primary"
+    type="button"
+  >
+    <button
+      className="plain plainThemePrimary"
+      data-test="Duck"
+      disabled={false}
+      type="button"
+    >
+      Goose
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders button of type \`button\` by default 1`] = `
+<ForwardRef>
+  <ForwardRef
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="button"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      type="button"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders button of type \`button\` by default 2`] = `
+<ForwardRef>
+  <ForwardRef
+    isDisabled={false}
+    theme="primary"
+    type="button"
+  >
+    <button
+      className="plain plainThemePrimary"
+      disabled={false}
+      type="button"
+    >
+      Goose
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders button of type \`submit\` when \`type\` is set 1`] = `
+<ForwardRef
+  type="submit"
+>
+  <ForwardRef
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="submit"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      type="submit"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders button of type \`submit\` when \`type\` is set 2`] = `
+<ForwardRef
+  type="submit"
+>
+  <ForwardRef
+    isDisabled={false}
+    theme="primary"
+    type="submit"
+  >
+    <button
+      className="plain plainThemePrimary"
+      disabled={false}
+      type="submit"
+    >
+      Goose
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders children passed in 1`] = `
+<ForwardRef>
+  <ForwardRef
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="button"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      type="button"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders children passed in 2`] = `
+<ForwardRef>
+  <ForwardRef
+    isDisabled={false}
+    theme="primary"
+    type="button"
+  >
+    <button
+      className="plain plainThemePrimary"
+      disabled={false}
+      type="button"
+    >
+      Goose
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`renders icon that is passed in 1`] = `
+<ForwardRef
+  icon={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <ForwardRef
+    icon={
+      <svg>
+        Duck
+      </svg>
+    }
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="button"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      type="button"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        <span
+          className="flexCenter"
+        >
+          <span
+            className="iconContainer iconContainerHasChildren"
+          >
+            <svg>
+              Duck
+            </svg>
+          </span>
+          Goose
+        </span>
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
