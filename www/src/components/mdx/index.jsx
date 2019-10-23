@@ -159,6 +159,14 @@ export const HR = p => (
     <hr {...p} className="bt b-gray-300 mv4" style={{ height: '0', border: '0' }} />
 );
 
+export const Iframe = p => (
+    <iframe
+        {...p}
+        className="pa1 mb1 ba bw-2 br2 b-gray-300"
+        title="Image of component from Figma"
+    />
+);
+
 export const MDXRenderer = ({ children }) => {
     let renderedChildren = children;
 
@@ -184,6 +192,7 @@ export const MDXRenderer = ({ children }) => {
                 td: TD,
                 th: TH,
                 hr: HR,
+                iframe: Iframe,
             }}
         >
             {renderedChildren}
@@ -200,6 +209,8 @@ const getPlatformByPathname = pathname => {
         react: 'React',
         scss: 'SCSS',
         usage: 'Usage',
+        ios: 'iOS',
+        android: 'Android',
     };
 
     const splitPathname = pathname.split('/');
@@ -244,7 +255,7 @@ const getSectionByPathname = pathname => {
 };
 
 const MDX = props => {
-    const { children, location, pageContext } = props;
+    const { children, location, pageContext, header } = props;
 
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
@@ -276,6 +287,7 @@ const MDX = props => {
                             metaTitle={metaTitle}
                             description={pageContext.frontmatter.description}
                         />
+                        {header}
                         <MDXRenderer>{children}</MDXRenderer>
                     </React.Fragment>
                 )}
@@ -288,6 +300,9 @@ MDX.propTypes = {
     children: PropTypes.node.isRequired,
     location: PropTypes.shape({}).isRequired,
     pageContext: PropTypes.shape({}).isRequired,
+    header: PropTypes.node,
 };
+
+MDX.defaultProps = { header: undefined };
 
 export default MDX;

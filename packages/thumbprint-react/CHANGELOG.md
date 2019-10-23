@@ -2,16 +2,48 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Create `Alert` component in React (TypeScript).
+
+## 10.0.1 - 2019-10-21
+
+### Fixed
+
+-   [Patch] Adjust `Input` padding when `innerLeft` or `innerRight` exist to prevent overlap and provide better spacing. Reverting previous change to `z-index`. (#498)
+-   [Patch] Change z-index of icon container on `Input` to prevent overlap when input background has a color. (#498)
+
+## 10.0.0 - 2019-10-17
+
 ### Changed
 
--   [Minor] Convert `Alert` component to React (TypeScript).
+-   [Patch] Rewrite `Label` component in TypeScript.
+-   [Patch] Convert `Input` component to TypeScript.
+-   [Major] Change type of `maxLength` attribute of `Input` from `string` to `number`.
+
+## 9.7.1 - 2019-10-17
+
+### Changed
+
+-   [Patch] Convert `Input` component to a function component with Hooks.
+-   [Patch] Update version of the Thumbprint Tokens dependency.
+
+## 9.7.0 - 2019-10-16
+
+### Added
+
+-   [Minor] Add `value` to `Checkbox` component. (#501)
+
+## 9.6.0 - 2019-10-16
+
+### Added
+
+-   [Minor] Add `isRequired` to `Radio` component.
+-   [Minor] Add `isRequired` to `Checkbox` component.
 
 ### Fixed
 
 -   [Patch] Add `line-height` to `Pill` to ensure alignment, prevent external value inheritance. (#494)
-
-### Fixed
-
 -   [Patch] Enable `size` prop to properly pass through a `number` to the `Image` height. (#486)
 
 ### Changed

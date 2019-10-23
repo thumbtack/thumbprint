@@ -2,23 +2,11 @@
 title: Avatar
 description: Display user images and badges on Thumbtack.
 ---
+## Avatar variations
 
-import Alert from 'components/alert';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
-import { graphql } from 'gatsby';
+Avatars can be placed in your layout files as either: `EntityAvatarView` or `UserAvatarView`.
 
-<ComponentHeader data={props.data} />
-
-<Alert type="warning" title="Android components are not currently open source">
-    While this component's source code is private, we've made the documentation public for those
-    interested in how we design and document our mobile components.
-</Alert>
-
-## Avatar Variations
-
-Avatars can be placed in your layout files as either: `EntityAvatarView` or `UserAvatarView`
-
-![Avatar Variations](images/variations.png)
+![Screenshot of both Avatar types](/img/avatar-android-variations.png)
 
 ```xml
 <com.thumbtack.thumbprint.views.EntityAvatarView
@@ -67,7 +55,7 @@ fun bind(imageUrl: String? = null, initials: String? = null, isOnline: Boolean =
 
 Both `UserAvatarView` and `EntityAvatarView` are available in five sizes ranging from `avatarExtraLarge` to `avatarExtraSmall`.
 
-![Avatar Sizes](images/sizes.png)
+![Avatar sizes](/img/android-avatar-sizes.png)
 
 ```xml
 <com.thumbtack.thumbprint.views.UserAvatarView
@@ -125,7 +113,7 @@ Both `UserAvatarView` and `EntityAvatarView` are available in five sizes ranging
 
 Avatars without images can display the the user or entity’s initials instead. The initials and background colors are assigned based on the first letter in the `initials` parameter of the `.bind()` method.
 
-![Avatar Without Images](images/no_images.png)
+![Avatar Without Images](/img/android-avatar-without-images.png)
 
 ```xml
 <LinearLayout
@@ -173,7 +161,7 @@ noImagesEntity.forEachChild {
 
 This badge indicates that a user or entity is online. It can be set initially through the `.bind()` method, or dynamically through the `setIsOnline()` method.
 
-![Avatar Badges](images/online_badges.png)
+![Avatar badges](/img/avatar-android-online-indicator.png)
 
 ```java
 badgesUser.forEachChild {
@@ -184,18 +172,3 @@ badgesEntity.forEachChild {
     (it as? EntityAvatarView)?.bind(imageUrl = NICOLAS_CAGE_URL, isOnline = true)
 }
 ```
-
-<ComponentFooter data={props.data} />
-
-export const pageQuery = graphql`
-    {
-        # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
-            edges {
-                node {
-                    ...PlatformNavFragment
-                }
-            }
-        }
-    }
-`;
