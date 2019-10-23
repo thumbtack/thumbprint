@@ -64,9 +64,7 @@ export const H4 = p => (
     />
 );
 
-export const P = p => (
-    <Text {...p} className={`${p.className} mb3 black-300 ${styles.readingWidth}`} />
-);
+export const P = p => <Text {...p} className={`mb3 black-300 ${styles.readingWidth}`} />;
 
 export const InlineCode = props => {
     const { shouldCopyToClipboard, children, theme } = props;
