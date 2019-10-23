@@ -881,7 +881,6 @@ exports[`Themed disables button when it is disabled and loading 1`] = `
           className="absoluteCenter"
         >
           <LoaderDots
-            assistiveText="Loading"
             size="small"
             theme="inverse"
           >
@@ -936,7 +935,6 @@ exports[`Themed disables button while it is loading 1`] = `
           className="absoluteCenter"
         >
           <LoaderDots
-            assistiveText="Loading"
             size="small"
             theme="inverse"
           >
@@ -1166,7 +1164,6 @@ exports[`Themed renders loading indicator 1`] = `
           className="absoluteCenter"
         >
           <LoaderDots
-            assistiveText="Loading"
             size="small"
             theme="inverse"
           >

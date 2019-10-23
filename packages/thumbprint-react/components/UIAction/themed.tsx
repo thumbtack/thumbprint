@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import warning from 'warning';
 import merge from 'lodash/merge';
 import classNames from 'classnames';
-import LoaderDots from '../LoaderDots/index.jsx';
+import LoaderDots from '../LoaderDots/index';
 import { InputRowContext } from '../InputRow/index.jsx';
 import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
@@ -40,7 +40,10 @@ const withIcon = (
 
 const withLoader = (
     children: React.ReactNode,
-    { isLoading, theme = 'primary' }: { isLoading?: boolean; theme?: string },
+    {
+        isLoading,
+        theme = 'primary',
+    }: { isLoading?: boolean; theme?: 'primary' | 'secondary' | 'tertiary' },
 ): React.ReactNode => {
     if (!isLoading) {
         return children;

@@ -119,10 +119,8 @@ exports[`renders a popover 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     />
                   }
-                  isDisabled={false}
                   onClick={[MockFunction]}
                   theme="inherit"
-                  type="button"
                 >
                   <ForwardRef
                     accessibilityLabel="Close popover"
@@ -138,9 +136,7 @@ exports[`renders a popover 1`] = `
                     }
                     isDisabled={false}
                     onClick={[MockFunction]}
-                    shouldOpenInNewTab={false}
                     theme="inherit"
-                    to={null}
                     type="button"
                   >
                     <button
