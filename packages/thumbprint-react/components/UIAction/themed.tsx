@@ -117,45 +117,42 @@ const Themed = React.forwardRef<HTMLElement, PropTypes>(
                       onBlur,
                   });
 
+        const mergedProps = merge(
+            {},
+            {
+                disabled: isLoading || isDisabled,
+                className: classNames({
+                    [styles.themedButton]: true,
+                    [styles.themedButtonRoundedBordersLeft]:
+                        isFirstInputRowChild || !isWithinInputRow,
+                    [styles.themedButtonRoundedBordersRight]:
+                        isLastInputRowChild || !isWithinInputRow,
+                    [styles.themedButtonHasNoRightBorder]: isWithinInputRow && !isLastInputRowChild,
+                    [styles.themedButtonThemePrimary]: theme === 'primary',
+                    [styles.themedButtonThemeTertiary]: theme === 'tertiary',
+                    [styles.themedButtonThemeSecondary]: theme === 'secondary',
+                    [styles.themedButtonThemeCaution]: theme === 'caution',
+                    [styles.themedButtonThemeSolid]: theme === 'solid',
+                    [styles.themedButtonThemePopoverPrimary]: theme === 'popover-primary',
+                    [styles.themedButtonThemePopoverSecondary]: theme === 'popover-secondary',
+                    [styles.themedButtonWidthAuto]: width === 'auto' && !isWithinInputRow,
+                    [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
+                    [styles.themedButtonWidthFullBelowSmall]:
+                        width === 'full-below-small' && !isWithinInputRow,
+                }),
+                'aria-label': accessibilityLabel,
+                'data-test': dataTest,
+                ref,
+            },
+            elementProps,
+        );
+
         return (
             <InputRowContext.Consumer>
                 {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element =>
                     React.createElement(
                         element,
-                        merge(
-                            {},
-                            {
-                                disabled: isLoading || isDisabled,
-                                className: classNames({
-                                    [styles.themedButton]: true,
-                                    [styles.themedButtonRoundedBordersLeft]:
-                                        isFirstInputRowChild || !isWithinInputRow,
-                                    [styles.themedButtonRoundedBordersRight]:
-                                        isLastInputRowChild || !isWithinInputRow,
-                                    [styles.themedButtonHasNoRightBorder]:
-                                        isWithinInputRow && !isLastInputRowChild,
-                                    [styles.themedButtonThemePrimary]: theme === 'primary',
-                                    [styles.themedButtonThemeTertiary]: theme === 'tertiary',
-                                    [styles.themedButtonThemeSecondary]: theme === 'secondary',
-                                    [styles.themedButtonThemeCaution]: theme === 'caution',
-                                    [styles.themedButtonThemeSolid]: theme === 'solid',
-                                    [styles.themedButtonThemePopoverPrimary]:
-                                        theme === 'popover-primary',
-                                    [styles.themedButtonThemePopoverSecondary]:
-                                        theme === 'popover-secondary',
-                                    [styles.themedButtonWidthAuto]:
-                                        width === 'auto' && !isWithinInputRow,
-                                    [styles.themedButtonWidthFull]:
-                                        width === 'full' || isWithinInputRow,
-                                    [styles.themedButtonWidthFullBelowSmall]:
-                                        width === 'full-below-small' && !isWithinInputRow,
-                                }),
-                                'aria-label': accessibilityLabel,
-                                'data-test': dataTest,
-                                ref,
-                            },
-                            elementProps,
-                        ),
+
                         /**
                          * Call functions that can wrap the `children` in HTML and CSS that aligns
                          * icons with text, adds a loading indicator, and adds a flex wrapper to
