@@ -3,18 +3,13 @@ title: Breakpoints
 description: Variables for visual consistency across platforms.
 ---
 
-import Alert from 'components/alert';
-
 Responsive design enables layouts that render well at any device width. Designers do this by providing layouts representing a component's state at different widths. Developers do this by using media queries, commonly with predefined breakpoints in Sass.
 
 ## Designing
 
 In Thumbprint we have three breakpoints. Since designers can only provide static designs, each layout should be built to represent what the expected layout should be between the breakpoints, not at the breakpoint.
 
-<Alert type="note" title="Custom breakpoints">
-    In rare cases a layout will need to change at a breakpoint other than three provided. Add them
-    with caution and provide comments explaining why they are needed.
-</Alert>
+**Note:** In rare cases a layout will need to change at a breakpoint other than three provided. Add them with caution and provide comments explaining why they are needed.
 
 ## Implementing breakpoints in code
 

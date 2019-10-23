@@ -129,7 +129,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
         // These are all the collections that we use in Netlify CMS. The content also exists in
         // `www/static/admin/config.yml`.
-        if (node.relativeDirectory === 'components-ios') {
+        if (node.relativeDirectory === 'overview') {
+            slug = `/overview/${node.name}/`;
+        } else if (node.relativeDirectory === 'guide') {
+            slug = `/guide/product/${node.name}/`;
+        } else if (node.relativeDirectory === 'components-ios') {
             slug = `/components/${node.name}/ios/`;
         } else if (node.relativeDirectory === 'components-android') {
             slug = `/components/${node.name}/android/`;
@@ -147,7 +151,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             context: {
                 id: node.childMdx.id,
                 relatedComponentsGlob: `/components/${node.name}/*/`,
-                isComponent: true,
+                isComponent: slug.startsWith('/components/'),
                 frontmatter: {
                     title: node.childMdx.frontmatter.title,
                     description: node.childMdx.frontmatter.description,
