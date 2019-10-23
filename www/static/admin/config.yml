@@ -10,6 +10,24 @@ public_folder: /img
 # won't need the code in `gatsby-node.js`. This is the downstream issue:
 # https://github.com/netlify/netlify-cms/issues/513
 collections:
+    - name: 'overview'
+      label: 'Overview'
+      folder: 'www/src/cms/overview'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+    - name: 'guides'
+      label: 'Guides'
+      folder: 'www/src/cms/guides'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
     - name: 'components-usage'
       label: 'Components (Usage)'
       folder: 'www/src/cms/components-usage'
