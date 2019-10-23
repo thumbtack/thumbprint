@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, forwardRef, useEffect } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
@@ -83,7 +83,7 @@ type AspectRatioBoxPropsType = {
     };
 };
 
-const Image = React.forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, outerRef) => {
+const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, outerRef) => {
     const {
         src,
         sources = [],

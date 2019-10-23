@@ -29,19 +29,21 @@ interface ServiceCardImagePropTypes {
     alt?: string;
 }
 
-const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImagePropTypes>((props, outerRef) => {
-    const { url, src, sources, alt } = props;
-    return (
-        <Image
-            className={styles.image}
-            sources={sources}
-            containerAspectRatio={8 / 5}
-            src={url || src} // `url` deprecated
-            alt={alt}
-            ref={outerRef}
-        />
-    );
-});
+const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImagePropTypes>(
+    (props: ServiceCardImagePropTypes, outerRef) => {
+        const { url, src, sources, alt } = props;
+        return (
+            <Image
+                className={styles.image}
+                sources={sources}
+                containerAspectRatio={8 / 5}
+                src={url || src} // `url` deprecated
+                alt={alt}
+                ref={outerRef}
+            />
+        );
+    },
+);
 
 // Needed because of the `forwardRef`.
 ServiceCardImage.displayName = 'ServiceCardImage';
