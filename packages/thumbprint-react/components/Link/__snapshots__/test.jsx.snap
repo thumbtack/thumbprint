@@ -4,7 +4,6 @@ exports[`adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -13,9 +12,7 @@ exports[`adds \`dataTest\` prop 1`] = `
   <ForwardRef
     dataTest="Duck"
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     theme="primary"
     to="https://example.com/"
@@ -25,7 +22,6 @@ exports[`adds \`dataTest\` prop 1`] = `
       data-test="Duck"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       Goose
@@ -49,13 +45,10 @@ exports[`adds \`dataTest\` prop 2`] = `
     dataTest="Duck"
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     size="large"
     theme="primary"
     to="#"
-    type="button"
     width="auto"
   >
     <a
@@ -63,7 +56,6 @@ exports[`adds \`dataTest\` prop 2`] = `
       data-test="Duck"
       disabled={false}
       href="#"
-      onClick={null}
       target="_self"
     >
       <span
@@ -79,7 +71,6 @@ exports[`adds \`dataTest\` prop 2`] = `
 exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={true}
   theme="primary"
@@ -87,9 +78,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={true}
     theme="primary"
     to="https://example.com/"
@@ -98,7 +87,6 @@ exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
       className="plain plainThemePrimary"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -121,20 +109,16 @@ exports[`adds \`rel\` attribute to handle security vulnerability 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={true}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -151,7 +135,6 @@ exports[`adds \`rel\` attribute to handle security vulnerability 2`] = `
 exports[`adds attribute to open link in new tab 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={true}
   theme="primary"
@@ -159,9 +142,7 @@ exports[`adds attribute to open link in new tab 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={true}
     theme="primary"
     to="https://example.com/"
@@ -170,7 +151,6 @@ exports[`adds attribute to open link in new tab 1`] = `
       className="plain plainThemePrimary"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -193,20 +173,16 @@ exports[`adds attribute to open link in new tab 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={true}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -223,7 +199,6 @@ exports[`adds attribute to open link in new tab 2`] = `
 exports[`removes \`href\` if link is disabled 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={true}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -231,9 +206,7 @@ exports[`removes \`href\` if link is disabled 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={true}
-    onClick={null}
     shouldOpenInNewTab={false}
     theme="primary"
     to="https://example.com/"
@@ -241,8 +214,6 @@ exports[`removes \`href\` if link is disabled 1`] = `
     <a
       className="plain plainThemePrimary"
       disabled={true}
-      href={null}
-      onClick={null}
       target="_self"
     >
       Goose
@@ -264,20 +235,15 @@ exports[`removes \`href\` if link is disabled 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={true}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={true}
-      href={null}
-      onClick={null}
       target="_self"
     >
       <span
@@ -293,7 +259,6 @@ exports[`removes \`href\` if link is disabled 2`] = `
 exports[`renders \`children\` passed in 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -301,9 +266,7 @@ exports[`renders \`children\` passed in 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     theme="primary"
     to="https://example.com/"
@@ -312,7 +275,6 @@ exports[`renders \`children\` passed in 1`] = `
       className="plain plainThemePrimary"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       Goose
@@ -334,20 +296,16 @@ exports[`renders \`children\` passed in 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       <span
@@ -363,7 +321,6 @@ exports[`renders \`children\` passed in 2`] = `
 exports[`renders \`to\` prop as \`href\` 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -371,9 +328,7 @@ exports[`renders \`to\` prop as \`href\` 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     theme="primary"
     to="https://example.com/"
@@ -382,7 +337,6 @@ exports[`renders \`to\` prop as \`href\` 1`] = `
       className="plain plainThemePrimary"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       Goose
@@ -404,20 +358,16 @@ exports[`renders \`to\` prop as \`href\` 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       <span
@@ -433,7 +383,6 @@ exports[`renders \`to\` prop as \`href\` 2`] = `
 exports[`renders a anchor tag when a \`to\` is provided 1`] = `
 <ForwardRef
   iconLeft={null}
-  iconRight={null}
   isDisabled={false}
   shouldOpenInNewTab={false}
   theme="primary"
@@ -441,9 +390,7 @@ exports[`renders a anchor tag when a \`to\` is provided 1`] = `
 >
   <ForwardRef
     iconLeft={null}
-    iconRight={null}
     isDisabled={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     theme="primary"
     to="https://example.com/"
@@ -452,7 +399,6 @@ exports[`renders a anchor tag when a \`to\` is provided 1`] = `
       className="plain plainThemePrimary"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       Goose
@@ -474,20 +420,16 @@ exports[`renders a anchor tag when a \`to\` is provided 2`] = `
   <ForwardRef
     icon={null}
     isDisabled={false}
-    isLoading={false}
-    onClick={null}
     shouldOpenInNewTab={false}
     size="large"
     theme="primary"
     to="https://example.com/"
-    type="button"
     width="auto"
   >
     <a
       className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
       disabled={false}
       href="https://example.com/"
-      onClick={null}
       target="_self"
     >
       <span
