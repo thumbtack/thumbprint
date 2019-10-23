@@ -49,6 +49,7 @@
         "react-scroll-marker": "^0.2.1",
         "sheetrock": "^1.1.4",
         "slugify": "^1.2.9",
+        "tt-react-docgen": "5.0.0-beta.2",
         "warning": "^4.0.1"
     }
 }
