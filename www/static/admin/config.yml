@@ -21,7 +21,7 @@ collections:
           - { label: 'Body', name: 'body', widget: 'markdown' }
     - name: 'guides'
       label: 'Guides'
-      folder: 'www/src/cms/guides'
+      folder: 'www/src/cms/guide'
       create: true
       slug: '{{slug}}'
       fields:
