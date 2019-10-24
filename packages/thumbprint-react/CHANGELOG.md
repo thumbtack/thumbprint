@@ -5,7 +5,14 @@
 ### Changed
 
 -   [Patch] Rewrite `Button` component in TypeScript.
--   [Patch] Convert `Link` component to TypeScript.
+
+### Fixed
+
+-   [Patch] Update Type syntax for `Image` and `ServiceCardImage` to fix missing API docs.
+
+### Added
+
+-   [Minor] Create `Alert` component in React (TypeScript).
 
 ## 10.0.1 - 2019-10-21
 

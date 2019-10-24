@@ -1,0 +1,69 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    display: flex;
+    font-size: $tp-font__body__2__size;
+    line-height: $tp-font__body__2__line-height;
+    text-align: left;
+    // Padding top and bottom of 12px to achieve 44px height of alert
+    padding: 12px $tp-space__3;
+    color: $tp-color__white;
+    background: $tp-color__gray;
+    font-weight: 700;
+    border-radius: $tp-border-radius__base;
+
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $tp-color__white;
+        fill: $tp-color__white;
+
+        &:hover {
+            color: $tp-color__white;
+            opacity: 0.7;
+        }
+    }
+}
+
+.banner {
+    display: block;
+    text-align: center;
+    border-radius: 0;
+}
+
+.good {
+    background: $tp-color__green;
+}
+
+.bad {
+    background: $tp-color__red;
+}
+
+.warning {
+    background: $tp-color__yellow-200;
+    color: $tp-color__yellow-600;
+
+    a,
+    a:hover {
+        color: $tp-color__yellow-600;
+        fill: $tp-color__yellow-600;
+    }
+}
+
+.info {
+    background: $tp-color__blue;
+}
+
+.text {
+    align-self: center;
+}
+
+.icon {
+    fill: currentColor;
+    flex: none;
+    // Margin right of 12px to align with the padding top and bottom
+    margin-right: 12px;
+    position: relative;
+    // aligns the icons optically
+    top: -1px;
+}
