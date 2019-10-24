@@ -49,7 +49,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
             theme = 'primary',
             type = 'button',
             dataTest,
-        },
+        }: TextButtonPropTypes,
         ref,
     ): JSX.Element => (
         <Plain
@@ -157,7 +157,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             size = 'large',
             width = 'auto',
             dataTest,
-        },
+        }: ButtonPropTypes,
         ref,
     ): JSX.Element => (
         <Themed
