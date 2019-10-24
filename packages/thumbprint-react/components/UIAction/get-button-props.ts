@@ -1,5 +1,5 @@
 interface ButtonProps {
-    type?: 'button' | 'submit';
+    type: 'button' | 'submit';
     onClick?: () => void;
     onMouseEnter?: () => void;
     onMouseOver?: () => void;

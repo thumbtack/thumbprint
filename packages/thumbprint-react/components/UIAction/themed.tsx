@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
-import merge from 'lodash/merge';
 import classNames from 'classnames';
 import LoaderDots from '../LoaderDots/index';
 import { InputRowContext } from '../InputRow/index.jsx';
@@ -9,11 +8,11 @@ import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './themed.module.scss';
 
-const loaderDotsTheme = {
-    primary: 'inverse',
-    secondary: 'brand',
-    tertiary: 'muted',
-};
+enum loaderDotsTheme {
+    primary = 'inverse',
+    secondary = 'brand',
+    tertiary = 'muted',
+}
 
 const withIcon = (
     children: React.ReactNode,
@@ -74,7 +73,7 @@ const withFlexWrapper = (
     </span>
 );
 
-const Themed = React.forwardRef<HTMLElement, PropTypes>(
+const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes>(
     (
         {
             children,
@@ -103,67 +102,95 @@ const Themed = React.forwardRef<HTMLElement, PropTypes>(
             'The prop `accessibilityLabel` must be provided to the button or link when `icon` is provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
-        const element = to ? 'a' : 'button';
-        const elementProps =
-            element === 'a'
-                ? getAnchorProps({ isDisabled, shouldOpenInNewTab, to, onClick })
-                : getButtonProps({
-                      onClick,
-                      type,
-                      onMouseEnter,
-                      onMouseOver,
-                      onFocus,
-                      onMouseLeave,
-                      onBlur,
-                  });
-
-        const mergedProps = merge(
-            {},
-            {
-                disabled: isLoading || isDisabled,
-                className: classNames({
-                    [styles.themedButton]: true,
-                    [styles.themedButtonRoundedBordersLeft]:
-                        isFirstInputRowChild || !isWithinInputRow,
-                    [styles.themedButtonRoundedBordersRight]:
-                        isLastInputRowChild || !isWithinInputRow,
-                    [styles.themedButtonHasNoRightBorder]: isWithinInputRow && !isLastInputRowChild,
-                    [styles.themedButtonThemePrimary]: theme === 'primary',
-                    [styles.themedButtonThemeTertiary]: theme === 'tertiary',
-                    [styles.themedButtonThemeSecondary]: theme === 'secondary',
-                    [styles.themedButtonThemeCaution]: theme === 'caution',
-                    [styles.themedButtonThemeSolid]: theme === 'solid',
-                    [styles.themedButtonThemePopoverPrimary]: theme === 'popover-primary',
-                    [styles.themedButtonThemePopoverSecondary]: theme === 'popover-secondary',
-                    [styles.themedButtonWidthAuto]: width === 'auto' && !isWithinInputRow,
-                    [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
-                    [styles.themedButtonWidthFullBelowSmall]:
-                        width === 'full-below-small' && !isWithinInputRow,
-                }),
-                'aria-label': accessibilityLabel,
-                'data-test': dataTest,
-                ref,
-            },
-            elementProps,
-        );
-
         return (
             <InputRowContext.Consumer>
-                {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element =>
-                    React.createElement(
-                        element,
+                {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element => {
+                    const isAnchor = !!to;
+                    const anchorProps = getAnchorProps({
+                        isDisabled,
+                        shouldOpenInNewTab,
+                        to,
+                        onClick,
+                    });
+                    const buttonProps = getButtonProps({
+                        onClick,
+                        type,
+                        onMouseEnter,
+                        onMouseOver,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
+                    });
 
-                        /**
-                         * Call functions that can wrap the `children` in HTML and CSS that aligns
-                         * icons with text, adds a loading indicator, and adds a flex wrapper to
-                         * the button.
-                         */
-                        withFlexWrapper(
-                            withLoader(withIcon(children, { icon }), { isLoading, theme }),
-                            { size },
-                        ),
-                    )
-                }
+                    const className = classNames({
+                        [styles.themedButton]: true,
+                        [styles.themedButtonRoundedBordersLeft]:
+                            isFirstInputRowChild || !isWithinInputRow,
+                        [styles.themedButtonRoundedBordersRight]:
+                            isLastInputRowChild || !isWithinInputRow,
+                        [styles.themedButtonHasNoRightBorder]:
+                            isWithinInputRow && !isLastInputRowChild,
+                        [styles.themedButtonThemePrimary]: theme === 'primary',
+                        [styles.themedButtonThemeTertiary]: theme === 'tertiary',
+                        [styles.themedButtonThemeSecondary]: theme === 'secondary',
+                        [styles.themedButtonThemeCaution]: theme === 'caution',
+                        [styles.themedButtonThemeSolid]: theme === 'solid',
+                        [styles.themedButtonThemePopoverPrimary]: theme === 'popover-primary',
+                        [styles.themedButtonThemePopoverSecondary]: theme === 'popover-secondary',
+                        [styles.themedButtonWidthAuto]: width === 'auto' && !isWithinInputRow,
+                        [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
+                        [styles.themedButtonWidthFullBelowSmall]:
+                            width === 'full-below-small' && !isWithinInputRow,
+                    });
+
+                    const commonProps = {
+                        disabled: isLoading || isDisabled,
+                        className,
+                        'aria-label': accessibilityLabel,
+                        'data-test': dataTest,
+                    };
+
+                    // There are more themes here than are valid for use with `LoaderDots`, so restrict the type
+                    // by overwriting any invalid themes as `undefined`.
+                    const restrictedTheme =
+                        theme === 'primary' || theme === 'secondary' || theme === 'tertiary'
+                            ? theme
+                            : undefined;
+
+                    const newChildren = withFlexWrapper(
+                        withLoader(withIcon(children, { icon }), {
+                            isLoading,
+                            theme: restrictedTheme,
+                        }),
+                        { size },
+                    );
+
+                    if (isAnchor) {
+                        return (
+                            <a
+                                {...commonProps}
+                                {...anchorProps}
+                                ref={ref as React.Ref<HTMLAnchorElement>}
+                            >
+                                {newChildren}
+                            </a>
+                        );
+                    }
+
+                    return (
+                        // Disable this rule, even though `buttonProps.type` can never be undefined,
+                        // because the rule itself is broken and shows a false positive.
+                        // https://github.com/yannickcr/eslint-plugin-react/issues/1555
+                        // eslint-disable-next-line react/button-has-type
+                        <button
+                            {...commonProps}
+                            {...buttonProps}
+                            ref={ref as React.Ref<HTMLButtonElement>}
+                        >
+                            {newChildren}
+                        </button>
+                    );
+                }}
             </InputRowContext.Consumer>
         );
     },

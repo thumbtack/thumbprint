@@ -39,6 +39,5 @@ describe('isThumbtackUrl', (): void => {
 
     test('should return false for non-string values', (): void => {
         expect(isThumbtackUrl(undefined)).toEqual(false);
-        expect(isThumbtackUrl(null)).toEqual(false);
     });
 });

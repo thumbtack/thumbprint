@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Rewrite `Button` component in TypeScript.
+-   [Patch] Rewrite `UIAction` component in TypeScript.
 
 ### Fixed
 

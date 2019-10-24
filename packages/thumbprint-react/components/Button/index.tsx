@@ -131,7 +131,7 @@ interface TextButtonPropTypes {
     dataTest?: string;
 }
 
-const Button = React.forwardRef<HTMLElement, ButtonPropTypes>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
     (
         {
             children,
