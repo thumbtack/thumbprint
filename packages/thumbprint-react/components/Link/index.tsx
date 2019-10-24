@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import warning from 'warning';
 import { Themed, Plain } from '../UIAction/index';
 
@@ -24,66 +23,80 @@ const getCommonLinkProps = props => {
 /**
  * Anchor link that renders as text.
  */
-const Link = React.forwardRef((props, ref) => (
-    <Plain {...getCommonLinkProps(props)} theme={props.theme} iconLeft={props.iconLeft} ref={ref} />
-));
+const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
+    (
+        {
+            children,
+            accessibilityLabel,
+            isDisabled = false,
+            iconLeft = null,
+            to,
+            onClick,
+            theme = 'primary',
+            shouldOpenInNewTab = false,
+            dataTest,
+        }: LinkPropTypes,
+        ref,
+    ) => (
+        <Plain
+            to={to}
+            onClick={onClick}
+            shouldOpenInNewTab={shouldOpenInNewTab}
+            isDisabled={isDisabled}
+            children={children}
+            accessibilityLabel={accessibilityLabel}
+            dataTest={dataTest}
+            theme={theme}
+            iconLeft={iconLeft}
+            ref={ref}
+        />
+    ),
+);
 
-Link.propTypes = {
+interface LinkPropTypes {
     /**
      * Contents displayed within the anchor.
      */
-    children: PropTypes.node,
+    children: React.ReactNode;
     /**
      * Description of the link’s content. It is required if the link contains an icon and no
      * descriptive text.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel: string;
     /**
      * Functionally disables the anchor. We discourage the use of this prop since it is difficult
      * to visually indicate that a link is disabled. Consider not rendering the link if it is not
      * interactive.
      */
-    isDisabled: PropTypes.bool,
+    isDisabled: boolean;
     /**
      * Page to navigate to when the anchor is clicked.
      */
-    to: PropTypes.string,
+    to: string;
     /**
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
-    onClick: PropTypes.func,
+    onClick: () => {};
     /**
      * Icon from [Thumbprint Icons](/icons/) to render left of the
      * text within `Link`.
      */
-    iconLeft: PropTypes.node,
+    iconLeft: React.ReactNode;
     /**
      * Opens the URL in a new tab when clicked.
      */
-    shouldOpenInNewTab: PropTypes.bool,
+    shouldOpenInNewTab: boolean;
     /**
      * Sets the anchor’s text color.
      *
      * `inherit` will make the anchor inherit `color` from its parent.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'inherit']),
+    theme: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
-
-Link.defaultProps = {
-    children: undefined,
-    accessibilityLabel: undefined,
-    isDisabled: false,
-    iconLeft: null,
-    to: null,
-    onClick: undefined,
-    theme: 'primary',
-    shouldOpenInNewTab: false,
-    dataTest: undefined,
-};
+    dataTest: string;
+}
 
 /**
  * Anchor link that visually looks like a button.
