@@ -25,7 +25,13 @@ const getCommonLinkProps = props => {
  * Anchor link that renders as text.
  */
 const Link = React.forwardRef((props, ref) => (
-    <Plain {...getCommonLinkProps(props)} theme={props.theme} iconLeft={props.iconLeft} ref={ref} />
+    <Plain
+        {...getCommonLinkProps(props)}
+        theme={props.theme}
+        iconLeft={props.iconLeft}
+        iconRight={props.iconRight}
+        ref={ref}
+    />
 ));
 
 Link.propTypes = {
@@ -53,10 +59,13 @@ Link.propTypes = {
      */
     onClick: PropTypes.func,
     /**
-     * Icon from [Thumbprint Icons](/icons/) to render left of the
-     * text within `Link`.
+     * Icon from [Thumbprint Icons](/icons/) to render left of the text within `Link`.
      */
     iconLeft: PropTypes.node,
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right of the text within `Link`.
+     */
+    iconRight: PropTypes.node,
     /**
      * Opens the URL in a new tab when clicked.
      */
@@ -78,6 +87,7 @@ Link.defaultProps = {
     accessibilityLabel: undefined,
     isDisabled: false,
     iconLeft: null,
+    iconRight: null,
     to: null,
     onClick: undefined,
     theme: 'primary',
