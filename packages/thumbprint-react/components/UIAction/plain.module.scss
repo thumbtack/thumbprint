@@ -48,5 +48,12 @@
 
 .textContainer {
     align-self: baseline;
-    margin-left: 8px;
+
+    &Left {
+        margin-left: 8px;
+    }
+
+    &Right {
+        margin-right: 8px;
+    }
 }

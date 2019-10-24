@@ -4,6 +4,7 @@ import { Themed, Plain } from '../UIAction/index';
 interface CommonProps {
     children?: React.ReactNode;
     iconLeft?: React.ReactNode;
+    iconRight?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
     onMouseEnter?: () => void;
@@ -31,11 +32,12 @@ const getCommonProps = (props: CommonProps): CommonProps => ({
     dataTest: props.dataTest,
 });
 
-const TextButton = React.forwardRef<HTMLElement, TextButtonPropTypes>(
+const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
     (
         {
             children,
             iconLeft,
+            iconRight,
             isDisabled = false,
             onClick,
             onMouseEnter,
@@ -66,6 +68,7 @@ const TextButton = React.forwardRef<HTMLElement, TextButtonPropTypes>(
             })}
             theme={theme}
             iconLeft={iconLeft}
+            iconRight={iconRight}
             ref={ref}
         />
     ),
@@ -80,6 +83,10 @@ interface TextButtonPropTypes {
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `TextButton`.
      */
     iconLeft?: React.ReactNode;
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right of the text within `TextButton`.
+     */
+    iconRight?: React.ReactNode;
     /**
      * Visually and functionally disables the button. We discourage the use of this prop since it
      * is difficult to visually indicate that a link is disabled. Consider not rendering the

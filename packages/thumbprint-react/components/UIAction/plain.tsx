@@ -5,13 +5,14 @@ import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './plain.module.scss';
 
-const Plain = React.forwardRef<HTMLElement, PropTypes>(
+const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>(
     (
         {
             children,
             isDisabled = false,
             to,
             iconLeft,
+            iconRight,
             theme = 'primary',
             type = 'button',
             shouldOpenInNewTab = false,
@@ -28,17 +29,32 @@ const Plain = React.forwardRef<HTMLElement, PropTypes>(
     ): JSX.Element => {
         warning(
             children || accessibilityLabel || (iconLeft && children),
-            'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` is provided but `children` is not. This helps users on screen readers navigate our content.',
+            'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` or `iconRight` are provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
-        const newChildren = iconLeft ? (
-            <span className={styles.flexCenter}>
-                {iconLeft}
-                {children && <span className={styles.textContainer}>{children}</span>}
-            </span>
-        ) : (
-            children
-        );
+        let newChildren = children;
+
+        if (iconLeft || iconRight) {
+            newChildren = (
+                <span className={styles.flexCenter}>
+                    {iconLeft}
+
+                    {children && (
+                        <span
+                            className={classNames({
+                                [styles.textContainer]: true,
+                                [styles.textContainerLeft]: iconLeft,
+                                [styles.textContainerRight]: iconRight,
+                            })}
+                        >
+                            {children}
+                        </span>
+                    )}
+
+                    {iconRight}
+                </span>
+            );
+        }
 
         const commonProps = {
             disabled: isDisabled,
@@ -93,6 +109,10 @@ interface PropTypes {
      * Icon from [Thumbprint Icons](/icons/) to render left of the text.
      */
     iconLeft?: React.ReactNode;
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right of the text.
+     */
+    iconRight?: React.ReactNode;
     /**
      * Sets the text color.
      */
