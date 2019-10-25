@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
@@ -32,6 +31,7 @@ const backgroundColor = {
 const circleColor = {
     disabled: tokens.tpColorGray,
     checked: tokens.tpColorBlue,
+    unchecked: undefined,
     error: tokens.tpColorRed,
 };
 
@@ -42,7 +42,13 @@ const textColor = {
     error: tokens.tpColorRed,
 };
 
-const getUIState = ({ isChecked, isDisabled, hasError }) => {
+type UiState = 'disabled' | 'error' | 'checked' | 'unchecked';
+
+const getUIState = ({
+    isChecked,
+    isDisabled,
+    hasError,
+}: Pick<PropTypes, 'isDisabled' | 'hasError' | 'isChecked'>): UiState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -58,19 +64,74 @@ const getUIState = ({ isChecked, isDisabled, hasError }) => {
     return 'unchecked';
 };
 
-const Radio = ({
-    children,
+interface PropTypes {
+    /**
+     * Disable the input and the label.
+     */
+    isDisabled?: boolean;
+    /**
+     * Text or elements that appear within the label. If `children` is not provided, the developer
+     * must use the `Radio`'s `id` prop to associate it with a custom `<label>` element.
+     */
+    children?: React.ReactNode;
+    /**
+     * The `id` is added to the radio button as an HTML attribute and passed to the `onChange`
+     * function.
+     */
+    id?: string;
+    /**
+     * Boolean that determines if the radio is checked.
+     */
+    isChecked?: boolean;
+    /**
+     * Adds the `required` HTML attribute.
+     */
+    isRequired?: boolean;
+    /**
+     * Makes the radio and text color red.
+     */
+    hasError?: boolean;
+    /**
+     * Radio buttons that have the same name attribute are in the same radio button group. Only one
+     * radio in a group can be selected at a time. All of the radio buttons in the group must share
+     * a value that is unique to the page. This is required for keyboard navigation.
+     */
+    name: string;
+    /**
+     * Determine that padding that gets applied to the label. This can be used
+     * to increase the label’s click target. The value supplied should be a
+     * string with a unit such as `8px` or `8px 16px`.
+     */
+    labelPadding?: string;
+    /**
+     * Function that runs when a new radio button is selected. It receives the new boolean value
+     * and the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
+     */
+    onChange: (isChecked: boolean, id?: string) => void;
+    /**
+     * A selector hook into the React component for use in automated testing environments. It is
+     * applied internally to the `<input />` element.
+     */
+    dataTest?: string;
+    /**
+     * Determines how the radio button input will be vertically aligned relative to `props.children`.
+     */
+    radioVerticalAlign?: 'top' | 'center';
+}
+
+export default function Radio({
+    children = null,
     dataTest,
-    hasError,
     id,
-    isChecked,
-    isDisabled,
-    isRequired,
-    labelPadding,
+    isChecked = false,
+    isDisabled = false,
+    isRequired = false,
+    hasError = false,
+    labelPadding = '14px 0',
     name,
     onChange,
-    radioVerticalAlign,
-}) => {
+    radioVerticalAlign = 'center',
+}: PropTypes): JSX.Element {
     const uiState = getUIState({ isChecked, isDisabled, hasError });
 
     warning(
@@ -91,7 +152,7 @@ const Radio = ({
                 className={styles.input}
                 type="radio"
                 id={id}
-                onChange={e => onChange(e.target.checked, id)}
+                onChange={(event): void => onChange(event.target.checked, id)}
                 checked={isChecked}
                 name={name}
                 disabled={isDisabled}
@@ -120,73 +181,4 @@ const Radio = ({
             )}
         </label>
     );
-};
-
-Radio.propTypes = {
-    /**
-     * Disable the input and the label.
-     */
-    isDisabled: PropTypes.bool,
-    /**
-     * Text or elements that appear within the label. If `children` is not provided, the developer
-     * must use the `Radio`'s `id` prop to associate it with a custom `<label>` element.
-     */
-    children: PropTypes.node,
-    /**
-     * The `id` is added to the radio button as an HTML attribute and passed to the `onChange`
-     * function.
-     */
-    id: PropTypes.string,
-    /**
-     * Boolean that determines if the radio is checked.
-     */
-    isChecked: PropTypes.bool,
-    /**
-     * Adds the `required` HTML attribute.
-     */
-    isRequired: PropTypes.bool,
-    /**
-     * Makes the radio and text color red.
-     */
-    hasError: PropTypes.bool,
-    /**
-     * Radio buttons that have the same name attribute are in the same radio button group. Only one
-     * radio in a group can be selected at a time. All of the radio buttons in the group must share
-     * a value that is unique to the page. This is required for keyboard navigation.
-     */
-    name: PropTypes.string.isRequired,
-    /**
-     * Determine that padding that gets applied to the label. This can be used
-     * to increase the label’s click target. The value supplied should be a
-     * string with a unit such as `8px` or `8px 16px`.
-     */
-    labelPadding: PropTypes.string,
-    /**
-     * Function that runs when a new radio button is selected. It receives the new boolean value
-     * and the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
-     */
-    onChange: PropTypes.func.isRequired,
-    /**
-     * A selector hook into the React component for use in automated testing environments. It is
-     * applied internally to the `<input />` element.
-     */
-    dataTest: PropTypes.string,
-    /**
-     * Determines how the radio button input will be vertically aligned relative to `props.children`.
-     */
-    radioVerticalAlign: PropTypes.oneOf(['top', 'center']),
-};
-
-Radio.defaultProps = {
-    children: null,
-    id: null,
-    isDisabled: false,
-    isChecked: false,
-    isRequired: false,
-    hasError: false,
-    labelPadding: '14px 0',
-    dataTest: undefined,
-    radioVerticalAlign: 'center',
-};
-
-export default Radio;
+}
