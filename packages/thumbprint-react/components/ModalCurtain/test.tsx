@@ -47,15 +47,15 @@ describe('ModalCurtain', () => {
 
         mount(
             <ModalCurtain onCloseClick={jest.fn}>
-                {args => {
+                {(args): JSX.Element => {
                     obj = args;
-                    return null;
+                    return <div />;
                 }}
             </ModalCurtain>,
         );
 
-        expect(obj.curtainOnClick).toBeTruthy();
-        expect(obj.curtainClassName).toBeTruthy();
+        expect((obj || { curtainOnClick: null }).curtainOnClick).toBeTruthy();
+        expect((obj || { curtainClassName: null }).curtainClassName).toBeTruthy();
     });
 
     test("`children`'s `curtainOnClick` render prop calls `onCloseClick` prop when executed", () => {
@@ -63,7 +63,7 @@ describe('ModalCurtain', () => {
 
         const wrapper = mount(
             <ModalCurtain onCloseClick={onClick}>
-                {({ curtainOnClick }) => (
+                {({ curtainOnClick }): JSX.Element => (
                     <button data-test-id="goose" onClick={curtainOnClick} type="button" />
                 )}
             </ModalCurtain>,
@@ -80,7 +80,9 @@ describe('ModalCurtain', () => {
         const wrapper = mount(
             <div>
                 <button type="button" />
-                <ModalCurtain onCloseClick={jest.fn}>{() => 'Goose'}</ModalCurtain>
+                <ModalCurtain onCloseClick={jest.fn}>
+                    {(): JSX.Element => <div>Goose</div>}
+                </ModalCurtain>
             </div>,
         );
 
@@ -94,7 +96,7 @@ describe('ModalCurtain', () => {
         const onCloseClick = jest.fn();
         const wrapper = mount(
             <ModalCurtain stage="entered" onCloseClick={onCloseClick}>
-                {() => (
+                {(): JSX.Element => (
                     <>
                         <button type="button" />
                         <input />
@@ -118,10 +120,34 @@ describe('ModalCurtain', () => {
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
-        document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: ENTER_KEY }));
-        document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: BACKSPACE_KEY }));
-        document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: SPACE_KEY }));
-        document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: LOWERCASE_A_KEY }));
+        document.dispatchEvent(
+            new KeyboardEvent('keyup', {
+                key: 'Enter',
+                code: 'Enter',
+                keyCode: ENTER_KEY,
+            } as KeyboardEventInit),
+        );
+        document.dispatchEvent(
+            new KeyboardEvent('keyup', {
+                key: 'Backspace',
+                code: 'Backspace',
+                keyCode: BACKSPACE_KEY,
+            } as KeyboardEventInit),
+        );
+        document.dispatchEvent(
+            new KeyboardEvent('keyup', {
+                key: 'Space',
+                code: 'Space',
+                keyCode: SPACE_KEY,
+            } as KeyboardEventInit),
+        );
+        document.dispatchEvent(
+            new KeyboardEvent('keyup', {
+                key: 'KeyA',
+                code: 'KeyA',
+                keyCode: LOWERCASE_A_KEY,
+            } as KeyboardEventInit),
+        );
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
     });
@@ -133,7 +159,11 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
@@ -147,7 +177,11 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
@@ -177,7 +211,11 @@ describe('ModalCurtain', () => {
             const onCloseClick = jest.fn();
             mount(<ModalCurtain stage="exited" onCloseClick={onCloseClick} shouldCloseOnEscape />);
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
@@ -193,7 +231,11 @@ describe('ModalCurtain', () => {
                 />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
@@ -209,7 +251,11 @@ describe('ModalCurtain', () => {
                 />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
@@ -221,7 +267,11 @@ describe('ModalCurtain', () => {
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
@@ -239,7 +289,11 @@ describe('ModalCurtain', () => {
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
@@ -257,7 +311,11 @@ describe('ModalCurtain', () => {
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
@@ -275,7 +333,11 @@ describe('ModalCurtain', () => {
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
-            const event = new KeyboardEvent('keyup', { keyCode: ESC_KEY });
+            const event = new KeyboardEvent('keyup', {
+                key: 'Escape',
+                code: 'Escape',
+                keyCode: ESC_KEY,
+            } as KeyboardEventInit);
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);

@@ -17,7 +17,7 @@ export { default as Link, ThemedLink } from './components/Link/index.jsx';
 export { List, ListItem } from './components/List/index';
 export { default as LoaderDots } from './components/LoaderDots/index';
 export { default as ModalBase } from './components/ModalBase/index.jsx';
-export { default as ModalCurtain } from './components/ModalCurtain/index.jsx';
+export { default as ModalCurtain } from './components/ModalCurtain/index';
 export {
     default as ModalDefault,
     ModalDefaultHeader,

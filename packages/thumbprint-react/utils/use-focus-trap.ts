@@ -13,10 +13,10 @@ function toggleTrap(trap: FocusTrap, isActive: boolean): void {
  * React Hook for trapping the focus inside a particular DOM element. Useful for building modal
  * components.
  *
- * @param {HTMLElement} element The element to trap focus inside of
+ * @param {HTMLElement | null} element The element to trap focus inside of
  * @param {boolean} isActive Whether or not to activate the trap
  */
-export default function useFocusTrap(element: HTMLElement, isActive: boolean): void {
+export default function useFocusTrap(element: HTMLElement | null, isActive: boolean): void {
     const [trap, setTrap] = useState();
 
     useEffect((): (() => void) => {
