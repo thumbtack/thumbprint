@@ -9,6 +9,7 @@
 ### Added
 
 -   [Minor] Create `Alert` component in React (TypeScript).
+-   [Minor] Add `ref` support to `Input` component. (#492)
 
 ## 10.0.1 - 2019-10-21
 
