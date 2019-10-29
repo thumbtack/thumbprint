@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `10:13` aspect ratio class.
+
 ## 3.3.2 - 2019-10-17
 
 ### Changed
