@@ -4,7 +4,6 @@ import {
     tpColorBlue600,
     tpColorIndigo600,
     tpColorBlack,
-    tpColorBlack300,
 } from '@thumbtack/thumbprint-tokens';
 
 const theme = {
