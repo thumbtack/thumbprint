@@ -36,7 +36,7 @@ export const pageQuery = graphql`
 
 ## Aspect Ratio
 
--   Available ratios are `16:9`, `8:5`, `7:3`, and `1:1`.
+-   Available ratios are `16:9`, `10:13`, `8:5`, `7:3`, and `1:1`.
 -   Used primarily to lock elements with background images in into a desired proportion.
 -   Also for fluid media embedded from third party sites like YouTube, Vimeo, etc.
 
@@ -48,18 +48,18 @@ export const pageQuery = graphql`
                 style={{ backgroundImage: 'url(https://picsum.photos/400/400)' }}
             />
             <InlineCode theme="plain">1:1</InlineCode>
-        </div>
-        <div className="s_col-4 mb2 s_mb0">
-            <div
-                className="aspect-ratio aspect-ratio-16x9 bg-center mb1"
-                style={{ backgroundImage: 'url(https://picsum.photos/400/300)' }}
-            />
-            <InlineCode theme="plain">16:9</InlineCode>
             <div
                 className="aspect-ratio aspect-ratio-7x3 bg-center mv2"
                 style={{ backgroundImage: 'url(https://picsum.photos/400/200)' }}
             />
             <InlineCode theme="plain">7:3</InlineCode>
+        </div>
+        <div className="s_col-4 mb2 s_mb0">
+            <div
+                className="aspect-ratio aspect-ratio-10x13 bg-center mb1"
+                style={{ backgroundImage: 'url(https://picsum.photos/400/600)' }}
+            />
+            <InlineCode theme="plain">10:13</InlineCode>
         </div>
         <div className="s_col-4">
             <div
@@ -67,6 +67,11 @@ export const pageQuery = graphql`
                 style={{ backgroundImage: 'url(https://picsum.photos/400/350)' }}
             />
             <InlineCode theme="plain">8:5</InlineCode>
+            <div
+                className="aspect-ratio aspect-ratio-16x9 bg-center mv2"
+                style={{ backgroundImage: 'url(https://picsum.photos/400/300)' }}
+            />
+            <InlineCode theme="plain">16:9</InlineCode>
         </div>
     </div>
 </div>
