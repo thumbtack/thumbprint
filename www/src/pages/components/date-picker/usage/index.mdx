@@ -1,0 +1,107 @@
+---
+title: Date Picker
+description: Calendar view allowing users to select a date or range of dates from a list of days.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Usage
+
+Calendars allow users to select a date or range of dates from a list of days laid out in a month view.
+
+## Anatomy
+
+The Calendar's main functionality is to allow for users to select a date or date range and have visibility into existing calendar details.
+
+![Anatomy](/img/Anatomy.png)
+
+## Options
+
+### Default
+
+The caledar renders the current month with no dates selected. Indicator on today is present.
+
+![Default](/img/Default.png)
+
+### Selected date
+
+Passing a pre-selected date to the calendar.
+
+![Selected](/img/Selected.png)
+
+### Disabled date
+
+Disbales a set of dates in the past, prior to the date passed into this property. These past dates remain visible to the user.
+
+![Disabled](/img/Disabled.png)
+
+### Last month
+
+Disables interaction and navigation to days prior to the date passed into this property.
+
+![Last Month](/img/LastMonth.png)
+
+### Multiselection
+
+Allow users to select any number of enabled dates from the calendar.
+
+![Multi-selection](/img/Multiselection.png)
+
+### Dot indicator
+
+Pass a set of dates to indicate an event that will be represented by a dot on the dates.
+
+![Dot Indicator](/img/DotIndicator.png)
+
+### Strikeout
+
+Pass a set of dates to indicate an event that will be represented by a strike-thru on the dates. TBD (does this disable the date?)
+
+![Strikeout](/img/Strikeout.png)
+
+| Common Properties     | Values  | Default Value |
+| --------------------- | ------- | ------------- |
+| value (selected date) | date    | -             |
+| disabledDays          | date    | before today  |
+| lastMonth             | date    | -             |
+| allowMultiSelection   | boolean | false         |
+| daysThemeDotIndicator | date    | -             |
+| daysThemeStrikeout    | date    | -             |
+
+## States
+
+The Calendar has many states, but they are all permutaitons of the options above. These states are all possible to generate by changing the options or through user input with the exception of `lastMonth`.
+
+## Visual Specs
+
+Calendars are primarily composed of two groups of elements - the Header and the Date cells. We will separate them here for illustration purposes, but know that they are inseprable in the product. The primary visual specs in both groups are derived from our design tokens.
+
+![Date Picker](/img/Specs.png)
+
+## Placement & Behavior
+
+In general the calendar component should always be presented with a minimum margin surrounding the component.
+
+![Date Picker](/img/Behavior.png)
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/date-picker/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
