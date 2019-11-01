@@ -42,19 +42,18 @@ const Container = ({ children, location, activeSection }) => {
                     value
                 }
             }
-            allWebTokens: allThumbprintToken(
-                filter: { tokens: { elemMatch: { value: { web: { ne: null } } } } }
-                sort: { fields: name }
-            ) {
-                nodes {
+            allScssTokens: thumbprintToken {
+                categories(platform: "scss") {
                     name
                 }
             }
-            allIosTokens: allThumbprintToken(
-                filter: { tokens: { elemMatch: { value: { ios: { ne: null } } } } }
-                sort: { fields: name }
-            ) {
-                nodes {
+            allJavaScriptTokens: thumbprintToken {
+                categories(platform: "javascript") {
+                    name
+                }
+            }
+            allIosTokens: thumbprintToken {
+                categories(platform: "ios") {
                     name
                 }
             }
@@ -103,7 +102,14 @@ const Container = ({ children, location, activeSection }) => {
         }
     `);
 
-    const { allAtomic, allGuides, allWebTokens, allIosTokens, allComponents } = data;
+    const {
+        allAtomic,
+        allGuides,
+        allScssTokens,
+        allJavaScriptTokens,
+        allIosTokens,
+        allComponents,
+    } = data;
     const { pathname, hash } = location;
 
     return (
@@ -332,14 +338,14 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/scss/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allWebTokens.nodes, node => (
+                                                {map(allScssTokens.categories, category => (
                                                     <SideNavLink
-                                                        title={node.name}
+                                                        title={category.name}
                                                         to={`/tokens/scss/#${generateSlug({
                                                             level: 'section',
-                                                            children: node.name,
+                                                            children: category.name,
                                                         })}`}
-                                                        key={node.name}
+                                                        key={category.name}
                                                         level={3}
                                                     />
                                                 ))}
@@ -352,14 +358,14 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/javascript/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allWebTokens.nodes, node => (
+                                                {map(allJavaScriptTokens.categories, category => (
                                                     <SideNavLink
-                                                        title={node.name}
+                                                        title={category.name}
                                                         to={`/tokens/javascript/#${generateSlug({
                                                             level: 'section',
-                                                            children: node.name,
+                                                            children: category.name,
                                                         })}`}
-                                                        key={node.name}
+                                                        key={category.name}
                                                         level={3}
                                                     />
                                                 ))}
@@ -372,14 +378,14 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/ios/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allIosTokens.nodes, node => (
+                                                {map(allIosTokens.categories, category => (
                                                     <SideNavLink
-                                                        title={node.name}
+                                                        title={category.name}
                                                         to={`/tokens/ios/#${generateSlug({
                                                             level: 'section',
-                                                            children: node.name,
+                                                            children: category.name,
                                                         })}`}
-                                                        key={node.name}
+                                                        key={category.name}
                                                         level={3}
                                                     />
                                                 ))}

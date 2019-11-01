@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import className from 'classnames';
 import { InlineCode } from '../../../mdx';
 
-const TokenExample = ({ data, displayText, type }) => {
+const TokenExample = ({ data, displayText, format }) => {
     const shouldRenderAsTwoLines = displayText.length > 30;
     let children;
 
-    switch (type) {
+    switch (format) {
         case 'color':
             children = (
                 <table className="w-100">
@@ -44,13 +44,13 @@ const TokenExample = ({ data, displayText, type }) => {
 };
 
 TokenExample.propTypes = {
-    type: PropTypes.string,
+    format: PropTypes.string,
     data: PropTypes.string.isRequired,
     displayText: PropTypes.node.isRequired,
 };
 
 TokenExample.defaultProps = {
-    type: undefined,
+    format: undefined,
 };
 
 export default TokenExample;

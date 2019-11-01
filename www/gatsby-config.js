@@ -101,10 +101,6 @@ module.exports = {
             resolve: 'gatsby-transformer-json',
             options: {
                 typeName: ({ node }) => {
-                    if (node.relativePath.startsWith('thumbprint-tokens/src/tokens/')) {
-                        return 'ThumbprintToken';
-                    }
-
                     if (
                         node.relativePath === 'thumbprint-scss/package.json' ||
                         node.relativePath === 'thumbprint-react/package.json'
@@ -114,6 +110,14 @@ module.exports = {
 
                     return 'DefaultJson';
                 },
+            },
+        },
+        {
+            resolve: 'gatsby-source-graphql',
+            options: {
+                typeName: 'ThumbprintToken',
+                fieldName: 'thumbprintToken',
+                url: 'https://thumbprint-tokens.netlify.com/',
             },
         },
         'gatsby-transformer-thumbprint-atomic',

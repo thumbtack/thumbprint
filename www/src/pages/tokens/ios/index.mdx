@@ -3,12 +3,6 @@ title: Tokens
 description: Design variables that power Thumbtack’s UI.
 ---
 
-import { version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
-import {
-    formatId,
-    formatValue,
-    formatSectionName,
-} from '../../../../../packages/thumbprint-tokens/src/helpers/ios.js';
 import classNames from 'classnames';
 import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
@@ -18,25 +12,25 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 
 export const pageQuery = graphql`
     {
-        allThumbprintToken(
-            filter: { tokens: { elemMatch: { value: { ios: { ne: null } } } } }
-            sort: { fields: name }
-        ) {
-            nodes {
+        thumbprintToken {
+            version
+            categories(platform: "ios") {
                 name
                 description
                 tokens {
-                    id
-                    type
-                    deprecated
-                    description {
-                        ios
+                    platforms {
+                        ios {
+                            name
+                            value
+                            description
+                        }
+                        javascript {
+                            value
+                        }
                     }
-                    value {
-                        ios
-                        web
-                    }
+                    format
                     group
+                    deprecated
                 }
             }
         }
@@ -46,21 +40,15 @@ export const pageQuery = graphql`
 <TabNav />
 
 <PackageTable
-    version={version}
+    version={props.data.thumbprintToken.version}
     packageName="ThumbprintTokens"
-    sourceDirectory={homepage}
+    sourceDirectory="https://github.com/thumbtack/thumbprint-tokens"
     platform="ios"
     importStatement="import ThumbprintTokens"
 />
 
 <div>
-    {props.data.allThumbprintToken.nodes.map(section => (
-        <TokenSection
-            section={section}
-            formatId={id => `${formatSectionName(section.name)}.${formatId(id)}`}
-            formatValue={value => formatValue(value).replace('UIColor = ', '')}
-            key={section.name}
-            platform="ios"
-        />
+    {props.data.thumbprintToken.categories.map(section => (
+        <TokenSection section={section} key={section.name} platform="ios" />
     ))}
 </div>
