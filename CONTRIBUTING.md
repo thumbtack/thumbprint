@@ -34,7 +34,7 @@ yarn start
 
 Then open [http://localhost:8090/](http://localhost:8090/) to see the docs. Take a look at [`www/README.md`](https://github.com/thumbtack/thumbprint/blob/master/www/README.md) to learn more.
 
-### Working on Components, Tokens, Atomic, or something else?
+### Working on Components, Atomic, or something else?
 
 The Thumbprint codebase is a collection of packages that we version independently and publish to NPM. These packages live in [`packages/`](https://github.com/thumbtack/thumbprint/tree/master/packages). Take a look at the package's `README.md` for specific information about that package.
 
