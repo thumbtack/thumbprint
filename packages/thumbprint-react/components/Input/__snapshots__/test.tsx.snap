@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input adds \`autocomplete\` attribute 1`] = `
-<ForwardRef
+<Input
   autoComplete="given-name"
   onChange={[Function]}
 >
@@ -29,11 +29,11 @@ exports[`Input adds \`autocomplete\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`autofocus\` attribute 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   shouldFocusOnPageLoad={true}
 >
@@ -60,11 +60,11 @@ exports[`Input adds \`autofocus\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`dataTest\` prop 1`] = `
-<ForwardRef
+<Input
   dataTest="Duck"
   onChange={[Function]}
 >
@@ -92,11 +92,11 @@ exports[`Input adds \`dataTest\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`disabled\` attribute 1`] = `
-<ForwardRef
+<Input
   isDisabled={true}
   onChange={[Function]}
 >
@@ -123,11 +123,11 @@ exports[`Input adds \`disabled\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDisabled"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`id\` attribute 1`] = `
-<ForwardRef
+<Input
   id="Goose"
   onChange={[Function]}
 >
@@ -155,11 +155,11 @@ exports[`Input adds \`id\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`inputMode\` prop 1`] = `
-<ForwardRef
+<Input
   inputMode="numeric"
   onChange={[Function]}
 >
@@ -187,11 +187,11 @@ exports[`Input adds \`inputMode\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`maxLength\` prop 1`] = `
-<ForwardRef
+<Input
   maxLength={5}
   onChange={[Function]}
 >
@@ -219,11 +219,11 @@ exports[`Input adds \`maxLength\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`pattern\` prop 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   pattern="[0-9]{5}"
 >
@@ -251,11 +251,11 @@ exports[`Input adds \`pattern\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`readonly\` attribute 1`] = `
-<ForwardRef
+<Input
   isReadOnly={true}
   onChange={[Function]}
 >
@@ -282,11 +282,11 @@ exports[`Input adds \`readonly\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateReadonly"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds \`required\` attribute 1`] = `
-<ForwardRef
+<Input
   isRequired={true}
   onChange={[Function]}
 >
@@ -313,11 +313,11 @@ exports[`Input adds \`required\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds name 1`] = `
-<ForwardRef
+<Input
   name="my-input"
   onChange={[Function]}
 >
@@ -345,11 +345,11 @@ exports[`Input adds name 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input adds placeholder 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   placeholder="Name"
 >
@@ -377,11 +377,11 @@ exports[`Input adds placeholder 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provided 1`] = `
-<ForwardRef
+<Input
   innerLeft={
     <div>
       Goose
@@ -420,11 +420,11 @@ exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provide
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = `
-<ForwardRef
+<Input
   innerLeft="Goose"
   onChange={[Function]}
 >
@@ -457,11 +457,11 @@ exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = 
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input innerRight renders \`innerRight\` node when HTML element is provided 1`] = `
-<ForwardRef
+<Input
   innerRight={
     <div>
       Goose
@@ -500,11 +500,11 @@ exports[`Input innerRight renders \`innerRight\` node when HTML element is provi
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input innerRight renders \`innerRight\` node when text is provided 1`] = `
-<ForwardRef
+<Input
   innerRight="Goose"
   onChange={[Function]}
 >
@@ -537,7 +537,7 @@ exports[`Input innerRight renders \`innerRight\` node when text is provided 1`] 
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders \`value\` as the input value 1`] = `
@@ -556,7 +556,7 @@ exports[`Input renders \`value\` as the input value 1`] = `
 `;
 
 exports[`Input renders email input when requested 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   type="email"
 >
@@ -583,11 +583,11 @@ exports[`Input renders email input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders large input 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   size="large"
 >
@@ -614,11 +614,11 @@ exports[`Input renders large input 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders number input when requested 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   type="number"
 >
@@ -645,11 +645,11 @@ exports[`Input renders number input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders search input when requested 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   type="search"
 >
@@ -676,11 +676,11 @@ exports[`Input renders search input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders small input 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   size="small"
 >
@@ -707,11 +707,11 @@ exports[`Input renders small input 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders telephone input when requested 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
   type="tel"
 >
@@ -738,11 +738,11 @@ exports[`Input renders telephone input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`Input renders text input by default 1`] = `
-<ForwardRef
+<Input
   onChange={[Function]}
 >
   <div
@@ -768,7 +768,7 @@ exports[`Input renders text input by default 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</ForwardRef>
+</Input>
 `;
 
 exports[`InputClearButton includes \`aria-label\` on button to describe the SVG icon 1`] = `

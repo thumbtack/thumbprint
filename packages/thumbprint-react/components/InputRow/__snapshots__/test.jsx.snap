@@ -212,7 +212,7 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
         }
       }
     >
-      <ForwardRef
+      <Input
         onChange={[Function]}
       >
         <div
@@ -238,7 +238,7 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
             className="inputStyles inputStylesRoundedBordersLeft inputStylesHasNoRightBorder inputStylesUiStateDefault"
           />
         </div>
-      </ForwardRef>
+      </Input>
     </div>
     <div
       key=".1"
@@ -343,7 +343,7 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
         }
       }
     >
-      <ForwardRef
+      <Input
         onChange={[Function]}
       >
         <div
@@ -369,7 +369,7 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
             className="inputStyles inputStylesRoundedBordersRight inputStylesUiStateDefault"
           />
         </div>
-      </ForwardRef>
+      </Input>
     </div>
   </div>
 </InputRow>
@@ -431,7 +431,7 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
         }
       }
     >
-      <ForwardRef
+      <Input
         onChange={[Function]}
       >
         <div
@@ -457,7 +457,7 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
             className="inputStyles inputStylesRoundedBordersRight inputStylesUiStateDefault"
           />
         </div>
-      </ForwardRef>
+      </Input>
     </div>
   </div>
 </InputRow>
@@ -476,7 +476,7 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
         }
       }
     >
-      <ForwardRef
+      <Input
         onChange={[Function]}
       >
         <div
@@ -502,7 +502,7 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
             className="inputStyles inputStylesRoundedBordersLeft inputStylesHasNoRightBorder inputStylesUiStateDefault"
           />
         </div>
-      </ForwardRef>
+      </Input>
     </div>
     <div
       key=".1"

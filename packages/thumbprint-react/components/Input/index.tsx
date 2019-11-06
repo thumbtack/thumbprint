@@ -405,6 +405,7 @@ const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
         );
     },
 );
+Input.displayName = 'Input';
 
 export default Input;
 export { InputIcon, InputClearButton, ClearButton };
