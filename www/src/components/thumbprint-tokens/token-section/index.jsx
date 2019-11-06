@@ -88,7 +88,7 @@ const TokenSection = ({ section, platform }) => {
 
 TokenSection.propTypes = {
     section: PropTypes.shape({}).isRequired,
-    platform: PropTypes.oneOf(['scss', 'javascript', 'ios']).isRequired,
+    platform: PropTypes.oneOf(['scss', 'javascript', 'ios', 'android']).isRequired,
 };
 
 export default TokenSection;
