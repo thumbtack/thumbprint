@@ -8,6 +8,9 @@ exports[`compiles correctly 1`] = `
 .aspect-ratio-16x9 {
   padding-bottom: 56.25% !important;
 }
+.aspect-ratio-10x13 {
+  padding-bottom: 130% !important;
+}
 .aspect-ratio-8x5 {
   padding-bottom: 62.5% !important;
 }

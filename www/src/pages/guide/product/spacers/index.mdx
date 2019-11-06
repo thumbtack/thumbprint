@@ -4,64 +4,120 @@ description: A simple system to encourage visual rhythm.
 ---
 
 import { Img } from 'components/mdx';
-import { Title, Text } from '@thumbtack/thumbprint-react';
+import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
 
-Good spacing systems are based on increments that are visually distinguishable and are backed by solid mathematical principles. This toolkit gives designers and developers guidelines for effectively applying layout spacing, resulting in a more consistent application of space across our product.
+Good spacing systems are based on simple mathematical principles with increments that are visually distinguishable. This toolkit gives designers and developers guidelines for effectively applying layout spacing, resulting in a more consistent application of space across our product.
 
 ## 16px = base increment
 
-Our spacing system is built on a base increment of 16px, with factors of 4px and 8px. The base of 16px also acts as a default spacer, as it is the most widely used spacing increment.
+Our spacing system is built on a base increment of 16px, with factors of 4px and 8px.
 
-Multiples of 16 make up the upper increments of our spacing system. Please stick to these increments to maintain consistency.
+<div className="mb3">
+    <Grid gutter="wide">
+        <GridColumn aboveSmall={6}>
+            <div className="pa3 bg-gray-200 h-100">
+                <div className="b mb3">Web</div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:4px;background:#ffcdcf;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">4px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:8px;background:#fed9b5;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">8px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:16px;background:#feebb8;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">16px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:24px;background:#c0e9d9;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">24px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:32px;background:#b2e2f3;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">32px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:64px;background:#e5d8fa;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">64px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:128px;background:#eecbf7;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">128px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:256px;background:#d1d3d4;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">256px</div>
+                </div>
+            </div>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <div className="pa3 bg-gray-200 h-100">
+                <div className="b mb3">iOS and Android</div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:4px;background:#ffcdcf;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">4px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:8px;background:#fed9b5;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">8px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:16px;background:#feebb8;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">16px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:24px;background:#c0e9d9;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">24px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:32px;background:#b2e2f3;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">32px</div>
+                </div>
+                <div className="flex items-center mb2">
+                    <div className="h2" style="width:48px;background:#cce1ff;">
+                        &nbsp;
+                    </div>
+                    <div className="ml2 b">48px</div>
+                </div>
+            </div>
+        </GridColumn>
+    </Grid>
+</div>
 
-<div className="flex items-center mb2">
-    <div className="w1 b">1</div>
-    <div className="h2" style="width:4px;background:#ffcdcf;">&nbsp;</div>
-    <div className="ml2 b">4px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">2</div>
-    <div className="h2" style="width:8px;background:#fed9b5;">&nbsp;</div>
-    <div className="ml2 b">8px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">3</div>
-    <div className="h2" style="width:16px;background:#feebb8;">&nbsp;</div>
-    <div className="ml2 b">16px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">4</div>
-    <div className="h2" style="width:24px;background:#c0e9d9;">&nbsp;</div>
-    <div className="ml2 b">24px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">5</div>
-    <div className="h2" style="width:32px;background:#b2e2f3;">&nbsp;</div>
-    <div className="ml2 b">32px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">6</div>
-    <div className="h2" style="width:64px;background:#e5d8fa;">&nbsp;</div>
-    <div className="ml2 b">64px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">7</div>
-    <div className="h2" style="width:128px;background:#eecbf7;">&nbsp;</div>
-    <div className="ml2 b">128px</div>
-</div>
-<div className="flex items-center mb2">
-    <div className="w1 b">8</div>
-    <div className="h2" style="width:256px;background:#d1d3d4;">&nbsp;</div>
-    <div className="ml2 b">256px</div>
-</div>
+### Platform specific
 
-### But wait, why is 24px included?
+You’ll notice that our web and native spacing units are slightly different. This reflects the design needs of each platform. Please use these increments to maintain consistency.
 
-24 is not a multiple of 16, but it is the 3rd most used increment in our system. We have included it order to give designers more flexibility at the smaller end of the spectrum.
+### What if I need to nudge something a few pixels?
 
-### But what if I need to nudge something a few pixels?
-
-A set of nudge classes are available to developers to aid in perfect positioning. These nudge classes are not available to designers and should only be used in components and elements that require it.
+If the implementation needs a subtle change, for example to tweak visual alignment, this can be done in web projects using the [Coordinates](/atomic/#section-coordinates) classes. For native apps use custom code.
 
 ## Spacing framework
 

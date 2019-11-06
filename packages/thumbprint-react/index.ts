@@ -39,7 +39,7 @@ export {
 export { default as ProgressBar } from './components/ProgressBar/index.jsx';
 export { default as ProgressBarBase } from './components/ProgressBarBase/index.jsx';
 export { default as Pill } from './components/Pill/index.jsx';
-export { default as Radio } from './components/Radio/index.jsx';
+export { default as Radio } from './components/Radio/index';
 export { default as Select } from './components/Select/index';
 export {
     default as ServiceCard,

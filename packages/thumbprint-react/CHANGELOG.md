@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Convert `Radio` component to TypeScript.
+
 ### Fixed
 
 -   [Patch] Update Type syntax for `Image` and `ServiceCardImage` to fix missing API docs.

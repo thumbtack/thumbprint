@@ -14,14 +14,6 @@ The following users have credentials to publish packages to npm:
 
 This list ordered based on experience releasing packages and contributing to Thumbprint.
 
-## Who can publish the `ThumbprintTokens` CocoaPod
-
-The following users have credentials to publish the `ThumbprintTokens` CocoaPod:
-
-1. [Daniel O’Connor](https://github.com/danoc)
-2. [Tom Genoni](https://github.com/tomgenoni)
-3. [Giles Lavelle](https://github.com/lavelle)
-
 ## Check to see if you have credentials to publish to npm
 
 Run `npm whoami`. You’ll be able to publish packages if the user npm returns is a collaborator for the packages on [Thumbtack’s npm org](https://www.npmjs.com/org/thumbtack).
@@ -32,11 +24,10 @@ Run `npm whoami`. You’ll be able to publish packages if the user npm returns i
 | --- | --- | --- |
 | 1 | `git checkout master && git pull` | Checks out `master` and pulls latest code. |
 | 2 | `npm run updated` | Shows which packages have unreleased changes.<br><br>**Why is a private package is appearing?:** This command will occasionally list private packages such as `www`. It is a bug in Lerna, the tool we use to publish our packages. You can safely ignore the packages that are listed as private. |
-| 3 |  | Open the `CHANGELOG.md` files for each package with unreleased changes.<br><br>For each package, add the new version number and the date above the list of unreleased changes. Use the [Semantic Versioning specification](https://semver.org/) to determine the new version number. The new version number will be based on the highest severity unreleased change.<br><br>**What if one of these changelogs has no "Unreleased" changes?** It is possible that a developer forgot to add a changelog entry in their PR or, more likely, one of the package's dependencies is going to receive a version bump.<br><br>A change to the `@thumbtack/thumbprint-tokens` package, for example, will trigger a version bump in every Thumbprint package that uses it. In that case, add a new entry to the changelog that addresses the version bump in the dependency. <br><br>You should also look at the folder's git history to ensure that a developer did not forget to list their change in the changelog. If they did, you should go ahead and add the change to the changelog. |
+| 3 |  | Open the `CHANGELOG.md` files for each package with unreleased changes.<br><br>For each package, add the new version number and the date above the list of unreleased changes. Use the [Semantic Versioning specification](https://semver.org/) to determine the new version number. The new version number will be based on the highest severity unreleased change.<br><br>**What if one of these changelogs has no "Unreleased" changes?** It is possible that a developer forgot to add a changelog entry in their PR or, more likely, one of the package's dependencies is going to receive a version bump.<br><br>A change to the `@thumbtack/thumbprint-scss` package, for example, will trigger a version bump in `@thumbtack/thumbprint-atomic` since Thumbprint Atomic depends on Thumbprint SCSS. In that case, add a new entry to the changelog that addresses the version bump in the dependency. <br><br>You should also look at the folder's git history to ensure that a developer did not forget to list their change in the changelog. If they did, you should go ahead and add the change to the changelog. |
 | 4 | `git add .` | Stage all changes. |
 | 5 | `git commit -m "Update CHANGELOG for package release"` | Commit all changes. |
 | 6 | `npm run publish` | You'll be prompted to select the new version numbers for each package.<br><br>Use the version numbers that you chose in step #3.<br><br>**Why is a private package is appearing?:** Private packages such as `www` will occasionally appear here. It is a bug in Lerna, the tool we use to publish our packages. Choose "Patch" for these packages. |
-| 7 | **If Thumbprint Tokens was updated**, publish the change to CocoaPods with `pod trunk push packages/thumbprint-tokens/ThumbprintTokens.podspec` | This allows iOS developers to use the new tokens. |
 
 ## Deploying documentation
 

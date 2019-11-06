@@ -89,7 +89,7 @@ test('applies `labelPadding` as padding on the label', () => {
             Goose
         </Radio>,
     );
-    expect(wrapper.find('label').prop('style').padding).toBe('10px 20px');
+    expect((wrapper.find('label').prop('style') || {}).padding).toBe('10px 20px');
     expect(wrapper).toMatchSnapshot();
 });
 
