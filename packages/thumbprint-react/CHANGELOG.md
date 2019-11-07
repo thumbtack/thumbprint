@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 10.1.0 - 2019-11-06
+
 ### Changed
 
 -   [Patch] Convert `Radio` component to TypeScript.
