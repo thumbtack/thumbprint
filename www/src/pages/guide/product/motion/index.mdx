@@ -1,0 +1,42 @@
+---
+title: Motion
+description: Understanding native page level navigation.
+---
+
+import { Img } from 'components/mdx';
+import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
+
+iOS and Android each ship with a number of stock page-level transitions. In this guide we’ll define which transitions are available on each platform, when each should be used, what’s involved in building custom transitions, and how transitions should be communicated by designers to developers in their layouts.
+
+## Available transitions
+
+### iOS
+
+ios
+
+### Android
+
+android
+
+## Custom transitions
+
+### Stick with stock
+
+We generally recommend using the stock animations that are pre-packaged on the different platforms. The primary reason for this is consistency.
+
+1. Users get accustomed to page-level interactions. They become conventions. Introducing a new way for the user to interact, or changing existing ones, can be disorienting and confusing, particularly when a standard transition will do.
+2. These interactions are occasionally changed in OS releases. If we bypass the stock animations our users will not benefit from these updates, again distancing them from the convention.
+
+### Custom
+
+A custom transition can be built into a feature or flow if it uniquely improves the user experience as they pass through it.
+
+For example, as of late 2019, the iOS App Store home uses a custom navigation that pushes the article out and over the link. Instead of an overlay sliding from the right or bottom the user has the sense of moving deeper into the UI, experiencing the hierarchy in a less jarring way.
+
+Custom transitions like these should be vetted with prototypes, user testing, and native developers who will determine the technical feasibility of building and maintaining it.
+
+## Communicating transitions in Figma
+
+The inability to communicate motion in static layouts has been a long-standing problem in the design world. In the absence of this information it is often up to the native developer to decide how to implement it.
+
+To alleviate this problem with page-level transitions we recommend designers to use an annotation in Figma.
