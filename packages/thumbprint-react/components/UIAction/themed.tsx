@@ -231,28 +231,28 @@ interface PropTypes {
     /**
      * Function that will run when the button is clicked on.
      */
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter?: () => void;
+    onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: () => void;
+    onMouseOver?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave?: () => void;
+    onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    /**
+     * Function that runs when the button receives focus.
+     */
+    onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.

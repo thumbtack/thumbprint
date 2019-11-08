@@ -17,7 +17,7 @@ const getRel = (url?: string, shouldOpenInNewTab = false): string | undefined =>
 };
 
 interface AnchorProps {
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
     href?: string;
     target: string;
     rel?: string;
@@ -35,7 +35,7 @@ const getAnchorProps = ({
     isDisabled?: boolean;
     shouldOpenInNewTab?: boolean;
     to?: string;
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }): AnchorProps => ({
     onClick,
     href: isDisabled ? undefined : to,

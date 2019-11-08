@@ -311,6 +311,43 @@ exports[`Plain adds proper accessibility attribute 1`] = `
 </ForwardRef>
 `;
 
+exports[`Plain left and right icons can be used together 1`] = `
+<ForwardRef
+  iconLeft={
+    <svg>
+      Swan
+    </svg>
+  }
+  iconRight={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <svg>
+        Swan
+      </svg>
+      <span
+        className="textContainer textContainerLeft textContainerRight"
+      >
+        Goose
+      </span>
+      <svg>
+        Duck
+      </svg>
+    </span>
+  </button>
+</ForwardRef>
+`;
+
 exports[`Plain renders icon that is passed in 1`] = `
 <ForwardRef
   iconLeft={
@@ -394,6 +431,35 @@ exports[`Plain renders primary theme 2`] = `
     type="button"
   >
     Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders right icon that is passed in 1`] = `
+<ForwardRef
+  iconRight={
+    <svg>
+      Duck
+    </svg>
+  }
+>
+  <button
+    className="plain plainThemePrimary"
+    disabled={false}
+    type="button"
+  >
+    <span
+      className="flexCenter"
+    >
+      <span
+        className="textContainer textContainerRight"
+      >
+        Goose
+      </span>
+      <svg>
+        Duck
+      </svg>
+    </span>
   </button>
 </ForwardRef>
 `;

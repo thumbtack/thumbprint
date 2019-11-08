@@ -1,11 +1,11 @@
 interface ButtonProps {
     type: 'button' | 'submit';
-    onClick?: () => void;
-    onMouseEnter?: () => void;
-    onMouseOver?: () => void;
-    onFocus?: () => void;
-    onMouseLeave?: () => void;
-    onBlur?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseOver?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
 }
 
 /**
