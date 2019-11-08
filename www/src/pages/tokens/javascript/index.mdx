@@ -3,8 +3,6 @@ title: Tokens
 description: Design variables that power Thumbtack’s UI.
 ---
 
-import { name, version, homepage } from '../../../../../packages/thumbprint-tokens/package.json';
-import { formatId } from '../../../../../packages/thumbprint-tokens/src/helpers/typescript.js';
 import classNames from 'classnames';
 import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
@@ -14,18 +12,22 @@ import TokenSection from 'components/thumbprint-tokens/token-section';
 
 export const pageQuery = graphql`
     {
-        allThumbprintToken(sort: { order: ASC, fields: [name] }) {
-            nodes {
+        thumbprintToken {
+            version
+            categories(platform: "javascript") {
                 name
                 description
                 tokens {
-                    id
-                    type
-                    deprecated
-                    value {
-                        web
+                    platforms {
+                        javascript {
+                            name
+                            value
+                            description
+                        }
                     }
+                    format
                     group
+                    deprecated
                 }
             }
         }
@@ -35,21 +37,15 @@ export const pageQuery = graphql`
 <TabNav />
 
 <PackageTable
-    version={version}
-    packageName={name}
-    sourceDirectory={homepage}
-    platform="web"
+    version={props.data.thumbprintToken.version}
+    packageName="@thumbtack/thumbprint-tokens"
+    sourceDirectory="https://github.com/thumbtack/thumbprint-tokens"
+    platform="javascript"
     importStatement="import * as tokens from '@thumbtack/thumbprint-tokens';"
 />
 
 <div>
-    {props.data.allThumbprintToken.nodes.map(section => (
-        <TokenSection
-            section={section}
-            formatId={id => formatId(section, { id })}
-            formatValue={value => value.web}
-            key={section.name}
-            platform="web"
-        />
+    {props.data.thumbprintToken.categories.map(section => (
+        <TokenSection section={section} key={section.name} platform="javascript" />
     ))}
 </div>

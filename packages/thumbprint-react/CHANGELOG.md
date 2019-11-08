@@ -7,6 +7,12 @@
 -   [Patch] Rewrite `Button` component in TypeScript.
 -   [Patch] Rewrite `UIAction` component in TypeScript.
 
+## 10.1.0 - 2019-11-06
+
+### Changed
+
+-   [Patch] Convert `Radio` component to TypeScript.
+
 ### Fixed
 
 -   [Patch] Update Type syntax for `Image` and `ServiceCardImage` to fix missing API docs.
@@ -14,6 +20,7 @@
 ### Added
 
 -   [Minor] Create `Alert` component in React (TypeScript).
+-   [Minor] Add `ref` support to `Input` component. (#492)
 
 ## 10.0.1 - 2019-10-21
 

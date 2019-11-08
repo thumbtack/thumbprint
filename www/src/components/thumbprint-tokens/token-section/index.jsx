@@ -7,12 +7,9 @@ import TokenExample from './token-example';
 import Tag from '../../tag';
 import { H2, P, InlineCode } from '../../mdx';
 
-const TokenSection = ({ section, formatId, formatValue, platform }) => {
-    // Filter out tokens that are not part of this platform.
-    const currentPlatformTokens = section.tokens.filter(token => token.value[platform]);
-
+const TokenSection = ({ section, platform }) => {
     // Group tokens based on their optional `group` field.
-    const groupedTokens = groupBy(currentPlatformTokens, 'group');
+    const groupedTokens = groupBy(section.tokens, 'group');
 
     return (
         <div key={section.name}>
@@ -31,41 +28,53 @@ const TokenSection = ({ section, formatId, formatValue, platform }) => {
                             <td colSpan="2">
                                 <table className="w-100 collapse tp-body-2">
                                     <tbody>
-                                        {map(group, (token, index) => (
-                                            <tr
-                                                key={token.id}
-                                                className={classNames({
-                                                    'bb b-gray-300':
-                                                        groupName === 'null' &&
-                                                        index !== group.length - 1,
-                                                })}
-                                            >
-                                                <td className="tl pv2" data-algolia="include">
-                                                    {token.deprecated && (
-                                                        <Tag type="deprecated" className="mr2" />
-                                                    )}
-                                                    <InlineCode theme="plain" shouldCopyToClipboard>
-                                                        {formatId(token.id)}
-                                                    </InlineCode>
-                                                    {token.description &&
-                                                        token.description[platform] && (
+                                        {map(group, (token, index) => {
+                                            // Get the platform specific token data.
+                                            const tokenPlatformValues = token.platforms[platform];
+
+                                            return (
+                                                <tr
+                                                    key={tokenPlatformValues.name}
+                                                    className={classNames({
+                                                        'bb b-gray-300':
+                                                            groupName === 'null' &&
+                                                            index !== group.length - 1,
+                                                    })}
+                                                >
+                                                    <td className="tl pv2" data-algolia="include">
+                                                        {token.deprecated && (
+                                                            <Tag
+                                                                type="deprecated"
+                                                                className="mr2"
+                                                            />
+                                                        )}
+                                                        <InlineCode
+                                                            theme="plain"
+                                                            shouldCopyToClipboard
+                                                        >
+                                                            {platform === 'ios' &&
+                                                                `${section.name}.`}
+                                                            {tokenPlatformValues.name}
+                                                        </InlineCode>
+                                                        {tokenPlatformValues.description && (
                                                             <Text
                                                                 size={3}
                                                                 className="black-300 mt1"
                                                             >
-                                                                {token.description[platform]}
+                                                                {tokenPlatformValues.description}
                                                             </Text>
                                                         )}
-                                                </td>
-                                                <td className="tr pv2">
-                                                    <TokenExample
-                                                        type={token.type}
-                                                        data={token.value.web}
-                                                        displayText={formatValue(token.value)}
-                                                    />
-                                                </td>
-                                            </tr>
-                                        ))}
+                                                    </td>
+                                                    <td className="tr pv2">
+                                                        <TokenExample
+                                                            format={token.format}
+                                                            data={token.platforms.javascript.value}
+                                                            displayText={tokenPlatformValues.value}
+                                                        />
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
                                     </tbody>
                                 </table>
                             </td>
@@ -79,17 +88,7 @@ const TokenSection = ({ section, formatId, formatValue, platform }) => {
 
 TokenSection.propTypes = {
     section: PropTypes.shape({}).isRequired,
-    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
-    /**
-     * Function that gets run on the token `id`, transforming the string into the variable name
-     * for that platform.
-     */
-    formatId: PropTypes.func.isRequired,
-    /**
-     * Function that gets run on the token `value`, transforming the string into the variable name
-     * for that platform.
-     */
-    formatValue: PropTypes.func.isRequired,
+    platform: PropTypes.oneOf(['scss', 'javascript', 'ios']).isRequired,
 };
 
 export default TokenSection;

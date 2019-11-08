@@ -5,8 +5,18 @@ description: Commonly used image styles.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
 
 <ComponentHeader data={props.data} />
+
+<Alert title="This component is moving out of Thumbprint" type="warning">
+    This component{' '}
+    <a href="https://github.com/thumbtack/thumbprint/issues/544">
+        will soon be moved out of Thumbprint
+    </a>{' '}
+    and into the website codebase. No action is required of you and you may continue using it. The
+    Design Systems team will own the migration.
+</Alert>
 
 ## Fixed dimension images
 
