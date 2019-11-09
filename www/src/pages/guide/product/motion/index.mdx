@@ -3,19 +3,52 @@ title: Motion
 description: Understanding native page level navigation.
 ---
 
+import IosPush from 'components/foo';
 import { Img } from 'components/mdx';
 import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
-import GifPlayer from 'react-gif-player';
 
-<GifPlayer gif="./paste.gif" />
+<IosPush />
 
 iOS and Android each ship with a number of stock page-level transitions. In this guide we’ll define which transitions are available on each platform, when each should be used, what’s involved in building custom transitions, and how transitions should be communicated by designers to developers in their layouts.
 
 ## Available transitions
 
+Note that the transition speeds used in these examples has been slowed to better convey how the transition works.
+
 ### iOS
 
-ios
+<div className="grid">
+    <div className="col-4">
+        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <div className="b mt2">Push</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+    <div className="col-4">
+        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <div className="b mt2">Push</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+    <div className="col-4">
+        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <div className="b mt2">Push</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+</div>
+
+#### Page sheet
+
+Creates a stack effect with the new page coming from the bottom and over the parent page.
+
+<img src="./ios-push.gif" class="ba b-black-300 br2" />
 
 ### Android
 
