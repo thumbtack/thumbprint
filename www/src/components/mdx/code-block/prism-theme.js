@@ -1,6 +1,7 @@
 import {
     tpColorGray200,
     tpColorBlue500,
+    tpColorBlue600,
     tpColorIndigo600,
     tpColorBlack,
 } from '@thumbtack/thumbprint-tokens';
@@ -14,23 +15,29 @@ const theme = {
         {
             types: ['prolog', 'comment', 'doctype', 'cdata'],
             style: {
-                color: 'hsl(30, 20%, 50%)',
+                color: '#929292',
+            },
+        },
+        {
+            types: ['selector'],
+            style: {
+                color: tpColorBlack,
             },
         },
         {
             types: ['property', 'tag', 'boolean', 'number', 'constant', 'symbol'],
-            style: { color: tpColorBlue500 },
+            style: { color: tpColorBlue600 },
         },
         {
-            types: ['attr-name', 'string', 'char', 'builtin', 'insterted'],
+            types: ['attr-name', 'string', 'char', 'builtin', 'insterted', 'function'],
             style: {
-                color: tpColorBlue500,
+                color: tpColorIndigo600,
             },
         },
         {
             types: ['operator', 'entity', 'url', 'string', 'variable', 'language-css'],
             style: {
-                color: 'hsl(40, 90%, 60%)',
+                color: tpColorBlue500,
             },
         },
         {
@@ -60,7 +67,7 @@ const theme = {
         {
             types: ['atrule', 'attr-value', 'keyword'],
             style: {
-                color: tpColorIndigo600,
+                color: tpColorBlue600,
             },
         },
         {

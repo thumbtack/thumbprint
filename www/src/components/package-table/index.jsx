@@ -76,7 +76,7 @@ const PackageTable = ({
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            {platform === 'web' && (
+                            {(platform === 'javascript' || platform === 'scss') && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`yarn add ${name} ${isStable ? '--exact' : ''}`}
                                 </InlineCode>
@@ -109,7 +109,7 @@ PackageTable.propTypes = {
     version: PropTypes.string.isRequired,
     deprecated: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     packageName: PropTypes.string.isRequired,
-    platform: PropTypes.oneOf(['web', 'ios']).isRequired,
+    platform: PropTypes.oneOf(['scss', 'javascript', 'ios']).isRequired,
     importStatement: PropTypes.string,
     sourceDirectory: PropTypes.string.isRequired,
 };

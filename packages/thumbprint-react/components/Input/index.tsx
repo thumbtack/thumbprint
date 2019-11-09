@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { InputRowContext } from '../InputRow/index.jsx';
@@ -255,136 +255,157 @@ interface InputPropTypes {
     autoComplete?: React.InputHTMLAttributes<HTMLInputElement>['autoComplete'];
 }
 
-export default function Input({
-    id,
-    type = 'text',
-    isDisabled = false,
-    isReadOnly = false,
-    isRequired = false,
-    hasError = false,
-    placeholder,
-    size = 'large',
-    name,
-    value = '',
-    innerLeft,
-    innerRight,
-    onClick = (): void => {},
-    onChange = (): void => {},
-    onFocus = (): void => {},
-    onBlur = (): void => {},
-    onKeyDown = (): void => {},
-    onKeyUp = (): void => {},
-    onKeyPress = (): void => {},
-    shouldFocusOnPageLoad = false,
-    dataTest,
-    inputMode,
-    pattern,
-    maxLength,
-    autoComplete,
-}: InputPropTypes): JSX.Element {
-    const uiState = getUIState({ isDisabled, isReadOnly, hasError });
-    const inputEl = useRef<HTMLInputElement>(null);
+const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
+    (
+        {
+            id,
+            type = 'text',
+            isDisabled = false,
+            isReadOnly = false,
+            isRequired = false,
+            hasError = false,
+            placeholder,
+            size = 'large',
+            name,
+            value = '',
+            innerLeft,
+            innerRight,
+            onClick = (): void => {},
+            onChange = (): void => {},
+            onFocus = (): void => {},
+            onBlur = (): void => {},
+            onKeyDown = (): void => {},
+            onKeyUp = (): void => {},
+            onKeyPress = (): void => {},
+            shouldFocusOnPageLoad = false,
+            dataTest,
+            inputMode,
+            pattern,
+            maxLength,
+            autoComplete,
+        }: InputPropTypes,
+        outerRef,
+    ): JSX.Element => {
+        const uiState = getUIState({ isDisabled, isReadOnly, hasError });
+        // The input element rendered by this component. We use `useState` instead of
+        // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
+        const [inputEl, setInputEl] = useState<HTMLInputElement | null>(null);
 
-    const focusInput = (): void => {
-        if (inputEl && inputEl.current) {
-            inputEl.current.focus();
-        }
-    };
+        const focusInput = (): void => {
+            if (inputEl) {
+                inputEl.focus();
+            }
+        };
 
-    /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-    return (
-        <div
-            className={classNames({
-                [styles.root]: true,
-                [styles.rootUiStateDefault]: uiState === 'default',
-                [styles.rootUiStateReadonly]: uiState === 'readonly',
-                [styles.rootUiStateDisabled]: uiState === 'disabled',
-                [styles.rootUiStateError]: uiState === 'error',
-            })}
-        >
-            {innerLeft && (
-                <Context.Provider
-                    value={{
-                        hasValue: !!value,
-                        size,
-                        position: 'left',
-                    }}
-                >
-                    <div className={styles.inputInnerElement} onClick={focusInput}>
-                        {innerLeft}
-                    </div>
-                </Context.Provider>
-            )}
-
-            <input
+        /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+        return (
+            <div
                 className={classNames({
-                    [styles.input]: true,
-                    [styles.inputError]: uiState === 'error',
-                    [styles.inputSizeSmall]: size === 'small',
-                    [styles.inputSizeLarge]: size === 'large',
-                    [styles.inputInnerLeft]: innerLeft,
-                    [styles.inputInnerRight]: innerRight,
+                    [styles.root]: true,
+                    [styles.rootUiStateDefault]: uiState === 'default',
+                    [styles.rootUiStateReadonly]: uiState === 'readonly',
+                    [styles.rootUiStateDisabled]: uiState === 'disabled',
+                    [styles.rootUiStateError]: uiState === 'error',
                 })}
-                disabled={isDisabled}
-                readOnly={isReadOnly}
-                required={isRequired}
-                placeholder={placeholder}
-                // eslint-disable-next-line jsx-a11y/no-autofocus
-                autoFocus={shouldFocusOnPageLoad}
-                name={name}
-                type={type}
-                value={value}
-                onChange={(e): void => onChange(e.target.value, e)}
-                onClick={(e): void => onClick(e)}
-                onFocus={(e): void => onFocus(e)}
-                onBlur={(e): void => onBlur(e)}
-                onKeyDown={(e): void => onKeyDown(e)}
-                onKeyUp={(e): void => onKeyUp(e)}
-                onKeyPress={(e): void => onKeyPress(e)}
-                id={id}
-                ref={inputEl}
-                data-test={dataTest}
-                inputMode={inputMode}
-                pattern={pattern}
-                maxLength={maxLength}
-                autoComplete={autoComplete}
-            />
-
-            {innerRight && (
-                <Context.Provider
-                    value={{
-                        hasValue: !!value,
-                        size,
-                        position: 'right',
-                    }}
-                >
-                    <div className={styles.inputInnerElement} onClick={focusInput}>
-                        {innerRight}
-                    </div>
-                </Context.Provider>
-            )}
-
-            <InputRowContext.Consumer>
-                {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element => (
-                    <div
-                        className={classNames({
-                            [styles.inputStyles]: true,
-                            [styles.inputStylesRoundedBordersLeft]:
-                                isFirstInputRowChild || !isWithinInputRow,
-                            [styles.inputStylesRoundedBordersRight]:
-                                isLastInputRowChild || !isWithinInputRow,
-                            [styles.inputStylesHasNoRightBorder]:
-                                isWithinInputRow && !isLastInputRowChild,
-                            [styles.inputStylesUiStateDefault]: uiState === 'default',
-                            [styles.inputStylesUiStateReadonly]: uiState === 'readonly',
-                            [styles.inputStylesUiStateDisabled]: uiState === 'disabled',
-                            [styles.inputStylesUiStateError]: uiState === 'error',
-                        })}
-                    />
+            >
+                {innerLeft && (
+                    <Context.Provider
+                        value={{
+                            hasValue: !!value,
+                            size,
+                            position: 'left',
+                        }}
+                    >
+                        <div className={styles.inputInnerElement} onClick={focusInput}>
+                            {innerLeft}
+                        </div>
+                    </Context.Provider>
                 )}
-            </InputRowContext.Consumer>
-        </div>
-    );
-}
 
+                <input
+                    className={classNames({
+                        [styles.input]: true,
+                        [styles.inputError]: uiState === 'error',
+                        [styles.inputSizeSmall]: size === 'small',
+                        [styles.inputSizeLarge]: size === 'large',
+                        [styles.inputInnerLeft]: innerLeft,
+                        [styles.inputInnerRight]: innerRight,
+                    })}
+                    disabled={isDisabled}
+                    readOnly={isReadOnly}
+                    required={isRequired}
+                    placeholder={placeholder}
+                    // eslint-disable-next-line jsx-a11y/no-autofocus
+                    autoFocus={shouldFocusOnPageLoad}
+                    name={name}
+                    type={type}
+                    value={value}
+                    onChange={(e): void => onChange(e.target.value, e)}
+                    onClick={(e): void => onClick(e)}
+                    onFocus={(e): void => onFocus(e)}
+                    onBlur={(e): void => onBlur(e)}
+                    onKeyDown={(e): void => onKeyDown(e)}
+                    onKeyUp={(e): void => onKeyUp(e)}
+                    onKeyPress={(e): void => onKeyPress(e)}
+                    id={id}
+                    ref={(el): void => {
+                        setInputEl(el);
+
+                        // `outerRef` is the potential forwarded `ref` passed in from a consumer.
+                        // Not all refs are callable functions, so only try and call it if it is.
+                        if (typeof outerRef === 'function') {
+                            outerRef(el);
+                        }
+                    }}
+                    data-test={dataTest}
+                    inputMode={inputMode}
+                    pattern={pattern}
+                    maxLength={maxLength}
+                    autoComplete={autoComplete}
+                />
+
+                {innerRight && (
+                    <Context.Provider
+                        value={{
+                            hasValue: !!value,
+                            size,
+                            position: 'right',
+                        }}
+                    >
+                        <div className={styles.inputInnerElement} onClick={focusInput}>
+                            {innerRight}
+                        </div>
+                    </Context.Provider>
+                )}
+
+                <InputRowContext.Consumer>
+                    {({
+                        isWithinInputRow,
+                        isFirstInputRowChild,
+                        isLastInputRowChild,
+                    }): JSX.Element => (
+                        <div
+                            className={classNames({
+                                [styles.inputStyles]: true,
+                                [styles.inputStylesRoundedBordersLeft]:
+                                    isFirstInputRowChild || !isWithinInputRow,
+                                [styles.inputStylesRoundedBordersRight]:
+                                    isLastInputRowChild || !isWithinInputRow,
+                                [styles.inputStylesHasNoRightBorder]:
+                                    isWithinInputRow && !isLastInputRowChild,
+                                [styles.inputStylesUiStateDefault]: uiState === 'default',
+                                [styles.inputStylesUiStateReadonly]: uiState === 'readonly',
+                                [styles.inputStylesUiStateDisabled]: uiState === 'disabled',
+                                [styles.inputStylesUiStateError]: uiState === 'error',
+                            })}
+                        />
+                    )}
+                </InputRowContext.Consumer>
+            </div>
+        );
+    },
+);
+Input.displayName = 'Input';
+
+export default Input;
 export { InputIcon, InputClearButton, ClearButton };
