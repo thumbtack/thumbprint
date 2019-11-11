@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import localStyle from './index.module.scss';
-import sharedStyle from '../../shared.module.scss';
+import sharedStyle from '../shared.module.scss';
 
-const IosPush = () => {
+const Push = () => {
     const [active, setActive] = useState(false);
     return (
         <button className={sharedStyle.root} onClick={() => setActive(!active)} type="button">
@@ -21,4 +21,4 @@ const IosPush = () => {
     );
 };
 
-export default IosPush;
+export default Push;

@@ -3,9 +3,11 @@ title: Motion
 description: Understanding native page level navigation.
 ---
 
-import IosPush from 'components/page-transitions/ios/push';
+import Push from 'components/page-transitions/push';
 import IosPageSheet from 'components/page-transitions/ios/page-sheet';
 import IosFullScreenModal from 'components/page-transitions/ios/full-screen-modal';
+import AndroidFullPage from 'components/page-transitions/android/full-page';
+import AndroidParentChild from 'components/page-transitions/android/parent-child';
 import { Img } from 'components/mdx';
 import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
 
@@ -19,7 +21,7 @@ Note that the transition speeds used in these examples has been slowed to better
 
 <div className="grid">
     <div className="col-4">
-        <IosPush />
+        <Push />
         <div className="b mt2">Push</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
@@ -28,7 +30,7 @@ Note that the transition speeds used in these examples has been slowed to better
     </div>
     <div className="col-4">
         <IosPageSheet />
-        <div className="b mt2">Push</div>
+        <div className="b mt2">Page sheet</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
             deeper into the UI.
@@ -36,7 +38,7 @@ Note that the transition speeds used in these examples has been slowed to better
     </div>
     <div className="col-4">
         <IosFullScreenModal />
-        <div className="b mt2">Push</div>
+        <div className="b mt2">Full screen modal</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
             deeper into the UI.
@@ -44,15 +46,34 @@ Note that the transition speeds used in these examples has been slowed to better
     </div>
 </div>
 
-#### Page sheet
-
-Creates a stack effect with the new page coming from the bottom and over the parent page.
-
-<img src="./ios-push.gif" class="ba b-black-300 br2" />
-
 ### Android
 
-android
+<div className="grid">
+    <div className="col-4">
+        <Push />
+        <div className="b mt2">Push</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+    <div className="col-4">
+        <AndroidFullPage />
+        <div className="b mt2">Full page</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+    <div className="col-4">
+        <AndroidParentChild />
+        <div className="b mt2">Parent child</div>
+        <Text size={2}>
+            This “pushes” one page out of the way for the other, sliding in from the right to go
+            deeper into the UI.
+        </Text>
+    </div>
+</div>
 
 ## Custom transitions
 
