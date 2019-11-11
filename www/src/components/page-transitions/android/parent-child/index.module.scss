@@ -1,14 +1,12 @@
 .box {
-    position: absolute;
-    left: 0;
-    height: 33.33%;
     -webkit-appearance: none;
     border: none;
     padding: 0;
+    position: absolute;
+    left: 0;
+    height: 33.33%;
     outline: none;
     width: 100%;
-    font-weight: 700;
-    font-size: 30px;
     transition: top 300ms, height 300ms, z-index 300ms 300ms;
     z-index: 0;
 }

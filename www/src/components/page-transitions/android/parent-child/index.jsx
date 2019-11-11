@@ -18,7 +18,7 @@ const AndroidParentChild = () => {
         <div className={sharedStyle.root}>
             <button
                 className={classNames(
-                    `${localStyle.box} ${localStyle.box0} flex items-center justify-center bg-white`,
+                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box0} flex items-center justify-center bg-white`,
                     {
                         [localStyle.isActive]: tab === 0,
                     },
@@ -30,7 +30,7 @@ const AndroidParentChild = () => {
             </button>
             <button
                 className={classNames(
-                    `${localStyle.box} ${localStyle.box1} flex items-center justify-center bg-gray-300`,
+                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box1} flex items-center justify-center bg-gray-300`,
                     {
                         [localStyle.isActive]: tab === 1,
                     },
@@ -42,7 +42,7 @@ const AndroidParentChild = () => {
             </button>
             <button
                 className={classNames(
-                    `${localStyle.box} ${localStyle.box2} flex items-center justify-center bg-gray`,
+                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box2} flex items-center justify-center bg-gray`,
                     {
                         [localStyle.isActive]: tab === 2,
                     },
