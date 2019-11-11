@@ -1,0 +1,7 @@
+.wrap {
+    transition: transform 500ms;
+}
+
+.isActive {
+    transform: translateX(-100%);
+}

@@ -3,11 +3,11 @@ title: Motion
 description: Understanding native page level navigation.
 ---
 
-import IosPush from 'components/foo';
+import IosPush from 'components/page-transitions/ios/push';
+import IosPageSheet from 'components/page-transitions/ios/page-sheet';
+import IosFullScreenModal from 'components/page-transitions/ios/full-screen-modal';
 import { Img } from 'components/mdx';
 import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
-
-<IosPush />
 
 iOS and Android each ship with a number of stock page-level transitions. In this guide we’ll define which transitions are available on each platform, when each should be used, what’s involved in building custom transitions, and how transitions should be communicated by designers to developers in their layouts.
 
@@ -19,7 +19,7 @@ Note that the transition speeds used in these examples has been slowed to better
 
 <div className="grid">
     <div className="col-4">
-        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <IosPush />
         <div className="b mt2">Push</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
@@ -27,7 +27,7 @@ Note that the transition speeds used in these examples has been slowed to better
         </Text>
     </div>
     <div className="col-4">
-        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <IosPageSheet />
         <div className="b mt2">Push</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
@@ -35,7 +35,7 @@ Note that the transition speeds used in these examples has been slowed to better
         </Text>
     </div>
     <div className="col-4">
-        <img src="./ios-push.gif" className="ba b-black-300 br2" />
+        <IosFullScreenModal />
         <div className="b mt2">Push</div>
         <Text size={2}>
             This “pushes” one page out of the way for the other, sliding in from the right to go
