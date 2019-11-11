@@ -1,6 +1,6 @@
 ---
 title: Motion
-description: Understanding native page level navigation.
+description: Understanding native page-level navigation.
 ---
 
 import Push from 'components/page-transitions/push';
@@ -15,63 +15,51 @@ iOS and Android each ship with a number of stock page-level transitions. In this
 
 ## Available transitions
 
-Note that the transition speeds used in these examples has been slowed to better convey how the transition works.
+Click on any of the letters to toggle the animations. Note that the transition speeds used in these examples has been slowed to better convey how the transition works.
 
 ### iOS
 
 <div className="grid">
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <Push />
         <div className="b mt2">Push</div>
         <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
+            “Pushes” a page out of the way for the other, sliding in from the right to go deeper
+            into the UI.
         </Text>
     </div>
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <IosPageSheet />
         <div className="b mt2">Page sheet</div>
-        <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
-        </Text>
+        <Text size={2}>A page slides from bottom and stacks above parent page.</Text>
     </div>
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <IosFullScreenModal />
         <div className="b mt2">Full screen modal</div>
-        <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
-        </Text>
+        <Text size={2}>Page slides from bottom, overtakes entire screen.</Text>
     </div>
 </div>
 
 ### Android
 
 <div className="grid">
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <Push />
         <div className="b mt2">Push</div>
         <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
+            “Pushes” a page out of the way for the other, sliding in from the right to go deeper
+            into the UI.
         </Text>
     </div>
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <AndroidFullPage />
         <div className="b mt2">Full page</div>
-        <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
-        </Text>
+        <Text size={2}>Page overtakes unrelated existing page with slight grow.</Text>
     </div>
-    <div className="col-4">
+    <div className="s_col-6 m_col-4 mb3">
         <AndroidParentChild />
         <div className="b mt2">Parent child</div>
-        <Text size={2}>
-            This “pushes” one page out of the way for the other, sliding in from the right to go
-            deeper into the UI.
-        </Text>
+        <Text size={2}>Transition from a child expanding to full screen.</Text>
     </div>
 </div>
 
