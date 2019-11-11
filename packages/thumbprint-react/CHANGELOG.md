@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 10.1.1 - 2019-11-11
+
 ### Changed
 
 -   [Patch] Rewrite `Button` component in TypeScript.
