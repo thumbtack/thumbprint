@@ -6,12 +6,12 @@ const EVENT_NAME = 'keyup';
 /**
  * React Hook to register a keyboard listener to run a function when the ESC key is pressed.
  *
- * @param {Function} doClose Function to run when ESC key is pressed.
- * @param {Boolean} isActive Whether or not the key listener does anything.
+ * @param {function} doClose Function to run when ESC key is pressed.
+ * @param {boolean} isActive Whether or not the key listener does anything.
  */
-export default function useCloseOnEscape(doClose, isActive = false) {
-    useEffect(() => {
-        const handleKeyUp = event => {
+export default function useCloseOnEscape(doClose: () => void, isActive = false): void {
+    useEffect((): (() => void) => {
+        const handleKeyUp = (event: KeyboardEvent): void => {
             if (isActive && event.keyCode === ESC_KEY) {
                 event.preventDefault();
                 doClose();
@@ -20,7 +20,7 @@ export default function useCloseOnEscape(doClose, isActive = false) {
 
         document.addEventListener(EVENT_NAME, handleKeyUp);
 
-        return () => {
+        return (): void => {
             document.removeEventListener(EVENT_NAME, handleKeyUp);
         };
     }, [doClose, isActive]);

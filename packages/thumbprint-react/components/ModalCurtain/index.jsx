@@ -6,7 +6,7 @@ import NoScroll from './components/no-scroll.jsx';
 
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
-import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
+import ConditionalPortal from '../../utils/ConditionalPortal';
 
 import styles from './index.module.scss';
 
