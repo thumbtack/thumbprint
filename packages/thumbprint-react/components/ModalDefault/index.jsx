@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'lodash/noop';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
-import { TextButton } from '../Button/index.jsx';
+import { TextButton } from '../Button/index';
 import StickyFooter from './components/sticky-footer.jsx';
 import Transition from './components/transition.jsx';
 import ModalCurtain from '../ModalCurtain/index.jsx';
@@ -59,7 +59,7 @@ const ModalDefaultAnimatedWrapper = ({
                         })}
                     >
                         {/*
-                            Extra nested <div> to prevent curtain's 
+                            Extra nested <div> to prevent curtain's
                             bottom padding from being ignored in Firefox and Edge
                             (See #376 and https://github.com/w3c/csswg-drafts/issues/129)
 

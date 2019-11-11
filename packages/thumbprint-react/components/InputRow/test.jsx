@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Input from '../Input/index';
-import Button from '../Button/index.jsx';
+import Button from '../Button/index';
 import InputRow from './index';
 
 test('renders all children', () => {
