@@ -16,6 +16,9 @@
     width: 100%;
     transition: top 300ms, height 300ms, z-index 300ms 300ms;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box0 {
