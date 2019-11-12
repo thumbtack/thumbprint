@@ -3,22 +3,22 @@ import { mount } from 'enzyme';
 import InputRow from '../InputRow/index.jsx';
 import { Themed, Plain } from './index';
 
-describe('Plain', () => {
-    describe('<a>', () => {
-        test('renders `children` passed in', () => {
+describe('Plain', (): void => {
+    describe('<a>', (): void => {
+        test('renders `children` passed in', (): void => {
             const wrapper = mount(<Plain to="https://example.com/">Goose</Plain>);
             expect(wrapper.text()).toBe('Goose');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders a anchor tag when a `to` is provided', () => {
+        test('renders a anchor tag when a `to` is provided', (): void => {
             const wrapper = mount(<Plain to="https://example.com/">Goose</Plain>);
             expect(wrapper.find('button')).toHaveLength(0);
             expect(wrapper.find('a')).toHaveLength(1);
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders a anchor tag when both `to` and `onClick` are provided', () => {
+        test('renders a anchor tag when both `to` and `onClick` are provided', (): void => {
             const wrapper = mount(
                 <Plain to="https://example.com/" onClick={jest.fn}>
                     Goose
@@ -29,7 +29,7 @@ describe('Plain', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('adds `rel="noopener noreferrer"` attribute for external links to handle security vulnerability', () => {
+        test('adds `rel="noopener noreferrer"` attribute for external links to handle security vulnerability', (): void => {
             const wrapper = mount(
                 <Plain shouldOpenInNewTab to="https://example.com/">
                     Goose
@@ -39,7 +39,7 @@ describe('Plain', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('adds `rel="noopener"` attribute for internal links that open new tab', () => {
+        test('adds `rel="noopener"` attribute for internal links that open new tab', (): void => {
             const wrapperDomain = mount(
                 <Plain shouldOpenInNewTab to="https://www.thumbtack.com/foo">
                     Goose
@@ -65,7 +65,7 @@ describe('Plain', () => {
             expect(wrapperHash).toMatchSnapshot();
         });
 
-        test('omits `rel` attribute for links that open in the same tab', () => {
+        test('omits `rel` attribute for links that open in the same tab', (): void => {
             const wrapperDomain = mount(<Plain to="https://www.thumbtack.com/foo">Goose</Plain>);
             const wrapperRootRelative = mount(<Plain to="/foo">Goose</Plain>);
             const wrapperHash = mount(<Plain to="#foo">Goose</Plain>);
@@ -83,7 +83,7 @@ describe('Plain', () => {
             expect(wrapperExternal).toMatchSnapshot();
         });
 
-        test('adds attribute to open link in new tab', () => {
+        test('adds attribute to open link in new tab', (): void => {
             const wrapper = mount(
                 <Plain shouldOpenInNewTab to="https://example.com/">
                     Goose
@@ -93,13 +93,13 @@ describe('Plain', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders `to` prop as `href`', () => {
+        test('renders `to` prop as `href`', (): void => {
             const wrapper = mount(<Plain to="https://example.com/">Goose</Plain>);
             expect(wrapper.find('a').prop('href')).toBe('https://example.com/');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders `onClick`', () => {
+        test('renders `onClick`', (): void => {
             const onClick = jest.fn();
             const wrapper = mount(
                 <Plain to="https://example.com/" onClick={onClick}>
@@ -111,7 +111,7 @@ describe('Plain', () => {
             expect(onClick).toHaveBeenCalledTimes(1);
         });
 
-        test('removes `href` if link is disabled', () => {
+        test('removes `href` if link is disabled', (): void => {
             const wrapper = mount(
                 <Plain isDisabled to="https://example.com/">
                     Goose
@@ -122,27 +122,27 @@ describe('Plain', () => {
         });
     });
 
-    describe('<button>', () => {
-        test('renders children passed in', () => {
+    describe('<button>', (): void => {
+        test('renders children passed in', (): void => {
             const wrapper = mount(<Plain>Goose</Plain>);
             expect(wrapper.text()).toEqual('Goose');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders button of type `button`', () => {
+        test('renders button of type `button`', (): void => {
             const wrapper = mount(<Plain onClick={jest.fn}>Goose</Plain>);
             expect(wrapper.find('button').prop('type')).toEqual('button');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders a button when an `onClick` is provided', () => {
+        test('renders a button when an `onClick` is provided', (): void => {
             const wrapper = mount(<Plain onClick={jest.fn}>Goose</Plain>);
             expect(wrapper.find('button')).toHaveLength(1);
             expect(wrapper.find('a')).toHaveLength(0);
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('`onClick` runs when button is clicked on', () => {
+        test('`onClick` runs when button is clicked on', (): void => {
             const onClick = jest.fn();
             const wrapper = mount(<Plain onClick={onClick}>Goose</Plain>);
 
@@ -151,7 +151,7 @@ describe('Plain', () => {
             expect(onClick).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseEnter` runs when button is clicked on', () => {
+        test('`onMouseEnter` runs when button is clicked on', (): void => {
             const onMouseEnter = jest.fn();
             const wrapper = mount(<Plain onMouseEnter={onMouseEnter}>Goose</Plain>);
 
@@ -160,7 +160,7 @@ describe('Plain', () => {
             expect(onMouseEnter).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseOver` runs when button is clicked on', () => {
+        test('`onMouseOver` runs when button is clicked on', (): void => {
             const onMouseOver = jest.fn();
             // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
             const wrapper = mount(<Plain onMouseOver={onMouseOver}>Goose</Plain>);
@@ -170,7 +170,7 @@ describe('Plain', () => {
             expect(onMouseOver).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseLeave` runs when button is clicked on', () => {
+        test('`onMouseLeave` runs when button is clicked on', (): void => {
             const onMouseLeave = jest.fn();
             const wrapper = mount(<Plain onMouseLeave={onMouseLeave}>Goose</Plain>);
 
@@ -179,7 +179,7 @@ describe('Plain', () => {
             expect(onMouseLeave).toHaveBeenCalledTimes(1);
         });
 
-        test('`onFocus` runs when button is clicked on', () => {
+        test('`onFocus` runs when button is clicked on', (): void => {
             const onFocus = jest.fn();
             const wrapper = mount(<Plain onFocus={onFocus}>Goose</Plain>);
 
@@ -188,7 +188,7 @@ describe('Plain', () => {
             expect(onFocus).toHaveBeenCalledTimes(1);
         });
 
-        test('`onBlur` runs when button is clicked on', () => {
+        test('`onBlur` runs when button is clicked on', (): void => {
             const onBlur = jest.fn();
             const wrapper = mount(<Plain onBlur={onBlur}>Goose</Plain>);
 
@@ -198,7 +198,7 @@ describe('Plain', () => {
         });
     });
 
-    test('renders primary theme', () => {
+    test('renders primary theme', (): void => {
         const wrapperA = mount(<Plain theme="primary">Goose</Plain>);
         const wrapperB = mount(
             <Plain theme="primary" isDisabled>
@@ -209,7 +209,7 @@ describe('Plain', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders secondary theme', () => {
+    test('renders secondary theme', (): void => {
         const wrapperA = mount(<Plain theme="secondary">Goose</Plain>);
         const wrapperB = mount(
             <Plain theme="secondary" isDisabled>
@@ -220,7 +220,7 @@ describe('Plain', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders tertiary theme', () => {
+    test('renders tertiary theme', (): void => {
         const wrapperA = mount(<Plain theme="tertiary">Goose</Plain>);
         const wrapperB = mount(
             <Plain theme="tertiary" isDisabled>
@@ -231,7 +231,7 @@ describe('Plain', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders inherit theme', () => {
+    test('renders inherit theme', (): void => {
         const wrapperA = mount(<Plain theme="inherit">Goose</Plain>);
         const wrapperB = mount(
             <Plain theme="inherit" isDisabled>
@@ -242,21 +242,21 @@ describe('Plain', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders left icon that is passed in', () => {
+    test('renders icon that is passed in', (): void => {
         const wrapper = mount(<Plain iconLeft={<svg>Duck</svg>}>Goose</Plain>);
         expect(wrapper.find('svg')).toHaveLength(1);
         expect(wrapper.text()).toBe('DuckGoose');
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders right icon that is passed in', () => {
+    test('renders right icon that is passed in', (): void => {
         const wrapper = mount(<Plain iconRight={<svg>Duck</svg>}>Goose</Plain>);
         expect(wrapper.find('svg')).toHaveLength(1);
         expect(wrapper.text()).toBe('GooseDuck');
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('left and right icons can be used together', () => {
+    test('left and right icons can be used together', (): void => {
         const wrapper = mount(
             <Plain iconLeft={<svg>Swan</svg>} iconRight={<svg>Duck</svg>}>
                 Goose
@@ -267,13 +267,13 @@ describe('Plain', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('adds proper accessibility attribute', () => {
+    test('adds proper accessibility attribute', (): void => {
         const wrapper = mount(<Plain accessibilityLabel="Duck">Goose</Plain>);
         expect(wrapper.find('button').prop('aria-label')).toEqual('Duck');
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('adds `dataTest` prop', () => {
+    test('adds `dataTest` prop', (): void => {
         const wrapperA = mount(<Plain dataTest="Duck">Goose</Plain>);
         expect(wrapperA.find('button').prop('data-test')).toEqual('Duck');
         expect(wrapperA).toMatchSnapshot();
@@ -288,22 +288,22 @@ describe('Plain', () => {
     });
 });
 
-describe('Themed', () => {
-    describe('<a>', () => {
-        test('renders `children` passed in', () => {
+describe('Themed', (): void => {
+    describe('<a>', (): void => {
+        test('renders `children` passed in', (): void => {
             const wrapper = mount(<Themed to="https://example.com/">Goose</Themed>);
             expect(wrapper.text()).toBe('Goose');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders a anchor tag when a `to` is provided', () => {
+        test('renders a anchor tag when a `to` is provided', (): void => {
             const wrapper = mount(<Themed to="https://example.com/">Goose</Themed>);
             expect(wrapper.find('button')).toHaveLength(0);
             expect(wrapper.find('a')).toHaveLength(1);
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders an anchor tag when both `to` and `onClick` are provided', () => {
+        test('renders an anchor tag when both `to` and `onClick` are provided', (): void => {
             const wrapper = mount(
                 <Themed to="https://example.com/" onClick={jest.fn}>
                     Goose
@@ -314,7 +314,7 @@ describe('Themed', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('adds `rel` attribute to handle security vulnerability', () => {
+        test('adds `rel` attribute to handle security vulnerability', (): void => {
             const wrapper = mount(
                 <Themed shouldOpenInNewTab to="https://example.com/">
                     Goose
@@ -324,7 +324,7 @@ describe('Themed', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('adds `rel="noopener"` attribute for internal links that open new tab', () => {
+        test('adds `rel="noopener"` attribute for internal links that open new tab', (): void => {
             const wrapperDomain = mount(
                 <Themed shouldOpenInNewTab to="https://www.thumbtack.com/foo">
                     Goose
@@ -350,7 +350,7 @@ describe('Themed', () => {
             expect(wrapperHash).toMatchSnapshot();
         });
 
-        test('omits `rel` attribute for links that open in the same tab', () => {
+        test('omits `rel` attribute for links that open in the same tab', (): void => {
             const wrapperDomain = mount(<Plain to="https://www.thumbtack.com/foo">Goose</Plain>);
             const wrapperRootRelative = mount(<Plain to="/foo">Goose</Plain>);
             const wrapperHash = mount(<Plain to="#foo">Goose</Plain>);
@@ -368,7 +368,7 @@ describe('Themed', () => {
             expect(wrapperExternal).toMatchSnapshot();
         });
 
-        test('adds attribute to open link in new tab', () => {
+        test('adds attribute to open link in new tab', (): void => {
             const wrapper = mount(
                 <Themed shouldOpenInNewTab to="https://example.com/">
                     Goose
@@ -378,13 +378,13 @@ describe('Themed', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders `to` prop as `href`', () => {
+        test('renders `to` prop as `href`', (): void => {
             const wrapper = mount(<Themed to="https://example.com/">Goose</Themed>);
             expect(wrapper.find('a').prop('href')).toBe('https://example.com/');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('removes `href` if link is disabled', () => {
+        test('removes `href` if link is disabled', (): void => {
             const wrapper = mount(
                 <Themed isDisabled to="https://example.com/">
                     Goose
@@ -395,20 +395,20 @@ describe('Themed', () => {
         });
     });
 
-    describe('<button>', () => {
-        test('renders children passed in', () => {
+    describe('<button>', (): void => {
+        test('renders children passed in', (): void => {
             const wrapper = mount(<Themed>Goose</Themed>);
             expect(wrapper.text()).toEqual('Goose');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders button of type `button`', () => {
+        test('renders button of type `button`', (): void => {
             const wrapper = mount(<Plain onClick={jest.fn}>Goose</Plain>);
             expect(wrapper.find('button').prop('type')).toEqual('button');
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders button of type `submit` if provided', () => {
+        test('renders button of type `submit` if provided', (): void => {
             const wrapper = mount(
                 <Plain onClick={jest.fn} type="submit">
                     Goose
@@ -418,14 +418,14 @@ describe('Themed', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('renders a button when an `onClick` is provided', () => {
+        test('renders a button when an `onClick` is provided', (): void => {
             const wrapper = mount(<Themed onClick={jest.fn}>Goose</Themed>);
             expect(wrapper.find('button')).toHaveLength(1);
             expect(wrapper.find('a')).toHaveLength(0);
             expect(wrapper).toMatchSnapshot();
         });
 
-        test('`onClick` runs when button is clicked on', () => {
+        test('`onClick` runs when button is clicked on', (): void => {
             const onClick = jest.fn();
             const wrapper = mount(<Themed onClick={onClick}>Goose</Themed>);
 
@@ -434,7 +434,7 @@ describe('Themed', () => {
             expect(onClick).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseEnter` runs when button receives `mouseenter` event', () => {
+        test('`onMouseEnter` runs when button receives `mouseenter` event', (): void => {
             const onMouseEnter = jest.fn();
             const wrapper = mount(<Themed onMouseEnter={onMouseEnter}>Goose</Themed>);
 
@@ -443,7 +443,7 @@ describe('Themed', () => {
             expect(onMouseEnter).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseOver` runs when button receives `mouseover` event', () => {
+        test('`onMouseOver` runs when button receives `mouseover` event', (): void => {
             const onMouseOver = jest.fn();
             // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
             const wrapper = mount(<Themed onMouseOver={onMouseOver}>Goose</Themed>);
@@ -453,7 +453,7 @@ describe('Themed', () => {
             expect(onMouseOver).toHaveBeenCalledTimes(1);
         });
 
-        test('`onMouseLeave` runs when button is clicked on', () => {
+        test('`onMouseLeave` runs when button is clicked on', (): void => {
             const onMouseLeave = jest.fn();
             const wrapper = mount(<Themed onMouseLeave={onMouseLeave}>Goose</Themed>);
 
@@ -462,7 +462,7 @@ describe('Themed', () => {
             expect(onMouseLeave).toHaveBeenCalledTimes(1);
         });
 
-        test('`onFocus` runs when button is clicked on', () => {
+        test('`onFocus` runs when button is clicked on', (): void => {
             const onFocus = jest.fn();
             const wrapper = mount(<Themed onFocus={onFocus}>Goose</Themed>);
 
@@ -471,7 +471,7 @@ describe('Themed', () => {
             expect(onFocus).toHaveBeenCalledTimes(1);
         });
 
-        test('`onBlur` runs when button is clicked on', () => {
+        test('`onBlur` runs when button is clicked on', (): void => {
             const onBlur = jest.fn();
             const wrapper = mount(<Themed onBlur={onBlur}>Goose</Themed>);
 
@@ -481,7 +481,7 @@ describe('Themed', () => {
         });
     });
 
-    test('renders primary theme', () => {
+    test('renders primary theme', (): void => {
         const wrapperA = mount(<Themed theme="primary">Goose</Themed>);
         const wrapperB = mount(
             <Themed theme="primary" isDisabled>
@@ -492,7 +492,7 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders secondary theme', () => {
+    test('renders secondary theme', (): void => {
         const wrapperA = mount(<Themed theme="secondary">Goose</Themed>);
         const wrapperB = mount(
             <Themed theme="secondary" isDisabled>
@@ -503,7 +503,7 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders tertiary theme', () => {
+    test('renders tertiary theme', (): void => {
         const wrapperA = mount(<Themed theme="tertiary">Goose</Themed>);
         const wrapperB = mount(
             <Themed theme="tertiary" isDisabled>
@@ -514,7 +514,7 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders caution theme', () => {
+    test('renders caution theme', (): void => {
         const wrapperA = mount(<Themed theme="caution">Goose</Themed>);
         const wrapperB = mount(
             <Themed theme="caution" isDisabled>
@@ -525,7 +525,7 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders solid theme', () => {
+    test('renders solid theme', (): void => {
         const wrapperA = mount(<Themed theme="solid">Goose</Themed>);
         const wrapperB = mount(
             <Themed theme="solid" isDisabled>
@@ -536,27 +536,27 @@ describe('Themed', () => {
         expect(wrapperB).toMatchSnapshot();
     });
 
-    test('renders large button', () => {
+    test('renders large button', (): void => {
         const wrapper = mount(<Themed>Goose</Themed>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders small button', () => {
+    test('renders small button', (): void => {
         const wrapper = mount(<Themed size="small">Goose</Themed>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders full width button', () => {
+    test('renders full width button', (): void => {
         const wrapper = mount(<Themed width="full">Goose</Themed>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders full width button on small screens', () => {
+    test('renders full width button on small screens', (): void => {
         const wrapper = mount(<Themed width="full-below-small">Goose</Themed>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders full width button when used within `InputRow`', () => {
+    test('renders full width button when used within `InputRow`', (): void => {
         const wrapper = mount(
             <InputRow>
                 <Themed>Duck</Themed>
@@ -566,35 +566,35 @@ describe('Themed', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders loading indicator', () => {
+    test('renders loading indicator', (): void => {
         const wrapper = mount(<Themed isLoading>Duck</Themed>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('disables button while it is loading', () => {
+    test('disables button while it is loading', (): void => {
         const wrapper = mount(<Themed isLoading>Duck</Themed>);
         expect(wrapper.find('button').prop('disabled')).toBeTruthy();
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('adds proper accessibility attribute', () => {
+    test('adds proper accessibility attribute', (): void => {
         const wrapper = mount(<Themed accessibilityLabel="Duck">Goose</Themed>);
         expect(wrapper.find('button').prop('aria-label')).toEqual('Duck');
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders themed `UIAction` with an icon and no text', () => {
+    test('renders themed `UIAction` with an icon and no text', (): void => {
         const wrapper = mount(<Themed icon={<svg>Duck</svg>} accessibilityLabel="Duck" />);
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('disables button when it is disabled', () => {
+    test('disables button when it is disabled', (): void => {
         const wrapper = mount(<Themed isDisabled>Duck</Themed>);
         expect(wrapper.find('button').prop('disabled')).toBeTruthy();
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('disables button when it is disabled and loading', () => {
+    test('disables button when it is disabled and loading', (): void => {
         const wrapper = mount(
             <Themed isDisabled isLoading>
                 Duck
@@ -604,14 +604,14 @@ describe('Themed', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('renders icon that is passed in', () => {
+    test('renders icon that is passed in', (): void => {
         const wrapper = mount(<Themed icon={<svg>Duck</svg>}>Goose</Themed>);
         expect(wrapper.find('svg')).toHaveLength(1);
         expect(wrapper.text()).toBe('DuckGoose');
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('adds `dataTest` prop', () => {
+    test('adds `dataTest` prop', (): void => {
         const wrapperA = mount(<Themed dataTest="Duck">Goose</Themed>);
         expect(wrapperA.find('button').prop('data-test')).toEqual('Duck');
         expect(wrapperA).toMatchSnapshot();

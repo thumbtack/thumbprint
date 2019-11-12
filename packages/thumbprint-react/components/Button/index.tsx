@@ -1,8 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Themed, Plain } from '../UIAction/index.jsx';
+import { Themed, Plain } from '../UIAction/index';
 
-const getCommonProps = props => ({
+interface CommonProps {
+    children?: React.ReactNode;
+    iconLeft?: React.ReactNode;
+    iconRight?: React.ReactNode;
+    isDisabled?: boolean;
+    onClick?: () => void;
+    onMouseEnter?: () => void;
+    onMouseOver?: () => void;
+    onFocus?: () => void;
+    onMouseLeave?: () => void;
+    onBlur?: () => void;
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
+    type?: 'button' | 'submit';
+    dataTest?: string;
+    accessibilityLabel?: string;
+}
+
+const getCommonProps = (props: CommonProps): CommonProps => ({
     onClick: props.onClick,
     isDisabled: props.isDisabled,
     type: props.type,
@@ -16,199 +32,230 @@ const getCommonProps = props => ({
     dataTest: props.dataTest,
 });
 
-const TextButton = React.forwardRef((props, ref) => (
-    <Plain
-        {...getCommonProps(props)}
-        theme={props.theme}
-        iconLeft={props.iconLeft}
-        iconRight={props.iconRight}
-        ref={ref}
-    />
-));
+const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
+    (
+        {
+            children,
+            iconLeft,
+            iconRight,
+            isDisabled = false,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            accessibilityLabel,
+            theme = 'primary',
+            type = 'button',
+            dataTest,
+        }: TextButtonPropTypes,
+        ref,
+    ): JSX.Element => (
+        <Plain
+            {...getCommonProps({
+                onClick,
+                isDisabled,
+                type,
+                children,
+                onMouseEnter,
+                onMouseOver,
+                onFocus,
+                onMouseLeave,
+                onBlur,
+                accessibilityLabel,
+                dataTest,
+            })}
+            theme={theme}
+            iconLeft={iconLeft}
+            iconRight={iconRight}
+            ref={ref}
+        />
+    ),
+);
 
-TextButton.propTypes = {
+interface TextButtonPropTypes {
     /**
      * Contents displayed within the button.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `TextButton`.
      */
-    iconLeft: PropTypes.node,
+    iconLeft?: React.ReactNode;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render right of the text within `TextButton`.
      */
-    iconRight: PropTypes.node,
+    iconRight?: React.ReactNode;
     /**
      * Visually and functionally disables the button. We discourage the use of this prop since it
      * is difficult to visually indicate that a link is disabled. Consider not rendering the
      * `TextButton` if it is not interactive.
      */
-    isDisabled: PropTypes.bool,
+    isDisabled?: boolean;
     /**
      * Function that will run when the button is clicked on.
      */
-    onClick: PropTypes.func,
+    onClick?: () => void;
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter: PropTypes.func,
+    onMouseEnter?: () => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver: PropTypes.func,
+    onMouseOver?: () => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus: PropTypes.func,
+    onFocus?: () => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave: PropTypes.func,
+    onMouseLeave?: () => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur: PropTypes.func,
+    onBlur?: () => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel?: string;
     /**
      * Controls the button’s background, text, and border color.
      * `inherit` will make the button inherit `color` from its parent.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'inherit']),
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     /**
      * Button’s of type `submit` will submit a form when used within a `form` element.
      */
-    type: PropTypes.oneOf(['button', 'submit']),
+    type?: 'button' | 'submit';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
+    dataTest?: string;
+}
 
-TextButton.defaultProps = {
-    children: undefined,
-    isDisabled: false,
-    iconLeft: null,
-    theme: 'primary',
-    onClick: null,
-    onMouseEnter: undefined,
-    onMouseOver: undefined,
-    onFocus: undefined,
-    onMouseLeave: undefined,
-    onBlur: undefined,
-    type: 'button',
-    accessibilityLabel: undefined,
-    dataTest: undefined,
-};
+const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
+    (
+        {
+            children,
+            isDisabled = false,
+            isLoading = false,
+            icon,
+            accessibilityLabel,
+            type = 'button',
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            theme = 'primary',
+            size = 'large',
+            width = 'auto',
+            dataTest,
+        }: ButtonPropTypes,
+        ref,
+    ): JSX.Element => (
+        <Themed
+            {...getCommonProps({
+                onClick,
+                isDisabled,
+                type,
+                children,
+                onMouseEnter,
+                onMouseOver,
+                onFocus,
+                onMouseLeave,
+                onBlur,
+                accessibilityLabel,
+                dataTest,
+            })}
+            icon={icon}
+            isLoading={isLoading}
+            theme={theme}
+            size={size}
+            width={width}
+            ref={ref}
+        />
+    ),
+);
 
-const Button = React.forwardRef((props, ref) => (
-    <Themed
-        {...getCommonProps(props)}
-        icon={props.icon}
-        isLoading={props.isLoading}
-        theme={props.theme}
-        size={props.size}
-        width={props.width}
-        ref={ref}
-    />
-));
-
-Button.propTypes = {
+interface ButtonPropTypes {
     /**
      * Contents displayed within the button.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Visually and functionally disables the button.
      */
-    isDisabled: PropTypes.bool,
+    isDisabled?: boolean;
     /**
      * Boolean determining whether the button is in a loading state. When `true` the text will
      * we replaced with a loading animation and interaction will be disabled.
      */
-    isLoading: PropTypes.bool,
+    isLoading?: boolean;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render within the button. It must be one of the
      * `small` icons.
      */
-    icon: PropTypes.node,
+    icon?: React.ReactNode;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel?: string;
     /**
      * Button’s of type `submit` will submit a form when used within a `form` element.
      */
-    type: PropTypes.oneOf(['button', 'submit']),
+    type?: 'button' | 'submit';
     /**
      * Function that will run when the button is clicked on.
      */
-    onClick: PropTypes.func,
+    onClick?: () => void;
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter: PropTypes.func,
+    onMouseEnter?: () => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver: PropTypes.func,
+    onMouseOver?: () => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus: PropTypes.func,
+    onFocus?: () => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave: PropTypes.func,
+    onMouseLeave?: () => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur: PropTypes.func,
+    onBlur?: () => void;
     /**
      * Controls the button’s background, text, and border color.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'caution', 'solid']),
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'caution' | 'solid';
     /**
      * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
      */
-    size: PropTypes.oneOf(['small', 'large']),
+    size?: 'small' | 'large';
     /**
      * `Button` components are as wide as the content that is passed in. The `full` option will
      * expand the width to `100%` on all screens. `full-below-small` will expand the width to 100%
      * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
      */
-    width: PropTypes.oneOf(['auto', 'full', 'full-below-small']),
+    width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
-
-Button.defaultProps = {
-    children: undefined,
-    type: 'button',
-    isDisabled: false,
-    isLoading: false,
-    icon: undefined,
-    onClick: undefined,
-    onMouseEnter: undefined,
-    onMouseOver: undefined,
-    onFocus: undefined,
-    onMouseLeave: undefined,
-    onBlur: undefined,
-    theme: 'primary',
-    size: 'large',
-    width: 'auto',
-    accessibilityLabel: undefined,
-    dataTest: undefined,
-};
+    dataTest?: string;
+}
 
 export default Button;
 export { TextButton };

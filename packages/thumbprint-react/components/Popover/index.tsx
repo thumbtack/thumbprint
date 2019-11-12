@@ -10,20 +10,11 @@ import canUseDOM from '../../utils/can-use-dom';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
 
-import { TextButton as _TextButton } from '../Button/index';
-import { Themed as _Themed } from '../UIAction/index';
+import { TextButton } from '../Button/index';
+import { Themed } from '../UIAction/index';
 import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
-
-// TS is attempting to infer types from the React.forwardRef call inside `Button` and `UIAction.
-// However, because they do not have prop types in TypeScript yet, it is not working properly.
-// Disable checking for now, but remove this line when we rewrite these components in TS.
-// TODO(giles): rewrite `TextButton` and `Themed` and remove this line.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const TextButton = _TextButton as any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Themed = _Themed as any;
 
 interface PopoverPropTypes {
     /**

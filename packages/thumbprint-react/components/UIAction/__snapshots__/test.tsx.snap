@@ -2,18 +2,13 @@
 
 exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external links to handle security vulnerability 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -24,18 +19,13 @@ exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external lin
 
 exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  theme="primary"
   to="https://www.thumbtack.com/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://www.thumbtack.com/foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -46,18 +36,13 @@ exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that ope
 
 exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 2`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  theme="primary"
   to="/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="/foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -68,18 +53,13 @@ exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that ope
 
 exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that open new tab 3`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  theme="primary"
   to="#foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="#foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -90,18 +70,13 @@ exports[`Plain <a> adds \`rel="noopener"\` attribute for internal links that ope
 
 exports[`Plain <a> adds attribute to open link in new tab 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -112,18 +87,12 @@ exports[`Plain <a> adds attribute to open link in new tab 1`] = `
 
 exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://www.thumbtack.com/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://www.thumbtack.com/foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -133,18 +102,12 @@ exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 1
 
 exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 2`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="/foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -154,18 +117,12 @@ exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 2
 
 exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 3`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="#foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="#foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -175,18 +132,12 @@ exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 3
 
 exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 4`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -196,18 +147,12 @@ exports[`Plain <a> omits \`rel\` attribute for links that open in the same tab 4
 
 exports[`Plain <a> removes \`href\` if link is disabled 1`] = `
 <ForwardRef
-  iconLeft={null}
   isDisabled={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={true}
-    href={null}
-    onClick={null}
     target="_self"
   >
     Goose
@@ -217,18 +162,12 @@ exports[`Plain <a> removes \`href\` if link is disabled 1`] = `
 
 exports[`Plain <a> renders \`children\` passed in 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -238,18 +177,12 @@ exports[`Plain <a> renders \`children\` passed in 1`] = `
 
 exports[`Plain <a> renders \`to\` prop as \`href\` 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -259,18 +192,12 @@ exports[`Plain <a> renders \`to\` prop as \`href\` 1`] = `
 
 exports[`Plain <a> renders a anchor tag when a \`to\` is provided 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -280,11 +207,7 @@ exports[`Plain <a> renders a anchor tag when a \`to\` is provided 1`] = `
 
 exports[`Plain <a> renders a anchor tag when both \`to\` and \`onClick\` are provided 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
@@ -301,12 +224,7 @@ exports[`Plain <a> renders a anchor tag when both \`to\` and \`onClick\` are pro
 
 exports[`Plain <button> renders a button when an \`onClick\` is provided 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
@@ -321,12 +239,7 @@ exports[`Plain <button> renders a button when an \`onClick\` is provided 1`] = `
 
 exports[`Plain <button> renders button of type \`button\` 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
@@ -340,18 +253,10 @@ exports[`Plain <button> renders button of type \`button\` 1`] = `
 `;
 
 exports[`Plain <button> renders children passed in 1`] = `
-<ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
->
+<ForwardRef>
   <button
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -362,18 +267,11 @@ exports[`Plain <button> renders children passed in 1`] = `
 exports[`Plain adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     data-test="Duck"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -384,11 +282,6 @@ exports[`Plain adds \`dataTest\` prop 1`] = `
 exports[`Plain adds \`dataTest\` prop 2`] = `
 <ForwardRef
   dataTest="Duck"
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="#"
 >
   <a
@@ -396,7 +289,6 @@ exports[`Plain adds \`dataTest\` prop 2`] = `
     data-test="Duck"
     disabled={false}
     href="#"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -407,18 +299,11 @@ exports[`Plain adds \`dataTest\` prop 2`] = `
 exports[`Plain adds proper accessibility attribute 1`] = `
 <ForwardRef
   accessibilityLabel="Duck"
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     aria-label="Duck"
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -438,16 +323,10 @@ exports[`Plain left and right icons can be used together 1`] = `
       Duck
     </svg>
   }
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -469,63 +348,17 @@ exports[`Plain left and right icons can be used together 1`] = `
 </ForwardRef>
 `;
 
-exports[`Plain renders inherit theme 1`] = `
-<ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="inherit"
-  to={null}
->
-  <button
-    className="plain plainThemeInherit"
-    disabled={false}
-    onClick={null}
-    type="button"
-  >
-    Goose
-  </button>
-</ForwardRef>
-`;
-
-exports[`Plain renders inherit theme 2`] = `
-<ForwardRef
-  iconLeft={null}
-  isDisabled={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="inherit"
-  to={null}
->
-  <button
-    className="plain plainThemeInherit"
-    disabled={true}
-    onClick={null}
-    type="button"
-  >
-    Goose
-  </button>
-</ForwardRef>
-`;
-
-exports[`Plain renders left icon that is passed in 1`] = `
+exports[`Plain renders icon that is passed in 1`] = `
 <ForwardRef
   iconLeft={
     <svg>
       Duck
     </svg>
   }
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -544,19 +377,42 @@ exports[`Plain renders left icon that is passed in 1`] = `
 </ForwardRef>
 `;
 
+exports[`Plain renders inherit theme 1`] = `
+<ForwardRef
+  theme="inherit"
+>
+  <button
+    className="plain plainThemeInherit"
+    disabled={false}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
+exports[`Plain renders inherit theme 2`] = `
+<ForwardRef
+  isDisabled={true}
+  theme="inherit"
+>
+  <button
+    className="plain plainThemeInherit"
+    disabled={true}
+    type="button"
+  >
+    Goose
+  </button>
+</ForwardRef>
+`;
+
 exports[`Plain renders primary theme 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -566,17 +422,12 @@ exports[`Plain renders primary theme 1`] = `
 
 exports[`Plain renders primary theme 2`] = `
 <ForwardRef
-  iconLeft={null}
   isDisabled={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     disabled={true}
-    onClick={null}
     type="button"
   >
     Goose
@@ -586,22 +437,15 @@ exports[`Plain renders primary theme 2`] = `
 
 exports[`Plain renders right icon that is passed in 1`] = `
 <ForwardRef
-  iconLeft={null}
   iconRight={
     <svg>
       Duck
     </svg>
   }
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -622,17 +466,11 @@ exports[`Plain renders right icon that is passed in 1`] = `
 
 exports[`Plain renders secondary theme 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="secondary"
-  to={null}
 >
   <button
     className="plain plainThemeSecondary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -642,17 +480,12 @@ exports[`Plain renders secondary theme 1`] = `
 
 exports[`Plain renders secondary theme 2`] = `
 <ForwardRef
-  iconLeft={null}
   isDisabled={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="secondary"
-  to={null}
 >
   <button
     className="plain plainThemeSecondary"
     disabled={true}
-    onClick={null}
     type="button"
   >
     Goose
@@ -662,17 +495,11 @@ exports[`Plain renders secondary theme 2`] = `
 
 exports[`Plain renders tertiary theme 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="tertiary"
-  to={null}
 >
   <button
     className="plain plainThemeTertiary"
     disabled={false}
-    onClick={null}
     type="button"
   >
     Goose
@@ -682,17 +509,12 @@ exports[`Plain renders tertiary theme 1`] = `
 
 exports[`Plain renders tertiary theme 2`] = `
 <ForwardRef
-  iconLeft={null}
   isDisabled={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
   theme="tertiary"
-  to={null}
 >
   <button
     className="plain plainThemeTertiary"
     disabled={true}
-    onClick={null}
     type="button"
   >
     Goose
@@ -702,22 +524,13 @@ exports[`Plain renders tertiary theme 2`] = `
 
 exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  size="large"
-  theme="primary"
   to="https://www.thumbtack.com/foo"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://www.thumbtack.com/foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -732,22 +545,13 @@ exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that op
 
 exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 2`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  size="large"
-  theme="primary"
   to="/foo"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="/foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -762,22 +566,13 @@ exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that op
 
 exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that open new tab 3`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  size="large"
-  theme="primary"
   to="#foo"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="#foo"
-    onClick={null}
     rel="noopener"
     target="_blank"
   >
@@ -792,22 +587,13 @@ exports[`Themed <a> adds \`rel="noopener"\` attribute for internal links that op
 
 exports[`Themed <a> adds \`rel\` attribute to handle security vulnerability 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -822,22 +608,13 @@ exports[`Themed <a> adds \`rel\` attribute to handle security vulnerability 1`] 
 
 exports[`Themed <a> adds attribute to open link in new tab 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
   shouldOpenInNewTab={true}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     rel="noopener noreferrer"
     target="_blank"
   >
@@ -852,18 +629,12 @@ exports[`Themed <a> adds attribute to open link in new tab 1`] = `
 
 exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://www.thumbtack.com/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://www.thumbtack.com/foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -873,18 +644,12 @@ exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 
 
 exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 2`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="/foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="/foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -894,18 +659,12 @@ exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 
 
 exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 3`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="#foo"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="#foo"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -915,18 +674,12 @@ exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 
 
 exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 4`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  theme="primary"
   to="https://example.com/"
 >
   <a
     className="plain plainThemePrimary"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     Goose
@@ -936,22 +689,12 @@ exports[`Themed <a> omits \`rel\` attribute for links that open in the same tab 
 
 exports[`Themed <a> removes \`href\` if link is disabled 1`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    href={null}
-    onClick={null}
     target="_self"
   >
     <span
@@ -965,22 +708,12 @@ exports[`Themed <a> removes \`href\` if link is disabled 1`] = `
 
 exports[`Themed <a> renders \`children\` passed in 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     <span
@@ -994,22 +727,12 @@ exports[`Themed <a> renders \`children\` passed in 1`] = `
 
 exports[`Themed <a> renders \`to\` prop as \`href\` 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     <span
@@ -1023,22 +746,12 @@ exports[`Themed <a> renders \`to\` prop as \`href\` 1`] = `
 
 exports[`Themed <a> renders a anchor tag when a \`to\` is provided 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
     href="https://example.com/"
-    onClick={null}
     target="_self"
   >
     <span
@@ -1052,16 +765,8 @@ exports[`Themed <a> renders a anchor tag when a \`to\` is provided 1`] = `
 
 exports[`Themed <a> renders an anchor tag when both \`to\` and \`onClick\` are provided 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="https://example.com/"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
@@ -1081,16 +786,7 @@ exports[`Themed <a> renders an anchor tag when both \`to\` and \`onClick\` are p
 
 exports[`Themed <button> renders a button when an \`onClick\` is provided 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
@@ -1109,12 +805,7 @@ exports[`Themed <button> renders a button when an \`onClick\` is provided 1`] = 
 
 exports[`Themed <button> renders button of type \`button\` 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
 >
   <button
     className="plain plainThemePrimary"
@@ -1129,12 +820,7 @@ exports[`Themed <button> renders button of type \`button\` 1`] = `
 
 exports[`Themed <button> renders button of type \`submit\` if provided 1`] = `
 <ForwardRef
-  iconLeft={null}
-  isDisabled={false}
   onClick={[Function]}
-  shouldOpenInNewTab={false}
-  theme="primary"
-  to={null}
   type="submit"
 >
   <button
@@ -1149,22 +835,10 @@ exports[`Themed <button> renders button of type \`submit\` if provided 1`] = `
 `;
 
 exports[`Themed <button> renders children passed in 1`] = `
-<ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
->
+<ForwardRef>
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1179,22 +853,11 @@ exports[`Themed <button> renders children passed in 1`] = `
 exports[`Themed adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     data-test="Duck"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1209,23 +872,13 @@ exports[`Themed adds \`dataTest\` prop 1`] = `
 exports[`Themed adds \`dataTest\` prop 2`] = `
 <ForwardRef
   dataTest="Duck"
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
   to="#"
-  type="button"
-  width="auto"
 >
   <a
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     data-test="Duck"
     disabled={false}
     href="#"
-    onClick={null}
     target="_self"
   >
     <span
@@ -1240,22 +893,11 @@ exports[`Themed adds \`dataTest\` prop 2`] = `
 exports[`Themed adds proper accessibility attribute 1`] = `
 <ForwardRef
   accessibilityLabel="Duck"
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     aria-label="Duck"
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1269,21 +911,11 @@ exports[`Themed adds proper accessibility attribute 1`] = `
 
 exports[`Themed disables button when it is disabled 1`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1297,21 +929,12 @@ exports[`Themed disables button when it is disabled 1`] = `
 
 exports[`Themed disables button when it is disabled and loading 1`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
   isLoading={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1361,21 +984,11 @@ exports[`Themed disables button when it is disabled and loading 1`] = `
 
 exports[`Themed disables button while it is loading 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
   isLoading={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1425,21 +1038,11 @@ exports[`Themed disables button while it is loading 1`] = `
 
 exports[`Themed renders caution theme 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="caution"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeCaution themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1453,21 +1056,12 @@ exports[`Themed renders caution theme 1`] = `
 
 exports[`Themed renders caution theme 2`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="caution"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeCaution themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1481,21 +1075,11 @@ exports[`Themed renders caution theme 2`] = `
 
 exports[`Themed renders full width button 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
   width="full"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1509,21 +1093,11 @@ exports[`Themed renders full width button 1`] = `
 
 exports[`Themed renders full width button on small screens 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
   width="full-below-small"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFullBelowSmall"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1548,22 +1122,10 @@ exports[`Themed renders full width button when used within \`InputRow\` 1`] = `
         }
       }
     >
-      <ForwardRef
-        icon={null}
-        isDisabled={false}
-        isLoading={false}
-        onClick={null}
-        shouldOpenInNewTab={false}
-        size="large"
-        theme="primary"
-        to={null}
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <button
           className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
           disabled={false}
-          onClick={null}
           type="button"
         >
           <span
@@ -1582,22 +1144,10 @@ exports[`Themed renders full width button when used within \`InputRow\` 1`] = `
         }
       }
     >
-      <ForwardRef
-        icon={null}
-        isDisabled={false}
-        isLoading={false}
-        onClick={null}
-        shouldOpenInNewTab={false}
-        size="large"
-        theme="primary"
-        to={null}
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <button
           className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
           disabled={false}
-          onClick={null}
           type="button"
         >
           <span
@@ -1619,20 +1169,10 @@ exports[`Themed renders icon that is passed in 1`] = `
       Duck
     </svg>
   }
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1656,22 +1196,10 @@ exports[`Themed renders icon that is passed in 1`] = `
 `;
 
 exports[`Themed renders large button 1`] = `
-<ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
->
+<ForwardRef>
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1685,21 +1213,11 @@ exports[`Themed renders large button 1`] = `
 
 exports[`Themed renders loading indicator 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
   isLoading={true}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1749,21 +1267,11 @@ exports[`Themed renders loading indicator 1`] = `
 
 exports[`Themed renders primary theme 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1777,21 +1285,12 @@ exports[`Themed renders primary theme 1`] = `
 
 exports[`Themed renders primary theme 2`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1805,21 +1304,11 @@ exports[`Themed renders primary theme 2`] = `
 
 exports[`Themed renders secondary theme 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="secondary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1833,21 +1322,12 @@ exports[`Themed renders secondary theme 1`] = `
 
 exports[`Themed renders secondary theme 2`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="secondary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSecondary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1861,21 +1341,11 @@ exports[`Themed renders secondary theme 2`] = `
 
 exports[`Themed renders small button 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
   size="small"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1889,21 +1359,11 @@ exports[`Themed renders small button 1`] = `
 
 exports[`Themed renders solid theme 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="solid"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSolid themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1917,21 +1377,12 @@ exports[`Themed renders solid theme 1`] = `
 
 exports[`Themed renders solid theme 2`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="solid"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeSolid themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -1945,21 +1396,11 @@ exports[`Themed renders solid theme 2`] = `
 
 exports[`Themed renders tertiary theme 1`] = `
 <ForwardRef
-  icon={null}
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="tertiary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
@@ -1973,21 +1414,12 @@ exports[`Themed renders tertiary theme 1`] = `
 
 exports[`Themed renders tertiary theme 2`] = `
 <ForwardRef
-  icon={null}
   isDisabled={true}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
   theme="tertiary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemeTertiary themedButtonWidthAuto"
     disabled={true}
-    onClick={null}
     type="button"
   >
     <span
@@ -2007,21 +1439,11 @@ exports[`Themed renders themed \`UIAction\` with an icon and no text 1`] = `
       Duck
     </svg>
   }
-  isDisabled={false}
-  isLoading={false}
-  onClick={null}
-  shouldOpenInNewTab={false}
-  size="large"
-  theme="primary"
-  to={null}
-  type="button"
-  width="auto"
 >
   <button
     aria-label="Duck"
     className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
     disabled={false}
-    onClick={null}
     type="button"
   >
     <span
