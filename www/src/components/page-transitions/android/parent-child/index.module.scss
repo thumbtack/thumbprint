@@ -1,4 +1,11 @@
+@import '../../shared.scss';
+
+.root {
+    @include root;
+}
+
 .box {
+    @include box;
     -webkit-appearance: none;
     border: none;
     padding: 0;

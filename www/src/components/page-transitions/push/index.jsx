@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import localStyle from './index.module.scss';
-import sharedStyle from '../shared.module.scss';
+import style from './index.module.scss';
 
 const Push = () => {
     const [active, setActive] = useState(false);
     return (
-        <button className={sharedStyle.root} onClick={() => setActive(!active)} type="button">
+        <button className={style.root} onClick={() => setActive(!active)} type="button">
             <div
                 className={classNames({
                     'flex h-100': true,
-                    [localStyle.wrap]: true,
-                    [localStyle.isActive]: active,
+                    [style.wrap]: true,
+                    [style.isActive]: active,
                 })}
             >
-                <div className={`${sharedStyle.box} bg-white`}>A</div>
-                <div className={`${sharedStyle.box} bg-gray-300`}>B</div>
+                <div className={`${style.box} bg-white`}>A</div>
+                <div className={`${style.box} bg-gray-300`}>B</div>
             </div>
         </button>
     );

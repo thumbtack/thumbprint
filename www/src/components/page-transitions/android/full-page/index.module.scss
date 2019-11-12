@@ -1,4 +1,11 @@
+@import '../../shared.scss';
+
+.root {
+    @include root;
+}
+
 .box {
+    @include box;
     position: absolute;
     left: 0;
     transform: scale(0.95);

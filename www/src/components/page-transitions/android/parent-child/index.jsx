@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import localStyle from './index.module.scss';
-import sharedStyle from '../../shared.module.scss';
+import style from './index.module.scss';
 
 const AndroidParentChild = () => {
     const [tab, setTab] = useState(null);
@@ -15,12 +14,12 @@ const AndroidParentChild = () => {
     };
 
     return (
-        <div className={sharedStyle.root}>
+        <div className={style.root}>
             <button
                 className={classNames(
-                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box0} flex items-center justify-center bg-white`,
+                    `${style.box} ${style.box0} flex items-center justify-center bg-white`,
                     {
-                        [localStyle.isActive]: tab === 0,
+                        [style.isActive]: tab === 0,
                     },
                 )}
                 onClick={() => handleClick(0)}
@@ -30,9 +29,9 @@ const AndroidParentChild = () => {
             </button>
             <button
                 className={classNames(
-                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box1} flex items-center justify-center bg-gray-300`,
+                    `${style.box} ${style.box1} flex items-center justify-center bg-gray-300`,
                     {
-                        [localStyle.isActive]: tab === 1,
+                        [style.isActive]: tab === 1,
                     },
                 )}
                 onClick={() => handleClick(1)}
@@ -42,9 +41,9 @@ const AndroidParentChild = () => {
             </button>
             <button
                 className={classNames(
-                    `${sharedStyle.box} ${localStyle.box} ${localStyle.box2} flex items-center justify-center bg-gray`,
+                    `${style.box} ${style.box2} flex items-center justify-center bg-gray`,
                     {
-                        [localStyle.isActive]: tab === 2,
+                        [style.isActive]: tab === 2,
                     },
                 )}
                 onClick={() => handleClick(2)}

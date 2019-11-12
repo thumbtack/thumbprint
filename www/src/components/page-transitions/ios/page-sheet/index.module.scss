@@ -1,3 +1,13 @@
+@import '../../shared.scss';
+
+.root {
+    @include root;
+}
+
+.box {
+    @include box;
+}
+
 .box2 {
     position: absolute;
 }
