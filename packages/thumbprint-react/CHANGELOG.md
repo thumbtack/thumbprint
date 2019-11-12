@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 10.1.1 - 2019-11-11
+
+### Changed
+
+-   [Patch] Rewrite `Button` component in TypeScript.
+-   [Patch] Rewrite `UIAction` component in TypeScript.
+-   [Patch] Rewrite internal utility function and components in TypeScript.
+
 ## 10.1.0 - 2019-11-06
 
 ### Changed
