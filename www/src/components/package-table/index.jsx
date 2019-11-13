@@ -76,7 +76,7 @@ const PackageTable = ({
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            {(platform === 'javascript' || platform === 'scss') && (
+                            {platform === 'web' && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`yarn add ${name} ${isStable ? '--exact' : ''}`}
                                 </InlineCode>
