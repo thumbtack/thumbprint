@@ -1,7 +1,6 @@
 const crypto = require('crypto');
 const fetch = require('node-fetch');
 const queryString = require('query-string');
-require('dotenv').config();
 
 exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useColumnNames }) => {
     if (!apiToken) {

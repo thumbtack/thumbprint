@@ -4,7 +4,7 @@ import assign from 'lodash/assign';
 import classNames from 'classnames';
 import { Manager, Reference, Popper, RefHandler } from 'react-popper';
 
-import ConditionalPortal from '../../utils/ConditionalPortal.jsx';
+import ConditionalPortal from '../../utils/ConditionalPortal';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import canUseDOM from '../../utils/can-use-dom';
 

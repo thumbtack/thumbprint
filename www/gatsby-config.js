@@ -1,5 +1,6 @@
 const { resolver } = require('react-docgen');
 const sassImporter = require('node-sass-tilde-importer');
+require('dotenv').config();
 
 module.exports = {
     siteMetadata: {

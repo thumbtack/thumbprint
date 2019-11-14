@@ -248,30 +248,18 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
         }
       }
     >
-      <ForwardRef
-        isDisabled={false}
-        isLoading={false}
-        size="large"
-        theme="primary"
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <ForwardRef
-          icon={null}
           isDisabled={false}
           isLoading={false}
-          onClick={null}
-          shouldOpenInNewTab={false}
           size="large"
           theme="primary"
-          to={null}
           type="button"
           width="auto"
         >
           <button
             className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
             disabled={false}
-            onClick={null}
             type="button"
           >
             <span
@@ -300,30 +288,18 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
         }
       }
     >
-      <ForwardRef
-        isDisabled={false}
-        isLoading={false}
-        size="large"
-        theme="primary"
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <ForwardRef
-          icon={null}
           isDisabled={false}
           isLoading={false}
-          onClick={null}
-          shouldOpenInNewTab={false}
           size="large"
           theme="primary"
-          to={null}
           type="button"
           width="auto"
         >
           <button
             className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
             disabled={false}
-            onClick={null}
             type="button"
           >
             <span
@@ -388,30 +364,18 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
         }
       }
     >
-      <ForwardRef
-        isDisabled={false}
-        isLoading={false}
-        size="large"
-        theme="primary"
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <ForwardRef
-          icon={null}
           isDisabled={false}
           isLoading={false}
-          onClick={null}
-          shouldOpenInNewTab={false}
           size="large"
           theme="primary"
-          to={null}
           type="button"
           width="auto"
         >
           <button
             className="themedButton themedButtonRoundedBordersLeft themedButtonHasNoRightBorder themedButtonThemePrimary themedButtonWidthFull"
             disabled={false}
-            onClick={null}
             type="button"
           >
             <span
@@ -512,30 +476,18 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
         }
       }
     >
-      <ForwardRef
-        isDisabled={false}
-        isLoading={false}
-        size="large"
-        theme="primary"
-        type="button"
-        width="auto"
-      >
+      <ForwardRef>
         <ForwardRef
-          icon={null}
           isDisabled={false}
           isLoading={false}
-          onClick={null}
-          shouldOpenInNewTab={false}
           size="large"
           theme="primary"
-          to={null}
           type="button"
           width="auto"
         >
           <button
             className="themedButton themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthFull"
             disabled={false}
-            onClick={null}
             type="button"
           >
             <span

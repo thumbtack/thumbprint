@@ -11,7 +11,7 @@ const hashUrlPattern = /^#/;
 /**
  * Check if a URL is an internal (TT.com) link
  */
-const isThumbtackUrl = url =>
+const isThumbtackUrl = (url?: string): boolean =>
     isString(url) &&
     (thumbtackDomainPattern.test(url) ||
         rootRelativeUrlPattern.test(url) ||

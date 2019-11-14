@@ -52,9 +52,9 @@ const TokenSection = ({ section, platform }) => {
                                                             theme="plain"
                                                             shouldCopyToClipboard
                                                         >
-                                                            {platform === 'ios' &&
-                                                                `${section.name}.`}
-                                                            {tokenPlatformValues.name}
+                                                            {platform === 'ios'
+                                                                ? `${section.name}.${tokenPlatformValues.name}`
+                                                                : tokenPlatformValues.name}
                                                         </InlineCode>
                                                         {tokenPlatformValues.description && (
                                                             <Text
