@@ -4,6 +4,7 @@ description: What to show users when there’s a delay.
 ---
 
 import { Img } from 'components/mdx';
+import { Skeleton } from 'components/skeleton-loader';
 import { Title, Text, Grid, GridColumn, LoaderDots, Button } from '@thumbtack/thumbprint-react';
 import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 
@@ -19,7 +20,7 @@ There are three primary loading types that are recommended for use in Thumbtack 
 
 ### 1. Loading dots
 
-This is our standard loading animation. This should be used inside buttons following an action, with a transparent white overlay to prevent additional actions, or along side text that indicates the process taking place.
+This is our standard loading animation. This should be used inside buttons following an action, with a transparent white overlay to prevent additional actions, or along side text denoting a process is taking place.
 
 <Grid>
     <GridColumn aboveSmall={4}>
@@ -93,3 +94,53 @@ This is our standard loading animation. This should be used inside buttons follo
 ### 2. Skeleton loader
 
 When the layout of the content to be rendered is known in advance, for example, a list of avatars with names and descriptions, studies indicate that the perceived loading time can be decreased by using a skeleton loader.
+
+<Grid>
+    <GridColumn aboveSmall={4}>
+        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
+            <div className="flex mb2">
+                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <Text size={3} className="black-300 b">
+                    <Skeleton />
+                </Text>
+            </div>
+            <div className="flex mb2">
+                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <Text size={3} className="black-300 b">
+                    Super Duper Cleaners
+                </Text>
+            </div>
+            <div className="flex mb2">
+                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <Text size={3} className="black-300 b">
+                    Danny’s Cleaning Services
+                </Text>
+            </div>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={4}>
+        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
+            <div className="flex items-center bb b-gray-300 pb2 mb2">
+                <LoaderDots size="small" />
+                <Text size={2} className="black-300 ml2">
+                    Calculating&hellip;
+                </Text>
+            </div>
+            <div>
+                <Title size={6} className="mb1">
+                    You contacted this pro.
+                </Title>
+                <div className="flex items-center">
+                    <ContentModifierTimeSmall className="gray mr1" />
+                    <Text size={2} className="black-300">
+                        Waiting to hear back.
+                    </Text>
+                </div>
+            </div>
+        </div>
+    </GridColumn>
+</Grid>
+
+### 2. Native loader
+
+In some cases the content that is loading is a
