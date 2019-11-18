@@ -4,7 +4,7 @@ description: What to show users when there’s a delay.
 ---
 
 import { Img } from 'components/mdx';
-import { Skeleton } from 'components/skeleton-loader';
+import Skeleton from 'components/skeleton-loader';
 import { Title, Text, Grid, GridColumn, LoaderDots, Button } from '@thumbtack/thumbprint-react';
 import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 
@@ -99,43 +99,50 @@ When the layout of the content to be rendered is known in advance, for example, 
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
             <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
-                <Text size={3} className="black-300 b">
-                    <Skeleton />
-                </Text>
+                <div className="flex-none mr2 w4">
+                    <Skeleton aspectRatio="1:1" />
+                </div>
+                <div className="flex-1">
+                    <Text size={3} className="black-300 b">
+                        <Skeleton />
+                        <Skeleton width="50%" />
+                    </Text>
+                </div>
             </div>
             <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
-                <Text size={3} className="black-300 b">
-                    Super Duper Cleaners
-                </Text>
+                <div className="flex-none mr2 w4">
+                    <Skeleton aspectRatio="1:1" />
+                </div>
+                <div className="flex-1">
+                    <Text size={3} className="black-300 b">
+                        <Skeleton />
+                        <Skeleton width="50%" />
+                    </Text>
+                </div>
             </div>
-            <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
-                <Text size={3} className="black-300 b">
-                    Danny’s Cleaning Services
-                </Text>
+            <div className="flex">
+                <div className="flex-none mr2 w4">
+                    <Skeleton aspectRatio="1:1" />
+                </div>
+                <div className="flex-1">
+                    <Text size={3} className="black-300 b">
+                        <Skeleton />
+                        <Skeleton width="50%" />
+                    </Text>
+                </div>
             </div>
         </div>
     </GridColumn>
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
-            <div className="flex items-center bb b-gray-300 pb2 mb2">
-                <LoaderDots size="small" />
-                <Text size={2} className="black-300 ml2">
-                    Calculating&hellip;
-                </Text>
-            </div>
-            <div>
-                <Title size={6} className="mb1">
-                    You contacted this pro.
-                </Title>
-                <div className="flex items-center">
-                    <ContentModifierTimeSmall className="gray mr1" />
-                    <Text size={2} className="black-300">
-                        Waiting to hear back.
-                    </Text>
+            <div className="mb2">
+                <div className="flex-none mb2">
+                    <Skeleton aspectRatio="8:5" />
                 </div>
+                <Text size={3} className="black-300 b">
+                    <Skeleton />
+                    <Skeleton width="50%" />
+                </Text>
             </div>
         </div>
     </GridColumn>
