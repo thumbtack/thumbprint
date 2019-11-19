@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `BlockList`, `ProgressBar`, and `ProgressBarBase` components. (#544)
+
 ## 10.1.1 - 2019-11-11
 
 ### Changed
