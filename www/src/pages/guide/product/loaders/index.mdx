@@ -8,7 +8,10 @@ import Skeleton from 'components/skeleton-loader';
 import { Title, Text, Grid, GridColumn, LoaderDots, Button } from '@thumbtack/thumbprint-react';
 import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 
-Loading animations let the user know that content is on the way. The more consistent we are with the experience the more trust that the requested content will load momentarily. Because we’re asking the user to wait, we want take steps to limit this delay and, where possible, preview the content that is coming.
+import loaderIos from './ios-loader.gif';
+import loaderAndroid from './android-loader.gif';
+
+Loading animations let the user know that content is on the way. The more consistent we are with the experience the more trust we’ll build with our users that the requested content will load shortly. Because we’re asking the user to wait, we want take steps to limit this delay and, where possible, preview the content that is coming.
 
 ## Loading types
 
@@ -16,11 +19,13 @@ There are three primary loading types that are recommended for use in Thumbtack 
 
 1. A small loading dot animation.
 2. Skeleton loaders.
-3. The operating system loader for native apps.
+3. For native apps only, the operating system loader.
+
+Each of these are indeterminate loaders as time to completion is unknown. Deciding which one to use will require some judgement.
 
 ### 1. Loading dots
 
-This is our standard loading animation. This should be used inside buttons following an action, with a transparent white overlay to prevent additional actions, or along side text denoting a process is taking place.
+This is our standard loading animation. It should be used when if we need to keep the user on the page or when smaller pieces of an existing layout is being generated.
 
 <Grid>
     <GridColumn aboveSmall={4}>
@@ -39,25 +44,46 @@ This is our standard loading animation. This should be used inside buttons follo
                 </Button>
             </div>
         </div>
+        <Text size={2} className="mt2 black-300">
+            A button was clicked and we we’re waiting for data.
+        </Text>
     </GridColumn>
     <GridColumn aboveSmall={4}>
-        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white relative">
+        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white relative overflow-hidden">
             <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <div
+                    className="w4 h4 mr2 br2 flex-none cover"
+                    style={{ background: 'url("https://picsum.photos/300/300")' }}
+                />
                 <Text size={3} className="black-300 b">
-                    Bay Cleaning
+                    Pro Photos
                 </Text>
             </div>
             <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <div
+                    className="w4 h4 mr2 br2 flex-none cover"
+                    style={{ background: 'url("https://picsum.photos/301/301")' }}
+                />
                 <Text size={3} className="black-300 b">
-                    Super Duper Cleaners
+                    Super Duper Photography
                 </Text>
             </div>
             <div className="flex mb2">
-                <div className="w4 h4 bg-gray mr2 br2 flex-none" />
+                <div
+                    className="w4 h4 mr2 br2 flex-none cover"
+                    style={{ background: 'url("https://picsum.photos/302/302")' }}
+                />
                 <Text size={3} className="black-300 b">
-                    Danny’s Cleaning Services
+                    Danny’s Wedding Photos
+                </Text>
+            </div>
+            <div className="flex mb2">
+                <div
+                    className="w4 h4 mr2 br2 flex-none cover"
+                    style={{ background: 'url("https://picsum.photos/304/304")' }}
+                />
+                <Text size={3} className="black-300 b">
+                    Photos 4U
                 </Text>
             </div>
             <div
@@ -67,6 +93,9 @@ This is our standard loading animation. This should be used inside buttons follo
                 <LoaderDots size="small" />
             </div>
         </div>
+        <Text size={2} className="mt2 black-300">
+            An action was triggered and we want to prevent further actions while we’re waiting for new content.
+        </Text>
     </GridColumn>
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
@@ -88,16 +117,34 @@ This is our standard loading animation. This should be used inside buttons follo
                 </div>
             </div>
         </div>
+        <Text size={2} className="mt2 black-300">
+            A smaller piece of content is being loaded on an existing page.
+        </Text>
     </GridColumn>
+
 </Grid>
 
 ### 2. Skeleton loader
 
-When the layout of the content to be rendered is known in advance, for example, a list of avatars with names and descriptions, studies indicate that the perceived loading time can be decreased by using a skeleton loader.
+When the layout of the content to be rendered is known in advance — for example, a list of avatars with names and descriptions — studies indicate that skeleton loaders can reduce the user’s perceived loading time.
 
 <Grid>
     <GridColumn aboveSmall={4}>
-        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
+        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
+            <Title size={5} className="mb2">
+                Projects
+            </Title>
+            <div className="flex mb2">
+                <div className="flex-none mr2 w4">
+                    <Skeleton aspectRatio="1:1" />
+                </div>
+                <div className="flex-1">
+                    <Text size={3} className="black-300 b">
+                        <Skeleton />
+                        <Skeleton width="50%" />
+                    </Text>
+                </div>
+            </div>
             <div className="flex mb2">
                 <div className="flex-none mr2 w4">
                     <Skeleton aspectRatio="1:1" />
@@ -134,8 +181,17 @@ When the layout of the content to be rendered is known in advance, for example, 
         </div>
     </GridColumn>
     <GridColumn aboveSmall={4}>
-        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
-            <div className="mb2">
+        <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
+            <div className="mb3">
+                <div className="flex-none mb2">
+                    <Skeleton aspectRatio="8:5" />
+                </div>
+                <Text size={3} className="black-300 b">
+                    <Skeleton />
+                    <Skeleton width="50%" />
+                </Text>
+            </div>
+            <div>
                 <div className="flex-none mb2">
                     <Skeleton aspectRatio="8:5" />
                 </div>
@@ -148,6 +204,25 @@ When the layout of the content to be rendered is known in advance, for example, 
     </GridColumn>
 </Grid>
 
-### 2. Native loader
+### 3. Native loader
 
-In some cases the content that is loading is a
+In cases where content is loading from the device, for example, a “pull down to refresh” or retrieving location settings, we can rely on the native loading animation.
+
+<Grid>
+    <GridColumn aboveSmall={4}>
+        <div className="h5 ba bw-2 b-gray br2 pa3 bg-white flex items-center justify-center">
+            <img src={loaderIos} width="16" />
+        </div>
+        <Text size={2} className="b mt1">
+            iOS
+        </Text>
+    </GridColumn>
+    <GridColumn aboveSmall={4}>
+        <div className="h5 ba bw-2 b-gray br2 pa3 bg-white flex items-center justify-center">
+            <img src={loaderAndroid} width="16" />
+        </div>
+        <Text size={2} className="b mt1">
+            Android
+        </Text>
+    </GridColumn>
+</Grid>
