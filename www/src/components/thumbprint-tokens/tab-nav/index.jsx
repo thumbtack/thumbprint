@@ -6,6 +6,7 @@ const TokensTabNav = () => (
         <TabNavItem to="/tokens/scss/">SCSS</TabNavItem>
         <TabNavItem to="/tokens/javascript/">JavaScript</TabNavItem>
         <TabNavItem to="/tokens/ios/">iOS</TabNavItem>
+        <TabNavItem to="/tokens/android/">Android</TabNavItem>
     </TabNav>
 );
 

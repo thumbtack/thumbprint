@@ -86,6 +86,11 @@ const PackageTable = ({
                                     {`pod '${name}', '~> ${installVersion}'`}
                                 </InlineCode>
                             )}
+                            {platform === 'android' && (
+                                <InlineCode theme="plain" shouldCopyToClipboard>
+                                    {`implementation 'com.github.thumbtack:thumbprint-tokens:v${installVersion}'`}
+                                </InlineCode>
+                            )}
                         </td>
                     </tr>
 
@@ -109,7 +114,7 @@ PackageTable.propTypes = {
     version: PropTypes.string.isRequired,
     deprecated: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     packageName: PropTypes.string.isRequired,
-    platform: PropTypes.oneOf(['scss', 'javascript', 'ios']).isRequired,
+    platform: PropTypes.oneOf(['scss', 'javascript', 'ios', 'android']).isRequired,
     importStatement: PropTypes.string,
     sourceDirectory: PropTypes.string.isRequired,
 };

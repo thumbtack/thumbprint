@@ -1,0 +1,60 @@
+---
+title: Tokens
+description: Design variables that power Thumbtack’s UI.
+---
+
+import classNames from 'classnames';
+import { camelCase } from 'lodash';
+import { graphql } from 'gatsby';
+import PackageTable from 'components/package-table';
+import TabNav from 'components/thumbprint-tokens/tab-nav';
+import TokenSection from 'components/thumbprint-tokens/token-section';
+import Alert from 'components/alert';
+
+export const pageQuery = graphql`
+    {
+        thumbprintToken {
+            version
+            categories(platform: "android") {
+                name
+                description
+                tokens {
+                    platforms {
+                        android {
+                            name
+                            value
+                            description
+                        }
+                        javascript {
+                            value
+                        }
+                    }
+                    format
+                    group
+                    deprecated
+                }
+            }
+        }
+    }
+`;
+
+<TabNav />
+
+<PackageTable
+    version={props.data.thumbprintToken.version}
+    packageName="ThumbprintTokens"
+    sourceDirectory="https://github.com/thumbtack/thumbprint-tokens"
+    platform="android"
+    importStatement="import com.github.thumbtack.thumbprinttokens.R"
+/>
+
+<Alert type="warning" title="Not yet available in Thumbtack's Android codebase">
+    The Design Systems team is working with Thumbtack's Android engineers to install this library in
+    the Android codebase.
+</Alert>
+
+<div>
+    {props.data.thumbprintToken.categories.map(section => (
+        <TokenSection section={section} key={section.name} platform="android" />
+    ))}
+</div>
