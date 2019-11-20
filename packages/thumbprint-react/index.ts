@@ -2,7 +2,6 @@ export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index';
 export { BannerAlert, InPageAlert } from './components/Alert/index';
 export { default as ButtonRow } from './components/ButtonRow/index';
-export { BlockList, BlockListItem, BlockListItemLink } from './components/BlockList/index.jsx';
 export { default as Carousel } from './components/Carousel/index';
 export { default as Checkbox } from './components/Checkbox/index';
 export { default as DatePicker } from './components/DatePicker/index';
@@ -36,8 +35,6 @@ export {
     PopoverPrimaryButton,
     PopoverSecondaryButton,
 } from './components/Popover/index';
-export { default as ProgressBar } from './components/ProgressBar/index.jsx';
-export { default as ProgressBarBase } from './components/ProgressBarBase/index.jsx';
 export { default as Pill } from './components/Pill/index.jsx';
 export { default as Radio } from './components/Radio/index';
 export { default as Select } from './components/Select/index';

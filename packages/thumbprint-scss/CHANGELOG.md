@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove all Block List, Fieldset, Image, and Table CSS classes. This affects `.tp-img`, `.tp-fieldset`, `.tp-block-list*`, and `.tp-table*` classes. (#544)
+
 ## 2.0.8 - 2019-10-17
 
 ### Changed
