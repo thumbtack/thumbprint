@@ -11,7 +11,7 @@ import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 import loaderIos from './ios-loader.gif';
 import loaderAndroid from './android-loader.gif';
 
-Loading animations let the user know that content is on the way. The more consistent we are with the experience the more trust we’ll build with our users that the requested content will load shortly. Because we’re asking the user to wait, we want take steps to limit this delay and, where possible, preview the content that is coming.
+Loading animations let the user know that content is on the way. The more consistent we are with the experience the more trust we’ll build with our users that they’ll get what they requested. Because we’re asking the user to wait, we want take steps to limit this delay and, where possible, preview the content that is coming.
 
 ## Loading types
 
@@ -21,7 +21,7 @@ There are three primary loading types that are recommended for use in Thumbtack 
 2. Skeleton loaders.
 3. For native apps only, the operating system loader.
 
-Each of these are indeterminate loaders as time to completion is unknown. Deciding which one to use will require some judgement.
+Deciding which one to use will require some judgement.
 
 ### 1. Loading dots
 
@@ -31,7 +31,7 @@ This is our standard loading animation. It should be used when if we need to kee
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 flex flex-column bg-white">
             <div className="flex-1">
-                <Title size={5} className="mb2">
+                <Title size={6} className="mb2">
                     Share your project.
                 </Title>
                 <Text size={2} className="black-300">
@@ -94,7 +94,7 @@ This is our standard loading animation. It should be used when if we need to kee
             </div>
         </div>
         <Text size={2} className="mt2 black-300">
-            An action was triggered and we want to prevent further actions while we’re waiting for new content.
+            An action was triggered and we want to prevent further actions by using a white overlay while we’re waiting for new content.
         </Text>
     </GridColumn>
     <GridColumn aboveSmall={4}>
@@ -131,7 +131,7 @@ When the layout of the content to be rendered is known in advance — for exampl
 <Grid>
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
-            <Title size={5} className="mb2">
+            <Title size={6} className="mb2">
                 Projects
             </Title>
             <div className="flex mb2">
@@ -182,9 +182,12 @@ When the layout of the content to be rendered is known in advance — for exampl
     </GridColumn>
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
+            <Title size={6} className="mb2">
+                Popular services
+            </Title>
             <div className="mb3">
                 <div className="flex-none mb2">
-                    <Skeleton aspectRatio="8:5" />
+                    <Skeleton aspectRatio="7:3" />
                 </div>
                 <Text size={3} className="black-300 b">
                     <Skeleton />
@@ -193,7 +196,7 @@ When the layout of the content to be rendered is known in advance — for exampl
             </div>
             <div>
                 <div className="flex-none mb2">
-                    <Skeleton aspectRatio="8:5" />
+                    <Skeleton aspectRatio="7:3" />
                 </div>
                 <Text size={3} className="black-300 b">
                     <Skeleton />
