@@ -11,24 +11,22 @@ import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 import loaderIos from './ios-loader.gif';
 import loaderAndroid from './android-loader.gif';
 
-Loading animations let the user know that content is on the way. The more consistent we are with the experience the more trust we’ll build with our users that they’ll get what they requested. Because we’re asking the user to wait, we want take steps to limit this delay and, where possible, preview the content that is coming.
+Loading animations let the user know that content is on the way. Because we’re asking the user to wait, we want to be consistent, limit this delay and, where possible, preview the content that’s about to load.
 
 ## Loading types
 
-There are three primary loading types that are recommended for use in Thumbtack products:
+There are three loading types recommended for use in Thumbtack products:
 
-1. A small loading dot animation.
+1. Loading dot animation.
 2. Skeleton loaders.
 3. For native apps only, the operating system loader.
 
-Deciding which one to use will require some judgement.
-
 ### 1. Loading dots
 
-This is our standard loading animation. It should be used when if we need to keep the user on the page or when smaller pieces of an existing layout is being generated. Use the blue loading icons over white whenever possible.
+This is our standard loading animation. It should be used when if we need to keep the user on the page or when smaller pieces of an existing layout is being generated. Use the blue [loading dots](/components/loader-dots/react/) over white whenever possible.
 
-<Grid>
-    <GridColumn aboveSmall={4}>
+<div class="grid">
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white relative overflow-hidden">
             <div className="flex mb2">
                 <div
@@ -74,10 +72,11 @@ This is our standard loading animation. It should be used when if we need to kee
             </div>
         </div>
         <Text size={2} className="mt2 black-300">
-            An action was triggered and we want to prevent further actions by using a white overlay while we’re waiting for new content.
+            An action was triggered and we want to prevent further actions by using a white overlay
+            while waiting for new content.
         </Text>
-    </GridColumn>
-    <GridColumn aboveSmall={4}>
+    </div>
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white">
             <div className="flex items-center bb b-gray-300 pb2 mb2">
                 <LoaderDots size="small" />
@@ -100,8 +99,8 @@ This is our standard loading animation. It should be used when if we need to kee
         <Text size={2} className="mt2 black-300">
             A smaller piece of content is being loaded on an existing page.
         </Text>
-    </GridColumn>
-    <GridColumn aboveSmall={4}>
+    </div>
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h6 ba bw-2 b-gray br2 pa3 flex flex-column bg-white">
             <div className="flex-1">
                 <Title size={6} className="mb2">
@@ -120,16 +119,15 @@ This is our standard loading animation. It should be used when if we need to kee
         <Text size={2} className="mt2 black-300">
             A button was clicked and we we’re waiting for data.
         </Text>
-    </GridColumn>
-
-</Grid>
+    </div>
+</div>
 
 ### 2. Skeleton loader
 
 When the layout of the content to be rendered is known in advance — for example, a list of avatars with names and descriptions — studies indicate that skeleton loaders can reduce the user’s perceived loading time.
 
-<Grid>
-    <GridColumn aboveSmall={4}>
+<div class="grid">
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
             <Title size={6} className="mb2">
                 Projects
@@ -179,8 +177,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </div>
             </div>
         </div>
-    </GridColumn>
-    <GridColumn aboveSmall={4}>
+    </div>
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white overflow-hidden">
             <Title size={6} className="mb2">
                 Popular services
@@ -204,28 +202,28 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </Text>
             </div>
         </div>
-    </GridColumn>
-</Grid>
+    </div>
+</div>
 
 ### 3. Native loader
 
-In cases where content is loading from the device, for example, a “pull down to refresh” or retrieving location settings, we can rely on the native loading animation.
+In cases where content is loading from the device in Thumbtack’s native apps, for example, a “pull down to refresh” or retrieving location settings, we can rely on the native loading animation.
 
-<Grid>
-    <GridColumn aboveSmall={4}>
+<div class="grid">
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h5 ba bw-2 b-gray br2 pa3 bg-white flex items-center justify-center">
             <img src={loaderIos} width="16" />
         </div>
         <Text size={2} className="b mt1">
             iOS
         </Text>
-    </GridColumn>
-    <GridColumn aboveSmall={4}>
+    </div>
+    <div class="m_col-4 mb3 m_mb0">
         <div className="h5 ba bw-2 b-gray br2 pa3 bg-white flex items-center justify-center">
             <img src={loaderAndroid} width="16" />
         </div>
         <Text size={2} className="b mt1">
             Android
         </Text>
-    </GridColumn>
-</Grid>
+    </div>
+</div>

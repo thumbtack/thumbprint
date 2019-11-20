@@ -29,7 +29,7 @@ const Skeleton = ({ type, aspectRatio, width, height, className }) => {
     }
 
     if (height) {
-        inlineStyles.height = width;
+        inlineStyles.height = height;
     }
 
     return (
