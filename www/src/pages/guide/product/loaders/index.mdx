@@ -25,29 +25,9 @@ Deciding which one to use will require some judgement.
 
 ### 1. Loading dots
 
-This is our standard loading animation. It should be used when if we need to keep the user on the page or when smaller pieces of an existing layout is being generated.
+This is our standard loading animation. It should be used when if we need to keep the user on the page or when smaller pieces of an existing layout is being generated. Use the blue loading icons over white whenever possible.
 
 <Grid>
-    <GridColumn aboveSmall={4}>
-        <div className="h6 ba bw-2 b-gray br2 pa3 flex flex-column bg-white">
-            <div className="flex-1">
-                <Title size={6} className="mb2">
-                    Share your project.
-                </Title>
-                <Text size={2} className="black-300">
-                    It's better to have a few pros look into the job.
-                </Text>
-            </div>
-            <div className="flex-none">
-                <Button isLoading size="small" width="full">
-                    Send Quote
-                </Button>
-            </div>
-        </div>
-        <Text size={2} className="mt2 black-300">
-            A button was clicked and we we’re waiting for data.
-        </Text>
-    </GridColumn>
     <GridColumn aboveSmall={4}>
         <div className="h6 ba bw-2 b-gray br2 pa3 bg-white relative overflow-hidden">
             <div className="flex mb2">
@@ -121,6 +101,26 @@ This is our standard loading animation. It should be used when if we need to kee
             A smaller piece of content is being loaded on an existing page.
         </Text>
     </GridColumn>
+    <GridColumn aboveSmall={4}>
+        <div className="h6 ba bw-2 b-gray br2 pa3 flex flex-column bg-white">
+            <div className="flex-1">
+                <Title size={6} className="mb2">
+                    Share your project.
+                </Title>
+                <Text size={2} className="black-300">
+                    It's better to have a few pros look into the job.
+                </Text>
+            </div>
+            <div className="flex-none">
+                <Button isLoading size="small" width="full">
+                    Send Quote
+                </Button>
+            </div>
+        </div>
+        <Text size={2} className="mt2 black-300">
+            A button was clicked and we we’re waiting for data.
+        </Text>
+    </GridColumn>
 
 </Grid>
 
@@ -140,8 +140,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </div>
                 <div className="flex-1">
                     <Text size={3} className="black-300 b">
-                        <Skeleton />
-                        <Skeleton width="50%" />
+                        <Skeleton type="text" />
+                        <Skeleton type="text" width="50%" />
                     </Text>
                 </div>
             </div>
@@ -151,8 +151,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </div>
                 <div className="flex-1">
                     <Text size={3} className="black-300 b">
-                        <Skeleton />
-                        <Skeleton width="50%" />
+                        <Skeleton type="text" />
+                        <Skeleton type="text" width="50%" />
                     </Text>
                 </div>
             </div>
@@ -162,8 +162,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </div>
                 <div className="flex-1">
                     <Text size={3} className="black-300 b">
-                        <Skeleton />
-                        <Skeleton width="50%" />
+                        <Skeleton type="text" />
+                        <Skeleton type="text" width="50%" />
                     </Text>
                 </div>
             </div>
@@ -173,8 +173,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                 </div>
                 <div className="flex-1">
                     <Text size={3} className="black-300 b">
-                        <Skeleton />
-                        <Skeleton width="50%" />
+                        <Skeleton type="text" />
+                        <Skeleton type="text" width="50%" />
                     </Text>
                 </div>
             </div>
@@ -190,8 +190,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                     <Skeleton aspectRatio="7:3" />
                 </div>
                 <Text size={3} className="black-300 b">
-                    <Skeleton />
-                    <Skeleton width="50%" />
+                    <Skeleton type="text" />
+                    <Skeleton type="text" width="50%" />
                 </Text>
             </div>
             <div>
@@ -199,8 +199,8 @@ When the layout of the content to be rendered is known in advance — for exampl
                     <Skeleton aspectRatio="7:3" />
                 </div>
                 <Text size={3} className="black-300 b">
-                    <Skeleton />
-                    <Skeleton width="50%" />
+                    <Skeleton type="text" />
+                    <Skeleton type="text" width="50%" />
                 </Text>
             </div>
         </div>

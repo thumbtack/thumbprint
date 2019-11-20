@@ -16,7 +16,7 @@ const aspectMap = {
     '10:13': 13 / 10,
 };
 
-const Skeleton = ({ isBlock, aspectRatio, width, height, className }) => {
+const Skeleton = ({ type, aspectRatio, width, height, className }) => {
     const inlineStyles = {};
 
     if (aspectRatio) {
@@ -24,11 +24,11 @@ const Skeleton = ({ isBlock, aspectRatio, width, height, className }) => {
         inlineStyles.height = 0;
     }
 
-    if (width && !aspectRatio) {
+    if (width) {
         inlineStyles.width = width;
     }
 
-    if (height && !aspectRatio) {
+    if (height) {
         inlineStyles.height = width;
     }
 
@@ -37,7 +37,7 @@ const Skeleton = ({ isBlock, aspectRatio, width, height, className }) => {
             className={classNames({
                 [styles.skeleton]: true,
                 [className]: className,
-                db: isBlock || aspectRatio,
+                dib: type === 'text',
             })}
             style={inlineStyles}
         />
@@ -47,7 +47,7 @@ const Skeleton = ({ isBlock, aspectRatio, width, height, className }) => {
 Skeleton.propTypes = {
     width: PropTypes.string,
     height: PropTypes.string,
-    isBlock: PropTypes.bool,
+    type: PropTypes.oneOf(['block', 'text']),
     aspectRatio: PropTypes.string,
     className: PropTypes.string,
 };
@@ -55,7 +55,7 @@ Skeleton.propTypes = {
 Skeleton.defaultProps = {
     width: null,
     height: null,
-    isBlock: false,
+    type: 'block',
     aspectRatio: null,
     className: null,
 };
