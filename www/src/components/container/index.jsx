@@ -57,6 +57,11 @@ const Container = ({ children, location, activeSection }) => {
                     name
                 }
             }
+            allAndroidTokens: thumbprintToken {
+                categories(platform: "android") {
+                    name
+                }
+            }
             allGuides: allSitePage(
                 filter: { path: { glob: "/guide/**" } }
                 sort: { fields: context___frontmatter___title }
@@ -108,6 +113,7 @@ const Container = ({ children, location, activeSection }) => {
         allScssTokens,
         allJavaScriptTokens,
         allIosTokens,
+        allAndroidTokens,
         allComponents,
     } = data;
     const { pathname, hash } = location;
@@ -382,6 +388,26 @@ const Container = ({ children, location, activeSection }) => {
                                                     <SideNavLink
                                                         title={category.name}
                                                         to={`/tokens/ios/#${generateSlug({
+                                                            level: 'section',
+                                                            children: category.name,
+                                                        })}`}
+                                                        key={category.name}
+                                                        level={3}
+                                                    />
+                                                ))}
+                                            </SideNavGroup>
+                                        </SideNavLink>
+                                        <SideNavLink
+                                            title="Android"
+                                            to="/tokens/android/"
+                                            level={2}
+                                            isActive={pathname.startsWith('/tokens/android/')}
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {map(allAndroidTokens.categories, category => (
+                                                    <SideNavLink
+                                                        title={category.name}
+                                                        to={`/tokens/android/#${generateSlug({
                                                             level: 'section',
                                                             children: category.name,
                                                         })}`}
