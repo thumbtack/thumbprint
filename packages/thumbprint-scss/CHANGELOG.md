@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.1.0 - 2019-11-21
+
 ### Added
 
 -   [Minor] Add checkbox and radio wrap classes that will replace `tp-input-wrap`.
