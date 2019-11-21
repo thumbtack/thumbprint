@@ -76,7 +76,7 @@ const PackageTable = ({
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            {(platform === 'javascript' || platform === 'scss') && (
+                            {platform === 'web' && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`yarn add ${name} ${isStable ? '--exact' : ''}`}
                                 </InlineCode>
@@ -84,6 +84,11 @@ const PackageTable = ({
                             {platform === 'ios' && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`pod '${name}', '~> ${installVersion}'`}
+                                </InlineCode>
+                            )}
+                            {platform === 'android' && (
+                                <InlineCode theme="plain" shouldCopyToClipboard>
+                                    {`implementation 'com.github.thumbtack:thumbprint-tokens:v${installVersion}'`}
                                 </InlineCode>
                             )}
                         </td>
@@ -109,7 +114,7 @@ PackageTable.propTypes = {
     version: PropTypes.string.isRequired,
     deprecated: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     packageName: PropTypes.string.isRequired,
-    platform: PropTypes.oneOf(['scss', 'javascript', 'ios']).isRequired,
+    platform: PropTypes.oneOf(['scss', 'javascript', 'ios', 'android']).isRequired,
     importStatement: PropTypes.string,
     sourceDirectory: PropTypes.string.isRequired,
 };

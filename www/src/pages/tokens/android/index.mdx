@@ -4,21 +4,23 @@ description: Design variables that power Thumbtack’s UI.
 ---
 
 import classNames from 'classnames';
+import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
 import PackageTable from 'components/package-table';
 import TabNav from 'components/thumbprint-tokens/tab-nav';
 import TokenSection from 'components/thumbprint-tokens/token-section';
+import Alert from 'components/alert';
 
 export const pageQuery = graphql`
     {
         thumbprintToken {
             version
-            categories(platform: "scss") {
+            categories(platform: "android") {
                 name
                 description
                 tokens {
                     platforms {
-                        scss {
+                        android {
                             name
                             value
                             description
@@ -40,14 +42,19 @@ export const pageQuery = graphql`
 
 <PackageTable
     version={props.data.thumbprintToken.version}
-    packageName="@thumbtack/thumbprint-tokens"
+    packageName="ThumbprintTokens"
     sourceDirectory="https://github.com/thumbtack/thumbprint-tokens"
-    platform="web"
-    importStatement={`@import "@thumbtack/thumbprint-tokens/dist/scss/_index";`}
+    platform="android"
+    importStatement="import com.github.thumbtack.thumbprinttokens.R"
 />
+
+<Alert type="warning" title="Not yet available in Thumbtack's Android codebase">
+    The Design Systems team is working with Thumbtack's Android engineers to install this library in
+    the Android codebase.
+</Alert>
 
 <div>
     {props.data.thumbprintToken.categories.map(section => (
-        <TokenSection section={section} key={section.name} platform="scss" />
+        <TokenSection section={section} key={section.name} platform="android" />
     ))}
 </div>
