@@ -3,16 +3,19 @@ title: Motion
 description: Bringing layouts to life.
 ---
 
-import Easing from 'components/motion';
-import Push from 'components/page-transitions/push';
+import Easing from 'components/motion/general/easing';
+import Color from 'components/motion/general/color';
+import Pop from 'components/motion/general/pop';
+import Slide from 'components/motion/general/slide';
 
-import IosPageSheet from 'components/page-transitions/ios/page-sheet';
-import IosFullScreenModal from 'components/page-transitions/ios/full-screen-modal';
-import AndroidFullPage from 'components/page-transitions/android/full-page';
-import AndroidParentChild from 'components/page-transitions/android/parent-child';
+import Push from 'components/motion/page/push';
+import IosPageSheet from 'components/motion/page/ios/page-sheet';
+import IosFullScreenModal from 'components/motion/page/ios/full-screen-modal';
+import AndroidFullPage from 'components/motion/page/android/full-page';
+import AndroidParentChild from 'components/motion/page/android/parent-child';
 
 import { Img, InlineCode } from 'components/mdx';
-import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
+import { Title, Text, Grid, GridColumn, HorizontalRule } from '@thumbtack/thumbprint-react';
 
 Motion can introduce an element of delight and activity. Used sparingly, it can help users focus their attention and navigate through the UI. Here we discuss motion at a platform agnostic level and then specifically about the page-level navigations available on iOS and Android.
 
@@ -78,79 +81,114 @@ For those familiar with easing values on the web these are slightly more aggress
 Determines the length of the animation. The length of the animation usually corresponds to the size and distance of the animation.
 
 <table>
-    <tr>
-        <th>
-            <Text size={2}>Token</Text>
-        </th>
-        <th>
-            <Text size={2}>Duration</Text>
-        </th>
-    </tr>
-    <tr>
-        <td>
-            <Text size={2}>
-                <InlineCode>duration-1</InlineCode>
-            </Text>
-        </td>
-        <td>
-            <Text size={2}>
-                <InlineCode>150ms</InlineCode>
-            </Text>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <Text size={2}>
-                <InlineCode>duration-2</InlineCode>
-            </Text>
-        </td>
-        <td>
-            <Text size={2}>
-                <InlineCode>200ms</InlineCode>
-            </Text>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <Text size={2}>
-                <InlineCode>duration-3</InlineCode>
-            </Text>
-        </td>
-        <td>
-            <Text size={2}>
-                <InlineCode>250ms</InlineCode>
-            </Text>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <Text size={2}>
-                <InlineCode>duration-4</InlineCode>
-            </Text>
-        </td>
-        <td>
-            <Text size={2}>
-                <InlineCode>300ms</InlineCode>
-            </Text>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <Text size={2}>
-                <InlineCode>duration-5</InlineCode>
-            </Text>
-        </td>
-        <td>
-            <Text size={2}>
-                <InlineCode>350ms</InlineCode>
-            </Text>
-        </td>
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                <Text size={2}>Token</Text>
+            </th>
+            <th>
+                <Text size={2}>Duration</Text>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode>duration-1</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode>150ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode>duration-2</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode>200ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode>duration-3</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode>250ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode>duration-4</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode>300ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode>duration-5</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode>350ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ### Examples
 
-Doctor Spielvogel, it alleviates nothing fixing the blame - blaming is still ailing, of course, of course - but nonetheless, what was it with these Jewish parents, what, that they were able to make us little Jewish boys believe ourselves to be princes on the one hand, unique as unicorns on the one hand, geniuses and brilliant like nobody has ever been brilliant and beautiful before in the history of childhood - saviors and sheer perfection on the one hand, and such bumbling, incompetent, thoughtless, helpless, selfish, evil little shits, little ingrates, on the other!
+Click to see animation.
+
+<div className="grid">
+    <div className="m_col-4">
+        <div className="shadow-300 h6 relative br2">
+            <Color />
+            <Text size={2} className="mt2 b">
+                Color transition
+            </Text>
+        </div>
+    </div>
+    <div className="m_col-4">
+        <div className="shadow-300 h6 relative br2">
+            <Pop />
+            <Text size={2} className="mt2 b">
+                Pop-up
+            </Text>
+        </div>
+    </div>
+    <div className="m_col-4">
+        <div className="shadow-300 h6 relative br2">
+            <Slide />
+            <Text size={2} className="mt2 b">
+                Slide
+            </Text>
+        </div>
+    </div>
+</div>
+
+<div className="pt6">
+    <HorizontalRule />
+</div>
 
 ## Page-level transitions
 
