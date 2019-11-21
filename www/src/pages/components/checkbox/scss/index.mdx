@@ -16,7 +16,7 @@ Here are a few tips for using checkboxes:
 -   The `label` and `input` are connected through the `for` and `id` attributes. Clicking on the label text should toggle the related checkbox.`
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input
         class="tp-checkbox-input"
         name="example-basic"
@@ -27,12 +27,12 @@ Here are a few tips for using checkboxes:
     <div class="tp-checkbox-image"></div>
     <label class="tp-label" for="example-basic-a">Morning</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input class="tp-checkbox-input" name="example-basic" id="example-basic-b" type="checkbox" />
     <div class="tp-checkbox-image"></div>
     <label class="tp-label" for="example-basic-b">Afternoon</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input class="tp-checkbox-input" name="example-basic" id="example-basic-c" type="checkbox" />
     <div class="tp-checkbox-image"></div>
     <label class="tp-label" for="example-basic-c">Evening</label>
@@ -46,7 +46,7 @@ Add the `disabled` attribute to the `input` element to make it visually and func
 You should also use `tp-label--disabled` to visually disable the `label`.
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input
         disabled
         class="tp-checkbox-input"
@@ -58,7 +58,7 @@ You should also use `tp-label--disabled` to visually disable the `label`.
     <div class="tp-checkbox-image"></div>
     <label class="tp-label tp-label--disabled" for="example-disabled-a">Morning</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input
         disabled
         class="tp-checkbox-input"
@@ -69,7 +69,7 @@ You should also use `tp-label--disabled` to visually disable the `label`.
     <div class="tp-checkbox-image"></div>
     <label class="tp-label tp-label--disabled" for="example-disabled-b">Afternoon</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input
         disabled
         class="tp-checkbox-input"
@@ -89,7 +89,7 @@ The `tp-checkbox-input--bad-news` class can be used to visually represent an err
 This class only changes the checkbox’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-checkbox-wrap">
     <input
         class="tp-checkbox-input tp-checkbox-input--bad-news"
         name="example-error"
