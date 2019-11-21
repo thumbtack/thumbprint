@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+-   [Major] Remove `.tp-input-wrap`, `.tp-input-wrap--flip`, `.tp-form-fields`, and `.tp-form-field__item` classes. `.tp-input-wrap` is replaced by `.tp-checkbox-wrap` and `.tp-radio-wrap`. (#559)
+
 ## 3.1.0 - 2019-11-21
 
 ### Added
