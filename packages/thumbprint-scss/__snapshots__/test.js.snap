@@ -1071,6 +1071,15 @@ exports[`compiles correctly 1`] = `
   vertical-align: middle;
   line-height: 24px;
 }
+.tp-text-input::-webkit-input-placeholder {
+  color: #676d73;
+}
+.tp-text-input::-moz-placeholder {
+  color: #676d73;
+}
+.tp-text-input:-ms-input-placeholder {
+  color: #676d73;
+}
 .tp-text-input--small {
   line-height: 20px;
   padding: 9px 15px;
@@ -1590,6 +1599,15 @@ _:-ms-fullscreen {
   resize: vertical;
   height: 152px;
   min-height: 104px;
+}
+.tp-textarea::-webkit-input-placeholder {
+  color: #676d73;
+}
+.tp-textarea::-moz-placeholder {
+  color: #676d73;
+}
+.tp-textarea:-ms-input-placeholder {
+  color: #676d73;
 }
 .tp-textarea:focus {
   color: #2f3033;
