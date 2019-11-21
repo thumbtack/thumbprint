@@ -12,6 +12,18 @@
     height: 152px;
     min-height: 104px;
 
+    &::-webkit-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    &::-moz-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    &:-ms-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
     &:focus {
         color: $tp-color__black;
         border-color: $tp-color__blue;
