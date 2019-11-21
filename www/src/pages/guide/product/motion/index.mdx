@@ -27,12 +27,12 @@ For those familiar with easing values on the web these are slightly more aggress
 
 <div className="grid mb3">
     <div className="m_col-6">
-        <div class="b mb1">ease-in</div>
-        <Text size={2} className="black-300 mb2">
-            Moves from slow to fast.
-        </Text>
+        <div class="b">ease-in</div>
         <Text size={2}>
-            <InlineCode>cubic-bezier(0.50, 0, 1, 1)</InlineCode>
+            <InlineCode theme="plain">cubic-bezier(0.50, 0, 1, 1)</InlineCode>
+        </Text>
+        <Text size={2} className="black-300">
+            Moves from slow to fast.
         </Text>
     </div>
     <div className="m_col-6 mt3 m_mt0">
@@ -44,12 +44,12 @@ For those familiar with easing values on the web these are slightly more aggress
 
 <div className="grid mb3">
     <div className="m_col-6">
-        <div class="b mb1">ease-out</div>
-        <Text size={2} className="black-300 mb2">
-            Moves from fast to slow.
-        </Text>
+        <div class="b">ease-out</div>
         <Text size={2}>
-            <InlineCode>cubic-bezier(0, 0, 0.40, 1)</InlineCode>
+            <InlineCode theme="plain">cubic-bezier(0, 0, 0.40, 1)</InlineCode>
+        </Text>
+        <Text size={2} className="black-300">
+            Moves from fast to slow.
         </Text>
     </div>
     <div className="m_col-6 mt3 m_mt0">
@@ -61,12 +61,12 @@ For those familiar with easing values on the web these are slightly more aggress
 
 <div className="grid mb3">
     <div className="m_col-6">
-        <div class="b mb1">ease-in-out</div>
-        <Text size={2} className="black-300 mb2">
-            Moves slowly on both ends.
-        </Text>
+        <div class="b">ease-in-out</div>
         <Text size={2}>
-            <InlineCode>cubic-bezier(0.45, 0, 0.40, 1)</InlineCode>
+            <InlineCode theme="plain">cubic-bezier(0.45, 0, 0.40, 1)</InlineCode>
+        </Text>
+        <Text size={2} className="black-300">
+            Moves slowly on both ends.
         </Text>
     </div>
     <div className="m_col-6 mt3 m_mt0">
@@ -95,60 +95,60 @@ Determines the length of the animation. The length of the animation usually corr
         <tr>
             <td>
                 <Text size={2}>
-                    <InlineCode>duration-1</InlineCode>
+                    <InlineCode theme="plain">duration-1</InlineCode>
                 </Text>
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode>150ms</InlineCode>
-                </Text>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <Text size={2}>
-                    <InlineCode>duration-2</InlineCode>
-                </Text>
-            </td>
-            <td>
-                <Text size={2}>
-                    <InlineCode>200ms</InlineCode>
+                    <InlineCode theme="plain">150ms</InlineCode>
                 </Text>
             </td>
         </tr>
         <tr>
             <td>
                 <Text size={2}>
-                    <InlineCode>duration-3</InlineCode>
+                    <InlineCode theme="plain">duration-2</InlineCode>
                 </Text>
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode>250ms</InlineCode>
-                </Text>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <Text size={2}>
-                    <InlineCode>duration-4</InlineCode>
-                </Text>
-            </td>
-            <td>
-                <Text size={2}>
-                    <InlineCode>300ms</InlineCode>
+                    <InlineCode theme="plain">200ms</InlineCode>
                 </Text>
             </td>
         </tr>
         <tr>
             <td>
                 <Text size={2}>
-                    <InlineCode>duration-5</InlineCode>
+                    <InlineCode theme="plain">duration-3</InlineCode>
                 </Text>
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode>350ms</InlineCode>
+                    <InlineCode theme="plain">250ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">duration-4</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">300ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">duration-5</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">350ms</InlineCode>
                 </Text>
             </td>
         </tr>
@@ -157,32 +157,44 @@ Determines the length of the animation. The length of the animation usually corr
 
 ### Examples
 
-Click to see animation.
+Click examples to toggle animations.
 
 <div className="grid">
-    <div className="m_col-4">
+    <div className="m_col-4 mb3 m_mb0">
         <div className="shadow-300 h6 relative br2">
             <Color />
-            <Text size={2} className="mt2 b">
-                Color transition
-            </Text>
         </div>
+        <Text size={2} className="mt2 b">
+            Color transition
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-2</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-in</InlineCode>
+        </Text>
     </div>
-    <div className="m_col-4">
+    <div className="m_col-4 mb3 m_mb0">
         <div className="shadow-300 h6 relative br2">
             <Pop />
-            <Text size={2} className="mt2 b">
-                Pop-up
-            </Text>
         </div>
+        <Text size={2} className="mt2 b">
+            Pop-up
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-1</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-out</InlineCode>
+        </Text>
     </div>
     <div className="m_col-4">
         <div className="shadow-300 h6 relative br2">
             <Slide />
-            <Text size={2} className="mt2 b">
-                Slide
-            </Text>
         </div>
+        <Text size={2} className="mt2 b">
+            Slide
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-4</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-out</InlineCode>
+        </Text>
     </div>
 </div>
 
