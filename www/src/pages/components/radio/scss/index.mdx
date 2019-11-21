@@ -17,7 +17,7 @@ Here are a few tips for using radio buttons:
 -   The `label`’s `for` attribute must match the `id` of the associated radio. This allows users to select the radio while clicking on the `label` text.
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input
         class="tp-radio-input"
         name="input-basic-radio"
@@ -28,12 +28,12 @@ Here are a few tips for using radio buttons:
     <div class="tp-radio-image"></div>
     <label class="tp-label" for="input-basic-radio-a">Long Distance Moving</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input class="tp-radio-input" name="input-basic-radio" type="radio" id="input-basic-radio-b" />
     <div class="tp-radio-image"></div>
     <label class="tp-label" for="input-basic-radio-b">Furniture Moving and Heavy Lifting</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input class="tp-radio-input" name="input-basic-radio" type="radio" id="input-basic-radio-c" />
     <div class="tp-radio-image"></div>
     <label class="tp-label" for="input-basic-radio-c">Pool Table Moving</label>
@@ -47,7 +47,7 @@ Add the `disabled` attribute to the `input` element to make it visually and func
 You should also use `tp-label--disabled` to visually disable the `label`.
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input
         class="tp-radio-input"
         name="input-disabed"
@@ -59,14 +59,14 @@ You should also use `tp-label--disabled` to visually disable the `label`.
     <div class="tp-radio-image"></div>
     <label class="tp-label tp-label--disabled" for="input-disabed-a">Long Distance Moving</label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input class="tp-radio-input" name="input-disabed" id="input-disabed-b" type="radio" disabled />
     <div class="tp-radio-image"></div>
     <label class="tp-label tp-label--disabled" for="input-disabed-b">
         Furniture Moving and Heavy Lifting
     </label>
 </div>
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input class="tp-radio-input" name="input-disabed" id="input-disabed-c" type="radio" disabled />
     <div class="tp-radio-image"></div>
     <label class="tp-label tp-label--disabled" for="input-disabed-c">Pool Table Moving</label>
@@ -80,7 +80,7 @@ The `tp-radio-input--bad-news` class can be used to visually represent an error.
 This class only changes the radio button’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```html
-<div class="tp-input-wrap">
+<div class="tp-radio-wrap">
     <input
         class="tp-radio-input tp-radio-input--bad-news"
         name="input-error"

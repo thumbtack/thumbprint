@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 3.1.0 - 2019-11-21
+
+### Added
+
+-   [Minor] Add checkbox and radio wrap classes that will replace `tp-input-wrap`.
+
+### Changed
+
+-   [Minor] Add input placeholder text color code to `input.scss` and `textarea.scss`. These styles are duplicated in `form.scss` but that file will soon be removed. (#559)
+
 ## 3.0.0 - 2019-11-20
 
 ### Removed

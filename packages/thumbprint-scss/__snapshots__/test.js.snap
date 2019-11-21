@@ -426,6 +426,18 @@ exports[`compiles correctly 1`] = `
 .tp-button-row__right {
   margin-left: auto;
 }
+.tp-checkbox-wrap {
+  position: relative;
+}
+.tp-checkbox-wrap .tp-label {
+  padding-left: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.tp-checkbox-wrap + .tp-checkbox-wrap {
+  margin-top: 8px;
+}
 .tp-checkbox-input {
   position: absolute;
   opacity: 0;
@@ -1071,6 +1083,15 @@ exports[`compiles correctly 1`] = `
   vertical-align: middle;
   line-height: 24px;
 }
+.tp-text-input::-webkit-input-placeholder {
+  color: #676d73;
+}
+.tp-text-input::-moz-placeholder {
+  color: #676d73;
+}
+.tp-text-input:-ms-input-placeholder {
+  color: #676d73;
+}
 .tp-text-input--small {
   line-height: 20px;
   padding: 9px 15px;
@@ -1477,6 +1498,15 @@ _:-ms-fullscreen {
 .tp-radio-wrap {
   position: relative;
 }
+.tp-radio-wrap .tp-label {
+  padding-left: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.tp-radio-wrap + .tp-radio-wrap {
+  margin-top: 8px;
+}
 .tp-radio-input {
   position: absolute;
   opacity: 0;
@@ -1590,6 +1620,15 @@ _:-ms-fullscreen {
   resize: vertical;
   height: 152px;
   min-height: 104px;
+}
+.tp-textarea::-webkit-input-placeholder {
+  color: #676d73;
+}
+.tp-textarea::-moz-placeholder {
+  color: #676d73;
+}
+.tp-textarea:-ms-input-placeholder {
+  color: #676d73;
 }
 .tp-textarea:focus {
   color: #2f3033;

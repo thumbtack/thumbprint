@@ -10,6 +10,18 @@
     vertical-align: middle;
     line-height: $tp-font__body__1__line-height;
 
+    &::-webkit-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    &::-moz-placeholder {
+        color: $tp-color__black-300;
+    }
+
+    &:-ms-input-placeholder {
+        color: $tp-color__black-300;
+    }
+
     &--small {
         line-height: $tp-font__body__2__line-height;
         padding: 9px 15px;
