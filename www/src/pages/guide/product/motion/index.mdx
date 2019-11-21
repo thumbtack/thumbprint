@@ -16,10 +16,14 @@ import { Title, Text, Grid, GridColumn } from '@thumbtack/thumbprint-react';
 
 Motion can introduce an element of delight and activity. Used sparingly, it can help users focus their attention and navigate through the UI. Here we discuss motion at a platform agnostic level and then specifically about the page-level navigations available on iOS and Android.
 
-## Easing
+## General motion
+
+### Easing
+
+For those familiar with easing values on the web these are slightly more aggressive than a browser’s `animation-timing-function` defaults.
 
 <div className="grid mb3">
-    <div className="col-6">
+    <div className="m_col-6">
         <div class="b mb1">ease-in</div>
         <Text size={2} className="black-300 mb2">
             Moves from slow to fast.
@@ -28,15 +32,15 @@ Motion can introduce an element of delight and activity. Used sparingly, it can 
             <InlineCode>cubic-bezier(0.50, 0, 1, 1)</InlineCode>
         </Text>
     </div>
-    <div className="col-6">
-        <div className="bg-gray-200 h5 pa3 flex items-center">
+    <div className="m_col-6 mt3 m_mt0">
+        <div className="bg-gray-200 h5 pa3 flex items-center br2">
             <Easing animation="easeIn" />
         </div>
     </div>
 </div>
 
 <div className="grid mb3">
-    <div className="col-6">
+    <div className="m_col-6">
         <div class="b mb1">ease-out</div>
         <Text size={2} className="black-300 mb2">
             Moves from fast to slow.
@@ -45,15 +49,15 @@ Motion can introduce an element of delight and activity. Used sparingly, it can 
             <InlineCode>cubic-bezier(0, 0, 0.40, 1)</InlineCode>
         </Text>
     </div>
-    <div className="col-6">
-        <div className="bg-gray-200 h5 pa3 flex items-center">
+    <div className="m_col-6 mt3 m_mt0">
+        <div className="bg-gray-200 h5 pa3 flex items-center br2">
             <Easing animation="easeOut" />
         </div>
     </div>
 </div>
 
 <div className="grid mb3">
-    <div className="col-6">
+    <div className="m_col-6">
         <div class="b mb1">ease-in-out</div>
         <Text size={2} className="black-300 mb2">
             Moves slowly on both ends.
@@ -62,12 +66,71 @@ Motion can introduce an element of delight and activity. Used sparingly, it can 
             <InlineCode>cubic-bezier(0.45, 0, 0.40, 1)</InlineCode>
         </Text>
     </div>
-    <div className="col-6">
-        <div className="bg-gray-200 h5 pa3 flex items-center">
+    <div className="m_col-6 mt3 m_mt0">
+        <div className="bg-gray-200 h5 pa3 flex items-center br2">
             <Easing animation="easeInOut" />
         </div>
     </div>
 </div>
+
+### Duration
+
+Determines the length of the animation. The length of the animation usually corresponds to the size and distance of the animation.
+
+<table>
+    <tr>
+        <th>
+            <Text size={2}>Token</Text>
+        </th>
+        <th>
+            <Text size={2}>Duration</Text>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <InlineCode>duration-1</InlineCode>
+        </td>
+        <td>
+            <InlineCode>150ms</InlineCode>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <InlineCode>duration-2</InlineCode>
+        </td>
+        <td>
+            <InlineCode>200ms</InlineCode>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <InlineCode>duration-3</InlineCode>
+        </td>
+        <td>
+            <InlineCode>250ms</InlineCode>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <InlineCode>duration-4</InlineCode>
+        </td>
+        <td>
+            <InlineCode>300ms</InlineCode>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <InlineCode>duration-5</InlineCode>
+        </td>
+        <td>
+            <InlineCode>350ms</InlineCode>
+        </td>
+    </tr>
+</table>
+
+### Examples
+
+Doctor Spielvogel, it alleviates nothing fixing the blame - blaming is still ailing, of course, of course - but nonetheless, what was it with these Jewish parents, what, that they were able to make us little Jewish boys believe ourselves to be princes on the one hand, unique as unicorns on the one hand, geniuses and brilliant like nobody has ever been brilliant and beautiful before in the history of childhood - saviors and sheer perfection on the one hand, and such bumbling, incompetent, thoughtless, helpless, selfish, evil little shits, little ingrates, on the other!
 
 ## Page-level transitions
 

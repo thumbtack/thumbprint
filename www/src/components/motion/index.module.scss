@@ -5,14 +5,15 @@
         transform: translateX(0%);
     }
 
+    // This provides a little delay before restarting the animation
     80%,
     100% {
-        transform: translateX(calc(100% - 17px));
+        transform: translateX(calc(100% - #{$tp-space__3} - 1px)); //
     }
 }
 
 .root {
-    height: 16px;
+    height: $tp-space__3;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -40,8 +41,8 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 16px;
-        height: 16px;
+        width: $tp-space__3;
+        height: $tp-space__3;
         background: $tp-color__blue;
         border-radius: 50%;
     }

@@ -2,6 +2,12 @@
 
 .root {
     @include root;
+    transition: background 300ms 300ms;
+
+    &.isActive {
+        background: #333;
+        transition: background 300ms;
+    }
 }
 
 .box {
