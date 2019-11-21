@@ -426,6 +426,18 @@ exports[`compiles correctly 1`] = `
 .tp-button-row__right {
   margin-left: auto;
 }
+.tp-checkbox-wrap {
+  position: relative;
+}
+.tp-checkbox-wrap .tp-label {
+  padding-left: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.tp-checkbox-wrap + .tp-checkbox-wrap {
+  margin-top: 8px;
+}
 .tp-checkbox-input {
   position: absolute;
   opacity: 0;
@@ -1485,6 +1497,15 @@ _:-ms-fullscreen {
 }
 .tp-radio-wrap {
   position: relative;
+}
+.tp-radio-wrap .tp-label {
+  padding-left: 28px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+.tp-radio-wrap + .tp-radio-wrap {
+  margin-top: 8px;
 }
 .tp-radio-input {
   position: absolute;
