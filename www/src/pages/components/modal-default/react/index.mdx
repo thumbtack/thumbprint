@@ -6,8 +6,15 @@ description: A basic and commonly used modal.
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
 import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="warning" title="This component will be renamed">
+    The <InlineCode>ModalDefault</InlineCode> React components component will be renamed to{' '}
+    <InlineCode>Modal</InlineCode> in early December.
+    <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
+</Alert>
 
 ## Modal variations
 

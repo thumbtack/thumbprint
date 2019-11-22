@@ -5,8 +5,16 @@ description: Loading indicator with three animated dots.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="warning" title="This component will be renamed">
+    The <InlineCode>tp-loader</InlineCode> classes will be renamed to{' '}
+    <InlineCode>tp-loader-dots</InlineCode> in early December.
+    <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
+</Alert>
 
 ## Loader Sizes
 
