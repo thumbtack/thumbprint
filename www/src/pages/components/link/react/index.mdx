@@ -5,8 +5,6 @@ description: Color and style variations for anchor links.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
-import Alert from 'components/alert';
-import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
@@ -136,12 +134,6 @@ These are the available `ThemedLink` styles for use on light background colors.
     </ThemedLink>
 </ButtonRow>
 ```
-
-<Alert type="warning" title="Why is the secondary theme different?">
-    The former <InlineCode>secondary</InlineCode> theme is has been renamed to{' '}
-    <InlineCode>tertiary</InlineCode>.{' '}
-    <a href="https://github.com/thumbtack/thumbprint/issues/89">Learn more about the changes</a>.
-</Alert>
 
 ### Use on dark backgrounds
 

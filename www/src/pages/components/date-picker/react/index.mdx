@@ -5,8 +5,16 @@ description: Configurable date selector.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="warning" title="This component will be renamed">
+    The <InlineCode>DatePicker</InlineCode> React component component will be renamed to{' '}
+    <InlineCode>Calendar</InlineCode> in early December.
+    <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
+</Alert>
 
 ## Initial dates
 

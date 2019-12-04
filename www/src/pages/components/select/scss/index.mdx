@@ -5,8 +5,16 @@ description: Dropdown for selecting an item from a larger set.
 
 import { graphql } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="warning" title="This component will be renamed">
+    The <InlineCode>tp-select</InlineCode> classes component will be renamed to{' '}
+    <InlineCode>tp-dropdown</InlineCode> in early December.
+    <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
+</Alert>
 
 ## Select dropdown sizes
 
