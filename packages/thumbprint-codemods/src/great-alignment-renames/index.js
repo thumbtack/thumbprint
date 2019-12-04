@@ -17,6 +17,8 @@ module.exports = (file, api) => {
         ModalDefaultAnimatedWrapper: 'ModalAnimatedWrapper',
         Textarea: 'TextArea',
         Input: 'TextInput',
+        InputIcon: 'TextInputIcon', 
+        InputClearButton: 'TextInputClearButton',
     });
 
     if (res === null) {
