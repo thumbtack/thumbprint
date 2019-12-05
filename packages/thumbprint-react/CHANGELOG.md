@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Export a `Calendar` component that is an alias for `DatePicker`. (#566)
+
 ## 11.0.2 - 2019-11-21
 
 ### Changed
