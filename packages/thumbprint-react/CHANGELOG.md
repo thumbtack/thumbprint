@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Export a `TextInput` component that is an alias for `Input`. (#566)
 -   [Minor] Export a `Dropdown` component that is an alias for `Select`. (#566)
 -   [Minor] Export a `Calendar` component that is an alias for `DatePicker`. (#566)
 

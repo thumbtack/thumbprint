@@ -408,4 +408,11 @@ const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
 Input.displayName = 'Input';
 
 export default Input;
-export { InputIcon, InputClearButton, ClearButton };
+export {
+    InputIcon,
+    InputClearButton,
+    ClearButton,
+    Input as TextInput,
+    InputIcon as TextInputIcon,
+    InputClearButton as TextInputClearButton,
+};
