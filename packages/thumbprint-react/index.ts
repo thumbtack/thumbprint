@@ -37,7 +37,7 @@ export {
 } from './components/Popover/index';
 export { default as Pill } from './components/Pill/index.jsx';
 export { default as Radio } from './components/Radio/index';
-export { default as Select } from './components/Select/index';
+export { default as Select, Dropdown } from './components/Select/index';
 export {
     default as ServiceCard,
     ServiceCardDescription,

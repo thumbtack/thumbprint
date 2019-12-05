@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Export a `Dropdown` component that is an alias for `Select`. (#566)
 -   [Minor] Export a `Calendar` component that is an alias for `DatePicker`. (#566)
 
 ## 11.0.2 - 2019-11-21
