@@ -94,7 +94,7 @@ interface PropTypes {
     name?: string;
 }
 
-export default function Select({
+const Select = ({
     children,
     dataTest,
     hasError = false,
@@ -109,7 +109,7 @@ export default function Select({
     onClick = (): void => {},
     size = 'large',
     value,
-}: PropTypes): JSX.Element {
+}: PropTypes): JSX.Element => {
     const uiState = getUIState({ isDisabled, hasError });
 
     return (
@@ -145,4 +145,7 @@ export default function Select({
             <NavigationCaretDownSmall className={styles.caret} fill={iconColor[uiState]} />
         </div>
     );
-}
+};
+
+export { Select as Dropdown };
+export default Select;
