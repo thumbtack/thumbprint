@@ -4,7 +4,7 @@
 
 ### Added
 
--   [Minor] Export a `TextInput` component that is an alias for `Input`. (#566)
+-   [Minor] Export a `TextArea` component that is an alias for `Textarea`. (#566)
 
 ## 11.0.2 - 2019-11-21
 
