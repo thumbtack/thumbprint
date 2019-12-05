@@ -81,7 +81,7 @@ interface PropTypes {
     dataTest?: string;
 }
 
-export default function Textarea({
+const Textarea = ({
     dataTest,
     hasError = false,
     id,
@@ -94,7 +94,7 @@ export default function Textarea({
     placeholder,
     value,
     name,
-}: PropTypes): JSX.Element {
+}: PropTypes): JSX.Element => {
     const uiState = getUIState({ hasError, isDisabled });
 
     return (
@@ -118,4 +118,7 @@ export default function Textarea({
             name={name}
         />
     );
-}
+};
+
+export { Textarea as TextArea };
+export default Textarea;
