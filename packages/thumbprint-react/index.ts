@@ -4,12 +4,19 @@ export { BannerAlert, InPageAlert } from './components/Alert/index';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { default as Carousel } from './components/Carousel/index';
 export { default as Checkbox } from './components/Checkbox/index';
-export { default as DatePicker } from './components/DatePicker/index';
+export { default as DatePicker, Calendar } from './components/DatePicker/index';
 export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
 export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index';
-export { default as Input, InputIcon, InputClearButton } from './components/Input/index';
+export {
+    default as Input,
+    InputIcon,
+    InputClearButton,
+    TextInput,
+    TextInputIcon,
+    TextInputClearButton,
+} from './components/Input/index';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
 export { default as Label } from './components/Label/index';
 export { default as Link, ThemedLink } from './components/Link/index.jsx';
@@ -45,7 +52,7 @@ export {
 } from './components/Popover/index';
 export { default as Pill } from './components/Pill/index.jsx';
 export { default as Radio } from './components/Radio/index';
-export { default as Select } from './components/Select/index';
+export { default as Select, Dropdown } from './components/Select/index';
 export {
     default as ServiceCard,
     ServiceCardDescription,
