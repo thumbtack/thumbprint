@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Export a `TextArea` component that is an alias for `Textarea`. (#566)
 -   [Minor] Export `Modal*` components that are aliases for `ModalDefault*`. (#566)
 -   [Minor] Export a `TextInput` component that is an alias for `Input`. (#566)
 -   [Minor] Export a `Dropdown` component that is an alias for `Select`. (#566)
