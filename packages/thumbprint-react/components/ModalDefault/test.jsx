@@ -216,7 +216,7 @@ describe('ModalDefaultFooter', () => {
     });
 });
 
-describe('Modal', () => {
+describe('New: Modal', () => {
     test('renders a basic modal', () => {
         const wrapper = mount(<Modal onCloseClick={noop} />);
         expect(wrapper).toMatchSnapshot();
@@ -364,35 +364,35 @@ describe('Modal', () => {
     });
 });
 
-describe('ModalHeader', () => {
+describe('New: ModalHeader', () => {
     test('renders a basic header', () => {
         const wrapper = mount(<ModalHeader>Goose</ModalHeader>);
         expect(wrapper).toMatchSnapshot();
     });
 });
 
-describe('ModalTitle', () => {
+describe('New: ModalTitle', () => {
     test('renders a basic title', () => {
         const wrapper = mount(<ModalTitle>Goose</ModalTitle>);
         expect(wrapper).toMatchSnapshot();
     });
 });
 
-describe('ModalDescription', () => {
+describe('New: ModalDescription', () => {
     test('renders a basic description', () => {
         const wrapper = mount(<ModalDescription>Goose</ModalDescription>);
         expect(wrapper).toMatchSnapshot();
     });
 });
 
-describe('ModalContent', () => {
+describe('New: ModalContent', () => {
     test('renders contents', () => {
         const wrapper = mount(<ModalContent>Goose</ModalContent>);
         expect(wrapper).toMatchSnapshot();
     });
 });
 
-describe('ModalFooter', () => {
+describe('New: ModalFooter', () => {
     test('renders a non-sticky footer', () => {
         const wrapper = mount(<ModalFooter isSticky={false}>Goose</ModalFooter>);
         expect(wrapper).toMatchSnapshot();
