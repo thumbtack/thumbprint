@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Export `Modal*` components that are aliases for `ModalDefault*`. (#566)
+
 ## 11.0.2 - 2019-11-21
 
 ### Changed

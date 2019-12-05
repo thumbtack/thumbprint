@@ -26,6 +26,14 @@ export {
     ModalDefaultContentFullBleed,
     ModalDefaultFooter,
     ModalDefaultAnimatedWrapper,
+    Modal,
+    ModalHeader,
+    ModalTitle,
+    ModalDescription,
+    ModalContent,
+    ModalContentFullBleed,
+    ModalFooter,
+    ModalAnimatedWrapper,
 } from './components/ModalDefault/index.jsx';
 export { default as ModalStandard } from './components/ModalStandard/index.jsx';
 export {
