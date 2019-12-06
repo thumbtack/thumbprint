@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 11.1.0 - 2019-12-05
+
 ### Added
 
 -   [Minor] Export a `TextArea` component that is an alias for `Textarea`. (#566)
