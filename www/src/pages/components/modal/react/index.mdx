@@ -1,5 +1,5 @@
 ---
-title: Modal Default
+title: Modal
 description: A basic and commonly used modal.
 ---
 
@@ -10,9 +10,9 @@ import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
-<Alert type="warning" title="This component will be renamed">
-    The <InlineCode>ModalDefault</InlineCode> React components component will be renamed to{' '}
-    <InlineCode>Modal</InlineCode> in early December.
+<Alert type="warning" title="This component was recently renamed">
+    The <InlineCode>Modal</InlineCode> React component component was recently renamed from{' '}
+    <InlineCode>ModalDefault</InlineCode>.
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
@@ -22,10 +22,10 @@ Modals can be opened or closed with a `isOpen` prop.
 
 ### Basic modal with a form
 
-The `ModalDefault` has a curtain (backdrop) at medium and large breakpoints. It appears fullscreen on small devices.
+The `Modal` has a curtain (backdrop) at medium and large breakpoints. It appears fullscreen on small devices.
 
 ```jsx
-function ModalDefaultDemoBasic() {
+function ModalDemoBasic() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [licenseText, setLicenseText] = React.useState('');
 
@@ -44,10 +44,10 @@ function ModalDefaultDemoBasic() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
             >
                 <ModalHeader>
@@ -93,10 +93,10 @@ function ModalDefaultDemoBasic() {
 
 ### Tall modal with a sticky footer
 
-This modal has a sticky footer that is always visible. The sticky footer is set by using the `isSticky` prop on the `ModalDefaultFooter` component.
+This modal has a sticky footer that is always visible. The sticky footer is set by using the `isSticky` prop on the `ModalFooter` component.
 
 ```jsx
-function ModalDefaultDemoStickyTall() {
+function ModalDemoStickyTall() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -114,10 +114,10 @@ function ModalDefaultDemoStickyTall() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
             >
                 <ModalHeader>
@@ -226,10 +226,10 @@ function ModalDefaultDemoStickyTall() {
 
 ### Tall modal without a sticky footer
 
-This modal does not have a default, non-sticky footer. You'll have to scroll to view the button within the `ModalDefaultFooter`.
+This modal does not have a default, non-sticky footer. You'll have to scroll to view the button within the `ModalFooter`.
 
 ```jsx
-function ModalDefaultDemoTall() {
+function ModalDemoTall() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -247,10 +247,10 @@ function ModalDefaultDemoTall() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
             >
                 <ModalHeader>
@@ -362,7 +362,7 @@ function ModalDefaultDemoTall() {
 It's possible to render narrow modals with the `width` prop.
 
 ```jsx
-function ModalDefaultDemoNarrow() {
+function ModalDemoNarrow() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -381,10 +381,10 @@ function ModalDefaultDemoNarrow() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
             >
                 <ModalHeader>
@@ -432,7 +432,7 @@ function ModalDefaultDemoNarrow() {
 To keep the height of the modal (including top row with close button and sticky footer) fixed such that it remains consistent as modal content changes, you can apply `heightAboveSmall` prop. It only applies when the viewport is above [the `small` breakpoint](https://thumbprint.design/guide/product/breakpoints/); modals always stretch 100% of the viewport under small breakpoint. When used with `<ModalFooter isSticky>`, the modal will not expand beyond the height of the viewport to maintain a sticky footer (i.e. the modal's height will be the max of the provided height and the viewport height).
 
 ```jsx
-function ModalDefaultDemoFixedHeight() {
+function ModalDemoFixedHeight() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [showIntroScreen, setShowIntroScreen] = React.useState(true);
 
@@ -451,10 +451,10 @@ function ModalDefaultDemoFixedHeight() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
                 heightAboveSmall="medium"
             >
@@ -567,7 +567,7 @@ function ModalDefaultDemoFixedHeight() {
 
 ### Full bleed modal
 
-You can use the `ModalDefaultContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal. This is useful for setting your own background color or section borders, for example.
+You can use the `ModalContentFullBleed` component to create a section of modal content that visually reaches the edge of the modal. This is useful for setting your own background color or section borders, for example.
 
 <Alert type="warning" title="Warning" className="mt5">
     This component provides the same amount of padding as the modal itself, so it can't be used to
@@ -579,7 +579,7 @@ You can use the `ModalDefaultContentFullBleed` component to create a section of 
 </Alert>
 
 ```jsx
-function ModalDefaultDemoFullBleed() {
+function ModalDemoFullBleed() {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -597,10 +597,10 @@ function ModalDefaultDemoFullBleed() {
                     setIsOpen(false);
                 }}
                 onCloseFinish={() => {
-                    console.log('ModalDefault onCloseFinish');
+                    console.log('Modal onCloseFinish');
                 }}
                 onOpenFinish={() => {
-                    console.log('ModalDefault onOpenFinish');
+                    console.log('Modal onOpenFinish');
                 }}
             >
                 <ModalHeader>
@@ -658,7 +658,7 @@ function ModalDefaultDemoFullBleed() {
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/modal-default/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/modal/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

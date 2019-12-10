@@ -1,5 +1,5 @@
 ---
-title: Textarea
+title: Text Area
 description: Multiline inputs for text.
 ---
 
@@ -10,20 +10,20 @@ import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
-<Alert type="warning" title="This component will be renamed">
-    The <InlineCode>Textarea</InlineCode> React component component will be renamed to{' '}
-    <InlineCode>TextArea</InlineCode> in early December.
+<Alert type="warning" title="This component was recently renamed">
+    The <InlineCode>TextArea</InlineCode> React component component was recently renamed from{' '}
+    <InlineCode>Textarea</InlineCode>.
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
-## Basic textarea
+## Basic Text Area
 
-`Textarea` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
+`TextArea` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
 
 In this example, notice how `value` is stored within `this.state`. The `onChange` function will set the new `value` when the user enters or removes a character in the textarea.
 
 ```jsx
-function TextareaExample() {
+function TextAreaExample() {
     const [value, setValue] = React.useState('');
     return (
         <div>
@@ -39,12 +39,12 @@ function TextareaExample() {
 }
 ```
 
-## Disabled textarea
+## Disabled Text Area
 
-The `isDisabled` prop disables the `Textarea` visually and functionally.
+The `isDisabled` prop disables the `TextArea` visually and functionally.
 
 ```jsx
-function TextareaExample() {
+function TextAreaExample() {
     const [value, setValue] = React.useState('');
     return (
         <TextArea
@@ -57,12 +57,12 @@ function TextareaExample() {
 }
 ```
 
-## Textarea with an error
+## Text Area with an error
 
-The `hasError` prop only changes the textarea’s color. It should be used alongside an error message that helps users advance through the form.
+The `hasError` prop only changes the Text Area’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-function TextareaExample() {
+function TextAreaExample() {
     const [value, setValue] = React.useState(
         'We provide DJ services in Austin and have been in business for 25 years.',
     );
@@ -82,7 +82,7 @@ function TextareaExample() {
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/textarea/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-area/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

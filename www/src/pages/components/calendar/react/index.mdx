@@ -1,5 +1,5 @@
 ---
-title: Date Picker
+title: Calendar
 description: Configurable date selector.
 ---
 
@@ -10,20 +10,20 @@ import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
-<Alert type="warning" title="This component will be renamed">
-    The <InlineCode>DatePicker</InlineCode> React component component will be renamed to{' '}
-    <InlineCode>Calendar</InlineCode> in early December.
+<Alert type="warning" title="This component was recently renamed">
+    The <InlineCode>Calendar</InlineCode> React component component was recently renamed from{' '}
+    <InlineCode>DatePicker</InlineCode>.
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
 ## Initial dates
 
-The `DatePicker` can optionally have an initial date selected.
+The `Calendar` can optionally have an initial date selected.
 
 ### No initial date selected
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(undefined);
     const [month, setMonth] = React.useState(undefined);
 
@@ -34,7 +34,7 @@ function DatePickerExample() {
 ### With an initial date selected
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
@@ -47,7 +47,7 @@ function DatePickerExample() {
 You can pass the date as a string that can be parsed to a `Date` object.
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState('2100-01-01');
     const [month, setMonth] = React.useState(undefined);
 
@@ -58,7 +58,7 @@ function DatePickerExample() {
 ### Multiple date selection
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState([
         new Date(),
         new Date(new Date().getTime() + 60 * 60 * 24 * 1000 * 2),
@@ -80,10 +80,10 @@ function DatePickerExample() {
 
 ### Past date selection enabled
 
-The `DatePicker` disables past days by default. This can be enabled by setting `disabledDays` to `null`.
+The `Calendar` disables past days by default. This can be enabled by setting `disabledDays` to `null`.
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
@@ -104,7 +104,7 @@ function DatePickerExample() {
 Users won’t be able to navigate or interact with the days after `lastMonth`.
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
@@ -125,7 +125,7 @@ function DatePickerExample() {
 Pass a function for this prop that returns true for any date where a dot indicator should appear.
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
@@ -148,7 +148,7 @@ function DatePickerExample() {
 Pass a function for this prop that returns true for any date where the number should be crossed out.
 
 ```jsx
-function DatePickerExample() {
+function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
@@ -171,7 +171,7 @@ function DatePickerExample() {
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/date-picker/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/calendar/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

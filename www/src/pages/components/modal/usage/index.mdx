@@ -1,5 +1,5 @@
 ---
-title: Modal Default
+title: Modal
 description: A basic and commonly used modal.
 ---
 
@@ -201,7 +201,7 @@ Contains the primary action of the modal. Since it is the primary action, use th
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/modal-default/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/modal/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
