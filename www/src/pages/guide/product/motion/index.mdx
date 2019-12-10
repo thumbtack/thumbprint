@@ -25,6 +25,8 @@ Motion can introduce an element of delight and activity. Used sparingly, it can 
 
 For those familiar with easing values on the web these are slightly more aggressive than a browser’s `animation-timing-function` defaults.
 
+[Easing tokens](/tokens/scss/#section-easing) are available for use in SCSS and Javascript. iOS and Android should use their platform’s built-in easings.
+
 <div className="grid mb3">
     <div className="m_col-6">
         <div class="b">ease-in</div>
@@ -79,6 +81,8 @@ For those familiar with easing values on the web these are slightly more aggress
 ### Duration
 
 Determines the length of the animation. The length of the animation usually corresponds to the size and distance of the animation.
+
+[Duration tokens](/tokens/scss/#section-duration) are available for all platforms.
 
 <table>
     <thead>
@@ -302,4 +306,4 @@ Also, these interactions are changed occasionally in OS releases. If we bypass t
 
 The inability to communicate motion in static layouts has been a long-standing problem in the design world. In the absence of this information it is often up to the native developer to decide how to implement it.
 
-To alleviate this problem with page-level transitions we recommend designers to use an annotation in Figma.
+To alleviate this problem with page-level transitions we recommend designers to use the motion annotations we’ve provided in Figma.
