@@ -224,3 +224,15 @@ https://thumbprint.thumbtack.com/* https://thumbprint.design/:splat 301!
 
 # Use tabs and actual pages for token languages instead of a select dropdown
 /tokens /tokens/scss
+
+# Rename a few components as part of "The Great Alignment" effort
+# https://github.com/thumbtack/thumbprint/issues/566
+/components/date-picker/react/ /components/calendar/react/
+/components/select/react/ /components/dropdown/react/
+/components/select/scss/ /components/dropdown/scss/
+/components/modal-default/usage/ /components/modal/usage/
+/components/modal-default/react/ /components/modal/react/
+/components/textarea/react/ /components/text-area/react/
+/components/textarea/scss/ /components/text-area/scss/
+/components/input/react/ /components/text-input/react/
+/components/input/scss/ /components/text-input/scss/

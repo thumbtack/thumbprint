@@ -1,5 +1,5 @@
 ---
-title: Textarea
+title: Text Area
 description: Multiline inputs for text.
 ---
 
@@ -16,20 +16,20 @@ import { InlineCode } from 'components/mdx';
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
-## Basic textarea example
+## Basic Text Area example
 
 ```html
-<label class="tp-label" for="example-basic-textarea">Business description</label>
+<label class="tp-label" for="example-basic-text-area">Business description</label>
 <textarea
     class="tp-textarea"
-    id="example-basic-textarea"
+    id="example-basic-text-area"
     placeholder="Tell us about your business"
 />
 ```
 
-## Textarea with an error
+## Text Area with an error
 
-The `tp-textarea--bad-news` class only changes the textarea’s color. It should be used alongside an error message that helps users advance through the form.
+The `tp-textarea--bad-news` class only changes the textarea's color. It should be used alongside an error message that helps users advance through the form.
 
 ```html
 <textarea
@@ -43,7 +43,7 @@ The `tp-textarea--bad-news` class only changes the textarea’s color. It should
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/textarea/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-area/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

@@ -1,5 +1,5 @@
 ---
-title: Select
+title: Dropdown
 description: Dropdown for selecting an item from a larger set.
 ---
 
@@ -16,9 +16,9 @@ import { InlineCode } from 'components/mdx';
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
-## Select dropdown sizes
+## Dropdown sizes
 
-This is the default size for select dropdowns.
+This is the default size for dropdowns.
 
 ### Large
 
@@ -34,7 +34,7 @@ This is the default size for select dropdowns.
 
 ### Small
 
-The `tp-select--small` class renders a smaller select dropdown.
+The `tp-select--small` class renders a smaller dropdown.
 
 ```html
 <label class="tp-label" for="example-size-small">Select a state</label>
@@ -48,7 +48,7 @@ The `tp-select--small` class renders a smaller select dropdown.
 
 ## Widths
 
-By default, the select dropdown renders as an `inline-block` element. Its width is determined by the `option` with the longest text.
+By default, the dropdown renders as an `inline-block` element. Its width is determined by the `option` with the longest text.
 
 The `tp-select--full` class can be used to set the width to 100%.
 
@@ -65,7 +65,7 @@ The `tp-select--full` class can be used to set the width to 100%.
 
 ## Disabled selects
 
-The `disabled` attribute visually and functionally disables the select dropdown.
+The `disabled` attribute visually and functionally disables the dropdown.
 
 ```html
 <label class="tp-label tp-label--disabled" for="example-disabled">Select a state</label>
@@ -77,11 +77,11 @@ The `disabled` attribute visually and functionally disables the select dropdown.
 </select>
 ```
 
-## Select dropdown with an error
+## Dropdown with an error
 
 The `tp-select--bad-news` class can be used to visually represent an error.
 
-This prop only changes the select dropdown’s color. It should be used alongside an error message that helps users advance through the form.
+This prop only changes the dropdown’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```html
 <label class="tp-label tp-label--bad-news" for="example-disabled">Select a state</label>
@@ -98,7 +98,7 @@ This prop only changes the select dropdown’s color. It should be used alongsid
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/select/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/dropdown/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

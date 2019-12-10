@@ -1,5 +1,5 @@
 ---
-title: Input
+title: Text Input
 description: Form inputs with sizes and style variations.
 ---
 
@@ -10,20 +10,20 @@ import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
-<Alert type="warning" title="This component will be renamed">
-    The <InlineCode>Input</InlineCode> React component component will be renamed to{' '}
-    <InlineCode>TextInput</InlineCode> in early December.
+<Alert type="warning" title="This component was recently renamed">
+    The <InlineCode>TextInput</InlineCode> React component component was recently renamed from{' '}
+    <InlineCode>Input</InlineCode>.
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
-## Input with an icon and clear button
+## TextInput with an icon and clear button
 
-`Input` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
+`TextInput` is a controlled component. This means that the visible text will always match the contents of the `value` prop.
 
 In this example, notice how `value` is stored in a `useState` variable. The `onChange` function will set the new `value` when the user enters or removes a character in the input.
 
 ```jsx
-function ClearableInput() {
+function ClearableTextInput() {
     const [value, setValue] = React.useState('1355 Market St.');
 
     return (
@@ -46,14 +46,14 @@ function ClearableInput() {
 }
 ```
 
-## Input sizes
+## Text Input sizes
 
-Inputs are available in two sizes: `small` and `large`. `large` is the default size.
+Text Inputs are available in two sizes: `small` and `large`. `large` is the default size.
 
 ### Small input
 
 ```jsx
-function InputExample() {
+function TextInputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
@@ -70,7 +70,7 @@ function InputExample() {
 ### Large input
 
 ```jsx
-function InputExample() {
+function TextInputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
@@ -86,10 +86,10 @@ function InputExample() {
 
 ## Disabled inputs
 
-The `isDisabled` prop disables the `Input` visually and functionally.
+The `isDisabled` prop disables the `TextInput` visually and functionally.
 
 ```jsx
-function InputExample() {
+function TextInputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
@@ -98,12 +98,12 @@ function InputExample() {
 }
 ```
 
-## Input with an error
+## Text Input with an error
 
 The `hasError` prop only changes the input’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-function InputExample() {
+function TextInputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
@@ -114,10 +114,10 @@ function InputExample() {
 
 ## Button attached to an input
 
-You can use the [`InputRow` component](/components/input-row/react/) to attach a `Button` to an `Input`.
+You can use the [`InputRow` component](/components/input-row/react/) to attach a `Button` to a `Text Input`.
 
 ```jsx
-function InputExample() {
+function TextInputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
@@ -138,7 +138,7 @@ Because of browser UI inconsistencies we do not use `type='date'` and instead su
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/input/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-input/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

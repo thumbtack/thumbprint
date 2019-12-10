@@ -1,5 +1,5 @@
 ---
-title: Select
+title: Dropdown
 description: Dropdown for selecting an item from a larger set.
 ---
 
@@ -10,20 +10,20 @@ import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
 
-<Alert type="warning" title="This component will be renamed">
-    The <InlineCode>Select</InlineCode> React component component will be renamed to{' '}
-    <InlineCode>Dropdown</InlineCode> in early December.
+<Alert type="warning" title="This component was recently renamed">
+    The <InlineCode>Dropdown</InlineCode> React component component was recently renamed from{' '}
+    <InlineCode>Select</InlineCode>.
     <a href="https://github.com/thumbtack/thumbprint/issues/566">Learn more about the changes</a>.
 </Alert>
 
-## Select dropdown with state management
+## Dropdown with state management
 
-`Select` is a controlled component. This means that the selected `option`, if any, must be provided as the `value` prop. The `onChange` function updates the `value` when the user selects a new option.
+`Dropdown` is a controlled component. This means that the selected `option`, if any, must be provided as the `value` prop. The `onChange` function updates the `value` when the user selects a new option.
 
 In this example, notice how `value` is stored within a `React.useState` object. The `onChange` function updates the state when the user selects a new option.
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -40,14 +40,14 @@ function SelectExample() {
 }
 ```
 
-## Select dropdown sizes
+## Dropdown sizes
 
 ### Large
 
-This is the default size for `Select` dropdowns.
+This is the default size for `Dropdown`.
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -67,7 +67,7 @@ function SelectExample() {
 ### Small
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -86,14 +86,14 @@ function SelectExample() {
 
 ## Widths
 
-By default, the `Select` component renders as an `inline-block` element. Its width is determined by the `option` with the longest text.
+By default, the `Dropdown` component renders as an `inline-block` element. Its width is determined by the `option` with the longest text.
 
 The `isFullWidth` prop can be used to set the width to 100%.
 
 ### Full width
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -112,10 +112,10 @@ function SelectExample() {
 
 ## Disabled selects
 
-The `isDisabled` prop visually and functionally disables the `Select`.
+The `isDisabled` prop visually and functionally disables the `Dropdown`.
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -132,14 +132,14 @@ function SelectExample() {
 }
 ```
 
-## Select dropdown with an error
+## Dropdown with an error
 
 The `hasError` prop can be used to visually represent an error.
 
 This prop only changes the select dropdown’s color. It should be used alongside an error message that helps users advance through the form.
 
 ```jsx
-function SelectExample() {
+function DropdownExample() {
     const [value, setValue] = React.useState('ca');
 
     return (
@@ -161,7 +161,7 @@ function SelectExample() {
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/select/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/dropdown/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
