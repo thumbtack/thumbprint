@@ -28,7 +28,7 @@ function TextareaExample() {
     return (
         <div>
             <Label text="Business description">
-                <Textarea
+                <TextArea
                     value={value}
                     placeholder="Tell us about your business"
                     onChange={v => setValue(v)}
@@ -47,7 +47,7 @@ The `isDisabled` prop disables the `Textarea` visually and functionally.
 function TextareaExample() {
     const [value, setValue] = React.useState('');
     return (
-        <Textarea
+        <TextArea
             isDisabled
             placeholder="Tell us about your business"
             onChange={v => setValue(v)}
@@ -67,7 +67,7 @@ function TextareaExample() {
         'We provide DJ services in Austin and have been in business for 25 years.',
     );
     return (
-        <Textarea
+        <TextArea
             hasError
             placeholder="Tell us about your business"
             onChange={v => setValue(v)}

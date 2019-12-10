@@ -19,7 +19,7 @@ The `for` and `id` props must match and be unique to the page. You can use [Loda
 ```jsx
 <React.Fragment>
     <Label for="example-49293">Email address</Label>
-    <Input id="example-49293" onChange={() => {}} placeholder="example@example.com" />
+    <TextInput id="example-49293" onChange={() => {}} placeholder="example@example.com" />
 </React.Fragment>
 ```
 
@@ -32,7 +32,12 @@ Labels can appear visually disabled. It’s important to also disable the associ
     <Label for="example-201998" isDisabled>
         Email address
     </Label>
-    <Input id="example-201998" isDisabled onChange={() => {}} placeholder="example@example.com" />
+    <TextInput
+        id="example-201998"
+        isDisabled
+        onChange={() => {}}
+        placeholder="example@example.com"
+    />
 </React.Fragment>
 ```
 
@@ -47,7 +52,7 @@ Validation errors must be also include text that explains the error. This helps 
     <Label for="example-083109" hasError>
         Email address
     </Label>
-    <Input id="example-083109" hasError value="example@exampl" onChange={() => {}} />
+    <TextInput id="example-083109" hasError value="example@exampl" onChange={() => {}} />
     <div className="mb1">
         <FormNote hasError>The email address you entered is incorrect.</FormNote>
     </div>

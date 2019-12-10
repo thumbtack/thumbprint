@@ -29,7 +29,7 @@ function ClearableInput() {
     return (
         <div>
             <Label for="example-1">Street address</Label>
-            <Input
+            <TextInput
                 id="example-1"
                 value={value}
                 placeholder="Enter an address"
@@ -57,7 +57,12 @@ function InputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
-        <Input size="small" value={value} placeholder="example@example.com" onChange={setValue} />
+        <TextInput
+            size="small"
+            value={value}
+            placeholder="example@example.com"
+            onChange={setValue}
+        />
     );
 }
 ```
@@ -69,7 +74,12 @@ function InputExample() {
     const [value, setValue] = React.useState(undefined);
 
     return (
-        <Input size="large" value={value} placeholder="example@example.com" onChange={setValue} />
+        <TextInput
+            size="large"
+            value={value}
+            placeholder="example@example.com"
+            onChange={setValue}
+        />
     );
 }
 ```
@@ -82,7 +92,9 @@ The `isDisabled` prop disables the `Input` visually and functionally.
 function InputExample() {
     const [value, setValue] = React.useState(undefined);
 
-    return <Input isDisabled value={value} placeholder="example@example.com" onChange={setValue} />;
+    return (
+        <TextInput isDisabled value={value} placeholder="example@example.com" onChange={setValue} />
+    );
 }
 ```
 
@@ -94,7 +106,9 @@ The `hasError` prop only changes the input’s color. It should be used alongsid
 function InputExample() {
     const [value, setValue] = React.useState(undefined);
 
-    return <Input hasError value={value} placeholder="example@example.com" onChange={setValue} />;
+    return (
+        <TextInput hasError value={value} placeholder="example@example.com" onChange={setValue} />
+    );
 }
 ```
 
@@ -108,7 +122,7 @@ function InputExample() {
 
     return (
         <InputRow widthRatios={[1, null]}>
-            <Input placeholder="Enter a zip code" onChange={setValue} value={value} />
+            <TextInput placeholder="Enter a zip code" onChange={setValue} value={value} />
             <Button>Find a pro</Button>
         </InputRow>
     );
