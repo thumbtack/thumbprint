@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.4.0 - 2019-12-05
+
+### Added
+
+-   [Minor] Write codemod for Great Alignment React renames. (#566)
+
 ## 0.3.3 - 2019-09-03
 
 ### Changed

@@ -12,7 +12,8 @@ const globbedCodemods = globby.sync(path.join(__dirname, './src/*/index.js'));
 // The list of codemods that we support. Looks like this:
 // {
 //    'avatar-import-name': './src/avatar-import-name/index.js',
-//    'button-secondary-to-tertiary': './src/button-secondary-to-tertiary/index.js'
+//    'button-secondary-to-tertiary': './src/button-secondary-to-tertiary/index.js',
+//    ...and so on...
 // }
 const codemods = keyBy(globbedCodemods, p => {
     const pathSplitArr = p.split('/');

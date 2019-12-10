@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 11.1.0 - 2019-12-05
+
+### Added
+
+-   [Minor] Export a `TextArea` component that is an alias for `Textarea`. (#566)
+-   [Minor] Export `Modal*` components that are aliases for `ModalDefault*`. (#566)
+-   [Minor] Export a `TextInput` component that is an alias for `Input`. (#566)
+-   [Minor] Export a `Dropdown` component that is an alias for `Select`. (#566)
+-   [Minor] Export a `Calendar` component that is an alias for `DatePicker`. (#566)
+
 ## 11.0.2 - 2019-11-21
 
 ### Changed

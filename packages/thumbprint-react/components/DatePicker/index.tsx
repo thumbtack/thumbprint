@@ -15,7 +15,7 @@ import { PropTypes } from './types';
 /**
  * Thin wrapper around `react-day-picker` that renders a calendar.
  */
-export default function DatePicker({
+const DatePicker = ({
     value = [],
     onChange,
     onMonthChange,
@@ -25,7 +25,7 @@ export default function DatePicker({
     allowMultiSelection = false,
     daysThemeDotIndicator,
     daysThemeStrikeout,
-}: PropTypes): JSX.Element {
+}: PropTypes): JSX.Element => {
     validateProps({
         value,
         onChange,
@@ -86,4 +86,7 @@ export default function DatePicker({
             />
         </div>
     );
-}
+};
+
+export { DatePicker as Calendar };
+export default DatePicker;

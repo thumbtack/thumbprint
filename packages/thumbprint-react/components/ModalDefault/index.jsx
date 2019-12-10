@@ -481,4 +481,12 @@ export {
     ModalDefaultContentFullBleed,
     ModalDefaultFooter,
     ModalDefaultAnimatedWrapper,
+    ModalDefault as Modal,
+    ModalDefaultHeader as ModalHeader,
+    ModalDefaultTitle as ModalTitle,
+    ModalDefaultDescription as ModalDescription,
+    ModalDefaultContent as ModalContent,
+    ModalDefaultContentFullBleed as ModalContentFullBleed,
+    ModalDefaultFooter as ModalFooter,
+    ModalDefaultAnimatedWrapper as ModalAnimatedWrapper,
 };
