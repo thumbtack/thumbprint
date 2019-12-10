@@ -38,7 +38,7 @@ function ModalDefaultDemoBasic() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
@@ -50,25 +50,25 @@ function ModalDefaultDemoBasic() {
                     console.log('ModalDefault onOpenFinish');
                 }}
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                    <ModalDefaultDescription>
+                <ModalHeader>
+                    <ModalTitle>Add a professional license</ModalTitle>
+                    <ModalDescription>
                         Licenses add credibility to your business and provide more trust for
                         customers.
-                    </ModalDefaultDescription>
-                </ModalDefaultHeader>
+                    </ModalDescription>
+                </ModalHeader>
 
-                <ModalDefaultContent>
+                <ModalContent>
                     <ol className="tp-form-fields">
                         <li className="tp-form-field__item">
                             <Label>License type</Label>
-                            <Select value="default" isFullWidth onChange={() => {}}>
+                            <Dropdown value="default" isFullWidth onChange={() => {}}>
                                 <option value="default">Choose one&hellip;</option>
-                            </Select>
+                            </Dropdown>
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={setLicenseText}
                                 placeholder="XX-XXXX-XXXX"
@@ -76,16 +76,16 @@ function ModalDefaultDemoBasic() {
                             />
                         </li>
                     </ol>
-                </ModalDefaultContent>
+                </ModalContent>
 
-                <ModalDefaultFooter>
+                <ModalFooter>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }
@@ -108,7 +108,7 @@ function ModalDefaultDemoStickyTall() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
@@ -120,25 +120,25 @@ function ModalDefaultDemoStickyTall() {
                     console.log('ModalDefault onOpenFinish');
                 }}
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                    <ModalDefaultDescription>
+                <ModalHeader>
+                    <ModalTitle>Add a professional license</ModalTitle>
+                    <ModalDescription>
                         Licenses add credibility to your business and provide more trust for
                         customers.
-                    </ModalDefaultDescription>
-                </ModalDefaultHeader>
+                    </ModalDescription>
+                </ModalHeader>
 
-                <ModalDefaultContent>
+                <ModalContent>
                     <ol className="tp-form-fields">
                         <li className="tp-form-field__item">
                             <Label>License type</Label>
-                            <Select value="default" isFullWidth onChange={() => {}}>
+                            <Dropdown value="default" isFullWidth onChange={() => {}}>
                                 <option value="default">Choose one&hellip;</option>
-                            </Select>
+                            </Dropdown>
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -146,7 +146,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -154,7 +154,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -162,7 +162,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -170,7 +170,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -178,7 +178,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -186,7 +186,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -194,7 +194,7 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -202,23 +202,23 @@ function ModalDefaultDemoStickyTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
                             />
                         </li>
                     </ol>
-                </ModalDefaultContent>
+                </ModalContent>
 
-                <ModalDefaultFooter isSticky>
+                <ModalFooter isSticky>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }
@@ -241,7 +241,7 @@ function ModalDefaultDemoTall() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
@@ -253,25 +253,25 @@ function ModalDefaultDemoTall() {
                     console.log('ModalDefault onOpenFinish');
                 }}
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                    <ModalDefaultDescription>
+                <ModalHeader>
+                    <ModalTitle>Add a professional license</ModalTitle>
+                    <ModalDescription>
                         Licenses add credibility to your business and provide more trust for
                         customers.
-                    </ModalDefaultDescription>
-                </ModalDefaultHeader>
+                    </ModalDescription>
+                </ModalHeader>
 
-                <ModalDefaultContent>
+                <ModalContent>
                     <ol className="tp-form-fields">
                         <li className="tp-form-field__item">
                             <Label>License type</Label>
-                            <Select value="default" isFullWidth onChange={() => {}}>
+                            <Dropdown value="default" isFullWidth onChange={() => {}}>
                                 <option value="default">Choose one&hellip;</option>
-                            </Select>
+                            </Dropdown>
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -279,7 +279,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -287,7 +287,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -295,7 +295,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -303,7 +303,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -311,7 +311,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -319,7 +319,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -327,7 +327,7 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
@@ -335,23 +335,23 @@ function ModalDefaultDemoTall() {
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
                             />
                         </li>
                     </ol>
-                </ModalDefaultContent>
+                </ModalContent>
 
-                <ModalDefaultFooter>
+                <ModalFooter>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }
@@ -374,7 +374,7 @@ function ModalDefaultDemoNarrow() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 width="narrow"
                 isOpen={isOpen}
                 onCloseClick={() => {
@@ -387,41 +387,41 @@ function ModalDefaultDemoNarrow() {
                     console.log('ModalDefault onOpenFinish');
                 }}
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                    <ModalDefaultDescription>
+                <ModalHeader>
+                    <ModalTitle>Add a professional license</ModalTitle>
+                    <ModalDescription>
                         Licenses add credibility to your business and provide more trust for
                         customers.
-                    </ModalDefaultDescription>
-                </ModalDefaultHeader>
+                    </ModalDescription>
+                </ModalHeader>
 
-                <ModalDefaultContent>
+                <ModalContent>
                     <ol className="tp-form-fields">
                         <li className="tp-form-field__item">
                             <Label>License type</Label>
-                            <Select value="default" isFullWidth onChange={() => {}}>
+                            <Dropdown value="default" isFullWidth onChange={() => {}}>
                                 <option value="default">Choose one&hellip;</option>
-                            </Select>
+                            </Dropdown>
                         </li>
                         <li className="tp-form-field__item">
                             <Label for="example-license-number">License number</Label>
-                            <Input
+                            <TextInput
                                 id="example-license-number"
                                 onChange={() => {}}
                                 placeholder="XX-XXXX-XXXX"
                             />
                         </li>
                     </ol>
-                </ModalDefaultContent>
+                </ModalContent>
 
-                <ModalDefaultFooter>
+                <ModalFooter>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }
@@ -445,7 +445,7 @@ function ModalDefaultDemoFixedHeight() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
@@ -458,13 +458,11 @@ function ModalDefaultDemoFixedHeight() {
                 }}
                 heightAboveSmall="medium"
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>
-                        {showIntroScreen ? 'First screen' : 'Second screen'}
-                    </ModalDefaultTitle>
-                </ModalDefaultHeader>
+                <ModalHeader>
+                    <ModalTitle>{showIntroScreen ? 'First screen' : 'Second screen'}</ModalTitle>
+                </ModalHeader>
 
-                <ModalDefaultContent>
+                <ModalContent>
                     {showIntroScreen ? (
                         <div>
                             <p>
@@ -536,9 +534,9 @@ function ModalDefaultDemoFixedHeight() {
                             </p>
                         </div>
                     )}
-                </ModalDefaultContent>
+                </ModalContent>
 
-                <ModalDefaultFooter isSticky>
+                <ModalFooter isSticky>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         {!showIntroScreen && (
                             <Button
@@ -560,8 +558,8 @@ function ModalDefaultDemoFixedHeight() {
                             {showIntroScreen ? 'Next' : 'Submit'}
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }
@@ -593,7 +591,7 @@ function ModalDefaultDemoFullBleed() {
             >
                 Open modal
             </Button>
-            <ModalDefault
+            <Modal
                 isOpen={isOpen}
                 onCloseClick={() => {
                     setIsOpen(false);
@@ -605,16 +603,16 @@ function ModalDefaultDemoFullBleed() {
                     console.log('ModalDefault onOpenFinish');
                 }}
             >
-                <ModalDefaultHeader>
-                    <ModalDefaultTitle>Add a professional license</ModalDefaultTitle>
-                    <ModalDefaultDescription>
+                <ModalHeader>
+                    <ModalTitle>Add a professional license</ModalTitle>
+                    <ModalDescription>
                         Licenses add credibility to your business and provide more trust for
                         customers.
-                    </ModalDefaultDescription>
-                </ModalDefaultHeader>
+                    </ModalDescription>
+                </ModalHeader>
 
-                <ModalDefaultContent>
-                    <ModalDefaultContentFullBleed
+                <ModalContent>
+                    <ModalContentFullBleed
                         style={{
                             backgroundColor: tokens.tpColorGray200,
                             borderTop: `1px solid ${tokens.tpColorGray}`,
@@ -626,30 +624,30 @@ function ModalDefaultDemoFullBleed() {
                         <ol className="tp-form-fields">
                             <li className="tp-form-field__item">
                                 <Label>License type</Label>
-                                <Select value="default" isFullWidth onChange={() => {}}>
+                                <Dropdown value="default" isFullWidth onChange={() => {}}>
                                     <option value="default">Choose one&hellip;</option>
-                                </Select>
+                                </Dropdown>
                             </li>
                             <li className="tp-form-field__item">
                                 <Label for="example-license-number">License number</Label>
-                                <Input
+                                <TextInput
                                     id="example-license-number"
                                     onChange={() => {}}
                                     placeholder="XX-XXXX-XXXX"
                                 />
                             </li>
                         </ol>
-                    </ModalDefaultContentFullBleed>
-                </ModalDefaultContent>
+                    </ModalContentFullBleed>
+                </ModalContent>
 
-                <ModalDefaultFooter>
+                <ModalFooter>
                     <ButtonRow justify="right" isStackedBelowSmall>
                         <Button onClick={() => setIsOpen(false)} width="full-below-small">
                             Submit
                         </Button>
                     </ButtonRow>
-                </ModalDefaultFooter>
-            </ModalDefault>
+                </ModalFooter>
+            </Modal>
         </React.Fragment>
     );
 }

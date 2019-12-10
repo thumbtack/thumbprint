@@ -27,7 +27,7 @@ function DatePickerExample() {
     const [value, setValue] = React.useState(undefined);
     const [month, setMonth] = React.useState(undefined);
 
-    return <DatePicker value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
+    return <Calendar value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
 }
 ```
 
@@ -38,7 +38,7 @@ function DatePickerExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
-    return <DatePicker value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
+    return <Calendar value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
 }
 ```
 
@@ -51,7 +51,7 @@ function DatePickerExample() {
     const [value, setValue] = React.useState('2100-01-01');
     const [month, setMonth] = React.useState(undefined);
 
-    return <DatePicker value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
+    return <Calendar value={value} month={month} onChange={setValue} onMonthChange={setMonth} />;
 }
 ```
 
@@ -67,7 +67,7 @@ function DatePickerExample() {
     const [month, setMonth] = React.useState(undefined);
 
     return (
-        <DatePicker
+        <Calendar
             value={value}
             month={month}
             onChange={setValue}
@@ -88,7 +88,7 @@ function DatePickerExample() {
     const [month, setMonth] = React.useState(undefined);
 
     return (
-        <DatePicker
+        <Calendar
             value={value}
             month={month}
             onChange={setValue}
@@ -109,7 +109,7 @@ function DatePickerExample() {
     const [month, setMonth] = React.useState(undefined);
 
     return (
-        <DatePicker
+        <Calendar
             value={value}
             month={month}
             onChange={setValue}
@@ -132,7 +132,7 @@ function DatePickerExample() {
     const isMonday = date => date.getDay() === 1;
 
     return (
-        <DatePicker
+        <Calendar
             value={value}
             month={month}
             onChange={setValue}
@@ -155,7 +155,7 @@ function DatePickerExample() {
     const isFriday = date => date.getDay() === 5;
 
     return (
-        <DatePicker
+        <Calendar
             value={value}
             month={month}
             onChange={setValue}
