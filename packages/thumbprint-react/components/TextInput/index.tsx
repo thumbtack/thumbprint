@@ -116,8 +116,6 @@ const TextInputClearButton = ({ onClick }: TextInputClearButtonPropTypes): JSX.E
     </TextInputIconContainer>
 );
 
-const ClearButton = TextInputClearButton;
-
 interface TextInputIconPropTypes {
     /**
      * Set the icon color with a color from [Thumbprint Tokens](/tokens/).
@@ -408,4 +406,4 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
 TextInput.displayName = 'TextInput';
 
 export default TextInput;
-export { ClearButton, TextInputIcon, TextInputClearButton };
+export { TextInputIcon, TextInputClearButton };

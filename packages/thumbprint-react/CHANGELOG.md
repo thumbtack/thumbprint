@@ -10,6 +10,10 @@
 
 -   [Patch] Rename a few directories in our source files. This doesn't affect consumers. (#566)
 
+### Fixed
+
+-   [Patch] Remove the `ClearButton` alias for `TextInputClearButton` from the `TextInput` source file. It was not accessible to consumers since our `index.ts` entrypoint doesn't export it. (#573)
+
 ## 11.1.0 - 2019-12-05
 
 ### Added
