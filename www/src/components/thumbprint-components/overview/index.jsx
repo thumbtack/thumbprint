@@ -9,9 +9,19 @@ import styles from './index.module.scss';
 const documentationStatus = PropTypes.oneOf([
     'To-do',
     'In progress',
-    'Not applicable',
-    'Deprecated',
-    'Done',
+    "Done / Won't build",
+    'Done / Deprecated',
+    'Done / Merged',
+]);
+
+const developmentStatus = PropTypes.oneOf([
+    'Needs evaluation',
+    'To-do',
+    'In progress',
+    'Done / Uses built in OS component',
+    "Done / Won't build",
+    'Done / Deprecated',
+    'Done / Merged',
 ]);
 
 const Dot = ({ status }) => (
@@ -19,11 +29,13 @@ const Dot = ({ status }) => (
         aria-label={status}
         className={classNames({
             [styles.dot]: true,
-            [styles.dotToDo]: status === 'To-do',
+            [styles.dotToDo]: ['To-do', 'Needs evaluation'].includes(status),
             [styles.dotInProgress]: status === 'In progress',
-            [styles.dotDeprecated]: status === 'Deprecated',
-            [styles.dotNotApplicable]: status === 'Not applicable',
-            [styles.dotDone]: status === 'Done',
+            [styles.dotDeprecated]: status === 'Done / Deprecated',
+            [styles.dotNotApplicable]: status === "Done / Won't build",
+            [styles.dotDone]: ['Done / Merged', 'Done / Uses built in OS component'].includes(
+                status,
+            ),
         })}
     />
 );
@@ -135,27 +147,27 @@ ComponentRow.propTypes = {
     name: PropTypes.string.isRequired,
     usage: PropTypes.shape({
         design: documentationStatus.isRequired,
-        development: documentationStatus.isRequired,
+        development: developmentStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
     react: PropTypes.shape({
         design: documentationStatus.isRequired,
-        development: documentationStatus.isRequired,
+        development: developmentStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
     scss: PropTypes.shape({
         design: documentationStatus.isRequired,
-        development: documentationStatus.isRequired,
+        development: developmentStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
     ios: PropTypes.shape({
         design: documentationStatus.isRequired,
-        development: documentationStatus.isRequired,
+        development: developmentStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
     android: PropTypes.shape({
         design: documentationStatus.isRequired,
-        development: documentationStatus.isRequired,
+        development: developmentStatus.isRequired,
         documentation: documentationStatus.isRequired,
     }).isRequired,
 };
