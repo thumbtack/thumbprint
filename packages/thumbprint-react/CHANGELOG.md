@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rename a few directories in our source files. This doesn't affect consumers. (#566)
+
 ## 11.1.0 - 2019-12-05
 
 ### Added
