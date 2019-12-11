@@ -1,0 +1,41 @@
+@import '../../shared.scss';
+
+.root {
+    @include root;
+}
+
+.box {
+    @include box;
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    height: 33.33%;
+    outline: none;
+    width: 100%;
+    transition: top 300ms, height 300ms, z-index 300ms 300ms;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box0 {
+    top: 0%;
+}
+
+.box1 {
+    top: 33.33%;
+}
+
+.box2 {
+    top: 66.66%;
+}
+
+.box.isActive {
+    top: 0%;
+    height: 100%;
+    z-index: 1;
+    transition: top 300ms, height 300ms;
+}
