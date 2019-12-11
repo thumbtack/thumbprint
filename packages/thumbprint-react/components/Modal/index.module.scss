@@ -219,7 +219,7 @@ $contents-padding-large: $tp-space__5;
 }
 
 .modalHeader {
-    // This value works well even if `ModalDefaultContent` isn't used in the modal.
+    // This value works well even if `ModalContent` isn't used in the modal.
     margin-bottom: 12px;
 }
 
@@ -240,9 +240,9 @@ $contents-padding-large: $tp-space__5;
 }
 
 .modalContent {
-    // Add top padding, not bottom margin, because top padding is built into the `ModalDefaultFooter` due
+    // Add top padding, not bottom margin, because top padding is built into the `ModalFooter` due
     // to a top-border on mobile when sticky. Using padding prevents the margins from collapsing
-    // with the margin from `ModalDefaultHeader`.
+    // with the margin from `ModalHeader`.
     padding-top: 12px;
 }
 
