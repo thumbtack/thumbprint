@@ -25,7 +25,7 @@ const getUIState = ({
     isDisabled,
     isReadOnly,
     hasError,
-}: Pick<InputPropTypes, 'isDisabled' | 'isReadOnly' | 'hasError'>): UiState => {
+}: Pick<TextInputPropTypes, 'isDisabled' | 'isReadOnly' | 'hasError'>): UiState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -53,7 +53,7 @@ interface InputIconContainerPropTypes {
  * `InputIcon` because they won’t have to specify as many props.
  * @private
  */
-const InputIconContainer = ({ children, style }: InputIconContainerPropTypes): JSX.Element => (
+const TextInputIconContainer = ({ children, style }: InputIconContainerPropTypes): JSX.Element => (
     <Context.Consumer>
         {(theme): JSX.Element => {
             const position = theme && theme.position;
@@ -85,7 +85,7 @@ const InputIconContainer = ({ children, style }: InputIconContainerPropTypes): J
     </Context.Consumer>
 );
 
-interface InputClearButtonPropTypes {
+interface TextInputClearButtonPropTypes {
     onClick: () => void;
 }
 
@@ -93,8 +93,8 @@ interface InputClearButtonPropTypes {
  * Accessible button that makes it easy to add a "Clear" button to a text input. It should be used
  * with the `innerRight` prop in `Input`.
  */
-const InputClearButton = ({ onClick }: InputClearButtonPropTypes): JSX.Element => (
-    <InputIconContainer>
+const TextInputClearButton = ({ onClick }: TextInputClearButtonPropTypes): JSX.Element => (
+    <TextInputIconContainer>
         <Context.Consumer>
             {(theme): JSX.Element => (
                 <div
@@ -113,12 +113,12 @@ const InputClearButton = ({ onClick }: InputClearButtonPropTypes): JSX.Element =
                 </div>
             )}
         </Context.Consumer>
-    </InputIconContainer>
+    </TextInputIconContainer>
 );
 
-const ClearButton = InputClearButton;
+const ClearButton = TextInputClearButton;
 
-interface InputIconPropTypes {
+interface TextInputIconPropTypes {
     /**
      * Set the icon color with a color from [Thumbprint Tokens](/tokens/).
      * @private
@@ -134,11 +134,11 @@ interface InputIconPropTypes {
 /**
  * Component that helps position icons within inputs.
  */
-const InputIcon = ({ color = 'inherit', children }: InputIconPropTypes): JSX.Element => (
-    <InputIconContainer style={{ color }}>{children}</InputIconContainer>
+const TextInputIcon = ({ color = 'inherit', children }: TextInputIconPropTypes): JSX.Element => (
+    <TextInputIconContainer style={{ color }}>{children}</TextInputIconContainer>
 );
 
-interface InputPropTypes {
+interface TextInputPropTypes {
     /**
      * Adds a HTML `id` attribute to the input. This is used for linking the HTML with a
      * [Label](/components/label/react/).
@@ -255,7 +255,7 @@ interface InputPropTypes {
     autoComplete?: React.InputHTMLAttributes<HTMLInputElement>['autoComplete'];
 }
 
-const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
+const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
     (
         {
             id,
@@ -283,7 +283,7 @@ const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
             pattern,
             maxLength,
             autoComplete,
-        }: InputPropTypes,
+        }: TextInputPropTypes,
         outerRef,
     ): JSX.Element => {
         const uiState = getUIState({ isDisabled, isReadOnly, hasError });
@@ -405,14 +405,7 @@ const Input = React.forwardRef<HTMLInputElement, InputPropTypes>(
         );
     },
 );
-Input.displayName = 'Input';
+TextInput.displayName = 'TextInput';
 
-export default Input;
-export {
-    InputIcon,
-    InputClearButton,
-    ClearButton,
-    Input as TextInput,
-    InputIcon as TextInputIcon,
-    InputClearButton as TextInputClearButton,
-};
+export default TextInput;
+export { ClearButton, TextInputIcon, TextInputClearButton };

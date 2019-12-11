@@ -20,14 +20,14 @@ const TRANSITION_OPEN_SPEED = 300;
 const TRANSITION_CLOSE_SPEED = 250;
 
 /**
- * `ModalDefaultAnimatedWrapper` is an exported component that we export for developers that want access to
- * `ModalDefault` without padding and a close button. We export it as a named export instead of
- * creating a `hasNoPadding` prop partly to discourage the use of `ModalDefault` without padding.
+ * `ModalAnimatedWrapper` is an exported component that we export for developers that want access to
+ * `Modal` without padding and a close button. We export it as a named export instead of
+ * creating a `hasNoPadding` prop partly to discourage the use of `Modal` without padding.
  *
  * This component uses `ModalCurtain` and includes the backdrop, transition, and white modal
  * wrapper that is available at a few widths.
  */
-const ModalDefaultAnimatedWrapper = ({
+const ModalAnimatedWrapper = ({
     children,
     isOpen,
     onCloseClick,
@@ -105,7 +105,7 @@ const ModalDefaultAnimatedWrapper = ({
     </Transition>
 );
 
-ModalDefaultAnimatedWrapper.propTypes = {
+ModalAnimatedWrapper.propTypes = {
     /**
      * Content that appears within the modal.
      */
@@ -148,7 +148,7 @@ ModalDefaultAnimatedWrapper.propTypes = {
     heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
-ModalDefaultAnimatedWrapper.defaultProps = {
+ModalAnimatedWrapper.defaultProps = {
     children: undefined,
     onOpenFinish: undefined,
     onCloseFinish: undefined,
@@ -161,7 +161,7 @@ ModalDefaultAnimatedWrapper.defaultProps = {
 
 const modalHeaderPropTypes = {
     /**
-     * Content (usually a `ModalDefaultTitle` and `ModalDefaultDescription`) that appears at the top of the
+     * Content (usually a `ModalTitle` and `ModalDescription`) that appears at the top of the
      * modal.
      */
     children: PropTypes.node.isRequired,
@@ -169,14 +169,14 @@ const modalHeaderPropTypes = {
 
 const modalTitlePropTypes = {
     /**
-     * Text that describes the modal contents. It is intended for use within the `ModalDefaultHeader`.
+     * Text that describes the modal contents. It is intended for use within the `ModalHeader`.
      */
     children: PropTypes.string.isRequired,
 };
 
 const modalDescriptionPropTypes = {
     /**
-     * Text intended for use below a `ModalDefaultTitle` and within a `ModalDefaultHeader`.
+     * Text intended for use below a `ModalTitle` and within a `ModalHeader`.
      */
     children: PropTypes.node.isRequired,
 };
@@ -223,7 +223,7 @@ const modalFooterDefaultProps = {
     isSticky: false,
 };
 
-const modalDefaultPropTypes = {
+const modalPropTypes = {
     /**
      * Content that appears within the modal.
      */
@@ -266,7 +266,7 @@ const modalDefaultPropTypes = {
     heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
 };
 
-const modalDefaultDefaultProps = {
+const modalProps = {
     children: undefined,
     onOpenFinish: undefined,
     onCloseFinish: undefined,
@@ -277,34 +277,34 @@ const modalDefaultDefaultProps = {
     heightAboveSmall: 'auto',
 };
 
-const ModalDefaultHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
+const ModalHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
 
-ModalDefaultHeader.propTypes = modalHeaderPropTypes;
+ModalHeader.propTypes = modalHeaderPropTypes;
 
-const ModalDefaultTitle = ({ children }) => <div className={styles.modalTitle}>{children}</div>;
+const ModalTitle = ({ children }) => <div className={styles.modalTitle}>{children}</div>;
 
-ModalDefaultTitle.propTypes = modalTitlePropTypes;
+ModalTitle.propTypes = modalTitlePropTypes;
 
-const ModalDefaultDescription = ({ children }) => (
+const ModalDescription = ({ children }) => (
     <div className={styles.modalDescription}>{children}</div>
 );
 
-ModalDefaultDescription.propTypes = modalDescriptionPropTypes;
+ModalDescription.propTypes = modalDescriptionPropTypes;
 
-const ModalDefaultContent = ({ children }) => <div className={styles.modalContent}>{children}</div>;
+const ModalContent = ({ children }) => <div className={styles.modalContent}>{children}</div>;
 
-ModalDefaultContent.propTypes = modalContentPropTypes;
+ModalContent.propTypes = modalContentPropTypes;
 
-const ModalDefaultContentFullBleed = ({ children, className, style }) => (
+const ModalContentFullBleed = ({ children, className, style }) => (
     <div className={classNames(className, styles.modalContentFullBleed)} style={style}>
         {children}
     </div>
 );
 
-ModalDefaultContentFullBleed.propTypes = modalContentFullBleedPropTypes;
-ModalDefaultContentFullBleed.defaultProps = modalContentFullBleedDefaultProps;
+ModalContentFullBleed.propTypes = modalContentFullBleedPropTypes;
+ModalContentFullBleed.defaultProps = modalContentFullBleedDefaultProps;
 
-class ModalDefaultFooter extends React.Component {
+class ModalFooter extends React.Component {
     constructor(props) {
         super(props);
 
@@ -330,13 +330,13 @@ class ModalDefaultFooter extends React.Component {
         return (
             <Consumer>
                 {({ stickyFooterContainerRef, setSticky }) => {
-                    // When `isSticky` is true, the `ModalDefaultFooter` must change it's position in the
+                    // When `isSticky` is true, the `ModalFooter` must change it's position in the
                     // DOM so that it is fixed at the bottom of the modal on small viewports. We
-                    // use React's Context API so that it is a property of the `ModalDefaultFooter`
-                    // component and not the `ModalDefault` API.
+                    // use React's Context API so that it is a property of the `ModalFooter`
+                    // component and not the `Modal` API.
                     //
                     // `stickyFooterContainerRef` is the DOM element where the sticky footer will
-                    // render. `setSticky` is a function that updates the state in `ModalDefault`,
+                    // render. `setSticky` is a function that updates the state in `Modal`,
                     // changing the CSS to make the contents scroll and the footer fixed at the
                     // bottom.
                     if (!isSticky) {
@@ -344,7 +344,7 @@ class ModalDefaultFooter extends React.Component {
                     }
 
                     // We have to create a separate component here because `setSticky` updates
-                    // state in `ModalDefault` and state updates are not allowed within `render`.
+                    // state in `Modal` and state updates are not allowed within `render`.
                     // Moving it to a separate component allows us to call it within
                     // `componentDidMount`.
                     // https://blog.kentcdodds.com/answers-to-common-questions-about-render-props-a9f84bb12d5d#6a05
@@ -358,10 +358,10 @@ class ModalDefaultFooter extends React.Component {
     }
 }
 
-ModalDefaultFooter.propTypes = modalFooterPropTypes;
-ModalDefaultFooter.defaultProps = modalFooterDefaultProps;
+ModalFooter.propTypes = modalFooterPropTypes;
+ModalFooter.defaultProps = modalFooterDefaultProps;
 
-class ModalDefault extends React.Component {
+class Modal extends React.Component {
     constructor(props) {
         super(props);
 
@@ -399,7 +399,7 @@ class ModalDefault extends React.Component {
         const { hasStickyFooter } = this.state;
 
         return (
-            <ModalDefaultAnimatedWrapper
+            <ModalAnimatedWrapper
                 onCloseClick={onCloseClick}
                 onOpenFinish={onOpenFinish}
                 onCloseFinish={onCloseFinish}
@@ -437,7 +437,7 @@ class ModalDefault extends React.Component {
                         </div>
                     </div>
                     {/*
-                        If a user uses `<ModalDefaultFooter isSticky />`, it gets
+                        If a user uses `<ModalFooter isSticky />`, it gets
                         moved here with React portals.
                     */}
                     <div ref={this.stickyFooterContainerRef} />
@@ -464,29 +464,21 @@ class ModalDefault extends React.Component {
                         )}
                     </div>
                 </Provider>
-            </ModalDefaultAnimatedWrapper>
+            </ModalAnimatedWrapper>
         );
     }
 }
 
-ModalDefault.propTypes = modalDefaultPropTypes;
-ModalDefault.defaultProps = modalDefaultDefaultProps;
+Modal.propTypes = modalPropTypes;
+Modal.defaultProps = modalProps;
 
-export default ModalDefault;
+export default Modal;
 export {
-    ModalDefaultHeader,
-    ModalDefaultTitle,
-    ModalDefaultDescription,
-    ModalDefaultContent,
-    ModalDefaultContentFullBleed,
-    ModalDefaultFooter,
-    ModalDefaultAnimatedWrapper,
-    ModalDefault as Modal,
-    ModalDefaultHeader as ModalHeader,
-    ModalDefaultTitle as ModalTitle,
-    ModalDefaultDescription as ModalDescription,
-    ModalDefaultContent as ModalContent,
-    ModalDefaultContentFullBleed as ModalContentFullBleed,
-    ModalDefaultFooter as ModalFooter,
-    ModalDefaultAnimatedWrapper as ModalAnimatedWrapper,
+    ModalHeader,
+    ModalTitle,
+    ModalDescription,
+    ModalContent,
+    ModalContentFullBleed,
+    ModalFooter,
+    ModalAnimatedWrapper,
 };
