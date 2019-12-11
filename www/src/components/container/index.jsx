@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
-import { Input, InputIcon } from '@thumbtack/thumbprint-react';
+import { TextInput, TextInputIcon } from '@thumbtack/thumbprint-react';
 import { map } from 'lodash';
 import { setConfig } from 'react-hot-loader';
 import {
@@ -178,7 +178,7 @@ const Container = ({ children, location, activeSection }) => {
 
                                 <DocSearch>
                                     {({ id }) => (
-                                        <Input
+                                        <TextInput
                                             type="search"
                                             size="small"
                                             placeholder="Search"
@@ -188,9 +188,9 @@ const Container = ({ children, location, activeSection }) => {
                                             value={searchValue}
                                             id={id}
                                             innerLeft={
-                                                <InputIcon>
+                                                <TextInputIcon>
                                                     <NavigationSearchSmall />
-                                                </InputIcon>
+                                                </TextInputIcon>
                                             }
                                         />
                                     )}
