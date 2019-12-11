@@ -17,7 +17,7 @@ import AndroidParentChild from 'components/motion/page/android/parent-child';
 import { Img, InlineCode } from 'components/mdx';
 import { Title, Text, Grid, GridColumn, HorizontalRule } from '@thumbtack/thumbprint-react';
 
-Motion can introduce an element of delight and activity. Used sparingly, it can help users focus their attention and navigate through the UI. Here we discuss motion at a platform agnostic level and then specifically about the page-level navigations available on iOS and Android.
+Motion can introduce elements of delight and activity for users. Used sparingly, it can focus their attention and help them navigate through the UI. Here we discuss motion generally, the specific page-level navigations available on iOS and Android, and custom animations.
 
 ## General motion
 
@@ -104,7 +104,7 @@ Determines the length of the animation. The length of the animation usually corr
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode theme="plain">150ms</InlineCode>
+                    <InlineCode theme="plain">75ms</InlineCode>
                 </Text>
             </td>
         </tr>
@@ -116,7 +116,7 @@ Determines the length of the animation. The length of the animation usually corr
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode theme="plain">200ms</InlineCode>
+                    <InlineCode theme="plain">150ms</InlineCode>
                 </Text>
             </td>
         </tr>
@@ -128,7 +128,7 @@ Determines the length of the animation. The length of the animation usually corr
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode theme="plain">250ms</InlineCode>
+                    <InlineCode theme="plain">200ms</InlineCode>
                 </Text>
             </td>
         </tr>
@@ -140,7 +140,7 @@ Determines the length of the animation. The length of the animation usually corr
             </td>
             <td>
                 <Text size={2}>
-                    <InlineCode theme="plain">300ms</InlineCode>
+                    <InlineCode theme="plain">250ms</InlineCode>
                 </Text>
             </td>
         </tr>
@@ -148,6 +148,18 @@ Determines the length of the animation. The length of the animation usually corr
             <td>
                 <Text size={2}>
                     <InlineCode theme="plain">duration-5</InlineCode>
+                </Text>
+            </td>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">300ms</InlineCode>
+                </Text>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <Text size={2}>
+                    <InlineCode theme="plain">duration-6</InlineCode>
                 </Text>
             </td>
             <td>
@@ -172,7 +184,7 @@ Click examples to toggle animations.
             Color transition
         </Text>
         <Text size={2}>
-            <InlineCode theme="plain">duration-2</InlineCode> with{' '}
+            <InlineCode theme="plain">duration-3</InlineCode> with{' '}
             <InlineCode theme="plain">ease-in</InlineCode>
         </Text>
     </div>
@@ -184,7 +196,7 @@ Click examples to toggle animations.
             Pop-up
         </Text>
         <Text size={2}>
-            <InlineCode theme="plain">duration-1</InlineCode> with{' '}
+            <InlineCode theme="plain">duration-2</InlineCode> with{' '}
             <InlineCode theme="plain">ease-out</InlineCode>
         </Text>
     </div>
@@ -196,7 +208,7 @@ Click examples to toggle animations.
             Slide
         </Text>
         <Text size={2}>
-            <InlineCode theme="plain">duration-4</InlineCode> with{' '}
+            <InlineCode theme="plain">duration-5</InlineCode> with{' '}
             <InlineCode theme="plain">ease-out</InlineCode>
         </Text>
     </div>
