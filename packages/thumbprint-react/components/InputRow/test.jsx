@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Input from '../Input/index';
+import Input from '../TextInput/index';
 import Button from '../Button/index';
 import InputRow from './index';
 
