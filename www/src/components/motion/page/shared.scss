@@ -1,0 +1,26 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+@mixin root {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    outline: none;
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    box-shadow: $tp-shadow__300;
+}
+
+@mixin box {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    transition: all 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+}

@@ -1,0 +1,61 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+@keyframes animate {
+    0% {
+        transform: translateX(0%);
+    }
+
+    // This provides a little delay before restarting the animation
+    80%,
+    100% {
+        transform: translateX(calc(100% - #{$tp-space__3} - 1px)); //
+    }
+}
+
+.root {
+    height: $tp-space__3;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $tp-color__gray;
+    }
+}
+
+.bar {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: animate 3s infinite;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: $tp-space__3;
+        height: $tp-space__3;
+        background: $tp-color__blue;
+        border-radius: 50%;
+    }
+}
+
+.easeIn {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 1);
+}
+
+.easeOut {
+    animation-timing-function: cubic-bezier(0, 0, 0.4, 1);
+}
+
+.easeInOut {
+    animation-timing-function: cubic-bezier(0.45, 0, 0.4, 1);
+}

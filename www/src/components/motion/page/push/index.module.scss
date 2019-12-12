@@ -1,0 +1,17 @@
+@import '../shared.scss';
+
+.root {
+    @include root;
+}
+
+.box {
+    @include box;
+}
+
+.wrap {
+    transition: transform 500ms;
+}
+
+.isActive {
+    transform: translateX(-100%);
+}
