@@ -1,0 +1,42 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.button {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform 300ms cubic-bezier(0, 0, 0.4, 1);
+}
+
+.active {
+    transform: translateX(-100%);
+}
+
+.box {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+    background: $tp-color__black-300;
+}
