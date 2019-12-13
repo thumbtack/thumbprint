@@ -8,6 +8,10 @@
 
 -   [Patch] The `Checkbox` HTML will no longer include the `value` attribute if the value prop is `undefined`. (#589)
 
+### Removed
+
+-   [Major] Remove `DatePicker`, `Select`, `ModalDefault`, `ModalDefaultHeader`, `ModalDefaultTitle`, `ModalDefaultDescription`, `ModalDefaultContent`, `ModalDefaultContentFullBleed`, `ModalDefaultFooter`, `ModalDefaultAnimatedWrapper`, `Textarea`, `Input`, `InputIcon`, and `InputClearButton` components. These have all been renamed and continue to exist under the new names. (#566)
+
 ### Changed
 
 -   [Patch] Rename a few directories in our source files. This doesn't affect consumers. (#566)
