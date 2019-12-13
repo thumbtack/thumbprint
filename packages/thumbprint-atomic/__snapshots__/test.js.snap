@@ -1135,30 +1135,6 @@ exports[`compiles correctly 1`] = `
   margin-left: 256px !important;
   margin-right: 256px !important;
 }
-.-ma1 {
-  margin: -4px !important;
-}
-.-ma2 {
-  margin: -8px !important;
-}
-.-ma3 {
-  margin: -16px !important;
-}
-.-ma4 {
-  margin: -24px !important;
-}
-.-ma5 {
-  margin: -32px !important;
-}
-.-ma6 {
-  margin: -64px !important;
-}
-.-ma7 {
-  margin: -128px !important;
-}
-.-ma8 {
-  margin: -256px !important;
-}
 .-ml1 {
   margin-left: -4px !important;
 }
@@ -2594,30 +2570,6 @@ exports[`compiles correctly 1`] = `
     margin-left: 256px !important;
     margin-right: 256px !important;
   }
-  .s_-ma1 {
-    margin: -4px !important;
-  }
-  .s_-ma2 {
-    margin: -8px !important;
-  }
-  .s_-ma3 {
-    margin: -16px !important;
-  }
-  .s_-ma4 {
-    margin: -24px !important;
-  }
-  .s_-ma5 {
-    margin: -32px !important;
-  }
-  .s_-ma6 {
-    margin: -64px !important;
-  }
-  .s_-ma7 {
-    margin: -128px !important;
-  }
-  .s_-ma8 {
-    margin: -256px !important;
-  }
   .s_-ml1 {
     margin-left: -4px !important;
   }
@@ -4027,30 +3979,6 @@ exports[`compiles correctly 1`] = `
     margin-left: 256px !important;
     margin-right: 256px !important;
   }
-  .m_-ma1 {
-    margin: -4px !important;
-  }
-  .m_-ma2 {
-    margin: -8px !important;
-  }
-  .m_-ma3 {
-    margin: -16px !important;
-  }
-  .m_-ma4 {
-    margin: -24px !important;
-  }
-  .m_-ma5 {
-    margin: -32px !important;
-  }
-  .m_-ma6 {
-    margin: -64px !important;
-  }
-  .m_-ma7 {
-    margin: -128px !important;
-  }
-  .m_-ma8 {
-    margin: -256px !important;
-  }
   .m_-ml1 {
     margin-left: -4px !important;
   }
@@ -5459,30 +5387,6 @@ exports[`compiles correctly 1`] = `
   .l_mh8 {
     margin-left: 256px !important;
     margin-right: 256px !important;
-  }
-  .l_-ma1 {
-    margin: -4px !important;
-  }
-  .l_-ma2 {
-    margin: -8px !important;
-  }
-  .l_-ma3 {
-    margin: -16px !important;
-  }
-  .l_-ma4 {
-    margin: -24px !important;
-  }
-  .l_-ma5 {
-    margin: -32px !important;
-  }
-  .l_-ma6 {
-    margin: -64px !important;
-  }
-  .l_-ma7 {
-    margin: -128px !important;
-  }
-  .l_-ma8 {
-    margin: -256px !important;
   }
   .l_-ml1 {
     margin-left: -4px !important;
