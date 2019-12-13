@@ -171,3 +171,57 @@ test('adds `value` prop', () => {
     expect(wrapper.find('input').prop('value')).toEqual('Duck');
     expect(wrapper).toMatchSnapshot();
 });
+
+test('`value` attribute is `"on"` in form data if prop is `undefined` and checkbox is checked', () => {
+    // This test exists to prevent a regression caused by this bug:
+    // https://github.com/thumbtack/thumbprint/issues/589
+    let nameInFormData;
+    const name = 'foo';
+
+    const wrapper = mount(
+        <form
+            onSubmit={(e): void => {
+                e.preventDefault();
+                // We need to assert the type because TypeScript can't infer it.
+                // https://stackoverflow.com/a/43851475
+                const data = new FormData(e.target as HTMLFormElement);
+                nameInFormData = data.get(name);
+            }}
+        >
+            <Checkbox isChecked value={undefined} name={name} onChange={(): void => {}}>
+                Goose
+            </Checkbox>
+            <button type="submit">Submit</button>
+        </form>,
+    );
+
+    wrapper.find('form').simulate('submit');
+    expect(nameInFormData).toBe('on');
+});
+
+test('`value` attribute is `"on"` in form data if prop is not supplied and checkbox is checked', () => {
+    // This test exists to prevent a regression caused by this bug:
+    // https://github.com/thumbtack/thumbprint/issues/589
+    let nameInFormData;
+    const name = 'foo';
+
+    const wrapper = mount(
+        <form
+            onSubmit={(e): void => {
+                e.preventDefault();
+                // We need to assert the type because TypeScript can't infer it.
+                // https://stackoverflow.com/a/43851475
+                const data = new FormData(e.target as HTMLFormElement);
+                nameInFormData = data.get(name);
+            }}
+        >
+            <Checkbox isChecked name={name} onChange={(): void => {}}>
+                Goose
+            </Checkbox>
+            <button type="submit">Submit</button>
+        </form>,
+    );
+
+    wrapper.find('form').simulate('submit');
+    expect(nameInFormData).toBe('on');
+});
