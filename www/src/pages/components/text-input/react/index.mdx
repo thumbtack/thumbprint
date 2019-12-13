@@ -34,11 +34,11 @@ function ClearableTextInput() {
                 value={value}
                 placeholder="Enter an address"
                 innerLeft={
-                    <TextInputIcon>
+                    <InputIcon>
                         <ContentModifierMapPinMedium />
-                    </TextInputIcon>
+                    </InputIcon>
                 }
-                innerRight={<TextInputClearButton onClick={() => setValue('')} />}
+                innerRight={<InputClearButton onClick={() => setValue('')} />}
                 onChange={setValue}
             />
         </div>

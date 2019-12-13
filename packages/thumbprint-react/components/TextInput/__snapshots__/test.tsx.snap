@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput adds \`autocomplete\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`autocomplete\` attribute 1`] = `
+<Input
   autoComplete="given-name"
   onChange={[Function]}
 >
@@ -29,11 +29,11 @@ exports[`TextInput adds \`autocomplete\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`autofocus\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`autofocus\` attribute 1`] = `
+<Input
   onChange={[Function]}
   shouldFocusOnPageLoad={true}
 >
@@ -60,11 +60,11 @@ exports[`TextInput adds \`autofocus\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`dataTest\` prop 1`] = `
-<TextInput
+exports[`Input adds \`dataTest\` prop 1`] = `
+<Input
   dataTest="Duck"
   onChange={[Function]}
 >
@@ -92,11 +92,11 @@ exports[`TextInput adds \`dataTest\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`disabled\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`disabled\` attribute 1`] = `
+<Input
   isDisabled={true}
   onChange={[Function]}
 >
@@ -123,11 +123,11 @@ exports[`TextInput adds \`disabled\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDisabled"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`id\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`id\` attribute 1`] = `
+<Input
   id="Goose"
   onChange={[Function]}
 >
@@ -155,11 +155,11 @@ exports[`TextInput adds \`id\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`inputMode\` prop 1`] = `
-<TextInput
+exports[`Input adds \`inputMode\` prop 1`] = `
+<Input
   inputMode="numeric"
   onChange={[Function]}
 >
@@ -187,11 +187,11 @@ exports[`TextInput adds \`inputMode\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`maxLength\` prop 1`] = `
-<TextInput
+exports[`Input adds \`maxLength\` prop 1`] = `
+<Input
   maxLength={5}
   onChange={[Function]}
 >
@@ -219,11 +219,11 @@ exports[`TextInput adds \`maxLength\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`pattern\` prop 1`] = `
-<TextInput
+exports[`Input adds \`pattern\` prop 1`] = `
+<Input
   onChange={[Function]}
   pattern="[0-9]{5}"
 >
@@ -251,11 +251,11 @@ exports[`TextInput adds \`pattern\` prop 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`readonly\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`readonly\` attribute 1`] = `
+<Input
   isReadOnly={true}
   onChange={[Function]}
 >
@@ -282,11 +282,11 @@ exports[`TextInput adds \`readonly\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateReadonly"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds \`required\` attribute 1`] = `
-<TextInput
+exports[`Input adds \`required\` attribute 1`] = `
+<Input
   isRequired={true}
   onChange={[Function]}
 >
@@ -313,11 +313,11 @@ exports[`TextInput adds \`required\` attribute 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds name 1`] = `
-<TextInput
+exports[`Input adds name 1`] = `
+<Input
   name="my-input"
   onChange={[Function]}
 >
@@ -345,11 +345,11 @@ exports[`TextInput adds name 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput adds placeholder 1`] = `
-<TextInput
+exports[`Input adds placeholder 1`] = `
+<Input
   onChange={[Function]}
   placeholder="Name"
 >
@@ -377,11 +377,11 @@ exports[`TextInput adds placeholder 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput innerLeft renders \`innerLeft\` node when HTML element is provided 1`] = `
-<TextInput
+exports[`Input innerLeft renders \`innerLeft\` node when HTML element is provided 1`] = `
+<Input
   innerLeft={
     <div>
       Goose
@@ -420,11 +420,11 @@ exports[`TextInput innerLeft renders \`innerLeft\` node when HTML element is pro
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput innerLeft renders \`innerLeft\` node when text is provided 1`] = `
-<TextInput
+exports[`Input innerLeft renders \`innerLeft\` node when text is provided 1`] = `
+<Input
   innerLeft="Goose"
   onChange={[Function]}
 >
@@ -457,11 +457,11 @@ exports[`TextInput innerLeft renders \`innerLeft\` node when text is provided 1`
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput innerRight renders \`innerRight\` node when HTML element is provided 1`] = `
-<TextInput
+exports[`Input innerRight renders \`innerRight\` node when HTML element is provided 1`] = `
+<Input
   innerRight={
     <div>
       Goose
@@ -500,11 +500,11 @@ exports[`TextInput innerRight renders \`innerRight\` node when HTML element is p
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput innerRight renders \`innerRight\` node when text is provided 1`] = `
-<TextInput
+exports[`Input innerRight renders \`innerRight\` node when text is provided 1`] = `
+<Input
   innerRight="Goose"
   onChange={[Function]}
 >
@@ -537,10 +537,10 @@ exports[`TextInput innerRight renders \`innerRight\` node when text is provided 
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders \`value\` as the input value 1`] = `
+exports[`Input renders \`value\` as the input value 1`] = `
 <div
   class="root rootUiStateDefault"
 >
@@ -555,8 +555,8 @@ exports[`TextInput renders \`value\` as the input value 1`] = `
 </div>
 `;
 
-exports[`TextInput renders email input when requested 1`] = `
-<TextInput
+exports[`Input renders email input when requested 1`] = `
+<Input
   onChange={[Function]}
   type="email"
 >
@@ -583,11 +583,11 @@ exports[`TextInput renders email input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders large input 1`] = `
-<TextInput
+exports[`Input renders large input 1`] = `
+<Input
   onChange={[Function]}
   size="large"
 >
@@ -614,11 +614,11 @@ exports[`TextInput renders large input 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders number input when requested 1`] = `
-<TextInput
+exports[`Input renders number input when requested 1`] = `
+<Input
   onChange={[Function]}
   type="number"
 >
@@ -645,11 +645,11 @@ exports[`TextInput renders number input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders search input when requested 1`] = `
-<TextInput
+exports[`Input renders search input when requested 1`] = `
+<Input
   onChange={[Function]}
   type="search"
 >
@@ -676,11 +676,11 @@ exports[`TextInput renders search input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders small input 1`] = `
-<TextInput
+exports[`Input renders small input 1`] = `
+<Input
   onChange={[Function]}
   size="small"
 >
@@ -707,11 +707,11 @@ exports[`TextInput renders small input 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders telephone input when requested 1`] = `
-<TextInput
+exports[`Input renders telephone input when requested 1`] = `
+<Input
   onChange={[Function]}
   type="tel"
 >
@@ -738,11 +738,11 @@ exports[`TextInput renders telephone input when requested 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInput renders text input by default 1`] = `
-<TextInput
+exports[`Input renders text input by default 1`] = `
+<Input
   onChange={[Function]}
 >
   <div
@@ -768,14 +768,14 @@ exports[`TextInput renders text input by default 1`] = `
       className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
     />
   </div>
-</TextInput>
+</Input>
 `;
 
-exports[`TextInputClearButton includes \`aria-label\` on button to describe the SVG icon 1`] = `
-<TextInputClearButton
+exports[`InputClearButton includes \`aria-label\` on button to describe the SVG icon 1`] = `
+<InputClearButton
   onClick={[Function]}
 >
-  <TextInputIconContainer>
+  <InputIconContainer>
     <div
       className="inputIconContainer inputIconContainerPositionLeft"
     >
@@ -811,15 +811,15 @@ exports[`TextInputClearButton includes \`aria-label\` on button to describe the 
         </button>
       </div>
     </div>
-  </TextInputIconContainer>
-</TextInputClearButton>
+  </InputIconContainer>
+</InputClearButton>
 `;
 
-exports[`TextInputClearButton renders an SVG icon 1`] = `
-<TextInputClearButton
+exports[`InputClearButton renders an SVG icon 1`] = `
+<InputClearButton
   onClick={[Function]}
 >
-  <TextInputIconContainer>
+  <InputIconContainer>
     <div
       className="inputIconContainer inputIconContainerPositionLeft"
     >
@@ -855,15 +855,15 @@ exports[`TextInputClearButton renders an SVG icon 1`] = `
         </button>
       </div>
     </div>
-  </TextInputIconContainer>
-</TextInputClearButton>
+  </InputIconContainer>
+</InputClearButton>
 `;
 
-exports[`TextInputIcon applies color prop 1`] = `
-<TextInputIcon
+exports[`InputIcon applies color prop 1`] = `
+<InputIcon
   color="LightGoldenRodYellow"
 >
-  <TextInputIconContainer
+  <InputIconContainer
     style={
       Object {
         "color": "LightGoldenRodYellow",
@@ -880,13 +880,13 @@ exports[`TextInputIcon applies color prop 1`] = `
     >
       Goose
     </div>
-  </TextInputIconContainer>
-</TextInputIcon>
+  </InputIconContainer>
+</InputIcon>
 `;
 
-exports[`TextInputIcon renders children 1`] = `
-<TextInputIcon>
-  <TextInputIconContainer
+exports[`InputIcon renders children 1`] = `
+<InputIcon>
+  <InputIconContainer
     style={
       Object {
         "color": "inherit",
@@ -907,6 +907,917 @@ exports[`TextInputIcon renders children 1`] = `
         </title>
       </svg>
     </div>
-  </TextInputIconContainer>
-</TextInputIcon>
+  </InputIconContainer>
+</InputIcon>
+`;
+
+exports[`TextInput adds \`autocomplete\` attribute 1`] = `
+<Input
+  autoComplete="given-name"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoComplete="given-name"
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`autofocus\` attribute 1`] = `
+<Input
+  onChange={[Function]}
+  shouldFocusOnPageLoad={true}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={true}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`dataTest\` prop 1`] = `
+<Input
+  dataTest="Duck"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      data-test="Duck"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`disabled\` attribute 1`] = `
+<Input
+  isDisabled={true}
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDisabled"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDisabled"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`id\` attribute 1`] = `
+<Input
+  id="Goose"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      id="Goose"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`inputMode\` prop 1`] = `
+<Input
+  inputMode="numeric"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      inputMode="numeric"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`maxLength\` prop 1`] = `
+<Input
+  maxLength={5}
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      maxLength={5}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`pattern\` prop 1`] = `
+<Input
+  onChange={[Function]}
+  pattern="[0-9]{5}"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      pattern="[0-9]{5}"
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`readonly\` attribute 1`] = `
+<Input
+  isReadOnly={true}
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateReadonly"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={true}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateReadonly"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds \`required\` attribute 1`] = `
+<Input
+  isRequired={true}
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={true}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds name 1`] = `
+<Input
+  name="my-input"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      name="my-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput adds placeholder 1`] = `
+<Input
+  onChange={[Function]}
+  placeholder="Name"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      placeholder="Name"
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput innerLeft renders \`innerLeft\` node when HTML element is provided 1`] = `
+<Input
+  innerLeft={
+    <div>
+      Goose
+    </div>
+  }
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <div
+      className="inputInnerElement"
+      onClick={[Function]}
+    >
+      <div>
+        Goose
+      </div>
+    </div>
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge inputInnerLeft"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput innerLeft renders \`innerLeft\` node when text is provided 1`] = `
+<Input
+  innerLeft="Goose"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <div
+      className="inputInnerElement"
+      onClick={[Function]}
+    >
+      Goose
+    </div>
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge inputInnerLeft"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput innerRight renders \`innerRight\` node when HTML element is provided 1`] = `
+<Input
+  innerRight={
+    <div>
+      Goose
+    </div>
+  }
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge inputInnerRight"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputInnerElement"
+      onClick={[Function]}
+    >
+      <div>
+        Goose
+      </div>
+    </div>
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput innerRight renders \`innerRight\` node when text is provided 1`] = `
+<Input
+  innerRight="Goose"
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge inputInnerRight"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputInnerElement"
+      onClick={[Function]}
+    >
+      Goose
+    </div>
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders \`value\` as the input value 1`] = `
+<div
+  class="root rootUiStateDefault"
+>
+  <input
+    class="input inputSizeLarge"
+    type="text"
+    value="Goose"
+  />
+  <div
+    class="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+  />
+</div>
+`;
+
+exports[`TextInput renders email input when requested 1`] = `
+<Input
+  onChange={[Function]}
+  type="email"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="email"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders large input 1`] = `
+<Input
+  onChange={[Function]}
+  size="large"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders number input when requested 1`] = `
+<Input
+  onChange={[Function]}
+  type="number"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="number"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders search input when requested 1`] = `
+<Input
+  onChange={[Function]}
+  type="search"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="search"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders small input 1`] = `
+<Input
+  onChange={[Function]}
+  size="small"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeSmall"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders telephone input when requested 1`] = `
+<Input
+  onChange={[Function]}
+  type="tel"
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="tel"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInput renders text input by default 1`] = `
+<Input
+  onChange={[Function]}
+>
+  <div
+    className="root rootUiStateDefault"
+  >
+    <input
+      autoFocus={false}
+      className="input inputSizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      readOnly={false}
+      required={false}
+      type="text"
+      value=""
+    />
+    <div
+      className="inputStyles inputStylesRoundedBordersLeft inputStylesRoundedBordersRight inputStylesUiStateDefault"
+    />
+  </div>
+</Input>
+`;
+
+exports[`TextInputClearButton includes \`aria-label\` on button to describe the SVG icon 1`] = `
+<InputClearButton
+  onClick={[Function]}
+>
+  <InputIconContainer>
+    <div
+      className="inputIconContainer inputIconContainerPositionLeft"
+    >
+      <div
+        className="displayNone"
+      >
+        <button
+          aria-label="Clear input"
+          className="unstyledButton"
+          onClick={[Function]}
+          type="button"
+        >
+          <NavigationCloseSmall
+            fill="currentColor"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              fill="currentColor"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </NavigationCloseSmall>
+        </button>
+      </div>
+    </div>
+  </InputIconContainer>
+</InputClearButton>
+`;
+
+exports[`TextInputClearButton renders an SVG icon 1`] = `
+<InputClearButton
+  onClick={[Function]}
+>
+  <InputIconContainer>
+    <div
+      className="inputIconContainer inputIconContainerPositionLeft"
+    >
+      <div
+        className="displayNone"
+      >
+        <button
+          aria-label="Clear input"
+          className="unstyledButton"
+          onClick={[Function]}
+          type="button"
+        >
+          <NavigationCloseSmall
+            fill="currentColor"
+            height="18"
+            viewBox="0 0 18 18"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <svg
+              fill="currentColor"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </NavigationCloseSmall>
+        </button>
+      </div>
+    </div>
+  </InputIconContainer>
+</InputClearButton>
+`;
+
+exports[`TextInputIcon applies color prop 1`] = `
+<InputIcon
+  color="LightGoldenRodYellow"
+>
+  <InputIconContainer
+    style={
+      Object {
+        "color": "LightGoldenRodYellow",
+      }
+    }
+  >
+    <div
+      className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "LightGoldenRodYellow",
+        }
+      }
+    >
+      Goose
+    </div>
+  </InputIconContainer>
+</InputIcon>
+`;
+
+exports[`TextInputIcon renders children 1`] = `
+<InputIcon>
+  <InputIconContainer
+    style={
+      Object {
+        "color": "inherit",
+      }
+    }
+  >
+    <div
+      className="inputIconContainer inputIconContainerPositionLeft"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      <svg>
+        <title>
+          Goose
+        </title>
+      </svg>
+    </div>
+  </InputIconContainer>
+</InputIcon>
 `;

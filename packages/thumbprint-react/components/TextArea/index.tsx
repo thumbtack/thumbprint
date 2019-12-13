@@ -81,7 +81,7 @@ interface PropTypes {
     dataTest?: string;
 }
 
-const TextArea = ({
+const Textarea = ({
     dataTest,
     hasError = false,
     id,
@@ -120,4 +120,5 @@ const TextArea = ({
     );
 };
 
-export default TextArea;
+export { Textarea as TextArea };
+export default Textarea;

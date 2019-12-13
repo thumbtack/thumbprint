@@ -94,7 +94,7 @@ interface PropTypes {
     name?: string;
 }
 
-const Dropdown = ({
+const Select = ({
     children,
     dataTest,
     hasError = false,
@@ -147,4 +147,5 @@ const Dropdown = ({
     );
 };
 
-export default Dropdown;
+export { Select as Dropdown };
+export default Select;
