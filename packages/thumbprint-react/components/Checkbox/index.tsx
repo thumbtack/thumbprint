@@ -190,6 +190,13 @@ export default function Checkbox({
         'If `children` is not provided to `Checkbox`, the `id` prop must be used to link the `Checkbox` to a `label` element.',
     );
 
+    // React adds a `value` attribute (`value=""`) to `input[type="checkbox"]` even if the `value`
+    // prop is `undefined`. This prevents the default browser behavior of `value="on"` when the
+    // `value` attribute is omitted. We can work around the React behavior and avoid adding
+    // `value=""` to the DOM by conditionally creating an object that we then spread onto the
+    // element. More context: https://github.com/thumbtack/thumbprint/issues/589
+    const valuePropObject = value ? { value } : {};
+
     return (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label
@@ -210,7 +217,7 @@ export default function Checkbox({
                 onChange={(event): void => onChange(event.target.checked, id)}
                 disabled={isDisabled}
                 required={isRequired}
-                value={value}
+                {...valuePropObject}
             />
 
             <div
