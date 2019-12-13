@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 11.1.1 - 2019-12-13
+
 ### Fixed
 
 -   [Patch] The `Checkbox` HTML will no longer include the `value` attribute if the value prop is `undefined`. (#589)

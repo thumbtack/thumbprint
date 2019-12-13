@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.0.0 - 2019-12-13
+
 ### Removed
 
 -   [Major] Remove negative margin classes that targeted all margin values, e.g. `margin: -ma*`. They have not been used by consumers.
