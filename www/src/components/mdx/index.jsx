@@ -207,6 +207,7 @@ MDXRenderer.propTypes = {
 const getPlatformByPathname = pathname => {
     const mappings = {
         react: 'React',
+        javascript: 'JavaScript',
         scss: 'SCSS',
         usage: 'Usage',
         ios: 'iOS',
@@ -259,10 +260,12 @@ const MDX = props => {
 
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
-    const isComponentPage =
-        location.pathname.startsWith('/components/') && getPlatformByPathname(location.pathname);
+    const isComponentOrTokensPage =
+        (location.pathname.startsWith('/components/') ||
+            location.pathname.startsWith('/tokens/')) &&
+        getPlatformByPathname(location.pathname);
 
-    const pageTitle = isComponentPage ? (
+    const pageTitle = isComponentOrTokensPage ? (
         <span>
             {pageContext.frontmatter.title}
             <span className="visually-hidden">
@@ -273,7 +276,7 @@ const MDX = props => {
         pageContext.frontmatter.title
     );
 
-    const metaTitle = isComponentPage
+    const metaTitle = isComponentOrTokensPage
         ? `${pageContext.frontmatter.title} (${getPlatformByPathname(location.pathname)})`
         : pageContext.frontmatter.title;
 
