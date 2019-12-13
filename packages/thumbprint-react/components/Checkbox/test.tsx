@@ -180,7 +180,7 @@ test('`value` attribute is `"on"` in form data if prop is `undefined` and checkb
 
     const wrapper = mount(
         <form
-            onSubmit={e => {
+            onSubmit={(e): void => {
                 e.preventDefault();
                 // We need to assert the type because TypeScript can't infer it.
                 // https://stackoverflow.com/a/43851475
@@ -188,10 +188,10 @@ test('`value` attribute is `"on"` in form data if prop is `undefined` and checkb
                 nameInFormData = data.get(name);
             }}
         >
-            <Checkbox isChecked value={undefined} name={name} onChange={() => {}}>
+            <Checkbox isChecked value={undefined} name={name} onChange={(): void => {}}>
                 Goose
             </Checkbox>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>,
     );
 
@@ -207,7 +207,7 @@ test('`value` attribute is `"on"` in form data if prop is not supplied and check
 
     const wrapper = mount(
         <form
-            onSubmit={e => {
+            onSubmit={(e): void => {
                 e.preventDefault();
                 // We need to assert the type because TypeScript can't infer it.
                 // https://stackoverflow.com/a/43851475
@@ -215,10 +215,10 @@ test('`value` attribute is `"on"` in form data if prop is not supplied and check
                 nameInFormData = data.get(name);
             }}
         >
-            <Checkbox isChecked name={name} onChange={() => {}}>
+            <Checkbox isChecked name={name} onChange={(): void => {}}>
                 Goose
             </Checkbox>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>,
     );
 
