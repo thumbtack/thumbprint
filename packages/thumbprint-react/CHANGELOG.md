@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Remove the `ClearButton` alias for `TextInputClearButton` from the `TextInput` source file. It was not accessible to consumers since our `index.ts` entrypoint doesn't export it. (#573)
+
 ### Removed
 
 -   [Major] Remove `DatePicker`, `Select`, `ModalDefault`, `ModalDefaultHeader`, `ModalDefaultTitle`, `ModalDefaultDescription`, `ModalDefaultContent`, `ModalDefaultContentFullBleed`, `ModalDefaultFooter`, `ModalDefaultAnimatedWrapper`, `Textarea`, `Input`, `InputIcon`, and `InputClearButton` components. These have all been renamed and continue to exist under the new names. (#566)
@@ -15,10 +19,6 @@
 ### Changed
 
 -   [Patch] Rename a few directories in our source files. This doesn't affect consumers. (#566)
-
-### Fixed
-
--   [Patch] Remove the `ClearButton` alias for `TextInputClearButton` from the `TextInput` source file. It was not accessible to consumers since our `index.ts` entrypoint doesn't export it. (#573)
 
 ## 11.1.0 - 2019-12-05
 
