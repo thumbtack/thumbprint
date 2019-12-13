@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'lodash/noop';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { TextButton } from '../Button/index';
 import StickyFooter from './components/sticky-footer.jsx';
@@ -16,8 +17,8 @@ const { Provider, Consumer } = React.createContext({
 });
 
 // These values are duplicated in the Sass.
-const TRANSITION_OPEN_SPEED = 300;
-const TRANSITION_CLOSE_SPEED = 250;
+const TRANSITION_OPEN_SPEED = tokens.tpDuration5;
+const TRANSITION_CLOSE_SPEED = tokens.tpDuration4;
 
 /**
  * `ModalAnimatedWrapper` is an exported component that we export for developers that want access to

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add opacity fade-in using duration token in `Tooltip`.
+
+### Changed
+
+-   [Minor] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
+
 ### Removed
 
 -   [Major] Remove `DatePicker`, `Select`, `ModalDefault`, `ModalDefaultHeader`, `ModalDefaultTitle`, `ModalDefaultDescription`, `ModalDefaultContent`, `ModalDefaultContentFullBleed`, `ModalDefaultFooter`, `ModalDefaultAnimatedWrapper`, `Textarea`, `Input`, `InputIcon`, and `InputClearButton` components. These have all been renamed and continue to exist under the new names. (#566)
@@ -9,6 +17,7 @@
 ### Changed
 
 -   [Patch] Rename a few directories in our source files. This doesn't affect consumers. (#566)
+-   [Patch] Update version of the Thumbprint Tokens dependency.
 
 ## 11.1.0 - 2019-12-05
 
