@@ -82,6 +82,9 @@
         "type": "git",
         "url": "git+https://github.com/thumbtack/thumbprint.git"
     },
+    "engines" : {
+        "node" : "12.x"
+    },
     "keywords": [
         "thumbtack",
         "thumbprint",
