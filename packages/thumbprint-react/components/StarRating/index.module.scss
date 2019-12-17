@@ -1,77 +1,137 @@
-$spacing--small: 1px;
-$spacing--medium: 2px;
-$spacing--large: 3px;
+$small-spacing-adjustment: -1px;
+$small-height: 12px;
+$small-width: 70px;
+$small-image: url(./image/stars-small.svg);
 
-$size--small: 12px;
-$size--medium: 18px;
-$size--large: 24px;
+$medium-spacing-adjustment: -2px;
+$medium-height: 18px;
+$medium-width: 110px;
+$medium-image: url(./image/stars-medium.svg);
+
+$large-spacing-adjustment: -3px;
+$large-height: 24px;
+$large-width: 150px;
+$large-image: url(./image/stars-large.svg);
+
+// This element will have gray stars in the background.
 
 .root {
     position: relative;
+    background-repeat: repeat-x;
     display: inline-block;
 }
 
-.rootSize {
-    &Small {
-        margin: 0 (-$spacing--small);
-    }
+// This pseudo element will have yellow stars. Because of the source order it will appear over the
+// top of the gray stars. The width is determined by the `data-star` value.
 
-    &Medium {
-        margin: 0 (-$spacing--medium);
-    }
-
-    &Large {
-        margin: 0 (-$spacing--large);
-    }
+.root:after {
+    content: '';
+    background-position: bottom left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 
-.rootIsClickable {
-    cursor: pointer;
+.root[data-star='0']:after {
+    width: 0%;
 }
 
-.row {
-    display: flex;
+.root[data-star='0.5']:after {
+    width: 10%;
 }
 
-.rowGold {
+.root[data-star='1']:after {
+    width: 20%;
+}
+
+.root[data-star='1.5']:after {
+    width: 30%;
+}
+
+.root[data-star='2']:after {
+    width: 40%;
+}
+
+.root[data-star='2.5']:after {
+    width: 50%;
+}
+
+.root[data-star='3']:after {
+    width: 60%;
+}
+
+.root[data-star='3.5']:after {
+    width: 70%;
+}
+
+.root[data-star='4']:after {
+    width: 80%;
+}
+
+.root[data-star='4.5']:after {
+    width: 90%;
+}
+
+.root[data-star='5']:after {
+    width: 100%;
+}
+
+// Star sizes. We use different background images for each size for precice spacing and rendering.
+
+.small {
+    margin: 0 $small-spacing-adjustment;
+    height: $small-height;
+    width: $small-width;
+}
+
+.small,
+.small:after {
+    background-image: $small-image;
+}
+
+.medium {
+    margin: 0 $medium-spacing-adjustment;
+    height: $medium-height;
+    width: $medium-width;
+}
+
+.medium,
+.medium:after {
+    background-image: $medium-image;
+}
+
+.large {
+    margin: 0 $large-spacing-adjustment;
+    height: $large-height;
+    width: $large-width;
+}
+
+.large,
+.large:after {
+    background-image: $large-image;
+}
+
+// Interactive rating.
+
+form {
     position: absolute;
     display: flex;
-    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+input {
+    display: none;
+}
+
+label {
+    flex: 1;
+    cursor: pointer;
+    // Pushes label text out of view
+    text-indent: 100%;
     overflow: hidden;
-    pointer-events: none; // We want the gray version of the stars to handle all events
-}
-
-.starContainer {
-    &Small {
-        padding: 0 $spacing--small;
-    }
-
-    &Medium {
-        padding: 0 $spacing--medium;
-    }
-
-    &Large {
-        padding: 0 $spacing--large;
-    }
-}
-
-.starSVG {
-    display: block;
-}
-
-.starSVGSize {
-    &Small {
-        height: $size--small;
-        width: $size--small;
-    }
-
-    &Medium {
-        height: $size--medium;
-        width: $size--medium;
-    }
-
-    &Large {
-        height: $size--large;
-        width: $size--large;
-    }
 }
