@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Minor] Refactored `StarRating` to output far less HTML, add accessibility.
+
 ### Fixed
 
 -   [Patch] Remove the `ClearButton` alias for `TextInputClearButton` from the `TextInput` source file. It was not accessible to consumers since our `index.ts` entrypoint doesn't export it. (#573)
