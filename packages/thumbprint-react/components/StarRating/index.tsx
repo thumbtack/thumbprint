@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import times from 'lodash/times';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
 import styles from './index.module.scss';
@@ -45,30 +46,10 @@ export default function StarRating({
     onStarHover = noop,
     onMouseLeave = noop,
 }: PropTypes): JSX.Element {
-    const renderLabels = (): JSX.Element[] => {
-        const starNodes = [];
-        for (let i = 1; i <= MAX_NUM_STARS; i += 1) {
-            const label = (
-                // eslint-disable-next-line no-console
-                <label key={i} onMouseEnter={(): void => onStarHover(i)}>
-                    <input
-                        type="radio"
-                        name="rating"
-                        value={i}
-                        onClick={(): void => onStarClick(i)}
-                    />
-                    {i}
-                </label>
-            );
-            starNodes.push(label);
-        }
-        return starNodes;
-    };
-
-    // Use hoverRating if exists, otherwise round rating to whole or one decimal half number
+    // Use hoverRating if present, otherwise round rating to whole or one-decimal half number
     const ratingValue = hoverRating || Math.round(rating * 2) / 2;
 
-    // Aria label text
+    // aria-label text
     const text = ratingValue === 1 ? 'star' : 'stars';
     const ariaLabel = `${ratingValue} ${text} out of ${MAX_NUM_STARS} stars`;
 
@@ -84,7 +65,22 @@ export default function StarRating({
             aria-label={ariaLabel}
             onMouseLeave={onMouseLeave}
         >
-            {onStarClick !== noop && <form>{renderLabels()}</form>}
+            {onStarClick !== noop && (
+                <form>
+                    {times(MAX_NUM_STARS, index => (
+                        // eslint-disable-next-line jsx-a11y/label-has-for jsx-a11y/label-has-associated-control
+                        <label key={index} onMouseEnter={(): void => onStarHover(index + 1)}>
+                            <input
+                                type="radio"
+                                name="rating"
+                                value={index + 1}
+                                onClick={(): void => onStarClick(index + 1)}
+                            />
+                            {index + 1}
+                        </label>
+                    ))}
+                </form>
+            )}
         </div>
     );
 }
