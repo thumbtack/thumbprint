@@ -440,12 +440,6 @@ const Container = ({ children, location, activeSection }) => {
                                             to="/updates/notes/"
                                             isActive={pathname.startsWith('/updates/notes/')}
                                         />
-                                        <SideNavLink
-                                            title="Roadmap"
-                                            level={2}
-                                            to="/updates/roadmap/"
-                                            isActive={pathname === '/updates/roadmap/'}
-                                        />
                                     </SideNavGroup>
                                 </SideNavLink>
 
