@@ -12,7 +12,7 @@ See something that needs a tweak or uncover a bug in one of our components? Let 
 
 ### 2. Propose guidelines or components
 
-Each quarter we tackle new [Toolkits](/guide/product/toolkits/) and update our [Roadmap](/updates/roadmap/), but we welcome suggestions for new or existing ones. Capturing existing use cases while allowing for future flexibility is always a challenge and we want to know if we’ve missed the mark.
+Each quarter we tackle new [Toolkits](/guide/product/toolkits/), but we welcome suggestions for new or existing ones. Capturing existing use cases while allowing for future flexibility is always a challenge and we want to know if we’ve missed the mark.
 
 ### 3. Volunteer to work on a Toolkit
 

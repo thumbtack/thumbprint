@@ -47,7 +47,7 @@ const Featured = () => (
         </div>
         <div className="m_col-6 mb3 m_mb0">
             <Link
-                to="/updates/roadmap/"
+                to="/components/overview"
                 className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
             >
                 <div className="flex pv3 ph3 m_ph4 items-center">
@@ -55,10 +55,8 @@ const Featured = () => (
                         <img src={checklistSvg} className="db w4 w-auto" alt="" />
                     </div>
                     <div className="">
-                        <div className="tp-title-5 mb1">Roadmap</div>
-                        <div className="black-300">
-                            Work we’re planning and work we’ve completed.
-                        </div>
+                        <div className="tp-title-5 mb1">Components</div>
+                        <div className="black-300">Components we’ve built and are working on.</div>
                     </div>
                 </div>
             </Link>
