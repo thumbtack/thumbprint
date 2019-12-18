@@ -68,7 +68,7 @@ export default function StarRating({
             {onStarClick !== noop && (
                 <form>
                     {times(MAX_NUM_STARS, index => (
-                        // eslint-disable-next-line jsx-a11y/label-has-for jsx-a11y/label-has-associated-control
+                        // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
                         <label key={index} onMouseEnter={(): void => onStarHover(index + 1)}>
                             <input
                                 type="radio"
