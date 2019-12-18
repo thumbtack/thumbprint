@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Support TypeScript (`.ts`, `.tsx`) files.
+
+### Changed
+
+-   [Patch] Upgrade jscodeshift from `0.6.4` to `0.7.0`.
+
 ## 0.4.0 - 2019-12-05
 
 ### Added
