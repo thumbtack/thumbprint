@@ -10,6 +10,8 @@
 
 -   [Minor] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
 
+## 12.0.0 - 2019-12-17
+
 ### Fixed
 
 -   [Patch] Remove the `ClearButton` alias for `TextInputClearButton` from the `TextInput` source file. It was not accessible to consumers since our `index.ts` entrypoint doesn't export it. (#573)
