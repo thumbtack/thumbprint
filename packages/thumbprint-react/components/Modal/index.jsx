@@ -17,8 +17,8 @@ const { Provider, Consumer } = React.createContext({
 });
 
 // These values are duplicated in the Sass.
-const TRANSITION_OPEN_SPEED = tokens.tpDuration5;
-const TRANSITION_CLOSE_SPEED = tokens.tpDuration4;
+const TRANSITION_OPEN_SPEED = parseInt(tokens.tpDuration5, 10);
+const TRANSITION_CLOSE_SPEED = parseInt(tokens.tpDuration4, 10);
 
 /**
  * `ModalAnimatedWrapper` is an exported component that we export for developers that want access to
