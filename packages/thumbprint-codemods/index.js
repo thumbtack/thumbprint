@@ -67,8 +67,10 @@ if (!cli.flags.codemod || !codemods[cli.flags.codemod]) {
 const commandArgs = [
     'jscodeshift',
     ...cli.input,
+    '--parser',
+    'tsx',
     '--extensions',
-    'js,jsx',
+    'js,jsx,ts,tsx',
     '-t',
     codemods[cli.flags.codemod],
 ];
