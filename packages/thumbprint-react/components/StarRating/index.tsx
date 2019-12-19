@@ -41,17 +41,16 @@ interface PropTypes {
 export default function StarRating({
     size = 'small',
     hoverRating = 0,
-    rating,
+    rating = 0,
     onStarClick = noop,
     onStarHover = noop,
     onMouseLeave = noop,
 }: PropTypes): JSX.Element {
-    // Use hoverRating if present, otherwise round rating to whole or one-decimal half number
+    // Use hoverRating if present, otherwise round rating to whole (3) or half number (3.5)
     const ratingValue = hoverRating || Math.round(rating * 2) / 2;
 
     // aria-label text
-    const text = ratingValue === 1 ? 'star' : 'stars';
-    const ariaLabel = `${ratingValue} ${text} out of ${MAX_NUM_STARS} stars`;
+    const ariaLabel = `${ratingValue} out of ${MAX_NUM_STARS} star rating`;
 
     return (
         <div
@@ -65,7 +64,7 @@ export default function StarRating({
             aria-label={ariaLabel}
             onMouseLeave={onMouseLeave}
         >
-            {onStarClick !== noop && (
+            {(onStarClick !== noop || onStarHover !== noop) && (
                 <form>
                     {times(MAX_NUM_STARS, index => (
                         // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
