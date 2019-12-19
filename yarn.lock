@@ -2404,10 +2404,10 @@
   resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-icons/-/thumbprint-icons-2.15.1.tgz#a655f7893479a8cffc9d8c8052b29edcd85221c2"
   integrity sha512-jXrKp9+EyLsCJcdzbEjofyZXbyjEika7TIAB+eJEwrzZCw2w2AW3gVg7aGfSy4USqX61KJ/YxZL43jps6tjdXA==
 
-"@thumbtack/thumbprint-tokens@^10.1.4":
-  version "10.1.4"
-  resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-tokens/-/thumbprint-tokens-10.1.4.tgz#e19573b612aaca1a2cea40226f827a7433033ded"
-  integrity sha512-BkOj7bBfXnjDkfOvvezi2BvW4wW0j8hKNjNGWpGs1WbKMUK0fx21yV5n/N2Rbjjb6OwDKPApQ2X/Qw1BbEPhmA==
+"@thumbtack/thumbprint-tokens@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-tokens/-/thumbprint-tokens-11.0.0.tgz#6ae1f957f3c81b57b5d9d3434240d831aee8a582"
+  integrity sha512-xDBZsvjwJsm2Uc6jLHVRAmG2ag5qgPUHj5KQdsBD1eqlJ/EwDljyU+snfRLXOXn670O7NVcFea+E5N587pcdfg==
   dependencies:
     apollo-server-lambda "^2.9.7"
     graphql "^14.5.8"
