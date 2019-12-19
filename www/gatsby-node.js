@@ -10,18 +10,18 @@ exports.sourceNodes = ({ actions }) => {
     // Thumbprint site locally without needing to set up a CODA API key. Read
     // the `CONTRIBUTING.md` file if you'd like to set this up.
     const typeDefs = `
-        type CodaImplementationsTableDataValue {
+        type CodaImplementationsTableDataValue @dontInfer {
             Component: String
             Platform: String
             Design_status: String
             Development_status: String
             Documentation_status: String
         }
-        type CodaImplementationsTableData {
-            values: CodaImplementationsTableDataValue
+        type CodaImplementationsTableData @dontInfer {
+            values: CodaImplementationsTableDataValue @link
         }
-        type CodaImplementationsTable implements Node {
-            data: CodaImplementationsTableData
+        type CodaImplementationsTable implements Node @dontInfer {
+            data: CodaImplementationsTableData @link
         }
     `;
 
