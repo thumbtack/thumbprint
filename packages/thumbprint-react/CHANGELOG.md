@@ -4,7 +4,7 @@
 
 ### Changed
 
--   [Minor] Refactored `StarRating` to output less HTML, add accessibility.
+-   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
 
 ## 12.0.0 - 2019-12-17
 
