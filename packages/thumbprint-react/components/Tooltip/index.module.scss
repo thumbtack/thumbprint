@@ -17,7 +17,7 @@ $tooltip-max-width: 235px;
 }
 
 .tooltip {
-    animation: tooltip-animation $tp-duration__2;
+    animation: tooltip-animation $tp-duration__2 $tp-ease__out;
     box-shadow: 0px 1px 3px 0px rgba($tp-color__black, 0.5);
     font-size: $tp-font__body__3__size;
     // Prevent font-weight from being inherited.
