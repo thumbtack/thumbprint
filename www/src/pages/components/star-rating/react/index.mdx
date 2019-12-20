@@ -55,21 +55,33 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Event listeners
 
+The `hoverRating`, `onStarClick`, `onStarHover`, and `onMouseLeave` props make it possible to build an interactive `StarRating` component.
+
 ```jsx
-<StarRating
-    size="large"
-    rating={3}
-    hoverRating={2}
-    onStarClick={value => {
-        console.log(`StarRating: Clicked on ${value}`);
-    }}
-    onStarHover={value => {
-        console.log(`StarRating: Hovered over ${value}`);
-    }}
-    onMouseLeave={() => {
-        console.log('StarRating: onMouseLeave');
-    }}
-/>
+function StarRatingExample() {
+    const [rating, setRating] = React.useState(3);
+    const [hoverRating, setHoverRating] = React.useState(undefined);
+
+    return (
+        <StarRating
+            size="large"
+            rating={rating}
+            hoverRating={hoverRating}
+            onStarClick={value => {
+                setRating(value);
+                console.log(`StarRating: Clicked on ${value}`);
+            }}
+            onStarHover={value => {
+                setHoverRating(value);
+                console.log(`StarRating: Hovered over ${value}`);
+            }}
+            onMouseLeave={() => {
+                setHoverRating(undefined);
+                console.log('StarRating: onMouseLeave');
+            }}
+        />
+    );
+}
 ```
 
 <ComponentFooter data={props.data} />
