@@ -116,7 +116,7 @@ $large-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iNDg
 
 // Interactive rating.
 
-form {
+.rateForm {
     position: absolute;
     display: flex;
     width: 100%;
@@ -126,11 +126,11 @@ form {
     z-index: 1;
 }
 
-input {
+.rateInput {
     display: none;
 }
 
-label {
+.rateLabel {
     flex: 1;
     cursor: pointer;
     // Pushes label text out of view

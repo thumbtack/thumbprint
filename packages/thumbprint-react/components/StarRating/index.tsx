@@ -65,11 +65,16 @@ export default function StarRating({
             onMouseLeave={onMouseLeave}
         >
             {(onStarClick !== noop || onStarHover !== noop) && (
-                <form>
+                <form className={styles.rateForm}>
                     {times(MAX_NUM_STARS, index => (
                         // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
-                        <label key={index} onMouseEnter={(): void => onStarHover(index + 1)}>
+                        <label
+                            className={styles.rateLabel}
+                            key={index}
+                            onMouseEnter={(): void => onStarHover(index + 1)}
+                        >
                             <input
+                                className={styles.rateInput}
                                 type="radio"
                                 name="rating"
                                 value={index + 1}
