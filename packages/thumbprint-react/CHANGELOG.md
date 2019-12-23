@@ -8,7 +8,7 @@
 
 ### Changed
 
--   [Minor] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
+-   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
 
 ## 12.0.0 - 2019-12-17
 
