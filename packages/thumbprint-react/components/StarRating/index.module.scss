@@ -116,7 +116,7 @@ $large-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iNDg
 
 // Interactive rating.
 
-.rateForm {
+.rateInputsWrap {
     position: absolute;
     display: flex;
     width: 100%;
@@ -127,7 +127,7 @@ $large-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iNDg
 }
 
 .rateInput {
-    display: none;
+    visibility: hidden;
 }
 
 .rateLabel {

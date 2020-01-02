@@ -46,11 +46,15 @@ export default function StarRating({
     onStarHover = noop,
     onMouseLeave = noop,
 }: PropTypes): JSX.Element {
+    // Determine if instance is interactive.
+    const isInteractive = onStarClick !== noop || onStarHover !== noop;
+
     // Use hoverRating if present, otherwise round rating to whole (3) or half number (3.5)
     const ratingValue = hoverRating || Math.round(rating * 2) / 2;
 
     // aria-label text
-    const ariaLabel = `${ratingValue} out of ${MAX_NUM_STARS} star rating`;
+    const ariaStarText = ratingValue === 1 ? 'star' : 'stars';
+    const ariaLabel = `${ratingValue} ${ariaStarText} out of ${MAX_NUM_STARS} star rating`;
 
     return (
         <div
@@ -60,12 +64,12 @@ export default function StarRating({
                 [styles.medium]: size === 'medium',
             })}
             data-star={ratingValue}
-            role="img"
             aria-label={ariaLabel}
             onMouseLeave={onMouseLeave}
+            role={isInteractive ? undefined : 'img'}
         >
-            {(onStarClick !== noop || onStarHover !== noop) && (
-                <form className={styles.rateForm}>
+            {isInteractive && (
+                <div className={styles.rateInputsWrap}>
                     {times(MAX_NUM_STARS, index => (
                         // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
                         <label
@@ -80,10 +84,10 @@ export default function StarRating({
                                 value={index + 1}
                                 onClick={(): void => onStarClick(index + 1)}
                             />
-                            {index + 1}
+                            {index === 0 ? `${index + 1} star` : `${index + 1} stars`}
                         </label>
                     ))}
-                </form>
+                </div>
             )}
         </div>
     );
