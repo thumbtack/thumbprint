@@ -1,5 +1,15 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
+@keyframes tooltip-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 $tooltip-max-width: 235px;
 
 .childrenWrapper {
@@ -7,6 +17,7 @@ $tooltip-max-width: 235px;
 }
 
 .tooltip {
+    animation: tooltip-animation $tp-duration__2 $tp-ease__out;
     box-shadow: 0px 1px 3px 0px rgba($tp-color__black, 0.5);
     font-size: $tp-font__body__3__size;
     // Prevent font-weight from being inherited.

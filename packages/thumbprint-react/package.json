@@ -40,7 +40,7 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
         "@thumbtack/thumbprint-scss": "^4.0.0",
-        "@thumbtack/thumbprint-tokens": "^8.3.3",
+        "@thumbtack/thumbprint-tokens": "^11.0.0",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
         "focus-trap": "4.0.2",
