@@ -2,7 +2,7 @@
 
 exports[`generates a valid rounded rating value for the data-star attr 1`] = `
 <div
-  aria-label="1.5 out of 5 star rating"
+  aria-label="1.5 stars out of 5 star rating"
   className="root small"
   data-star={1.5}
   onMouseLeave={[Function]}
@@ -12,7 +12,7 @@ exports[`generates a valid rounded rating value for the data-star attr 1`] = `
 
 exports[`generates the correct aria-label 1`] = `
 <div
-  aria-label="2 out of 5 star rating"
+  aria-label="2 stars out of 5 star rating"
   className="root small"
   data-star={2}
   onMouseLeave={[Function]}
@@ -22,7 +22,7 @@ exports[`generates the correct aria-label 1`] = `
 
 exports[`generates the correct aria-label with 1 star rating 1`] = `
 <div
-  aria-label="1 out of 5 star rating"
+  aria-label="1 star out of 5 star rating"
   className="root small"
   data-star={1}
   onMouseLeave={[Function]}
@@ -32,7 +32,7 @@ exports[`generates the correct aria-label with 1 star rating 1`] = `
 
 exports[`generates the correct role attr 1`] = `
 <div
-  aria-label="1 out of 5 star rating"
+  aria-label="1 star out of 5 star rating"
   className="root small"
   data-star={1}
   onMouseLeave={[Function]}
@@ -45,7 +45,7 @@ exports[`renders 0 star rating 1`] = `
   rating={0}
 >
   <div
-    aria-label="0 out of 5 star rating"
+    aria-label="0 stars out of 5 star rating"
     className="root small"
     data-star={0}
     onMouseLeave={[Function]}
@@ -59,7 +59,7 @@ exports[`renders 2.5 star rating 1`] = `
   rating={2.5}
 >
   <div
-    aria-label="2.5 out of 5 star rating"
+    aria-label="2.5 stars out of 5 star rating"
     className="root small"
     data-star={2.5}
     onMouseLeave={[Function]}
@@ -73,7 +73,7 @@ exports[`renders 3 star rating 1`] = `
   rating={3}
 >
   <div
-    aria-label="3 out of 5 star rating"
+    aria-label="3 stars out of 5 star rating"
     className="root small"
     data-star={3}
     onMouseLeave={[Function]}
@@ -88,74 +88,85 @@ exports[`renders 5 label elements in total 1`] = `
   rating={3}
 >
   <div
-    aria-label="3 out of 5 star rating"
+    aria-label="3 stars out of 5 star rating"
     className="root small"
     data-star={3}
     onMouseLeave={[Function]}
-    role="img"
   >
-    <form>
+    <div
+      className="rateInputsWrap"
+    >
       <label
+        className="rateLabel"
         key="0"
         onMouseEnter={[Function]}
       >
         <input
+          className="rateInput"
           name="rating"
           onClick={[Function]}
           type="radio"
           value={1}
         />
-        1
+        1 star
       </label>
       <label
+        className="rateLabel"
         key="1"
         onMouseEnter={[Function]}
       >
         <input
+          className="rateInput"
           name="rating"
           onClick={[Function]}
           type="radio"
           value={2}
         />
-        2
+        2 stars
       </label>
       <label
+        className="rateLabel"
         key="2"
         onMouseEnter={[Function]}
       >
         <input
+          className="rateInput"
           name="rating"
           onClick={[Function]}
           type="radio"
           value={3}
         />
-        3
+        3 stars
       </label>
       <label
+        className="rateLabel"
         key="3"
         onMouseEnter={[Function]}
       >
         <input
+          className="rateInput"
           name="rating"
           onClick={[Function]}
           type="radio"
           value={4}
         />
-        4
+        4 stars
       </label>
       <label
+        className="rateLabel"
         key="4"
         onMouseEnter={[Function]}
       >
         <input
+          className="rateInput"
           name="rating"
           onClick={[Function]}
           type="radio"
           value={5}
         />
-        5
+        5 stars
       </label>
-    </form>
+    </div>
   </div>
 </StarRating>
 `;

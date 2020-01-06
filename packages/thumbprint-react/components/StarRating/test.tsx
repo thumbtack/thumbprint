@@ -25,13 +25,13 @@ test('renders 0 star rating', () => {
 
 test('generates the correct aria-label', () => {
     const wrapper = shallow(<StarRating rating={2} />);
-    expect(wrapper.prop('aria-label')).toBe('2 out of 5 star rating');
+    expect(wrapper.prop('aria-label')).toBe('2 stars out of 5 star rating');
     expect(wrapper).toMatchSnapshot();
 });
 
 test('generates the correct aria-label with 1 star rating', () => {
     const wrapper = shallow(<StarRating rating={1} />);
-    expect(wrapper.prop('aria-label')).toBe('1 out of 5 star rating');
+    expect(wrapper.prop('aria-label')).toBe('1 star out of 5 star rating');
     expect(wrapper).toMatchSnapshot();
 });
 
