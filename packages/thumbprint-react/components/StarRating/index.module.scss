@@ -1,77 +1,139 @@
-$spacing--small: 1px;
-$spacing--medium: 2px;
-$spacing--large: 3px;
+// Each image is a single gray star on top of a single yellow star.
 
-$size--small: 12px;
-$size--medium: 18px;
-$size--large: 24px;
+$small-spacing-adjustment: -1px;
+$small-height: 12px;
+$small-width: 70px;
+$small-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAxNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuMzQyMTUgMC4yNTc2MzFMOC42MjcyNSA0LjI0NTdMMTIuNjQyNCA0LjI5NDQzQzEyLjk4OCA0LjI5ODY2IDEzLjEzMSA0Ljc2MDE5IDEyLjg1MzkgNC45NzYxNEw5LjYzMjUgNy40ODkzNUwxMC44MjkgMTEuNTA3NEMxMC45MzE4IDExLjg1MzIgMTAuNTU3NyAxMi4xMzggMTAuMjc1NyAxMS45Mjg2TDcuMDAwMiA5LjQ5MzY2TDMuNzI0MyAxMS45MjgyQzMuNDQyNyAxMi4xMzc2IDMuMDY4MTMgMTEuODUyMiAzLjE3MDkzIDExLjUwN0w0LjM2NzUgNy40ODg4OEwxLjE0NjExIDQuOTc1NjdDMC44Njg5ODQgNC43NTk3MiAxLjAxMjAyIDQuMjk4MTkgMS4zNTc1MyA0LjI5Mzk2TDUuMzcyNzUgNC4yNDUyM0w2LjY1Nzg1IDAuMjU3MTYxQzYuNzY4NyAtMC4wODU3OTg2IDcuMjMxNzUgLTAuMDg1Nzk4NiA3LjM0MjE1IDAuMjU3NjMxWiIgZmlsbD0iI0QzRDRENSIvPgo8cGF0aCBkPSJNNy4zNDIxNSAxMi4yNTc2TDguNjI3MjUgMTYuMjQ1N0wxMi42NDI0IDE2LjI5NDRDMTIuOTg4IDE2LjI5ODcgMTMuMTMxIDE2Ljc2MDIgMTIuODUzOSAxNi45NzYxTDkuNjMyNSAxOS40ODk0TDEwLjgyOSAyMy41MDc0QzEwLjkzMTggMjMuODUzMiAxMC41NTc3IDI0LjEzOCAxMC4yNzU3IDIzLjkyODZMNy4wMDAyIDIxLjQ5MzdMMy43MjQzIDIzLjkyODJDMy40NDI3IDI0LjEzNzYgMy4wNjgxMyAyMy44NTIyIDMuMTcwOTMgMjMuNTA3TDQuMzY3NSAxOS40ODg5TDEuMTQ2MTEgMTYuOTc1N0MwLjg2ODk4NCAxNi43NTk3IDEuMDEyMDIgMTYuMjk4MiAxLjM1NzUzIDE2LjI5NEw1LjM3Mjc1IDE2LjI0NTJMNi42NTc4NSAxMi4yNTcyQzYuNzY4NyAxMS45MTQyIDcuMjMxNzUgMTEuOTE0MiA3LjM0MjE1IDEyLjI1NzZaIiBmaWxsPSIjRkVCRTE0Ii8+Cjwvc3ZnPgo=');
+
+$medium-spacing-adjustment: -2px;
+$medium-height: 18px;
+$medium-width: 110px;
+$medium-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAyMiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjUxMzIgMTguMzg2NEwxMy40NDA5IDI0LjM2ODZMMTkuNDYzNyAyNC40NDE3QzE5Ljk4MiAyNC40NDggMjAuMTk2NSAyNS4xNDAzIDE5Ljc4MDggMjUuNDY0MkwxNC45NDg3IDI5LjIzNEwxNi43NDM2IDM1LjI2MTFDMTYuODk3OCAzNS43Nzk4IDE2LjMzNjYgMzYuMjA3MSAxNS45MTM1IDM1Ljg5MjlMMTEuMDAwMyAzMi4yNDA1TDYuMDg2NDUgMzUuODkyMkM1LjY2NDA1IDM2LjIwNjQgNS4xMDIxOSAzNS43Nzg0IDUuMjU2NCAzNS4yNjA0TDcuMDUxMjYgMjkuMjMzM0wyLjIxOTE3IDI1LjQ2MzVDMS44MDM0OCAyNS4xMzk2IDIuMDE4MDMgMjQuNDQ3MyAyLjUzNjMgMjQuNDQwOUw4LjU1OTEyIDI0LjM2NzlMMTAuNDg2OCAxOC4zODU3QzEwLjY1MyAxNy44NzEzIDExLjM0NzYgMTcuODcxMyAxMS41MTMyIDE4LjM4NjRaIiBmaWxsPSIjRkVCRTE0Ii8+CjxwYXRoIGQ9Ik0xMS41MTMyIDAuMzg2NDQ2TDEzLjQ0MDkgNi4zNjg1NkwxOS40NjM3IDYuNDQxNjVDMTkuOTgyIDYuNDQ3OTkgMjAuMTk2NSA3LjE0MDI4IDE5Ljc4MDggNy40NjQyMUwxNC45NDg3IDExLjIzNEwxNi43NDM2IDE3LjI2MTFDMTYuODk3OCAxNy43Nzk4IDE2LjMzNjYgMTguMjA3MSAxNS45MTM1IDE3Ljg5MjlMMTEuMDAwMyAxNC4yNDA1TDYuMDg2NDUgMTcuODkyMkM1LjY2NDA1IDE4LjIwNjQgNS4xMDIxOSAxNy43Nzg0IDUuMjU2NCAxNy4yNjA0TDcuMDUxMjYgMTEuMjMzM0wyLjIxOTE3IDcuNDYzNUMxLjgwMzQ4IDcuMTM5NTggMi4wMTgwMyA2LjQ0NzI5IDIuNTM2MyA2LjQ0MDk1TDguNTU5MTIgNi4zNjc4NUwxMC40ODY4IDAuMzg1NzQyQzEwLjY1MyAtMC4xMjg2OTggMTEuMzQ3NiAtMC4xMjg2OTggMTEuNTEzMiAwLjM4NjQ0NloiIGZpbGw9IiNEM0Q0RDUiLz4KPC9zdmc+Cg==');
+
+$large-spacing-adjustment: -3px;
+$large-height: 24px;
+$large-width: 150px;
+$large-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAzMCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjY4NDMgMjQuNTE1M0wxOC4yNTQ1IDMyLjQ5MTRMMjYuMjg0OSAzMi41ODg5QzI2Ljk3NiAzMi41OTczIDI3LjI2MiAzMy41MjA0IDI2LjcwNzggMzMuOTUyM0wyMC4yNjUgMzguOTc4N0wyMi42NTgxIDQ3LjAxNDhDMjIuODYzNyA0Ny43MDY0IDIyLjExNTUgNDguMjc2MSAyMS41NTE0IDQ3Ljg1NzJMMTUuMDAwNCA0Mi45ODczTDguNDQ4NiA0Ny44NTYzQzcuODg1NCA0OC4yNzUyIDcuMTM2MjYgNDcuNzA0NSA3LjM0MTg3IDQ3LjAxMzlMOS43MzUwMSAzOC45Nzc4TDMuMjkyMjMgMzMuOTUxM0MyLjczNzk3IDMzLjUxOTQgMy4wMjQwNCAzMi41OTY0IDMuNzE1MDcgMzIuNTg3OUwxMS43NDU1IDMyLjQ5MDVMMTQuMzE1NyAyNC41MTQzQzE0LjUzNzQgMjMuODI4NCAxNS40NjM1IDIzLjgyODQgMTUuNjg0MyAyNC41MTUzWiIgZmlsbD0iI0ZFQkUxNCIvPgo8cGF0aCBkPSJNMTUuNjg0MyAwLjUxNTI2MkwxOC4yNTQ1IDguNDkxNDFMMjYuMjg0OSA4LjU4ODg3QzI2Ljk3NiA4LjU5NzMyIDI3LjI2MiA5LjUyMDM4IDI2LjcwNzggOS45NTIyOEwyMC4yNjUgMTQuOTc4N0wyMi42NTgxIDIzLjAxNDhDMjIuODYzNyAyMy43MDY0IDIyLjExNTUgMjQuMjc2MSAyMS41NTE0IDIzLjg1NzJMMTUuMDAwNCAxOC45ODczTDguNDQ4NiAyMy44NTYzQzcuODg1NCAyNC4yNzUyIDcuMTM2MjYgMjMuNzA0NSA3LjM0MTg3IDIzLjAxMzlMOS43MzUwMSAxNC45Nzc4TDMuMjkyMjMgOS45NTEzNEMyLjczNzk3IDkuNTE5NDQgMy4wMjQwNCA4LjU5NjM4IDMuNzE1MDcgOC41ODc5M0wxMS43NDU1IDguNDkwNDdMMTQuMzE1NyAwLjUxNDMyMkMxNC41Mzc0IC0wLjE3MTU5NyAxNS40NjM1IC0wLjE3MTU5NyAxNS42ODQzIDAuNTE1MjYyWiIgZmlsbD0iI0QzRDRENSIvPgo8L3N2Zz4K');
+
+// This element will have gray stars in the background.
 
 .root {
     position: relative;
+    background-repeat: repeat-x;
     display: inline-block;
 }
 
-.rootSize {
-    &Small {
-        margin: 0 (-$spacing--small);
-    }
+// This pseudo element will have yellow stars. Because of the source order it will appear over the
+// top of the gray stars. The width is determined by the `data-star` value.
 
-    &Medium {
-        margin: 0 (-$spacing--medium);
-    }
-
-    &Large {
-        margin: 0 (-$spacing--large);
-    }
+.root:after {
+    content: '';
+    background-position: bottom left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 
-.rootIsClickable {
-    cursor: pointer;
+.root[data-star='0']:after {
+    width: 0%;
 }
 
-.row {
-    display: flex;
+.root[data-star='0.5']:after {
+    width: 10%;
 }
 
-.rowGold {
+.root[data-star='1']:after {
+    width: 20%;
+}
+
+.root[data-star='1.5']:after {
+    width: 30%;
+}
+
+.root[data-star='2']:after {
+    width: 40%;
+}
+
+.root[data-star='2.5']:after {
+    width: 50%;
+}
+
+.root[data-star='3']:after {
+    width: 60%;
+}
+
+.root[data-star='3.5']:after {
+    width: 70%;
+}
+
+.root[data-star='4']:after {
+    width: 80%;
+}
+
+.root[data-star='4.5']:after {
+    width: 90%;
+}
+
+.root[data-star='5']:after {
+    width: 100%;
+}
+
+// Star sizes. We use different background images for each size for precice spacing and rendering.
+
+.small {
+    margin: 0 $small-spacing-adjustment;
+    height: $small-height;
+    width: $small-width;
+}
+
+.small,
+.small:after {
+    background-image: $small-image;
+}
+
+.medium {
+    margin: 0 $medium-spacing-adjustment;
+    height: $medium-height;
+    width: $medium-width;
+}
+
+.medium,
+.medium:after {
+    background-image: $medium-image;
+}
+
+.large {
+    margin: 0 $large-spacing-adjustment;
+    height: $large-height;
+    width: $large-width;
+}
+
+.large,
+.large:after {
+    background-image: $large-image;
+}
+
+// Interactive rating.
+
+.rateInputsWrap {
     position: absolute;
     display: flex;
-    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.rateInput {
+    visibility: hidden;
+}
+
+.rateLabel {
+    flex: 1;
+    cursor: pointer;
+    // Pushes label text out of view
+    text-indent: 100%;
     overflow: hidden;
-    pointer-events: none; // We want the gray version of the stars to handle all events
-}
-
-.starContainer {
-    &Small {
-        padding: 0 $spacing--small;
-    }
-
-    &Medium {
-        padding: 0 $spacing--medium;
-    }
-
-    &Large {
-        padding: 0 $spacing--large;
-    }
-}
-
-.starSVG {
-    display: block;
-}
-
-.starSVGSize {
-    &Small {
-        height: $size--small;
-        width: $size--small;
-    }
-
-    &Medium {
-        height: $size--medium;
-        width: $size--medium;
-    }
-
-    &Large {
-        height: $size--large;
-        width: $size--large;
-    }
 }

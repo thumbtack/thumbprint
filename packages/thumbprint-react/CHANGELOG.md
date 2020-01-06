@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
+
 ### Added
 
 -   [Minor] Add opacity fade-in using duration token in `Tooltip`.
