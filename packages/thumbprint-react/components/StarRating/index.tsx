@@ -1,6 +1,5 @@
 import React from 'react';
 import clamp from 'lodash/clamp';
-import PropTypes from 'prop-types';
 import times from 'lodash/times';
 import noop from 'lodash/noop';
 import classNames from 'classnames';
