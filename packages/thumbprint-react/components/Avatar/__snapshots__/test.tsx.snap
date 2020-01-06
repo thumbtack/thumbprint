@@ -144,7 +144,7 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "backgroundColor": "#fafafa",
+          "backgroundColor": "#d3d4d5",
           "color": "#2f3033",
         }
       }
@@ -251,7 +251,7 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "backgroundColor": "#fafafa",
+          "backgroundColor": "#d3d4d5",
           "color": "#2f3033",
         }
       }
@@ -335,7 +335,7 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "backgroundColor": "#fafafa",
+          "backgroundColor": "#d3d4d5",
           "color": "#2f3033",
         }
       }
@@ -704,7 +704,7 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
       className="initialsAvatar circleAvatar"
       style={
         Object {
-          "backgroundColor": "#fafafa",
+          "backgroundColor": "#d3d4d5",
           "color": "#2f3033",
         }
       }

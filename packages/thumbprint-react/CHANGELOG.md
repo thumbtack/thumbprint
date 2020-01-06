@@ -9,6 +9,7 @@
 ### Changed
 
 -   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
+-   [Patch] Change `EntityAvatar`, `UserAvatar` empty background color from `gray-200` to `gray`.
 
 ## 12.0.0 - 2019-12-17
 

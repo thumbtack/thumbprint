@@ -58,7 +58,7 @@ const STYLES: StyleType[] = [
 const getStyle = (initials?: string): StyleType =>
     initials
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
-        : { color: tokens.tpColorBlack, backgroundColor: tokens.tpColorGray200 };
+        : { color: tokens.tpColorBlack, backgroundColor: tokens.tpColorGray };
 
 const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
     (props: EntityPropTypes, outerRef): JSX.Element => {
