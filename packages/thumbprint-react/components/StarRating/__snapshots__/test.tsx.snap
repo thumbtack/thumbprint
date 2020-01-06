@@ -1,272 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`does not add title text if a function is provided 1`] = `
+exports[`generates a valid rounded rating value for the data-star attr 1`] = `
 <div
-  className="root rootSizeSmall rootIsClickable"
->
-  <div
-    className="row rowGold"
-    data-test-id="star-row-gold"
-    onMouseLeave={[Function]}
-    style={
-      Object {
-        "width": "40%",
-      }
-    }
-  >
-    <div
-      className="starContainerSmall"
-      key="0"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="1"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="3"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="4"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-  </div>
-  <div
-    className="row"
-    data-test-id="star-row-gray"
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="starContainerSmall"
-      key="0"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="1"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="3"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="4"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-  </div>
-</div>
+  aria-label="1.5 stars out of 5 star rating"
+  className="root small"
+  data-star={1.5}
+  onMouseLeave={[Function]}
+  role="img"
+/>
 `;
 
-exports[`generates the correct title 1`] = `
+exports[`generates the correct aria-label 1`] = `
 <div
-  className="root rootSizeSmall"
-  title="2 out of 5 star rating"
->
-  <div
-    className="row rowGold"
-    data-test-id="star-row-gold"
-    onMouseLeave={[Function]}
-    style={
-      Object {
-        "width": "40%",
-      }
-    }
-  >
-    <div
-      className="starContainerSmall"
-      key="0"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="1"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="3"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="4"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#febe14"
-      />
-    </div>
-  </div>
-  <div
-    className="row"
-    data-test-id="star-row-gray"
-    onMouseLeave={[Function]}
-  >
-    <div
-      className="starContainerSmall"
-      key="0"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="1"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="2"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="3"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-    <div
-      className="starContainerSmall"
-      key="4"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      <StarIcon
-        className="starSVG starSVGSizeSmall"
-        fill="#d3d4d5"
-      />
-    </div>
-  </div>
-</div>
+  aria-label="2 stars out of 5 star rating"
+  className="root small"
+  data-star={2}
+  onMouseLeave={[Function]}
+  role="img"
+/>
+`;
+
+exports[`generates the correct aria-label with 1 star rating 1`] = `
+<div
+  aria-label="1 star out of 5 star rating"
+  className="root small"
+  data-star={1}
+  onMouseLeave={[Function]}
+  role="img"
+/>
+`;
+
+exports[`generates the correct role attr 1`] = `
+<div
+  aria-label="1 star out of 5 star rating"
+  className="root small"
+  data-star={1}
+  onMouseLeave={[Function]}
+  role="img"
+/>
 `;
 
 exports[`renders 0 star rating 1`] = `
@@ -274,267 +45,12 @@ exports[`renders 0 star rating 1`] = `
   rating={0}
 >
   <div
-    className="root rootSizeSmall"
-    title="0 out of 5 star rating"
-  >
-    <div
-      className="row rowGold"
-      data-test-id="star-row-gold"
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "width": "0%",
-        }
-      }
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-    <div
-      className="row"
-      data-test-id="star-row-gray"
-      onMouseLeave={[Function]}
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-  </div>
+    aria-label="0 stars out of 5 star rating"
+    className="root small"
+    data-star={0}
+    onMouseLeave={[Function]}
+    role="img"
+  />
 </StarRating>
 `;
 
@@ -543,267 +59,12 @@ exports[`renders 2.5 star rating 1`] = `
   rating={2.5}
 >
   <div
-    className="root rootSizeSmall"
-    title="2.5 out of 5 star rating"
-  >
-    <div
-      className="row rowGold"
-      data-test-id="star-row-gold"
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "width": "50%",
-        }
-      }
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-    <div
-      className="row"
-      data-test-id="star-row-gray"
-      onMouseLeave={[Function]}
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-  </div>
+    aria-label="2.5 stars out of 5 star rating"
+    className="root small"
+    data-star={2.5}
+    onMouseLeave={[Function]}
+    role="img"
+  />
 </StarRating>
 `;
 
@@ -812,534 +73,99 @@ exports[`renders 3 star rating 1`] = `
   rating={3}
 >
   <div
-    className="root rootSizeSmall"
-    title="3 out of 5 star rating"
-  >
-    <div
-      className="row rowGold"
-      data-test-id="star-row-gold"
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "width": "60%",
-        }
-      }
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-    <div
-      className="row"
-      data-test-id="star-row-gray"
-      onMouseLeave={[Function]}
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-  </div>
+    aria-label="3 stars out of 5 star rating"
+    className="root small"
+    data-star={3}
+    onMouseLeave={[Function]}
+    role="img"
+  />
 </StarRating>
 `;
 
-exports[`renders 10 star SVG elements in total 1`] = `
+exports[`renders 5 label elements in total 1`] = `
 <StarRating
-  rating={5}
+  onStarClick={[Function]}
+  rating={3}
 >
   <div
-    className="root rootSizeSmall"
-    title="5 out of 5 star rating"
+    aria-label="3 stars out of 5 star rating"
+    className="root small"
+    data-star={3}
+    onMouseLeave={[Function]}
   >
     <div
-      className="row rowGold"
-      data-test-id="star-row-gold"
-      onMouseLeave={[Function]}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
+      className="rateInputsWrap"
     >
-      <div
-        className="starContainerSmall"
+      <label
+        className="rateLabel"
         key="0"
-        onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
+        <input
+          className="rateInput"
+          name="rating"
+          onClick={[Function]}
+          type="radio"
+          value={1}
+        />
+        1 star
+      </label>
+      <label
+        className="rateLabel"
         key="1"
-        onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
+        <input
+          className="rateInput"
+          name="rating"
+          onClick={[Function]}
+          type="radio"
+          value={2}
+        />
+        2 stars
+      </label>
+      <label
+        className="rateLabel"
         key="2"
-        onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
+        <input
+          className="rateInput"
+          name="rating"
+          onClick={[Function]}
+          type="radio"
+          value={3}
+        />
+        3 stars
+      </label>
+      <label
+        className="rateLabel"
         key="3"
-        onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
+        <input
+          className="rateInput"
+          name="rating"
+          onClick={[Function]}
+          type="radio"
+          value={4}
+        />
+        4 stars
+      </label>
+      <label
+        className="rateLabel"
         key="4"
-        onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#febe14"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#febe14"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-    </div>
-    <div
-      className="row"
-      data-test-id="star-row-gray"
-      onMouseLeave={[Function]}
-    >
-      <div
-        className="starContainerSmall"
-        key="0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="1"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="2"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="3"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
-      <div
-        className="starContainerSmall"
-        key="4"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <StarIcon
-          className="starSVG starSVGSizeSmall"
-          fill="#d3d4d5"
-        >
-          <svg
-            className="starSVG starSVGSizeSmall"
-            fill="#d3d4d5"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 0c-.29675 0-.54325.1998361-.62.4733224L5.8065 5.333235H.64c-.35675 0-.64.3104371-.64.670142 0 .2199454.11.4165137.27675.533399C.38 6.6066557 4.45 9.5800656 4.45 9.5800656s-1.56325 4.8000874-1.5935 4.8767541c-.02325.0698798-.03975.1467978-.03975.2264808 0 .3599563.28975.6500328.6465.6500328.13675 0 .26325-.0432349.37-.1163825L8 12.1832131s4.07325 2.9668743 4.16675 3.0337377c.10625.0731476.23325.1163825.36975.1163825.35675 0 .64675-.2933442.64675-.6500328 0-.079683-.0165-.156601-.04-.2264808-.03-.0766667-1.593-4.8767541-1.593-4.8767541s4.0695-2.9734099 4.173-3.0432896C15.89 6.4198907 16 6.2233224 16 6.0001093c0-.3564372-.27675-.6668743-.6335-.6668743H10.2L8.61975.4733224C8.54325.1998361 8.2965 0 8 0"
-            />
-          </svg>
-        </StarIcon>
-      </div>
+        <input
+          className="rateInput"
+          name="rating"
+          onClick={[Function]}
+          type="radio"
+          value={5}
+        />
+        5 stars
+      </label>
     </div>
   </div>
 </StarRating>
