@@ -1,4 +1,5 @@
 import React from 'react';
+import clamp from 'lodash/clamp';
 import PropTypes from 'prop-types';
 import times from 'lodash/times';
 import noop from 'lodash/noop';
@@ -7,6 +8,9 @@ import styles from './index.module.scss';
 
 // Total number of stars
 const MAX_NUM_STARS = 5;
+
+// Smallest increment we render
+const PRECISION = 0.5;
 
 interface PropTypes {
     /**
@@ -39,9 +43,9 @@ interface PropTypes {
 }
 
 export default function StarRating({
-    size = 'small',
+    rating,
     hoverRating = 0,
-    rating = 0,
+    size = 'small',
     onStarClick = noop,
     onStarHover = noop,
     onMouseLeave = noop,
@@ -49,8 +53,14 @@ export default function StarRating({
     // Determine if instance is interactive.
     const isInteractive = onStarClick !== noop || onStarHover !== noop;
 
-    // Use hoverRating if present, otherwise round rating to whole (3) or half number (3.5)
-    const ratingValue = hoverRating || Math.round(rating * 2) / 2;
+    // Limit rating to between 0 and MAX_NUM_STARS
+    const clampedRating = clamp(rating, 0, MAX_NUM_STARS);
+
+    // Round rating to PRECISION (e.g, 2.7 --> 2.5).
+    const roundedRating = Math.round(clampedRating / PRECISION) * PRECISION;
+
+    // Use hoverRating when present, otherwise use rating
+    const ratingValue = hoverRating || roundedRating;
 
     // aria-label text
     const ariaStarText = ratingValue === 1 ? 'star' : 'stars';
@@ -84,7 +94,7 @@ export default function StarRating({
                                 value={index + 1}
                                 onClick={(): void => onStarClick(index + 1)}
                             />
-                            {index === 0 ? `${index + 1} star` : `${index + 1} stars`}
+                            {index === 0 ? '1 star' : `${index + 1} stars`}
                         </label>
                     ))}
                 </div>
