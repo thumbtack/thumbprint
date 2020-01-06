@@ -6,6 +6,14 @@
 
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
 
+### Added
+
+-   [Minor] Add opacity fade-in using duration token in `Tooltip`.
+
+### Changed
+
+-   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
+
 ## 12.0.0 - 2019-12-17
 
 ### Fixed
