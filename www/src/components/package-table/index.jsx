@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { startsWith } from 'lodash';
 import { parse as urlParse } from 'url';
-import { join as pathJoin } from 'path';
 import { InlineCode } from '../mdx';
 import Tag from '../tag';
 
@@ -13,7 +12,7 @@ import Tag from '../tag';
 const getChangelogURLFromPackageHomepageURL = homepageURL => {
     const parsedUrl = urlParse(homepageURL);
 
-    return pathJoin(`https://github.com/${parsedUrl.pathname}`, 'CHANGELOG.md');
+    return `https://github.com${parsedUrl.pathname}CHANGELOG.md`;
 };
 
 const PackageTable = ({
@@ -26,8 +25,6 @@ const PackageTable = ({
 }) => {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
-
-    console.log({ changelogURL });
 
     const name = packageName;
     const isStable = startsWith(version, '0');
