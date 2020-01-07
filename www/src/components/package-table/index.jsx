@@ -26,6 +26,9 @@ const PackageTable = ({
 }) => {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
+
+    console.log({ changelogURL });
+
     const name = packageName;
     const isStable = startsWith(version, '0');
 
