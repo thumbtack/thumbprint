@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { startsWith } from 'lodash';
 import { parse as urlParse } from 'url';
+import urlJoin from 'url-join';
 import { InlineCode } from '../mdx';
 import Tag from '../tag';
 
@@ -12,7 +13,7 @@ import Tag from '../tag';
 const getChangelogURLFromPackageHomepageURL = homepageURL => {
     const parsedUrl = urlParse(homepageURL);
 
-    return `https://github.com${parsedUrl.pathname}CHANGELOG.md`;
+    return urlJoin('https://github.com', parsedUrl.pathname, 'CHANGELOG.md');
 };
 
 const PackageTable = ({
