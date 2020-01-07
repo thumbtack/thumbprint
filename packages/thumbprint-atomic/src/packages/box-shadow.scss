@@ -1,6 +1,17 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 @import '~@thumbtack/thumbprint-scss/mixins';
 
+// Box shadows in IE 11 through Edge 18 render ~50% lighter than expected. The following box-shadow
+// values provide close visual parity between IE/Edge and modern browsers. Edge browsers
+// above 18 are Chromium-based and ignore the `_:-ms-lang(x)` rule and render as expected.
+
+$ie-edge-shadow: (
+    100: 0px 1px 8px rgba(0, 0, 0, 0.15) !important,
+    200: 0px 1px 10px rgba(0, 0, 0, 0.2) !important,
+    300: 0px 1px 14px rgba(0, 0, 0, 0.22) !important,
+    400: 0px 1px 20px rgba(0, 0, 0, 0.25) !important,
+);
+
 .shadow-none {
     box-shadow: none !important;
 }
@@ -9,16 +20,36 @@
     box-shadow: $tp-shadow__100 !important;
 }
 
+_:-ms-lang(x),
+.shadow-100 {
+    box-shadow: map-get($ie-edge-shadow, 100);
+}
+
 .shadow-200 {
     box-shadow: $tp-shadow__200 !important;
+}
+
+_:-ms-lang(x),
+.shadow-200 {
+    box-shadow: map-get($ie-edge-shadow, 200);
 }
 
 .shadow-300 {
     box-shadow: $tp-shadow__300 !important;
 }
 
+_:-ms-lang(x),
+.shadow-300 {
+    box-shadow: map-get($ie-edge-shadow, 300);
+}
+
 .shadow-400 {
     box-shadow: $tp-shadow__400 !important;
+}
+
+_:-ms-lang(x),
+.shadow-400 {
+    box-shadow: map-get($ie-edge-shadow, 400);
 }
 
 @include tp-respond-above($tp-breakpoint__small) {
@@ -30,16 +61,36 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    _:-ms-lang(x),
+    .s_shadow-100 {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+
     .s_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
+    }
+
+    _:-ms-lang(x),
+    .s_shadow-200 {
+        box-shadow: map-get($ie-edge-shadow, 200);
     }
 
     .s_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    _:-ms-lang(x),
+    .s_shadow-300 {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+
     .s_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
+    }
+
+    _:-ms-lang(x),
+    .s_shadow-400 {
+        box-shadow: map-get($ie-edge-shadow, 400);
     }
 }
 
@@ -52,16 +103,36 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    _:-ms-lang(x),
+    .m_shadow-100 {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+
     .m_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
+    }
+
+    _:-ms-lang(x),
+    .m_shadow-200 {
+        box-shadow: map-get($ie-edge-shadow, 200);
     }
 
     .m_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    _:-ms-lang(x),
+    .m_shadow-300 {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+
     .m_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
+    }
+
+    _:-ms-lang(x),
+    .m_shadow-400 {
+        box-shadow: map-get($ie-edge-shadow, 400);
     }
 }
 
@@ -74,15 +145,35 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    _:-ms-lang(x),
+    .l_shadow-100 {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+
     .l_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
+    }
+
+    _:-ms-lang(x),
+    .l_shadow-200 {
+        box-shadow: map-get($ie-edge-shadow, 200);
     }
 
     .l_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    _:-ms-lang(x),
+    .l_shadow-300 {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+
     .l_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
+    }
+
+    _:-ms-lang(x),
+    .l_shadow-400 {
+        box-shadow: map-get($ie-edge-shadow, 400);
     }
 }
