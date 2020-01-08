@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
+-   [Patch] Rewrite `HorizontalRule` component in TypeScript.
 
 ### Added
 
