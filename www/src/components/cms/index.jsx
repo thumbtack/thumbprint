@@ -4,11 +4,11 @@ import { graphql } from 'gatsby';
 import MDX from '../mdx';
 import { ComponentHeader } from '../thumbprint-components';
 
-const CMS = ({ data, location, isComponent }) => (
+const CMS = ({ data, location, pageContext }) => (
     <MDX
         location={location}
         pageContext={{ frontmatter: data.mdx.frontmatter }}
-        header={isComponent && data.platformNav && <ComponentHeader data={data} />}
+        header={pageContext.isComponent && data.platformNav && <ComponentHeader data={data} />}
     >
         {data.mdx.body}
     </MDX>
@@ -17,11 +17,7 @@ const CMS = ({ data, location, isComponent }) => (
 CMS.propTypes = {
     data: PropTypes.shape({}).isRequired,
     location: PropTypes.string.isRequired,
-    isComponent: PropTypes.bool,
-};
-
-CMS.defaultProps = {
-    isComponent: false,
+    pageContext: PropTypes.shape({}).isRequired,
 };
 
 export default CMS;
