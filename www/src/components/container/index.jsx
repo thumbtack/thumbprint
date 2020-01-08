@@ -87,7 +87,6 @@ const Container = ({ children, location, activeSection }) => {
                             "/components/mixins/scss/"
                         ]
                     }
-                    context: { frontmatter: { unlisted: { ne: true } } }
                 }
             ) {
                 group(field: context___frontmatter___title) {
