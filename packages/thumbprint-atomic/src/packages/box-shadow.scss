@@ -4,6 +4,7 @@
 // Box shadows in IE 11 through Edge 18 render ~50% lighter than expected. The following box-shadow
 // values provide close visual parity between IE/Edge and modern browsers. Edge browsers
 // above 18 are Chromium-based and ignore the `_:-ms-lang(x)` rule and render as expected.
+// Each of these rules need to be ignored because the selector is unknown.
 
 $ie-edge-shadow: (
     100: 0px 1px 8px rgba(0, 0, 0, 0.15) !important,
@@ -20,6 +21,7 @@ $ie-edge-shadow: (
     box-shadow: $tp-shadow__100 !important;
 }
 
+/* stylelint-disable-next-line selector-type-no-unknown */
 _:-ms-lang(x),
 .shadow-100 {
     box-shadow: map-get($ie-edge-shadow, 100);
@@ -29,6 +31,7 @@ _:-ms-lang(x),
     box-shadow: $tp-shadow__200 !important;
 }
 
+/* stylelint-disable-next-line selector-type-no-unknown */
 _:-ms-lang(x),
 .shadow-200 {
     box-shadow: map-get($ie-edge-shadow, 200);
@@ -38,6 +41,7 @@ _:-ms-lang(x),
     box-shadow: $tp-shadow__300 !important;
 }
 
+/* stylelint-disable-next-line selector-type-no-unknown */
 _:-ms-lang(x),
 .shadow-300 {
     box-shadow: map-get($ie-edge-shadow, 300);
@@ -47,6 +51,7 @@ _:-ms-lang(x),
     box-shadow: $tp-shadow__400 !important;
 }
 
+/* stylelint-disable-next-line selector-type-no-unknown */
 _:-ms-lang(x),
 .shadow-400 {
     box-shadow: map-get($ie-edge-shadow, 400);
@@ -61,6 +66,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .s_shadow-100 {
         box-shadow: map-get($ie-edge-shadow, 100);
@@ -70,6 +76,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__200 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .s_shadow-200 {
         box-shadow: map-get($ie-edge-shadow, 200);
@@ -79,6 +86,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .s_shadow-300 {
         box-shadow: map-get($ie-edge-shadow, 300);
@@ -88,6 +96,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__400 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .s_shadow-400 {
         box-shadow: map-get($ie-edge-shadow, 400);
@@ -103,6 +112,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .m_shadow-100 {
         box-shadow: map-get($ie-edge-shadow, 100);
@@ -112,6 +122,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__200 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .m_shadow-200 {
         box-shadow: map-get($ie-edge-shadow, 200);
@@ -121,6 +132,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .m_shadow-300 {
         box-shadow: map-get($ie-edge-shadow, 300);
@@ -130,6 +142,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__400 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .m_shadow-400 {
         box-shadow: map-get($ie-edge-shadow, 400);
@@ -145,6 +158,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .l_shadow-100 {
         box-shadow: map-get($ie-edge-shadow, 100);
@@ -154,6 +168,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__200 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .l_shadow-200 {
         box-shadow: map-get($ie-edge-shadow, 200);
@@ -163,6 +178,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .l_shadow-300 {
         box-shadow: map-get($ie-edge-shadow, 300);
@@ -172,6 +188,7 @@ _:-ms-lang(x),
         box-shadow: $tp-shadow__400 !important;
     }
 
+    /* stylelint-disable-next-line selector-type-no-unknown */
     _:-ms-lang(x),
     .l_shadow-400 {
         box-shadow: map-get($ie-edge-shadow, 400);
