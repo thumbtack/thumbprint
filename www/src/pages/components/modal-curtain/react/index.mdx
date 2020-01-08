@@ -1,13 +1,23 @@
 ---
 title: Modal Curtain
 description: An overlay that contains content and covers the page
-unlisted: true
 ---
 
 import { graphql, Link } from 'gatsby';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
 
 <ComponentHeader data={props.data} />
+
+<Alert type="warning" title="Before using this component…">
+    <InlineCode>ModalCurtain</InlineCode> is a low-level component that should only be used if the{' '}
+    <Link to="/components/modal/react/">Modal component</Link> is too restrictive. Please{' '}
+    <a href="https://thumbtack.slack.com/archives/C7FLM0ZGU">
+        reach out to the Design Systems team
+    </a>{' '}
+    before using it.
+</Alert>
 
 ## Examples
 

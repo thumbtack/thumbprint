@@ -236,3 +236,9 @@ https://thumbprint.thumbtack.com/* https://thumbprint.design/:splat 301!
 /components/textarea/scss/ /components/text-area/scss/
 /components/input/react/ /components/text-input/react/
 /components/input/scss/ /components/text-input/scss/
+
+# The `<body>` and CSS reset styles used to be part of the Thumbprint SCSS
+# package. They are now part of the `thumbprint-global-css` package and
+# documented on a different page.
+/components/body/scss/ /components/global-css/scss/
+/components/reset/scss/ /components/global-css/scss/
