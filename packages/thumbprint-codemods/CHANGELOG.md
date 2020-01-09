@@ -9,6 +9,7 @@
 ### Changed
 
 -   [Patch] Upgrade jscodeshift from `0.6.4` to `0.7.0`.
+-   [Patch] Change the formatting in the `package.json` field.
 
 ## 0.4.0 - 2019-12-05
 

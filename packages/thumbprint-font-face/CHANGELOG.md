@@ -7,6 +7,7 @@
 ### Changed
 
 -   [Patch] Update version of the Thumbprint Tokens dependency.
+-   [Patch] Change the formatting in the `package.json` field.
 
 ## 1.0.12 - 2019-09-17
 
