@@ -51,7 +51,6 @@ interface InputIconContainerPropTypes {
  * classes to position the icon. It does this by using `create-react-context`, a ponyfill for
  * React’s context functionality. This makes it easier for consumers to use `InputClearButton` and
  * `InputIcon` because they won’t have to specify as many props.
- * @private
  */
 const TextInputIconContainer = ({ children, style }: InputIconContainerPropTypes): JSX.Element => (
     <Context.Consumer>
@@ -119,7 +118,6 @@ const TextInputClearButton = ({ onClick }: TextInputClearButtonPropTypes): JSX.E
 interface TextInputIconPropTypes {
     /**
      * Set the icon color with a color from [Thumbprint Tokens](/tokens/).
-     * @private
      */
     color?: string;
     /**
