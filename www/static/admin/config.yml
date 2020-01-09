@@ -1,6 +1,5 @@
 backend:
-    name: github
-    repo: thumbtack/thumbprint
+    name: git-gateway
     branch: master
 
 media_folder: www/static/img
