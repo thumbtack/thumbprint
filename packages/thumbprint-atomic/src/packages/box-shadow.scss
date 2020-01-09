@@ -1,6 +1,20 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 @import '~@thumbtack/thumbprint-scss/mixins';
 
+// Box shadows in IE 11 through Edge 18 render ~50% lighter than expected. The following box-shadow
+// values provide close visual parity between IE/Edge and modern browsers.
+
+$ie-edge-shadow: (
+    100: 0px 1px 8px rgba(0, 0, 0, 0.15) !important,
+    200: 0px 1px 10px rgba(0, 0, 0, 0.2) !important,
+    300: 0px 1px 14px rgba(0, 0, 0, 0.22) !important,
+    400: 0px 1px 20px rgba(0, 0, 0, 0.25) !important,
+);
+
+// The `_:-ms-lang(x)` selector below is a CSS hack that invalidates the entire rule-set for all
+// browsers except for IE 11 through Edge 18. Edge browsers above 18 and all other browsers will
+// only parse the "normal" rule-sets. https://www.w3.org/TR/css-syntax-3/#style-rule
+
 .shadow-none {
     box-shadow: none !important;
 }
@@ -9,17 +23,45 @@
     box-shadow: $tp-shadow__100 !important;
 }
 
+/* stylelint-disable selector-type-no-unknown */
+.shadow-100,
+_:-ms-lang(x) {
+    box-shadow: map-get($ie-edge-shadow, 100);
+}
+/* stylelint-enable */
+
 .shadow-200 {
     box-shadow: $tp-shadow__200 !important;
 }
+
+/* stylelint-disable selector-type-no-unknown */
+.shadow-200,
+_:-ms-lang(x) {
+    box-shadow: map-get($ie-edge-shadow, 200);
+}
+/* stylelint-enable */
 
 .shadow-300 {
     box-shadow: $tp-shadow__300 !important;
 }
 
+/* stylelint-disable selector-type-no-unknown */
+.shadow-300,
+_:-ms-lang(x) {
+    box-shadow: map-get($ie-edge-shadow, 300);
+}
+/* stylelint-enable */
+
 .shadow-400 {
     box-shadow: $tp-shadow__400 !important;
 }
+
+/* stylelint-disable selector-type-no-unknown */
+.shadow-400,
+_:-ms-lang(x) {
+    box-shadow: map-get($ie-edge-shadow, 400);
+}
+/* stylelint-enable */
 
 @include tp-respond-above($tp-breakpoint__small) {
     .s_shadow-none {
@@ -30,17 +72,45 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .s_shadow-100,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+    /* stylelint-enable */
+
     .s_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .s_shadow-200,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 200);
+    }
+    /* stylelint-enable */
 
     .s_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .s_shadow-300,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+    /* stylelint-enable */
+
     .s_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .s_shadow-400,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 400);
+    }
+    /* stylelint-enable */
 }
 
 @include tp-respond-above($tp-breakpoint__medium) {
@@ -52,17 +122,45 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .m_shadow-100,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+    /* stylelint-enable */
+
     .m_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .m_shadow-200,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 200);
+    }
+    /* stylelint-enable */
 
     .m_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .m_shadow-300,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+    /* stylelint-enable */
+
     .m_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .m_shadow-400,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 400);
+    }
+    /* stylelint-enable */
 }
 
 @include tp-respond-above($tp-breakpoint__large) {
@@ -74,15 +172,43 @@
         box-shadow: $tp-shadow__100 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .l_shadow-100,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 100);
+    }
+    /* stylelint-enable */
+
     .l_shadow-200 {
         box-shadow: $tp-shadow__200 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .l_shadow-200,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 200);
+    }
+    /* stylelint-enable */
 
     .l_shadow-300 {
         box-shadow: $tp-shadow__300 !important;
     }
 
+    /* stylelint-disable selector-type-no-unknown */
+    .l_shadow-300,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 300);
+    }
+    /* stylelint-enable */
+
     .l_shadow-400 {
         box-shadow: $tp-shadow__400 !important;
     }
+
+    /* stylelint-disable selector-type-no-unknown */
+    .l_shadow-400,
+    _:-ms-lang(x) {
+        box-shadow: map-get($ie-edge-shadow, 400);
+    }
+    /* stylelint-enable */
 }
