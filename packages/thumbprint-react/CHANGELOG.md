@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   [Patch] Change some JSDoc annotations to please Gatsby
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
 -   [Patch] Change the formatting in the `package.json` field.
 
