@@ -10,11 +10,7 @@
         "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
-    "author": {
-        "name": "Tom Genoni",
-        "email": "tom@atomeye.com",
-        "url": "http://atomeye.com/"
-    },
+    "author": "Daniel O'Connor <doconnor@thumbtack.com>",
     "contributors": [
         {
             "name": "Daniel O'Connor",

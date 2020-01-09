@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
+-   [Patch] Change the formatting in the `package.json` field.
 
 ### Added
 

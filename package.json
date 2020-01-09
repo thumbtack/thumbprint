@@ -89,11 +89,7 @@
         "ui-library",
         "design-system"
     ],
-    "author": {
-        "name": "Tom Genoni",
-        "email": "tom@atomeye.com",
-        "url": "http://atomeye.com/"
-    },
+    "author": "Tom Genoni <tom@thumbtack.com>",
     "contributors": [
         {
             "name": "Daniel O'Connor",
