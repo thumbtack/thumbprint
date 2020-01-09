@@ -2,19 +2,18 @@
 
 ## Unreleased
 
+## 12.1.0 - 2020-01-09
+
 ### Changed
 
 -   [Patch] Change some JSDoc annotations to please Gatsby
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
 -   [Patch] Change the formatting in the `package.json` field.
+-   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
 
 ### Added
 
 -   [Minor] Add opacity fade-in using duration token in `Tooltip`.
-
-### Changed
-
--   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
 
 ## 12.0.0 - 2019-12-17
 
