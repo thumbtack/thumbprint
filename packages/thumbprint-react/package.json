@@ -28,11 +28,7 @@
         "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
-    "author": {
-        "name": "Daniel O'Connor",
-        "email": "daniel@danoc.me",
-        "url": "https://danoc.me/"
-    },
+    "author": "Daniel O'Connor <doconnor@thumbtack.com>",
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"
