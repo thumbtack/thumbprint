@@ -15,7 +15,7 @@ const Table = ({ atomicClasses }) => {
         // There are `shadow-*, _:-ms-lang(x)` hack selectors in the Atomic source code that
         // provide darker box-shadows for IE/Edge. This filters out those selectors to prevent them
         // from rendering in these docs.
-        item => item.selectors[1] !== '_:-ms-lang(x)',
+        item => !item.selectors.includes('_:-ms-lang(x)'),
     );
     return (
         <table className="w-100 tp-body-2">
