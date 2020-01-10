@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Title, Text } from '@thumbtack/thumbprint-react';
 
 import styles from './index.module.scss';
 
 const Scale = () => {
-    const [active, setActive] = useState(false);
     return (
         <div className={styles.root}>
             <div className={`ba b-gray-300 br2 overflow-hidden w-80 ${styles.box}`}>
