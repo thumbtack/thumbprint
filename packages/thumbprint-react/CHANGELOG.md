@@ -2,13 +2,16 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `HorizontalRule` component in TypeScript.
+
 ## 12.1.0 - 2020-01-09
 
 ### Changed
 
 -   [Patch] Change some JSDoc annotations to please Gatsby
 -   [Patch] Refactored `StarRating` to output less HTML, add accessibility.
--   [Patch] Rewrite `HorizontalRule` component in TypeScript.
 -   [Patch] Change the formatting in the `package.json` field.
 -   [Patch] Replace existing duration and easing values for SCSS/JS tokens in `Modal`.
 
