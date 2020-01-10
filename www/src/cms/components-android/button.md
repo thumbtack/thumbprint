@@ -8,7 +8,7 @@ A button can have one of five themes: Primary, Secondary, Tertiary, Caution and 
 
 ![Button themes](/img/button_states.png "Button themes")
 
-#### States
+### States
 
 There are three global states: default, active and disabled. The primary button also has a loading state. All active states double as focus states.
 
