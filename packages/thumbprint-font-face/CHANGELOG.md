@@ -2,12 +2,17 @@
 
 ## Unreleased
 
+## 1.0.14 - 2020-01-09
+
+### Changed
+
+-   [Patch] Change the formatting in the `package.json` field.
+
 ## 1.0.13 - 2019-10-17
 
 ### Changed
 
 -   [Patch] Update version of the Thumbprint Tokens dependency.
--   [Patch] Change the formatting in the `package.json` field.
 
 ## 1.0.12 - 2019-09-17
 

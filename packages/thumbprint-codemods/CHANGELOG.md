@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.0 - 2020-01-09
+
 ### Added
 
 -   [Minor] Support TypeScript (`.ts`, `.tsx`) files.
