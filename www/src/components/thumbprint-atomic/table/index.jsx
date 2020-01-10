@@ -12,8 +12,9 @@ const cleanSelector = selector =>
 
 const Table = ({ atomicClasses }) => {
     const atomicClassesHackless = atomicClasses.filter(
-        // If `_:-ms-lang(x)` is a classname, remove it from the array. Also prevents duplicated
-        // classname that is in the source code for IE/Edge browsers from rendering in these docs.
+        // There are `shadow-*, _:-ms-lang(x)` hack selectors in the Atomic source code that
+        // provide darker box-shadows for IE/Edge. This filters out those selectors to prevent them
+        // from rendering in these docs.
         item => item.selectors[1] !== '_:-ms-lang(x)',
     );
     return (
