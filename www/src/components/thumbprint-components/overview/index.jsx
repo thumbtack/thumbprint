@@ -47,7 +47,7 @@ Dot.propTypes = {
 export const Legend = () => (
     <ul aria-hidden="true" className="flex black-300 mb2">
         <li className="mr4 flex items-center">
-            <Dot status="Done" />{' '}
+            <Dot status="Done / Merged" />{' '}
             <Text size={2} className="ml2">
                 Done
             </Text>
@@ -65,13 +65,13 @@ export const Legend = () => (
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="Not applicable" />{' '}
+            <Dot status="Done / Won't build" />{' '}
             <Text size={2} className="ml2">
                 Not applicable
             </Text>
         </li>
         <li className="mr4 flex items-center">
-            <Dot status="Deprecated" />{' '}
+            <Dot status="Done / Deprecated" />{' '}
             <Text size={2} className="ml2">
                 Deprecated
             </Text>

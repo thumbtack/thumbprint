@@ -33,14 +33,26 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
 
     // Process data into nodes.
     data.items.forEach(item => {
-        const jsonString = JSON.stringify(item);
+        const sanitizedItem = item;
+
+        // Sanitize the column names that come from Coda. Spaces get replaced
+        // with an underscore, allowing it to work better with Gatsby.
+        Object.keys(sanitizedItem.values).forEach(key => {
+            const newKey = key.replace(/\s+/g, '_');
+            if (key !== newKey) {
+                sanitizedItem.values[newKey] = sanitizedItem.values[key];
+                delete sanitizedItem.values[key];
+            }
+        });
+
+        const jsonString = JSON.stringify(sanitizedItem);
 
         const gatsbyNode = {
             // Fields from Coda
-            data: item,
+            data: sanitizedItem,
 
             // Required Gatsby fields
-            id: `Coda ${item.id}`,
+            id: `Coda ${sanitizedItem.id}`,
             parent: '__SOURCE__',
             children: [],
             internal: {
