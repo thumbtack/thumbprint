@@ -7,7 +7,7 @@ export { default as Carousel } from './components/Carousel/index';
 export { default as Checkbox } from './components/Checkbox/index';
 export { default as Dropdown } from './components/Dropdown/index';
 export { default as FormNote } from './components/FormNote/index';
-export { default as HorizontalRule } from './components/HorizontalRule/index.jsx';
+export { default as HorizontalRule } from './components/HorizontalRule/index';
 export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index';
 export { default as InputRow, InputRowContext } from './components/InputRow/index.jsx';
