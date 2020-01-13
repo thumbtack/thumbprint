@@ -1,6 +1,7 @@
 import addDays from 'date-fns/add_days';
 import subDays from 'date-fns/sub_days';
-import { hasAnyPastDays, hasAnyFutureDays, validateProps, normaliseValue } from './utilities';
+import { hasAnyPastDays, hasAnyFutureDays } from './utilities';
+import { validateProps, normaliseValue } from './index';
 
 describe('DatePicker utilities', () => {
     describe('normaliseValue', () => {

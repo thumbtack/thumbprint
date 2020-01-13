@@ -1,16 +1,47 @@
 import React from 'react';
-import DayPicker, { DateUtils, Modifiers, Modifier } from 'react-day-picker';
+import DayPicker, { DateUtils, Modifiers } from 'react-day-picker';
 
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
 import startOfDay from 'date-fns/start_of_day';
 
+import castArray from 'lodash/castArray';
+import parse from 'date-fns/parse';
+import { hasAnyPastDays, hasAnyFutureDays } from './utilities';
+
 import styles from './index.module.scss';
+import { DateIsh, Modifier } from './types';
 
-import { validateProps, normaliseValue } from './utilities';
+function throwError(message: string): void {
+    throw new Error(`TUI DatePicker: ${message}`);
+}
 
-import { DateIsh } from './types';
+export function normaliseValue(value: PropTypes['value']): Date[] {
+    const valueArr: DateIsh[] = castArray<DateIsh>(value);
+    return map<DateIsh, Date>(valueArr, d => parse(d));
+}
+
+export function validateProps(props: PropTypes): void {
+    const days = normaliseValue(props.value);
+
+    if (!props.allowMultiSelection && days.length > 1) {
+        throwError('`allowMultiSelection` is `false` but multiple dates were provided');
+    }
+
+    const { before, after } = props.disabledDays || {};
+    if (before && hasAnyPastDays(days, before)) {
+        throwError(
+            `Days before ${before} are disabled but one or more provided days fall before that.`,
+        );
+    }
+
+    if (after && hasAnyFutureDays(days, after)) {
+        throwError(
+            `Days after ${after} are disabled but one or more provided days fall after that.`,
+        );
+    }
+}
 
 interface PropTypes {
     /**
