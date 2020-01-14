@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import InputRow from '../InputRow/index.jsx';
+import InputRow from '../InputRow/index';
 import { Themed, Plain } from './index';
 
 describe('Plain', (): void => {
