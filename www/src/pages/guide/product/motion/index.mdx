@@ -3,6 +3,10 @@ title: Motion
 description: Bringing layouts to life.
 ---
 
+import Banner from 'components/motion/general/banner';
+import Scale from 'components/motion/general/scale';
+import Skip from 'components/motion/general/skip';
+
 import Easing from 'components/motion/general/easing';
 import Color from 'components/motion/general/color';
 import Pop from 'components/motion/general/pop';
@@ -20,6 +24,10 @@ import { Title, Text, Grid, GridColumn, HorizontalRule } from '@thumbtack/thumbp
 Motion can introduce elements of delight and activity for users. Used sparingly, it can focus their attention and help them navigate through the UI. Here we discuss motion generally, the specific page-level navigations available on iOS and Android, and custom animations.
 
 ## General motion
+
+### Principles
+
+Deciding what type of animation to use is more art than science. They should be quick but not jarring. To achieve this balance we generally use short durations for animations with smaller items and those moving smaller distances. Larger objects and objects moving larger distances will use longer durations.
 
 ### Easing
 
@@ -173,9 +181,9 @@ Determines the length of the animation. The length of the animation usually corr
 
 ### Examples
 
-Click examples to toggle animations.
+These first three are generic examples of motion. Click each to toggle the animation.
 
-<div className="grid">
+<div className="grid mb5">
     <div className="m_col-4 mb3 m_mb0">
         <div className="shadow-300 h6 relative br2">
             <Color />
@@ -209,6 +217,47 @@ Click examples to toggle animations.
         </Text>
         <Text size={2}>
             <InlineCode theme="plain">duration-5</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-out</InlineCode>
+        </Text>
+    </div>
+</div>
+
+And these three examples are based on interactions currently used in Thumbtack products.
+
+<div className="grid">
+    <div className="m_col-4 mb3 m_mb0">
+        <div className="shadow-300 h6 relative br2 overflow-hidden">
+            <Banner />
+        </div>
+        <Text size={2} className="mt2 b">
+            Banner slide down/up
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-3</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-in</InlineCode>
+        </Text>
+    </div>
+    <div className="m_col-4 mb3 m_mb0">
+        <div className="shadow-300 h6 relative br2 bg-gray-200">
+            <Scale />
+        </div>
+        <Text size={2} className="mt2 b">
+            Hover/touch scale
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-2</InlineCode> with{' '}
+            <InlineCode theme="plain">ease-out</InlineCode>
+        </Text>
+    </div>
+    <div className="m_col-4">
+        <div className="shadow-300 h6 relative br2">
+            <Skip />
+        </div>
+        <Text size={2} className="mt2 b">
+            Skip fade out/in
+        </Text>
+        <Text size={2}>
+            <InlineCode theme="plain">duration-4</InlineCode> with{' '}
             <InlineCode theme="plain">ease-out</InlineCode>
         </Text>
     </div>
