@@ -35,7 +35,7 @@ export {
     PopoverPrimaryButton,
     PopoverSecondaryButton,
 } from './components/Popover/index';
-export { default as Pill } from './components/Pill/index.jsx';
+export { default as Pill } from './components/Pill/index';
 export { default as Radio } from './components/Radio/index';
 export {
     default as ServiceCard,
