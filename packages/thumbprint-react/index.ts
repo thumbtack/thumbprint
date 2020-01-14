@@ -1,6 +1,7 @@
 export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index';
 export { BannerAlert, InPageAlert } from './components/Alert/index';
+export { default as AlertBanner } from './components/AlertBanner/index';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { default as Calendar } from './components/Calendar/index';
 export { default as Carousel } from './components/Carousel/index';

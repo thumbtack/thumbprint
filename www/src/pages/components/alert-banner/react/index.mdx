@@ -1,0 +1,34 @@
+---
+title: Alert Banner
+description: Important account information displayed at the top of a screen
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/alert-banner/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/AlertBanner/index.tsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
