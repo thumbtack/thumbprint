@@ -1,0 +1,24 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.box {
+    transition: transform 200ms;
+}
+
+.box:hover {
+    transform: scale(0.98);
+    transition: transform 150ms cubic-bezier(0.5, 0, 1, 1);
+}
+
+.image {
+    background: url(./training.jpg);
+    background-size: cover;
+    background-position: right;
+    height: 100px;
+}
