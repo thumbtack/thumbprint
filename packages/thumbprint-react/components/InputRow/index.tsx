@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import warning from 'warning';
 import styles from './index.module.scss';
 
-const propTypes = {
+interface PropTypes {
     /**
      * Form fields to display.
      */
-    children: PropTypes.node.isRequired,
+    children: React.ReactNode;
     /**
      * An array of numbers (or `null`) that reflect the ratio of the widths of the `children`.
      *
@@ -20,17 +19,12 @@ const propTypes = {
      *
      * The length of the array should be the same as the number of children.
      */
-    widthRatios: PropTypes.arrayOf(PropTypes.number),
+    widthRatios?: (number | null)[];
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
-
-const defaultProps = {
-    widthRatios: undefined,
-    dataTest: undefined,
-};
+    dataTest?: string;
+}
 
 // Components that import `InputRowContext` from this package will have access to this object. They
 // will then be able to know when their component is being used within an `InputRow` as well as
@@ -41,7 +35,9 @@ const InputRowContext = React.createContext({
     isLastInputRowChild: false,
 });
 
-const InputRow = ({ widthRatios, children, dataTest }) => {
+export { InputRowContext };
+
+export default function InputRow({ widthRatios, children, dataTest }: PropTypes): JSX.Element {
     const widthLength = widthRatios && widthRatios.length;
     const numChildren = React.Children.count(children);
 
@@ -58,7 +54,7 @@ const InputRow = ({ widthRatios, children, dataTest }) => {
     return (
         <div className={styles.root} data-test={dataTest}>
             {React.Children.map(children, (child, i) => (
-                <div style={{ flex: widthRatios ? widthRatios[i] : undefined }}>
+                <div style={{ flex: widthRatios ? `${widthRatios[i]}` : undefined }}>
                     <InputRowContext.Provider
                         value={{
                             isWithinInputRow: true,
@@ -72,12 +68,4 @@ const InputRow = ({ widthRatios, children, dataTest }) => {
             ))}
         </div>
     );
-};
-
-InputRow.propTypes = propTypes;
-
-InputRow.defaultProps = defaultProps;
-
-export default InputRow;
-
-export { InputRowContext };
+}

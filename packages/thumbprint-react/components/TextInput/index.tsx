@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { NavigationCloseSmall } from '../../icons/index.jsx';
-import { InputRowContext } from '../InputRow/index.jsx';
+import { InputRowContext } from '../InputRow/index';
 import styles from './index.module.scss';
 
 type UiState = 'disabled' | 'readonly' | 'error' | 'default';

@@ -110,7 +110,7 @@ exports[`sets width ratios even if some are \`null\` 1`] = `
       key=".0"
       style={
         Object {
-          "flex": 1,
+          "flex": "1",
         }
       }
     >
@@ -122,7 +122,7 @@ exports[`sets width ratios even if some are \`null\` 1`] = `
       key=".1"
       style={
         Object {
-          "flex": null,
+          "flex": "null",
         }
       }
     >
@@ -134,7 +134,7 @@ exports[`sets width ratios even if some are \`null\` 1`] = `
       key=".2"
       style={
         Object {
-          "flex": null,
+          "flex": "null",
         }
       }
     >
@@ -163,7 +163,7 @@ exports[`sets width ratios when they are all numbers 1`] = `
       key=".0"
       style={
         Object {
-          "flex": 1,
+          "flex": "1",
         }
       }
     >
@@ -175,7 +175,7 @@ exports[`sets width ratios when they are all numbers 1`] = `
       key=".1"
       style={
         Object {
-          "flex": 1,
+          "flex": "1",
         }
       }
     >
@@ -187,7 +187,7 @@ exports[`sets width ratios when they are all numbers 1`] = `
       key=".2"
       style={
         Object {
-          "flex": 1,
+          "flex": "1",
         }
       }
     >
