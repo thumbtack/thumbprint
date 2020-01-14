@@ -1,10 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-export default function Pill({ color, icon, children }) {
+interface PropTypes {
+    /**
+     * Text content to render.
+     */
+    children: string;
+    /**
+     * "Tiny" size icon to render.
+     */
+    icon?: React.ReactNode;
+    /**
+     * Color of the pill text and background.
+     */
+    color?: 'green' | 'red' | 'indigo' | 'blue' | 'yellow' | 'purple';
+}
+
+export default function Pill({ color, icon, children }: PropTypes): JSX.Element {
     return (
         <div
             className={classNames({
@@ -24,23 +38,3 @@ export default function Pill({ color, icon, children }) {
         </div>
     );
 }
-
-Pill.propTypes = {
-    /**
-     * Text content to render.
-     */
-    children: PropTypes.string.isRequired,
-    /**
-     * "Tiny" size icon to render.
-     */
-    icon: PropTypes.node,
-    /**
-     * Color of the pill text and background.
-     */
-    color: PropTypes.oneOf(['green', 'red', 'indigo', 'blue', 'yellow', 'purple']),
-};
-
-Pill.defaultProps = {
-    icon: undefined,
-    color: undefined,
-};
