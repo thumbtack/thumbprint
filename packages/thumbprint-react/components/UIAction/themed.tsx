@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import warning from 'warning';
 import classNames from 'classnames';
 import LoaderDots from '../LoaderDots/index';
-import { InputRowContext } from '../InputRow/index.jsx';
+import { InputRowContext } from '../InputRow/index';
 import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './themed.module.scss';
