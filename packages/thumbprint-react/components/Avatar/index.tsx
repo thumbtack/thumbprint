@@ -198,7 +198,7 @@ interface UserPropTypes {
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
     /**
      * Displays a badge of a checkmark next to the `Avatar`.
-     * @deprecated
+     * @deprecated Indicate this information outside of the avatar instead.
      */
     isChecked?: boolean;
     /**

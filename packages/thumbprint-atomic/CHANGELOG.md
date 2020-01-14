@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.0.1 - 2020-01-09
+
 ### Added
 
 -   [Patch] Adding IE/Edge selectors to `box-shadow` to bring visual parity with modern browsers. (#476)
