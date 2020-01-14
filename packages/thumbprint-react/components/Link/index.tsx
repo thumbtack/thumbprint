@@ -1,9 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import warning from 'warning';
 import { Themed, Plain } from '../UIAction/index';
 
-const getCommonLinkProps = props => {
+interface CommonProps {
+    to?: string;
+    shouldOpenInNewTab?: boolean;
+    children?: React.ReactNode;
+    isDisabled?: boolean;
+    onClick?: () => void;
+    dataTest?: string;
+    accessibilityLabel?: string;
+}
+
+const getCommonLinkProps = (props: CommonProps): CommonProps => {
     warning(
         // If `onClick` prop exists then `to` must also exist.
         !props.onClick || (props.to && props.onClick),
@@ -24,155 +33,177 @@ const getCommonLinkProps = props => {
 /**
  * Anchor link that renders as text.
  */
-const Link = React.forwardRef((props, ref) => (
-    <Plain
-        {...getCommonLinkProps(props)}
-        theme={props.theme}
-        iconLeft={props.iconLeft}
-        iconRight={props.iconRight}
-        ref={ref}
-    />
-));
+const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
+    (
+        {
+            to,
+            onClick,
+            shouldOpenInNewTab = false,
+            isDisabled = false,
+            children,
+            accessibilityLabel,
+            dataTest,
+            theme = 'primary',
+            iconLeft,
+            iconRight,
+        }: LinkPropTypes,
+        ref,
+    ) => (
+        <Plain
+            {...getCommonLinkProps({
+                to,
+                onClick,
+                shouldOpenInNewTab,
+                isDisabled,
+                children,
+                accessibilityLabel,
+                dataTest,
+            })}
+            theme={theme}
+            iconLeft={iconLeft}
+            iconRight={iconRight}
+            ref={ref}
+        />
+    ),
+);
 
-Link.propTypes = {
+interface LinkPropTypes {
     /**
      * Contents displayed within the anchor.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Description of the link’s content. It is required if the link contains an icon and no
      * descriptive text.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel?: string;
     /**
      * Functionally disables the anchor. We discourage the use of this prop since it is difficult
      * to visually indicate that a link is disabled. Consider not rendering the link if it is not
      * interactive.
      */
-    isDisabled: PropTypes.bool,
+    isDisabled?: boolean;
     /**
      * Page to navigate to when the anchor is clicked.
      */
-    to: PropTypes.string,
+    to?: string;
     /**
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
-    onClick: PropTypes.func,
+    onClick?: () => void;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `Link`.
      */
-    iconLeft: PropTypes.node,
+    iconLeft?: React.ReactNode;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render right of the text within `Link`.
      */
-    iconRight: PropTypes.node,
+    iconRight?: React.ReactNode;
     /**
      * Opens the URL in a new tab when clicked.
      */
-    shouldOpenInNewTab: PropTypes.bool,
+    shouldOpenInNewTab?: boolean;
     /**
      * Sets the anchor’s text color.
      *
      * `inherit` will make the anchor inherit `color` from its parent.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'inherit']),
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
-
-Link.defaultProps = {
-    children: undefined,
-    accessibilityLabel: undefined,
-    isDisabled: false,
-    iconLeft: null,
-    iconRight: null,
-    to: null,
-    onClick: undefined,
-    theme: 'primary',
-    shouldOpenInNewTab: false,
-    dataTest: undefined,
-};
+    dataTest?: string;
+}
 
 /**
  * Anchor link that visually looks like a button.
  */
-const ThemedLink = React.forwardRef((props, ref) => (
-    <Themed
-        {...getCommonLinkProps(props)}
-        icon={props.icon}
-        theme={props.theme}
-        size={props.size}
-        width={props.width}
-        ref={ref}
-    />
-));
+const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
+    (
+        {
+            to,
+            onClick,
+            shouldOpenInNewTab = false,
+            isDisabled = false,
+            children,
+            accessibilityLabel,
+            dataTest,
+            icon,
+            theme = 'primary',
+            size = 'large',
+            width = 'auto',
+        }: ThemedLinkPropTypes,
+        ref,
+    ) => (
+        <Themed
+            {...getCommonLinkProps({
+                to,
+                onClick,
+                shouldOpenInNewTab,
+                isDisabled,
+                children,
+                accessibilityLabel,
+                dataTest,
+            })}
+            icon={icon}
+            theme={theme}
+            size={size}
+            width={width}
+            ref={ref}
+        />
+    ),
+);
 
-ThemedLink.propTypes = {
+interface ThemedLinkPropTypes {
     /**
      * Contents displayed within the button.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Description of the link’s content. It is required if the link contains an icon and no
      * descriptive text.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel?: string;
     /**
      * Visually and functionally disables the button.
      */
-    isDisabled: PropTypes.bool,
+    isDisabled?: boolean;
     /**
      * Page to navigate to when the anchor is clicked.
      */
-    to: PropTypes.string,
+    to?: string;
     /**
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
-    onClick: PropTypes.func,
+    onClick?: () => void;
     /**
      * Opens the URL in a new tab when clicked.
      */
-    shouldOpenInNewTab: PropTypes.bool,
+    shouldOpenInNewTab?: boolean;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render within the
      * button. It must be one of the `small` icons.
      */
-    icon: PropTypes.node,
+    icon?: React.ReactNode;
     /**
      * Controls the button's background, text, and border theme.
      */
-    theme: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'caution', 'solid']),
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'caution' | 'solid';
     /**
      * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
      */
-    size: PropTypes.oneOf(['small', 'large']),
+    size?: 'small' | 'large';
     /**
      * Themed links are as wide as the content that is passed in.  The `full` option will
      * expand the width to `100%` on all screens. `full-below-small` will expand the width to 100%
      * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
      */
-    width: PropTypes.oneOf(['auto', 'full', 'full-below-small']),
+    width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
-    dataTest: PropTypes.string,
-};
-
-ThemedLink.defaultProps = {
-    children: undefined,
-    accessibilityLabel: undefined,
-    isDisabled: false,
-    shouldOpenInNewTab: false,
-    theme: 'primary',
-    size: 'large',
-    width: 'auto',
-    icon: null,
-    to: null,
-    onClick: undefined,
-    dataTest: undefined,
-};
+    dataTest?: string;
+}
 
 export default Link;
 export { ThemedLink };
