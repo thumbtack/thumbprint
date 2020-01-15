@@ -135,8 +135,6 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         triggerOnce: true,
     });
 
-    console.log('RENDER');
-
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState(
         canUseDOM && typeof window.IntersectionObserver !== 'undefined',
     );
@@ -234,6 +232,12 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     const [isLoaded, setIsLoaded] = useState(false);
     const [isError, setIsError] = useState(false);
 
+    // --------------------------------------------------------------------------------------------
+    // Combining refs: This component has three refs that need to be combined into one. This
+    // method of combining refs is suggested by `react-intersection-observer`:
+    // https://github.com/thebuilder/react-intersection-observer#how-can-i-assign-multiple-refs-to-a-component
+    // --------------------------------------------------------------------------------------------
+
     const setRefs = useCallback(
         node => {
             // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
@@ -250,7 +254,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                 outerRef(node);
             }
         },
-        [inViewRef, outerRef, browserSupportIntersectionObserver],
+        [inViewRef, outerRef, setContainerRef, browserSupportIntersectionObserver],
     );
 
     return (
