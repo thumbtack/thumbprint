@@ -4,11 +4,14 @@ import DayPicker, { DateUtils, Modifiers } from 'react-day-picker';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
-import startOfDay from 'date-fns/start_of_day';
-
+import some from 'lodash/some';
 import castArray from 'lodash/castArray';
+
 import parse from 'date-fns/parse';
-import { hasAnyPastDays, hasAnyFutureDays } from './utilities';
+import isAfter from 'date-fns/is_after';
+import isBefore from 'date-fns/is_before';
+import endOfDay from 'date-fns/end_of_day';
+import startOfDay from 'date-fns/start_of_day';
 
 import styles from './index.module.scss';
 import { DateIsh, Modifier } from './types';
@@ -20,6 +23,16 @@ function throwError(message: string): void {
 export function normaliseValue(value: PropTypes['value']): Date[] {
     const valueArr: DateIsh[] = castArray<DateIsh>(value);
     return map<DateIsh, Date>(valueArr, d => parse(d));
+}
+
+// Returns true any of the given `dates` fall on a day before the day of `cutoff`.
+export function hasAnyPastDays(dates: Date[], cutoff: Date = new Date()): boolean {
+    return some(dates, date => isBefore(endOfDay(date), cutoff));
+}
+
+// Returns true any of the given `dates` fall on a day after the day of `cutoff`.
+export function hasAnyFutureDays(dates: Date[], cutoff: Date = new Date()): boolean {
+    return some(dates, date => isAfter(startOfDay(date), cutoff));
 }
 
 export function validateProps(props: PropTypes): void {
