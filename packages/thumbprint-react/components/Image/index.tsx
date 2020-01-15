@@ -244,7 +244,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             // element.
             setContainerRef(node);
 
-            // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+            // We don't want to turn on the `react-intersection-observer` functionality until
+            // the polyfill is done loading.
             if (browserSupportIntersectionObserver) {
                 inViewRef(node);
             }
