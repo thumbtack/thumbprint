@@ -302,7 +302,6 @@ const MDX = props => {
                             //     e.preventDefault();
                             // }}
                         >
-                            <input type="hidden" name="page" value={location.pathname} />
                             <Title size={5} className="mb2">
                                 Was this page helpful?
                             </Title>
@@ -326,6 +325,7 @@ const MDX = props => {
                                 />
                                 No
                             </label>
+                            <input type="hidden" name="page" value={location.pathname} />
                             {/* <label htmlFor="feedback-comment">
                                 <textarea id="feedback-comment" name="comment" />
                             </label> */}
