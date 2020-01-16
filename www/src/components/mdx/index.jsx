@@ -292,6 +292,47 @@ const MDX = props => {
                         />
                         {header}
                         <MDXRenderer>{children}</MDXRenderer>
+                        <form
+                            name="feedback"
+                            method="POST"
+                            data-netlify="true"
+                            className="pa4 mt6 br2"
+                            style={{ backgroundColor: tokens.tpColorYellow100 }}
+                            onSubmit={e => {
+                                e.preventDefault();
+                            }}
+                        >
+                            <input type="hidden" name="page" value={location.pathname} />
+                            <Title size={5} className="mb2">
+                                Was this page helpful?
+                            </Title>
+                            <label htmlFor="feedback-helpful-yes" className="db">
+                                <input
+                                    type="radio"
+                                    name="helpful"
+                                    id="feedback-helpful-yes"
+                                    value="yes"
+                                    className="mr2"
+                                />
+                                Yes
+                            </label>
+                            <label htmlFor="feedback-helpful-no" className="db">
+                                <input
+                                    type="radio"
+                                    name="helpful"
+                                    id="feedback-helpful-no"
+                                    value="no"
+                                    className="mr2"
+                                />
+                                No
+                            </label>
+                            {/* <label htmlFor="feedback-comment">
+                                <textarea id="feedback-comment" name="comment" />
+                            </label> */}
+                            <button type="submit" className="mt2">
+                                Send
+                            </button>
+                        </form>
                     </React.Fragment>
                 )}
             </Wrap>
