@@ -298,9 +298,9 @@ const MDX = props => {
                             data-netlify="true"
                             className="pa4 mt6 br2"
                             style={{ backgroundColor: tokens.tpColorYellow100 }}
-                            onSubmit={e => {
-                                e.preventDefault();
-                            }}
+                            // onSubmit={e => {
+                            //     e.preventDefault();
+                            // }}
                         >
                             <input type="hidden" name="page" value={location.pathname} />
                             <Title size={5} className="mb2">
