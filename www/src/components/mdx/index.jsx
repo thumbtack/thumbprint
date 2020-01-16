@@ -325,6 +325,7 @@ const MDX = props => {
                                 />
                                 No
                             </label>
+                            <input type="hidden" name="form-name" value="feedback" />
                             <input type="hidden" name="page" value={location.pathname} />
                             {/* <label htmlFor="feedback-comment">
                                 <textarea id="feedback-comment" name="comment" />
