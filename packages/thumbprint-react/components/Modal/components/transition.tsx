@@ -1,29 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const EXITED = 'exited';
 const ENTERING = 'entering';
 const ENTERED = 'entered';
 const EXITING = 'exiting';
 
-const propTypes = {
-    children: PropTypes.func.isRequired,
-    in: PropTypes.bool.isRequired,
-    timeout: PropTypes.shape({
-        enter: PropTypes.number.isRequired,
-        exit: PropTypes.number.isRequired,
-    }).isRequired,
-    onEntered: PropTypes.func,
-    onExited: PropTypes.func,
-};
+type Stage = 'exited' | 'entering' | 'entered' | 'exiting' | null;
 
-const defaultProps = {
-    onEntered: undefined,
-    onExited: undefined,
-};
+interface PropTypes {
+    children: (stage: Stage) => JSX.Element;
+    in: boolean;
+    timeout: {
+        enter: number;
+        exit: number;
+    };
+    onEntered?: () => void;
+    onExited?: () => void;
+}
 
-class Transition extends React.Component {
-    constructor(props) {
+interface StateTypes {
+    stage: Stage;
+}
+
+export default class Transition extends React.Component<PropTypes, StateTypes> {
+    currentTimeout: number | null = null;
+
+    constructor(props: PropTypes) {
         super(props);
 
         this.state = {
@@ -31,7 +33,7 @@ class Transition extends React.Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         const { in: inProp } = this.props;
 
         this.setState({
@@ -52,7 +54,7 @@ class Transition extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: { in: boolean }): void {
         const { in: inProp } = this.props;
 
         if (prevProps.in !== inProp) {
@@ -66,18 +68,18 @@ class Transition extends React.Component {
         }
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         this.clearExistingTimeout();
     }
 
-    onEntering() {
+    onEntering(): void {
         const { timeout } = this.props;
 
         this.setState({ stage: ENTERING });
-        this.currentTimeout = setTimeout(this.onEntered, timeout.enter);
+        this.currentTimeout = window.setTimeout(this.onEntered, timeout.enter);
     }
 
-    onEntered() {
+    onEntered(): void {
         const { onEntered } = this.props;
 
         this.setState({ stage: ENTERED });
@@ -87,14 +89,14 @@ class Transition extends React.Component {
         }
     }
 
-    onExiting() {
+    onExiting(): void {
         const { timeout } = this.props;
 
         this.setState({ stage: EXITING });
-        this.currentTimeout = setTimeout(this.onExited, timeout.exit);
+        this.currentTimeout = window.setTimeout(this.onExited, timeout.exit);
     }
 
-    onExited() {
+    onExited(): void {
         const { onExited } = this.props;
 
         this.setState({ stage: EXITED });
@@ -104,13 +106,13 @@ class Transition extends React.Component {
         }
     }
 
-    clearExistingTimeout() {
+    clearExistingTimeout(): void {
         if (this.currentTimeout) {
             clearTimeout(this.currentTimeout);
         }
     }
 
-    render() {
+    render(): JSX.Element | null {
         const { stage } = this.state;
         const { children } = this.props;
 
@@ -121,8 +123,3 @@ class Transition extends React.Component {
         return children(stage);
     }
 }
-
-Transition.propTypes = propTypes;
-Transition.defaultProps = defaultProps;
-
-export default Transition;

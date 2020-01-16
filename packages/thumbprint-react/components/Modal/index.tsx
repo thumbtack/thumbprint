@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from 'lodash/noop';
 import * as tokens from '@thumbtack/thumbprint-tokens';
+
 import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { TextButton } from '../Button/index';
-import StickyFooter from './components/sticky-footer.jsx';
-import Transition from './components/transition.jsx';
+import StickyFooter from './components/sticky-footer';
+import Transition from './components/transition';
 import ModalCurtain from '../ModalCurtain/index.jsx';
+
 import styles from './index.module.scss';
 
-const { Provider, Consumer } = React.createContext({
+type StickyContext = {
+    stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null;
+    setSticky: (isSticky: boolean) => void;
+};
+
+const { Provider, Consumer } = React.createContext<StickyContext>({
     stickyFooterContainerRef: null,
     setSticky: noop,
 });
@@ -30,15 +36,15 @@ const TRANSITION_CLOSE_SPEED = tokens.tpDuration4;
  */
 const ModalAnimatedWrapper = ({
     children,
-    isOpen,
+    isOpen = false,
     onCloseClick,
     onCloseFinish,
     onOpenFinish,
-    shouldCloseOnCurtainClick,
-    width,
-    heightAboveSmall,
-    shouldPageScrollAboveSmall,
-}) => (
+    shouldCloseOnCurtainClick = true,
+    width = 'medium',
+    heightAboveSmall = 'auto',
+    shouldPageScrollAboveSmall = true,
+}: ModalAnimatedWrapperPropTypes): JSX.Element => (
     <Transition
         in={isOpen}
         timeout={{
@@ -48,9 +54,9 @@ const ModalAnimatedWrapper = ({
         onEntered={onOpenFinish}
         onExited={onCloseFinish}
     >
-        {transitionStage => (
+        {(transitionStage): JSX.Element => (
             <ModalCurtain stage={transitionStage} onCloseClick={onCloseClick}>
-                {({ curtainClassName, curtainOnClick }) => (
+                {({ curtainClassName, curtainOnClick }): JSX.Element => (
                     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                     <div
                         className={classNames({
@@ -106,207 +112,175 @@ const ModalAnimatedWrapper = ({
     </Transition>
 );
 
-ModalAnimatedWrapper.propTypes = {
+interface ModalAnimatedWrapperPropTypes {
     /**
      * Content that appears within the modal.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Function that fires to close the modal.
      */
-    onCloseClick: PropTypes.func.isRequired,
+    onCloseClick: () => void;
     /**
      * Function that fires once the modal has opened and transitions have ended.
      */
-    onOpenFinish: PropTypes.func,
+    onOpenFinish?: () => void;
     /**
      * Function that fires once the modal has closed and transitions have ended.
      */
-    onCloseFinish: PropTypes.func,
+    onCloseFinish?: () => void;
     /**
      * Determines if the modal should close when clicking on the curtain, outside of the `children`.
      */
-    shouldCloseOnCurtainClick: PropTypes.bool,
+    shouldCloseOnCurtainClick?: boolean;
     /**
      * Allows the page to scroll vertically at viewports larger than the small breakpoint. If
      * `false`, the modal will always be equal to or smaller than the viewport and the contents
      * of the modal will scroll, not the page itself.
      */
-    shouldPageScrollAboveSmall: PropTypes.bool,
+    shouldPageScrollAboveSmall?: boolean;
     /**
      * Should the modal appear open.
      */
-    isOpen: PropTypes.bool,
+    isOpen?: boolean;
     /**
      * Sets the max-width of the modal container.
      */
-    width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    width?: 'narrow' | 'medium' | 'wide';
     /**
      * Sets height of the modal container above small viewport.
      * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
-};
+    heightAboveSmall?: 'auto' | 'medium' | 'tall';
+}
 
-ModalAnimatedWrapper.defaultProps = {
-    children: undefined,
-    onOpenFinish: undefined,
-    onCloseFinish: undefined,
-    isOpen: false,
-    shouldCloseOnCurtainClick: true,
-    shouldPageScrollAboveSmall: true,
-    width: 'medium',
-    heightAboveSmall: 'auto',
-};
-
-const modalHeaderPropTypes = {
+interface ModalHeaderPropTypes {
     /**
      * Content (usually a `ModalTitle` and `ModalDescription`) that appears at the top of the
      * modal.
      */
-    children: PropTypes.node.isRequired,
-};
+    children: React.ReactNode;
+}
 
-const modalTitlePropTypes = {
+interface ModalTitlePropTypes {
     /**
      * Text that describes the modal contents. It is intended for use within the `ModalHeader`.
      */
-    children: PropTypes.string.isRequired,
-};
+    children: string;
+}
 
-const modalDescriptionPropTypes = {
+interface ModalDescriptionPropTypes {
     /**
      * Text intended for use below a `ModalTitle` and within a `ModalHeader`.
      */
-    children: PropTypes.node.isRequired,
-};
+    children: React.ReactNode;
+}
 
-const modalContentPropTypes = {
+interface ModalContentPropTypes {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
-    children: PropTypes.node.isRequired,
-};
+    children: React.ReactNode;
+}
 
-const modalContentFullBleedPropTypes = {
+interface ModalContentFullBleedPropTypes {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
-    children: PropTypes.node.isRequired,
+    children: React.ReactNode;
     /**
      * Allows the React `className` prop to be passed through to the rendered element.
      */
-    className: PropTypes.string,
+    className?: string;
     /**
      * Allows the React `style` prop to be passed through to the rendered element.
      */
-    style: PropTypes.shape(),
-};
+    style?: object;
+}
 
-const modalContentFullBleedDefaultProps = {
-    className: '',
-    style: {},
-};
-
-const modalFooterPropTypes = {
+interface ModalFooterPropTypes {
     /**
      * Content (ususally buttons) to render within the footer.
      */
-    children: PropTypes.node.isRequired,
+    children: React.ReactNode;
     /**
      * Attaches the footer to the bottom of the modal below the small breakpoint.
      */
-    isSticky: PropTypes.bool,
-};
+    isSticky?: boolean;
+}
 
-const modalFooterDefaultProps = {
-    isSticky: false,
-};
-
-const modalPropTypes = {
+interface ModalPropTypes {
     /**
      * Content that appears within the modal.
      */
-    children: PropTypes.node,
+    children?: React.ReactNode;
     /**
      * Function that fires to close the modal.
      */
-    onCloseClick: PropTypes.func.isRequired,
+    onCloseClick: () => void;
     /**
      * Function that fires once the modal has opened and transitions have ended.
      */
-    onOpenFinish: PropTypes.func,
+    onOpenFinish?: () => void;
     /**
      * Function that fires once the modal has closed and transitions have ended.
      */
-    onCloseFinish: PropTypes.func,
+    onCloseFinish?: () => void;
     /**
      * Determines if the close button should be rendered. This is generally discouraged and should
      * be used carefully. If used, the contents passed into the modal must contain a focusable
      * element such as a link or button.
      */
-    shouldHideCloseButton: PropTypes.bool,
+    shouldHideCloseButton?: boolean;
     /**
      * Determines if the modal should close when clicking on the curtain, outside of the `children`.
      */
-    shouldCloseOnCurtainClick: PropTypes.bool,
+    shouldCloseOnCurtainClick?: boolean;
     /**
      * Should the modal appear open.
      */
-    isOpen: PropTypes.bool,
+    isOpen?: boolean;
     /**
      * Sets the max-width of the modal container.
      */
-    width: PropTypes.oneOf(['narrow', 'medium', 'wide']),
+    width?: 'narrow' | 'medium' | 'wide';
     /**
      * Sets height of the modal container above small viewport.
      * If `auto` (default), the modal height will be determined by its content.
      * Otherwise, the modal height will be fixed at some constant px.
      */
-    heightAboveSmall: PropTypes.oneOf(['auto', 'medium', 'tall']),
-};
+    heightAboveSmall?: 'auto' | 'medium' | 'tall';
+}
 
-const modalProps = {
-    children: undefined,
-    onOpenFinish: undefined,
-    onCloseFinish: undefined,
-    isOpen: false,
-    shouldHideCloseButton: false,
-    shouldCloseOnCurtainClick: true,
-    width: 'medium',
-    heightAboveSmall: 'auto',
-};
+const ModalHeader = ({ children }: ModalHeaderPropTypes): JSX.Element => (
+    <div className={styles.modalHeader}>{children}</div>
+);
 
-const ModalHeader = ({ children }) => <div className={styles.modalHeader}>{children}</div>;
+const ModalTitle = ({ children }: ModalTitlePropTypes): JSX.Element => (
+    <div className={styles.modalTitle}>{children}</div>
+);
 
-ModalHeader.propTypes = modalHeaderPropTypes;
-
-const ModalTitle = ({ children }) => <div className={styles.modalTitle}>{children}</div>;
-
-ModalTitle.propTypes = modalTitlePropTypes;
-
-const ModalDescription = ({ children }) => (
+const ModalDescription = ({ children }: ModalDescriptionPropTypes): JSX.Element => (
     <div className={styles.modalDescription}>{children}</div>
 );
 
-ModalDescription.propTypes = modalDescriptionPropTypes;
+const ModalContent = ({ children }: ModalContentPropTypes): JSX.Element => (
+    <div className={styles.modalContent}>{children}</div>
+);
 
-const ModalContent = ({ children }) => <div className={styles.modalContent}>{children}</div>;
-
-ModalContent.propTypes = modalContentPropTypes;
-
-const ModalContentFullBleed = ({ children, className, style }) => (
+const ModalContentFullBleed = ({
+    children,
+    className = '',
+    style = {},
+}: ModalContentFullBleedPropTypes): JSX.Element => (
     <div className={classNames(className, styles.modalContentFullBleed)} style={style}>
         {children}
     </div>
 );
 
-ModalContentFullBleed.propTypes = modalContentFullBleedPropTypes;
-ModalContentFullBleed.defaultProps = modalContentFullBleedDefaultProps;
-
-class ModalFooter extends React.Component {
-    constructor(props) {
+class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: boolean }> {
+    constructor(props: ModalFooterPropTypes) {
         super(props);
 
         this.state = {
@@ -314,13 +288,13 @@ class ModalFooter extends React.Component {
         };
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         this.setState({
             isClient: true,
         });
     }
 
-    render() {
+    render(): JSX.Element | null {
         const { isClient } = this.state;
         const { isSticky, children } = this.props;
 
@@ -330,7 +304,7 @@ class ModalFooter extends React.Component {
 
         return (
             <Consumer>
-                {({ stickyFooterContainerRef, setSticky }) => {
+                {({ stickyFooterContainerRef, setSticky }): JSX.Element => {
                     // When `isSticky` is true, the `ModalFooter` must change it's position in the
                     // DOM so that it is fixed at the bottom of the modal on small viewports. We
                     // use React's Context API so that it is a property of the `ModalFooter`
@@ -341,6 +315,13 @@ class ModalFooter extends React.Component {
                     // changing the CSS to make the contents scroll and the footer fixed at the
                     // bottom.
                     if (!isSticky) {
+                        return <div className={styles.modalFooterFluid}>{children}</div>;
+                    }
+
+                    if (
+                        !stickyFooterContainerRef ||
+                        (stickyFooterContainerRef && !stickyFooterContainerRef.current)
+                    ) {
                         return <div className={styles.modalFooterFluid}>{children}</div>;
                     }
 
@@ -359,14 +340,23 @@ class ModalFooter extends React.Component {
     }
 }
 
-ModalFooter.propTypes = modalFooterPropTypes;
-ModalFooter.defaultProps = modalFooterDefaultProps;
+// const modalProps = {
+//     isOpen: false,
+//     shouldHideCloseButton: false,
+//     shouldCloseOnCurtainClick: true,
+//     width: 'medium',
+//     heightAboveSmall: 'auto',
+// };
 
-class Modal extends React.Component {
-    constructor(props) {
+class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }> {
+    stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null = null;
+
+    activeTimeout: number | null = null;
+
+    constructor(props: ModalPropTypes) {
         super(props);
 
-        this.stickyFooterContainerRef = React.createRef();
+        this.stickyFooterContainerRef = React.createRef<HTMLDivElement>();
         this.state = {
             hasStickyFooter: false,
         };
@@ -374,7 +364,7 @@ class Modal extends React.Component {
         this.activeTimeout = null;
     }
 
-    setSticky(newVal) {
+    setSticky(newVal: boolean): void {
         const { hasStickyFooter } = this.state;
 
         if (newVal !== hasStickyFooter) {
@@ -384,7 +374,7 @@ class Modal extends React.Component {
         }
     }
 
-    render() {
+    render(): JSX.Element {
         const {
             children,
             isOpen,
@@ -408,13 +398,11 @@ class Modal extends React.Component {
                 isOpen={isOpen}
                 width={width}
                 heightAboveSmall={heightAboveSmall}
-                // We allow the modal to grow taller than the page only if
-                // there is no sticky footer. This means that the page can
-                // scroll vertically when the modal contents are tall enough.
-                // If we have a sticky footer, we prevent the modal from
-                // getting taller than the viewport so that the footer can
-                // always appear at the bottom. In this case, the inside
-                // of the modal itself will scroll vertically as needed.
+                // We allow the modal to grow taller than the page only if there is no sticky
+                // footer. This means that the page can scroll vertically when the modal contents
+                // are tall enough. If we have a sticky footer, we prevent the modal from getting
+                // taller than the viewport so that the footer can always appear at the bottom.
+                // In this case, the inside of the modal itself will scroll vertically as needed.
                 shouldPageScrollAboveSmall={!hasStickyFooter}
             >
                 <Provider
@@ -469,9 +457,6 @@ class Modal extends React.Component {
         );
     }
 }
-
-Modal.propTypes = modalPropTypes;
-Modal.defaultProps = modalProps;
 
 export default Modal;
 export {
