@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
@@ -305,24 +306,12 @@ const MDX = props => {
                             <Title size={5} className="mb2">
                                 Was this page helpful?
                             </Title>
-                            <label htmlFor="feedback-helpful-yes" className="db">
-                                <input
-                                    type="radio"
-                                    name="helpful"
-                                    id="feedback-helpful-yes"
-                                    value="yes"
-                                    className="mr2"
-                                />
+                            <label className="db">
+                                <input type="radio" name="helpful" value="yes" className="mr2" />
                                 Yes
                             </label>
-                            <label htmlFor="feedback-helpful-no" className="db">
-                                <input
-                                    type="radio"
-                                    name="helpful"
-                                    id="feedback-helpful-no"
-                                    value="no"
-                                    className="mr2"
-                                />
+                            <label className="db">
+                                <input type="radio" name="helpful" value="no" className="mr2" />
                                 No
                             </label>
                             <input type="hidden" name="form-name" value="feedback" />
