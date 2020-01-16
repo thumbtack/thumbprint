@@ -306,6 +306,7 @@ const MDX = props => {
                             <Title size={5} className="mb2">
                                 Was this page helpful?
                             </Title>
+                            <input type="hidden" name="page" value={location.pathname} />
                             <label className="db">
                                 <input type="radio" name="helpful" value="yes" className="mr2" />
                                 Yes
@@ -315,7 +316,6 @@ const MDX = props => {
                                 No
                             </label>
                             <input type="hidden" name="form-name" value="feedback" />
-                            <input type="hidden" name="page" value={location.pathname} />
                             {/* <label htmlFor="feedback-comment">
                                 <textarea id="feedback-comment" name="comment" />
                             </label> */}
