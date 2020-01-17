@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import Link, { ThemedLink } from './index';
 
 test('renders `children` passed in', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapper = mount(<Component to="https://example.com/">Goose</Component>);
         expect(wrapper.text()).toBe('Goose');
         expect(wrapper).toMatchSnapshot();
@@ -14,7 +14,7 @@ test('renders `children` passed in', () => {
 });
 
 test('renders a anchor tag when a `to` is provided', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapper = mount(<Component to="https://example.com/">Goose</Component>);
         expect(wrapper.find('button')).toHaveLength(0);
         expect(wrapper.find('a')).toHaveLength(1);
@@ -26,7 +26,7 @@ test('renders a anchor tag when a `to` is provided', () => {
 });
 
 test('renders an anchor tag when both `to` and `onClick` are provided', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapper = mount(
             <Component to="https://example.com/" onClick={jest.fn}>
                 Goose
@@ -41,7 +41,7 @@ test('renders an anchor tag when both `to` and `onClick` are provided', () => {
 });
 
 test('adds `rel` attribute to handle security vulnerability', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(
             <Component shouldOpenInNewTab to="https://example.com/">
                 Goose
@@ -56,7 +56,7 @@ test('adds `rel` attribute to handle security vulnerability', () => {
 });
 
 test('adds attribute to open link in new tab', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(
             <Component shouldOpenInNewTab to="https://example.com/">
                 Goose
@@ -71,7 +71,7 @@ test('adds attribute to open link in new tab', () => {
 });
 
 test('renders `to` prop as `href`', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(<Component to="https://example.com/">Goose</Component>);
         expect(wrapperLink.find('a').prop('href')).toBe('https://example.com/');
         expect(wrapperLink).toMatchSnapshot();
@@ -82,7 +82,7 @@ test('renders `to` prop as `href`', () => {
 });
 
 test('renders `onClick` prop', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const onClick = jest.fn();
         const wrapper = mount(
             <Component to="https://example.com/" onClick={onClick}>
@@ -99,7 +99,7 @@ test('renders `onClick` prop', () => {
 });
 
 test('removes `href` if link is disabled', () => {
-    const testComponent = Component => {
+    const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(
             <Component isDisabled to="https://example.com/">
                 Goose
