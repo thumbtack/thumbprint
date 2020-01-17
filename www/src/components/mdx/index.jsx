@@ -328,7 +328,7 @@ const MDX = props => {
                                 No
                             </label>
                             <input type="hidden" name="form-name" value="feedback" />
-                            <label htmlFor="feedback-comment">
+                            <label>
                                 Comments
                                 <textarea id="feedback-comment" name="comment" />
                             </label>
