@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 12.1.1 - 2020-01-18
+
 ### Changed
 
 -   [Patch] Rewrite `HorizontalRule` component in TypeScript.
