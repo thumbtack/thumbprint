@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+-   [Minor] Add `AlertBanner` component in React (Typescript).
+-   [Minor] Deprecate usage of `BannerAlert` component.
+
 ## 12.1.1 - 2020-01-18
 
 ### Changed
