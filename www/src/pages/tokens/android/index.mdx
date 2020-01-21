@@ -3,13 +3,10 @@ title: Tokens
 description: Design variables that power Thumbtack’s UI.
 ---
 
-import classNames from 'classnames';
-import { camelCase } from 'lodash';
 import { graphql } from 'gatsby';
 import PackageTable from 'components/package-table';
 import TabNav from 'components/thumbprint-tokens/tab-nav';
 import TokenSection from 'components/thumbprint-tokens/token-section';
-import Alert from 'components/alert';
 
 export const pageQuery = graphql`
     {
@@ -47,11 +44,6 @@ export const pageQuery = graphql`
     platform="android"
     importStatement="import com.github.thumbtack.thumbprinttokens.R"
 />
-
-<Alert type="warning" title="Not yet available in Thumbtack's Android codebase">
-    The Design Systems team is working with Thumbtack's Android engineers to install this library in
-    the Android codebase.
-</Alert>
 
 <div>
     {props.data.thumbprintToken.categories.map(section => (
