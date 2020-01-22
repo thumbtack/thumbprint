@@ -2,7 +2,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
-import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
+import {
+    Title,
+    Text,
+    List,
+    ListItem,
+    Button,
+    ButtonRow,
+    TextArea,
+} from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
 import InternalMDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
@@ -297,16 +305,34 @@ const MDX = props => {
                             name="feedback"
                             method="POST"
                             data-netlify="true"
-                            className="pa4 mt6 br2"
-                            style={{ backgroundColor: tokens.tpColorYellow100 }}
+                            className="pt5 mt5 bt bw-2 b-gray-300"
                             // onSubmit={e => {
                             //     e.preventDefault();
                             // }}
                         >
-                            <Title size={5} className="mb2">
-                                Was this page helpful?
-                            </Title>
-                            <input type="hidden" name="page" value={location.pathname} />
+                            <div
+                                className={`flex items-center flex-column m_flex-row ${styles.readingWidth}`}
+                            >
+                                <div className="mb3 m_mb0 m_mr4">
+                                    <Title size={5} className="mb2">
+                                        Was this page helpful?
+                                    </Title>
+                                    <Text className="black-300 mw7">
+                                        We use this feedback to improve the quality of our
+                                        documentation.
+                                    </Text>
+                                </div>
+                                <ButtonRow>
+                                    <Button size="small" theme="tertiary">
+                                        Yes
+                                    </Button>
+                                    <Button size="small" theme="tertiary">
+                                        No
+                                    </Button>
+                                </ButtonRow>
+                            </div>
+
+                            {/* <input type="hidden" name="page" value={location.pathname} />
                             <label className="db">
                                 <input
                                     type="radio"
@@ -334,7 +360,66 @@ const MDX = props => {
                             </label>
                             <button type="submit" className="mt2">
                                 Send
-                            </button>
+                            </button> */}
+                        </form>
+                        <form
+                            name="feedback"
+                            method="POST"
+                            data-netlify="true"
+                            className="pt5 mt5 bt bw-2 b-gray-300"
+                            // onSubmit={e => {
+                            //     e.preventDefault();
+                            // }}
+                        >
+                            <div
+                                className={`flex items-center flex-column m_flex-row mb3 ${styles.readingWidth}`}
+                            >
+                                <div className="mb3 m_mb0 m_mr4">
+                                    <Title size={5} className="mb2">
+                                        Was this page helpful?
+                                    </Title>
+                                    <Text className="black-300 mw7">
+                                        Thanks! Please provide additonal context if needed.
+                                    </Text>
+                                </div>
+                            </div>
+                            <div className="mb3 mw7">
+                                <TextArea />
+                            </div>
+
+                            <Button theme="primary" size="small">
+                                Send
+                            </Button>
+
+                            {/* <input type="hidden" name="page" value={location.pathname} />
+                            <label className="db">
+                                <input
+                                    type="radio"
+                                    name="helpful"
+                                    value="yes"
+                                    className="mr2"
+                                    required
+                                />
+                                Yes
+                            </label>
+                            <label className="db">
+                                <input
+                                    type="radio"
+                                    name="helpful"
+                                    value="no"
+                                    className="mr2"
+                                    required
+                                />
+                                No
+                            </label>
+                            <input type="hidden" name="form-name" value="feedback" />
+                            <label>
+                                Comments
+                                <textarea id="feedback-comment" name="comment" />
+                            </label>
+                            <button type="submit" className="mt2">
+                                Send
+                            </button> */}
                         </form>
                     </React.Fragment>
                 )}
