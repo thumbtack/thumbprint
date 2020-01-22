@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 12.1.2 - 2020-01-22
+
+### Fixed
+
+-   [Patch] Re-write ref handling in `Image` component so it works with a change in `react-intersection-observer@8.24.1`.
+
 ## 12.1.1 - 2020-01-18
 
 ### Changed
@@ -10,10 +16,6 @@
 -   [Patch] Rewrite `Pill` component in TypeScript.
 -   [Patch] Rewrite `InputRow` component in TypeScript.
 -   [Patch] Rewrite `Link` component in TypeScript.
-
-### Fixed
-
--   [Patch] Re-write ref handling in `Image` component so it works with a change in `react-intersection-observer@8.24.1`.
 
 ## 12.1.0 - 2020-01-09
 
