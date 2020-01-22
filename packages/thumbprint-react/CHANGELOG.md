@@ -2,11 +2,14 @@
 
 ## Unreleased
 
+## 12.1.1 - 2020-01-18
+
 ### Changed
 
 -   [Patch] Rewrite `HorizontalRule` component in TypeScript.
 -   [Patch] Rewrite `Pill` component in TypeScript.
 -   [Patch] Rewrite `InputRow` component in TypeScript.
+-   [Patch] Rewrite `Link` component in TypeScript.
 
 ## 12.1.0 - 2020-01-09
 
