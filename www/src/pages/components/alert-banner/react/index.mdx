@@ -10,9 +10,9 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Usage
 
-AlertBanner should be used as a banner on top of the page, above the global header.
+`AlertBanner` should be used as a banner at the very top of the page.
 
-Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item in the children.
+Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item in the `children`.
 
 ## Themes
 
@@ -20,7 +20,8 @@ Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item
 
 ```jsx
 <AlertBanner theme="caution">
-    This is a caution banner. <a href="#">Go to top of the page</a>
+    Your pre-paid credits are running low. Purchase new credits before you run out.{' '}
+    <a href="https://example.com/">Purchase credits</a>
 </AlertBanner>
 ```
 
@@ -28,7 +29,8 @@ Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item
 
 ```jsx
 <AlertBanner theme="info">
-    This is an info banner. <a href="#">Go to top of the page</a>
+    You haven’t finish setting up. Add 3 reviews and turn on targeting.{' '}
+    <a href="https://example.com/">Finish setup</a>
 </AlertBanner>
 ```
 
@@ -36,7 +38,8 @@ Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item
 
 ```jsx
 <AlertBanner theme="warning">
-    This is a warning banner. <a href="#">Go to top of the page</a>
+    Oops. Your payment failed! Update your payment details to continue using Thumbtack.{' '}
+    <a href="https://example.com/">Update payment</a>
 </AlertBanner>
 ```
 
