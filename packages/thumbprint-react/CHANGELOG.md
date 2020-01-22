@@ -8,6 +8,10 @@
 
 -   [Minor] Add `AlertBanner` component in React (Typescript).
 
+### Changed
+
+-   [Patch] Reorganize `Calendar` component files so the types display correctly in docs. (#586)
+
 ### Deprecated
 
 -   [Patch] Deprecate usage of `BannerAlert` component.
