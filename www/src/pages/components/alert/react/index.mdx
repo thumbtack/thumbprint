@@ -3,12 +3,21 @@ title: Alert
 description: Vibrant alert messages used as page banners or within forms.
 ---
 
-import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import { graphql, Link } from 'gatsby';
+import {
+    ComponentHeader,
+    ComponentFooter,
+    DeprecatedComponentAlert,
+} from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
 ## Banner alerts
+
+<DeprecatedComponentAlert>
+    This component is deprecated. Use <Link to="/components/alert-banner/react/">AlertBanner</Link>{' '}
+    instead.
+</DeprecatedComponentAlert>
 
 These alerts should be used at the very top of a page.
 
