@@ -2,8 +2,19 @@
 
 ## Unreleased
 
+### Added
+
 -   [Minor] Add `AlertBanner` component in React (Typescript).
--   [Minor] Deprecate usage of `BannerAlert` component.
+
+### Deprecated
+
+-   [Patch] Deprecate usage of `BannerAlert` component.
+
+## 12.1.2 - 2020-01-22
+
+### Fixed
+
+-   [Patch] Re-write ref handling in `Image` component so it works with a change in `react-intersection-observer@8.24.1`.
 
 ## 12.1.1 - 2020-01-18
 

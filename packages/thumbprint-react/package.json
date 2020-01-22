@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "12.1.1",
+    "version": "12.1.2",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -47,7 +47,7 @@
         "object-fit-images": "^3.2.4",
         "react-day-picker": "7.3.2",
         "react-displace": "^2.3.0",
-        "react-intersection-observer": "^8.23.0",
+        "react-intersection-observer": "^8.25.2",
         "react-onclickoutside": "^6.4.0",
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
