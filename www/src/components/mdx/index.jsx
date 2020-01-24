@@ -324,6 +324,9 @@ const MDX = props => {
             fetch(form.action, {
                 method: 'POST',
                 body: data,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
             }).then(() => {
                 setFeedbackStep(FEEDBACK_STEPS['feedback-comment']);
             });
@@ -402,6 +405,9 @@ const MDX = props => {
                                     fetch(form.action, {
                                         method: 'POST',
                                         body: data,
+                                        headers: {
+                                            'Content-Type': 'application/x-www-form-urlencoded',
+                                        },
                                     }).then(() => {
                                         setFeedbackStep(FEEDBACK_STEPS['feedback-complete']);
                                     });
