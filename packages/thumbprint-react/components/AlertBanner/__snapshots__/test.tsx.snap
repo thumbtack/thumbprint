@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertBanner match snapshot 1`] = `
+<AlertBanner
+  dataTest="test"
+  theme="caution"
+>
+  <div
+    className="root caution"
+    data-test="test"
+  >
+    <WarningFilled
+      className="icon"
+      fill="currentColor"
+      height="28"
+      viewBox="0 0 28 28"
+      width="28"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <svg
+        className="icon"
+        fill="currentColor"
+        height="28"
+        viewBox="0 0 28 28"
+        width="28"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.9985 21.5C13.1695 21.5 12.4985 20.829 12.4985 20C12.4985 19.171 13.1695 18.5 13.9985 18.5C14.8275 18.5 15.4985 19.171 15.4985 20C15.4985 20.829 14.8275 21.5 13.9985 21.5ZM12.9995 10C12.9995 9.448 13.4475 9 13.9995 9C14.5525 9 14.9995 9.448 14.9995 10V16C14.9995 16.552 14.5525 17 13.9995 17C13.4475 17 12.9995 16.552 12.9995 16V10ZM25.4195 18.502L17.7805 5.187C16.9955 3.817 15.5815 3 13.9995 3C12.4175 3 11.0045 3.817 10.2195 5.187L2.58054 18.502C1.80154 19.858 1.80554 21.476 2.58854 22.829C3.37554 24.188 4.78654 25 6.36054 25H21.6395C23.2135 25 24.6235 24.188 25.4115 22.829C26.1945 21.476 26.1985 19.858 25.4195 18.502Z"
+        />
+         
+      </svg>
+    </WarningFilled>
+    <div>
+      <div
+        data-test="child"
+      >
+        This is the child component.
+        <a
+          href="/"
+        >
+          Click here
+        </a>
+      </div>
+    </div>
+  </div>
+</AlertBanner>
+`;
+
+exports[`AlertBanner match snapshot 2`] = `
+<AlertBanner
+  dataTest="test"
+  theme="info"
+>
+  <div
+    className="root info"
+    data-test="test"
+  >
+    <InfoFilled
+      className="icon"
+      fill="currentColor"
+      height="28"
+      viewBox="0 0 28 28"
+      width="28"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <svg
+        className="icon"
+        fill="currentColor"
+        height="28"
+        viewBox="0 0 28 28"
+        width="28"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.9929 10.4926C13.1655 10.4926 12.4921 9.82131 12.4921 8.99192C12.4921 8.16252 13.1655 7.4912 13.9929 7.4912C14.8213 7.4912 15.4937 8.16252 15.4937 8.99192C15.4937 9.82131 14.8213 10.4926 13.9929 10.4926ZM15.0004 19.0027C15.0004 19.5549 14.5532 20.0031 13.9999 20.0031C13.4466 20.0031 12.9994 19.5549 12.9994 19.0027V12.9998C12.9994 12.4476 13.4466 11.9993 13.9999 11.9993C14.5532 11.9993 15.0004 12.4476 15.0004 12.9998V19.0027ZM22.4883 5.51126C17.8079 0.830039 10.1899 0.829038 5.50955 5.51126C0.830151 10.1915 0.830151 17.8081 5.50955 22.4893C7.84975 24.8304 10.9253 26 13.9999 26C17.0735 26 20.1481 24.8304 22.4883 22.4893C27.1707 17.8081 27.1707 10.1915 22.4883 5.51126Z"
+        />
+         
+      </svg>
+    </InfoFilled>
+    <div>
+      <div
+        data-test="child"
+      >
+        This is the child component.
+        <a
+          href="/"
+        >
+          Click here
+        </a>
+      </div>
+    </div>
+  </div>
+</AlertBanner>
+`;
+
+exports[`AlertBanner match snapshot 3`] = `
+<AlertBanner
+  dataTest="test"
+  theme="warning"
+>
+  <div
+    className="root warning"
+    data-test="test"
+  >
+    <BlockedFilled
+      className="icon"
+      fill="currentColor"
+      height="28"
+      viewBox="0 0 28 28"
+      width="28"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <svg
+        className="icon"
+        fill="currentColor"
+        height="28"
+        viewBox="0 0 28 28"
+        width="28"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.9996 2.00006C20.627 2.00006 25.9996 7.37263 25.9996 14C25.9996 20.6274 20.627 26 13.9996 26C7.3722 26 1.99963 20.6274 1.99963 14C1.99963 7.37263 7.3722 2.00006 13.9996 2.00006ZM21 13H7.00002C6.44774 13 6.00002 13.4477 6.00002 14C6.00002 14.5523 6.44774 15 7.00002 15H21C21.5523 15 22 14.5523 22 14C22 13.4477 21.5523 13 21 13Z"
+        />
+         
+      </svg>
+    </BlockedFilled>
+    <div>
+      <div
+        data-test="child"
+      >
+        This is the child component.
+        <a
+          href="/"
+        >
+          Click here
+        </a>
+      </div>
+    </div>
+  </div>
+</AlertBanner>
+`;

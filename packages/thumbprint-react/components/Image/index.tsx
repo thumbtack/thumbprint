@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useEffect } from 'react';
+import React, { useState, forwardRef, useEffect, useCallback } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
@@ -232,29 +232,35 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     const [isLoaded, setIsLoaded] = useState(false);
     const [isError, setIsError] = useState(false);
 
+    // --------------------------------------------------------------------------------------------
+    // Combining refs: This component has three refs that need to be combined into one. This
+    // method of combining refs is suggested by `react-intersection-observer`:
+    // https://github.com/thebuilder/react-intersection-observer#how-can-i-assign-multiple-refs-to-a-component
+    // --------------------------------------------------------------------------------------------
+
+    const setRefs = useCallback(
+        node => {
+            // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
+            // element.
+            setContainerRef(node);
+
+            // We don't want to turn on the `react-intersection-observer` functionality until
+            // the polyfill is done loading.
+            if (browserSupportIntersectionObserver) {
+                inViewRef(node);
+            }
+
+            // Check if the consumer sets a ref.
+            if (typeof outerRef === 'function') {
+                outerRef(node);
+            }
+        },
+        [inViewRef, outerRef, setContainerRef, browserSupportIntersectionObserver],
+    );
+
     return (
         <>
-            <picture
-                {...rest}
-                className={classNames(styles.picture, className)}
-                ref={(el): void => {
-                    // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
-                    // element.
-                    setContainerRef(el);
-
-                    // We don't want to turn on the `react-intersection-observer` functionality until
-                    // the polyfill is done loading.
-                    if (browserSupportIntersectionObserver) {
-                        inViewRef(el);
-                    }
-
-                    // `outerRef` is the potential forwarded `ref` passed in from a consumer.
-                    // Not all refs are callable functions, so only try and call it if it is.
-                    if (typeof outerRef === 'function') {
-                        outerRef(el);
-                    }
-                }}
-            >
+            <picture {...rest} className={classNames(styles.picture, className)} ref={setRefs}>
                 {webpSource && (
                     <source
                         type={webpSource.type}

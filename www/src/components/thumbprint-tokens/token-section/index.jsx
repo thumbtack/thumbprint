@@ -68,7 +68,10 @@ const TokenSection = ({ section, platform }) => {
                                                     <td className="tr pv2">
                                                         <TokenExample
                                                             format={token.format}
-                                                            data={token.platforms.javascript.value}
+                                                            exampleData={
+                                                                token.platforms.javascript &&
+                                                                token.platforms.javascript.value
+                                                            }
                                                             displayText={tokenPlatformValues.value}
                                                         />
                                                     </td>

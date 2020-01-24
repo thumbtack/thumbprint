@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## 12.2.0 - 2020-01-22
+
+### Added
+
+-   [Minor] Add `AlertBanner` component in React (Typescript).
+
+### Changed
+
+-   [Patch] Reorganize `Calendar` component files so the types display correctly in docs. (#586)
+
+### Deprecated
+
+-   [Patch] Deprecate usage of `BannerAlert` component.
+
+## 12.1.2 - 2020-01-22
+
+### Fixed
+
+-   [Patch] Re-write ref handling in `Image` component so it works with a change in `react-intersection-observer@8.24.1`.
+
 ## 12.1.1 - 2020-01-18
 
 ### Changed
