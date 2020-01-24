@@ -437,7 +437,6 @@ const MDX = props => {
                                         </Text>
                                     </label>
                                 </div>
-                                <input type="hidden" name="page" value={location.pathname} />
                                 <div className="mb3 mw7">
                                     <TextArea
                                         onChange={v => setFeedbackComment(v)}
@@ -446,6 +445,7 @@ const MDX = props => {
                                         id="feedback-comments"
                                     />
                                 </div>
+                                <input type="hidden" name="page" value={location.pathname} />
                                 <input type="hidden" name="form-name" value="feedback-comments" />
                                 <input
                                     type="hidden"
