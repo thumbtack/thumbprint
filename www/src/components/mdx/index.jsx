@@ -429,6 +429,7 @@ const MDX = props => {
                                         id="feedback-comments"
                                     />
                                 </div>
+                                <input type="hidden" name="page" value={location.pathname} />
                                 <input type="hidden" name="form-name" value="feedback-comments" />
                                 <input
                                     type="hidden"
