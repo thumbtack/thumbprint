@@ -397,6 +397,16 @@ const MDX = props => {
                                 method="POST"
                                 data-netlify="true"
                                 onSubmit={e => {
+                                    // Show a success message (but don't send data to Netlify)
+                                    // if the user clicks on "Send" with an empty text area.
+                                    // The user may hit send without adding comments because they
+                                    // may not have realized that their answer to the first step
+                                    // of this two step form was already recorded.
+                                    if (feedbackComment === '') {
+                                        setFeedbackStep(FEEDBACK_STEPS['feedback-complete']);
+                                        return;
+                                    }
+
                                     e.preventDefault();
 
                                     const form = e.target;
@@ -427,6 +437,7 @@ const MDX = props => {
                                         </Text>
                                     </label>
                                 </div>
+                                <input type="hidden" name="page" value={location.pathname} />
                                 <div className="mb3 mw7">
                                     <TextArea
                                         onChange={v => setFeedbackComment(v)}
@@ -435,7 +446,6 @@ const MDX = props => {
                                         id="feedback-comments"
                                     />
                                 </div>
-                                <input type="hidden" name="page" value={location.pathname} />
                                 <input type="hidden" name="form-name" value="feedback-comments" />
                                 <input
                                     type="hidden"
