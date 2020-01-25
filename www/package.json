@@ -50,6 +50,7 @@
         "react-scroll-marker": "^0.2.1",
         "slugify": "^1.2.9",
         "url-join": "^4.0.1",
+        "uuid": "^3.4.0",
         "warning": "^4.0.1"
     }
 }
