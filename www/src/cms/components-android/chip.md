@@ -18,7 +18,7 @@ A filter chip behaves more like a button and should be used for filtering option
 
 There are two global states: selected and unselected. Unselected states have a 2dp border while selected states have a solid color.
 
-![Chip states](/img/Screen Shot 2020-01-24 at 2.05.50 PM.png "Chip states")
+![Chip states](/img/chip-states.png "Chip states")
 
 ### Size
 
