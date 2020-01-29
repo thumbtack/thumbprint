@@ -1,8 +1,14 @@
 # Thumbprint Global CSS
 
-A dependency of using Thumbprint React or SCSS components is the inclusion of the `@thumbtack/thumbprint-global-css` package.
+A peer dependency of using Thumbprint React or SCSS components is the inclusion of the `@thumbtack/thumbprint-global-css` package.
 
-The output of this package is a small CSS file and it should be the first file included in your project that Thumbprint.
+The output of this package is a small CSS file and it should be the first file included in your project that uses Thumbprint components.
+
+## Installation
+
+```bash
+yarn add @thumbtack/thumbprint-global-css
+```
 
 ## SCSS usage
 
