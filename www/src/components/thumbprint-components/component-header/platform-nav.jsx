@@ -18,6 +18,7 @@ const sortPlatforms = ({ node }) => {
         scss: 3,
         ios: 4,
         android: 5,
+        email: 6,
     };
 
     const { path } = node;
@@ -34,6 +35,7 @@ const getPlatformDisplayName = path => {
         scss: 'SCSS',
         ios: 'iOS',
         android: 'Android',
+        email: 'Email',
     };
 
     return displayName[getPlatformSlugByPath(path)];

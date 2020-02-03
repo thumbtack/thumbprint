@@ -1,0 +1,43 @@
+---
+title: Button
+description: Clickable elements used to perform actions.
+---
+
+import { graphql } from 'gatsby';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Button themes
+
+These are the available `Button` styles for use on light background colors.
+
+```html
+<div class="tp-button-row">
+    <button class="tp-button">Primary</button>
+    <button class="tp-button tp-button--secondary">Secondary</button>
+    <button class="tp-button tp-button--tertiary">Tertiary</button>
+    <button class="tp-button tp-button--caution">Caution</button>
+</div>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-email" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
