@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text } from '@thumbtack/thumbprint-react';
-import { InlineCode } from '../../mdx';
+import { InlineCode } from '../mdx';
 import styles from './prop-type.module.scss';
 
 const EnumPropType = ({ value }) => {
