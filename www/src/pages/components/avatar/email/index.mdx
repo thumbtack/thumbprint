@@ -1,6 +1,6 @@
 ---
-title: Button
-description: Clickable elements used to perform actions.
+title: Avatar
+description: Display user images.
 ---
 
 import { graphql } from 'gatsby';
@@ -11,24 +11,21 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Button themes
+## Avatar options
 
-These are the available `Button` styles for use on light background colors.
+These are the available `Avatar` styles for use on light background colors.
 
 ```html
-<div class="tp-button-row">
-    <button class="tp-button">Primary</button>
-    <button class="tp-button tp-button--secondary">Secondary</button>
-    <button class="tp-button tp-button--tertiary">Tertiary</button>
-    <button class="tp-button tp-button--caution">Caution</button>
-</div>
+{{> avatar src="#" size="30" }}
 ```
+
+## Props
 
 <APITable
     properties={[
         {
-            name: 'text',
-            description: 'The text within the button.',
+            name: 'src',
+            description: 'URL of the user avatar.',
             type: {
                 name: 'string',
             },
@@ -36,13 +33,12 @@ These are the available `Button` styles for use on light background colors.
         },
         {
             name: 'size',
-            description: 'Controls the height, width, and padding.',
+            description: 'Controls the height and width.',
             type: {
                 name: 'enum',
-                options: ['small', 'large'],
+                options: ['30', '60'],
             },
-            deprecated: 'This is going away in a few weeks.',
-            isRequired: false,
+            defaultValue: 72,
         },
     ]}
 />
@@ -52,7 +48,7 @@ These are the available `Button` styles for use on light background colors.
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
