@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import Alert from 'components/alert';
 import { InlineCode } from 'components/mdx';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
@@ -22,6 +23,47 @@ These are the available `Button` styles for use on light background colors.
     <button class="tp-button tp-button--caution">Caution</button>
 </div>
 ```
+
+```js
+APITable.propTypes = {
+    properties: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            description: PropTypes.node.isRequired,
+            type: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                value: PropTypes.string.isRequired,
+            }),
+            defaultValue: PropTypes.string,
+            isRequired: PropTypes.bool,
+            deprecated: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+        }),
+    ).isRequired,
+};
+```
+
+<APITable
+    properties={[
+        {
+            name: 'text',
+            description: 'The text within the button.',
+            type: {
+                name: 'string',
+            },
+            isRequired: true,
+        },
+        {
+            name: 'size',
+            description: 'Controls the height, width, and padding.',
+            type: {
+                name: 'enum',
+                options: ['small', 'large'],
+            },
+            deprecated: 'This is going away in a few weeks.',
+            isRequired: false,
+        },
+    ]}
+/>
 
 <ComponentFooter data={props.data} />
 

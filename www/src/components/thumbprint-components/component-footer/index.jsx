@@ -4,7 +4,7 @@ import { Text } from '@thumbtack/thumbprint-react';
 import { isString, get, find } from 'lodash';
 import Tag from '../../tag';
 import { MDXRenderer, InlineCode, H2, H3 } from '../../mdx';
-import PropType from './prop-type';
+import PropType from '../../api-table/prop-type';
 
 const ComponentFooter = ({ data }) => {
     const { reactComponentProps } = data;
