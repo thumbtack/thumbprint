@@ -1,0 +1,28 @@
+{
+    "name": "@thumbtack/thumbprint-email",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thumbtack/thumbprint.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "author": "Tom Genoni <tom@thumbtack.com>",
+    "license": "Apache-2.0",
+    "engines": {
+        "node": ">=8"
+    },
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-email/",
+    "scripts": {
+        "clear": "rm -rf dist",
+        "generate-css": "mkdir -p dist && node-sass -q src/thumbprint-email.scss dist/thumbprint-email.css"
+    },
+    "dependencies": {
+        "node-sass": "^4.13.1"
+    }
+}
