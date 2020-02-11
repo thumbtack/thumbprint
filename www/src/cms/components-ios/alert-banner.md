@@ -8,7 +8,7 @@ description: Important account information displayed at the top of the applicati
 
 `AlertBanner` should be implemented as a global banner that displays at the top of the application. It is recommended to enforce a max height constraint to guard from the banner growing infinitely.
 
-### Guidelines
+### Content Guidelines
 
 * should be non-dismissible until a required action is completed 
 * should have a link to resolve the required action
