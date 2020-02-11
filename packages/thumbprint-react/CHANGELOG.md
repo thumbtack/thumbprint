@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Patch] Fix `AlertBanner` component to horizontally center items.
+
 ## 12.2.0 - 2020-01-22
 
 ### Added
