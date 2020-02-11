@@ -45,7 +45,7 @@ The global banner should refresh at predesignated triggers based on when the con
 
 ## **Accessibility**
 
-`AlertBanner` responds to the device text setting by omitting the icon when using the extra large text size. In the event that constraints limit the size of the banner, ellipsis are used in the middle of the text so that the action link is always visible at the end.
+`AlertBanner` responds to the device text size setting by omitting the icon when using the extra large text size. In the event that constraints limit the size of the banner, ellipsis are used in the middle of the text so that the action link is always visible at the end.
 
 ## For Thumbtack
 
