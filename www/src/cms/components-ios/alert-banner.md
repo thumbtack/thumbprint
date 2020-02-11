@@ -26,12 +26,14 @@ To define a new global banner, see ContextualInsightView.php in website. Some gl
 
 ## Visibility
 
-The global banner is always visible at the top of the application other than these exceptions:
+A global banner is always visible at the top of the application other than these exceptions:
 
 * pre-login ( hidden )
 * onboarding ( presented over )
 * service setup ( presented over )
 * presented full screen views ( presented over )
+
+Only one global banner is visible at a time based on the pre-defined priority order.
 
 ![](/img/alert-banner-info.png)
 
