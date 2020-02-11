@@ -10,6 +10,25 @@ description: Important account information displayed at the top of the applicati
 
 To define a new global banner, see ContextualInsightView.php in website. Some global banners may also require a new refresh trigger to update immediately after resolving the required action.
 
+## Themes
+
+### Caution
+
+### Info
+
+### Warning
+
+## Visibility
+
+The global banner is always visible at the top of the application other than these exceptions:
+
+* pre-login ( hidden )
+* onboarding ( presented over )
+* service setup ( presented over )
+* presented full screen views ( presented over )
+
+![](/img/alert-banner-info.png)
+
 ## **Refreshing**
 
 The global banner refreshes on the following application events ( only when logged in ):
@@ -20,15 +39,6 @@ The global banner refreshes on the following application events ( only when logg
 * onboarding was dismissed ( including service setup )
 * credit card added, removed, or updated
 * EMR status changed within service settings
-
-## Visibility
-
-The global banner is always visible at the top of the application other than these exceptions:
-
-* pre-login ( hidden )
-* onboarding ( presented over )
-* service setup ( presented over )
-* presented full screen views ( presented over )
 
 ## Animation
 
