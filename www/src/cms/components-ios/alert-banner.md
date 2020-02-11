@@ -75,4 +75,4 @@ The global banner refreshes on the following application events ( only when logg
 * credit card added, removed, or updated
 * EMR status changed within service settings
 
-The global banner is capped at a max height of 33% of the device's full screen.
+The global banner is capped at a max height of 33% of the screen size.
