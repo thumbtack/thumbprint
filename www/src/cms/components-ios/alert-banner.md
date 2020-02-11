@@ -14,9 +14,15 @@ To define a new global banner, see ContextualInsightView.php in website. Some gl
 
 ### Caution
 
+![caution theme example](/img/alert-banner-theme-caution.png "Caution")
+
 ### Info
 
+![info theme example](/img/alert-banner-theme-info.png "Info")
+
 ### Warning
+
+![warning theme example](/img/alert-banner-theme-warning.png "Warning")
 
 ## Visibility
 
