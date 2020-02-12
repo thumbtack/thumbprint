@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Handlebars from 'handlebars';
+import { Helmet } from 'react-helmet';
 import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
@@ -16,20 +17,26 @@ const CodeBlock = props => {
 
     const renderHbs = emailSnippet => {
         // Need to register partials in advance.
-        Handlebars.registerPartial('avatar', '<img src="{{src}}" width="{{size}}" />');
+        Handlebars.registerPartial('avatar', '<button href="#" data-foo="{{foo}}">foo</button>');
         const source = emailSnippet;
         const template = Handlebars.compile(source);
-        return template({});
+        const preInky = `<container>${template({})}</container>`;
+        return preInky;
     };
 
     /* eslint-disable react/no-danger */
     return (
         <div>
             {language === 'email' && shouldRender && (
-                <div
-                    className={`${classes.preview} ${previewThemes[theme]}`}
-                    dangerouslySetInnerHTML={{ __html: renderHbs(children) }}
-                />
+                <>
+                    <Helmet>
+                        <script src="https://get.foundation/emails/docs/assets/js/inky-browser.js" />
+                    </Helmet>
+                    <div
+                        className={`${classes.preview} ${previewThemes[theme]}`}
+                        dangerouslySetInnerHTML={{ __html: renderHbs(children) }}
+                    />
+                </>
             )}
             {language === 'html' && shouldRender && (
                 <div
