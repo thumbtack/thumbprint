@@ -2,8 +2,6 @@
 title: Alert Banner
 description: Important account information displayed at the top of the application.
 ---
-*This documentation page is still under construction, more coming soon...*
-
 ## **Usage**
 
 `AlertBanner` should be implemented as a global banner that displays at the top of the application. It is recommended to enforce a max height constraint to guard from the banner growing infinitely.
