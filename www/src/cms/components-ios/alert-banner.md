@@ -10,7 +10,7 @@ description: Important account information displayed at the top of the applicati
 
 * should be non-dismissible until a required action is completed 
 * should have a link to resolve the required action
-* should have a reasonable character count to avoid being shown with ellipsis
+* should have a reasonable character count to avoid being partially shown with ellipsis
 
 ## Themes
 
