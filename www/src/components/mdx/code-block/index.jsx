@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import Handlebars from 'handlebars';
 import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
@@ -13,9 +14,23 @@ const CodeBlock = props => {
         return <ReactCodeBlock {...props} />;
     }
 
+    const renderHbs = emailSnippet => {
+        // Need to register partials in advance.
+        Handlebars.registerPartial('avatar', '<img src="{{src}}" width="{{size}}" />');
+        const source = emailSnippet;
+        const template = Handlebars.compile(source);
+        return template({});
+    };
+
     /* eslint-disable react/no-danger */
     return (
         <div>
+            {language === 'email' && shouldRender && (
+                <div
+                    className={`${classes.preview} ${previewThemes[theme]}`}
+                    dangerouslySetInnerHTML={{ __html: renderHbs(children) }}
+                />
+            )}
             {language === 'html' && shouldRender && (
                 <div
                     className={`${classes.preview} ${previewThemes[theme]}`}
