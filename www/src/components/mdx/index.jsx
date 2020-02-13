@@ -142,7 +142,12 @@ export const Code = p => {
     const language = p.className && p.className.replace('language-', '');
 
     return (
-        <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
+        <CodeBlock
+            language={language}
+            theme={p.theme}
+            shouldRender={p.shouldRender !== 'false'}
+            emailPartial={p.emailPartial}
+        >
             {p.children}
         </CodeBlock>
     );

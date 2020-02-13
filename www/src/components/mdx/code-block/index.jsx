@@ -7,7 +7,7 @@ import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './index.module.scss';
 
-const renderHbs = async (emailSnippet, component) => {
+const compileEmail = async (emailSnippet, component) => {
     // Grab the partial for the current component.
     const { default: partial } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/${component}/index.hbs`
@@ -24,9 +24,10 @@ const renderHbs = async (emailSnippet, component) => {
     return Inky.releaseTheKraken(`<container>${template({})}</container>`);
 };
 
-const EmailRenderer = ({ theme, code }) => {
+const EmailRenderer = ({ theme, code, emailPartial }) => {
     const [transformedCode, setTransformedCode] = useState(undefined);
-    renderHbs(code, 'avatar').then(html => setTransformedCode(html));
+
+    compileEmail(code, emailPartial).then(html => setTransformedCode(html));
 
     return (
         <div
@@ -37,8 +38,18 @@ const EmailRenderer = ({ theme, code }) => {
     );
 };
 
+EmailRenderer.propTypes = {
+    theme: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    emailPartial: PropTypes.string,
+};
+
+EmailRenderer.defaultProps = {
+    emailPartial: undefined,
+};
+
 const CodeBlock = props => {
-    const { language, shouldRender, theme, children } = props;
+    const { language, shouldRender, emailPartial, theme, children } = props;
 
     if (language === 'jsx' && shouldRender) {
         return <ReactCodeBlock {...props} />;
@@ -47,8 +58,8 @@ const CodeBlock = props => {
     /* eslint-disable react/no-danger */
     return (
         <div>
-            {language === 'email' && shouldRender && (
-                <EmailRenderer theme={theme} code={children} />
+            {language === 'email' && shouldRender && emailPartial && (
+                <EmailRenderer theme={theme} code={children} emailPartial={emailPartial} />
             )}
             {language === 'html' && shouldRender && (
                 <div
