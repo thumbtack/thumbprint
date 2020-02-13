@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Handlebars from 'handlebars';
-import { Helmet } from 'react-helmet';
 import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './index.module.scss';
+
+const renderHbs = async (emailSnippet, component) => {
+    // Grab the partial for the current component.
+    const { default: partial } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/${component}/index.hbs`
+    );
+
+    Handlebars.registerPartial(component, partial);
+
+    const source = emailSnippet;
+    const template = Handlebars.compile(source);
+
+    const { default: InkyImport } = await import('inky/lib/inky');
+    const Inky = new InkyImport();
+
+    return Inky.releaseTheKraken(`<container>${template({})}</container>`);
+};
+
+const EmailRenderer = ({ theme, code }) => {
+    const [transformedCode, setTransformedCode] = useState(undefined);
+    renderHbs(code, 'avatar').then(html => setTransformedCode(html));
+
+    return (
+        <div
+            className={`${classes.preview} ${previewThemes[theme]}`}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: transformedCode }}
+        />
+    );
+};
 
 const CodeBlock = props => {
     const { language, shouldRender, theme, children } = props;
@@ -15,28 +44,11 @@ const CodeBlock = props => {
         return <ReactCodeBlock {...props} />;
     }
 
-    const renderHbs = emailSnippet => {
-        // Need to register partials in advance.
-        Handlebars.registerPartial('avatar', '<button href="#" data-foo="{{foo}}">foo</button>');
-        const source = emailSnippet;
-        const template = Handlebars.compile(source);
-        const preInky = `<container>${template({})}</container>`;
-        return preInky;
-    };
-
     /* eslint-disable react/no-danger */
     return (
         <div>
             {language === 'email' && shouldRender && (
-                <>
-                    <Helmet>
-                        <script src="https://get.foundation/emails/docs/assets/js/inky-browser.js" />
-                    </Helmet>
-                    <div
-                        className={`${classes.preview} ${previewThemes[theme]}`}
-                        dangerouslySetInnerHTML={{ __html: renderHbs(children) }}
-                    />
-                </>
+                <EmailRenderer theme={theme} code={children} />
             )}
             {language === 'html' && shouldRender && (
                 <div

@@ -34,6 +34,7 @@
         "gatsby-transformer-json": "^2.2.22",
         "gatsby-transformer-react-docgen": "^5.0.25",
         "handlebars": "^4.7.2",
+        "inky": "^1.3.7",
         "invariant": "^2.2.4",
         "lodash": "^4.17.4",
         "mousetrap": "^1.6.2",
