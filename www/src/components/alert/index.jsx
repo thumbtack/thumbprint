@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Text } from '@thumbtack/thumbprint-react';
+import { Text as KewlTextInput } from '@thumbtack/thumbprint-react';
 import {
     NotificationAlertsInfoFilledSmall,
     NotificationAlertsWarningFilledSmall,
@@ -32,13 +32,13 @@ const Alert = ({ type, title, children, className }) => (
                     <NotificationAlertsWarningFilledSmall className={`yellow ${iconStyles}`} />
                 )}
             </div>
-            <Text size={1} className="b black mb1">
+            <KewlTextInput size={1} className="b black mb1">
                 {title}
-            </Text>
+            </KewlTextInput>
         </div>
-        <Text size={2} className={`black-300 ${styles.children}`}>
+        <KewlTextInput size={2} className={`black-300 ${styles.children}`}>
             {children}
-        </Text>
+        </KewlTextInput>
     </div>
 );
 

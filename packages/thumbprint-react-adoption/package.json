@@ -1,0 +1,30 @@
+{
+    "name": "@thumbtack/thumbprint-react-adoption",
+    "version": "0.0.0",
+    "bin": {
+        "thumbprint-react-adoption": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thumbtack/thumbprint.git"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "author": "Daniel O'Connor <doconnor@thumbtack.com>",
+    "license": "Apache-2.0",
+    "engines": {
+        "node": ">=8"
+    },
+    "bugs": {
+        "url": "https://github.com/thumbtack/thumbprint/issues"
+    },
+    "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react-adoption/",
+    "dependencies": {
+        "@babel/parser": "^7.8.4",
+        "@babel/traverse": "^7.8.4",
+        "@segment/dependency-report": "^1.1.0",
+        "meow": "^6.0.0"
+    }
+}
