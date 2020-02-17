@@ -26,5 +26,8 @@
         "@babel/traverse": "^7.8.4",
         "@segment/dependency-report": "^1.1.0",
         "meow": "^6.0.0"
+    },
+    "devDependencies": {
+        "tmp": "^0.1.0"
     }
 }

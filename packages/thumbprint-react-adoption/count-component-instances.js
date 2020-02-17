@@ -21,9 +21,18 @@ const countComponentInstances = (component, file) => {
         },
     });
 
+    // Count the number of times the component is used by iterating through
+    // all of the `JSXElement`s.
     traverse.default(ast, {
         JSXElement: ({ node }) => {
             if (node.openingElement.name.name === componentLocalName) {
+                count += 1;
+            }
+        },
+        Identifier: n => {
+            const { node } = n;
+
+            if (node.name === componentLocalName && n.parent.type !== 'ImportSpecifier') {
                 count += 1;
             }
         },
