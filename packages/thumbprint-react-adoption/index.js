@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const meow = require('meow');
 const DependencyReport = require('@segment/dependency-report');
 const countComponentInstances = require('./count-component-instances');
 
@@ -24,5 +23,6 @@ const report = new DependencyReport({
         };
     });
 
+    // eslint-disable-next-line no-console
     console.log(components);
 })();
