@@ -18,7 +18,7 @@ const compileEmail = async (emailSnippet, component) => {
     const source = emailSnippet;
     const template = Handlebars.compile(source);
 
-    const { default: InkyImport } = await import('inky/lib/inky');
+    const { default: InkyImport } = await import('../../../../../node_modules/inky/lib/inky');
     const Inky = new InkyImport();
 
     return Inky.releaseTheKraken(`<container>${template({})}</container>`);

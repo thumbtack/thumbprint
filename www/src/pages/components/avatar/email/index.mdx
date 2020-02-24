@@ -15,11 +15,31 @@ import APITable from 'components/api-table';
 
 These are the available `Avatar` styles for use on light background colors.
 
+### Pro
+
 ```email emailPartial=avatar
 {{> avatar
-    src="https://d1vg1gqh4nkuns.cloudfront.net/i/302055784058904755/width/400.webp"
-    size="200"
+    src="https://www.placecage.com/480/480"
+    size="72"
 }}
+```
+
+### Customer
+
+```email emailPartial=avatar
+{{> avatar
+    src="https://www.placecage.com/480/480"
+    size="72"
+    customer="true"
+}}
+```
+
+### Blank
+
+These are the available `Avatar` styles for use on light background colors.
+
+```email emailPartial=avatar
+{{> avatar }}
 ```
 
 ## Props
@@ -32,16 +52,23 @@ These are the available `Avatar` styles for use on light background colors.
             type: {
                 name: 'string',
             },
-            isRequired: true,
         },
         {
             name: 'size',
             description: 'Controls the height and width.',
             type: {
                 name: 'enum',
-                options: ['30', '60'],
+                options: ['30', '72'],
             },
             defaultValue: '72',
+        },
+        {
+            name: 'customer',
+            description: 'Defines square of circular avatar.',
+            type: {
+                name: 'boolean',
+            },
+            defaultValue: 'false',
         },
     ]}
 />

@@ -11,38 +11,36 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Button themes
+## Button options
 
 These are the available `Button` styles for use on light background colors.
 
-```html
-<div class="tp-button-row">
-    <button class="tp-button">Primary</button>
-    <button class="tp-button tp-button--secondary">Secondary</button>
-    <button class="tp-button tp-button--tertiary">Tertiary</button>
-    <button class="tp-button tp-button--caution">Caution</button>
-</div>
+```email emailPartial=button
+{{> button
+    href="https://thumbtack.com"
+    text="My button"
+}}
 ```
+
+## Props
 
 <APITable
     properties={[
         {
-            name: 'text',
-            description: 'The text within the button.',
+            name: 'href',
+            description: 'URL of the button destination.',
             type: {
                 name: 'string',
             },
             isRequired: true,
         },
         {
-            name: 'size',
-            description: 'Controls the height, width, and padding.',
+            name: 'text',
+            description: 'Text content of the button.',
             type: {
-                name: 'enum',
-                options: ['small', 'large'],
+                name: 'string',
             },
-            deprecated: 'This is going away in a few weeks.',
-            isRequired: false,
+            isRequired: true,
         },
     ]}
 />
