@@ -6,6 +6,7 @@ import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './index.module.scss';
+import './button.scss'; // TEMP
 
 const compileEmail = async (emailSnippet, component) => {
     // Grab the partial for the current component.
