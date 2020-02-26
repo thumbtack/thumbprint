@@ -1,0 +1,68 @@
+---
+title: Card
+description: Simple callouts for customers.
+---
+
+import { graphql } from 'gatsby';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import APITable from 'components/api-table';
+
+<ComponentHeader data={props.data} />
+
+Cards
+
+### Default
+
+```email emailPartial=card
+{{> card
+    iconUrl="https://staging-email-preview.thumbtack.io/img/icons/dollar_green@2x.png"
+    title="When you’re done, rate this pro."
+    text="Please respect professional boundaries. Inappropriate requests of any kind will not be tolerated and may be reported."
+    linkText="Review this pro"
+    linkHref="https://thumback.com"
+}}
+```
+
+## Props
+
+<APITable
+    properties={[
+        {
+            name: 'href',
+            description: 'URL of the button destination.',
+            type: {
+                name: 'string',
+            },
+            isRequired: true,
+        },
+        {
+            name: 'text',
+            description: 'Text content of the button.',
+            type: {
+                name: 'string',
+            },
+            isRequired: true,
+        },
+    ]}
+/>
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/card/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-email" }) {
+            ...PackageTableFragment
+        }
+    }
+`;

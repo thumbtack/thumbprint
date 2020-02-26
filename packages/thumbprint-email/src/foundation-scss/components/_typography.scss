@@ -1,6 +1,4 @@
-// Foundation for Emails by ZURB
-// zurb.com/ink/
-// Licensed under MIT Open Source
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
 ////
 /// @group typography
@@ -12,7 +10,7 @@ $global-font-color: $black !default;
 
 /// Global font family.
 /// @type Font
-$body-font-family: Helvetica, Arial, sans-serif !default;
+$body-font-family: $tp-font-family__base !default;
 
 /// Global font weight.
 /// @type Keyword
@@ -40,7 +38,7 @@ $header-font-family: $body-font-family !default;
 
 /// Font family of headings.
 /// @type List
-$header-font-weight: $global-font-weight !default;
+$header-font-weight: $tp-font-weight__bold !default;
 
 /// Font size of `<h1>` elements.
 /// @type Number
@@ -180,10 +178,12 @@ $remove-ios-blue: true !default;
 
     th {
         padding-bottom: $margin;
-        @if $align == 'left' {
+
+        @if $align== 'left' {
             text-align: left;
         }
-        @elseif $align == 'right' {
+
+        @elseif $align=='right' {
             text-align: right;
         } @else {
             text-align: center;

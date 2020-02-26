@@ -1,0 +1,20 @@
+// SCSS file for thumbprint docs.
+
+.thumbprint-email-example {
+    @import 'thumbprint-email';
+
+    // This extra styling is for the docs only.
+    // The max-width a bit to wide to fit into the example box.
+
+    table.container,
+    center {
+        width: auto;
+        max-width: 580px;
+        min-width: 0;
+    }
+
+    center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

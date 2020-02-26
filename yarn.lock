@@ -2417,6 +2417,14 @@
     apollo-server-lambda "^2.9.7"
     graphql "^14.5.8"
 
+"@thumbtack/thumbprint-tokens@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-tokens/-/thumbprint-tokens-12.1.0.tgz#0917fc10c10b7b269e9affb000285f135729ed93"
+  integrity sha512-tEWxFViqzZKkByjQfc3WErn3YnCeSa05BDna0r4L37sVizMJGmfadsm5KAiZZOw0sZjJz3j+KGhPTgfRFKLDHg==
+  dependencies:
+    apollo-server-lambda "^2.9.7"
+    graphql "^14.5.8"
+
 "@thumbtack/thumbprint-tokens@^8.3.3":
   version "8.3.3"
   resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-tokens/-/thumbprint-tokens-8.3.3.tgz#9c7aa9b83099c16a452db1c26b53f2d1acbd4e68"

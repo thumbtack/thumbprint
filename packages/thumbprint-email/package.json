@@ -20,9 +20,11 @@
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-email/",
     "scripts": {
         "clear": "rm -rf dist",
-        "generate-css": "mkdir -p dist && node-sass -q src/thumbprint-email.scss dist/thumbprint-email.css"
+        "generate-css": "mkdir -p dist && node-sass -q src/thumbprint-email.scss dist/thumbprint-email.css --importer=./node-sass-importer.js"
     },
-    "dependencies": {
-        "node-sass": "^4.13.1"
+    "devDependencies": {
+        "@thumbtack/thumbprint-tokens": "^12.1.0",
+        "node-sass": "^4.13.1",
+        "node-sass-tilde-importer": "2.0.0-alpha.1"
     }
 }

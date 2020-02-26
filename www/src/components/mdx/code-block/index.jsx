@@ -6,7 +6,7 @@ import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './index.module.scss';
-import './button.scss'; // TEMP
+import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'; // TEMP
 
 const compileEmail = async (emailSnippet, component) => {
     // Grab the partial for the current component.
@@ -22,7 +22,21 @@ const compileEmail = async (emailSnippet, component) => {
     const { default: InkyImport } = await import('../../../../../node_modules/inky/lib/inky');
     const Inky = new InkyImport();
 
-    return Inky.releaseTheKraken(`<container>${template({})}</container>`);
+    return Inky.releaseTheKraken(
+        `<div class="thumbprint-email-example">
+            <table class="body">
+                <tr>
+                    <td class="center" align="center" valign="top">
+                        <center>
+                            <container>
+                                ${template({})}
+                            </container>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>`,
+    );
 };
 
 const EmailRenderer = ({ theme, code, emailPartial }) => {
