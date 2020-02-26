@@ -8,16 +8,26 @@ import prismTheme from './prism-theme';
 import styles from './index.module.scss';
 import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'; // TEMP
 
-const compileEmail = async (emailSnippet, component) => {
-    if (component) {
-        // Grab the partial for the current component.
-        const { default: partial } = await import(
-            `raw-loader!../../../../../packages/thumbprint-email/src/components/${component}/index.hbs`
-        );
+const compileEmail = async emailSnippet => {
+    const { default: button } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/button/index.hbs`
+    );
+    const { default: avatar } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/avatar/index.hbs`
+    );
+    const { default: card } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/card/index.hbs`
+    );
+    const { default: image } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
+    );
 
-        Handlebars.registerPartial(component, partial);
-    }
-    const source = component ? Handlebars.compile(emailSnippet)({}) : emailSnippet;
+    Handlebars.registerPartial('button', button);
+    Handlebars.registerPartial('avatar', avatar);
+    Handlebars.registerPartial('card', card);
+    Handlebars.registerPartial('image', image);
+
+    const source = Handlebars.compile(emailSnippet)();
 
     const { default: InkyImport } = await import('../../../../../node_modules/inky/lib/inky');
     const Inky = new InkyImport();
@@ -39,10 +49,10 @@ const compileEmail = async (emailSnippet, component) => {
     );
 };
 
-const EmailRenderer = ({ theme, code, emailPartial }) => {
+const EmailRenderer = ({ theme, code }) => {
     const [transformedCode, setTransformedCode] = useState(undefined);
 
-    compileEmail(code, emailPartial).then(html => setTransformedCode(html));
+    compileEmail(code).then(html => setTransformedCode(html));
 
     return (
         <div
@@ -56,15 +66,10 @@ const EmailRenderer = ({ theme, code, emailPartial }) => {
 EmailRenderer.propTypes = {
     theme: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
-    emailPartial: PropTypes.string,
-};
-
-EmailRenderer.defaultProps = {
-    emailPartial: undefined,
 };
 
 const CodeBlock = props => {
-    const { language, shouldRender, emailPartial, theme, children } = props;
+    const { language, shouldRender, theme, children } = props;
 
     if (language === 'jsx' && shouldRender) {
         return <ReactCodeBlock {...props} />;
@@ -74,7 +79,7 @@ const CodeBlock = props => {
     return (
         <div>
             {language === 'email' && shouldRender && (
-                <EmailRenderer theme={theme} code={children} emailPartial={emailPartial} />
+                <EmailRenderer theme={theme} code={children} />
             )}
             {language === 'html' && shouldRender && (
                 <div
