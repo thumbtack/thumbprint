@@ -1,0 +1,11 @@
+<img
+    src="{{src}}"
+    alt="{{alt}}"
+    {{#if align }} class="float-{{align}}" {{/if}}
+    width="{{~#if width ~}} {{~width~}} {{~else~}} 100% {{~/if~}}"
+    border="0"
+    style="
+        width: 100%;
+        {{#if width}} max-width:{{width~}}px {{/if}}
+    "
+/>

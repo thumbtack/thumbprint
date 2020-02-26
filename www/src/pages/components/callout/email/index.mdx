@@ -1,6 +1,6 @@
 ---
-title: Card
-description: Simple callouts for customers.
+title: Callout
+description: Box for content.
 ---
 
 import { graphql } from 'gatsby';
@@ -11,29 +11,15 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-Cards
+Images
 
 ### Default
 
-```email emailPartial=card
-{{> card
-    iconUrl="https://staging-email-preview.thumbtack.io/img/icons/dollar_green@2x.png"
-    title="When you’re done, rate this pro."
-    text="Please respect professional boundaries. Inappropriate requests of any kind will not be tolerated and may be reported."
-    linkText="Review this pro"
-    linkHref="https://thumback.com"
-}}
-```
-
-```email emailPartial=card
-{{> card
-    iconUrl="https://staging-email-preview.thumbtack.io/img/icons/dollar_green@2x.png"
-    title="When you’re done, rate this pro."
-    text="Please respect professional boundaries. Inappropriate requests of any kind will not be tolerated and may be reported."
-    linkText="Review this pro"
-    linkHref="https://thumback.com"
-    type="secondary"
-}}
+```email
+<callout>
+    <h1 class="text-center">Content</h1>
+    <div class="text-center">She was so deeply imbedded in my consciousness that for the first year of school I seem to have believed that.</div>
+</callout>
 ```
 
 ## Props
@@ -64,7 +50,7 @@ Cards
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/card/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/callout/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

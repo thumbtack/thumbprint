@@ -83,12 +83,12 @@
 
     table.body .right-text-pad,
     table.body .text-pad-right {
-        padding-left: $text-padding !important;
+        padding-left: $tp-space__3 !important;
     }
 
     table.body .left-text-pad,
     table.body .text-pad-left {
-        padding-right: $text-padding !important;
+        padding-right: $tp-space__3 !important;
     }
 
     //menu

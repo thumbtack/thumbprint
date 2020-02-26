@@ -1,0 +1,38 @@
+table.callout {
+    margin-bottom: $tp-space__3;
+    margin-bottom: $tp-space__3;
+    width: 100%;
+}
+
+th.callout-inner {
+    width: 100%;
+    border: none;
+    padding: $tp-space__3;
+    background: $tp-color__gray-200;
+
+    &.secondary {
+        background: $tp-color__blue-100;
+    }
+
+    &.flush {
+        &-all {
+            padding: 0;
+        }
+
+        &-top {
+            padding-top: 0;
+        }
+
+        &-left {
+            padding-left: 0;
+        }
+
+        &-bottom {
+            padding-bottom: 0;
+        }
+
+        &-right {
+            padding-right: 0;
+        }
+    }
+}

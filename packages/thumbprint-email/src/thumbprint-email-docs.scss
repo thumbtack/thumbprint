@@ -6,10 +6,25 @@
     // This extra styling is for the docs only.
     // The max-width a bit to wide to fit into the example box.
 
+    table.body {
+        // Adds a striped background to show edges of email
+        background-image: linear-gradient(
+            45deg,
+            #eee 4.55%,
+            transparent 4.55%,
+            transparent 50%,
+            #eee 50%,
+            #eee 54.55%,
+            transparent 54.55%,
+            transparent 100%
+        );
+        background-size: 15.56px 15.56px;
+    }
+
     table.container,
     center {
-        width: auto;
-        max-width: 580px;
+        width: 100%;
+        max-width: $global-width;
         min-width: 0;
     }
 

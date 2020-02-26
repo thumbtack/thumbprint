@@ -9,15 +9,15 @@ import styles from './index.module.scss';
 import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'; // TEMP
 
 const compileEmail = async (emailSnippet, component) => {
-    // Grab the partial for the current component.
-    const { default: partial } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/${component}/index.hbs`
-    );
+    if (component) {
+        // Grab the partial for the current component.
+        const { default: partial } = await import(
+            `raw-loader!../../../../../packages/thumbprint-email/src/components/${component}/index.hbs`
+        );
 
-    Handlebars.registerPartial(component, partial);
-
-    const source = emailSnippet;
-    const template = Handlebars.compile(source);
+        Handlebars.registerPartial(component, partial);
+    }
+    const source = component ? Handlebars.compile(emailSnippet)({}) : emailSnippet;
 
     const { default: InkyImport } = await import('../../../../../node_modules/inky/lib/inky');
     const Inky = new InkyImport();
@@ -29,7 +29,7 @@ const compileEmail = async (emailSnippet, component) => {
                     <td class="center" align="center" valign="top">
                         <center>
                             <container>
-                                ${template({})}
+                                ${source}
                             </container>
                         </center>
                     </td>
@@ -73,7 +73,7 @@ const CodeBlock = props => {
     /* eslint-disable react/no-danger */
     return (
         <div>
-            {language === 'email' && shouldRender && emailPartial && (
+            {language === 'email' && shouldRender && (
                 <EmailRenderer theme={theme} code={children} emailPartial={emailPartial} />
             )}
             {language === 'html' && shouldRender && (

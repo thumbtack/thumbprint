@@ -13,7 +13,7 @@ table.button {
             border-radius: $tp-corner-radius__base;
 
             a {
-                font-family: Mark;
+                font-family: $tp-font-family__base;
                 font-size: $tp-font__body__1__size;
                 font-weight: $tp-font-weight__bold;
                 color: $tp-color__white;
