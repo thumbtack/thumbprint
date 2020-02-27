@@ -9,11 +9,14 @@ import styles from './index.module.scss';
 import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'; // TEMP
 
 const compileEmail = async emailSnippet => {
+    const { default: avatar } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/avatar/index.hbs`
+    );
     const { default: button } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/button/index.hbs`
     );
-    const { default: avatar } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/avatar/index.hbs`
+    const { default: callout } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/callout/index.hbs`
     );
     const { default: card } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/card/index.hbs`
@@ -22,8 +25,9 @@ const compileEmail = async emailSnippet => {
         `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
     );
 
-    Handlebars.registerPartial('button', button);
     Handlebars.registerPartial('avatar', avatar);
+    Handlebars.registerPartial('button', button);
+    Handlebars.registerPartial('callout', callout);
     Handlebars.registerPartial('card', card);
     Handlebars.registerPartial('image', image);
 

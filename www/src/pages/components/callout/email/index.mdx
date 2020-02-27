@@ -16,7 +16,9 @@ Images
 ### Default
 
 ```email
-<callout class="flush-bottom">
+{{#> callout
+    flush="bottom"
+}}
     <h1 class="text-center">Get the app.</h1>
     <p class="text-center">It's free. And it's how busy pros stay busy.</p>
     <spacer size="8" />
@@ -25,7 +27,23 @@ Images
         width="368"
         align="center"
     }}
-</callout>
+{{/callout}}
+```
+
+```email
+{{#> callout
+    backgroundImage="https://d1vg1gqh4nkuns.cloudfront.net/i/323307114241613929/width/768.jpeg"
+    flush="bottom"
+}}
+    <h1 class="text-center white">Get the app.</h1>
+    <p class="text-center white">It's free. And it's how busy pros stay busy.</p>
+    <spacer size="8" />
+    {{> image
+        src="https://staging-email-preview.thumbtack.io/img/illustrations/Phone.png"
+        width="368"
+        align="center"
+    }}
+{{/callout}}
 ```
 
 ## Props

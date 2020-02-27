@@ -1,0 +1,9 @@
+{{~#if backgroundImage ~}}
+<div style="background-image:url({{~backgroundImage~}})" class="callout-bkg-img">
+    {{~/if~}}
+    <callout class="{{~#if type ~}} {{~type~}} {{~/if~}} {{~#if flush ~}} flush-{{~flush~}} {{~/if~}}">
+        {{> @partial-block }}
+    </callout>
+    {{~#if backgroundImage ~}}
+</div>
+{{~/if~}}
