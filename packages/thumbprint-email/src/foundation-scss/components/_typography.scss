@@ -76,8 +76,13 @@ p {
     margin-bottom: $tp-space__3;
 }
 
-small .small {
+small,
+.small {
     font-size: $tp-font__body__2__size;
+}
+
+.small {
+    line-height: $tp-font__body__2__line-height;
 }
 
 a {

@@ -1,6 +1,10 @@
 // SCSS file for thumbprint docs.
 
 .thumbprint-email-example {
+    * {
+        box-sizing: content-box;
+    }
+
     @import 'thumbprint-email';
 
     // This extra styling is for the docs only.

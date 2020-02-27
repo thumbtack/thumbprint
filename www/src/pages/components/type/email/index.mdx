@@ -1,0 +1,49 @@
+---
+title: Type
+description: Styles for header and body text.
+---
+
+import { graphql } from 'gatsby';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import APITable from 'components/api-table';
+
+<ComponentHeader data={props.data} />
+
+Images
+
+### Titles
+
+```email
+<h1>This is a header</h1>
+<h2>This is a header</h2>
+<h3>This is a header</h3>
+<h4>This is a header</h4>
+```
+
+### Text
+
+```email
+<p>She was so deeply imbedded in my consciousness that for the first year of school I seem to have believed that each of my teachers was my mother in disguise.</p>
+<p class="small">She was so deeply imbedded in my consciousness that for the first year of school I seem to have believed that each of my teachers was my mother in disguise.</p>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/type/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-email" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
