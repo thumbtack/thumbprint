@@ -1,6 +1,6 @@
 ---
-title: Button
-description: Clickable elements used to perform actions.
+title: Hero
+description: Box for content.
 ---
 
 import { graphql } from 'gatsby';
@@ -11,37 +11,20 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Button options
-
-These are the available `Button` styles for use on light background colors.
+Images
 
 ### Default
 
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Primary"
+```email
+{{#> hero
+    backgroundImage="https://d1vg1gqh4nkuns.cloudfront.net/i/323307114241613929/width/768.jpeg"
+    flush="bottom"
+    height="300"
 }}
-```
-
-### Tertiary
-
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Tertiary"
-    tertiary="true"
-}}
-```
-
-### Align
-
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Tertiary"
-    center="true"
-}}
+    <h1 class="text-center white">Get the app.</h1>
+    <p class="text-center white">It's free. And it's how busy pros stay busy.</p>
+    <spacer size="8" />
+{{/hero}}
 ```
 
 ## Props
@@ -72,7 +55,7 @@ These are the available `Button` styles for use on light background colors.
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/hero/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

@@ -1,3 +1,9 @@
-<button href="{{href}}" class="{{~#if tertiary ~}} tertiary {{~/if~}}">
-    {{text}}
-</button>
+{{#if center}}
+<center>
+    {{/if}}
+    <button href="{{href}}" class="{{~#if tertiary ~}} tertiary {{~/if~}}">
+        {{text}}
+    </button>
+    {{#if center}}
+</center>
+{{/if}}

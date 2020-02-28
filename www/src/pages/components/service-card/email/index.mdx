@@ -1,5 +1,5 @@
 ---
-title: Callout
+title: Service Card
 description: Box for content.
 ---
 
@@ -16,34 +16,35 @@ Images
 ### Default
 
 ```email
-{{#> callout
-    flush="bottom"
+{{> serviceCard
+    image="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
+    title="Piano Lessons"
 }}
-    <h1 class="text-center">Get the app.</h1>
-    <p class="text-center">It's free. And it's how busy pros stay busy.</p>
-    <spacer size="8" />
-    {{> image
-        src="https://staging-email-preview.thumbtack.io/img/illustrations/Phone.png"
-        width="368"
-        align="center"
-    }}
-{{/callout}}
 ```
 
+### Default
+
 ```email
-{{#> callout
-    backgroundImage="https://d1vg1gqh4nkuns.cloudfront.net/i/323307114241613929/width/768.jpeg"
-    flush="bottom"
-}}
-    <h1 class="text-center white">Get the app.</h1>
-    <p class="text-center white">It's free. And it's how busy pros stay busy.</p>
-    <spacer size="8" />
-    {{> image
-        src="https://staging-email-preview.thumbtack.io/img/illustrations/Phone.png"
-        width="368"
-        align="center"
-    }}
-{{/callout}}
+<row>
+    <columns>
+        {{> serviceCard
+            image="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
+            title="Piano Lessons"
+        }}
+    </columns>
+    <columns>
+        {{> serviceCard
+            image="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
+            title="Piano Lessons"
+        }}
+    </columns>
+    <columns>
+        {{> serviceCard
+            image="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/1024/aspect/8-5.jpeg"
+            title="Piano Lessons"
+        }}
+    </columns>
+</row>
 ```
 
 ## Props
@@ -74,7 +75,7 @@ Images
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/callout/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/service-card/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

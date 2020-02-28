@@ -15,21 +15,29 @@ const compileEmail = async emailSnippet => {
     const { default: button } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/button/index.hbs`
     );
-    const { default: callout } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/callout/index.hbs`
-    );
     const { default: card } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/card/index.hbs`
+    );
+    const { default: hero } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/hero/index.hbs`
     );
     const { default: image } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
     );
+    const { default: serviceCard } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/service-card/index.hbs`
+    );
+    const { default: upsell } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/upsell/index.hbs`
+    );
 
     Handlebars.registerPartial('avatar', avatar);
     Handlebars.registerPartial('button', button);
-    Handlebars.registerPartial('callout', callout);
     Handlebars.registerPartial('card', card);
+    Handlebars.registerPartial('hero', hero);
     Handlebars.registerPartial('image', image);
+    Handlebars.registerPartial('serviceCard', serviceCard);
+    Handlebars.registerPartial('upsell', upsell);
 
     const source = Handlebars.compile(emailSnippet)();
 

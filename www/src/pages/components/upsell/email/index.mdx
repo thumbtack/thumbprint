@@ -1,6 +1,6 @@
 ---
-title: Button
-description: Clickable elements used to perform actions.
+title: Upsell
+description: Box for content.
 ---
 
 import { graphql } from 'gatsby';
@@ -11,37 +11,28 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Button options
-
-These are the available `Button` styles for use on light background colors.
+Images
 
 ### Default
 
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Primary"
+```email
+{{#> upsell
+    flush="bottom"
 }}
-```
-
-### Tertiary
-
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Tertiary"
-    tertiary="true"
-}}
-```
-
-### Align
-
-```email emailPartial=button
-{{> button
-    href="https://thumbtack.com"
-    text="Tertiary"
-    center="true"
-}}
+    <h1 class="text-center">Get the app.</h1>
+    <p class="text-center">It's free. And it's how busy pros stay busy.</p>
+    {{> button
+        href="https://thumbtack.com"
+        text="Get the app"
+        center="true"
+    }}
+    <spacer size="8" />
+    {{> image
+        src="https://staging-email-preview.thumbtack.io/img/illustrations/Phone.png"
+        width="368"
+        align="center"
+    }}
+{{/upsell}}
 ```
 
 ## Props
@@ -72,7 +63,7 @@ These are the available `Button` styles for use on light background colors.
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/upsell/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
