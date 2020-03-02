@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 12.2.1 - 2020-03-02
+
 ### Changed
 
 -   [Patch] Tweak color of `muted` `LoaderDots` to use `black-300`. (#643)
