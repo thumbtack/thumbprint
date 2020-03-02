@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Tweak color of `muted` `LoaderDots` to use `black-300`. (#643)
+
 ### Fixed
 
 -   [Patch] Fix `AlertBanner` component to horizontally center items.
