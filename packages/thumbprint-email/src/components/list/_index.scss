@@ -1,0 +1,18 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+ul,
+ol {
+    margin-left: $tp-space__4;
+
+    li {
+        padding-left: $tp-space__3;
+    }
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}

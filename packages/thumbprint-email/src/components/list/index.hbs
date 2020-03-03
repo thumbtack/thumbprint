@@ -1,0 +1,12 @@
+<img
+    alt="Avatar"
+    src="{{~#if src ~}} {{~src~}} {{~else~}} https://staging-email-preview.thumbtack.io/img/icons/empty-profile.png {{~/if~}}"
+    width="{{~#if size ~}} {{~size~}} {{~else~}} 72 {{~/if~}}"
+    height="{{~#if size ~}} {{~size~}} {{~else~}} 72 {{~/if~}}"
+    style="
+        max-width:{{~#if size~}} {{~size~}}px {{~else~}} 72px {{~/if~}};
+        border-radius: {{~#if customer ~}} 50% {{~else~}} 3px {{~/if~}};
+        object-fit: cover;
+        object-position: center center;
+    "
+>

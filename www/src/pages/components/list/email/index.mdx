@@ -1,6 +1,6 @@
 ---
-title: Card
-description: Simple callouts for customers.
+title: List
+description: Styling lists with bullets, numbers, or letters.
 ---
 
 import { graphql } from 'gatsby';
@@ -13,26 +13,46 @@ import APITable from 'components/api-table';
 
 Cards are used to callout certain features or actions Thumbtack is requesting of the recipient.
 
-### Example
+### Basic HTML lists
 
 ```email
-{{> card
-    iconUrl="https://staging-email-preview.thumbtack.io/img/icons/dollar_green@2x.png"
-    title="When you’re done, rate this pro."
-    text="Please respect professional boundaries. Inappropriate requests of any kind will not be tolerated and may be reported."
-    linkText="Review this pro"
-    linkHref="https://thumback.com"
-}}
+<ul>
+    <li>item one</li>
+    <li>
+        item two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+    </li>
+    <li>item three</li>
+</ul>
 ```
 
-Not all options are required. In the following example there is no link, we’re simply letting the user know what will happen, not requesting an action.
+```email
+<ol>
+    <li>item one</li>
+    <li>
+        item two ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.
+    </li>
+    <li>item three</li>
+</ol>
+```
+
+### Boxed lists
 
 ```email
-{{> card
-    iconUrl="https://staging-email-preview.thumbtack.io/img/icons/charges@2x.png"
-    title="What happens after 4 hours?"
-    text="You’ll be needing to do someting that we’ll be sure to tell you about."
-}}
+{{#> block type="secondary"}}
+    <h1>This is the title</h1>
+    <div class="b">This is a list heading</div>
+    <div>Oh, to be a center fielder, a center fielder and nothing more.</div>
+    <spacer size="16" />
+    <hr />
+    <div class="b">This is a list heading</div>
+    <div>Oh, to be a center fielder, a center fielder and nothing more.</div>
+    <spacer size="16" />
+    <hr />
+    <div class="b">This is a list heading</div>
+    <div>Oh, to be a center fielder, a center fielder and nothing more.</div>
+{{/block}}
 ```
 
 ## Props
@@ -82,7 +102,7 @@ Not all options are required. In the following example there is no link, we’re
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/card/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/list/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment

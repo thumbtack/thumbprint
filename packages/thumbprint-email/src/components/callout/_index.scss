@@ -10,8 +10,10 @@ th.callout-inner {
     padding: $tp-space__4;
     background: $tp-color__gray-200;
 
-    &.secondary {
-        background: $tp-color__blue-100;
+    &.type {
+        &-secondary {
+            background: $tp-color__blue-100;
+        }
     }
 
     &.flush {

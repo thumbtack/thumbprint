@@ -13,34 +13,59 @@ import APITable from 'components/api-table';
 
 ## Button options
 
-These are the available `Button` styles for use on light background colors.
+These are the two available `Button` styles for use on light background colors.
 
 ### Default
 
-```email emailPartial=button
+```email
 {{> button
     href="https://thumbtack.com"
     text="Primary"
 }}
 ```
 
-### Tertiary
+### Secondary
 
-```email emailPartial=button
+```email
 {{> button
     href="https://thumbtack.com"
-    text="Tertiary"
-    tertiary="true"
+    text="Secondary"
+    secondary="true"
 }}
 ```
 
-### Align
+### Alignment
 
-```email emailPartial=button
+Buttons are left-aligned by default. They can be also be centered aligned with the `center` attribute.
+
+```email
 {{> button
     href="https://thumbtack.com"
-    text="Tertiary"
+    text="Centered button"
     center="true"
+}}
+```
+
+### Full width
+
+By default buttons will expand to the full-width of their container.
+
+-   Buttons can be forced to expand on desktop with the `forceExpanded` attribute.
+-   Buttons can be forced to to remain unexpanded on desktop and mobile with the `preventExpanded` attribute.
+
+```email
+{{> button
+    href="https://thumbtack.com"
+    text="Full width button"
+    forceExpanded="true"
+}}
+```
+
+```email
+{{> button
+    href="https://thumbtack.com"
+    text="Full width button"
+    preventExpanded="true"
 }}
 ```
 
@@ -63,6 +88,27 @@ These are the available `Button` styles for use on light background colors.
                 name: 'string',
             },
             isRequired: true,
+        },
+        {
+            name: 'center',
+            description: 'Centers button.',
+            type: {
+                name: 'boolean',
+            },
+        },
+        {
+            name: 'forceExpanded',
+            description: 'Forces button to remain full width at all breakpoints.',
+            type: {
+                name: 'boolean',
+            },
+        },
+        {
+            name: 'preventExpanded',
+            description: 'Forces button to remain unexpaned at all breakpoints.',
+            type: {
+                name: 'boolean',
+            },
         },
     ]}
 />

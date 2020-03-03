@@ -26,16 +26,16 @@ table.button {
     }
 }
 
-table.button.tertiary {
+table.button.secondary {
     table {
         td {
             background: $tp-color__white;
-            color: $tp-color__black-300;
+            color: $tp-color__blue;
 
             a {
                 background: $tp-color__white;
                 border: 2px solid $tp-color__gray;
-                color: $tp-color__black-300;
+                color: $tp-color__blue;
                 padding: 11px 22px;
                 border-radius: $tp-corner-radius__base;
             }
