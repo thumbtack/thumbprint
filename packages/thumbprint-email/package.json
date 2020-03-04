@@ -1,6 +1,9 @@
 {
     "name": "@thumbtack/thumbprint-email",
     "version": "0.0.0",
+    "author": "Tom Genoni <tom@thumbtack.com>",
+    "main": "dist/thumbprint-email.css",
+    "style": "dist/thumbprint-email.css",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/thumbtack/thumbprint.git"
@@ -9,7 +12,6 @@
         "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
-    "author": "Tom Genoni <tom@thumbtack.com>",
     "license": "Apache-2.0",
     "engines": {
         "node": ">=8"
