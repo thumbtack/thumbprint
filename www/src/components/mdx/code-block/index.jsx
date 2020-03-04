@@ -24,6 +24,9 @@ const compileEmail = async emailSnippet => {
     const { default: hero } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/hero/index.hbs`
     );
+    const { default: icon } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/icon/index.hbs`
+    );
     const { default: image } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
     );
@@ -40,6 +43,7 @@ const compileEmail = async emailSnippet => {
     Handlebars.registerPartial('card', card);
     Handlebars.registerPartial('hero', hero);
     Handlebars.registerPartial('image', image);
+    Handlebars.registerPartial('icon', icon);
     Handlebars.registerPartial('serviceCard', serviceCard);
     Handlebars.registerPartial('upsell', upsell);
 
