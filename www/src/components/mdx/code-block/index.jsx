@@ -31,7 +31,7 @@ const compileEmail = async emailSnippet => {
         `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
     );
     const { default: serviceCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/service-card/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/serviceCard/index.hbs`
     );
     const { default: upsell } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/upsell/index.hbs`
