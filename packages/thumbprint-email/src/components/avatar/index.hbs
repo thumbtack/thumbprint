@@ -1,12 +1,26 @@
-<img
-    alt="Avatar"
+<img alt="Avatar"
     src="{{~#if src ~}} {{~src~}} {{~else~}} https://staging-email-preview.thumbtack.io/img/icons/empty-profile.png {{~/if~}}"
-    width="{{~#if size ~}} {{~size~}} {{~else~}} 72 {{~/if~}}"
-    height="{{~#if size ~}} {{~size~}} {{~else~}} 72 {{~/if~}}"
-    style="
-        max-width:{{~#if size~}} {{~size~}}px {{~else~}} 72px {{~/if~}};
-        border-radius: {{~#if customer ~}} 50% {{~else~}} 3px {{~/if~}};
+    width="
+        {{~#equal size "xlarge"~}} 140 {{~/equal~}}
+        {{~#equal size "large"~}} 100 {{~/equal~}}
+        {{~#equal size "medium"~}} 72 {{~/equal~}}
+        {{~#equal size "small"~}} 28 {{~/equal~}}
+        {{~#equal size "xsmall"~}} 32 {{~/equal~}}
+    " height="
+        {{~#equal size "xlarge"~}} 140 {{~/equal~}}
+        {{~#equal size "large"~}} 100 {{~/equal~}}
+        {{~#equal size "medium"~}} 72 {{~/equal~}}
+        {{~#equal size "small"~}} 28 {{~/equal~}}
+        {{~#equal size "xsmall"~}} 32 {{~/equal~}}
+    " style="
+        max-width:
+            {{~#equal size "xlarge"~}} 140px {{~/equal~}}
+            {{~#equal size "large"~}} 100px {{~/equal~}}
+            {{~#equal size "medium"~}} 72px {{~/equal~}}
+            {{~#equal size "small"~}} 28px {{~/equal~}}
+            {{~#equal size "xsmall"~}} 32px {{~/equal~}}
+        ;
+        border-radius:{{~#if type~}} 50% {{~else~}} 3px {{~/if~}};
         object-fit: cover;
         object-position: center center;
-    "
->
+    " />

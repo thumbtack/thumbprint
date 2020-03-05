@@ -20,7 +20,7 @@ These are the two available `Button` styles for use on light background colors.
 ```email
 {{> button
     href="https://thumbtack.com"
-    text="Primary"
+    text="Click me"
 }}
 ```
 
@@ -29,8 +29,8 @@ These are the two available `Button` styles for use on light background colors.
 ```email
 {{> button
     href="https://thumbtack.com"
-    text="Secondary"
-    secondary="true"
+    text="Click me"
+    type="secondary"
 }}
 ```
 
@@ -42,7 +42,7 @@ Buttons are left-aligned by default. They can be also be centered aligned with t
 {{> button
     href="https://thumbtack.com"
     text="Centered button"
-    center="true"
+    align="center"
 }}
 ```
 
@@ -90,7 +90,7 @@ By default buttons will expand to the full-width of their container.
             isRequired: true,
         },
         {
-            name: 'center',
+            name: 'align',
             description: 'Centers button.',
             type: {
                 name: 'boolean',

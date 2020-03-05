@@ -1,13 +1,13 @@
-{{#if center}}
-<center>
-    {{/if}}
+{{#equal align "center"}}
+    <center>
+{{/equal}}
     <button href="{{href}}" class="
             {{#unless preventExpanded}} small-expanded {{/unless}}
-            {{#if secondary }} secondary {{/if}}
+            {{#equal type "secondary" }} secondary {{/equal}}
             {{#if forceExpanded }} expanded {{/if}}
         ">
         {{{text}}}
     </button>
-    {{#if center}}
-</center>
-{{/if}}
+{{#equal align "center"}}
+    </center>
+{{/equal}}

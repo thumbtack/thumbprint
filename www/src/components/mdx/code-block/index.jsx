@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import Handlebars from 'handlebars';
@@ -46,6 +47,16 @@ const compileEmail = async emailSnippet => {
     Handlebars.registerPartial('tpIcon', tpIcon);
     Handlebars.registerPartial('serviceCard', serviceCard);
     Handlebars.registerPartial('upsell', upsell);
+
+    Handlebars.registerHelper({
+        equal: function equal(source, target, options) {
+            if (_.isObject(source) || _.isObject(target)) {
+                throw new TypeError('Cannot compare non-primitive types in #equal');
+            }
+
+            return String(source) === String(target) ? options.fn(this) : '';
+        },
+    });
 
     const source = Handlebars.compile(emailSnippet)();
 
