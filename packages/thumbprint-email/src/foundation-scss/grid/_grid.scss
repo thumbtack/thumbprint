@@ -91,7 +91,7 @@ td.columns.last,
 td.column.last,
 th.columns.last,
 th.column.last {
-    padding-right: $global-gutter;
+    padding-right: 0;
 }
 
 //makes sure nested tables are 100% width
@@ -123,12 +123,12 @@ th.column {
 
     td.large-#{$i}.first,
     th.large-#{$i}.first {
-        padding-left: $global-gutter;
+        padding-left: 0;
     }
 
     td.large-#{$i}.last,
     th.large-#{$i}.last {
-        padding-right: $global-gutter;
+        padding-right: 0;
     }
 
     //Collapsed logic

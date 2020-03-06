@@ -13,17 +13,11 @@ const compileEmail = async emailSnippet => {
     const { default: avatar } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/avatar/index.hbs`
     );
-    const { default: block } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/block/index.hbs`
-    );
     const { default: button } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/button/index.hbs`
     );
     const { default: card } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/card/index.hbs`
-    );
-    const { default: hero } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/hero/index.hbs`
     );
     const { default: tpIcon } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/tpIcon/index.hbs`
@@ -34,19 +28,13 @@ const compileEmail = async emailSnippet => {
     const { default: serviceCard } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/serviceCard/index.hbs`
     );
-    const { default: upsell } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/upsell/index.hbs`
-    );
 
     Handlebars.registerPartial('avatar', avatar);
-    Handlebars.registerPartial('block', block);
     Handlebars.registerPartial('button', button);
     Handlebars.registerPartial('card', card);
-    Handlebars.registerPartial('hero', hero);
     Handlebars.registerPartial('image', image);
     Handlebars.registerPartial('tpIcon', tpIcon);
     Handlebars.registerPartial('serviceCard', serviceCard);
-    Handlebars.registerPartial('upsell', upsell);
 
     Handlebars.registerHelper({
         equal: function equal(source, target, options) {

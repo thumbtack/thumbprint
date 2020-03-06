@@ -8,7 +8,12 @@ th.callout-inner {
     width: 100%;
     border: none;
     padding: $tp-space__4;
-    background: $tp-color__gray-200;
+
+    &.type {
+        &-primary {
+            background: $tp-color__gray-200;
+        }
+    }
 
     &.type {
         &-secondary {
