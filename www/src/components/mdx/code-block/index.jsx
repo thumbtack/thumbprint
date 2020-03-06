@@ -25,6 +25,9 @@ const compileEmail = async emailSnippet => {
     const { default: image } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
     );
+    const { default: spacer } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/spacer/index.hbs`
+    );
     const { default: serviceCard } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/serviceCard/index.hbs`
     );
@@ -35,6 +38,7 @@ const compileEmail = async emailSnippet => {
     Handlebars.registerPartial('image', image);
     Handlebars.registerPartial('tpIcon', tpIcon);
     Handlebars.registerPartial('serviceCard', serviceCard);
+    Handlebars.registerPartial('spacer', spacer);
 
     Handlebars.registerHelper({
         equal: function equal(source, target, options) {

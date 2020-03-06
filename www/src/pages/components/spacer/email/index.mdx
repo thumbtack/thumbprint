@@ -1,0 +1,61 @@
+---
+title: Spacer
+description: For spacing.
+---
+
+import { graphql } from 'gatsby';
+import Alert from 'components/alert';
+import { InlineCode } from 'components/mdx';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import APITable from 'components/api-table';
+
+<ComponentHeader data={props.data} />
+
+This partials uses our [web spacing units](/guide/product/spacers/) to create vertical space between blocks of content.
+
+```email
+<div>This is some text.</div>
+{{> spacer }}
+<div>That is divided by space.</div>
+```
+
+```email
+<div>This is some text.</div>
+{{> spacer size="5" }}
+<div>That is divided by space.</div>
+```
+
+## Props
+
+<APITable
+    properties={[
+        {
+            name: 'size',
+            description: 'Value corresponding to a spacer value.',
+            type: {
+                name: 'enum',
+                options: ['1', '2', '3', '4', '5', '6', '7'],
+            },
+            defaultValue: '3',
+        },
+    ]}
+/>
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/spacer/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-email" }) {
+            ...PackageTableFragment
+        }
+    }
+`;
