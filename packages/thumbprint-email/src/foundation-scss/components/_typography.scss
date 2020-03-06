@@ -23,7 +23,8 @@ th {
     padding-bottom: 0;
     padding-left: 0;
     margin: 0;
-    margin: 0;
+    /* prettier-ignore */
+    Margin: 0;
     text-align: left;
     line-height: $tp-line-height__base;
 }
@@ -39,7 +40,8 @@ h6 {
     font-family: $tp-font-family__base;
     font-weight: $tp-font-weight__bold;
     margin-bottom: $tp-space__3;
-    margin-bottom: $tp-space__3;
+    /* prettier-ignore */
+    Margin-bottom: $tp-space__3;
 }
 
 h1 {
@@ -73,7 +75,8 @@ th {
 
 p {
     margin-bottom: $tp-space__3;
-    margin-bottom: $tp-space__3;
+    /* prettier-ignore */
+    Margin-bottom: $tp-space__3;
 }
 
 small,

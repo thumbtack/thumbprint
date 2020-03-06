@@ -16,7 +16,8 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     margin: 0;
-    margin: 0;
+    /* prettier-ignore */
+    Margin: 0;
     padding: 0;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -39,7 +40,8 @@ body {
 
 #backgroundTable {
     margin: 0;
-    margin: 0;
+    /* prettier-ignore */
+    Margin: 0;
     padding: 0;
     width: 100% !important;
     line-height: 100% !important;
