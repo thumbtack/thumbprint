@@ -1,28 +1,8 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.dotDone {
-    background: $tp-color__green;
-}
-
-.dotInProgress {
-    border: 2px solid $tp-color__yellow;
-}
-
-.dotToDo {
-    border: 2px solid $tp-color__blue;
-}
-
-.dotNotApplicable {
-    background: $tp-color__gray;
-}
-
-.dotDeprecated {
-    background: $tp-color__red-300;
+.componentGrid {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
 }
