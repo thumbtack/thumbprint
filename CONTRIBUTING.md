@@ -44,7 +44,17 @@ Our documentation source code lives in [`www/`](https://github.com/thumbtack/thu
 
 ### Environment variables we use
 
--   `CODA_API_TOKEN` – This is an API token from Coda that we use to display the component statuses on `thumbprint.design/components/overview`. It is not required for local development. To get it, message a Design Systems team member on Slack and store the value as an environment variable in `www/.env`.
+`CODA_API_TOKEN` – This is an API token from Coda that we use to display the component statuses on `thumbprint.design/components/overview`. It is not required for local development. To get it: 
+
+1. Message a Design Systems team member on Slack to request a token. 
+2. Create `www/.env`.
+3. Store the token in `www/.env` as an environment variable:
+
+```
+CODA_API_TOKEN="[token-value]"
+```
+
+4. Restart local development with `yarn start`.
 
 ### Submitting a pull request
 
