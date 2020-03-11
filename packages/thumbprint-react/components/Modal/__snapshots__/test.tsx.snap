@@ -6,8 +6,12 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
   shouldHideCloseButton={true}
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={false}
@@ -119,8 +123,12 @@ exports[`Modal renders a basic modal 1`] = `
   onCloseClick={[Function]}
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={false}
@@ -173,7 +181,31 @@ exports[`Modal renders a basic modal 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -213,7 +245,76 @@ exports[`Modal renders a basic modal 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,8 +333,12 @@ exports[`Modal renders a basic modal with content 1`] = `
   onCloseClick={[Function]}
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={false}
@@ -295,7 +400,31 @@ exports[`Modal renders a basic modal with content 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -344,7 +473,76 @@ exports[`Modal renders a basic modal with content 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -368,7 +566,9 @@ exports[`Modal renders a medium height modal 1`] = `
     heightAboveSmall="medium"
     isOpen={true}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={true}
@@ -421,7 +621,31 @@ exports[`Modal renders a medium height modal 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -462,7 +686,76 @@ exports[`Modal renders a medium height modal 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -482,7 +775,10 @@ exports[`Modal renders a narrow modal 1`] = `
   width="narrow"
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
     width="narrow"
   >
@@ -537,7 +833,31 @@ exports[`Modal renders a narrow modal 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -577,7 +897,76 @@ exports[`Modal renders a narrow modal 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -601,7 +990,9 @@ exports[`Modal renders a tall height modal 1`] = `
     heightAboveSmall="tall"
     isOpen={true}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={true}
@@ -654,7 +1045,31 @@ exports[`Modal renders a tall height modal 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -695,7 +1110,76 @@ exports[`Modal renders a tall height modal 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -715,7 +1199,10 @@ exports[`Modal renders a wide modal 1`] = `
   width="wide"
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
     width="wide"
   >
@@ -770,7 +1257,31 @@ exports[`Modal renders a wide modal 1`] = `
                           <div />
                           <div
                             class="closeButton closeButtonNotSticky"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -810,7 +1321,76 @@ exports[`Modal renders a wide modal 1`] = `
                       <div />
                       <div
                         className="closeButton closeButtonNotSticky"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -830,8 +1410,12 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
   shouldHideCloseButton={false}
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={true}
+    width="medium"
   >
     <Transition
       in={false}
@@ -1068,8 +1652,12 @@ exports[`ModalFooter renders a sticky footer 1`] = `
   onCloseClick={[Function]}
 >
   <ModalAnimatedWrapper
+    heightAboveSmall="auto"
+    isOpen={false}
     onCloseClick={[Function]}
+    shouldCloseOnCurtainClick={true}
     shouldPageScrollAboveSmall={false}
+    width="medium"
   >
     <Transition
       in={false}
@@ -1128,7 +1716,31 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                           </div>
                           <div
                             class="closeButton"
-                          />
+                          >
+                            <button
+                              aria-label="Close modal"
+                              class="plain plainThemeInherit"
+                              type="button"
+                            >
+                              <span
+                                class="flexCenter"
+                              >
+                                <svg
+                                  class="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                    fill-rule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1194,7 +1806,76 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                       <div />
                       <div
                         className="closeButton"
-                      />
+                      >
+                        <ForwardRef
+                          accessibilityLabel="Close modal"
+                          iconLeft={
+                            <NavigationCloseSmall
+                              className="closeButtonIcon"
+                              fill="currentColor"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            />
+                          }
+                          onClick={[Function]}
+                          theme="inherit"
+                        >
+                          <ForwardRef
+                            accessibilityLabel="Close modal"
+                            iconLeft={
+                              <NavigationCloseSmall
+                                className="closeButtonIcon"
+                                fill="currentColor"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              />
+                            }
+                            isDisabled={false}
+                            onClick={[Function]}
+                            theme="inherit"
+                            type="button"
+                          >
+                            <button
+                              aria-label="Close modal"
+                              className="plain plainThemeInherit"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="flexCenter"
+                              >
+                                <NavigationCloseSmall
+                                  className="closeButtonIcon"
+                                  fill="currentColor"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    className="closeButtonIcon"
+                                    fill="currentColor"
+                                    height="18"
+                                    viewBox="0 0 18 18"
+                                    width="18"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
+                                      fillRule="evenodd"
+                                    />
+                                  </svg>
+                                </NavigationCloseSmall>
+                              </span>
+                            </button>
+                          </ForwardRef>
+                        </ForwardRef>
+                      </div>
                     </div>
                   </div>
                 </div>
