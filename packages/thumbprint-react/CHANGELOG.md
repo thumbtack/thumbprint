@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Rewrite `Modal` component in TypeScript.
+-   [Patch] Rewrite `ModalCurtain` component in TypeScript.
 
 ## 12.2.1 - 2020-03-02
 

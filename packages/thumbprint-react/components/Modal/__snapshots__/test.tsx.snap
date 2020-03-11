@@ -23,9 +23,7 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -76,7 +74,7 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -140,9 +138,7 @@ exports[`Modal renders a basic modal 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -217,7 +213,7 @@ exports[`Modal renders a basic modal 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -350,9 +346,7 @@ exports[`Modal renders a basic modal with content 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -436,7 +430,7 @@ exports[`Modal renders a basic modal with content 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -580,9 +574,7 @@ exports[`Modal renders a medium height modal 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="entered"
       >
         <ConditionalPortal
@@ -657,7 +649,7 @@ exports[`Modal renders a medium height modal 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <NoScroll />
               <div
@@ -792,9 +784,7 @@ exports[`Modal renders a narrow modal 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -869,7 +859,7 @@ exports[`Modal renders a narrow modal 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -1004,9 +994,7 @@ exports[`Modal renders a tall height modal 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="entered"
       >
         <ConditionalPortal
@@ -1081,7 +1069,7 @@ exports[`Modal renders a tall height modal 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <NoScroll />
               <div
@@ -1216,9 +1204,7 @@ exports[`Modal renders a wide modal 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -1293,7 +1279,7 @@ exports[`Modal renders a wide modal 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -1427,9 +1413,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -1504,7 +1488,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
@@ -1669,9 +1653,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
       }
     >
       <ModalCurtain
-        accessibilityLabel="Modal"
         onCloseClick={[Function]}
-        shouldCloseOnEscape={true}
         stage="exited"
       >
         <ConditionalPortal
@@ -1752,7 +1734,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
             <div
               aria-label="Modal"
               role="dialog"
-              tabIndex="-1"
+              tabIndex={-1}
             >
               <div
                 className="root curtain"
