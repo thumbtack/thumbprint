@@ -1,0 +1,69 @@
+---
+title: Alert Banner
+description: Important account information displayed at the top of a screen
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Usage
+
+`AlertBanner` should be used as a banner at the very top of the page.
+
+Call-to-actions (e.g. `<a>` tags in the `children` prop) should be the last item in the `children`.
+
+## Themes
+
+### Caution
+
+```jsx
+<AlertBanner theme="caution">
+    Your pre-paid credits are running low. Purchase new credits before you run out.{' '}
+    <a href="https://example.com/">Purchase credits</a>
+</AlertBanner>
+```
+
+### Info
+
+```jsx
+<AlertBanner theme="info">
+    You haven’t finish setting up. Add 3 reviews and turn on targeting.{' '}
+    <a href="https://example.com/">Finish setup</a>
+</AlertBanner>
+```
+
+### Warning
+
+```jsx
+<AlertBanner theme="warning">
+    Oops. Your payment failed! Update your payment details to continue using Thumbtack.{' '}
+    <a href="https://example.com/">Update payment</a>
+</AlertBanner>
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/alert-banner/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/AlertBanner/index.tsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;

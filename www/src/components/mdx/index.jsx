@@ -1,11 +1,21 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
-import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
+import {
+    Title,
+    Text,
+    List,
+    ListItem,
+    Button,
+    ButtonRow,
+    TextArea,
+} from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ScrollMarkerSection } from 'react-scroll-marker';
 import InternalMDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { isString } from 'lodash';
+import uuid from 'uuid';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import invariant from 'invariant';
 import Wrap from '../wrap';
@@ -255,6 +265,172 @@ const getSectionByPathname = pathname => {
     return displayName;
 };
 
+const FEEDBACK_STEPS = {
+    'feedback-score': 'feedback-score',
+    'feedback-comment': 'feedback-comment',
+    'feedback-complete': 'feedback-complete',
+};
+
+const FeedbackForm = ({ page }) => {
+    // Track the current step in the feedback flow.
+    const [feedbackStep, setFeedbackStep] = useState(FEEDBACK_STEPS['feedback-score']);
+    // "Yes" or "No" values
+    const [feedbackScore, setFeedbackScore] = useState('');
+    // Freeform comment box for additional feedback
+    const [feedbackComment, setFeedbackComment] = useState('');
+    const feebackScoreFormEl = useRef();
+    // We send the feedback to Netlify in two steps because we want to record a
+    // "Yes" or "No" even if the user doesn't leave a comment. Netlify doesn't
+    // allow us to update an existing form response, so we generate a UUID
+    // that we can later use to associate a score ("Yes"/"No") with a
+    // free-form comment. Storing it with `useRef` prevents the value from
+    // changing if the component re-renders.
+    const feedbackResponseId = useRef(uuid());
+
+    // Submit the feedback programatically here instead of the form's
+    // `onSubmit`. This is because the "Yes" and "No" buttons are
+    // `<Button>` components. When clicked, they update an
+    // `input[hidden]` value. Putting the value in the hidden input
+    // allows us to easily include it in the form submission.
+    useEffect(() => {
+        if (feedbackScore) {
+            const form = feebackScoreFormEl.current;
+            const data = new URLSearchParams(new FormData(form)).toString();
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            }).then(() => {
+                setFeedbackStep(FEEDBACK_STEPS['feedback-comment']);
+            });
+        }
+    }, [feedbackScore]);
+
+    return (
+        <>
+            <form
+                name="feedback-scores"
+                method="POST"
+                data-netlify="true"
+                ref={feebackScoreFormEl}
+                hidden={feedbackStep !== FEEDBACK_STEPS['feedback-score']}
+            >
+                <div className={`flex items-center flex-column m_flex-row ${styles.readingWidth}`}>
+                    <div className="mb3 m_mb0 m_mr4">
+                        <Title size={5} className="mb2">
+                            Was this page helpful?
+                        </Title>
+                        <Text className="black-300 mw7">
+                            We use this feedback to improve the quality of our documentation.
+                        </Text>
+                    </div>
+                    <ButtonRow>
+                        <Button
+                            size="small"
+                            theme="tertiary"
+                            onClick={() => setFeedbackScore('yes')}
+                        >
+                            Yes
+                        </Button>
+                        <Button
+                            size="small"
+                            theme="tertiary"
+                            onClick={() => setFeedbackScore('no')}
+                        >
+                            No
+                        </Button>
+                    </ButtonRow>
+                </div>
+
+                <input type="hidden" name="page" value={page} />
+                <input type="hidden" name="response-id" value={feedbackResponseId.current} />
+                <input type="hidden" name="helpful" value={feedbackScore} />
+                <input type="hidden" name="form-name" value="feedback-scores" />
+            </form>
+            <form
+                name="feedback-comments"
+                method="POST"
+                data-netlify="true"
+                onSubmit={e => {
+                    // Show a success message (but don't send data to Netlify)
+                    // if the user clicks on "Send" with an empty text area.
+                    // The user may hit send without adding comments because they
+                    // may not have realized that their answer to the first step
+                    // of this two step form was already recorded.
+                    if (feedbackComment === '') {
+                        setFeedbackStep(FEEDBACK_STEPS['feedback-complete']);
+                        return;
+                    }
+
+                    e.preventDefault();
+
+                    const form = e.target;
+                    const data = new URLSearchParams(new FormData(form)).toString();
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                    }).then(() => {
+                        setFeedbackStep(FEEDBACK_STEPS['feedback-complete']);
+                    });
+                }}
+                hidden={feedbackStep !== FEEDBACK_STEPS['feedback-comment']}
+            >
+                <div className={`mb3 ${styles.readingWidth}`}>
+                    <Title size={5} className="mb2">
+                        Was this page helpful?
+                    </Title>
+                    <label htmlFor="feedback-comments">
+                        <Text className="black-300 mw7">
+                            {feedbackScore === 'yes' &&
+                                'Thanks! We’re glad you found it helpful. You can optionally let us know what you liked about this page.'}
+                            {feedbackScore === 'no' &&
+                                'Sorry to hear that! How can we improve this page?'}{' '}
+                        </Text>
+                    </label>
+                </div>
+                <div className="mb3 mw7">
+                    <TextArea
+                        onChange={v => setFeedbackComment(v)}
+                        value={feedbackComment}
+                        name="comment"
+                        id="feedback-comments"
+                    />
+                </div>
+                <input type="hidden" name="page" value={page} />
+                <input type="hidden" name="form-name" value="feedback-comments" />
+                <input type="hidden" name="response-id" value={feedbackResponseId.current} />
+                <Button theme="primary" size="small" type="submit">
+                    Send
+                </Button>
+            </form>
+            {feedbackStep === FEEDBACK_STEPS['feedback-complete'] && (
+                <div className={`mb3 ${styles.readingWidth}`}>
+                    <Title size={5} className="mb2">
+                        Was this page helpful?
+                    </Title>
+                    <Text className="black-300 mw7">
+                        Thanks! We’ve submitted your feedback.{' '}
+                        <span role="img" aria-label="">
+                            🎉
+                        </span>
+                    </Text>
+                </div>
+            )}
+        </>
+    );
+};
+
+FeedbackForm.propTypes = {
+    page: PropTypes.string.isRequired,
+};
+
 const MDX = props => {
     const { children, location, pageContext, header } = props;
 
@@ -292,6 +468,9 @@ const MDX = props => {
                         />
                         {header}
                         <MDXRenderer>{children}</MDXRenderer>
+                        <div className="pt5 mt5 bt bw-2 b-gray-300">
+                            <FeedbackForm page={location.pathname} />
+                        </div>
                     </React.Fragment>
                 )}
             </Wrap>

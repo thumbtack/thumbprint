@@ -1,6 +1,7 @@
 export { UserAvatar, EntityAvatar } from './components/Avatar/index';
 export { default as Button, TextButton } from './components/Button/index';
 export { BannerAlert, InPageAlert } from './components/Alert/index';
+export { default as AlertBanner } from './components/AlertBanner/index';
 export { default as ButtonRow } from './components/ButtonRow/index';
 export { default as Calendar } from './components/Calendar/index';
 export { default as Carousel } from './components/Carousel/index';
@@ -12,7 +13,7 @@ export { Grid, GridColumn } from './components/Grid/index';
 export { default as Image } from './components/Image/index';
 export { default as InputRow, InputRowContext } from './components/InputRow/index';
 export { default as Label } from './components/Label/index';
-export { default as Link, ThemedLink } from './components/Link/index.jsx';
+export { default as Link, ThemedLink } from './components/Link/index';
 export { List, ListItem } from './components/List/index';
 export { default as LoaderDots } from './components/LoaderDots/index';
 export {

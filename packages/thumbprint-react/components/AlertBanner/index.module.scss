@@ -1,0 +1,61 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $tp-space__3;
+    color: $tp-color__black;
+    background-color: $tp-color__gray-200;
+    font-size: $tp-font__body__2__size;
+    line-height: $tp-font__body__2__line-height;
+
+    a {
+        font-weight: $tp-font-weight__bold;
+        text-decoration: underline;
+        color: $tp-color__black;
+    }
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        padding: $tp-space__4;
+        font-size: $tp-font__body__1__size;
+        line-height: $tp-font__body__1__line-height;
+    }
+}
+
+.info {
+    background-color: $tp-color__blue-100;
+    color: $tp-color__blue-600;
+
+    a {
+        color: $tp-color__blue-600;
+    }
+}
+
+.warning {
+    background-color: $tp-color__red-100;
+    color: $tp-color__red-600;
+
+    a {
+        color: $tp-color__red-600;
+    }
+}
+
+.caution {
+    background-color: $tp-color__yellow-100;
+    color: $tp-color__yellow-600;
+
+    a {
+        color: $tp-color__yellow-600;
+    }
+}
+
+.icon {
+    flex-shrink: 0;
+    margin-right: $tp-space__3;
+
+    @include tp-respond-above($tp-breakpoint__small) {
+        margin-right: $tp-space__4;
+    }
+}

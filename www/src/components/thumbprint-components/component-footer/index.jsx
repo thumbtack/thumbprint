@@ -31,7 +31,7 @@ const ComponentFooter = ({ data }) => {
                                 const deprecated = find(prop.doclets, o => o.tag === 'deprecated');
 
                                 return (
-                                    <li className="bb b-gray-300 pv3" key={prop.name}>
+                                    <li className="pv3" key={prop.name}>
                                         <div className="flex">
                                             <div className="b">
                                                 <InlineCode shouldCopyToClipboard theme="plain">

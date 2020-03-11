@@ -2,11 +2,44 @@
 
 ## Unreleased
 
+## 12.2.1 - 2020-03-02
+
+### Changed
+
+-   [Patch] Tweak color of `muted` `LoaderDots` to use `black-300`. (#643)
+
+### Fixed
+
+-   [Patch] Fix `AlertBanner` component to horizontally center items.
+
+## 12.2.0 - 2020-01-22
+
+### Added
+
+-   [Minor] Add `AlertBanner` component in React (Typescript).
+
+### Changed
+
+-   [Patch] Reorganize `Calendar` component files so the types display correctly in docs. (#586)
+
+### Deprecated
+
+-   [Patch] Deprecate usage of `BannerAlert` component.
+
+## 12.1.2 - 2020-01-22
+
+### Fixed
+
+-   [Patch] Re-write ref handling in `Image` component so it works with a change in `react-intersection-observer@8.24.1`.
+
+## 12.1.1 - 2020-01-18
+
 ### Changed
 
 -   [Patch] Rewrite `HorizontalRule` component in TypeScript.
 -   [Patch] Rewrite `Pill` component in TypeScript.
 -   [Patch] Rewrite `InputRow` component in TypeScript.
+-   [Patch] Rewrite `Link` component in TypeScript.
 
 ## 12.1.0 - 2020-01-09
 
