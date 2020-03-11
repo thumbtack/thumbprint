@@ -8,7 +8,7 @@ import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { TextButton } from '../Button/index';
 import StickyFooter from './components/sticky-footer';
 import Transition from './components/transition';
-import ModalCurtain from '../ModalCurtain/index.jsx';
+import ModalCurtain from '../ModalCurtain/index';
 
 import styles from './index.module.scss';
 
