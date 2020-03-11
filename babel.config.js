@@ -4,6 +4,7 @@ module.exports = {
         // Needed until `dynamic-import` becomes stage 4:
         // https://github.com/tc39/proposal-dynamic-import
         '@babel/plugin-syntax-dynamic-import',
+        'babel-plugin-transform-class-properties',
     ],
     env: {
         test: {

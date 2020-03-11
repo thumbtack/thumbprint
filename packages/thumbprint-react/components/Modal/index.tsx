@@ -305,7 +305,7 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
         return (
             <Consumer>
                 {({ stickyFooterContainerRef, setSticky }): JSX.Element => {
-                    // When `isSticky` is true, the `ModalFooter` must change it's position in the
+                    // When `isSticky` is true, the `ModalFooter` must change its position in the
                     // DOM so that it is fixed at the bottom of the modal on small viewports. We
                     // use React's Context API so that it is a property of the `ModalFooter`
                     // component and not the `Modal` API.
@@ -318,10 +318,11 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
                         return <div className={styles.modalFooterFluid}>{children}</div>;
                     }
 
-                    if (
-                        !stickyFooterContainerRef ||
-                        (stickyFooterContainerRef && !stickyFooterContainerRef.current)
-                    ) {
+                    if (stickyFooterContainerRef === null) {
+                        return <div className={styles.modalFooterFluid}>{children}</div>;
+                    }
+
+                    if (stickyFooterContainerRef.current === null) {
                         return <div className={styles.modalFooterFluid}>{children}</div>;
                     }
 
