@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Text } from '@thumbtack/thumbprint-react';
+import { Text, TextInput } from '@thumbtack/thumbprint-react';
 import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
@@ -44,16 +44,33 @@ Dot.propTypes = {
     status: documentationStatus.isRequired,
 };
 
-export const Legend = () => <div>search tools</div>;
+export const Legend = () => (
+    <div className="flex mb5">
+        <TextInput size="small" />
+        <div className="ba b-gray br2 ml3 flex">
+            <Text size={2} className="br b-gray h-100 flex items-center ph3">
+                React
+            </Text>
+            <Text size={2} className="br b-gray h-100 flex items-center ph3">
+                iOS
+            </Text>
+            <Text size={2} className="br b-gray h-100 flex items-center ph3">
+                Android
+            </Text>
+            <Text size={2} className="br b-gray h-100 flex items-center ph3">
+                SCSS
+            </Text>
+            <Text size={2} className="h-100 flex items-center ph3">
+                Email
+            </Text>
+        </div>
+    </div>
+);
 
 export const ComponentRow = ({ name, react, scss, ios, android }) => (
-    <a href="/path/" className={`color-inherit pa2 ba b-gray-300 br2 ${styles.component}`}>
-        <div className="h4 bg-gray br1 mb1">&nbsp;</div>
+    <a href="/path/" className={`color-inherit ${styles.component}`}>
+        <div className="h5 bg-gray-300 br1 mb1">&nbsp;</div>
         <Text size={2}>{name}</Text>
-        <Text size={3} className="black-300">
-            <span>Status: </span>
-            <span>{react.documentation}</span>
-        </Text>
     </a>
 );
 
