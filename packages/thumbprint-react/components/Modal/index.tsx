@@ -341,14 +341,6 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
     }
 }
 
-// const modalProps = {
-//     isOpen: false,
-//     shouldHideCloseButton: false,
-//     shouldCloseOnCurtainClick: true,
-//     width: 'medium',
-//     heightAboveSmall: 'auto',
-// };
-
 class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }> {
     stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null = null;
 
@@ -378,14 +370,14 @@ class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }
     render(): JSX.Element {
         const {
             children,
-            isOpen,
+            isOpen = false,
             onCloseClick,
             onCloseFinish,
             onOpenFinish,
-            shouldCloseOnCurtainClick,
-            shouldHideCloseButton,
-            width,
-            heightAboveSmall,
+            shouldCloseOnCurtainClick = true,
+            shouldHideCloseButton = false,
+            width = 'medium',
+            heightAboveSmall = 'auto',
         } = this.props;
 
         const { hasStickyFooter } = this.state;
