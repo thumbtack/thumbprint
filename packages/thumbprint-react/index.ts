@@ -7,6 +7,7 @@ export { default as Calendar } from './components/Calendar/index';
 export { default as Carousel } from './components/Carousel/index';
 export { default as Checkbox } from './components/Checkbox/index';
 export { default as Dropdown } from './components/Dropdown/index';
+export { TextFab, IconFab } from './components/Fab/index';
 export { default as FormNote } from './components/FormNote/index';
 export { default as HorizontalRule } from './components/HorizontalRule/index';
 export { Grid, GridColumn } from './components/Grid/index';
