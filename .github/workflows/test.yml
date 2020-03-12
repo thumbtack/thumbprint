@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     jest:
-        name: Test (Jest)
+        name: Jest
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
@@ -19,7 +19,7 @@ jobs:
               run: |
                   yarn run bootstrap && yarn run test:jest
     eslint:
-        name: Test (ESLint)
+        name: ESLint
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
@@ -34,7 +34,7 @@ jobs:
               run: |
                   yarn run bootstrap && yarn run test:lint:js
     stylelint:
-        name: Test (stylelint)
+        name: stylelint
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
@@ -49,7 +49,7 @@ jobs:
               run: |
                   yarn run bootstrap && yarn run test:lint:css
     prettier:
-        name: Test (Prettier)
+        name: Prettier
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
@@ -64,7 +64,7 @@ jobs:
               run: |
                   yarn run bootstrap && yarn run test:prettier
     typescript:
-        name: Test (TypeScript)
+        name: TypeScript
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
