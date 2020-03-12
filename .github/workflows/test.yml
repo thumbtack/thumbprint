@@ -34,7 +34,7 @@ jobs:
               run: |
                   yarn run bootstrap && yarn run test:lint:js
     stylelint:
-        name: stylelint
+        name: Stylelint
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
