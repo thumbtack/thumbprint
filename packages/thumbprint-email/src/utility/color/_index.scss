@@ -1,13 +1,97 @@
-@font-face {
-    font-family: 'Mark';
-    font-weight: 400;
-    src: url(https://fonts.thumbtack.com/mark/mark-tt-subset.woff2) format('woff2'),
-        url(https://fonts.thumbtack.com/mark/mark-tt-subset.woff) format('woff');
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.white {
+    color: $tp-color__white;
 }
 
-@font-face {
-    font-family: 'Mark';
-    font-weight: 700;
-    src: url(https://fonts.thumbtack.com/mark/mark-tt-subset-bold.woff2) format('woff2'),
-        url(https://fonts.thumbtack.com/mark/mark-tt-subset-bold.woff) format('woff');
+.black {
+    color: $tp-color__black;
+}
+
+.black-300 {
+    color: $tp-color__black-300;
+}
+
+.blue {
+    color: $tp-color__blue;
+}
+
+.indigo {
+    color: $tp-color__indigo;
+}
+
+.purple {
+    color: $tp-color__purple;
+}
+
+.green {
+    color: $tp-color__green;
+}
+
+.yellow {
+    color: $tp-color__yellow;
+}
+
+.red {
+    color: $tp-color__red;
+}
+
+.gray {
+    color: $tp-color__gray;
+}
+
+.gray-200 {
+    color: $tp-color__gray-200;
+}
+
+.gray-300 {
+    color: $tp-color__gray-300;
+}
+
+.bg-white {
+    background-color: $tp-color__white;
+}
+
+.bg-black {
+    background-color: $tp-color__black;
+}
+
+.bg-black-300 {
+    background-color: $tp-color__black-300;
+}
+
+.bg-blue {
+    background-color: $tp-color__blue;
+}
+
+.bg-indigo {
+    background-color: $tp-color__indigo;
+}
+
+.bg-purple {
+    background-color: $tp-color__purple;
+}
+
+.bg-green {
+    background-color: $tp-color__green;
+}
+
+.bg-yellow {
+    background-color: $tp-color__yellow;
+}
+
+.bg-red {
+    background-color: $tp-color__red;
+}
+
+.bg-gray {
+    background-color: $tp-color__gray;
+}
+
+.bg-gray-200 {
+    background-color: $tp-color__gray-200;
+}
+
+.bg-gray-300 {
+    background-color: $tp-color__gray-300;
 }

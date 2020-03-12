@@ -1,13 +1,19 @@
 {{#equal align "center"}}
-    <center>
+    <row>
+        <columns>
+            <center>
 {{/equal}}
-    <button href="{{href}}" class="
-            {{#unless preventExpanded}} small-expanded {{/unless}}
-            {{#equal type "secondary" }} secondary {{/equal}}
-            {{#if forceExpanded }} expanded {{/if}}
-        ">
-        {{{text}}}
-    </button>
+
+            <button href="{{href}}" class="
+                    {{#unless preventExpanded}} small-expanded {{/unless}}
+                    {{#equal type "secondary" }} secondary {{/equal}}
+                    {{#if forceExpanded }} expanded {{/if}}
+                ">
+                {{{text}}}
+            </button>
+
 {{#equal align "center"}}
-    </center>
+            </center>
+        </columns>
+    </row>
 {{/equal}}
