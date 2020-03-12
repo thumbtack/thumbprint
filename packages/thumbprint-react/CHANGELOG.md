@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Added] Add React component of `FAB`. (#643)
+
 ## 12.2.1 - 2020-03-02
 
 ### Changed

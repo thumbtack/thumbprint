@@ -24,14 +24,14 @@
     padding: 0px $tp-space__3;
 }
 
-.inactive {
-    background-color: $tp-color__white;
-    color: $tp-color__blue;
-    border: 2px solid $tp-color__gray;
-}
-
-.active {
+.primary {
     background-color: $tp-color__blue;
     color: $tp-color__white;
     border: 0px;
+}
+
+.secondary {
+    background-color: $tp-color__white;
+    color: $tp-color__blue;
+    border: 2px solid $tp-color__gray;
 }

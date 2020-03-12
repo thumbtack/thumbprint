@@ -12,16 +12,16 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ```jsx
 <TextFab>
-    <ContentActionsFilterSmall />
+    <ContentActionsFilterSmall className="mr2" />
     Filters
 </TextFab>
 ```
 
-### Active Text Fab
+### Secondary Text Fab
 
 ```jsx
-<TextFab active>
-    <ContentActionsFilterSmall />
+<TextFab theme="secondary">
+    <ContentActionsFilterSmall className="mr2" />
     Filters
 </TextFab>
 ```
@@ -32,10 +32,10 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 <IconFab icon={<ContentActionsAddMedium />} />
 ```
 
-### Active Icon Fab
+### Secondary Icon Fab
 
 ```jsx
-<IconFab icon={<ContentActionsAddMedium />} active />
+<IconFab icon={<ContentActionsAddMedium />} theme="secondary" />
 ```
 
 <ComponentFooter data={props.data} />

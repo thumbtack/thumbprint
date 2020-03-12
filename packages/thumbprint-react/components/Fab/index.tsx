@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import noop from 'lodash/noop';
 import styles from './index.module.scss';
 
 interface TextFabProps {
@@ -9,24 +8,35 @@ interface TextFabProps {
      */
     children: React.ReactNode;
     /**
-     * Visually highlights the fab if it‘s active.
+     * Theme that decides the style of the button.
      */
-    active?: boolean;
+    theme?: 'primary' | 'secondary';
     /**
      * Function that will run when the fab is clicked on.
      */
     onClick?: () => void;
+    /**
+     * Description of the fab content. It is required if the link contains an icon and no
+     * descriptive text.
+     */
+    accessibilityLabel?: string;
 }
 
-export function TextFab({ children, active = false, onClick = noop }: TextFabProps): JSX.Element {
+export function TextFab({
+    children,
+    theme = 'primary',
+    onClick,
+    accessibilityLabel,
+}: TextFabProps): JSX.Element {
     return (
         <button
             className={classNames(styles.root, styles.textFab, {
-                [styles.active]: active,
-                [styles.inactive]: !active,
+                [styles.primary]: theme === 'primary',
+                [styles.secondary]: theme === 'secondary',
             })}
             type="button"
             onClick={onClick}
+            aria-label={accessibilityLabel}
         >
             {children}
         </button>
@@ -36,28 +46,39 @@ export function TextFab({ children, active = false, onClick = noop }: TextFabPro
 interface IconFabProps {
     /**
      * Icon from [Thumbprint Icons](/icons/) to render within the button. It must be one of the
-     * `small` icons.
+     * `medium` icons.
      */
     icon: React.ReactNode;
     /**
-     * Visually highlights the fab if it‘s active.
+     * Theme that decides the style of the button.
      */
-    active?: boolean;
+    theme?: 'primary' | 'secondary';
     /**
      * Function that will run when the fab is clicked on.
      */
     onClick?: () => void;
+    /**
+     * Description of the fab content. It is required if the link contains an icon and no
+     * descriptive text.
+     */
+    accessibilityLabel?: string;
 }
 
-export function IconFab({ icon, active = false, onClick = noop }: IconFabProps): JSX.Element {
+export function IconFab({
+    icon,
+    theme = 'primary',
+    onClick,
+    accessibilityLabel,
+}: IconFabProps): JSX.Element {
     return (
         <button
             className={classNames(styles.root, styles.iconFab, {
-                [styles.active]: active,
-                [styles.inactive]: !active,
+                [styles.primary]: theme === 'primary',
+                [styles.secondary]: theme === 'secondary',
             })}
             type="button"
             onClick={onClick}
+            aria-label={accessibilityLabel}
         >
             {icon}
         </button>
