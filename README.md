@@ -1,4 +1,4 @@
-[![Build Status](https://badgen.net/travis/thumbtack/thumbprint)](https://travis-ci.org/thumbtack/thumbprint)
+[![Test build status](https://github.com/thumbtack/thumbprint/workflows/Test/badge.svg)](https://github.com/thumbtack/thumbprint/actions?query=workflow%3ATest)
 
 # Thumbprint
 
