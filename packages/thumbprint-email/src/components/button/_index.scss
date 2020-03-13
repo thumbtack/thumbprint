@@ -5,6 +5,7 @@ table.button {
     margin: 0 0 $tp-space__3 0;
     /* prettier-ignore */
     Margin: 0 0 $tp-space__3 0;
+
     table {
         td {
             text-align: left;
@@ -36,6 +37,7 @@ table.button.secondary {
                 background: $tp-color__white;
                 border: 2px solid $tp-color__gray;
                 color: $tp-color__blue;
+                box-sizing: border-box;
                 padding: 11px 22px;
                 border-radius: $tp-corner-radius__base;
             }
