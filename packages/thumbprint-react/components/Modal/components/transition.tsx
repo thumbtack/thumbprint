@@ -20,16 +20,16 @@ interface PropTypes {
 
 interface StateTypes {
     stage: Stage;
+    currentTimeout: number | null;
 }
 
 export default class Transition extends React.Component<PropTypes, StateTypes> {
-    currentTimeout: number | null = null;
-
     constructor(props: PropTypes) {
         super(props);
 
         this.state = {
             stage: null,
+            currentTimeout: null,
         };
     }
 
@@ -38,6 +38,7 @@ export default class Transition extends React.Component<PropTypes, StateTypes> {
 
         this.setState({
             stage: inProp ? ENTERING : EXITED,
+            currentTimeout: null,
         });
 
         this.onEntering = this.onEntering.bind(this);
@@ -45,8 +46,6 @@ export default class Transition extends React.Component<PropTypes, StateTypes> {
         this.onExiting = this.onExiting.bind(this);
         this.onExited = this.onExited.bind(this);
         this.clearExistingTimeout = this.clearExistingTimeout.bind(this);
-
-        this.currentTimeout = null;
 
         // Call `onEntered` If the modal is immediately open when it mounts.
         if (inProp) {
@@ -75,8 +74,10 @@ export default class Transition extends React.Component<PropTypes, StateTypes> {
     onEntering(): void {
         const { timeout } = this.props;
 
-        this.setState({ stage: ENTERING });
-        this.currentTimeout = window.setTimeout(this.onEntered, timeout.enter);
+        this.setState({
+            stage: ENTERING,
+            currentTimeout: window.setTimeout(this.onEntered, timeout.enter),
+        });
     }
 
     onEntered(): void {
@@ -92,8 +93,10 @@ export default class Transition extends React.Component<PropTypes, StateTypes> {
     onExiting(): void {
         const { timeout } = this.props;
 
-        this.setState({ stage: EXITING });
-        this.currentTimeout = window.setTimeout(this.onExited, timeout.exit);
+        this.setState({
+            stage: EXITING,
+            currentTimeout: window.setTimeout(this.onExited, timeout.exit),
+        });
     }
 
     onExited(): void {
@@ -107,8 +110,10 @@ export default class Transition extends React.Component<PropTypes, StateTypes> {
     }
 
     clearExistingTimeout(): void {
-        if (this.currentTimeout) {
-            clearTimeout(this.currentTimeout);
+        const { currentTimeout } = this.state;
+
+        if (currentTimeout) {
+            clearTimeout(currentTimeout);
         }
     }
 
