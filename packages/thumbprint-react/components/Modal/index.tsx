@@ -196,7 +196,7 @@ interface ModalContentFullBleedPropTypes {
     /**
      * Allows the React `style` prop to be passed through to the rendered element.
      */
-    style?: object;
+    style?: React.CSSProperties;
 }
 
 interface ModalFooterPropTypes {
@@ -314,15 +314,11 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
                     // render. `setSticky` is a function that updates the state in `Modal`,
                     // changing the CSS to make the contents scroll and the footer fixed at the
                     // bottom.
-                    if (!isSticky) {
-                        return <div className={styles.modalFooterFluid}>{children}</div>;
-                    }
-
-                    if (stickyFooterContainerRef === null) {
-                        return <div className={styles.modalFooterFluid}>{children}</div>;
-                    }
-
-                    if (stickyFooterContainerRef.current === null) {
+                    if (
+                        !isSticky ||
+                        stickyFooterContainerRef === null ||
+                        stickyFooterContainerRef.current === null
+                    ) {
                         return <div className={styles.modalFooterFluid}>{children}</div>;
                     }
 
@@ -341,20 +337,20 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
     }
 }
 
-class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }> {
-    stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null = null;
+interface ModalStateTypes {
+    hasStickyFooter: boolean;
+    stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null;
+}
 
-    activeTimeout: number | null = null;
-
+class Modal extends React.Component<ModalPropTypes, ModalStateTypes> {
     constructor(props: ModalPropTypes) {
         super(props);
 
-        this.stickyFooterContainerRef = React.createRef<HTMLDivElement>();
         this.state = {
             hasStickyFooter: false,
+            stickyFooterContainerRef: React.createRef<HTMLDivElement>(),
         };
         this.setSticky = this.setSticky.bind(this);
-        this.activeTimeout = null;
     }
 
     setSticky(newVal: boolean): void {
@@ -380,7 +376,7 @@ class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }
             heightAboveSmall = 'auto',
         } = this.props;
 
-        const { hasStickyFooter } = this.state;
+        const { hasStickyFooter, stickyFooterContainerRef } = this.state;
 
         return (
             <ModalAnimatedWrapper
@@ -400,7 +396,7 @@ class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }
             >
                 <Provider
                     value={{
-                        stickyFooterContainerRef: this.stickyFooterContainerRef,
+                        stickyFooterContainerRef,
                         setSticky: this.setSticky,
                     }}
                 >
@@ -422,7 +418,7 @@ class Modal extends React.Component<ModalPropTypes, { hasStickyFooter: boolean }
                         If a user uses `<ModalFooter isSticky />`, it gets
                         moved here with React portals.
                     */}
-                    <div ref={this.stickyFooterContainerRef} />
+                    <div ref={stickyFooterContainerRef} />
                     {/*
                         The close button is last in the DOM so that it is
                         not focused first by the focus trap. We visually
