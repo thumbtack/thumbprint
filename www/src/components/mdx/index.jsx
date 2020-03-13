@@ -309,12 +309,17 @@ const FeedbackForm = ({ page }) => {
         }
     }, [feedbackScore]);
 
+    // This helps prevent spam submissions:
+    // https://docs.netlify.com/forms/spam-filters/#honeypot-field
+    const honeypotInputName = 'netlify-trickyness';
+
     return (
         <>
             <form
                 name="feedback-scores"
                 method="POST"
                 data-netlify="true"
+                netlify-honeypot={honeypotInputName}
                 ref={feebackScoreFormEl}
                 hidden={feedbackStep !== FEEDBACK_STEPS['feedback-score']}
             >
@@ -347,6 +352,7 @@ const FeedbackForm = ({ page }) => {
 
                 <input type="hidden" name="page" value={page} />
                 <input type="hidden" name="response-id" value={feedbackResponseId.current} />
+                <input type="text" className="visually-hidden" name={honeypotInputName} />
                 <input type="hidden" name="helpful" value={feedbackScore} />
                 <input type="hidden" name="form-name" value="feedback-scores" />
             </form>
