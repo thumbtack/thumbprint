@@ -25,7 +25,7 @@ export {
     ModalContentFullBleed,
     ModalFooter,
     ModalAnimatedWrapper,
-} from './components/Modal/index.jsx';
+} from './components/Modal/index';
 export { default as ModalBase } from './components/ModalBase/index.jsx';
 export { default as ModalCurtain } from './components/ModalCurtain/index.jsx';
 export { default as ModalStandard } from './components/ModalStandard/index.jsx';

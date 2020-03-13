@@ -2,12 +2,8 @@
 
 exports[`Modal does not show the close button if \`shouldHideCloseButton\` is true 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
   shouldHideCloseButton={true}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="auto"
@@ -124,12 +120,7 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
 
 exports[`Modal renders a basic modal 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="auto"
@@ -339,12 +330,7 @@ exports[`Modal renders a basic modal 1`] = `
 
 exports[`Modal renders a basic modal with content 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="auto"
@@ -575,9 +561,6 @@ exports[`Modal renders a medium height modal 1`] = `
   heightAboveSmall="medium"
   isOpen={true}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="medium"
@@ -788,11 +771,7 @@ exports[`Modal renders a medium height modal 1`] = `
 
 exports[`Modal renders a narrow modal 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
   width="narrow"
 >
   <ModalAnimatedWrapper
@@ -1006,9 +985,6 @@ exports[`Modal renders a tall height modal 1`] = `
   heightAboveSmall="tall"
   isOpen={true}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="tall"
@@ -1219,11 +1195,7 @@ exports[`Modal renders a tall height modal 1`] = `
 
 exports[`Modal renders a wide modal 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
   width="wide"
 >
   <ModalAnimatedWrapper
@@ -1434,12 +1406,8 @@ exports[`Modal renders a wide modal 1`] = `
 
 exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
   shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="auto"
@@ -1681,12 +1649,7 @@ exports[`ModalFooter renders a non-sticky footer 1`] = `
 
 exports[`ModalFooter renders a sticky footer 1`] = `
 <Modal
-  heightAboveSmall="auto"
-  isOpen={false}
   onCloseClick={[Function]}
-  shouldCloseOnCurtainClick={true}
-  shouldHideCloseButton={false}
-  width="medium"
 >
   <ModalAnimatedWrapper
     heightAboveSmall="auto"
