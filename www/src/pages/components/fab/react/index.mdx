@@ -1,0 +1,64 @@
+---
+title: Fab
+description: Buttons providing easy access to important actions.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Text Fab
+
+```jsx
+<TextFab>
+    <ContentActionsFilterSmall className="mr2" />
+    Filters
+</TextFab>
+```
+
+### Secondary Text Fab
+
+```jsx
+<TextFab theme="secondary">
+    <ContentActionsFilterSmall className="mr2" />
+    Filters
+</TextFab>
+```
+
+## Icon Fab
+
+```jsx
+<IconFab icon={<ContentActionsAddMedium />} />
+```
+
+### Secondary Icon Fab
+
+```jsx
+<IconFab icon={<ContentActionsAddMedium />} theme="secondary" />
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/fab/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: file(
+            relativePath: { eq: "thumbprint-react/components/Fab/index.tsx" }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
