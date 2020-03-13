@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add React component of `FAB`.
+
 ### Changed
 
 -   [Patch] Rewrite `Modal` component in TypeScript.
