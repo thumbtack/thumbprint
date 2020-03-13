@@ -2,9 +2,13 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add React component of `FAB`.
+
 ### Changed
 
--   [Added] Add React component of `FAB`. (#643)
+-   [Patch] Rewrite `Modal` component in TypeScript.
 
 ## 12.2.1 - 2020-03-02
 
