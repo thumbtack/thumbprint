@@ -6,7 +6,7 @@ description: Our components and the platforms they're available in.
 import { graphql } from 'gatsby';
 import { keyBy } from 'lodash';
 import { Text } from '@thumbtack/thumbprint-react';
-import { Legend, ComponentRow, ComponentTable } from 'components/thumbprint-components/overview';
+import { FilterBar, ComponentRow, ComponentTable } from 'components/thumbprint-components/overview';
 import Alert from 'components/alert';
 import { InlineCode } from 'components/mdx';
 
@@ -49,7 +49,7 @@ export const pageQuery = graphql`
         </Alert>
     ) : (
         <React.Fragment>
-            <Legend />
+            <FilterBar />
             <ComponentTable>
                 {props.data.allCodaImplementationsTable.group.map(group => {
                     const platforms = keyBy(group.edges, 'node.data.values.Platform');

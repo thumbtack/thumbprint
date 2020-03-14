@@ -1,9 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Text, TextInput } from '@thumbtack/thumbprint-react';
-import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
 const documentationStatus = PropTypes.oneOf([
@@ -24,52 +23,79 @@ const developmentStatus = PropTypes.oneOf([
     'Done / Merged',
 ]);
 
-const Dot = ({ status }) => (
-    <div
-        aria-label={status}
-        className={classNames({
-            [styles.dot]: true,
-            [styles.dotToDo]: ['To-do', 'Needs evaluation'].includes(status),
-            [styles.dotInProgress]: status === 'In progress',
-            [styles.dotDeprecated]: status === 'Done / Deprecated',
-            [styles.dotNotApplicable]: status === "Done / Won't build",
-            [styles.dotDone]: ['Done / Merged', 'Done / Uses built in OS component'].includes(
-                status,
-            ),
-        })}
-    />
-);
+export const FilterBar = () => {
+    const [filter, setFilter] = useState(undefined);
+    const [platform, setPlatform] = useState(undefined);
 
-Dot.propTypes = {
-    status: documentationStatus.isRequired,
+    return (
+        <div className="flex mb5">
+            <TextInput size="small" onChange={setFilter} value={filter} />
+            <div className="ba b-gray br2 ml3 flex">
+                <button
+                    type="button"
+                    onClick={() => setPlatform(platform === 'react' ? undefined : 'react')}
+                    className={classNames({
+                        [styles.platformButton]: true,
+                        'br b-gray': true,
+                        [styles.isActive]: platform === 'react',
+                    })}
+                >
+                    <Text size={2}>React</Text>
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setPlatform(platform === 'ios' ? undefined : 'ios')}
+                    className={classNames({
+                        [styles.platformButton]: true,
+                        'br b-gray': true,
+                        [styles.isActive]: platform === 'ios',
+                    })}
+                >
+                    <Text size={2}>iOS</Text>
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setPlatform(platform === 'android' ? undefined : 'android')}
+                    className={classNames({
+                        [styles.platformButton]: true,
+                        'br b-gray': true,
+                        [styles.isActive]: platform === 'android',
+                    })}
+                >
+                    <Text size={2}>Android</Text>
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setPlatform(platform === 'scss' ? undefined : 'scss')}
+                    className={classNames({
+                        [styles.platformButton]: true,
+                        'br b-gray': true,
+                        [styles.isActive]: platform === 'scss',
+                    })}
+                >
+                    SCSS
+                </button>
+                <button
+                    type="button"
+                    onClick={() => setPlatform(platform === 'email' ? undefined : 'email')}
+                    className={classNames({
+                        [styles.platformButton]: true,
+                        [styles.isActive]: platform === 'email',
+                    })}
+                >
+                    <Text size={2}>Email</Text>
+                </button>
+            </div>
+        </div>
+    );
 };
 
-export const Legend = () => (
-    <div className="flex mb5">
-        <TextInput size="small" />
-        <div className="ba b-gray br2 ml3 flex">
-            <Text size={2} className="br b-gray h-100 flex items-center ph3">
-                React
-            </Text>
-            <Text size={2} className="br b-gray h-100 flex items-center ph3">
-                iOS
-            </Text>
-            <Text size={2} className="br b-gray h-100 flex items-center ph3">
-                Android
-            </Text>
-            <Text size={2} className="br b-gray h-100 flex items-center ph3">
-                SCSS
-            </Text>
-            <Text size={2} className="h-100 flex items-center ph3">
-                Email
-            </Text>
-        </div>
-    </div>
-);
-
 export const ComponentRow = ({ name, react, scss, ios, android }) => (
-    <a href="/path/" className={`color-inherit ${styles.component}`}>
+    <a href="/path/" className={`color-inherit relative ${styles.component}`}>
         <div className="h5 bg-gray-300 br1 mb1">&nbsp;</div>
+        <Text size={3} className="absolute top-0 right-0 bg-blue b pv1 ph3 white">
+            {react.documentation}
+        </Text>
         <Text size={2}>{name}</Text>
     </a>
 );

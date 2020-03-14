@@ -2,7 +2,18 @@
 
 .componentGrid {
     display: grid;
-    grid-column-gap: 24px;
-    grid-row-gap: 24px;
+    grid-column-gap: $tp-space__4;
+    grid-row-gap: $tp-space__4;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.platformButton {
+    background: none;
+    border: none;
+    padding: 0 $tp-space__3;
+}
+
+.isActive {
+    color: $tp-color__white;
+    background: $tp-color__blue;
 }
