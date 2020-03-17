@@ -63,9 +63,12 @@ module.exports = {
             resolve: 'gatsby-source-coda',
             options: {
                 apiToken: process.env.CODA_API_TOKEN,
-                docId: 'bXyUQb2tJW',
-                tableIdOrName: 'Implementations',
-                useColumnNames: true,
+                tables: [
+                    // Components
+                    { docId: 'bXyUQb2tJW', tableId: 'grid-aJ3liErr5E' },
+                    // Implementations
+                    { docId: 'bXyUQb2tJW', tableId: 'grid-GWmIeb-dNN' },
+                ],
             },
         },
         {

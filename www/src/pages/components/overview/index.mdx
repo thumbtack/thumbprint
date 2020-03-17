@@ -6,7 +6,7 @@ description: Our components and the platforms they're available in.
 import { graphql } from 'gatsby';
 import { keyBy } from 'lodash';
 import { Text } from '@thumbtack/thumbprint-react';
-import { FilterBar, ComponentRow, ComponentTable } from 'components/thumbprint-components/overview';
+import ComponentOverview from 'components/thumbprint-components/overview';
 import Alert from 'components/alert';
 import { InlineCode } from 'components/mdx';
 
@@ -23,7 +23,20 @@ export const pageQuery = graphql`
                                 Design_status
                                 Development_status
                                 Documentation_status
+                                Documentation
                             }
+                        }
+                    }
+                }
+            }
+        }
+        allCodaComponentsTable {
+            edges {
+                node {
+                    data {
+                        values {
+                            Name
+                            Usage_documentation
                         }
                     }
                 }
@@ -48,43 +61,7 @@ export const pageQuery = graphql`
             file for help.
         </Alert>
     ) : (
-        <React.Fragment>
-            <FilterBar />
-            <ComponentTable>
-                {props.data.allCodaImplementationsTable.group.map(group => {
-                    const platforms = keyBy(group.edges, 'node.data.values.Platform');
-                    return (
-                        <ComponentRow
-                            name={group.fieldValue}
-                            react={{
-                                design: platforms['React'].node.data.values.Design_status,
-                                development: platforms['React'].node.data.values.Development_status,
-                                documentation:
-                                    platforms['React'].node.data.values.Documentation_status,
-                            }}
-                            scss={{
-                                design: platforms['SCSS'].node.data.values.Design_status,
-                                development: platforms['SCSS'].node.data.values.Development_status,
-                                documentation:
-                                    platforms['SCSS'].node.data.values.Documentation_status,
-                            }}
-                            ios={{
-                                design: platforms['iOS'].node.data.values.Design_status,
-                                development: platforms['iOS'].node.data.values.Development_status,
-                                documentation:
-                                    platforms['iOS'].node.data.values.Documentation_status,
-                            }}
-                            android={{
-                                design: platforms['Android'].node.data.values.Design_status,
-                                development:
-                                    platforms['Android'].node.data.values.Development_status,
-                                documentation:
-                                    platforms['Android'].node.data.values.Documentation_status,
-                            }}
-                        />
-                    );
-                })}
-            </ComponentTable>
-        </React.Fragment>
+        <ComponentOverview data={props.data} />
     )}
+
 </React.Fragment>
