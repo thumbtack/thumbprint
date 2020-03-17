@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 12.3.0 - 2020-03-16
+
 ### Added
 
 -   [Minor] Add React component of `FAB`.
