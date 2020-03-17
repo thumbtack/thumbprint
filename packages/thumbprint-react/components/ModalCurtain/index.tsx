@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import NoScroll from './components/no-scroll.jsx';
+import NoScroll from './components/no-scroll';
 
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import useFocusTrap from '../../utils/use-focus-trap';
@@ -10,7 +9,7 @@ import ConditionalPortal from '../../utils/ConditionalPortal';
 
 import styles from './index.module.scss';
 
-const propTypes = {
+interface PropTypes {
     /**
      * Content that appears on top of the curtain. `children` is a [render
      * prop](https://reactjs.org/docs/render-props.html) and expects a function. The function
@@ -24,7 +23,13 @@ const propTypes = {
      *
      * The examples on this page include code samples that demonstrate real use of these props.
      */
-    children: PropTypes.func,
+    children?: ({
+        curtainClassName,
+        curtainOnClick,
+    }: {
+        curtainClassName: string;
+        curtainOnClick: (event: React.MouseEvent<HTMLElement>) => void;
+    }) => JSX.Element;
     /**
      * The four states that a modal can be in.
      *
@@ -35,37 +40,30 @@ const propTypes = {
      *
      * Modals that do not have transitions will only use the `entered` and `exited` stages.
      */
-    stage: PropTypes.oneOf(['entering', 'entered', 'exiting', 'exited']),
+    stage?: 'entering' | 'entered' | 'exiting' | 'exited' | null;
     /**
      * Accessibility title used to describe the content of the modal to screen readers.
      */
-    accessibilityLabel: PropTypes.string,
+    accessibilityLabel?: string;
     /**
      * Function that fires to close the modal.
      */
-    onCloseClick: PropTypes.func.isRequired,
+    onCloseClick: () => void;
     /**
      * Determines if the modal should close when pressing the escape key.
      */
-    shouldCloseOnEscape: PropTypes.bool,
-};
-
-const defaultProps = {
-    children: undefined,
-    accessibilityLabel: 'Modal',
-    stage: 'exited',
-    shouldCloseOnEscape: true,
-};
+    shouldCloseOnEscape?: boolean;
+}
 
 export default function ModalCurtain({
-    stage,
-    shouldCloseOnEscape,
-    accessibilityLabel,
+    stage = 'exited',
+    shouldCloseOnEscape = true,
+    accessibilityLabel = 'Modal',
     onCloseClick,
     children,
-}) {
-    const [isClient, setIsClient] = useState(false);
-    const [wrapperEl, setWrapperEl] = useState(null);
+}: PropTypes): JSX.Element {
+    const [isClient, setIsClient] = useState<boolean>(false);
+    const [wrapperEl, setWrapperEl] = useState<HTMLDivElement | null>(null);
 
     useEffect(() => {
         setIsClient(true);
@@ -73,7 +71,7 @@ export default function ModalCurtain({
 
     const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
     const shouldBindEscListener = isClient && shouldCloseOnEscape && isEnteringOrEntered;
-    const shouldTrapFocus = isClient && wrapperEl && stage === 'entered';
+    const shouldTrapFocus = isClient && wrapperEl !== null && stage === 'entered';
     const shouldDisableScrolling = isEnteringOrEntered;
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
@@ -86,8 +84,8 @@ export default function ModalCurtain({
             <div
                 role="dialog"
                 aria-label={accessibilityLabel}
-                tabIndex="-1"
-                ref={element => {
+                tabIndex={-1}
+                ref={(element): void => {
                     setWrapperEl(element);
                 }}
             >
@@ -115,6 +113,3 @@ export default function ModalCurtain({
         </ConditionalPortal>
     );
 }
-
-ModalCurtain.propTypes = propTypes;
-ModalCurtain.defaultProps = defaultProps;

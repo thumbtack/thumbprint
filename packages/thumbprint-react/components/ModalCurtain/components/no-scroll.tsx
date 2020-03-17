@@ -2,15 +2,15 @@ import React from 'react';
 import noScroll from 'no-scroll';
 
 export default class NoScroll extends React.Component {
-    componentDidMount() {
+    componentDidMount(): void {
         noScroll.on();
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         noScroll.off();
     }
 
-    render() {
+    render(): null {
         return null;
     }
 }
