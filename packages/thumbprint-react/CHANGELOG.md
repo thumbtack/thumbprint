@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `ModalCurtain` component in TypeScript.
+
+## 12.3.0 - 2020-03-16
+
+### Added
+
+-   [Minor] Add React component of `FAB`.
+
+### Changed
+
+-   [Patch] Rewrite `Modal` component in TypeScript.
+
 ## 12.2.1 - 2020-03-02
 
 ### Changed

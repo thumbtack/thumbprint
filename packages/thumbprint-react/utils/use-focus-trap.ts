@@ -16,7 +16,7 @@ function toggleTrap(trap: FocusTrap, isActive: boolean): void {
  * @param {HTMLElement} element The element to trap focus inside of
  * @param {boolean} isActive Whether or not to activate the trap
  */
-export default function useFocusTrap(element: HTMLElement, isActive: boolean): void {
+export default function useFocusTrap(element: HTMLElement | null, isActive = false): void {
     const [trap, setTrap] = useState();
 
     useEffect((): (() => void) => {
