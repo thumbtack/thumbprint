@@ -6,12 +6,16 @@ import { Text, TextInput } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
 export default function ComponentOverview({ data, currentPlatform }) {
-    const [filter, setFilter] = useState(undefined);
+    const [searchFilter, setSearchFilter] = useState(undefined);
 
     return (
         <div>
             <div className="flex mb5">
-                <TextInput size="small" onChange={newValue => setFilter(newValue)} value={filter} />
+                <TextInput
+                    size="small"
+                    onChange={newValue => setSearchFilter(newValue)}
+                    value={searchFilter}
+                />
                 <div className="ba b-gray br2 ml3 flex">
                     <Link
                         to={
@@ -106,12 +110,13 @@ export default function ComponentOverview({ data, currentPlatform }) {
                         );
                     })
                     .filter(component => {
-                        if (!filter) {
+                        // Filter results if the user has entered a search query.
+                        if (!searchFilter) {
                             return true;
                         }
 
                         const componentName = component.fieldValue.toLowerCase().replace(/ /g, '');
-                        const searchTerm = filter.toLowerCase().replace(/ /g, '');
+                        const searchTerm = searchFilter.toLowerCase().replace(/ /g, '');
 
                         return componentName.includes(searchTerm);
                     })
