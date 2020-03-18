@@ -61,6 +61,6 @@ export const pageQuery = graphql`
             file for help.
         </Alert>
     ) : (
-        <ComponentOverview data={props.data} />
+        <ComponentOverview initialFilter={props.location.state.initialFilter} data={props.data} />
     )}
 </React.Fragment>

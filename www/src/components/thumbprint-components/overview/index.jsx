@@ -5,8 +5,8 @@ import { Text, TextInput } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
 // eslint-disable-next-line react/prop-types
-export default function ComponentOverview({ data, currentPlatform }) {
-    const [searchFilter, setSearchFilter] = useState(undefined);
+export default function ComponentOverview({ data, currentPlatform, initialFilter }) {
+    const [searchFilter, setSearchFilter] = useState(initialFilter);
 
     return (
         <div>
@@ -28,6 +28,7 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             'br b-gray': true,
                             [styles.isActive]: currentPlatform === 'react',
                         })}
+                        state={{ initialFilter: searchFilter }}
                     >
                         React
                     </Link>
@@ -42,6 +43,7 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             'br b-gray': true,
                             [styles.isActive]: currentPlatform === 'ios',
                         })}
+                        state={{ initialFilter: searchFilter }}
                     >
                         iOS
                     </Link>
@@ -56,6 +58,7 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             'br b-gray': true,
                             [styles.isActive]: currentPlatform === 'android',
                         })}
+                        state={{ initialFilter: searchFilter }}
                     >
                         Android
                     </Link>
@@ -70,6 +73,7 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             'br b-gray': true,
                             [styles.isActive]: currentPlatform === 'scss',
                         })}
+                        state={{ initialFilter: searchFilter }}
                     >
                         SCSS
                     </Link>
@@ -83,6 +87,7 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             [styles.platformButton]: true,
                             [styles.isActive]: currentPlatform === 'email',
                         })}
+                        state={{ initialFilter: searchFilter }}
                     >
                         Email
                     </Link>

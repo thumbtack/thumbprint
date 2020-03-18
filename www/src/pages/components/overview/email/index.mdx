@@ -59,6 +59,10 @@ export const pageQuery = graphql`
             file for help.
         </Alert>
     ) : (
-        <ComponentOverview data={props.data} currentPlatform="email" />
+        <ComponentOverview
+            data={props.data}
+            initialFilter={props.location.state.initialFilter}
+            currentPlatform="email"
+        />
     )}
 </React.Fragment>
