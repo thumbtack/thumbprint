@@ -149,12 +149,12 @@ export default function ComponentOverview({ data, currentPlatform }) {
                         const children = (
                             <>
                                 <div className="h5 bg-gray-300 br1 mb1">&nbsp;</div>
-                                {status && (
+                                {['To-do', 'In progress', 'Done / Deprecated'].includes(status) && (
                                     <Text
                                         size={3}
                                         className="absolute top-0 right-0 bg-blue b pv1 ph3 white"
                                     >
-                                        {status}
+                                        {status.replace('Done / Deprecated', 'Deprecated')}
                                     </Text>
                                 )}
                                 <Text size={2}>{component.fieldValue}</Text>
