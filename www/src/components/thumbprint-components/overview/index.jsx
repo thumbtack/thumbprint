@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { Text, TextInput } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
+// eslint-disable-next-line react/prop-types
 export default function ComponentOverview({ data, currentPlatform }) {
     const [searchFilter, setSearchFilter] = useState(undefined);
+
+    console.log({ data, currentPlatform });
 
     return (
         <div>
