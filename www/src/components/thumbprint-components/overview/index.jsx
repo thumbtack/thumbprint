@@ -105,6 +105,13 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             ].includes(platform.node.data.values.Development_status),
                         );
                     })
+                    .filter(component => {
+                        if (!filter) {
+                            return true;
+                        }
+
+                        return component.fieldValue.toLowerCase().includes(filter.toLowerCase());
+                    })
                     .map(component => {
                         const componentForCurrentPlatform = currentPlatform
                             ? component.edges[0].node.data.values
