@@ -61,7 +61,7 @@ export const pageQuery = graphql`
     ) : (
         <ComponentOverview
             data={props.data}
-            initialFilter={props.location.state.initialFilter}
+            initialFilter={props.location.state && props.location.state.initialFilter}
             currentPlatform="email"
         />
     )}
