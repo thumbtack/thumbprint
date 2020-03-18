@@ -8,14 +8,23 @@
 }
 
 .platformButton {
-    background: none;
-    border: none;
     padding: 0 $tp-space__3;
-    outline: none;
     color: $tp-color__black-300;
+    font-size: $tp-font__body__2__size;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    &:hover {
+        color: $tp-color__black-300;
+    }
 }
 
 .isActive {
     color: $tp-color__white;
     background: $tp-color__blue;
+
+    &:hover {
+        color: $tp-color__white;
+    }
 }

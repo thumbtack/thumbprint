@@ -19,7 +19,6 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import SideNav, { SideNavLink, SideNavGroup } from './side-nav';
 import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
-import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
 
@@ -77,32 +76,6 @@ const Container = ({ children, location, activeSection }) => {
                     }
                 }
             }
-            allComponents: allSitePage(
-                filter: {
-                    path: {
-                        glob: "/components/*/*/"
-                        nin: [
-                            "/components/overview/"
-                            "/components/global-css/scss/"
-                            "/components/mixins/scss/"
-                        ]
-                    }
-                }
-            ) {
-                group(field: context___frontmatter___title) {
-                    fieldValue
-                    edges {
-                        node {
-                            path
-                            context {
-                                frontmatter {
-                                    title
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     `);
 
@@ -113,7 +86,6 @@ const Container = ({ children, location, activeSection }) => {
         allJavaScriptTokens,
         allIosTokens,
         allAndroidTokens,
-        allComponents,
     } = data;
     const { pathname, hash } = location;
 
@@ -273,6 +245,60 @@ const Container = ({ children, location, activeSection }) => {
                                             to="/components/overview/"
                                             isActive={pathname === '/components/overview/'}
                                         />
+                                    </SideNavGroup>
+                                    <SideNavGroup level={2}>
+                                        <SideNavLink
+                                            title="React"
+                                            level={2}
+                                            to="/components/overview/react/"
+                                            isActive={
+                                                pathname === '/components/overview/react/' ||
+                                                (pathname.startsWith('/components/') &&
+                                                    pathname.endsWith('/react/'))
+                                            }
+                                        />
+                                        <SideNavLink
+                                            title="iOS"
+                                            level={2}
+                                            to="/components/overview/ios/"
+                                            isActive={
+                                                pathname === '/components/overview/ios/' ||
+                                                (pathname.startsWith('/components/') &&
+                                                    pathname.endsWith('/ios/'))
+                                            }
+                                        />
+                                        <SideNavLink
+                                            title="Android"
+                                            level={2}
+                                            to="/components/overview/android/"
+                                            isActive={
+                                                pathname === '/components/overview/android/' ||
+                                                (pathname.startsWith('/components/') &&
+                                                    pathname.endsWith('/android/'))
+                                            }
+                                        />
+                                        <SideNavLink
+                                            title="SCSS"
+                                            level={2}
+                                            to="/components/overview/scss/"
+                                            isActive={
+                                                pathname === '/components/overview/scss/' ||
+                                                (pathname.startsWith('/components/') &&
+                                                    pathname.endsWith('/scss/'))
+                                            }
+                                        />
+                                        <SideNavLink
+                                            title="Email"
+                                            level={2}
+                                            to="/components/overview/email/"
+                                            isActive={
+                                                pathname === '/components/overview/email/' ||
+                                                (pathname.startsWith('/components/') &&
+                                                    pathname.endsWith('/email/'))
+                                            }
+                                        />
+                                    </SideNavGroup>
+                                    <SideNavGroup level={2}>
                                         <SideNavLink
                                             title="Global CSS"
                                             level={2}
@@ -285,16 +311,6 @@ const Container = ({ children, location, activeSection }) => {
                                             to="/components/mixins/scss/"
                                             isActive={pathname === '/components/mixins/scss/'}
                                         />
-                                    </SideNavGroup>
-                                    <SideNavGroup level={2}>
-                                        {map(allComponents.group, group => (
-                                            <SideNavLink
-                                                title={group.fieldValue}
-                                                level={2}
-                                                key={group.edges[0].node.path}
-                                                {...getComponentsLinkProps(group.edges, pathname)}
-                                            />
-                                        ))}
                                     </SideNavGroup>
                                 </SideNavLink>
 

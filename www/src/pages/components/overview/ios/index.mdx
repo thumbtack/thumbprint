@@ -4,15 +4,13 @@ description: Our components and the platforms they're available in.
 ---
 
 import { graphql } from 'gatsby';
-import { keyBy } from 'lodash';
-import { Text } from '@thumbtack/thumbprint-react';
 import ComponentOverview from 'components/thumbprint-components/overview';
 import Alert from 'components/alert';
 import { InlineCode } from 'components/mdx';
 
 export const pageQuery = graphql`
     {
-        allCodaImplementationsTable {
+        allCodaImplementationsTable(filter: { data: { values: { Platform: { eq: "iOS" } } } }) {
             group(field: data___values___Component) {
                 fieldValue
                 edges {
@@ -61,6 +59,6 @@ export const pageQuery = graphql`
             file for help.
         </Alert>
     ) : (
-        <ComponentOverview data={props.data} />
+        <ComponentOverview data={props.data} currentPlatform="ios" />
     )}
 </React.Fragment>

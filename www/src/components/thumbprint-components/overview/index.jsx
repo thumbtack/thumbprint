@@ -5,19 +5,19 @@ import classNames from 'classnames';
 import { Text, TextInput } from '@thumbtack/thumbprint-react';
 import styles from './index.module.scss';
 
-export default function ComponentOverview({ data }) {
+export default function ComponentOverview({ data, currentPlatform }) {
     const [filter, setFilter] = useState(undefined);
-    const [currentPlatform, setCurrentPlatform] = useState(undefined);
 
     return (
         <div>
             <div className="flex mb5">
                 <TextInput size="small" onChange={newValue => setFilter(newValue)} value={filter} />
                 <div className="ba b-gray br2 ml3 flex">
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setCurrentPlatform(currentPlatform === 'react' ? null : 'react')
+                    <Link
+                        to={
+                            currentPlatform === 'react'
+                                ? '/components/overview/'
+                                : '/components/overview/react/'
                         }
                         className={classNames({
                             [styles.platformButton]: true,
@@ -25,23 +25,27 @@ export default function ComponentOverview({ data }) {
                             [styles.isActive]: currentPlatform === 'react',
                         })}
                     >
-                        <Text size={2}>React</Text>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => setCurrentPlatform(currentPlatform === 'ios' ? null : 'ios')}
+                        React
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'ios'
+                                ? '/components/overview/'
+                                : '/components/overview/ios/'
+                        }
                         className={classNames({
                             [styles.platformButton]: true,
                             'br b-gray': true,
                             [styles.isActive]: currentPlatform === 'ios',
                         })}
                     >
-                        <Text size={2}>iOS</Text>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setCurrentPlatform(currentPlatform === 'android' ? null : 'android')
+                        iOS
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'android'
+                                ? '/components/overview/'
+                                : '/components/overview/android/'
                         }
                         className={classNames({
                             [styles.platformButton]: true,
@@ -49,12 +53,13 @@ export default function ComponentOverview({ data }) {
                             [styles.isActive]: currentPlatform === 'android',
                         })}
                     >
-                        <Text size={2}>Android</Text>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setCurrentPlatform(currentPlatform === 'scss' ? null : 'scss')
+                        Android
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'scss'
+                                ? '/components/overview/'
+                                : '/components/overview/scss/'
                         }
                         className={classNames({
                             [styles.platformButton]: true,
@@ -62,20 +67,21 @@ export default function ComponentOverview({ data }) {
                             [styles.isActive]: currentPlatform === 'scss',
                         })}
                     >
-                        <Text size={2}>SCSS</Text>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() =>
-                            setCurrentPlatform(currentPlatform === 'email' ? null : 'email')
+                        SCSS
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'email'
+                                ? '/components/overview/'
+                                : '/components/overview/email/'
                         }
                         className={classNames({
                             [styles.platformButton]: true,
                             [styles.isActive]: currentPlatform === 'email',
                         })}
                     >
-                        <Text size={2}>Email</Text>
-                    </button>
+                        Email
+                    </Link>
                 </div>
             </div>
 
@@ -89,43 +95,24 @@ export default function ComponentOverview({ data }) {
 
                         // Show only the components for the selected platform that we've either
                         // completed or know that we want to build.
-                        return component.edges.some(
-                            platform =>
-                                platform.node.data.values.Platform.toLowerCase() ===
-                                    currentPlatform.toLowerCase() &&
-                                [
-                                    'To-do',
-                                    'In progress',
-                                    'Done / Uses built in OS component',
-                                    'Done / Deprecated',
-                                    'Done / Merged',
-                                ].includes(platform.node.data.values.Development_status),
+                        return component.edges.some(platform =>
+                            [
+                                'To-do',
+                                'In progress',
+                                'Done / Uses built in OS component',
+                                'Done / Deprecated',
+                                'Done / Merged',
+                            ].includes(platform.node.data.values.Development_status),
                         );
                     })
                     .map(component => {
-                        console.log({ component });
-                        console.log({ data });
-
                         const componentForCurrentPlatform = currentPlatform
-                            ? component.edges.find(
-                                  platform =>
-                                      platform.node.data.values.Platform.toLowerCase() ===
-                                      currentPlatform.toLowerCase(),
-                              ).node.data.values
+                            ? component.edges[0].node.data.values
                             : null;
-
-                        console.log(componentForCurrentPlatform);
 
                         const status = componentForCurrentPlatform
                             ? componentForCurrentPlatform.Development_status
                             : null;
-
-                        console.log(
-                            'usage',
-                            data.allCodaComponentsTable.edges.find(
-                                c => c.node.data.values.Usage_documentation,
-                            ),
-                        );
 
                         let documentationLink;
 
@@ -179,32 +166,3 @@ export default function ComponentOverview({ data }) {
         </div>
     );
 }
-
-// Component.propTypes = {
-//     name: PropTypes.string.isRequired,
-//     usage: PropTypes.shape({
-//         design: documentationStatus.isRequired,
-//         development: developmentStatus.isRequired,
-//         documentation: documentationStatus.isRequired,
-//     }).isRequired,
-//     react: PropTypes.shape({
-//         design: documentationStatus.isRequired,
-//         development: developmentStatus.isRequired,
-//         documentation: documentationStatus.isRequired,
-//     }).isRequired,
-//     scss: PropTypes.shape({
-//         design: documentationStatus.isRequired,
-//         development: developmentStatus.isRequired,
-//         documentation: documentationStatus.isRequired,
-//     }).isRequired,
-//     ios: PropTypes.shape({
-//         design: documentationStatus.isRequired,
-//         development: developmentStatus.isRequired,
-//         documentation: documentationStatus.isRequired,
-//     }).isRequired,
-//     android: PropTypes.shape({
-//         design: documentationStatus.isRequired,
-//         development: developmentStatus.isRequired,
-//         documentation: documentationStatus.isRequired,
-//     }).isRequired,
-// };
