@@ -110,7 +110,10 @@ export default function ComponentOverview({ data, currentPlatform }) {
                             return true;
                         }
 
-                        return component.fieldValue.toLowerCase().includes(filter.toLowerCase());
+                        const componentName = component.fieldValue.toLowerCase().replace(/ /g, '');
+                        const searchTerm = filter.toLowerCase().replace(/ /g, '');
+
+                        return componentName.includes(searchTerm);
                     })
                     .map(component => {
                         const componentForCurrentPlatform = currentPlatform
