@@ -4,8 +4,6 @@ exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
 <ModalCurtain
   accessibilityLabel="goosegoosegoose"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="exited"
 >
   <ConditionalPortal
     shouldDisplace={true}
@@ -49,7 +47,7 @@ exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
       <div
         aria-label="goosegoosegoose"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </Portal>
   </ConditionalPortal>
@@ -58,10 +56,7 @@ exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
 
 exports[`ModalCurtain renders a basic curtain 1`] = `
 <ModalCurtain
-  accessibilityLabel="Modal"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
-  stage="exited"
 >
   <ConditionalPortal
     shouldDisplace={true}
@@ -80,7 +75,7 @@ exports[`ModalCurtain renders a basic curtain 1`] = `
       <div
         aria-label="Modal"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </Portal>
   </ConditionalPortal>
@@ -89,9 +84,7 @@ exports[`ModalCurtain renders a basic curtain 1`] = `
 
 exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
 <ModalCurtain
-  accessibilityLabel="Modal"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
   stage="entered"
 >
   <ConditionalPortal
@@ -126,7 +119,7 @@ exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
       <div
         aria-label="Modal"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <NoScroll />
       </div>
@@ -137,9 +130,7 @@ exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
 
 exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
 <ModalCurtain
-  accessibilityLabel="Modal"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
   stage="entering"
 >
   <ConditionalPortal
@@ -169,7 +160,7 @@ exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
       <div
         aria-label="Modal"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <NoScroll />
       </div>
@@ -180,9 +171,7 @@ exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
 
 exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
 <ModalCurtain
-  accessibilityLabel="Modal"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
   stage="exited"
 >
   <ConditionalPortal
@@ -207,7 +196,7 @@ exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
       <div
         aria-label="Modal"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </Portal>
   </ConditionalPortal>
@@ -216,9 +205,7 @@ exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
 
 exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
 <ModalCurtain
-  accessibilityLabel="Modal"
   onCloseClick={[Function]}
-  shouldCloseOnEscape={true}
   stage="exiting"
 >
   <ConditionalPortal
@@ -258,7 +245,7 @@ exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
       <div
         aria-label="Modal"
         role="dialog"
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </Portal>
   </ConditionalPortal>
@@ -271,10 +258,7 @@ exports[`ModalCurtain renders text that is passed in 1`] = `
     type="button"
   />
   <ModalCurtain
-    accessibilityLabel="Modal"
     onCloseClick={[Function]}
-    shouldCloseOnEscape={true}
-    stage="exited"
   >
     <ConditionalPortal
       shouldDisplace={true}
@@ -316,7 +300,9 @@ exports[`ModalCurtain renders text that is passed in 1`] = `
               aria-label="Modal"
               role="dialog"
               tabindex="-1"
-            />
+            >
+              <div />
+            </div>
             <div
               aria-label="Modal"
               role="dialog"
@@ -332,7 +318,9 @@ exports[`ModalCurtain renders text that is passed in 1`] = `
               role="dialog"
               tabindex="-1"
             >
-              Goose
+              <div>
+                Goose
+              </div>
             </div>
           </body>
         }
@@ -340,9 +328,11 @@ exports[`ModalCurtain renders text that is passed in 1`] = `
         <div
           aria-label="Modal"
           role="dialog"
-          tabIndex="-1"
+          tabIndex={-1}
         >
-          Goose
+          <div>
+            Goose
+          </div>
         </div>
       </Portal>
     </ConditionalPortal>
