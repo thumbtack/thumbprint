@@ -8,8 +8,6 @@ import styles from './index.module.scss';
 export default function ComponentOverview({ data, currentPlatform }) {
     const [searchFilter, setSearchFilter] = useState(undefined);
 
-    console.log({ data, currentPlatform });
-
     return (
         <div>
             <div className="flex mb5">
