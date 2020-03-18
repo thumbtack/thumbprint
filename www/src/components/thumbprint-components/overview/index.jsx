@@ -15,6 +15,7 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
                     size="small"
                     onChange={newValue => setSearchFilter(newValue)}
                     value={searchFilter}
+                    placeholder="Filter components"
                 />
                 <div className="ba b-gray br2 ml3 flex">
                     <Link
