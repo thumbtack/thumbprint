@@ -2404,10 +2404,12 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@thumbtack/thumbprint-icons@^2.8.1":
-  version "2.15.1"
-  resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-icons/-/thumbprint-icons-2.15.1.tgz#a655f7893479a8cffc9d8c8052b29edcd85221c2"
-  integrity sha512-jXrKp9+EyLsCJcdzbEjofyZXbyjEika7TIAB+eJEwrzZCw2w2AW3gVg7aGfSy4USqX61KJ/YxZL43jps6tjdXA==
+"@thumbtack/thumbprint-icons@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@thumbtack/thumbprint-icons/-/thumbprint-icons-4.1.0.tgz#9be8c1b7f00e8cf5e4314266dc03fc0e05c81e88"
+  integrity sha512-DKC+T64x/JNwu2D9WITCvqKkKzQp8mcIF6t2K1HXiif5rp/5P/pFr3+NGDTN1ZORGw5IL0+wMcVto95Df25TrQ==
+  dependencies:
+    tslib "^1.10.0"
 
 "@thumbtack/thumbprint-tokens@^11.0.0":
   version "11.0.0"
@@ -2825,6 +2827,11 @@
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
+
+"@types/url-join@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/url-join/-/url-join-4.0.0.tgz#72eff71648a429c7d4acf94e03780e06671369bd"
+  integrity sha512-awrJu8yML4E/xTwr2EMatC+HBnHGoDxc2+ImA9QyeUELI1S7dOCIZcyjki1rkwoA8P2D2NVgLAJLjnclkdLtAw==
 
 "@types/vfile-message@*":
   version "1.0.1"
