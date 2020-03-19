@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
 import React, { useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { MDXProvider } from '@mdx-js/react';
 import {
     Title,
@@ -25,7 +24,7 @@ import CodeBlock from './code-block';
 import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
 
-const HashAnchor = ({ children, id }) => (
+const HashAnchor = ({ children, id }: { children: React.ReactNode; id: string }): JSX.Element => (
     <div className={styles.hashAnchor}>
         <a href={`#${id}`} aria-hidden="true" className={styles.hashAnchorLink}>
             <svg
@@ -42,43 +41,53 @@ const HashAnchor = ({ children, id }) => (
     </div>
 );
 
-HashAnchor.propTypes = { children: PropTypes.node.isRequired, id: PropTypes.string.isRequired };
+export function H2(p: Parameters<typeof Title>[0]): JSX.Element {
+    return (
+        <ScrollMarkerSection id={generateSlug({ level: 'section', children: p.children }) || ''}>
+            {({ id }: { id: string }): JSX.Element => (
+                <HashAnchor id={id}>
+                    <Title {...p} id={id} size={3} headingLevel={2} className="mt6 mb3" />
+                </HashAnchor>
+            )}
+        </ScrollMarkerSection>
+    );
+}
 
-export const H2 = p => (
-    <ScrollMarkerSection id={generateSlug({ level: 'section', children: p.children })}>
-        {({ id }) => (
-            <HashAnchor id={id}>
-                <Title {...p} id={id} size={3} headingLevel={2} className="mt6 mb3" />
-            </HashAnchor>
-        )}
-    </ScrollMarkerSection>
-);
-
-export const H3 = p => {
-    const id = generateSlug({ level: 'example', children: p.children });
+export function H3(p: Parameters<typeof Title>[0]): JSX.Element {
+    const id = generateSlug({ level: 'example', children: p.children }) || '';
 
     return (
         <HashAnchor id={id}>
             <Title {...p} id={id} size={5} headingLevel={3} className="mt5 mb2" />
         </HashAnchor>
     );
-};
+}
 
-export const H4 = p => (
-    <Title
-        {...p}
-        id={generateSlug({ level: 'example', children: p.children })}
-        size={6}
-        headingLevel={4}
-        className="mt5 mb1"
-    />
-);
+export function H4(p: Parameters<typeof Title>[0]): JSX.Element {
+    return (
+        <Title
+            {...p}
+            id={generateSlug({ level: 'example', children: p.children })}
+            size={6}
+            headingLevel={4}
+            className="mt5 mb1"
+        />
+    );
+}
 
-export const P = p => <Text {...p} className={`mb3 black-300 ${styles.readingWidth}`} />;
+export function P(p: Parameters<typeof Text>[0]): JSX.Element {
+    return <Text {...p} className={`mb3 black-300 ${styles.readingWidth}`} />;
+}
 
-export const InlineCode = props => {
-    const { shouldCopyToClipboard, children, theme } = props;
-
+export const InlineCode = ({
+    shouldCopyToClipboard = false,
+    children,
+    theme = 'default',
+}: {
+    shouldCopyToClipboard?: boolean;
+    children?: React.ReactNode;
+    theme?: 'plain' | 'default';
+}): JSX.Element => {
     const plainStyles = {
         fontFamily: tokens.tpFontFamilyMonospace,
         fontSize: '95%',
@@ -106,78 +115,91 @@ export const InlineCode = props => {
     );
 };
 
-InlineCode.propTypes = {
-    theme: PropTypes.oneOf(['plain', 'default']),
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    shouldCopyToClipboard: PropTypes.bool,
-};
+export function Pre(p: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
+    return <div {...p} />;
+}
 
-InlineCode.defaultProps = {
-    theme: 'default',
-    children: undefined,
-    shouldCopyToClipboard: false,
-};
+export function LI(p: Parameters<typeof Text>[0]): JSX.Element {
+    return (
+        <ListItem>
+            <Text elementName="div" className={`black-300 ${styles.readingWidth}`} {...p} />
+        </ListItem>
+    );
+}
 
-export const Pre = p => <div {...p} />;
+export function OL(p: Parameters<typeof List>[0]): JSX.Element {
+    return (
+        <div className="mb3 ml4">
+            <List theme="decimal" {...p} />
+        </div>
+    );
+}
 
-export const LI = p => (
-    <ListItem>
-        <Text elementName="div" className={`black-300 ${styles.readingWidth}`} {...p} />
-    </ListItem>
-);
+export function UL(p: Parameters<typeof List>[0]): JSX.Element {
+    return (
+        <div className="mb3 ml4">
+            <List {...p} />
+        </div>
+    );
+}
 
-export const OL = p => (
-    <div className="mb3 ml4">
-        <List theme="decimal" {...p} />
-    </div>
-);
-
-export const UL = p => (
-    <div className="mb3 ml4">
-        <List {...p} />
-    </div>
-);
-
-export const Code = p => {
+export function Code(p: {
+    className: string;
+    theme: string;
+    shouldRender: 'true' | 'false';
+    children: React.ReactNode;
+}): JSX.Element {
     const language = p.className && p.className.replace('language-', '');
 
     return (
         <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
-            {p.children}
+            {/* TODO(giles): CodeBlock is still using PropTypes, and TS inferring the wrong types
+            here. Remove this typecast when you covert CodeBlock to TS. */}
+            {(p.children as unknown) as string}
         </CodeBlock>
     );
-};
+}
 
-export const Table = p => <table {...p} className="mb5 w-100 black-300" />;
+export function Table(p: React.TableHTMLAttributes<HTMLTableElement>): JSX.Element {
+    return <table {...p} className="mb5 w-100 black-300" />;
+}
 
-export const TH = p => <th {...p} className="ph2 pb2 bb b-gray-300 tl" />;
+export function TH(p: React.TableHTMLAttributes<HTMLTableHeaderCellElement>): JSX.Element {
+    return <th {...p} className="ph2 pb2 bb b-gray-300 tl" />;
+}
 
-export const TD = p => <td {...p} className="pa2 bb b-gray-300" />;
+export function TD(p: React.TableHTMLAttributes<HTMLTableDataCellElement>): JSX.Element {
+    return <td {...p} className="pa2 bb b-gray-300" />;
+}
 
-export const Img = p => (
-    <img
-        src={p.src}
-        alt={p.alt}
-        className={p.className}
-        width={p.width}
-        height={p.height}
-        style={{ display: 'block', maxWidth: '100%' }}
-    />
-);
+export function Img(p: React.ImgHTMLAttributes<HTMLImageElement>): JSX.Element {
+    return (
+        <img
+            src={p.src}
+            alt={p.alt}
+            className={p.className}
+            width={p.width}
+            height={p.height}
+            style={{ display: 'block', maxWidth: '100%' }}
+        />
+    );
+}
 
-export const HR = p => (
-    <hr {...p} className="bt b-gray-300 mv4" style={{ height: '0', border: '0' }} />
-);
+export function HR(p: React.HTMLAttributes<HTMLHRElement>): JSX.Element {
+    return <hr {...p} className="bt b-gray-300 mv4" style={{ height: '0', border: '0' }} />;
+}
 
-export const Iframe = p => (
-    <iframe
-        {...p}
-        className="pa1 mb1 ba bw-2 br2 b-gray-300"
-        title="Image of component from Figma"
-    />
-);
+export function Iframe(p: React.IframeHTMLAttributes<HTMLIFrameElement>): JSX.Element {
+    return (
+        <iframe
+            {...p}
+            className="pa1 mb1 ba bw-2 br2 b-gray-300"
+            title="Image of component from Figma"
+        />
+    );
+}
 
-export const MDXRenderer = ({ children }) => {
+export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.Element => {
     let renderedChildren = children;
 
     if (isString(renderedChildren)) {
@@ -197,7 +219,7 @@ export const MDXRenderer = ({ children }) => {
                 ol: OL,
                 ul: UL,
                 img: Img,
-                code: p => <Code {...p} />,
+                code: (p): JSX.Element => <Code {...p} />,
                 table: Table,
                 td: TD,
                 th: TH,
@@ -210,12 +232,10 @@ export const MDXRenderer = ({ children }) => {
     );
 };
 
-MDXRenderer.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-};
+type Platform = 'React' | 'JavaScript' | 'SCSS' | 'Usage' | 'iOS' | 'Android';
 
-const getPlatformByPathname = pathname => {
-    const mappings = {
+const getPlatformByPathname = (pathname: string): Platform => {
+    const mappings: Record<string, Platform> = {
         react: 'React',
         javascript: 'JavaScript',
         scss: 'SCSS',
@@ -238,9 +258,19 @@ const getPlatformByPathname = pathname => {
     return mappings[platformSlug];
 };
 
-const getSectionByPathname = pathname => {
+type Section =
+    | 'Overview'
+    | 'Guidelines'
+    | 'Components'
+    | 'Atomic'
+    | 'Tokens'
+    | 'Icons'
+    | 'Updates'
+    | 'Help';
+
+const getSectionByPathname = (pathname: string): Section => {
     // This needs to be updated if a new section is added or a section is renamed.
-    const mappings = {
+    const mappings: Record<string, Section> = {
         overview: 'Overview',
         guide: 'Guidelines',
         components: 'Components',
@@ -265,27 +295,31 @@ const getSectionByPathname = pathname => {
     return displayName;
 };
 
-const FEEDBACK_STEPS = {
+type FeedbackStep = 'feedback-score' | 'feedback-comment' | 'feedback-complete';
+
+const FEEDBACK_STEPS: Record<FeedbackStep, FeedbackStep> = {
     'feedback-score': 'feedback-score',
     'feedback-comment': 'feedback-comment',
     'feedback-complete': 'feedback-complete',
 };
 
-const FeedbackForm = ({ page }) => {
+const FeedbackForm = ({ page }: { page: string }): JSX.Element => {
     // Track the current step in the feedback flow.
-    const [feedbackStep, setFeedbackStep] = useState(FEEDBACK_STEPS['feedback-score']);
+    const [feedbackStep, setFeedbackStep] = useState<FeedbackStep>(
+        FEEDBACK_STEPS['feedback-score'],
+    );
     // "Yes" or "No" values
     const [feedbackScore, setFeedbackScore] = useState('');
     // Freeform comment box for additional feedback
     const [feedbackComment, setFeedbackComment] = useState('');
-    const feebackScoreFormEl = useRef();
+    const feebackScoreFormEl = useRef<HTMLFormElement>(null);
     // We send the feedback to Netlify in two steps because we want to record a
     // "Yes" or "No" even if the user doesn't leave a comment. Netlify doesn't
     // allow us to update an existing form response, so we generate a UUID
     // that we can later use to associate a score ("Yes"/"No") with a
     // free-form comment. Storing it with `useRef` prevents the value from
     // changing if the component re-renders.
-    const feedbackResponseId = useRef(uuid());
+    const feedbackResponseId = useRef(uuid.v1());
 
     // Submit the feedback programatically here instead of the form's
     // `onSubmit`. This is because the "Yes" and "No" buttons are
@@ -295,7 +329,14 @@ const FeedbackForm = ({ page }) => {
     useEffect(() => {
         if (feedbackScore) {
             const form = feebackScoreFormEl.current;
-            const data = new URLSearchParams(new FormData(form)).toString();
+            if (!form) {
+                return;
+            }
+
+            // Unfortunately TypeScript's DOM types do not yet recognise FormData as a valid
+            // argument to URLSearchParams. Cast here to avoid an error
+            // See: https://github.com/Microsoft/TypeScript/issues/30584
+            const data = new URLSearchParams((new FormData(form) as unknown) as string).toString();
 
             fetch(form.action, {
                 method: 'POST',
@@ -336,14 +377,14 @@ const FeedbackForm = ({ page }) => {
                         <Button
                             size="small"
                             theme="tertiary"
-                            onClick={() => setFeedbackScore('yes')}
+                            onClick={(): void => setFeedbackScore('yes')}
                         >
                             Yes
                         </Button>
                         <Button
                             size="small"
                             theme="tertiary"
-                            onClick={() => setFeedbackScore('no')}
+                            onClick={(): void => setFeedbackScore('no')}
                         >
                             No
                         </Button>
@@ -360,7 +401,7 @@ const FeedbackForm = ({ page }) => {
                 name="feedback-comments"
                 method="POST"
                 data-netlify="true"
-                onSubmit={e => {
+                onSubmit={(e: React.FormEvent<HTMLFormElement>): void => {
                     // Show a success message (but don't send data to Netlify)
                     // if the user clicks on "Send" with an empty text area.
                     // The user may hit send without adding comments because they
@@ -373,8 +414,10 @@ const FeedbackForm = ({ page }) => {
 
                     e.preventDefault();
 
-                    const form = e.target;
-                    const data = new URLSearchParams(new FormData(form)).toString();
+                    const form = e.target as HTMLFormElement;
+                    const data = new URLSearchParams((new FormData(
+                        form,
+                    ) as unknown) as string).toString();
 
                     fetch(form.action, {
                         method: 'POST',
@@ -403,7 +446,7 @@ const FeedbackForm = ({ page }) => {
                 </div>
                 <div className="mb3 mw7">
                     <TextArea
-                        onChange={v => setFeedbackComment(v)}
+                        onChange={(v): void => setFeedbackComment(v)}
                         value={feedbackComment}
                         name="comment"
                         id="feedback-comments"
@@ -416,11 +459,13 @@ const FeedbackForm = ({ page }) => {
                     Send
                 </Button>
             </form>
+
             {feedbackStep === FEEDBACK_STEPS['feedback-complete'] && (
                 <div className={`mb3 ${styles.readingWidth}`}>
                     <Title size={5} className="mb2">
                         Was this page helpful?
                     </Title>
+
                     <Text className="black-300 mw7">
                         Thanks! We’ve submitted your feedback.{' '}
                         <span role="img" aria-label="">
@@ -433,13 +478,24 @@ const FeedbackForm = ({ page }) => {
     );
 };
 
-FeedbackForm.propTypes = {
-    page: PropTypes.string.isRequired,
-};
+interface MdxPropTypes {
+    children: React.ReactNode;
+    location: { pathname: string };
+    pageContext: {
+        frontmatter: {
+            title: string;
+            description: string;
+        };
+    };
+    header?: React.ReactNode;
+}
 
-const MDX = props => {
-    const { children, location, pageContext, header } = props;
-
+export default function MDX({
+    children,
+    location,
+    pageContext,
+    header,
+}: MdxPropTypes): JSX.Element {
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
     const isComponentOrTokensPage =
@@ -482,15 +538,4 @@ const MDX = props => {
             </Wrap>
         </Container>
     );
-};
-
-MDX.propTypes = {
-    children: PropTypes.node.isRequired,
-    location: PropTypes.shape({}).isRequired,
-    pageContext: PropTypes.shape({}).isRequired,
-    header: PropTypes.node,
-};
-
-MDX.defaultProps = { header: undefined };
-
-export default MDX;
+}

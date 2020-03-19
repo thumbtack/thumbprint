@@ -31,7 +31,7 @@ description: Clickable elements used to perform actions.
 
 MDX files can include `import` statements and [Gatsby GraphQL queries](https://www.gatsbyjs.org/docs/querying-with-graphql/). Take a look at examples in `src/pages/` to learn more.
 
-The Markdown in MDX files gets transformed by the `MDXProvider` component in [`src/components/mdx/index.jsx`](https://github.com/thumbtack/thumbprint/blob/master/www/src/components/mdx/index.jsx). `MDXProvider` allows us to map Markdown elements to custom React components.
+The Markdown in MDX files gets transformed by the `MDXProvider` component in [`src/components/mdx/index.tsx`](https://github.com/thumbtack/thumbprint/blob/master/www/src/components/mdx/index.tsx). `MDXProvider` allows us to map Markdown elements to custom React components.
 
 #### Multiline code blocks in MDX
 
