@@ -9,6 +9,9 @@ www/.cache
 package.json
 # Ignore the Netlify CMS files because those are edited through a WYSIWYG interface.
 www/src/cms/**/*.md
+# Ignore thumbprint-email handlebar partials.
+/packages/thumbprint-email/src/**/*html
+
 
 coverage
 yarn.lock

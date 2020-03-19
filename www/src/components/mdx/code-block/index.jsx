@@ -11,25 +11,25 @@ import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'
 
 const compileEmail = async emailSnippet => {
     const { default: tpAvatar } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpAvatar/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpAvatar/index.html`
     );
     const { default: tpButton } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpButton/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpButton/index.html`
     );
     const { default: tpCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpCard/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpCard/index.html`
     );
     const { default: tpIcon } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpIcon/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpIcon/index.html`
     );
     const { default: tpImage } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpImage/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpImage/index.html`
     );
     const { default: tpSpacer } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpSpacer/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpSpacer/index.html`
     );
     const { default: tpServiceCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpServiceCard/index.hbs`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpServiceCard/index.html`
     );
 
     Handlebars.registerPartial('tpAvatar', tpAvatar);

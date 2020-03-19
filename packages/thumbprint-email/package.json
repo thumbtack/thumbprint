@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-email",
-    "version": "0.1.0-beta.7",
+    "version": "0.1.0-beta.8",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/thumbprint-email.css",
     "style": "dist/thumbprint-email.css",
