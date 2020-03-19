@@ -18,15 +18,7 @@ exports[`renders content that is passed in 1`] = `
 
 exports[`renders icon 1`] = `
 <Pill
-  icon={
-    <ContentModifierLightningTiny
-      fill="currentColor"
-      height="14"
-      viewBox="0 0 14 14"
-      width="14"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  }
+  icon={<ContentModifierLightningTiny />}
 >
   <div
     className="root"
@@ -37,13 +29,7 @@ exports[`renders icon 1`] = `
       <span
         className="iconWrap"
       >
-        <ContentModifierLightningTiny
-          fill="currentColor"
-          height="14"
-          viewBox="0 0 14 14"
-          width="14"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <ContentModifierLightningTiny>
           <svg
             fill="currentColor"
             height="14"
@@ -52,7 +38,7 @@ exports[`renders icon 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M4.968 10.08l.897-2.855a.751.751 0 0 0-.715-.975H4.14L6.604 2.5h3.019L8.101 5.123A.748.748 0 0 0 8.75 6.25h.898l-4.68 3.83zm7.488-4.832a.748.748 0 0 0-.706-.498h-1.698l1.523-2.623A.752.752 0 0 0 10.925 1H6.201a.75.75 0 0 0-.628.338l-3.45 5.25A.75.75 0 0 0 2.75 7.75h1.378l-1.344 4.275a.749.749 0 0 0 1.19.806l8.25-6.75a.749.749 0 0 0 .232-.833z"
+              d="M4.968 10.08l.897-2.855a.751.751 0 00-.716-.975H4.141L6.604 2.5h3.019L8.101 5.123A.748.748 0 008.75 6.25h.898l-4.68 3.83zm7.488-4.832a.748.748 0 00-.706-.498h-1.698l1.523-2.623A.752.752 0 0010.925 1H6.201a.75.75 0 00-.628.338l-3.45 5.25A.75.75 0 002.75 7.75h1.378l-1.344 4.275a.749.749 0 001.19.806l8.25-6.75a.749.749 0 00.232-.833z"
             />
           </svg>
         </ContentModifierLightningTiny>
