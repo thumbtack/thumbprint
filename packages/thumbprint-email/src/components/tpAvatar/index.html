@@ -1,0 +1,40 @@
+<img alt="Avatar"
+    src="{{~#if src ~}} {{~src~}} {{~else~}} /img/icons/empty-profile.png {{~/if~}}"
+    width="
+        {{~#equal size "xlarge"~}} 140 {{~/equal~}}
+        {{~#equal size "large"~}} 100 {{~/equal~}}
+        {{~#equal size "medium"~}} 72 {{~/equal~}}
+        {{~#equal size "small"~}} 48 {{~/equal~}}
+        {{~#equal size "xsmall"~}} 32 {{~/equal~}}
+    " height="
+        {{~#equal size "xlarge"~}} 140 {{~/equal~}}
+        {{~#equal size "large"~}} 100 {{~/equal~}}
+        {{~#equal size "medium"~}} 72 {{~/equal~}}
+        {{~#equal size "small"~}} 48 {{~/equal~}}
+        {{~#equal size "xsmall"~}} 32 {{~/equal~}}
+    " style="
+        max-width:
+            {{~#equal size "xlarge"~}} 140px {{~/equal~}}
+            {{~#equal size "large"~}} 100px {{~/equal~}}
+            {{~#equal size "medium"~}} 72px {{~/equal~}}
+            {{~#equal size "small"~}} 48px {{~/equal~}}
+            {{~#equal size "xsmall"~}} 32px {{~/equal~}}
+        ;
+        width:
+            {{~#equal size "xlarge"~}} 140px {{~/equal~}}
+            {{~#equal size "large"~}} 100px {{~/equal~}}
+            {{~#equal size "medium"~}} 72px {{~/equal~}}
+            {{~#equal size "small"~}} 48px {{~/equal~}}
+            {{~#equal size "xsmall"~}} 32px {{~/equal~}}
+        ;
+        height:
+            {{~#equal size "xlarge"~}} 140px {{~/equal~}}
+            {{~#equal size "large"~}} 100px {{~/equal~}}
+            {{~#equal size "medium"~}} 72px {{~/equal~}}
+            {{~#equal size "small"~}} 48px {{~/equal~}}
+            {{~#equal size "xsmall"~}} 32px {{~/equal~}}
+        ;
+        border-radius:{{~#if type~}} 50% {{~else~}} 3px {{~/if~}};
+        object-fit: cover;
+        object-position: center center;
+    " />
