@@ -6,6 +6,10 @@
 
 -   [Patch] Rewrite `ModalCurtain` component in TypeScript.
 
+### Added
+
+-   [Minor] Add iconRight prop to `Button` and `ThemedLink`.
+
 ## 12.3.0 - 2020-03-16
 
 ### Added

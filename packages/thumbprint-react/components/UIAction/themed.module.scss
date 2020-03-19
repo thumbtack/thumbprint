@@ -30,8 +30,12 @@ $button-border-width: 2px;
     height: 18px;
     overflow: hidden;
 
-    &HasChildren {
+    &HasRightChildren {
         margin-right: 12px;
+    }
+
+    &HasLeftChildren {
+        margin-left: 12px;
     }
 }
 

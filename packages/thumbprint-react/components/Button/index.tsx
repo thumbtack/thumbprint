@@ -145,6 +145,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             isDisabled = false,
             isLoading = false,
             icon,
+            iconRight,
             accessibilityLabel,
             type = 'button',
             onClick,
@@ -175,6 +176,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
                 dataTest,
             })}
             icon={icon}
+            iconRight={iconRight}
             isLoading={isLoading}
             theme={theme}
             size={size}
@@ -199,10 +201,15 @@ interface ButtonPropTypes {
      */
     isLoading?: boolean;
     /**
-     * Icon from [Thumbprint Icons](/icons/) to render within the button. It must be one of the
+     * Icon from [Thumbprint Icons](/icons/) to render left within the button. It must be one of the
      * `small` icons.
      */
     icon?: React.ReactNode;
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right within the button. It must be one of the
+     * `small` icons.
+     */
+    iconRight?: React.ReactNode;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
