@@ -1,6 +1,6 @@
 ---
 title: Grid
-description: asdfadfs.
+description: Content side-by-side with responsive options.
 ---
 
 import { graphql } from 'gatsby';
@@ -11,92 +11,24 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Avatar options
-
-These are the available `Avatar` styles for use on light background colors.
-
 ### Rows & columns
 
 ```email
 <row>
-    <columns>
-        {{> image
+    <columns small="12">
+        {{> tpImage
             src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
             radius="true"
         }}
     </columns>
-    <columns>
-        {{> image
-            src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
-            radius="true"
-        }}
-    </columns>
-    <columns>
-        {{> image
+    <columns small="12">
+        {{> tpImage
             src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
             radius="true"
         }}
     </columns>
 </row>
 ```
-
-### Block grid
-
-```email
-<block-grid up="3">
-    <td>
-        {{> image
-            src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
-            radius="true"
-        }}
-    </td>
-    <td>
-        {{> image
-            src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
-            radius="true"
-        }}
-    </td>
-    <td>
-        {{> image
-            src="https://production-next-images-cdn.thumbtack.com/i/323761720722374783/width/400/aspect/8-5.jpeg"
-            radius="true"
-        }}
-    </td>
-</block-grid>
-```
-
-## Props
-
-<APITable
-    properties={[
-        {
-            name: 'src',
-            description: 'URL of the user avatar.',
-            type: {
-                name: 'string',
-            },
-        },
-        {
-            name: 'size',
-            description: 'Controls the height and width.',
-            type: {
-                name: 'enum',
-                options: ['30', '72'],
-            },
-            defaultValue: '72',
-        },
-        {
-            name: 'customer',
-            description: 'Defines square of circular avatar.',
-            type: {
-                name: 'boolean',
-            },
-            defaultValue: 'false',
-        },
-    ]}
-/>
-
-<ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
     {
