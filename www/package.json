@@ -54,6 +54,9 @@
         "warning": "^4.0.1"
     },
     "devDependencies": {
-        "@types/url-join": "^4.0.0"
+        "@types/invariant": "^2.2.31",
+        "@types/mdx-js__react": "^1.5.1",
+        "@types/url-join": "^4.0.0",
+        "@types/uuid": "^7.0.2"
     }
 }
