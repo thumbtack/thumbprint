@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import { Text, TextInput } from '@thumbtack/thumbprint-react';
+import { Text, TextInput, Image } from '@thumbtack/thumbprint-react';
+import { tpSpace7 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
 // eslint-disable-next-line react/prop-types
@@ -135,6 +136,10 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
                             ? componentForCurrentPlatform.Development_status
                             : null;
 
+                        const componentLevelData = data.allCodaComponentsTable.edges.find(
+                            c => c.node.data.values.Name === component.fieldValue,
+                        );
+
                         let documentationLink;
 
                         if (componentForCurrentPlatform) {
@@ -144,17 +149,22 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
                         } else {
                             // If no platform filter is selected, link to the component usage
                             // documentation when available.
-                            const componentLevelData = data.allCodaComponentsTable.edges.find(
-                                c => c.node.data.values.Name === component.fieldValue,
-                            );
-
                             documentationLink =
                                 componentLevelData.node.data.values.Usage_documentation || null;
                         }
 
+                        const componentImage = componentLevelData.node.data.values.Image_URL;
+
+                        console.log({ componentLevelData });
+
                         const children = (
                             <>
-                                <div className="h5 bg-gray-300 br1 mb1">&nbsp;</div>
+                                <div className="h5 bg-gray-300 br1 mb1">
+                                    {componentImage && (
+                                        <Image src={componentImage} alt="" height={tpSpace7} />
+                                    )}
+                                </div>
+
                                 {['To-do', 'In progress', 'Done / Deprecated'].includes(status) && (
                                     <Text
                                         size={3}
