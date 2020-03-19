@@ -6,48 +6,46 @@ import { Text } from '@thumbtack/thumbprint-react';
 import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
-const documentationStatus = PropTypes.oneOf([
-    'To-do',
-    'In progress',
-    "Done / Won't build",
-    'Done / Deprecated',
-    'Done / Merged',
-]);
+const documentationStatuses = ['Unknown', 'To-do', 'In progress', 'Done', "Done / Won't do"];
+const documentationStatusPropTypes = PropTypes.oneOf(documentationStatuses);
 
-const developmentStatus = PropTypes.oneOf([
-    'Needs evaluation',
+const developmentStatuses = [
+    'Unknown',
     'To-do',
     'In progress',
-    'Done / Uses built in OS component',
+    'Done',
+    'Done / Uses OS component',
     "Done / Won't build",
     'Done / Deprecated',
-    'Done / Merged',
-]);
+];
+const developmentStatusPropTypes = PropTypes.oneOf(developmentStatuses);
+
+const designStatuses = ['Unknown', 'To-do', 'In progress', 'Done', "Done / Won't do"];
+const designStatusPropTypes = PropTypes.oneOf(designStatuses);
 
 const Dot = ({ status }) => (
     <div
         aria-label={status}
         className={classNames({
             [styles.dot]: true,
-            [styles.dotToDo]: ['To-do', 'Needs evaluation'].includes(status),
+            [styles.dotToDo]: ['To-do', 'Unknown'].includes(status),
             [styles.dotInProgress]: status === 'In progress',
             [styles.dotDeprecated]: status === 'Done / Deprecated',
-            [styles.dotNotApplicable]: status === "Done / Won't build",
-            [styles.dotDone]: ['Done / Merged', 'Done / Uses built in OS component'].includes(
-                status,
-            ),
+            [styles.dotNotApplicable]: ["Done / Won't build", "Done / Won't do"].includes(status),
+            [styles.dotDone]: ['Done', 'Done / Uses OS component'].includes(status),
         })}
     />
 );
 
 Dot.propTypes = {
-    status: documentationStatus.isRequired,
+    status: PropTypes.oneOf([...designStatuses, ...developmentStatuses, ...documentationStatuses])
+        .isRequired,
 };
 
 export const Legend = () => (
     <ul aria-hidden="true" className="flex black-300 mb2">
         <li className="mr4 flex items-center">
-            <Dot status="Done / Merged" />{' '}
+            <Dot status="Done" />{' '}
             <Text size={2} className="ml2">
                 Done
             </Text>
@@ -145,30 +143,25 @@ export const ComponentRow = ({ name, react, scss, ios, android }) => (
 
 ComponentRow.propTypes = {
     name: PropTypes.string.isRequired,
-    usage: PropTypes.shape({
-        design: documentationStatus.isRequired,
-        development: developmentStatus.isRequired,
-        documentation: documentationStatus.isRequired,
-    }).isRequired,
     react: PropTypes.shape({
-        design: documentationStatus.isRequired,
-        development: developmentStatus.isRequired,
-        documentation: documentationStatus.isRequired,
+        design: designStatusPropTypes.isRequired,
+        development: developmentStatusPropTypes.isRequired,
+        documentation: documentationStatusPropTypes.isRequired,
     }).isRequired,
     scss: PropTypes.shape({
-        design: documentationStatus.isRequired,
-        development: developmentStatus.isRequired,
-        documentation: documentationStatus.isRequired,
+        design: designStatusPropTypes.isRequired,
+        development: developmentStatusPropTypes.isRequired,
+        documentation: documentationStatusPropTypes.isRequired,
     }).isRequired,
     ios: PropTypes.shape({
-        design: documentationStatus.isRequired,
-        development: developmentStatus.isRequired,
-        documentation: documentationStatus.isRequired,
+        design: designStatusPropTypes.isRequired,
+        development: developmentStatusPropTypes.isRequired,
+        documentation: documentationStatusPropTypes.isRequired,
     }).isRequired,
     android: PropTypes.shape({
-        design: documentationStatus.isRequired,
-        development: developmentStatus.isRequired,
-        documentation: documentationStatus.isRequired,
+        design: designStatusPropTypes.isRequired,
+        development: developmentStatusPropTypes.isRequired,
+        documentation: documentationStatusPropTypes.isRequired,
     }).isRequired,
 };
 
