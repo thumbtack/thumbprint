@@ -10,7 +10,7 @@
     "dependencies": {
         "@mdx-js/mdx": "^1.5.2",
         "@mdx-js/react": "^1.5.2",
-        "@thumbtack/thumbprint-icons": "^2.8.1",
+        "@thumbtack/thumbprint-icons": "4.1.0",
         "@thumbtack/thumbprint-react": "^12.3.0",
         "@thumbtack/thumbprint-scss": "^4.0.0",
         "classnames": "^2.2.5",
@@ -52,5 +52,8 @@
         "url-join": "^4.0.1",
         "uuid": "^3.4.0",
         "warning": "^4.0.1"
+    },
+    "devDependencies": {
+        "@types/url-join": "^4.0.0"
     }
 }
