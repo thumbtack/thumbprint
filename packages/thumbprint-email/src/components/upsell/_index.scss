@@ -8,8 +8,13 @@ table.callout {
 th.callout-inner {
     width: 100%;
     border: none;
-    padding: $tp-space__4;
     background: $tp-color__gray-200;
+
+    // Need to write out all properites to override email inliner
+    padding-top: $tp-space__4;
+    padding-right: $tp-space__4;
+    padding-bottom: $tp-space__4;
+    padding-left: $tp-space__4;
 
     &.secondary {
         background: $tp-color__blue-100;
