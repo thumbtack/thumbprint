@@ -10,35 +10,35 @@ import styles from './index.module.scss';
 import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'; // TEMP
 
 const compileEmail = async emailSnippet => {
-    const { default: avatar } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/avatar/index.hbs`
+    const { default: tpAvatar } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpAvatar/index.hbs`
     );
-    const { default: button } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/button/index.hbs`
+    const { default: tpButton } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpButton/index.hbs`
     );
-    const { default: card } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/card/index.hbs`
+    const { default: tpCard } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpCard/index.hbs`
     );
     const { default: tpIcon } = await import(
         `raw-loader!../../../../../packages/thumbprint-email/src/components/tpIcon/index.hbs`
     );
-    const { default: image } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/image/index.hbs`
+    const { default: tpImage } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpImage/index.hbs`
     );
-    const { default: spacer } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/spacer/index.hbs`
+    const { default: tpSpacer } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpSpacer/index.hbs`
     );
-    const { default: serviceCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/serviceCard/index.hbs`
+    const { default: tpServiceCard } = await import(
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpServiceCard/index.hbs`
     );
 
-    Handlebars.registerPartial('avatar', avatar);
-    Handlebars.registerPartial('button', button);
-    Handlebars.registerPartial('card', card);
-    Handlebars.registerPartial('image', image);
+    Handlebars.registerPartial('tpAvatar', tpAvatar);
+    Handlebars.registerPartial('tpButton', tpButton);
+    Handlebars.registerPartial('tpCard', tpCard);
     Handlebars.registerPartial('tpIcon', tpIcon);
-    Handlebars.registerPartial('serviceCard', serviceCard);
-    Handlebars.registerPartial('spacer', spacer);
+    Handlebars.registerPartial('tpImage', tpImage);
+    Handlebars.registerPartial('tpSpacer', tpSpacer);
+    Handlebars.registerPartial('tpServiceCard', tpServiceCard);
 
     Handlebars.registerHelper({
         equal: function equal(source, target, options) {

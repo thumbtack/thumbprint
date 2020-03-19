@@ -11,14 +11,10 @@ import APITable from 'components/api-table';
 
 <ComponentHeader data={props.data} />
 
-## Avatar options
-
-These are the available `Avatar` styles for use on light background colors.
-
 ### Pro
 
-```email emailPartial=avatar
-{{> avatar
+```email
+{{> tpAvatar
     src="https://www.placecage.com/480/480"
     size="xlarge"
 }}
@@ -26,8 +22,8 @@ These are the available `Avatar` styles for use on light background colors.
 
 ### Customer
 
-```email emailPartial=avatar
-{{> avatar
+```email
+{{> tpAvatar
     src="https://www.placecage.com/480/480"
     size="xlarge"
     type="customer"
@@ -38,8 +34,8 @@ These are the available `Avatar` styles for use on light background colors.
 
 These are the available `Avatar` styles for use on light background colors.
 
-```email emailPartial=avatar
-{{> avatar size="xlarge" }}
+```email
+{{> tpAvatar size="small" }}
 ```
 
 ## Props
