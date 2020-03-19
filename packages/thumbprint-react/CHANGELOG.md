@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Rewrite `ModalCurtain` component in TypeScript.
+
+## 12.3.0 - 2020-03-16
+
+### Added
+
+-   [Minor] Add React component of `FAB`.
+
+### Changed
+
+-   [Patch] Rewrite `Modal` component in TypeScript.
+
+## 12.2.1 - 2020-03-02
+
+### Changed
+
+-   [Patch] Tweak color of `muted` `LoaderDots` to use `black-300`. (#643)
+
 ### Fixed
 
 -   [Patch] Fix `AlertBanner` component to horizontally center items.

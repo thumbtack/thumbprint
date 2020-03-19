@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "12.2.0",
+    "version": "12.3.0",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -55,6 +55,7 @@
         "warning": "^4.0.2"
     },
     "devDependencies": {
+        "@types/no-scroll": "^2.1.0",
         "@types/react-swipeable": "^4.3.0",
         "rollup": "^1.11.0",
         "rollup-plugin-babel": "^4.2.0",

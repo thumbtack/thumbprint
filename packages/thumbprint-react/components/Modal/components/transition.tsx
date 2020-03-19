@@ -1,41 +1,44 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const EXITED = 'exited';
 const ENTERING = 'entering';
 const ENTERED = 'entered';
 const EXITING = 'exiting';
 
-const propTypes = {
-    children: PropTypes.func.isRequired,
-    in: PropTypes.bool.isRequired,
-    timeout: PropTypes.shape({
-        enter: PropTypes.number.isRequired,
-        exit: PropTypes.number.isRequired,
-    }).isRequired,
-    onEntered: PropTypes.func,
-    onExited: PropTypes.func,
-};
+type Stage = 'exited' | 'entering' | 'entered' | 'exiting' | null;
 
-const defaultProps = {
-    onEntered: undefined,
-    onExited: undefined,
-};
+interface PropTypes {
+    children: (stage: Stage) => JSX.Element;
+    in: boolean;
+    timeout: {
+        enter: number;
+        exit: number;
+    };
+    onEntered?: () => void;
+    onExited?: () => void;
+}
 
-class Transition extends React.Component {
-    constructor(props) {
+interface StateTypes {
+    stage: Stage;
+    currentTimeout: number | null;
+}
+
+export default class Transition extends React.Component<PropTypes, StateTypes> {
+    constructor(props: PropTypes) {
         super(props);
 
         this.state = {
             stage: null,
+            currentTimeout: null,
         };
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         const { in: inProp } = this.props;
 
         this.setState({
             stage: inProp ? ENTERING : EXITED,
+            currentTimeout: null,
         });
 
         this.onEntering = this.onEntering.bind(this);
@@ -44,15 +47,13 @@ class Transition extends React.Component {
         this.onExited = this.onExited.bind(this);
         this.clearExistingTimeout = this.clearExistingTimeout.bind(this);
 
-        this.currentTimeout = null;
-
         // Call `onEntered` If the modal is immediately open when it mounts.
         if (inProp) {
             this.onEntered();
         }
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: { in: boolean }): void {
         const { in: inProp } = this.props;
 
         if (prevProps.in !== inProp) {
@@ -66,18 +67,20 @@ class Transition extends React.Component {
         }
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         this.clearExistingTimeout();
     }
 
-    onEntering() {
+    onEntering(): void {
         const { timeout } = this.props;
 
-        this.setState({ stage: ENTERING });
-        this.currentTimeout = setTimeout(this.onEntered, timeout.enter);
+        this.setState({
+            stage: ENTERING,
+            currentTimeout: window.setTimeout(this.onEntered, timeout.enter),
+        });
     }
 
-    onEntered() {
+    onEntered(): void {
         const { onEntered } = this.props;
 
         this.setState({ stage: ENTERED });
@@ -87,14 +90,16 @@ class Transition extends React.Component {
         }
     }
 
-    onExiting() {
+    onExiting(): void {
         const { timeout } = this.props;
 
-        this.setState({ stage: EXITING });
-        this.currentTimeout = setTimeout(this.onExited, timeout.exit);
+        this.setState({
+            stage: EXITING,
+            currentTimeout: window.setTimeout(this.onExited, timeout.exit),
+        });
     }
 
-    onExited() {
+    onExited(): void {
         const { onExited } = this.props;
 
         this.setState({ stage: EXITED });
@@ -104,13 +109,15 @@ class Transition extends React.Component {
         }
     }
 
-    clearExistingTimeout() {
-        if (this.currentTimeout) {
-            clearTimeout(this.currentTimeout);
+    clearExistingTimeout(): void {
+        const { currentTimeout } = this.state;
+
+        if (currentTimeout) {
+            clearTimeout(currentTimeout);
         }
     }
 
-    render() {
+    render(): JSX.Element | null {
         const { stage } = this.state;
         const { children } = this.props;
 
@@ -121,8 +128,3 @@ class Transition extends React.Component {
         return children(stage);
     }
 }
-
-Transition.propTypes = propTypes;
-Transition.defaultProps = defaultProps;
-
-export default Transition;

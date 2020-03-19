@@ -1,0 +1,37 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $tp-shadow__400;
+}
+
+.iconFab {
+    border-radius: $tp-border-radius__full;
+    border: 0px;
+    height: 56px;
+    width: 56px;
+}
+
+.textFab {
+    border-radius: 22px;
+    height: 44px;
+    min-width: 44px;
+    font-size: $tp-font__title__6__size;
+    line-height: $tp-font__title__6__line-height;
+    font-weight: $tp-font__title__6__weight;
+    padding: 0px $tp-space__3;
+}
+
+.primary {
+    background-color: $tp-color__blue;
+    color: $tp-color__white;
+    border: 0px;
+}
+
+.secondary {
+    background-color: $tp-color__white;
+    color: $tp-color__blue;
+    border: 2px solid $tp-color__gray;
+}
