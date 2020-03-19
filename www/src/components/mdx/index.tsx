@@ -153,7 +153,9 @@ export function Code(p: {
 
     return (
         <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
-            {p.children}
+            {/* TODO(giles): CodeBlock is still using PropTypes, and TS inferring the wrong types
+            here. Remove this typecast when you covert CodeBlock to TS. */}
+            {(p.children as unknown) as string}
         </CodeBlock>
     );
 }

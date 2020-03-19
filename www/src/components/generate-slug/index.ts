@@ -32,7 +32,7 @@ const generateSlug = ({
             return '';
         }
 
-        if (c.props && isString(c.props.children)) {
+        if (c instanceof React.Component && c.props && isString(c.props.children)) {
             return c.props.children;
         }
 
