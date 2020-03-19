@@ -1182,13 +1182,16 @@ exports[`Themed renders icon that is passed in 1`] = `
         className="flexCenter"
       >
         <span
-          className="iconContainer iconContainerHasChildren"
+          className="iconContainer iconContainerHasRightChildren"
         >
           <svg>
             Duck
           </svg>
         </span>
         Goose
+        <span
+          className="iconContainer iconContainerHasLeftChildren"
+        />
       </span>
     </span>
   </button>
@@ -1459,6 +1462,9 @@ exports[`Themed renders themed \`UIAction\` with an icon and no text 1`] = `
             Duck
           </svg>
         </span>
+        <span
+          className="iconContainer"
+        />
       </span>
     </span>
   </button>

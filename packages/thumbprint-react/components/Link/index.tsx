@@ -129,6 +129,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             accessibilityLabel,
             dataTest,
             icon,
+            iconRight,
             theme = 'primary',
             size = 'large',
             width = 'auto',
@@ -146,6 +147,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
                 dataTest,
             })}
             icon={icon}
+            iconRight={iconRight}
             theme={theme}
             size={size}
             width={width}
@@ -181,10 +183,15 @@ interface ThemedLinkPropTypes {
      */
     shouldOpenInNewTab?: boolean;
     /**
-     * Icon from [Thumbprint Icons](/icons/) to render within the
+     * Icon from [Thumbprint Icons](/icons/) to render left within the
      * button. It must be one of the `small` icons.
      */
     icon?: React.ReactNode;
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right within the
+     * button. It must be one of the `small` icons.
+     */
+    iconRight?: React.ReactNode;
     /**
      * Controls the button's background, text, and border theme.
      */

@@ -28,7 +28,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
         ref,
     ): JSX.Element => {
         warning(
-            children || accessibilityLabel || (iconLeft && children),
+            children || accessibilityLabel || ((iconLeft || iconRight) && children),
             'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` or `iconRight` are provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
