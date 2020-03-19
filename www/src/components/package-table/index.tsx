@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { startsWith } from 'lodash';
 import { parse as urlParse } from 'url';
 import urlJoin from 'url-join';
@@ -10,20 +9,35 @@ import Tag from '../tag';
  * Finds the link to a changelog on GitHub given a URL like:
  * https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/#readme
  */
-const getChangelogURLFromPackageHomepageURL = homepageURL => {
+const getChangelogURLFromPackageHomepageURL = (homepageURL: string): string => {
     const parsedUrl = urlParse(homepageURL);
+
+    if (!parsedUrl.pathname) {
+        throw new Error(
+            `Cannot get changelog URL from homepage URL – URL ${homepageURL} has no pathname.`,
+        );
+    }
 
     return urlJoin('https://github.com', parsedUrl.pathname, 'CHANGELOG.md');
 };
 
-const PackageTable = ({
+interface PropTypes {
+    version: string;
+    deprecated?: string | boolean;
+    packageName: string;
+    platform: 'scss' | 'javascript' | 'ios' | 'android';
+    importStatement?: string;
+    sourceDirectory: string;
+}
+
+export default function PackageTable({
     version,
-    deprecated,
+    deprecated = false,
     packageName,
     importStatement,
     sourceDirectory,
     platform,
-}) => {
+}: PropTypes): JSX.Element {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
     const name = packageName;
@@ -55,7 +69,7 @@ const PackageTable = ({
                 <tbody>
                     <tr className={styles.tr}>
                         <th className={styles.th}>Version:</th>
-                        <td className={styles.td} colSpan="2">
+                        <td className={styles.td} colSpan={2}>
                             <InlineCode theme="plain">{version}</InlineCode>{' '}
                             {isDeprecated && <Tag type="deprecated" />}
                             <span className="mh1">•</span>
@@ -76,11 +90,12 @@ const PackageTable = ({
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            {platform === 'web' && (
-                                <InlineCode theme="plain" shouldCopyToClipboard>
-                                    {`yarn add ${name} ${isStable ? '--exact' : ''}`}
-                                </InlineCode>
-                            )}
+                            {platform === 'javascript' ||
+                                (platform === 'scss' && (
+                                    <InlineCode theme="plain" shouldCopyToClipboard>
+                                        {`yarn add ${name} ${isStable ? '--exact' : ''}`}
+                                    </InlineCode>
+                                ))}
                             {platform === 'ios' && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`pod '${name}', '~> ${installVersion}'`}
@@ -108,20 +123,4 @@ const PackageTable = ({
             </table>
         </div>
     );
-};
-
-PackageTable.propTypes = {
-    version: PropTypes.string.isRequired,
-    deprecated: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-    packageName: PropTypes.string.isRequired,
-    platform: PropTypes.oneOf(['scss', 'javascript', 'ios', 'android']).isRequired,
-    importStatement: PropTypes.string,
-    sourceDirectory: PropTypes.string.isRequired,
-};
-
-PackageTable.defaultProps = {
-    deprecated: false,
-    importStatement: undefined,
-};
-
-export default PackageTable;
+}
