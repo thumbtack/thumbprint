@@ -109,9 +109,9 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
                             [
                                 'To-do',
                                 'In progress',
-                                'Done / Uses built in OS component',
+                                'Done',
+                                'Done / Uses OS component',
                                 'Done / Deprecated',
-                                'Done / Merged',
                             ].includes(platform.node.data.values.Development_status),
                         );
                     })
