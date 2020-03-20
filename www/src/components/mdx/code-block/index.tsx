@@ -1,24 +1,37 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import ReactCodeBlock from './react-code-block';
 import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './index.module.scss';
 
-const CodeBlock = props => {
-    const { language, shouldRender, theme, children } = props;
+interface PropTypes {
+    children: string;
+    language?: Language;
+    theme?: 'light' | 'dark' | 'white';
+    shouldRender?: boolean;
+}
 
-    if (language === 'jsx' && shouldRender) {
-        return <ReactCodeBlock {...props} />;
+export default function CodeBlock({
+    children,
+    language,
+    theme = 'white',
+    shouldRender = true,
+}: PropTypes): JSX.Element | null {
+    if (!language) {
+        return null;
     }
 
-    /* eslint-disable react/no-danger */
+    if (language === 'jsx' && shouldRender) {
+        return <ReactCodeBlock theme={theme}>{children}</ReactCodeBlock>;
+    }
+
     return (
         <div>
-            {language === 'html' && shouldRender && (
+            {(language as Language & 'html') === 'html' && shouldRender && (
                 <div
                     className={`${classes.preview} ${previewThemes[theme]}`}
+                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{ __html: children }}
                 />
             )}
@@ -29,7 +42,13 @@ const CodeBlock = props => {
                     language={language}
                     theme={prismTheme}
                 >
-                    {({ className, style, tokens: codeTokens, getLineProps, getTokenProps }) => (
+                    {({
+                        className,
+                        style,
+                        tokens: codeTokens,
+                        getLineProps,
+                        getTokenProps,
+                    }): JSX.Element => (
                         <pre
                             className={`${className} ${styles.code} ${styles.codeHTML}`}
                             style={style}
@@ -47,18 +66,4 @@ const CodeBlock = props => {
             </div>
         </div>
     );
-};
-
-CodeBlock.propTypes = {
-    children: PropTypes.node.isRequired,
-    theme: PropTypes.oneOf(['light', 'dark', 'white']),
-    language: PropTypes.string.isRequired,
-    shouldRender: PropTypes.bool,
-};
-
-CodeBlock.defaultProps = {
-    theme: 'white',
-    shouldRender: true,
-};
-
-export default CodeBlock;
+}

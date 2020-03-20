@@ -17,6 +17,8 @@ import { isString } from 'lodash';
 import uuid from 'uuid';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import invariant from 'invariant';
+import { Language } from 'prism-react-renderer';
+
 import Wrap from '../wrap';
 import PageHeader from '../page-header';
 import Container from '../container';
@@ -145,17 +147,17 @@ export function UL(p: Parameters<typeof List>[0]): JSX.Element {
 
 export function Code(p: {
     className: string;
-    theme: string;
+    theme: 'white' | 'dark' | 'light';
     shouldRender: 'true' | 'false';
-    children: React.ReactNode;
+    children: string;
 }): JSX.Element {
-    const language = p.className && p.className.replace('language-', '');
+    const language = p.className
+        ? ((p.className.replace('language-', '') as unknown) as Language)
+        : undefined;
 
     return (
         <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
-            {/* TODO(giles): CodeBlock is still using PropTypes, and TS inferring the wrong types
-            here. Remove this typecast when you covert CodeBlock to TS. */}
-            {(p.children as unknown) as string}
+            {p.children}
         </CodeBlock>
     );
 }

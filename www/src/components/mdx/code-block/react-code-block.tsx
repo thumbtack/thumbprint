@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import * as thumbprintIcons from '@thumbtack/thumbprint-icons';
 import * as thumbprintReact from '@thumbtack/thumbprint-react';
@@ -8,9 +7,12 @@ import { previewThemes, classes } from './styles';
 import styles from './index.module.scss';
 import prismTheme from './prism-theme';
 
-const ReactCodeBlock = props => {
-    const { children, theme } = props;
+interface PropTypes {
+    children: string;
+    theme: 'dark' | 'light' | 'white';
+}
 
+export default function ReactCodeBlock({ children, theme }: PropTypes): JSX.Element {
     return (
         <LiveProvider
             code={children.trim()}
@@ -23,7 +25,7 @@ const ReactCodeBlock = props => {
             </React.StrictMode>
 
             <div className={classes.codeContainer}>
-                <LiveEditor className={`${styles.code} ${styles.codeJSX}`} ignoreTabKey />
+                <LiveEditor className={`${styles.code} ${styles.codeJSX}`} />
             </div>
 
             <pre>
@@ -37,11 +39,4 @@ const ReactCodeBlock = props => {
             </pre>
         </LiveProvider>
     );
-};
-
-ReactCodeBlock.propTypes = {
-    children: PropTypes.node.isRequired,
-    theme: PropTypes.oneOf(['dark', 'light', 'white']).isRequired,
-};
-
-export default ReactCodeBlock;
+}
