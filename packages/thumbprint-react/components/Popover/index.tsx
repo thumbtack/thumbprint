@@ -78,7 +78,7 @@ export default function Popover({
     const shouldDisplace = container === 'body';
 
     // Using `useState` instead of `useRef `to allow multiple refs. See Image for another example.
-    const [wrapperEl, setWrapperEl] = useState();
+    const [wrapperEl, setWrapperEl] = useState<HTMLDivElement | null>(null);
 
     const shouldTrapFocus: boolean = canUseDOM && !!wrapperEl;
     const shouldBindEscListener: boolean = canUseDOM && isOpen;
@@ -100,13 +100,13 @@ export default function Popover({
                         positionFixed={false}
                     >
                         {({ ref: popperRef, style, placement, arrowProps }): JSX.Element => (
-                            // Use tabIndex="-1" to allow programmatic focus (as initialFocus node
+                            // Use tabIndex={-1} to allow programmatic focus (as initialFocus node
                             // for focus-trap) but not be tabbable by user.
                             <div
                                 role="dialog"
                                 aria-label={accessibilityLabel}
                                 tabIndex={-1}
-                                ref={(el: HTMLElement | null): void => {
+                                ref={(el: HTMLDivElement | null): void => {
                                     setWrapperEl(el);
                                     popperRef(el);
                                 }}

@@ -36,9 +36,9 @@ export default function BaseCarousel({
 }: PropTypes): JSX.Element {
     // When animating, `prevSelectedIndex` is the value of `selectedIndex` before the
     // animation began. Once the animation is complete, it becomes the same as `selectedIndex`.
-    const [prevSelectedIndex, setPrevSelectedIndex] = useState(selectedIndex);
-    const [isAnimating, setIsAnimating] = useState(false);
-    const [isSuspensed, setIsSuspensed] = useState(false);
+    const [prevSelectedIndex, setPrevSelectedIndex] = useState<number>(selectedIndex);
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
+    const [isSuspensed, setIsSuspensed] = useState<boolean>(false);
 
     function reorder(items: number[]): number[] {
         // The `prevSelectedIndex` doesn't update until the animation is done, so we want to

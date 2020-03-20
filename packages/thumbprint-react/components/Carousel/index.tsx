@@ -34,7 +34,7 @@ export default function Carousel({
     selectedIndex,
     onSelectedIndexChange,
 }: PropTypes): JSX.Element {
-    const [dragIndexOffset, setDragIndexOffset] = useState(0);
+    const [dragIndexOffset, setDragIndexOffset] = useState<number>(0);
     const isDragging = dragIndexOffset !== 0;
     const containerRef = useRef<HTMLDivElement>(null);
 
