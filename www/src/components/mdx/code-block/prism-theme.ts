@@ -5,8 +5,9 @@ import {
     tpColorIndigo600,
     tpColorBlack,
 } from '@thumbtack/thumbprint-tokens';
+import { PrismTheme } from 'prism-react-renderer';
 
-const theme = {
+const theme: PrismTheme = {
     plain: {
         color: tpColorBlack,
         backgroundColor: tpColorGray200,
@@ -73,7 +74,7 @@ const theme = {
         {
             types: ['punctuation', 'symbol'],
             style: {
-                opacity: '0.7',
+                opacity: 0.7,
             },
         },
     ],
