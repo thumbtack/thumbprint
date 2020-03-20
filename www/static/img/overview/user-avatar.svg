@@ -1,11 +1,1 @@
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="22" cy="22" r="22" fill="#005979"/>
-<ellipse cx="22.3189" cy="16" rx="8.11594" ry="8" fill="white"/>
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="44" height="44">
-<circle cx="22" cy="22" r="22" fill="#005979"/>
-</mask>
-<g mask="url(#mask0)">
-<path d="M10.9828 30.6426C11.5905 28.488 13.5564 27 15.795 27H28.6614C30.9844 27 33.0014 28.5999 33.5301 30.8619L36.1014 41.8619C36.8346 44.9986 34.4539 48 31.2327 48H12.6924C9.37748 48 6.98023 44.833 7.88012 41.6426L10.9828 30.6426Z" fill="white"/>
-</g>
-<circle cx="22" cy="22" r="21" stroke="#005A7A" stroke-width="2"/>
-</svg>
+<svg fill="none" height="44" viewBox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><mask id="a" height="44" maskUnits="userSpaceOnUse" width="44" x="0" y="0"><circle cx="22" cy="22" fill="#005979" r="22"/></mask><circle cx="22" cy="22" fill="#005979" r="22"/><ellipse cx="22.3189" cy="16" fill="#fff" rx="8.11594" ry="8"/><g mask="url(#a)"><path d="m10.9828 30.6426c.6077-2.1546 2.5736-3.6426 4.8122-3.6426h12.8664c2.323 0 4.34 1.5999 4.8687 3.8619l2.5713 11c.7332 3.1367-1.6475 6.1381-4.8687 6.1381h-18.5403c-3.31492 0-5.71217-3.167-4.81228-6.3574z" fill="#fff"/></g><circle cx="22" cy="22" r="21" stroke="#005a7a" stroke-width="2"/></svg>

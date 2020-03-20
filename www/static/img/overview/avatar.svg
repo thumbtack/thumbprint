@@ -1,17 +1,1 @@
-<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
-<ellipse cx="34.5" cy="35" rx="34.5" ry="35" fill="#005979"/>
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="9" width="52" height="77">
-<path d="M47.3221 22.3431C47.3221 29.5607 41.4711 35.4118 34.2535 35.4118C27.0359 35.4118 21.1849 29.5607 21.1849 22.3431C21.1849 15.1255 27.0359 9.27451 34.2535 9.27451C41.4711 9.27451 47.3221 15.1255 47.3221 22.3431Z" fill="white"/>
-<path d="M12.0454 49.6428C12.9355 43.4122 18.2716 38.7843 24.5654 38.7843H43.9416C50.2355 38.7843 55.5715 43.4122 56.4616 49.6428L59.5932 71.5644C60.6817 79.1834 54.7697 86 47.0733 86H21.4337C13.7374 86 7.82536 79.1834 8.91379 71.5644L12.0454 49.6428Z" fill="white"/>
-</mask>
-<g mask="url(#mask0)">
-<circle cx="34.5" cy="34.9902" r="30.7745" fill="white"/>
-</g>
-</g>
-<defs>
-<clipPath id="clip0">
-<rect width="70" height="70" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg fill="none" height="70" viewBox="0 0 70 70" width="70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><clipPath id="a"><path d="m0 0h70v70h-70z"/></clipPath><mask id="b" height="77" maskUnits="userSpaceOnUse" width="52" x="8" y="9"><path d="m47.3221 22.3431c0 7.2176-5.851 13.0687-13.0686 13.0687s-13.0686-5.8511-13.0686-13.0687 5.851-13.06859 13.0686-13.06859 13.0686 5.85099 13.0686 13.06859z" fill="#fff"/><path d="m12.0454 49.6428c.8901-6.2306 6.2262-10.8585 12.52-10.8585h19.3762c6.2939 0 11.6299 4.6279 12.52 10.8585l3.1316 21.9216c1.0885 7.619-4.8235 14.4356-12.5199 14.4356h-25.6396c-7.6963 0-13.60834-6.8166-12.51991-14.4356z" fill="#fff"/></mask><g clip-path="url(#a)"><ellipse cx="34.5" cy="35" fill="#005979" rx="34.5" ry="35"/><g mask="url(#b)"><circle cx="34.5" cy="34.9902" fill="#fff" r="30.7745"/></g></g></svg>
