@@ -14,10 +14,10 @@
 @import 'foundation-scss/components/media-query';
 
 // Thumbprint emails components
-@import 'components/tpButton/index';
-@import 'components/callout/index';
-@import 'components/hr/index';
-@import 'components/tpList/index';
+@import 'components/scss/tp-button';
+@import 'components/scss/callout';
+@import 'components/scss/hr';
+@import 'components/scss/tp-list';
 
 // Utility classes
 @import 'utility/color/index';

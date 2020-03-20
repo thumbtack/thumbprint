@@ -11,34 +11,34 @@ import '../../../../../packages/thumbprint-email/src/thumbprint-email-docs.scss'
 
 const compileEmail = async emailSnippet => {
     const { default: tpAvatar } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpAvatar/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-avatar.html`
     );
     const { default: tpButton } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpButton/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-button.html`
     );
     const { default: tpCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpCard/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-card.html`
     );
     const { default: tpIcon } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpIcon/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-icon.html`
     );
     const { default: tpImage } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpImage/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-image.html`
     );
     const { default: tpSpacer } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpSpacer/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-spacer.html`
     );
     const { default: tpServiceCard } = await import(
-        `raw-loader!../../../../../packages/thumbprint-email/src/components/tpServiceCard/index.html`
+        `raw-loader!../../../../../packages/thumbprint-email/src/components/partials/tp-service-card.html`
     );
 
-    Handlebars.registerPartial('tpAvatar', tpAvatar);
-    Handlebars.registerPartial('tpButton', tpButton);
-    Handlebars.registerPartial('tpCard', tpCard);
-    Handlebars.registerPartial('tpIcon', tpIcon);
-    Handlebars.registerPartial('tpImage', tpImage);
-    Handlebars.registerPartial('tpSpacer', tpSpacer);
-    Handlebars.registerPartial('tpServiceCard', tpServiceCard);
+    Handlebars.registerPartial('tp-avatar', tpAvatar);
+    Handlebars.registerPartial('tp-button', tpButton);
+    Handlebars.registerPartial('tp-card', tpCard);
+    Handlebars.registerPartial('tp-icon', tpIcon);
+    Handlebars.registerPartial('tp-image', tpImage);
+    Handlebars.registerPartial('tp-spacer', tpSpacer);
+    Handlebars.registerPartial('tp-service-card', tpServiceCard);
 
     Handlebars.registerHelper({
         equal: function equal(source, target, options) {
