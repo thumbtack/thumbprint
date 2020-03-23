@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Patch] Rewrite `ModalCurtain` component in TypeScript.
+-   [Patch] Add types to some `useState` calls in a few components.
 
 ### Added
 
