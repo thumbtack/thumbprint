@@ -155,12 +155,10 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
 
                         const componentImage = componentLevelData.node.data.values.Image_URL;
 
-                        console.log({ componentLevelData });
-
                         const children = (
                             <>
                                 <div className="h5 bg-gray-300 br1 mb1">
-                                    {componentImage && (
+                                    {false && componentImage && (
                                         <Image src={componentImage} alt="" height={tpSpace7} />
                                     )}
                                 </div>

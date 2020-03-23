@@ -25,7 +25,7 @@ interface PropTypes {
     version: string;
     deprecated?: string | boolean;
     packageName: string;
-    platform: 'scss' | 'javascript' | 'ios' | 'android';
+    platform: 'web' | 'ios' | 'android';
     importStatement?: string;
     sourceDirectory: string;
 }
@@ -40,6 +40,7 @@ export default function PackageTable({
 }: PropTypes): JSX.Element {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
+
     const name = packageName;
     const isStable = startsWith(version, '0');
 
@@ -90,12 +91,11 @@ export default function PackageTable({
                     <tr className={styles.tr}>
                         <th className={styles.th}>Install:</th>
                         <td className={styles.td}>
-                            {platform === 'javascript' ||
-                                (platform === 'scss' && (
-                                    <InlineCode theme="plain" shouldCopyToClipboard>
-                                        {`yarn add ${name} ${isStable ? '--exact' : ''}`}
-                                    </InlineCode>
-                                ))}
+                            {platform === 'web' && (
+                                <InlineCode theme="plain" shouldCopyToClipboard>
+                                    {`yarn add ${name} ${isStable ? '--exact' : ''}`}
+                                </InlineCode>
+                            )}
                             {platform === 'ios' && (
                                 <InlineCode theme="plain" shouldCopyToClipboard>
                                     {`pod '${name}', '~> ${installVersion}'`}
