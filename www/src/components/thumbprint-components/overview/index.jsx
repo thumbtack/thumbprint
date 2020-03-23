@@ -158,8 +158,13 @@ export default function ComponentOverview({ data, currentPlatform, initialFilter
                         const children = (
                             <>
                                 <div className="h5 bg-gray-300 br1 mb1">
-                                    {false && componentImage && (
-                                        <Image src={componentImage} alt="" height={tpSpace7} />
+                                    {componentImage && (
+                                        <Image
+                                            src={componentImage}
+                                            alt=""
+                                            height={tpSpace7}
+                                            objectFit="contain"
+                                        />
                                     )}
                                 </div>
 
