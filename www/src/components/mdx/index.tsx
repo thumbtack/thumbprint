@@ -311,9 +311,9 @@ const FeedbackForm = ({ page }: { page: string }): JSX.Element => {
         FEEDBACK_STEPS['feedback-score'],
     );
     // "Yes" or "No" values
-    const [feedbackScore, setFeedbackScore] = useState('');
+    const [feedbackScore, setFeedbackScore] = useState<string>('');
     // Freeform comment box for additional feedback
-    const [feedbackComment, setFeedbackComment] = useState('');
+    const [feedbackComment, setFeedbackComment] = useState<string>('');
     const feebackScoreFormEl = useRef<HTMLFormElement>(null);
     // We send the feedback to Netlify in two steps because we want to record a
     // "Yes" or "No" even if the user doesn't leave a comment. Netlify doesn't

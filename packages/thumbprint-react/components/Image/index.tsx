@@ -135,9 +135,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         triggerOnce: true,
     });
 
-    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState(
-        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
-    );
+    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
+        boolean
+    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
     if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
@@ -229,8 +229,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Image load and error states
     // --------------------------------------------------------------------------------------------
 
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    const [isError, setIsError] = useState<boolean>(false);
 
     // --------------------------------------------------------------------------------------------
     // Combining refs: This component has three refs that need to be combined into one. This

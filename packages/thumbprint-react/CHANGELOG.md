@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 12.4.0 - 2020-03-23
+
 ### Changed
 
 -   [Patch] Rewrite `ModalCurtain` component in TypeScript.
+-   [Patch] Add types to some `useState` calls in a few components.
 
 ### Added
 
