@@ -36,6 +36,24 @@ const Container = ({ children, location, activeSection }) => {
 
     const data = useStaticQuery(graphql`
         query HeadingQuery {
+            allComponents: allCodaImplementationsTable(
+                filter: { data: { values: { Documentation: { ne: "" } } } }
+                sort: { fields: data___values___Component, order: ASC }
+            ) {
+                group(field: data___values___Platform) {
+                    fieldValue
+                    edges {
+                        node {
+                            data {
+                                values {
+                                    Component
+                                    Documentation
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             allAtomic: mdx(fileAbsolutePath: { glob: "**/src/pages/atomic/index.mdx" }) {
                 headings(depth: h2) {
                     value
@@ -80,6 +98,7 @@ const Container = ({ children, location, activeSection }) => {
     `);
 
     const {
+        allComponents,
         allAtomic,
         allGuides,
         allScssTokens,
@@ -88,6 +107,8 @@ const Container = ({ children, location, activeSection }) => {
         allAndroidTokens,
     } = data;
     const { pathname, hash } = location;
+
+    const componentsByPlatform = allComponents.group;
 
     return (
         <div className="flex h-100">
@@ -256,7 +277,34 @@ const Container = ({ children, location, activeSection }) => {
                                                 (pathname.startsWith('/components/') &&
                                                     pathname.endsWith('/react/'))
                                             }
-                                        />
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {componentsByPlatform
+                                                    .find(
+                                                        platform => platform.fieldValue === 'React',
+                                                    )
+                                                    .edges.map(({ node: component }) => {
+                                                        const componentData = component.data.values;
+
+                                                        const componentPath = componentData.Documentation.replace(
+                                                            'https://thumbprint.design',
+                                                            '',
+                                                        );
+
+                                                        return (
+                                                            <SideNavLink
+                                                                title={componentData.Component}
+                                                                key={componentData.Component}
+                                                                to={componentPath}
+                                                                level={3}
+                                                                isActive={
+                                                                    pathname === componentPath
+                                                                }
+                                                            />
+                                                        );
+                                                    })}
+                                            </SideNavGroup>
+                                        </SideNavLink>
                                         <SideNavLink
                                             title="iOS"
                                             level={2}
@@ -266,7 +314,32 @@ const Container = ({ children, location, activeSection }) => {
                                                 (pathname.startsWith('/components/') &&
                                                     pathname.endsWith('/ios/'))
                                             }
-                                        />
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {componentsByPlatform
+                                                    .find(platform => platform.fieldValue === 'iOS')
+                                                    .edges.map(({ node: component }) => {
+                                                        const componentData = component.data.values;
+
+                                                        const componentPath = componentData.Documentation.replace(
+                                                            'https://thumbprint.design',
+                                                            '',
+                                                        );
+
+                                                        return (
+                                                            <SideNavLink
+                                                                title={componentData.Component}
+                                                                key={componentData.Component}
+                                                                to={componentPath}
+                                                                level={3}
+                                                                isActive={
+                                                                    pathname === componentPath
+                                                                }
+                                                            />
+                                                        );
+                                                    })}
+                                            </SideNavGroup>
+                                        </SideNavLink>
                                         <SideNavLink
                                             title="Android"
                                             level={2}
@@ -276,7 +349,35 @@ const Container = ({ children, location, activeSection }) => {
                                                 (pathname.startsWith('/components/') &&
                                                     pathname.endsWith('/android/'))
                                             }
-                                        />
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {componentsByPlatform
+                                                    .find(
+                                                        platform =>
+                                                            platform.fieldValue === 'Android',
+                                                    )
+                                                    .edges.map(({ node: component }) => {
+                                                        const componentData = component.data.values;
+
+                                                        const componentPath = componentData.Documentation.replace(
+                                                            'https://thumbprint.design',
+                                                            '',
+                                                        );
+
+                                                        return (
+                                                            <SideNavLink
+                                                                title={componentData.Component}
+                                                                key={componentData.Component}
+                                                                to={componentPath}
+                                                                level={3}
+                                                                isActive={
+                                                                    pathname === componentPath
+                                                                }
+                                                            />
+                                                        );
+                                                    })}
+                                            </SideNavGroup>
+                                        </SideNavLink>
                                         <SideNavLink
                                             title="SCSS"
                                             level={2}
@@ -286,7 +387,34 @@ const Container = ({ children, location, activeSection }) => {
                                                 (pathname.startsWith('/components/') &&
                                                     pathname.endsWith('/scss/'))
                                             }
-                                        />
+                                        >
+                                            <SideNavGroup level={3}>
+                                                {componentsByPlatform
+                                                    .find(
+                                                        platform => platform.fieldValue === 'SCSS',
+                                                    )
+                                                    .edges.map(({ node: component }) => {
+                                                        const componentData = component.data.values;
+
+                                                        const componentPath = componentData.Documentation.replace(
+                                                            'https://thumbprint.design',
+                                                            '',
+                                                        );
+
+                                                        return (
+                                                            <SideNavLink
+                                                                title={componentData.Component}
+                                                                key={componentData.Component}
+                                                                to={componentPath}
+                                                                level={3}
+                                                                isActive={
+                                                                    pathname === componentPath
+                                                                }
+                                                            />
+                                                        );
+                                                    })}
+                                            </SideNavGroup>
+                                        </SideNavLink>
                                         <SideNavLink
                                             title="Email"
                                             level={2}
