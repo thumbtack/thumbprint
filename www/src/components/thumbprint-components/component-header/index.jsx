@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import PlatformNav from './platform-nav';
 import ComponentPackageTable from './component-package-table';
+import { SetTableOfContentsContext } from '../../mdx';
 
 const ComponentHeader = ({ data }) => {
     const { platformNav: platformNavQueryResults, packageTable, reactComponentProps } = data;
@@ -15,6 +16,12 @@ const ComponentHeader = ({ data }) => {
                 components.push(component);
             });
         });
+    }
+
+    const setTableOfContents = useContext(SetTableOfContentsContext);
+
+    if (data.tableOfContents && setTableOfContents) {
+        setTableOfContents(data.tableOfContents.childMdx.headings);
     }
 
     return (

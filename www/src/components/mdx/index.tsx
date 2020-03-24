@@ -11,7 +11,8 @@ import {
     TextArea,
 } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import { ScrollMarkerSection } from 'react-scroll-marker';
+import classNames from 'classnames';
+import { ScrollMarkerSection, ScrollMarkerLink } from 'react-scroll-marker';
 import InternalMDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { isString } from 'lodash';
 import uuid from 'uuid';
@@ -19,7 +20,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import invariant from 'invariant';
 import { Language } from 'prism-react-renderer';
 
-import Wrap from '../wrap';
 import PageHeader from '../page-header';
 import Container from '../container';
 import CodeBlock from './code-block';
@@ -56,12 +56,14 @@ export function H2(p: Parameters<typeof Title>[0]): JSX.Element {
 }
 
 export function H3(p: Parameters<typeof Title>[0]): JSX.Element {
-    const id = generateSlug({ level: 'example', children: p.children }) || '';
-
     return (
-        <HashAnchor id={id}>
-            <Title {...p} id={id} size={5} headingLevel={3} className="mt5 mb2" />
-        </HashAnchor>
+        <ScrollMarkerSection id={generateSlug({ level: 'example', children: p.children }) || ''}>
+            {({ id }: { id: string }): JSX.Element => (
+                <HashAnchor id={id}>
+                    <Title {...p} id={id} size={5} headingLevel={3} className="mt5 mb2" />
+                </HashAnchor>
+            )}
+        </ScrollMarkerSection>
     );
 }
 
@@ -492,6 +494,8 @@ interface MdxPropTypes {
     header?: React.ReactNode;
 }
 
+export const SetTableOfContentsContext = React.createContext(null);
+
 export default function MDX({
     children,
     location,
@@ -520,24 +524,89 @@ export default function MDX({
         ? `${pageContext.frontmatter.title} (${getPlatformByPathname(location.pathname)})`
         : pageContext.frontmatter.title;
 
+    const [tableOfContents, setTableOfContents] = useState(null);
+
     return (
         <Container location={location} activeSection={getSectionByPathname(location.pathname)}>
-            <Wrap>
+            <div
+                className="pv6 center flex"
+                style={{
+                    maxWidth: '1000px',
+                }}
+            >
                 {pageContext.frontmatter && (
                     <React.Fragment>
-                        <PageHeader
-                            pageTitle={pageTitle}
-                            metaTitle={metaTitle}
-                            description={pageContext.frontmatter.description}
-                        />
-                        {header}
-                        <MDXRenderer>{children}</MDXRenderer>
-                        <div className="pt5 mt5 bt bw-2 b-gray-300">
-                            <FeedbackForm page={location.pathname} />
+                        <div className="ph3">
+                            <PageHeader
+                                pageTitle={pageTitle}
+                                metaTitle={metaTitle}
+                                description={pageContext.frontmatter.description}
+                            />
+                            {header}
+                            <SetTableOfContentsContext.Provider value={setTableOfContents}>
+                                <MDXRenderer>{children}</MDXRenderer>
+                            </SetTableOfContentsContext.Provider>
+                            <div className="pt5 mt5 bt bw-2 b-gray-300">
+                                <FeedbackForm page={location.pathname} />
+                            </div>
+                        </div>
+                        <div className="pl5" style={{ width: '360px' }}>
+                            <div className="top2" style={{ position: 'sticky' }}>
+                                <Text
+                                    size={2}
+                                    className={classNames({
+                                        'black mb2 b': true,
+                                    })}
+                                >
+                                    Table of Contents
+                                </Text>
+
+                                {tableOfContents && (
+                                    <ul
+                                        className="top2"
+                                        style={{
+                                            fontSize: tokens.tpFontTitle7Size,
+                                        }}
+                                    >
+                                        {tableOfContents.map(heading => {
+                                            const hash = generateSlug({
+                                                level: heading.depth > 2 ? 'example' : 'section',
+                                                children: heading.value,
+                                            });
+
+                                            return (
+                                                <li
+                                                    key={`${heading.value}-${heading.depth}`}
+                                                    style={{
+                                                        marginLeft: `calc(${
+                                                            tokens.tpSpace2
+                                                        } * ${heading.depth - 2})`,
+                                                    }}
+                                                >
+                                                    <ScrollMarkerLink id={hash}>
+                                                        {({ isActive: isHashActive, onClick }) => (
+                                                            <a
+                                                                className={classNames({
+                                                                    'b black': isHashActive,
+                                                                    'black-300': !isHashActive,
+                                                                })}
+                                                                onClick={onClick}
+                                                                href={`#${hash}`}
+                                                            >
+                                                                {heading.value}
+                                                            </a>
+                                                        )}
+                                                    </ScrollMarkerLink>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                )}
+                            </div>
                         </div>
                     </React.Fragment>
                 )}
-            </Wrap>
+            </div>
         </Container>
     );
 }
