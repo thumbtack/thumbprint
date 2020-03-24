@@ -19,31 +19,35 @@ export const query = graphql`
         version
         homepage
     }
-    fragment ReactComponentPropsFragment on File {
-        childrenComponentMetadata {
-            displayName
-            description {
-                childMdx {
-                    body
-                }
-            }
-            doclets
-            props {
-                name
-                required
-                doclets
-                defaultValue {
-                    value
-                    computed
-                }
-                description {
-                    childMdx {
-                        body
+    fragment ReactComponentPropsFragment on FileConnection {
+        edges {
+            node {
+                childrenComponentMetadata {
+                    displayName
+                    description {
+                        childMdx {
+                            body
+                        }
                     }
-                }
-                type {
-                    name
-                    value
+                    doclets
+                    props {
+                        name
+                        required
+                        doclets
+                        defaultValue {
+                            value
+                            computed
+                        }
+                        description {
+                            childMdx {
+                                body
+                            }
+                        }
+                        type {
+                            name
+                            value
+                        }
+                    }
                 }
             }
         }
