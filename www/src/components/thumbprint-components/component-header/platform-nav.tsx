@@ -1,18 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
 import TabNav, { TabNavItem } from '../../tab-nav';
+
+type PlatformSlug = 'usage' | 'react' | 'scss' | 'ios' | 'android';
+type PlatformName = 'Usage' | 'React' | 'SCSS' | 'iOS' | 'Android';
+type PlatformIndex = 1 | 2 | 3 | 4 | 5;
 
 /**
  * Given `/components/button/react/`, this function returns `react`.
  */
-const getPlatformSlugByPath = path => {
+const getPlatformSlugByPath = (path: string): PlatformSlug => {
     const arr = path.split('/');
-    return arr[arr.length - 2];
+    return arr[arr.length - 2] as PlatformSlug;
 };
 
-const sortPlatforms = ({ node }) => {
-    const platformOrder = {
+const sortPlatforms = ({ node }: { node: { path: string } }): PlatformIndex => {
+    const platformOrder: Record<PlatformSlug, PlatformIndex> = {
         usage: 1,
         react: 2,
         scss: 3,
@@ -27,8 +30,8 @@ const sortPlatforms = ({ node }) => {
 /**
  * Given `/components/button/react/`, this function returns `React`.
  */
-const getPlatformDisplayName = path => {
-    const displayName = {
+const getPlatformDisplayName = (path: string): PlatformName => {
+    const displayName: Record<PlatformSlug, PlatformName> = {
         usage: 'Usage',
         react: 'React',
         scss: 'SCSS',
@@ -39,7 +42,11 @@ const getPlatformDisplayName = path => {
     return displayName[getPlatformSlugByPath(path)];
 };
 
-const PlatformNav = ({ platformNavQueryResults }) => {
+export default function PlatformNav({
+    platformNavQueryResults,
+}: {
+    platformNavQueryResults: { edges: { node: { path: string } }[] };
+}): JSX.Element {
     const sortedPlatforms = sortBy(platformNavQueryResults.edges, sortPlatforms);
 
     return (
@@ -51,10 +58,4 @@ const PlatformNav = ({ platformNavQueryResults }) => {
             ))}
         </TabNav>
     );
-};
-
-PlatformNav.propTypes = {
-    platformNavQueryResults: PropTypes.shape({}).isRequired,
-};
-
-export default PlatformNav;
+}

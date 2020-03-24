@@ -1,9 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import PlatformNav from './platform-nav';
 import ComponentPackageTable from './component-package-table';
 
-const ComponentHeader = ({ data }) => {
+interface PropTypes {
+    data: {
+        platformNav: {
+            edges: {
+                node: {
+                    path: string;
+                };
+            }[];
+        };
+        packageTable?: {
+            name: string;
+            version: string;
+            homepage: string;
+        };
+        reactComponentProps?: {
+            childrenComponentMetadata: {
+                displayName: string;
+            }[];
+        };
+    };
+}
+
+export default function ComponentHeader({ data }: PropTypes): JSX.Element {
     const { platformNav: platformNavQueryResults, packageTable, reactComponentProps } = data;
 
     return (
@@ -24,14 +45,4 @@ const ComponentHeader = ({ data }) => {
             )}
         </React.Fragment>
     );
-};
-
-ComponentHeader.propTypes = {
-    data: PropTypes.shape({
-        platformNav: PropTypes.shape({}).isRequired,
-        packageTable: PropTypes.shape({}),
-        reactComponentProps: PropTypes.shape({}),
-    }).isRequired,
-};
-
-export default ComponentHeader;
+}
