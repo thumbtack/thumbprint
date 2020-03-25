@@ -536,7 +536,7 @@ export default function MDX({
             >
                 {pageContext.frontmatter && (
                     <React.Fragment>
-                        <div className="ph3">
+                        <div className="ph3 flex-1">
                             <PageHeader
                                 pageTitle={pageTitle}
                                 metaTitle={metaTitle}
@@ -550,7 +550,7 @@ export default function MDX({
                                 <FeedbackForm page={location.pathname} />
                             </div>
                         </div>
-                        <div className="pl5" style={{ width: '360px' }}>
+                        <div className="pl5" style={{ width: '290px' }}>
                             <div className="top2" style={{ position: 'sticky' }}>
                                 <Text
                                     size={2}
@@ -584,7 +584,10 @@ export default function MDX({
                                                     }}
                                                 >
                                                     <ScrollMarkerLink id={hash}>
-                                                        {({ isActive: isHashActive, onClick }) => (
+                                                        {({
+                                                            isActive: isHashActive,
+                                                            onClick,
+                                                        }): JSX.Element => (
                                                             <a
                                                                 className={classNames({
                                                                     'b black': isHashActive,
