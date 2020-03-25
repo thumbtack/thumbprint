@@ -147,5 +147,13 @@ export const pageQuery = graphql`
         ) {
             ...ReactComponentPropsFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/text-input/react/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

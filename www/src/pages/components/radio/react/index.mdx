@@ -199,5 +199,13 @@ export const pageQuery = graphql`
         ) {
             ...ReactComponentPropsFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/radio/react/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

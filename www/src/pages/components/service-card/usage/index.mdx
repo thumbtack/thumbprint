@@ -80,5 +80,13 @@ export const pageQuery = graphql`
                 }
             }
         }
+        tableOfContents: file(relativePath: { eq: "components/service-card/usage/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

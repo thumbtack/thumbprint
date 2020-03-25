@@ -93,5 +93,13 @@ export const pageQuery = graphql`
         ) {
             ...ReactComponentPropsFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/carousel/react/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

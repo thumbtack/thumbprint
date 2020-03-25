@@ -524,7 +524,7 @@ export default function MDX({
         ? `${pageContext.frontmatter.title} (${getPlatformByPathname(location.pathname)})`
         : pageContext.frontmatter.title;
 
-    const [tableOfContents, setTableOfContents] = useState(null);
+    const [tableOfContents, setTableOfContents] = useState(pageContext.tableOfContents);
 
     return (
         <Container location={location} activeSection={getSectionByPathname(location.pathname)}>
@@ -550,18 +550,18 @@ export default function MDX({
                                 <FeedbackForm page={location.pathname} />
                             </div>
                         </div>
-                        <div className="pl5" style={{ width: '290px' }}>
-                            <div className="top2" style={{ position: 'sticky' }}>
-                                <Text
-                                    size={2}
-                                    className={classNames({
-                                        'black mb2 b': true,
-                                    })}
-                                >
-                                    Table of Contents
-                                </Text>
+                        {tableOfContents && (
+                            <div className="pl5" style={{ width: '290px' }}>
+                                <div className="top2" style={{ position: 'sticky' }}>
+                                    <Text
+                                        size={2}
+                                        className={classNames({
+                                            'black mb2 b': true,
+                                        })}
+                                    >
+                                        Table of Contents
+                                    </Text>
 
-                                {tableOfContents && (
                                     <ul
                                         className="top2"
                                         style={{
@@ -604,9 +604,9 @@ export default function MDX({
                                             );
                                         })}
                                     </ul>
-                                )}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </React.Fragment>
                 )}
             </div>

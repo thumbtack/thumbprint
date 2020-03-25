@@ -69,5 +69,13 @@ export const pageQuery = graphql`
         ) {
             ...ReactComponentPropsFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/horizontal-rule/react/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

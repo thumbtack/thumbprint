@@ -51,5 +51,13 @@ export const pageQuery = graphql`
         packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-font-face" }) {
             ...PackageTableFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/font-face/scss/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;
