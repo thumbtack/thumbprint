@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add cursor styles category.
+
 ## 4.0.1 - 2020-01-09
 
 ### Added
