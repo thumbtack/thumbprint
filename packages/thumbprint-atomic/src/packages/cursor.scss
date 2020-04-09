@@ -1,55 +1,23 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 @import '~@thumbtack/thumbprint-scss/mixins';
 
-.cursor-default {
-    cursor: default !important;
-}
-
-.cursor-auto {
-    cursor: auto !important;
-}
-
 .cursor-pointer {
     cursor: pointer !important;
 }
 
 @include tp-respond-above($tp-breakpoint__small) {
-    .s_cursor-default {
-        cursor: default !important;
-    }
-
-    .s_cursor-auto {
-        cursor: auto !important;
-    }
-
     .s_cursor-pointer {
         cursor: pointer !important;
     }
 }
 
 @include tp-respond-above($tp-breakpoint__medium) {
-    .m_cursor-default {
-        cursor: default !important;
-    }
-
-    .m_cursor-auto {
-        cursor: auto !important;
-    }
-
     .m_cursor-pointer {
         cursor: pointer !important;
     }
 }
 
 @include tp-respond-above($tp-breakpoint__large) {
-    .l_cursor-default {
-        cursor: default !important;
-    }
-
-    .l_cursor-auto {
-        cursor: auto !important;
-    }
-
     .l_cursor-pointer {
         cursor: pointer !important;
     }

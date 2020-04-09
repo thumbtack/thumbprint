@@ -594,12 +594,6 @@ _:-ms-lang(x) {
 .-left-5 {
   left: -5px !important;
 }
-.cursor-default {
-  cursor: default !important;
-}
-.cursor-auto {
-  cursor: auto !important;
-}
 .cursor-pointer {
   cursor: pointer !important;
 }
@@ -2054,12 +2048,6 @@ _:-ms-lang(x) {
   .s_-left-5 {
     left: -5px !important;
   }
-  .s_cursor-default {
-    cursor: default !important;
-  }
-  .s_cursor-auto {
-    cursor: auto !important;
-  }
   .s_cursor-pointer {
     cursor: pointer !important;
   }
@@ -3488,12 +3476,6 @@ _:-ms-lang(x) {
   .m_-left-5 {
     left: -5px !important;
   }
-  .m_cursor-default {
-    cursor: default !important;
-  }
-  .m_cursor-auto {
-    cursor: auto !important;
-  }
   .m_cursor-pointer {
     cursor: pointer !important;
   }
@@ -4921,12 +4903,6 @@ _:-ms-lang(x) {
   }
   .l_-left-5 {
     left: -5px !important;
-  }
-  .l_cursor-default {
-    cursor: default !important;
-  }
-  .l_cursor-auto {
-    cursor: auto !important;
   }
   .l_cursor-pointer {
     cursor: pointer !important;
