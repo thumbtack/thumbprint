@@ -2048,9 +2048,6 @@ _:-ms-lang(x) {
   .s_-left-5 {
     left: -5px !important;
   }
-  .s_cursor-pointer {
-    cursor: pointer !important;
-  }
   .s_dn {
     display: none !important;
   }
@@ -3476,9 +3473,6 @@ _:-ms-lang(x) {
   .m_-left-5 {
     left: -5px !important;
   }
-  .m_cursor-pointer {
-    cursor: pointer !important;
-  }
   .m_dn {
     display: none !important;
   }
@@ -4903,9 +4897,6 @@ _:-ms-lang(x) {
   }
   .l_-left-5 {
     left: -5px !important;
-  }
-  .l_cursor-pointer {
-    cursor: pointer !important;
   }
   .l_dn {
     display: none !important;

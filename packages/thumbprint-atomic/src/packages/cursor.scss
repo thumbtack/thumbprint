@@ -1,24 +1,3 @@
-@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
-@import '~@thumbtack/thumbprint-scss/mixins';
-
 .cursor-pointer {
     cursor: pointer !important;
-}
-
-@include tp-respond-above($tp-breakpoint__small) {
-    .s_cursor-pointer {
-        cursor: pointer !important;
-    }
-}
-
-@include tp-respond-above($tp-breakpoint__medium) {
-    .m_cursor-pointer {
-        cursor: pointer !important;
-    }
-}
-
-@include tp-respond-above($tp-breakpoint__large) {
-    .l_cursor-pointer {
-        cursor: pointer !important;
-    }
 }
