@@ -594,6 +594,9 @@ _:-ms-lang(x) {
 .-left-5 {
   left: -5px !important;
 }
+.cursor-pointer {
+  cursor: pointer !important;
+}
 .dn {
   display: none !important;
 }
