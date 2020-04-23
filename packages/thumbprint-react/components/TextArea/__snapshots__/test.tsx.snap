@@ -11,6 +11,7 @@ exports[`adds \`dataTest\` prop 1`] = `
     data-test="Duck"
     disabled={false}
     onChange={[Function]}
+    readOnly={false}
     required={false}
     value="goose"
   />
@@ -27,6 +28,7 @@ exports[`adds \`disabled\` attribute 1`] = `
     className="root rootStateDisabled"
     disabled={true}
     onChange={[Function]}
+    readOnly={false}
     required={false}
     value="goose"
   />
@@ -44,6 +46,7 @@ exports[`adds \`id\` attribute 1`] = `
     disabled={false}
     id="Goose"
     onChange={[Function]}
+    readOnly={false}
     required={false}
     value="goose"
   />
@@ -61,6 +64,7 @@ exports[`adds \`maxLength\` attribute 1`] = `
     disabled={false}
     maxLength={100}
     onChange={[Function]}
+    readOnly={false}
     required={false}
     value="goose"
   />
@@ -78,6 +82,24 @@ exports[`adds \`name\` HTML attribute 1`] = `
     disabled={false}
     name="duck"
     onChange={[Function]}
+    readOnly={false}
+    required={false}
+    value="goose"
+  />
+</TextArea>
+`;
+
+exports[`adds \`readOnly\` attribute 1`] = `
+<TextArea
+  isReadOnly={true}
+  onChange={[Function]}
+  value="goose"
+>
+  <textarea
+    className="root rootStateDefault"
+    disabled={false}
+    onChange={[Function]}
+    readOnly={true}
     required={false}
     value="goose"
   />
@@ -94,6 +116,7 @@ exports[`adds \`required\` attribute 1`] = `
     className="root rootStateDefault"
     disabled={false}
     onChange={[Function]}
+    readOnly={false}
     required={true}
     value="goose"
   />
@@ -111,6 +134,7 @@ exports[`adds placeholder 1`] = `
     disabled={false}
     onChange={[Function]}
     placeholder="Goose"
+    readOnly={false}
     required={false}
     value="goose"
   />
@@ -135,6 +159,7 @@ exports[`renders an error state 1`] = `
     className="root rootStateError"
     disabled={false}
     onChange={[Function]}
+    readOnly={false}
     required={false}
     value="goose"
   />
