@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Add `isReadOnly` prop to `TextArea`. (#681)
+
 ## 12.4.0 - 2020-03-23
 
 ### Changed
