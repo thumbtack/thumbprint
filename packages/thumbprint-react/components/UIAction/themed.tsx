@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import warning from 'warning';
 import classNames from 'classnames';
 import LoaderDots from '../LoaderDots/index';
@@ -102,6 +101,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             size = 'large',
             theme = 'primary',
             width = 'auto',
+            form,
             dataTest,
         }: PropTypes,
         ref,
@@ -129,6 +129,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         onFocus,
                         onMouseLeave,
                         onBlur,
+                        form,
                     });
 
                     const className = classNames({
@@ -292,6 +293,11 @@ interface PropTypes {
      * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
      */
     width?: 'auto' | 'full' | 'full-below-small';
+    /**
+     * The ID of a `form` element to associate this button with, if it is not a child of that
+     * `form`.
+     */
+    form?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */

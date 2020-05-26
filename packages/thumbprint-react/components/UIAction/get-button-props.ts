@@ -6,6 +6,7 @@ interface ButtonProps {
     onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
     onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    form?: string;
 }
 
 /**
@@ -19,6 +20,7 @@ const getButtonProps = ({
     onFocus,
     onMouseLeave,
     onBlur,
+    form,
 }: ButtonProps): ButtonProps => ({
     onClick,
     type,
@@ -27,6 +29,7 @@ const getButtonProps = ({
     onFocus,
     onMouseLeave,
     onBlur,
+    form,
 });
 
 export default getButtonProps;

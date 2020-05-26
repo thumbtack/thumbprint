@@ -48,6 +48,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
             accessibilityLabel,
             theme = 'primary',
             type = 'button',
+            form,
             dataTest,
         }: TextButtonPropTypes,
         ref,
@@ -70,6 +71,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
             iconLeft={iconLeft}
             iconRight={iconRight}
             ref={ref}
+            form={form}
         />
     ),
 );
@@ -133,6 +135,11 @@ interface TextButtonPropTypes {
      */
     type?: 'button' | 'submit';
     /**
+     * The ID of a `form` element to associate this button with, if it is not a child of that
+     * `form`.
+     */
+    form?: string;
+    /**
      * A selector hook into the React component for use in automated testing environments.
      */
     dataTest?: string;
@@ -157,6 +164,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             theme = 'primary',
             size = 'large',
             width = 'auto',
+            form,
             dataTest,
         }: ButtonPropTypes,
         ref,
@@ -181,6 +189,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             theme={theme}
             size={size}
             width={width}
+            form={form}
             ref={ref}
         />
     ),
@@ -258,6 +267,11 @@ interface ButtonPropTypes {
      * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
      */
     width?: 'auto' | 'full' | 'full-below-small';
+    /**
+     * The ID of a `form` element to associate this button with, if it is not a child of that
+     * `form`.
+     */
+    form?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */

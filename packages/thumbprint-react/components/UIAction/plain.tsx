@@ -23,6 +23,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             onMouseLeave,
             onBlur,
             accessibilityLabel,
+            form,
             dataTest,
         },
         ref,
@@ -92,6 +93,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
                     onFocus,
                     onMouseLeave,
                     onBlur,
+                    form,
                 })}
                 ref={ref as React.Ref<HTMLButtonElement>}
             />
@@ -156,6 +158,11 @@ interface PropTypes {
      * descriptive text.
      */
     accessibilityLabel?: string;
+    /**
+     * The ID of a `form` element to associate this button with, if it is not a child of that
+     * `form`.
+     */
+    form?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */

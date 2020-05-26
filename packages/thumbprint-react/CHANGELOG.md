@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `form` prop to `Button` and `TextButton` components.
+
 ## 12.5.0 - 2020-05-01
 
 ### Fixed
