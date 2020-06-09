@@ -118,26 +118,32 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
+    const browserSupportsNativeLazyLoading = 'loading' in HTMLImageElement.prototype;
+    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
+        boolean
+    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
+
     // IntersectionObserver's `root` property identifies the element whose bounds are treated as
     // the bounding box of the viewport for this element. By default, it uses `window`. Instead
     // of using the default, we use the nearest scrollable parent. This is the same approach that
     // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
     // https://git.io/fj00H
+    let parent;
+    let root;
 
-    const parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
-    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
+    // Skip over the scroll parent calculation if the browser supports native lazy-loading.
+    if (!browserSupportsNativeLazyLoading) {
+        parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
+        root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
+    }
 
-    // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
-    // load the image.
+    // `isInView` becomes `true` when the lazy-loading functionality decides that we should load
+    // the image. We'll only add the `inViewRef` to the `picture` element if the browser
     const [inViewRef, isInView] = useInView({
         root,
         rootMargin: '100px',
         triggerOnce: true,
     });
-
-    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
-        boolean
-    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
     if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
@@ -146,8 +152,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         });
     }
 
-    // If `forceEarlyRender` is truthy, bypass lazy loading and load the image.
-    const shouldLoadImage = isInView || forceEarlyRender;
+    // If `browserSupportsNativeLazyLoading` or `forceEarlyRender` are truthy, bypass our
+    // `IntersectionObserver` lazy-loading and defer to the browser.
+    const shouldAddSrcAttributes = browserSupportsNativeLazyLoading || isInView || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
@@ -171,15 +178,15 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     useEffect(() => {
         // We polyfill `object-fit` for browsers that don't support it. We only do it if we're
-        // using a `height` or `containerAspectRatio`. The `shouldLoadImage` variable ensures
-        // that we don't try to polyfill the image before the `src` exists. This can happy
+        // using a `height` or `containerAspectRatio`. The `shouldAddSrcAttributes` variable
+        // ensures that we don't try to polyfill the image before the `src` exists. This can happen
         // when we lazy-load.
-        if (shouldObjectFit && containerRef && shouldLoadImage && shouldPolyfillObjectFit) {
+        if (shouldObjectFit && containerRef && shouldAddSrcAttributes && shouldPolyfillObjectFit) {
             import('object-fit-images').then(({ default: ObjectFitImages }) => {
                 ObjectFitImages(containerRef.querySelector('img'));
             });
         }
-    }, [shouldObjectFit, containerRef, shouldLoadImage, shouldPolyfillObjectFit]);
+    }, [shouldObjectFit, containerRef, shouldAddSrcAttributes, shouldPolyfillObjectFit]);
 
     if (shouldObjectFit) {
         objectFitProps.style = {
@@ -244,9 +251,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             // element.
             setContainerRef(node);
 
-            // We don't want to turn on the `react-intersection-observer` functionality until
-            // the polyfill is done loading.
-            if (browserSupportIntersectionObserver) {
+            // We should turn on `react-intersection-observer` if the browser doesn't natively
+            // support lazy-loading and the `IntersectionObserver` polyfill is done loading.
+            if (!browserSupportsNativeLazyLoading && browserSupportIntersectionObserver) {
                 inViewRef(node);
             }
 
@@ -255,7 +262,13 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                 outerRef(node);
             }
         },
-        [inViewRef, outerRef, setContainerRef, browserSupportIntersectionObserver],
+        [
+            inViewRef,
+            outerRef,
+            setContainerRef,
+            browserSupportIntersectionObserver,
+            browserSupportsNativeLazyLoading,
+        ],
     );
 
     return (
@@ -265,7 +278,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                     <source
                         type={webpSource.type}
                         // Only add this attribute if lazyload has been triggered.
-                        srcSet={shouldLoadImage ? webpSource.srcSet : undefined}
+                        srcSet={shouldAddSrcAttributes ? webpSource.srcSet : undefined}
                         sizes={sizes}
                     />
                 )}
@@ -275,9 +288,11 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                     // `img` tag and using `source` tags.
                     sizes={sizes}
                     // Only add this attribute if lazyload has been triggered.
-                    srcSet={shouldLoadImage && imgTagSource ? imgTagSource.srcSet : undefined}
+                    srcSet={
+                        shouldAddSrcAttributes && imgTagSource ? imgTagSource.srcSet : undefined
+                    }
                     // Only add this attribute if lazyload has been triggered.
-                    src={shouldLoadImage ? src : undefined}
+                    src={shouldAddSrcAttributes ? src : undefined}
                     // Height is generally only used for full-width hero images.
                     height={height}
                     alt={alt}
@@ -302,6 +317,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                         // For SSR we want this to fire instantly.
                         [styles.imageEnd]: isLoaded || isError || forceEarlyRender,
                     })}
+                    loading="lazy"
                 />
             </picture>
             {!forceEarlyRender && (
