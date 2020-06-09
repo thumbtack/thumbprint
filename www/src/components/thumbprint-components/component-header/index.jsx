@@ -6,17 +6,24 @@ import ComponentPackageTable from './component-package-table';
 const ComponentHeader = ({ data }) => {
     const { platformNav: platformNavQueryResults, packageTable, reactComponentProps } = data;
 
+    const components = [];
+
+    // Loop through the files for that component and combine all of the components into one array.
+    if (reactComponentProps) {
+        reactComponentProps.edges.forEach(file => {
+            file.node.childrenComponentMetadata.forEach(component => {
+                components.push(component);
+            });
+        });
+    }
+
     return (
         <React.Fragment>
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
 
             {packageTable && (
                 <ComponentPackageTable
-                    components={
-                        reactComponentProps
-                            ? reactComponentProps.childrenComponentMetadata
-                            : undefined
-                    }
+                    components={components.length > 0 ? components : undefined}
                     name={packageTable.name}
                     version={packageTable.version}
                     homepage={packageTable.homepage}

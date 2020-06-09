@@ -175,8 +175,8 @@ export const pageQuery = graphql`
             ...PackageTableFragment
         }
         # Get component props by path to component file.
-        reactComponentProps: file(
-            relativePath: { eq: "thumbprint-react/components/Calendar/index.tsx" }
+        reactComponentProps: allFile(
+            filter: { relativePath: { in: ["thumbprint-react/components/Calendar/index.tsx"] } }
         ) {
             ...ReactComponentPropsFragment
         }

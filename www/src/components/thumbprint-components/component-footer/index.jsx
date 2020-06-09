@@ -16,82 +16,87 @@ const ComponentFooter = ({ data }) => {
     return (
         <React.Fragment>
             <H2>Props</H2>
-            {reactComponentProps.childrenComponentMetadata.map(component => (
-                <div key={component.displayName}>
-                    <H3>{component.displayName}</H3>
-                    {component.description && (
-                        <div className="mb3">
-                            <MDXRenderer>{component.description.childMdx.body}</MDXRenderer>
-                        </div>
-                    )}
-                    <ul>
-                        {component.props
-                            .sort((a, b) => b.required - a.required)
-                            .map(prop => {
-                                const deprecated = find(prop.doclets, o => o.tag === 'deprecated');
+            {reactComponentProps.edges.map(file =>
+                file.node.childrenComponentMetadata.map(component => (
+                    <div key={component.displayName}>
+                        <H3>{component.displayName}</H3>
+                        {component.description && (
+                            <div className="mb3">
+                                <MDXRenderer>{component.description.childMdx.body}</MDXRenderer>
+                            </div>
+                        )}
+                        <ul>
+                            {component.props
+                                .sort((a, b) => b.required - a.required)
+                                .map(prop => {
+                                    const deprecated = find(
+                                        prop.doclets,
+                                        o => o.tag === 'deprecated',
+                                    );
 
-                                return (
-                                    <li className="pv3" key={prop.name}>
-                                        <div className="flex">
-                                            <div className="b">
-                                                <InlineCode shouldCopyToClipboard theme="plain">
-                                                    {prop.name}
-                                                </InlineCode>
-                                            </div>
-                                            {prop.required && (
-                                                <div className="ml2">
-                                                    <Tag type="required" />
+                                    return (
+                                        <li className="pv3" key={prop.name}>
+                                            <div className="flex">
+                                                <div className="b">
+                                                    <InlineCode shouldCopyToClipboard theme="plain">
+                                                        {prop.name}
+                                                    </InlineCode>
                                                 </div>
-                                            )}
-                                            {deprecated && (
-                                                <div className="ml2">
-                                                    <Tag type="deprecated" />
-                                                </div>
-                                            )}
-                                        </div>
-                                        <div className="black-300 mw8 mb2">
-                                            {prop.description && (
-                                                <MDXRenderer>
-                                                    {prop.description.childMdx.body}
-                                                </MDXRenderer>
-                                            )}
-
-                                            {deprecated && isString(deprecated.value) && (
-                                                <p>
-                                                    <b>Note:</b> {deprecated.value}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <div className="flex">
-                                            {prop.type && (
-                                                <Text
-                                                    className="mr4 w-50 s_w-40 m_w-30 m_w-20"
-                                                    elementName="div"
-                                                >
-                                                    <div className="b">Type</div>
-                                                    <PropType
-                                                        type={prop.type.name}
-                                                        value={prop.type.value}
-                                                    />
-                                                </Text>
-                                            )}
-                                            {get(prop.defaultValue, 'value') && (
-                                                <div>
-                                                    <div className="b">Default</div>
-                                                    <div className="black-300">
-                                                        <InlineCode theme="plain">
-                                                            {get(prop.defaultValue, 'value')}
-                                                        </InlineCode>
+                                                {prop.required && (
+                                                    <div className="ml2">
+                                                        <Tag type="required" />
                                                     </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                    </ul>
-                </div>
-            ))}
+                                                )}
+                                                {deprecated && (
+                                                    <div className="ml2">
+                                                        <Tag type="deprecated" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="black-300 mw8 mb2">
+                                                {prop.description && (
+                                                    <MDXRenderer>
+                                                        {prop.description.childMdx.body}
+                                                    </MDXRenderer>
+                                                )}
+
+                                                {deprecated && isString(deprecated.value) && (
+                                                    <p>
+                                                        <b>Note:</b> {deprecated.value}
+                                                    </p>
+                                                )}
+                                            </div>
+                                            <div className="flex">
+                                                {prop.type && (
+                                                    <Text
+                                                        className="mr4 w-50 s_w-40 m_w-30 m_w-20"
+                                                        elementName="div"
+                                                    >
+                                                        <div className="b">Type</div>
+                                                        <PropType
+                                                            type={prop.type.name}
+                                                            value={prop.type.value}
+                                                        />
+                                                    </Text>
+                                                )}
+                                                {get(prop.defaultValue, 'value') && (
+                                                    <div>
+                                                        <div className="b">Default</div>
+                                                        <div className="black-300">
+                                                            <InlineCode theme="plain">
+                                                                {get(prop.defaultValue, 'value')}
+                                                            </InlineCode>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </li>
+                                    );
+                                })}
+                        </ul>
+                    </div>
+                )),
+            )}
         </React.Fragment>
     );
 };

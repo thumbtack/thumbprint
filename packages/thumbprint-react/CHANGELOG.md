@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 12.5.0 - 2020-05-01
+
+### Fixed
+
+-   [Minor] Add `isReadOnly` prop to `TextArea`. (#681)
+
 ## 12.4.0 - 2020-03-23
 
 ### Changed

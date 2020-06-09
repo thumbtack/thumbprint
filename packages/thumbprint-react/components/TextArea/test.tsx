@@ -26,6 +26,12 @@ test('adds `disabled` attribute', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('adds `readOnly` attribute', () => {
+    const wrapper = mount(<TextArea isReadOnly onChange={jest.fn} value="goose" />);
+    expect(wrapper.find('textarea').prop('readOnly')).toBeTruthy();
+    expect(wrapper).toMatchSnapshot();
+});
+
 test('adds `required` attribute', () => {
     const wrapper = mount(<TextArea isRequired onChange={jest.fn} value="goose" />);
     expect(wrapper.find('textarea').prop('required')).toBeTruthy();
