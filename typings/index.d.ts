@@ -38,3 +38,10 @@ declare module '*.module.scss' {
     const classes: { [key: string]: string };
     export default classes;
 }
+
+declare namespace React {
+    interface ImgHTMLAttributes<T> extends HTMLAttributes<T> {
+        // https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading#Images_and_iframes
+        loading?: 'lazy' | 'eager' | 'auto';
+    }
+}
