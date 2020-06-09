@@ -29,7 +29,7 @@ class DocSearch extends React.Component {
                     return suggestions;
                 }
 
-                return suggestions.map(suggestion => ({
+                return suggestions.map((suggestion) => ({
                     ...suggestion,
                     url: suggestion.url.replace(
                         'https://thumbprint.design/',

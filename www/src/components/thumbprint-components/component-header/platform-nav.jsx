@@ -6,7 +6,7 @@ import TabNav, { TabNavItem } from '../../tab-nav';
 /**
  * Given `/components/button/react/`, this function returns `react`.
  */
-const getPlatformSlugByPath = path => {
+const getPlatformSlugByPath = (path) => {
     const arr = path.split('/');
     return arr[arr.length - 2];
 };
@@ -27,7 +27,7 @@ const sortPlatforms = ({ node }) => {
 /**
  * Given `/components/button/react/`, this function returns `React`.
  */
-const getPlatformDisplayName = path => {
+const getPlatformDisplayName = (path) => {
     const displayName = {
         usage: 'Usage',
         react: 'React',

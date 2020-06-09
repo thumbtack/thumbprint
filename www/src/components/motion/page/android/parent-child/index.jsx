@@ -5,7 +5,7 @@ import style from './index.module.scss';
 const AndroidParentChild = () => {
     const [tab, setTab] = useState(null);
 
-    const handleClick = num => {
+    const handleClick = (num) => {
         if (tab !== num) {
             setTab(num);
         } else {

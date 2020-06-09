@@ -5,7 +5,7 @@ import { InlineCode } from '../../mdx';
 import styles from './prop-type.module.scss';
 
 const EnumPropType = ({ value }) => {
-    const enumValues = value.map(valObj => valObj.value);
+    const enumValues = value.map((valObj) => valObj.value);
 
     return (
         <pre>
@@ -47,7 +47,7 @@ const UnionPropType = ({ value }) => (
         </Text>
 
         <ul className={styles.unionPropType}>
-            {value.map(type => (
+            {value.map((type) => (
                 <li key={type.name}>
                     <PropType value={type.value} type={type.name} />
                 </li>

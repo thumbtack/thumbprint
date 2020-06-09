@@ -4,6 +4,10 @@
 
 ## 12.5.0 - 2020-05-01
 
+### Changed
+
+-   [Patch] Upgrade version of Prettier.
+
 ### Fixed
 
 -   [Minor] Add `isReadOnly` prop to `TextArea`. (#681)

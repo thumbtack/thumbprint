@@ -39,7 +39,7 @@ export default function ButtonRow({
             })}
             data-test={dataTest}
         >
-            {React.Children.map(children, child => (
+            {React.Children.map(children, (child) => (
                 <div className={styles.item}>{child}</div>
             ))}
         </div>

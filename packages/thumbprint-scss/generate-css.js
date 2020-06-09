@@ -12,11 +12,11 @@ const nodeSassImporter = require('./node-sass-importer');
 /**
  * Ensures that errors throw an error with a stacktrace.
  */
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error) => {
     throw error;
 });
 
-const compileSass = async fromFile => {
+const compileSass = async (fromFile) => {
     const { css } = sass.renderSync({
         file: fromFile,
         importer: nodeSassImporter,

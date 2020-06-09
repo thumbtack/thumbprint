@@ -44,7 +44,7 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
      * This function exists to share code between the `Link` component instances when wrapped in
      * `ScrollMarkerLink` and when used on its own.
      */
-    const getLinkClasses = hasActiveClass =>
+    const getLinkClasses = (hasActiveClass) =>
         classNames({
             'db flex-1 black': true,
             'pv2 ph3': level === 1,

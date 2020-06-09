@@ -22,7 +22,7 @@ jest.mock(
 );
 
 beforeEach((): void => {
-    window.IntersectionObserver = (true as unknown) as (typeof window.IntersectionObserver);
+    window.IntersectionObserver = (true as unknown) as typeof window.IntersectionObserver;
 });
 
 describe('ServiceCard', () => {

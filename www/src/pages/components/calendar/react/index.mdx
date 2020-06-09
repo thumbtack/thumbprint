@@ -121,7 +121,7 @@ function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
-    const isMonday = date => date.getDay() === 1;
+    const isMonday = (date) => date.getDay() === 1;
 
     return (
         <Calendar
@@ -144,7 +144,7 @@ function CalendarExample() {
     const [value, setValue] = React.useState(new Date());
     const [month, setMonth] = React.useState(undefined);
 
-    const isFriday = date => date.getDay() === 5;
+    const isFriday = (date) => date.getDay() === 5;
 
     return (
         <Calendar

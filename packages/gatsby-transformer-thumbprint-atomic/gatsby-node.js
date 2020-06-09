@@ -21,10 +21,7 @@ const createCssNode = ({ node, actions }) => {
         atomicClasses: parseAst(css),
         children: [],
         internal: {
-            contentDigest: crypto
-                .createHash('md5')
-                .update(css)
-                .digest('hex'),
+            contentDigest: crypto.createHash('md5').update(css).digest('hex'),
             type: 'ThumbprintAtomicClasses',
         },
     };

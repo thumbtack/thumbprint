@@ -23,7 +23,7 @@ function TextAreaExample() {
                 <TextArea
                     value={value}
                     placeholder="Tell us about your business"
-                    onChange={v => setValue(v)}
+                    onChange={(v) => setValue(v)}
                 />
             </Label>
         </div>
@@ -42,7 +42,7 @@ function TextAreaExample() {
         <TextArea
             isDisabled
             placeholder="Tell us about your business"
-            onChange={v => setValue(v)}
+            onChange={(v) => setValue(v)}
             value={value}
         />
     );
@@ -62,7 +62,7 @@ function TextAreaExample() {
         <TextArea
             hasError
             placeholder="Tell us about your business"
-            onChange={v => setValue(v)}
+            onChange={(v) => setValue(v)}
             value={value}
         />
     );

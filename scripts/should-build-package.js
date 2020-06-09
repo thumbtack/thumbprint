@@ -7,11 +7,11 @@ const path = require('path');
 /**
  * Ensures that errors throw an error with a stacktrace.
  */
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error) => {
     throw error;
 });
 
-const getHash = async dir => {
+const getHash = async (dir) => {
     const yarnLockLocation = path.join(dir, '../../yarn.lock');
 
     const { hash: hashPackageFolder } = await hashElement(dir, {

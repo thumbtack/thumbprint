@@ -43,7 +43,7 @@ export const pageQuery = graphql`
 />
 
 <div>
-    {props.data.thumbprintToken.categories.map(section => (
+    {props.data.thumbprintToken.categories.map((section) => (
         <TokenSection section={section} key={section.name} platform="javascript" />
     ))}
 </div>

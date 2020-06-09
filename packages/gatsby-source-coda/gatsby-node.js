@@ -32,12 +32,12 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
     const data = await listRowsRes.json();
 
     // Process data into nodes.
-    data.items.forEach(item => {
+    data.items.forEach((item) => {
         const sanitizedItem = item;
 
         // Sanitize the column names that come from Coda. Spaces get replaced
         // with an underscore, allowing it to work better with Gatsby.
-        Object.keys(sanitizedItem.values).forEach(key => {
+        Object.keys(sanitizedItem.values).forEach((key) => {
             const newKey = key.replace(/\s+/g, '_');
             if (key !== newKey) {
                 sanitizedItem.values[newKey] = sanitizedItem.values[key];
@@ -57,10 +57,7 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
             children: [],
             internal: {
                 type: `Coda${tableIdOrName}Table`,
-                contentDigest: crypto
-                    .createHash('md5')
-                    .update(jsonString)
-                    .digest('hex'),
+                contentDigest: crypto.createHash('md5').update(jsonString).digest('hex'),
             },
         };
 

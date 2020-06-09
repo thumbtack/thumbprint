@@ -5,16 +5,16 @@ const { flatten } = require('lodash');
 /**
  * Ensures that the `atrule` node is for a media query.
  */
-const isAtRuleAMediaQuery = atruleNode =>
+const isAtRuleAMediaQuery = (atruleNode) =>
     atruleNode.first('atkeyword').first('ident').content === 'media';
 
 /**
  * Returns an array of rules such as `[ 'background-color: red !important;' ]`.
  */
-const getBlockContent = blockNode => {
+const getBlockContent = (blockNode) => {
     const declarations = [];
 
-    blockNode.traverseByType('declaration', n => {
+    blockNode.traverseByType('declaration', (n) => {
         // Run through prettier to unminify the source CSS.
         // https://github.com/tonyganch/gonzales-pe/blob/dev/docs/node-types.md#declaration
         declarations.push(prettier.format(n.toString(), { parser: 'css' }).replace('\n', ''));
@@ -23,14 +23,14 @@ const getBlockContent = blockNode => {
     return declarations;
 };
 
-const getRulesetContent = rulesetNode => {
+const getRulesetContent = (rulesetNode) => {
     const data = {
         selectors: [],
         declarations: [],
     };
 
     // A ruleset contains a class (`.foo`) and `block` contains the rules.
-    rulesetNode.traverse(n => {
+    rulesetNode.traverse((n) => {
         switch (n.type) {
             case 'selector':
                 // Regex changes `.s\:bg-right` to `.s:bg-right`.
@@ -55,11 +55,11 @@ const getRulesetContent = rulesetNode => {
  *
  * Returns an array of objects.
  */
-const getAtruleContent = atruleNode => {
+const getAtruleContent = (atruleNode) => {
     const classesWithinMediaQueries = [];
 
     if (isAtRuleAMediaQuery(atruleNode)) {
-        atruleNode.traverse(node => {
+        atruleNode.traverse((node) => {
             if (node.is('ruleset')) {
                 classesWithinMediaQueries.push({
                     media: atruleNode.first('parentheses').toString(),
@@ -88,13 +88,13 @@ const getAtruleContent = atruleNode => {
  * }
  * ```
  */
-module.exports = css => {
+module.exports = (css) => {
     const classes = [];
     const parseTree = gonzales.parse(css, { syntax: 'css' });
 
     // Starting at the top node, we only care about `ruleset` and `atrule` nodes. These will give
     // us a list of classes as well as information about media queries.
-    parseTree.forEach(node => {
+    parseTree.forEach((node) => {
         if (node.is('ruleset')) {
             // https://github.com/tonyganch/gonzales-pe/blob/dev/docs/node-types.md#ruleset
             classes.push(getRulesetContent(node));

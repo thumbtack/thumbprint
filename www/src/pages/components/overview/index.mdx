@@ -51,7 +51,7 @@ export const pageQuery = graphql`
         <React.Fragment>
             <Legend />
             <ComponentTable>
-                {props.data.allCodaImplementationsTable.group.map(group => {
+                {props.data.allCodaImplementationsTable.group.map((group) => {
                     const platforms = keyBy(group.edges, 'node.data.values.Platform');
                     return (
                         <ComponentRow

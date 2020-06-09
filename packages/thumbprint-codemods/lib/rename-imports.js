@@ -32,7 +32,7 @@ module.exports = function renameImports(api, ast, importMap) {
         (newName, oldName) =>
             !!thumbprintReactImport
                 .get()
-                .value.specifiers.find(node => node.imported.name === oldName),
+                .value.specifiers.find((node) => node.imported.name === oldName),
     );
 
     // Skip file none of the components are imported
@@ -41,10 +41,10 @@ module.exports = function renameImports(api, ast, importMap) {
     }
 
     function rewriteImport(from, to, members) {
-        thumbprintReactImport.forEach(decl => {
+        thumbprintReactImport.forEach((decl) => {
             j(decl)
                 .find(j.ImportSpecifier, { imported: { name: from } })
-                .forEach(spec => {
+                .forEach((spec) => {
                     if (importsByName[to] && members.length) {
                         // if the destination import already exists and there are members
                         // in this identifier, then this one is a dupe
@@ -60,14 +60,14 @@ module.exports = function renameImports(api, ast, importMap) {
 
         // replace all of the rewritten identifiers with member expressions
         ast.find(j.Identifier, { name: from })
-            .filter(id => id.parent.node.type !== 'ImportSpecifier')
+            .filter((id) => id.parent.node.type !== 'ImportSpecifier')
             .replaceWith(memberExpression(j, to, ...members));
     }
 
-    thumbprintReactImport.forEach(decl => {
+    thumbprintReactImport.forEach((decl) => {
         j(decl)
             .find(j.ImportSpecifier)
-            .forEach(spec => {
+            .forEach((spec) => {
                 importsByName[spec.node.imported.name] = spec;
             });
     });

@@ -67,11 +67,11 @@ function StarRatingExample() {
             size="large"
             rating={rating}
             hoverRating={hoverRating}
-            onStarClick={value => {
+            onStarClick={(value) => {
                 setRating(value);
                 console.log(`StarRating: Clicked on ${value}`);
             }}
-            onStarHover={value => {
+            onStarHover={(value) => {
                 setHoverRating(value);
                 console.log(`StarRating: Hovered over ${value}`);
             }}

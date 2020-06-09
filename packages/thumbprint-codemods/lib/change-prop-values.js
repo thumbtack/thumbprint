@@ -1,15 +1,10 @@
 /* eslint-disable no-console */
 const usesSpreadProps = (instances, j) =>
-    instances.some(
-        node =>
-            j(node)
-                .find(j.JSXSpreadAttribute)
-                .size() > 0,
-    );
+    instances.some((node) => j(node).find(j.JSXSpreadAttribute).size() > 0);
 
 const usesExpressionAsPropValue = (instances, j, propName) =>
     instances.some(
-        node =>
+        (node) =>
             j(node)
                 .find(j.JSXAttribute, {
                     name: { name: propName },
@@ -43,7 +38,7 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
 
     const specifier = thumbprintReactImport
         .get()
-        .value.specifiers.find(node => node.imported.name === componentName);
+        .value.specifiers.find((node) => node.imported.name === componentName);
 
     // Skip file if the component is not imported
     if (!specifier) {
@@ -81,10 +76,10 @@ module.exports = (file, api, ast, componentName, propName, valuesMap, extraCheck
         }
     }
 
-    instances.forEach(path => {
+    instances.forEach((path) => {
         const { node } = path;
 
-        node.openingElement.attributes.forEach(attr => {
+        node.openingElement.attributes.forEach((attr) => {
             if (attr.name && attr.name.name && attr.name.name === propName) {
                 const attribute = attr;
                 const { value } = attribute.value;

@@ -181,7 +181,7 @@ const Container = ({ children, location, activeSection }) => {
                                             type="search"
                                             size="small"
                                             placeholder="Search"
-                                            onChange={v => {
+                                            onChange={(v) => {
                                                 setSearchValue(v);
                                             }}
                                             value={searchValue}
@@ -287,7 +287,7 @@ const Container = ({ children, location, activeSection }) => {
                                         />
                                     </SideNavGroup>
                                     <SideNavGroup level={2}>
-                                        {map(allComponents.group, group => (
+                                        {map(allComponents.group, (group) => (
                                             <SideNavLink
                                                 title={group.fieldValue}
                                                 level={2}
@@ -343,7 +343,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/scss/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allScssTokens.categories, category => (
+                                                {map(allScssTokens.categories, (category) => (
                                                     <SideNavLink
                                                         title={category.name}
                                                         to={`/tokens/scss/#${generateSlug({
@@ -363,7 +363,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/javascript/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allJavaScriptTokens.categories, category => (
+                                                {map(allJavaScriptTokens.categories, (category) => (
                                                     <SideNavLink
                                                         title={category.name}
                                                         to={`/tokens/javascript/#${generateSlug({
@@ -383,7 +383,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/ios/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allIosTokens.categories, category => (
+                                                {map(allIosTokens.categories, (category) => (
                                                     <SideNavLink
                                                         title={category.name}
                                                         to={`/tokens/ios/#${generateSlug({
@@ -403,7 +403,7 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname.startsWith('/tokens/android/')}
                                         >
                                             <SideNavGroup level={3}>
-                                                {map(allAndroidTokens.categories, category => (
+                                                {map(allAndroidTokens.categories, (category) => (
                                                     <SideNavLink
                                                         title={category.name}
                                                         to={`/tokens/android/#${generateSlug({

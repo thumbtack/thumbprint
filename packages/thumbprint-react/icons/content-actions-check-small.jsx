@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContentActionsCheckSmall = props => (
+const ContentActionsCheckSmall = (props) => (
     <svg {...props}>
         <path
             fillRule="evenodd"

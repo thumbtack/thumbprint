@@ -16,8 +16,8 @@ const ComponentFooter = ({ data }) => {
     return (
         <React.Fragment>
             <H2>Props</H2>
-            {reactComponentProps.edges.map(file =>
-                file.node.childrenComponentMetadata.map(component => (
+            {reactComponentProps.edges.map((file) =>
+                file.node.childrenComponentMetadata.map((component) => (
                     <div key={component.displayName}>
                         <H3>{component.displayName}</H3>
                         {component.description && (
@@ -28,10 +28,10 @@ const ComponentFooter = ({ data }) => {
                         <ul>
                             {component.props
                                 .sort((a, b) => b.required - a.required)
-                                .map(prop => {
+                                .map((prop) => {
                                     const deprecated = find(
                                         prop.doclets,
-                                        o => o.tag === 'deprecated',
+                                        (o) => o.tag === 'deprecated',
                                     );
 
                                     return (

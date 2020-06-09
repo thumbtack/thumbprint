@@ -10,8 +10,8 @@ const ComponentHeader = ({ data }) => {
 
     // Loop through the files for that component and combine all of the components into one array.
     if (reactComponentProps) {
-        reactComponentProps.edges.forEach(file => {
-            file.node.childrenComponentMetadata.forEach(component => {
+        reactComponentProps.edges.forEach((file) => {
+            file.node.childrenComponentMetadata.forEach((component) => {
                 components.push(component);
             });
         });

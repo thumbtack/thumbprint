@@ -17,7 +17,7 @@ function RadioExample() {
     const [isChecked, setIsChecked] = React.useState(undefined);
 
     return (
-        <Radio isChecked={isChecked} name="example-basic" onChange={v => setIsChecked(v)}>
+        <Radio isChecked={isChecked} name="example-basic" onChange={(v) => setIsChecked(v)}>
             Long Distance Moving
         </Radio>
     );
@@ -113,7 +113,12 @@ function RadioExample() {
     const [isChecked, setIsChecked] = React.useState(undefined);
 
     return (
-        <Radio isChecked={isChecked} hasError name="example-error" onChange={v => setIsChecked(v)}>
+        <Radio
+            isChecked={isChecked}
+            hasError
+            name="example-error"
+            onChange={(v) => setIsChecked(v)}
+        >
             Long Distance Moving
         </Radio>
     );
@@ -134,7 +139,7 @@ function RadioExample() {
         <Radio
             isChecked={isChecked}
             name="example-multi-column-content"
-            onChange={v => setIsChecked(v)}
+            onChange={(v) => setIsChecked(v)}
         >
             <div className="flex">
                 <div className="flex-none">
@@ -163,7 +168,7 @@ function RadioExample() {
         <Radio
             name="vertical-align"
             isChecked={isChecked}
-            onChange={v => setIsChecked(v)}
+            onChange={(v) => setIsChecked(v)}
             radioVerticalAlign="top"
         >
             <Text>

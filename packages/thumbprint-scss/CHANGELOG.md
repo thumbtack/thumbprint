@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade version of Prettier.
+
 ## 4.0.0 - 2019-11-21
 
 ### Removed
