@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 
 const ESC_KEY = 27;
 
-const toggleScrolling = (isOpen) => {
+const toggleScrolling = isOpen => {
     if (isOpen) {
         noScroll.on();
     } else {

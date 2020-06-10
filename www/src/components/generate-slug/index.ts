@@ -15,7 +15,7 @@ const generateSlug = ({
     level: string;
     children: React.ReactNode;
 }): string | undefined => {
-    const text = React.Children.map(children, (c) => {
+    const text = React.Children.map(children, c => {
         if (isString(c)) {
             return c;
         }

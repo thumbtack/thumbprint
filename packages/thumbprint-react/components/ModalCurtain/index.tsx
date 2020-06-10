@@ -96,7 +96,7 @@ export default function ModalCurtain({
                 While using those two properties is optional, they provide helpful functionality. */}
                 {children &&
                     children({
-                        curtainOnClick: (event) => {
+                        curtainOnClick: event => {
                             // Ensures that the click event happened on the element that has the
                             // `onClick`. This prevents clicks deep within `children` from bubbling
                             // up and closing the ModalCurtain.

@@ -4,7 +4,7 @@ const changePropValues = require('../../lib/change-prop-values');
 
 const usesSecondaryButtons = (collection, j) =>
     collection.some(
-        (node) =>
+        node =>
             j(node)
                 .find(j.JSXAttribute, {
                     name: { name: 'theme' },

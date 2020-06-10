@@ -6,7 +6,7 @@ import PackageTable from '../../package-table';
  * Returns an JavaScript import statement for components (and subcomponents) within a package.
  */
 const getImportStatement = ({ components, packageName }) =>
-    `import { ${components.map((c) => c.displayName).join(', ')} } from '${packageName}';`;
+    `import { ${components.map(c => c.displayName).join(', ')} } from '${packageName}';`;
 
 const ComponentPackageTable = ({ version, name, homepage, components }) => (
     <PackageTable

@@ -3,7 +3,7 @@ const changePropValues = require('../../lib/change-prop-values');
 
 const usesXLargeSize = (collection, j) =>
     collection.some(
-        (node) =>
+        node =>
             j(node)
                 .find(j.JSXAttribute, {
                     name: { name: 'size' },

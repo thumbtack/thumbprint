@@ -3,3 +3,4 @@ tabWidth: 4
 trailingComma: all
 singleQuote: true
 proseWrap: never
+arrowParens: avoid

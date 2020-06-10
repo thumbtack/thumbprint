@@ -222,8 +222,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // - https://bugs.webkit.org/show_bug.cgi?id=190031
     // - https://bugs.webkit.org/show_bug.cgi?id=177068
 
-    const webpSource = find(sources, (s) => s.type === 'image/webp');
-    const imgTagSource = find(sources, (s) => s.type === 'image/jpeg' || s.type === 'image/png');
+    const webpSource = find(sources, s => s.type === 'image/webp');
+    const imgTagSource = find(sources, s => s.type === 'image/jpeg' || s.type === 'image/png');
 
     // --------------------------------------------------------------------------------------------
     // Image load and error states
@@ -239,7 +239,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // --------------------------------------------------------------------------------------------
 
     const setRefs = useCallback(
-        (node) => {
+        node => {
             // Using a callback `ref` on this `picture` allows us to have multiple `ref`s on one
             // element.
             setContainerRef(node);

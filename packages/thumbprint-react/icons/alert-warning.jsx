@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AlertWarning = (props) => (
+const AlertWarning = props => (
     <svg {...props}>
         <path
             fillRule="evenodd"
