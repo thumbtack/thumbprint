@@ -79,23 +79,13 @@ test('renders a badge if valid badge prop is supplied', (): void => {
 
 test('renders an SVG when `isChecked` is true', (): void => {
     const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('renders an SVG when `isChecked` is true', (): void => {
     const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -108,12 +98,7 @@ test('renders `isOnline` when `isOnline` is true', (): void => {
 test('renders checkmark SVG when `isChecked` and `isOnline` are true', (): void => {
     const wrapper = mount(<UserAvatar isChecked isOnline />);
     expect(wrapper.find('.badge').exists()).toBe(true);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 

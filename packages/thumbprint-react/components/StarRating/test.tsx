@@ -57,10 +57,7 @@ test('does not throw an error when clicking on a star when `onStarClick` is not 
 test('calls `onStarClick` function when supplied', () => {
     const onStarClick = jest.fn();
     const wrapper = mount(<StarRating rating={0} onStarClick={onStarClick} />);
-    wrapper
-        .find('input')
-        .first()
-        .simulate('click');
+    wrapper.find('input').first().simulate('click');
     expect(onStarClick).toHaveBeenCalledTimes(1);
 });
 

@@ -417,9 +417,9 @@ const FeedbackForm = ({ page }: { page: string }): JSX.Element => {
                     e.preventDefault();
 
                     const form = e.target as HTMLFormElement;
-                    const data = new URLSearchParams((new FormData(
-                        form,
-                    ) as unknown) as string).toString();
+                    const data = new URLSearchParams(
+                        (new FormData(form) as unknown) as string,
+                    ).toString();
 
                     fetch(form.action, {
                         method: 'POST',

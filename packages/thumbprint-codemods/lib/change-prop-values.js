@@ -1,11 +1,6 @@
 /* eslint-disable no-console */
 const usesSpreadProps = (instances, j) =>
-    instances.some(
-        node =>
-            j(node)
-                .find(j.JSXSpreadAttribute)
-                .size() > 0,
-    );
+    instances.some(node => j(node).find(j.JSXSpreadAttribute).size() > 0);
 
 const usesExpressionAsPropValue = (instances, j, propName) =>
     instances.some(
