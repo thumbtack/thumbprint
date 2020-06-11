@@ -5,7 +5,7 @@ import resolve from 'rollup-plugin-node-resolve';
 
 import { dependencies, peerDependencies } from './package.json';
 
-const getConfig = (format) => {
+const getConfig = format => {
     const dest = path.join('dist', format);
 
     return {
@@ -32,7 +32,7 @@ const getConfig = (format) => {
             }),
         ],
         preserveModules: true,
-        external: (id) =>
+        external: id =>
             // Don't attempt to bundle dependencies and peerDependencies.
             dependencies[id] ||
             peerDependencies[id] ||

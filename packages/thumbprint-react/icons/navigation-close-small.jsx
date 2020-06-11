@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavigationCloseSmall = (props) => (
+const NavigationCloseSmall = props => (
     <svg {...props}>
         <path
             fillRule="evenodd"

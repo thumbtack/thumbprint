@@ -2,7 +2,7 @@
 const jscodeshift = require('jscodeshift');
 const codemod = require('./index');
 
-const transform = (source) =>
+const transform = source =>
     codemod(
         {
             source,

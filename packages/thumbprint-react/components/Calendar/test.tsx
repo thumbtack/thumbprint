@@ -30,14 +30,14 @@ describe('calls `onChange` with the correct date', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 15th first.
-        const day15 = allDays.findWhere((n) => n.prop('children') === 15);
+        const day15 = allDays.findWhere(n => n.prop('children') === 15);
         day15.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
         expect(onChange).toHaveBeenCalledWith([new Date('2057-09-15T07:00:00.000Z')]);
 
         // Click on the 22nd next.
-        const day22 = allDays.findWhere((n) => n.prop('children') === 22);
+        const day22 = allDays.findWhere(n => n.prop('children') === 22);
         day22.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(2);
@@ -89,14 +89,14 @@ describe('calls `onChange` with the correct date', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 15th first.
-        const day15 = allDays.findWhere((n) => n.prop('children') === 15);
+        const day15 = allDays.findWhere(n => n.prop('children') === 15);
         day15.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
         expect(onChange).toHaveBeenCalledWith([firstDate, secondDate]);
 
         // Click on the 22nd next.
-        const day22 = allDays.findWhere((n) => n.prop('children') === 22);
+        const day22 = allDays.findWhere(n => n.prop('children') === 22);
         day22.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(2);
@@ -121,7 +121,7 @@ describe('user tries to unselect a date that was already selected', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 3rd day.
-        const day3 = allDays.findWhere((n) => n.prop('children') === 3);
+        const day3 = allDays.findWhere(n => n.prop('children') === 3);
         day3.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -147,7 +147,7 @@ describe('user tries to unselect a date that was already selected', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 3rd day.
-        const day3 = allDays.findWhere((n) => n.prop('children') === 3);
+        const day3 = allDays.findWhere(n => n.prop('children') === 3);
         day3.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -176,7 +176,7 @@ describe('user tries to click on a disabled date', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 10th, the disabled date.
-        const day10 = allDays.findWhere((n) => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.prop('children') === 10);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(0);
@@ -203,7 +203,7 @@ describe('user tries to click on a disabled date', () => {
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 10th, the disabled date.
-        const day10 = allDays.findWhere((n) => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.prop('children') === 10);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(0);
@@ -235,7 +235,7 @@ describe('user is able to select a date in the past if disabled days is disabled
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 10th, the date from a previous month.
-        const day10 = allDays.findWhere((n) => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.prop('children') === 10);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -267,7 +267,7 @@ describe('user is able to select a date in the past if disabled days is disabled
         const allDays = wrapper.find('.DayPicker-Day');
 
         // Click on the 10th, the date from a previous month.
-        const day10 = allDays.findWhere((n) => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.prop('children') === 10);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);

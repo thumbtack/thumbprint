@@ -37,7 +37,7 @@ describe('AlertBanner', () => {
         expect(infoWrapper.find('.root.info').length).toBe(1);
         expect(warningWrapper.find('.root.warning').length).toBe(1);
 
-        forEach(testCases, (wrapper) => {
+        forEach(testCases, wrapper => {
             expect(wrapper.find('svg').hasClass('icon')).toBe(true);
         });
     });
@@ -57,7 +57,7 @@ describe('AlertBanner', () => {
     });
 
     test('match snapshot', () => {
-        forEach(testCases, (wrapper) => {
+        forEach(testCases, wrapper => {
             expect(wrapper).toMatchSnapshot();
         });
     });

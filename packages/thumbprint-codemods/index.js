@@ -15,7 +15,7 @@ const globbedCodemods = globby.sync(path.join(__dirname, './src/*/index.js'));
 //    'button-secondary-to-tertiary': './src/button-secondary-to-tertiary/index.js',
 //    ...and so on...
 // }
-const codemods = keyBy(globbedCodemods, (p) => {
+const codemods = keyBy(globbedCodemods, p => {
     const pathSplitArr = p.split('/');
     return pathSplitArr[pathSplitArr.length - 2];
 });
@@ -56,7 +56,7 @@ if (cli.input.length === 0) {
 // Throw an error if the codemod name isn't valid
 if (!cli.flags.codemod || !codemods[cli.flags.codemod]) {
     const validCodeModsList = Object.keys(codemods)
-        .map((c) => `• ${c}`)
+        .map(c => `• ${c}`)
         .join('\n');
 
     throw Error(

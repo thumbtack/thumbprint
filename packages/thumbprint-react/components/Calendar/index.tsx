@@ -22,17 +22,17 @@ function throwError(message: string): void {
 
 export function normaliseValue(value: PropTypes['value']): Date[] {
     const valueArr: DateIsh[] = castArray<DateIsh>(value);
-    return map<DateIsh, Date>(valueArr, (d) => parse(d));
+    return map<DateIsh, Date>(valueArr, d => parse(d));
 }
 
 // Returns true any of the given `dates` fall on a day before the day of `cutoff`.
 export function hasAnyPastDays(dates: Date[], cutoff: Date = new Date()): boolean {
-    return some(dates, (date) => isBefore(endOfDay(date), cutoff));
+    return some(dates, date => isBefore(endOfDay(date), cutoff));
 }
 
 // Returns true any of the given `dates` fall on a day after the day of `cutoff`.
 export function hasAnyFutureDays(dates: Date[], cutoff: Date = new Date()): boolean {
-    return some(dates, (date) => isAfter(startOfDay(date), cutoff));
+    return some(dates, date => isAfter(startOfDay(date), cutoff));
 }
 
 export function validateProps(props: PropTypes): void {
@@ -166,7 +166,7 @@ const Calendar = ({
 
                     if (allowMultiSelection) {
                         if (selected) {
-                            const selectedIndex = findIndex(newSelectedDays, (selectedDay) =>
+                            const selectedIndex = findIndex(newSelectedDays, selectedDay =>
                                 DateUtils.isSameDay(selectedDay, day),
                             );
                             newSelectedDays.splice(selectedIndex, 1);

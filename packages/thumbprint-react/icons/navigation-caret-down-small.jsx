@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavigationCaretDownSmall = (props) => (
+const NavigationCaretDownSmall = props => (
     <svg {...props}>
         <path
             fillRule="evenodd"
