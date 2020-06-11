@@ -118,7 +118,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
-    const browserSupportsNativeLazyLoading = 'loading' in HTMLImageElement.prototype;
+    const browserSupportsNativeLazyLoading = canUseDOM && 'loading' in HTMLImageElement.prototype;
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
         boolean
     >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
