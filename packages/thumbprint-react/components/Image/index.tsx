@@ -96,6 +96,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         ...rest
     } = props;
 
+    //
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -322,7 +323,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                         // For SSR we want this to fire instantly.
                         [styles.imageEnd]: isLoaded || isError || forceEarlyRender,
                     })}
-                    loading="lazy"
+                    loading={forceEarlyRender ? 'eager' : 'lazy'}
                 />
             </picture>
             {!forceEarlyRender && (
