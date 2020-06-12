@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import warning from 'warning';
 import { useInView } from 'react-intersection-observer';
 import scrollparent from './get-scroll-parent';
-import canUseDOM from '../../utils/can-use-dom';
 import styles from './index.module.scss';
 
 // --------------------------------------------------------------------------------------------
@@ -97,6 +96,12 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         ...rest
     } = props;
 
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     // The outermost DOM node that this component references. We use `useState` instead of
     // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
     const [containerRef, setContainerRef] = useState<Element | null>(null);
@@ -118,10 +123,10 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
-    const browserSupportsNativeLazyLoading = canUseDOM && 'loading' in HTMLImageElement.prototype;
+    const browserSupportsNativeLazyLoading = isClient && 'loading' in HTMLImageElement.prototype;
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
         boolean
-    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
+    >(isClient && typeof window.IntersectionObserver !== 'undefined');
 
     // IntersectionObserver's `root` property identifies the element whose bounds are treated as
     // the bounding box of the viewport for this element. By default, it uses `window`. Instead
@@ -133,7 +138,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     // Skip over the scroll parent calculation if the browser supports native lazy-loading.
     if (!browserSupportsNativeLazyLoading) {
-        parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
+        parent = isClient && containerRef ? scrollparent(containerRef) : null;
         root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
     }
 
@@ -146,7 +151,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     });
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
-    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
+    if (isClient && typeof window.IntersectionObserver === 'undefined') {
         import('intersection-observer').then(() => {
             setBrowserSupportIntersectionObserver(true);
         });
@@ -164,7 +169,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     const shouldObjectFit = !!height;
     const shouldPolyfillObjectFit =
-        canUseDOM &&
+        isClient &&
         document.documentElement &&
         document.documentElement.style &&
         'objectFit' in document.documentElement.style !== true;
