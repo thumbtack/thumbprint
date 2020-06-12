@@ -7,6 +7,7 @@
 ### Changed
 
 -   [Patch] Upgrade version of Prettier.
+-   [Patch] Use built-in browser image lazy-loading when supported.
 
 ### Fixed
 

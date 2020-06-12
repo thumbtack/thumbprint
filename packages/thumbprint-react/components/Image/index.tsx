@@ -96,7 +96,6 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         ...rest
     } = props;
 
-    //
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
@@ -283,7 +282,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                 {webpSource && (
                     <source
                         type={webpSource.type}
-                        // Only add this attribute if lazyload has been triggered.
+                        // Add this attribute if we're ready to defer to the browser, letting it
+                        // either load the image immediately or handle the lazy-loading itself.
                         srcSet={shouldAddSrcAttributes ? webpSource.srcSet : undefined}
                         sizes={sizes}
                     />
