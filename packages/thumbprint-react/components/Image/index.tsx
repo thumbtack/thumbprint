@@ -3,8 +3,8 @@ import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
 import { useInView } from 'react-intersection-observer';
-import canUseDom from '../../utils/can-use-dom';
 import scrollparent from './get-scroll-parent';
+import canUseDOM from '../../utils/can-use-dom';
 import styles from './index.module.scss';
 
 // --------------------------------------------------------------------------------------------
@@ -118,10 +118,10 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
-    const browserSupportsNativeLazyLoading = canUseDom && 'loading' in HTMLImageElement.prototype;
+    const browserSupportsNativeLazyLoading = canUseDOM && 'loading' in HTMLImageElement.prototype;
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
         boolean
-    >(canUseDom && typeof window.IntersectionObserver !== 'undefined');
+    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
 
     // IntersectionObserver's `root` property identifies the element whose bounds are treated as
     // the bounding box of the viewport for this element. By default, it uses `window`. Instead
@@ -133,7 +133,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     // Skip over the scroll parent calculation if the browser supports native lazy-loading.
     if (!browserSupportsNativeLazyLoading) {
-        parent = canUseDom && containerRef ? scrollparent(containerRef) : null;
+        parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
         root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
     }
 
@@ -146,7 +146,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     });
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
-    if (canUseDom && typeof window.IntersectionObserver === 'undefined') {
+    if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
         import('intersection-observer').then(() => {
             setBrowserSupportIntersectionObserver(true);
         });
@@ -170,7 +170,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     const shouldObjectFit = !!height;
     const shouldPolyfillObjectFit =
-        canUseDom &&
+        canUseDOM &&
         document.documentElement &&
         document.documentElement.style &&
         'objectFit' in document.documentElement.style !== true;
