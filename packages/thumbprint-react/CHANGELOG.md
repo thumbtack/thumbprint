@@ -2,12 +2,11 @@
 
 ## Unreleased
 
-## 12.5.0 - 2020-05-01
-
 ### Changed
 
--   [Patch] Upgrade version of Prettier.
 -   [Patch] Use built-in browser image lazy-loading when supported.
+
+## 12.5.0 - 2020-05-01
 
 ### Fixed
 
