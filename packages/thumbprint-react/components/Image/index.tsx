@@ -138,7 +138,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     }
 
     // `isInView` becomes `true` when the lazy-loading functionality decides that we should load
-    // the image. We'll only add the `inViewRef` to the `picture` element if the browser
+    // the image. We'll only add the `inViewRef` to the `picture` element if the browser doesn't
+    // support the `loading` attribute.
     const [inViewRef, isInView] = useInView({
         root,
         rootMargin: '100px',
