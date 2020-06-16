@@ -2,9 +2,8 @@ import React, { useState, forwardRef, useEffect, useCallback } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
-import { useInView } from 'react-intersection-observer';
-import scrollparent from './get-scroll-parent';
 import canUseDOM from '../../utils/can-use-dom';
+import useLazyLoad from './use-lazy-load';
 import styles from './index.module.scss';
 
 // --------------------------------------------------------------------------------------------
@@ -118,26 +117,11 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
-    // IntersectionObserver's `root` property identifies the element whose bounds are treated as
-    // the bounding box of the viewport for this element. By default, it uses `window`. Instead
-    // of using the default, we use the nearest scrollable parent. This is the same approach that
-    // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
-    // https://git.io/fj00H
-
-    const parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
-    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
-
-    // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
-    // load the image.
-    const [inViewRef, isInView] = useInView({
-        root,
-        rootMargin: '100px',
-        triggerOnce: true,
-    });
-
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
         boolean
     >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
+
+    const shouldLoad = useLazyLoad(containerRef, browserSupportIntersectionObserver);
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
     if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
@@ -147,7 +131,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     }
 
     // If `forceEarlyRender` is truthy, bypass lazy loading and load the image.
-    const shouldLoadImage = isInView || forceEarlyRender;
+    const shouldLoadImage = shouldLoad || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
@@ -244,18 +228,12 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             // element.
             setContainerRef(node);
 
-            // We don't want to turn on the `react-intersection-observer` functionality until
-            // the polyfill is done loading.
-            if (browserSupportIntersectionObserver) {
-                inViewRef(node);
-            }
-
             // Check if the consumer sets a ref.
             if (typeof outerRef === 'function') {
                 outerRef(node);
             }
         },
-        [inViewRef, outerRef, setContainerRef, browserSupportIntersectionObserver],
+        [outerRef, setContainerRef],
     );
 
     return (
