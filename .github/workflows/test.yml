@@ -24,7 +24,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
               run: |
                   yarn install --frozen-lockfile
             - name: Run Jest
@@ -51,7 +50,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
               run: |
                   yarn install --frozen-lockfile
             - name: Run ESLint
@@ -78,7 +76,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
               run: |
                   yarn install --frozen-lockfile
             - name: Run Stylelint
@@ -105,7 +102,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
               run: |
                   yarn install --frozen-lockfile
             - name: Run Prettier
@@ -132,7 +128,6 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-yarn-
             - name: Install dependencies
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
               run: |
                   yarn install --frozen-lockfile
             - name: Run TypeScript
