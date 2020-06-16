@@ -93,9 +93,9 @@ This example uses the `height` prop to "crop" the image. By default, the cropped
 />
 ```
 
-## Within a `Carousel`
+## Within a carousel
 
-This example uses the `Carousel` and `ServiceCard` components. The `ServiceCardImage` uses the `Image` component behind the scenes and will behave like the other examples on this page.
+This example uses `ServiceCard` components within a scrollable container. The `ServiceCardImage` uses the `Image` component behind the scenes and will behave like the other examples on this page.
 
 ```jsx
 function CarouselDemo() {
@@ -106,13 +106,8 @@ function CarouselDemo() {
     }
 
     return (
-        <React.Fragment>
-            <Carousel
-                visibleCount={3}
-                spacing="16px"
-                selectedIndex={selectedIndex}
-                onSelectedIndexChange={onSelectedIndexChange}
-            >
+        <div className="overflow-x-auto flex">
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Personal Training"
@@ -120,6 +115,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>1. Personal Training</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Dog Training"
@@ -127,6 +124,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>2. Dog Training</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Local Moving (under 50 miles)"
@@ -134,6 +133,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>3. Local Moving</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
                     <ServiceCardImage
                         alt="Massage Therapy"
@@ -141,6 +142,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>4. Massage Therapy</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/interior-painting/near-me/">
                     <ServiceCardImage
                         alt="Interior Painting"
@@ -148,6 +151,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>5. Interior Painting</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
                 <ServiceCard url="https://www.thumbtack.com/k/junk-removal/near-me/">
                     <ServiceCardImage
                         alt="Junk Removal"
@@ -155,6 +160,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>6. Junk Removal</ServiceCardTitle>
                 </ServiceCard>
+            </div>
+            <div className="w6 flex-none">
                 <ServiceCard url="https://www.thumbtack.com/k/new-home-building/near-me/">
                     <ServiceCardImage
                         alt="New Home Construction"
@@ -162,17 +169,8 @@ function CarouselDemo() {
                     />
                     <ServiceCardTitle>7. New Home Construction</ServiceCardTitle>
                 </ServiceCard>
-            </Carousel>
-
-            <ButtonRow>
-                <Button size="small" onClick={() => setSelectedIndex(selectedIndex - 1)}>
-                    Prev
-                </Button>
-                <Button size="small" onClick={() => setSelectedIndex(selectedIndex + 1)}>
-                    Next
-                </Button>
-            </ButtonRow>
-        </React.Fragment>
+            </div>
+        </div>
     );
 }
 ```
