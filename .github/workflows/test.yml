@@ -12,17 +12,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12.x
-            - name: Get the Yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
             - name: Restore Yarn cache
               uses: actions/cache@v2
-              id: yarn-cache
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                  path: |
+                      node_modules
+                      */*/node_modules
+                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
                   yarn install --frozen-lockfile
@@ -38,17 +34,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12.x
-            - name: Get the Yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
             - name: Restore Yarn cache
               uses: actions/cache@v2
-              id: yarn-cache
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                  path: |
+                      node_modules
+                      */*/node_modules
+                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
                   yarn install --frozen-lockfile
@@ -64,17 +56,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12.x
-            - name: Get the Yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
             - name: Restore Yarn cache
               uses: actions/cache@v2
-              id: yarn-cache
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                  path: |
+                      node_modules
+                      */*/node_modules
+                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
                   yarn install --frozen-lockfile
@@ -90,17 +78,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12.x
-            - name: Get the Yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
             - name: Restore Yarn cache
               uses: actions/cache@v2
-              id: yarn-cache
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                  path: |
+                      node_modules
+                      */*/node_modules
+                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
                   yarn install --frozen-lockfile
@@ -116,17 +100,13 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12.x
-            - name: Get the Yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
             - name: Restore Yarn cache
               uses: actions/cache@v2
-              id: yarn-cache
               with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-yarn-
+                  path: |
+                      node_modules
+                      */*/node_modules
+                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
                   yarn install --frozen-lockfile
