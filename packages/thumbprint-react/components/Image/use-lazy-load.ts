@@ -57,7 +57,9 @@ export default function useLazyLoad(
                         // IntersectionObserver.
                         const entry = entries[0];
 
-                        if (entry.isIntersecting) {
+                        // We use `intersectionRatio` rather than `isIntersecting` because Edge 15
+                        // doesn't support `isIntersecting`.
+                        if (entry.intersectionRatio > 0) {
                             // We need to pass in a function to `setNumHaveIntersected` so that it
                             // can get the current value of `numHaveIntersected` within this
                             // callback.
