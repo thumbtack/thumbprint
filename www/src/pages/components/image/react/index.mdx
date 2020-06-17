@@ -99,12 +99,6 @@ This example uses `ServiceCard` components within a scrollable container. The `S
 
 ```jsx
 function CarouselDemo() {
-    const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-    function onSelectedIndexChange(newIndex) {
-        setSelectedIndex(Math.round(newIndex));
-    }
-
     return (
         <div className="overflow-x-auto flex">
             <div className="w6 flex-none mr3">
