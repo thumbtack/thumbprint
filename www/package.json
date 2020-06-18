@@ -1,6 +1,6 @@
 {
     "name": "www",
-    "version": "0.0.124",
+    "version": "0.0.125",
     "private": true,
     "scripts": {
         "build": "gatsby build",
@@ -11,7 +11,7 @@
         "@mdx-js/mdx": "^1.6.5",
         "@mdx-js/react": "^1.6.5",
         "@thumbtack/thumbprint-icons": "4.1.0",
-        "@thumbtack/thumbprint-react": "^12.5.0",
+        "@thumbtack/thumbprint-react": "^12.5.1",
         "@thumbtack/thumbprint-scss": "^4.0.0",
         "classnames": "^2.2.5",
         "clickable-box": "^1.0.0",
