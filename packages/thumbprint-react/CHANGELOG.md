@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 12.5.1 - 2020-06-18
+
 ### Fixed
 
 -   [Patch] Improve lazy-loading of images within carousels.
