@@ -2,18 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-jest.mock('react-intersection-observer', (): any => ({
-    InView: ({ children }: { children: (arg1: any) => any }): any =>
-        children({ inView: true, ref: null }),
-    useInView: (): any => [(): any => {}, true],
-}));
-
-beforeEach((): void => {
-    window.IntersectionObserver = true as any;
-});
-/* eslint-enable */
-
 test('renders an image when the user has one', (): void => {
     const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
     expect(wrapper).toMatchSnapshot();

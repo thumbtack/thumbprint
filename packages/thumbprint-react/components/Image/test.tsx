@@ -2,18 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Image from './index';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-jest.mock('react-intersection-observer', (): any => ({
-    InView: ({ children }: { children: (arg1: any) => any }): any =>
-        children({ inView: true, ref: null }),
-    useInView: (): any => [(): any => {}, true],
-}));
-
-beforeEach((): void => {
-    window.IntersectionObserver = true as any;
-});
-/* eslint-enable */
-
 test('puts `alt` on the `img` tag', () => {
     const wrapper = mount(
         <Image
@@ -35,4 +23,41 @@ test('forwards props to the outermost element', () => {
     );
 
     expect(wrapper.prop('data-test')).toBe('goose');
+});
+
+test('creates one IntersectionObserver instance if there is one scrollable parent', () => {
+    // The `<body>` is the scrollable parent in this case.
+    mount(
+        <Image src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg" />,
+    );
+
+    expect(window.IntersectionObserver).toHaveBeenCalledTimes(1);
+});
+
+test('creates two IntersectionObserver instances if there are two scrollable parents', () => {
+    mount(
+        <div style={{ overflowX: 'scroll' }}>
+            <Image src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg" />
+        </div>,
+    );
+
+    expect(window.IntersectionObserver).toHaveBeenCalledTimes(2);
+});
+
+test('creates three IntersectionObserver instances if there are three scrollable parents', () => {
+    mount(
+        <React.Fragment>
+            <header css={{ overflowX: 'scroll' }}>Header</header>
+            <main style={{ overflowX: 'auto' }}>
+                <div>
+                    <div style={{ overflowX: 'scroll' }}>
+                        <Image src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg" />
+                    </div>
+                </div>
+                <div>Sidebar</div>
+            </main>
+        </React.Fragment>,
+    );
+
+    expect(window.IntersectionObserver).toHaveBeenCalledTimes(3);
 });

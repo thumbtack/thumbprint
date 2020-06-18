@@ -20,9 +20,7 @@ export default function ReactCodeBlock({ children, theme }: PropTypes): JSX.Elem
             className="relative"
             theme={prismTheme}
         >
-            <React.StrictMode>
-                <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
-            </React.StrictMode>
+            <LivePreview className={`${classes.preview} ${previewThemes[theme]}`} />
 
             <div className={classes.codeContainer}>
                 <LiveEditor className={`${styles.code} ${styles.codeJSX}`} />
