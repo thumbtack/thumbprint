@@ -29,7 +29,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -107,7 +106,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -184,7 +182,6 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -666,7 +663,6 @@ exports[`renders an image when the user has one 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
