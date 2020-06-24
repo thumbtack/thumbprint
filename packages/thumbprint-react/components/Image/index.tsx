@@ -173,6 +173,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         objectFitProps.style = {
             objectFit,
             objectPosition,
+        };
+
+        if (!height) {
             // Add `height: 100%` as an inline style if the user wants to `objectFit` but hasn't
             // passed in the `height` prop. Almost always, this means that the user is setting the
             // height with CSS or an inline style. Since inline styles and `className` get added to
@@ -180,8 +183,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             // preventing the `objectFit` from working. Adding `height: 100%` to the `img` in these
             // cases allows `objectFit` to work as well as it would if the `height` was provided as
             // a prop rather than through `style` or `className`.
-            height: height ? undefined : '100%',
-        };
+            objectFitProps.style.height = '100%';
+        }
+
         if (shouldPolyfillObjectFit) {
             // Weird, but this is how the polyfill knows what to do with the image in IE.
             objectFitProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
