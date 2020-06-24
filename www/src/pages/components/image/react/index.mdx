@@ -81,7 +81,7 @@ The image component accepts `style` and `className` props. This example uses bot
 </div>
 ```
 
-## Cropped images with `height`
+## Cropped images with custom heights
 
 This example uses the `height` prop to "crop" the image. By default, the cropped image is vertically centered with `object-position: center center`.
 
@@ -89,7 +89,19 @@ This example uses the `height` prop to "crop" the image. By default, the cropped
 <Image
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
     alt="Office building with large table and chairs"
+    objectFit="cover"
     height="230px"
+/>
+```
+
+You can also use CSS to change the height. This is especially useful when combined with media queries that affect the image height.
+
+```jsx
+<Image
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
+    alt="Office building with large table and chairs"
+    objectFit="cover"
+    style={{ height: '230px' }}
 />
 ```
 
