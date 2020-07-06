@@ -114,7 +114,7 @@ Prepare fonts for use.
 
 Scale a floating point value by the same multiplier that is currently being used for Dynamic Type on the specific text style.
 
-### `Font.TextStyle` enum
+### Font.TextStyle
 
 #### `case title1, title2, title3, title4, title5, title6, title7, title8, text1, text2, text3`
 
@@ -124,11 +124,10 @@ Enum cases for each Thumbprint text style.
 
 Static font with this text style.
 
-#### `public var dynamicFont: UIFont` 
+#### `public var dynamicFont: UIFont`
 
 Font with this text style that supports scaling for accessibility.
 
 #### `public func scaledFont(compatibleWith traitCollection: UITraitCollection) -> UIFont`
 
-Font with this text style that supports scaling for accessibility and is configured with a specific trait collection.
-When using attributed strings, `UIContentSizeCategoryAdusting.adjustsFontForContentSizeCategory` does not work, and therefore fonts must be configured with a specific trait collection and updated any time the preferred content size category on the relevant view changes.
+Font with this text style that supports scaling for accessibility and is configured with a specific trait collection. When using attributed strings, `UIContentSizeCategoryAdusting.adjustsFontForContentSizeCategory` does not work, and therefore fonts must be configured with a specific trait collection and updated any time the preferred content size category on the relevant view changes.
