@@ -12,94 +12,123 @@ Thumbprint supports both static fonts and Dynamic Type–the iOS feature that en
 
 ## Public API
 
-### `Font`
+### Font
 
-`public static let title1: UIFont`
+#### `public static let title1: UIFont`
+
 Static font with title 1 style.
 
-`public static let title2: UIFont`
+#### `public static let title2: UIFont`
+
 Static font with title 2 style.
 
-`public static let title3: UIFont`
+#### `public static let title3: UIFont`
+
 Static font with title 3 style.
 
-`public static let title4: UIFont`
+#### `public static let title4: UIFont`
+
 Static font with title 4 style.
 
-`public static let title5: UIFont`
+#### `public static let title5: UIFont`
+
 Static font with title 5 style.
 
-`public static let title6: UIFont`
+#### `public static let title6: UIFont`
+
 Static font with title 6 style.
 
-`public static let title7: UIFont`
+#### `public static let title7: UIFont`
+
 Static font with title 7 style.
 
-`public static let title8: UIFont`
+#### `public static let title8: UIFont`
+
 Static font with title 8 style.
 
-`public static let text1: UIFont`
+#### `public static let text1: UIFont`
+
 Static font with text 1 style.
 
-`public static let text2: UIFont`
+#### `public static let text2: UIFont`
+
 Static font with text 2 style.
 
-`public static let text3: UIFont`
+#### `public static let text3: UIFont`
+
 Static font with text 3 style.
 
-`public static let dynamicTitle1: UIFont`
+#### `public static let dynamicTitle1: UIFont`
+
 Font with title 1 style that supports scaling for accessibility.
 
-`public static let dynamicTitle2: UIFont`
+#### `public static let dynamicTitle2: UIFont`
+
 Font with title 2 style that supports scaling for accessibility.
 
-`public static let dynamicTitle3: UIFont`
+#### `public static let dynamicTitle3: UIFont`
+
 Font with title 3 style that supports scaling for accessibility.
 
-`public static let dynamicTitle4: UIFont`
+#### `public static let dynamicTitle4: UIFont`
+
 Font with title 4 style that supports scaling for accessibility.
 
-`public static let dynamicTitle5: UIFont`
+#### `public static let dynamicTitle5: UIFont`
+
 Font with title 5 style that supports scaling for accessibility.
 
-`public static let dynamicTitle6: UIFont`
+#### `public static let dynamicTitle6: UIFont`
+
 Font with title 6 style that supports scaling for accessibility.
 
-`public static let dynamicTitle7: UIFont`
+#### `public static let dynamicTitle7: UIFont`
+
 Font with title 7 style that supports scaling for accessibility.
 
-`public static let dynamicTitle8: UIFont`
+#### `public static let dynamicTitle8: UIFont`
+
 Font with title 8 style that supports scaling for accessibility.
 
-`public static let dynamicText1: UIFont`
+#### `public static let dynamicText1: UIFont`
+
 Font with text 1 style that supports scaling for accessibility.
 
-`public static let dynamicText2: UIFont`
+#### `public static let dynamicText2: UIFont`
+
 Font with text 2 style that supports scaling for accessibility.
 
-`public static let dynamicText3: UIFont`
+#### `public static let dynamicText3: UIFont`
+
 Font with text 3 style that supports scaling for accessibility.
 
-`public static var traitCollectionOverrideForTesting: UITraitCollection?`
+#### `public static var traitCollectionOverrideForTesting: UITraitCollection?`
+
 Used by snapshot tests to forcefully apply the given trait collection. Do not use in application code.
 
-`static func loadCustomFonts()`
+#### `static func loadCustomFonts()`
+
 Prepare fonts for use.
 
-`static func scaledValue(_ value: CGFloat, for style: TextStyle) -> CGFloat`
+#### `static func scaledValue(_ value: CGFloat, for style: TextStyle) -> CGFloat`
+
 Scale a floating point value by the same multiplier that is currently being used for Dynamic Type on the specific text style.
 
 ### `Font.TextStyle` enum
 
-`case title1, title2, title3, title4, title5, title6, title7, title8, text1, text2, text3`
+#### `case title1, title2, title3, title4, title5, title6, title7, title8, text1, text2, text3`
+
 Enum cases for each Thumbprint text style.
 
-`public var font: UIFont`
+#### `public var font: UIFont`
+
 Static font with this text style.
 
-`public var dynamicFont: UIFont`
+#### `public var dynamicFont: UIFont` 
+
 Font with this text style that supports scaling for accessibility.
 
-`public func scaledFont(compatibleWith traitCollection: UITraitCollection) -> UIFont`
+#### `public func scaledFont(compatibleWith traitCollection: UITraitCollection) -> UIFont`
+
 Font with this text style that supports scaling for accessibility and is configured with a specific trait collection.
-When using attributed strings, UIContentSizeCategoryAdusting.adjustsFontForContentSizeCategory does not work, and therefore fonts must be configured with a specific trait collection and updated any time the preferred content size category on the relevant view changes.
+When using attributed strings, `UIContentSizeCategoryAdusting.adjustsFontForContentSizeCategory` does not work, and therefore fonts must be configured with a specific trait collection and updated any time the preferred content size category on the relevant view changes.
