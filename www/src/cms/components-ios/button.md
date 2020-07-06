@@ -64,7 +64,7 @@ Set `adjustsFontForContentSizeCategory: true` to enable Dynamic Type support for
 
 ## Public API
 
-### `Theme` struct
+### Theme struct
 
 #### `public let titleColor: UIColor`
 
@@ -118,7 +118,7 @@ Text-only button theme.
 
 Text-only button theme that appears as a link.
 
-### `Size` struct
+### Size struct
 
 #### `public init(textStyle: Font.TextStyle, contentEdgeInsets: UIEdgeInsets = .zero, iconTextSpacing: CGFloat = Space.two)`
 
