@@ -7,6 +7,10 @@
 -   [Patch] Remove unusued `IntersectionObserver` test mock.
 -   [Patch] Fix IntersectionObserver logic.
 
+### Changed
+
+-   [Major] Change `StarRating` color to green
+
 ## 12.5.1 - 2020-06-18
 
 ### Fixed
