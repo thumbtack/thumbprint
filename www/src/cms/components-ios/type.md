@@ -18,45 +18,67 @@ Thumbprint supports both static fonts and Dynamic Type–the iOS feature that en
 
 Static font with title 1 style.
 
+![Title 1 text style](/img/ios-title1.png)
+
 #### `public static let title2: UIFont`
 
 Static font with title 2 style.
+
+![Title 2 text style](/img/ios-title2.png)
 
 #### `public static let title3: UIFont`
 
 Static font with title 3 style.
 
+![Title 3 text style](/img/ios-title3.png)
+
 #### `public static let title4: UIFont`
 
 Static font with title 4 style.
+
+![Title 4 text style](/img/ios-title4.png)
 
 #### `public static let title5: UIFont`
 
 Static font with title 5 style.
 
+![Title 5 text style](/img/ios-title5.png)
+
 #### `public static let title6: UIFont`
 
 Static font with title 6 style.
+
+![Title 6 text style](/img/ios-title6.png)
 
 #### `public static let title7: UIFont`
 
 Static font with title 7 style.
 
+![Title 7 text style](/img/ios-title7.png)
+
 #### `public static let title8: UIFont`
 
 Static font with title 8 style.
+
+![Title 8 text style](/img/ios-title8.png)
 
 #### `public static let text1: UIFont`
 
 Static font with text 1 style.
 
+![Text 1 text style](/img/ios-text1.png)
+
 #### `public static let text2: UIFont`
 
 Static font with text 2 style.
 
+![Text 2 text style](/img/ios-text2.png)
+
 #### `public static let text3: UIFont`
 
 Static font with text 3 style.
+
+![Text 3 text style](/img/ios-text3.png)
 
 #### `public static let dynamicTitle1: UIFont`
 
