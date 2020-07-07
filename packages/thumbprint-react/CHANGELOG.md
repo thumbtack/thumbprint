@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 12.5.2 - 2020-07-07
+
 ### Fixed
 
 -   [Patch] Remove unusued `IntersectionObserver` test mock.
