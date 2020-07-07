@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 13.0.0 - 2020-07-07
+
 ### Changed
 
 -   [Major] Change `StarRating` color to green
