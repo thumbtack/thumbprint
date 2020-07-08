@@ -6,9 +6,18 @@
 
 -   [Major] The `Image` component `objectFit` prop will work even if the `height` prop is not used. This allows for use of `objectFit` while setting a height using `style` or `className`. Consumers should check that instances of `Image` that used the `objectFit` prop but didn't use the `height` prop render as expected. This should be uncommon since `objectFit` previously wouldn't have done anything.
 
+## 13.0.0 - 2020-07-07
+
+### Changed
+
+-   [Major] Change `StarRating` color to green
+
+## 12.5.2 - 2020-07-07
+
 ### Fixed
 
 -   [Patch] Remove unusued `IntersectionObserver` test mock.
+-   [Patch] Fix IntersectionObserver logic.
 
 ## 12.5.1 - 2020-06-18
 
