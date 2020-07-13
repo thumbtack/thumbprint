@@ -24,7 +24,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-font-face/#readme",
     "dependencies": {
-        "@thumbtack/thumbprint-tokens": "^8.3.3"
+        "@thumbtack/thumbprint-tokens": "^12.1.1"
     },
     "devDependencies": {
         "node-sass-tilde-importer": "2.0.0-alpha.1",

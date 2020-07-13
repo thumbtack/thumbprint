@@ -99,7 +99,7 @@ exports[`compiles correctly 1`] = `
   border-color: #5968e2 !important;
 }
 .b-purple {
-  border-color: #a97ff0 !important;
+  border-color: #8d56eb !important;
 }
 .b-green {
   border-color: #2db783 !important;
@@ -244,7 +244,7 @@ _:-ms-lang(x) {
   color: #5968e2 !important;
 }
 .purple {
-  color: #a97ff0 !important;
+  color: #8d56eb !important;
 }
 .green {
   color: #2db783 !important;
@@ -280,7 +280,7 @@ _:-ms-lang(x) {
   background-color: #5968e2 !important;
 }
 .bg-purple {
-  background-color: #a97ff0 !important;
+  background-color: #8d56eb !important;
 }
 .bg-green {
   background-color: #2db783 !important;
@@ -322,7 +322,7 @@ _:-ms-lang(x) {
 }
 .hover-purple:focus,
 .hover-purple:hover {
-  color: #a97ff0 !important;
+  color: #8d56eb !important;
 }
 .hover-green:focus,
 .hover-green:hover {
@@ -370,7 +370,7 @@ _:-ms-lang(x) {
 }
 .hover-bg-purple:focus,
 .hover-bg-purple:hover {
-  background-color: #a97ff0 !important;
+  background-color: #8d56eb !important;
 }
 .hover-bg-green:focus,
 .hover-bg-green:hover {

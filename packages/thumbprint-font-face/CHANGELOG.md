@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Upgrade Thumbprint Tokens to latest version. The changes do not affect this package.
+
 ## 1.0.14 - 2020-01-09
 
 ### Changed
