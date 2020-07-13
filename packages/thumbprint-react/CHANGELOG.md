@@ -6,6 +6,10 @@
 
 -   [Major] The `Image` component `objectFit` prop will work even if the `height` prop is not used. This allows for use of `objectFit` while setting a height using `style` or `className`. Consumers should check that instances of `Image` that used the `objectFit` prop but didn't use the `height` prop render as expected. This should be uncommon since `objectFit` previously wouldn't have done anything.
 
+### Fixed
+
+-   [Patch] Upgrade Thumbprint Tokens to latest version. This pulls in small color tweaks to improve accessibility.
+
 ## 13.0.0 - 2020-07-07
 
 ### Changed
