@@ -1,0 +1,23 @@
+---
+title: Label
+description: Form labels commonly used with inputs.
+---
+## Summary
+
+Label to display non-interactive text using Thumbprint text styles. It is preferable in nearly all cases to use this `Label` component instead of using `UILabel` directly.
+
+## Accessibility
+
+Set `adjustsFontForContentSizeCategory` to true to enable Dynamic Type support. In most cases, `numberOfLines` should also be set to 0 to ensure that the content wraps at larger content sizes.
+
+`UIAccessibilityTraits.staticText` is added to all `Labels`, and `UIAccessibilityTraits.header` is additionally added for any of the Title 1-8 Thumbprint text styles.
+
+## Public API
+
+#### `public var textStyle: Font.TextStyle`
+
+Text style applied to this label. Setting this property automatically updates the label's font & accessibility traits and invalidates the label's intrinsic content size.
+
+#### `public init(textStyle: Font.TextStyle, adjustsFontForContentSizeCategory: Bool)`
+
+Creates and returns a new label with the specified text style. Note that if you're planning to use attributed strings with this label, the text style you pass in here might not matter.
