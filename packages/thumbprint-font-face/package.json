@@ -1,6 +1,6 @@
 {
     "name": "@thumbtack/thumbprint-font-face",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "main": "_index.scss",
     "repository": {
         "type": "git",

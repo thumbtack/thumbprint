@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-global-css",
     "description": "Global reset, body, and anchor styling for building Thumbtack UI",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/thumbprint-global.css",
     "style": "dist/thumbprint-global.css",

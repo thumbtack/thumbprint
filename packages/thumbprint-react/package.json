@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "13.0.0",
+    "version": "14.0.0",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -35,7 +35,7 @@
     },
     "homepage": "https://github.com/thumbtack/thumbprint/blob/master/packages/thumbprint-react/",
     "dependencies": {
-        "@thumbtack/thumbprint-scss": "^4.0.0",
+        "@thumbtack/thumbprint-scss": "^4.0.1",
         "@thumbtack/thumbprint-tokens": "^12.1.1",
         "classnames": "^2.2.6",
         "date-fns": "^1.28.5",
