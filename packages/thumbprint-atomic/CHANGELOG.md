@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.1.1 - 2020-07-14
+
 ### Fixed
 
 -   [Patch] Upgrade Thumbprint Tokens to latest version. This pulls in small color tweaks to improve accessibility.
