@@ -220,7 +220,7 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
       title="Avatar for Duck Goose"
@@ -276,7 +276,7 @@ exports[`does not render a badge by default 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -305,7 +305,7 @@ exports[`does not render a badge by default 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -376,7 +376,7 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -434,7 +434,7 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -492,7 +492,7 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -538,7 +538,7 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -596,7 +596,7 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
