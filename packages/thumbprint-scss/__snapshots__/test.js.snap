@@ -35,12 +35,12 @@ exports[`compiles correctly 1`] = `
 }
 .tp-alert--warning {
   background: #ffebb3;
-  color: #714601;
+  color: #8a5500;
 }
 .tp-alert--warning a,
 .tp-alert--warning a:hover {
-  color: #714601;
-  fill: #714601;
+  color: #8a5500;
+  fill: #8a5500;
 }
 .tp-alert--note {
   background: #009fd9;
@@ -200,7 +200,7 @@ exports[`compiles correctly 1`] = `
   color: #ff5a5f;
 }
 .tp-button--caution:focus {
-  color: #b22d31;
+  color: #cc3553;
   background-color: #fff;
   border-color: #d3d4d5;
 }
