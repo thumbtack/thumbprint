@@ -77,6 +77,44 @@ function ModalCurtainDemo() {
 }
 ```
 
+### `ModalCurtain` with a custom initial focus
+
+By default the curtain will focus on the container when it opens. If your modal contains a focusable input, you may wish to skip directly to this. Pass a selector for an element in the modal's `children` to `initialFocus` to acheive this.
+
+```jsx
+function ModalCurtainDemo() {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [textValue, setTextValue] = React.useState('hello');
+
+    return (
+        <div>
+            <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+
+            <ModalCurtain
+                stage={isOpen ? 'entered' : 'exited'}
+                onCloseClick={() => setIsOpen(false)}
+                initialFocus="#initial-input"
+            >
+                {({ curtainClassName, curtainOnClick }) => (
+                    <div className={`pa4 ${curtainClassName}`}>
+                        <div className="bg-white ma-auto pa4 mw7">
+                            <div className="mt4">
+                                <TextInput
+                                    value={textValue}
+                                    id="initial-input"
+                                    onChange={value => setTextValue(value)}
+                                />
+                                <Button onClick={() => setIsOpen(false)}>Close Modal</Button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </ModalCurtain>
+        </div>
+    );
+}
+```
+
 ### `ModalCurtain` with a full screen takeover
 
 The `ModalCurtain` component works well for full-screen takeovers. This example doesn't use `curtainOnClick` since we don't want to close the curtain when clicking on the backdrop.

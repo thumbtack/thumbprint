@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add an `initialFocus` to `ModalCurtain`.
+
 ## 14.0.0 - 2020-07-14
 
 ### Changed

@@ -93,7 +93,7 @@ describe('ModalCurtain', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('initially traps focus to the root dialog node', () => {
+    test.only('initially traps focus to the root dialog node', () => {
         jest.useFakeTimers();
 
         const onCloseClick = jest.fn();
@@ -102,7 +102,6 @@ describe('ModalCurtain', () => {
                 {(): JSX.Element => (
                     <>
                         <button type="button" />
-                        <input />
                     </>
                 )}
             </ModalCurtain>,
@@ -113,6 +112,30 @@ describe('ModalCurtain', () => {
 
         const modalWrapper = wrapper.find('[role="dialog"]');
         expect(modalWrapper.is(':focus')).toBe(true);
+
+        jest.useRealTimers();
+    });
+
+    test.only('initially focuses `initialFocus` element if provided', () => {
+        jest.useFakeTimers();
+
+        const onCloseClick = jest.fn();
+        const wrapper = mount(
+            <ModalCurtain stage="entered" onCloseClick={onCloseClick} initialFocus="#initial-input">
+                {(): JSX.Element => (
+                    <>
+                        <button type="button" />
+                        <input id="initial-input" />
+                    </>
+                )}
+            </ModalCurtain>,
+        );
+
+        // Run setTimeouts() in focus-trap to completion
+        jest.runAllTimers();
+
+        const input = wrapper.find('#initial-input');
+        expect(input.is(':focus')).toBe(true);
 
         jest.useRealTimers();
     });
