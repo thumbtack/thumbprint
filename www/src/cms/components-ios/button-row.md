@@ -14,19 +14,19 @@ A `ButtonRow`’s distribution determines both the size and position of its butt
 
 Left & right buttons each use 50% of the total space.
 
-![Button row with equal distribution](/img/equal 3.57.45 PM.png)
+![Button row with equal distribution](/img/ios-buttonrow-equal.png)
 
 #### Emphasis
 
 Left button is given enough space to fit its content, and right button takes up the remaining space.
 
-![Button row with emphasis distribution](/img/emphasis 3.57.45 PM.png)
+![Button row with emphasis distribution](/img/ios-buttonrow-emphasis.png)
 
 #### Minimal
 
 Left & right buttons are each given enough space to fit their content, but with the additional restriction that the right button never be smaller than the left button.
 
-![Button row with minimal distribution](/img/minimal 3.57.45 PM.png)
+![Button row with minimal distribution](/img/ios-buttonrow-minimal.png)
 
 ## Public API
 
