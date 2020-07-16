@@ -4,7 +4,7 @@
         "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn workspace www start",
         "start:ssr": "yarn run build:docs && yarn workspace www serve",
         "updated": "lerna updated",
-        "bootstrap": "lerna run prepublishOnly",
+        "bootstrap": "yarn install && lerna run prepublishOnly",
         "publish": "git checkout master && git pull && yarn && yarn test && yarn build:dist && lerna publish",
         "build:docs": "yarn run bootstrap && yarn workspace www build",
         "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
@@ -12,7 +12,7 @@
         "test": "yarn run bootstrap && yarn run test:lint && yarn run test:jest && yarn run test:prettier && yarn test:typecheck",
         "test:jest": "TZ=America/Los_Angeles jest",
         "test:jest:watch": "yarn run bootstrap && yarn test:jest --watch",
-        "test:prettier": "./scripts/test-prettier.sh",
+        "test:prettier": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,json,md,mdx,html}\" --check",
         "test:lint": "yarn test:lint:css && yarn test:lint:js",
         "test:lint:css": "stylelint \"**/*.scss\" \"**/*.css\" --ignore-path .gitignore",
         "test:lint:js": "eslint . --ignore-path .gitignore --ext .jsx,.js,.tsx,.ts",
@@ -74,7 +74,7 @@
         "stylelint-config-recommended-scss": "^3.3.0",
         "stylelint-scss": "^3.11.0",
         "tslib": "^1.10.0",
-        "typescript": "3.8.3"
+        "typescript": "3.9.6"
     },
     "repository": {
         "type": "git",
