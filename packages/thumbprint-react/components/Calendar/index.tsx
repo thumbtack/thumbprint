@@ -1,7 +1,6 @@
 import React from 'react';
 import DayPicker, { DateUtils, Modifiers } from 'react-day-picker';
 
-import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
 import some from 'lodash/some';
@@ -150,7 +149,7 @@ const Calendar = ({
         <div className={styles.root}>
             <DayPicker
                 disabledDays={disabledDays}
-                fromMonth={get(disabledDays, 'before', null)}
+                fromMonth={disabledDays?.before || null}
                 toMonth={lastMonth}
                 month={month || selectedDays[0]}
                 initialMonth={month || selectedDays[0]}

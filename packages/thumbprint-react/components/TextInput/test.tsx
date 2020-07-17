@@ -202,33 +202,41 @@ describe('TextInput', () => {
     });
 
     test('focuses the input when `innerLeft` icon is clicked', () => {
+        const container = document.createElement('div');
+        document.body.append(container);
+
         const component = mount(
             <TextInput
                 onChange={jest.fn}
                 innerLeft={<div data-test="Duck">Duck</div>}
                 id="Goose"
             />,
+            { attachTo: container },
         );
 
         const innerLeft = component.find('[data-test="Duck"]');
         innerLeft.simulate('click');
 
-        expect(document.activeElement ? document.activeElement.id : '').toBe('Goose');
+        expect(document?.activeElement?.id).toBe('Goose');
     });
 
     test('focuses the input when `innerRight` icon is clicked', () => {
+        const container = document.createElement('div');
+        document.body.append(container);
+
         const component = mount(
             <TextInput
                 onChange={jest.fn}
                 innerRight={<div data-test="Duck">Duck</div>}
                 id="Goose"
             />,
+            { attachTo: container },
         );
 
         const innerRight = component.find('[data-test="Duck"]');
         innerRight.simulate('click');
 
-        expect(document.activeElement ? document.activeElement.id : '').toBe('Goose');
+        expect(document?.activeElement?.id).toBe('Goose');
     });
 
     test('adds `dataTest` prop', () => {

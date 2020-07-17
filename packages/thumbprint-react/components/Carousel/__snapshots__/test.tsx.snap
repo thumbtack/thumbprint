@@ -20,7 +20,6 @@ exports[`Carousel \`selectedIndex\` supports decimal \`selectedIndex\` values 1`
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -130,7 +129,6 @@ exports[`Carousel \`selectedIndex\` supports negative \`selectedIndex\` 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -241,7 +239,6 @@ exports[`Carousel \`spacing\` no spacing 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -352,7 +349,6 @@ exports[`Carousel \`spacing\` spacing in ems 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -463,7 +459,6 @@ exports[`Carousel \`spacing\` spacing in pixels 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -574,7 +569,6 @@ exports[`Carousel \`visibleCount\` one and a half visible items 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -685,7 +679,6 @@ exports[`Carousel \`visibleCount\` one visible item 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -796,7 +789,6 @@ exports[`Carousel \`visibleCount\` three visible items 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel
@@ -906,7 +898,6 @@ exports[`Carousel renders a carousel 1`] = `
       <div
         onMouseDown={[Function]}
         onTouchEnd={[Function]}
-        onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <BaseCarousel

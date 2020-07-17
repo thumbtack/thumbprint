@@ -51,6 +51,7 @@
         "react-popper": "^1.0.0",
         "react-swipeable": "^4.3.0",
         "rotate-array": "^1.1.0",
+        "typescript": "3.9.7",
         "warning": "^4.0.2"
     },
     "devDependencies": {
