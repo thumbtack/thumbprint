@@ -57,14 +57,14 @@ interface PropTypes {
      * A selector for the element that should be focused when the modal opens. If omitted, the
      * entire container element of the modal is focused.
      */
-    initialFocus?: string;
+    initialFocus?: HTMLElement;
 }
 
 export default function ModalCurtain({
     stage = 'exited',
     shouldCloseOnEscape = true,
     accessibilityLabel = 'Modal',
-    initialFocus,
+    initialFocus: initialFocusProp,
     onCloseClick,
     children,
 }: PropTypes): JSX.Element {
@@ -75,20 +75,15 @@ export default function ModalCurtain({
         setIsClient(true);
     }, []);
 
-    let elementToFocus: HTMLElement | null = null;
-    if (initialFocus && wrapperEl) {
-        elementToFocus = (wrapperEl.querySelector(initialFocus) as HTMLElement) || null;
-    }
+    const initialFocus = initialFocusProp || wrapperEl;
 
     const isEnteringOrEntered = stage === 'entering' || stage === 'entered';
     const shouldBindEscListener = isClient && shouldCloseOnEscape && isEnteringOrEntered;
-    const shouldTrapFocus = isClient && elementToFocus !== null && stage === 'entered';
+    const shouldTrapFocus = isClient && !!initialFocus && stage === 'entered';
     const shouldDisableScrolling = isEnteringOrEntered;
 
-    // console.log(elementToFocus);
-
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
-    useFocusTrap(wrapperEl, shouldTrapFocus, elementToFocus);
+    useFocusTrap(wrapperEl, shouldTrapFocus, initialFocus);
 
     return (
         <ConditionalPortal shouldDisplace>
