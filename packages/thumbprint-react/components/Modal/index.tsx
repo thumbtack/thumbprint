@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import noop from 'lodash/noop';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-
-import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { TextButton } from '../Button/index';
 import StickyFooter from './components/sticky-footer';
 import Transition from './components/transition';
@@ -433,8 +431,22 @@ class Modal extends React.Component<ModalPropTypes, ModalStateTypes> {
                         {shouldHideCloseButton === false && (
                             <TextButton
                                 accessibilityLabel="Close modal"
+                                dataTest="close-modal"
                                 iconLeft={
-                                    <NavigationCloseSmall className={styles.closeButtonIcon} />
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        width="18"
+                                        height="18"
+                                        stroke="currentColor"
+                                        strokeWidth="3"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className={styles.closeButtonIcon}
+                                    >
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
                                 }
                                 onClick={onCloseClick}
                                 theme="inherit"
