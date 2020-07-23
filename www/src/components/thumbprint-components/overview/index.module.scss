@@ -1,28 +1,30 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
+.componentGrid {
+    display: grid;
+    grid-column-gap: $tp-space__4;
+    grid-row-gap: $tp-space__4;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.dotDone {
-    background: $tp-color__green;
+.platformButton {
+    padding: 0 $tp-space__3;
+    color: $tp-color__black-300;
+    font-size: $tp-font__body__2__size;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    &:hover {
+        color: $tp-color__black-300;
+    }
 }
 
-.dotInProgress {
-    border: 2px solid $tp-color__yellow;
-}
+.isActive {
+    color: $tp-color__white;
+    background: $tp-color__blue;
 
-.dotToDo {
-    border: 2px solid $tp-color__blue;
-}
-
-.dotNotApplicable {
-    background: $tp-color__gray;
-}
-
-.dotDeprecated {
-    background: $tp-color__red-300;
+    &:hover {
+        color: $tp-color__white;
+    }
 }

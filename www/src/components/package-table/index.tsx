@@ -40,6 +40,7 @@ export default function PackageTable({
 }: PropTypes): JSX.Element {
     const isDeprecated = !!deprecated;
     const changelogURL = getChangelogURLFromPackageHomepageURL(sourceDirectory);
+
     const name = packageName;
     const isStable = startsWith(version, '0');
 

@@ -1,232 +1,202 @@
-/* eslint-disable import/prefer-default-export */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import classNames from 'classnames';
-import { Text } from '@thumbtack/thumbprint-react';
-import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
+import { Text, TextInput, Image } from '@thumbtack/thumbprint-react';
+import { tpSpace7 } from '@thumbtack/thumbprint-tokens';
 import styles from './index.module.scss';
 
-const documentationStatuses = ['Unknown', 'To-do', 'In progress', 'Done', "Done / Won't do"];
-const documentationStatusPropTypes = PropTypes.oneOf(documentationStatuses);
+// eslint-disable-next-line react/prop-types
+export default function ComponentOverview({ data, currentPlatform, initialFilter }) {
+    const [searchFilter, setSearchFilter] = useState(initialFilter);
 
-const developmentStatuses = [
-    'Unknown',
-    'To-do',
-    'In progress',
-    'Done',
-    'Done / Uses OS component',
-    "Done / Won't build",
-    'Done / Deprecated',
-];
-const developmentStatusPropTypes = PropTypes.oneOf(developmentStatuses);
+    return (
+        <div>
+            <div className="flex mb5">
+                <TextInput
+                    size="small"
+                    onChange={newValue => setSearchFilter(newValue)}
+                    value={searchFilter}
+                    placeholder="Filter components"
+                />
+                <div className="ba b-gray br2 ml3 flex">
+                    <Link
+                        to={
+                            currentPlatform === 'react'
+                                ? '/components/overview/'
+                                : '/components/overview/react/'
+                        }
+                        className={classNames({
+                            [styles.platformButton]: true,
+                            'br b-gray': true,
+                            [styles.isActive]: currentPlatform === 'react',
+                        })}
+                        state={{ initialFilter: searchFilter }}
+                    >
+                        React
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'ios'
+                                ? '/components/overview/'
+                                : '/components/overview/ios/'
+                        }
+                        className={classNames({
+                            [styles.platformButton]: true,
+                            'br b-gray': true,
+                            [styles.isActive]: currentPlatform === 'ios',
+                        })}
+                        state={{ initialFilter: searchFilter }}
+                    >
+                        iOS
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'android'
+                                ? '/components/overview/'
+                                : '/components/overview/android/'
+                        }
+                        className={classNames({
+                            [styles.platformButton]: true,
+                            'br b-gray': true,
+                            [styles.isActive]: currentPlatform === 'android',
+                        })}
+                        state={{ initialFilter: searchFilter }}
+                    >
+                        Android
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'scss'
+                                ? '/components/overview/'
+                                : '/components/overview/scss/'
+                        }
+                        className={classNames({
+                            [styles.platformButton]: true,
+                            'br b-gray': true,
+                            [styles.isActive]: currentPlatform === 'scss',
+                        })}
+                        state={{ initialFilter: searchFilter }}
+                    >
+                        SCSS
+                    </Link>
+                    <Link
+                        to={
+                            currentPlatform === 'email'
+                                ? '/components/overview/'
+                                : '/components/overview/email/'
+                        }
+                        className={classNames({
+                            [styles.platformButton]: true,
+                            [styles.isActive]: currentPlatform === 'email',
+                        })}
+                        state={{ initialFilter: searchFilter }}
+                    >
+                        Email
+                    </Link>
+                </div>
+            </div>
 
-const designStatuses = ['Unknown', 'To-do', 'In progress', 'Done', "Done / Won't do"];
-const designStatusPropTypes = PropTypes.oneOf(designStatuses);
+            <div className={styles.componentGrid}>
+                {data.allCodaImplementationsTable.group
+                    .filter(component => {
+                        // If no platform filter is selected, all components should appear
+                        if (!currentPlatform) {
+                            return true;
+                        }
 
-const Dot = ({ status }) => (
-    <div
-        aria-label={status}
-        className={classNames({
-            [styles.dot]: true,
-            [styles.dotToDo]: ['To-do', 'Unknown'].includes(status),
-            [styles.dotInProgress]: status === 'In progress',
-            [styles.dotDeprecated]: status === 'Done / Deprecated',
-            [styles.dotNotApplicable]: ["Done / Won't build", "Done / Won't do"].includes(status),
-            [styles.dotDone]: ['Done', 'Done / Uses OS component'].includes(status),
-        })}
-    />
-);
+                        // Show only the components for the selected platform that we've either
+                        // completed or know that we want to build.
+                        return component.edges.some(platform =>
+                            [
+                                'To-do',
+                                'In progress',
+                                'Done',
+                                'Done / Uses OS component',
+                                'Done / Deprecated',
+                            ].includes(platform.node.data.values.Development_status),
+                        );
+                    })
+                    .filter(component => {
+                        // Filter results if the user has entered a search query.
+                        if (!searchFilter) {
+                            return true;
+                        }
 
-Dot.propTypes = {
-    status: PropTypes.oneOf([...designStatuses, ...developmentStatuses, ...documentationStatuses])
-        .isRequired,
-};
+                        const componentName = component.fieldValue.toLowerCase().replace(/ /g, '');
+                        const searchTerm = searchFilter.toLowerCase().replace(/ /g, '');
 
-export const Legend = () => (
-    <ul aria-hidden="true" className="flex black-300 mb2">
-        <li className="mr4 flex items-center">
-            <Dot status="Done" />{' '}
-            <Text size={2} className="ml2">
-                Done
-            </Text>
-        </li>
-        <li className="mr4 flex items-center">
-            <Dot status="In progress" />{' '}
-            <Text size={2} className="ml2">
-                In Progress
-            </Text>
-        </li>
-        <li className="mr4 flex items-center">
-            <Dot status="To-do" />{' '}
-            <Text size={2} className="ml2">
-                To-do
-            </Text>
-        </li>
-        <li className="mr4 flex items-center">
-            <Dot status="Done / Won't build" />{' '}
-            <Text size={2} className="ml2">
-                Not applicable
-            </Text>
-        </li>
-        <li className="mr4 flex items-center">
-            <Dot status="Done / Deprecated" />{' '}
-            <Text size={2} className="ml2">
-                Deprecated
-            </Text>
-        </li>
-    </ul>
-);
+                        return componentName.includes(searchTerm);
+                    })
+                    .map(component => {
+                        const componentForCurrentPlatform = currentPlatform
+                            ? component.edges[0].node.data.values
+                            : null;
 
-export const ComponentRow = ({ name, react, scss, ios, android }) => (
-    <>
-        <tr className="tl bb b-gray-300">
-            <th rowSpan={4} className="pr2 pv2 v-top bb b-gray-300 bw-2">
-                {name}
-            </th>
-            <th className="normal ph2 pv1">
-                <Text size={2}>React</Text>
-            </th>
-            <td className="pa2 tc">
-                <Dot status={react.design} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={react.development} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={react.documentation} />
-            </td>
-        </tr>
-        <tr className="bb b-gray-300 tl">
-            <th className="normal ph2 pv1">
-                <Text size={2}>SCSS</Text>
-            </th>
-            <td className="pa2 tc">
-                <Dot status={scss.design} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={scss.development} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={scss.documentation} />
-            </td>
-        </tr>
-        <tr className="bb b-gray-300 tl">
-            <th className="normal ph2 pv1">
-                <Text size={2}>iOS</Text>
-            </th>
-            <td className="pa2 tc">
-                <Dot status={ios.design} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={ios.development} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={ios.documentation} />
-            </td>
-        </tr>
-        <tr className="bb b-gray-300 bw-2 tl">
-            <th className="normal ph2 pv1">
-                <Text size={2}>Android</Text>
-            </th>
-            <td className="pa2 tc">
-                <Dot status={android.design} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={android.development} />
-            </td>
-            <td className="pa2 tc">
-                <Dot status={android.documentation} />
-            </td>
-        </tr>
-    </>
-);
+                        const status = componentForCurrentPlatform
+                            ? componentForCurrentPlatform.Development_status
+                            : null;
 
-ComponentRow.propTypes = {
-    name: PropTypes.string.isRequired,
-    react: PropTypes.shape({
-        design: designStatusPropTypes.isRequired,
-        development: developmentStatusPropTypes.isRequired,
-        documentation: documentationStatusPropTypes.isRequired,
-    }).isRequired,
-    scss: PropTypes.shape({
-        design: designStatusPropTypes.isRequired,
-        development: developmentStatusPropTypes.isRequired,
-        documentation: documentationStatusPropTypes.isRequired,
-    }).isRequired,
-    ios: PropTypes.shape({
-        design: designStatusPropTypes.isRequired,
-        development: developmentStatusPropTypes.isRequired,
-        documentation: documentationStatusPropTypes.isRequired,
-    }).isRequired,
-    android: PropTypes.shape({
-        design: designStatusPropTypes.isRequired,
-        development: developmentStatusPropTypes.isRequired,
-        documentation: documentationStatusPropTypes.isRequired,
-    }).isRequired,
-};
+                        const componentLevelData = data.allCodaComponentsTable.edges.find(
+                            c => c.node.data.values.Name === component.fieldValue,
+                        );
 
-export const ComponentTable = ({ children }) => (
-    <table className="w-100">
-        <thead className="tl">
-            <tr>
-                {/*
-                    The `boxShadow` is used instead of `border` because of:
-                    https://stackoverflow.com/q/41882616/316602
-                 */}
-                <th
-                    className="pt3 pr2 pb2 v-top top0 bg-white"
-                    style={{
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Component</Text>
-                </th>
-                <th
-                    className="pt3 ph2 pb2 v-top top0 bg-white"
-                    style={{
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Platforms</Text>
-                </th>
-                <th
-                    className="pt3 ph3 pb2 v-top top0 bg-white"
-                    style={{
-                        width: '1%',
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Design</Text>
-                </th>
-                <th
-                    className="pt3 ph3 pb2 v-top top0 bg-white"
-                    style={{
-                        width: '1%',
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Development</Text>
-                </th>
-                <th
-                    className="pt3 ph3 pb2 v-top top0 bg-white"
-                    style={{
-                        width: '1%',
-                        position: 'sticky',
-                        boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,
-                    }}
-                >
-                    <Text size={2}>Documentation</Text>
-                </th>
-            </tr>
-        </thead>
-        <tbody>{children}</tbody>
-    </table>
-);
+                        let documentationLink;
 
-ComponentTable.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+                        if (componentForCurrentPlatform) {
+                            // When viewing data for a specific platform, link to the documentation
+                            // for the component on that platform.
+                            documentationLink = componentForCurrentPlatform.Documentation || null;
+                        } else {
+                            // If no platform filter is selected, link to the component usage
+                            // documentation when available.
+                            documentationLink =
+                                componentLevelData.node.data.values.Usage_documentation || null;
+                        }
+
+                        const componentImage = componentLevelData.node.data.values.Image_URL;
+
+                        const children = (
+                            <>
+                                <div className="h5 bg-gray-300 br1 mb1">
+                                    {componentImage && (
+                                        <Image
+                                            src={componentImage}
+                                            alt=""
+                                            height={tpSpace7}
+                                            objectFit="contain"
+                                        />
+                                    )}
+                                </div>
+
+                                {['To-do', 'In progress', 'Done / Deprecated'].includes(status) && (
+                                    <Text
+                                        size={3}
+                                        className="absolute top-0 right-0 bg-blue b pv1 ph3 white"
+                                    >
+                                        {status.replace('Done / Deprecated', 'Deprecated')}
+                                    </Text>
+                                )}
+                                <Text size={2}>{component.fieldValue}</Text>
+                            </>
+                        );
+
+                        // Some components won't have a page that we can link to. This conditional
+                        // handles both cases.
+                        return documentationLink ? (
+                            <Link
+                                to={documentationLink.replace('https://thumbprint.design', '')}
+                                className="color-inherit relative"
+                                key={component.fieldValue}
+                            >
+                                {children}
+                            </Link>
+                        ) : (
+                            <div className="color-inherit relative" key={component.fieldValue}>
+                                {children}
+                            </div>
+                        );
+                    })}
+            </div>
+        </div>
+    );
+}
