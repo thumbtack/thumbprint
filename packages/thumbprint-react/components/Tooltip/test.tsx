@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import Tooltip from './index';
@@ -918,5 +919,37 @@ describe('Tooltip', () => {
         wrapper.setProps({ text: 'Swan' });
 
         expect(wrapper.find('[role="tooltip"]').text()).toContain('Swan');
+    });
+
+    test("doesn't render a tooltip when server rendered", () => {
+        const component = (
+            <Tooltip text="Goose">
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>
+        );
+
+        const ssrHTML = ReactDOMServer.renderToStaticMarkup(component);
+        expect(ssrHTML).not.toContain('data-test-id="tooltip"');
     });
 });

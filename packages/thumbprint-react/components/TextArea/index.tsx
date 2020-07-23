@@ -33,6 +33,10 @@ interface PropTypes {
      */
     isDisabled?: boolean;
     /**
+     * Adds `readonly` HTML attribute, allowing users to select (but not modify) the input.
+     */
+    isReadOnly?: boolean;
+    /**
      * Adds the `required` HTML attribute to the textarea.
      */
     isRequired?: boolean;
@@ -86,6 +90,7 @@ const TextArea = ({
     hasError = false,
     id,
     isDisabled = false,
+    isReadOnly = false,
     isRequired = false,
     maxLength,
     onBlur,
@@ -107,6 +112,7 @@ const TextArea = ({
             })}
             id={id}
             disabled={isDisabled}
+            readOnly={isReadOnly}
             maxLength={maxLength}
             required={isRequired}
             placeholder={placeholder}

@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## 4.1.1 - 2020-07-14
+
+### Fixed
+
+-   [Patch] Upgrade Thumbprint Tokens to latest version. This pulls in small color tweaks to improve accessibility.
+
+## 4.1.0 - 2020-04-10
+
+### Added
+
+-   [Minor] Add cursor styles category.
+
 ## 4.0.1 - 2020-01-09
 
 ### Added

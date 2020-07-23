@@ -16,9 +16,9 @@ enum loaderDotsTheme {
 
 const withIcon = (
     children: React.ReactNode,
-    { icon }: { icon?: React.ReactNode },
+    { icon, iconRight }: { icon?: React.ReactNode; iconRight?: React.ReactNode },
 ): React.ReactNode => {
-    if (!icon) {
+    if (!icon && !iconRight) {
         return children;
     }
 
@@ -27,12 +27,20 @@ const withIcon = (
             <span
                 className={classNames({
                     [styles.iconContainer]: true,
-                    [styles.iconContainerHasChildren]: children,
+                    [styles.iconContainerHasRightChildren]: children,
                 })}
             >
                 {icon}
             </span>
             {children}
+            <span
+                className={classNames({
+                    [styles.iconContainer]: true,
+                    [styles.iconContainerHasLeftChildren]: children,
+                })}
+            >
+                {iconRight}
+            </span>
         </span>
     );
 };
@@ -80,6 +88,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             isDisabled = false,
             isLoading = false,
             icon,
+            iconRight,
             type = 'button',
             to,
             shouldOpenInNewTab = false,
@@ -98,8 +107,8 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
         ref,
     ): JSX.Element => {
         warning(
-            children || accessibilityLabel || (icon && children),
-            'The prop `accessibilityLabel` must be provided to the button or link when `icon` is provided but `children` is not. This helps users on screen readers navigate our content.',
+            children || accessibilityLabel || ((icon || iconRight) && children),
+            'The prop `accessibilityLabel` must be provided to the button or link when `icon` or `iconRight` is provided but `children` is not. This helps users on screen readers navigate our content.',
         );
 
         return (
@@ -158,7 +167,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                             : undefined;
 
                     const newChildren = withFlexWrapper(
-                        withLoader(withIcon(children, { icon }), {
+                        withLoader(withIcon(children, { icon, iconRight }), {
                             isLoading,
                             theme: restrictedTheme,
                         }),
@@ -212,9 +221,13 @@ interface PropTypes {
      */
     isLoading?: boolean;
     /**
-     * Icon from [Thumbprint Icons](/icons/) to render within the button.
+     * Icon from [Thumbprint Icons](/icons/) to render left within the button.
      */
     icon?: React.ReactNode;
+    /**
+     * Icon from [Thumbprint Icons](/icons/) to render right within the button.
+     */
+    iconRight?: React.ReactNode;
     /**
      * Button's on type `submit` will submit a form when used within a `form`
      * element.

@@ -81,7 +81,7 @@ The image component accepts `style` and `className` props. This example uses bot
 </div>
 ```
 
-## Cropped images with `height`
+## Cropped images with custom heights
 
 This example uses the `height` prop to "crop" the image. By default, the cropped image is vertically centered with `object-position: center center`.
 
@@ -89,8 +89,96 @@ This example uses the `height` prop to "crop" the image. By default, the cropped
 <Image
     src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
     alt="Office building with large table and chairs"
+    objectFit="cover"
     height="230px"
 />
+```
+
+You can also use CSS to change the height. This is especially useful when combined with media queries that affect the image height.
+
+```jsx
+<Image
+    src="https://d1vg1gqh4nkuns.cloudfront.net/i/323302285472456711/width/1024.jpeg"
+    alt="Office building with large table and chairs"
+    objectFit="cover"
+    style={{ height: '230px' }}
+/>
+```
+
+## Within a carousel
+
+This example uses `ServiceCard` components within a scrollable container. The `ServiceCardImage` uses the `Image` component behind the scenes and will behave like the other examples on this page.
+
+```jsx
+function CarouselDemo() {
+    return (
+        <div className="overflow-x-auto flex">
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Personal Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/318810408927723609/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>1. Personal Training</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Dog Training"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761411685384319/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>2. Dog Training</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Local Moving (under 50 miles)"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323760317171040266/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>3. Local Moving</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/massage/near-me/">
+                    <ServiceCardImage
+                        alt="Massage Therapy"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761720722374783/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>4. Massage Therapy</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/interior-painting/near-me/">
+                    <ServiceCardImage
+                        alt="Interior Painting"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323761857295261793/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>5. Interior Painting</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none mr3">
+                <ServiceCard url="https://www.thumbtack.com/k/junk-removal/near-me/">
+                    <ServiceCardImage
+                        alt="Junk Removal"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/323234733715669089/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>6. Junk Removal</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+            <div className="w6 flex-none">
+                <ServiceCard url="https://www.thumbtack.com/k/new-home-building/near-me/">
+                    <ServiceCardImage
+                        alt="New Home Construction"
+                        url="https://d1vg1gqh4nkuns.cloudfront.net/i/327799254292824113/width/640/aspect/8-5.jpeg"
+                    />
+                    <ServiceCardTitle>7. New Home Construction</ServiceCardTitle>
+                </ServiceCard>
+            </div>
+        </div>
+    );
+}
 ```
 
 ## Forcing early render
@@ -148,8 +236,8 @@ export const pageQuery = graphql`
             ...PackageTableFragment
         }
         # Get component props by path to component file.
-        reactComponentProps: file(
-            relativePath: { eq: "thumbprint-react/components/Image/index.tsx" }
+        reactComponentProps: allFile(
+            filter: { relativePath: { in: ["thumbprint-react/components/Image/index.tsx"] } }
         ) {
             ...ReactComponentPropsFragment
         }

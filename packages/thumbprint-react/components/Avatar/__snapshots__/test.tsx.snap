@@ -29,7 +29,6 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -107,7 +106,6 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -184,7 +182,6 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",
@@ -223,7 +220,7 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
       title="Avatar for Duck Goose"
@@ -279,7 +276,7 @@ exports[`does not render a badge by default 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -308,7 +305,7 @@ exports[`does not render a badge by default 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -379,7 +376,7 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -437,7 +434,7 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -495,7 +492,7 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -541,7 +538,7 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -599,7 +596,7 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
       style={
         Object {
           "backgroundColor": "#fdf7e7",
-          "color": "#8a5500",
+          "color": "#714601",
         }
       }
     >
@@ -666,7 +663,6 @@ exports[`renders an image when the user has one 1`] = `
           onError={[Function]}
           onLoad={[Function]}
           sizes="0px"
-          src="//www.placecage.com/130/130"
           style={
             Object {
               "objectFit": "cover",

@@ -2,9 +2,8 @@ import React, { useState, forwardRef, useEffect, useCallback } from 'react';
 import find from 'lodash/find';
 import classNames from 'classnames';
 import warning from 'warning';
-import { useInView } from 'react-intersection-observer';
-import scrollparent from './get-scroll-parent';
 import canUseDOM from '../../utils/can-use-dom';
+import useLazyLoad from './use-lazy-load';
 import styles from './index.module.scss';
 
 // --------------------------------------------------------------------------------------------
@@ -72,6 +71,7 @@ type ObjectFitPropsType = {
         objectFit?: 'cover' | 'contain';
         objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
         fontFamily?: React.CSSProperties['fontFamily'];
+        height?: '100%';
     };
 };
 
@@ -118,26 +118,11 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Lazy-loading: library setup and polyfill
     // --------------------------------------------------------------------------------------------
 
-    // IntersectionObserver's `root` property identifies the element whose bounds are treated as
-    // the bounding box of the viewport for this element. By default, it uses `window`. Instead
-    // of using the default, we use the nearest scrollable parent. This is the same approach that
-    // React Waypoint and lazysizes use. The React Waypoint README explains this concept well:
-    // https://git.io/fj00H
+    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
+        boolean
+    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
 
-    const parent = canUseDOM && containerRef ? scrollparent(containerRef) : null;
-    const root = parent && (parent.tagName === 'HTML' || parent.tagName === 'BODY') ? null : parent;
-
-    // `shouldLoadImage` becomes `true` when the lazy-loading functionality decides that we should
-    // load the image.
-    const [inViewRef, isInView] = useInView({
-        root,
-        rootMargin: '100px',
-        triggerOnce: true,
-    });
-
-    const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState(
-        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
-    );
+    const shouldLoad = useLazyLoad(containerRef, browserSupportIntersectionObserver);
 
     // Loads the `IntersectionObserver` polyfill asynchronously on browsers that don't support it.
     if (canUseDOM && typeof window.IntersectionObserver === 'undefined') {
@@ -147,7 +132,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     }
 
     // If `forceEarlyRender` is truthy, bypass lazy loading and load the image.
-    const shouldLoadImage = isInView || forceEarlyRender;
+    const shouldLoadImage = shouldLoad || forceEarlyRender;
 
     // --------------------------------------------------------------------------------------------
     // Object Fit: polyfill and CSS styles
@@ -155,7 +140,10 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
 
     const objectFitProps: ObjectFitPropsType = {};
 
-    const shouldObjectFit = !!height;
+    // Checking for the use of the `height` prop is not enough since users can also change the
+    // image height using `className`, or `style`.
+    const shouldObjectFit = !!height || !!props.objectFit;
+
     const shouldPolyfillObjectFit =
         canUseDOM &&
         document.documentElement &&
@@ -186,6 +174,18 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             objectFit,
             objectPosition,
         };
+
+        if (!height) {
+            // Add `height: 100%` as an inline style if the user wants to `objectFit` but hasn't
+            // passed in the `height` prop. Almost always, this means that the user is setting the
+            // height with CSS or an inline style. Since inline styles and `className` get added to
+            // `picture`, not `img`, the `img` element would become taller than the picture,
+            // preventing the `objectFit` from working. Adding `height: 100%` to the `img` in these
+            // cases allows `objectFit` to work as well as it would if the `height` was provided as
+            // a prop rather than through `style` or `className`.
+            objectFitProps.style.height = '100%';
+        }
+
         if (shouldPolyfillObjectFit) {
             // Weird, but this is how the polyfill knows what to do with the image in IE.
             objectFitProps.style.fontFamily = `"object-fit: ${objectFit}; object-position: ${objectPosition}"`;
@@ -229,8 +229,8 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
     // Image load and error states
     // --------------------------------------------------------------------------------------------
 
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [isLoaded, setIsLoaded] = useState<boolean>(false);
+    const [isError, setIsError] = useState<boolean>(false);
 
     // --------------------------------------------------------------------------------------------
     // Combining refs: This component has three refs that need to be combined into one. This
@@ -244,18 +244,12 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
             // element.
             setContainerRef(node);
 
-            // We don't want to turn on the `react-intersection-observer` functionality until
-            // the polyfill is done loading.
-            if (browserSupportIntersectionObserver) {
-                inViewRef(node);
-            }
-
             // Check if the consumer sets a ref.
             if (typeof outerRef === 'function') {
                 outerRef(node);
             }
         },
-        [inViewRef, outerRef, setContainerRef, browserSupportIntersectionObserver],
+        [outerRef, setContainerRef],
     );
 
     return (

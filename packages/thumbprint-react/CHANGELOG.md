@@ -2,9 +2,51 @@
 
 ## Unreleased
 
+## 14.0.0 - 2020-07-14
+
+### Changed
+
+-   [Major] The `Image` component `objectFit` prop will work even if the `height` prop is not used. This allows for use of `objectFit` while setting a height using `style` or `className`. Consumers should check that instances of `Image` that used the `objectFit` prop but didn't use the `height` prop render as expected. This should be uncommon since `objectFit` previously wouldn't have done anything.
+
+### Fixed
+
+-   [Patch] Upgrade Thumbprint Tokens to latest version. This pulls in small color tweaks to improve accessibility.
+
+## 13.0.0 - 2020-07-07
+
+### Changed
+
+-   [Major] Change `StarRating` color to green
+
+## 12.5.2 - 2020-07-07
+
+### Fixed
+
+-   [Patch] Remove unusued `IntersectionObserver` test mock.
+-   [Patch] Fix IntersectionObserver logic.
+
+## 12.5.1 - 2020-06-18
+
+### Fixed
+
+-   [Patch] Improve lazy-loading of images within carousels.
+
+## 12.5.0 - 2020-05-01
+
+### Fixed
+
+-   [Minor] Add `isReadOnly` prop to `TextArea`. (#681)
+
+## 12.4.0 - 2020-03-23
+
 ### Changed
 
 -   [Patch] Rewrite `ModalCurtain` component in TypeScript.
+-   [Patch] Add types to some `useState` calls in a few components.
+
+### Added
+
+-   [Minor] Add iconRight prop to `Button` and `ThemedLink`.
 
 ## 12.3.0 - 2020-03-16
 

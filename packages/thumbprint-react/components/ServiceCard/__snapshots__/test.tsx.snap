@@ -82,7 +82,6 @@ exports[`ServiceCardImage render works 1`] = `
         onError={[Function]}
         onLoad={[Function]}
         sizes="0px"
-        src="https://www.thumbtack.com/image.png"
         style={
           Object {
             "height": 0,

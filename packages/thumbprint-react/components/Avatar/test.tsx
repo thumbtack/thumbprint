@@ -2,18 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-jest.mock('react-intersection-observer', (): any => ({
-    InView: ({ children }: { children: (arg1: any) => any }): any =>
-        children({ inView: true, ref: null }),
-    useInView: (): any => [(): any => {}, true],
-}));
-
-beforeEach((): void => {
-    window.IntersectionObserver = true as any;
-});
-/* eslint-enable */
-
 test('renders an image when the user has one', (): void => {
     const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
     expect(wrapper).toMatchSnapshot();
@@ -79,23 +67,13 @@ test('renders a badge if valid badge prop is supplied', (): void => {
 
 test('renders an SVG when `isChecked` is true', (): void => {
     const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('renders an SVG when `isChecked` is true', (): void => {
     const wrapper = mount(<UserAvatar size="medium" isChecked initials="DK" />);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -108,12 +86,7 @@ test('renders `isOnline` when `isOnline` is true', (): void => {
 test('renders checkmark SVG when `isChecked` and `isOnline` are true', (): void => {
     const wrapper = mount(<UserAvatar isChecked isOnline />);
     expect(wrapper.find('.badge').exists()).toBe(true);
-    expect(
-        wrapper
-            .find('.badge')
-            .find('svg')
-            .exists(),
-    ).toBe(true);
+    expect(wrapper.find('.badge').find('svg').exists()).toBe(true);
     expect(wrapper).toMatchSnapshot();
 });
 
