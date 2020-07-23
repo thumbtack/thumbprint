@@ -7,8 +7,6 @@ www/public
 www/.cache
 # Prevent Yarn and Prettier from conflicting.
 package.json
-# Ignore the Netlify CMS files because those are edited through a WYSIWYG interface.
-www/src/cms/**/*.md
 
 coverage
 yarn.lock

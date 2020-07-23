@@ -2,6 +2,12 @@
 title: Button
 description: Clickable elements used to perform actions.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 Button should be used to display buttons with text.
@@ -187,3 +193,16 @@ A Boolean value indicating whether haptic feedback is enabled on tap. Should onl
 #### `public var isEnabled: Bool`
 
 #### `public var isHighlighted: Bool`
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/button/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

@@ -2,6 +2,12 @@
 title: Icon Button
 description: Icon-only button used to perform actions.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 `IconButton` should be used for interactive elements which do not contain text like a usual `Button`.
@@ -65,3 +71,16 @@ Update the icon, accessibility label, and/or theme of this button. The accessibi
 #### `public init(icon: UIImage, accessibilityLabel: String, theme: IconButton.Theme = .default)`
 
 Creates and returns an icon button with the specified icon, accessibility label, and theme. The accessibility label must not be an empty string.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/icon-button/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

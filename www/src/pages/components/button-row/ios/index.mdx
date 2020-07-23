@@ -2,6 +2,12 @@
 title: Button Row
 description: Consistent spacing between buttons.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 `ButtonRow` should be used to display two `Buttons` side-by-side. The `ButtonRow` should fill the readable content width of the screen, and its distribution should be used to define the layout of the buttons within it.
@@ -45,3 +51,16 @@ Button to be shown on the right, should typically have primary button style.
 #### `public var distribution: Button.Distribution`
 
 Enum specifying how the buttons should be distributed along the horizontal axis.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/button-row/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
