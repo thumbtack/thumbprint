@@ -74,10 +74,7 @@ exports.sourceNodes = async ({ actions, reporter }, { apiToken, tables }) => {
                 children: [],
                 internal: {
                     type: `Coda${tableName.replace(/\s+/g, '_')}Table`,
-                    contentDigest: crypto
-                        .createHash('md5')
-                        .update(jsonString)
-                        .digest('hex'),
+                    contentDigest: crypto.createHash('md5').update(jsonString).digest('hex'),
                 },
             };
 
