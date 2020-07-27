@@ -17,6 +17,13 @@ declare module 'react-scroll-marker' {
         id: string;
         children: ({ id }: { id: string }) => JSX.Element;
     }): JSX.Element;
+    export function ScrollMarkerLink({
+        id,
+        children,
+    }: {
+        id: string;
+        children: ({ isActive, onClick }: { isActive: boolean; onClick: any }) => JSX.Element;
+    }): JSX.Element;
 }
 
 declare module 'gatsby-plugin-mdx/mdx-renderer' {

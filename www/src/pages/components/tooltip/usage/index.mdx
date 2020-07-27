@@ -120,5 +120,13 @@ export const pageQuery = graphql`
                 }
             }
         }
+        tableOfContents: file(relativePath: { eq: "components/tooltip/usage/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

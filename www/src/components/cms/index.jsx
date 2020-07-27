@@ -4,15 +4,19 @@ import { graphql } from 'gatsby';
 import MDX from '../mdx';
 import { ComponentHeader } from '../thumbprint-components';
 
-const CMS = ({ data, location, pageContext }) => (
-    <MDX
-        location={location}
-        pageContext={{ frontmatter: data.mdx.frontmatter }}
-        header={pageContext.isComponent && data.platformNav && <ComponentHeader data={data} />}
-    >
-        {data.mdx.body}
-    </MDX>
-);
+const CMS = ({ data, location, pageContext }) => {
+    console.log({ data });
+
+    return (
+        <MDX
+            location={location}
+            pageContext={{ frontmatter: data.mdx.frontmatter, tableOfContents: data.mdx.headings }}
+            header={pageContext.isComponent && data.platformNav && <ComponentHeader data={data} />}
+        >
+            {data.mdx.body}
+        </MDX>
+    );
+};
 
 CMS.propTypes = {
     data: PropTypes.shape({}).isRequired,
@@ -30,6 +34,10 @@ export const pageQuery = graphql`
             frontmatter {
                 title
                 description
+            }
+            headings {
+                value
+                depth
             }
         }
         platformNav: allSitePage(filter: { path: { glob: $relatedComponentsGlob } })

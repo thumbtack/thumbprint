@@ -12,7 +12,7 @@ const generateSlug = ({
     level,
     children,
 }: {
-    level: string;
+    level: 'section' | 'example';
     children: React.ReactNode;
 }): string | undefined => {
     const text = React.Children.map(children, c => {

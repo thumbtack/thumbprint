@@ -111,5 +111,13 @@ export const pageQuery = graphql`
         packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-scss" }) {
             ...PackageTableFragment
         }
+        tableOfContents: file(relativePath: { eq: "components/avatar/scss/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;

@@ -43,5 +43,13 @@ export const pageQuery = graphql`
                 }
             }
         }
+        tableOfContents: file(relativePath: { eq: "components/wrap/usage/index.mdx" }) {
+            childMdx {
+                headings {
+                    value
+                    depth
+                }
+            }
+        }
     }
 `;
