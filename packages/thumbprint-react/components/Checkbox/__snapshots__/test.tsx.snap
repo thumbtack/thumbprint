@@ -356,26 +356,33 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
         }
       }
     >
-      <ContentActionsCheckSmall
+      <svg
         fill="currentColor"
         height="18"
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          fill="currentColor"
-          height="18"
-          viewBox="0 0 18 18"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.5810763,3.19812449 C14.132085,2.85681117 13.5060971,2.96739243 13.1851033,3.44586905 L8.01720309,11.1408364 L4.52827048,8.83245251 C4.05827956,8.52197434 3.44229146,8.67402358 3.1502971,9.17270255 C2.85930272,9.67138151 3.00329993,10.3274261 3.47229088,10.6379043 L8.55419272,14 L14.8130718,4.68246529 C15.1350656,4.20398867 15.0300676,3.53943781 14.5810763,3.19812449"
-            fillRule="evenodd"
-          />
-        </svg>
-      </ContentActionsCheckSmall>
+        <rect
+          height="1.879"
+          rx=".939"
+          transform="rotate(123 15.232 4.003)"
+          width="11.701"
+          x="15.232"
+          y="4.003"
+        />
+        <rect
+          height="1.879"
+          rx=".939"
+          transform="rotate(-146 8.83 13.822)"
+          width="7.337"
+          x="8.83"
+          y="13.822"
+        />
+        <path
+          d="M8.072 13.306l1.03-1.586.787.512-1.03 1.586z"
+        />
+      </svg>
     </div>
     <span
       className="text"
@@ -517,26 +524,33 @@ exports[`renders \`hasError\` state 1`] = `
         }
       }
     >
-      <ContentActionsCheckSmall
+      <svg
         fill="currentColor"
         height="18"
         viewBox="0 0 18 18"
         width="18"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          fill="currentColor"
-          height="18"
-          viewBox="0 0 18 18"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.5810763,3.19812449 C14.132085,2.85681117 13.5060971,2.96739243 13.1851033,3.44586905 L8.01720309,11.1408364 L4.52827048,8.83245251 C4.05827956,8.52197434 3.44229146,8.67402358 3.1502971,9.17270255 C2.85930272,9.67138151 3.00329993,10.3274261 3.47229088,10.6379043 L8.55419272,14 L14.8130718,4.68246529 C15.1350656,4.20398867 15.0300676,3.53943781 14.5810763,3.19812449"
-            fillRule="evenodd"
-          />
-        </svg>
-      </ContentActionsCheckSmall>
+        <rect
+          height="1.879"
+          rx=".939"
+          transform="rotate(123 15.232 4.003)"
+          width="11.701"
+          x="15.232"
+          y="4.003"
+        />
+        <rect
+          height="1.879"
+          rx=".939"
+          transform="rotate(-146 8.83 13.822)"
+          width="7.337"
+          x="8.83"
+          y="13.822"
+        />
+        <path
+          d="M8.072 13.306l1.03-1.586.787.512-1.03 1.586z"
+        />
+      </svg>
     </div>
     <span
       className="text"

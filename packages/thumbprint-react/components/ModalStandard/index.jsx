@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import ModalBase from '../ModalBase/index.jsx';
 import styles from './index.module.scss';
-import { NavigationCloseMedium } from '../../icons/index.jsx';
 
 const ModalStandard = ({
     children,
@@ -32,12 +31,23 @@ const ModalStandard = ({
             {children}
             {shouldHideCloseButton === false && (
                 <button onClick={onCloseClick} className={styles.closeButton} type="button">
-                    <NavigationCloseMedium
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className={classnames({
                             [styles.closeIcon]: true,
                             [styles.closeIconBrand]: theme === 'brand',
                         })}
-                    />
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
                 </button>
             )}
         </div>
