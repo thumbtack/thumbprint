@@ -2,6 +2,12 @@
 title: Avatar
 description: Display user images and badges on Thumbtack.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Avatar variations
 
 Avatars can be placed in your layout files as either: `EntityAvatarView` or `UserAvatarView`.
@@ -172,3 +178,16 @@ badgesEntity.forEachChild {
     (it as? EntityAvatarView)?.bind(imageUrl = NICOLAS_CAGE_URL, isOnline = true)
 }
 ```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

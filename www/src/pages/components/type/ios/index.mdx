@@ -2,6 +2,12 @@
 title: Type
 description: Styles for header and body text.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 `Font` contains constants for `UIFont` instances of each Thumbprint text style, as well as font variants and helper functions for use with Dynamic Type (see Accessibility below).
@@ -153,3 +159,16 @@ Font with this text style that supports scaling for accessibility.
 #### `public func scaledFont(compatibleWith traitCollection: UITraitCollection) -> UIFont`
 
 Font with this text style that supports scaling for accessibility and is configured with a specific trait collection. When using attributed strings, `UIContentSizeCategoryAdusting.adjustsFontForContentSizeCategory` does not work, and therefore fonts must be configured with a specific trait collection and updated any time the preferred content size category on the relevant view changes.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/type/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

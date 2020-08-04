@@ -2,6 +2,12 @@
 title: Label
 description: Form labels commonly used with inputs.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 Label to display non-interactive text using Thumbprint text styles. It is preferable in nearly all cases to use this `Label` component instead of using `UILabel` directly.
@@ -21,3 +27,16 @@ Text style applied to this label. Setting this property automatically updates th
 #### `public init(textStyle: Font.TextStyle, adjustsFontForContentSizeCategory: Bool)`
 
 Creates and returns a new label with the specified text style. Note that if you're planning to use attributed strings with this label, the text style you pass in here might not matter.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/label/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
