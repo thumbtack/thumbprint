@@ -74,7 +74,7 @@
         "stylelint-config-recommended-scss": "^3.3.0",
         "stylelint-scss": "^3.11.0",
         "tslib": "^1.10.0",
-        "typescript": "3.9.6"
+        "typescript": "^3.9.6"
     },
     "repository": {
         "type": "git",
