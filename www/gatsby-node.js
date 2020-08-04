@@ -94,8 +94,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     result.data.allFile.edges.forEach(({ node }) => {
         let slug;
 
-        // These are all the collections that we use in Netlify CMS. The content also exists in
-        // `www/static/admin/config.yml`.
+        // These are all the collections that we previously used in Netlify CMS. This will be
+        // removed once we remove the CMS.
         if (node.relativeDirectory === 'overview') {
             slug = `/overview/${node.name}/`;
         } else if (node.relativeDirectory === 'guide') {
