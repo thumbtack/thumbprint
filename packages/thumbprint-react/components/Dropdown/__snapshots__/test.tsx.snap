@@ -18,28 +18,21 @@ exports[`adds \`dataTest\` prop 1`] = `
       required={false}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#2f3033"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#2f3033"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -61,28 +54,21 @@ exports[`adds \`disabled\` attribute 1`] = `
       required={false}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#d3d4d5"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#d3d4d5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#d3d4d5"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -105,28 +91,21 @@ exports[`adds \`id\` attribute 1`] = `
       required={false}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#2f3033"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#2f3033"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -149,28 +128,21 @@ exports[`adds \`name\` HTML attribute 1`] = `
       required={false}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#2f3033"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#2f3033"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -192,28 +164,21 @@ exports[`adds \`required\` attribute 1`] = `
       required={true}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#2f3033"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#2f3033"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -235,28 +200,21 @@ exports[`renders an error state with \`hasError\` 1`] = `
       required={false}
       value="goose"
     />
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#ff5a5f"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#ff5a5f"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#ff5a5f"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -284,28 +242,21 @@ exports[`renders options that are passed in as \`children\` 1`] = `
         California
       </option>
     </select>
-    <NavigationCaretDownSmall
+    <svg
       className="caret"
-      fill="#2f3033"
+      fill="none"
       height="18"
-      viewBox="0 0 18 18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
       width="18"
-      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        className="caret"
-        fill="#2f3033"
-        height="18"
-        viewBox="0 0 18 18"
-        width="18"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-          fillRule="evenodd"
-        />
-      </svg>
-    </NavigationCaretDownSmall>
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
   </div>
 </Dropdown>
 `;
@@ -331,15 +282,17 @@ exports[`uses \`value\` as the selected option 1`] = `
   </select>
   <svg
     class="caret"
-    fill="#2f3033"
+    fill="none"
     height="18"
-    viewBox="0 0 18 18"
+    stroke="#2f3033"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="3"
+    viewBox="0 0 24 24"
     width="18"
-    xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M14.646 6.764L9 13 3.311 6.725a1 1 0 0 1 1.342-1.482L9 10l4.285-4.699c.2-.187.435-.301.715-.301a1 1 0 0 1 1 1c0 .306-.151.537-.354.764z"
-      fill-rule="evenodd"
+    <polyline
+      points="6 9 12 15 18 9"
     />
   </svg>
 </div>

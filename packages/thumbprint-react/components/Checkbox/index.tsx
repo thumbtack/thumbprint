@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
 import styles from './index.module.scss';
-import { ContentActionsCheckSmall } from '../../icons/index.jsx';
 
 const labelCursor = {
     error: 'pointer',
@@ -228,7 +227,33 @@ export default function Checkbox({
                     borderColor: borderColor[functionalState][checkedState],
                 }}
             >
-                {isChecked && !isIndeterminate && <ContentActionsCheckSmall />}
+                {isChecked && !isIndeterminate && (
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="15.232"
+                            y="4.003"
+                            width="11.701"
+                            height="1.879"
+                            rx=".939"
+                            transform="rotate(123 15.232 4.003)"
+                        />
+                        <rect
+                            x="8.83"
+                            y="13.822"
+                            width="7.337"
+                            height="1.879"
+                            rx=".939"
+                            transform="rotate(-146 8.83 13.822)"
+                        />
+                        <path d="M8.072 13.306l1.03-1.586.787.512-1.03 1.586z" />
+                    </svg>
+                )}
                 {isIndeterminate && (
                     <svg
                         width="10"
