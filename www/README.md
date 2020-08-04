@@ -50,4 +50,4 @@ Try doing one of the following if you run into issues:
 -   Check the version of Yarn or Node that you're using. Our [`CONTRIBUTING.md` file](https://github.com/thumbtack/thumbprint/blob/master/CONTRIBUTING.md) includes our version requirements.
 -   Run `rm -rf www/.cache www/public` to clear Gatsby's cache. ([View related bug in Gatsby](https://github.com/gatsbyjs/gatsby/issues/11747).)
 
-If these tips don't won't, reach out to [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) on GitHub.
+If these tips don't won't, reach out to [#design-systems](https://thumbtack.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) on GitHub.

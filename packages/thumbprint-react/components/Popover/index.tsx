@@ -12,7 +12,6 @@ import useFocusTrap from '../../utils/use-focus-trap';
 
 import { TextButton } from '../Button/index';
 import { Themed } from '../UIAction/index';
-import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
@@ -123,9 +122,20 @@ export default function Popover({
                                     <TextButton
                                         accessibilityLabel="Close popover"
                                         iconLeft={
-                                            <NavigationCloseTiny
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                width="14"
+                                                height="14"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
                                                 className={styles.closeButtonIcon}
-                                            />
+                                            >
+                                                <line x1="18" y1="6" x2="6" y2="18" />
+                                                <line x1="6" y1="6" x2="18" y2="18" />
+                                            </svg>
                                         }
                                         theme="inherit"
                                         onClick={onCloseClick}

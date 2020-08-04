@@ -17,8 +17,8 @@ exports.sourceNodes = async ({ actions }, { apiToken, docId, tableIdOrName, useC
 
     try {
         listRowsRes = await fetch(
-            // https://coda.io/developers/apis/v1beta1#operation/listRows
-            `https://coda.io/apis/v1beta1/docs/${docId}/tables/${tableIdOrName}/rows?${qs}`,
+            // https://coda.io/developers/apis/v1#operation/listRows
+            `https://coda.io/apis/v1/docs/${docId}/tables/${tableIdOrName}/rows?${qs}`,
             {
                 headers: {
                     Authorization: `Bearer ${apiToken}`,

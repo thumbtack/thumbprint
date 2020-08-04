@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { NavigationCloseSmall } from '../../icons/index.jsx';
 import { InputRowContext } from '../InputRow/index';
 import styles from './index.module.scss';
 
@@ -107,7 +106,20 @@ const TextInputClearButton = ({ onClick }: TextInputClearButtonPropTypes): JSX.E
                         onClick={onClick}
                         type="button"
                     >
-                        <NavigationCloseSmall />
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="18"
+                            height="18"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={styles.closeButtonIcon}
+                        >
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
                     </button>
                 </div>
             )}
