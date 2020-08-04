@@ -47,7 +47,7 @@ test('creates two IntersectionObserver instances if there are two scrollable par
 test('creates three IntersectionObserver instances if there are three scrollable parents', () => {
     mount(
         <React.Fragment>
-            <header style={{ overflowX: 'scroll' }}>Header</header>
+            <header css={{ overflowX: 'scroll' }}>Header</header>
             <main style={{ overflowX: 'auto' }}>
                 <div>
                     <div style={{ overflowX: 'scroll' }}>
