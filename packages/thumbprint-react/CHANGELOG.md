@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Use newer version of TypeScript as dev dependency.
+
 ## 14.0.0 - 2020-07-14
 
 ### Changed
