@@ -1,12 +1,12 @@
 {
     "private": true,
     "scripts": {
-        "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn workspace www start",
-        "start:ssr": "yarn run build:docs && yarn workspace www serve",
+        "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn workspace web dev",
+        "start:ssr": "yarn run build:docs && yarn workspace web build && yarn workspace web start",
         "updated": "lerna updated",
         "bootstrap": "yarn install && lerna run prepublishOnly",
         "publish": "git checkout master && git pull && yarn && yarn test && yarn build:dist && lerna publish",
-        "build:docs": "yarn run bootstrap && yarn workspace www build",
+        "build:docs": "yarn run bootstrap && yarn workspace web build && yarn workspace web export",
         "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
         "format": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,json,md,mdx,html}\" --write",
         "test": "yarn run bootstrap && yarn run test:lint && yarn run test:jest && yarn run test:prettier && yarn test:typecheck",
@@ -55,7 +55,6 @@
         "execa": "^2.0.4",
         "folder-hash": "^3.0.0",
         "fs-extra": "^8.1.0",
-        "gatsby-plugin-typescript": "^2.1.9",
         "husky": "^4.2.5",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^24.0.0",
@@ -65,8 +64,8 @@
         "prettier": "2.0.5",
         "pretty-quick": "^2.0.1",
         "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-typescript": "^1.0.1",
         "stylelint": "^11.0.0",
@@ -107,7 +106,7 @@
     "homepage": "https://github.com/thumbtack/thumbprint#readme",
     "workspaces": [
         "packages/*",
-        "www"
+        "web"
     ],
     "husky": {
         "hooks": {

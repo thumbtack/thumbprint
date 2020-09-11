@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ContentModifierLightningTiny } from '@thumbtack/thumbprint-icons';
 import Pill from './index';
 
 test('renders content that is passed in', () => {
@@ -10,7 +9,7 @@ test('renders content that is passed in', () => {
 });
 
 test('renders icon', () => {
-    const wrapper = mount(<Pill icon={<ContentModifierLightningTiny />}>goose</Pill>);
+    const wrapper = mount(<Pill icon={<svg />}>goose</Pill>);
     expect(wrapper.find('svg')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
 });

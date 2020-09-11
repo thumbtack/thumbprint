@@ -1,0 +1,17 @@
+import React from 'react';
+import { MDXProvider } from '@mdx-js/react';
+import { Title } from '@thumbtack/thumbprint-react/dist/es/index';
+
+interface LayoutPropTypes {
+    children: React.ReactNode;
+}
+
+const mdComponents = {
+    h1: props => <Title size={1} {...props} />,
+    h2: props => <Title size={2} {...props} />,
+    h3: props => <Title size={3} {...props} />,
+};
+
+export default function Layout({ children }: LayoutPropTypes): React.ReactElement {
+    return <MDXProvider components={mdComponents}>hi {children}</MDXProvider>;
+}
