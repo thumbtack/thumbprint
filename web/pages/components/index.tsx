@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import Layout from '../../components/layout';
 
-// eslint-disable-next-line react/prop-types
 export default function Components({ implementations }): React.ReactNode {
     return (
         <Layout>

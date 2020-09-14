@@ -19,5 +19,12 @@
         "next-transpile-modules": "^4.1.0",
         "react": "16.13.1",
         "react-dom": "16.13.1"
+    },
+    "devDependencies": {
+        "fs-extra": "^9.0.1",
+        "gonzales-pe": "^4.3.0",
+        "node-sass-tilde-importer": "2.0.0-alpha.1",
+        "prettier": "^2.1.1",
+        "sass": "^1.26.10"
     }
 }
