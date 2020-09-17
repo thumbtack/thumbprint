@@ -63,6 +63,11 @@ interface ImagePropTypes {
      */
     objectPosition?: 'top' | 'center' | 'bottom' | 'left' | 'right';
     className?: string;
+    /**
+     * Function that is called if there is an error when trying to load the image. This could happen
+     * if the image `src` is a 404, for example.
+     */
+    onError?: () => void;
 }
 
 type ObjectFitPropsType = {
@@ -94,6 +99,7 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
         alt = '',
         className,
         forceEarlyRender = null,
+        onError,
         ...rest
     } = props;
 
@@ -287,6 +293,9 @@ const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, ou
                         setIsLoaded(true);
                     }}
                     onError={(): void => {
+                        if (onError) {
+                            onError();
+                        }
                         setIsError(true);
                     }}
                     className={classNames({

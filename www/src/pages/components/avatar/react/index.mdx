@@ -121,6 +121,17 @@ Avatars without images can display the the user or entity’s initials instead. 
 </>
 ```
 
+## Invalid image
+
+If the `imageUrl` is provided but it doesn't point to a valid image, the `initials` will be displayed as a fallback.
+
+```jsx
+<>
+    <UserAvatar imageUrl="https://example.com/404.jpg" initials="AA" size="large" />
+    <EntityAvatar imageUrl="https://example.com/404.jpg" initials="B" size="large" />
+</>
+```
+
 ## Avatar badges
 
 Badges can be added to avatars to denote information including hired status and online status.

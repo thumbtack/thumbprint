@@ -2,9 +2,14 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] The `Image` component exposes an `onError` prop that is called if the image fails to load.
+
 ### Changed
 
 -   [Patch] Use newer version of TypeScript as dev dependency.
+-   [Patch] The `UserAvatar` and `EntityAvatar` components will now show the initials as a fallback if the `imageUrl` is provided but invalid.
 
 ## 14.0.0 - 2020-07-14
 

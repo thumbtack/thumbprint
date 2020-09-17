@@ -62,7 +62,15 @@ const getStyle = (initials?: string): StyleType =>
 
 const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
     (props: EntityPropTypes, outerRef): JSX.Element => {
-        const { imageUrl, size = 'small', initial, fullName, isOnline = false } = props;
+        const {
+            imageUrl: imageUrlProp,
+            size = 'small',
+            initial,
+            fullName,
+            isOnline = false,
+        } = props;
+
+        const [imageUrl, setImageUrl] = React.useState<string | undefined>(imageUrlProp);
 
         return (
             <div
@@ -86,6 +94,9 @@ const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
                         alt={fullName && `Avatar for ${fullName}`}
                         height={typeof size === 'string' ? dimensions[size] : `${size}px`}
                         ref={outerRef}
+                        onError={(): void => {
+                            setImageUrl(undefined);
+                        }}
                     />
                 ) : (
                     <span
@@ -133,7 +144,16 @@ EntityAvatar.displayName = 'EntityAvatar';
 
 const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
     (props: UserPropTypes, outerRef): JSX.Element => {
-        const { imageUrl, size = 'small', initials, fullName, isOnline = false, isChecked } = props;
+        const {
+            imageUrl: imageUrlProp,
+            size = 'small',
+            initials,
+            fullName,
+            isOnline = false,
+            isChecked,
+        } = props;
+
+        const [imageUrl, setImageUrl] = React.useState<string | undefined>(imageUrlProp);
 
         return (
             <div
@@ -157,6 +177,9 @@ const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
                         alt={fullName && `Avatar for ${fullName}`}
                         height={typeof size === 'string' ? dimensions[size] : `${size}px`}
                         ref={outerRef}
+                        onError={(): void => {
+                            setImageUrl(undefined);
+                        }}
                     />
                 ) : (
                     <span
