@@ -126,10 +126,12 @@ Avatars without images can display the the user or entity’s initials instead. 
 If the `imageUrl` is provided but it doesn't point to a valid image, the `initials` will be displayed as a fallback.
 
 ```jsx
-<>
-    <UserAvatar imageUrl="https://example.com/404.jpg" initials="AA" size="large" />
-    <EntityAvatar imageUrl="https://example.com/404.jpg" initials="B" size="large" />
-</>
+<div className="flex">
+    <div className="mr2">
+        <UserAvatar imageUrl="https://example.com/404.jpg" initials="AA" size="large" />
+    </div>
+    <EntityAvatar imageUrl="https://example.com/404.jpg" initial="B" size="large" />
+</div>
 ```
 
 ## Avatar badges
