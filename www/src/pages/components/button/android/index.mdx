@@ -40,76 +40,15 @@ By default buttons change width depending on the content inside of them. Occasio
 
 ### Implementation
 
-1. **ThumbprintPrimaryButton**
+**ThumbprintButton**
 
-    Configurable items (via xml or properties): buttonText, inlineDrawable, isLoading, isEnabled
+Configurable items (via XML or values):
 
-    ```
-    <com.thumbtack.thumbprint.views.ThumbprintPrimaryButton
-                    android:id="@+id/primaryButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonText="Primary"
-                    app:inlineDrawable="@drawable/lightning__small"
-                    app:isLoading="false"
-                    app:isEnabled="true" />
-    ```
-
-2. **ThumbprintSecondaryButton**
-
-    Configurable items (via xml or properties): buttonText, inlineDrawable, isEnabled
-
-    ```
-    <com.thumbtack.thumbprint.views.ThumbprintSecondaryButton
-                    android:id="@+id/secondaryButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonText="Secondary"
-                    app:inlineDrawable="@drawable/lightning__small"
-                    app:isEnabled="true" />
-    ```
-
-3. **ThumbprintTertiaryButton**
-
-    Configurable items (via xml or properties): buttonText, inlineDrawable, isEnabled
-
-    ```
-    <com.thumbtack.thumbprint.views.ThumbprintTertiaryButton
-                    android:id="@+id/tertiaryButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonText="Tertiary"
-                    app:inlineDrawable="@drawable/lightning__small"
-                    app:isEnabled="true" />
-    ```
-
-4. **ThumbprintCautionButton**
-
-    Configurable items (via xml or properties): buttonText, inlineDrawable, isEnabled
-
-    ```
-    <com.thumbtack.thumbprint.views.ThumbprintCautionButton
-                    android:id="@+id/cautionButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonText="Caution"
-                    app:inlineDrawable="@drawable/lightning__small"
-                    app:isEnabled="true" />
-    ```
-
-5. **ThumbprintSolidButton**
-
-    Configurable items (via xml or properties): buttonText, inlineDrawable, isEnabled
-
-    ```
-    <com.thumbtack.thumbprint.views.ThumbprintSolidButton
-                    android:id="@+id/solidButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:buttonText="Solid"
-                    app:inlineDrawable="@drawable/lightning__small"
-                    app:isEnabled="true" />
-    ```
+1. `app:buttonType` in XML or `ThumbprintButton.buttonType`, with enum values `primary`, `secondary`, `tertiary`, `caution`, or `solid`; defaults to `primary`
+2. `app:buttonText` in XML or `ThumbprintButton.buttonText`, String; note that `android:text` is ignored
+3. `app:isEnabled` in XML or `ThumbprintButton.isEnabled`, Boolean; defaults to true
+4. `app:isLoading` in XML or `ThumbprintButton.isLoading`, Boolean; defaults to false
+5. `app:isBleed` in XML or `ThumbprintButton.isBleed`, Boolean; defaults to false
 
 export const pageQuery = graphql`
     {
