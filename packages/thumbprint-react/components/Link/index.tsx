@@ -4,6 +4,7 @@ import { Themed, Plain } from '../UIAction/index';
 
 interface CommonProps {
     to?: string;
+    target?: string;
     shouldOpenInNewTab?: boolean;
     children?: React.ReactNode;
     isDisabled?: boolean;
@@ -22,6 +23,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
     return {
         to: props.to,
         onClick: props.onClick,
+        target: props.target,
         shouldOpenInNewTab: props.shouldOpenInNewTab,
         isDisabled: props.isDisabled,
         children: props.children,
@@ -38,6 +40,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
         {
             to,
             onClick,
+            target,
             shouldOpenInNewTab = false,
             isDisabled = false,
             children,
@@ -53,6 +56,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
             {...getCommonLinkProps({
                 to,
                 onClick,
+                target,
                 shouldOpenInNewTab,
                 isDisabled,
                 children,
@@ -100,6 +104,12 @@ interface LinkPropTypes {
      */
     iconRight?: React.ReactNode;
     /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
+    /**
+     * @deprecated
      * Opens the URL in a new tab when clicked.
      */
     shouldOpenInNewTab?: boolean;
@@ -124,6 +134,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             to,
             onClick,
             shouldOpenInNewTab = false,
+            target,
             isDisabled = false,
             children,
             accessibilityLabel,
@@ -141,6 +152,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
                 to,
                 onClick,
                 shouldOpenInNewTab,
+                target,
                 isDisabled,
                 children,
                 accessibilityLabel,
@@ -178,6 +190,11 @@ interface ThemedLinkPropTypes {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
     /**
      * Opens the URL in a new tab when clicked.
      */
