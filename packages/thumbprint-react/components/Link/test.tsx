@@ -40,10 +40,25 @@ test('renders an anchor tag when both `to` and `onClick` are provided', () => {
     testComponent(ThemedLink);
 });
 
-test('adds `rel` attribute to handle security vulnerability', () => {
+test('adds `rel` attribute to handle security vulnerability for `shouldOpenInNewTab`', () => {
     const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(
             <Component shouldOpenInNewTab to="https://example.com/">
+                Goose
+            </Component>,
+        );
+        expect(wrapperLink.find('a').prop('rel')).toEqual('noopener noreferrer');
+        expect(wrapperLink).toMatchSnapshot();
+    };
+
+    testComponent(Link);
+    testComponent(ThemedLink);
+});
+
+test('adds `rel` attribute to handle security vulnerability for `target=_blank`', () => {
+    const testComponent = (Component: React.ElementType): void => {
+        const wrapperLink = mount(
+            <Component target="_blank" to="https://example.com/">
                 Goose
             </Component>,
         );
@@ -63,6 +78,36 @@ test('adds attribute to open link in new tab', () => {
             </Component>,
         );
         expect(wrapperLink.find('a').prop('target')).toEqual('_blank');
+        expect(wrapperLink).toMatchSnapshot();
+    };
+
+    testComponent(Link);
+    testComponent(ThemedLink);
+});
+
+test('sets `target` attribute', () => {
+    const testComponent = (Component: React.ElementType): void => {
+        const wrapperLink = mount(
+            <Component target="foo" to="https://example.com/">
+                Goose
+            </Component>,
+        );
+        expect(wrapperLink.find('a').prop('target')).toEqual('foo');
+        expect(wrapperLink).toMatchSnapshot();
+    };
+
+    testComponent(Link);
+    testComponent(ThemedLink);
+});
+
+test('prefers `target` attribute to `shouldOpenInNewTab` when both are provided', () => {
+    const testComponent = (Component: React.ElementType): void => {
+        const wrapperLink = mount(
+            <Component shouldOpenInNewTab target="foo" to="https://example.com/">
+                Goose
+            </Component>,
+        );
+        expect(wrapperLink.find('a').prop('target')).toEqual('foo');
         expect(wrapperLink).toMatchSnapshot();
     };
 

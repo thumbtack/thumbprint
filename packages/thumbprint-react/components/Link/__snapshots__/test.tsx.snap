@@ -56,7 +56,7 @@ exports[`adds \`dataTest\` prop 2`] = `
 </ForwardRef>
 `;
 
-exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
+exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpenInNewTab\` 1`] = `
 <ForwardRef
   shouldOpenInNewTab={true}
   to="https://example.com/"
@@ -80,7 +80,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability 1`] = `
 </ForwardRef>
 `;
 
-exports[`adds \`rel\` attribute to handle security vulnerability 2`] = `
+exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpenInNewTab\` 2`] = `
 <ForwardRef
   shouldOpenInNewTab={true}
   to="https://example.com/"
@@ -89,6 +89,62 @@ exports[`adds \`rel\` attribute to handle security vulnerability 2`] = `
     isDisabled={false}
     shouldOpenInNewTab={true}
     size="large"
+    theme="primary"
+    to="https://example.com/"
+    width="auto"
+  >
+    <a
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      href="https://example.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_blank\` 1`] = `
+<ForwardRef
+  target="_blank"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={false}
+    target="_blank"
+    theme="primary"
+    to="https://example.com/"
+  >
+    <a
+      className="plain plainThemePrimary"
+      disabled={false}
+      href="https://example.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Goose
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_blank\` 2`] = `
+<ForwardRef
+  target="_blank"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={false}
+    size="large"
+    target="_blank"
     theme="primary"
     to="https://example.com/"
     width="auto"
@@ -153,6 +209,64 @@ exports[`adds attribute to open link in new tab 2`] = `
       href="https://example.com/"
       rel="noopener noreferrer"
       target="_blank"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are provided 1`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  target="foo"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={true}
+    target="foo"
+    theme="primary"
+    to="https://example.com/"
+  >
+    <a
+      className="plain plainThemePrimary"
+      disabled={false}
+      href="https://example.com/"
+      rel="noopener noreferrer"
+      target="foo"
+    >
+      Goose
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are provided 2`] = `
+<ForwardRef
+  shouldOpenInNewTab={true}
+  target="foo"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={true}
+    size="large"
+    target="foo"
+    theme="primary"
+    to="https://example.com/"
+    width="auto"
+  >
+    <a
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      href="https://example.com/"
+      rel="noopener noreferrer"
+      target="foo"
     >
       <span
         className="flexWrapper flexWrapperSizeLarge"
@@ -353,6 +467,60 @@ exports[`renders a anchor tag when a \`to\` is provided 2`] = `
       disabled={false}
       href="https://example.com/"
       target="_self"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`sets \`target\` attribute 1`] = `
+<ForwardRef
+  target="foo"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={false}
+    target="foo"
+    theme="primary"
+    to="https://example.com/"
+  >
+    <a
+      className="plain plainThemePrimary"
+      disabled={false}
+      href="https://example.com/"
+      target="foo"
+    >
+      Goose
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`sets \`target\` attribute 2`] = `
+<ForwardRef
+  target="foo"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    shouldOpenInNewTab={false}
+    size="large"
+    target="foo"
+    theme="primary"
+    to="https://example.com/"
+    width="auto"
+  >
+    <a
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      href="https://example.com/"
+      target="foo"
     >
       <span
         className="flexWrapper flexWrapperSizeLarge"

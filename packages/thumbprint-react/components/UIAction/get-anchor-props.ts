@@ -1,7 +1,7 @@
 import isThumbtackUrl from './is-thumbtack-url';
 
-const getRel = (url?: string, shouldOpenInNewTab = false): string | undefined => {
-    if (shouldOpenInNewTab) {
+const getRel = (url?: string, target?: string, shouldOpenInNewTab = false): string | undefined => {
+    if (shouldOpenInNewTab || target === '_blank') {
         if (isThumbtackUrl(url)) {
             // There are performance benefits of adding `rel="noopener"`.
             // https://jakearchibald.com/2016/performance-benefits-of-rel-noopener/
@@ -31,18 +31,20 @@ const getAnchorProps = ({
     shouldOpenInNewTab,
     to,
     onClick,
+    target,
 }: {
     isDisabled?: boolean;
     shouldOpenInNewTab?: boolean;
     to?: string;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    target?: string;
 }): AnchorProps => ({
     onClick,
     href: isDisabled ? undefined : to,
-    target: shouldOpenInNewTab ? '_blank' : '_self',
+    target: target || (shouldOpenInNewTab ? '_blank' : '_self'),
     // NOTE use `noopener` even for internal links in new tabs to prevent potential slowdown of
     // new tab https://mathiasbynens.github.io/rel-noopener/
-    rel: getRel(to, shouldOpenInNewTab),
+    rel: getRel(to, target, shouldOpenInNewTab),
 });
 
 export default getAnchorProps;
