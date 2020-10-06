@@ -1,0 +1,30 @@
+---
+title: Carousel
+description: Layout for grouped content that is navigated horizontally.
+---
+
+## Summary
+
+`CarouselLayout` is our custom subclass of `UICollectionViewFlowLayout` that facilitates creation of single line carousels ![Carousel](carousel.gif)
+
+## Public API
+
+See [UICollectionViewFlowLayout](https://developer.apple.com/documentation/uikit/uicollectionviewflowlayout)
+
+## Usage
+
+`CarouselLayout` can be used to lay out a collection view
+
+```swift
+   import Thumbprint
+
+   /* ... */
+
+   let carouselLayout = CarouselLayout()
+   let collectionView = UICollectionView(frame: .zero, collectionViewLayout: carouselLayout)
+
+   // Properties can be modified just like a regular UICollectionViewFlowLayout
+   carouselLayout.sectionInset.bottom = Space.three
+   carouselLayout.sectionInset.left = Space.four
+   carouselLayout.sectionInset.right = Space.four
+```

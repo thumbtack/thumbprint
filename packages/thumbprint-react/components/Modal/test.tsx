@@ -71,14 +71,16 @@ describe('Modal', () => {
 
     test('does not show the close button if `shouldHideCloseButton` is true', () => {
         const wrapper = mount(<Modal onCloseClick={noop} shouldHideCloseButton />);
-        expect(wrapper.find('NavigationCloseSmall').exists()).toBe(false);
+
+        expect(wrapper.find('button[data-test="Close modal"]').exists()).toBe(false);
         expect(wrapper).toMatchSnapshot();
         wrapper.unmount();
     });
 
     test('shows the close button if `shouldHideCloseButton` is false', () => {
         const wrapper = mount(<Modal onCloseClick={noop} shouldHideCloseButton={false} />);
-        expect(wrapper.find('NavigationCloseSmall').exists()).toBe(true);
+
+        expect(wrapper.find('button[data-test="close-modal"]').exists()).toBe(true);
         expect(wrapper).toMatchSnapshot();
         wrapper.unmount();
     });

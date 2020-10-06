@@ -1,0 +1,56 @@
+---
+title: Dropdown
+description: Dropdown for selecting an item from a larger set.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+Dropdowns are for selecting an item from a larger set of items. The following states are possible for dropdown: default, disabled, selected and error.
+
+Configurable items: **entries**, **hasError**, **isEnabled**, **errorText**
+
+These items can be set programmatically or through XML.
+
+## **XML usage:**
+
+```
+<com.thumbtack.thumbprint.views.ThumbprintDropdown
+            android:id="@+id/thumbprintDropdownErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:entries="@array/DropdownEntriesNumbers"
+            android:isEnabled="true"
+            app:errorText="This is an error text"
+            app:state_error="true" />
+```
+
+## **Screenshots of dropdown options:**
+
+![default dropdown](/img/dropdown_default.png 'Default dropdown')
+
+![default dropdown expanded](/img/dropdown_default_expanded.png 'Default dropdown expanded')
+
+![dropdown long expanded](/img/dropdown_long_expanded.png 'Dropdown with long text expanded')
+
+![Dropdown in error state](/img/dropdown_error.png 'Dropdown in error state')
+
+![Dropdown in error state expanded](/img/dropdown_error_expanded.png 'Dropdown in error state expanded')
+
+![Dropdown in disabled state](/img/dropdown_disabled.png 'Dropdown in disabled state')
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/dropdown/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

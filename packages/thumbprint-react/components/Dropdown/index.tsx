@@ -2,7 +2,6 @@ import React from 'react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import classNames from 'classnames';
 import styles from './index.module.scss';
-import { NavigationCaretDownSmall } from '../../icons/index.jsx';
 
 const iconColor = {
     disabled: tokens.tpColorGray,
@@ -142,7 +141,19 @@ const Dropdown = ({
                 {children}
             </select>
 
-            <NavigationCaretDownSmall className={styles.caret} fill={iconColor[uiState]} />
+            <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                className={styles.caret}
+                stroke={iconColor[uiState]}
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <polyline points="6 9 12 15 18 9" />
+            </svg>
         </div>
     );
 };

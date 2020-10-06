@@ -1,0 +1,45 @@
+---
+title: Radio
+description: Control for selecting an option inside a form
+---
+
+## Summary
+
+Control for selecting an option inside a form
+
+![default](default.png)
+
+## Accessibility
+
+Set `adjustsFontForContentSizeCategory: true` to enable Dynamic Type support for a Radio.
+
+## Public API
+
+`public var isSelected: Bool`
+
+Toggles selected state ![unselected](deselected.png)
+
+`public var isEnabled: Bool` Toggles enabled state ![disabled](disabled.png)
+
+`public var hasError: Bool` Toggles error state ![error](error.png)
+
+## Usage
+
+Radio should generally be used within a `RadioGroup` to control exclusive selection. Components such as `RadioStack` already do this and should be used wherever possible.
+
+```swift
+
+let titles = ["Apple", "Banana", "Orange"]
+let radioStack = RadioStack(titles: titles, adjustsFontForContentSizeCategory: adjustsFontForContentSizeCategory)
+radioStack.delegate = self
+view.addSubview(radioStack)
+
+/* ... */
+
+// MARK: RadioStackDelegate
+
+public func radioStack(_ radioStack: RadioStack, didSelectRadioAt index: Int?) {
+    guard let index = index else { return }
+    print ("Selected radio at index \(index)")
+}
+```

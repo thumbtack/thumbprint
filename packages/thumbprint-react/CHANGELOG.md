@@ -6,6 +6,17 @@
 
 -   [Minor] Add an `initialFocus` to `ModalCurtain`.
 
+## 14.1.0 - 2020-10-05
+
+### Changed
+
+-   [Patch] Use newer version of TypeScript as dev dependency.
+-   [Patch] Mark the `shouldOpenInNewTab` prop of `Link` and `ThemedLink` as deprecated.
+
+### Added
+
+-   [Minor] Add `target` prop to `Link` and `ThemedLink`.
+
 ## 14.0.0 - 2020-07-14
 
 ### Changed
