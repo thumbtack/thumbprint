@@ -37,27 +37,22 @@ export default function Components({ implementations }): React.ReactNode {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    let listRowsRes;
-
-    try {
-        listRowsRes = await fetch(
-            // https://coda.io/developers/apis/v1#operation/listRows
-            `https://coda.io/apis/v1/docs/bXyUQb2tJW/tables/Implementations/rows?useColumnNames=true`,
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.CODA_API_TOKEN}`,
-                },
+    const listRowsRes = await fetch(
+        // https://coda.io/developers/apis/v1#operation/listRows
+        `https://coda.io/apis/v1/docs/bXyUQb2tJW/tables/Implementations/rows?useColumnNames=true`,
+        {
+            headers: {
+                Authorization: `Bearer ${process.env.CODA_API_TOKEN}`,
             },
-        );
-    } catch (error) {
-        throw Error(error);
-    }
+        },
+    );
 
-    const data = await listRowsRes.json();
+    const data = listRowsRes.ok ? await listRowsRes.json() : null;
+    const implementations = data ? data.items : [];
 
     return {
         props: {
-            implementations: data.items,
+            implementations,
         },
     };
 };

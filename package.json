@@ -1,12 +1,12 @@
 {
     "private": true,
     "scripts": {
-        "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn workspace web dev",
-        "start:ssr": "yarn run build:docs && yarn workspace web build && yarn workspace web start",
+        "start": "echo \"\n👋 New to Thumbprint? Take a look at our 'CONTRIBUTING.md' for tips!\n\" && yarn run bootstrap && echo \"\nℹ️  Need a hand? Reach out on #design-systems for help.\n\" && yarn workspace www dev",
+        "start:ssr": "yarn run build:docs && yarn workspace www build && yarn workspace www start",
         "updated": "lerna updated",
         "bootstrap": "yarn install && lerna run prepublishOnly",
         "publish": "git checkout master && git pull && yarn && yarn test && yarn build:dist && lerna publish",
-        "build:docs": "yarn run bootstrap && yarn workspace web build && yarn workspace web export",
+        "build:docs": "yarn run bootstrap && yarn workspace www build && yarn workspace www export",
         "build:dist": "lerna exec -- rm -rf dist .cache && yarn run bootstrap",
         "format": "prettier \"**/*.{ts,tsx,js,jsx,css,scss,json,md,mdx,html}\" --write",
         "test": "yarn run bootstrap && yarn run test:lint && yarn run test:jest && yarn run test:prettier && yarn test:typecheck",
@@ -106,7 +106,7 @@
     "homepage": "https://github.com/thumbtack/thumbprint#readme",
     "workspaces": [
         "packages/*",
-        "web"
+        "www"
     ],
     "husky": {
         "hooks": {
