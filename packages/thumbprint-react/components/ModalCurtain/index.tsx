@@ -54,8 +54,8 @@ interface PropTypes {
      */
     shouldCloseOnEscape?: boolean;
     /**
-     * A selector for the element that should be focused when the modal opens. If omitted, the
-     * entire container element of the modal is focused.
+     * The element that should be focused when the modal opens. If omitted, the entire container
+     * element of the modal is focused.
      */
     initialFocus?: HTMLElement | null;
 }

@@ -24,6 +24,7 @@ export default function useFocusTrap(
 ): void {
     const [trap, setTrap] = useState<FocusTrap>();
 
+    // If `initialFocus` is not provided, `element` becomes the initial focus.
     const initialFocusElement = initialFocus || element;
 
     useEffect((): (() => void) => {
