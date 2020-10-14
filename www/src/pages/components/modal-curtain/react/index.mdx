@@ -103,12 +103,20 @@ function ModalCurtainDemo() {
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
                     >
                         <div className="bg-white ma-auto pa4 mw7">
+                            <ModalHeader>
+                                <ModalTitle>Add a professional license</ModalTitle>
+                                <ModalDescription>
+                                    Licenses add credibility to your business and provide more trust
+                                    for customers.
+                                </ModalDescription>
+                            </ModalHeader>
+
                             <div className="mt4">
                                 <input
                                     value={textValue}
-                                    id="initial-input"
-                                    onChange={value => setTextValue(value)}
+                                    onChange={e => setTextValue(e.target.value)}
                                     ref={inputEl}
+                                    className="pv2 ph3 db mb3"
                                 />
                                 <Button onClick={() => setIsOpen(false)}>Close Modal</Button>
                             </div>

@@ -57,7 +57,7 @@ interface PropTypes {
      * A selector for the element that should be focused when the modal opens. If omitted, the
      * entire container element of the modal is focused.
      */
-    initialFocus?: HTMLElement;
+    initialFocus?: HTMLElement | null;
 }
 
 export default function ModalCurtain({
