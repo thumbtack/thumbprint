@@ -7,11 +7,11 @@ interface LayoutPropTypes {
 }
 
 const mdComponents = {
-    h1: props => <Title size={1} {...props} />,
-    h2: props => <Title size={2} {...props} />,
-    h3: props => <Title size={3} {...props} />,
+    h1: (props): React.ReactElement => <Title size={1} {...props} />,
+    h2: (props): React.ReactElement => <Title size={2} {...props} />,
+    h3: (props): React.ReactElement => <Title size={3} {...props} />,
 };
 
 export default function Layout({ children }: LayoutPropTypes): React.ReactElement {
-    return <MDXProvider components={mdComponents}>hi {children}</MDXProvider>;
+    return <MDXProvider components={mdComponents}>{children}</MDXProvider>;
 }

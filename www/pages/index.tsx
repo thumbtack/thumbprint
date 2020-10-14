@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Button } from '@thumbtack/thumbprint-react';
 
 export default function Home(): React.ReactNode {
     return (
@@ -12,8 +11,6 @@ export default function Home(): React.ReactNode {
             </Head>
 
             <main>
-                <Button>Primary</Button>
-
                 <h1>Welcome to Thumbprint</h1>
             </main>
 

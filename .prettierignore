@@ -3,8 +3,7 @@
 packages/thumbprint-scss/*.css
 packages/thumbprint-scss/*.css.map
 # Ignore `dist` files created by the Thumbprint documentation.
-www/public
-www/.cache
+www/.next
 # Prevent Yarn and Prettier from conflicting.
 package.json
 
