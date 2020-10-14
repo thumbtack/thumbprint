@@ -85,6 +85,7 @@ By default the curtain will focus on the container when it opens. If your modal 
 function ModalCurtainDemo() {
     const [isOpen, setIsOpen] = React.useState(false);
     const [textValue, setTextValue] = React.useState('hello');
+    const inputEl = React.useRef();
 
     return (
         <div>
@@ -93,16 +94,21 @@ function ModalCurtainDemo() {
             <ModalCurtain
                 stage={isOpen ? 'entered' : 'exited'}
                 onCloseClick={() => setIsOpen(false)}
-                initialFocus="#initial-input"
+                initialFocus={inputEl && inputEl.current}
             >
                 {({ curtainClassName, curtainOnClick }) => (
-                    <div className={`pa4 ${curtainClassName}`}>
+                    <div
+                        onClick={curtainOnClick}
+                        className={`pa4 ${curtainClassName}`}
+                        style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+                    >
                         <div className="bg-white ma-auto pa4 mw7">
                             <div className="mt4">
-                                <TextInput
+                                <input
                                     value={textValue}
                                     id="initial-input"
                                     onChange={value => setTextValue(value)}
+                                    ref={inputEl}
                                 />
                                 <Button onClick={() => setIsOpen(false)}>Close Modal</Button>
                             </div>

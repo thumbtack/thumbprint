@@ -20,20 +20,18 @@ function toggleTrap(trap: FocusTrap, isActive: boolean): void {
 export default function useFocusTrap(
     element: HTMLElement | null,
     isActive = false,
-    initialFocus?: HTMLElement | null,
+    initialFocus: HTMLElement | null,
 ): void {
     const [trap, setTrap] = useState<FocusTrap>();
 
     const initialFocusElement = initialFocus || element;
-
-    console.log('focusing on', initialFocusElement ? initialFocusElement.type : undefined);
 
     useEffect((): (() => void) => {
         // If we've already created a trap, toggle it based on the isActive status
         if (trap) {
             toggleTrap(trap, isActive);
             // Otherwise, if there's no trap, but there is a valid element that needs to be trapped
-        } else if (element) {
+        } else if (element && initialFocusElement && isActive) {
             // Create the trap and store a reference to it
             const newTrap = createFocusTrap(element, {
                 clickOutsideDeactivates: true,

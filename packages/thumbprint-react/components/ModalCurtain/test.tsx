@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { mount } from 'enzyme';
 import ModalCurtain from './index';
 
@@ -118,18 +118,28 @@ describe('ModalCurtain', () => {
 
     test.only('initially focuses `initialFocus` element if provided', () => {
         jest.useFakeTimers();
-
         const onCloseClick = jest.fn();
-        const wrapper = mount(
-            <ModalCurtain stage="entered" onCloseClick={onCloseClick} initialFocus="#initial-input">
-                {(): JSX.Element => (
-                    <>
-                        <button type="button" />
-                        <input id="initial-input" />
-                    </>
-                )}
-            </ModalCurtain>,
-        );
+
+        const Example = (): React.ReactElement => {
+            const buttonRef = useRef<HTMLButtonElement>(null);
+
+            return (
+                <ModalCurtain
+                    stage="entered"
+                    onCloseClick={onCloseClick}
+                    initialFocus={buttonRef.current !== null ? buttonRef.current : undefined}
+                >
+                    {(): JSX.Element => (
+                        <>
+                            <button type="button" ref={buttonRef} />
+                            <input id="initial-input" />
+                        </>
+                    )}
+                </ModalCurtain>
+            );
+        };
+
+        const wrapper = mount(<Example />);
 
         // Run setTimeouts() in focus-trap to completion
         jest.runAllTimers();
