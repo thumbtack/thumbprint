@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { mount } from 'enzyme';
 import ModalCurtain from './index';
 
