@@ -5,9 +5,11 @@ import cx from 'classnames';
 import { TextInput, TextInputIcon } from '@thumbtack/thumbprint-react';
 import ClickableBox from 'clickable-box';
 import { NavigationSearchSmall, NavigationHamburgerMedium } from '@thumbtack/thumbprint-icons';
+import { SideNavGroup, SideNavLink } from '../components/app/side-nav';
+import '@thumbtack/thumbprint-global-css';
 import '@thumbtack/thumbprint-atomic';
-import '../styles/globals.css';
 import 'docsearch.js/dist/npm/styles/main.scss';
+import '../components/app/styles.scss';
 
 function ThumbprintApp({ Component, pageProps }: AppProps): React.ReactElement {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -83,29 +85,68 @@ function ThumbprintApp({ Component, pageProps }: AppProps): React.ReactElement {
                 <nav>
                     <ul>
                         <li>
-                            <Link href="/overview/about">
-                                <a>Overview</a>
-                            </Link>
+                            <SideNavLink
+                                title="Overview"
+                                to="/overview/about"
+                                level={1}
+                                isActive={false}
+                            >
+                                <SideNavGroup level={2}>
+                                    <SideNavLink
+                                        title="About"
+                                        level={2}
+                                        to="/overview/about/"
+                                        isActive={false}
+                                    />
+                                </SideNavGroup>
+                            </SideNavLink>
                         </li>
-                        <li>Guidelines</li>
                         <li>
-                            <Link href="/components">
-                                <a>Components</a>
-                            </Link>
+                            <SideNavLink
+                                title="Components"
+                                to="/components"
+                                level={1}
+                                isActive={false}
+                            />
                         </li>
                         <li>
-                            <Link href="/atomic">
-                                <a>Atomic</a>
-                            </Link>
+                            <SideNavLink title="Atomic" to="/atomic" level={1} isActive={false} />
                         </li>
                         <li>
-                            <Link href="/tokens/scss">
-                                <a>Tokens</a>
-                            </Link>
+                            <SideNavLink
+                                title="Tokens"
+                                to="/tokens/scss"
+                                level={1}
+                                isActive={false}
+                            >
+                                <SideNavGroup level={2}>
+                                    <SideNavLink
+                                        title="SCSS"
+                                        level={2}
+                                        to="/tokens/scss/"
+                                        isActive={false}
+                                    />
+                                    <SideNavLink
+                                        title="JavaScript"
+                                        level={2}
+                                        to="/tokens/javascript/"
+                                        isActive={false}
+                                    />
+                                    <SideNavLink
+                                        title="iOS"
+                                        level={2}
+                                        to="/tokens/ios/"
+                                        isActive={false}
+                                    />
+                                    <SideNavLink
+                                        title="Android"
+                                        level={2}
+                                        to="/tokens/android/"
+                                        isActive={false}
+                                    />
+                                </SideNavGroup>
+                            </SideNavLink>
                         </li>
-                        <li>Icons</li>
-                        <li>Updates</li>
-                        <li>Help</li>
                     </ul>
                 </nav>
             </div>

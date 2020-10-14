@@ -21,7 +21,8 @@
         "next-compose-plugins": "^2.2.0",
         "next-transpile-modules": "^4.1.0",
         "react": "16.13.1",
-        "react-dom": "16.13.1"
+        "react-dom": "16.13.1",
+        "react-scroll-marker": "^0.2.1"
     },
     "devDependencies": {
         "fs-extra": "^9.0.1",

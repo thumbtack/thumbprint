@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { Title } from '@thumbtack/thumbprint-react/dist/es/index';
+import { Title } from '@thumbtack/thumbprint-react';
 
 interface LayoutPropTypes {
     children: React.ReactNode;
