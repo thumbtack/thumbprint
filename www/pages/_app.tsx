@@ -98,6 +98,12 @@ function ThumbprintApp({ Component, pageProps }: AppProps): React.ReactElement {
                                         to="/overview/about/"
                                         isActive={false}
                                     />
+                                    <SideNavLink
+                                        title="Accessibility"
+                                        level={2}
+                                        to="/overview/accessibility/"
+                                        isActive={false}
+                                    />
                                 </SideNavGroup>
                             </SideNavLink>
                         </li>
