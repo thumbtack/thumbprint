@@ -204,9 +204,9 @@ export function Iframe(p: React.IframeHTMLAttributes<HTMLIFrameElement>): JSX.El
 export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.Element => {
     let renderedChildren = children;
 
-    if (isString(renderedChildren)) {
-        renderedChildren = <InternalMDXRenderer>{children}</InternalMDXRenderer>;
-    }
+    // if (isString(renderedChildren)) {
+    //     renderedChildren = <InternalMDXRenderer>{children}</InternalMDXRenderer>;
+    // }
 
     return (
         <MDXProvider
@@ -492,52 +492,27 @@ interface MdxPropTypes {
     header?: React.ReactNode;
 }
 
-export default function MDX({
-    children,
-    location,
-    pageContext,
-    header,
-}: MdxPropTypes): JSX.Element {
+export default function MDX({ children, title, description }: MdxPropTypes): JSX.Element {
     // Add the platform name to the page title when on a page within `components/` that has a
     // platform.
-    const isComponentOrTokensPage =
-        (location.pathname.startsWith('/components/') ||
-            location.pathname.startsWith('/tokens/')) &&
-        getPlatformByPathname(location.pathname);
+    const isComponentOrTokensPage = false;
 
     const pageTitle = isComponentOrTokensPage ? (
         <span>
-            {pageContext.frontmatter.title}
-            <span className="visually-hidden">
-                {`(${getPlatformByPathname(location.pathname)})`}
-            </span>
+            {title}
+            <span className="visually-hidden">React</span>
         </span>
     ) : (
-        pageContext.frontmatter.title
+        title
     );
 
-    const metaTitle = isComponentOrTokensPage
-        ? `${pageContext.frontmatter.title} (${getPlatformByPathname(location.pathname)})`
-        : pageContext.frontmatter.title;
+    const metaTitle = isComponentOrTokensPage ? `${title} (React)` : title;
 
     return (
-        <Container location={location} activeSection={getSectionByPathname(location.pathname)}>
-            <Wrap>
-                {pageContext.frontmatter && (
-                    <React.Fragment>
-                        <PageHeader
-                            pageTitle={pageTitle}
-                            metaTitle={metaTitle}
-                            description={pageContext.frontmatter.description}
-                        />
-                        {header}
-                        <MDXRenderer>{children}</MDXRenderer>
-                        <div className="pt5 mt5 bt bw-2 b-gray-300">
-                            <FeedbackForm page={location.pathname} />
-                        </div>
-                    </React.Fragment>
-                )}
-            </Wrap>
-        </Container>
+        <Wrap>
+            <PageHeader pageTitle={pageTitle} metaTitle={metaTitle} description={description} />
+            <MDXRenderer>{children}</MDXRenderer>
+            <div className="pt5 mt5 bt bw-2 b-gray-300">Feedback Form</div>
+        </Wrap>
     );
 }

@@ -1,6 +1,10 @@
-import Layout from '../../../../components/layout';
+import MDX from '../../../../components/mdx';
 
-# Fab for React
+export const metadata = {
+    title: 'Fab',
+    description: 'Buttons providing easy access to important actions.',
+    platform: 'React',
+};
 
 ## Text Fab
 
@@ -32,4 +36,4 @@ import Layout from '../../../../components/layout';
 <IconFab icon={<ContentActionsAddMedium />} theme="secondary" />
 ```
 
-export default ({ children }) => <Layout>{children}</Layout>;
+export default ({ children }) => <MDX {...metadata}>{children}</MDX>;

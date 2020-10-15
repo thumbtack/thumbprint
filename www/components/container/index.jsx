@@ -154,25 +154,6 @@ const Container = ({ children, location, activeSection }) => {
                                     </SideNavGroup>
                                 </SideNavLink>
 
-                                {/* <SideNavLink
-                                    title="Guidelines"
-                                    isActive={activeSection === 'Guidelines'}
-                                    to={allGuides.edges[0].node.path}
-                                    level={1}
-                                >
-                                    <SideNavGroup level={2}>
-                                        {map(allGuides.edges, ({ node }) => (
-                                            <SideNavLink
-                                                title={node.context.frontmatter.title}
-                                                level={2}
-                                                to={node.path}
-                                                key={node.path}
-                                                isActive={node.path === pathname}
-                                            />
-                                        ))}
-                                    </SideNavGroup>
-                                </SideNavLink> */}
-
                                 <SideNavLink
                                     title="Components"
                                     isActive={activeSection === 'Components'}
@@ -199,16 +180,6 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname === '/components/mixins/scss/'}
                                         />
                                     </SideNavGroup>
-                                    <SideNavGroup level={2}>
-                                        {/* {map(allComponents.group, group => (
-                                            <SideNavLink
-                                                title={group.fieldValue}
-                                                level={2}
-                                                key={group.edges[0].node.path}
-                                                {...getComponentsLinkProps(group.edges, pathname)}
-                                            />
-                                        ))} */}
-                                    </SideNavGroup>
                                 </SideNavLink>
 
                                 <SideNavLink
@@ -225,21 +196,6 @@ const Container = ({ children, location, activeSection }) => {
                                             isActive={pathname === '/atomic/usage/'}
                                         />
                                     </SideNavGroup>
-
-                                    <SideNavGroup level={2}>
-                                        {/* {map(allAtomic.headings, ({ value }) => (
-                                            <SideNavLink
-                                                title={value}
-                                                level={2}
-                                                to={`/atomic/#${generateSlug({
-                                                    level: 'section',
-                                                    children: value,
-                                                })}`}
-                                                isActive={false}
-                                                key={value}
-                                            />
-                                        ))} */}
-                                    </SideNavGroup>
                                 </SideNavLink>
 
                                 <SideNavLink
@@ -254,81 +210,25 @@ const Container = ({ children, location, activeSection }) => {
                                             to="/tokens/scss/"
                                             level={2}
                                             isActive={pathname.startsWith('/tokens/scss/')}
-                                        >
-                                            <SideNavGroup level={3}>
-                                                {/* {map(allScssTokens.categories, category => (
-                                                    <SideNavLink
-                                                        title={category.name}
-                                                        to={`/tokens/scss/#${generateSlug({
-                                                            level: 'section',
-                                                            children: category.name,
-                                                        })}`}
-                                                        key={category.name}
-                                                        level={3}
-                                                    />
-                                                ))} */}
-                                            </SideNavGroup>
-                                        </SideNavLink>
+                                        />
                                         <SideNavLink
                                             title="JavaScript"
                                             to="/tokens/javascript/"
                                             level={2}
                                             isActive={pathname.startsWith('/tokens/javascript/')}
-                                        >
-                                            <SideNavGroup level={3}>
-                                                {/* {map(allJavaScriptTokens.categories, category => (
-                                                    <SideNavLink
-                                                        title={category.name}
-                                                        to={`/tokens/javascript/#${generateSlug({
-                                                            level: 'section',
-                                                            children: category.name,
-                                                        })}`}
-                                                        key={category.name}
-                                                        level={3}
-                                                    />
-                                                ))} */}
-                                            </SideNavGroup>
-                                        </SideNavLink>
+                                        />
                                         <SideNavLink
                                             title="iOS"
                                             to="/tokens/ios/"
                                             level={2}
                                             isActive={pathname.startsWith('/tokens/ios/')}
-                                        >
-                                            <SideNavGroup level={3}>
-                                                {/* {map(allIosTokens.categories, category => (
-                                                    <SideNavLink
-                                                        title={category.name}
-                                                        to={`/tokens/ios/#${generateSlug({
-                                                            level: 'section',
-                                                            children: category.name,
-                                                        })}`}
-                                                        key={category.name}
-                                                        level={3}
-                                                    />
-                                                ))} */}
-                                            </SideNavGroup>
-                                        </SideNavLink>
+                                        />
                                         <SideNavLink
                                             title="Android"
                                             to="/tokens/android/"
                                             level={2}
                                             isActive={pathname.startsWith('/tokens/android/')}
-                                        >
-                                            <SideNavGroup level={3}>
-                                                {/* {map(allAndroidTokens.categories, category => (
-                                                    <SideNavLink
-                                                        title={category.name}
-                                                        to={`/tokens/android/#${generateSlug({
-                                                            level: 'section',
-                                                            children: category.name,
-                                                        })}`}
-                                                        key={category.name}
-                                                        level={3}
-                                                    />
-                                                ))} */}
-                                            </SideNavGroup>
-                                        </SideNavLink>
+                                        />
                                     </SideNavGroup>
                                 </SideNavLink>
 

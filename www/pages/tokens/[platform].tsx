@@ -1,26 +1,23 @@
 import React from 'react';
-import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import Layout from '../../components/layout';
+import PageHeader from '../../components/page-header';
+import TokenSection from '../../components/thumbprint-tokens/token-section';
+import Wrap from '../../components/wrap';
 
-export default function Tokens({ tokens }): React.ReactNode {
+export default function Tokens({ tokens, platform }): React.ReactNode {
     return (
-        <Layout>
-            <Head>
-                <title>Tokens / Thumbprint</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <main>
-                <h1>Thumbprint Tokens</h1>
-            </main>
-
-            <ul>
+        <Wrap>
+            <PageHeader
+                pageTitle="Tokens"
+                metaTitle="Tokens"
+                description="Design variables that power Thumbtack’s UI."
+            />
+            <div>
                 {tokens.map(category => (
-                    <li key={category.name}>{category.name}</li>
+                    <TokenSection key={category.name} section={category} platform={platform} />
                 ))}
-            </ul>
-        </Layout>
+            </div>
+        </Wrap>
     );
 }
 
@@ -54,6 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             tokens: data.categories,
+            platform,
         },
     };
 };
