@@ -1,6 +1,9 @@
 import Layout from '../../components/layout';
 
-# Accessibility
+export const metadata = {
+    title: 'Accessibility',
+    description: 'Building for the widest audience possible.',
+};
 
 The openness of the web means it’s easy to build any website you want. This also means it’s easy to inadvertently build one that’s difficult for people to use. While common problems like small font sizes are easy to spot, building a truly accessible website goes well beyond that.
 
@@ -44,4 +47,4 @@ The good news is that there are an abundance of tools and resources to help eval
 -   [Contrast](https://itunes.apple.com/us/app/contrast-color-accessibility/id1254981365?mt=12). A MacOS app to test on-screen colors for accessible contrast.
 -   [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Now built into Chrome’s DevTools this tool will run a variety of tests, among them an accessibility audit with suggested fixes.
 
-export default ({ children }) => <Layout>{children}</Layout>;
+export default ({ children }) => <Layout {...metadata}>{children}</Layout>;
