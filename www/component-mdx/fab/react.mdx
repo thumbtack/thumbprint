@@ -1,9 +1,9 @@
-import MDX from '../../../../components/mdx';
+import MDX from '../../components/mdx';
+export default ({ children, metadata }) => <MDX {...metadata}>{children}</MDX>;
 
 export const metadata = {
     title: 'Fab',
     description: 'Buttons providing easy access to important actions.',
-    platform: 'React',
 };
 
 ## Text Fab
@@ -35,5 +35,3 @@ export const metadata = {
 ```jsx
 <IconFab icon={<ContentActionsAddMedium />} theme="secondary" />
 ```
-
-export default ({ children }) => <MDX {...metadata}>{children}</MDX>;
