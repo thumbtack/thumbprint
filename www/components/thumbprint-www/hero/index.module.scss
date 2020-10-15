@@ -1,0 +1,67 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+.hero {
+    background: $tp-color__white;
+    border-top: 1px solid $tp-color__gray-300;
+    display: flex;
+    align-items: center;
+    height: 240px;
+
+    @include tp-respond-above($tp-breakpoint__medium) {
+        height: 454px;
+    }
+
+    @include tp-respond-above($tp-breakpoint__large) {
+        border-top: none;
+    }
+}
+
+.imageWrap {
+    flex: none;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+    position: relative;
+
+    @include tp-respond-above($tp-breakpoint__medium) {
+        display: block;
+        width: 40%;
+    }
+
+    @include tp-respond-above($tp-breakpoint__large) {
+        width: 50%;
+        max-width: 450px;
+    }
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-29%);
+}
+
+.textBlock {
+    padding-left: $tp-space__4;
+    padding-right: $tp-space__4;
+
+    @include tp-respond-above($tp-breakpoint__medium) {
+        padding-left: $tp-space__6;
+    }
+}
+
+.logo {
+    width: 220px;
+    display: block;
+}
+
+.subhead {
+    font-size: 22px;
+    color: $tp-color__black-300;
+}
+
+.description {
+    max-width: 360px;
+    color: $tp-color__black-300;
+}

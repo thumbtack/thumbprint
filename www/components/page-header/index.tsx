@@ -1,31 +1,48 @@
 import React from 'react';
-import { Title } from '@thumbtack/thumbprint-react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
+import { Title, Text } from '@thumbtack/thumbprint-react';
+import classNames from 'classnames';
+import { ActiveSectionContext } from '../container';
 
-interface PageHeaderPropTypes {
-    title: string;
-    metaTitle?: string;
+interface PropTypes {
+    metaTitle: string;
+    pageTitle: React.ReactNode;
     description?: string;
+    isOpen?: boolean;
 }
 
-export default function PageHeader({
-    title,
-    metaTitle,
-    description,
-}: PageHeaderPropTypes): React.ReactElement {
+export default function PageHeader({ metaTitle, description, pageTitle }: PropTypes): JSX.Element {
     return (
-        <header className="mb5">
+        <div className="mb5">
             <Head>
                 {metaTitle && <title>{metaTitle} / Thumbprint</title>}
                 {metaTitle && <meta property="og:title" content={`${metaTitle} / Thumbprint`} />}
                 {metaTitle && <meta name="twitter:title" content={`${metaTitle} / Thumbprint`} />}
+
                 {description && <meta name="twitter:description" content={description} />}
                 {description && <meta name="description" content={description} />}
-                {description && <meta property="og:description" content={description} />}{' '}
+                {description && <meta property="og:description" content={description} />}
             </Head>
 
+            <ActiveSectionContext.Consumer>
+                {(activeSection): JSX.Element => (
+                    <Text
+                        className={classNames({
+                            // Hide the section name visually if it is the same as the page title. We
+                            // still render it in the DOM so Algolia can use it for their search index.
+                            'visually-hidden': pageTitle === activeSection,
+                            'black-300 mb1': true,
+                        })}
+                        size={2}
+                    >
+                        <span data-algolia="lvl0">{activeSection}</span>
+                    </Text>
+                )}
+            </ActiveSectionContext.Consumer>
+
             <Title headingLevel={1} size={1} className="flex justify-between items-baseline">
-                {title}
+                {pageTitle}
             </Title>
 
             {description && (
@@ -33,6 +50,6 @@ export default function PageHeader({
                     {description}
                 </p>
             )}
-        </header>
+        </div>
     );
 }

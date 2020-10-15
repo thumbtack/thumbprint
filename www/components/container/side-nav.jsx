@@ -1,46 +1,39 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import PropTypes from 'prop-types';
 import { Text } from '@thumbtack/thumbprint-react';
+import classNames from 'classnames';
 import ClickableBox from 'clickable-box';
+import Link from 'next/link';
 import { NavigationCaretDownSmall, NavigationCaretUpSmall } from '@thumbtack/thumbprint-icons';
 import { ScrollMarkerLink } from 'react-scroll-marker';
-import cx from 'classnames';
 import styles from './side-nav.module.scss';
 
-interface SideNavLinkProps {
-    to: string;
-    children?: React.ReactNode;
-    level: 1 | 2 | 3;
-    title: string;
-    isActive: boolean;
-}
+const SideNav = ({ children }) => (
+    <ul className={`flex-1 overflow-y-auto pb3 ${styles.sideNav}`}>{children}</ul>
+);
 
-interface SideNavGroupProps {
-    children: React.ReactNode;
-    level: 2 | 3;
-}
+SideNav.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
-export function SideNavGroup({ children, level }: SideNavGroupProps): React.ReactElement {
-    return (
-        <li
-            className={cx({
-                [styles.sideNavGroup]: true,
-                [styles.sideNavGroupLevel2]: level === 2,
-                [styles.sideNavGroupLevel3]: level === 3,
-            })}
-        >
-            <ul>{children}</ul>
-        </li>
-    );
-}
+const SideNavGroup = ({ children, level }) => (
+    <li
+        className={classNames({
+            [styles.sideNavGroup]: true,
+            [styles.sideNavGroupLevel2]: level === 2,
+            [styles.sideNavGroupLevel3]: level === 3,
+        })}
+    >
+        <ul>{children}</ul>
+    </li>
+);
 
-export function SideNavLink({
-    to,
-    children,
-    level,
-    title,
-    isActive,
-}: SideNavLinkProps): React.ReactElement {
+SideNavGroup.propTypes = {
+    children: PropTypes.node.isRequired,
+    level: PropTypes.oneOf([2, 3]).isRequired,
+};
+
+const SideNavLink = ({ to, children, level, title, isActive }) => {
     const [isExpanded, setIsExpanded] = useState(isActive);
     const [isExpandButtonHovered, setIsExpandButtonHovered] = useState(false);
 
@@ -51,8 +44,8 @@ export function SideNavLink({
      * This function exists to share code between the `Link` component instances when wrapped in
      * `ScrollMarkerLink` and when used on its own.
      */
-    const getLinkClasses = (hasActiveClass): string =>
-        cx({
+    const getLinkClasses = hasActiveClass =>
+        classNames({
             'db flex-1 black': true,
             'pv2 ph3': level === 1,
             'pv1 ph4': level === 2,
@@ -65,7 +58,7 @@ export function SideNavLink({
     return (
         <Text elementName="li" size={2}>
             <div
-                className={cx({
+                className={classNames({
                     'relative flex': true,
                     'hover-bg-gray-200': !isExpandButtonHovered,
                 })}
@@ -90,19 +83,19 @@ export function SideNavLink({
                 {children && (
                     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
                     <ClickableBox
-                        className={cx({
+                        className={classNames({
                             'db hover-bg-gray-200 ph3 flex b pointer': true,
                             pv2: level === 1,
                             pv1: level === 2 || level === 3,
                             [styles.sideNavClickableBox]: true,
                         })}
-                        onClick={(): void => {
+                        onClick={() => {
                             setIsExpanded(!isExpanded);
                         }}
-                        onMouseOver={(): void => {
+                        onMouseOver={() => {
                             setIsExpandButtonHovered(true);
                         }}
-                        onMouseLeave={(): void => {
+                        onMouseLeave={() => {
                             setIsExpandButtonHovered(false);
                         }}
                     >
@@ -121,4 +114,24 @@ export function SideNavLink({
             )}
         </Text>
     );
-}
+};
+
+SideNavLink.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node,
+    to: PropTypes.string.isRequired,
+    level: PropTypes.oneOf([1, 2, 3]).isRequired,
+    /**
+     * Indicates the current page (or section of a page). This should be fase if it is a hash link
+     * since the active section will depend on the user's scrolling.
+     */
+    isActive: PropTypes.bool,
+};
+
+SideNavLink.defaultProps = {
+    children: undefined,
+    isActive: false,
+};
+
+export default SideNav;
+export { SideNavLink, SideNavGroup };

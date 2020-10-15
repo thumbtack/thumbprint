@@ -108,7 +108,7 @@ export default function Layout({
     return (
         <Wrap>
             <MDXProvider components={mdComponents}>
-                <PageHeader title={title} description={description} metaTitle={title} />
+                <PageHeader pageTitle={title} description={description} metaTitle={title} />
                 {children}
             </MDXProvider>
         </Wrap>
