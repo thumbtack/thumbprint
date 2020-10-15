@@ -17,6 +17,7 @@ const Table = ({ atomicClasses }) => {
         // from rendering in these docs.
         item => !item.selectors.includes('_:-ms-lang(x)'),
     );
+
     return (
         <table className="w-100 tp-body-2">
             <tbody>

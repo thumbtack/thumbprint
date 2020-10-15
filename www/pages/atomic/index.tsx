@@ -1,25 +1,103 @@
 import React from 'react';
-import Head from 'next/head';
 import fse from 'fs-extra';
 import sass from 'sass';
 import nodeSassImporter from 'node-sass-tilde-importer';
 import gonzales from 'gonzales-pe';
 import prettier from 'prettier';
 import { GetStaticProps } from 'next';
-import Layout from '../../components/layout';
+import Wrap from '../../components/wrap';
+import PageHeader from '../../components/page-header';
+import { H2, H3, UL, LI, InlineCode, P } from '../../components/mdx';
+import Table from '../../components/thumbprint-atomic/table';
+import getClasses from '../../components/thumbprint-atomic/get-classes';
+import CodeBlock from '../../components/mdx/code-block';
 
-export default function Components(): React.ReactNode {
+export default function Components({ data }): React.ReactNode {
     return (
-        <Layout>
-            <Head>
-                <title>Atomic / Thumbprint</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+        <Wrap>
+            <PageHeader pageTitle="Atomic" metaTitle="Atomic" />
 
-            <main>
-                <h1>Thumbprint Atomic</h1>
-            </main>
-        </Layout>
+            <H2>Aspect Ratio</H2>
+
+            <UL>
+                <LI>
+                    Available ratios are <InlineCode>16:9</InlineCode>,{' '}
+                    <InlineCode>10:13</InlineCode>, <InlineCode>8:5</InlineCode>,{' '}
+                    <InlineCode>7:3</InlineCode>, and <InlineCode>1:1</InlineCode>.
+                </LI>
+                <LI>
+                    Used primarily to lock elements with background images in into a desired
+                    proportion.
+                </LI>
+                <LI>
+                    Also for fluid media embedded from third party sites like YouTube, Vimeo, etc.
+                </LI>
+            </UL>
+
+            <div className="pa3 ba b-gray-300 mb4 tp-body-2">
+                <div className="grid">
+                    <div className="s_col-4 mb2 s_mb0">
+                        <div
+                            className="aspect-ratio aspect-ratio-1x1 bg-center mb1"
+                            style={{ backgroundImage: 'url(https://picsum.photos/400/400)' }}
+                        />
+                        <InlineCode theme="plain">1:1</InlineCode>
+                        <div
+                            className="aspect-ratio aspect-ratio-7x3 bg-center mv2"
+                            style={{ backgroundImage: 'url(https://picsum.photos/400/200)' }}
+                        />
+                        <InlineCode theme="plain">7:3</InlineCode>
+                    </div>
+                    <div className="s_col-4 mb2 s_mb0">
+                        <div
+                            className="aspect-ratio aspect-ratio-10x13 bg-center mb1"
+                            style={{ backgroundImage: 'url(https://picsum.photos/400/600)' }}
+                        />
+                        <InlineCode theme="plain">10:13</InlineCode>
+                    </div>
+                    <div className="s_col-4">
+                        <div
+                            className="aspect-ratio aspect-ratio-8x5 bg-center mb1"
+                            style={{ backgroundImage: 'url(https://picsum.photos/400/350)' }}
+                        />
+                        <InlineCode theme="plain">8:5</InlineCode>
+                        <div
+                            className="aspect-ratio aspect-ratio-16x9 bg-center mv2"
+                            style={{ backgroundImage: 'url(https://picsum.photos/400/300)' }}
+                        />
+                        <InlineCode theme="plain">16:9</InlineCode>
+                    </div>
+                </div>
+            </div>
+
+            <H3>Block-level elements</H3>
+
+            <CodeBlock
+                language="html"
+                shouldRender={false}
+            >{`<div className="aspect-ratio aspect-ratio-8x5" style="background-image:url(...)"></div>`}</CodeBlock>
+
+            <P>
+                Don't use any additional CSS on the element that changes{' '}
+                <InlineCode>height</InlineCode> or <InlineCode>padding</InlineCode>.
+            </P>
+
+            <H3>Video embeds and iframes</H3>
+
+            <CodeBlock language="html" shouldRender={false}>
+                {`<div className="aspect-ratio aspect-ratio-16x9">
+    <iframe className="aspect-ratio-object" src="https://player.vimeo.com/..."></iframe>
+</div>`}
+            </CodeBlock>
+
+            <P>
+                When using <InlineCode>aspect-ratio-object</InlineCode> be sure the embedded content
+                does not have conflicting <InlineCode>height</InlineCode> or{' '}
+                <InlineCode>width</InlineCode> values.
+            </P>
+
+            <Table atomicClasses={getClasses(data, 'aspect-ratio').classes} />
+        </Wrap>
     );
 }
 
@@ -119,13 +197,20 @@ export const getStaticProps: GetStaticProps = async () => {
     const directoryPath = atomicSassFilesPath;
     const files = await fse.readdir(directoryPath);
 
-    const classes = files.map(file => {
+    const data = files.map(file => {
         const css = sass
             .renderSync({ file: `${atomicSassFilesPath}/${file}`, importer: nodeSassImporter })
             .css.toString();
+
+        return {
+            file,
+            classes: parseAST(css),
+        };
     });
 
     return {
-        props: {},
+        props: {
+            data,
+        },
     };
 };

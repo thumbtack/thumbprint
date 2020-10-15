@@ -2,14 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import Layout from '../../components/layout';
+import Wrap from '../../components/wrap';
 
 export default function Components({ implementations }): React.ReactNode {
     return (
-        <Layout>
+        <Wrap>
             <Head>
                 <title>Components / Thumbprint</title>
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main>
@@ -32,7 +31,7 @@ export default function Components({ implementations }): React.ReactNode {
                         </li>
                     ))}
             </ul>
-        </Layout>
+        </Wrap>
     );
 }
 
