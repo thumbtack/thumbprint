@@ -78,7 +78,7 @@ export default function Components({ data }): React.ReactNode {
             >{`<div className="aspect-ratio aspect-ratio-8x5" style="background-image:url(...)"></div>`}</CodeBlock>
 
             <P>
-                Don't use any additional CSS on the element that changes{' '}
+                Don’t use any additional CSS on the element that changes{' '}
                 <InlineCode>height</InlineCode> or <InlineCode>padding</InlineCode>.
             </P>
 

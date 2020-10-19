@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 
 interface PropTypes {
     children: string;
-    language?: Language;
+    language?: Language | 'html';
     theme?: 'light' | 'dark' | 'white';
     shouldRender?: boolean;
 }
@@ -39,7 +39,7 @@ export default function CodeBlock({
                 <Highlight
                     {...defaultProps}
                     code={children.trim()}
-                    language={language}
+                    language={language as Language & 'html'}
                     theme={prismTheme}
                 >
                     {({
