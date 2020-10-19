@@ -19,10 +19,6 @@ declare module 'react-scroll-marker' {
     }): JSX.Element;
 }
 
-declare module 'gatsby-plugin-mdx/mdx-renderer' {
-    export default function InternalMDXRenderer(props: { children: React.ReactNode }): JSX.Element;
-}
-
 // The only types for this module on DefinitelyTyped are for an old version, so we provide our own
 // types here.
 declare module 'react-copy-to-clipboard' {

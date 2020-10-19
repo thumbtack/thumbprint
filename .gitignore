@@ -1,7 +1,6 @@
 dist
 tmp
 aws.json
-www/public
 .cache
 packages/thumbprint-icons/www
 

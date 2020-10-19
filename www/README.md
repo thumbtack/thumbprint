@@ -1,53 +1,30 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/10043c63-1dc0-47ef-a69d-583e55171728/deploy-status)](https://app.netlify.com/sites/thumbprint/deploys)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# thumbprint.design
+## Getting Started
 
-The Thumbprint documentation is powered by [Gatsby](https://www.gatsbyjs.org/) and hosted on [Netlify](https://netlify.com/). It is deployed automatically when pull requests are merged into `master`.
+First, run the development server:
 
-## Running the documentation locally
-
-Run `yarn start` in the Thumbprint root folder to run the documentation locally.
-
-It will be available at [http://localhost:8090/](http://localhost:8090/).
-
-## How to make changes
-
-The [`src`](https://github.com/thumbtack/thumbprint/tree/master/www/src) folder contains all of the documentation's pages and components.
-
-The URL for each page in our documentation maps exactly to a file in [`src/pages/`](https://github.com/thumbtack/thumbprint/tree/master/www/src/pages). These pages can import components from [`src/components`](https://github.com/thumbtack/thumbprint/tree/master/www/src/components) as well as packages from NPM. The available packages are defined in [this folder's `package.json`](https://github.com/thumbtack/thumbprint/blob/master/www/package.json).
-
-### Working with MDX files
-
-[MDX](https://mdxjs.com/) is a file format that allows you to render JSX within Markdown documents. Thumbprint uses [`gatsby-plugin-mdx`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-mdx) to create the pages.
-
-Each MDX file starts with front matter. Here's an example from our button component documentation:
-
-```
----
-title: Button
-description: Clickable elements used to perform actions.
----
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-MDX files can include `import` statements and [Gatsby GraphQL queries](https://www.gatsbyjs.org/docs/querying-with-graphql/). Take a look at examples in `src/pages/` to learn more.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The Markdown in MDX files gets transformed by the `MDXProvider` component in [`src/components/mdx/index.tsx`](https://github.com/thumbtack/thumbprint/blob/master/www/src/components/mdx/index.tsx). `MDXProvider` allows us to map Markdown elements to custom React components.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-#### Multiline code blocks in MDX
+## Learn More
 
-You can [use triple backticks](https://help.github.com/en/articles/creating-and-highlighting-code-blocks) to document code examples in MDX. Behind the scenes, this uses our [custom `CodeBlock` component](https://github.com/thumbtack/thumbprint/blob/master/www/src/components/mdx/code-block/index.jsx) to render examples and highlight the source code.
+To learn more about Next.js, take a look at the following resources:
 
-Beyond [specifying a language](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#syntax-highlighting), the triple backticks can include the following custom configuration options:
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
--   `shouldRender`: Code written in `jsx` or `html` will render by default if [the language identifier](https://help.github.com/en/articles/creating-and-highlighting-code-blocks#syntax-highlighting) was included. You can use `shouldRender=false` to prevent the example from rendering. (Here's an [example from the `InputRow` React component](https://github.com/thumbtack/thumbprint/blob/e9016e6b8589710641dbd7ded6434095dab5cdf0/www/src/pages/components/input-row/react/index.mdx#L38-L42).)
--   `theme`: You can set a rendered example's background color to `light`, `dark`, or `white`. The option defaults to `white`. (Here's an [example from the React `Button` component](https://github.com/thumbtack/thumbprint/blob/e9016e6b8589710641dbd7ded6434095dab5cdf0/www/src/pages/components/button/react/index.mdx#L27-L29).)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Troubleshooting
+## Deploy on Vercel
 
-Try doing one of the following if you run into issues:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
--   Run `yarn install` or `yarn install --force` in the Thumbprint root folder.
--   Check the version of Yarn or Node that you're using. Our [`CONTRIBUTING.md` file](https://github.com/thumbtack/thumbprint/blob/master/CONTRIBUTING.md) includes our version requirements.
--   Run `rm -rf www/.cache www/public` to clear Gatsby's cache. ([View related bug in Gatsby](https://github.com/gatsbyjs/gatsby/issues/11747).)
-
-If these tips don't won't, reach out to [#design-systems](https://thumbtack.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) on GitHub.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
