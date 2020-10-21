@@ -87,3 +87,15 @@ test('adds `dataTest` prop', () => {
     expect(wrapper.find('div[data-test="Duck"]')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
 });
+
+test('adds `dataTestId` prop', () => {
+    const wrapper = mount(
+        <InputRow dataTestId="Duck">
+            <button type="button" />
+            <button type="button" />
+            <button type="button" />
+        </InputRow>,
+    );
+    expect(wrapper.find('div[data-testid="Duck"]')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+});

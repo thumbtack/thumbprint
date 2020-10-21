@@ -18,11 +18,11 @@ test('forwards props to the outermost element', () => {
     const wrapper = mount(
         <Image
             src="https://d1vg1gqh4nkuns.cloudfront.net/i/356206765797793818/width/1024.jpeg"
-            data-test="goose"
+            data-testid="goose"
         />,
     );
 
-    expect(wrapper.prop('data-test')).toBe('goose');
+    expect(wrapper.prop('data-testid')).toBe('goose');
 });
 
 test('creates one IntersectionObserver instance if there is one scrollable parent', () => {

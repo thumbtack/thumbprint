@@ -23,6 +23,29 @@ exports[`GridColumn adds \`dataTest\` prop 1`] = `
 </Grid>
 `;
 
+exports[`GridColumn adds \`dataTestId\` prop 1`] = `
+<Grid
+  dataTestId="Duck"
+>
+  <div
+    className="grid"
+    data-testid="Duck"
+  >
+    <GridColumn
+      base={1}
+      dataTestId="Goose"
+    >
+      <div
+        className="col col1"
+        data-testid="Goose"
+      >
+        goose
+      </div>
+    </GridColumn>
+  </div>
+</Grid>
+`;
+
 exports[`GridColumn column renders content that is passed in 1`] = `
 <Grid>
   <div

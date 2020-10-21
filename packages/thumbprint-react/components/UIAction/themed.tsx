@@ -103,6 +103,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             size = 'large',
             theme = 'primary',
             width = 'auto',
+            dataTestId,
             dataTest,
         }: PropTypes,
         ref,
@@ -158,6 +159,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         disabled: isLoading || isDisabled,
                         className,
                         'aria-label': accessibilityLabel,
+                        'data-testid': dataTestId,
                         'data-test': dataTest,
                     };
 
@@ -303,6 +305,11 @@ interface PropTypes {
     width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
      */
     dataTest?: string;
 }

@@ -37,6 +37,11 @@ interface ColumnPropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
@@ -46,6 +51,7 @@ export function GridColumn({
     aboveSmall,
     aboveMedium,
     aboveLarge,
+    dataTestId,
     dataTest,
 }: ColumnPropTypes): JSX.Element {
     return (
@@ -64,6 +70,7 @@ export function GridColumn({
                             [styles[`aboveMediumCol${aboveMedium}`]]: aboveMedium,
                             [styles[`aboveLargeCol${aboveLarge}`]]: aboveLarge,
                         })}
+                        data-testid={dataTestId}
                         data-test={dataTest}
                     >
                         {children}
@@ -86,10 +93,20 @@ interface GridPropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
-export function Grid({ children, gutter = 'normal', dataTest }: GridPropTypes): JSX.Element {
+export function Grid({
+    children,
+    gutter = 'normal',
+    dataTestId,
+    dataTest,
+}: GridPropTypes): JSX.Element {
     return (
         <div
             className={classNames({
@@ -97,6 +114,7 @@ export function Grid({ children, gutter = 'normal', dataTest }: GridPropTypes): 
                 [styles.gridWide]: gutter === 'wide',
                 [styles.gridFlush]: gutter === 'flush',
             })}
+            data-testid={dataTestId}
             data-test={dataTest}
         >
             <Provider value={{ gutter, isWithinGrid: true }}>{children}</Provider>

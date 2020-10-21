@@ -37,6 +37,43 @@ exports[`adds \`dataTest\` prop 1`] = `
 </Dropdown>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<Dropdown
+  dataTestId="Duck"
+  onChange={[Function]}
+  value="goose"
+>
+  <div
+    className="root"
+  >
+    <select
+      className="select selectStateDefault selectSizeLarge"
+      data-testid="Duck"
+      disabled={false}
+      onChange={[Function]}
+      onClick={[Function]}
+      required={false}
+      value="goose"
+    />
+    <svg
+      className="caret"
+      fill="none"
+      height="18"
+      stroke="#2f3033"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      viewBox="0 0 24 24"
+      width="18"
+    >
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
+  </div>
+</Dropdown>
+`;
+
 exports[`adds \`disabled\` attribute 1`] = `
 <Dropdown
   isDisabled={true}

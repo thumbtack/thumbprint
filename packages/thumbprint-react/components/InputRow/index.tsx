@@ -23,6 +23,11 @@ interface PropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
@@ -37,7 +42,12 @@ const InputRowContext = React.createContext({
 
 export { InputRowContext };
 
-export default function InputRow({ widthRatios, children, dataTest }: PropTypes): JSX.Element {
+export default function InputRow({
+    widthRatios,
+    children,
+    dataTest,
+    dataTestId,
+}: PropTypes): JSX.Element {
     const widthLength = widthRatios && widthRatios.length;
     const numChildren = React.Children.count(children);
 
@@ -52,7 +62,7 @@ export default function InputRow({ widthRatios, children, dataTest }: PropTypes)
     );
 
     return (
-        <div className={styles.root} data-test={dataTest}>
+        <div className={styles.root} data-test={dataTest} data-testid={dataTestId}>
             {React.Children.map(children, (child, i) => (
                 <div style={{ flex: widthRatios ? `${widthRatios[i]}` : undefined }}>
                     <InputRowContext.Provider

@@ -15,6 +15,11 @@ interface AlertBannerPropTypes {
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
@@ -27,6 +32,7 @@ const ALERT_ICONS = {
 export default function AlertBanner({
     children,
     theme,
+    dataTestId,
     dataTest,
 }: AlertBannerPropTypes): JSX.Element {
     return (
@@ -37,6 +43,7 @@ export default function AlertBanner({
                 [styles.info]: theme === 'info',
                 [styles.warning]: theme === 'warning',
             })}
+            data-testid={dataTestId}
             data-test={dataTest}
         >
             {ALERT_ICONS[theme]}
