@@ -11,17 +11,6 @@ exports[`adds \`dataTest\` prop 1`] = `
 </ButtonRow>
 `;
 
-exports[`adds \`dataTest\` prop 2`] = `
-<ButtonRow
-  dataTestId="Duck"
->
-  <div
-    className="root justifyLeft"
-    data-testid="Duck"
-  />
-</ButtonRow>
-`;
-
 exports[`adds \`dataTestId\` prop 1`] = `
 <ButtonRow
   dataTestId="Duck"
