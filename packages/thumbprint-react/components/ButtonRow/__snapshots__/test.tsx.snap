@@ -22,6 +22,17 @@ exports[`adds \`dataTest\` prop 2`] = `
 </ButtonRow>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<ButtonRow
+  dataTestId="Duck"
+>
+  <div
+    className="root justifyLeft"
+    data-testid="Duck"
+  />
+</ButtonRow>
+`;
+
 exports[`placement center 1`] = `
 <ButtonRow
   justify="center"

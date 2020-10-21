@@ -31,7 +31,7 @@ test('adds `dataTest` prop', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('adds `dataTest` prop', () => {
+test('adds `dataTestId` prop', () => {
     const wrapper = mount(<ButtonRow dataTestId="Duck" />);
     expect(wrapper.find('div').prop('data-testid')).toEqual('Duck');
     expect(wrapper).toMatchSnapshot();
