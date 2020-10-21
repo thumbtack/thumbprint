@@ -48,6 +48,54 @@ exports[`adds \`dataTest\` prop 1`] = `
 </Checkbox>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<Checkbox
+  dataTestId="Duck"
+  onChange={[MockFunction]}
+>
+  <label
+    className="root rootCheckboxVerticalAlignCenter"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="input"
+      data-testid="Duck"
+      disabled={false}
+      onChange={[Function]}
+      required={false}
+      type="checkbox"
+    />
+    <div
+      className="checkboxImage"
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d3d4d5",
+          "color": "inherit",
+        }
+      }
+    />
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Checkbox>
+`;
+
 exports[`adds \`disabled\` attribute 1`] = `
 <Checkbox
   isDisabled={true}

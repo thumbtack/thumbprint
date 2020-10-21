@@ -80,3 +80,13 @@ test('adds `dataTest` prop', (): void => {
     expect(wrapperB.find('button').prop('data-test')).toEqual('Duck');
     expect(wrapperB).toMatchSnapshot();
 });
+
+test('adds `dataTestId` prop', (): void => {
+    const wrapperA = mount(<Button dataTestId="Duck">Goose</Button>);
+    expect(wrapperA.find('button').prop('data-testid')).toEqual('Duck');
+    expect(wrapperA).toMatchSnapshot();
+
+    const wrapperB = mount(<TextButton dataTestId="Duck">Goose</TextButton>);
+    expect(wrapperB.find('button').prop('data-testid')).toEqual('Duck');
+    expect(wrapperB).toMatchSnapshot();
+});

@@ -19,12 +19,18 @@ interface PropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
 export default function ButtonRow({
     children = null,
     justify = 'left',
+    dataTestId,
     dataTest,
     isStackedBelowSmall = false,
 }: PropTypes): JSX.Element {
@@ -37,6 +43,7 @@ export default function ButtonRow({
                 [styles.justifyLeft]: justify === 'left',
                 [styles.justifyRight]: justify === 'right',
             })}
+            data-testid={dataTestId}
             data-test={dataTest}
         >
             {React.Children.map(children, child => (

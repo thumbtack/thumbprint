@@ -5,6 +5,7 @@
 ### Added
 
 -   [Minor] Add an `initialFocus` to `ModalCurtain`.
+-   [Minor] Add `dataTestId` props to components that previously supported `dataTest`. `dataTest` is now deprecated. (#724)
 
 ## 14.1.0 - 2020-10-05
 

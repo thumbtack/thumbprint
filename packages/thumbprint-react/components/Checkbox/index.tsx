@@ -154,6 +154,12 @@ interface PropTypes {
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments. It is
+     * applied internally to the `<input />` element.
+     * @deprecated
+     */
     dataTest?: string;
     /**
      * Determines how the checkbox input will be vertically aligned relative to `props.children`.
@@ -170,6 +176,7 @@ export default function Checkbox({
     checkboxVerticalAlign = 'center',
     children,
     dataTest,
+    dataTestId,
     hasError = false,
     id,
     isChecked = false,
@@ -208,6 +215,7 @@ export default function Checkbox({
             <input
                 className={styles.input}
                 aria-checked={isIndeterminate ? 'mixed' : isChecked}
+                data-testid={dataTestId}
                 data-test={dataTest}
                 type="checkbox"
                 id={id}

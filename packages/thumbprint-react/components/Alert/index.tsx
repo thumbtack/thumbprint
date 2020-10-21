@@ -16,12 +16,18 @@ interface BannerPropTypes {
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
 export function BannerAlert({
     children = null,
     theme = 'info',
+    dataTestId,
     dataTest,
 }: BannerPropTypes): JSX.Element {
     return (
@@ -34,6 +40,7 @@ export function BannerAlert({
                 [styles.warning]: theme === 'warning',
                 [styles.info]: theme === 'info',
             })}
+            data-testid={dataTestId}
             data-test={dataTest}
         >
             <div className={styles.text}>{children}</div>
@@ -53,6 +60,11 @@ interface InPagePropTypes {
     /**
      * A selector to hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
@@ -67,6 +79,7 @@ export function InPageAlert({
     children = null,
     theme = 'info',
     dataTest,
+    dataTestId,
 }: InPagePropTypes): JSX.Element {
     return (
         <div
@@ -77,6 +90,7 @@ export function InPageAlert({
                 [styles.warning]: theme === 'warning',
                 [styles.info]: theme === 'info',
             })}
+            data-testid={dataTestId}
             data-test={dataTest}
         >
             {ALERT_ICONS[theme]}

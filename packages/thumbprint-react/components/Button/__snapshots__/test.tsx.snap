@@ -51,6 +51,57 @@ exports[`adds \`dataTest\` prop 2`] = `
 </ForwardRef>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<ForwardRef
+  dataTestId="Duck"
+>
+  <ForwardRef
+    dataTestId="Duck"
+    isDisabled={false}
+    isLoading={false}
+    size="large"
+    theme="primary"
+    type="button"
+    width="auto"
+  >
+    <button
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      data-testid="Duck"
+      disabled={false}
+      type="button"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`adds \`dataTestId\` prop 2`] = `
+<ForwardRef
+  dataTestId="Duck"
+>
+  <ForwardRef
+    dataTestId="Duck"
+    isDisabled={false}
+    theme="primary"
+    type="button"
+  >
+    <button
+      className="plain plainThemePrimary"
+      data-testid="Duck"
+      disabled={false}
+      type="button"
+    >
+      Goose
+    </button>
+  </ForwardRef>
+</ForwardRef>
+`;
+
 exports[`renders button of type \`button\` by default 1`] = `
 <ForwardRef>
   <ForwardRef

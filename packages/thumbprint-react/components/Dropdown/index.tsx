@@ -85,6 +85,11 @@ interface PropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
     /**
      * Adds `name` HTML attribute to element, indicating the property name associated with the
@@ -96,6 +101,7 @@ interface PropTypes {
 const Dropdown = ({
     children,
     dataTest,
+    dataTestId,
     hasError = false,
     id,
     isDisabled = false,
@@ -135,6 +141,7 @@ const Dropdown = ({
                 onChange={(event): void => onChange(event.target.value, event)}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                data-testid={dataTestId}
                 data-test={dataTest}
                 name={name}
             >

@@ -15,6 +15,7 @@ interface CommonProps {
     theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     type?: 'button' | 'submit';
     dataTest?: string;
+    dataTestId?: string;
     accessibilityLabel?: string;
 }
 
@@ -30,6 +31,7 @@ const getCommonProps = (props: CommonProps): CommonProps => ({
     onBlur: props.onBlur,
     accessibilityLabel: props.accessibilityLabel,
     dataTest: props.dataTest,
+    dataTestId: props.dataTestId,
 });
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
@@ -49,6 +51,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
             theme = 'primary',
             type = 'button',
             dataTest,
+            dataTestId,
         }: TextButtonPropTypes,
         ref,
     ): JSX.Element => (
@@ -65,6 +68,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
                 onBlur,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             theme={theme}
             iconLeft={iconLeft}
@@ -135,6 +139,11 @@ interface TextButtonPropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
+     */
     dataTest?: string;
 }
 
@@ -158,6 +167,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             size = 'large',
             width = 'auto',
             dataTest,
+            dataTestId,
         }: ButtonPropTypes,
         ref,
     ): JSX.Element => (
@@ -174,6 +184,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
                 onBlur,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             icon={icon}
             iconRight={iconRight}
@@ -260,6 +271,11 @@ interface ButtonPropTypes {
     width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
      */
     dataTest?: string;
 }

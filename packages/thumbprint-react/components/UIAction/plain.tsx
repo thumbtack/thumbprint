@@ -24,6 +24,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             onMouseLeave,
             onBlur,
             accessibilityLabel,
+            dataTestId,
             dataTest,
         },
         ref,
@@ -68,6 +69,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
                 [styles.plainThemeInherit]: theme === 'inherit',
             }),
             'aria-label': accessibilityLabel,
+            'data-testid': dataTestId,
             'data-test': dataTest,
             ref,
         };
@@ -164,6 +166,11 @@ interface PropTypes {
     accessibilityLabel?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated
      */
     dataTest?: string;
 }
