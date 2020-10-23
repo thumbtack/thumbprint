@@ -158,7 +158,7 @@ interface PropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
-     * @deprecated
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
     /**

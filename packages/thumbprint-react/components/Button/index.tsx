@@ -142,7 +142,7 @@ interface TextButtonPropTypes {
     dataTestId?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
-     * @deprecated
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -275,7 +275,7 @@ interface ButtonPropTypes {
     dataTestId?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
-     * @deprecated
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
