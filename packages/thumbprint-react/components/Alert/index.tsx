@@ -19,7 +19,7 @@ interface BannerPropTypes {
     dataTestId?: string;
     /**
      * A selector to hook into the React component for use in automated testing environments.
-     * @deprecated
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -63,7 +63,7 @@ interface InPagePropTypes {
     dataTestId?: string;
     /**
      * A selector to hook into the React component for use in automated testing environments.
-     * @deprecated
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }

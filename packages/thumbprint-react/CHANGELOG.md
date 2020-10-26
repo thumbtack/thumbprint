@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Add note in `dataTest` deprecated documentation telling developers to use `dataTestId` instead.
+
 ### Added
 
 -   [Minor] Add missing `dataTestId` prop to `Link` and `ThemedLink` components. (#724)
