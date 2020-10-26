@@ -175,3 +175,21 @@ test('adds `dataTest` prop', () => {
     expect(wrapperB.find('a').prop('data-test')).toEqual('Duck');
     expect(wrapperB).toMatchSnapshot();
 });
+
+test('adds `dataTestId` prop', () => {
+    const wrapperA = mount(
+        <Link to="https://example.com/" dataTestId="Duck">
+            Goose
+        </Link>,
+    );
+    expect(wrapperA.find('a').prop('data-testid')).toEqual('Duck');
+    expect(wrapperA).toMatchSnapshot();
+
+    const wrapperB = mount(
+        <ThemedLink to="#" dataTestId="Duck">
+            Goose
+        </ThemedLink>,
+    );
+    expect(wrapperB.find('a').prop('data-testid')).toEqual('Duck');
+    expect(wrapperB).toMatchSnapshot();
+});
