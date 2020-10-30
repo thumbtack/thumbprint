@@ -9,6 +9,7 @@
 ### Added
 
 -   [Minor] Add missing `dataTestId` prop to `Link` and `ThemedLink` components. (#724)
+-   [Minor] Add missing `dataTestId` prop to `Label`, `Wrap`, and `Type` components. (#724)
 
 ## 14.2.0 - 2020-10-21
 
