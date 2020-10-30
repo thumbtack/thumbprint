@@ -41,7 +41,12 @@ interface PropTypes {
      */
     hasError?: boolean;
     /**
-     * A selector hook into the React component for use in automated testing environments.
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -51,6 +56,7 @@ export default function Label({
     hasError = false,
     for: forProp,
     dataTest,
+    dataTestId,
     children = null,
 }: PropTypes): JSX.Element {
     const uiState = getUIState({ isDisabled, hasError });
@@ -66,6 +72,7 @@ export default function Label({
                 [styles.textUiStateDefault]: uiState === 'default',
             })}
             data-test={dataTest}
+            data-testid={dataTestId}
         >
             {children}
         </label>

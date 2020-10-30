@@ -13,12 +13,22 @@ interface PropTypes {
      */
     bleedBelow?: 'small' | 'medium' | 'large';
     /**
-     * A selector hook into the React component for use in automated testing environments.
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
 
-export default function Wrap({ children, bleedBelow, dataTest }: PropTypes): JSX.Element {
+export default function Wrap({
+    children,
+    bleedBelow,
+    dataTest,
+    dataTestId,
+}: PropTypes): JSX.Element {
     return (
         <div
             className={classNames({
@@ -28,6 +38,7 @@ export default function Wrap({ children, bleedBelow, dataTest }: PropTypes): JSX
                 [styles.bleedBelowLarge]: bleedBelow === 'large',
             })}
             data-test={dataTest}
+            data-testid={dataTestId}
         >
             {children}
         </div>
