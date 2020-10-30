@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.3.0 - 2020-10-30
+
 ### Changed
 
 -   [Patch] Add note in `dataTest` deprecated documentation telling developers to use `dataTestId` instead.
