@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Patch] Add `event` argument to the `onClick`, `onBlur` and `onFocus` props of the `Dropdown` component.
+
 ## 14.3.0 - 2020-10-30
 
 ### Changed
