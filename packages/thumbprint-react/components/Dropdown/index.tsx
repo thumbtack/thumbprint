@@ -68,7 +68,7 @@ interface PropTypes {
     /**
      * Function that is fired when the value of the select changes.
      */
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLSelectElement, MouseEvent>) => void;
     /**
      * A function that is fired when the value of the select changes. The
      * new `value` is passed to the function.
@@ -77,11 +77,11 @@ interface PropTypes {
     /**
      * Fires when the select receives focus.
      */
-    onFocus?: () => void;
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
     /**
      * Fires when the select loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
