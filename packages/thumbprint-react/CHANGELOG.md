@@ -6,6 +6,24 @@
 
 -   [Minor] Add `event` argument to the `onClick`, `onBlur` and `onFocus` props of the `Dropdown` component.
 
+## 14.3.0 - 2020-10-30
+
+### Changed
+
+-   [Patch] Add note in `dataTest` deprecated documentation telling developers to use `dataTestId` instead.
+
+### Added
+
+-   [Minor] Add missing `dataTestId` prop to `Link` and `ThemedLink` components. (#724)
+-   [Minor] Add missing `dataTestId` prop to `Label`, `Wrap`, and `Type` components. (#724)
+
+## 14.2.0 - 2020-10-21
+
+### Added
+
+-   [Minor] Add an `initialFocus` to `ModalCurtain`.
+-   [Minor] Add `dataTestId` props to components that previously supported `dataTest`. `dataTest` is now deprecated. (#724)
+
 ## 14.1.0 - 2020-10-05
 
 ### Changed

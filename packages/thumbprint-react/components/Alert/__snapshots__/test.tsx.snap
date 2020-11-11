@@ -9,7 +9,7 @@ exports[`BannerAlert renders children 1`] = `
       className="text"
     >
       <p
-        data-test-id="text"
+        data-testid="text"
       >
         Alert content
       </p>
@@ -49,7 +49,7 @@ exports[`InPageAlert renders children 1`] = `
       className="text"
     >
       <p
-        data-test-id="text"
+        data-testid="text"
       >
         Alert content
       </p>

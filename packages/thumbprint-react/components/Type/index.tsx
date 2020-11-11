@@ -30,7 +30,12 @@ interface TitlePropTypes {
      */
     id?: string;
     /**
-     * A selector hook into the React component for use in automated testing environments.
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -41,6 +46,7 @@ export function Title({
     className,
     headingLevel,
     dataTest,
+    dataTestId,
     id,
 }: TitlePropTypes): JSX.Element {
     const elementName = headingLevel ? `h${headingLevel}` : 'div';
@@ -48,6 +54,7 @@ export function Title({
     const props = {
         className: classNames(styles[`title${size}`], className),
         'data-test': dataTest,
+        'data-testid': dataTestId,
         id,
     };
 
@@ -75,7 +82,12 @@ interface TextPropTypes {
      */
     elementName?: keyof React.ReactHTML;
     /**
-     * A selector hook into the React component for use in automated testing environments.
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -86,10 +98,12 @@ export function Text({
     className,
     elementName = 'p',
     dataTest,
+    dataTestId,
 }: TextPropTypes): JSX.Element {
     const props = {
         className: classNames(styles[`text${size}`], className),
         'data-test': dataTest,
+        'data-testid': dataTestId,
     };
 
     return React.createElement(elementName, props, children);

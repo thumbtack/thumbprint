@@ -15,22 +15,30 @@ function toggleTrap(trap: FocusTrap, isActive: boolean): void {
  *
  * @param element  The element to trap focus inside of
  * @param isActive Whether or not to activate the trap
+ * @param initialFocus The initial element inside the trap to focus
  */
-export default function useFocusTrap(element: HTMLElement | null, isActive = false): void {
+export default function useFocusTrap(
+    element: HTMLElement | null,
+    isActive = false,
+    initialFocus: HTMLElement | null,
+): void {
     const [trap, setTrap] = useState<FocusTrap>();
+
+    // If `initialFocus` is not provided, `element` becomes the initial focus.
+    const initialFocusElement = initialFocus || element;
 
     useEffect((): (() => void) => {
         // If we've already created a trap, toggle it based on the isActive status
         if (trap) {
             toggleTrap(trap, isActive);
             // Otherwise, if there's no trap, but there is a valid element that needs to be trapped
-        } else if (element) {
+        } else if (element && initialFocusElement && isActive) {
             // Create the trap and store a reference to it
             const newTrap = createFocusTrap(element, {
                 clickOutsideDeactivates: true,
                 // Set initial focus to the modal wrapper itself instead of focusing on the first
                 // focusable element by default
-                initialFocus: element,
+                initialFocus: initialFocusElement,
             });
             setTrap(newTrap);
             // And toggle it based on isActive status
@@ -43,5 +51,5 @@ export default function useFocusTrap(element: HTMLElement | null, isActive = fal
                 trap.deactivate();
             }
         };
-    }, [element, isActive, trap]);
+    }, [element, isActive, trap, initialFocusElement]);
 }

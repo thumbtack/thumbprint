@@ -55,4 +55,17 @@ describe('GridColumn', () => {
         expect(wrapper.find('div[data-test="Goose"]')).toHaveLength(1);
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('adds `dataTestId` prop', () => {
+        const wrapper = mount(
+            <Grid dataTestId="Duck">
+                <GridColumn base={1} dataTestId="Goose">
+                    goose
+                </GridColumn>
+            </Grid>,
+        );
+        expect(wrapper.find('div[data-testid="Duck"]')).toHaveLength(1);
+        expect(wrapper.find('div[data-testid="Goose"]')).toHaveLength(1);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { mount } from 'enzyme';
 import ModalCurtain from './index';
 
@@ -102,7 +102,6 @@ describe('ModalCurtain', () => {
                 {(): JSX.Element => (
                     <>
                         <button type="button" />
-                        <input />
                     </>
                 )}
             </ModalCurtain>,
@@ -113,6 +112,48 @@ describe('ModalCurtain', () => {
 
         const modalWrapper = wrapper.find('[role="dialog"]');
         expect(modalWrapper.is(':focus')).toBe(true);
+
+        jest.useRealTimers();
+    });
+
+    test('initially focuses `initialFocus` element if provided', () => {
+        jest.useFakeTimers();
+        const onCloseClick = jest.fn();
+
+        const Example = (): React.ReactElement => {
+            const [inputRef, setInputRef] = useState<HTMLInputElement | null>(null);
+
+            return (
+                <ModalCurtain stage="entered" onCloseClick={onCloseClick} initialFocus={inputRef}>
+                    {(): JSX.Element => (
+                        <div>
+                            <button type="button" data-testid="button" />
+                            <input
+                                ref={(r): void => {
+                                    setInputRef(r);
+                                }}
+                                data-testid="input"
+                            />
+                        </div>
+                    )}
+                </ModalCurtain>
+            );
+        };
+
+        const wrapper = mount(<Example />);
+
+        // Run setTimeouts() in focus-trap to completion
+        jest.runAllTimers();
+
+        // We don't want focus to be on the outside wrapper.
+        const modalWrapper = wrapper.find('[role="dialog"]');
+        expect(modalWrapper.is(':focus')).toBe(false);
+
+        const button = wrapper.find('[data-testid="button"]');
+        const input = wrapper.find('[data-testid="input"]');
+
+        expect(button.is(':focus')).toBe(false);
+        expect(input.is(':focus')).toBe(true);
 
         jest.useRealTimers();
     });

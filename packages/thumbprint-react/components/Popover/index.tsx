@@ -83,7 +83,7 @@ export default function Popover({
     const shouldBindEscListener: boolean = canUseDOM && isOpen;
 
     useCloseOnEscape(onCloseClick, shouldBindEscListener);
-    useFocusTrap(wrapperEl, shouldTrapFocus);
+    useFocusTrap(wrapperEl, shouldTrapFocus, wrapperEl);
 
     return (
         <Manager>

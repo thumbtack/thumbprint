@@ -48,6 +48,54 @@ exports[`adds \`dataTest\` prop 1`] = `
 </InputRow>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<InputRow
+  dataTestId="Duck"
+>
+  <div
+    className="root"
+    data-testid="Duck"
+  >
+    <div
+      key=".0"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".1"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+    <div
+      key=".2"
+      style={
+        Object {
+          "flex": undefined,
+        }
+      }
+    >
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+</InputRow>
+`;
+
 exports[`renders all children 1`] = `
 <InputRow>
   <div

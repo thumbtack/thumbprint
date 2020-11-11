@@ -33,7 +33,7 @@ exports[`AlertBanner match snapshot 1`] = `
     </WarningFilled>
     <div>
       <div
-        data-test="child"
+        data-testid="child"
       >
         This is the child component.
         <a
@@ -80,7 +80,7 @@ exports[`AlertBanner match snapshot 2`] = `
     </InfoFilled>
     <div>
       <div
-        data-test="child"
+        data-testid="child"
       >
         This is the child component.
         <a
@@ -127,7 +127,7 @@ exports[`AlertBanner match snapshot 3`] = `
     </BlockedFilled>
     <div>
       <div
-        data-test="child"
+        data-testid="child"
       >
         This is the child component.
         <a

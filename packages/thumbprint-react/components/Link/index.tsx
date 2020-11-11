@@ -9,6 +9,7 @@ interface CommonProps {
     children?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
+    dataTestId?: string;
     dataTest?: string;
     accessibilityLabel?: string;
 }
@@ -28,6 +29,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
         isDisabled: props.isDisabled,
         children: props.children,
         accessibilityLabel: props.accessibilityLabel,
+        dataTestId: props.dataTestId,
         dataTest: props.dataTest,
     };
 };
@@ -46,6 +48,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
             children,
             accessibilityLabel,
             dataTest,
+            dataTestId,
             theme = 'primary',
             iconLeft,
             iconRight,
@@ -62,6 +65,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
                 children,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             theme={theme}
             iconLeft={iconLeft}
@@ -122,6 +126,11 @@ interface LinkPropTypes {
     /**
      * A selector hook into the React component for use in automated testing environments.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
+     */
     dataTest?: string;
 }
 
@@ -139,6 +148,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             children,
             accessibilityLabel,
             dataTest,
+            dataTestId,
             icon,
             iconRight,
             theme = 'primary',
@@ -157,6 +167,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
                 children,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             icon={icon}
             iconRight={iconRight}
@@ -225,6 +236,11 @@ interface ThemedLinkPropTypes {
     width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
