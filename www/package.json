@@ -9,8 +9,8 @@
         "start": "next start"
     },
     "dependencies": {
-        "@mdx-js/loader": "^1.6.18",
-        "@next/mdx": "^9.5.5",
+        "@mdx-js/loader": "^1.6.19",
+        "@next/mdx": "^10.0.0",
         "@thumbtack/thumbprint-atomic": "^4.1.1",
         "@thumbtack/thumbprint-icons": "^4.3.0",
         "@thumbtack/thumbprint-react": "^14.0.0",
@@ -20,7 +20,7 @@
         "gatsby-plugin-mdx": "^1.2.46",
         "lodash": "^4.17.20",
         "mousetrap": "^1.6.5",
-        "next": "9.5.5",
+        "next": "10.0.0",
         "next-compose-plugins": "^2.2.0",
         "next-mdx-remote": "^1.0.0",
         "next-transpile-modules": "^4.1.0",
