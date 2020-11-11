@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.3.2 - 2020-11-11
+
 ### Added
 
 -   [Patch] Add `event` argument to the `onBlur` and `onFocus` props of the `TextArea` component.
