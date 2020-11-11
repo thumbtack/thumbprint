@@ -73,11 +73,11 @@ interface PropTypes {
     /**
      * Fires when the textarea receives focus.
      */
-    onFocus?: () => void;
+    onFocus?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
     /**
      * Fires when the textarea loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
     /**
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<textarea />` element.
