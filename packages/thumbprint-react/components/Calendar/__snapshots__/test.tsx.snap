@@ -80,7 +80,6 @@ exports[`renders a basic calendar with past date selection allowed 1`] = `
           "wrapper": "DayPicker-wrapper",
         }
       }
-      disabledDays={null}
       enableOutsideDaysClick={true}
       fixedWeeks={false}
       fromMonth={null}
@@ -338,7 +337,6 @@ exports[`renders a basic calendar with past date selection allowed 1`] = `
                   "wrapper": "DayPicker-wrapper",
                 }
               }
-              disabledDays={null}
               enableOutsideDaysClick={true}
               firstDayOfWeek={0}
               fixedWeeks={false}
