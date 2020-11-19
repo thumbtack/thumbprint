@@ -29,7 +29,12 @@ function throwError(message: string): void {
 }
 
 export function normaliseValue(value: PropTypes['value']): Date[] {
+    if (value === null) {
+        return [];
+    }
+
     const valueArr: DateIsh[] = castArray<DateIsh>(value);
+
     return map<DateIsh, Date>(valueArr, d => parse(d));
 }
 
@@ -80,7 +85,7 @@ interface PropTypes {
      * or a string representing a date, or a numeric UNIX timestamp, and either a single object or
      * an array of such objects can be provided.
      */
-    value?: DateIsh | DateIsh[];
+    value?: DateIsh | DateIsh[] | null;
     /**
      * Date object representing the month that is currently displayed by the calendar. If omitted
      * it will default to the first date in the `value` prop. You should update it in response to
