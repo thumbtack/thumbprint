@@ -489,5 +489,29 @@ describe('DatePicker utilities', () => {
                 });
             }).toThrow('are disabled but one or more provided days fall after that');
         });
+
+        test('does not throw an error when past and future selection are disabled, and the initial date is `null`', () => {
+            expect(() => {
+                validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
+                    allowMultiSelection: true,
+                    disabledDays: { before: subDays(new Date(), 5), after: addDays(new Date(), 5) },
+                    value: null,
+                });
+            }).not.toThrow();
+        });
+
+        test('does not throw an error when past and future selection are disabled, and the initial date is `undefined`', () => {
+            expect(() => {
+                validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
+                    allowMultiSelection: true,
+                    disabledDays: { before: subDays(new Date(), 5), after: addDays(new Date(), 5) },
+                    value: undefined,
+                });
+            }).not.toThrow();
+        });
     });
 });
