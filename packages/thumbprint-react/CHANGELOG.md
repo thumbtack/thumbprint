@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix fatal error being thrown when passing `null` to the `value` prop of `Calendar`.
+-   [Patch] Fix error that meant the type of `Calendar`'s `value` prop was accidentally `any`.
+
 ## 14.3.2 - 2020-11-11
 
 ### Added
