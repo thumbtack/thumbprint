@@ -4,11 +4,7 @@ description: Navigation controls displayed along the top of the screen.
 ---
 
 import { graphql, Link } from 'gatsby';
-import {
-    ComponentHeader,
-    ComponentFooter,
-    DeprecatedComponentAlert,
-} from 'components/thumbprint-components';
+import { ComponentHeader } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
@@ -108,27 +104,15 @@ Configure a navigation bar with the specified appearance and content style.
 
 Pass `UINavigationBar.appearance()` for the `navigationBar` argument to set the default appearance of all navigation bars.
 
-<ComponentFooter data={props.data} />
-
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/alert/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/navigation-bar/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
                 }
             }
-        }
-        # Get package information by NPM package name.
-        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
-            ...PackageTableFragment
-        }
-        # Get component props by path to component file.
-        reactComponentProps: allFile(
-            filter: { relativePath: { in: ["thumbprint-react/components/Alert/index.tsx"] } }
-        ) {
-            ...ReactComponentPropsFragment
         }
     }
 `;
