@@ -14,14 +14,11 @@ import {
 
 ## Summary
 
-Navigation bars for iOS are implemented using the built-in UIKit component `UINavigationBar`,
-however they should be configured using the Thumbprint decorator method `NavigationBar.configure(_:appearance:content:)`
-to apply one of the standard Thumbprint navigation bar styles.
+Navigation bars for iOS are implemented using the built-in UIKit component `UINavigationBar`, however they should be configured using the Thumbprint decorator method `NavigationBar.configure(_:appearance:content:)` to apply one of the standard Thumbprint navigation bar styles.
 
 ### Appearance
 
-There are three standard navigation bar appearances. In addition, custom themes can be defined by calling
-the `NavigationBar.Appearance` constructor directly.
+There are three standard navigation bar appearances. In addition, custom themes can be defined by calling the `NavigationBar.Appearance` constructor directly.
 
 #### Default
 
@@ -37,8 +34,7 @@ the `NavigationBar.Appearance` constructor directly.
 
 ### Content Style
 
-There are two standard content styles. The content style defines how foreground content such as text
-should be displayed.
+There are two standard content styles. The content style defines how foreground content such as text should be displayed.
 
 #### Default
 
@@ -66,8 +62,7 @@ Light content style to be used on a navigation bar with a dark background.
 
 #### `var tintColor: UIColor??`
 
-If set to `nil`, will default to the content style's foreground color. Set to `.some(nil)` to
-disable this default and actually set the navigation bar's tint color to nil.
+If set to `nil`, will default to the content style's foreground color. Set to `.some(nil)` to disable this default and actually set the navigation bar's tint color to nil.
 
 #### `var titleTextAttributes: [NSAttributedString.Key: Any]?`
 
