@@ -1,0 +1,118 @@
+---
+title: Navigation Bar
+description: Navigation controls displayed along the top of the screen.
+---
+
+import { graphql, Link } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Navigation bars for iOS are implemented using the built-in UIKit component `UINavigationBar`, however they should be configured using the Thumbprint decorator method `NavigationBar.configure(_:appearance:content:)` to apply one of the standard Thumbprint navigation bar styles.
+
+### Appearance
+
+There are three standard navigation bar appearances. In addition, custom themes can be defined by calling the `NavigationBar.Appearance` constructor directly.
+
+#### Default
+
+![Default navigation bar](/img/ios-navigation-bar-default.png)
+
+#### Shadowless
+
+![Shadowless navigation bar](/img/ios-navigation-bar-shadowless.png)
+
+#### Transparent
+
+![Transparent navigation bar](/img/ios-navigation-bar-transparent.png)
+
+### Content Style
+
+There are two standard content styles. The content style defines how foreground content such as text should be displayed.
+
+#### Default
+
+Dark content style to be used on a navigation bar with a light background.
+
+![Default content style](/img/ios-navigation-bar-default.png)
+
+#### Light
+
+Light content style to be used on a navigation bar with a dark background.
+
+![Light content style](/img/ios-navigation-bar-transparent.png)
+
+## Public API
+
+### Appearance struct
+
+#### `var isTranslucent: Bool`
+
+#### `var backgroundImage: UIImage?`
+
+#### `var barTintColor: UIColor?`
+
+#### `var shadowImage: UIImage?`
+
+#### `var tintColor: UIColor??`
+
+If set to `nil`, will default to the content style's foreground color. Set to `.some(nil)` to disable this default and actually set the navigation bar's tint color to nil.
+
+#### `var titleTextAttributes: [NSAttributedString.Key: Any]?`
+
+If no foreground color is specified, will default to the content style's foreground color.
+
+#### `var largeTitleTextAttributes: [NSAttributedString.Key: Any]?`
+
+If no foreground color is specified, will default to the content style's foreground color.
+
+#### `public init(isTranslucent: Bool, backgroundImage: UIImage?, barTintColor: UIColor?, tintColor: UIColor??, shadowImage: UIImage?, titleTextAttributes: [NSAttributedString.Key: Any]?, largeTitleTextAttributes: [NSAttributedString.Key: Any]?)`
+
+#### `public static let default: NavigationBar.Appearance`
+
+Default navigation bar appearance.
+
+#### `public static let shadowless: NavigationBar.Appearance`
+
+Navigation bar appearance without a bottom shadow.
+
+#### `public static let transparent: NavigationBar.Apperance`
+
+Transparent navigation bar appearance.
+
+### ContentStyle enum
+
+#### `case default`
+
+Style for use on a light background.
+
+#### `case light`
+
+Style for use on a dark background.
+
+#### `var foregroundColor: UIColor`
+
+Color used for foreground content such as text and template icons.
+
+### NavigationBar
+
+#### `public static func configure(_ navigationBar: UINavigationBar, appearance: Appearance = .default, content: ContentStyle = .default)`
+
+Configure a navigation bar with the specified appearance and content style.
+
+Pass `UINavigationBar.appearance()` for the `navigationBar` argument to set the default appearance of all navigation bars.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/navigation-bar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
