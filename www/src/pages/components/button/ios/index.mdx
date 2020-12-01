@@ -12,6 +12,8 @@ import { ComponentHeader } from 'components/thumbprint-components';
 
 Button should be used to display buttons with text.
 
+Buttons may also display an icon either to the leading or the trailing side, not both.
+
 ### Theme
 
 There are seven standard button themes on iOS. In addition, custom themes can be defined by calling the `Button.Theme` constructor directly.
@@ -47,6 +49,8 @@ There are seven standard button themes on iOS. In addition, custom themes can be
 ### Size
 
 There are three standard button sizes on iOS. Similarly to themes, custom sizes can be defined by calling the `Button.Size` constructor directly.
+
+In tight layouts i.e. smaller screens or the user setting large fonts for display, the content may use up to 2/3 of the declared padding before being compressed or clipped.
 
 #### Default
 
@@ -144,6 +148,28 @@ Small button size.
 
 Size that should be used with the .text/.link button themes.
 
+### Icon struct
+
+#### `enum Position`
+
+Options are `leading` and `trailing`, corresponding to the position of the icon against the label.
+
+#### `public let position: Position`
+
+Position of the icon, per the `enum` declared above.
+
+#### `public let image: UIImage`
+
+The image to use as an icon. It's up to the caller to ensure it is the right size and has the right behavior.
+
+#### `public init(_ position: Position, image: UIImage)`
+
+Default initializer. Sets the properties.
+
+#### `public init?(_ position: Position, image: UIImage?)`
+
+Utility initializer to avoid repeated glue code when dealing with image sources that don't commit to returning an image.
+
 ### Button
 
 #### `public var theme: Button.Theme`
@@ -156,17 +182,17 @@ Button size.
 
 #### `public var title: String?`
 
-Title of the button.
+Title of the button. Should always be an actual, non-empty string but many of our sources (i.e. graphQL) give us optionals and it would be far too inconvenient to protect against a potential nil value in every single case.
 
-#### `public var iconLeft: UIImage?`
+#### `public var icon: Button.Icon?`
 
-An icon displayed to the left of the title. Should be a small size Thumbprint icon.
+A struct (see above) determining, if present, what icon to show and on what side of the label.
+
+`button.icon = .init(.leading, iconLeft)`
 
 ![Button with left icon](/img/iconLeft.png)
 
-#### `public var iconRight: UIImage?`
-
-An icon displayed to the right of the title. Should be a small size Thumbprint icon.
+`button.icon = .init(.trailing, iconRight)`
 
 ![Button with right icon](/img/iconRight.png)
 
