@@ -1,0 +1,32 @@
+---
+title: Alert
+description: Alert message requiring action before proceeding.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Alerts on iOS are implemented using the built-in UIKit component `UIAlertController` with `preferredStyle: .alert`.
+
+![iOS Alert](/img/ios-alert.png)
+
+## Public API
+
+See Apple documentation on [UIAlertController](https://developer.apple.com/documentation/uikit/uialertcontroller) for the public API.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/alert/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
