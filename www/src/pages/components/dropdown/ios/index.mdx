@@ -3,8 +3,8 @@ title: Dropdown
 description: Dropdown for selecting an item from a larger set.
 ---
 
-import { graphql } from 'gatsby';
-import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+import { graphql, Link } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
@@ -80,4 +80,15 @@ A dropdown that cannot be selected by the user. This may be the case when the dr
 dropbox.isEnabled = false
 ```
 
-<ComponentFooter data={props.data} />
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/dropdown/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
