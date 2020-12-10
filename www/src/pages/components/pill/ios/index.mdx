@@ -6,6 +6,8 @@ description: Small labels that help qualify information.
 import { graphql } from 'gatsby';
 import { ComponentHeader } from 'components/thumbprint-components';
 
+<ComponentHeader data={props.data} />
+
 ## Usage
 
 Pills are badges that help to explain or draw attention to a certain area of the UI.
@@ -41,15 +43,15 @@ For visually impaired navigation the pill is just represented by its title label
 
 Used by some old legacy logic that stores it. Consider it deprecated.
 
-#### `public static let green: Pill.Theme
+#### `public static let green: Pill.Theme`
 
 The standard green pill theme.
 
-#### `public static let blue: Pill.Theme'
+#### `public static let blue: Pill.Theme`
 
 The standard blue pill theme.
 
-#### `public static let red: Pill.Theme'
+#### `public static let red: Pill.Theme`
 
 The standard red pill theme.
 
