@@ -75,3 +75,16 @@ If present will always show on the leading side. Should always be a tiny sized i
 While an optional, should always be set to a non-empty string before display.
 
 #### `public var Theme: Pill.Theme`
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/pill/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
