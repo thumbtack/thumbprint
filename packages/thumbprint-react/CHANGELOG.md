@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] `TextInput` component's `ref` now works with `useRef`. (#743)
+
 ## 14.3.3 - 2020-11-19
 
 ### Fixed

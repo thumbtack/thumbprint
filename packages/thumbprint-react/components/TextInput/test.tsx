@@ -254,6 +254,19 @@ describe('TextInput', () => {
         expect(wrapper.find('input').prop('maxLength')).toEqual(5);
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('works with `useRef`', () => {
+        let ref: React.RefObject<HTMLInputElement> | null = null;
+
+        const TestComponent = (): React.ReactElement => {
+            ref = React.useRef<HTMLInputElement>(null);
+            return <TextInput ref={ref} onChange={noop} />;
+        };
+
+        mount(<TestComponent />);
+
+        expect(ref && ref.current).toBeTruthy();
+    });
 });
 
 describe('TextInputClearButton', () => {

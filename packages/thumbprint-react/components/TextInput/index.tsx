@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
+import mergeRefs from 'react-merge-refs';
 import { InputRowContext } from '../InputRow/index';
 import styles from './index.module.scss';
 
@@ -295,13 +296,11 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
         outerRef,
     ): JSX.Element => {
         const uiState = getUIState({ isDisabled, isReadOnly, hasError });
-        // The input element rendered by this component. We use `useState` instead of
-        // `useRef` because callback refs allow us to add more than one `ref` to a DOM node.
-        const [inputEl, setInputEl] = useState<HTMLInputElement | null>(null);
+        const innerRef = useRef<HTMLInputElement>();
 
         const focusInput = (): void => {
-            if (inputEl) {
-                inputEl.focus();
+            if (innerRef.current) {
+                innerRef.current.focus();
             }
         };
 
@@ -356,15 +355,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
                     onKeyUp={(e): void => onKeyUp(e)}
                     onKeyPress={(e): void => onKeyPress(e)}
                     id={id}
-                    ref={(el): void => {
-                        setInputEl(el);
-
-                        // `outerRef` is the potential forwarded `ref` passed in from a consumer.
-                        // Not all refs are callable functions, so only try and call it if it is.
-                        if (typeof outerRef === 'function') {
-                            outerRef(el);
-                        }
-                    }}
+                    ref={mergeRefs([innerRef, outerRef])}
                     data-test={dataTest}
                     inputMode={inputMode}
                     pattern={pattern}
