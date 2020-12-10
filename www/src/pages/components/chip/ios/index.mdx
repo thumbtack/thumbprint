@@ -53,3 +53,16 @@ Has no additional configuration options beyond its superclass `Chip`
 ### ToggleChip
 
 Has no additional configuration options beyond its superclass `Chip`
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/chip/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
