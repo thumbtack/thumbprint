@@ -45,10 +45,11 @@ By default buttons change width depending on the content inside of them. Occasio
 Configurable items (via XML or values):
 
 1. `app:buttonType` in XML or `ThumbprintButton.buttonType`, with enum values `primary`, `secondary`, `tertiary`, `caution`, or `solid`; defaults to `primary`
-2. `app:buttonText` in XML or `ThumbprintButton.buttonText`, String; note that `android:text` is ignored
+2. `android:text` in XML or `ThumbprintButton.text`, String
 3. `app:isEnabled` in XML or `ThumbprintButton.isEnabled`, Boolean; defaults to true
 4. `app:isLoading` in XML or `ThumbprintButton.isLoading`, Boolean; defaults to false
 5. `app:isBleed` in XML or `ThumbprintButton.isBleed`, Boolean; defaults to false
+6. `app:inlineDrawableLeft` or `app:inlineDrawableRight` in XML, Drawable
 
 export const pageQuery = graphql`
     {
