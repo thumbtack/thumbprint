@@ -32,7 +32,7 @@ calendarPicker.additionalMonthCount = 0
 
 ```
 
-### Enabling/Disbling Selection
+### Enabling/Disabling Selection
 
 ![CalendarPicker - Date selected](/img/ios/calendar_date_selected.png 'CalendarPicker - Date selected')
 
@@ -44,9 +44,9 @@ calendarPicker.allowsMultipleSelection = false // Default is false
 
 ```
 
-![CalendarPicker - Mutliple Selection](/img/ios/calendar_multiple_selection.png 'CalendarPicker - Multiple Selection')
+![CalendarPicker - Multiple Selection](/img/ios/calendar_multiple_selection.png 'CalendarPicker - Multiple Selection')
 
-In addition to being notified when the user interacts with the calendar's selected dates, the developer may query or set the calenddar's selected dates directly.
+In addition to being notified when the user interacts with the calendar's selected dates, the developer may query or set the calendar's selected dates directly.
 
 ```swift
 calendarPicker.selectedDates = [dec2, dec11, dec23]
@@ -71,9 +71,9 @@ CalendarPicker(_ CalendarPicker: CalendarPicker, cellHasSlashForDate date: Date)
 
 CalendarPickers internally manage their own height – *they should never have a height constraint imposed upon them*.
 
-The CalendarPicker supports two height modes: `Fixed` and `Dynamic`. A fixed height CalendarPicker will always show the maximum number of rows that can displayed for a given calendar, even if the current month requires fewer rows. For a gregorian calendar, the maximum number of rows a month can need is six.
+The CalendarPicker supports two height modes: `Fixed` and `Dynamic`. A fixed height CalendarPicker will always show the maximum number of rows that can displayed for a given calendar, even if the current month requires fewer rows. For a Gregorian calendar, the maximum number of rows a month can need is six.
 
-If the `calendarHeightMode` is set to `dyanmic`, then the calendar will expand and collapse as as necessary to display the minimum number of rows possible for each month. After transitioning to a new month, a `dynamic` height CalendarPicker will update its own internal height constraint and notify its delegates of the update.
+If the `calendarHeightMode` is set to `dynamic`, then the calendar will expand and collapse as as necessary to display the minimum number of rows possible for each month. After transitioning to a new month, a `dynamic` height CalendarPicker will update its own internal height constraint and notify its delegates of the update.
 
 ```swift
 calendarPicker.calendarHeightMode = .fixed
