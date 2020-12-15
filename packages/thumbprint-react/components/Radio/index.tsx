@@ -64,7 +64,7 @@ const getUIState = ({
     return 'unchecked';
 };
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Disable the input and the label.
      */

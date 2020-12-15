@@ -11,7 +11,7 @@ const MAX_NUM_STARS = 5;
 // Smallest increment we render
 const PRECISION = 0.5;
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Number from 0-5 at increments of 0.5. Numbers between these steps will be rounded.
      */

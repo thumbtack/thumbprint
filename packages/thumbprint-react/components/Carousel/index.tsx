@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Swipeable from 'react-swipeable';
 import BaseCarousel from './base-carousel';
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * The items in the carousel that appear horizontally.
      */

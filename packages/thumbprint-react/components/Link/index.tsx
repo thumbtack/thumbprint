@@ -67,7 +67,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
     ),
 );
 
-interface LinkPropTypes {
+export interface LinkPropTypes {
     /**
      * Contents displayed within the anchor.
      */
@@ -156,7 +156,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
     ),
 );
 
-interface ThemedLinkPropTypes {
+export interface ThemedLinkPropTypes {
     /**
      * Contents displayed within the button.
      */

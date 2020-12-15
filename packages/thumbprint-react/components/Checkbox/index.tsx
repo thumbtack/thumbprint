@@ -104,7 +104,7 @@ const getFunctionalState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Disables the input and the label.
      */

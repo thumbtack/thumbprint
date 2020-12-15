@@ -19,7 +19,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * The label text that appears above the form element.
      */

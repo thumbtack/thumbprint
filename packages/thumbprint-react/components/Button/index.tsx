@@ -74,7 +74,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
     ),
 );
 
-interface TextButtonPropTypes {
+export interface TextButtonPropTypes {
     /**
      * Contents displayed within the button.
      */
@@ -186,7 +186,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
     ),
 );
 
-interface ButtonPropTypes {
+export interface ButtonPropTypes {
     /**
      * Contents displayed within the button.
      */

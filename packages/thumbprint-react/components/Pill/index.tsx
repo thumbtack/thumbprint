@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Text content to render.
      */

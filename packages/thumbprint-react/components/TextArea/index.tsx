@@ -22,7 +22,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Adds a HTML `id` attribute to the textarea. This is used for linking the HTML with a
      * [Label](/components/label/react/).

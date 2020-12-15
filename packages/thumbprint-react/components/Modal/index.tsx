@@ -112,7 +112,7 @@ const ModalAnimatedWrapper = ({
     </Transition>
 );
 
-interface ModalAnimatedWrapperPropTypes {
+export interface ModalAnimatedWrapperPropTypes {
     /**
      * Content that appears within the modal.
      */
@@ -155,7 +155,7 @@ interface ModalAnimatedWrapperPropTypes {
     heightAboveSmall?: 'auto' | 'medium' | 'tall';
 }
 
-interface ModalHeaderPropTypes {
+export interface ModalHeaderPropTypes {
     /**
      * Content (usually a `ModalTitle` and `ModalDescription`) that appears at the top of the
      * modal.
@@ -163,28 +163,28 @@ interface ModalHeaderPropTypes {
     children: React.ReactNode;
 }
 
-interface ModalTitlePropTypes {
+export interface ModalTitlePropTypes {
     /**
      * Text that describes the modal contents. It is intended for use within the `ModalHeader`.
      */
     children: string;
 }
 
-interface ModalDescriptionPropTypes {
+export interface ModalDescriptionPropTypes {
     /**
      * Text intended for use below a `ModalTitle` and within a `ModalHeader`.
      */
     children: React.ReactNode;
 }
 
-interface ModalContentPropTypes {
+export interface ModalContentPropTypes {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
     children: React.ReactNode;
 }
 
-interface ModalContentFullBleedPropTypes {
+export interface ModalContentFullBleedPropTypes {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
@@ -199,7 +199,7 @@ interface ModalContentFullBleedPropTypes {
     style?: React.CSSProperties;
 }
 
-interface ModalFooterPropTypes {
+export interface ModalFooterPropTypes {
     /**
      * Content (ususally buttons) to render within the footer.
      */
@@ -210,7 +210,7 @@ interface ModalFooterPropTypes {
     isSticky?: boolean;
 }
 
-interface ModalPropTypes {
+export interface ModalPropTypes {
     /**
      * Content that appears within the modal.
      */
@@ -337,7 +337,7 @@ class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: bool
     }
 }
 
-interface ModalStateTypes {
+export interface ModalStateTypes {
     hasStickyFooter: boolean;
     stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null;
 }

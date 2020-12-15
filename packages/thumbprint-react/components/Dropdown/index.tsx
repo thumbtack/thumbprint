@@ -28,7 +28,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * A collection of [HTML `<option>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option).
      */

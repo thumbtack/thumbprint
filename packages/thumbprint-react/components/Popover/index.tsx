@@ -16,7 +16,7 @@ import { NavigationCloseTiny } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-interface PopoverPropTypes {
+export interface PopoverPropTypes {
     /**
      * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
      */
@@ -152,7 +152,7 @@ export default function Popover({
     );
 }
 
-interface PopoverTitlePropTypes {
+export interface PopoverTitlePropTypes {
     /**
      * The contents of the title.
      */
@@ -163,7 +163,7 @@ const PopoverTitle = ({ children }: PopoverTitlePropTypes): JSX.Element => (
     <div className={styles.popoverTitle}>{children}</div>
 );
 
-interface PopoverBodyPropTypes {
+export interface PopoverBodyPropTypes {
     /**
      * The contents of the body.
      */
@@ -174,7 +174,7 @@ const PopoverBody = ({ children }: PopoverBodyPropTypes): JSX.Element => (
     <div className={styles.popoverBody}>{children}</div>
 );
 
-interface PopoverPrimaryButtonPropTypes {
+export interface PopoverPrimaryButtonPropTypes {
     /**
      * The text of the button.
      */
@@ -194,7 +194,7 @@ const PopoverPrimaryButton = ({
     </Themed>
 );
 
-interface PopoverSecondaryButtonPropTypes {
+export interface PopoverSecondaryButtonPropTypes {
     /**
      * The text of the button.
      */

@@ -104,7 +104,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
     },
 );
 
-interface EntityPropTypes {
+export interface EntityPropTypes {
     /**
      * HTTPS URL that points a user's avatar. The `imageURL` will take
      * precendence over `initials` if both are supplied.
@@ -177,7 +177,7 @@ const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
     },
 );
 
-interface UserPropTypes {
+export interface UserPropTypes {
     /**
      * HTTPS URL that points a user's avatar. The `imageURL` will take
      * precendence over `initials` if both are supplied.

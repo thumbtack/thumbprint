@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 import { BlockedFilled, InfoFilled, WarningFilled } from '../../icons';
 
-interface AlertBannerPropTypes {
+export interface AlertBannerPropTypes {
     /**
      * Text within the alert
      */

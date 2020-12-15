@@ -8,7 +8,7 @@ type ImageSource = {
     srcSet: string;
 };
 
-interface ServiceCardImagePropTypes {
+export interface ServiceCardImagePropTypes {
     /**
      * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
      * @deprecated Use `src` instead of `url`.
@@ -48,7 +48,7 @@ const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImagePropTypes>(
 // Needed because of the `forwardRef`.
 ServiceCardImage.displayName = 'ServiceCardImage';
 
-interface ServiceCardTitlePropTypes {
+export interface ServiceCardTitlePropTypes {
     children: string;
 }
 
@@ -60,7 +60,7 @@ function ServiceCardTitle({ children }: ServiceCardTitlePropTypes): JSX.Element 
     );
 }
 
-interface ServiceCardDescriptionPropTypes {
+export interface ServiceCardDescriptionPropTypes {
     /**
      * Service description or other service info.
      */
@@ -94,7 +94,7 @@ function ServiceCardDescription({
     );
 }
 
-interface ServiceCardPropTypes {
+export interface ServiceCardPropTypes {
     /**
      * URL pointing to the card link destination.
      */

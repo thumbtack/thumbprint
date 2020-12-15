@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface ListPropTypes {
+export interface ListPropTypes {
     /**
      * List items to render. Should be instances of `ListItem`.
      */
@@ -29,7 +29,7 @@ export function List({ children, theme = 'bullet' }: ListPropTypes): JSX.Element
     return React.createElement(elementName, props, children);
 }
 
-interface ListItemPropTypes {
+export interface ListItemPropTypes {
     /**
      * Item contents to render.
      */

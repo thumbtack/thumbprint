@@ -84,7 +84,7 @@ const TextInputIconContainer = ({ children, style }: InputIconContainerPropTypes
     </Context.Consumer>
 );
 
-interface TextInputClearButtonPropTypes {
+export interface TextInputClearButtonPropTypes {
     onClick: () => void;
 }
 
@@ -115,7 +115,7 @@ const TextInputClearButton = ({ onClick }: TextInputClearButtonPropTypes): JSX.E
     </TextInputIconContainer>
 );
 
-interface TextInputIconPropTypes {
+export interface TextInputIconPropTypes {
     /**
      * Set the icon color with a color from [Thumbprint Tokens](/tokens/).
      */
@@ -134,7 +134,7 @@ const TextInputIcon = ({ color = 'inherit', children }: TextInputIconPropTypes):
     <TextInputIconContainer style={{ color }}>{children}</TextInputIconContainer>
 );
 
-interface TextInputPropTypes {
+export interface TextInputPropTypes {
     /**
      * Adds a HTML `id` attribute to the input. This is used for linking the HTML with a
      * [Label](/components/label/react/).

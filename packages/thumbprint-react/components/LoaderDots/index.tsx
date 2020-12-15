@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Text that describes the current status and is only visible to
      * screenreaders.

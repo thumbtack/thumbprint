@@ -52,7 +52,7 @@ interface ChildrenPropTypes {
     ariaLabel: string;
 }
 
-interface TooltipPropTypes {
+export interface TooltipPropTypes {
     /**
      * A function that renders JSX and receives an object with `ref`, `onMouseEnter`, `onFocus`,
      * `onMouseLeave`, `onBlur`, `onClick`, and `ariaLabel`. All of these props must be added to

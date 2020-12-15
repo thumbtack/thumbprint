@@ -9,7 +9,7 @@ import ConditionalPortal from '../../utils/ConditionalPortal';
 
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Content that appears on top of the curtain. `children` is a [render
      * prop](https://reactjs.org/docs/render-props.html) and expects a function. The function

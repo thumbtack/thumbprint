@@ -9,7 +9,7 @@ const { Provider, Consumer } = React.createContext({
     isWithinGrid: false,
 });
 
-interface ColumnPropTypes {
+export interface ColumnPropTypes {
     /**
      * Column contents.
      */
@@ -74,7 +74,7 @@ export function GridColumn({
     );
 }
 
-interface GridPropTypes {
+export interface GridPropTypes {
     /**
      * Grid contents.
      */

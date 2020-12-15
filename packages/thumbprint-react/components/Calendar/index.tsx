@@ -56,7 +56,7 @@ export function validateProps(props: PropTypes): void {
     }
 }
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * One or more dates to show as selected in the initial UI. Each "date" can be a JS Date object
      * or a string representing a date, or a numeric UNIX timestamp, and either a single object or

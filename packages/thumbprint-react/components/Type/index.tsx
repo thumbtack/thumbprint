@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface TitlePropTypes {
+export interface TitlePropTypes {
     /**
      * Text to render.
      */
@@ -54,7 +54,7 @@ export function Title({
     return React.createElement(elementName, props, children);
 }
 
-interface TextPropTypes {
+export interface TextPropTypes {
     /**
      * Text to render.
      */

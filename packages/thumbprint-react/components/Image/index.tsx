@@ -23,7 +23,7 @@ type ImageSource = {
     srcSet: string;
 };
 
-interface ImagePropTypes {
+export interface ImagePropTypes {
     /**
      * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
      * users on browsers that don't support responsive images. If `sources` is not provided, this

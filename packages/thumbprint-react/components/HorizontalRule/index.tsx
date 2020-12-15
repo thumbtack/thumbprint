@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface PropTypes {
     /**
      * Controls the style of the line rendered for the horizontal rule.
      */
