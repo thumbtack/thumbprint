@@ -10,7 +10,8 @@ import { ComponentHeader } from 'components/thumbprint-components';
 
 ### Usage
 
-Pills are compact badges that help to explain or draw attention to a certain area of the UI. Pills include one or both of text and an icon (which at the start of the text if both are present).
+Pills are compact badges that help to explain or draw attention to a certain area of the UI. Pills include one or both of text and an icon (which is aligned at the start of the text if both are present).
+
 
 ### Themes
 
@@ -40,6 +41,7 @@ Pill instances are configured in layout XML, using the custom attributes
 -   `pillText` text to use
 -   `pillIcon` an optional icon
 
+
 For example:
 
 ```xml
@@ -48,9 +50,11 @@ For example:
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:pillColor="indigo"
-        app:pillText="Indigo Pill" />
+        app:pillText="Indigo Pill"
         app:pillIcon="@drawable/pill_icon" />
 ```
+
+These attributes can also be modified programatically using the fields of the same name on the ThumbprintPill object.
 
 export const pageQuery = graphql`
     {
