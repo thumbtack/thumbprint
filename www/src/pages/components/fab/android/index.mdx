@@ -37,6 +37,7 @@ There are two styles for text FABs: primary and secondary
 Configurable items
 
 1. `android:src` in XML or `ThumbprintIconFab.setImageResource() / ThumbprintIconFab.setImageDrawable`, DrawableRes
+2. `android:contentDescription` in XML or ThumbprintIconFab.contentDescription, String
 
 **ThumbprintTextFab**
 
@@ -45,6 +46,7 @@ Configurable items
 1. `app:fabStyle` in XML or `ThumbprintTextFab.fabStyle`, with enum values `primary` or `secondary`, defaults to `primary`
 2. `android:text` in XML or `ThumbprintTextFab.text`, String
 3. `app:icon` in XML or `ThumbprintTextFab.icon`, optional DrawableRes; defaults to null
+4. `android:contentDescription` in XML or ThumbprintIconFab.contentDescription, String
 
 export const pageQuery = graphql`
     {
