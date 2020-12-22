@@ -1,7 +1,12 @@
 ---
 title: Carousel
-description: Layout for grouped content that is navigated horizontally.
+description: Grouped content that is navigated horizontally.
 ---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
 
 ## Summary
 
@@ -28,3 +33,16 @@ See [UICollectionViewFlowLayout](https://developer.apple.com/documentation/uikit
    carouselLayout.sectionInset.left = Space.four
    carouselLayout.sectionInset.right = Space.four
 ```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/carousel/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
