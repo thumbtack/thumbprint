@@ -32,6 +32,14 @@ import { ComponentHeader } from 'components/thumbprint-components';
 
 ![warning theme example](/img/alert-banner-theme-warning.png 'Warning')
 
+## Implementation
+
+The name of the component is `ThumbprintBanner`. `ThumbprintBanner` contains three configurable attributes:
+
+-   `text` : String. The main text to display in the banner. Configurable via properties or via `android:text` in xml.
+-   `linkText` : String. Additional link text to display in the banner. Configurable via properties or via `app:linkText` in xml.
+-   `bannerTheme` : Enum. This is one of three themes: INFO, WARNING, or CAUTION. This is configurable via properties by setting an enum of type `ThumbprintBannerType` or via xml using one of three options: `app:bannerTheme="info"`, `app:bannerTheme="warning"` or `app:bannerTheme="caution"`.
+
 ## Visibility
 
 The global banner should always be visible at the top of the application other than exceptions where it may be intentionally hidden to provide the desired UX. Some situations where the global banner may not be visible could be:
