@@ -135,3 +135,16 @@ Use this function to set the icon (`icon`) and the read-out accessibility label 
 #### `public init(icon: UIImage, accessibilityLabel: String, theme: IconFloatingActionButton.Theme = .primary)`
 
 #### `public override var intrinsicContentSize: CGSize`
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/fab/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
