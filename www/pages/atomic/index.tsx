@@ -12,7 +12,22 @@ import Table from '../../components/thumbprint-atomic/table';
 import getClasses from '../../components/thumbprint-atomic/get-classes';
 import CodeBlock from '../../components/mdx/code-block';
 
-export default function Components({ data }): React.ReactNode {
+interface CSSClass {
+    media?: string;
+    selectors: string[];
+    declarations: string[];
+}
+
+interface File {
+    file: string;
+    classes: CSSClass[];
+}
+
+interface AtomicProps {
+    files: File[];
+}
+
+export default function Atomic({ files }: AtomicProps): React.ReactNode {
     return (
         <Wrap>
             <PageHeader pageTitle="Atomic" metaTitle="Atomic" />
@@ -96,7 +111,7 @@ export default function Components({ data }): React.ReactNode {
                 <InlineCode>width</InlineCode> values.
             </P>
 
-            <Table atomicClasses={getClasses(data, 'aspect-ratio').classes} />
+            <Table atomicClasses={getClasses(files, 'aspect-ratio').classes} />
         </Wrap>
     );
 }
@@ -110,7 +125,7 @@ const isAtRuleAMediaQuery = (atruleNode): boolean =>
 /**
  * Returns an array of rules such as `[ 'background-color: red !important;' ]`.
  */
-const getBlockContent = blockNode => {
+const getBlockContent = (blockNode): string[] => {
     const declarations = [];
 
     blockNode.traverseByType('declaration', n => {
@@ -122,7 +137,12 @@ const getBlockContent = blockNode => {
     return declarations;
 };
 
-const getRulesetContent = rulesetNode => {
+const getRulesetContent = (
+    rulesetNode,
+): {
+    selectors: string[];
+    declarations: string[];
+} => {
     const data = {
         selectors: [],
         declarations: [],
@@ -151,10 +171,8 @@ const getRulesetContent = rulesetNode => {
 /**
  * `atrule` nodes are used for media queries (among other things). There are usually `ruleset`
  * nodes within them.
- *
- * Returns an array of objects.
  */
-const getAtruleContent = atruleNode => {
+const getAtruleContent = (atruleNode): CSSClass[] => {
     const classesWithinMediaQueries = [];
 
     if (isAtRuleAMediaQuery(atruleNode)) {
@@ -169,11 +187,13 @@ const getAtruleContent = atruleNode => {
             }
         });
     }
-
     return classesWithinMediaQueries;
 };
 
-const parseAST = (css: string) => {
+/**
+ * Parses a CSS file into an array of classes.
+ */
+const parseAST = (css: string): CSSClass[] => {
     const classes = [];
     const parseTree = gonzales.parse(css, { syntax: 'css' });
 
@@ -195,7 +215,7 @@ const parseAST = (css: string) => {
 export const getStaticProps: GetStaticProps = async () => {
     const atomicSassFilesPath = '../packages/thumbprint-atomic/src/packages';
     const directoryPath = atomicSassFilesPath;
-    const files = await fse.readdir(directoryPath);
+    const files: string[] = await fse.readdir(directoryPath);
 
     const data = files.map(file => {
         const css = sass
@@ -210,7 +230,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     return {
         props: {
-            data,
+            files: data,
         },
     };
 };

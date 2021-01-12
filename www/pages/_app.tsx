@@ -4,7 +4,7 @@ import Container from '../components/container';
 
 function ThumbprintApp({ Component, pageProps, router }: AppProps): React.ReactElement {
     return (
-        <Container location={router} activeSection="Overview">
+        <Container pathname={router.pathname} activeSection="Overview">
             <Component {...pageProps} />
         </Container>
     );

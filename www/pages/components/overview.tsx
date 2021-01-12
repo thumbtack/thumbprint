@@ -4,7 +4,23 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import Wrap from '../../components/wrap';
 
-export default function Components({ implementations }): React.ReactNode {
+interface Implementation {
+    browserLink: string;
+    createdAt: string;
+    href: string;
+    id: string;
+    index: number;
+    name: string;
+    type: string;
+    updatedAt: string;
+    values: unknown;
+}
+
+interface ComponentsProps {
+    implementations: Implementation[];
+}
+
+export default function Components({ implementations }: ComponentsProps): JSX.Element {
     return (
         <Wrap>
             <Head>

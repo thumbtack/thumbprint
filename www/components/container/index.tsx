@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Link from 'next/link';
 import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
 import { TextInput, TextInputIcon } from '@thumbtack/thumbprint-react';
-import { map } from 'lodash';
 import {
     NavigationSearchSmall,
     NavigationCloseSmall,
@@ -17,19 +15,21 @@ import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
 import SideNav, { SideNavLink, SideNavGroup } from './side-nav';
 import DocSearch from './doc-search';
-import getComponentsLinkProps from './get-component-link-props';
-import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
 
 const ActiveSectionContext = React.createContext(null);
 
-const Container = ({ children, location, activeSection }) => {
+interface ContainerProps {
+    children: React.ReactNode;
+    pathname: string;
+    activeSection: 'Overview' | 'Components' | 'Atomic' | 'Tokens' | 'Icons' | 'Updates' | 'Help';
+}
+
+const Container = ({ children, pathname, activeSection }: ContainerProps): JSX.Element => {
     const [searchValue, setSearchValue] = useState(undefined);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const sidebarCloseEl = useRef();
     const sidebarOpenEl = useRef();
-
-    const { pathname, hash } = location;
 
     return (
         <div className="flex h-100">
@@ -63,7 +63,7 @@ const Container = ({ children, location, activeSection }) => {
 
                 <ScrollMarkerContainer>
                     <OutsideClickHandler
-                        onOutsideClick={() => {
+                        onOutsideClick={(): void => {
                             if (isSidebarOpen) {
                                 setIsSidebarOpen(false);
                             }
@@ -89,12 +89,12 @@ const Container = ({ children, location, activeSection }) => {
                                 </Link>
 
                                 <DocSearch>
-                                    {({ id }) => (
+                                    {({ id }): JSX.Element => (
                                         <TextInput
                                             type="search"
                                             size="small"
                                             placeholder="Search"
-                                            onChange={v => {
+                                            onChange={(v): void => {
                                                 setSearchValue(v);
                                             }}
                                             value={searchValue}
@@ -110,7 +110,7 @@ const Container = ({ children, location, activeSection }) => {
                             </div>
                             <ClickableBox
                                 className="pa2 absolute top0 right0 pointer l_dn z-1"
-                                onClick={() => {
+                                onClick={(): void => {
                                     setIsSidebarOpen(false);
                                 }}
                                 aria-label="Close sidebar navigation"
@@ -119,7 +119,7 @@ const Container = ({ children, location, activeSection }) => {
                                 <NavigationCloseSmall className="db" />
                             </ClickableBox>
 
-                            <SideNav pathName={pathname} hash={hash}>
+                            <SideNav pathName={pathname}>
                                 <SideNavLink
                                     title="Overview"
                                     isActive={activeSection === 'Overview'}
@@ -268,7 +268,7 @@ const Container = ({ children, location, activeSection }) => {
                     <div className="flex-1 l_ml8">
                         <ClickableBox
                             className="inline-flex pv3 ph4 pointer l_dn"
-                            onClick={() => {
+                            onClick={(): void => {
                                 setIsSidebarOpen(true);
                             }}
                             aria-label="Open sidebar navigation"

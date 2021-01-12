@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Text } from '@thumbtack/thumbprint-react';
 import classNames from 'classnames';
 import ClickableBox from 'clickable-box';
@@ -8,15 +8,32 @@ import { NavigationCaretDownSmall, NavigationCaretUpSmall } from '@thumbtack/thu
 import { ScrollMarkerLink } from 'react-scroll-marker';
 import styles from './side-nav.module.scss';
 
-const SideNav = ({ children }) => (
+interface SideNavProps {
+    children: React.ReactNode;
+}
+
+interface SideNavGroup {
+    children: React.ReactNode;
+    level: 2 | 3;
+}
+
+interface SideNavLinkProps {
+    to: string;
+    level: 1 | 2 | 3;
+    title: string;
+    /**
+     * Indicates the current page (or section of a page). This should be fase if it is a hash link
+     * since the active section will depend on the user's scrolling.
+     */
+    isActive?: boolean;
+    children?: React.ReactNode;
+}
+
+const SideNav = ({ children }: SideNavProps): JSX.Element => (
     <ul className={`flex-1 overflow-y-auto pb3 ${styles.sideNav}`}>{children}</ul>
 );
 
-SideNav.propTypes = {
-    children: PropTypes.node.isRequired,
-};
-
-const SideNavGroup = ({ children, level }) => (
+const SideNavGroup = ({ children, level }: SideNavGroup): JSX.Element => (
     <li
         className={classNames({
             [styles.sideNavGroup]: true,
@@ -28,12 +45,13 @@ const SideNavGroup = ({ children, level }) => (
     </li>
 );
 
-SideNavGroup.propTypes = {
-    children: PropTypes.node.isRequired,
-    level: PropTypes.oneOf([2, 3]).isRequired,
-};
-
-const SideNavLink = ({ to, children, level, title, isActive }) => {
+const SideNavLink = ({
+    to,
+    children,
+    level,
+    title,
+    isActive = false,
+}: SideNavLinkProps): JSX.Element => {
     const [isExpanded, setIsExpanded] = useState(isActive);
     const [isExpandButtonHovered, setIsExpandButtonHovered] = useState(false);
 
@@ -44,7 +62,7 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
      * This function exists to share code between the `Link` component instances when wrapped in
      * `ScrollMarkerLink` and when used on its own.
      */
-    const getLinkClasses = hasActiveClass =>
+    const getLinkClasses = (hasActiveClass: boolean): string =>
         classNames({
             'db flex-1 black': true,
             'pv2 ph3': level === 1,
@@ -65,7 +83,7 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
             >
                 {hash ? (
                     <ScrollMarkerLink id={hash}>
-                        {({ isActive: isHashActive, onClick }) => (
+                        {({ isActive: isHashActive, onClick }): JSX.Element => (
                             <Link href={to}>
                                 <a className={getLinkClasses(isHashActive)} onClick={onClick}>
                                     {title}
@@ -89,13 +107,13 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
                             pv1: level === 2 || level === 3,
                             [styles.sideNavClickableBox]: true,
                         })}
-                        onClick={() => {
+                        onClick={(): void => {
                             setIsExpanded(!isExpanded);
                         }}
-                        onMouseOver={() => {
+                        onMouseOver={(): void => {
                             setIsExpandButtonHovered(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(): void => {
                             setIsExpandButtonHovered(false);
                         }}
                     >
@@ -114,23 +132,6 @@ const SideNavLink = ({ to, children, level, title, isActive }) => {
             )}
         </Text>
     );
-};
-
-SideNavLink.propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.node,
-    to: PropTypes.string.isRequired,
-    level: PropTypes.oneOf([1, 2, 3]).isRequired,
-    /**
-     * Indicates the current page (or section of a page). This should be fase if it is a hash link
-     * since the active section will depend on the user's scrolling.
-     */
-    isActive: PropTypes.bool,
-};
-
-SideNavLink.defaultProps = {
-    children: undefined,
-    isActive: false,
 };
 
 export default SideNav;

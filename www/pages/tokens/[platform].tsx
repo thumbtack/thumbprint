@@ -4,7 +4,36 @@ import PageHeader from '../../components/page-header';
 import TokenSection from '../../components/thumbprint-tokens/token-section';
 import Wrap from '../../components/wrap';
 
-export default function Tokens({ tokens, platform }): React.ReactNode {
+const tokenPlatforms = ['scss', 'javascript', 'ios', 'android'] as const;
+
+interface Token {
+    deprecated: boolean | null;
+    format: 'color' | null;
+    group: 'string' | null;
+    platforms: {
+        javascript: {
+            value: string;
+        };
+        scss: {
+            value: string;
+            name: string;
+            description: string | null;
+        };
+    };
+}
+
+interface TokenCategory {
+    name: string;
+    description: string | null;
+    tokens: Token;
+}
+
+interface TokensProps {
+    tokens: TokenCategory[];
+    platform: typeof tokenPlatforms[number];
+}
+
+export default function Tokens({ tokens, platform }: TokensProps): JSX.Element {
     return (
         <Wrap>
             <PageHeader
@@ -23,12 +52,7 @@ export default function Tokens({ tokens, platform }): React.ReactNode {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [
-            { params: { platform: 'scss' } },
-            { params: { platform: 'javascript' } },
-            { params: { platform: 'ios' } },
-            { params: { platform: 'android' } },
-        ],
+        paths: tokenPlatforms.map(platform => ({ params: { platform } })),
         fallback: false,
     };
 };

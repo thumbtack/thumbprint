@@ -2,6 +2,7 @@ dist
 tmp
 aws.json
 .cache
+www/.next
 packages/thumbprint-icons/www
 
 # These are `dist` files. They exist in the root of the `thumbprint-scss` folder so that consumers

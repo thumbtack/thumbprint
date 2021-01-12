@@ -5,6 +5,8 @@ export const metadata = {
     description: 'Thumbprint is the design system for Thumbtack products.',
 };
 
+export default ({ children }) => <MDX {...metadata}>{children}</MDX>;
+
 Thumbprint is a living system that streamlines the design and development process through consolidation, standardization, and documentation. By reducing decision-making friction, we free teams to focus on higher-order problems while increasing quality and consistency for Thumbtack's customers.
 
 ## Principles
@@ -20,5 +22,3 @@ Providing clear references and dependable tools are critical to the success of T
 ### Encourage collaboration and feedback
 
 Encouraging contributions and constructive criticism helps establish trust with teams and promotes the system as a shared resource with a transparent process. By spreading system thinking to a wider, diverse group, we also form greater clarity about what to build and, equally important, what not to build.
-
-export default ({ children }) => <MDX {...metadata}>{children}</MDX>;

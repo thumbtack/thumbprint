@@ -31,7 +31,7 @@ interface ComponentPlatformProps {
     allComponentPlatforms: Array<'react' | 'scss' | 'ios' | 'android'>;
 }
 
-const sortPlatforms = platform => {
+const sortPlatforms = (platform: string): number => {
     const platformOrder = {
         usage: 1,
         react: 2,
@@ -39,10 +39,17 @@ const sortPlatforms = platform => {
         ios: 4,
         android: 5,
     };
-    return platformOrder[platform];
+
+    const order = platformOrder[platform];
+
+    if (typeof order !== 'number') {
+        throw Error(`Could not the order for platform "${platform}."`);
+    }
+
+    return order;
 };
 
-const getPlatformDisplayName = platform => {
+const getPlatformDisplayName = (platform: string): string => {
     const displayName = {
         usage: 'Usage',
         react: 'React',
@@ -51,7 +58,13 @@ const getPlatformDisplayName = platform => {
         android: 'Android',
     };
 
-    return displayName[platform];
+    const name = displayName[platform];
+
+    if (typeof name !== 'string') {
+        throw Error(`Can't get the platform display name for "${name}."`);
+    }
+
+    return name;
 };
 
 export default function ComponentPlatform({

@@ -4,6 +4,7 @@ import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Language } from 'prism-react-renderer';
+import cx from 'classnames';
 
 import Wrap from '../wrap';
 import PageHeader from '../page-header';
@@ -163,10 +164,10 @@ export function Img(p: React.ImgHTMLAttributes<HTMLImageElement>): JSX.Element {
         <img
             src={p.src}
             alt={p.alt}
-            className={p.className}
+            className={cx(p.className, styles.readingWidth)}
             width={p.width}
             height={p.height}
-            style={{ display: 'block', maxWidth: '100%' }}
+            style={{ display: 'block' }}
         />
     );
 }
