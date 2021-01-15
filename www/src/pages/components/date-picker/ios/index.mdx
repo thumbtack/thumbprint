@@ -1,0 +1,32 @@
+---
+title: Date Picker
+description: A control for the inputting of date and time values.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Date pickers on iOS are implemented with the built-in UIKit component `UIDatePicker`.
+
+![iOS action sheet](/img/ios/date_picker.png)
+
+## Public API
+
+See Apple documentation on [UIDatePicker](https://developer.apple.com/documentation/uikit/uidatepicker) for the public API.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/date-picker/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
