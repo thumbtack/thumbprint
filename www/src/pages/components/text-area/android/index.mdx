@@ -1,0 +1,38 @@
+---
+title: Text Area
+description: Multiline inputs for text.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+`ThumbprintTextArea` is a multi-line ThumbprintEditText. For iOS and web parity, this is referred to as a Text Area. Since `ThumbprintTextArea` inherits from `ThumbprintEditTextBase`, it shares common properties with `ThumbprintTextInput`.
+
+### States
+
+The following states are available for inputs: Default, selected, filled, disabled, and error.
+
+![Text Area states](/img/native-text-area-states.png 'text-area states')
+
+### Implementation
+
+The following are the new attributes added on top of Andriod's default EditText:
+
+-   `hasError` : Boolean. Indicates whether the Text Area is currently in an error state.
+-   `isDisabled` : Boolean. Indicates whether the Text Area is currently in a disabled state.
+-   `state` : Boolean. Returns the current state of the Text Area. Can not be set.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-area/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
