@@ -1,0 +1,62 @@
+---
+title: Fab
+description: Buttons providing easy access to important actions.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Usage
+
+FAB stands for floating action button and they perform a specific highly important task. FABS are usually high up in the page’s hierarchy and as such should be used sparingly to avoid overuse.
+
+### Components
+
+There are two types of FAB components: ThumbprintIconFab and ThumbprintTextFab
+
+ThumbprintIconFab should sit in the lower right hand side of a UI and perform important tasks that are high priority compared to other actions on the page.
+
+ThumbprintTextFab should sit in the bottom middle of a UI and has text and an optional icon to the left of the text.
+
+### Styles
+
+There is only one style of icon FABs
+
+![Icon FAB Styles](/img/android-icon-fab-styles.png 'Icon FAB styles')
+
+There are two styles for text FABs: primary and secondary
+
+![Text FAB Styles](/img/android-text-fab-styles.png 'Text FAB styles')
+
+### Implementation
+
+**ThumbprintIconFab**
+
+Configurable items
+
+1. `android:src` in XML or `ThumbprintIconFab.setImageResource() / ThumbprintIconFab.setImageDrawable`, DrawableRes
+2. `android:contentDescription` in XML or ThumbprintIconFab.contentDescription, String
+
+**ThumbprintTextFab**
+
+Configurable items
+
+1. `app:fabStyle` in XML or `ThumbprintTextFab.fabStyle`, with enum values `primary` or `secondary`, defaults to `primary`
+2. `android:text` in XML or `ThumbprintTextFab.text`, String
+3. `app:icon` in XML or `ThumbprintTextFab.icon`, optional DrawableRes; defaults to null
+4. `android:contentDescription` in XML or ThumbprintIconFab.contentDescription, String
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/fab/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
