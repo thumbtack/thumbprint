@@ -1,0 +1,34 @@
+---
+title: Switch
+description: A control that offers a binary choice, such as on/off.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Switches on iOS are implemented with the built-in UIKit component `UISwitch`.
+
+![iOS switch (on)](/img/ios/switch_on.png)
+
+![iOS switch (off)](/img/ios/switch_off.png)
+
+## Public API
+
+See Apple documentation on [UISwitch](https://developer.apple.com/documentation/uikit/uiswitch) for the public API.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/switch/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

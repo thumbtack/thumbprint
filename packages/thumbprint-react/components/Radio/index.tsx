@@ -1,7 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
+import isUndefined from 'lodash/isUndefined';
+import toString from 'lodash/toString';
 import warning from 'warning';
+
 import styles from './index.module.scss';
 
 const borderColor = {
@@ -151,7 +154,7 @@ export default function Radio<T extends string | number = string>({
             <input
                 className={styles.input}
                 type="radio"
-                id={`${id}`}
+                id={isUndefined(id) ? id : toString(id)}
                 onChange={(event): void => onChange(event.target.checked, id)}
                 checked={isChecked}
                 name={name}

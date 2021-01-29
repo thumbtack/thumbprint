@@ -1,0 +1,49 @@
+---
+title: Text Input
+description: Form inputs with sizes and style variations.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Components
+
+There are three types of Text Input components:
+
+-   `ThumbprintTextInput` : A single line `ThumbprintEditText` with no drawables. While you can use `ThumbprintTextInputWithDrawables` without defining any drawables in place of this View, it is recommended to use this View if you do not plan on defining drawables. This is because `ThumbprintTextInputWithDrawables` has tap event listeners which will do unncessary work if no drawables are defined.
+-   `ThumbprintTextInputWithDrawables` : A single line `ThumbprintEditText` with support for start and end drawables. Drawable click events can be handled by assigning a lambda expression to `drawableStartListener`, or `drawableEndListener`.
+-   `ThumbprintClearableTextInput` : A single line `ThumbprintEditText` that allows for a custom drawableStart, but not a custom drawableEnd. Instead, the drawableEnd will be a X that can be tapped to clear the current input and focus the View.
+
+All the above components inherit from `ThumbprintEditTextBase`, which iteslf inherits from `EditText`.
+
+### States
+
+The following states are available for inputs: Default, selected, filled, disabled, and error.
+
+![Text Input states](/img/native-text-input-states.png 'text-input states')
+
+### Implementation
+
+The following are the new attributes added on top of Andriod's default EditText:
+
+-   `hasError` : Boolean. Indicates whether the Text Input is currently in an error state.
+-   `isDisabled` : Boolean. Indicates whether the Text Input is currently in a disabled state.
+-   `state` : Boolean. Returns the current state of the Text Input. Can not be set.
+-   `focusOnDrawableTap` : Boolean. Indicates whether to listen for drawable click events.
+-   `drawableStartListener`: () -> Unit. Callback for when `ThumbprintTextInputWithDrawables`'s drawableStart is clicked.
+-   `drawableEndListener`: () -> Unit. Callback for when `ThumbprintTextInputWithDrawables`'s drawableEnd is clicked.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-input/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
