@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update Type definitions for `Dropdown` and `Radio` to support generic types.
+
 ## 14.3.3 - 2020-11-19
 
 ### Fixed
