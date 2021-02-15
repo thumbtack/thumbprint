@@ -1,0 +1,44 @@
+---
+title: Shadow Card
+description: A control that's a empty box with a shadow.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+This control is a `UIView` with a default appearance and a highlighted appearance.
+
+![Default](/img/ios/shadowcard_default.png)
+
+```swift
+let shadowCard = ShadowCard()
+```
+
+![Highlighted](/img/ios/shadowcard_highlighted.png)
+
+```swift
+shadowCard.isHighlighted = true
+```
+
+It's also possible to provide a custom shadow image.
+
+```swift
+let shadowCard = ShadowCard(shadowImage: UIImage(named: "funky-shadow"))
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/shadow-card/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
