@@ -204,3 +204,17 @@ This defines the width/height of the checkbox. The checkbox always has a square 
 ```swift
 labelCheckbox.checkboxSize = 32
 ```
+
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/checkbox/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
