@@ -1,0 +1,219 @@
+---
+title: Checkbox
+description: Boxes for checking and unchecking multiple values in forms.
+---
+
+import { graphql, Link } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+There are 2 checkbox components, `Checkbox` and `LabelCheckbox`.
+
+`Checkbox` is a square box that is empty, checked or has an intermediate state.
+
+`LabelCheckbox` is a `Checkbox` with a `Label`. The label can be on the left or right side of the checkbox.
+
+## States
+
+Empty Checkbox ![Empty Checkbox](/img/ios/checkbox_empty.png 'Empty Checkbox')
+
+```swift
+let checkbox = Checkbox()
+```
+
+Empty LabelCheckbox ![Empty LabelCheckbox](/img/ios/labelcheckbox_empty.png 'Empty LabelCheckbox')
+
+```swift
+let labelCheckbox = LabelCheckbox(text: "This is a label checkbox")
+```
+
+Checked Checkbox ![Checked Checkbox](/img/ios/checkbox_checked.png 'Checked Checkbox')
+
+```swift
+let checkbox = Checkbox()
+checkbox.isSelected = true
+```
+
+Checked LabelCheckbox ![Checked LabelCheckbox](/img/ios/labelcheckbox_checked.png 'Checked LabelCheckbox')
+
+```swift
+let labelCheckbox = LabelCheckbox(text: "This is a label checkbox")
+labelCheckbox.isSelected = true
+```
+
+Intermediate Checkbox ![Intermediate Checkbox](/img/ios/checkbox_intermediate.png 'Intermediate Checkbox')
+
+```swift
+let checkbox = Checkbox()
+checkbox.mark = .intermediate
+```
+
+Intermediate LabelCheckbox ![Intermediate LabelCheckbox](/img/ios/labelcheckbox_intermediate.png 'Intermediate Checkbox')
+
+```swift
+let labelCheckbox = LabelCheckbox(text: "This is a label checkbox")
+labelCheckbox.mark = .intermediate
+```
+
+## Checkbox Properties
+
+#### hasError
+
+I true, the checkbox will be red. Use this property if something's wrong and the checkbox needs a user's attention.
+
+![Error Checkbox](/img/ios/checkbox_error.png 'Error Checkbox')
+
+```swift
+checkbox.hasError = true
+```
+
+### isEnabled
+
+If false, the user cannot interact with the checkbox and the checkbox will be gray.
+
+![Disabled Checkbox](/img/ios/checkbox_disabled.png 'Disabled Checkbox')
+
+```swift
+checkbox.isEnabled = false
+```
+
+### isSelected
+
+If true, the checkbox will be checked and blue.
+
+![Checked Checkbox](/img/ios/checkbox_checked.png 'Checked Checkbox')
+
+```swift
+checkbox.isSelected = false
+```
+
+### mark
+
+Defines the mark displayed inside the checkbox. Can be either `empty`, `checked` or `intermediate`. The default value is `empty`.
+
+```swift
+checkbox.mark = .intermediate
+```
+
+### checkboxSize
+
+This defines the width/height of the checkbox. The checkbox always has a square shape. The default value is 20.
+
+```swift
+checkbox.checkboxSize = 32
+```
+
+## LabelCheckbox Properties
+
+#### text
+
+Sets the text of the label.
+
+```swift
+labelCheckbox.text = "This is a cool label checkbox!"
+```
+
+#### attributedText
+
+Sets the attributed text of the label.
+
+```swift
+labelCheckbox.attributedText = attributedString
+```
+
+#### textStyle
+
+Sets the text style of the label.
+
+```swift
+labelCheckbox.textStyle = .title1
+```
+
+#### contentInsets
+
+Sets the content insets of the full control.
+
+```swift
+labelCheckbox.contentInsets = UIEdgeInsets(left: 10, top: 10, bottom: 10, right: 10)
+```
+
+### isEnabled
+
+If false, the user cannot interact with the checkbox and the control will be gray.
+
+![Disabled LabelCheckbox](/img/ios/labelcheckbox_disabled.png 'Disabled LabelCheckbox')
+
+```swift
+labelCheckbox.isEnabled = false
+```
+
+### isSelected
+
+If true, the checkbox will be checked and blue.
+
+![Checked LabelCheckbox](/img/ios/labelcheckbox_checked.png 'Checked LabelCheckbox')
+
+```swift
+labelCheckbox.isSelected = false
+```
+
+#### contentPlacement
+
+Determines on what side of the checkbox the label is shown. The default value is `.right`.
+
+![Left LabelCheckbox](/img/ios/labelcheckbox_left.png 'Left LabelCheckbox')
+
+```swift
+labelCheckbox.contentPlacement = .left
+```
+
+#### numberOfLines
+
+Determines the number of lines for the label. The default is `1`. When set to `0` there will be as many lines as needed to display the full text.
+
+![Multiline LabelCheckbox](/img/ios/labelcheckbox_multiline.png 'Multiline LabelCheckbox')
+
+```swift
+labelCheckbox.numberOfLines = 0
+labelCheckbox.text = "This is a checkbox label text that will spread out over multiple lines because this text is too big to fit on one line"
+```
+
+#### hasError
+
+I true, the checkbox and label will be red. Use this property if something's wrong and the control needs a user's attention.
+
+![Error LabelCheckbox](/img/ios/labelcheckbox_error.png 'Error LabelCheckbox')
+
+```swift
+labelCheckbox.hasError = true
+```
+
+### mark
+
+Defines the mark displayed inside the checkbox. Can be either `empty`, `checked` or `intermediate`. The default value is `empty`.
+
+```swift
+labelCheckbox.mark = .intermediate
+```
+
+### checkboxSize
+
+This defines the width/height of the checkbox. The checkbox always has a square shape. The default value is 20.
+
+```swift
+labelCheckbox.checkboxSize = 32
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/checkbox/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
