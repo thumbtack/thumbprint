@@ -1,0 +1,103 @@
+---
+title: Text Input
+description: A control that allows single line text input.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+The single line text input control `TextInput` is build upon the built-in UIKit component `UITextField`.
+
+![Default TextInput](/img/ios/textinput_default.png)
+
+```swift
+let textInput = TextInput()
+```
+
+## Properties
+
+#### placeholder
+
+The placeholder text that's shown when no text has been entered. Placeholder text is shown in gray.
+
+![Placeholder TextInput](/img/ios/textinput_placeholder.png)
+
+```swift
+textInput.placeholder = "Type something..."
+```
+
+#### hasError
+
+If true, the control will be red. Use this property if something's wrong and the text input control needs a user's attention.
+
+![Error TextInput](/img/ios/textinput_error.png)
+
+```swift
+textInput.hasError = true
+```
+
+#### isEnabled
+
+If false, the control will not react to user interaction and will have a light gray color.
+
+![Disabled TextInput](/img/ios/textinput_disabled.png)
+
+```swift
+textInput.isEnabled = false
+```
+
+#### isHighlighted
+
+If true, the control has a blue border.
+
+![Highlighted TextInput](/img/ios/textinput_highlighted.png)
+
+```swift
+textInput.isHighlighted = true
+```
+
+#### leftView and rightView
+
+These properties are inherited from `UITextField` and typically make it possible to show image based buttons on both sides of the text. More info can be found in the [official UITextField documentation](https://developer.apple.com/documentation/uikit/uitextfield).
+
+![Leftview TextInput](/img/ios/textinput_leftview.png)
+
+```swift
+let leftView = UIButton(type: .system)
+leftView.setTitle("left", for: .normal)
+textInput.leftView = leftView
+textInput.leftViewMode = .always
+```
+
+#### clearButtonMode
+
+This property is inherited from `UITextField` and determines when the standard clear button appears. More info can be found in the [official UITextField documentation](https://developer.apple.com/documentation/uikit/uitextfield).
+
+```swift
+textInput.clearButtonMode = .whileEditing
+```
+
+#### hidesCaret
+
+Suppresses the cursor display while the control is active.
+
+```swift
+textInput.hidesCaret = true
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-input/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
