@@ -92,7 +92,7 @@ textInput.hidesCaret = true
 export const pageQuery = graphql`
     {
         # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/textinput/*/" } }) {
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-input/*/" } }) {
             edges {
                 node {
                     ...PlatformNavFragment
