@@ -3,6 +3,11 @@ title: Toast
 description: Auto-dismissing alert displayed at the bottom of the screen
 ---
 
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 A toast should be used to display a short lived alert at the bottom of the screen with a message, and optionally, a CTA.
@@ -63,3 +68,16 @@ public func display(_ toastWithText text: String, linkText: String, in view: UIV
         }
 }
 ```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/toast/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
