@@ -1,0 +1,55 @@
+---
+title: Partial Sheet
+description: A control that presents a view controller as a partial sheet.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+On iOS the partial sheet presentation is implemented using the built-in UIKit component `UIPresentationController`.
+
+```swift
+viewController.modalPresentationStyle = .custom
+viewController.transitioningDelegate = Presentation.partialSheet
+viewController.partialSheetPresentationController?.partialSheetDelegate = self
+present(viewController, animated: true)
+```
+
+## Properties
+
+#### isGrabberViewHidden
+
+If false, the grabber at the top of the partial sheet is shown. The default value is `true`.
+
+```swift
+viewController.partialSheetPresentationController?.isGrabberViewHidden = false
+```
+
+#### isPanToDismissEnabled
+
+If false, the partial sheet cannot be dismissed by panning it down. The default value is `true`.
+
+```swift
+viewController.partialSheetPresentationController?.isPanToDismissEnabled = false
+```
+
+## Public API
+
+See Apple documentation on [UIPresentationController](https://developer.apple.com/documentation/uikit/uipresentationcontroller) for the public API.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/partial-sheet/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
