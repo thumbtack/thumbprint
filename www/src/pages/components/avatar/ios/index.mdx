@@ -74,3 +74,16 @@ _Note_ A URL extension is provided for utility for loading a remote image. It is
 ### `func setImageURL(_ url: URL?) -> SDWebImageOperation?`
 
 Loads an image from the given URL and sets a blank placeholder image while loading. Once loaded, the image is displayed in the Avatar.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
