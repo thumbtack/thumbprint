@@ -1,7 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
+import isUndefined from 'lodash/isUndefined';
+import toString from 'lodash/toString';
 import warning from 'warning';
+
 import styles from './index.module.scss';
 
 const borderColor = {
@@ -48,7 +51,7 @@ const getUIState = ({
     isChecked,
     isDisabled,
     hasError,
-}: Pick<PropTypes, 'isDisabled' | 'hasError' | 'isChecked'>): UiState => {
+}: Pick<PropTypes<string>, 'isDisabled' | 'hasError' | 'isChecked'>): UiState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -64,7 +67,7 @@ const getUIState = ({
     return 'unchecked';
 };
 
-interface PropTypes {
+interface PropTypes<T extends string | number> {
     /**
      * Disable the input and the label.
      */
@@ -78,7 +81,7 @@ interface PropTypes {
      * The `id` is added to the radio button as an HTML attribute and passed to the `onChange`
      * function.
      */
-    id?: string;
+    id?: T;
     /**
      * Boolean that determines if the radio is checked.
      */
@@ -107,7 +110,7 @@ interface PropTypes {
      * Function that runs when a new radio button is selected. It receives the new boolean value
      * and the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
      */
-    onChange: (isChecked: boolean, id?: string) => void;
+    onChange: (isChecked: boolean, id?: T) => void;
     /**
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
@@ -119,7 +122,7 @@ interface PropTypes {
     radioVerticalAlign?: 'top' | 'center';
 }
 
-export default function Radio({
+export default function Radio<T extends string | number = string>({
     children = null,
     dataTest,
     id,
@@ -131,7 +134,7 @@ export default function Radio({
     name,
     onChange,
     radioVerticalAlign = 'center',
-}: PropTypes): JSX.Element {
+}: PropTypes<T>): JSX.Element {
     const uiState = getUIState({ isChecked, isDisabled, hasError });
 
     warning(
@@ -151,7 +154,7 @@ export default function Radio({
             <input
                 className={styles.input}
                 type="radio"
-                id={id}
+                id={isUndefined(id) ? id : toString(id)}
                 onChange={(event): void => onChange(event.target.checked, id)}
                 checked={isChecked}
                 name={name}
