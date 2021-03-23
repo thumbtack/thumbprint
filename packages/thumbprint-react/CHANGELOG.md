@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.3.4 - 2021-03-23
+
 ### Fixed
 
 -   [Patch] Fix server-side rendering Popover bug.
