@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fix server-side rendering Popover bug.
+
 ## 14.3.3 - 2020-11-19
 
 ### Fixed

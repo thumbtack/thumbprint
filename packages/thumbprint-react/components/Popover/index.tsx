@@ -89,74 +89,72 @@ export default function Popover({
         <Manager>
             <Reference>{({ ref }): React.ReactNode => launcher({ ref })}</Reference>
             <ConditionalPortal shouldDisplace={shouldDisplace}>
-                {canUseDOM && (
-                    <Popper
-                        placement={position}
-                        modifiers={{
-                            offset: { offset: `0, ${tokens.tpSpace3}` },
-                            preventOverflow: { boundariesElement: 'window' },
-                        }}
-                        positionFixed={false}
-                    >
-                        {({ ref: popperRef, style, placement, arrowProps }): JSX.Element => (
-                            // Use tabIndex={-1} to allow programmatic focus (as initialFocus node
-                            // for focus-trap) but not be tabbable by user.
-                            <div
-                                role="dialog"
-                                aria-label={accessibilityLabel}
-                                tabIndex={-1}
-                                ref={(el: HTMLDivElement | null): void => {
-                                    setWrapperEl(el);
-                                    popperRef(el);
-                                }}
-                                className={classNames({
-                                    [styles.root]: true,
-                                    [styles.open]: isOpen,
-                                })}
-                                style={style}
-                                data-placement={placement}
-                            >
-                                {children}
+                <Popper
+                    placement={position}
+                    modifiers={{
+                        offset: { offset: `0, ${tokens.tpSpace3}` },
+                        preventOverflow: { boundariesElement: 'window' },
+                    }}
+                    positionFixed={false}
+                >
+                    {({ ref: popperRef, style, placement, arrowProps }): JSX.Element => (
+                        // Use tabIndex={-1} to allow programmatic focus (as initialFocus node
+                        // for focus-trap) but not be tabbable by user.
+                        <div
+                            role="dialog"
+                            aria-label={accessibilityLabel}
+                            tabIndex={-1}
+                            ref={(el: HTMLDivElement | null): void => {
+                                setWrapperEl(el);
+                                popperRef(el);
+                            }}
+                            className={classNames({
+                                [styles.root]: true,
+                                [styles.open]: isOpen,
+                            })}
+                            style={style}
+                            data-placement={placement}
+                        >
+                            {children}
 
-                                <div className={styles.closeButton}>
-                                    <TextButton
-                                        accessibilityLabel="Close popover"
-                                        iconLeft={
-                                            <svg
-                                                viewBox="0 0 24 24"
-                                                width="14"
-                                                height="14"
-                                                stroke="currentColor"
-                                                strokeWidth="3"
-                                                fill="none"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                className={styles.closeButtonIcon}
-                                            >
-                                                <line x1="18" y1="6" x2="6" y2="18" />
-                                                <line x1="6" y1="6" x2="18" y2="18" />
-                                            </svg>
-                                        }
-                                        theme="inherit"
-                                        onClick={onCloseClick}
-                                    />
-                                </div>
-
-                                <div
-                                    className={classNames({
-                                        [styles.nubbin]: true,
-                                        [styles.nubbinTop]: startsWith(placement, 'bottom'),
-                                        [styles.nubbinBottom]: startsWith(placement, 'top'),
-                                        [styles.nubbinLeft]: startsWith(placement, 'right'),
-                                        [styles.nubbinRight]: startsWith(placement, 'left'),
-                                    })}
-                                    ref={arrowProps.ref}
-                                    style={arrowProps.style}
+                            <div className={styles.closeButton}>
+                                <TextButton
+                                    accessibilityLabel="Close popover"
+                                    iconLeft={
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            width="14"
+                                            height="14"
+                                            stroke="currentColor"
+                                            strokeWidth="3"
+                                            fill="none"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className={styles.closeButtonIcon}
+                                        >
+                                            <line x1="18" y1="6" x2="6" y2="18" />
+                                            <line x1="6" y1="6" x2="18" y2="18" />
+                                        </svg>
+                                    }
+                                    theme="inherit"
+                                    onClick={onCloseClick}
                                 />
                             </div>
-                        )}
-                    </Popper>
-                )}
+
+                            <div
+                                className={classNames({
+                                    [styles.nubbin]: true,
+                                    [styles.nubbinTop]: startsWith(placement, 'bottom'),
+                                    [styles.nubbinBottom]: startsWith(placement, 'top'),
+                                    [styles.nubbinLeft]: startsWith(placement, 'right'),
+                                    [styles.nubbinRight]: startsWith(placement, 'left'),
+                                })}
+                                ref={arrowProps.ref}
+                                style={arrowProps.style}
+                            />
+                        </div>
+                    )}
+                </Popper>
             </ConditionalPortal>
         </Manager>
     );
