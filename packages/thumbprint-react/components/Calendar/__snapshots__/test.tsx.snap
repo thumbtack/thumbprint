@@ -483,6 +483,7 @@ exports[`renders a basic calendar with past date selection allowed 1`] = `
                   }
                 >
                   <div
+                    aria-live="polite"
                     className="DayPicker-Caption"
                     role="heading"
                   >
