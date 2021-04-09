@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Upgrade `react-day-picker` to 7.4.10
+-   [Patch] Allow React 17 as a peer dependency
+
 ## 14.3.4 - 2021-03-23
 
 ### Fixed
