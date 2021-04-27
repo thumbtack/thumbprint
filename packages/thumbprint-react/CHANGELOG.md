@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Add UNSAFE prefix to deprecated React lifecycle methods, prepping for React 17 support.
+
 ## 14.3.4 - 2021-03-23
 
 ### Fixed

@@ -48,7 +48,12 @@ export default class ModalStructure extends React.Component {
         }
     }
 
-    componentWillUpdate(nextProps) {
+    componentWillUnmount() {
+        this.toggleKeyDownListener(false, false);
+        toggleScrolling(false);
+    }
+
+    UNSAFE_componentWillUpdate(nextProps) {
         const { isOpen, onOpenFinish, onCloseFinish, shouldCloseOnEscape } = this.props;
 
         // Enable or disable the background scrolling if the `isOpen` prop has changed.
@@ -68,11 +73,6 @@ export default class ModalStructure extends React.Component {
         if (isOpen !== nextProps.isOpen || shouldCloseOnEscape !== nextProps.shouldCloseOnEscape) {
             this.toggleKeyDownListener(nextProps.isOpen, nextProps.shouldCloseOnEscape);
         }
-    }
-
-    componentWillUnmount() {
-        this.toggleKeyDownListener(false, false);
-        toggleScrolling(false);
     }
 
     handleKeyDown(event) {
