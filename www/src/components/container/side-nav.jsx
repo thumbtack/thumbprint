@@ -9,7 +9,24 @@ import { ScrollMarkerLink } from 'react-scroll-marker';
 import styles from './side-nav.module.scss';
 
 const SideNav = ({ children }) => (
-    <ul className={`flex-1 overflow-y-auto pb3 ${styles.sideNav}`}>{children}</ul>
+    <div className="flex-1 flex overflow-y-auto flex-column">
+        <ul className={`pb3 ${styles.sideNav}`}>{children}</ul>
+        <ul className="mt-auto ph3 pv3 flex">
+            <Text elementName="li" size={2} className={styles.sideNavBottomFooterLinks}>
+                <a
+                    href="https://github.com/thumbtack/thumbprint/blob/master/LICENSE"
+                    className="black"
+                >
+                    License
+                </a>
+            </Text>
+            <Text elementName="li" size={2} className={styles.sideNavBottomFooterLinks}>
+                <a href="https://www.thumbtack.com/" className="black" size={2} elementName="a">
+                    Thumbtack, Inc.
+                </a>
+            </Text>
+        </ul>
+    </div>
 );
 
 SideNav.propTypes = {
