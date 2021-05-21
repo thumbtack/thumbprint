@@ -203,7 +203,7 @@ interface ModalFooterPropTypes {
      */
     children: React.ReactNode;
     /**
-     * Attaches the footer to the bottom of the modal below the small breakpoint.
+     * Attaches the footer to the bottom of the modal.
      */
     isSticky?: boolean;
 }
