@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "14.3.4",
+    "version": "14.3.5",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
