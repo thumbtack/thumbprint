@@ -5,8 +5,6 @@
 ### Changed
 
 -   [Patch] Allow React 17 as a peer dependency.
--   [Patch] Add resolution for `react` at `17.0.2`.
--   [Patch] Add resolution for `react-dom` at `17.0.2`.
 
 ## 14.3.5 - 2021-06-03
 
