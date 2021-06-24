@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.3.6 - 2021-06-24
+
 ### Changed
 
 -   [Patch] Allow React 17 as a peer dependency.
