@@ -133,6 +133,15 @@ radioStack.radioGroup.selection
 
 ```
 
-```
-
-```
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/radio/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
