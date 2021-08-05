@@ -15,6 +15,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             iconRight,
             theme = 'primary',
             type = 'button',
+            target,
             shouldOpenInNewTab = false,
             onClick,
             onMouseEnter,
@@ -23,6 +24,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             onMouseLeave,
             onBlur,
             accessibilityLabel,
+            dataTestId,
             dataTest,
         },
         ref,
@@ -67,6 +69,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
                 [styles.plainThemeInherit]: theme === 'inherit',
             }),
             'aria-label': accessibilityLabel,
+            'data-testid': dataTestId,
             'data-test': dataTest,
             ref,
         };
@@ -75,7 +78,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             return (
                 <a // eslint-disable-line jsx-a11y/anchor-has-content
                     {...commonProps}
-                    {...getAnchorProps({ isDisabled, shouldOpenInNewTab, to, onClick })}
+                    {...getAnchorProps({ isDisabled, target, shouldOpenInNewTab, to, onClick })}
                     ref={ref as React.Ref<HTMLAnchorElement>}
                 />
             );
@@ -122,6 +125,11 @@ interface PropTypes {
      */
     type?: 'button' | 'submit';
     /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
+    /**
      * Opens the URL in a new tab when clicked.
      */
     shouldOpenInNewTab?: boolean;
@@ -158,6 +166,11 @@ interface PropTypes {
     accessibilityLabel?: string;
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }

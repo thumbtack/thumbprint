@@ -50,3 +50,13 @@
     width: $tp-space__1;
     background: $tp-color__blue;
 }
+
+.sideNavBottomFooterLinks:not(:last-child) {
+    margin-right: $tp-space__2;
+    &:after {
+        // Adds a dot in between the links.
+        color: $tp-color__black-300;
+        content: '\2022';
+        padding-left: $tp-space__2;
+    }
+}

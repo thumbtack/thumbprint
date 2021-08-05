@@ -2,7 +2,6 @@ import React from 'react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import classNames from 'classnames';
 import styles from './index.module.scss';
-import { NavigationCaretDownSmall } from '../../icons/index.jsx';
 
 const iconColor = {
     disabled: tokens.tpColorGray,
@@ -69,7 +68,7 @@ interface PropTypes {
     /**
      * Function that is fired when the value of the select changes.
      */
-    onClick?: () => void;
+    onClick?: (event: React.MouseEvent<HTMLSelectElement, MouseEvent>) => void;
     /**
      * A function that is fired when the value of the select changes. The
      * new `value` is passed to the function.
@@ -78,13 +77,18 @@ interface PropTypes {
     /**
      * Fires when the select receives focus.
      */
-    onFocus?: () => void;
+    onFocus?: (event: React.FocusEvent<HTMLSelectElement>) => void;
     /**
      * Fires when the select loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (event: React.FocusEvent<HTMLSelectElement>) => void;
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
     /**
@@ -97,6 +101,7 @@ interface PropTypes {
 const Dropdown = ({
     children,
     dataTest,
+    dataTestId,
     hasError = false,
     id,
     isDisabled = false,
@@ -136,13 +141,26 @@ const Dropdown = ({
                 onChange={(event): void => onChange(event.target.value, event)}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                data-testid={dataTestId}
                 data-test={dataTest}
                 name={name}
             >
                 {children}
             </select>
 
-            <NavigationCaretDownSmall className={styles.caret} fill={iconColor[uiState]} />
+            <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                className={styles.caret}
+                stroke={iconColor[uiState]}
+                strokeWidth="3"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            >
+                <polyline points="6 9 12 15 18 9" />
+            </svg>
         </div>
     );
 };

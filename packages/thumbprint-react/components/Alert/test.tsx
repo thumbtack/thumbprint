@@ -6,10 +6,10 @@ describe('BannerAlert', () => {
     test('renders children', () => {
         const wrapper = mount(
             <BannerAlert>
-                <p data-test-id="text">Alert content</p>
+                <p data-testid="text">Alert content</p>
             </BannerAlert>,
         );
-        expect(wrapper.find('[data-test-id="text"]').text()).toBe('Alert content');
+        expect(wrapper.find('[data-testid="text"]').text()).toBe('Alert content');
         expect(wrapper).toMatchSnapshot();
     });
 });
@@ -27,10 +27,10 @@ describe('InPageAlert', () => {
     test('renders children', () => {
         const wrapper = mount(
             <InPageAlert>
-                <p data-test-id="text">Alert content</p>
+                <p data-testid="text">Alert content</p>
             </InPageAlert>,
         );
-        expect(wrapper.find('[data-test-id="text"]').text()).toBe('Alert content');
+        expect(wrapper.find('[data-testid="text"]').text()).toBe('Alert content');
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -162,6 +162,16 @@ test('adds `dataTest` prop', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
+test('adds `dataTestId` prop', () => {
+    const wrapper = mount(
+        <Checkbox dataTestId="Duck" onChange={jest.fn()}>
+            Goose
+        </Checkbox>,
+    );
+    expect(wrapper.find('input').prop('data-testid')).toEqual('Duck');
+    expect(wrapper).toMatchSnapshot();
+});
+
 test('adds `value` prop', () => {
     const wrapper = mount(
         <Checkbox value="Duck" onChange={jest.fn()}>

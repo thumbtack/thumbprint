@@ -1,5 +1,12 @@
 import React from 'react';
-import DayPicker, { DateUtils, Modifiers } from 'react-day-picker';
+import DayPicker, {
+    DateUtils,
+    Modifiers,
+    Modifier,
+    BeforeModifier,
+    BeforeAfterModifier,
+    AfterModifier,
+} from 'react-day-picker';
 
 import get from 'lodash/get';
 import map from 'lodash/map';
@@ -14,14 +21,20 @@ import endOfDay from 'date-fns/end_of_day';
 import startOfDay from 'date-fns/start_of_day';
 
 import styles from './index.module.scss';
-import { DateIsh, Modifier } from './types';
+
+export type DateIsh = Date | string | number;
 
 function throwError(message: string): void {
     throw new Error(`TUI DatePicker: ${message}`);
 }
 
 export function normaliseValue(value: PropTypes['value']): Date[] {
+    if (value === null) {
+        return [];
+    }
+
     const valueArr: DateIsh[] = castArray<DateIsh>(value);
+
     return map<DateIsh, Date>(valueArr, d => parse(d));
 }
 
@@ -35,6 +48,17 @@ export function hasAnyFutureDays(dates: Date[], cutoff: Date = new Date()): bool
     return some(dates, date => isAfter(startOfDay(date), cutoff));
 }
 
+function isBeforeModifier(
+    modifier: Modifier | null,
+): modifier is BeforeModifier | BeforeAfterModifier {
+    return !!modifier && 'before' in modifier;
+}
+function isAfterModifier(
+    modifier: Modifier | null,
+): modifier is AfterModifier | BeforeAfterModifier {
+    return !!modifier && 'after' in modifier;
+}
+
 export function validateProps(props: PropTypes): void {
     const days = normaliseValue(props.value);
 
@@ -42,16 +66,15 @@ export function validateProps(props: PropTypes): void {
         throwError('`allowMultiSelection` is `false` but multiple dates were provided');
     }
 
-    const { before, after } = props.disabledDays || {};
-    if (before && hasAnyPastDays(days, before)) {
+    if (isBeforeModifier(props.disabledDays) && hasAnyPastDays(days, props.disabledDays.before)) {
         throwError(
-            `Days before ${before} are disabled but one or more provided days fall before that.`,
+            `Days before ${props.disabledDays.before} are disabled but one or more provided days fall before that.`,
         );
     }
 
-    if (after && hasAnyFutureDays(days, after)) {
+    if (isAfterModifier(props.disabledDays) && hasAnyFutureDays(days, props.disabledDays.after)) {
         throwError(
-            `Days after ${after} are disabled but one or more provided days fall after that.`,
+            `Days after ${props.disabledDays.after} are disabled but one or more provided days fall after that.`,
         );
     }
 }
@@ -62,7 +85,7 @@ interface PropTypes {
      * or a string representing a date, or a numeric UNIX timestamp, and either a single object or
      * an array of such objects can be provided.
      */
-    value?: DateIsh | DateIsh[];
+    value?: DateIsh | DateIsh[] | null;
     /**
      * Date object representing the month that is currently displayed by the calendar. If omitted
      * it will default to the first date in the `value` prop. You should update it in response to
@@ -90,7 +113,7 @@ interface PropTypes {
      * disabled by default.
      * http://react-day-picker.js.org/docs/modifiers.html
      */
-    disabledDays?: Modifier;
+    disabledDays?: Modifier | null;
     /**
      * A Date object representing the last allowed month. Users won’t be able to navigate or
      * interact with the days after it.
@@ -149,7 +172,7 @@ const Calendar = ({
     return (
         <div className={styles.root}>
             <DayPicker
-                disabledDays={disabledDays}
+                disabledDays={disabledDays || undefined}
                 fromMonth={get(disabledDays, 'before', null)}
                 toMonth={lastMonth}
                 month={month || selectedDays[0]}

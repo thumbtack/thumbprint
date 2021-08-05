@@ -788,26 +788,30 @@ exports[`TextInputClearButton includes \`aria-label\` on button to describe the 
           onClick={[Function]}
           type="button"
         >
-          <NavigationCloseSmall
-            fill="currentColor"
+          <svg
+            className="closeButtonIcon"
+            fill="none"
             height="18"
-            viewBox="0 0 18 18"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
             width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="currentColor"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </NavigationCloseSmall>
+            <line
+              x1="18"
+              x2="6"
+              y1="6"
+              y2="18"
+            />
+            <line
+              x1="6"
+              x2="18"
+              y1="6"
+              y2="18"
+            />
+          </svg>
         </button>
       </div>
     </div>
@@ -832,26 +836,30 @@ exports[`TextInputClearButton renders an SVG icon 1`] = `
           onClick={[Function]}
           type="button"
         >
-          <NavigationCloseSmall
-            fill="currentColor"
+          <svg
+            className="closeButtonIcon"
+            fill="none"
             height="18"
-            viewBox="0 0 18 18"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
             width="18"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <svg
-              fill="currentColor"
-              height="18"
-              viewBox="0 0 18 18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.014 7.6L4.771 3.357a1 1 0 1 0-1.414 1.414L7.6 9.014l-4.243 4.243a1 1 0 1 0 1.414 1.414l4.243-4.243 4.243 4.243a1 1 0 0 0 1.414-1.414l-4.243-4.243 4.243-4.243a1 1 0 0 0-1.414-1.414L9.014 7.6z"
-                fillRule="evenodd"
-              />
-            </svg>
-          </NavigationCloseSmall>
+            <line
+              x1="18"
+              x2="6"
+              y1="6"
+              y2="18"
+            />
+            <line
+              x1="6"
+              x2="18"
+              y1="6"
+              y2="18"
+            />
+          </svg>
         </button>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { BlockedFilled, InfoFilled, WarningFilled } from '../../icons';
 
 describe('AlertBanner', () => {
     const children = (
-        <div data-test="child">
+        <div data-testid="child">
             This is the child component.
             <a href="/">Click here</a>
         </div>
@@ -49,11 +49,21 @@ describe('AlertBanner', () => {
     });
 
     test('renders children', () => {
-        expect(cautionWrapper.find('[data-test="child"]').length).toBe(1);
+        expect(cautionWrapper.find('[data-testid="child"]').length).toBe(1);
     });
 
     test('appends data-test attribute to root', () => {
         expect(cautionWrapper.find('[data-test="test"]').hasClass('root')).toBe(true);
+    });
+
+    test('appends data-testid attribute to root', () => {
+        const wrapper = mount(
+            <AlertBanner theme="caution" dataTestId="test">
+                {children}
+            </AlertBanner>,
+        );
+
+        expect(wrapper.find('[data-testid="test"]').hasClass('root')).toBe(true);
     });
 
     test('match snapshot', () => {

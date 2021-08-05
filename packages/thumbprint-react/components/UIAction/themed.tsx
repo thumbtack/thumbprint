@@ -92,6 +92,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             type = 'button',
             to,
             shouldOpenInNewTab = false,
+            target,
             onClick,
             onMouseEnter,
             onMouseOver,
@@ -102,6 +103,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             size = 'large',
             theme = 'primary',
             width = 'auto',
+            dataTestId,
             dataTest,
         }: PropTypes,
         ref,
@@ -120,6 +122,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         shouldOpenInNewTab,
                         to,
                         onClick,
+                        target,
                     });
                     const buttonProps = getButtonProps({
                         onClick,
@@ -156,6 +159,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         disabled: isLoading || isDisabled,
                         className,
                         'aria-label': accessibilityLabel,
+                        'data-testid': dataTestId,
                         'data-test': dataTest,
                     };
 
@@ -238,9 +242,16 @@ interface PropTypes {
      */
     to?: string;
     /**
+     * @deprecated
      * Opens the URL in a new tab when clicked.
+     * This is deprecated. Use `target="_blank"` instead.
      */
     shouldOpenInNewTab?: boolean;
+    /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
     /**
      * Function that will run when the button is clicked on.
      */
@@ -294,6 +305,11 @@ interface PropTypes {
     width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }

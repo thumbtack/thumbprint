@@ -4,10 +4,12 @@ import { Themed, Plain } from '../UIAction/index';
 
 interface CommonProps {
     to?: string;
+    target?: string;
     shouldOpenInNewTab?: boolean;
     children?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
+    dataTestId?: string;
     dataTest?: string;
     accessibilityLabel?: string;
 }
@@ -22,10 +24,12 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
     return {
         to: props.to,
         onClick: props.onClick,
+        target: props.target,
         shouldOpenInNewTab: props.shouldOpenInNewTab,
         isDisabled: props.isDisabled,
         children: props.children,
         accessibilityLabel: props.accessibilityLabel,
+        dataTestId: props.dataTestId,
         dataTest: props.dataTest,
     };
 };
@@ -38,11 +42,13 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
         {
             to,
             onClick,
+            target,
             shouldOpenInNewTab = false,
             isDisabled = false,
             children,
             accessibilityLabel,
             dataTest,
+            dataTestId,
             theme = 'primary',
             iconLeft,
             iconRight,
@@ -53,11 +59,13 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
             {...getCommonLinkProps({
                 to,
                 onClick,
+                target,
                 shouldOpenInNewTab,
                 isDisabled,
                 children,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             theme={theme}
             iconLeft={iconLeft}
@@ -100,6 +108,12 @@ interface LinkPropTypes {
      */
     iconRight?: React.ReactNode;
     /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
+    /**
+     * @deprecated
      * Opens the URL in a new tab when clicked.
      */
     shouldOpenInNewTab?: boolean;
@@ -111,6 +125,11 @@ interface LinkPropTypes {
     theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }
@@ -124,10 +143,12 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             to,
             onClick,
             shouldOpenInNewTab = false,
+            target,
             isDisabled = false,
             children,
             accessibilityLabel,
             dataTest,
+            dataTestId,
             icon,
             iconRight,
             theme = 'primary',
@@ -141,10 +162,12 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
                 to,
                 onClick,
                 shouldOpenInNewTab,
+                target,
                 isDisabled,
                 children,
                 accessibilityLabel,
                 dataTest,
+                dataTestId,
             })}
             icon={icon}
             iconRight={iconRight}
@@ -179,6 +202,11 @@ interface ThemedLinkPropTypes {
      */
     onClick?: () => void;
     /**
+     * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
+     * string to open the link in an `<iframe>` with the same `name`.
+     */
+    target?: string;
+    /**
      * Opens the URL in a new tab when clicked.
      */
     shouldOpenInNewTab?: boolean;
@@ -208,6 +236,11 @@ interface ThemedLinkPropTypes {
     width?: 'auto' | 'full' | 'full-below-small';
     /**
      * A selector hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
 }

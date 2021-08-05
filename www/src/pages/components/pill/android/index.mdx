@@ -1,0 +1,68 @@
+---
+title: Pill
+description: Small labels that help qualify information.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Usage
+
+Pills are compact badges that help to explain or draw attention to a certain area of the UI. Pills include one or both of text and an icon (which is aligned at the start of the text if both are present).
+
+### Themes
+
+Android supports seven standard pill themes, shown below.
+
+![Pill themes](/img/android-pill-themes.png)
+
+These themes correspond to the following colors:
+
+1. green
+1. blue
+1. indigo
+1. purple
+1. red
+1. yellow
+1. gray (the default)
+
+### Size
+
+Pill uses Thumbprint Title7 text (14sp)
+
+### Layout XML
+
+Pill instances are configured in layout XML, using the custom attributes
+
+-   `pillColor` one of the seven colors determining the style
+-   `pillText` text to use
+-   `pillIcon` an optional icon
+
+For example:
+
+```xml
+    <com.thumbtack.thumbprint.views.pill.ThumbprintPill
+        android:id="@+id/indigoPill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:pillColor="indigo"
+        app:pillText="Indigo Pill"
+        app:pillIcon="@drawable/pill_icon" />
+```
+
+These attributes can also be modified programatically using the fields of the same name on the ThumbprintPill object.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/pill/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

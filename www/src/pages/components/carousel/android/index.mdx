@@ -1,0 +1,33 @@
+---
+title: Carousel
+description: Grouped content that is navigated horizontally.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Usage
+
+ThumbprintCarousel is a RecyclerView which imposes standard Thumbprint styles for carousels; in particular:
+
+-   sets the orientation to horizontal
+-   uses a [LinearLayoutManager](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/LinearLayoutManager)
+-   disables clipping for children within its padding (android:clipToPadding)
+-   adds a 8dp space between items
+
+Note that ThumbprintCarousel automatically applies R.style.Thumbprint_Carousel; it does not need to be added as a style in XML.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/carousel/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

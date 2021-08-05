@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import warning from 'warning';
 import styles from './index.module.scss';
-import { ContentActionsCheckSmall } from '../../icons/index.jsx';
 
 const labelCursor = {
     error: 'pointer',
@@ -155,6 +154,12 @@ interface PropTypes {
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments. It is
+     * applied internally to the `<input />` element.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
+     */
     dataTest?: string;
     /**
      * Determines how the checkbox input will be vertically aligned relative to `props.children`.
@@ -171,6 +176,7 @@ export default function Checkbox({
     checkboxVerticalAlign = 'center',
     children,
     dataTest,
+    dataTestId,
     hasError = false,
     id,
     isChecked = false,
@@ -209,6 +215,7 @@ export default function Checkbox({
             <input
                 className={styles.input}
                 aria-checked={isIndeterminate ? 'mixed' : isChecked}
+                data-testid={dataTestId}
                 data-test={dataTest}
                 type="checkbox"
                 id={id}
@@ -228,7 +235,33 @@ export default function Checkbox({
                     borderColor: borderColor[functionalState][checkedState],
                 }}
             >
-                {isChecked && !isIndeterminate && <ContentActionsCheckSmall />}
+                {isChecked && !isIndeterminate && (
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="15.232"
+                            y="4.003"
+                            width="11.701"
+                            height="1.879"
+                            rx=".939"
+                            transform="rotate(123 15.232 4.003)"
+                        />
+                        <rect
+                            x="8.83"
+                            y="13.822"
+                            width="7.337"
+                            height="1.879"
+                            rx=".939"
+                            transform="rotate(-146 8.83 13.822)"
+                        />
+                        <path d="M8.072 13.306l1.03-1.586.787.512-1.03 1.586z" />
+                    </svg>
+                )}
                 {isIndeterminate && (
                     <svg
                         width="10"

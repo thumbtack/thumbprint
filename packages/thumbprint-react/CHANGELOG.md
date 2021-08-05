@@ -2,6 +2,73 @@
 
 ## Unreleased
 
+## 14.3.6 - 2021-06-24
+
+### Changed
+
+-   [Patch] Allow React 17 as a peer dependency.
+-   [Patch] Upgrade `react-day-picker` to 7.4.10
+
+## 14.3.5 - 2021-06-03
+
+### Changed
+
+-   [Patch] Add UNSAFE prefix to deprecated React lifecycle methods, prepping for React 17 support.
+
+## 14.3.4 - 2021-03-23
+
+### Fixed
+
+-   [Patch] Fix server-side rendering Popover bug.
+
+## 14.3.3 - 2020-11-19
+
+### Fixed
+
+-   [Patch] Fix fatal error being thrown when passing `null` to the `value` prop of `Calendar`.
+-   [Patch] Fix error that meant the type of `Calendar`'s `value` prop was accidentally `any`.
+
+## 14.3.2 - 2020-11-11
+
+### Added
+
+-   [Patch] Add `event` argument to the `onBlur` and `onFocus` props of the `TextArea` component.
+
+## 14.3.1 - 2020-11-11
+
+### Added
+
+-   [Patch] Add `event` argument to the `onClick`, `onBlur` and `onFocus` props of the `Dropdown` component.
+
+## 14.3.0 - 2020-10-30
+
+### Changed
+
+-   [Patch] Add note in `dataTest` deprecated documentation telling developers to use `dataTestId` instead.
+
+### Added
+
+-   [Minor] Add missing `dataTestId` prop to `Link` and `ThemedLink` components. (#724)
+-   [Minor] Add missing `dataTestId` prop to `Label`, `Wrap`, and `Type` components. (#724)
+
+## 14.2.0 - 2020-10-21
+
+### Added
+
+-   [Minor] Add an `initialFocus` to `ModalCurtain`.
+-   [Minor] Add `dataTestId` props to components that previously supported `dataTest`. `dataTest` is now deprecated. (#724)
+
+## 14.1.0 - 2020-10-05
+
+### Changed
+
+-   [Patch] Use newer version of TypeScript as dev dependency.
+-   [Patch] Mark the `shouldOpenInNewTab` prop of `Link` and `ThemedLink` as deprecated.
+
+### Added
+
+-   [Minor] Add `target` prop to `Link` and `ThemedLink`.
+
 ## 14.0.0 - 2020-07-14
 
 ### Changed

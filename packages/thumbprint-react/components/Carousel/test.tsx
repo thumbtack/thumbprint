@@ -16,11 +16,11 @@ describe('Carousel', () => {
     test('does not render duplicate children when not animating', () => {
         const wrapper = mount(
             <Carousel selectedIndex={0} onSelectedIndexChange={noop}>
-                <div data-test="item">Goose</div>
+                <div data-testid="item">Goose</div>
             </Carousel>,
         );
 
-        expect(wrapper.find('[data-test="item"]')).toHaveLength(1);
+        expect(wrapper.find('[data-testid="item"]')).toHaveLength(1);
     });
 
     describe('`selectedIndex`', () => {

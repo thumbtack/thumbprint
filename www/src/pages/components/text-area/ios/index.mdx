@@ -1,0 +1,194 @@
+---
+title: Text Area
+description: A control that offers multiline, editable text input.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+`TextArea` is a multiline, editable text input control with a lot of customisation options.
+
+```swift
+let textArea = TextArea()
+```
+
+## Properties
+
+#### text
+
+The text that's shown by the control.
+
+![Text TextArea](/img/ios/textarea_text.png)
+
+```swift
+textInput.text = "This is a simple text that can cover multiple lines if the control is too small to fit everything on one line."
+```
+
+#### placeholder
+
+The placeholder text that's shown when no text has been entered. Placeholder text is shown in a light gray color.
+
+![Placeholder TextArea](/img/ios/textarea_placeholder.png)
+
+```swift
+textInput.placeholder = "Type something..."
+```
+
+#### hasError
+
+If true, the control will be red. Use this property if something's wrong and the text area control needs a user's attention.
+
+![Error TextArea](/img/ios/textarea_error.png)
+
+```swift
+textInput.hasError = true
+```
+
+#### isEnabled
+
+If false, the control will not react to user interaction and will have a light gray color.
+
+![Disabled TextArea](/img/ios/textarea_disabled.png)
+
+```swift
+textInput.isEnabled = false
+```
+
+#### isHighlighted
+
+If true, the control has a blue border.
+
+![Highlighted TextArea](/img/ios/textarea_highlighted.png)
+
+```swift
+textInput.isHighlighted = true
+```
+
+#### inputView
+
+The custom input view to display when the receiver becomes the first responder. The default value is nil, resulting in the system-supplied keyboard to be used.
+
+```swift
+textInput.inputView = customView
+```
+
+#### inputAccessoryView
+
+An accessory view for to the system-supplied keyboard or the custom input view.
+
+```swift
+textInput.inputAccessoryView = customAccessoryView
+```
+
+#### keyboardType
+
+The specific keyboard that should be used for this control.
+
+```swift
+textInput.keyboardType = .numberPad
+```
+
+#### keyboardAppearance
+
+The appearance style of the keyboard.
+
+```swift
+textInput.keyboardAppearance = .dark
+```
+
+#### returnKeyType
+
+The visible title of the return key.
+
+```swift
+textInput.returnKeyType = .done
+```
+
+#### textContentType
+
+The semantic meaning of the control.
+
+```swift
+textInput.textContentType = .emailAddress
+```
+
+#### isSecureTextEntry
+
+If true, disables the user’s ability to copy the text.
+
+```swift
+textInput.isSecureTextEntry = true
+```
+
+#### enablesReturnKeyAutomatically
+
+If true, the keyboard disables the Return key when the text entry area contains no text. As soon as the user enters some text, the Return key is automatically enabled.
+
+```swift
+textInput.enablesReturnKeyAutomatically = true
+```
+
+#### autocapitalizationType
+
+The autocapitalization style of the control.
+
+```swift
+textInput.autocapitalizationType = .sentences
+```
+
+#### autocorrectionType
+
+The autocorrection behavior of the control.
+
+```swift
+textInput.autocorrectionType = .yes
+```
+
+#### spellCheckingType
+
+The spell-checking style of the control.
+
+```swift
+textInput.spellCheckingType = .no
+```
+
+#### smartQuotesType
+
+The configuration state for smart quotes.
+
+```swift
+textInput.smartQuotesType = .yes
+```
+
+#### smartDashesType
+
+The configuration state for smart dashes.
+
+```swift
+textInput.smartDashesType = .yes
+```
+
+#### smartInsertDeleteType
+
+The configuration state for the smart insertion and deletion of space characters.
+
+```swift
+textInput.smartInsertDeleteType = .yes
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-area/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

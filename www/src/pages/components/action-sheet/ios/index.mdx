@@ -1,0 +1,34 @@
+---
+title: Action Sheet
+description: Modal prompt for making an important choice.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Action sheets on iOS are implemented with the built-in UIKit component `UIAlertController` with `preferredStyle: .actionSheet`.
+
+Note that on iPhones, action sheets slide up from the bottom of the screen, while on iPads they are displayed as popovers.
+
+![iOS action sheet](/img/ios-action-sheet.png)
+
+## Public API
+
+See Apple documentation on [UIAlertController](https://developer.apple.com/documentation/uikit/uialertcontroller) for the public API.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/action-sheet/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

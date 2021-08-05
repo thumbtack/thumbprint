@@ -8,7 +8,7 @@ Here are a few ways to get started:
 
 Providing feedback is the easiest way to contribute to Thumbprint. You can do this by [creating an issue on GitHub](https://github.com/thumbtack/thumbprint/issues).
 
-If you're a Thumbtack employee, you can also post on [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) for quick help.
+If you're a Thumbtack employee, you can also post on [#design-systems](https://thumbtack.slack.com/messages/C7FLM0ZGU/details/) for quick help.
 
 ## Contribute code to Thumbprint
 
@@ -72,4 +72,4 @@ Thumbprint follows a [traditional GitHub workflow](https://guides.github.com/int
 
 [Learn how to release the Thumbprint packages and documentation](https://github.com/thumbtack/thumbprint/blob/master/RELEASING.md). This process is done by [Thumbprint maintainers](https://github.com/orgs/thumbtack/teams/design-systems/members) after your code has merged into `master`.
 
-As always, reach out to [#design-systems](https://teamsanfrancisco.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) if you have questions or feedback.
+As always, reach out to [#design-systems](https://thumbtack.slack.com/messages/C7FLM0ZGU/details/) (internal to Thumbtack employees) or [create an issue](https://github.com/thumbtack/thumbprint/issues) if you have questions or feedback.

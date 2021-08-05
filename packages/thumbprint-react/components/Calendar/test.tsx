@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { mount } from 'enzyme';
 import addDays from 'date-fns/add_days';
 import subDays from 'date-fns/sub_days';
+
 import Calendar, { validateProps, normaliseValue, hasAnyPastDays, hasAnyFutureDays } from './index';
 
 test('renders a basic calendar with past date selection allowed', () => {
@@ -487,6 +488,30 @@ describe('DatePicker utilities', () => {
                     value: [addDays(new Date(), 1), addDays(new Date(), 2)],
                 });
             }).toThrow('are disabled but one or more provided days fall after that');
+        });
+
+        test('does not throw an error when past and future selection are disabled, and the initial date is `null`', () => {
+            expect(() => {
+                validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
+                    allowMultiSelection: true,
+                    disabledDays: { before: subDays(new Date(), 5), after: addDays(new Date(), 5) },
+                    value: null,
+                });
+            }).not.toThrow();
+        });
+
+        test('does not throw an error when past and future selection are disabled, and the initial date is `undefined`', () => {
+            expect(() => {
+                validateProps({
+                    onChange: (): void => {},
+                    onMonthChange: (): void => {},
+                    allowMultiSelection: true,
+                    disabledDays: { before: subDays(new Date(), 5), after: addDays(new Date(), 5) },
+                    value: undefined,
+                });
+            }).not.toThrow();
         });
     });
 });
