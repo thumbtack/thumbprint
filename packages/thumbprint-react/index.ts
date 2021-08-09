@@ -55,3 +55,4 @@ export {
 export { default as Tooltip } from './components/Tooltip/index';
 export { Title, Text } from './components/Type/index';
 export { default as Wrap } from './components/Wrap/index';
+export { default as FilterChip } from './components/Chip/index';

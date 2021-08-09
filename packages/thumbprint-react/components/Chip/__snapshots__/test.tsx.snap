@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders \`text\` passed in 1`] = `
+<body>
+  <div>
+    <button
+      aria-pressed="false"
+      class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
+      type="button"
+    >
+      Beverages
+    </button>
+  </div>
+</body>
+`;
+
+exports[`renders a proper onClick callback 1`] = `
+<body>
+  <div>
+    <button
+      aria-pressed="false"
+      class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
+      type="button"
+    >
+      Beverages
+    </button>
+  </div>
+</body>
+`;
+
+exports[`renders the correct selected state when clicked 1`] = `
+<body>
+  <div>
+    <button
+      aria-pressed="true"
+      class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipSelected"
+      type="button"
+    >
+      Beverages
+    </button>
+  </div>
+</body>
+`;
+
+exports[`renders the selected state 1`] = `
+<body>
+  <div>
+    <button
+      aria-pressed="true"
+      class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipSelected"
+      type="button"
+    >
+      Beverages
+    </button>
+  </div>
+</body>
+`;
+
+exports[`renders the unselected state by default 1`] = `
+<body>
+  <div>
+    <button
+      aria-pressed="false"
+      class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
+      type="button"
+    >
+      Beverages
+    </button>
+  </div>
+</body>
+`;

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add documentation for FilterChip component.
+
 ## 14.3.6 - 2021-06-24
 
 ### Changed

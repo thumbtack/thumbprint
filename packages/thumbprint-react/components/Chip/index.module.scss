@@ -1,0 +1,17 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.filterChip {
+    flex: 0 0 auto;
+    font-size: $tp-font__body__3__size;
+    line-height: 18px;
+    &Selected {
+        border: 1px $tp-color__blue-100;
+        color: $tp-color__blue;
+        background-color: $tp-color__blue-100;
+    }
+    &NotSelected {
+        border: 2px solid $tp-color__gray;
+        color: $tp-color__blue;
+        background-color: $tp-color__white;
+    }
+}
