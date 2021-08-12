@@ -6,7 +6,6 @@ import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
 import { TextInput, TextInputIcon } from '@thumbtack/thumbprint-react';
 import { map } from 'lodash';
-import { setConfig } from 'react-hot-loader';
 import {
     NavigationSearchSmall,
     NavigationCloseSmall,
@@ -22,10 +21,6 @@ import DocSearch from './doc-search';
 import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
 import styles from './index.module.scss';
-
-// https://github.com/gatsbyjs/gatsby/issues/7209
-// https://github.com/gaearon/react-hot-loader/issues/1034
-setConfig({ logLevel: 'no-errors-please' });
 
 const ActiveSectionContext = React.createContext(null);
 
