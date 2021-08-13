@@ -1,0 +1,92 @@
+---
+title: Chip
+description: Compact controls that allow for toggling and filtering
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Usage
+
+Chips allow users to make selections, filter content, or trigger small actions. Chips should appear as a group of multiple elements in most cases. Unlike buttons, chips shouldn’t navigate away from the current page. If the action requires a new page to load, please use a button instead of a chip.
+
+### Components
+
+There are two types of chip components: ToggleChip and FilterChip.
+
+#### ToggleChip
+
+A toggle chip behaves the same way as a checkbox and should be used for a set of options where more than one option can be selected. It is currently not available as a React component.
+
+#### FilterChip
+
+A FilterChip is used to filter options and behaves like a button.
+
+The `isSelected` prop determines if a FilterChip is selected.
+
+```jsx
+function FilterChipExample() {
+    const [isSelected, setIsSelected] = React.useState(undefined);
+    return (
+        <FilterChip
+            text={isSelected ? "I'm Selected" : 'Select Me'}
+            isSelected={isSelected}
+            onClick={() => setIsSelected(!isSelected)}
+        />
+    );
+}
+```
+
+Below is an example of multiple FilterChips.
+
+```jsx
+function MultipleFilterChipExample() {
+    const [selection, setSelection] = React.useState('Canada');
+    return (
+        <div>
+            <FilterChip
+                text="Canada"
+                isSelected={selection == 'Canada'}
+                onClick={() => setSelection('Canada')}
+            />
+            <FilterChip
+                text="United States"
+                isSelected={selection == 'United States'}
+                onClick={() => setSelection('United States')}
+            />
+            <FilterChip
+                text="Philippines"
+                isSelected={selection == 'Philippines'}
+                onClick={() => setSelection('Philippines')}
+            />
+        </div>
+    );
+}
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/chip/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: allFile(
+            filter: { relativePath: { in: ["thumbprint-react/components/Chip/index.tsx"] } }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
