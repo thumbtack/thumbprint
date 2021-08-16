@@ -4,7 +4,9 @@
 
 ### Added
 
--   [Minor] Add documentation for FilterChip component.
+## 14.4.0 - 2021-08-16
+
+-   [Minor] Add FilterChip component and documentation.
 
 ## 14.3.6 - 2021-06-24
 
