@@ -15,6 +15,7 @@ The `ThumbprintCheckBox` class is used for a simple checkbox with button and tex
 ![basic_checkbox](https://user-images.githubusercontent.com/11261709/131582174-5ceec397-2291-4faf-b128-273b863ac4ee.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintCheckBox
     android:id="@+id/checkbox"
@@ -30,6 +31,7 @@ The `checked` property indicates if the checkbox is checked.
 ![checked_box](https://user-images.githubusercontent.com/11261709/131582343-88530ffe-456e-433d-934b-70d070c2f3a0.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintCheckBox
     android:id="@+id/checkbox"
@@ -39,6 +41,7 @@ XML:
 ```
 
 Code:
+
 ```kotlin
 checkbox.isChecked = true
 ```
@@ -50,6 +53,7 @@ Indeterminate checkboxes are used when not all items in a field are selected. Th
 ![indeterminate_checkbox](https://user-images.githubusercontent.com/11261709/131582480-5454848d-a0a1-49cc-b52e-df75b54223ac.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintCheckBox
     android:id="@+id/indeterminateCheckbox"
@@ -60,6 +64,7 @@ XML:
 ```
 
 Code:
+
 ```kotlin
 checkbox.isIndeterminate = true
 ```
@@ -71,6 +76,7 @@ Checkboxes can be disabled with the standard Android `enabled` property.
 ![disabled_checkbox](https://user-images.githubusercontent.com/11261709/131582651-f0a79ec2-d6d2-4aef-bf97-c0e31902c7b0.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintCheckBox
     android:id="@+id/checkboxDisabled"
@@ -81,6 +87,7 @@ XML:
 ```
 
 Code:
+
 ```kotlin
 checkbox.enabled = false
 ```
@@ -92,6 +99,7 @@ Checkboxes can visually represent an error state with the `isError` property.
 ![error_checkbox](https://user-images.githubusercontent.com/11261709/131582759-8e137fbf-4ded-45b4-9aad-1c643ea3b238.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintCheckBox
     android:id="@+id/errorCheckbox"
@@ -102,6 +110,7 @@ XML:
 ```
 
 Code:
+
 ```kotlin
 checkbox.isError = true
 ```
@@ -113,6 +122,7 @@ You can also have a checkbox with more complex content, such as multiple lines o
 ![arbitrary_checkbox](https://user-images.githubusercontent.com/11261709/131582910-86e357d9-52a5-4985-a8b6-b0404b044ecb.png)
 
 XML:
+
 ```xml
 <com.thumbtack.thumbprint.views.checkbox.ThumbprintContainerCheckBox
     android:id="@+id/singleLine1"
@@ -128,4 +138,3 @@ XML:
 ```
 
 You can control the vertical alignment of the button with its content by specifying the `android:gravity` attribute to `ThumbprintContainerCheckBox`. The values supported are `top`, `center_vertical` and `bottom`. Additionally, you can set the width and height of the button with the `app:button_layout_width` and `app:button_layout_height` attributes, which support either a dimension or the values `match_parent` or `wrap_content`. And just like with the simple checkbox, you can specify indeterminate and error states with `app:isError` and `app:isIndeterminate`. Specifying `app:isError` will only render the button as red; the child content will render as normal.
-
