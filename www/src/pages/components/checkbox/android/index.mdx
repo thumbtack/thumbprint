@@ -138,3 +138,16 @@ XML:
 ```
 
 You can control the vertical alignment of the button with its content by specifying the `android:gravity` attribute to `ThumbprintContainerCheckBox`. The values supported are `top`, `center_vertical` and `bottom`. Additionally, you can set the width and height of the button with the `app:button_layout_width` and `app:button_layout_height` attributes, which support either a dimension or the values `match_parent` or `wrap_content`. And just like with the simple checkbox, you can specify indeterminate and error states with `app:isError` and `app:isIndeterminate`. Specifying `app:isError` will only render the button as red; the child content will render as normal.
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/checkbox/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
