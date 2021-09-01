@@ -99,7 +99,7 @@
 
     // IE11 does not seem to recognize the cell dimensions for absolutely positioning the dot
     // without the padding to fill the vertical space.
-    $vertical-padding: ($cell-side - $line-height) / 2 - $border-size;
+    $vertical-padding: ($cell-side - $line-height) * 0.5 - $border-size;
 
     display: table-cell;
     color: $tp-color__black;
