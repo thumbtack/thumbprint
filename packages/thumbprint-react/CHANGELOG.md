@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Replace division with multiplation for better Dart Sass support.
+
 ### Added
 
 ## 14.4.0 - 2021-08-16
