@@ -3,6 +3,8 @@ title: Breakpoints
 description: Variables for visual consistency across platforms.
 ---
 
+import { ThemedLink } from '@thumbtack/thumbprint-react';
+
 Responsive design enables layouts that render well at any device width. Designers do this by providing layouts representing a component's state at different widths. Developers do this by using media queries, commonly with predefined breakpoints in Sass.
 
 ## Designing
@@ -11,9 +13,28 @@ In Thumbprint we have three breakpoints. Since designers can only provide static
 
 **Note:** In rare cases a layout will need to change at a breakpoint other than three provided. Add them with caution and provide comments explaining why they are needed.
 
+| Size   | Breakpoint |
+| ------ | ---------- |
+| Small  | `375px`    |
+| Medium | `600px`    |
+| Large  | `946px`    |
+
+<ThemedLink
+    theme="primary"
+    to="https://www.figma.com/file/ILP0YIrg8YsGJLeQChrZpsRi/Thumbprint-Web?node-id=1441%3A120"
+>
+    View Figma resource
+</ThemedLink>
+
 ## Implementing breakpoints in code
 
 Thumbprint provides Sass mixins that produce the needed code. In each of these examples we are using breakpoint variables, however custom pixel widths are valid if needed. Because we are "small-first" (aka "mobile-first"), styles will often be grouped as follows:
+
+| Size   | Breakpoint |
+| ------ | ---------- |
+| Small  | `481px`    |
+| Medium | `700px`    |
+| Large  | `1025px`   |
 
 ```scss
 .my-item {
