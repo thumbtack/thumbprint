@@ -104,8 +104,8 @@ interface LinkPropTypes {
      */
     onClick?: () => void;
     /**
-     * The anchor `rel` attribute. Setting this value will override any default value provided by
-     * thumbprint for the `rel` attribute.
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
      */
     rel?: string;
     /**
@@ -213,8 +213,8 @@ interface ThemedLinkPropTypes {
      */
     onClick?: () => void;
     /**
-     * The anchor `rel` attribute. Setting this value will override any default value provided by
-     * thumbprint for the `rel` attribute.
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
      */
     rel?: string;
     /**
