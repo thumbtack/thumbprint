@@ -70,6 +70,21 @@ test('adds `rel` attribute to handle security vulnerability for `target=_blank`'
     testComponent(ThemedLink);
 });
 
+test('adds `rel` attribute when explicitly defined', () => {
+    const testComponent = (Component: React.ElementType): void => {
+        const wrapperLink = mount(
+            <Component target="_blank" to="https://example.com/" rel="nofollow">
+                Goose
+            </Component>,
+        );
+        expect(wrapperLink.find('a').prop('rel')).toEqual('nofollow noopener noreferrer');
+        expect(wrapperLink).toMatchSnapshot();
+    };
+
+    testComponent(Link);
+    testComponent(ThemedLink);
+});
+
 test('adds attribute to open link in new tab', () => {
     const testComponent = (Component: React.ElementType): void => {
         const wrapperLink = mount(
