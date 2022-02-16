@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 14.4.2 - 2022-02-16
+
+### Changed
+
+-   [Patch] Refactor how default `rel` attribute values are defined
+
+### Added
+
+-   [Minor] Add optional `rel` prop to `Link` and `ThemedLink` components.
+
 ## 14.4.1 - 2021-09-03
 
 ### Changed
