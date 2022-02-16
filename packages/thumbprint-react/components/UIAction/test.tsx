@@ -39,6 +39,26 @@ describe('Plain', (): void => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        test('adds `rel="noopener noreferrer"` attribute for external links and respects any provided attributes', (): void => {
+            const wrapper = mount(
+                <Plain shouldOpenInNewTab to="https://example.com/" rel="nofollow">
+                    Goose
+                </Plain>,
+            );
+            expect(wrapper.find('a').prop('rel')).toEqual('nofollow noopener noreferrer');
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        test('adds `rel="noopener noreferrer"` attribute for external links and does not duplicate, if duplicate is provided', (): void => {
+            const wrapper = mount(
+                <Plain shouldOpenInNewTab to="https://example.com/" rel="nofollow noopener">
+                    Goose
+                </Plain>,
+            );
+            expect(wrapper.find('a').prop('rel')).toEqual('nofollow noopener noreferrer');
+            expect(wrapper).toMatchSnapshot();
+        });
+
         test('adds `rel="noopener"` attribute for internal links that open new tab', (): void => {
             const wrapperDomain = mount(
                 <Plain shouldOpenInNewTab to="https://www.thumbtack.com/foo">
@@ -321,6 +341,26 @@ describe('Themed', (): void => {
                 </Themed>,
             );
             expect(wrapper.find('a').prop('rel')).toEqual('noopener noreferrer');
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        test('adds `rel="noopener noreferrer"` attribute for external links and respects any provided attributes', (): void => {
+            const wrapper = mount(
+                <Themed shouldOpenInNewTab to="https://example.com/" rel="nofollow">
+                    Goose
+                </Themed>,
+            );
+            expect(wrapper.find('a').prop('rel')).toEqual('nofollow noopener noreferrer');
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        test('adds `rel="noopener noreferrer"` attribute for external links and does not duplicate, if duplicate is provided', (): void => {
+            const wrapper = mount(
+                <Themed shouldOpenInNewTab to="https://example.com/" rel="nofollow noopener">
+                    Goose
+                </Themed>,
+            );
+            expect(wrapper.find('a').prop('rel')).toEqual('nofollow noopener noreferrer');
             expect(wrapper).toMatchSnapshot();
         });
 
