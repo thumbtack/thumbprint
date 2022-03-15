@@ -42,9 +42,17 @@ export {
     ModalContentFullBleed,
     ModalFooter,
     ModalAnimatedWrapper,
+    ModalProps,
+    ModalHeaderProps,
+    ModalTitleProps,
+    ModalDescriptionProps,
+    ModalContentProps,
+    ModalContentFullBleedProps,
+    ModalFooterProps,
+    ModalAnimatedWrapperProps,
 } from './components/Modal/index';
 export { default as ModalBase } from './components/ModalBase/index.jsx';
-export { default as ModalCurtain } from './components/ModalCurtain/index';
+export { default as ModalCurtain, ModalCurtainProps } from './components/ModalCurtain/index';
 export { default as ModalStandard } from './components/ModalStandard/index.jsx';
 export {
     default as Popover,

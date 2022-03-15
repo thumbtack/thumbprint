@@ -9,7 +9,7 @@ import ConditionalPortal from '../../utils/ConditionalPortal';
 
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface ModalCurtainProps {
     /**
      * Content that appears on top of the curtain. `children` is a [render
      * prop](https://reactjs.org/docs/render-props.html) and expects a function. The function
@@ -67,7 +67,7 @@ export default function ModalCurtain({
     initialFocus: initialFocusProp,
     onCloseClick,
     children,
-}: PropTypes): JSX.Element {
+}: ModalCurtainProps): JSX.Element {
     const [isClient, setIsClient] = useState<boolean>(false);
     const [wrapperEl, setWrapperEl] = useState<HTMLDivElement | null>(null);
 
