@@ -5,8 +5,6 @@ const sass = require('sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const glob = require('glob');
-const promiseMap = require('p-map');
 const nodeSassImporter = require('./node-sass-importer');
 
 /**
@@ -26,18 +24,12 @@ const compileSass = async fromFile => {
         from: undefined,
     });
 
-    // Naively turns `component.scss` into `component.css` and
-    // `scss/alert.scss` into `alert.css`.
-    const outputFileName = fromFile.replace('scss/', '').replace('.scss', '.css');
+    const outputFileName = fromFile.replace('src/', 'dist/').replace('.scss', '.css');
 
     return fse.outputFile(outputFileName, processedCss);
 };
 
 (async () => {
     // Create a single CSS file with all the code.
-    await compileSass('components.scss');
-
-    // Create individual CSS files for each component.
-    const individualSassFiles = glob.sync('scss/*.scss');
-    await promiseMap(individualSassFiles, compileSass);
+    await compileSass('src/atomic.scss');
 })();
