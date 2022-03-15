@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface TextFabProps {
+export interface TextFabProps {
     /**
      * Children content to render.
      */
@@ -43,7 +43,7 @@ export function TextFab({
     );
 }
 
-interface IconFabProps {
+export interface IconFabProps {
     /**
      * Icon from [Thumbprint Icons](/icons/) to render within the button. It must be one of the
      * `medium` icons.

@@ -15,7 +15,7 @@ import { Themed } from '../UIAction/index';
 
 import styles from './index.module.scss';
 
-interface PopoverPropTypes {
+export interface PopoverProps {
     /**
      * Contents for the Popover. Usually a `PopoverTitle`, `PopoverBody`, and `PopoverPrimaryButton`
      */
@@ -71,7 +71,7 @@ export default function Popover({
     isOpen = false,
     container = 'body',
     accessibilityLabel = 'Popover',
-}: PopoverPropTypes): JSX.Element {
+}: PopoverProps): JSX.Element {
     // Appends the tooltip right before `</body>` when true. Used to prevent z-index and positioning
     // issues.
     const shouldDisplace = container === 'body';
@@ -160,29 +160,29 @@ export default function Popover({
     );
 }
 
-interface PopoverTitlePropTypes {
+export interface PopoverTitleProps {
     /**
      * The contents of the title.
      */
     children: React.ReactNode;
 }
 
-const PopoverTitle = ({ children }: PopoverTitlePropTypes): JSX.Element => (
+const PopoverTitle = ({ children }: PopoverTitleProps): JSX.Element => (
     <div className={styles.popoverTitle}>{children}</div>
 );
 
-interface PopoverBodyPropTypes {
+export interface PopoverBodyProps {
     /**
      * The contents of the body.
      */
     children: React.ReactNode;
 }
 
-const PopoverBody = ({ children }: PopoverBodyPropTypes): JSX.Element => (
+const PopoverBody = ({ children }: PopoverBodyProps): JSX.Element => (
     <div className={styles.popoverBody}>{children}</div>
 );
 
-interface PopoverPrimaryButtonPropTypes {
+export interface PopoverPrimaryButtonProps {
     /**
      * The text of the button.
      */
@@ -193,16 +193,13 @@ interface PopoverPrimaryButtonPropTypes {
     onClick: () => void;
 }
 
-const PopoverPrimaryButton = ({
-    children,
-    onClick,
-}: PopoverPrimaryButtonPropTypes): JSX.Element => (
+const PopoverPrimaryButton = ({ children, onClick }: PopoverPrimaryButtonProps): JSX.Element => (
     <Themed size="small" onClick={onClick} theme="popover-primary">
         {children}
     </Themed>
 );
 
-interface PopoverSecondaryButtonPropTypes {
+export interface PopoverSecondaryButtonProps {
     /**
      * The text of the button.
      */
@@ -221,7 +218,7 @@ const PopoverSecondaryButton = ({
     children,
     onClick,
     to,
-}: PopoverSecondaryButtonPropTypes): JSX.Element => (
+}: PopoverSecondaryButtonProps): JSX.Element => (
     <Themed size="small" onClick={onClick} to={to} theme="popover-secondary" shouldOpenInNewTab>
         {children}
     </Themed>

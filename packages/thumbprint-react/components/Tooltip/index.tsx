@@ -52,7 +52,7 @@ interface ChildrenPropTypes {
     ariaLabel: string;
 }
 
-interface TooltipPropTypes {
+export interface TooltipProps {
     /**
      * A function that renders JSX and receives an object with `ref`, `onMouseEnter`, `onFocus`,
      * `onMouseLeave`, `onBlur`, `onClick`, and `ariaLabel`. All of these props must be added to
@@ -102,7 +102,7 @@ export default function Tooltip({
     text,
     children,
     closeDelayLength = 200,
-}: TooltipPropTypes): JSX.Element {
+}: TooltipProps): JSX.Element {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [openTimeout, setOpenTimeout] = useState<number | undefined>(undefined);
     const [closeTimeout, setCloseTimeout] = useState<number | undefined>(undefined);

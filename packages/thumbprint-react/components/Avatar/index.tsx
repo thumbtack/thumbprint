@@ -60,8 +60,8 @@ const getStyle = (initials?: string): StyleType =>
         ? STYLES[initials.charCodeAt(0) % STYLES.length]
         : { color: tokens.tpColorBlack, backgroundColor: tokens.tpColorGray200 };
 
-const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
-    (props: EntityPropTypes, outerRef): JSX.Element => {
+const EntityAvatar = forwardRef<HTMLElement, EntityAvatarProps>(
+    (props: EntityAvatarProps, outerRef): JSX.Element => {
         const { imageUrl, size = 'small', initial, fullName, isOnline = false } = props;
 
         return (
@@ -104,7 +104,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityPropTypes>(
     },
 );
 
-interface EntityPropTypes {
+export interface EntityAvatarProps {
     /**
      * HTTPS URL that points a user's avatar. The `imageURL` will take
      * precendence over `initials` if both are supplied.
@@ -131,8 +131,8 @@ interface EntityPropTypes {
 // Needed because of the `forwardRef`.
 EntityAvatar.displayName = 'EntityAvatar';
 
-const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
-    (props: UserPropTypes, outerRef): JSX.Element => {
+const UserAvatar = forwardRef<HTMLElement, UserAvatarProps>(
+    (props: UserAvatarProps, outerRef): JSX.Element => {
         const { imageUrl, size = 'small', initials, fullName, isOnline = false, isChecked } = props;
 
         return (
@@ -177,7 +177,7 @@ const UserAvatar = forwardRef<HTMLElement, UserPropTypes>(
     },
 );
 
-interface UserPropTypes {
+export interface UserAvatarProps {
     /**
      * HTTPS URL that points a user's avatar. The `imageURL` will take
      * precendence over `initials` if both are supplied.

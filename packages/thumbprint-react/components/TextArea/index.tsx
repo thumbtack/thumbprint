@@ -22,7 +22,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface TextAreaProps {
     /**
      * Adds a HTML `id` attribute to the textarea. This is used for linking the HTML with a
      * [Label](/components/label/react/).
@@ -99,7 +99,7 @@ const TextArea = ({
     placeholder,
     value,
     name,
-}: PropTypes): JSX.Element => {
+}: TextAreaProps): JSX.Element => {
     const uiState = getUIState({ hasError, isDisabled });
 
     return (

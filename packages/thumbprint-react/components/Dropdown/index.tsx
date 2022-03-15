@@ -27,7 +27,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface DropdownProps {
     /**
      * A collection of [HTML `<option>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option).
      */
@@ -114,7 +114,7 @@ const Dropdown = ({
     onClick = (): void => {},
     size = 'large',
     value,
-}: PropTypes): JSX.Element => {
+}: DropdownProps): JSX.Element => {
     const uiState = getUIState({ isDisabled, hasError });
 
     return (

@@ -4,7 +4,7 @@ import { AlertCheck, AlertInfo, AlertWarning } from '../../icons/index.jsx';
 
 import styles from './index.module.scss';
 
-interface BannerPropTypes {
+export interface BannerAlertProps {
     /**
      * Text within the alert
      */
@@ -29,7 +29,7 @@ export function BannerAlert({
     theme = 'info',
     dataTestId,
     dataTest,
-}: BannerPropTypes): JSX.Element {
+}: BannerAlertProps): JSX.Element {
     return (
         <div
             className={classNames({
@@ -48,7 +48,7 @@ export function BannerAlert({
     );
 }
 
-interface InPagePropTypes {
+export interface InPageAlertProps {
     /**
      * Text within the alert
      */
@@ -80,7 +80,7 @@ export function InPageAlert({
     theme = 'info',
     dataTest,
     dataTestId,
-}: InPagePropTypes): JSX.Element {
+}: InPageAlertProps): JSX.Element {
     return (
         <div
             className={classNames({
