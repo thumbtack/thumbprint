@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Patch] Update Type definitions for `Dropdown` to support generic types.
+
 ## 14.4.1 - 2021-09-03
 
 ### Changed
