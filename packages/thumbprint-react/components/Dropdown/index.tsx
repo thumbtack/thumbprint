@@ -27,7 +27,7 @@ const getUIState = ({
     return 'default';
 };
 
-export interface DropdownProps {
+export interface DropdownProps<T extends string | number> {
     /**
      * A collection of [HTML `<option>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option).
      */
@@ -64,7 +64,7 @@ export interface DropdownProps {
      * on `<select>` and controlled components](https://facebook.github.io/react/docs/forms.html#the-select-tag)
      * to learn more.
      */
-    value: string;
+    value: T;
     /**
      * Function that is fired when the value of the select changes.
      */
@@ -73,7 +73,7 @@ export interface DropdownProps {
      * A function that is fired when the value of the select changes. The
      * new `value` is passed to the function.
      */
-    onChange: (value: string, event: React.ChangeEvent<HTMLSelectElement>) => void;
+    onChange: (value: T, event: React.ChangeEvent<HTMLSelectElement>) => void;
     /**
      * Fires when the select receives focus.
      */
@@ -98,7 +98,7 @@ export interface DropdownProps {
     name?: string;
 }
 
-const Dropdown = ({
+export default function Dropdown<T extends string | number = string>({
     children,
     dataTest,
     dataTestId,
@@ -114,7 +114,7 @@ const Dropdown = ({
     onClick = (): void => {},
     size = 'large',
     value,
-}: DropdownProps): JSX.Element => {
+}: DropdownProps<T>): JSX.Element {
     const uiState = getUIState({ isDisabled, hasError });
 
     return (
@@ -138,7 +138,7 @@ const Dropdown = ({
                 required={isRequired}
                 value={value}
                 onClick={onClick}
-                onChange={(event): void => onChange(event.target.value, event)}
+                onChange={(event): void => onChange(event.target.value as T, event)}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 data-testid={dataTestId}
@@ -163,6 +163,4 @@ const Dropdown = ({
             </svg>
         </div>
     );
-};
-
-export default Dropdown;
+}
