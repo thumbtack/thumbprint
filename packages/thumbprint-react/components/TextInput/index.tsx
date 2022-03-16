@@ -24,7 +24,7 @@ const getUIState = ({
     isDisabled,
     isReadOnly,
     hasError,
-}: Pick<TextInputPropTypes, 'isDisabled' | 'isReadOnly' | 'hasError'>): UiState => {
+}: Pick<TextInputProps, 'isDisabled' | 'isReadOnly' | 'hasError'>): UiState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -146,7 +146,7 @@ const TextInputIcon = ({ color = 'inherit', children }: TextInputIconPropTypes):
     <TextInputIconContainer style={{ color }}>{children}</TextInputIconContainer>
 );
 
-interface TextInputPropTypes {
+export interface TextInputProps {
     /**
      * Adds a HTML `id` attribute to the input. This is used for linking the HTML with a
      * [Label](/components/label/react/).
@@ -263,7 +263,7 @@ interface TextInputPropTypes {
     autoComplete?: React.InputHTMLAttributes<HTMLInputElement>['autoComplete'];
 }
 
-const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
+const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     (
         {
             id,
@@ -291,7 +291,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputPropTypes>(
             pattern,
             maxLength,
             autoComplete,
-        }: TextInputPropTypes,
+        }: TextInputProps,
         outerRef,
     ): JSX.Element => {
         const uiState = getUIState({ isDisabled, isReadOnly, hasError });

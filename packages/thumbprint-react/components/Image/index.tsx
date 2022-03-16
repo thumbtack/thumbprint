@@ -22,7 +22,7 @@ type ImageSource = {
     srcSet: string;
 };
 
-interface ImagePropTypes {
+export interface ImageProps {
     /**
      * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
      * users on browsers that don't support responsive images. If `sources` is not provided, this
@@ -83,7 +83,7 @@ type AspectRatioBoxPropsType = {
     };
 };
 
-const Image = forwardRef<HTMLElement, ImagePropTypes>((props: ImagePropTypes, outerRef) => {
+const Image = forwardRef<HTMLElement, ImageProps>((props: ImageProps, outerRef) => {
     const {
         src,
         sources = [],

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface TitlePropTypes {
+export interface TitleProps {
     /**
      * Text to render.
      */
@@ -48,7 +48,7 @@ export function Title({
     dataTest,
     dataTestId,
     id,
-}: TitlePropTypes): JSX.Element {
+}: TitleProps): JSX.Element {
     const elementName = headingLevel ? `h${headingLevel}` : 'div';
 
     const props = {
@@ -61,7 +61,7 @@ export function Title({
     return React.createElement(elementName, props, children);
 }
 
-interface TextPropTypes {
+export interface TextProps {
     /**
      * Text to render.
      */
@@ -99,7 +99,7 @@ export function Text({
     elementName = 'p',
     dataTest,
     dataTestId,
-}: TextPropTypes): JSX.Element {
+}: TextProps): JSX.Element {
     const props = {
         className: classNames(styles[`text${size}`], className),
         'data-test': dataTest,

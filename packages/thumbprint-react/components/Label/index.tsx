@@ -7,7 +7,7 @@ type UiState = 'disabled' | 'error' | 'default';
 const getUIState = ({
     isDisabled,
     hasError,
-}: Pick<PropTypes, 'isDisabled' | 'hasError'>): UiState => {
+}: Pick<LabelProps, 'isDisabled' | 'hasError'>): UiState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -19,7 +19,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface LabelProps {
     /**
      * The label text that appears above the form element.
      */
@@ -58,7 +58,7 @@ export default function Label({
     dataTest,
     dataTestId,
     children = null,
-}: PropTypes): JSX.Element {
+}: LabelProps): JSX.Element {
     const uiState = getUIState({ isDisabled, hasError });
 
     return (

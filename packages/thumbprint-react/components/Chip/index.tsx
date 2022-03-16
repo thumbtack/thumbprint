@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface FilterChipProps {
+export interface FilterChipProps {
     /**
      * The text to display inside the FilterChip.
      */

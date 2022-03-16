@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface LoaderDotsProps {
     /**
      * Text that describes the current status and is only visible to
      * screenreaders.
@@ -22,7 +22,7 @@ export default function LoaderDots({
     assistiveText = 'Loading',
     size = 'medium',
     theme = 'brand',
-}: PropTypes): JSX.Element {
+}: LoaderDotsProps): JSX.Element {
     const dotClasses = classNames({
         [styles.dot]: true,
         [styles.dotThemeBrand]: theme === 'brand',

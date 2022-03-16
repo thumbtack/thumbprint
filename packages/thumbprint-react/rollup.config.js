@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel';
 import path from 'path';
 import copy from 'rollup-plugin-cpy';
 import resolve from 'rollup-plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
 
 import { dependencies, peerDependencies } from './package.json';
 
@@ -19,6 +20,8 @@ const getConfig = format => {
             resolve({
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             }),
+            // Typescript plugin is needed in addition to Babel since we export our interfaces.
+            typescript(),
             babel({
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
                 root: '../..',

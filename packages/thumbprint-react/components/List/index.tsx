@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface ListPropTypes {
+export interface ListProps {
     /**
      * List items to render. Should be instances of `ListItem`.
      */
@@ -14,7 +14,7 @@ interface ListPropTypes {
     theme?: 'bullet' | 'decimal' | 'alpha';
 }
 
-export function List({ children, theme = 'bullet' }: ListPropTypes): JSX.Element {
+export function List({ children, theme = 'bullet' }: ListProps): JSX.Element {
     const props = {
         className: classNames({
             [styles.root]: true,
@@ -29,13 +29,13 @@ export function List({ children, theme = 'bullet' }: ListPropTypes): JSX.Element
     return React.createElement(elementName, props, children);
 }
 
-interface ListItemPropTypes {
+export interface ListItemProps {
     /**
      * Item contents to render.
      */
     children?: React.ReactNode;
 }
 
-export function ListItem({ children }: ListItemPropTypes): JSX.Element {
+export function ListItem({ children }: ListItemProps): JSX.Element {
     return <li className={styles.item}>{children}</li>;
 }

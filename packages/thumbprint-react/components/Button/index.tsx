@@ -34,7 +34,7 @@ const getCommonProps = (props: CommonProps): CommonProps => ({
     dataTestId: props.dataTestId,
 });
 
-const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
+const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
     (
         {
             children,
@@ -52,7 +52,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
             type = 'button',
             dataTest,
             dataTestId,
-        }: TextButtonPropTypes,
+        }: TextButtonProps,
         ref,
     ): JSX.Element => (
         <Plain
@@ -78,7 +78,7 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonPropTypes>(
     ),
 );
 
-interface TextButtonPropTypes {
+export interface TextButtonProps {
     /**
      * Contents displayed within the button.
      */
@@ -147,7 +147,7 @@ interface TextButtonPropTypes {
     dataTest?: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     (
         {
             children,
@@ -168,7 +168,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
             width = 'auto',
             dataTest,
             dataTestId,
-        }: ButtonPropTypes,
+        }: ButtonProps,
         ref,
     ): JSX.Element => (
         <Themed
@@ -197,7 +197,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonPropTypes>(
     ),
 );
 
-interface ButtonPropTypes {
+export interface ButtonProps {
     /**
      * Contents displayed within the button.
      */

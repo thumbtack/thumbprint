@@ -27,7 +27,7 @@ const getUIState = ({
     return 'default';
 };
 
-interface PropTypes<T extends string | number> {
+export interface DropdownProps<T extends string | number> {
     /**
      * A collection of [HTML `<option>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option).
      */
@@ -114,7 +114,7 @@ export default function Dropdown<T extends string | number = string>({
     onClick = (): void => {},
     size = 'large',
     value,
-}: PropTypes<T>): JSX.Element {
+}: DropdownProps<T>): JSX.Element {
     const uiState = getUIState({ isDisabled, hasError });
 
     return (

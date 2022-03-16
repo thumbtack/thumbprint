@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface PillProps {
     /**
      * Text content to render.
      */
@@ -18,7 +18,7 @@ interface PropTypes {
     color?: 'green' | 'red' | 'indigo' | 'blue' | 'yellow' | 'purple';
 }
 
-export default function Pill({ color, icon, children }: PropTypes): JSX.Element {
+export default function Pill({ color, icon, children }: PillProps): JSX.Element {
     return (
         <div
             className={classNames({

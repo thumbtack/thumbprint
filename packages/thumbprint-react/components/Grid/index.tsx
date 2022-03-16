@@ -9,7 +9,7 @@ const { Provider, Consumer } = React.createContext({
     isWithinGrid: false,
 });
 
-interface ColumnPropTypes {
+export interface GridColumnProps {
     /**
      * Column contents.
      */
@@ -53,7 +53,7 @@ export function GridColumn({
     aboveLarge,
     dataTestId,
     dataTest,
-}: ColumnPropTypes): JSX.Element {
+}: GridColumnProps): JSX.Element {
     return (
         <Consumer>
             {({ gutter, isWithinGrid }): JSX.Element => {
@@ -81,7 +81,7 @@ export function GridColumn({
     );
 }
 
-interface GridPropTypes {
+export interface GridProps {
     /**
      * Grid contents.
      */
@@ -106,7 +106,7 @@ export function Grid({
     gutter = 'normal',
     dataTestId,
     dataTest,
-}: GridPropTypes): JSX.Element {
+}: GridProps): JSX.Element {
     return (
         <div
             className={classNames({
