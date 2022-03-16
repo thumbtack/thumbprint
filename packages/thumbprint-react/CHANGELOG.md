@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+-   [Minor] Rename all component prop interfaces and export them. This is a minor change since the interfaces were private before, so renaming them will not break any client code.
+
 ## 14.4.1 - 2021-09-03
 
 ### Changed
