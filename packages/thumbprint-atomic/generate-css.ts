@@ -15,8 +15,12 @@ process.on('unhandledRejection', error => {
 });
 
 const compileSass = async (fromFile: string): Promise<void> => {
+    // We can't use the new `compile` method because it uses a new API for importers, which don't
+    // match our tilde importer. So for now we're stuck with the legacy `renderSync` method.
     const { css } = sass.renderSync({
         file: fromFile,
+        // The only difference is in the return type, which doesn't make a difference in practice,
+        // so we're safe to typecast here.
         importer: nodeSassImporter as LegacyImporter<'sync'>,
     });
 
