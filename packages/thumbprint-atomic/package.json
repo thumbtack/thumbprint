@@ -5,6 +5,7 @@
     "author": "Tom Genoni <tom@thumbtack.com>",
     "main": "dist/atomic.css",
     "style": "dist/atomic.css",
+    "type": "module",
     "files": [
         "dist"
     ],
@@ -16,17 +17,19 @@
     "scripts": {
         "start": "yarn clear && yarn generateCss",
         "clear": "rm -rf dist",
-        "generateCss": "mkdir -p dist && ./generate-css.js src/atomic.scss dist/atomic.css && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
+        "generateCss": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-scss": "^4.0.1",
         "@thumbtack/thumbprint-tokens": "^12.1.1",
+        "@types/node-sass-tilde-importer": "^1.0.0",
         "autoprefixer": "^9.0.1",
         "css-mqpacker": "^7.0.0",
         "cssnano": "^4.1.0",
         "node-sass-tilde-importer": "2.0.0-alpha.1",
         "postcss-cli": "^6.1.1",
-        "sass": "^1.49.9"
+        "sass": "^1.49.9",
+        "ts-node": "^10.7.0"
     }
 }
