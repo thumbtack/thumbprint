@@ -28,7 +28,7 @@ function throwError(message: string): void {
     throw new Error(`TUI DatePicker: ${message}`);
 }
 
-export function normaliseValue(value: PropTypes['value']): Date[] {
+export function normaliseValue(value: CalendarProps['value']): Date[] {
     if (value === null) {
         return [];
     }
@@ -59,7 +59,7 @@ function isAfterModifier(
     return !!modifier && 'after' in modifier;
 }
 
-export function validateProps(props: PropTypes): void {
+export function validateProps(props: CalendarProps): void {
     const days = normaliseValue(props.value);
 
     if (!props.allowMultiSelection && days.length > 1) {
@@ -79,7 +79,7 @@ export function validateProps(props: PropTypes): void {
     }
 }
 
-interface PropTypes {
+export interface CalendarProps {
     /**
      * One or more dates to show as selected in the initial UI. Each "date" can be a JS Date object
      * or a string representing a date, or a numeric UNIX timestamp, and either a single object or
@@ -144,7 +144,7 @@ const Calendar = ({
     allowMultiSelection = false,
     daysThemeDotIndicator,
     daysThemeStrikeout,
-}: PropTypes): JSX.Element => {
+}: CalendarProps): JSX.Element => {
     validateProps({
         value,
         onChange,

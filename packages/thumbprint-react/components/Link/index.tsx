@@ -39,7 +39,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
 /**
  * Anchor link that renders as text.
  */
-const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
+const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
     (
         {
             to,
@@ -55,7 +55,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
             theme = 'primary',
             iconLeft,
             iconRight,
-        }: LinkPropTypes,
+        }: LinkProps,
         ref,
     ) => (
         <Plain
@@ -79,7 +79,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
     ),
 );
 
-interface LinkPropTypes {
+export interface LinkProps {
     /**
      * Contents displayed within the anchor.
      */
@@ -146,7 +146,7 @@ interface LinkPropTypes {
 /**
  * Anchor link that visually looks like a button.
  */
-const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
+const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
     (
         {
             to,
@@ -164,7 +164,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             theme = 'primary',
             size = 'large',
             width = 'auto',
-        }: ThemedLinkPropTypes,
+        }: ThemedLinkProps,
         ref,
     ) => (
         <Themed
@@ -190,7 +190,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
     ),
 );
 
-interface ThemedLinkPropTypes {
+interface ThemedLinkProps {
     /**
      * Contents displayed within the button.
      */

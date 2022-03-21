@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 14.4.2 - 2022-02-16
-
 ### Changed
 
 -   [Patch] Refactor how default `rel` attribute values are defined
@@ -11,6 +9,13 @@
 ### Added
 
 -   [Minor] Add optional `rel` prop to `Link` and `ThemedLink` components.
+
+## 14.5.0 - 2022-03-17
+
+### Changed
+
+-   [Minor] Rename all component prop interfaces and export them. This is a minor change since the interfaces were private before, so renaming them will not break any client code.
+-   [Patch] Update Type definitions for `Dropdown` to support generic types.
 
 ## 14.4.1 - 2021-09-03
 

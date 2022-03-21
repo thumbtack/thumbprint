@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface FormNoteProps {
     /**
      * Text within the form note.
      */
@@ -13,7 +13,10 @@ interface PropTypes {
     hasError?: boolean;
 }
 
-export default function FormNote({ hasError = false, children = null }: PropTypes): JSX.Element {
+export default function FormNote({
+    hasError = false,
+    children = null,
+}: FormNoteProps): JSX.Element {
     return (
         <div className={classNames(styles.root, { [styles.rootError]: hasError })}>{children}</div>
     );

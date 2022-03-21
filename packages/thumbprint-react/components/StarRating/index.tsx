@@ -11,7 +11,7 @@ const MAX_NUM_STARS = 5;
 // Smallest increment we render
 const PRECISION = 0.5;
 
-interface PropTypes {
+export interface StarRatingProps {
     /**
      * Number from 0-5 at increments of 0.5. Numbers between these steps will be rounded.
      */
@@ -48,7 +48,7 @@ export default function StarRating({
     onStarClick = noop,
     onStarHover = noop,
     onMouseLeave = noop,
-}: PropTypes): JSX.Element {
+}: StarRatingProps): JSX.Element {
     // Determine if instance is interactive.
     const isInteractive = onStarClick !== noop || onStarHover !== noop;
 

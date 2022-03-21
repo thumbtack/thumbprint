@@ -105,7 +105,7 @@ module.exports = {
             options: {
                 typeName: 'ThumbprintToken',
                 fieldName: 'thumbprintToken',
-                url: 'https://thumbprint-tokens.netlify.com/',
+                url: 'https://thumbprint-tokens.netlify.app/.netlify/functions/graphql',
             },
         },
         'gatsby-transformer-thumbprint-atomic',
