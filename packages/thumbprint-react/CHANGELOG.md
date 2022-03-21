@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.6.0 - 2022-03-21
+
 ### Changed
 
 -   [Patch] Refactor how default `rel` attribute values are defined
