@@ -1,5 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external links and does not duplicate, if duplicate is provided 1`] = `
+<ForwardRef
+  rel="nofollow noopener"
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="plain plainThemePrimary"
+    disabled={false}
+    href="https://example.com/"
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
+exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external links and respects any provided attributes 1`] = `
+<ForwardRef
+  rel="nofollow"
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="plain plainThemePrimary"
+    disabled={false}
+    href="https://example.com/"
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+  >
+    Goose
+  </a>
+</ForwardRef>
+`;
+
 exports[`Plain <a> adds \`rel="noopener noreferrer"\` attribute for external links to handle security vulnerability 1`] = `
 <ForwardRef
   shouldOpenInNewTab={true}
@@ -519,6 +555,50 @@ exports[`Plain renders tertiary theme 2`] = `
   >
     Goose
   </button>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel="noopener noreferrer"\` attribute for external links and does not duplicate, if duplicate is provided 1`] = `
+<ForwardRef
+  rel="nofollow noopener"
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+    disabled={false}
+    href="https://example.com/"
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper flexWrapperSizeLarge"
+    >
+      Goose
+    </span>
+  </a>
+</ForwardRef>
+`;
+
+exports[`Themed <a> adds \`rel="noopener noreferrer"\` attribute for external links and respects any provided attributes 1`] = `
+<ForwardRef
+  rel="nofollow"
+  shouldOpenInNewTab={true}
+  to="https://example.com/"
+>
+  <a
+    className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+    disabled={false}
+    href="https://example.com/"
+    rel="nofollow noopener noreferrer"
+    target="_blank"
+  >
+    <span
+      className="flexWrapper flexWrapperSizeLarge"
+    >
+      Goose
+    </span>
+  </a>
 </ForwardRef>
 `;
 

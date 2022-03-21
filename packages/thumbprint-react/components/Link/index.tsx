@@ -9,6 +9,7 @@ interface CommonProps {
     children?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
+    rel?: string;
     dataTestId?: string;
     dataTest?: string;
     accessibilityLabel?: string;
@@ -24,6 +25,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
     return {
         to: props.to,
         onClick: props.onClick,
+        rel: props.rel,
         target: props.target,
         shouldOpenInNewTab: props.shouldOpenInNewTab,
         isDisabled: props.isDisabled,
@@ -42,6 +44,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         {
             to,
             onClick,
+            rel,
             target,
             shouldOpenInNewTab = false,
             isDisabled = false,
@@ -59,6 +62,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
             {...getCommonLinkProps({
                 to,
                 onClick,
+                rel,
                 target,
                 shouldOpenInNewTab,
                 isDisabled,
@@ -99,6 +103,11 @@ export interface LinkProps {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `Link`.
      */
@@ -142,6 +151,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
         {
             to,
             onClick,
+            rel,
             shouldOpenInNewTab = false,
             target,
             isDisabled = false,
@@ -161,6 +171,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
             {...getCommonLinkProps({
                 to,
                 onClick,
+                rel,
                 shouldOpenInNewTab,
                 target,
                 isDisabled,
@@ -201,6 +212,11 @@ interface ThemedLinkProps {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
      * string to open the link in an `<iframe>` with the same `name`.
