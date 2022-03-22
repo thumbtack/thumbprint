@@ -76,7 +76,7 @@ type FunctionalState = 'disabled' | 'error' | 'default';
 const getCheckedState = ({
     isChecked,
     isIndeterminate,
-}: Pick<PropTypes, 'isChecked' | 'isIndeterminate'>): CheckedState => {
+}: Pick<CheckboxProps, 'isChecked' | 'isIndeterminate'>): CheckedState => {
     if (isChecked) {
         return 'checked';
     }
@@ -91,7 +91,7 @@ const getCheckedState = ({
 const getFunctionalState = ({
     isDisabled,
     hasError,
-}: Pick<PropTypes, 'isDisabled' | 'hasError'>): FunctionalState => {
+}: Pick<CheckboxProps, 'isDisabled' | 'hasError'>): FunctionalState => {
     if (isDisabled) {
         return 'disabled';
     }
@@ -103,7 +103,7 @@ const getFunctionalState = ({
     return 'default';
 };
 
-interface PropTypes {
+export interface CheckboxProps {
     /**
      * Disables the input and the label.
      */
@@ -187,7 +187,7 @@ export default function Checkbox({
     name,
     onChange,
     value,
-}: PropTypes): JSX.Element {
+}: CheckboxProps): JSX.Element {
     const functionalState = getFunctionalState({ isDisabled, hasError });
     const checkedState = getCheckedState({ isChecked, isIndeterminate });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface HorizontalRuleProps {
     /**
      * Controls the style of the line rendered for the horizontal rule.
      */
@@ -16,7 +16,7 @@ interface PropTypes {
 export default function HorizontalRule({
     lineStyle = 'solid',
     color = 'gray',
-}: PropTypes): JSX.Element {
+}: HorizontalRuleProps): JSX.Element {
     return (
         <hr
             className={classNames({

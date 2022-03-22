@@ -8,7 +8,7 @@ type ImageSource = {
     srcSet: string;
 };
 
-interface ServiceCardImagePropTypes {
+export interface ServiceCardImageProps {
     /**
      * URL pointing to image to be displayed. This image must have an aspect ratio of 8:5.
      * @deprecated Use `src` instead of `url`.
@@ -29,8 +29,8 @@ interface ServiceCardImagePropTypes {
     alt?: string;
 }
 
-const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImagePropTypes>(
-    (props: ServiceCardImagePropTypes, outerRef) => {
+const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImageProps>(
+    (props: ServiceCardImageProps, outerRef) => {
         const { url, src, sources, alt } = props;
         return (
             <Image
@@ -48,11 +48,11 @@ const ServiceCardImage = forwardRef<HTMLElement, ServiceCardImagePropTypes>(
 // Needed because of the `forwardRef`.
 ServiceCardImage.displayName = 'ServiceCardImage';
 
-interface ServiceCardTitlePropTypes {
+export interface ServiceCardTitleProps {
     children: string;
 }
 
-function ServiceCardTitle({ children }: ServiceCardTitlePropTypes): JSX.Element {
+function ServiceCardTitle({ children }: ServiceCardTitleProps): JSX.Element {
     return (
         <div className={styles.title} title={children}>
             {children}
@@ -60,7 +60,7 @@ function ServiceCardTitle({ children }: ServiceCardTitlePropTypes): JSX.Element 
     );
 }
 
-interface ServiceCardDescriptionPropTypes {
+export interface ServiceCardDescriptionProps {
     /**
      * Service description or other service info.
      */
@@ -80,7 +80,7 @@ function ServiceCardDescription({
     iconColor = 'blue',
     icon,
     children,
-}: ServiceCardDescriptionPropTypes): JSX.Element {
+}: ServiceCardDescriptionProps): JSX.Element {
     return (
         <div
             className={classNames(styles.descriptionWrap, {
@@ -94,7 +94,7 @@ function ServiceCardDescription({
     );
 }
 
-interface ServiceCardPropTypes {
+export interface ServiceCardProps {
     /**
      * URL pointing to the card link destination.
      */
@@ -118,7 +118,7 @@ export default function ServiceCard({
     children,
     onClick,
     shouldOpenInNewTab = false,
-}: ServiceCardPropTypes): JSX.Element {
+}: ServiceCardProps): JSX.Element {
     return (
         <a
             href={url}

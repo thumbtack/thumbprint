@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Swipeable from 'react-swipeable';
 import BaseCarousel from './base-carousel';
 
-interface PropTypes {
+export interface CarouselProps {
     /**
      * The items in the carousel that appear horizontally.
      */
@@ -33,7 +33,7 @@ export default function Carousel({
     visibleCount = 1,
     selectedIndex,
     onSelectedIndexChange,
-}: PropTypes): JSX.Element {
+}: CarouselProps): JSX.Element {
     const [dragIndexOffset, setDragIndexOffset] = useState<number>(0);
     const isDragging = dragIndexOffset !== 0;
     const containerRef = useRef<HTMLDivElement>(null);

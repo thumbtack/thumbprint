@@ -148,6 +148,37 @@ function DropdownExample() {
 }
 ```
 
+## Usage with TypeScript
+
+The Dropdown can be passed a TypeScript type for the `value` prop.
+
+This is useful when you are using Dropdown to select between values of an Enum. This same type will be recieved by the `onChange` prop.
+
+```tsx
+enum State {
+    CA,
+    NY,
+    TN,
+    FL,
+}
+
+function DropdownExample() {
+    const [value, setValue] = React.useState<State>(State.CA);
+
+    return (
+        <div>
+            <Label for="example-7">Select a state</Label>
+            <Dropdown<State> id="example-7" hasError value={value} onChange={v => setValue(v)}>
+                <option value={State.NY}>New York</option>
+                <option value={State.CA}>California</option>
+                <option value={State.TN}>Tennessee</option>
+                <option value={State.FL}>Florida</option>
+            </Dropdown>
+        </div>
+    );
+}
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`

@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface ButtonRowProps {
     /**
      * `Button` components to render.
      */
@@ -33,7 +33,7 @@ export default function ButtonRow({
     dataTestId,
     dataTest,
     isStackedBelowSmall = false,
-}: PropTypes): JSX.Element {
+}: ButtonRowProps): JSX.Element {
     return (
         <div
             className={classNames({

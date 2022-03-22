@@ -92,6 +92,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             type = 'button',
             to,
             shouldOpenInNewTab = false,
+            rel,
             target,
             onClick,
             onMouseEnter,
@@ -122,6 +123,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         shouldOpenInNewTab,
                         to,
                         onClick,
+                        rel,
                         target,
                     });
                     const buttonProps = getButtonProps({
@@ -247,6 +249,11 @@ interface PropTypes {
      * This is deprecated. Use `target="_blank"` instead.
      */
     shouldOpenInNewTab?: boolean;
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
      * string to open the link in an `<iframe>` with the same `name`.

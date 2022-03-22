@@ -9,6 +9,7 @@ interface CommonProps {
     children?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
+    rel?: string;
     dataTestId?: string;
     dataTest?: string;
     accessibilityLabel?: string;
@@ -24,6 +25,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
     return {
         to: props.to,
         onClick: props.onClick,
+        rel: props.rel,
         target: props.target,
         shouldOpenInNewTab: props.shouldOpenInNewTab,
         isDisabled: props.isDisabled,
@@ -37,11 +39,12 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
 /**
  * Anchor link that renders as text.
  */
-const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
+const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
     (
         {
             to,
             onClick,
+            rel,
             target,
             shouldOpenInNewTab = false,
             isDisabled = false,
@@ -52,13 +55,14 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
             theme = 'primary',
             iconLeft,
             iconRight,
-        }: LinkPropTypes,
+        }: LinkProps,
         ref,
     ) => (
         <Plain
             {...getCommonLinkProps({
                 to,
                 onClick,
+                rel,
                 target,
                 shouldOpenInNewTab,
                 isDisabled,
@@ -75,7 +79,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkPropTypes>(
     ),
 );
 
-interface LinkPropTypes {
+export interface LinkProps {
     /**
      * Contents displayed within the anchor.
      */
@@ -99,6 +103,11 @@ interface LinkPropTypes {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * Icon from [Thumbprint Icons](/icons/) to render left of the text within `Link`.
      */
@@ -137,11 +146,12 @@ interface LinkPropTypes {
 /**
  * Anchor link that visually looks like a button.
  */
-const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
+const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
     (
         {
             to,
             onClick,
+            rel,
             shouldOpenInNewTab = false,
             target,
             isDisabled = false,
@@ -154,13 +164,14 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
             theme = 'primary',
             size = 'large',
             width = 'auto',
-        }: ThemedLinkPropTypes,
+        }: ThemedLinkProps,
         ref,
     ) => (
         <Themed
             {...getCommonLinkProps({
                 to,
                 onClick,
+                rel,
                 shouldOpenInNewTab,
                 target,
                 isDisabled,
@@ -179,7 +190,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkPropTypes>(
     ),
 );
 
-interface ThemedLinkPropTypes {
+interface ThemedLinkProps {
     /**
      * Contents displayed within the button.
      */
@@ -201,6 +212,11 @@ interface ThemedLinkPropTypes {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any default values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
      * string to open the link in an `<iframe>` with the same `name`.

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 import { BlockedFilled, InfoFilled, WarningFilled } from '../../icons';
 
-interface AlertBannerPropTypes {
+export interface AlertBannerProps {
     /**
      * Text within the alert
      */
@@ -34,7 +34,7 @@ export default function AlertBanner({
     theme,
     dataTestId,
     dataTest,
-}: AlertBannerPropTypes): JSX.Element {
+}: AlertBannerProps): JSX.Element {
     return (
         <div
             className={classNames({

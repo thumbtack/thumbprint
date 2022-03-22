@@ -15,6 +15,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             iconRight,
             theme = 'primary',
             type = 'button',
+            rel,
             target,
             shouldOpenInNewTab = false,
             onClick,
@@ -78,7 +79,14 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             return (
                 <a // eslint-disable-line jsx-a11y/anchor-has-content
                     {...commonProps}
-                    {...getAnchorProps({ isDisabled, target, shouldOpenInNewTab, to, onClick })}
+                    {...getAnchorProps({
+                        isDisabled,
+                        target,
+                        shouldOpenInNewTab,
+                        to,
+                        onClick,
+                        rel,
+                    })}
                     ref={ref as React.Ref<HTMLAnchorElement>}
                 />
             );
@@ -124,6 +132,11 @@ interface PropTypes {
      * Button’s of type `submit` will submit a form when used within a `form` element.
      */
     type?: 'button' | 'submit';
+    /**
+     * The anchor `rel` attribute. Setting this value will add to any defalut values provided by
+     * Thumbprint for the `rel` attribute.
+     */
+    rel?: string;
     /**
      * The anchor `target` attribute. Set this to `_blank` to open in a new tab, or to an arbitrary
      * string to open the link in an `<iframe>` with the same `name`.

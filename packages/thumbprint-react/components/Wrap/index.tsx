@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface WrapProps {
     /**
      * Component to be wrapped.
      */
@@ -28,7 +28,7 @@ export default function Wrap({
     bleedBelow,
     dataTest,
     dataTestId,
-}: PropTypes): JSX.Element {
+}: WrapProps): JSX.Element {
     return (
         <div
             className={classNames({

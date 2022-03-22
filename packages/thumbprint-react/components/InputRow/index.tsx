@@ -2,7 +2,7 @@ import React from 'react';
 import warning from 'warning';
 import styles from './index.module.scss';
 
-interface PropTypes {
+export interface InputRowProps {
     /**
      * Form fields to display.
      */
@@ -47,7 +47,7 @@ export default function InputRow({
     children,
     dataTest,
     dataTestId,
-}: PropTypes): JSX.Element {
+}: InputRowProps): JSX.Element {
     const widthLength = widthRatios && widthRatios.length;
     const numChildren = React.Children.count(children);
 

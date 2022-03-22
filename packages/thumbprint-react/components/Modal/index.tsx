@@ -42,7 +42,7 @@ const ModalAnimatedWrapper = ({
     width = 'medium',
     heightAboveSmall = 'auto',
     shouldPageScrollAboveSmall = true,
-}: ModalAnimatedWrapperPropTypes): JSX.Element => (
+}: ModalAnimatedWrapperProps): JSX.Element => (
     <Transition
         in={isOpen}
         timeout={{
@@ -110,7 +110,7 @@ const ModalAnimatedWrapper = ({
     </Transition>
 );
 
-interface ModalAnimatedWrapperPropTypes {
+export interface ModalAnimatedWrapperProps {
     /**
      * Content that appears within the modal.
      */
@@ -153,7 +153,7 @@ interface ModalAnimatedWrapperPropTypes {
     heightAboveSmall?: 'auto' | 'medium' | 'tall';
 }
 
-interface ModalHeaderPropTypes {
+export interface ModalHeaderProps {
     /**
      * Content (usually a `ModalTitle` and `ModalDescription`) that appears at the top of the
      * modal.
@@ -161,28 +161,28 @@ interface ModalHeaderPropTypes {
     children: React.ReactNode;
 }
 
-interface ModalTitlePropTypes {
+export interface ModalTitleProps {
     /**
      * Text that describes the modal contents. It is intended for use within the `ModalHeader`.
      */
     children: string;
 }
 
-interface ModalDescriptionPropTypes {
+export interface ModalDescriptionProps {
     /**
      * Text intended for use below a `ModalTitle` and within a `ModalHeader`.
      */
     children: React.ReactNode;
 }
 
-interface ModalContentPropTypes {
+export interface ModalContentProps {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
     children: React.ReactNode;
 }
 
-interface ModalContentFullBleedPropTypes {
+export interface ModalContentFullBleedProps {
     /**
      * Content (usually a form) that makes up the main part of the modal.
      */
@@ -197,7 +197,7 @@ interface ModalContentFullBleedPropTypes {
     style?: React.CSSProperties;
 }
 
-interface ModalFooterPropTypes {
+export interface ModalFooterProps {
     /**
      * Content (ususally buttons) to render within the footer.
      */
@@ -208,7 +208,7 @@ interface ModalFooterPropTypes {
     isSticky?: boolean;
 }
 
-interface ModalPropTypes {
+export interface ModalProps {
     /**
      * Content that appears within the modal.
      */
@@ -251,19 +251,19 @@ interface ModalPropTypes {
     heightAboveSmall?: 'auto' | 'medium' | 'tall';
 }
 
-const ModalHeader = ({ children }: ModalHeaderPropTypes): JSX.Element => (
+const ModalHeader = ({ children }: ModalHeaderProps): JSX.Element => (
     <div className={styles.modalHeader}>{children}</div>
 );
 
-const ModalTitle = ({ children }: ModalTitlePropTypes): JSX.Element => (
+const ModalTitle = ({ children }: ModalTitleProps): JSX.Element => (
     <div className={styles.modalTitle}>{children}</div>
 );
 
-const ModalDescription = ({ children }: ModalDescriptionPropTypes): JSX.Element => (
+const ModalDescription = ({ children }: ModalDescriptionProps): JSX.Element => (
     <div className={styles.modalDescription}>{children}</div>
 );
 
-const ModalContent = ({ children }: ModalContentPropTypes): JSX.Element => (
+const ModalContent = ({ children }: ModalContentProps): JSX.Element => (
     <div className={styles.modalContent}>{children}</div>
 );
 
@@ -271,14 +271,14 @@ const ModalContentFullBleed = ({
     children,
     className = '',
     style = {},
-}: ModalContentFullBleedPropTypes): JSX.Element => (
+}: ModalContentFullBleedProps): JSX.Element => (
     <div className={classNames(className, styles.modalContentFullBleed)} style={style}>
         {children}
     </div>
 );
 
-class ModalFooter extends React.Component<ModalFooterPropTypes, { isClient: boolean }> {
-    constructor(props: ModalFooterPropTypes) {
+class ModalFooter extends React.Component<ModalFooterProps, { isClient: boolean }> {
+    constructor(props: ModalFooterProps) {
         super(props);
 
         this.state = {
@@ -340,8 +340,8 @@ interface ModalStateTypes {
     stickyFooterContainerRef: React.RefObject<HTMLDivElement> | null;
 }
 
-class Modal extends React.Component<ModalPropTypes, ModalStateTypes> {
-    constructor(props: ModalPropTypes) {
+class Modal extends React.Component<ModalProps, ModalStateTypes> {
+    constructor(props: ModalProps) {
         super(props);
 
         this.state = {

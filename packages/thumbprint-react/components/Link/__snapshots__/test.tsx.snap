@@ -222,6 +222,66 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_b
 </ForwardRef>
 `;
 
+exports[`adds \`rel\` attribute when explicitly defined 1`] = `
+<ForwardRef
+  rel="nofollow"
+  target="_blank"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    rel="nofollow"
+    shouldOpenInNewTab={false}
+    target="_blank"
+    theme="primary"
+    to="https://example.com/"
+  >
+    <a
+      className="plain plainThemePrimary"
+      disabled={false}
+      href="https://example.com/"
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+    >
+      Goose
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
+exports[`adds \`rel\` attribute when explicitly defined 2`] = `
+<ForwardRef
+  rel="nofollow"
+  target="_blank"
+  to="https://example.com/"
+>
+  <ForwardRef
+    isDisabled={false}
+    rel="nofollow"
+    shouldOpenInNewTab={false}
+    size="large"
+    target="_blank"
+    theme="primary"
+    to="https://example.com/"
+    width="auto"
+  >
+    <a
+      className="themedButton themedButtonRoundedBordersLeft themedButtonRoundedBordersRight themedButtonThemePrimary themedButtonWidthAuto"
+      disabled={false}
+      href="https://example.com/"
+      rel="nofollow noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        className="flexWrapper flexWrapperSizeLarge"
+      >
+        Goose
+      </span>
+    </a>
+  </ForwardRef>
+</ForwardRef>
+`;
+
 exports[`adds attribute to open link in new tab 1`] = `
 <ForwardRef
   shouldOpenInNewTab={true}
