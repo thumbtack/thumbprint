@@ -113,7 +113,7 @@ $button-border-width: 2px;
     }
 
     &ThemeSecondary {
-        color: $tp-color__blue;
+        color: $tp-color__blue-500;
         background-color: $tp-color__white;
         border-color: $tp-color__gray;
 
@@ -157,7 +157,7 @@ $button-border-width: 2px;
     }
 
     &ThemeCaution {
-        color: $tp-color__red;
+        color: $tp-color__red-500;
         background-color: $tp-color__white;
         border-color: $tp-color__gray;
 
@@ -242,6 +242,18 @@ $button-border-width: 2px;
     &[disabled] {
         cursor: default;
     }
+
+    &Size {
+        &Small {
+            background-color: $tp-color__black;
+            border-color: $tp-color__black;
+            color: $tp-color__white;
+        }
+
+        &Large {
+            padding: $tp-space__1 $tp-space__5;
+        }
+    }
 }
 
 .flexWrapper {
@@ -269,7 +281,7 @@ $button-border-width: 2px;
         &Large {
             min-height: $button-height-large - ($button-border-width * 2);
             line-height: $tp-font__body__1__line-height;
-            font-size: $tp-font__body__1__size;
+            font-size: 19px;
         }
     }
 }

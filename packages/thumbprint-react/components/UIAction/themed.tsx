@@ -163,6 +163,8 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ThemedPro
                         [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
                         [styles.themedButtonWidthFullBelowSmall]:
                             width === 'full-below-small' && !isWithinInputRow,
+                        [styles.themedButtonSizeLarge]: size === 'large',
+                        [styles.themedButtonSizeSmall]: size === 'small',
                     });
 
                     const commonProps = {
