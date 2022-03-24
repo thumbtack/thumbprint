@@ -112,8 +112,20 @@ $button-border-width: 2px;
         }
     }
 
+    &Size {
+        &Small {
+            background-color: $tp-color__black;
+            border-color: $tp-color__black;
+            color: $tp-color__white;
+        }
+
+        &Large {
+            padding: $tp-space__1 $tp-space__5;
+        }
+    }
+
     &ThemeSecondary {
-        color: $tp-color__blue-500;
+        color: $tp-color__blue;
         background-color: $tp-color__white;
         border-color: $tp-color__gray;
 
@@ -241,18 +253,6 @@ $button-border-width: 2px;
 
     &[disabled] {
         cursor: default;
-    }
-
-    &Size {
-        &Small {
-            background-color: $tp-color__black;
-            border-color: $tp-color__black;
-            color: $tp-color__white;
-        }
-
-        &Large {
-            padding: $tp-space__1 $tp-space__5;
-        }
     }
 }
 
