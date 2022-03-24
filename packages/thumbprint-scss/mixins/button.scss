@@ -9,17 +9,17 @@
     font-family: inherit $important;
     cursor: pointer $important;
     margin: 0 $important;
-    padding-top: 12px $important;
-    padding-bottom: 12px $important;
+    padding-top: $tp-space__3 $important;
+    padding-bottom: $tp-space__3 $important;
     line-height: 24px $important;
     border-width: 2px $important;
     border-style: solid $important;
-    font-size: 16px $important;
+    font-size: 19px $important;
     font-weight: 700 $important;
     user-select: none $important;
     border-radius: $tp-border-radius__base $important;
-    padding-left: 22px $important;
-    padding-right: 22px $important;
+    padding-left: $tp-space__5 $important;
+    padding-right: $tp-space__5 $important;
     overflow: visible $important;
     min-height: 52px $important;
 
