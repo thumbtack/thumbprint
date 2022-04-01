@@ -1,0 +1,61 @@
+---
+title: March 31, 2022
+---
+
+Welcome to the Thumbprint newsletter! This newsletter highlights the work that's going on around the design and engineering teams regarding the Thumbprint Design System. We'll celebrate some wins, talk about what's new, coming up, what's leaving, and more.
+
+## 🛠 Updates and changes
+
+We know Thumbprint is a great product, but there is always room for improvement, just like any home renovation project. Here are some updates and changes to the product that we’re excited to celebrate!
+
+### 1. Link & ThemedLink component now accepts `rel` prop
+
+This new addition to Thumbprint provides a more flexible [Link](/components/link/react/#section-link-styles) and [ThemedLink](/components/link/react/#section-themed-links) component by enabling the ability to pass in an optional rel prop. With this new addition, you can now accomplish behaviors like adding additional guards against Google indexing links that would reduce less than desirable results by passing in a rel=‘nofollow’ attribute.
+
+Check out the [Link component on Thumbprint](/components/link/react/#section-themed-links) or the [GitHub pull request](https://github.com/thumbtack/thumbprint/pull/793) to see more.
+
+### 2. Thumbprint Global & Native design libraries are now using auto layout
+
+**Thumbprint Global**
+
+This is our first step towards standardizing our components to more consistent and responsive behavior. Migrating to using auto layout means that you’ll be able to insert your component not need to scale the elements to fit into your designs.
+
+There were also improvements made on the [Star Rating component](https://www.figma.com/file/YrpLNWoOwvEADbyFBWzuKv0V/?node-id=2094%3A28) and how to change the number of stars per rating. After inserting the component, simply change the rating (only in .5 increments) in the Design panel. There is no need to sift through the layers to make changes to the start count. Voila!
+
+**Thumbprint Native**
+
+This is the second design library that has now been migrated to using Figma’s auto layout feature. This update provides some much needed support for the responsive design behaviors for more complex organisms like [Sheets](https://www.figma.com/file/Z7xbBfwFUb2DGMd2Nptt0KoD/?node-id=465%3A266). This design component is now flexible enough to scale the file horizontally and also enables the design to hide regions in the page without needing to adjust the spacing manually.
+
+This release also deprecates the support for the Mocks page in the Figma library. No need to worry, though. The existing resource was too far out of date and did not include enough nest components to continue supporting this page. An improved version of this page will surface in the Templates library in the future.
+
+## 📋 What’s coming up
+
+Here are some projects that are currently in progress or are just over the horizon.
+
+### 1. Auto Layout is coming to Thumbprint Web Figma library
+
+This is third major resource to be receiving the much needed attention to migrating design components to auto layout. As mentioned earlier, supporting auto layout makes for a much more responsive library of design components. Having responsive design components means that we can reduce the overhead by producing components that serve multiple platforms.
+
+### 2. Improving access Thumbprint Request Form
+
+The new Thumbprint request form format was released last month. To help keep the momentum going, there are explorations going on how to increase the visibility and access to the request form. More to come soon but feel free to chime into the #design-systems channel and provide some of your ideas to the team.
+
+### 3. Workshopping the Toast component
+
+We've heard your requests! Since the release of the updated request form, there has been interest in providing expanded and more consistent coverage for the Toast component. These requests include providing a web-based experience and a consistent experience that spans iOS and Android platforms.
+
+## **✨**Did you know?
+
+Looking for a short snippet to help get you excited about design systems. Below you’ll find a brief knowledge drop that is noteworthy. It’s our “The more you know” (shooting star) moment.
+
+**You can now find breakpoint values for both design and engineering purposes on Thumbprint.**
+
+The design system now offers specific values for the Small, Medium, and Large responsive breakpoints to the [Breakpoints Guidelines page](/guide/product/breakpoints/). As an added bonus, there is a direct link to the Figma Breakpoints Cheatsheet that intends to help provide specs for the design team in regards to responsive design efforts.
+
+---
+
+### Additional resources
+
+**GitHub component repositories**
+
+[Documentation & Web](https://github.com/thumbtack/thumbprint) • [Andriod](https://github.com/thumbtack/thumbprint-android) • [iOS](https://github.com/thumbtack/thumbprint-ios)
