@@ -11,6 +11,7 @@
 ### Added
 
 -   [Patch] Support new `fetchPriority` feature in Chrome for loading images
+-   [Minor] Add an `accessibilityLabel` prop to `Dropdown`
 
 ## 14.6.0 - 2022-03-21
 
