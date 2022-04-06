@@ -177,7 +177,7 @@ a {
 a,
 a:active,
 a:hover {
-  color: #009fd9;
+  color: #007fad;
 }
 /*# sourceMappingURL=thumbprint-global.css.map */
 "
