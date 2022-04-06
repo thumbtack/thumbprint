@@ -105,6 +105,14 @@ test('adds `dataTestId` prop', () => {
     expect(wrapperA).toMatchSnapshot();
 });
 
+test('adds `accessibilityLabel` prop', () => {
+    const wrapperA = mount(
+        <Dropdown accessibilityLabel="Choose your business" onChange={noop} value="foo" />,
+    );
+    expect(wrapperA.find('select').prop('aria-label')).toEqual('Choose your business');
+    expect(wrapperA).toMatchSnapshot();
+});
+
 test('adds `name` HTML attribute', () => {
     const wrapperA = mount(<Dropdown name="duck" onChange={noop} value="goose" />);
     expect(wrapperA.find('select').prop('name')).toEqual('duck');

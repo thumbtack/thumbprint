@@ -96,9 +96,16 @@ export interface DropdownProps<T extends string | number> {
      * selected value.
      */
     name?: string;
+    /**
+     * This adds an `aria-label` to the element. It should only be used in cases where the
+     * `<Dropdown>` doesn't have or can't be associated with a related `<label>`. [Learn more about
+     * the importance of using labels](https://dequeuniversity.com/rules/axe/4.3/select-name).
+     */
+    accessibilityLabel?: string;
 }
 
 export default function Dropdown<T extends string | number = string>({
+    accessibilityLabel,
     children,
     dataTest,
     dataTestId,
@@ -143,6 +150,7 @@ export default function Dropdown<T extends string | number = string>({
                 onBlur={onBlur}
                 data-testid={dataTestId}
                 data-test={dataTest}
+                aria-label={accessibilityLabel}
                 name={name}
             >
                 {children}
