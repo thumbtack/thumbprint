@@ -289,6 +289,7 @@ const Image = forwardRef<HTMLElement, ImageProps>((props: ImageProps, outerRef) 
                     onError={(): void => {
                         setIsError(true);
                     }}
+                    fetchPriority={forceEarlyRender ? 'high' : 'auto'}
                     className={classNames({
                         // Opacity to 0, prevents flash of alt text when `height` prop used
                         [styles.imageStart]: true,

@@ -38,3 +38,12 @@ declare module '*.module.scss' {
     const classes: { [key: string]: string };
     export default classes;
 }
+
+declare module 'react' {
+    interface ImgHTMLAttributes<T> extends HTMLAttributes<T> {
+        // https://wicg.github.io/priority-hints/
+        // https://chromestatus.com/feature/5273474901737472
+        // https://web.dev/priority-hints/
+        fetchPriority?: 'auto' | 'high' | 'low';
+    }
+}
