@@ -8,6 +8,10 @@
 -   [Minor] Add `icon` prop to `FilterChip` component
 -   [Patch] Fix thinning of the `FilterChip` component when selected
 
+### Added
+
+-   [Patch] Support new `fetchPriority` feature in Chrome for loading images
+
 ## 14.6.0 - 2022-03-21
 
 ### Changed
