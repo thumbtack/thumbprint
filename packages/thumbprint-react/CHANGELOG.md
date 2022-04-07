@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.7.0 - 2022-04-07
+
 ### Added
 
 -   [Patch] Support new `fetchPriority` feature in Chrome for loading images
