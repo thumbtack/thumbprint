@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 4.1.2 - 2022-04-07
+
+### Changed
+
+-   [Patch] Use Dart Sass instead of Sass for compilation.
+
 ## 4.1.1 - 2020-07-14
 
 ### Fixed
