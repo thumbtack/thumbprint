@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { ContentModifierLightningTiny } from '@thumbtack/thumbprint-icons';
 import { mount } from 'enzyme';
 import FilterChip from './index';
 
@@ -85,13 +84,7 @@ test('renders the correct text when clicked', () => {
 });
 
 test('renders the `icon` passed in', () => {
-    const wrapper = mount(
-        <FilterChip
-            text="Lightning"
-            icon={<ContentModifierLightningTiny />}
-            onClick={(): void => {}}
-        />,
-    );
+    const wrapper = mount(<FilterChip text="Lightning" icon={<svg />} onClick={(): void => {}} />);
     expect(wrapper.find('svg')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
 });
