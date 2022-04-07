@@ -40,7 +40,7 @@ export default function FilterChip({
             onClick={onClick}
             aria-pressed={isSelected}
         >
-            <div className="flex items-center">
+            <div className={styles.contentContainer}>
                 {icon && <span className={styles.iconWrap}>{icon}</span>}
                 {text}
             </div>
