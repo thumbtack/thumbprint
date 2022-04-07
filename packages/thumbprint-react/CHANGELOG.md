@@ -5,8 +5,14 @@
 ### Changed
 
 -   [Minor] Change unselected `FilterChip` component border to `1px`
--   [Minor] Add `icon` prop to `FilterChip` component
+
+### Fixed
+
 -   [Patch] Fix thinning of the `FilterChip` component when selected
+
+### Added
+
+-   [Minor] Add `icon` prop to `FilterChip` component
 
 ## 14.7.0 - 2022-04-07
 
