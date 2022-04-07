@@ -28,6 +28,44 @@ exports[`renders a proper onClick callback 1`] = `
 </body>
 `;
 
+exports[`renders the \`icon\` passed in 1`] = `
+<FilterChip
+  icon={<ContentModifierLightningTiny />}
+  onClick={[Function]}
+  text="Lightning"
+>
+  <button
+    aria-pressed={false}
+    className="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="flex items-center"
+    >
+      <span
+        className="iconWrap"
+      >
+        <ContentModifierLightningTiny>
+          <svg
+            fill="currentColor"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.968 10.08l.897-2.855a.751.751 0 00-.716-.975H4.141L6.604 2.5h3.019L8.101 5.123A.748.748 0 008.75 6.25h.898l-4.68 3.83zm7.488-4.832a.748.748 0 00-.706-.498h-1.698l1.523-2.623A.752.752 0 0010.925 1H6.201a.75.75 0 00-.628.338l-3.45 5.25A.75.75 0 002.75 7.75h1.378l-1.344 4.275a.749.749 0 001.19.806l8.25-6.75a.749.749 0 00.232-.833z"
+            />
+          </svg>
+        </ContentModifierLightningTiny>
+      </span>
+      Lightning
+    </div>
+  </button>
+</FilterChip>
+`;
+
 exports[`renders the correct selected state when clicked 1`] = `
 <body>
   <div>
