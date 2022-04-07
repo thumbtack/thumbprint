@@ -292,7 +292,7 @@ const Image = forwardRef<HTMLElement, ImageProps>((props: ImageProps, outerRef) 
                     // We expect an error because the attribute is non-standard and doesn't yet
                     // exist in the React types.
                     // @ts-expect-error
-                    fetchPriority={forceEarlyRender ? 'high' : 'auto'}
+                    fetchpriority={forceEarlyRender ? 'high' : 'auto'}
                     className={classNames({
                         // Opacity to 0, prevents flash of alt text when `height` prop used
                         [styles.imageStart]: true,
