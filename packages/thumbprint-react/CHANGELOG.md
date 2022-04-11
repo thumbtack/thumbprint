@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.8.0 - 2022-04-11
+
 ### Changed
 
 -   [Minor] Change unselected `FilterChip` component border to `1px`
