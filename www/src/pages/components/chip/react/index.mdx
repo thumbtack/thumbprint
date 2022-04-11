@@ -39,6 +39,22 @@ function FilterChipExample() {
 }
 ```
 
+With the `icon` prop:
+
+```jsx
+function FilterChipIconExample() {
+    const [isSelected, setIsSelected] = React.useState(true);
+    return (
+        <FilterChip
+            text="New York"
+            icon={isSelected && <ContentActionsCheckTiny />}
+            isSelected={isSelected}
+            onClick={() => setIsSelected(!isSelected)}
+        />
+    );
+}
+```
+
 Below is an example of multiple FilterChips.
 
 ```jsx

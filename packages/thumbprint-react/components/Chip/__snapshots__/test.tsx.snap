@@ -8,7 +8,11 @@ exports[`renders \`text\` passed in 1`] = `
       class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
       type="button"
     >
-      Beverages
+      <div
+        class="contentContainer"
+      >
+        Beverages
+      </div>
     </button>
   </div>
 </body>
@@ -22,10 +26,40 @@ exports[`renders a proper onClick callback 1`] = `
       class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
       type="button"
     >
-      Beverages
+      <div
+        class="contentContainer"
+      >
+        Beverages
+      </div>
     </button>
   </div>
 </body>
+`;
+
+exports[`renders the \`icon\` passed in 1`] = `
+<FilterChip
+  icon={<svg />}
+  onClick={[Function]}
+  text="Lightning"
+>
+  <button
+    aria-pressed={false}
+    className="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="contentContainer"
+    >
+      <span
+        className="iconWrap"
+      >
+        <svg />
+      </span>
+      Lightning
+    </div>
+  </button>
+</FilterChip>
 `;
 
 exports[`renders the correct selected state when clicked 1`] = `
@@ -36,7 +70,11 @@ exports[`renders the correct selected state when clicked 1`] = `
       class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipSelected"
       type="button"
     >
-      Beverages
+      <div
+        class="contentContainer"
+      >
+        Beverages
+      </div>
     </button>
   </div>
 </body>
@@ -50,7 +88,11 @@ exports[`renders the selected state 1`] = `
       class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipSelected"
       type="button"
     >
-      Beverages
+      <div
+        class="contentContainer"
+      >
+        Beverages
+      </div>
     </button>
   </div>
 </body>
@@ -64,7 +106,11 @@ exports[`renders the unselected state by default 1`] = `
       class="filterChip br-pill mr1 truncate no-underlin mb1 ph3 pv2 b filterChipNotSelected"
       type="button"
     >
-      Beverages
+      <div
+        class="contentContainer"
+      >
+        Beverages
+      </div>
     </button>
   </div>
 </body>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { mount } from 'enzyme';
 import FilterChip from './index';
 
 test('renders `text` passed in', () => {
@@ -33,14 +34,15 @@ test('renders a proper onClick callback', () => {
 
 type ExamplePropTypes = {
     text: string;
+    icon?: React.ReactNode;
 };
 
-function ExamplePage({ text }: ExamplePropTypes): JSX.Element {
+function ExamplePage({ text, icon }: ExamplePropTypes): JSX.Element {
     const [isSelected, setIsSelected] = React.useState(false);
     const onClick = (): void => {
         setIsSelected(!isSelected);
     };
-    return <FilterChip text={text} onClick={onClick} isSelected={isSelected} />;
+    return <FilterChip text={text} onClick={onClick} icon={icon} isSelected={isSelected} />;
 }
 
 test('renders the correct selected state when clicked', () => {
@@ -79,4 +81,10 @@ test('renders the correct text when clicked', () => {
     button = screen.getByRole('button', { pressed: true });
     expect(button).toBeTruthy();
     expect(button).toHaveTextContent('Remove Beverages');
+});
+
+test('renders the `icon` passed in', () => {
+    const wrapper = mount(<FilterChip text="Lightning" icon={<svg />} onClick={(): void => {}} />);
+    expect(wrapper.find('svg')).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
 });

@@ -13,6 +13,11 @@ export interface FilterChipProps {
      */
     isSelected?: boolean;
     /**
+     * Icon from [Thumbprint Icons](/icons/) to render within the
+     * chip. It must be one of the tiny icons.
+     */
+    icon?: React.ReactNode;
+    /**
      * A function to be called whenever the selected state of the chip changes.
      */
     onClick: () => void;
@@ -21,6 +26,7 @@ export interface FilterChipProps {
 export default function FilterChip({
     text,
     isSelected = false,
+    icon,
     onClick,
 }: FilterChipProps): JSX.Element {
     return (
@@ -34,7 +40,10 @@ export default function FilterChip({
             onClick={onClick}
             aria-pressed={isSelected}
         >
-            {text}
+            <div className={styles.contentContainer}>
+                {icon && <span className={styles.iconWrap}>{icon}</span>}
+                {text}
+            </div>
         </button>
     );
 }
