@@ -192,7 +192,7 @@ interface PropTypes {
      * Adds the `title` attribute to the element. This should be used infrequently since it's better
      * to use descriptive text in `children`.
      */
-    title: string;
+    title?: string;
 }
 
 export default Plain;
