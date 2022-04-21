@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `title` to `Link` component
+
 ## 14.8.0 - 2022-04-11
 
 ### Changed

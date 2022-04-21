@@ -106,6 +106,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             width = 'auto',
             dataTestId,
             dataTest,
+            title,
         }: PropTypes,
         ref,
     ): JSX.Element => {
@@ -125,6 +126,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         onClick,
                         rel,
                         target,
+                        title,
                     });
                     const buttonProps = getButtonProps({
                         onClick,
@@ -319,6 +321,11 @@ interface PropTypes {
      * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
+    /**
+     * Adds the `title` attribute to the element. This should be used infrequently since it's better
+     * to use descriptive text in `children`.
+     */
+    title: string;
 }
 
 export default Themed;

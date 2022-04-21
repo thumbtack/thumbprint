@@ -37,6 +37,7 @@ interface AnchorProps {
     href?: string;
     target: string;
     rel?: string;
+    title?: string;
 }
 
 /**
@@ -49,6 +50,7 @@ const getAnchorProps = ({
     onClick,
     rel,
     target,
+    title,
 }: {
     isDisabled?: boolean;
     shouldOpenInNewTab?: boolean;
@@ -56,6 +58,7 @@ const getAnchorProps = ({
     onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
     rel?: string;
     target?: string;
+    title?: string;
 }): AnchorProps => ({
     onClick,
     href: isDisabled ? undefined : to,
@@ -63,6 +66,7 @@ const getAnchorProps = ({
     // new tab https://mathiasbynens.github.io/rel-noopener/
     rel: getRel(to, target, shouldOpenInNewTab, rel),
     target: target || (shouldOpenInNewTab ? '_blank' : '_self'),
+    title,
 });
 
 export default getAnchorProps;
