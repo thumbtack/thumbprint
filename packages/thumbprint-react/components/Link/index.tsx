@@ -13,6 +13,7 @@ interface CommonProps {
     dataTestId?: string;
     dataTest?: string;
     accessibilityLabel?: string;
+    title?: string;
 }
 
 const getCommonLinkProps = (props: CommonProps): CommonProps => {
@@ -33,6 +34,7 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
         accessibilityLabel: props.accessibilityLabel,
         dataTestId: props.dataTestId,
         dataTest: props.dataTest,
+        title: props.title,
     };
 };
 
@@ -55,6 +57,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
             theme = 'primary',
             iconLeft,
             iconRight,
+            title,
         }: LinkProps,
         ref,
     ) => (
@@ -70,6 +73,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
                 accessibilityLabel,
                 dataTest,
                 dataTestId,
+                title,
             })}
             theme={theme}
             iconLeft={iconLeft}
@@ -141,6 +145,11 @@ export interface LinkProps {
      * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
+    /**
+     * Adds the `title` attribute to the anchor. This should be used infrequently since it's better
+     * to use descriptive text in `children`.
+     */
+    title?: string;
 }
 
 /**
@@ -164,6 +173,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
             theme = 'primary',
             size = 'large',
             width = 'auto',
+            title,
         }: ThemedLinkProps,
         ref,
     ) => (
@@ -179,6 +189,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
                 accessibilityLabel,
                 dataTest,
                 dataTestId,
+                title,
             })}
             icon={icon}
             iconRight={iconRight}
@@ -259,6 +270,11 @@ interface ThemedLinkProps {
      * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
+    /**
+     * Adds the `title` attribute to the anchor. This should be used infrequently since it's better
+     * to use descriptive text in `children`.
+     */
+    title?: string;
 }
 
 export default Link;
