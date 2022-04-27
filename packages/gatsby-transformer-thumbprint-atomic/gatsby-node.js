@@ -1,4 +1,4 @@
-const sass = require('node-sass');
+const sass = require('sass');
 const crypto = require('crypto');
 const importer = require('node-sass-tilde-importer');
 const parseAst = require('./parse-ast');
