@@ -276,20 +276,38 @@ _:-ms-lang(x) {
 .bg-blue {
   background-color: #009fd9 !important;
 }
+.bg-blue-100 {
+  background-color: #eaf6fa !important;
+}
 .bg-indigo {
   background-color: #5968e2 !important;
+}
+.bg-indigo-100 {
+  background-color: #e8f1fd !important;
 }
 .bg-purple {
   background-color: #8d56eb !important;
 }
+.bg-purple-100 {
+  background-color: #f5efff !important;
+}
 .bg-green {
   background-color: #2db783 !important;
+}
+.bg-green-100 {
+  background-color: #e1fdf3 !important;
 }
 .bg-yellow {
   background-color: #febe14 !important;
 }
+.bg-yellow-100 {
+  background-color: #fdf7e7 !important;
+}
 .bg-red {
   background-color: #ff5a5f !important;
+}
+.bg-red-100 {
+  background-color: #ffeff0 !important;
 }
 .bg-gray {
   background-color: #d3d4d5 !important;
