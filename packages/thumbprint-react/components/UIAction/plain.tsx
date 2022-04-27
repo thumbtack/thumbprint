@@ -27,6 +27,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
             accessibilityLabel,
             dataTestId,
             dataTest,
+            title,
         },
         ref,
     ): JSX.Element => {
@@ -86,6 +87,7 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
                         to,
                         onClick,
                         rel,
+                        title,
                     })}
                     ref={ref as React.Ref<HTMLAnchorElement>}
                 />
@@ -186,6 +188,11 @@ interface PropTypes {
      * @deprecated Deprecated in favor of the `dataTestId` prop
      */
     dataTest?: string;
+    /**
+     * Adds the `title` attribute to the element. This should be used infrequently since it's better
+     * to use descriptive text in `children`.
+     */
+    title?: string;
 }
 
 export default Plain;
