@@ -1,7 +1,13 @@
-const sass = require('node-sass');
-const fs = require('fs');
-const importer = require('node-sass-tilde-importer');
-const tmp = require('tmp');
+/**
+ * dart-sass only runs in the Jest `node` environment.
+ * See: https://github.com/sass/dart-sass/issues/710
+ * @jest-environment node
+ */
+
+import sass, { LegacyImporter } from 'sass';
+import fs from 'fs';
+import importer from 'node-sass-tilde-importer';
+import tmp from 'tmp';
 
 it('throws error if variable is not provided correctly', () => {
     let error = null;
@@ -9,7 +15,7 @@ it('throws error if variable is not provided correctly', () => {
     try {
         sass.renderSync({
             file: 'packages/thumbprint-font-face/_index.scss',
-            importer,
+            importer: importer as LegacyImporter<'sync'>,
         }).css.toString();
     } catch (e) {
         error = e;
@@ -32,7 +38,7 @@ it('works if variable is provided', () => {
     const css = sass
         .renderSync({
             file: file.name,
-            importer,
+            importer: importer as LegacyImporter<'sync'>,
         })
         .css.toString();
     expect(css).toMatchSnapshot();
