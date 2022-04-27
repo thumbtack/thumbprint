@@ -50,7 +50,7 @@ Our documentation source code lives in [`www/`](https://github.com/thumbtack/thu
 
 Here are a few things to keep in mind when creating a pull request:
 
--   **Testing:** Run `yarn test` locally to ensure that the build will pass. If the command fails because of [Jest snapshot tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html), you will have to run `yarn test:jest -u` to update the snapshots. Review the changes to the snapshots to ensure that they are intended and include them in the code review.
+-   **Testing:** Run `yarn verify` locally to ensure that the build will pass. If the command fails because of [Jest snapshot tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html), you will have to run `yarn test -u` to update the snapshots. Review the changes to the snapshots to ensure that they are intended and include them in the code review.
 -   **Changelog:**
     -   Most changes within `packages/`require updates to the package's `CHANGELOG.md` file. You can skip modifying the changelog if your commit only modifies this [list of ignored files](https://github.com/thumbtack/thumbprint/blob/master/lerna.json).
     -   Our changelogs follow the “[Keep a Changelog](http://keepachangelog.com/en/1.0.0/)” specification. Our version numbers follow [Semantic Versioning](https://semver.org/).
