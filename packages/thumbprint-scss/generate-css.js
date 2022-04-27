@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const fse = require('fs-extra');
-const sass = require('sass');
-const postcss = require('postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const glob = require('glob');
-const promiseMap = require('p-map');
-const nodeSassImporter = require('./node-sass-importer');
+import fs from 'fs';
+import sass from 'sass';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import glob from 'glob';
+import promiseMap from 'p-map';
+import nodeSassImporter from 'node-sass-tilde-importer';
 
 /**
  * Ensures that errors throw an error with a stacktrace.
@@ -30,7 +30,7 @@ const compileSass = async fromFile => {
     // `scss/alert.scss` into `alert.css`.
     const outputFileName = fromFile.replace('scss/', '').replace('.scss', '.css');
 
-    return fse.outputFile(outputFileName, processedCss);
+    return fs.writeFileSync(outputFileName, processedCss.css);
 };
 
 (async () => {

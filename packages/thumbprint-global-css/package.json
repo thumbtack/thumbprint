@@ -18,7 +18,7 @@
         "start": "yarn clear && yarn generate-css",
         "clear": "rm -rf dist",
         "generate-css": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts && postcss dist/thumbprint-global.css --map --use autoprefixer cssnano --replace",
-        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+        "prepublishOnly": "node --loader ts-node/esm ../../scripts/should-build-package.ts -- yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^12.1.1",
@@ -26,7 +26,8 @@
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
         "node-sass-tilde-importer": "2.0.0-alpha.1",
-        "postcss-cli": "^6.1.1",
+        "postcss": "^8.4.12",
+        "postcss-cli": "^9.1.0",
         "sass": "^1.51.0"
     },
     "bugs": {
