@@ -26,7 +26,7 @@ Use the following commands to run the Thumbprint documentation:
 ```bash
 git clone git@github.com:thumbtack/thumbprint.git
 cd thumbprint
-node -v # This must be 12.x
+node -v # This must be 16.x
 yarn -v # This must be >= 1.4.2
 yarn
 yarn start
