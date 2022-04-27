@@ -1,5 +1,5 @@
-const prettier = require('prettier');
-const fs = require('fs');
+import prettier from 'prettier';
+import fs from 'fs';
 
 it('compiles correctly', () => {
     const css = fs.readFileSync(
