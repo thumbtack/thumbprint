@@ -54,6 +54,9 @@ module.exports = {
 
         // We use noop functions in many places, for example as default values for props.
         '@typescript-eslint/no-empty-function': 'off',
+
+        'no-use-before-define': 'off',
+        'no-shadow': 'off',
     },
     overrides: [
         {
