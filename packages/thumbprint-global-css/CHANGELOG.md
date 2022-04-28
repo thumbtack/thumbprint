@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.1.18 - 2022-04-28
+
+### Fixed
+
+-   [Patch] Update to use Dart Sass.
+-   [Patch] Rewrite unit test in TypeScript.
+
 ## 0.1.17 - 2020-07-14
 
 ### Fixed
