@@ -12,5 +12,9 @@ module.exports = {
                 ignorePseudoClasses: ['global'],
             },
         ],
+        'scss/at-import-no-partial-leading-underscore': null,
+        'scss/at-import-partial-extension': null,
+        'scss/no-global-function-names': null,
+        'scss/comment-no-empty': null,
     },
 };
