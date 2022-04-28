@@ -51,9 +51,9 @@ export {
     ModalFooterProps,
     ModalAnimatedWrapperProps,
 } from './components/Modal/index';
-export { default as ModalBase } from './components/ModalBase/index.jsx';
+// export { default as ModalBase } from './components/ModalBase/index.jsx';
 export { default as ModalCurtain, ModalCurtainProps } from './components/ModalCurtain/index';
-export { default as ModalStandard } from './components/ModalStandard/index.jsx';
+// export { default as ModalStandard } from './components/ModalStandard/index.jsx';
 export {
     default as Popover,
     PopoverTitle,
