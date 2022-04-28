@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.16 - 2022-04-28
+
 ### Fixed
 
 -   [Patch] Update to use Dart Sass.

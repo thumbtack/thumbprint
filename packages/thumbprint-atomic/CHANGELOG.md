@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 4.2.0 - 2022-04-28
+
+### Added
+
+-   [Minor] Add `-100` versions of colours as background color classes. (#809)
+
 ## 4.1.2 - 2022-04-07
 
 ### Changed
