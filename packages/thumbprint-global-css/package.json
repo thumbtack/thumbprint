@@ -18,7 +18,7 @@
         "start": "yarn clear && yarn generate-css",
         "clear": "rm -rf dist",
         "generate-css": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts ",
-        "prepublishOnly": "yarn start"
+        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^12.1.1",
