@@ -26,7 +26,8 @@
         "autoprefixer": "^9.0.1",
         "cssnano": "^4.1.0",
         "node-sass-tilde-importer": "2.0.0-alpha.1",
-        "postcss-cli": "^6.1.1",
+        "postcss": "^8.4.12",
+        "postcss-cli": "^9.1.0",
         "sass": "^1.51.0"
     },
     "bugs": {

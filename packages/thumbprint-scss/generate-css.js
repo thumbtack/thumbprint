@@ -30,7 +30,7 @@ const compileSass = async fromFile => {
     // `scss/alert.scss` into `alert.css`.
     const outputFileName = fromFile.replace('scss/', '').replace('.scss', '.css');
 
-    return fse.outputFile(outputFileName, processedCss);
+    return fse.outputFile(outputFileName, processedCss.css);
 };
 
 (async () => {
