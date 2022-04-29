@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fse = require('fs-extra');
+// const fs = require('fs');
 const sass = require('sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
@@ -30,7 +31,7 @@ const compileSass = async fromFile => {
     // `scss/alert.scss` into `alert.css`.
     const outputFileName = fromFile.replace('scss/', '').replace('.scss', '.css');
 
-    return fse.outputFile(outputFileName, processedCss);
+    return fse.outputFile(outputFileName, processedCss.css);
 };
 
 (async () => {

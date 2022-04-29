@@ -54,7 +54,7 @@
         "eslint-plugin-lodash": "^5.1.0",
         "eslint-plugin-react": "^7.11.1",
         "eslint-plugin-react-hooks": "^1.6.1",
-        "execa": "^2.0.4",
+        "execa": "^5.1.1",
         "folder-hash": "^3.0.0",
         "fs-extra": "^8.1.0",
         "gatsby-plugin-typescript": "^2.1.9",
@@ -83,7 +83,7 @@
         "url": "git+https://github.com/thumbtack/thumbprint.git"
     },
     "engines": {
-        "node": "12.x"
+        "node": "16.x"
     },
     "keywords": [
         "thumbtack",
@@ -115,5 +115,8 @@
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
+    },
+    "resolutions": {
+        "execa": "5.1.1"
     }
 }

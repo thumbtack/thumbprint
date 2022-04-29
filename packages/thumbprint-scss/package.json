@@ -27,7 +27,7 @@
         "start": "yarn generate-css",
         "clear": "rm *.css",
         "generate-css": "./generate-css.js",
-        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+        "prepublishOnly": "yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-tokens": "^12.1.1",

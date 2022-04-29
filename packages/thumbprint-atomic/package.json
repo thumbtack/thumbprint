@@ -17,8 +17,8 @@
     "scripts": {
         "start": "yarn clear && yarn generateCss",
         "clear": "rm -rf dist",
-        "generateCss": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
-        "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
+        "generateCss": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts ",
+        "prepublishOnly": "yarn start"
     },
     "devDependencies": {
         "@thumbtack/thumbprint-scss": "^4.0.2",
