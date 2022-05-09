@@ -18,22 +18,22 @@ export interface GridColumnProps {
      * Default width of the column as a fraction of the grid out of 12, to be shown at all
      * breakpoints except those covered by the three optional props below.
      */
-    base?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    base?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `small`.
      */
-    aboveSmall?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    aboveSmall?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `medium`.
      */
-    aboveMedium?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    aboveMedium?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * Width of the column as a fraction of the grid out of 12, to be shown in viewports wider
      * than `large`.
      */
-    aboveLarge?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    aboveLarge?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
     /**
      * A selector hook into the React component for use in automated testing environments.
      */

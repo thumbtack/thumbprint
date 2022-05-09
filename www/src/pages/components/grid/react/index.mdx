@@ -95,6 +95,30 @@ Using multiple columns with a combined width that exceeds `12` will automaticall
 </Grid>
 ```
 
+### Hidden at some breakpoints
+
+You can set a column width to `0` to hide it entirely at certain breakpoints
+
+```jsx
+<Grid>
+    <GridColumn base={0} aboveMedium={3}>
+        <div className="bg-red h4 mb3 tc">Item A</div>
+    </GridColumn>
+
+    <GridColumn base={12} aboveMedium={3}>
+        <div className="bg-blue h4 mb3 tc">Item B</div>
+    </GridColumn>
+
+    <GridColumn base={12} aboveMedium={3}>
+        <div className="bg-green h4 mb3 tc">Item C</div>
+    </GridColumn>
+
+    <GridColumn base={12} aboveMedium={3}>
+        <div className="bg-yellow h4 mb3 tc">Item D</div>
+    </GridColumn>
+</Grid>
+```
+
 ### Centered grid
 
 The `Grid` component should not be used for centered single-column grids. This can be built with [Atomic classes](https://thumbprint.design/atomic/): `mw7 center tc`.
