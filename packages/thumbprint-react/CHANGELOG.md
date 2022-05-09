@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.10.0 - 2022-05-09
+
 ### Added
 
 -   [Minor] Add support for a width of `0` to `GridColumn`

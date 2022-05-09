@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.1.19 - 2022-05-09
+
+### Changed
+
+-   [Patch] Upgrade dependencies to prepare for Node 16
+
 ## 0.1.18 - 2022-04-28
 
 ### Fixed
