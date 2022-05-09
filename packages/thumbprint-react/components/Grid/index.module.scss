@@ -152,6 +152,10 @@
 
 // Above medium
 @include tp-respond-above($tp-breakpoint__medium) {
+    .aboveMediumCol0 {
+        display: none !important;
+    }
+
     .aboveMediumCol1 {
         width: 8.333333% !important;
         display: block !important;
@@ -215,51 +219,67 @@
 
 // Above large
 @include tp-respond-above($tp-breakpoint__large) {
+    .aboveLargeCol0 {
+        display: none !important;
+    }
+
     .aboveLargeCol1 {
         width: 8.333333% !important;
+        display: block !important;
     }
 
     .aboveLargeCol2 {
         width: 16.666666% !important;
+        display: block !important;
     }
 
     .aboveLargeCol3 {
         width: 25% !important;
+        display: block !important;
     }
 
     .aboveLargeCol4 {
         width: 33.333333% !important;
+        display: block !important;
     }
 
     .aboveLargeCol5 {
         width: 41.666666% !important;
+        display: block !important;
     }
 
     .aboveLargeCol6 {
         width: 50% !important;
+        display: block !important;
     }
 
     .aboveLargeCol7 {
         width: 58.333333% !important;
+        display: block !important;
     }
 
     .aboveLargeCol8 {
         width: 66.666666% !important;
+        display: block !important;
     }
 
     .aboveLargeCol9 {
         width: 75% !important;
+        display: block !important;
     }
 
     .aboveLargeCol10 {
         width: 83.333333% !important;
+        display: block !important;
     }
 
     .aboveLargeCol11 {
         width: 91.666666% !important;
+        display: block !important;
     }
 
     .aboveLargeCol12 {
         width: 100% !important;
+        display: block !important;
     }
 }
