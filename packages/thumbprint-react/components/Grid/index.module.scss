@@ -31,6 +31,10 @@
 }
 
 // Column default
+.col0 {
+    display: none !important;
+}
+
 .col1 {
     width: 8.333333% !important;
 }
@@ -81,52 +85,68 @@
 
 // Above small
 @include tp-respond-above($tp-breakpoint__small) {
+    .aboveSmallCol0 {
+        display: none !important;
+    }
+
     .aboveSmallCol1 {
         width: 8.333333% !important;
+        display: block !important;
     }
 
     .aboveSmallCol2 {
         width: 16.666666% !important;
+        display: block !important;
     }
 
     .aboveSmallCol3 {
         width: 25% !important;
+        display: block !important;
     }
 
     .aboveSmallCol4 {
         width: 33.333333% !important;
+        display: block !important;
     }
 
     .aboveSmallCol5 {
         width: 41.666666% !important;
+        display: block !important;
     }
 
     .aboveSmallCol6 {
         width: 50% !important;
+        display: block !important;
     }
 
     .aboveSmallCol7 {
         width: 58.333333% !important;
+        display: block !important;
     }
 
     .aboveSmallCol8 {
         width: 66.666666% !important;
+        display: block !important;
     }
 
     .aboveSmallCol9 {
         width: 75% !important;
+        display: block !important;
     }
 
     .aboveSmallCol10 {
         width: 83.333333% !important;
+        display: block !important;
     }
 
     .aboveSmallCol11 {
         width: 91.666666% !important;
+        display: block !important;
     }
 
     .aboveSmallCol12 {
         width: 100% !important;
+        display: block !important;
     }
 }
 
@@ -134,50 +154,62 @@
 @include tp-respond-above($tp-breakpoint__medium) {
     .aboveMediumCol1 {
         width: 8.333333% !important;
+        display: block !important;
     }
 
     .aboveMediumCol2 {
         width: 16.666666% !important;
+        display: block !important;
     }
 
     .aboveMediumCol3 {
         width: 25% !important;
+        display: block !important;
     }
 
     .aboveMediumCol4 {
         width: 33.333333% !important;
+        display: block !important;
     }
 
     .aboveMediumCol5 {
         width: 41.666666% !important;
+        display: block !important;
     }
 
     .aboveMediumCol6 {
         width: 50% !important;
+        display: block !important;
     }
 
     .aboveMediumCol7 {
         width: 58.333333% !important;
+        display: block !important;
     }
 
     .aboveMediumCol8 {
         width: 66.666666% !important;
+        display: block !important;
     }
 
     .aboveMediumCol9 {
         width: 75% !important;
+        display: block !important;
     }
 
     .aboveMediumCol10 {
         width: 83.333333% !important;
+        display: block !important;
     }
 
     .aboveMediumCol11 {
         width: 91.666666% !important;
+        display: block !important;
     }
 
     .aboveMediumCol12 {
         width: 100% !important;
+        display: block !important;
     }
 }
 
