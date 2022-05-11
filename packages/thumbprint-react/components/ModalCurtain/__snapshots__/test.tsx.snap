@@ -65,3 +65,24 @@ exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
   />
 </body>
 `;
+
+exports[`ModalCurtain renders text that is passed in 1`] = `
+<body>
+  <div>
+    <div>
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div>
+      Goose
+    </div>
+  </div>
+</body>
+`;

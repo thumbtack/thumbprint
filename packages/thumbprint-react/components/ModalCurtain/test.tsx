@@ -80,7 +80,7 @@ describe('ModalCurtain', () => {
     });
 
     test('renders text that is passed in', () => {
-        render(
+        const wrapper = render(
             <div>
                 <button type="button" />
                 <ModalCurtain onCloseClick={jest.fn}>
@@ -90,7 +90,7 @@ describe('ModalCurtain', () => {
         );
 
         expect(screen.getByRole('dialog')?.textContent).toEqual('Goose');
-        // expect(wrapper).toMatchSnapshot();
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('initially traps focus to the root dialog node', () => {
