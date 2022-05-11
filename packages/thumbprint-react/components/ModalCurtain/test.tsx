@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import ModalCurtain from './index';
 
 const ESC_KEY = 27;
@@ -10,36 +10,36 @@ const LOWERCASE_A_KEY = 65;
 
 describe('ModalCurtain', () => {
     test('renders a basic curtain', () => {
-        const wrapper = mount(<ModalCurtain onCloseClick={jest.fn} />);
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = render(<ModalCurtain onCloseClick={jest.fn} />);
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('renders modal in `exited` stage', () => {
-        const wrapper = mount(<ModalCurtain stage="exited" onCloseClick={jest.fn} />);
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = render(<ModalCurtain stage="exited" onCloseClick={jest.fn} />);
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('renders modal in `entering` stage', () => {
-        const wrapper = mount(<ModalCurtain stage="entering" onCloseClick={jest.fn} />);
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = render(<ModalCurtain stage="entering" onCloseClick={jest.fn} />);
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('renders modal in `entered` stage', () => {
-        const wrapper = mount(<ModalCurtain stage="entered" onCloseClick={jest.fn} />);
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = render(<ModalCurtain stage="entered" onCloseClick={jest.fn} />);
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('renders modal in `exiting` stage', () => {
-        const wrapper = mount(<ModalCurtain stage="exiting" onCloseClick={jest.fn} />);
-        expect(wrapper).toMatchSnapshot();
+        const wrapper = render(<ModalCurtain stage="exiting" onCloseClick={jest.fn} />);
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('renders `accessibilityLabel`', () => {
-        const wrapper = mount(
+        const wrapper = render(
             <ModalCurtain accessibilityLabel="goosegoosegoose" onCloseClick={jest.fn} />,
         );
-        expect(wrapper.html()).toContain('goosegoosegoose');
-        expect(wrapper).toMatchSnapshot();
+        expect(screen.getByRole('dialog').getAttribute('aria-label')).toEqual('goosegoosegoose');
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('`children` receives `curtainOnClick` and `curtainClassName`', () => {
@@ -48,7 +48,7 @@ describe('ModalCurtain', () => {
             curtainClassName?: string;
         } = {};
 
-        mount(
+        render(
             <ModalCurtain onCloseClick={jest.fn}>
                 {(args): JSX.Element => {
                     obj = args;
@@ -64,23 +64,23 @@ describe('ModalCurtain', () => {
     test("`children`'s `curtainOnClick` render prop calls `onCloseClick` prop when executed", () => {
         const onClick = jest.fn();
 
-        const wrapper = mount(
+        render(
             <ModalCurtain onCloseClick={onClick}>
                 {({ curtainOnClick }): JSX.Element => (
-                    <button data-test-id="goose" onClick={curtainOnClick} type="button" />
+                    <button onClick={curtainOnClick} type="button" />
                 )}
             </ModalCurtain>,
         );
 
         expect(onClick).toHaveBeenCalledTimes(0);
 
-        wrapper.find('button[data-test-id="goose"]').simulate('click');
+        screen.getByRole('button').click();
 
         expect(onClick).toHaveBeenCalledTimes(1);
     });
 
     test('renders text that is passed in', () => {
-        const wrapper = mount(
+        const wrapper = render(
             <div>
                 <button type="button" />
                 <ModalCurtain onCloseClick={jest.fn}>
@@ -89,15 +89,15 @@ describe('ModalCurtain', () => {
             </div>,
         );
 
-        expect(wrapper.find('ModalCurtain').text()).toEqual('Goose');
-        expect(wrapper).toMatchSnapshot();
+        expect(screen.getByRole('dialog').textContent).toEqual('Goose');
+        expect(wrapper.baseElement).toMatchSnapshot();
     });
 
     test('initially traps focus to the root dialog node', () => {
         jest.useFakeTimers();
 
         const onCloseClick = jest.fn();
-        const wrapper = mount(
+        render(
             <ModalCurtain stage="entered" onCloseClick={onCloseClick}>
                 {(): JSX.Element => (
                     <>
@@ -110,8 +110,7 @@ describe('ModalCurtain', () => {
         // Run setTimeouts() in focus-trap to completion
         jest.runAllTimers();
 
-        const modalWrapper = wrapper.find('[role="dialog"]');
-        expect(modalWrapper.is(':focus')).toBe(true);
+        expect(screen.getByRole('dialog')).toHaveFocus();
 
         jest.useRealTimers();
     });
@@ -127,12 +126,11 @@ describe('ModalCurtain', () => {
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} initialFocus={inputRef}>
                     {(): JSX.Element => (
                         <div>
-                            <button type="button" data-testid="button" />
+                            <button type="button" />
                             <input
                                 ref={(r): void => {
                                     setInputRef(r);
                                 }}
-                                data-testid="input"
                             />
                         </div>
                     )}
@@ -140,27 +138,26 @@ describe('ModalCurtain', () => {
             );
         };
 
-        const wrapper = mount(<Example />);
+        render(<Example />);
 
         // Run setTimeouts() in focus-trap to completion
         jest.runAllTimers();
 
         // We don't want focus to be on the outside wrapper.
-        const modalWrapper = wrapper.find('[role="dialog"]');
-        expect(modalWrapper.is(':focus')).toBe(false);
+        expect(screen.getByRole('dialog')).not.toHaveFocus();
 
-        const button = wrapper.find('[data-testid="button"]');
-        const input = wrapper.find('[data-testid="input"]');
+        const button = screen.getByRole('button');
+        const input = screen.getByRole('textbox');
 
-        expect(button.is(':focus')).toBe(false);
-        expect(input.is(':focus')).toBe(true);
+        expect(button).not.toHaveFocus();
+        expect(input).toHaveFocus();
 
         jest.useRealTimers();
     });
 
     test('`onCloseClick` is not called when non-ESC keys are pressed', () => {
         const onCloseClick = jest.fn();
-        mount(<ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />);
+        render(<ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />);
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
@@ -203,7 +200,9 @@ describe('ModalCurtain', () => {
     describe('closes modal on `ESC`', () => {
         test('when modal is open and `shouldCloseOnEscape` is `true`', () => {
             const onCloseClick = jest.fn();
-            mount(<ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />);
+            render(
+                <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
+            );
 
             expect(onCloseClick).toHaveBeenCalledTimes(0);
 
@@ -219,7 +218,7 @@ describe('ModalCurtain', () => {
 
         test('when modal is open and `shouldCloseOnEscape` are `true`, become closed and `false`, then become open and `true` again', () => {
             const onCloseClick = jest.fn();
-            const wrapper = mount(
+            const wrapper = render(
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
@@ -234,21 +233,37 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ shouldCloseOnEscape: false, stage: 'exited' });
+            wrapper.rerender(
+                <ModalCurtain
+                    stage="exited"
+                    onCloseClick={onCloseClick}
+                    shouldCloseOnEscape={false}
+                />,
+            );
             document.dispatchEvent(event);
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ shouldCloseOnEscape: true, stage: 'exited' });
+            wrapper.rerender(
+                <ModalCurtain stage="exited" onCloseClick={onCloseClick} shouldCloseOnEscape />,
+            );
             document.dispatchEvent(event);
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ shouldCloseOnEscape: false, stage: 'entered' });
+            wrapper.rerender(
+                <ModalCurtain
+                    stage="entered"
+                    onCloseClick={onCloseClick}
+                    shouldCloseOnEscape={false}
+                />,
+            );
             document.dispatchEvent(event);
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
             // Both are now true, so the event listener should be reactiviated.
-            wrapper.setProps({ shouldCloseOnEscape: true, stage: 'entered' });
+            wrapper.rerender(
+                <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
+            );
             document.dispatchEvent(event);
             expect(onCloseClick).toHaveBeenCalledTimes(2);
         });
@@ -257,7 +272,7 @@ describe('ModalCurtain', () => {
     describe('does not close modal on `ESC`', () => {
         test('when modal is closed and `shouldCloseOnEscape` is `true`', () => {
             const onCloseClick = jest.fn();
-            mount(<ModalCurtain stage="exited" onCloseClick={onCloseClick} shouldCloseOnEscape />);
+            render(<ModalCurtain stage="exited" onCloseClick={onCloseClick} shouldCloseOnEscape />);
 
             const event = new KeyboardEvent('keyup', {
                 key: 'Escape',
@@ -271,7 +286,7 @@ describe('ModalCurtain', () => {
 
         test('when modal is closed and `shouldCloseOnEscape` is `false`', () => {
             const onCloseClick = jest.fn();
-            mount(
+            render(
                 <ModalCurtain
                     stage="exited"
                     onCloseClick={onCloseClick}
@@ -291,7 +306,7 @@ describe('ModalCurtain', () => {
 
         test('when modal is open and `shouldCloseOnEscape` is `false`', () => {
             const onCloseClick = jest.fn();
-            mount(
+            render(
                 <ModalCurtain
                     stage="entered"
                     onCloseClick={onCloseClick}
@@ -311,7 +326,7 @@ describe('ModalCurtain', () => {
 
         test('when modal is open then changes to closed', () => {
             const onCloseClick = jest.fn();
-            const wrapper = mount(
+            const wrapper = render(
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
@@ -324,7 +339,9 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ stage: 'exited' });
+            wrapper.rerender(
+                <ModalCurtain stage="exited" onCloseClick={onCloseClick} shouldCloseOnEscape />,
+            );
 
             document.dispatchEvent(event);
 
@@ -333,7 +350,7 @@ describe('ModalCurtain', () => {
 
         test('when `shouldCloseOnEscape` changes to `false` while mounted', () => {
             const onCloseClick = jest.fn();
-            const wrapper = mount(
+            const wrapper = render(
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
@@ -346,7 +363,13 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ shouldCloseOnEscape: false });
+            wrapper.rerender(
+                <ModalCurtain
+                    stage="entered"
+                    onCloseClick={onCloseClick}
+                    shouldCloseOnEscape={false}
+                />,
+            );
 
             document.dispatchEvent(event);
 
@@ -355,7 +378,7 @@ describe('ModalCurtain', () => {
 
         test('when `shouldCloseOnEscape` changes to `false` and the modal close while mounted', () => {
             const onCloseClick = jest.fn();
-            const wrapper = mount(
+            const wrapper = render(
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 
@@ -368,7 +391,13 @@ describe('ModalCurtain', () => {
 
             expect(onCloseClick).toHaveBeenCalledTimes(1);
 
-            wrapper.setProps({ shouldCloseOnEscape: false, stage: 'exited' });
+            wrapper.rerender(
+                <ModalCurtain
+                    stage="exited"
+                    onCloseClick={onCloseClick}
+                    shouldCloseOnEscape={false}
+                />,
+            );
 
             document.dispatchEvent(event);
 
@@ -377,7 +406,7 @@ describe('ModalCurtain', () => {
 
         test('when component is unmounted', () => {
             const onCloseClick = jest.fn();
-            const wrapper = mount(
+            const wrapper = render(
                 <ModalCurtain stage="entered" onCloseClick={onCloseClick} shouldCloseOnEscape />,
             );
 

@@ -1,341 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalCurtain renders \`accessibilityLabel\` 1`] = `
-<ModalCurtain
-  accessibilityLabel="goosegoosegoose"
-  onCloseClick={[Function]}
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="goosegoosegoose"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="goosegoosegoose"
-        role="dialog"
-        tabIndex={-1}
-      />
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="goosegoosegoose"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders a basic curtain 1`] = `
-<ModalCurtain
-  onCloseClick={[Function]}
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex={-1}
-      />
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders modal in \`entered\` stage 1`] = `
-<ModalCurtain
-  onCloseClick={[Function]}
-  stage="entered"
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex={-1}
-      >
-        <NoScroll />
-      </div>
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders modal in \`entering\` stage 1`] = `
-<ModalCurtain
-  onCloseClick={[Function]}
-  stage="entering"
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex={-1}
-      >
-        <NoScroll />
-      </div>
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders modal in \`exited\` stage 1`] = `
-<ModalCurtain
-  onCloseClick={[Function]}
-  stage="exited"
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex={-1}
-      />
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders modal in \`exiting\` stage 1`] = `
-<ModalCurtain
-  onCloseClick={[Function]}
-  stage="exiting"
->
-  <ConditionalPortal
-    shouldDisplace={true}
-  >
-    <Portal
-      containerInfo={
-        <body>
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-          <div
-            aria-label="Modal"
-            role="dialog"
-            tabindex="-1"
-          />
-        </body>
-      }
-    >
-      <div
-        aria-label="Modal"
-        role="dialog"
-        tabIndex={-1}
-      />
-    </Portal>
-  </ConditionalPortal>
-</ModalCurtain>
+<body>
+  <div />
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
+  />
+</body>
 `;
 
 exports[`ModalCurtain renders text that is passed in 1`] = `
-<div>
-  <button
-    type="button"
-  />
-  <ModalCurtain
-    onCloseClick={[Function]}
+<body>
+  <div>
+    <div>
+      <button
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    aria-label="Modal"
+    role="dialog"
+    tabindex="-1"
   >
-    <ConditionalPortal
-      shouldDisplace={true}
-    >
-      <Portal
-        containerInfo={
-          <body>
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="goosegoosegoose"
-              role="dialog"
-              tabindex="-1"
-            />
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            >
-              <div />
-            </div>
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            >
-              <button
-                data-test-id="goose"
-                type="button"
-              />
-            </div>
-            <div
-              aria-label="Modal"
-              role="dialog"
-              tabindex="-1"
-            >
-              <div>
-                Goose
-              </div>
-            </div>
-          </body>
-        }
-      >
-        <div
-          aria-label="Modal"
-          role="dialog"
-          tabIndex={-1}
-        >
-          <div>
-            Goose
-          </div>
-        </div>
-      </Portal>
-    </ConditionalPortal>
-  </ModalCurtain>
-</div>
+    <div>
+      Goose
+    </div>
+  </div>
+</body>
 `;
