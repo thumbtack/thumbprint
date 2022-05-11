@@ -89,7 +89,7 @@ describe('ModalCurtain', () => {
             </div>,
         );
 
-        expect(screen.getByRole('dialog')?.textContent).toEqual('Goose');
+        expect(screen.getByRole('dialog').textContent).toEqual('Goose');
         expect(wrapper.baseElement).toMatchSnapshot();
     });
 
