@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { render, screen } from '@testing-library/react';
 import ModalCurtain from './index';
+import { mount } from 'enzyme';
 
 const ESC_KEY = 27;
 const ENTER_KEY = 13;
@@ -196,9 +197,22 @@ describe('ModalCurtain', () => {
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
     });
+    test('Cleans up DOM on unmount enzyme', () => {
+        const wrapper = mount(<ModalCurtain onCloseClick={jest.fn} stage="entered" />);
+        screen.debug();
+        wrapper.unmount();
+    });
 
-    test.only('Cleans up DOM on unmount', () => {
+    test('Cleans up DOM on unmount with RTL and Enzyme', () => {
         const onCloseClick = jest.fn();
+        const wrapper1 = mount(<ModalCurtain stage="entered" onCloseClick={onCloseClick} />);
+
+        expect(screen.queryByRole('dialog')).toBeInTheDocument();
+
+        wrapper1.unmount();
+
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
         const wrapper = render(<ModalCurtain stage="entered" onCloseClick={onCloseClick} />);
 
         expect(screen.queryByRole('dialog')).toBeInTheDocument();

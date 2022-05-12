@@ -22,15 +22,26 @@ export default function ConditionalPortal({
     shouldDisplace = false,
     children,
 }: PropTypes): JSX.Element | null {
+    const [container] = React.useState(() => {
+        const el = document.createElement('div');
+        el.classList.add('root-portal');
+        return el;
+    });
+
+    React.useEffect(() => {
+        document.body.appendChild(container);
+        return () => {
+            document.body.removeChild(container);
+        };
+    }, []);
+
     if (!children) {
         return null;
     }
 
     return (
         <React.Fragment>
-            {canUseDOM && shouldDisplace
-                ? ReactDOM.createPortal(children, document.body)
-                : children}
+            {canUseDOM && shouldDisplace ? ReactDOM.createPortal(children, container) : children}
         </React.Fragment>
     );
 }
