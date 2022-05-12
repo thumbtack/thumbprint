@@ -22,6 +22,7 @@ exports[`adds \`dataTest\` prop 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -80,6 +81,7 @@ exports[`adds \`disabled\` attribute 1`] = `
       disabled={true}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -138,6 +140,7 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -196,6 +199,7 @@ exports[`applies className corresponding to \`radioVerticalAlign\` on the label 
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -255,6 +259,7 @@ exports[`if no \`children\` are passed in 1`] = `
       id="no-children"
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -303,6 +308,7 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -366,6 +372,7 @@ exports[`is not checked by default 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -423,6 +430,7 @@ exports[`renders \`children\` passed in 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -481,6 +489,7 @@ exports[`renders \`hasError\` state 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -540,6 +549,7 @@ exports[`renders \`hasError\` state 2`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -603,6 +613,7 @@ exports[`renders \`input\` within \`label\` 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />
@@ -660,6 +671,7 @@ exports[`renders radio input 1`] = `
       disabled={false}
       name="duck"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="radio"
     />

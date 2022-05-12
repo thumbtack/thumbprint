@@ -21,6 +21,7 @@ exports[`adds \`dataTest\` prop 1`] = `
       data-test="Duck"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -69,6 +70,7 @@ exports[`adds \`dataTestId\` prop 1`] = `
       data-testid="Duck"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -116,6 +118,7 @@ exports[`adds \`disabled\` attribute 1`] = `
       className="input"
       disabled={true}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -164,6 +167,7 @@ exports[`adds \`name\` attribute 1`] = `
       disabled={false}
       name="ohhi"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -211,6 +215,7 @@ exports[`adds \`value\` prop 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
       value="Duck"
@@ -259,6 +264,7 @@ exports[`applies \`labelPadding\` as padding on the label 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -306,6 +312,7 @@ exports[`applies className corresponding to \`checkboxVerticalAlign\` on the lab
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -354,6 +361,7 @@ exports[`if no \`children\` are passed in 1`] = `
       disabled={false}
       id="no-children"
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -391,6 +399,7 @@ exports[`is checked when \`isChecked\` is set to true 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -465,6 +474,7 @@ exports[`is not checked by default 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -511,6 +521,7 @@ exports[`renders \`children\` passed in 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -559,6 +570,7 @@ exports[`renders \`hasError\` state 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -634,6 +646,7 @@ exports[`renders \`hasError\` state 2`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -680,6 +693,7 @@ exports[`renders \`input\` within \`label\` 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -726,6 +740,7 @@ exports[`renders checkbox input 1`] = `
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
@@ -774,6 +789,7 @@ exports[`renders indeterminate SVG when both \`isIndeterminate\` and \`isChecked
       className="input"
       disabled={false}
       onChange={[Function]}
+      onKeyPress={[Function]}
       required={false}
       type="checkbox"
     />
