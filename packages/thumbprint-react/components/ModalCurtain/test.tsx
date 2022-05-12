@@ -197,6 +197,19 @@ describe('ModalCurtain', () => {
         expect(onCloseClick).toHaveBeenCalledTimes(0);
     });
 
+    test.only('Cleans up DOM on unmount', () => {
+        const onCloseClick = jest.fn();
+        const wrapper = render(<ModalCurtain stage="entered" onCloseClick={onCloseClick} />);
+
+        expect(screen.queryByRole('dialog')).toBeInTheDocument();
+        console.log(screen.debug());
+
+        wrapper.unmount();
+        console.log(screen.debug());
+
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     describe('closes modal on `ESC`', () => {
         test('when modal is open and `shouldCloseOnEscape` is `true`', () => {
             const onCloseClick = jest.fn();
