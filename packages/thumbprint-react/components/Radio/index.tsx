@@ -104,10 +104,15 @@ export interface RadioProps {
      */
     labelPadding?: string;
     /**
-     * Function that runs when a new radio button is selected. It receives the new boolean value
-     * and the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
+     * Function that runs when a new radio button is selected. It receives the new boolean value,
+     * the provided `id`, and the underlying `event` as such:
+     * `props.onChange(event.target.checked, props.id, event)`.
      */
-    onChange: (isChecked: boolean, id?: string) => void;
+    onChange: (
+        isChecked: boolean,
+        id: string | undefined,
+        event: React.ChangeEvent<HTMLInputElement>,
+    ) => void;
     /**
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
@@ -152,7 +157,7 @@ export default function Radio({
                 className={styles.input}
                 type="radio"
                 id={id}
-                onChange={(event): void => onChange(event.target.checked, id)}
+                onChange={(event): void => onChange(event.target.checked, id, event)}
                 checked={isChecked}
                 name={name}
                 disabled={isDisabled}

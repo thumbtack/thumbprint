@@ -142,10 +142,15 @@ export interface CheckboxProps {
      */
     labelPadding?: string;
     /**
-     * Function that runs when a checkbox value changes. It receives the new boolean value and
-     * the provided `id` as such: `props.onChange(e.target.checked, props.id)`.
+     * Function that runs when a checkbox value changes. It receives the new boolean value,
+     * the provided `id`, and the underlying `event` as such:
+     * `props.onChange(event.target.checked, props.id, event)`.
      */
-    onChange: (value: boolean, id?: string) => void;
+    onChange: (
+        value: boolean,
+        id: string | undefined,
+        event: React.ChangeEvent<HTMLInputElement>,
+    ) => void;
     /**
      * Shows a horizontal line to represent an indeterminate input.
      */
@@ -221,7 +226,7 @@ export default function Checkbox({
                 id={id}
                 name={name}
                 checked={isChecked}
-                onChange={(event): void => onChange(event.target.checked, id)}
+                onChange={(event): void => onChange(event.target.checked, id, event)}
                 disabled={isDisabled}
                 required={isRequired}
                 {...valuePropObject}

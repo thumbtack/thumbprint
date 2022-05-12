@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Pass `event` object as argument to `onChange` prop of the `Radio` and `Checkbox` components.
+
 ## 14.10.0 - 2022-05-09
 
 ### Added
