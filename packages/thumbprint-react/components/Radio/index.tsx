@@ -116,7 +116,7 @@ export interface RadioProps {
     /**
      * Function that is called when the user presses a key while focused on the Radio.
      */
-    onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     /**
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
@@ -139,7 +139,7 @@ export default function Radio({
     labelPadding = '14px 0',
     name,
     onChange,
-    onKeyPress = (): void => {},
+    onKeyDown = (): void => {},
     radioVerticalAlign = 'center',
 }: RadioProps): JSX.Element {
     const uiState = getUIState({ isChecked, isDisabled, hasError });
@@ -165,8 +165,8 @@ export default function Radio({
                 onChange={(event): void => {
                     onChange(event.target.checked, id, event);
                 }}
-                onKeyPress={(event): void => {
-                    onKeyPress(event);
+                onKeyDown={(event): void => {
+                    onKeyDown(event);
                 }}
                 checked={isChecked}
                 name={name}

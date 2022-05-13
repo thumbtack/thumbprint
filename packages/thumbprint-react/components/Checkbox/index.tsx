@@ -154,7 +154,7 @@ export interface CheckboxProps {
     /**
      * Function that is called when the user presses a key while focused on the Checkbox.
      */
-    onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     /**
      * Shows a horizontal line to represent an indeterminate input.
      */
@@ -195,7 +195,7 @@ export default function Checkbox({
     isRequired = false,
     name,
     onChange,
-    onKeyPress = (): void => {},
+    onKeyDown = (): void => {},
     value,
 }: CheckboxProps): JSX.Element {
     const functionalState = getFunctionalState({ isDisabled, hasError });
@@ -234,8 +234,8 @@ export default function Checkbox({
                 onChange={(event): void => {
                     onChange(event.target.checked, id, event);
                 }}
-                onKeyPress={(event): void => {
-                    onKeyPress(event);
+                onKeyDown={(event): void => {
+                    onKeyDown(event);
                 }}
                 disabled={isDisabled}
                 required={isRequired}
