@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+## 14.10.0 - 2022-05-13
+
 ### Added
 
 -   [Minor] Pass `event` object as argument to `onChange` prop of the `Radio` and `Checkbox` components
 -   [Minor] Add `onKeyDown` prop to the `Radio` and `Checkbox` components
--   [Patch] Mark `onKeyPress` prop of `TextInput` component as deprecated.
+-   [Patch] Mark `onKeyPress` prop of `TextInput` component as deprecated
 
 ## 14.10.0 - 2022-05-09
 
