@@ -121,10 +121,18 @@ test('passes correct new value and `id` to `onChange` function', () => {
     );
 
     wrapper.find('input').simulate('change', { target: { checked: false } });
-    expect(onChange).toHaveBeenCalledWith(false, 'goose');
+    expect(onChange).toHaveBeenCalledWith(
+        false,
+        'goose',
+        expect.objectContaining({ type: 'change' }),
+    );
 
     wrapper.find('input').simulate('change', { target: { checked: true } });
-    expect(onChange).toHaveBeenCalledWith(true, 'goose');
+    expect(onChange).toHaveBeenCalledWith(
+        true,
+        'goose',
+        expect.objectContaining({ type: 'change' }),
+    );
 });
 
 test('calls `onChange` with correct values when `isIndeterminate` is true ', () => {
@@ -136,10 +144,18 @@ test('calls `onChange` with correct values when `isIndeterminate` is true ', () 
     );
 
     wrapper.find('input').simulate('change', { target: { checked: false } });
-    expect(onChange).toHaveBeenCalledWith(false, undefined);
+    expect(onChange).toHaveBeenCalledWith(
+        false,
+        undefined,
+        expect.objectContaining({ type: 'change' }),
+    );
 
     wrapper.find('input').simulate('change', { target: { checked: true } });
-    expect(onChange).toHaveBeenCalledWith(true, undefined);
+    expect(onChange).toHaveBeenCalledWith(
+        true,
+        undefined,
+        expect.objectContaining({ type: 'change' }),
+    );
 });
 
 test('renders indeterminate SVG when both `isIndeterminate` and `isChecked` are true ', () => {

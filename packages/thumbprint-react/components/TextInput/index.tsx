@@ -244,6 +244,7 @@ export interface TextInputProps {
     onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     /**
      * Fires when a valid key input is made.
+     * @deprecated This event is deprecated in the DOM APIs. Use `onKeyDown` or `onKeyUp` instead.
      */
     onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     /**
