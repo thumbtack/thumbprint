@@ -9,6 +9,11 @@ interface CommonProps {
     children?: React.ReactNode;
     isDisabled?: boolean;
     onClick?: () => void;
+    onMouseEnter?: () => void;
+    onMouseOver?: () => void;
+    onFocus?: () => void;
+    onMouseLeave?: () => void;
+    onBlur?: () => void;
     rel?: string;
     dataTestId?: string;
     dataTest?: string;
@@ -26,6 +31,11 @@ const getCommonLinkProps = (props: CommonProps): CommonProps => {
     return {
         to: props.to,
         onClick: props.onClick,
+        onMouseEnter: props.onMouseEnter,
+        onMouseOver: props.onMouseOver,
+        onFocus: props.onFocus,
+        onMouseLeave: props.onMouseLeave,
+        onBlur: props.onBlur,
         rel: props.rel,
         target: props.target,
         shouldOpenInNewTab: props.shouldOpenInNewTab,
@@ -107,6 +117,27 @@ export interface LinkProps {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * Function that runs when the user hovers on the link.
+     */
+    onMouseEnter?: () => void;
+    /**
+     * Function that runs when the user hovers on the link. Unlike `onMouseEnter`, `onMouseOver`
+     * fires each time a child element receives focus.
+     */
+    onMouseOver?: () => void;
+    /**
+     * Function that runs when the link receives focus.
+     */
+    onFocus?: () => void;
+    /**
+     * Function that runs when the user hovers away from the link.
+     */
+    onMouseLeave?: () => void;
+    /**
+     * Function that runs when the link loses focus.
+     */
+    onBlur?: () => void;
     /**
      * The anchor `rel` attribute. Setting this value will add to any default values provided by
      * Thumbprint for the `rel` attribute.
@@ -223,6 +254,27 @@ interface ThemedLinkProps {
      * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
      */
     onClick?: () => void;
+    /**
+     * Function that runs when the user hovers on the link.
+     */
+    onMouseEnter?: () => void;
+    /**
+     * Function that runs when the user hovers on the link. Unlike `onMouseEnter`, `onMouseOver`
+     * fires each time a child element receives focus.
+     */
+    onMouseOver?: () => void;
+    /**
+     * Function that runs when the link receives focus.
+     */
+    onFocus?: () => void;
+    /**
+     * Function that runs when the user hovers away from the link.
+     */
+    onMouseLeave?: () => void;
+    /**
+     * Function that runs when the link loses focus.
+     */
+    onBlur?: () => void;
     /**
      * The anchor `rel` attribute. Setting this value will add to any default values provided by
      * Thumbprint for the `rel` attribute.
