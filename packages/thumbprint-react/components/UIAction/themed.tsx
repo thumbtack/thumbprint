@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import warning from 'warning';
 import classNames from 'classnames';
 import LoaderDots from '../LoaderDots/index';
@@ -81,7 +80,7 @@ const withFlexWrapper = (
     </span>
 );
 
-const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes>(
+const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ThemedPropTypes>(
     (
         {
             children,
@@ -107,7 +106,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
             dataTestId,
             dataTest,
             title,
-        }: PropTypes,
+        }: ThemedPropTypes,
         ref,
     ): JSX.Element => {
         warning(
@@ -124,6 +123,11 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
                         shouldOpenInNewTab,
                         to,
                         onClick,
+                        onMouseEnter,
+                        onMouseOver,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
                         rel,
                         target,
                         title,
@@ -213,7 +217,7 @@ const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, PropTypes
     },
 );
 
-interface PropTypes {
+interface ThemedPropTypes {
     /**
      * Contents displayed within the button.
      */
@@ -268,24 +272,30 @@ interface PropTypes {
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseEnter?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseOver?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseLeave?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.

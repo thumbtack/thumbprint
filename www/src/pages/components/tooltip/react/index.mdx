@@ -73,6 +73,38 @@ The `theme` prop makes it possible to use tooltips on dark backgrounds.
 </div>
 ```
 
+## Tooltip on a Link
+
+Tooltips can also be used with the `Link` and `ThemedLink` components.
+
+```jsx
+<div
+    style={{
+        minHeight: '120px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }}
+>
+    <Tooltip text="This is a tooltip for a link">
+        {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+            <Link
+                accessibilityLabel={ariaLabel}
+                onMouseEnter={onMouseEnter}
+                onClick={onClick}
+                onFocus={onFocus}
+                onMouseLeave={onMouseLeave}
+                onBlur={onBlur}
+                ref={ref}
+                to="#"
+            >
+                Next
+            </Link>
+        )}
+    </Tooltip>
+</div>
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`
