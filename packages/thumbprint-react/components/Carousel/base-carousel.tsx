@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import rotate from 'rotate-array';
 import range from 'lodash/range';
 import styles from './base-carousel.module.scss';

@@ -86,6 +86,11 @@ const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>
                         shouldOpenInNewTab,
                         to,
                         onClick,
+                        onMouseEnter,
+                        onMouseOver,
+                        onFocus,
+                        onMouseLeave,
+                        onBlur,
                         rel,
                         title,
                     })}
@@ -156,24 +161,30 @@ interface PropTypes {
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseEnter?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseOver?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onMouseLeave?: (
+        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
+    ) => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur?: (event: React.FocusEvent<HTMLButtonElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.

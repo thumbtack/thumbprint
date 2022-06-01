@@ -32,11 +32,28 @@ const getRel = (
     return undefined;
 };
 
-interface AnchorProps {
+interface AnchorMouseEventProps {
     onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onMouseEnter?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onMouseOver?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onMouseLeave?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+    onFocus?: (event: React.FocusEvent<HTMLAnchorElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLAnchorElement>) => void;
+}
+
+interface AnchorProps extends AnchorMouseEventProps {
     href?: string;
     target: string;
     rel?: string;
+    title?: string;
+}
+
+interface AnchorInputProps extends AnchorMouseEventProps {
+    isDisabled?: boolean;
+    shouldOpenInNewTab?: boolean;
+    to?: string;
+    rel?: string;
+    target?: string;
     title?: string;
 }
 
@@ -48,19 +65,21 @@ const getAnchorProps = ({
     shouldOpenInNewTab,
     to,
     onClick,
+    onMouseEnter,
+    onMouseOver,
+    onFocus,
+    onMouseLeave,
+    onBlur,
     rel,
     target,
     title,
-}: {
-    isDisabled?: boolean;
-    shouldOpenInNewTab?: boolean;
-    to?: string;
-    onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    rel?: string;
-    target?: string;
-    title?: string;
-}): AnchorProps => ({
+}: AnchorInputProps): AnchorProps => ({
     onClick,
+    onMouseEnter,
+    onMouseOver,
+    onFocus,
+    onMouseLeave,
+    onBlur,
     href: isDisabled ? undefined : to,
     // NOTE use `noopener` even for internal links in new tabs to prevent potential slowdown of
     // new tab https://mathiasbynens.github.io/rel-noopener/

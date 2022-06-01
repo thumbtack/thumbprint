@@ -49,9 +49,6 @@ describe('calls `onChange` with the correct date', () => {
         const onMonthChange = jest.fn();
 
         // Wrapper component to allow us to write integration tests for a controlled component.
-        //
-        // Don't need to write proptypes for a one-off wrapper used inside a test
-        // eslint-disable-next-line react/prop-types
         function DatePickerExample({
             firstDate,
             onChange,
