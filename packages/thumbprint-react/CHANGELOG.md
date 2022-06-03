@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.11.0 - 2022-06-03
+## 14.12.0 - 2022-06-03
 
 ## Unreleased
 
@@ -8,7 +8,7 @@
 
 -   [Minor] Add `onMouseEnter`, `onMouseOver`, `onFocus`, `onMouseLeave`, `onBlur` props to `Link` and `ThemedLink` components.
 
-## 14.10.0 - 2022-05-13
+## 14.11.0 - 2022-05-13
 
 ### Added
 
