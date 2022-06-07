@@ -1,0 +1,65 @@
+---
+title: April & May, 2022
+---
+
+A lot of amazing work and new changes to the Thumbprint Design System have happened from both a design and engineering perspective in April & May. Let’s take some to celebrate those wins, talk about what's new, coming up, what's leaving, and more in this April & May version of the TT Thumbprint Newsletter.
+
+## 🎉 What’s new
+
+It’s always exciting to get a new pair of shoes. While we won’t don these changes on our feet, these improvements to the product are even more exciting than those new sneakers!
+
+### 1. New ‘tiny’ filled icons
+
+The “tiny” version of the `circle-money-filled` and `circle-map-pin-filled` have now been added to [https://icons.thumbprint.design](https://icons.thumbprint.design). The “medium” and “small” sizing options were already available and this new addition widens the available icons to all the sizes that we offer.
+
+### 100-level Atomic background classes
+
+The 100-level background class color usage is [now available in Atomic](/atomic/#section-color). The usage of applying a background color attribute [surpassed the threshold of least 10 instances](/atomic/usage/#section-adding-new-atomic-classes) of a property in Thumbtack’s website codebase. With this new class it’s even easier now to apply our lighters background color to UI elements by adding a class to an html element and removing the need to declare a css attribute in our SCSS files.
+
+## 🛠 Updates and changes
+
+We know Thumbprint is a great product, but there is always room for improvement, just like any home renovation project. Here are some updates and changes to the product that we’re excited to celebrate!
+
+### 1. Thumbprint Web Figma Library is now using Auto Layout
+
+We have now officially moved all of our Thumbprint design libraries to leverage the Figma Auto Layout feature! This upgrade means that all the design components are now more maintainable from a design standpoint. Using the Inspect panel in Figma will provide a more modern approach to handling css `flex-box` attributes such as `padding` and `gap`.
+
+### 2. The onKeyDown event handler addition to Radio & Checkbox components
+
+This change provides a more inclusive experience by enabling keyboard users to tab to and interact the Radio and Checkbox components.
+
+### 3. Add support for a width of zero to GridColumn
+
+It’s now possible to hide GridColumns entirely at certain breakpoints by passing in a 0 value an option to the size props. For example `<GridColumn base={0} aboveMedium={4} aboveLarge={3} />` would be invisible on small screens, take up 4/12 columns on medium screens, and 3/12 columns on large screens.
+
+### 4. Chip & Filter improvements
+
+The Chips and Filter component now is in closer alignment with current design efforts by enforcing a 1px border option and enabling the option to use a visual indicator to denote when a selection has been made by adding an `icon` prop. This new prop allows selecting and icon from Thumbprint Icons to render within the chip. It must be one of the tiny icons.
+
+### 5. In-Page Alerts in Thumbprint Global
+
+To help align the Thumbprint and the Figma design libraries, the In-Page Alerts have been added to the Thumbprint Global library. These components are used to draw the user’s attention and to the immediate needs inside other page elements and come into four different theme options of `Bad`, `Good`, `Warning` and `Info`.
+
+## 📋 What’s coming up
+
+Here are some projects that are currently in progress or are just over the horizon.
+
+### Figma Variant Updates
+
+Now that we have migrated all of our components to leveraging the Figma Auto Layout feature, we’re now focussing on transitioning our components to using Figma Variants. Variants is a significant overhaul to how we use components in our design ecosystem and will result in a much more streamlined component discovery and usage method.
+
+While this change introduces an enormous complexity of work for defining a Button component by presenting all the variations and states a Button can represent, the simplicity of how a designer selects and interacts with a Button component is drastically reduced from 33 to 1; in Thumbprint Native for example!
+
+## **✨**Did you know?
+
+Looking for a short snippet to help get you excited about design systems. Below you’ll find a brief knowledge drop that is noteworthy. It’s our “The more you know” (shooting star) moment.
+
+**You can evaluate your design for color contrast ratio issues in Figma?** The Figma community is a fantastic resource for accentuating your design workflow. A perfect example is leveraging tools like [Contrast](https://www.figma.com/community/plugin/748533339900865323/Contrast) to achieve a more accessible experience from a design perspective. Simply install the plugin, select a layer and check for AA compliance. Yet another early step in the design process to provide a more inclusive design experience for all TT users.
+
+---
+
+### Additional resources
+
+**GitHub component repositories**
+
+[Documentation & Web](https://github.com/thumbtack/thumbprint) • [Andriod](https://github.com/thumbtack/thumbprint-android) • [iOS](https://github.com/thumbtack/thumbprint-ios)
