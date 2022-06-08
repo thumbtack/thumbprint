@@ -1,9 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-codemods",
     "version": "0.5.1",
-    "bin": {
-        "thumbprint-codemods": "./index.js"
-    },
+    "bin": "./index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/thumbtack/thumbprint.git"
