@@ -4,6 +4,7 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
+        tsconfigRootDir: __dirname,
     },
     extends: [
         'airbnb',

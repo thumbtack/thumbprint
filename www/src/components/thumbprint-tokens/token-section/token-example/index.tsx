@@ -1,9 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import className from 'classnames';
 import { InlineCode } from '../../../mdx';
 
-const TokenExample = ({ exampleData, displayText, format }) => {
+interface TokenExampleProps {
+    exampleData: string;
+    displayText: string;
+    format: string;
+}
+
+export default function TokenExample({
+    exampleData,
+    displayText,
+    format,
+}: TokenExampleProps): JSX.Element {
     const shouldRenderAsTwoLines = displayText.length > 30;
     let children;
 
@@ -38,17 +47,4 @@ const TokenExample = ({ exampleData, displayText, format }) => {
     }
 
     return <div>{children}</div>;
-};
-
-TokenExample.propTypes = {
-    format: PropTypes.string,
-    exampleData: PropTypes.string,
-    displayText: PropTypes.node.isRequired,
-};
-
-TokenExample.defaultProps = {
-    format: undefined,
-    exampleData: undefined,
-};
-
-export default TokenExample;
+}
