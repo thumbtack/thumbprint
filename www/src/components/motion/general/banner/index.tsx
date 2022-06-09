@@ -5,7 +5,7 @@ import { NavigationCloseTiny } from '@thumbtack/thumbprint-icons';
 
 import styles from './index.module.scss';
 
-const Banner = () => {
+export default function Banner(): JSX.Element {
     const [active, setActive] = useState(false);
     return (
         <div className={styles.root}>
@@ -26,6 +26,4 @@ const Banner = () => {
             </Button>
         </div>
     );
-};
-
-export default Banner;
+}
