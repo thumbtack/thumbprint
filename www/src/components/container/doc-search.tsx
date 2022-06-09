@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import mousetrap from 'mousetrap';
+
 import 'docsearch.js/dist/npm/styles/main.scss';
 
-class DocSearch extends React.Component {
-    constructor(props) {
+interface DocSearchProps {
+    children: (props: { id: string }) => JSX.Element;
+}
+
+export default class DocSearch extends React.Component<DocSearchProps> {
+    inputSelector: string;
+
+    constructor(props: DocSearchProps) {
         super(props);
         this.inputSelector = 'thumbprint-algolia-doc-search';
 
@@ -24,7 +30,7 @@ class DocSearch extends React.Component {
             apiKey: 'e5314d1bc146a7d26433a00e2031794c',
             indexName: 'thumbprint',
             inputSelector: `#${this.inputSelector}`,
-            transformData(suggestions) {
+            transformData(suggestions: { url: string }[]) {
                 if (process.env.NODE_ENV === 'production') {
                     return suggestions;
                 }
@@ -47,7 +53,7 @@ class DocSearch extends React.Component {
     }
 
     focusInput() {
-        document.getElementById(this.inputSelector).focus();
+        document.getElementById(this.inputSelector)?.focus();
     }
 
     render() {
@@ -56,9 +62,3 @@ class DocSearch extends React.Component {
         return children({ id: this.inputSelector });
     }
 }
-
-DocSearch.propTypes = {
-    children: PropTypes.func.isRequired,
-};
-
-export default DocSearch;
