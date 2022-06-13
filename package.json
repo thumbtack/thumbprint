@@ -115,5 +115,6 @@
         "hooks": {
             "pre-commit": "pretty-quick --staged"
         }
-    }
+    },
+    "packageManager": "yarn@3.2.1"
 }
