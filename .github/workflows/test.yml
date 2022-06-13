@@ -21,7 +21,7 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
-                  yarn install --frozen-lockfile
+                  yarn install --immutable
             - name: Run Jest
               run: |
                   yarn run bootstrap && yarn run test
@@ -43,7 +43,7 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
-                  yarn install --frozen-lockfile
+                  yarn install --immutable
             - name: Run ESLint
               run: |
                   yarn run bootstrap && yarn run lint:js
@@ -65,7 +65,7 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
-                  yarn install --frozen-lockfile
+                  yarn install --immutable
             - name: Run Stylelint
               run: |
                   yarn run lint:css
@@ -87,7 +87,7 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
-                  yarn install --frozen-lockfile
+                  yarn install --immutable
             - name: Run Prettier
               run: |
                   yarn run prettier-check
@@ -109,7 +109,7 @@ jobs:
                   key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
             - name: Install dependencies
               run: |
-                  yarn install --frozen-lockfile
+                  yarn install --immutable
             - name: Run TypeScript
               run: |
                   yarn run typecheck
