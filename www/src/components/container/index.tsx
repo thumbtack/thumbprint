@@ -28,12 +28,12 @@ import styles from './index.module.scss';
 // https://github.com/gaearon/react-hot-loader/issues/1034
 setConfig({ logLevel: 'no-errors-please' });
 
-export const ActiveSectionContext = React.createContext<string | null>(null);
+export const ActiveSectionContext = React.createContext<string | null | undefined>(null);
 
 interface ContainerProps {
     children: React.ReactNode;
     location: Location;
-    activeSection: string;
+    activeSection?: string;
 }
 
 export default function Container({
