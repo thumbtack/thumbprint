@@ -14,11 +14,15 @@ import findIndex from 'lodash/findIndex';
 import some from 'lodash/some';
 import castArray from 'lodash/castArray';
 
+// False positive.
+// TODO(giles): see if upgrading date-fns fixes this.
+/* eslint-disable import/no-duplicates */
 import parse from 'date-fns/parse';
 import isAfter from 'date-fns/is_after';
 import isBefore from 'date-fns/is_before';
 import endOfDay from 'date-fns/end_of_day';
 import startOfDay from 'date-fns/start_of_day';
+/* eslint-enable */
 
 import styles from './index.module.scss';
 

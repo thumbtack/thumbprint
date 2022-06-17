@@ -19,6 +19,7 @@ function toggleTrap(trap: FocusTrap, isActive: boolean): void {
  */
 export default function useFocusTrap(
     element: HTMLElement | null,
+    // eslint-disable-next-line default-param-last
     isActive = false,
     initialFocus: HTMLElement | null,
 ): void {

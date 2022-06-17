@@ -100,7 +100,7 @@ export function SideNavLink({
             >
                 {hash ? (
                     <ScrollMarkerLink id={hash}>
-                        {({ isActive: isHashActive, onClick }) => (
+                        {({ isActive: isHashActive, onClick }): JSX.Element => (
                             <Link
                                 className={getLinkClasses(isHashActive)}
                                 onClick={onClick}
@@ -124,13 +124,13 @@ export function SideNavLink({
                             pv1: level === 2 || level === 3,
                             [styles.sideNavClickableBox]: true,
                         })}
-                        onClick={() => {
+                        onClick={(): void => {
                             setIsExpanded(!isExpanded);
                         }}
-                        onMouseOver={() => {
+                        onMouseOver={(): void => {
                             setIsExpandButtonHovered(true);
                         }}
-                        onMouseLeave={() => {
+                        onMouseLeave={(): void => {
                             setIsExpandButtonHovered(false);
                         }}
                     >

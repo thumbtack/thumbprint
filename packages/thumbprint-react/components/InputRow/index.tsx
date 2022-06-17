@@ -66,6 +66,7 @@ export default function InputRow({
             {React.Children.map(children, (child, i) => (
                 <div style={{ flex: widthRatios ? `${widthRatios[i]}` : undefined }}>
                     <InputRowContext.Provider
+                        // eslint-disable-next-line react/jsx-no-constructed-context-values
                         value={{
                             isWithinInputRow: true,
                             isFirstInputRowChild: i === 0,

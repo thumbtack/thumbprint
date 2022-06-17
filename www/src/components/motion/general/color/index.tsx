@@ -13,7 +13,11 @@ export default function Color(): JSX.Element {
                     [styles.active]: active,
                 })}
             />
-            <button className={styles.button} onClick={() => setActive(!active)} type="button" />
+            <button
+                className={styles.button}
+                onClick={(): void => setActive(!active)}
+                type="button"
+            />
         </div>
     );
 }

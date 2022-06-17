@@ -18,10 +18,10 @@ export default function Banner(): JSX.Element {
                 <div>Preferences saved.</div>
                 <NavigationCloseTiny
                     className={styles.closeIcon}
-                    onClick={() => setActive(!active)}
+                    onClick={(): void => setActive(!active)}
                 />
             </div>
-            <Button theme="tertiary" size="small" onClick={() => setActive(!active)}>
+            <Button theme="tertiary" size="small" onClick={(): void => setActive(!active)}>
                 Save
             </Button>
         </div>

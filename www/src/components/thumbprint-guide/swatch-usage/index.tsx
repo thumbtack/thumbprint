@@ -11,7 +11,13 @@ interface PropTypes {
     hasBorder?: boolean;
 }
 
-export default function SwatchUsage({ name, hex, doText, dontText, hasBorder }: PropTypes) {
+export default function SwatchUsage({
+    name,
+    hex,
+    doText,
+    dontText,
+    hasBorder,
+}: PropTypes): JSX.Element {
     return (
         <div className="mb3 bb b-gray-300 pb3">
             <Grid>

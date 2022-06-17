@@ -16,6 +16,7 @@ jest.mock('popper.js', () => {
         static placements: any;
 
         constructor() {
+            // eslint-disable-next-line no-constructor-return
             return {
                 destroy: (): void => {},
                 scheduleUpdate: (): void => {},

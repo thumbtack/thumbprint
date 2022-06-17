@@ -55,14 +55,13 @@ ModalContents.propTypes = {
      * when clicking outside of it. If `true`, this prevents backdrop clicks
      * from closing the modal.
      */
-    disableOnClickOutside:
-        // eslint-disable-next-line react/no-unused-prop-types
-        PropTypes.oneOfType([
-            // This should be passed in as a boolean. `func` is also listed because
-            // onClickOutside`'s HOC changes it to a function.
-            PropTypes.bool,
-            PropTypes.func,
-        ]),
+    // eslint-disable-next-line react/no-unused-prop-types
+    disableOnClickOutside: PropTypes.oneOfType([
+        // This should be passed in as a boolean. `func` is also listed because
+        // onClickOutside`'s HOC changes it to a function.
+        PropTypes.bool,
+        PropTypes.func,
+    ]),
     /**
      * Should the modal contents be visible.
      */

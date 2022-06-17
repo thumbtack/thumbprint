@@ -163,7 +163,7 @@ export default function Container({
 
                 <ScrollMarkerContainer>
                     <OutsideClickHandler
-                        onOutsideClick={() => {
+                        onOutsideClick={(): void => {
                             if (isSidebarOpen) {
                                 setIsSidebarOpen(false);
                             }
@@ -187,12 +187,12 @@ export default function Container({
                                 </Link>
 
                                 <DocSearch>
-                                    {({ id }) => (
+                                    {({ id }): JSX.Element => (
                                         <TextInput
                                             type="search"
                                             size="small"
                                             placeholder="Search"
-                                            onChange={v => {
+                                            onChange={(v): void => {
                                                 setSearchValue(v);
                                             }}
                                             value={searchValue}
@@ -208,7 +208,7 @@ export default function Container({
                             </div>
                             <ClickableBox
                                 className="pa2 absolute top0 right0 pointer l_dn z-1"
-                                onClick={() => {
+                                onClick={(): void => {
                                     setIsSidebarOpen(false);
                                 }}
                                 aria-label="Close sidebar navigation"
@@ -466,7 +466,7 @@ export default function Container({
                     <div className="flex-1 l_ml8">
                         <ClickableBox
                             className="inline-flex pv3 ph4 pointer l_dn"
-                            onClick={() => {
+                            onClick={(): void => {
                                 setIsSidebarOpen(true);
                             }}
                             aria-label="Open sidebar navigation"

@@ -11,8 +11,6 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         // Prettier must come last
         'prettier',
-        'prettier/react',
-        'prettier/@typescript-eslint',
     ],
     settings: {
         'import/parsers': {
@@ -20,7 +18,7 @@ module.exports = {
         },
         'import/resolver': {
             typescript: {
-                directory: './tsconfig.json',
+                project: __dirname,
             },
         },
     },
@@ -55,6 +53,22 @@ module.exports = {
 
         // We use noop functions in many places, for example as default values for props.
         '@typescript-eslint/no-empty-function': 'off',
+
+        // Not worth fixing. Just finish converting everything to TS instead.
+        'react/prop-types': 'off',
+
+        // Prop spreading is safe in TS
+        'react/jsx-props-no-spreading': 'off',
+
+        'import/extensions': 'off',
+
+        // Disabled to make upgrading easier. TODO(giles): re-enable
+        'react/function-component-definition': 'off',
+        'react/jsx-fragments': 'off',
+        'jsx-a11y/control-has-associated-label': 'off',
+        'no-use-before-define': 'off',
+        'arrow-body-style': 'off',
+        'react/destructuring-assignment': 'off',
     },
     overrides: [
         {
@@ -64,11 +78,15 @@ module.exports = {
                 // error for missing imports
                 'import/named': 'off',
                 'import/export': 'off',
+
+                // PropTypes are not needed for TS files
+                'react/require-default-props': 'off',
             },
         },
         {
             files: ['**/*.js', '**/*.jsx'],
             rules: {
+                // TypeScript rules don't apply in JS files
                 '@typescript-eslint/no-var-requires': 'off',
                 '@typescript-eslint/explicit-function-return-type': 'off',
             },

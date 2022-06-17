@@ -15,14 +15,14 @@ declare module 'react-scroll-marker' {
         children,
     }: {
         id: string;
-        children: ({ id }: { id: string }) => JSX.Element;
+        children: (childProps: { id: string }) => JSX.Element;
     }): JSX.Element;
 
     export function ScrollMarkerContainer(props: { children: React.ReactNode }): JSX.Element;
 
     export function ScrollMarkerLink(props: {
         id: string;
-        children: (props: { isActive: boolean; onClick: () => void }) => JSX.Element;
+        children: (childProps: { isActive: boolean; onClick: () => void }) => JSX.Element;
     }): JSX.Element;
 }
 

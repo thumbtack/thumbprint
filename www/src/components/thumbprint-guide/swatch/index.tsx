@@ -31,11 +31,9 @@ export default function Swatch({ name, hex, isCore, hasBorder }: SwatchProps): J
             {name && (
                 <Text size={3} elementName="span">
                     <InlineCode theme="plain">{name}</InlineCode>
-                    {isCore && ( // If a core color, add an indicator
-                        <InlineCode theme="plain">
-                            {'('}c{')'}
-                        </InlineCode>
-                    )}
+                    {
+                        isCore && <InlineCode theme="plain">(c)</InlineCode> // If a core color, add an indicator
+                    }
                 </Text>
             )}
         </div>

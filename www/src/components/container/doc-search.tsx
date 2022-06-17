@@ -17,13 +17,13 @@ export default class DocSearch extends React.Component<DocSearchProps> {
         this.focusInput = this.focusInput.bind(this);
     }
 
-    async componentDidMount() {
+    async componentDidMount(): Promise<void> {
         // Focus on search when `/` is pressed.
         if (typeof window !== 'undefined') {
             mousetrap.bind(['/'], this.focusInput, 'keyup');
         }
 
-        // eslint-disable-next-line global-require
+        // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
         const docsearch = require('docsearch.js');
 
         docsearch({
@@ -46,17 +46,17 @@ export default class DocSearch extends React.Component<DocSearchProps> {
         });
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         if (typeof window !== 'undefined') {
             mousetrap.unbind(['/'], this.focusInput);
         }
     }
 
-    focusInput() {
+    focusInput(): void {
         document.getElementById(this.inputSelector)?.focus();
     }
 
-    render() {
+    render(): JSX.Element {
         const { children } = this.props;
 
         return children({ id: this.inputSelector });
