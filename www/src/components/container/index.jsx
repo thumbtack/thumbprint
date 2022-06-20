@@ -62,17 +62,12 @@ const Container = ({ children, location, activeSection }) => {
                     name
                 }
             }
-            allGuides: allSitePage(
-                filter: { path: { glob: "/guide/**" } }
-                sort: { fields: context___frontmatter___title }
-            ) {
+            allGuides: allSitePage(filter: { path: { glob: "/guide/**" } }) {
                 edges {
                     node {
                         path
-                        context {
-                            frontmatter {
-                                title
-                            }
+                        frontmatter {
+                            title
                         }
                     }
                 }
@@ -89,16 +84,12 @@ const Container = ({ children, location, activeSection }) => {
                     }
                 }
             ) {
-                group(field: context___frontmatter___title) {
-                    fieldValue
-                    edges {
-                        node {
-                            path
-                            context {
-                                frontmatter {
-                                    title
-                                }
-                            }
+                fieldValue
+                edges {
+                    node {
+                        path
+                        frontmatter {
+                            title
                         }
                     }
                 }

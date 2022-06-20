@@ -1,15 +1,18 @@
-const { resolver } = require('react-docgen');
-const sassImporter = require('node-sass-tilde-importer');
-require('dotenv').config();
+import { GatsbyConfig } from 'gatsby';
+import path from 'path';
+import { resolver } from 'react-docgen';
+import sassImporter from 'node-sass-tilde-importer';
+import dotenv from 'dotenv';
 
-module.exports = {
+dotenv.config();
+
+const config: GatsbyConfig = {
     siteMetadata: {
         title: 'Thumbprint',
         description: 'Thumbprint is the design system of Thumbtack.',
         siteUrl: 'https://thumbprint.design',
     },
     plugins: [
-        'gatsby-plugin-typescript',
         'gatsby-plugin-react-helmet',
         {
             resolve: 'gatsby-source-filesystem',
@@ -43,7 +46,9 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sass',
             options: {
-                importer: sassImporter,
+                sassOptions: {
+                    importer: sassImporter,
+                },
             },
         },
         {
@@ -60,7 +65,7 @@ module.exports = {
             options: {
                 extensions: ['.mdx', '.md'],
                 defaultLayouts: {
-                    default: require.resolve('./src/components/mdx/index.tsx'),
+                    default: path.resolve('./src/components/mdx/index.tsx'),
                 },
                 gatsbyRemarkPlugins: [
                     {
@@ -88,7 +93,7 @@ module.exports = {
         {
             resolve: 'gatsby-transformer-json',
             options: {
-                typeName: ({ node }) => {
+                typeName: ({ node }: { node: { relativePath: string } }) => {
                     if (
                         node.relativePath === 'thumbprint-scss/package.json' ||
                         node.relativePath === 'thumbprint-react/package.json'
@@ -126,3 +131,5 @@ module.exports = {
         'gatsby-plugin-netlify', // Netlify plugin must go last.
     ],
 };
+
+export default config;

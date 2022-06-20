@@ -4,6 +4,7 @@
 // TODO(giles): provide types for these two libraries
 declare module 'intersection-observer';
 declare module 'object-fit-images';
+declare module 'react-docgen';
 
 declare module 'rotate-array' {
     export default function rotate<T>(array: Array<T>, offset: number): Array<T>;
