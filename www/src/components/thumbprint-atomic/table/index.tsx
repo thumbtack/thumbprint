@@ -1,16 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { InlineCode } from '../../mdx';
 import Swatch from '../../swatch';
 
-const cleanSelector = selector =>
+const cleanSelector = (selector: string): string =>
     selector
         .replace('.', '')
         .replace(':hover', '')
         .replace(/hover.*:focus/, '')
         .replace(/.*> \*/, '');
 
-const Table = ({ atomicClasses }) => {
+export default function AtomicTable({
+    atomicClasses,
+}: {
+    atomicClasses: {
+        selectors: string[];
+        declarations: string[];
+    }[];
+}): JSX.Element {
     const atomicClassesHackless = atomicClasses.filter(
         // There are `shadow-*, _:-ms-lang(x)` hack selectors in the Atomic source code that
         // provide darker box-shadows for IE/Edge. This filters out those selectors to prevent them
@@ -56,10 +62,4 @@ const Table = ({ atomicClasses }) => {
             </tbody>
         </table>
     );
-};
-
-Table.propTypes = {
-    atomicClasses: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
-
-export default Table;
+}

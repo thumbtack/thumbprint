@@ -58,6 +58,7 @@ export default function Carousel({
             <Swipeable
                 preventDefaultTouchmoveEvent
                 onSwiping={(_, deltaX): void => onDrag(deltaX)}
+                // eslint-disable-next-line react/jsx-no-bind
                 onSwiped={onDragEnd}
             >
                 <BaseCarousel

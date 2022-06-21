@@ -99,11 +99,7 @@ describe('ModalCurtain', () => {
         const onCloseClick = jest.fn();
         render(
             <ModalCurtain stage="entered" onCloseClick={onCloseClick}>
-                {(): JSX.Element => (
-                    <>
-                        <button type="button" />
-                    </>
-                )}
+                {(): JSX.Element => <button type="button" />}
             </ModalCurtain>,
         );
 

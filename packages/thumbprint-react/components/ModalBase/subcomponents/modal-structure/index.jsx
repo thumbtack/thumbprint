@@ -48,6 +48,7 @@ export default class ModalStructure extends React.Component {
         }
     }
 
+    // eslint-disable-next-line react/sort-comp
     componentWillUnmount() {
         this.toggleKeyDownListener(false, false);
         toggleScrolling(false);

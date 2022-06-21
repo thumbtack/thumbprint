@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import '@thumbtack/thumbprint-atomic';
@@ -16,21 +15,33 @@ import { ScrollMarkerContainer } from 'react-scroll-marker';
 import ClickableBox from 'clickable-box';
 import classNames from 'classnames';
 import OutsideClickHandler from 'react-outside-click-handler';
+
 import SideNav, { SideNavLink, SideNavGroup } from './side-nav';
-import thumbprintLogo from './thumbprintLogo.svg';
 import DocSearch from './doc-search';
 import getComponentsLinkProps from './get-component-link-props';
 import generateSlug from '../generate-slug';
+
+import thumbprintLogo from './thumbprintLogo.svg';
 import styles from './index.module.scss';
 
 // https://github.com/gatsbyjs/gatsby/issues/7209
 // https://github.com/gaearon/react-hot-loader/issues/1034
 setConfig({ logLevel: 'no-errors-please' });
 
-const ActiveSectionContext = React.createContext(null);
+export const ActiveSectionContext = React.createContext<string | null | undefined>(null);
 
-const Container = ({ children, location, activeSection }) => {
-    const [searchValue, setSearchValue] = useState(undefined);
+interface ContainerProps {
+    children: React.ReactNode;
+    location: Location;
+    activeSection?: string;
+}
+
+export default function Container({
+    children,
+    location,
+    activeSection,
+}: ContainerProps): JSX.Element {
+    const [searchValue, setSearchValue] = useState<string | undefined>(undefined);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const sidebarCloseEl = useRef();
     const sidebarOpenEl = useRef();
@@ -115,7 +126,7 @@ const Container = ({ children, location, activeSection }) => {
         allAndroidTokens,
         allComponents,
     } = data;
-    const { pathname, hash } = location;
+    const { pathname } = location;
 
     return (
         <div className="flex h-100">
@@ -152,7 +163,7 @@ const Container = ({ children, location, activeSection }) => {
 
                 <ScrollMarkerContainer>
                     <OutsideClickHandler
-                        onOutsideClick={() => {
+                        onOutsideClick={(): void => {
                             if (isSidebarOpen) {
                                 setIsSidebarOpen(false);
                             }
@@ -176,12 +187,12 @@ const Container = ({ children, location, activeSection }) => {
                                 </Link>
 
                                 <DocSearch>
-                                    {({ id }) => (
+                                    {({ id }): JSX.Element => (
                                         <TextInput
                                             type="search"
                                             size="small"
                                             placeholder="Search"
-                                            onChange={v => {
+                                            onChange={(v): void => {
                                                 setSearchValue(v);
                                             }}
                                             value={searchValue}
@@ -197,7 +208,7 @@ const Container = ({ children, location, activeSection }) => {
                             </div>
                             <ClickableBox
                                 className="pa2 absolute top0 right0 pointer l_dn z-1"
-                                onClick={() => {
+                                onClick={(): void => {
                                     setIsSidebarOpen(false);
                                 }}
                                 aria-label="Close sidebar navigation"
@@ -206,7 +217,7 @@ const Container = ({ children, location, activeSection }) => {
                                 <NavigationCloseSmall className="db" />
                             </ClickableBox>
 
-                            <SideNav pathName={pathname} hash={hash}>
+                            <SideNav>
                                 <SideNavLink
                                     title="Overview"
                                     isActive={activeSection === 'Overview'}
@@ -455,7 +466,7 @@ const Container = ({ children, location, activeSection }) => {
                     <div className="flex-1 l_ml8">
                         <ClickableBox
                             className="inline-flex pv3 ph4 pointer l_dn"
-                            onClick={() => {
+                            onClick={(): void => {
                                 setIsSidebarOpen(true);
                             }}
                             aria-label="Open sidebar navigation"
@@ -470,27 +481,4 @@ const Container = ({ children, location, activeSection }) => {
             </ActiveSectionContext.Provider>
         </div>
     );
-};
-
-Container.propTypes = {
-    children: PropTypes.node,
-    location: PropTypes.shape({}).isRequired,
-    activeSection: PropTypes.oneOf([
-        'Overview',
-        'Guidelines',
-        'Components',
-        'Atomic',
-        'Tokens',
-        'Icons',
-        'Updates',
-        'Help',
-    ]),
-};
-
-Container.defaultProps = {
-    children: undefined,
-    activeSection: undefined,
-};
-
-export default Container;
-export { ActiveSectionContext };
+}

@@ -120,7 +120,10 @@ const Image = forwardRef<HTMLElement, ImageProps>((props: ImageProps, outerRef) 
 
     const [browserSupportIntersectionObserver, setBrowserSupportIntersectionObserver] = useState<
         boolean
-    >(canUseDOM && typeof window.IntersectionObserver !== 'undefined');
+    >(
+        // eslint-disable-next-line compat/compat
+        canUseDOM && typeof window.IntersectionObserver !== 'undefined',
+    );
 
     const shouldLoad = useLazyLoad(containerRef, browserSupportIntersectionObserver);
 
@@ -289,9 +292,8 @@ const Image = forwardRef<HTMLElement, ImageProps>((props: ImageProps, outerRef) 
                     onError={(): void => {
                         setIsError(true);
                     }}
-                    // We expect an error because the attribute is non-standard and doesn't yet
-                    // exist in the React types.
-                    // @ts-expect-error
+                    // @ts-expect-error We expect an error because the attribute is non-standard and
+                    // doesn't yet exist in the React types.
                     fetchpriority={forceEarlyRender ? 'high' : 'auto'}
                     className={classNames({
                         // Opacity to 0, prevents flash of alt text when `height` prop used

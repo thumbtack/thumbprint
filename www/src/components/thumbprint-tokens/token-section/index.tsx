@@ -1,19 +1,53 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Text } from '@thumbtack/thumbprint-react';
 import classNames from 'classnames';
-import { groupBy, map } from 'lodash';
+import { groupBy } from 'lodash';
+
 import TokenExample from './token-example';
 import Tag from '../../tag';
 import { H2, P, InlineCode } from '../../mdx';
 
-const TokenSection = ({ section, platform }) => {
+interface TokenSectionProps {
+    platform: 'android' | 'ios';
+    section: {
+        description: string;
+        name: string;
+        tokens: {
+            group: string;
+            deprecated: boolean;
+            format: string;
+            platforms: Record<
+                string,
+                {
+                    name: string;
+                    description: string;
+                    value: string;
+                }
+            >;
+        }[];
+    };
+}
+
+export function typedGroupBy<V, R extends string | number | symbol>(
+    arr: V[],
+    iteratee: (value: V) => R,
+): Record<R, V[]> {
+    return groupBy(arr, iteratee) as Record<R, V[]>;
+}
+
+export function typedEntries<K extends string | number | symbol, V>(
+    object: Partial<Record<K, V>>,
+): [K, V][] {
+    return Object.entries(object) as [K, V][];
+}
+
+export default function TokenSection({ section, platform }: TokenSectionProps): JSX.Element {
     // Group tokens based on their optional `group` field.
-    const groupedTokens = groupBy(section.tokens, 'group');
+    const groupedTokens = typedGroupBy(section.tokens, x => x.group);
 
     return (
         <div key={section.name}>
-            <H2>{section.name}</H2>
+            <H2 size={2}>{section.name}</H2>
             {section.description && <P>{section.description}</P>}
             <table className="w-100 collapse tp-body-2">
                 <thead>
@@ -23,12 +57,12 @@ const TokenSection = ({ section, platform }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {map(groupedTokens, (group, groupName) => (
+                    {typedEntries(groupedTokens).map(([groupName, group]) => (
                         <tr className="bb b-gray-300" key={groupName}>
-                            <td colSpan="2">
+                            <td colSpan={2}>
                                 <table className="w-100 collapse tp-body-2">
                                     <tbody>
-                                        {map(group, (token, index) => {
+                                        {group.map((token, index) => {
                                             // Get the platform specific token data.
                                             const tokenPlatformValues = token.platforms[platform];
 
@@ -87,11 +121,4 @@ const TokenSection = ({ section, platform }) => {
             </table>
         </div>
     );
-};
-
-TokenSection.propTypes = {
-    section: PropTypes.shape({}).isRequired,
-    platform: PropTypes.oneOf(['scss', 'javascript', 'ios', 'android']).isRequired,
-};
-
-export default TokenSection;
+}

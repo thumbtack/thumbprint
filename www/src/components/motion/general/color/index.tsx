@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './index.module.scss';
 
-const Color = () => {
+export default function Color(): JSX.Element {
     const [active, setActive] = useState(false);
     return (
         <div className={styles.root}>
@@ -13,9 +13,11 @@ const Color = () => {
                     [styles.active]: active,
                 })}
             />
-            <button className={styles.button} onClick={() => setActive(!active)} type="button" />
+            <button
+                className={styles.button}
+                onClick={(): void => setActive(!active)}
+                type="button"
+            />
         </div>
     );
-};
-
-export default Color;
+}

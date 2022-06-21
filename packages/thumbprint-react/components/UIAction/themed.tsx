@@ -7,6 +7,8 @@ import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './themed.module.scss';
 
+// False positive
+// eslint-disable-next-line no-shadow
 enum loaderDotsTheme {
     primary = 'inverse',
     secondary = 'brand',

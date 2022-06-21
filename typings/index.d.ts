@@ -15,7 +15,14 @@ declare module 'react-scroll-marker' {
         children,
     }: {
         id: string;
-        children: ({ id }: { id: string }) => JSX.Element;
+        children: (childProps: { id: string }) => JSX.Element;
+    }): JSX.Element;
+
+    export function ScrollMarkerContainer(props: { children: React.ReactNode }): JSX.Element;
+
+    export function ScrollMarkerLink(props: {
+        id: string;
+        children: (childProps: { isActive: boolean; onClick: () => void }) => JSX.Element;
     }): JSX.Element;
 }
 
@@ -33,8 +40,24 @@ declare module 'react-copy-to-clipboard' {
     }): JSX.Element;
 }
 
+declare module 'clickable-box';
+
+declare module 'react-outside-click-handler';
+
+declare module 'mousetrap';
+
 // An SCSS module returns a map from string => string when imported.
 declare module '*.module.scss' {
     const classes: { [key: string]: string };
     export default classes;
+}
+
+declare module '*.svg' {
+    const component: string;
+    export default component;
+}
+
+declare module '*.png' {
+    const url: string;
+    export default url;
 }

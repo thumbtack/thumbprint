@@ -4,6 +4,7 @@ import isThumbtackUrl from './is-thumbtack-url';
 const getRel = (
     url?: string,
     target?: string,
+    // eslint-disable-next-line default-param-last
     shouldOpenInNewTab = false,
     rel?: string,
 ): string | undefined => {

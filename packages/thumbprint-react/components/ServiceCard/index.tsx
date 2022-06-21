@@ -120,6 +120,8 @@ export default function ServiceCard({
     shouldOpenInNewTab = false,
 }: ServiceCardProps): JSX.Element {
     return (
+        // TODO(giles): Add the noopener attribute and remove this
+        // eslint-disable-next-line react/jsx-no-target-blank
         <a
             href={url}
             onClick={onClick}

@@ -8,7 +8,6 @@ interface PropTypes {
     metaTitle: string;
     pageTitle: React.ReactNode;
     description?: string;
-    isOpen?: boolean;
 }
 
 export default function PageHeader({ metaTitle, description, pageTitle }: PropTypes): JSX.Element {

@@ -5,7 +5,7 @@ import { NavigationCloseTiny } from '@thumbtack/thumbprint-icons';
 
 import styles from './index.module.scss';
 
-const Banner = () => {
+export default function Banner(): JSX.Element {
     const [active, setActive] = useState(false);
     return (
         <div className={styles.root}>
@@ -18,14 +18,12 @@ const Banner = () => {
                 <div>Preferences saved.</div>
                 <NavigationCloseTiny
                     className={styles.closeIcon}
-                    onClick={() => setActive(!active)}
+                    onClick={(): void => setActive(!active)}
                 />
             </div>
-            <Button theme="tertiary" size="small" onClick={() => setActive(!active)}>
+            <Button theme="tertiary" size="small" onClick={(): void => setActive(!active)}>
                 Save
             </Button>
         </div>
     );
-};
-
-export default Banner;
+}

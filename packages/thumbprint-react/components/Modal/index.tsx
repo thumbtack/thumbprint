@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';

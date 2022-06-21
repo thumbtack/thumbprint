@@ -27,6 +27,7 @@ export default function ConditionalPortal({
     }
 
     return (
+        // eslint-disable-next-line react/jsx-no-useless-fragment
         <React.Fragment>
             {canUseDOM && shouldDisplace
                 ? ReactDOM.createPortal(children, document.body)

@@ -221,6 +221,7 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
                 ol: OL,
                 ul: UL,
                 img: Img,
+                // eslint-disable-next-line react/no-unstable-nested-components
                 code: (p): JSX.Element => <Code {...p} />,
                 table: Table,
                 td: TD,
@@ -482,7 +483,7 @@ const FeedbackForm = ({ page }: { page: string }): JSX.Element => {
 
 interface MdxPropTypes {
     children: React.ReactNode;
-    location: { pathname: string };
+    location: Location;
     pageContext: {
         frontmatter: {
             title: string;

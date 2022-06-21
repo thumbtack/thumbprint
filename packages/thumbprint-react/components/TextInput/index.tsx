@@ -319,6 +319,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
             >
                 {innerLeft && (
                     <Context.Provider
+                        // eslint-disable-next-line react/jsx-no-constructed-context-values
                         value={{
                             hasValue: !!value,
                             size,
@@ -375,6 +376,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
 
                 {innerRight && (
                     <Context.Provider
+                        // eslint-disable-next-line react/jsx-no-constructed-context-values
                         value={{
                             hasValue: !!value,
                             size,

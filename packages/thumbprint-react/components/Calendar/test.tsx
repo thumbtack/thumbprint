@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { mount } from 'enzyme';
+// This is a false positive
+// eslint-disable-next-line import/no-duplicates
 import addDays from 'date-fns/add_days';
+// eslint-disable-next-line import/no-duplicates
 import subDays from 'date-fns/sub_days';
 
 import Calendar, { validateProps, normaliseValue, hasAnyPastDays, hasAnyFutureDays } from './index';
