@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.5.3 - 2022-06-22
+
+### Changed
+
+-   [Patch] Add test comment to test lerna publishing.
+
 ## 0.5.2 - 2022-06-22
 
 ### Changed
