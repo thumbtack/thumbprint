@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.5.2 - 2022-06-22
+
+### Changed
+
+-   [Patch] Fix or disable new ESLint rules.
+
 ## 0.5.1 - 2020-06-18
 
 ### Changed

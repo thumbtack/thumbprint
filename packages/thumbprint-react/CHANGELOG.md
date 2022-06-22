@@ -1,5 +1,11 @@
 # Changelog
 
+## 14.12.01 - 2022-06-22
+
+### Changed
+
+-   [Patch] Fix or disable new ESLint rules.
+
 ## 14.12.0 - 2022-06-03
 
 ## Unreleased
