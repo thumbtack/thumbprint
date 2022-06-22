@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add support for medium and heavy font weights
+
 ## 1.0.16 - 2022-04-28
 
 ### Fixed

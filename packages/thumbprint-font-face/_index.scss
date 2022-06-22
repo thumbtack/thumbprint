@@ -15,11 +15,29 @@
 
     @font-face {
         font-family: 'Mark';
+        font-weight: 500;
+        font-display: swap;
+        src: local('#{$tp-font-family__base}'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset-medium.woff2) format('woff2'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset-medium.woff) format('woff');
+    }
+
+    @font-face {
+        font-family: 'Mark';
         font-weight: 700;
         font-display: swap;
         src: local('#{$tp-font-family__base}'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff2) format('woff2'),
             url(#{$thumbprint-font-url}mark/mark-tt-subset-bold.woff) format('woff');
+    }
+
+    @font-face {
+        font-family: 'Mark';
+        font-weight: 800;
+        font-display: swap;
+        src: local('#{$tp-font-family__base}'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset-heavy.woff2) format('woff2'),
+            url(#{$thumbprint-font-url}mark/mark-tt-subset-heavy.woff) format('woff');
     }
 } @else {
     @error "The variable `$thumbprint-font-url` must be provided if using the `@thumbtack/thumbprint-font-face` package. Please visit our documentation for help: https://thumbprint.design/components/font-face/scss/";
