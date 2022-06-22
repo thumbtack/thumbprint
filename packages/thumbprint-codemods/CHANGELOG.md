@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changedd
+
+-   [Patch] Remove test comment to test Lerna publishing.
+
 ## 0.5.3 - 2022-06-22
 
 ### Changed

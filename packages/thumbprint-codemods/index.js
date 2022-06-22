@@ -20,8 +20,6 @@ const codemods = keyBy(globbedCodemods, p => {
     return pathSplitArr[pathSplitArr.length - 2];
 });
 
-// Test comment
-
 const cli = meow({
     help: `
 Usage
