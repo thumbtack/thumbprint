@@ -9,8 +9,20 @@ exports[`works if variable is provided 1`] = `
 }
 @font-face {
   font-family: \\"Mark\\";
+  font-weight: 500;
+  font-display: swap;
+  src: local(\\"Mark, Avenir, Helvetica, Arial, sans-serif\\"), url(https://example.com/fonts/mark/mark-tt-subset-medium.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset-medium.woff) format(\\"woff\\");
+}
+@font-face {
+  font-family: \\"Mark\\";
   font-weight: 700;
   font-display: swap;
   src: local(\\"Mark, Avenir, Helvetica, Arial, sans-serif\\"), url(https://example.com/fonts/mark/mark-tt-subset-bold.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset-bold.woff) format(\\"woff\\");
+}
+@font-face {
+  font-family: \\"Mark\\";
+  font-weight: 800;
+  font-display: swap;
+  src: local(\\"Mark, Avenir, Helvetica, Arial, sans-serif\\"), url(https://example.com/fonts/mark/mark-tt-subset-heavy.woff2) format(\\"woff2\\"), url(https://example.com/fonts/mark/mark-tt-subset-heavy.woff) format(\\"woff\\");
 }"
 `;
