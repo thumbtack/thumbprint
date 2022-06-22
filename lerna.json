@@ -4,10 +4,10 @@
     "version": "independent",
     "npmClient": "yarn",
     "useWorkspaces": true,
-    "commands": {
+    "command": {
         "publish": {
             "allowBranch": "master",
-            "ignore": [
+            "ignoreChanges": [
                 "README.mdx",
                 "README.md",
                 "CHANGELOG.md",
