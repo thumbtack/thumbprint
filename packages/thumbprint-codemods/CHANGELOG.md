@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-### Changedd
+### Changed
 
 -   [Patch] Remove test comment to test Lerna publishing.
 
