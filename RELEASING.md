@@ -75,7 +75,7 @@ You'll be prompted to select the new version numbers for each package.
 
 Use the version numbers that you chose in step #3.
 
-#### Why is a private package appearing?:
+#### Why is a private package appearing?
 
 Private packages such as `www` will occasionally appear here. It is a bug in Lerna, the tool we use to publish our packages. Choose "Patch" for these packages.
 
