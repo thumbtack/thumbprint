@@ -2,10 +2,6 @@
 
 ## Unreleased
 
-### Added
-
--   [Minor] Add a `sr-only` class for only displaying an element to a screen reader.
-
 ## 4.2.1 - 2022-05-09
 
 ### Changed
