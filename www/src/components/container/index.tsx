@@ -255,12 +255,6 @@ export default function Container({
                                             to="/overview/product-design/"
                                             isActive={pathname === '/overview/product-design/'}
                                         />
-                                        <SideNavLink
-                                            title="Content Design"
-                                            level={2}
-                                            to="/overview/content-design/"
-                                            isActive={pathname === '/overview/content-design/'}
-                                        />
                                     </SideNavGroup>
                                 </SideNavLink>
 
