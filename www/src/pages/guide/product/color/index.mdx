@@ -5,31 +5,38 @@ description: A simple system for interfaces and illustrations.
 
 import { ContentActionsCheckTiny } from '@thumbtack/thumbprint-icons';
 import { Text, GridColumn, Grid } from '@thumbtack/thumbprint-react';
+import DoDont from 'components/dodont';
 import {
     tpColorBlue100,
     tpColorBlue200,
     tpColorBlue,
     tpColorBlue600,
+    tpColorBlue500,
     tpColorIndigo100,
     tpColorIndigo200,
     tpColorIndigo,
     tpColorIndigo600,
+    tpColorIndigo500,
     tpColorPurple100,
     tpColorPurple200,
     tpColorPurple,
     tpColorPurple600,
+    tpColorPurple500,
     tpColorGreen100,
     tpColorGreen200,
     tpColorGreen,
     tpColorGreen600,
+    tpColorGreen500,
     tpColorYellow100,
     tpColorYellow200,
     tpColorYellow,
     tpColorYellow600,
+    tpColorYellow500,
     tpColorRed100,
     tpColorRed200,
     tpColorRed,
     tpColorRed600,
+    tpColorRed500,
     tpColorBlack,
     tpColorBlack300,
     tpColorGray,
@@ -37,7 +44,7 @@ import {
     tpColorGray200,
     tpColorWhite,
 } from '@thumbtack/thumbprint-tokens';
-import { InlineCode } from 'components/mdx';
+import { Img, InlineCode } from 'components/mdx';
 import Swatch from 'components/thumbprint-guide/swatch';
 import SwatchUsage from 'components/thumbprint-guide/swatch-usage';
 
@@ -55,37 +62,37 @@ Color names are unambiguous and direct. "Blue" means blue. We do this to avoid u
     <Swatch name="blue-200" hex={tpColorBlue200} />
     <Swatch hasBorder />
     <Swatch name="blue" hex={tpColorBlue} isCore />
-    <Swatch hasBorder />
+    <Swatch name="blue-500" hex={tpColorBlue500} />
     <Swatch name="blue-600" hex={tpColorBlue600} />
     <Swatch name="indigo-100" hex={tpColorIndigo100} />
     <Swatch name="indigo-200" hex={tpColorIndigo200} />
     <Swatch hasBorder />
     <Swatch name="indigo" hex={tpColorIndigo} isCore />
-    <Swatch hasBorder />
+    <Swatch name="indigo-500" hex={tpColorIndigo500} />
     <Swatch name="indigo-600" hex={tpColorIndigo600} />
     <Swatch name="purple-100" hex={tpColorPurple100} />
     <Swatch name="purple-200" hex={tpColorPurple200} />
     <Swatch hasBorder />
     <Swatch name="purple" hex={tpColorPurple} isCore />
-    <Swatch hasBorder />
+    <Swatch name="purple-500" hex={tpColorPurple500} />
     <Swatch name="purple-600" hex={tpColorPurple600} />
     <Swatch name="green-100" hex={tpColorGreen100} />
     <Swatch name="green-200" hex={tpColorGreen200} />
     <Swatch hasBorder />
     <Swatch name="green" hex={tpColorGreen} isCore />
-    <Swatch hasBorder />
+    <Swatch name="green-500" hex={tpColorGreen500} />
     <Swatch name="green-600" hex={tpColorGreen600} />
     <Swatch name="yellow-100" hex={tpColorYellow100} />
     <Swatch name="yellow-200" hex={tpColorYellow200} />
     <Swatch hasBorder />
     <Swatch name="yellow" hex={tpColorYellow} isCore />
-    <Swatch hasBorder />
+    <Swatch name="yellow-500" hex={tpColorYellow500} />
     <Swatch name="yellow-600" hex={tpColorYellow600} />
     <Swatch name="red-100" hex={tpColorRed100} />
     <Swatch name="red-200" hex={tpColorRed200} />
     <Swatch hasBorder />
     <Swatch name="red" hex={tpColorRed} isCore />
-    <Swatch hasBorder />
+    <Swatch name="red-500" hex={tpColorRed500} />
     <Swatch name="red-600" hex={tpColorRed600} />
     <Swatch hasBorder />
     <Swatch hasBorder />
@@ -189,7 +196,69 @@ Color names are unambiguous and direct. "Blue" means blue. We do this to avoid u
     dontText="On light backgrounds"
 />
 
+## Accessibility
+
+Accessibility is important for everyone, and it should not forgotten in the design process. Accessible colors are vital for those with color blindness or other vision impairments. By using a high color contrast ratio, you can make sure that your design is accessible to as many people as possible.
+
+Color combinations should be used in accordance with the [WCAG 2.1 AA success criterion for contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum). The color system is set up to provide an accessible experience by combining a particular range of color values from Thumbprint. The combinations include any **100-level** color paired with any **600-level** color values. For example, when using the **blue-100** background color, the **blue-600** color should be used for the text.
+
+### 100-level background
+
+A common and preferred pattern for non-interactive elements when applying a background color uses the 100-level values for backgrounds. The 600-level color of the same hue will ensure an accessible color contrast ratio combined with this background treatment. Any value below the **600-level** (500, 400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+
+#### Examples
+
+<Img
+    src="./100-600-levels-red.png"
+    alt="Shows compliant 600-level colors on top of 100-level background for red hue"
+/>
+<Img
+    src="./100-600-levels-blue.png"
+    alt="Shows compliant 600-level colors on top of 100-level background for blue hue"
+/>
+
+### White background
+
+The foreground text should use the **500 value** when using a **white** background. This combination ensures that the color contrast ratio meets the 4.5:1 minimum. Any value below the **500-level** (400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+
+#### Examples
+
+<Img
+    src="./white-500-levels-green-bold.png"
+    alt="Shows compliant 500-level colors on top of white background with green bold text"
+/>
+
+<Img
+    src="./white-500-levels-red.png"
+    alt="Shows compliant 500-level colors on top of white background with red regular weight text"
+/>
+
+### Neutral colors
+
+The foreground text should use the **500 value** when using a **white** background. This combination ensures that the color contrast ratio meets the 4.5:1 minimum. Any value below the **500-level** (400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+
+#### Examples
+
+<Img
+    src="./neutral-white.png"
+    alt="Shows compliant neutral text colors on top of white background"
+/>
+<Img
+    src="./neutral-gray200.png"
+    alt="Shows compliant neutral text colors on top of gray200 background"
+/>
+
+### Avoid using color exclusively
+
+Colors can also be used to convey information. For example, using red for error messages or green for success messages can help users understand your interface more quickly. Ultimately, accessible colors can help create a better experience for all users, regardless of their abilities.
+
+However, color alone should not be used exclusively as an indicator for a user experience. To provide a more inclusive experience, additional information, such as supportive text, should be included.
+
 ## Implementations
 
 -   All color variables shown here available for SCSS and JS usage in [Thumbprint Tokens](/tokens/#section-color).
 -   The "core" colors, as indicated by `(c)`, are available as classes in [Thumbprint Atomic](/atomic/#section-color) for both `color` and `background` properties.
+
+## Resources
+
+-   [WCAG 2.1 AA success criterion for contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum).
