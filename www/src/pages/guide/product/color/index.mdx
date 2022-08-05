@@ -200,59 +200,161 @@ Color names are unambiguous and direct. "Blue" means blue. We do this to avoid u
 
 Accessibility is important for everyone, and it should not forgotten in the design process. Accessible colors are vital for those with color blindness or other vision impairments. By using a high color contrast ratio, you can make sure that your design is accessible to as many people as possible.
 
-Color combinations should be used in accordance with the [WCAG 2.1 AA success criterion for contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum). The color system is set up to provide an accessible experience by combining a particular range of color values from Thumbprint. The combinations include any **100-level** color paired with any **600-level** color values. For example, when using the **blue-100** background color, the **blue-600** color should be used for the text.
+### Text styling
+
+All text, including text in images and link text, should have enough contrast to stand out. This is especially important for links that aren’t underlined (and should apply to all states, including default, hover, and focus). See [WCAG 2.1 AA success criterion](https://www.w3.org/TR/WCAG21/#contrast-minimum) for contrast for the current requirements.
+
+### Color combinations
+
+The color system is set up to provide an accessible experience by combining a particular range of color values from Thumbprint. The combinations include any **100-level** color paired with any **600-level** color values. For example, when using the **blue-100** background color, the **blue-600** color should be used for the text.
 
 ### 100-level background
 
-A common and preferred pattern for non-interactive elements when applying a background color uses the 100-level values for backgrounds. The 600-level color of the same hue will ensure an accessible color contrast ratio combined with this background treatment. Any value below the **600-level** (500, 400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+A common and preferred pattern for non-interactive elements when applying a background color uses the **100-level** values for backgrounds. The **600-level** color of the same hue will ensure an accessible color contrast ratio combined with this background treatment. **Any value below the 600-level** (500, 400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
 
-#### Examples
-
-<Img
-    src="./100-600-levels-red.png"
-    alt="Shows compliant 600-level colors on top of 100-level background for red hue"
-/>
-<Img
-    src="./100-600-levels-blue.png"
-    alt="Shows compliant 600-level colors on top of 100-level background for blue hue"
-/>
+<Grid gutter="flush">
+    <GridColumn aboveSmall={2}>
+        <div className="bg-blue-100 pa3 bt bl bb b-gray-300">
+            <Text size={2} className="blue-600">
+                blue-600
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-indigo-100 pa3 bt bb b-gray-300">
+            <Text size={2} className="indigo-600">
+                indigo-600
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-purple-100 pa3 bt bb b-gray-300">
+            <Text size={2} className="purple-600">
+                purple-600
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-green-100 pa3 bt bb b-gray-300">
+            <Text size={2} className="green-600">
+                green-600
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-yellow-100 pa3 bt bb b-gray-300">
+            <Text size={2} className="yellow-600">
+                yellow-600
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-red-100 pa3 bt br bb b-gray-300">
+            <Text size={2} className="red-600">
+                red-600
+            </Text>
+        </div>
+    </GridColumn>
+</Grid>
 
 ### White background
 
-The foreground text should use the **500 value** when using a **white** background. This combination ensures that the color contrast ratio meets the 4.5:1 minimum. Any value below the **500-level** (400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+The foreground text should use the **500 value** when using a **white** background. This combination ensures that the color contrast ratio meets the 4.5:1 minimum. **Any value below the 500-level** (400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
 
-#### Examples
-
-<Img
-    src="./white-500-levels-green-bold.png"
-    alt="Shows compliant 500-level colors on top of white background with green bold text"
-/>
-
-<Img
-    src="./white-500-levels-red.png"
-    alt="Shows compliant 500-level colors on top of white background with red regular weight text"
-/>
+<Grid gutter="flush">
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bl bb b-gray-300">
+            <Text size={2} className="blue-500">
+                blue-500
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bb b-gray-300">
+            <Text size={2} className="indigo-500">
+                indigo-500
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bb b-gray-300">
+            <Text size={2} className="purple-500">
+                purple-500
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bb b-gray-300">
+            <Text size={2} className="green-500">
+                green-500
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bb b-gray-300">
+            <Text size={2} className="yellow-500">
+                yellow-500
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bb br b-gray-300">
+            <Text size={2} className="red-500">
+                red-500
+            </Text>
+        </div>
+    </GridColumn>
+</Grid>
 
 ### Neutral colors
 
-The foreground text should use the **500 value** when using a **white** background. This combination ensures that the color contrast ratio meets the 4.5:1 minimum. Any value below the **500-level** (400, 300, 200, 100) **will not** meet the minimum CCR requirement, and the use of these combinations should be avoided.
+When using a combination of neutral colors, not all combinations of colors will provide an accessible experience. The following graph represents the minimum color combinations expressed by the WCAG AA color contrast ratio and our established color palette.
 
-#### Examples
-
-<Img
-    src="./neutral-white.png"
-    alt="Shows compliant neutral text colors on top of white background"
-/>
-<Img
-    src="./neutral-gray200.png"
-    alt="Shows compliant neutral text colors on top of gray200 background"
-/>
+<Grid gutter="flush">
+    <GridColumn aboveSmall={2}>
+        <div className="bg-white pa3 bt bl bb b-gray-300">
+            <Text size={2} className="black-300">
+                black-300
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-gray-200 pa3 bt bb b-gray-300">
+            <Text size={2} className="black-300">
+                black-300
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-gray-300 pa3 bt bb b-gray-300">
+            <Text size={2} className="black">
+                black
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-black-300 pa3 bt bb b-gray-300">
+            <Text size={2} v className="gray-200">
+                gray-200
+            </Text>
+        </div>
+    </GridColumn>
+    <GridColumn aboveSmall={2}>
+        <div className="bg-black pa3 bt br bb b-gray-300">
+            <Text size={2} className="gray-300">
+                gray-300
+            </Text>
+        </div>
+    </GridColumn>
+</Grid>
 
 ### Avoid using color exclusively
 
 Colors can also be used to convey information. For example, using red for error messages or green for success messages can help users understand your interface more quickly. Ultimately, accessible colors can help create a better experience for all users, regardless of their abilities.
 
-However, color alone should not be used exclusively as an indicator for a user experience. To provide a more inclusive experience, additional information, such as supportive text, should be included.
+However, color alone should not be used exclusively as an indicator for a user experience especially when an action or response from the user is required. To provide a more inclusive experience, additional information, such as supportive text, should be included.
+
+For example, when expressing an error state on an input in a form, the input color should provide a visual indicator that the element needs attention. However, the color change should not be the sole indicator. The color change should be paired with supportive text that gives the user more information on how to recover from the error state.
 
 ## Implementations
 
@@ -262,3 +364,4 @@ However, color alone should not be used exclusively as an indicator for a user e
 ## Resources
 
 -   [WCAG 2.1 AA success criterion for contrast](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+-   [The A11Y Project Checklist / Color Contrast](https://www.a11yproject.com/checklist/#color-contrast)
