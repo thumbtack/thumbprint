@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 4.3.0 - 2022-08-08
-
 ### Added
 
 -   [Minor] Add 500 and 600 level text colors
