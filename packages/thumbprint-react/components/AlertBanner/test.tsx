@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import forEach from 'lodash/forEach';
 import AlertBanner from './index';
 import { BlockedFilled, InfoFilled, WarningFilled } from '../../icons';
@@ -64,6 +65,16 @@ describe('AlertBanner', () => {
         );
 
         expect(wrapper.find('[data-testid="test"]').hasClass('root')).toBe(true);
+    });
+
+    test('can render custom icons', () => {
+        render(
+            <AlertBanner theme="caution" icon={<svg data-testid="custom-svg" />}>
+                {children}
+            </AlertBanner>,
+        );
+
+        expect(screen.getByTestId('custom-svg')).toBeTruthy();
     });
 
     test('match snapshot', () => {

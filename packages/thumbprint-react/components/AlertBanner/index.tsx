@@ -13,6 +13,10 @@ export interface AlertBannerProps {
      */
     theme: 'info' | 'warning' | 'caution';
     /**
+     * A React component such as `<MyCustomIcon />` to render as the icon.
+     */
+    icon?: React.ReactNode;
+    /**
      * A selector to hook into the React component for use in automated testing environments.
      */
     dataTestId?: string;
@@ -34,6 +38,7 @@ export default function AlertBanner({
     theme,
     dataTestId,
     dataTest,
+    icon,
 }: AlertBannerProps): JSX.Element {
     return (
         <div
@@ -46,7 +51,7 @@ export default function AlertBanner({
             data-testid={dataTestId}
             data-test={dataTest}
         >
-            {ALERT_ICONS[theme]}
+            {icon || ALERT_ICONS[theme]}
             <div>{children}</div>
         </div>
     );
