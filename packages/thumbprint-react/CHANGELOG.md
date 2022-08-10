@@ -1,5 +1,13 @@
 # Changelog
 
+### Added
+
+-   [Minor] Add support `InputRow` to `Dropdown`.
+
+### Added
+
+-   [Minor] Add support for custom icons to `AlertBanner`.
+
 ## 14.12.01 - 2022-06-22
 
 ### Changed
