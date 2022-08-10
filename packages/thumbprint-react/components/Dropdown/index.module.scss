@@ -20,7 +20,6 @@
 
     border: 1px solid;
     font-family: $tp-font-family__base;
-    border-radius: $tp-border-radius__base;
     outline: none;
     vertical-align: middle;
     background-repeat: no-repeat;
@@ -76,6 +75,20 @@
             height: 52px;
             font-size: $tp-font__title__5__size;
         }
+    }
+
+    &RoundedBordersLeft {
+        border-top-left-radius: $tp-border-radius__base;
+        border-bottom-left-radius: $tp-border-radius__base;
+    }
+
+    &RoundedBordersRight {
+        border-top-right-radius: $tp-border-radius__base;
+        border-bottom-right-radius: $tp-border-radius__base;
+    }
+
+    &HasNoRightBorder {
+        border-right: none;
     }
 }
 
