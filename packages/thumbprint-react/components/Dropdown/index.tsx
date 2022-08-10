@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import classNames from 'classnames';
-import styles from './index.module.scss';
+
 import { InputRowContext } from '../InputRow';
+
+import styles from './index.module.scss';
 
 const iconColor = {
     disabled: tokens.tpColorGray,
