@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import classNames from 'classnames';
+
+import { InputRowContext } from '../InputRow';
+
 import styles from './index.module.scss';
 
 const iconColor = {
@@ -124,6 +127,10 @@ export default function Dropdown<T extends string | number = string>({
 }: DropdownProps<T>): JSX.Element {
     const uiState = getUIState({ isDisabled, hasError });
 
+    const { isFirstInputRowChild, isWithinInputRow, isLastInputRowChild } = useContext(
+        InputRowContext,
+    );
+
     return (
         <div
             className={classNames({
@@ -139,6 +146,10 @@ export default function Dropdown<T extends string | number = string>({
                     [styles.selectStateDefault]: uiState === 'default',
                     [styles.selectSizeSmall]: size === 'small',
                     [styles.selectSizeLarge]: size === 'large',
+                    // Styles for when the Dropdown is inside an InputRow
+                    [styles.selectRoundedBordersLeft]: isFirstInputRowChild || !isWithinInputRow,
+                    [styles.selectRoundedBordersRight]: isLastInputRowChild || !isWithinInputRow,
+                    [styles.selectHasNoRightBorder]: isWithinInputRow && !isLastInputRowChild,
                 })}
                 id={id}
                 disabled={isDisabled}

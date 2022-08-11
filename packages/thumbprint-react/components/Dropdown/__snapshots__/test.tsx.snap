@@ -11,7 +11,7 @@ exports[`adds \`accessibilityLabel\` prop 1`] = `
   >
     <select
       aria-label="Choose your business"
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -47,7 +47,7 @@ exports[`adds \`dataTest\` prop 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       data-test="Duck"
       disabled={false}
       onChange={[Function]}
@@ -84,7 +84,7 @@ exports[`adds \`dataTestId\` prop 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       data-testid="Duck"
       disabled={false}
       onChange={[Function]}
@@ -121,7 +121,7 @@ exports[`adds \`disabled\` attribute 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDisabled selectSizeLarge"
+      className="select selectStateDisabled selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={true}
       onChange={[Function]}
       onClick={[Function]}
@@ -157,7 +157,7 @@ exports[`adds \`id\` attribute 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       id="Goose"
       onChange={[Function]}
@@ -194,7 +194,7 @@ exports[`adds \`name\` HTML attribute 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       name="duck"
       onChange={[Function]}
@@ -231,7 +231,7 @@ exports[`adds \`required\` attribute 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -267,7 +267,7 @@ exports[`renders an error state with \`hasError\` 1`] = `
     className="root"
   >
     <select
-      className="select selectStateError selectSizeLarge"
+      className="select selectStateError selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -302,7 +302,7 @@ exports[`renders options that are passed in as \`children\` 1`] = `
     className="root"
   >
     <select
-      className="select selectStateDefault selectSizeLarge"
+      className="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
       disabled={false}
       onChange={[Function]}
       onClick={[Function]}
@@ -340,7 +340,7 @@ exports[`uses \`value\` as the selected option 1`] = `
   class="root"
 >
   <select
-    class="select selectStateDefault selectSizeLarge"
+    class="select selectStateDefault selectSizeLarge selectRoundedBordersLeft selectRoundedBordersRight"
   >
     <option
       value="ny"

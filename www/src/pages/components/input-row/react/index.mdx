@@ -8,7 +8,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## `InputRow` with an `Input` and `Button`
+## `InputRow` with a `TextInput` and `Button`
 
 The `widthRatios` prop in this example tells the input to take up as much space as possible.
 
@@ -16,6 +16,36 @@ The `widthRatios` prop in this example tells the input to take up as much space 
 <InputRow widthRatios={[1, null]}>
     <TextInput placeholder="Enter a zip code" onChange={() => {}} />
     <Button>Find a pro</Button>
+</InputRow>
+```
+
+## `InputRow` with a `Dropdown` and `Button`
+
+An `InputRow` can be used to pair a `Dropdown` with a `Button`.
+
+```jsx
+<InputRow>
+    <Dropdown onChange={() => {}} value="one">
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+    </Dropdown>
+    <Button>Submit</Button>
+</InputRow>
+```
+
+If `widthRatios` is used on the `InputRow`, `isFullWidth` must also be passed to the `Dropdown`.
+
+```jsx
+<InputRow widthRatios={[1, null]}>
+    <Dropdown size="small" onChange={() => {}} value="one" isFullWidth>
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+    </Dropdown>
+    <Button size="small" theme="tertiary">
+        Submit
+    </Button>
 </InputRow>
 ```
 
