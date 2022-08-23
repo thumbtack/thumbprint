@@ -1,0 +1,127 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+$border-width: 2px;
+
+.root {
+    border: 2px solid;
+    border-radius: 4px;
+    font-weight: $tp-font-weight__bold;
+    // The designs have an inset 2px border. The subtraction accounts for that.
+    padding: 0 ($tp-space__4 - $border-width);
+    // Used to absolutely position the `LoaderDots`
+    position: relative;
+}
+
+.buttonWidthFull {
+    width: 100%;
+}
+
+.buttonWidthFullBelowSmall {
+    @include tp-respond-below($tp-breakpoint__small) {
+        width: 100%;
+    }
+}
+
+.buttonLarge,
+.buttonMedium {
+    min-height: 52px;
+}
+
+.buttonLarge {
+    // This doesn't use one of our system font sizes because the text size needs to be just large
+    // enough so that it is accessible on our blue background.
+    font-size: 19px;
+}
+
+.buttonMedium {
+    font-size: $tp-font__body__1__size;
+
+    @include tp-respond-below($tp-breakpoint__small) {
+        min-height: 48px;
+    }
+}
+
+.buttonSmall {
+    font-size: $tp-font__body__2__size;
+    min-height: 36px;
+}
+
+.primaryButton {
+    color: $tp-color__white;
+    border-color: $tp-color__blue;
+    background-color: $tp-color__blue;
+
+    &[disabled] {
+        border-color: $tp-color__blue-300;
+        background-color: $tp-color__blue-300;
+    }
+}
+
+.secondaryButtonEmphasisHigh {
+    color: $tp-color__white;
+    border-color: $tp-color__black;
+    background-color: $tp-color__black;
+}
+
+.secondaryButtonEmphasisLow {
+    color: $tp-color__black;
+    border-color: $tp-color__white;
+    background-color: $tp-color__white;
+}
+
+.secondaryButtonBlackBorder {
+    border-color: $tp-color__black;
+
+    &[disabled] {
+        background-color: $tp-color__gray;
+        border-color: $tp-color__gray;
+    }
+}
+
+.secondaryButtonWhiteBorder {
+    border-color: $tp-color__white;
+
+    &[disabled] {
+        color: $tp-color__gray;
+    }
+}
+
+.secondaryButtonGrayBorder {
+    border-color: $tp-color__gray;
+
+    &[disabled] {
+        color: $tp-color__gray;
+    }
+}
+
+.tertiaryButton {
+    border-color: $tp-color__white;
+    background-color: $tp-color__white;
+    color: $tp-color__black-300;
+}
+
+.cautionButton[disabled] {
+    border-color: $tp-color__gray;
+    background-color: $tp-color__red-100;
+    color: $tp-color__red-200;
+}
+
+.cautionButtonEmphasisHigh {
+    background-color: $tp-color__red-500;
+    color: $tp-color__white;
+    border-color: $tp-color__red-500;
+}
+
+.cautionButtonEmphasisLow {
+    background-color: $tp-color__white;
+    color: $tp-color__red-500;
+    border-color: $tp-color__gray;
+}
+
+.flexWrapper {
+    // This wraps the content since `button`s are not able to use `display: flex`.
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

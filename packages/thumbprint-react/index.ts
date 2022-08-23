@@ -9,6 +9,14 @@ export {
     TextButton,
     ButtonProps,
     TextButtonProps,
+    PrimaryButton,
+    PrimaryButtonProps,
+    SecondaryButton,
+    SecondaryButtonProps,
+    TertiaryButton,
+    CautionButton,
+    IconButton,
+    PlainButton,
 } from './components/Button/index';
 export {
     BannerAlert,

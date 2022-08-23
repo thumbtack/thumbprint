@@ -15,7 +15,7 @@ enum loaderDotsTheme {
     tertiary = 'muted',
 }
 
-const withIcon = (
+export const withIcon = (
     children: React.ReactNode,
     { icon, iconRight }: { icon?: React.ReactNode; iconRight?: React.ReactNode },
 ): React.ReactNode => {
@@ -46,7 +46,7 @@ const withIcon = (
     );
 };
 
-const withLoader = (
+export const withLoader = (
     children: React.ReactNode,
     {
         isLoading,

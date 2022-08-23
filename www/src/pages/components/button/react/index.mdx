@@ -15,169 +15,194 @@ import { InlineCode } from 'components/mdx';
 These are the available `Button` styles for use on light background colors.
 
 ```jsx
-<ButtonRow>
-    <Button>Primary</Button>
-    <Button theme="secondary">Secondary</Button>
-    <Button theme="tertiary">Tertiary</Button>
-    <Button theme="caution">Caution</Button>
-</ButtonRow>
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <PrimaryButton>Primary</PrimaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <SecondaryButton emphasis="high">Secondary</SecondaryButton>
+        <SecondaryButton emphasis="low">Secondary</SecondaryButton>
+        <SecondaryButton isBordered emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isBordered emphasis="low">
+            Secondary
+        </SecondaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <TertiaryButton>Tertiary</TertiaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <CautionButton emphasis="high">Caution</CautionButton>
+        <CautionButton emphasis="low">Caution</CautionButton>
+    </ButtonRow>
+</div>
 ```
 
-### Use on dark backgrounds
+## Button sizes
 
-The `solid` theme works well on dark backgrounds.
-
-```jsx theme=dark
-<Button theme="solid">Solid</Button>
-```
-
-## Small buttons
-
-Buttons are `large` by default. The `size` prop allows you to render a `small` button.
+The `SecondaryButton`, `TertiaryButton`, and `CautionButton` components are also available as `small` buttons.
 
 ```jsx
-<ButtonRow>
-    <Button size="small">Primary</Button>
-    <Button size="small" theme="secondary">
-        Secondary
-    </Button>
-    <Button size="small" theme="tertiary">
-        Tertiary
-    </Button>
-    <Button size="small" theme="caution">
-        Caution
-    </Button>
-</ButtonRow>
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <SecondaryButton size="small" emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton size="small" emphasis="low">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton size="small" isBordered emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton size="small" isBordered emphasis="low">
+            Secondary
+        </SecondaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <TertiaryButton size="small">Tertiary</TertiaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <CautionButton size="small" emphasis="high">
+            Caution
+        </CautionButton>
+        <CautionButton size="small" emphasis="low">
+            Caution
+        </CautionButton>
+    </ButtonRow>
+</div>
 ```
 
 ## Disabled buttons
 
-The `isDisabled` prop visually and functionally disables the button.
+The `isDisabled` prop will visually and functionally disable the button components.
 
 ```jsx
-<ButtonRow>
-    <Button isDisabled theme="primary">
-        Primary
-    </Button>
-    <Button isDisabled theme="secondary">
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <PrimaryButton isDisabled>Primary</PrimaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <SecondaryButton isDisabled emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isDisabled emphasis="low">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isDisabled isBordered emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isDisabled isBordered emphasis="low">
+            Secondary
+        </SecondaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <TertiaryButton isDisabled>Tertiary</TertiaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <CautionButton isDisabled emphasis="high">
+            Caution
+        </CautionButton>
+        <CautionButton isDisabled emphasis="low">
+            Caution
+        </CautionButton>
+    </ButtonRow>
+</div>
+```
+
+## Loading buttons
+
+The `isLoading` prop replaces the button text with a loading animation and disables the interaction.
+
+```jsx
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <PrimaryButton isLoading>Primary</PrimaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <SecondaryButton isLoading emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isLoading emphasis="low">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isLoading isBordered emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton isLoading isBordered emphasis="low">
+            Secondary
+        </SecondaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <TertiaryButton isLoading>Tertiary</TertiaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <CautionButton isLoading emphasis="high">
+            Caution
+        </CautionButton>
+        <CautionButton isLoading emphasis="low">
+            Caution
+        </CautionButton>
+    </ButtonRow>
+</div>
+```
+
+## Width options
+
+```jsx
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <PrimaryButton width="full">Primary</PrimaryButton>
+
+    <SecondaryButton width="full" emphasis="high">
         Secondary
-    </Button>
-    <Button isDisabled theme="tertiary">
-        Tertiary
-    </Button>
-    <Button isDisabled theme="caution">
+    </SecondaryButton>
+    <SecondaryButton width="full" emphasis="low">
+        Secondary
+    </SecondaryButton>
+    <SecondaryButton width="full" isBordered emphasis="high">
+        Secondary
+    </SecondaryButton>
+    <SecondaryButton width="full" isBordered emphasis="low">
+        Secondary
+    </SecondaryButton>
+
+    <TertiaryButton width="full">Tertiary</TertiaryButton>
+
+    <CautionButton width="full" emphasis="high">
         Caution
-    </Button>
-</ButtonRow>
-```
-
-```jsx theme=dark
-<ButtonRow>
-    <Button isDisabled theme="solid">
-        Solid
-    </Button>
-</ButtonRow>
-```
-
-## Full width buttons
-
-```jsx
-<Button width="full">Send Quote</Button>
-```
-
-### Full width on small screens
-
-This button becomes full width on viewports that are smaller than [our `small` breakpoint](/tokens/#section-breakpoint). The width is `auto` on larger screens.
-
-```jsx
-<Button width="full-below-small">Send Quote</Button>
+    </CautionButton>
+    <CautionButton width="full" emphasis="low">
+        Caution
+    </CautionButton>
+</div>
 ```
 
 ## Icon within a button
 
-The `icon` prop accepts any small icon from [Thumbprint Icons](/icons/).
-
-This prop renders an icon left within button.
+The `iconLeft` and `ironRight` props accept any small icon from [Thumbprint Icons](/icons).
 
 ```jsx
-<Button icon={<ContentModifierMessageSmall />}>Send Message</Button>
-```
-
-### Icon right within the button
-
-`iconRight` renders an icon right within button.
-
-```jsx
-<Button iconRight={<ContentModifierMessageSmall />}>Send Message</Button>
-```
-
-## Button with loading indicator
-
-These loading indicators should be used when buttons are processing. They are avialble in the `primary`, `secondary`, and `tertiary` button themes.
-
-```jsx
-<ButtonRow>
-    <Button isLoading>Send Quote</Button>
-    <Button theme="secondary" isLoading>
-        Send Quote
-    </Button>
-    <Button theme="tertiary" isLoading>
-        Send Quote
-    </Button>
-</ButtonRow>
-```
-
-## Buttons that look like links
-
-The `TextButton` component renders button elements that visually appear as text links. These buttons accept an `onClick` and render as inline elements.
-
-```jsx
-<React.Fragment>
-    The Pro exceeded our expectations and did a fantastic&hellip; <TextButton>Read more</TextButton>
-</React.Fragment>
-```
-
-### Adding an icon with text
-
-The `TextButton` component provides a `iconLeft` prop to help vertically position icons alongside text.
-
-```jsx
-<b>
-    <TextButton iconLeft={<NavigationArrowLeftSmall />}>Back</TextButton>
-</b>
-```
-
-### Adding an icon with text on the right
-
-The `TextButton` component also allows an icon to the right of the text.
-
-```jsx
-<b>
-    <TextButton iconRight={<NavigationArrowRightSmall />}>Forward</TextButton>
-</b>
-```
-
-### Icon that inherits color of parent
-
-This icon inherits the color of its parent with `theme="inherit"`.
-
-```jsx theme=dark
-<div style={{ color: tokens.tpColorWhite }}>
-    <TextButton theme="inherit" iconLeft={<NavigationCloseMedium />} accessibilityLabel="Close" />
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <PrimaryButton iconLeft={<ContentModifierMessageSmall />}>Send Message</PrimaryButton>
+    </ButtonRow>
+    <ButtonRow>
+        <SecondaryButton iconRight={<ContentModifierMessageSmall />} isBordered>
+            Send Message
+        </SecondaryButton>
+    </ButtonRow>
 </div>
-```
-
-### Changing the font size and weight
-
-These buttons inherit the font size and font weight of their container.
-
-```jsx
-<Text size={3}>
-    The Pro exceeded our expectations and did a fantastic&hellip;{' '}
-    <b>
-        <TextButton>Read more</TextButton>
-    </b>
-</Text>
 ```
 
 <ComponentFooter data={props.data} />

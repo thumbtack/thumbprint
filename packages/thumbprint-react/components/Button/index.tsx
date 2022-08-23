@@ -1,5 +1,169 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
-import { Themed, Plain } from '../UIAction/index';
+import classNames from 'classnames';
+import { Themed, Plain, withIcon, withLoader } from '../UIAction/index';
+import styles from './index.module.scss';
+
+interface CommonButtonProps {
+    children: React.ReactNode;
+    isDisabled: boolean;
+    isLoading: boolean;
+    dataTestId?: string;
+    iconLeft: React.ReactNode;
+    iconRight: React.ReactNode;
+    onClick?: () => void;
+    onMouseEnter?: () => void;
+    onMouseOver?: () => void;
+    onFocus?: () => void;
+    onMouseLeave?: () => void;
+    onBlur?: () => void;
+    type?: 'button' | 'submit';
+    width?: 'auto' | 'full' | 'full-below-small';
+}
+
+export type PrimaryButtonProps = CommonButtonProps;
+
+interface BaseButtonProps extends CommonButtonProps {
+    className: string;
+    size?: 'small' | 'medium' | 'large';
+    loaderDotsTheme: 'primary' | 'secondary' | 'tertiary';
+}
+
+const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
+    (
+        {
+            children,
+            className,
+            isDisabled,
+            isLoading,
+            dataTestId,
+            iconLeft,
+            iconRight,
+            size = 'medium',
+            loaderDotsTheme,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            type,
+            width,
+        },
+        ref,
+    ) => {
+        const newChildren = withLoader(withIcon(children, { icon: iconLeft, iconRight }), {
+            isLoading,
+            theme: loaderDotsTheme,
+        });
+
+        return (
+            <button
+                type={type}
+                className={classNames(styles.root, className, {
+                    [styles.buttonLarge]: size === 'large',
+                    [styles.buttonMedium]: size === 'medium',
+                    [styles.buttonSmall]: size === 'small',
+                    [styles.buttonWidthFull]: width === 'full',
+                    [styles.buttonWidthFullBelowSmall]: width === 'full-below-small',
+                })}
+                data-testid={dataTestId}
+                disabled={isDisabled}
+                onClick={onClick}
+                onMouseEnter={onMouseEnter}
+                onMouseOver={onMouseOver}
+                onFocus={onFocus}
+                onMouseLeave={onMouseLeave}
+                onBlur={onBlur}
+                ref={ref}
+            >
+                <span className={styles.flexWrapper}>{newChildren}</span>
+            </button>
+        );
+    },
+);
+
+const PrimaryButton = React.forwardRef<HTMLButtonElement, PrimaryButtonProps>((props, ref) => {
+    return (
+        <BaseButton
+            {...props}
+            className={`${styles.root} ${styles.primaryButton} ${styles.buttonLarge}`}
+            size="large"
+            loaderDotsTheme="primary"
+            ref={ref}
+        />
+    );
+});
+
+export interface SecondaryButtonProps extends CommonButtonProps {
+    iconLeft: React.ReactNode;
+    iconRight: React.ReactNode;
+    emphasis?: 'low' | 'high';
+    isBordered?: boolean;
+    size?: 'small' | 'medium';
+}
+
+const SecondaryButton = React.forwardRef<HTMLButtonElement, SecondaryButtonProps>(
+    ({ emphasis = 'low', isBordered = false, ...rest }, ref) => {
+        return (
+            <BaseButton
+                {...rest}
+                className={classNames(styles.root, {
+                    [styles.secondaryButtonEmphasisHigh]: emphasis === 'high',
+                    [styles.secondaryButtonEmphasisLow]: emphasis === 'low',
+                    [styles.secondaryButtonWhiteBorder]: isBordered === false && emphasis === 'low',
+                    [styles.secondaryButtonGrayBorder]: isBordered === true && emphasis === 'low',
+                    [styles.secondaryButtonBlackBorder]: emphasis === 'high',
+                })}
+                loaderDotsTheme={emphasis === 'high' ? 'primary' : 'tertiary'}
+                ref={ref}
+            />
+        );
+    },
+);
+
+export interface TertiaryButtonProps extends CommonButtonProps {
+    iconLeft: React.ReactNode;
+    iconRight: React.ReactNode;
+    size?: 'small' | 'medium';
+}
+
+const TertiaryButton = React.forwardRef<HTMLButtonElement, TertiaryButtonProps>((props, ref) => {
+    return (
+        <BaseButton
+            {...props}
+            className={classNames(styles.root, styles.tertiaryButton)}
+            loaderDotsTheme="tertiary"
+            ref={ref}
+        />
+    );
+});
+
+export interface CautionButtonProps extends CommonButtonProps {
+    iconLeft: React.ReactNode;
+    iconRight: React.ReactNode;
+    emphasis?: 'low' | 'high';
+    size?: 'small' | 'medium';
+}
+
+const CautionButton = React.forwardRef<HTMLButtonElement, CautionButtonProps>(
+    ({ emphasis = 'low', ...rest }, ref) => {
+        return (
+            <BaseButton
+                className={classNames(styles.root, styles.cautionButton, {
+                    [styles.cautionButtonEmphasisHigh]: emphasis === 'high',
+                    [styles.cautionButtonEmphasisLow]: emphasis === 'low',
+                })}
+                loaderDotsTheme={emphasis === 'high' ? 'primary' : 'tertiary'}
+                {...rest}
+                ref={ref}
+            />
+        );
+    },
+);
+
+const IconButton = (): JSX.Element => <button>IconButton</button>;
+const PlainButton = (): JSX.Element => <button>IconButton</button>;
 
 interface CommonProps {
     children?: React.ReactNode;
@@ -281,4 +445,12 @@ export interface ButtonProps {
 }
 
 export default Button;
-export { TextButton };
+export {
+    TextButton,
+    PrimaryButton,
+    SecondaryButton,
+    TertiaryButton,
+    CautionButton,
+    IconButton,
+    PlainButton,
+};
