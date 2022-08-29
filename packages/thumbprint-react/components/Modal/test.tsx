@@ -33,11 +33,13 @@ describe('Modal', () => {
     test('renders a medium height modal', () => {
         const wrapper = mount(<Modal isOpen onCloseClick={noop} heightAboveSmall="medium" />);
         expect(
-            wrapper.find('[data-test="thumbprint-modal-wrapper"]').hasClass('wrapperHeightMedium'),
+            wrapper
+                .find('[data-testid="thumbprint-modal-wrapper"]')
+                .hasClass('wrapperHeightMedium'),
         );
         expect(
             wrapper
-                .find('[data-test="thumbprint-modal-container"]')
+                .find('[data-testid="thumbprint-modal-container"]')
                 .hasClass('containerFixedHeight'),
         );
         expect(wrapper).toMatchSnapshot();
@@ -47,11 +49,11 @@ describe('Modal', () => {
     test('renders a tall height modal', () => {
         const wrapper = mount(<Modal isOpen onCloseClick={noop} heightAboveSmall="tall" />);
         expect(
-            wrapper.find('[data-test="thumbprint-modal-wrapper"]').hasClass('wrapperHeightTall'),
+            wrapper.find('[data-testid="thumbprint-modal-wrapper"]').hasClass('wrapperHeightTall'),
         );
         expect(
             wrapper
-                .find('[data-test="thumbprint-modal-container"]')
+                .find('[data-testid="thumbprint-modal-container"]')
                 .hasClass('containerFixedHeight'),
         );
         expect(wrapper).toMatchSnapshot();
@@ -72,7 +74,7 @@ describe('Modal', () => {
     test('does not show the close button if `shouldHideCloseButton` is true', () => {
         const wrapper = mount(<Modal onCloseClick={noop} shouldHideCloseButton />);
 
-        expect(wrapper.find('button[data-test="Close modal"]').exists()).toBe(false);
+        expect(wrapper.find('button[data-testid="Close modal"]').exists()).toBe(false);
         expect(wrapper).toMatchSnapshot();
         wrapper.unmount();
     });
@@ -80,7 +82,7 @@ describe('Modal', () => {
     test('shows the close button if `shouldHideCloseButton` is false', () => {
         const wrapper = mount(<Modal onCloseClick={noop} shouldHideCloseButton={false} />);
 
-        expect(wrapper.find('button[data-test="close-modal"]').exists()).toBe(true);
+        expect(wrapper.find('button[data-testid="close-modal"]').exists()).toBe(true);
         expect(wrapper).toMatchSnapshot();
         wrapper.unmount();
     });
@@ -95,7 +97,7 @@ describe('Modal', () => {
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
-        wrapper.find('[data-test="thumbprint-modal-curtain"]').simulate('click');
+        wrapper.find('[data-testid="thumbprint-modal-curtain"]').simulate('click');
 
         expect(onCloseClick).toHaveBeenCalledTimes(1);
         wrapper.unmount();
@@ -111,7 +113,7 @@ describe('Modal', () => {
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
 
-        wrapper.find('[data-test="thumbprint-modal-curtain"]').simulate('click');
+        wrapper.find('[data-testid="thumbprint-modal-curtain"]').simulate('click');
 
         expect(onCloseClick).toHaveBeenCalledTimes(0);
         wrapper.unmount();

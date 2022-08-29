@@ -58,6 +58,10 @@ export interface ModalCurtainProps {
      * element of the modal is focused.
      */
     initialFocus?: HTMLElement | null;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
 }
 
 export default function ModalCurtain({
@@ -67,6 +71,7 @@ export default function ModalCurtain({
     initialFocus: initialFocusProp,
     onCloseClick,
     children,
+    dataTestId,
 }: ModalCurtainProps): JSX.Element {
     const [isClient, setIsClient] = useState<boolean>(false);
     const [wrapperEl, setWrapperEl] = useState<HTMLDivElement | null>(null);
@@ -96,6 +101,7 @@ export default function ModalCurtain({
                 ref={(element): void => {
                     setWrapperEl(element);
                 }}
+                data-testid={dataTestId}
             >
                 {shouldDisableScrolling && <NoScroll />}
 

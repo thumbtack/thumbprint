@@ -1,5 +1,9 @@
 # Changelog
 
+### Changed
+
+-   [Minor] Add `dataTestId` to Modal components.
+
 ## 14.13.0 - 2022-08-11
 
 ### Added

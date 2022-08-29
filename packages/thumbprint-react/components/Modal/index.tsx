@@ -35,6 +35,7 @@ const TRANSITION_CLOSE_SPEED = tokens.tpDuration4;
  */
 const ModalAnimatedWrapper = ({
     children,
+    dataTestId,
     isOpen = false,
     onCloseClick,
     onCloseFinish,
@@ -54,7 +55,11 @@ const ModalAnimatedWrapper = ({
         onExited={onCloseFinish}
     >
         {(transitionStage): JSX.Element => (
-            <ModalCurtain stage={transitionStage} onCloseClick={onCloseClick}>
+            <ModalCurtain
+                stage={transitionStage}
+                onCloseClick={onCloseClick}
+                dataTestId={dataTestId}
+            >
                 {({ curtainClassName, curtainOnClick }): JSX.Element => (
                     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                     <div
@@ -79,7 +84,7 @@ const ModalAnimatedWrapper = ({
                                 [styles.curtainInnerShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                             })}
                             onClick={shouldCloseOnCurtainClick ? curtainOnClick : undefined}
-                            data-test="thumbprint-modal-curtain"
+                            data-testid="thumbprint-modal-curtain"
                         >
                             <div
                                 className={classNames({
@@ -92,13 +97,13 @@ const ModalAnimatedWrapper = ({
                                     [styles.wrapperHeightTall]: heightAboveSmall === 'tall',
                                     [styles.wrapperShouldPageScrollAboveSmall]: shouldPageScrollAboveSmall,
                                 })}
-                                data-test="thumbprint-modal-wrapper"
+                                data-testid="thumbprint-modal-wrapper"
                             >
                                 <div
                                     className={classNames({
                                         [styles.container]: true,
                                     })}
-                                    data-test="thumbprint-modal-container"
+                                    data-testid="thumbprint-modal-container"
                                 >
                                     {children}
                                 </div>
@@ -116,6 +121,10 @@ export interface ModalAnimatedWrapperProps {
      * Content that appears within the modal.
      */
     children?: React.ReactNode;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
     /**
      * Function that fires to close the modal.
      */
@@ -214,6 +223,10 @@ export interface ModalProps {
      * Content that appears within the modal.
      */
     children?: React.ReactNode;
+    /**
+     * A selector to hook into the React component for use in automated testing environments.
+     */
+    dataTestId?: string;
     /**
      * Function that fires to close the modal.
      */
@@ -365,6 +378,7 @@ class Modal extends React.Component<ModalProps, ModalStateTypes> {
     render(): JSX.Element {
         const {
             children,
+            dataTestId,
             isOpen = false,
             onCloseClick,
             onCloseFinish,
@@ -379,6 +393,7 @@ class Modal extends React.Component<ModalProps, ModalStateTypes> {
 
         return (
             <ModalAnimatedWrapper
+                dataTestId={dataTestId}
                 onCloseClick={onCloseClick}
                 onOpenFinish={onOpenFinish}
                 onCloseFinish={onCloseFinish}
@@ -432,7 +447,7 @@ class Modal extends React.Component<ModalProps, ModalStateTypes> {
                         {shouldHideCloseButton === false && (
                             <TextButton
                                 accessibilityLabel="Close modal"
-                                dataTest="close-modal"
+                                dataTestId="close-modal"
                                 iconLeft={
                                     <svg
                                         viewBox="0 0 24 24"

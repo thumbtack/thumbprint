@@ -42,15 +42,15 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -81,16 +81,16 @@ exports[`Modal does not show the close button if \`shouldHideCloseButton\` is tr
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -157,15 +157,15 @@ exports[`Modal renders a basic modal 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -181,7 +181,7 @@ exports[`Modal renders a basic modal 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -232,16 +232,16 @@ exports[`Modal renders a basic modal 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -256,7 +256,7 @@ exports[`Modal renders a basic modal 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -288,7 +288,7 @@ exports[`Modal renders a basic modal 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -323,7 +323,7 @@ exports[`Modal renders a basic modal 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -414,15 +414,15 @@ exports[`Modal renders a basic modal with content 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -447,7 +447,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -498,16 +498,16 @@ exports[`Modal renders a basic modal with content 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -531,7 +531,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -563,7 +563,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -598,7 +598,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -691,15 +691,15 @@ exports[`Modal renders a medium height modal 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperOpen wrapperMedium wrapperHeightMedium wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -715,7 +715,7 @@ exports[`Modal renders a medium height modal 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -767,16 +767,16 @@ exports[`Modal renders a medium height modal 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperOpen wrapperMedium wrapperHeightMedium wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -791,7 +791,7 @@ exports[`Modal renders a medium height modal 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -823,7 +823,7 @@ exports[`Modal renders a medium height modal 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -858,7 +858,7 @@ exports[`Modal renders a medium height modal 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -950,15 +950,15 @@ exports[`Modal renders a narrow modal 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -974,7 +974,7 @@ exports[`Modal renders a narrow modal 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -1025,16 +1025,16 @@ exports[`Modal renders a narrow modal 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperNarrow wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -1049,7 +1049,7 @@ exports[`Modal renders a narrow modal 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -1081,7 +1081,7 @@ exports[`Modal renders a narrow modal 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -1116,7 +1116,7 @@ exports[`Modal renders a narrow modal 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -1209,15 +1209,15 @@ exports[`Modal renders a tall height modal 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperOpen wrapperMedium wrapperHeightTall wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -1233,7 +1233,7 @@ exports[`Modal renders a tall height modal 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -1285,16 +1285,16 @@ exports[`Modal renders a tall height modal 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperOpen wrapperMedium wrapperHeightTall wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -1309,7 +1309,7 @@ exports[`Modal renders a tall height modal 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -1341,7 +1341,7 @@ exports[`Modal renders a tall height modal 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -1376,7 +1376,7 @@ exports[`Modal renders a tall height modal 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -1468,15 +1468,15 @@ exports[`Modal renders a wide modal 1`] = `
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -1492,7 +1492,7 @@ exports[`Modal renders a wide modal 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -1543,16 +1543,16 @@ exports[`Modal renders a wide modal 1`] = `
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperWide wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -1567,7 +1567,7 @@ exports[`Modal renders a wide modal 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -1599,7 +1599,7 @@ exports[`Modal renders a wide modal 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -1634,7 +1634,7 @@ exports[`Modal renders a wide modal 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -1726,15 +1726,15 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                   >
                     <div
                       class="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -1750,7 +1750,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -1801,16 +1801,16 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
               >
                 <div
                   className="curtainInner curtainInnerShouldPageScrollAboveSmall"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium wrapperShouldPageScrollAboveSmall"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -1825,7 +1825,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -1857,7 +1857,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -1892,7 +1892,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
@@ -2015,15 +2015,15 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                   >
                     <div
                       class="curtainInner"
-                      data-test="thumbprint-modal-curtain"
+                      data-testid="thumbprint-modal-curtain"
                     >
                       <div
                         class="wrapper wrapperMedium"
-                        data-test="thumbprint-modal-wrapper"
+                        data-testid="thumbprint-modal-wrapper"
                       >
                         <div
                           class="container"
-                          data-test="thumbprint-modal-container"
+                          data-testid="thumbprint-modal-container"
                         >
                           <div
                             class="contents"
@@ -2045,7 +2045,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                             <button
                               aria-label="Close modal"
                               class="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               type="button"
                             >
                               <span
@@ -2096,16 +2096,16 @@ exports[`ModalFooter renders a sticky footer 1`] = `
               >
                 <div
                   className="curtainInner"
-                  data-test="thumbprint-modal-curtain"
+                  data-testid="thumbprint-modal-curtain"
                   onClick={[Function]}
                 >
                   <div
                     className="wrapper wrapperMedium"
-                    data-test="thumbprint-modal-wrapper"
+                    data-testid="thumbprint-modal-wrapper"
                   >
                     <div
                       className="container"
-                      data-test="thumbprint-modal-container"
+                      data-testid="thumbprint-modal-container"
                     >
                       <div
                         className="contents"
@@ -2146,7 +2146,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                       >
                         <ForwardRef
                           accessibilityLabel="Close modal"
-                          dataTest="close-modal"
+                          dataTestId="close-modal"
                           iconLeft={
                             <svg
                               className="closeButtonIcon"
@@ -2178,7 +2178,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                         >
                           <ForwardRef
                             accessibilityLabel="Close modal"
-                            dataTest="close-modal"
+                            dataTestId="close-modal"
                             iconLeft={
                               <svg
                                 className="closeButtonIcon"
@@ -2213,7 +2213,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                             <button
                               aria-label="Close modal"
                               className="plain plainThemeInherit"
-                              data-test="close-modal"
+                              data-testid="close-modal"
                               disabled={false}
                               onClick={[Function]}
                               type="button"
