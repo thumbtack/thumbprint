@@ -1,5 +1,9 @@
 # Changelog
 
+### Added
+
+-   [Minor] Add `dataTestId` to Radio component.
+
 ## 14.13.0 - 2022-08-11
 
 ### Added

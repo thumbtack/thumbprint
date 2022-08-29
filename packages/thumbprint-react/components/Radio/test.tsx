@@ -153,3 +153,13 @@ test('adds `dataTest` prop', () => {
     expect(wrapper.find('input').prop('data-test')).toEqual('Duck');
     expect(wrapper).toMatchSnapshot();
 });
+
+test('adds `dataTestId` prop', () => {
+    const wrapper = mount(
+        <Radio name="duck" dataTestId="Duck" onChange={jest.fn()}>
+            Goose
+        </Radio>,
+    );
+    expect(wrapper.find('input').prop('data-testid')).toEqual('Duck');
+    expect(wrapper).toMatchSnapshot();
+});
