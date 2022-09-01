@@ -4,13 +4,19 @@ import classNames from 'classnames';
 import { Themed, Plain, withIcon, withLoader } from '../UIAction/index';
 import styles from './index.module.scss';
 
+interface HrefOptions {
+    url: string;
+    target?: string;
+}
+
 interface CommonButtonProps {
     children: React.ReactNode;
-    isDisabled: boolean;
-    isLoading: boolean;
+    isDisabled?: boolean;
+    isLoading?: boolean;
     dataTestId?: string;
-    iconLeft: React.ReactNode;
-    iconRight: React.ReactNode;
+    iconLeft?: React.ReactNode;
+    iconRight?: React.ReactNode;
+    href?: string | HrefOptions;
     onClick?: () => void;
     onMouseEnter?: () => void;
     onMouseOver?: () => void;
@@ -29,7 +35,7 @@ interface BaseButtonProps extends CommonButtonProps {
     loaderDotsTheme: 'primary' | 'secondary' | 'tertiary';
 }
 
-const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
+const BaseButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, BaseButtonProps>(
     (
         {
             children,
@@ -41,6 +47,7 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
             iconRight,
             size = 'medium',
             loaderDotsTheme,
+            href: hrefProp,
             onClick,
             onMouseEnter,
             onMouseOver,
@@ -57,16 +64,17 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
             theme: loaderDotsTheme,
         });
 
+        const Component = hrefProp ? 'a' : 'button';
+        const href = typeof hrefProp === 'string' ? hrefProp : hrefProp?.url;
+
         return (
-            <button
+            <Component
                 type={type}
                 className={classNames(styles.root, className, {
-                    [styles.buttonLarge]: size === 'large',
-                    [styles.buttonMedium]: size === 'medium',
-                    [styles.buttonSmall]: size === 'small',
                     [styles.buttonWidthFull]: width === 'full',
                     [styles.buttonWidthFullBelowSmall]: width === 'full-below-small',
                 })}
+                href={href}
                 data-testid={dataTestId}
                 disabled={isDisabled}
                 onClick={onClick}
@@ -77,8 +85,16 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
                 onBlur={onBlur}
                 ref={ref}
             >
-                <span className={styles.flexWrapper}>{newChildren}</span>
-            </button>
+                <span
+                    className={classNames(styles.flexWrapper, {
+                        [styles.buttonLarge]: size === 'large',
+                        [styles.buttonMedium]: size === 'medium',
+                        [styles.buttonSmall]: size === 'small',
+                    })}
+                >
+                    {newChildren}
+                </span>
+            </Component>
         );
     },
 );
@@ -96,15 +112,13 @@ const PrimaryButton = React.forwardRef<HTMLButtonElement, PrimaryButtonProps>((p
 });
 
 export interface SecondaryButtonProps extends CommonButtonProps {
-    iconLeft: React.ReactNode;
-    iconRight: React.ReactNode;
     emphasis?: 'low' | 'high';
     isBordered?: boolean;
     size?: 'small' | 'medium';
 }
 
 const SecondaryButton = React.forwardRef<HTMLButtonElement, SecondaryButtonProps>(
-    ({ emphasis = 'low', isBordered = false, ...rest }, ref) => {
+    ({ emphasis = 'high', isBordered = false, ...rest }, ref) => {
         return (
             <BaseButton
                 {...rest}
@@ -123,8 +137,6 @@ const SecondaryButton = React.forwardRef<HTMLButtonElement, SecondaryButtonProps
 );
 
 export interface TertiaryButtonProps extends CommonButtonProps {
-    iconLeft: React.ReactNode;
-    iconRight: React.ReactNode;
     size?: 'small' | 'medium';
 }
 
@@ -140,8 +152,6 @@ const TertiaryButton = React.forwardRef<HTMLButtonElement, TertiaryButtonProps>(
 });
 
 export interface CautionButtonProps extends CommonButtonProps {
-    iconLeft: React.ReactNode;
-    iconRight: React.ReactNode;
     emphasis?: 'low' | 'high';
     size?: 'small' | 'medium';
 }

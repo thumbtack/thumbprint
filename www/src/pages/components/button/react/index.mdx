@@ -205,6 +205,46 @@ The `iconLeft` and `ironRight` props accept any small icon from [Thumbprint Icon
 </div>
 ```
 
+## Buttons that are links
+
+These are the available `Button` styles for use on light background colors.
+
+```jsx
+<div className="flex flex-column" style={{ gap: tokens.tpSpace3 }}>
+    <ButtonRow>
+        <PrimaryButton href="https://example.com">Primary</PrimaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <SecondaryButton href="https://example.com" emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton href="https://example.com" emphasis="low">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton href="https://example.com" isBordered emphasis="high">
+            Secondary
+        </SecondaryButton>
+        <SecondaryButton href="https://example.com" isBordered emphasis="low">
+            Secondary
+        </SecondaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <TertiaryButton href="https://example.com">Tertiary</TertiaryButton>
+    </ButtonRow>
+
+    <ButtonRow>
+        <CautionButton href="https://example.com" emphasis="high">
+            Caution
+        </CautionButton>
+        <CautionButton href="https://example.com" emphasis="low">
+            Caution
+        </CautionButton>
+    </ButtonRow>
+</div>
+```
+
 <ComponentFooter data={props.data} />
 
 export const pageQuery = graphql`

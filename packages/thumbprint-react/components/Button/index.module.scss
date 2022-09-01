@@ -11,6 +11,8 @@ $border-width: 2px;
     padding: 0 ($tp-space__4 - $border-width);
     // Used to absolutely position the `LoaderDots`
     position: relative;
+    display: inline-block;
+    user-select: none;
 }
 
 .buttonWidthFull {
@@ -25,7 +27,7 @@ $border-width: 2px;
 
 .buttonLarge,
 .buttonMedium {
-    min-height: 52px;
+    min-height: (52px - ($border-width * 2));
 }
 
 .buttonLarge {
@@ -44,7 +46,7 @@ $border-width: 2px;
 
 .buttonSmall {
     font-size: $tp-font__body__2__size;
-    min-height: 36px;
+    min-height: 36px - ($border-width * 2);
 }
 
 .primaryButton {
