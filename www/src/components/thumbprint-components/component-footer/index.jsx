@@ -18,7 +18,7 @@ const ComponentFooter = ({ data }) => {
             <H2>Props</H2>
             {reactComponentProps.edges.map(file =>
                 file.node.childrenComponentMetadata.map(component => (
-                    <div key={component.displayName}>
+                    <div key={component.displayName} className="ph5 pb3 mb5 ba br2 b-gray-300">
                         <H3>{component.displayName}</H3>
                         {component.description && (
                             <div className="mb3">
@@ -35,7 +35,7 @@ const ComponentFooter = ({ data }) => {
                                     );
 
                                     return (
-                                        <li className="pv3" key={prop.name}>
+                                        <li className="pv4 bt b-gray-300" key={prop.name}>
                                             <div className="flex">
                                                 <div className="b">
                                                     <InlineCode shouldCopyToClipboard theme="plain">
@@ -69,10 +69,11 @@ const ComponentFooter = ({ data }) => {
                                             <div className="flex">
                                                 {prop.type && (
                                                     <Text
+                                                        size={2}
                                                         className="mr4 w-50 s_w-40 m_w-30 m_w-20"
                                                         elementName="div"
                                                     >
-                                                        <div className="b">Type</div>
+                                                        <div className="b black-300">Type</div>
                                                         <PropType
                                                             type={prop.type.name}
                                                             value={prop.type.value}
@@ -80,14 +81,18 @@ const ComponentFooter = ({ data }) => {
                                                     </Text>
                                                 )}
                                                 {get(prop.defaultValue, 'value') && (
-                                                    <div>
-                                                        <div className="b">Default</div>
+                                                    <Text
+                                                        size={2}
+                                                        className="mr4 w-50 s_w-40 m_w-30 m_w-20"
+                                                        elementName="div"
+                                                    >
+                                                        <div className="b black-300">Default</div>
                                                         <div className="black-300">
                                                             <InlineCode theme="plain">
                                                                 {get(prop.defaultValue, 'value')}
                                                             </InlineCode>
                                                         </div>
-                                                    </div>
+                                                    </Text>
                                                 )}
                                             </div>
                                         </li>
