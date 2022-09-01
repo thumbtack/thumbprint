@@ -1,7 +1,7 @@
 import split from 'lodash/split';
 import isThumbtackUrl from './is-thumbtack-url';
 
-const getRel = (
+export const getRel = (
     url?: string,
     target?: string,
     // eslint-disable-next-line default-param-last

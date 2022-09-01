@@ -3,10 +3,12 @@ import React from 'react';
 import classNames from 'classnames';
 import { Themed, Plain, withIcon, withLoader } from '../UIAction/index';
 import styles from './index.module.scss';
+import { getRel } from '../UIAction/get-anchor-props';
 
 interface HrefOptions {
     url: string;
     target?: string;
+    rel?: string;
 }
 
 interface CommonButtonProps {
@@ -65,7 +67,21 @@ const BaseButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, BaseB
         });
 
         const Component = hrefProp ? 'a' : 'button';
-        const href = typeof hrefProp === 'string' ? hrefProp : hrefProp?.url;
+
+        let href;
+        let target;
+        let rel;
+
+        if (hrefProp) {
+            href = typeof hrefProp === 'string' ? hrefProp : hrefProp?.url;
+            target = typeof hrefProp === 'string' ? '_self' : hrefProp?.target;
+            rel = getRel(
+                href,
+                target,
+                undefined,
+                typeof hrefProp === 'string' ? undefined : hrefProp?.rel,
+            );
+        }
 
         return (
             <Component
@@ -75,6 +91,8 @@ const BaseButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, BaseB
                     [styles.buttonWidthFullBelowSmall]: width === 'full-below-small',
                 })}
                 href={href}
+                target={target}
+                rel={rel}
                 data-testid={dataTestId}
                 disabled={isDisabled}
                 onClick={onClick}
