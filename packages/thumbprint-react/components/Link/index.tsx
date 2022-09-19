@@ -1,6 +1,34 @@
+import classNames from 'classnames';
 import React from 'react';
 import warning from 'warning';
 import { Themed, Plain } from '../UIAction/index';
+import styles from './index.module.scss';
+
+interface PropTypes
+    extends React.DetailedHTMLProps<
+        React.AnchorHTMLAttributes<HTMLAnchorElement>,
+        HTMLAnchorElement
+    > {
+    className?: string;
+    theme: 'primary' | 'secondary' | 'tertiary' | 'plain';
+}
+
+export function FutureLink({
+    className,
+    theme = 'primary',
+    ...rest
+}: PropTypes): React.ReactElement {
+    return (
+        <a
+            className={classNames(className, {
+                [styles.primary]: theme === 'primary',
+                [styles.secondary]: theme === 'secondary',
+                [styles.tertiary]: theme === 'tertiary',
+            })}
+            {...rest}
+        />
+    );
+}
 
 interface CommonProps {
     to?: string;

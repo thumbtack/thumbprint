@@ -38,7 +38,7 @@ export { Grid, GridColumn, GridProps, GridColumnProps } from './components/Grid/
 export { default as Image, ImageProps } from './components/Image/index';
 export { default as InputRow, InputRowContext, InputRowProps } from './components/InputRow/index';
 export { default as Label, LabelProps } from './components/Label/index';
-export { default as Link, ThemedLink } from './components/Link/index';
+export { default as Link, ThemedLink, FutureLink } from './components/Link/index';
 export { List, ListItem, ListProps, ListItemProps } from './components/List/index';
 export { default as LoaderDots, LoaderDotsProps } from './components/LoaderDots/index';
 export {

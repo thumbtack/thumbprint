@@ -1,13 +1,10 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
-a {
+.primary {
     color: $tp-color__black;
-    fill: $tp-color__black;
     text-decoration: underline;
-    cursor: pointer;
+}
 
-    &:hover,
-    &:active {
-        color: $tp-color__black;
-    }
+.secondary {
+    color: $tp-color__black;
 }
