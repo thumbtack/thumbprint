@@ -89,5 +89,6 @@ Run `yarn npm whoami`. You’ll be able to publish if the user npm returns is a 
 
 1. Run `git checkout [branch-name]` to navigate to the branch that contains the changes you'd like to release.
 2. Navigate to the package with `cd packages/[package-name]`.
-3. Run `yarn npm publish --tag beta`. This will ask you for a version number. A package at `2.1.3` that includes a `Minor` beta change would become `2.2.0-beta.0`. If `2.2.0-beta.0` was already published, then increment the final digit.
-4. Run `git reset --hard HEAD~1` to undo the changes to `package.json` that Yarn committed. We do not want to merge the new version number into `master`.
+3. Edit the `version` in the package's `package.json` file. A package that is currently at `2.1.3` which includes a `Minor` beta change would become `2.2.0-beta.0`. If `2.2.0-beta.0` was already published, then increment the final digit. Save the file.
+4. Run `yarn npm publish --tag beta`. It will use the version number you just added to `package.json`.
+5. Undo the `package.json` version number change.
