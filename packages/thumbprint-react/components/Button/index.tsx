@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import classNames from 'classnames';
@@ -73,13 +74,13 @@ const BaseButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, BaseB
         let rel;
 
         if (hrefProp) {
-            href = typeof hrefProp === 'string' ? hrefProp : hrefProp?.url;
-            target = typeof hrefProp === 'string' ? '_self' : hrefProp?.target;
+            href = typeof hrefProp === 'string' ? hrefProp : hrefProp && hrefProp.url;
+            target = typeof hrefProp === 'string' ? '_self' : hrefProp && hrefProp.target;
             rel = getRel(
                 href,
                 target,
                 undefined,
-                typeof hrefProp === 'string' ? undefined : hrefProp?.rel,
+                typeof hrefProp === 'string' ? undefined : hrefProp && hrefProp.rel,
             );
         }
 

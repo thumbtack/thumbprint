@@ -10,7 +10,7 @@ interface PropTypes
         HTMLAnchorElement
     > {
     className?: string;
-    theme: 'primary' | 'secondary' | 'tertiary' | 'plain';
+    theme?: 'primary' | 'secondary' | 'tertiary' | 'plain';
 }
 
 export function FutureLink({
