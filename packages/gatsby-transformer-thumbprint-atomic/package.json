@@ -4,7 +4,7 @@
     "private": true,
     "dependencies": {
         "gonzales-pe": "^4.2.4",
-        "lodash": "^4.17.10",
+        "lodash": "^4.17.21",
         "node-sass-tilde-importer": "2.0.0-alpha.1",
         "prettier": "2.0.5",
         "sass": "^1.51.0"
