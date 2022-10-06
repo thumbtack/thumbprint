@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Security
+
+-   [Patch] Update version of lodash
+
 ## 14.13.0 - 2022-08-11
 
 ### Added
