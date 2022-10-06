@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.5 - 2022-10-06
+
 ### Security
 
 -   [Patch] Update version of lodash

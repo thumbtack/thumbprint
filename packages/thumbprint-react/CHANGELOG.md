@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 14.13.1 - 2022-10-06
+
 ### Security
 
 -   [Patch] Update version of lodash
