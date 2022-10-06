@@ -1,5 +1,7 @@
 # Changelog
 
+## Unreleased
+
 ### Security
 
 -   [Patch] Update version of lodash
