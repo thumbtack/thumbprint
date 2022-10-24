@@ -1,8 +1,16 @@
 # Changelog
 
-### Changed
+## Unreleased
+
+### Added
 
 -   [Minor] Add `dataTestId` to Modal components.
+
+## 14.13.1 - 2022-10-06
+
+### Security
+
+-   [Patch] Update version of lodash
 
 ## 14.13.0 - 2022-08-11
 

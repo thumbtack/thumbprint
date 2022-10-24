@@ -5819,7 +5819,7 @@ __metadata:
   resolution: "@thumbtack/gatsby-transformer-thumbprint-atomic@workspace:packages/gatsby-transformer-thumbprint-atomic"
   dependencies:
     gonzales-pe: ^4.2.4
-    lodash: ^4.17.10
+    lodash: ^4.17.21
     node-sass-tilde-importer: 2.0.0-alpha.1
     prettier: 2.0.5
     sass: ^1.51.0
@@ -5851,7 +5851,7 @@ __metadata:
     execa: ^2.0.4
     globby: ^10.0.1
     jscodeshift: ^0.7.0
-    lodash: ^4.17.11
+    lodash: ^4.17.21
     meow: ^5.0.0
   bin:
     thumbprint-codemods: ./index.js
@@ -5909,7 +5909,7 @@ __metadata:
     focus-trap: 4.0.2
     focus-trap-react: ^6.0.0
     intersection-observer: ^0.6.0
-    lodash: ^4.17.11
+    lodash: ^4.17.21
     no-scroll: ^2.1.0
     object-fit-images: ^3.2.4
     react-day-picker: 7.4.10
@@ -32720,7 +32720,7 @@ is-whitespace@latest:
     gatsby-transformer-json: ^2.4.5
     gatsby-transformer-react-docgen: ^5.2.5
     invariant: ^2.2.4
-    lodash: ^4.17.4
+    lodash: ^4.17.21
     mousetrap: ^1.6.2
     node-sass-tilde-importer: 2.0.0-alpha.1
     postcss-import: ^12.0.0
