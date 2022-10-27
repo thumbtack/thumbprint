@@ -185,7 +185,7 @@ export default function Radio({
                 name={name}
                 disabled={isDisabled}
                 data-test={dataTest}
-                data-testId={dataTestId}
+                data-testid={dataTestId}
                 required={isRequired}
                 {...(value ? { value } : {})}
             />
