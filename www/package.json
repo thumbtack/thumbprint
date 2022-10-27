@@ -1,6 +1,6 @@
 {
     "name": "www",
-    "version": "0.0.149",
+    "version": "0.0.151",
     "private": true,
     "scripts": {
         "build": "gatsby build",
@@ -11,7 +11,7 @@
         "@mdx-js/mdx": "^1.6.5",
         "@mdx-js/react": "^1.6.5",
         "@thumbtack/thumbprint-icons": "4.1.0",
-        "@thumbtack/thumbprint-react": "^14.13.0",
+        "@thumbtack/thumbprint-react": "^14.14.0",
         "@thumbtack/thumbprint-scss": "^4.0.3",
         "classnames": "^2.2.5",
         "clickable-box": "^1.0.0",
@@ -33,7 +33,7 @@
         "gatsby-transformer-json": "^2.4.5",
         "gatsby-transformer-react-docgen": "^5.2.5",
         "invariant": "^2.2.4",
-        "lodash": "^4.17.4",
+        "lodash": "^4.17.21",
         "mousetrap": "^1.6.2",
         "node-sass-tilde-importer": "2.0.0-alpha.1",
         "postcss-import": "^12.0.0",

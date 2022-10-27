@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.20 - 2022-10-06
+
 ### Changed
 
 -   [Patch] Upgrade `ts-node`, a `devDependency`. This does not affect the outputted code.

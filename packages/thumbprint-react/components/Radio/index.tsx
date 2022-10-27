@@ -132,6 +132,11 @@ export interface RadioProps {
      * Determines how the radio button input will be vertically aligned relative to `props.children`.
      */
     radioVerticalAlign?: 'top' | 'center';
+    /**
+     * Determines the value that will be submitted if the radio is selected. The default value is
+     * `'on'`.
+     */
+    value?: string | string[] | number;
 }
 
 export default function Radio({
@@ -148,6 +153,7 @@ export default function Radio({
     onChange,
     onKeyDown = (): void => {},
     radioVerticalAlign = 'center',
+    value,
 }: RadioProps): JSX.Element {
     const uiState = getUIState({ isChecked, isDisabled, hasError });
 
@@ -181,6 +187,7 @@ export default function Radio({
                 data-test={dataTest}
                 data-testId={dataTestId}
                 required={isRequired}
+                {...(value ? { value } : {})}
             />
 
             <svg

@@ -1,7 +1,7 @@
 {
     "name": "@thumbtack/thumbprint-react",
     "description": "React components for building UIs with Thumbprint",
-    "version": "14.13.0",
+    "version": "14.14.0",
     "main": "dist/cjs/index.js",
     "module": "dist/es/index.js",
     "files": [
@@ -42,7 +42,7 @@
         "focus-trap": "4.0.2",
         "focus-trap-react": "^6.0.0",
         "intersection-observer": "^0.6.0",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.21",
         "no-scroll": "^2.1.0",
         "object-fit-images": "^3.2.4",
         "react-day-picker": "7.4.10",
