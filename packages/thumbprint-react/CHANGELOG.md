@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `value` prop to `Radio`.
+
 ## 14.13.1 - 2022-10-06
 
 ### Security
@@ -22,8 +26,6 @@
 -   [Patch] Fix or disable new ESLint rules.
 
 ## 14.12.0 - 2022-06-03
-
-## Unreleased
 
 ### Added
 
