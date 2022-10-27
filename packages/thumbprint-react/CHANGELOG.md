@@ -2,18 +2,15 @@
 
 ## Unreleased
 
-<<<<<<< HEAD
-
 ### Added
 
--   # [Minor] Add `value` prop to `Radio`.
+-   [Minor] Add `value` prop to `Radio`.
 
 ## 14.13.1 - 2022-10-06
 
 ### Security
 
 -   [Patch] Update version of lodash
-    > > > > > > > master
 
 ## 14.13.0 - 2022-08-11
 
