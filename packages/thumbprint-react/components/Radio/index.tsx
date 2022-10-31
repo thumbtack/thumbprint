@@ -121,6 +121,12 @@ export interface RadioProps {
      * A selector hook into the React component for use in automated testing environments. It is
      * applied internally to the `<input />` element.
      */
+    dataTestId?: string;
+    /**
+     * A selector hook into the React component for use in automated testing environments. It is
+     * applied internally to the `<input />` element.
+     * @deprecated Deprecated in favor of the `dataTestId` prop
+     */
     dataTest?: string;
     /**
      * Determines how the radio button input will be vertically aligned relative to `props.children`.
@@ -136,6 +142,7 @@ export interface RadioProps {
 export default function Radio({
     children = null,
     dataTest,
+    dataTestId,
     id,
     isChecked = false,
     isDisabled = false,
@@ -178,6 +185,7 @@ export default function Radio({
                 name={name}
                 disabled={isDisabled}
                 data-test={dataTest}
+                data-testid={dataTestId}
                 required={isRequired}
                 {...(value ? { value } : {})}
             />

@@ -4,6 +4,7 @@
 
 ### Added
 
+-   [Minor] Add `dataTestId` prop to `Radio` component.
 -   [Minor] Add `max` and `min` props to `TextInput`.
 
 ## 14.14.0 - 2022-10-27

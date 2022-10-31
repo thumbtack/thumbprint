@@ -60,6 +60,66 @@ exports[`adds \`dataTest\` prop 1`] = `
 </Radio>
 `;
 
+exports[`adds \`dataTestId\` prop 1`] = `
+<Radio
+  dataTestId="Duck"
+  name="duck"
+  onChange={[MockFunction]}
+>
+  <label
+    className="root rootRadioVerticalAlignCenter"
+    style={
+      Object {
+        "cursor": "pointer",
+        "padding": "14px 0",
+      }
+    }
+  >
+    <input
+      checked={false}
+      className="input"
+      data-testid="Duck"
+      disabled={false}
+      name="duck"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      required={false}
+      type="radio"
+    />
+    <svg
+      className="radioImage"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        fill="#ffffff"
+        fillRule="evenodd"
+      >
+        <circle
+          cx="10"
+          cy="10"
+          r="9"
+          stroke="#d3d4d5"
+          strokeWidth="2"
+        />
+      </g>
+    </svg>
+    <span
+      className="text"
+      style={
+        Object {
+          "color": "inherit",
+        }
+      }
+    >
+      Goose
+    </span>
+  </label>
+</Radio>
+`;
+
 exports[`adds \`disabled\` attribute 1`] = `
 <Radio
   isDisabled={true}
