@@ -175,6 +175,14 @@ export interface TextInputProps {
      */
     maxLength?: number;
     /**
+     * The maximum value that can be entered. Valid when `type=number`.
+     */
+    max?: number;
+    /**
+     * The minimum value that can be entered. Valid when `type=number`.
+     */
+    min?: number;
+    /**
      * Makes the text and border color red.
      */
     hasError?: boolean;
@@ -291,6 +299,8 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
             inputMode,
             pattern,
             maxLength,
+            max,
+            min,
             autoComplete,
         }: TextInputProps,
         outerRef,
@@ -371,6 +381,8 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
                     inputMode={inputMode}
                     pattern={pattern}
                     maxLength={maxLength}
+                    max={max}
+                    min={min}
                     autoComplete={autoComplete}
                 />
 
