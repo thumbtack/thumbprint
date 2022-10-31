@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `max` and `min` props to `TextInput`.
+
 ## 14.14.0 - 2022-10-27
 
 ### Added
