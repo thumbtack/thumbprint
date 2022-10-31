@@ -75,6 +75,14 @@ You'll be prompted to select the new version numbers for each package.
 
 Use the version numbers that you chose in step #3.
 
+### Step 7
+
+```
+yarn install && git add yarn.lock && git commit -m "Update lockfile" && git push
+```
+
+For some reason the lockfile gets out of sync after publishing, so run this command to update it, or the build will start failing.
+
 #### Why is a private package appearing?
 
 Private packages such as `www` will occasionally appear here. It is a bug in Lerna, the tool we use to publish our packages. Choose "Patch" for these packages.
