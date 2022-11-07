@@ -4,6 +4,7 @@ description: Getting started as a designer at Thumbtack.
 ---
 
 import Alert from 'components/alert';
+import { Title } from '@thumbtack/thumbprint-react';
 
 <Alert type="note" title="Note">
     This page includes documentation and information that is pertinent to the internal design team
@@ -20,9 +21,9 @@ As a product designer, you will automatically have access to all of Thumbprint d
 
 Mark For Thumbtack, our primary font, is used for 100% of our product. All of the weights can be found here:
 
--   !Important\* You will need to reach out to the design systems team to request our custom in-house font.
+Important You will need to reach out to the design systems team to request our custom in-house font.
 
-Our design files also include some uses of system fonts for native apps, so it’s a good idea to also have them installed too:
+Our design files also include some uses of system fonts for native apps, so it's a good idea to also have them installed too:
 
 1. [SF UI](https://developer.apple.com/fonts/)
 2. [Roboto](https://fonts.google.com/specimen/Roboto)
@@ -31,9 +32,9 @@ Our design files also include some uses of system fonts for native apps, so it�
 
 Thumbprint has a specific vertical rhythm and defined spacing units that make applying and managing space easy for all parties.
 
-By changing your nudge settings to align with our vertical rhythm, you’ll find bumping and aligning elements in the frame much easier.
+By changing your nudge settings to align with our vertical rhythm, you'll find bumping and aligning elements in the frame much easier.
 
-It’s recommend keeping Small Nudge at 1 and changing Big Nudge to 8.
+It's recommend keeping Small Nudge at 1 and changing Big Nudge to 8.
 
 ## Best Practices
 
@@ -43,7 +44,7 @@ Always use the global styles for color and type that can be found in the inspect
 
 The icon for global styling is 4 dots.
 
-Using document styles or colors doesn’t attach the style name to the code, meaning your developer won’t have access to important information that is necessary for him/her to implement the right style.
+Using document styles or colors doesn't attach the style name to the code, meaning your developer won't have access to important information that is necessary for him/her to implement the right style.
 
 ### Leverage auto layout
 
@@ -53,15 +54,42 @@ Sometimes frames have both Scale options selected, and this is generally not goo
 
 ### Keep your libraries up to date
 
-When DS has an update or new component to share, we’ll publish it to the rest of the team through Figma.
+When DS has an update or new component to share, we'll publish it to the rest of the team through Figma.
 
-You’ll see a blue dot in the team library section or a message in the lower right asking you to review the updates to an existing component.
+You'll see a blue dot in the team library section or a message in the lower right asking you to review the updates to an existing component.
 
 ## Suggested Plugins
 
 To support our design practices better, we occasionally adopt and leverage design resources from the wider Figma design community. One example is the usage of Figma plugins. Below is a list of recommended plugins that are beneficial to supporting our design processes.
 
-Coming soon!
+<div className="flex pt4">
+    <div>
+        <a href="https://www.figma.com/community/plugin/748533339900865323" target="_blank">
+            <img src="./plugin-contrast.png" />
+        </a>
+    </div>
+    <div className="pl4">
+        <Title size={4} headingLevel={3} className="mt0 pb1">
+            Contrast
+        </Title>
+        <p className="black-300">
+            Evaluates foreground and background color against Web Content Accessibility Guidelines
+            WCAG Scan entire pages to see all text-layer color issues
+        </p>
+        <div>
+            <a href="https://www.figma.com/community/plugin/748533339900865323" target="_blank">
+                Get the{' '}
+                <span className="visually-hidden">
+                    Contrast
+                </span>{' '} plugin{' '}
+                <span className="visually-hidden">
+                    (opens in new window)
+                </span>
+            </a>
+        </div>
+    </div>
+
+</div>
 
 ## Support
 
@@ -81,4 +109,4 @@ Resources for more inlilne conversations and discussions. Ask and answer questio
 
 The design systems team holds a weekly hour (held over Zoom) session set aside exclusively for more qualitative insights about how to use the system.
 
-Tuesdays @ 11am PST
+Tuesdays 11am PST
