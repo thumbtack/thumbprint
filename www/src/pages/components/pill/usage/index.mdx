@@ -15,7 +15,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 Used for quick visual recognition of user interface elements in a clear, concise, and contextual manner.
 
-`Pills` are also considered read-only and non-interactive.
+`Pill`s are also considered read-only and are non-interactive in nature. See [Chip](/components/chip) component for an interactive element with with similar characteristics.
 
 ## Anatomy
 
@@ -35,7 +35,9 @@ You can use the icon parameter to provide additional accentuation in the messagi
     <Grid gutter="wide">
         <GridColumn aboveSmall={6}>
             <DoDont type="do">
-                <Img src="./pill-do-a11y.png" alt="Pill accessibility color do examples" className="ma-auto" />
+                <div style={{maxWidth: '143px'}} className="ma-auto">
+                    <Img src="./pill-do-a11y.png" alt="Pill accessibility color do examples" />
+                </div>
             </DoDont>
             <p className="black-300">
                 Use 600-level text & 100-level surface colors of the same hue.
@@ -43,7 +45,9 @@ You can use the icon parameter to provide additional accentuation in the messagi
         </GridColumn>
         <GridColumn aboveSmall={6}>
             <DoDont type="dont">
-                <Img src="./pill-dont-a11y.png" alt="Pill accessibility color don't examples" className="ma-auto" />
+                <div style={{maxWidth: '130px'}} className="ma-auto">
+                    <Img src="./pill-dont-a11y.png" alt="Pill accessibility color don't examples" />
+                </div>
             </DoDont>
             <p className="black-300">
                 Mix and match color values with surface and text colors. Avoid using white as a
@@ -56,7 +60,9 @@ You can use the icon parameter to provide additional accentuation in the messagi
     <Grid gutter="wide">
         <GridColumn aboveSmall={6}>
             <DoDont type="do">
-                <Img src="./pill-do-icons.png" alt="Pill icons do examples" className="ma-auto" />
+                <div style={{maxWidth: '137px'}} className="ma-auto">
+                    <Img src="./pill-do-icons.png" alt="Pill icons do examples" />
+                </div>
             </DoDont>
             <p className="black-300">
                 When including iconography, place the icon on the left-hand side of the text.
@@ -64,7 +70,9 @@ You can use the icon parameter to provide additional accentuation in the messagi
         </GridColumn>
         <GridColumn aboveSmall={6}>
             <DoDont type="dont">
-                <Img src="./pill-dont-icons.png" alt="Pill icons don't examples" className="ma-auto" />
+                <div style={{maxWidth: '123px'}} className="ma-auto">
+                    <Img src="./pill-dont-icons.png" alt="Pill icons don't examples" />
+                </div>    
             </DoDont>
             <p className="black-300">
                 Place the icon on any location other than the left side of the pill.
@@ -80,10 +88,10 @@ You can use the icon parameter to provide additional accentuation in the messagi
 -   Avoid using color alone to express the intention of the messaging.
 -   The icon should be considered as strictly presentational and hidden from screen readers unless otherwise explicitly expressed.
 
-## Related
+## Related components
 
 -   [Icons](https://thumbprint.thumbtack.io/icons)
--   [Chips](/components/chip)
+-   [Chip](/components/chip)
 
 export const pageQuery = graphql`
     {
