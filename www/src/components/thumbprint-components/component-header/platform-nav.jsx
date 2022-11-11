@@ -33,12 +33,20 @@ const getPlatformDisplayName = path => {
         usage: 'Usage',
         react: 'React',
         scss: 'SCSS',
-        ios: 'iOS',
-        swiftui: 'SwiftUI',
+        ios: 'iOS (Old)',
+        swiftui: 'iOS (SwiftUI)',
         android: 'Android',
     };
 
     return displayName[getPlatformSlugByPath(path)];
+};
+
+const getPlatformStyle = path => {
+    const style = {
+        ios: { textDecoration: 'line-through' },
+    };
+
+    return style[getPlatformSlugByPath(path)];
 };
 
 const PlatformNav = ({ platformNavQueryResults }) => {
@@ -48,7 +56,9 @@ const PlatformNav = ({ platformNavQueryResults }) => {
         <TabNav>
             {sortedPlatforms.map(({ node }) => (
                 <TabNavItem to={node.path} key={node.path}>
-                    {getPlatformDisplayName(node.path)}
+                    <span style={getPlatformStyle(node.path)}>
+                        {getPlatformDisplayName(node.path)}
+                    </span>
                 </TabNavItem>
             ))}
         </TabNav>

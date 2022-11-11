@@ -20,7 +20,6 @@ const ComponentHeader = ({ data }) => {
     return (
         <React.Fragment>
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
-
             {packageTable && (
                 <ComponentPackageTable
                     components={components.length > 0 ? components : undefined}
