@@ -3,6 +3,20 @@ import PropTypes from 'prop-types';
 import PlatformNav from './platform-nav';
 import ComponentPackageTable from './component-package-table';
 
+const UIKitDeprecatedCopy = () => {
+    return (
+        <div className="bg-red-100 pa3">
+            <h3 className="tp-title-2 mb3">No longer maintained</h3>
+            <div>
+                The iOS team is transitioning from UIKit to SwiftUI backed views. To support that
+                effort, the team is rebuilding Thumbprint from the ground up in SwiftUI (a project
+                we are internally calling ThumbprintUI). Going forward, the "iOS (SwiftUI)"
+                documentation should be considered the source of truth for what can be built on iOS.
+            </div>
+        </div>
+    );
+};
+
 const ComponentHeader = ({ data }) => {
     const { platformNav: platformNavQueryResults, packageTable, reactComponentProps } = data;
 
@@ -20,6 +34,7 @@ const ComponentHeader = ({ data }) => {
     return (
         <React.Fragment>
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
+            {window.location.pathname.endsWith('ios/') && UIKitDeprecatedCopy()}
             {packageTable && (
                 <ComponentPackageTable
                     components={components.length > 0 ? components : undefined}
