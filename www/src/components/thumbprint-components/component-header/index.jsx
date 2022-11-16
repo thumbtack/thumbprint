@@ -6,11 +6,9 @@ import Alert from '../../alert';
 
 const UIKitDeprecatedCopy = () => {
     return (
-        <Alert type="warning" title="UIKit based Thumbprint is no longer being developed">
-            As the iOS team is transitions from UIKit to SwiftUI backed view code, we are rebuilding
-            Thumbprint from the ground up with SwiftUI – a project we are calling
-            &ldquo;ThumbprintUI&rdquo;. Where it exists, the &ldquo;iOS (SwiftUI)&rdquo;
-            documentation should be considered the source of truth for what can be built on iOS.
+        <Alert type="warning" title="iOS (UIKit) is being deprecated">
+            Thumbprint on iOS is transitioning from UIKit to SwiftUI, and this documentation is no
+            longer being supported. Please refer to the SwiftUI documentation when available.
         </Alert>
     );
 };
