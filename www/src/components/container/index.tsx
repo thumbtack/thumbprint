@@ -255,6 +255,62 @@ export default function Container({
                                             to="/overview/product-design/"
                                             isActive={pathname === '/overview/product-design/'}
                                         />
+                                        <SideNavLink
+                                            title="Content Design"
+                                            level={2}
+                                            to="/overview/content-design/"
+                                            isActive={pathname.startsWith(
+                                                '/overview/content-design/',
+                                            )}
+                                        >
+                                            <SideNavGroup level={3}>
+                                                <SideNavLink
+                                                    title="Voice and tone"
+                                                    level={3}
+                                                    to="/overview/content-design/voice-and-tone"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/voice-and-tone'
+                                                    }
+                                                />
+                                                <SideNavLink
+                                                    title="Accessible and inclusive language"
+                                                    level={3}
+                                                    to="/overview/content-design/inclusive-language"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/inclusive-language'
+                                                    }
+                                                />
+                                                <SideNavLink
+                                                    title="Grammar and mechanics"
+                                                    level={3}
+                                                    to="/overview/content-design/grammar-and-mechanics"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/grammar-and-mechanics'
+                                                    }
+                                                />
+                                                <SideNavLink
+                                                    title="Surfaces and elements"
+                                                    level={3}
+                                                    to="/overview/content-design/surfaces-and-elements"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/surfaces-and-elements'
+                                                    }
+                                                />
+                                                <SideNavLink
+                                                    title="Word list"
+                                                    level={3}
+                                                    to="/overview/content-design/word-list"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/word-list'
+                                                    }
+                                                />
+                                            </SideNavGroup>
+                                        </SideNavLink>
                                     </SideNavGroup>
                                 </SideNavLink>
 
