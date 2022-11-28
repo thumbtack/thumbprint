@@ -1,19 +1,52 @@
-.dont:after,
-.dont:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    height: calc(100% + 32px);
-    width: 5px;
-    background: #ff5a5f;
-    opacity: 0.6;
-    border-radius: 2px;
-    z-index: 1;
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+// provides x overlay on top of content region
+.dont {
+    &:not(.coloredHeading) {
+        > div:last-of-type {
+            :after,
+            :before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                height: calc(100% + 32px);
+                width: 5px;
+                background: #ff5a5f;
+                opacity: 0.6;
+                border-radius: 2px;
+                z-index: 1;
+            }
+            :before {
+                -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+                transform: translateX(-50%) translateY(-50%) rotate(135deg);
+            }
+        }
+    }
 }
-.dont:before {
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
-    transform: translateX(-50%) translateY(-50%) rotate(135deg);
+
+// alternative option that excludes the X overlaying content
+.coloredHeading {
+    &.do {
+        svg {
+            fill: $tp-color__green;
+        }
+
+        > div:last-of-type {
+            // border-color: $tp-color__green-300 !important;
+            border-top: 2px solid $tp-color__green !important;
+        }
+    }
+
+    &.dont {
+        svg {
+            fill: $tp-color__red;
+        }
+        > div:last-of-type {
+            border-top-color: $tp-color__red-300 !important;
+            border-top: 2px solid $tp-color__red !important;
+        }
+    }
 }

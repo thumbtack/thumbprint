@@ -6,11 +6,17 @@ import styles from './index.module.scss';
 interface PropTypes {
     children: React.ReactNode;
     type: 'do' | 'dont';
+    coloredHeading: boolean;
 }
 
-export default function DoDont({ type, children }: PropTypes): JSX.Element {
+export default function DoDont({ type, children, coloredHeading }: PropTypes): JSX.Element {
     return (
-        <div className="mb5">
+        <div
+            className={classNames('mb5', {
+                [styles[`${type}`]]: true,
+                [styles.coloredHeading]: coloredHeading,
+            })}
+        >
             {type === 'do' && (
                 <div className="flex items-center mb2">
                     <InputsThumbsUpSmall />
@@ -24,13 +30,7 @@ export default function DoDont({ type, children }: PropTypes): JSX.Element {
                 </div>
             )}
 
-            <div
-                className={classNames(`overflow-hidden ba b-gray-300 pa3 relative`, {
-                    [styles.dont]: type === 'dont',
-                })}
-            >
-                {children}
-            </div>
+            <div className="overflow-hidden ba b-gray-300 pa3 relative">{children}</div>
         </div>
     );
 }
