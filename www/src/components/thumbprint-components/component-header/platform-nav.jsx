@@ -17,7 +17,8 @@ const sortPlatforms = ({ node }) => {
         react: 2,
         scss: 3,
         ios: 4,
-        android: 5,
+        swiftui: 5,
+        android: 6,
     };
 
     const { path } = node;
@@ -32,7 +33,8 @@ const getPlatformDisplayName = path => {
         usage: 'Usage',
         react: 'React',
         scss: 'SCSS',
-        ios: 'iOS',
+        ios: 'iOS (UIKit)',
+        swiftui: 'iOS (SwiftUI)',
         android: 'Android',
     };
 
