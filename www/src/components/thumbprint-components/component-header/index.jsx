@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PlatformNav from './platform-nav';
 import ComponentPackageTable from './component-package-table';
+import Alert from '../../alert';
+
+const UIKitDeprecatedCopy = () => {
+    return (
+        <Alert type="warning" title="iOS (UIKit) is being deprecated">
+            Thumbprint on iOS is transitioning from UIKit to SwiftUI, and this documentation is no
+            longer being supported. Please refer to the SwiftUI documentation when available.
+        </Alert>
+    );
+};
 
 const ComponentHeader = ({ data }) => {
     const { platformNav: platformNavQueryResults, packageTable, reactComponentProps } = data;
@@ -20,7 +30,9 @@ const ComponentHeader = ({ data }) => {
     return (
         <React.Fragment>
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
-
+            {typeof window !== 'undefined' && window.location.pathname.endsWith('ios/') && (
+                <UIKitDeprecatedCopy />
+            )}
             {packageTable && (
                 <ComponentPackageTable
                     components={components.length > 0 ? components : undefined}
