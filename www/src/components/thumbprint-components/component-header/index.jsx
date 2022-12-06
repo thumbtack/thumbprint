@@ -32,7 +32,7 @@ const ComponentHeader = ({ data }) => {
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
             {typeof window !== 'undefined' &&
                 window.location.pathname.endsWith('ios/') &&
-                UIKitDeprecatedCopy()}
+                <UIKitDeprecatedCopy />}
             {packageTable && (
                 <ComponentPackageTable
                     components={components.length > 0 ? components : undefined}
