@@ -30279,15 +30279,15 @@ is-whitespace@latest:
   linkType: hard
 
 "terser@npm:^4.1.2":
-  version: 4.2.0
-  resolution: "terser@npm:4.2.0"
+  version: 4.8.1
+  resolution: "terser@npm:4.8.1"
   dependencies:
     commander: ^2.20.0
     source-map: ~0.6.1
     source-map-support: ~0.5.12
   bin:
-    terser: bin/uglifyjs
-  checksum: 0ef9cd89839faf0bec71053066df3f7a2735c0722d169b513d886bc724d7a984dfc4c92ac99a4729bf4be9230ca429914fc02c69f96effe4e45a6a9abdb9fce7
+    terser: bin/terser
+  checksum: b342819bf7e82283059aaa3f22bb74deb1862d07573ba5a8947882190ad525fd9b44a15074986be083fd379c58b9a879457a330b66dcdb77b485c44267f9a55a
   languageName: node
   linkType: hard
 
