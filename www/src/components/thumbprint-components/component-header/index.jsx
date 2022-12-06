@@ -30,9 +30,9 @@ const ComponentHeader = ({ data }) => {
     return (
         <React.Fragment>
             <PlatformNav platformNavQueryResults={platformNavQueryResults} />
-            {typeof window !== 'undefined' &&
-                window.location.pathname.endsWith('ios/') &&
-                <UIKitDeprecatedCopy />}
+            {typeof window !== 'undefined' && window.location.pathname.endsWith('ios/') && (
+                <UIKitDeprecatedCopy />
+            )}
             {packageTable && (
                 <ComponentPackageTable
                     components={components.length > 0 ? components : undefined}
