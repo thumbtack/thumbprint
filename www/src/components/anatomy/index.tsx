@@ -1,6 +1,6 @@
 import React from 'react';
-import Badge from '../badge';
 import { Text } from '@thumbtack/thumbprint-react';
+import Badge from '../badge';
 import styles from './index.module.scss';
 
 interface PropTypes {
