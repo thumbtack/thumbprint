@@ -258,21 +258,12 @@ export default function Container({
                                         <SideNavLink
                                             title="Content Design"
                                             level={2}
-                                            to="/overview/content-design/"
+                                            to="/overview/content-design/inclusive-language"
                                             isActive={pathname.startsWith(
                                                 '/overview/content-design/',
                                             )}
                                         >
                                             <SideNavGroup level={3}>
-                                                <SideNavLink
-                                                    title="Voice and tone"
-                                                    level={3}
-                                                    to="/overview/content-design/voice-and-tone"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/voice-and-tone'
-                                                    }
-                                                />
                                                 <SideNavLink
                                                     title="Accessible and inclusive language"
                                                     level={3}
@@ -298,15 +289,6 @@ export default function Container({
                                                     isActive={
                                                         pathname ===
                                                         '/overview/content-design/surfaces-and-elements'
-                                                    }
-                                                />
-                                                <SideNavLink
-                                                    title="Word list"
-                                                    level={3}
-                                                    to="/overview/content-design/word-list"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/word-list'
                                                     }
                                                 />
                                             </SideNavGroup>
