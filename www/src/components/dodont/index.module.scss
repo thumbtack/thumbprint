@@ -50,12 +50,19 @@
 }
 
 .isTable {
+    border-collapse: separate;
+
     td,
     th {
         vertical-align: top;
         border-left: 2px solid $tp-color__white !important;
         border-collapse: separate !important;
         border-spacing: 12px !important;
+    }
+
+    td,
+    th {
+        padding: 16px !important;
     }
 
     th {

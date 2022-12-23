@@ -10,92 +10,6 @@ import { Anatomy, AnatomyItem } from 'components/anatomy';
 import { Grid, GridColumn } from '@thumbtack/thumbprint-react';
 import { Text } from '@thumbtack/thumbprint-react';
 
-## **Voice and tone**
-
-**Voice** doesn’t change. It’s your personality and how you sound, regardless of the situation.
-
-**Tone** changes all the time depending on context and setting. It’s how you speak, depending on who you’re talking to or the situation you’re addressing.
-
-### **Thumbtack’s voice attributes**
-
-Pros and customers should read and sense the real person on the other end of those words. In combination, the following attributes make Thumbtack’s voice what it is:
-
-<table>
-    <tr>
-        <th>Attributes</th>
-        <th>In other words:</th>
-    </tr>
-    <tr>
-        <td className="v-top">Refreshing</td>
-        <td>
-            <Text>Unexpected</Text>
-            <Text>A relief</Text>
-            <Text>Relatable</Text>
-            <Text>No BS</Text>
-        </td>
-    </tr>
-    <tr>
-        <td>Realistic</td>
-        <td>
-            <Text>Unexpected</Text>
-            <Text>A relief</Text>
-            <Text>Relatable</Text>
-            <Text>No BS</Text>
-        </td>
-    </tr>
-    <tr>
-        <td>Reliable</td>
-        <td>
-            <Text>Glad to be of help</Text>
-            <Text>Trusted</Text>
-            <Text>Reassuring</Text>
-        </td>
-    </tr>
-</table>
-
-### **Different moments, different tones**
-
-When deciding on tone, consider:
-
--   What stage of user journey you’re currently writing for
--   The user’s current emotions
--   How much space you have for content
-
-<table>
-    <tr>
-        <th>Low tone</th>
-        <th>Medium tone</th>
-        <th>High tone</th>
-    </tr>
-    <tr>
-        <td>
-            <ul>
-                <li>Error messages</li>
-                <li>Collecting sensitive info like addresses or SSNs</li>
-                <li>Addressing changes to prices or pricing</li>
-                <li>Unhappy paths (payment failure, no pros found)</li>
-                <li>Legal related content</li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li>Transactional emails</li>
-                <li>Feature updates and announcements</li>
-                <li>Ghost li/UI</li>
-            </ul>
-        </td>
-        <td>
-            <ul>
-                <li>Celebratory moments</li>
-                <li>Review flow</li>
-                <li>Onboarding and welcome</li>
-                <li>Explore page</li>
-                <li>Moments of inspiration</li>
-            </ul>
-        </td>
-    </tr>
-</table>
-
 ## **Plain language**
 
 You should always write in a way that helps people find what they need quickly and understand it quickly. Plain language makes it easy for new and existing users to understand your products and can reach a wider audience.
@@ -279,10 +193,6 @@ Use the following websites and apps to check your content’s readability the ne
 -   [WebFX Readable Tool](https://www.webfx.com/tools/read-able/)
 -   [Readable](https://app.readable.com/text/)
 
-[https://codahosted.io/docs/bXyUQb2tJW/blobs/bl-xV0_QUJseG/1dbaf507b21bca561f077ae7a2e00066be713b51a827d9d03f55c74f185245f333ebc57fd9bcfdb3b0ed7c635f4fb058db3b27a87825523d7ec17d8de48949f38f309ef4b34eddea3ecb9949cfec44ddc5f5741bc842c15370b27513aec0966d6bd2d2ef](https://codahosted.io/docs/bXyUQb2tJW/blobs/bl-xV0_QUJseG/1dbaf507b21bca561f077ae7a2e00066be713b51a827d9d03f55c74f185245f333ebc57fd9bcfdb3b0ed7c635f4fb058db3b27a87825523d7ec17d8de48949f38f309ef4b34eddea3ecb9949cfec44ddc5f5741bc842c15370b27513aec0966d6bd2d2ef)
-
-_Image description: Hemingway App readability tool._
-
 #### **Accessibility and person-first language**
 
 Accessible language allows everyone to read and understand content, regardless of their abilities. Use person-first language to put a person before their disability, while respecting their individuality and dignity.
@@ -305,8 +215,8 @@ Accessible language allows everyone to read and understand content, regardless o
             <tbody>
                 <tr>
                     <td>
-                        <Text>A person with a disability</Text>
-                        <Text>Other:</Text>
+                        <Text className="black-300">A person with a disability</Text>
+                        <Text className="black-300">Other:</Text>
                         <ul>
                             <li>people with disability (women with disability, children with disability, etc)</li>
                             <li>has disability</li>
@@ -316,11 +226,11 @@ Accessible language allows everyone to read and understand content, regardless o
                         </ul>
                     </td>
                     <td>
-                        <Text>
+                        <Text className="black-300">
                             A disabled or differently abled person, handicapped person, physically
                             challenged, special, special needs, mentally incapacitated/ill
                         </Text>
-                        <Text>Other:</Text>
+                        <Text className="black-300">Other:</Text>
                         <ul>
                             <li>afflicted by</li>
                             <li>crippled by</li>
@@ -341,53 +251,53 @@ Accessible language allows everyone to read and understand content, regardless o
                 </tr>
                 <tr>
                     <td>
-                        A person who uses a wheelchair
+                        <Text className="black-300">A person who uses a wheelchair</Text>
                     </td>
                     <td>
-                        A wheelchair-bound person
+                        <Text className="black-300">A wheelchair-bound person</Text>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <Text>
+                        <Text className="black-300">
                             A person/people with complete or nearly complete vision loss
                         </Text>
-                        <Text>Other:</Text>
-                        <Text>
+                        <Text className="black-300">Other:</Text>
+                        <Text className="black-300">
                             experience/experiencing vision loss
                         </Text>
                     </td>
-                    <td>A blind person</td>
+                    <td><Text className="black-300">A blind person</Text></td>
                 </tr>
                 <tr>
                     <td>
-                        <Text>Usless</Text>
-                        <Text>Intense</Text>
-                        <Text>Outrageous</Text>
-                        <Text>Silly</Text>
+                        <Text className="black-300">Usless</Text>
+                        <Text className="black-300">Intense</Text>
+                        <Text className="black-300">Outrageous</Text>
+                        <Text className="black-300">Silly</Text>
                     </td>
-                    <td><Text>Dumb</Text>
-                        <Text>Crazy</Text>
-                        <Text>Insane</Text>
-                        <Text size={2}>(Some catch-all terms have histories of being used to discriminate)</Text></td>
+                    <td><Text className="black-300">Dumb</Text>
+                        <Text className="black-300">Crazy</Text>
+                        <Text className="black-300">Insane</Text>
+                        <Text size={2} className="black-300">(Some catch-all terms have histories of being used to discriminate)</Text></td>
                 </tr>
                 <tr>
-                    <td>Feeling frustrated about xyz … </td>
-                    <td>Feeling depressed about …</td>
+                    <td><Text className="black-300">Feeling frustrated about xyz...</Text></td>
+                    <td><Text className="black-300">Feeling depressed about...</Text></td>
                 </tr>
                 <tr>
                     <td>
-                        <Text>In the menu</Text>
-                        <Text>First / before</Text>
-                        <Text>Next / after</Text>
-                        <Text>Read</Text>
-                        <Text>Select / Click</Text>
+                        <Text className="black-300">In the menu</Text>
+                        <Text className="black-300">First / before</Text>
+                        <Text className="black-300">Next / after</Text>
+                        <Text className="black-300">Read</Text>
+                        <Text className="black-300">Select / Click</Text>
                     </td>
                     <td>
-                        <Text>On the left/right (or other directional language)</Text>
-                        <Text>Above / below</Text>
-                        <Text>View / see (don’t assume this is how people are reading content)</Text>
-                        <Text>Here (specify clearly what the destination is/will be)</Text>
+                        <Text className="black-300">On the left/right (or other directional language)</Text>
+                        <Text className="black-300">Above / below</Text>
+                        <Text className="black-300">View / see (don’t assume this is how people are reading content)</Text>
+                        <Text className="black-300">Here (specify clearly what the destination is/will be)</Text>
                     </td>
                 </tr>
             </tbody>
@@ -415,38 +325,70 @@ Anti-racist content includes diverse perspectives that are different from our ow
         <DoDont coloredHeading isTable>
             <tbody>
                 <tr>
-                    <td>Historically underrepresented groups or people of color</td>
-                    <td>Minority/minorities, visible minorities</td>
-                </tr>
-                <tr>
                     <td>
-                        Discontinued, legacy, defunct, exempt, excluded, special case, special
-                        privilege, etc.
+                        <Text className="black-300">
+                            Historically underrepresented groups or people of color
+                        </Text>
                     </td>
                     <td>
-                        Grandfather, grandfathered, grandfathering (verbs), and grandfather clause
-                        (noun)
+                        <Text className="black-300">Minority/minorities, visible minorities</Text>
                     </td>
                 </tr>
                 <tr>
-                    <td>Welcome back</td>
-                    <td>Long time no see</td>
+                    <td>
+                        <Text className="black-300">
+                            Discontinued, legacy, defunct, exempt, excluded, special case, special
+                            privilege, etc.
+                        </Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">
+                            Grandfather, grandfathered, grandfathering (verbs), and grandfather
+                            clause (noun)
+                        </Text>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Sorry, something went wrong</td>
-                    <td>No can do</td>
+                    <td>
+                        <Text className="black-300">Welcome back</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Long time no see</Text>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Authority or expert</td>
-                    <td>Guru or ninja</td>
+                    <td>
+                        <Text className="black-300">Sorry, something went wrong</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">No can do</Text>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Native to the operating system or built-in feature</td>
-                    <td>Native</td>
+                    <td>
+                        <Text className="black-300">Authority or expert</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Guru or ninja</Text>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Meeting</td>
-                    <td>Powwow</td>
+                    <td>
+                        <Text className="black-300">
+                            Native to the operating system or built-in feature
+                        </Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Native</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">Meeting</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Powwow</Text>
+                    </td>
                 </tr>
             </tbody>
         </DoDont>
@@ -474,69 +416,89 @@ Gender-neutral language is important so our words don’t enforce biases and ste
             <tbody>
                 <tr>
                     <td>
-                        <Text>Parent or parents</Text>
+                        <Text className="black-300">Parent or parents</Text>
                     </td>
                     <td>
-                        <Text>Moms</Text>
-                        <Text>Dads</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text>Pronouns</Text>
-                        <Text>What are your pronouns?</Text>
-                        <Text>Prefer not to say / self-describe / respond</Text>
-                    </td>
-                    <td>
-                        <Text>Preferred pronouns</Text>
-                        <Text>What are your preferred pronouns?</Text>
-                        <Text>Other (in forms that collect personal data)</Text>
+                        <Text className="black-300">Moms</Text>
+                        <Text className="black-300">Dads</Text>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,
-                        transsexual, they /them/their
-                    </td>
-                    <td>Homosexual or the wrong pronoun</td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text>Given name</Text>
-                        <Text>Assumed name</Text>
-                        <Text>Legal name</Text>
+                        <Text className="black-300">Pronouns</Text>
+                        <Text className="black-300">What are your pronouns?</Text>
+                        <Text className="black-300">
+                            Prefer not to say / self-describe / respond
+                        </Text>
                     </td>
                     <td>
-                        <Text>Maiden name</Text>
-                        <Text>Married name</Text>
+                        <Text className="black-300">Preferred pronouns</Text>
+                        <Text className="black-300">What are your preferred pronouns?</Text>
+                        <Text className="black-300">
+                            Other (in forms that collect personal data)
+                        </Text>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <Text>People</Text>
-                        <Text>Everyone</Text>
-                        <Text>Everybody</Text>
+                        <Text className="black-300">
+                            LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,
+                            transsexual, they /them/their
+                        </Text>
                     </td>
                     <td>
-                        <Text>Men and women</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Woman/women (this is inclusive of trans women)</td>
-                    <td>Female</td>
-                </tr>
-                <tr>
-                    <td>They/their/them (acceptable gender-neutral singular pronouns)</td>
-                    <td>
-                        <Text>Him and/or her</Text>
-                        <Text>He and/or she</Text>
+                        <Text className="black-300">Homosexual or the wrong pronoun</Text>
                     </td>
                 </tr>
                 <tr>
-                    <td>Any representative name</td>
                     <td>
-                        <Text>John/Jane Doe</Text>
-                        <Text>
+                        <Text className="black-300">Given name</Text>
+                        <Text className="black-300">Assumed name</Text>
+                        <Text className="black-300">Legal name</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Maiden name</Text>
+                        <Text className="black-300">Married name</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">People</Text>
+                        <Text className="black-300">Everyone</Text>
+                        <Text className="black-300">Everybody</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Men and women</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">
+                            Woman/women (this is inclusive of trans women)
+                        </Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Female</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">
+                            They/their/them (acceptable gender-neutral singular pronouns)
+                        </Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Him and/or her</Text>
+                        <Text className="black-300">He and/or she</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">Any representative name</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">John/Jane Doe</Text>
+                        <Text className="black-300">
                             (These names are typically used to identify anonymous people in court
                             cases, police warrants, and violent crimes.)
                         </Text>
@@ -544,33 +506,41 @@ Gender-neutral language is important so our words don’t enforce biases and ste
                 </tr>
                 <tr>
                     <td>
-                        <Text>Businessperson</Text>
-                        <Text>
+                        <Text className="black-300">Businessperson</Text>
+                        <Text className="black-300">
                             This could apply to any position, role, or title that is a gendered
                             word.
                         </Text>
                     </td>
-                    <td>Businessman</td>
-                </tr>
-                <tr>
                     <td>
-                        <Text>Staffed</Text>
-                        <Text>Managed</Text>
-                    </td>
-                    <td>
-                        <Text>Manned</Text>
+                        <Text className="black-300">Businessman</Text>
                     </td>
                 </tr>
                 <tr>
-                    <td>Workforce</td>
-                    <td>Manpower</td>
+                    <td>
+                        <Text className="black-300">Staffed</Text>
+                        <Text className="black-300">Managed</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Manned</Text>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <Text>Machine-made</Text>
-                        <Text>Artificial</Text>
+                        <Text className="black-300">Workforce</Text>
                     </td>
-                    <td>Man-made</td>
+                    <td>
+                        <Text className="black-300">Manpower</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text className="black-300">Machine-made</Text>
+                        <Text className="black-300">Artificial</Text>
+                    </td>
+                    <td>
+                        <Text className="black-300">Man-made</Text>
+                    </td>
                 </tr>
             </tbody>
         </DoDont>
