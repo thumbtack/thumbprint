@@ -11,28 +11,7 @@ import { Grid, GridColumn } from '@thumbtack/thumbprint-react';
 
 ## Emails
 
-Keep emails short, ideally less than 150 words. To emphasize a point, use a single sentence paragraph. Otherwise, each paragraph should cover one topic in no more than four lines (about 50 words). Lean on subheaders and bulleted lists to structure complex or [lengthy information](https://docs.google.com/document/d/1FVofijr_uM3KbGI6xQNvXgN2Jwt2LN69UiRuNxpwXyQ/edit#heading=h.aqai4g17xkbc) [<-- link to plain language section].
-
-<!--
-### Subject lines (SL)
-
-Keep subject lines under 10 words or 40 characters and don’t punctuate them. They should communicate the most important information, like a deadline or required action.
-
-### Pre-headers (PH)
-
-This is the sentence that appears next to or near the subject line in an email inbox. It’s often clipped, so keep it under 10 words or 40 characters as well. Write it as a complete sentence with punctuation that reinforces the subject line, continues the conversation, or entices action.
-
-### Headers
-
-Not all emails need headers, but they can be a helpful way to highlight and frontload the main message. Headers often repeat or expand upon the subject line. Ideally, headers are contained to one line.
-
-### Calls to action (CTAs)
-
-Always include at least one call to action, even if it’s just to go to the app. To test for readability, ask if the main message of the email can be understood by reading the subject line, header, and CTA alone.
-
-### Footers
-
-Always include the standard footer with our business address, a link to unsubscribe, and links to download the app. -->
+Keep emails short, ideally less than 150 words. To emphasize a point, use a single sentence paragraph. Otherwise, each paragraph should cover one topic in no more than four lines (about 50 words). Lean on subheaders and bulleted lists to structure complex or [lengthy information](/overview/content-design/grammar-and-mechanics#section-write-using-plain-language).
 
 <Img
     src="./email.png"
@@ -62,7 +41,12 @@ Always include the standard footer with our business address, a link to unsubscr
             are contained to one line.
         </Text>
     </AnatomyItem>
-    <AnatomyItem number="4" title="Body"></AnatomyItem>
+    <AnatomyItem number="4" title="Body">
+        <Text size={2} className="black-300">
+            Keep body copy concise and use formatting, like subheaders or bulleted lists, to improve
+            readability. Paragraphs should cover one topic and not exceed three lines.
+        </Text>
+    </AnatomyItem>
     <AnatomyItem number="5" title="Calls to action (CTAs)">
         <Text size={2} className="black-300">
             Always include at least one call to action, even if it’s just to go to the app. To test
@@ -120,8 +104,6 @@ When writing copy for buttons and links, remember Nielsen Norman Group’s 4 gui
 Use buttons for primary actions and links for navigation. Unless you’re following a common button pattern, like “Done” or “Continue,” buttons and links should follow the [action verb] + [noun] pattern.
 
 Remember, image-only buttons and links need alt-text.
-
-[*Breadcrumb to button component page]
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
