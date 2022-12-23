@@ -1,0 +1,578 @@
+---
+title: Inclusion and accessibility
+description: This section outlines principles and techniques to ensure our content is easy to understand and inclusive for everyone.
+---
+
+import DoDont from 'components/dodont';
+import Wrap from 'components/wrap';
+import { Img } from 'components/mdx';
+import { Anatomy, AnatomyItem } from 'components/anatomy';
+import { Grid, GridColumn } from '@thumbtack/thumbprint-react';
+import { Text } from '@thumbtack/thumbprint-react';
+
+## **Voice and tone**
+
+**Voice** doesn’t change. It’s your personality and how you sound, regardless of the situation.
+
+**Tone** changes all the time depending on context and setting. It’s how you speak, depending on who you’re talking to or the situation you’re addressing.
+
+### **Thumbtack’s voice attributes**
+
+Pros and customers should read and sense the real person on the other end of those words. In combination, the following attributes make Thumbtack’s voice what it is:
+
+<table>
+    <tr>
+        <th>Attributes</th>
+        <th>In other words:</th>
+    </tr>
+    <tr>
+        <td className="v-top">Refreshing</td>
+        <td>
+            <Text>Unexpected</Text>
+            <Text>A relief</Text>
+            <Text>Relatable</Text>
+            <Text>No BS</Text>
+        </td>
+    </tr>
+    <tr>
+        <td>Realistic</td>
+        <td>
+            <Text>Unexpected</Text>
+            <Text>A relief</Text>
+            <Text>Relatable</Text>
+            <Text>No BS</Text>
+        </td>
+    </tr>
+    <tr>
+        <td>Reliable</td>
+        <td>
+            <Text>Glad to be of help</Text>
+            <Text>Trusted</Text>
+            <Text>Reassuring</Text>
+        </td>
+    </tr>
+</table>
+
+### **Different moments, different tones**
+
+When deciding on tone, consider:
+
+-   What stage of user journey you’re currently writing for
+-   The user’s current emotions
+-   How much space you have for content
+
+<table>
+    <tr>
+        <th>Low tone</th>
+        <th>Medium tone</th>
+        <th>High tone</th>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li>Error messages</li>
+                <li>Collecting sensitive info like addresses or SSNs</li>
+                <li>Addressing changes to prices or pricing</li>
+                <li>Unhappy paths (payment failure, no pros found)</li>
+                <li>Legal related content</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Transactional emails</li>
+                <li>Feature updates and announcements</li>
+                <li>Ghost li/UI</li>
+            </ul>
+        </td>
+        <td>
+            <ul>
+                <li>Celebratory moments</li>
+                <li>Review flow</li>
+                <li>Onboarding and welcome</li>
+                <li>Explore page</li>
+                <li>Moments of inspiration</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+## **Plain language**
+
+You should always write in a way that helps people find what they need quickly and understand it quickly. Plain language makes it easy for new and existing users to understand your products and can reach a wider audience.
+
+Plain language has also been proven to increase customer compliance, reduce complaints and errors, improve sales, and reduce costs. Learn more about the [business benefits of plain language](https://www.plainlanguage.gov/resources/articles/arguments-in-favor-of-plain-language/)**.**
+
+### **Why use plain language?**
+
+_Accessibility_: Plain language is required under the Web Content Accessibility Guidelines (WCAG). It helps users with comprehension as well as secondary language and cognitive challenges. Plain language also makes it easier for assistive technology to parse information correctly.
+
+_Search Engine Optimization (SEO)_: Plain language uses the words and phrases that people actually use when searching for content.
+
+_Online reading_: People spend less time reading online content and tend to scan it instead of reading linearly. They're less likely to drop off when content is easily found and understood.
+
+_Mobile devices:_ Plain language can reduce the space content needs so it more easily fits on smaller surfaces. It also helps to group content so it's easier to navigate in-app.
+
+### **Plain language principles and techniques**
+
+#### **Use everyday words**
+
+Common, simple words and phrases help with accessibility and SEO, and are more easily understood by readers who don’t speak English as their first language. Everyday words are also generally shorter, so they take up less space on mobile devices.
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={6}>
+        <DoDont type="do" coloredHeading>
+            <ul>
+                <li>Help</li>
+                <li>Get</li>
+                <li>Get rid of</li>
+                <li>Help</li>
+                <li>Ask</li>
+                <li>Need</li>
+                <li>To</li>
+                <li>If</li>
+                <li>About</li>
+                <li>Pay</li>
+            </ul>
+        </DoDont>
+    </GridColumn>
+    <GridColumn aboveSmall={6}>
+        <DoDont type="dont" coloredHeading>
+            <ul>
+                <li>Assistance</li>
+                <li>Access</li>
+                <li>Eliminate</li>
+                <li>Facilitate</li>
+                <li>Request</li>
+                <li>Require</li>
+                <li>In order to</li>
+                <li>In the event that</li>
+                <li>In regard to</li>
+                <li>Make a payment</li>
+            </ul>
+        </DoDont>
+    </GridColumn>
+</Grid>
+
+#### **Use active voice instead of passive voice**
+
+Active sentences are shorter and more straightforward than passive ones. They are more easily understood by ESL speakers and easier to remember by people relying on screen readers and memory. While there are times when the passive voice is appropriate, a quick way to shorten and simplify a sentence is to switch from passive to active voice.
+
+Our Grammar and Mechanics section has more information on active voice and passive voice construction.
+
+#### **Avoid hidden verbs**
+
+Hidden verbs are verbs that have been turned into a noun. This construction leads to more passive, indirect sentences. Hidden verbs also use more words and make sentences longer than they should be. When writing or proofreading your content, think about whether a noun construction could really be simplified into a verb.
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={6}>
+        <DoDont type="do" coloredHeading>
+            <ul>
+                <li>Except for</li>
+                <li>Applies to</li>
+                <li>Review</li>
+            </ul>
+        </DoDont>
+    </GridColumn>
+    <GridColumn aboveSmall={6}>
+        <DoDont type="dont" coloredHeading>
+            <ul>
+                <li>With the exception of</li>
+                <li>Is applicable to</li>
+                <li>Leave a review</li>
+            </ul>
+        </DoDont>
+    </GridColumn>
+</Grid>
+
+#### **Stay in the present (tense)**
+
+Keep your content conversational by writing in the present tense. Present tense is both simple and direct, and is the easiest way to communicate information or instructions that users need to act on. While context matters, writing in future or conditional tenses are more confusing for users or require more time to understand.
+
+#### **Write like you talk**
+
+When you write content in a conversational way, it sounds natural. Think about how to explain or describe something if you had to say it out loud — this is usually a good approach to ensuring your writing is conversational.
+
+#### **Address your audience with “you”**
+
+Using names or third-person pronouns like “he” or “she” can be confusing for users when they want to understand instructions or important information. To keep things simple, address the audience as “you”. When you directly address your users, they’re able to visualize and relate to the content.
+
+#### **Keep it short**
+
+When your writing is concise, it’s easier for your audience to read and understand your message. Keeping it short is all about numbers; follow these recommended limits:
+
+-   **Word length:** no more than 3 syllables. If it’s longer than 3 syllables, try a shorter word.
+-   **Sentence length:** No more than 25 words. If you find you’re using too much punctuation such as commas or semicolons, make smaller sentences instead.
+-   **Paragraph length**: No more than 150 words. If your content is getting too long, try a list or table to keep it concise.
+
+#### **Use contractions (but avoid negatives)**
+
+Contractions keep content simple and direct. Since they are commonly used, contractions are also good for accessibility.
+
+However, contractions should also be used appropriately. Negative and conditional contractions, for example, are actually harder to understand for people who have reading disabilities or who speak English as a second language. The negative word “not” can also be more clear in certain contexts, such as warning labels or instructions.
+
+Our Grammar and Mechanics section has more information on best practices for using contractions.
+
+#### **Avoid jargon**
+
+Jargon intimidates, annoys, and confuses readers. If words are specific to a field or require specialized knowledge, you can alienate people from your content. Be mindful of language that may refer to internal jargon, processes, legal language, and web development. If you need to use a Thumbtack-specific term because there is no alternative, define it in context.
+
+#### **Organize content logically**
+
+Organize content in the order in which a user would need the information. If they have to read a sentence more than once to understand it, that sentence needs to change.
+
+**Tip:** For instructions, use the model "to do this...do this". It generally creates shorter content, and it puts the information in the right order so it's easier for the reader to get to the information they need, if they need it.
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={6}>
+        <DoDont type="do" coloredHeading>
+            <p>For help with your scheduling calendar, call 416-123-1234.</p>
+        </DoDont>
+    </GridColumn>
+    <GridColumn aboveSmall={6}>
+        <DoDont type="dont" coloredHeading>
+            <p>Call 416-123-1234 for help with your scheduling calendar.</p>
+        </DoDont>
+    </GridColumn>
+</Grid>
+
+#### **Structure content with headers**
+
+Headers are an effective way to structure content. A good header clearly communicates what the following content will be about, breaks up the content, and helps users scan and find information quickly. Headers are also important when using assistive technology to parse information.
+
+**Tip:** Headings are a good way to check if content is organized logically. A quick test is to remove all body copy, and read the headers on their own. If you can still get a general idea of the topic and sequence of information, your headers are effective.
+
+Our Grammar and Mechanics section has more information on how to format headers and header tags.
+
+#### **Optimize content with lists**
+
+A list can reduce word count, and make content easy to scan and remember. As best practice, content should use parallel construction and grammatical structure (i.e. all verbs, all adverbs, same tense, etc.). If it’s important to order the information in a sequence, use a numbered list.
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={6}>
+        <DoDont type="do" coloredHeading>
+            <p>
+                Active sentences are: Shorter and simpler, More straight forward, More easily
+                understood by ESL speakers, Easier to remember
+            </p>
+        </DoDont>
+    </GridColumn>
+    <GridColumn aboveSmall={6}>
+        <DoDont type="dont" coloredHeading>
+            <p>
+                Active sentences are shorter and more straight forward than passively constructed
+                ones. They are more easily understood by ESL speakers and easier to remember by
+                people relying on screen readers and memory.
+            </p>
+        </DoDont>
+    </GridColumn>
+</Grid>
+
+#### **Improve readability**
+
+Content should be written at a Grade 8 reading level or lower. This makes your writing clear and concise, while still sounding sophisticated for a wide audience.
+
+Readability tools determine your content’s reading level. They check elements such as sentence length, comprehension, and complexity, and give scores or grades for your content.
+
+Use the following websites and apps to check your content’s readability the next time you write:
+
+-   [Hemingway App](https://hemingwayapp.com/)
+-   [WebFX Readable Tool](https://www.webfx.com/tools/read-able/)
+-   [Readable](https://app.readable.com/text/)
+
+[https://codahosted.io/docs/bXyUQb2tJW/blobs/bl-xV0_QUJseG/1dbaf507b21bca561f077ae7a2e00066be713b51a827d9d03f55c74f185245f333ebc57fd9bcfdb3b0ed7c635f4fb058db3b27a87825523d7ec17d8de48949f38f309ef4b34eddea3ecb9949cfec44ddc5f5741bc842c15370b27513aec0966d6bd2d2ef](https://codahosted.io/docs/bXyUQb2tJW/blobs/bl-xV0_QUJseG/1dbaf507b21bca561f077ae7a2e00066be713b51a827d9d03f55c74f185245f333ebc57fd9bcfdb3b0ed7c635f4fb058db3b27a87825523d7ec17d8de48949f38f309ef4b34eddea3ecb9949cfec44ddc5f5741bc842c15370b27513aec0966d6bd2d2ef)
+
+_Image description: Hemingway App readability tool._
+
+#### **Accessibility and person-first language**
+
+Accessible language allows everyone to read and understand content, regardless of their abilities. Use person-first language to put a person before their disability, while respecting their individuality and dignity.
+
+**How to make your writing accessible and inclusive:**
+
+-   Consider whether a person’s or group’s identity is relevant to the content. Only identify someone’s disability if it adds value and context.
+-   While person-first language is best, some users have their own preferences about how they want to be addressed. When in doubt, simply ask.
+-   Avoid using “normal" or "healthy" to describe people without disabilities.
+-   Don’t imply that individuals with disabilities are victims, such as “suffering from” or “a victim of".
+-   Be descriptive in hyperlinks so people who use screen readers have an easy time understanding what you’re linking to.
+-   Write alt text for images that provide important information to sighted users.
+-
+
+**Words and phrases to use and avoid**
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={12}>
+        <DoDont coloredHeading isTable>
+            <tbody>
+                <tr>
+                    <td>
+                        <Text>A person with a disability</Text>
+                        <Text>Other:</Text>
+                        <ul>
+                            <li>people with disability (women with disability, children with disability, etc)</li>
+                            <li>has disability</li>
+                            <li>lives with disability</li>
+                            <li>has a chronic health condition</li>
+                            <li>lives with a chronic health condition</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <Text>
+                            A disabled or differently abled person, handicapped person, physically
+                            challenged, special, special needs, mentally incapacitated/ill
+                        </Text>
+                        <Text>Other:</Text>
+                        <ul>
+                            <li>afflicted by</li>
+                            <li>crippled by</li>
+                            <li>diffability</li>
+                            <li>differently abled</li>
+                            <li>handicap(ped)</li>
+                            <li>handicapable</li>
+                            <li>specially abled</li>
+                            <li>special needs</li>
+                            <li>suffers from</li>
+                            <li>the disabled</li>
+                            <li>victim of</li>
+                            <li>with different abilities</li>
+                            <li>person with a disability</li>
+                            <li>people with disabilities</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        A person who uses a wheelchair
+                    </td>
+                    <td>
+                        A wheelchair-bound person
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>
+                            A person/people with complete or nearly complete vision loss
+                        </Text>
+                        <Text>Other:</Text>
+                        <Text>
+                            experience/experiencing vision loss
+                        </Text>
+                    </td>
+                    <td>A blind person</td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Usless</Text>
+                        <Text>Intense</Text>
+                        <Text>Outrageous</Text>
+                        <Text>Silly</Text>
+                    </td>
+                    <td><Text>Dumb</Text>
+                        <Text>Crazy</Text>
+                        <Text>Insane</Text>
+                        <Text size={2}>(Some catch-all terms have histories of being used to discriminate)</Text></td>
+                </tr>
+                <tr>
+                    <td>Feeling frustrated about xyz … </td>
+                    <td>Feeling depressed about …</td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>In the menu</Text>
+                        <Text>First / before</Text>
+                        <Text>Next / after</Text>
+                        <Text>Read</Text>
+                        <Text>Select / Click</Text>
+                    </td>
+                    <td>
+                        <Text>On the left/right (or other directional language)</Text>
+                        <Text>Above / below</Text>
+                        <Text>View / see (don’t assume this is how people are reading content)</Text>
+                        <Text>Here (specify clearly what the destination is/will be)</Text>
+                    </td>
+                </tr>
+            </tbody>
+        </DoDont>
+    </GridColumn>
+
+</Grid>
+
+#### **Anti-racist content**
+
+Anti-racist content includes diverse perspectives that are different from our own. It’s important that our writing never elevates or excludes any one group over another.
+
+**How to make your writing anti-racist:**
+
+-   Identify a person’s race or ethnicity only when it’s relevant. Always ask for a person’s preference and identify them as specifically as possible.
+-   Avoid metaphors or expressions that are specific to a culture or class. For example, phrases like “knock it out of the park” or “hit a home run" are not universal.
+-   Avoid using language, metaphors and idioms that excludes, offends, or assumes a certain class, culture, ability, age, other privileged status, etc.
+-   Avoid culturally insensitive slang or appropriating cultural terminology. Some examples can be found in our list of words and phrases to use and avoid.
+-   Don’t speak about people in divisive ways. For example, instead of referring to people as "native speakers" or "non-native speakers" of English, think about whether or not your document needs to discuss this at all.
+
+**Words and phrases to use and avoid**
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={9}>
+        <DoDont coloredHeading isTable>
+            <tbody>
+                <tr>
+                    <td>Historically underrepresented groups or people of color</td>
+                    <td>Minority/minorities, visible minorities</td>
+                </tr>
+                <tr>
+                    <td>
+                        Discontinued, legacy, defunct, exempt, excluded, special case, special
+                        privilege, etc.
+                    </td>
+                    <td>
+                        Grandfather, grandfathered, grandfathering (verbs), and grandfather clause
+                        (noun)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Welcome back</td>
+                    <td>Long time no see</td>
+                </tr>
+                <tr>
+                    <td>Sorry, something went wrong</td>
+                    <td>No can do</td>
+                </tr>
+                <tr>
+                    <td>Authority or expert</td>
+                    <td>Guru or ninja</td>
+                </tr>
+                <tr>
+                    <td>Native to the operating system or built-in feature</td>
+                    <td>Native</td>
+                </tr>
+                <tr>
+                    <td>Meeting</td>
+                    <td>Powwow</td>
+                </tr>
+            </tbody>
+        </DoDont>
+    </GridColumn>
+</Grid>
+
+#### **Gender-neutral language**
+
+Gender-neutral language is important so our words don’t enforce biases and stereotypes based on sex and gender.
+
+**How to make your writing gender-neutral:**
+
+-   Always use people’s preferred pronouns. When in doubt, it’s better to ask.
+-   Use gender neutral pronouns “they/them/their”. Avoid using “he” or “she” unless you’re referring to a specific person.
+-   Avoid gendered titles such as “Mr.”, “Mrs.”, “Miss” and “Ms”. Whenever possible, use the person’s first name. This will also make content more conversational.
+-   Use gender-neutral alternatives for gendered words. Refer to our list of words and phrases to use and avoid.
+-   When using plural pronouns, you can rewrite the sentence so the nouns are also plural if it improves readability.
+-   When specific context is needed, use diverse names, genders, ages and locations for examples or placeholder copy.
+
+**Words and phrases to use and avoid**
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={9}>
+        <DoDont coloredHeading isTable>
+            <tbody>
+                <tr>
+                    <td>
+                        <Text>Parent or parents</Text>
+                    </td>
+                    <td>
+                        <Text>Moms</Text>
+                        <Text>Dads</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Pronouns</Text>
+                        <Text>What are your pronouns?</Text>
+                        <Text>Prefer not to say / self-describe / respond</Text>
+                    </td>
+                    <td>
+                        <Text>Preferred pronouns</Text>
+                        <Text>What are your preferred pronouns?</Text>
+                        <Text>Other (in forms that collect personal data)</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,
+                        transsexual, they /them/their
+                    </td>
+                    <td>Homosexual or the wrong pronoun</td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Given name</Text>
+                        <Text>Assumed name</Text>
+                        <Text>Legal name</Text>
+                    </td>
+                    <td>
+                        <Text>Maiden name</Text>
+                        <Text>Married name</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>People</Text>
+                        <Text>Everyone</Text>
+                        <Text>Everybody</Text>
+                    </td>
+                    <td>
+                        <Text>Men and women</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Woman/women (this is inclusive of trans women)</td>
+                    <td>Female</td>
+                </tr>
+                <tr>
+                    <td>They/their/them (acceptable gender-neutral singular pronouns)</td>
+                    <td>
+                        <Text>Him and/or her</Text>
+                        <Text>He and/or she</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Any representative name</td>
+                    <td>
+                        <Text>John/Jane Doe</Text>
+                        <Text>
+                            (These names are typically used to identify anonymous people in court
+                            cases, police warrants, and violent crimes.)
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Businessperson</Text>
+                        <Text>
+                            This could apply to any position, role, or title that is a gendered
+                            word.
+                        </Text>
+                    </td>
+                    <td>Businessman</td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Staffed</Text>
+                        <Text>Managed</Text>
+                    </td>
+                    <td>
+                        <Text>Manned</Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Workforce</td>
+                    <td>Manpower</td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text>Machine-made</Text>
+                        <Text>Artificial</Text>
+                    </td>
+                    <td>Man-made</td>
+                </tr>
+            </tbody>
+        </DoDont>
+    </GridColumn>
+</Grid>

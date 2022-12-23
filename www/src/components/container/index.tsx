@@ -258,19 +258,19 @@ export default function Container({
                                         <SideNavLink
                                             title="Content Design"
                                             level={2}
-                                            to="/overview/content-design/inclusive-language"
+                                            to="/overview/content-design/inclusion-and-accessibility"
                                             isActive={pathname.startsWith(
                                                 '/overview/content-design/',
                                             )}
                                         >
                                             <SideNavGroup level={3}>
                                                 <SideNavLink
-                                                    title="Accessible and inclusive language"
+                                                    title="Inclusion and accessibility"
                                                     level={3}
-                                                    to="/overview/content-design/inclusive-language"
+                                                    to="/overview/content-design/inclusion-and-accessibility"
                                                     isActive={
                                                         pathname ===
-                                                        '/overview/content-design/inclusive-language'
+                                                        '/overview/content-design/inclusion-and-accessibility'
                                                     }
                                                 />
                                                 <SideNavLink
