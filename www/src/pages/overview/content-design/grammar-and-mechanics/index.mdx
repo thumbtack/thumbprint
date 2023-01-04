@@ -4,7 +4,7 @@ description: This section outlines our approach to grammar and mechanics across 
 ---
 
 import DoDont from 'components/dodont';
-import { Grid, GridColumn, Title, Text } from '@thumbtack/thumbprint-react';
+import { Grid, GridColumn, List, ListItem, Title, Text } from '@thumbtack/thumbprint-react';
 
 ## Write using plain language
 
@@ -628,12 +628,17 @@ Help pros and customers understand earnings and payment details, when jobs are h
 
 ### General guidance
 
--   Use ###-###-#### formatting when writing telephone numbers. Don’t use parentheses.
--   Spell out small numbers in a sentence.
--   Use the actual number only if it’s in a form field, chart, date or other UX value.
--   Use the number for 100 and up.
--   For very large numbers, combine the number and word (32 million). Abbreviate (\$32M) only if you have a hard character limit.
--   Use the % sign for percentages.
+<ul>
+    <li>Use ###-###-#### formatting when writing telephone numbers. Don’t use parentheses.</li>
+    <li>Spell out small numbers in a sentence.</li>
+    <li>Use the actual number only if it’s in a form field, chart, date or other UX value.</li>
+    <li>Use the number for 100 and up.</li>
+    <li>
+        For very large numbers, combine the number and word (32 million). Abbreviate ($32M) only if
+        you have a hard character limit.
+    </li>
+    <li>Use the % sign for percentages.</li>
+</ul>
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
@@ -708,18 +713,22 @@ Round to the nearest dollar amount in:
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <Text className="tc">$8.34</Text>
-            <Text className="tc">avg. lead cost</Text>
-            <Text className="pt3">Set up direct deposit to receive $154.75 in earnings.</Text>
-            <Text className="pt3">Jason sent you $168.75</Text>
+            <Text className="tc black-300">$8.34</Text>
+            <Text className="tc black-300">avg. lead cost</Text>
+            <Text className="pt3 black-300">
+                Set up direct deposit to receive $154.75 in earnings.
+            </Text>
+            <Text className="pt3 black-300">Jason sent you $168.75</Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <Text className="tc">$8</Text>
-            <Text className="tc">avg. lead cost</Text>
-            <Text className="pt3">Set up direct deposit to receive $154 in earnings.</Text>
-            <Text className="pt3">Jason sent you $168.</Text>
+            <Text className="tc black-300">$8</Text>
+            <Text className="tc black-300">avg. lead cost</Text>
+            <Text className="pt3 black-300">
+                Set up direct deposit to receive $154 in earnings.
+            </Text>
+            <Text className="pt3 black-300">Jason sent you $168.</Text>
         </DoDont>
     </GridColumn>
 </Grid>
