@@ -23,16 +23,16 @@ The subject of a sentence performs the action when writing in active voice. Usin
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <div className="black-300">
+            <Text size={1} className="black-300">
                 Don’t want to request the review directly? Let us email them for you.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="black-300">
+            <Text size={1} className="black-300">
                 Don’t want to request the review directly? An email can be sent on your behalf.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -47,12 +47,16 @@ You can opt for passive voice when you want to emphasize the action instead of t
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <div className="black-300">Unable to save prices</div>
+            <Text size={1} className="black-300">
+                Unable to save prices
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="black-300">We can’t save your prices</div>
+            <Text size={1} className="black-300">
+                We can’t save your prices
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -66,14 +70,16 @@ Choosing the best pronoun for a given scenario helps us write copy that’s conv
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <div className="black-300">It feels good to get things done. We’re here to help.</div>
+            <Text size={1} className="black-300">
+                It feels good to get things done. We’re here to help.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="black-300">
+            <Text size={1} className="black-300">
                 It feels good to get things done. Thumbtack is here to help.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -85,17 +91,17 @@ We typically only use third person when speaking about pros, customers, or produ
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <div className="black-300">
+            <Text size={1} className="black-300">
                 We analyzed millions of bids from Thumbtack pros to see what things really cost.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="black-300">
+            <Text size={1} className="black-300">
                 Thumbtack analyzed millions of bids from Thumbtack pros to see what things really
                 cost.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -133,11 +139,11 @@ Using the right header tags helps people scan the information on their screens q
 
 Here are some best practices for using header tags:
 
--   Use H1 tags to communicate the title of the page
--   Use only one H1 per page
--   Use H2 tags for second-level headings
--   Use H3 tags for third-level headings sparingly
--   Don’t skip heading levels
+-   Use H1 tags to communicate the title of the page.
+-   Use only one H1 per page.
+-   Use H2 tags for second-level headings.
+-   Use H3 tags for third-level headings sparingly.
+-   Don’t skip heading levels.
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
@@ -160,31 +166,33 @@ Here are some best practices for using header tags:
 
 ### Formatted text
 
-#### Avoid using bold or italicized text to emphasize a point
+#### Avoid using bolded, italicized, or underlined text to emphasize a point
 
 To help people scan the content on a page, frontload the important information instead of bolding or italicizing it. We should only underline text when it links to other content.
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Get $100 in credits for telling us which tools you use to manage your availability
-            outside of Thumbtack.
+            <Text size={1} className="black-300">
+                Get $100 in credits for telling us which tools you use to manage your availability
+                outside of Thumbtack.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="mb3">
+            <Text size={1} className="black-300 mb3">
                 Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
                 <span className="b">get $100 in credits</span>.{' '}
-            </div>
-            <div>
+            </Text>
+            <Text size={1} className="black-300 mb3">
                 Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
                 <i>get $100 in credits.</i>
-            </div>
-            <div>
+            </Text>
+            <Text size={1} className="black-300">
                 Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-                <u>get $100 in credits.</u>
-            </div>
+                <span className="m_underline">get $100 in credits.</span>
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -282,14 +290,18 @@ The Oxford or serial comma should be used to break up a series of three or more 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Your base price includes consultation, travel fees, and mount on drywall, plaster, or
-            wood.
+            <Text size={1} className="black-300">
+                Your base price includes consultation, travel fees, and mount on drywall, plaster,
+                or wood.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Your base price includes consultation, travel fees and mount on drywall, plaster or
-            wood.
+            <Text size={1} className="black-300">
+                Your base price includes consultation, travel fees and mount on drywall, plaster or
+                wood.
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -301,14 +313,18 @@ To improve readability, try breaking up complex sentences into two or more sente
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            This is a 60% discount off the current price of instant bookings. We'll let you know in
-            advance before prices change.
+            <Text size={1} className="black-300">
+                This is a 60% discount off the current price of instant bookings. We'll let you know
+                in advance before prices change.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            This is a 60% discount off the current price of instant bookings, and we'll let you know
-            in advance before prices change.
+            <Text size={1} className="black-300">
+                This is a 60% discount off the current price of instant bookings, and we'll let you
+                know in advance before prices change.
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -318,12 +334,16 @@ To improve readability, try breaking up complex sentences into two or more sente
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.
+            <Text size={1} className="black-300">
+                We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.
+            <Text size={1} className="black-300">
+                We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -346,17 +366,19 @@ Adding a space both before and after the em dash allows for cleaner line breaks.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.
+            <Text size={1} className="black-300">
+                Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <div className="mb3">
+            <Text size={1} className="black-300 mb3">
                 Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.
-            </div>
-            <div>
+            </Text>
+            <Text size={1} className="black-300">
                 Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
-            </div>
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -368,12 +390,16 @@ When writing product copy, use a hyphen instead.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            8 am - 5 pm
+            <Text size={1} className="black-300">
+                8 am - 5 pm
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            8 am – 5 pm
+            <Text size={1} className="black-300">
+                8 am – 5 pm
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -414,12 +440,16 @@ It’s easy to overuse exclamation marks, so only use them when you need to add 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            🎉 New direct lead! Howard G.
+            <Text size={1} className="black-300">
+                🎉 New direct lead! Howard G.
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Set your budget!
+            <Text size={1} className="black-300">
+                Set your budget!
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -461,13 +491,18 @@ Avoid using periods in links, buttons, and tabs.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Your base price includes consultation, travel fees, and mount on drywall, plaster, or
-            wood
+            <Text size={1} className="black-300">
+                Your base price includes consultation, travel fees, and mount on drywall, plaster,
+                or wood
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Your base price includes consultation, travel fees, & mount on drywall, plaster, or wood
+            <Text size={1} className="black-300">
+                Your base price includes consultation, travel fees, & mount on drywall, plaster, or
+                wood
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -504,12 +539,16 @@ Avoid using periods in links, buttons, and tabs.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Required: Review your business hours
+            <Text size={1} className="black-300">
+                Required: Review your business hours
+            </Text>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Required: Review your business hours.
+            <Text size={1} className="black-300">
+                Required: Review your business hours.
+            </Text>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -530,7 +569,9 @@ Improve readability by breaking up large chunks of text into lists.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Instant Book offers better returns for the money you spend on Thumbtack through:
+            <Text size={1} className="black-300 mb3">
+                Instant Book offers better returns for the money you spend on Thumbtack through:
+            </Text>
             <ul>
                 <li>Higher-intent customers</li>
                 <li>Reduced competition</li>
@@ -540,7 +581,9 @@ Improve readability by breaking up large chunks of text into lists.
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Instant Book offers better returns for the money you spend on Thumbtack through:
+            <Text size={1} className="black-300 mb3">
+                Instant Book offers better returns for the money you spend on Thumbtack through:
+            </Text>
             <ul>
                 <li>higher-intent customers,</li>
                 <li>reduced competition, and</li>
@@ -555,7 +598,9 @@ Improve readability by breaking up large chunks of text into lists.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            Customers can instantly book you starting September 19th
+            <Text size={1} className="black-300 mb3">
+                Customers can instantly book you starting September 19th
+            </Text>
             <ol>
                 <li>Check your business hours</li>
                 <li>Block your calendar</li>
@@ -565,7 +610,9 @@ Improve readability by breaking up large chunks of text into lists.
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            Instant Book offers better returns for the money you spend on Thumbtack through:
+            <Text size={1} className="black-300 mb3">
+                Instant Book offers better returns for the money you spend on Thumbtack through:
+            </Text>
             <ol>
                 <li>Higher-intent customers</li>
                 <li>Reduced competition</li>
@@ -620,9 +667,9 @@ Help pros and customers understand earnings and payment details, when jobs are h
     </GridColumn>
 </Grid>
 
-## Currency
+### Currency
 
-Don’t include values after the decimal when referring to dollar amounts conversationally
+#### Don’t include values after the decimal when referring to dollar amounts conversationally
 
 Round to the nearest dollar amount in:
 
@@ -653,7 +700,7 @@ Round to the nearest dollar amount in:
     </GridColumn>
 </Grid>
 
-Use the entire dollar amount, including cents, to:
+#### Use the entire dollar amount, including cents, to:
 
 -   Communicate payments and earnings
 -   Maintain alignment in the UI
@@ -681,7 +728,7 @@ Use the entire dollar amount, including cents, to:
 
 -   Spell out dates instead of using the numerical format whenever possible.
 -   Use shorthand only if you have a hard character limit.
--   For times, use lower case “am” or “pm” with a space before..
+-   For times, use lower case “am” or “pm” with a space before.
 -   Use a dash to indicate a time range.
 -   Omit the first “am” or “pm” if a time range is within the same part of the day
 
