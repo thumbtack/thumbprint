@@ -10,7 +10,7 @@ import { Anatomy, AnatomyItem } from 'components/anatomy';
 import { Grid, GridColumn } from '@thumbtack/thumbprint-react';
 import { Text } from '@thumbtack/thumbprint-react';
 
-## **Plain language**
+## Plain language
 
 You should always write in a way that helps people find what they need quickly and understand it quickly. Plain language makes it easy for new and existing users to understand your products and can reach a wider audience.
 
@@ -24,7 +24,7 @@ _Search Engine Optimization (SEO)_: Plain language uses the words and phrases th
 
 _Online reading_: People spend less time reading online content and tend to scan it instead of reading linearly. They're less likely to drop off when content is easily found and understood.
 
-_Mobile devices:_ Plain language can reduce the space content needs so it more easily fits on smaller surfaces. It also helps to group content so it's easier to navigate in-app.
+_Mobile devices_: Plain language can reduce the space content needs so it more easily fits on smaller surfaces. It also helps to group content so it's easier to navigate in-app.
 
 ### Plain language principles and techniques
 
@@ -34,35 +34,129 @@ Common, simple words and phrases help with accessibility and SEO, and are more e
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Help</li>
-                <li>Get</li>
-                <li>Get rid of</li>
-                <li>Help</li>
-                <li>Ask</li>
-                <li>Need</li>
-                <li>To</li>
-                <li>If</li>
-                <li>About</li>
-                <li>Pay</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Assistance</li>
-                <li>Access</li>
-                <li>Eliminate</li>
-                <li>Facilitate</li>
-                <li>Request</li>
-                <li>Require</li>
-                <li>In order to</li>
-                <li>In the event that</li>
-                <li>In regard to</li>
-                <li>Make a payment</li>
-            </ul>
+        <DoDont coloredHeading isTable>
+            <tbody>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Help
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Assistance
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Get
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Access
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Get rid of
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Eliminate
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Help
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Facilitate
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Ask
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Request
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Need
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Require
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            To
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            In order to
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            If
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            In the event that
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            About
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            In regard to
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Pay
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Make a payment
+                        </Text>
+                    </td>
+                </tr>
+            </tbody>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -71,7 +165,7 @@ Common, simple words and phrases help with accessibility and SEO, and are more e
 
 Active sentences are shorter and more straightforward than passive ones. They are more easily understood by ESL speakers and easier to remember by people relying on screen readers and memory. While there are times when the passive voice is appropriate, a quick way to shorten and simplify a sentence is to switch from passive to active voice.
 
-Our [Grammar and Mechanics](/overview/content-design/grammar-and-mechanics) section has more information on active voice and passive voice construction.
+Our [Grammar and mechanics](/overview/content-design/grammar-and-mechanics) section has more information on active voice and passive voice construction.
 
 #### Avoid hidden verbs
 
@@ -79,21 +173,45 @@ Hidden verbs are verbs that have been turned into a noun. This construction lead
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Except for</li>
-                <li>Applies to</li>
-                <li>Review</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>With the exception of</li>
-                <li>Is applicable to</li>
-                <li>Leave a review</li>
-            </ul>
+        <DoDont coloredHeading isTable>
+            <tbody>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Except for
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            With the exception of
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Applies to
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Is applicable to
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Review
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Leave a review
+                        </Text>
+                    </td>
+                </tr>
+            </tbody>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -124,7 +242,7 @@ Contractions keep content simple and direct. Since they are commonly used, contr
 
 However, contractions should also be used appropriately. Negative and conditional contractions, for example, are actually harder to understand for people who have reading disabilities or who speak English as a second language. The negative word “not” can also be more clear in certain contexts, such as warning labels or instructions.
 
-Our [Grammar and Mechanics](/overview/content-design/grammar-and-mechanics) section has more information on best practices for using contractions.
+Our [Grammar and mechanics](/overview/content-design/grammar-and-mechanics) section has more information on best practices for using contractions.
 
 #### Avoid jargon
 
@@ -155,7 +273,7 @@ Headers are an effective way to structure content. A good header clearly communi
 
 **Tip:** Headings are a good way to check if content is organized logically. A quick test is to remove all body copy, and read the headers on their own. If you can still get a general idea of the topic and sequence of information, your headers are effective.
 
-Our [Grammar and Mechanics](/overview/content-design/grammar-and-mechanics) section has more information on how to format headers and header tags.
+Our [Grammar and mechanics](/overview/content-design/grammar-and-mechanics) section has more information on how to format headers and header tags.
 
 #### Optimize content with lists
 
@@ -193,11 +311,11 @@ Use the following websites and apps to check your content’s readability the ne
 -   [WebFX Readable Tool](https://www.webfx.com/tools/read-able/)
 -   [Readable](https://app.readable.com/text/)
 
-#### Accessibility and person-first language
+## Accessibility and person-first language
 
 Accessible language allows everyone to read and understand content, regardless of their abilities. Use person-first language to put a person before their disability, while respecting their individuality and dignity.
 
-**How to make your writing accessible and inclusive:**
+### How to make your writing accessible and inclusive:
 
 -   Consider whether a person’s or group’s identity is relevant to the content. Only identify someone’s disability if it adds value and context.
 -   While person-first language is best, some users have their own preferences about how they want to be addressed. When in doubt, simply ask.
@@ -206,7 +324,7 @@ Accessible language allows everyone to read and understand content, regardless o
 -   Be descriptive in hyperlinks so people who use screen readers have an easy time understanding what you’re linking to.
 -   Write alt text for images that provide important information to sighted users.
 
-**Words and phrases to use and avoid**
+### Words and phrases to use and avoid
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={12}>
@@ -305,11 +423,11 @@ Accessible language allows everyone to read and understand content, regardless o
 
 </Grid>
 
-#### Anti-racist content
+## Anti-racist content
 
 Anti-racist content includes diverse perspectives that are different from our own. It’s important that our writing never elevates or excludes any one group over another.
 
-**How to make your writing anti-racist:**
+### How to make your writing anti-racist:
 
 -   Identify a person’s race or ethnicity only when it’s relevant. Always ask for a person’s preference and identify them as specifically as possible.
 -   Avoid metaphors or expressions that are specific to a culture or class. For example, phrases like “knock it out of the park” or “hit a home run" are not universal.
@@ -317,7 +435,7 @@ Anti-racist content includes diverse perspectives that are different from our ow
 -   Avoid culturally insensitive slang or appropriating cultural terminology. Some examples can be found in our list of words and phrases to use and avoid.
 -   Don’t speak about people in divisive ways. For example, instead of referring to people as "native speakers" or "non-native speakers" of English, think about whether or not your document needs to discuss this at all.
 
-**Words and phrases to use and avoid**
+### Words and phrases to use and avoid
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={9}>
@@ -394,11 +512,11 @@ Anti-racist content includes diverse perspectives that are different from our ow
     </GridColumn>
 </Grid>
 
-#### Gender-neutral language
+## Gender-neutral language
 
 Gender-neutral language is important so our words don’t enforce biases and stereotypes based on sex and gender.
 
-**How to make your writing gender-neutral:**
+### How to make your writing gender-neutral:
 
 -   Always use people’s preferred pronouns. When in doubt, it’s better to ask.
 -   Use gender neutral pronouns “they/them/their”. Avoid using “he” or “she” unless you’re referring to a specific person.
@@ -407,7 +525,7 @@ Gender-neutral language is important so our words don’t enforce biases and ste
 -   When using plural pronouns, you can rewrite the sentence so the nouns are also plural if it improves readability.
 -   When specific context is needed, use diverse names, genders, ages and locations for examples or placeholder copy.
 
-**Words and phrases to use and avoid**
+### Words and phrases to use and avoid
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={9}>
