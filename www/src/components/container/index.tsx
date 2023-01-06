@@ -265,6 +265,15 @@ export default function Container({
                                         >
                                             <SideNavGroup level={3}>
                                                 <SideNavLink
+                                                    title="Voice and tone"
+                                                    level={3}
+                                                    to="/overview/content-design/voice-and-tone"
+                                                    isActive={
+                                                        pathname ===
+                                                        '/overview/content-design/voice-and-tone'
+                                                    }
+                                                />
+                                                <SideNavLink
                                                     title="Inclusion and accessibility"
                                                     level={3}
                                                     to="/overview/content-design/inclusion-and-accessibility"
