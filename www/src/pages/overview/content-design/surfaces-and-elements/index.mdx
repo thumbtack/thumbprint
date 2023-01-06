@@ -106,22 +106,46 @@ Use buttons for primary actions and links for navigation. Unless you’re follow
 Remember, image-only buttons and links need alt-text.
 
 <Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <ul>
-                <li>See policy details</li>
-                <li>Start free trial</li>
-                <li>Set reminder</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Learn more</li>
-                <li>Try it now!</li>
-                <li>Set a reminder</li>
-            </ul>
+    <GridColumn aboveSmall={9}>
+        <DoDont coloredHeading isTable className="w-100">
+            <tbody>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            See policy details
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Learn more
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Start free trial
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Try it now!
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Set reminder
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            Set a reminder
+                        </Text>
+                    </td>
+                </tr>
+            </tbody>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -145,22 +169,46 @@ Use complete sentences and keep body copy to two lines total. This space is gene
 Keep CTAs to four words or less and don’t punctuate them. If the user can resolve the error on their own, direct them to do so in the CTA (even if it’s just trying again or refreshing the page).
 
 <Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <ul>
-                <li>We weren’t able to process your payment.</li>
-                <li>We’re working to improve.</li>
-                <li>That doesn’t look like the right password.</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>The payment failed.</li>
-                <li>We’re sorry.</li>
-                <li>You entered the wrong password</li>
-            </ul>
+    <GridColumn aboveSmall={9}>
+        <DoDont coloredHeading isTable className="w-100">
+            <tbody>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            We weren’t able to process your payment.
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            The payment failed.
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            We’re working to improve.
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            We’re sorry.
+                        </Text>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <Text size={1} className="black-300">
+                            That doesn’t look like the right password.
+                        </Text>
+                    </td>
+                    <td>
+                        <Text size={1} className="black-300">
+                            You entered the wrong password
+                        </Text>
+                    </td>
+                </tr>
+            </tbody>
         </DoDont>
     </GridColumn>
 </Grid>
