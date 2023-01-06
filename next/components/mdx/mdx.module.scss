@@ -1,0 +1,58 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+$hashIconWidth: 16px;
+
+.readingWidth {
+    max-width: 580px;
+}
+
+.hashAnchor {
+    position: relative;
+
+    &:hover {
+        // Allows user to hover over the icon which is absolutely positioned to the left of the
+        // headline text.
+        margin-left: $hashIconWidth * -2;
+        padding-left: $hashIconWidth * 2;
+
+        .hashAnchorLink {
+            display: flex;
+        }
+    }
+}
+
+.hashAnchorLink {
+    display: none;
+    position: absolute;
+    top: 50%;
+    color: inherit;
+
+    // Move the icon left of the text.
+    transform: translate($hashIconWidth * -1.2, -50%);
+
+    @include tp-respond-above($tp-breakpoint__large) {
+        transform: translate($hashIconWidth * -1.6, -50%);
+    }
+}
+
+.inlineCodeClipboard {
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        color: $tp-color__blue;
+    }
+}
+
+.inlineCodeClipboard:hover:before {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDEyIDE0Ij4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgIDxyZWN0IHdpZHRoPSIxMSIgaGVpZ2h0PSIxMiIgeD0iLjUiIHk9IjEuNSIgZmlsbD0iI0ZGRiIgc3Ryb2tlPSIjMDAwIiByeD0iMSIvPiAgICA8cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSIzIiB4PSIzIiBmaWxsPSIjMDAwIi8+ICAgIDxwYXRoIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgZD0iTTMuNSA3LjVMNSA5bS41LS41bDMtMyIvPiAgPC9nPjwvc3ZnPg==);
+    position: absolute;
+    left: -18px;
+    width: 12px;
+    height: 14px;
+    top: 2px;
+}
