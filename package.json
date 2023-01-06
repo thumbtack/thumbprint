@@ -109,6 +109,7 @@
     "homepage": "https://github.com/thumbtack/thumbprint#readme",
     "workspaces": [
         "packages/*",
+        "next",
         "www"
     ],
     "husky": {

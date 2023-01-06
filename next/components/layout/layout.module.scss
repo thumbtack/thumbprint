@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    grid-template-columns: 256px 1fr;
+}
+
+.sidenav {
+    box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.1);
+}
