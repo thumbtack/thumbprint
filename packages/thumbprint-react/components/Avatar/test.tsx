@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { UserAvatar, EntityAvatar } from './index';
 
 test('renders an image when the user has one', (): void => {
-    const wrapper = mount(<UserAvatar imageUrl="//www.placecage.com/130/130" initials="NC" />);
+    const wrapper = mount(<UserAvatar imageUrl="//https://i.pravatar.cc/140" initials="NC" />);
     expect(wrapper).toMatchSnapshot();
 });
 
@@ -16,7 +16,7 @@ test('renders the initials when the user has no image', (): void => {
 test('adds the `fullName` as `title` text', (): void => {
     const wrapper = mount(<UserAvatar fullName="Duck Goose" />);
     const wrapperWithImage = mount(
-        <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
+        <UserAvatar fullName="Duck Goose" imageUrl="//https://i.pravatar.cc/140" />,
     );
     const wrapperWithInitials = mount(<UserAvatar fullName="Duck Goose" initials="DG" />);
 
@@ -30,7 +30,7 @@ test('adds the `fullName` as `title` text', (): void => {
 
 test('adds the `fullName` as `alt` text when image is provided', (): void => {
     const wrapper = mount(
-        <UserAvatar fullName="Duck Goose" imageUrl="//www.placecage.com/130/130" />,
+        <UserAvatar fullName="Duck Goose" imageUrl="//https://i.pravatar.cc/140" />,
     );
     expect(wrapper.find('Image').prop('alt')).toContain('Duck Goose');
     expect(wrapper).toMatchSnapshot();
@@ -91,7 +91,7 @@ test('renders checkmark SVG when `isChecked` and `isOnline` are true', (): void 
 });
 
 test('EntityAvatar renders an image when the user has one', (): void => {
-    const wrapper = mount(<EntityAvatar imageUrl="//www.placecage.com/130/130" initial="N" />);
+    const wrapper = mount(<EntityAvatar imageUrl="//https://i.pravatar.cc/140" initial="N" />);
     expect(wrapper).toMatchSnapshot();
 });
 
