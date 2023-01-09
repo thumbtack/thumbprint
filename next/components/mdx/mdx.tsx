@@ -3,12 +3,12 @@ import { MDXProvider } from '@mdx-js/react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Language } from 'prism-react-renderer';
+// import { Language } from 'prism-react-renderer';
 import cx from 'classnames';
 
 import Wrap from '../wrap/wrap';
 import PageHeader from '../page-header/page-header';
-import CodeBlock from './code-block/code-block';
+// import CodeBlock from './code-block/code-block';
 import generateSlug from '../generate-slug/generate-slug';
 import styles from './mdx.module.scss';
 import Layout from '../layout/layout';
@@ -31,36 +31,63 @@ const HashAnchor = ({ children, id }: { children: React.ReactNode; id: string })
     </div>
 );
 
-type HeadingType = Omit<Parameters<typeof Title>[0], 'size' | 'headingLevel' | 'className' | 'id'>;
+export function H2({
+    children,
+    ...rest
+}: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+>): JSX.Element {
+    const id = generateSlug({ level: 'section', children });
 
-export function H2(p: HeadingType): JSX.Element {
-    const id = generateSlug({ level: 'section', children: p.children });
-    return (
-        <HashAnchor id={id}>
-            <Title {...p} id={id} size={3} headingLevel={2} className="mt6 mb3" />
-        </HashAnchor>
+    const contents = (
+        <Title {...rest} id={id} size={3} headingLevel={2} className="mt6 mb3">
+            {children}
+        </Title>
     );
+
+    if (!id) {
+        return contents;
+    }
+
+    return <HashAnchor id={id}>{contents}</HashAnchor>;
 }
 
-export function H3(p: HeadingType): JSX.Element {
-    const id = generateSlug({ level: 'example', children: p.children }) || '';
+export function H3({
+    children,
+    ...rest
+}: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+>): JSX.Element {
+    const id = generateSlug({ level: 'example', children });
 
-    return (
-        <HashAnchor id={id}>
-            <Title {...p} id={id} size={5} headingLevel={3} className="mt5 mb2" />
-        </HashAnchor>
+    const contents = (
+        <Title {...rest} id={id} size={5} headingLevel={3} className="mt5 mb2">
+            {children}
+        </Title>
     );
+
+    if (!id) {
+        return contents;
+    }
+
+    return <HashAnchor id={id}>{contents}</HashAnchor>;
 }
 
-export function H4(p: HeadingType): JSX.Element {
+export function H4({
+    children,
+    ...rest
+}: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+>): JSX.Element {
+    const id = generateSlug({ level: 'example', children });
+
     return (
-        <Title
-            {...p}
-            id={generateSlug({ level: 'example', children: p.children })}
-            size={6}
-            headingLevel={4}
-            className="mt5 mb1"
-        />
+        <Title {...rest} id={id} size={6} headingLevel={4} className="mt5 mb1">
+            {children}
+        </Title>
     );
 }
 
@@ -104,8 +131,10 @@ export const InlineCode = ({
     );
 };
 
-export function Pre(p: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
-    return <div {...p} />;
+export function Pre(
+    p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement>,
+): JSX.Element {
+    return <pre {...p} />;
 }
 
 export function LI(p: Parameters<typeof Text>[0]): JSX.Element {
@@ -132,32 +161,35 @@ export function UL(p: Parameters<typeof List>[0]): JSX.Element {
     );
 }
 
-export function Code(p: {
-    className: string;
-    theme: 'white' | 'dark' | 'light';
-    shouldRender: 'true' | 'false';
-    children: string;
-}): JSX.Element {
-    const language = p.className
-        ? ((p.className.replace('language-', '') as unknown) as Language)
-        : undefined;
+export function Code(
+    p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
+): JSX.Element {
+    // const language = p.className
+    //     ? ((p.className.replace('language-', '') as unknown) as Language)
+    //     : undefined;
 
-    return (
-        <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
-            {p.children}
-        </CodeBlock>
-    );
+    return <code>{p.children}</code>;
+
+    // return (
+    //     <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
+    //         {p.children}
+    //     </CodeBlock>
+    // );
 }
 
 export function Table(p: React.TableHTMLAttributes<HTMLTableElement>): JSX.Element {
     return <table {...p} className="mb5 w-100 black-300" />;
 }
 
-export function TH(p: React.TableHTMLAttributes<HTMLTableHeaderCellElement>): JSX.Element {
+export function TH(
+    p: React.DetailedHTMLProps<React.ThHTMLAttributes<HTMLTableCellElement>, HTMLTableCellElement>,
+): JSX.Element {
     return <th {...p} className="ph2 pb2 bb b-gray-300 tl" />;
 }
 
-export function TD(p: React.TableHTMLAttributes<HTMLTableDataCellElement>): JSX.Element {
+export function TD(
+    p: React.DetailedHTMLProps<React.TdHTMLAttributes<HTMLTableCellElement>, HTMLTableCellElement>,
+): JSX.Element {
     return <td {...p} className="pa2 bb b-gray-300" />;
 }
 
@@ -202,7 +234,7 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
                 ol: OL,
                 ul: UL,
                 img: Img,
-                code: (p): JSX.Element => <Code {...p} />,
+                code: Code,
                 table: Table,
                 td: TD,
                 th: TH,
@@ -215,7 +247,7 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
     );
 };
 
-export function getStaticProps() {
+export function getStaticProps(): { props: { layoutProps: LayoutProps } } {
     return {
         props: {
             layoutProps: getLayoutProps(),

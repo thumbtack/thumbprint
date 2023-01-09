@@ -12,6 +12,10 @@ const nextConfig = {
     reactStrictMode: true,
     transpilePackages: ['@thumbtack/thumbprint-react'],
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    eslint: {
+        // We do this separately in CI.
+        ignoreDuringBuilds: true,
+    },
     webpack: config => {
         // https://github.com/martpie/next-transpile-modules/issues/117
         //
