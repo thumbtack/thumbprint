@@ -1,29 +1,25 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
 // provides x overlay on top of content region
-.dont {
-    &:not(.coloredHeading) {
-        > div:last-of-type {
-            :after,
-            :before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-                transform: translateX(-50%) translateY(-50%) rotate(45deg);
-                height: calc(100% + 32px);
-                width: 5px;
-                background: #ff5a5f;
-                opacity: 0.6;
-                border-radius: 2px;
-                z-index: 1;
-            }
-            :before {
-                -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
-                transform: translateX(-50%) translateY(-50%) rotate(135deg);
-            }
-        }
+.crossout {
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        height: calc(100% + 32px);
+        width: 5px;
+        background: #ff5a5f;
+        opacity: 0.6;
+        border-radius: 2px;
+        z-index: 1;
+    }
+    &:before {
+        -webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+        transform: translateX(-50%) translateY(-50%) rotate(135deg);
     }
 }
 

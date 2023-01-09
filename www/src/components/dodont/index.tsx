@@ -49,19 +49,29 @@ export default function DoDont({
             })}
         >
             {type === 'do' && (
-                <div className="flex items-center mb2">
-                    <InputsThumbsUpSmall />
-                    <div className="ml2 b">Do</div>
-                </div>
+                <>
+                    <div className="flex items-center mb2">
+                        <InputsThumbsUpSmall />
+                        <div className="ml2 b">Do</div>
+                    </div>
+                    <div className="overflow-hidden ba b-gray-300 pa3">{children}</div>
+                </>
             )}
             {type === 'dont' && (
-                <div className="flex items-center mb2">
-                    <InputsThumbsDownSmall />
-                    <div className="ml2 b">Don’t</div>
-                </div>
+                <>
+                    <div className="flex items-center mb2">
+                        <InputsThumbsDownSmall />
+                        <div className="ml2 b">Don’t</div>
+                    </div>
+                    <div
+                        className={classNames('overflow-hidden ba b-gray-300 pa3 relative', {
+                            [styles.crossout]: !coloredHeading,
+                        })}
+                    >
+                        {children}
+                    </div>
+                </>
             )}
-
-            <div className="overflow-hidden ba b-gray-300 pa3 relative">{children}</div>
         </div>
     );
 }
