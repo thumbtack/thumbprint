@@ -255,53 +255,55 @@ export default function Container({
                                             to="/overview/product-design/"
                                             isActive={pathname === '/overview/product-design/'}
                                         />
-                                        <SideNavLink
-                                            title="Content Design"
-                                            level={2}
-                                            to="/overview/content-design/inclusion-and-accessibility"
-                                            isActive={pathname.startsWith(
-                                                '/overview/content-design/',
-                                            )}
-                                        >
-                                            <SideNavGroup level={3}>
-                                                <SideNavLink
-                                                    title="Voice and tone"
-                                                    level={3}
-                                                    to="/overview/content-design/voice-and-tone"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/voice-and-tone'
-                                                    }
-                                                />
-                                                <SideNavLink
-                                                    title="Inclusion and accessibility"
-                                                    level={3}
-                                                    to="/overview/content-design/inclusion-and-accessibility"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/inclusion-and-accessibility'
-                                                    }
-                                                />
-                                                <SideNavLink
-                                                    title="Grammar and mechanics"
-                                                    level={3}
-                                                    to="/overview/content-design/grammar-and-mechanics"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/grammar-and-mechanics'
-                                                    }
-                                                />
-                                                <SideNavLink
-                                                    title="Surfaces and elements"
-                                                    level={3}
-                                                    to="/overview/content-design/surfaces-and-elements"
-                                                    isActive={
-                                                        pathname ===
-                                                        '/overview/content-design/surfaces-and-elements'
-                                                    }
-                                                />
-                                            </SideNavGroup>
-                                        </SideNavLink>
+                                        <SideNavGroup level={2}>
+                                            <SideNavLink
+                                                title="Content Design"
+                                                level={2}
+                                                to="/overview/content-design/voice-and-tone/"
+                                                isActive={pathname.startsWith(
+                                                    '/overview/content-design/',
+                                                )}
+                                            >
+                                                <SideNavGroup level={3}>
+                                                    <SideNavLink
+                                                        title="Voice and tone"
+                                                        level={3}
+                                                        to="/overview/content-design/voice-and-tone/"
+                                                        isActive={
+                                                            pathname ===
+                                                            '/overview/content-design/voice-and-tone/'
+                                                        }
+                                                    />
+                                                    <SideNavLink
+                                                        title="Inclusion and accessibility"
+                                                        level={3}
+                                                        to="/overview/content-design/inclusion-and-accessibility/"
+                                                        isActive={
+                                                            pathname ===
+                                                            '/overview/content-design/inclusion-and-accessibility/'
+                                                        }
+                                                    />
+                                                    <SideNavLink
+                                                        title="Grammar and mechanics"
+                                                        level={3}
+                                                        to="/overview/content-design/grammar-and-mechanics/"
+                                                        isActive={
+                                                            pathname ===
+                                                            '/overview/content-design/grammar-and-mechanics/'
+                                                        }
+                                                    />
+                                                    <SideNavLink
+                                                        title="Surfaces and elements"
+                                                        level={3}
+                                                        to="/overview/content-design/surfaces-and-elements/"
+                                                        isActive={
+                                                            pathname ===
+                                                            '/overview/content-design/surfaces-and-elements/'
+                                                        }
+                                                    />
+                                                </SideNavGroup>
+                                            </SideNavLink>
+                                        </SideNavGroup>
                                     </SideNavGroup>
                                 </SideNavLink>
 
