@@ -132,5 +132,13 @@ module.exports = {
                 ],
             },
         },
+        {
+            files: ['next/pages/**/*.tsx'],
+            rules: {
+                // We can use Next.js's `InferGetStaticPropsType` rather than specifying the return
+                // type manually.
+                '@typescript-eslint/explicit-function-return-type': 'off',
+            },
+        },
     ],
 };

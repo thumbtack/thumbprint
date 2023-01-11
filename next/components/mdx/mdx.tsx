@@ -255,25 +255,38 @@ export function getStaticProps(): { props: { layoutProps: LayoutProps } } {
     };
 }
 
-interface MdxPropTypes {
+interface ContentPageProps {
     children: React.ReactNode;
     title: string;
     description?: string;
     layoutProps: LayoutProps;
 }
 
+export const ContentPage = ({
+    children,
+    title,
+    description,
+    layoutProps,
+}: ContentPageProps): JSX.Element => {
+    return (
+        <Layout {...layoutProps}>
+            <Wrap>
+                <PageHeader pageTitle={title} metaTitle={title} description={description} />
+                {children}
+            </Wrap>
+        </Layout>
+    );
+};
+
 export default function MDX({
     children,
     title,
     description,
     layoutProps,
-}: MdxPropTypes): JSX.Element {
+}: ContentPageProps): JSX.Element {
     return (
-        <Layout {...layoutProps}>
-            <Wrap>
-                <PageHeader pageTitle={title} metaTitle={title} description={description} />
-                <MDXRenderer>{children}</MDXRenderer>
-            </Wrap>
-        </Layout>
+        <ContentPage title={title} description={description} layoutProps={layoutProps}>
+            <MDXRenderer>{children}</MDXRenderer>
+        </ContentPage>
     );
 }
