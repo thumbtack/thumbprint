@@ -26,7 +26,11 @@ export default function Atomic({ files, layoutProps }: AtomicProps): React.React
     return (
         <Layout {...layoutProps}>
             <Wrap>
-                <PageHeader pageTitle="Atomic" metaTitle="Atomic" />
+                <PageHeader
+                    pageTitle="Atomic"
+                    metaTitle="Atomic"
+                    description="CSS classes for composing layouts"
+                />
 
                 <H2>Aspect Ratio</H2>
 

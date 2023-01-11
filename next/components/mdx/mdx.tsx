@@ -5,6 +5,7 @@ import * as tokens from '@thumbtack/thumbprint-tokens';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 // import { Language } from 'prism-react-renderer';
 import cx from 'classnames';
+import { ScrollMarkerSection } from 'react-scroll-marker';
 
 import Wrap from '../wrap/wrap';
 import PageHeader from '../page-header/page-header';
@@ -52,7 +53,11 @@ export function H2({
         return contents;
     }
 
-    return <HashAnchor id={id}>{contents}</HashAnchor>;
+    return (
+        <ScrollMarkerSection id={id}>
+            {(): JSX.Element => <HashAnchor id={id}>{contents}</HashAnchor>}
+        </ScrollMarkerSection>
+    );
 }
 
 export function H3({

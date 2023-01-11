@@ -1,5 +1,16 @@
+type ActiveSection =
+    | 'Overview'
+    | 'Guidelines'
+    | 'Components'
+    | 'Atomic'
+    | 'Tokens'
+    | 'Icons'
+    | 'Updates'
+    | 'Help'
+    // `null` is for pages like the homepage that aren't part of the collapsable sidebar navigation.
+    | null;
+
 export interface LayoutProps {
-    activeSection: string;
     navigation: {
         title: string;
         href: string;
@@ -20,7 +31,6 @@ export default function getLayoutProps(): LayoutProps {
     }
 
     return {
-        activeSection: 'Overview',
         navigation: [
             {
                 title: 'Overview',
@@ -104,8 +114,11 @@ export default function getLayoutProps(): LayoutProps {
                             title: 'SCSS',
                             href: '/tokens/scss',
                             sections: [
-                                { title: 'Border Radius', href: '/tokens/scss#border-radius' },
-                                { title: 'Breakpoint', href: '/tokens/scss#breakpoint' },
+                                {
+                                    title: 'Border Radius',
+                                    href: '/tokens/scss#section-border-radius',
+                                },
+                                { title: 'Breakpoint', href: '/tokens/scss#section-breakpoint' },
                             ],
                         },
                         { title: 'JavaScript', href: '/tokens/javascript' },
