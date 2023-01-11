@@ -47,6 +47,7 @@ export default function getLayoutProps(): LayoutProps {
                     [
                         { title: 'Action Sheet', href: '/components/action-sheet/ios' },
                         { title: 'Alert', href: '/components/alert/react' },
+                        { title: 'Avatar', href: '/components/avatar/usage' },
                     ],
                 ],
             },
