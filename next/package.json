@@ -17,6 +17,7 @@
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
     "clickable-box": "^1.1.10",
+    "gonzales-pe": "^4.3.0",
     "mousetrap": "^1.6.5",
     "next": "13.1.1",
     "prism-react-renderer": "0.1.7",

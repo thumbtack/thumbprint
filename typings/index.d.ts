@@ -46,6 +46,8 @@ declare module 'react-outside-click-handler';
 
 declare module 'mousetrap';
 
+declare module 'gonzales-pe';
+
 // An SCSS module returns a map from string => string when imported.
 declare module '*.module.scss' {
     const classes: { [key: string]: string };

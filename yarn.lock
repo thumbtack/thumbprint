@@ -17348,6 +17348,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gonzales-pe@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "gonzales-pe@npm:4.3.0"
+  dependencies:
+    minimist: ^1.2.5
+  bin:
+    gonzales: bin/gonzales.js
+  checksum: 49d60fc49ad35639e5d55923c1516d3ec2e4de5e6e5913ec3458a479b66623e54a060d568295349b0bb9f96ee970c473ff984d4b82a5cfeaf736c55f0d6dc3b7
+  languageName: node
+  linkType: hard
+
 "gopd@npm:^1.0.1":
   version: 1.0.1
   resolution: "gopd@npm:1.0.1"
@@ -23746,6 +23757,7 @@ is-whitespace@latest:
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
     clickable-box: ^1.1.10
+    gonzales-pe: ^4.3.0
     mousetrap: ^1.6.5
     next: 13.1.1
     prism-react-renderer: 0.1.7
