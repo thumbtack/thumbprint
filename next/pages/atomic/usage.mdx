@@ -1,5 +1,6 @@
 import MDX from '../../components/mdx/mdx';
-export { getStaticProps } from '../../components/mdx/mdx';
+import baseGetStaticProps from '../../utils/mdx-get-static-props';
+export const getStaticProps = ctx => baseGetStaticProps(ctx, metadata);
 export default props => <MDX {...props} {...metadata} />;
 
 export const metadata = {

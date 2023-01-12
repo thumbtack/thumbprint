@@ -12,7 +12,9 @@ import PageHeader from '../page-header/page-header';
 import generateSlug from '../generate-slug/generate-slug';
 import styles from './mdx.module.scss';
 import Layout from '../layout/layout';
-import getLayoutProps, { LayoutProps } from '../../utils/get-layout-props';
+import { LayoutProps } from '../../utils/get-layout-props';
+import TabNav, { TabNavItem } from '../tab-nav/tab-nav';
+import { ComponentPageProps } from '../../utils/mdx-get-static-props';
 
 const HashAnchor = ({ children, id }: { children: React.ReactNode; id: string }): JSX.Element => (
     <div className={styles.hashAnchor}>
@@ -247,14 +249,6 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
     );
 };
 
-export function getStaticProps(): { props: { layoutProps: LayoutProps } } {
-    return {
-        props: {
-            layoutProps: getLayoutProps(),
-        },
-    };
-}
-
 interface ContentPageProps {
     children: React.ReactNode;
     title: string;
@@ -275,6 +269,31 @@ export const ContentPage = ({
                 {children}
             </Wrap>
         </Layout>
+    );
+};
+
+export const MDXComponentPage = ({
+    children,
+    title,
+    description,
+    layoutProps,
+    componentPageProps,
+}: ContentPageProps & { componentPageProps: ComponentPageProps }): JSX.Element => {
+    return (
+        <MDX title={title} description={description} layoutProps={layoutProps}>
+            <TabNav>
+                {componentPageProps.componentPlatforms.map(platform => (
+                    <TabNavItem
+                        isActive={platform === componentPageProps.platformId}
+                        key={platform}
+                        href={`/components/${componentPageProps.id}/${platform}`}
+                    >
+                        {platform}
+                    </TabNavItem>
+                ))}
+            </TabNav>
+            {children}
+        </MDX>
     );
 };
 
