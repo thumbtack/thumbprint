@@ -1,15 +1,3 @@
-type ActiveSection =
-    | 'Overview'
-    | 'Guidelines'
-    | 'Components'
-    | 'Atomic'
-    | 'Tokens'
-    | 'Icons'
-    | 'Updates'
-    | 'Help'
-    // `null` is for pages like the homepage that aren't part of the collapsable sidebar navigation.
-    | null;
-
 export interface LayoutProps {
     navigation: {
         title: string;
