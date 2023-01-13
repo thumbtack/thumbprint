@@ -1,7 +1,21 @@
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [],
+        rehypePlugins: [],
+        providerImportSource: '@mdx-js/react',
+    },
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
     transpilePackages: ['@thumbtack/thumbprint-react'],
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    eslint: {
+        // We do this separately in CI.
+        ignoreDuringBuilds: true,
+    },
     webpack: config => {
         // This allows Thumbprint React to work. It's needed for a bug in `next-transpile-modules`
         // was was ported over to Next.js and still exists as a bug in `transpilePackages`.
@@ -16,4 +30,4 @@ const nextConfig = {
     },
 };
 
-module.exports = nextConfig;
+module.exports = withMDX(nextConfig);

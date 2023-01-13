@@ -1,0 +1,13 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+@import '~@thumbtack/thumbprint-scss/mixins';
+
+.wrap {
+    max-width: 1024px;
+    padding-left: $tp-space__4;
+    padding-right: $tp-space__4;
+
+    @include tp-respond-above($tp-breakpoint__large) {
+        padding-left: 96px;
+        padding-right: 96px;
+    }
+}
