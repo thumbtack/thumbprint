@@ -7,7 +7,7 @@ import prettier from 'prettier';
 import { GetStaticProps } from 'next';
 import Wrap from '../../components/wrap/wrap';
 import PageHeader from '../../components/page-header/page-header';
-import { H2, H3, UL, LI, P } from '../../components/mdx/mdx';
+import { H2, H3, UL, LI, P } from '../../components/mdx/components';
 import InlineCode from '../../components/inline-code/inline-code';
 import Table from '../../components/thumbprint-atomic/table/table';
 import getClasses, {
