@@ -244,29 +244,59 @@ Negative contractions are difficult to read and may be easily misread.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>I'll</li>
-                <li>I'm</li>
-                <li>It's</li>
-                <li>There's</li>
-                <li>They're</li>
-                <li>We'll</li>
-                <li>We're</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">I'll</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">I'm</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">It's</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">There's</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">They're</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">We'll</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">We're</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Can't</li>
-                <li>Couldn't</li>
-                <li>Didn't</li>
-                <li>Don't</li>
-                <li>Shouldn't</li>
-                <li>Weren't</li>
-                <li>Won't</li>
-                <li>Wouldn't</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Can't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Couldn't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Didn't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Don't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Shouldn't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Weren't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Won't</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Wouldn't</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -413,20 +443,32 @@ When writing product copy, use a hyphen instead.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Auto-pay</li>
-                <li>Higher-intent customers</li>
-                <li>Instantly booked jobs</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Auto-pay</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Higher-intent customers</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Instantly booked jobs</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Autopay or Auto pay</li>
-                <li>Higher intent customers</li>
-                <li>Instantly-booked jobs</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Autopay or Auto pay</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Higher intent customers</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Instantly-booked jobs</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -461,20 +503,32 @@ Avoid using periods in links, buttons, and tabs.
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Opportunities</li>
-                <li>Calendar</li>
-                <li>View details</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Opportunities</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Calendar</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">View details</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Opportunities.</li>
-                <li>Calendar.</li>
-                <li>View details.</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Opportunities.</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Calendar.</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">View details.</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -483,54 +537,76 @@ Avoid using periods in links, buttons, and tabs.
 
 #### Avoid using ampersands
 
-<ul>
-    <li>Avoid using ampersands unless you have a hard character limit.</li>
-    <li>Don’t use ampersands after commas.</li>
-</ul>
+<List>
+    <ListItem>
+        <Text className="black-300">
+            Avoid using ampersands unless you have a hard character limit.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Don’t use ampersands after commas.</Text>
+    </ListItem>
+</List>
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Your base price includes consultation, travel fees, and mount on drywall, plaster,
-                or wood
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Your base price includes consultation, travel fees, & mount on drywall, plaster, or
-                wood
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+<div className="mt3">
+    <Grid gutter="wide">
+        <GridColumn aboveSmall={6}>
+            <DoDont type="do" coloredHeading>
+                <Text size={1} className="black-300">
+                    Your base price includes consultation, travel fees, and mount on drywall,
+                    plaster, or wood
+                </Text>
+            </DoDont>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <DoDont type="dont" coloredHeading>
+                <Text size={1} className="black-300">
+                    Your base price includes consultation, travel fees, & mount on drywall, plaster,
+                    or wood
+                </Text>
+            </DoDont>
+        </GridColumn>
+    </Grid>
+</div>
 
 ### Periods
 
 #### Avoid using periods in headers
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Set your hours</li>
-                <li>Edit your business hours</li>
-                <li>You’re now signed up for Instant Book</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>Set your hours.</li>
-                <li>Edit your business hours.</li>
-                <li>You’re now signed up for Instant Book.</li>
-            </ul>
-        </DoDont>
-    </GridColumn>
-</Grid>
+<div className="mt3">
+    <Grid gutter="wide">
+        <GridColumn aboveSmall={6}>
+            <DoDont type="do" coloredHeading>
+                <List>
+                    <ListItem>
+                        <Text className="black-300">Set your hours</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Text className="black-300">Edit your business hours</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Text className="black-300">You’re now signed up for Instant Book</Text>
+                    </ListItem>
+                </List>
+            </DoDont>
+        </GridColumn>
+        <GridColumn aboveSmall={6}>
+            <DoDont type="dont" coloredHeading>
+                <List>
+                    <ListItem>
+                        <Text className="black-300">Set your hours.</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Text className="black-300">Edit your business hours.</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Text className="black-300">You’re now signed up for Instant Book.</Text>
+                    </ListItem>
+                </List>
+            </DoDont>
+        </GridColumn>
+    </Grid>
+</div>
 
 ### Emails
 
@@ -572,11 +648,17 @@ Improve readability by breaking up large chunks of text into lists.
             <Text size={1} className="black-300 mb3">
                 Instant Book offers better returns for the money you spend on Thumbtack through:
             </Text>
-            <ul>
-                <li>Higher-intent customers</li>
-                <li>Reduced competition</li>
-                <li>Less time communicating with customers</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Higher-intent customers</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Reduced competition</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Less time communicating with customers</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
@@ -584,11 +666,17 @@ Improve readability by breaking up large chunks of text into lists.
             <Text size={1} className="black-300 mb3">
                 Instant Book offers better returns for the money you spend on Thumbtack through:
             </Text>
-            <ul>
-                <li>higher-intent customers,</li>
-                <li>reduced competition, and</li>
-                <li>less time communicating with customers.</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">higher-intent customers,</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">reduced competition, and</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">less time communicating with customers.</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -602,9 +690,15 @@ Improve readability by breaking up large chunks of text into lists.
                 Customers can instantly book you starting September 19th
             </Text>
             <ol>
-                <li>Check your business hours</li>
-                <li>Block your calendar</li>
-                <li>Get ready for instant bookings</li>
+                <ListItem>
+                    <Text className="black-300">Check your business hours</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Block your calendar</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Get ready for instant bookings</Text>
+                </ListItem>
             </ol>
         </DoDont>
     </GridColumn>
@@ -614,9 +708,15 @@ Improve readability by breaking up large chunks of text into lists.
                 Instant Book offers better returns for the money you spend on Thumbtack through:
             </Text>
             <ol>
-                <li>Higher-intent customers</li>
-                <li>Reduced competition</li>
-                <li>Less time communicating with customers</li>
+                <ListItem>
+                    <Text className="black-300">Higher-intent customers</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Reduced competition</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Less time communicating with customers</Text>
+                </ListItem>
             </ol>
         </DoDont>
     </GridColumn>
@@ -628,46 +728,82 @@ Help pros and customers understand earnings and payment details, when jobs are h
 
 ### General guidance
 
-<ul>
-    <li>Use ###-###-#### formatting when writing telephone numbers. Don’t use parentheses.</li>
-    <li>Spell out small numbers in a sentence.</li>
-    <li>Use the actual number only if it’s in a form field, chart, date or other UX value.</li>
-    <li>Use the number for 100 and up.</li>
+<List>
+    <ListItem>
+        <Text className="black-300">
+            Use ###-###-#### formatting when writing telephone numbers. Don’t use parentheses.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Spell out small numbers in a sentence.</Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">
+            Use the actual number only if it’s in a form field, chart, date or other UX value.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Use the number for 100 and up.</Text>
+    </ListItem>
     <li>
         For very large numbers, combine the number and word (32 million). Abbreviate ($32M) only if
         you have a hard character limit.
     </li>
-    <li>Use the % sign for percentages.</li>
-</ul>
+    <ListItem>
+        <Text className="black-300">Use the % sign for percentages.</Text>
+    </ListItem>
+</List>
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>555-867-5309</li>
+            <List>
+                <ListItem>
+                    <Text className="black-300">555-867-5309</Text>
+                </ListItem>
                 <li>
                     Pros who have at least 12 hours available each week book more jobs on Thumbtack.
                 </li>
-                <li>[H1] Invite five friends to join Thumbtack</li>
-                <li>You’ve completed over 200 jobs on Thumbtack</li>
-                <li>32 million</li>
-                <li>24%</li>
-            </ul>
+                <ListItem>
+                    <Text className="black-300">[H1] Invite five friends to join Thumbtack</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">You’ve completed over 200 jobs on Thumbtack</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">32 million</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">24%</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>(555) 867-5309 or 1-867-555-5309</li>
+            <List>
+                <ListItem>
+                    <Text className="black-300">(555) 867-5309 or 1-867-555-5309</Text>
+                </ListItem>
                 <li>
                     Pros who have at least twelve hours available each week book more jobs on
                     Thumbtack.
                 </li>
-                <li>[H1] Invite 5 friends to join Thumbtack</li>
-                <li>You’ve completed over two hundred jobs on Thumbtack</li>
-                <li>32,000,000</li>
-                <li>24 percent</li>
-            </ul>
+                <ListItem>
+                    <Text className="black-300">[H1] Invite 5 friends to join Thumbtack</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">
+                        You’ve completed over two hundred jobs on Thumbtack
+                    </Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">32,000,000</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">24 percent</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -685,22 +821,34 @@ Round to the nearest dollar amount in:
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>Limited time offer: Sign up today and get $50 in free leads and bookings.</li>
-                <li>Inviting friends can pay off (up to $250)</li>
-                <li>$65 / $120 spent</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">
+                        Limited time offer: Sign up today and get $50 in free leads and bookings.
+                    </Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Inviting friends can pay off (up to $250)</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">$65 / $120 spent</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
+            <List>
                 <li>
                     Limited time offer: Sign up today and get $50.00 in free leads and bookings.
                 </li>
-                <li>Inviting friends can pay off (up to $250.00)</li>
-                <li>$65.05 / $120 spent</li>
-            </ul>
+                <ListItem>
+                    <Text className="black-300">Inviting friends can pay off (up to $250.00)</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">$65.05 / $120 spent</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>
@@ -744,21 +892,35 @@ Round to the nearest dollar amount in:
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <ul>
-                <li>July 16, 2023</li>
-                <li>8:00 am</li>
-                <li>8:00 am - 12:15 pm</li>
-                <li>8:00 - 10:15 am</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">July 16, 2023</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">8:00 am</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">8:00 am - 12:15 pm</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">8:00 - 10:15 am</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
         <DoDont type="dont" coloredHeading>
-            <ul>
-                <li>7/16/23 (unless there’s a character limit)</li>
-                <li>8 a.m. or 8am</li>
-                <li>8am – 12:15pm</li>
-            </ul>
+            <List>
+                <ListItem>
+                    <Text className="black-300">7/16/23 (unless there’s a character limit)</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">8 a.m. or 8am</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">8am – 12:15pm</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
 </Grid>

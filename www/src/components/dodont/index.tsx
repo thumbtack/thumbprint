@@ -18,7 +18,7 @@ export default function DoDont({
 }: PropTypes): JSX.Element {
     return isTable ? (
         <table
-            className={classNames('mb5', {
+            className={classNames('mb5 mt3', {
                 [styles.coloredHeading]: coloredHeading,
                 [styles.isTable]: isTable,
             })}
@@ -43,7 +43,7 @@ export default function DoDont({
         </table>
     ) : (
         <div
-            className={classNames('mb5', {
+            className={classNames('mb5 mt3', {
                 [styles[`${type}`]]: true,
                 [styles.coloredHeading]: coloredHeading,
             })}

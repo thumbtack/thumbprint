@@ -7,7 +7,7 @@ import DoDont from 'components/dodont';
 import Wrap from 'components/wrap';
 import { Img } from 'components/mdx';
 import { Anatomy, AnatomyItem } from 'components/anatomy';
-import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
+import { Grid, GridColumn, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 
 ## Plain language
 
@@ -236,17 +236,19 @@ When your writing is concise, it’s easier for your audience to read and unders
 
 Contractions keep content simple and direct. Since they are commonly used, contractions are also good for accessibility.
 
-However, contractions should also be used appropriately. Negative and conditional contractions, for example, are actually harder to understand for people who have reading disabilities or who speak English as a second language. The negative word “not” can also be more clear in certain contexts, such as warning labels or instructions.
+However, contractions should also be used appropriately. Negative and conditional contractions, such as won’t and could’ve, can be harder to understand for people who have reading disabilities or who speak English as a second language.
 
-Our [Grammar and mechanics](/overview/content-design/grammar-and-mechanics) section has more information on best practices for using contractions.
+The negative word “not” can also be more clear in certain contexts, such as warning labels or instructions where it’s important to emphasize “Do not…”.
+
+Our Grammar and mechanics section has more information on [best practices for using contractions](/overview/content-design/grammar-and-mechanics/#section-punctuation).
 
 #### Avoid jargon
 
-Jargon intimidates, annoys, and confuses readers. If words are specific to a field or require specialized knowledge, you can alienate people from your content. Be mindful of language that may refer to internal jargon, processes, legal language, and web development. If you need to use a Thumbtack-specific term because there is no alternative, define it in context.
+Jargon can intimidate, annoy, and confuse users. If words are specific to a field or require specialized knowledge, you can alienate your audience from your content. Be mindful of language that refers to internal processes and legal copy. If you need to use a Thumbtack-specific term because there is no alternative, define it in context.
 
 #### Organize content logically
 
-Organize content in the order in which a user would need the information. If they have to read a sentence more than once to understand it, that sentence needs to change.
+Organize content in the order in which users would need the information. If they have to read a sentence more than once to understand it, consider if the sequence of information needs to change.
 
 **Tip:** For instructions, use the model "to do this...do this". It generally creates shorter content, and it puts the information in the right order so it's easier for the reader to get to the information they need, if they need it.
 
@@ -269,19 +271,30 @@ Headers are an effective way to structure content. A good header clearly communi
 
 **Tip:** Headings are a good way to check if content is organized logically. A quick test is to remove all body copy, and read the headers on their own. If you can still get a general idea of the topic and sequence of information, your headers are effective.
 
-Our [Grammar and mechanics](/overview/content-design/grammar-and-mechanics) section has more information on how to format headers and header tags.
+Our Grammar and mechanics section has more information on [how to format headers and header tags](/overview/content-design/grammar-and-mechanics/#section-formatting).
 
 #### Optimize content with lists
 
-A list can reduce word count, and make content easy to scan and remember. As best practice, content should use parallel construction and grammatical structure (i.e. all verbs, all adverbs, same tense, etc.). If it’s important to order the information in a sequence, use a numbered list.
+A list can reduce word count, and make content easy to scan and remember. List content should use parallel construction and grammatical structure (i.e. all verbs with same ending, all adverbs, same tense, etc.). If it’s important to order the information in a sequence, use a numbered list.
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
         <DoDont type="do" coloredHeading>
-            <p>
-                Active sentences are: Shorter and simpler, More straight forward, More easily
-                understood by ESL speakers, Easier to remember
-            </p>
+            <p>Active sentences are:</p>
+            <List>
+                <ListItem>
+                    <Text className="black-300">Shorter and simpler</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">More straightforward</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">More easily understood by ESL speakers</Text>
+                </ListItem>
+                <ListItem>
+                    <Text className="black-300">Easier to remember</Text>
+                </ListItem>
+            </List>
         </DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
@@ -309,7 +322,7 @@ Use the following websites and apps to check your content’s readability the ne
 
 ## Accessibility and person-first language
 
-Accessible language allows everyone to read and understand content, regardless of their abilities. Use person-first language to put a person before their disability, while respecting their individuality and dignity.
+Accessible language allows everyone to read and understand content, regardless of their abilities. Use person-first language to put a person before their disability, while respecting their individual differences.
 
 ### How to make your writing accessible and inclusive:
 
@@ -317,8 +330,8 @@ Accessible language allows everyone to read and understand content, regardless o
 -   While person-first language is best, some users have their own preferences about how they want to be addressed. When in doubt, simply ask.
 -   Avoid using “normal" or "healthy" to describe people without disabilities.
 -   Don’t imply that individuals with disabilities are victims, such as “suffering from” or “a victim of".
--   Be descriptive in hyperlinks so people who use screen readers have an easy time understanding what you’re linking to.
--   Write alt text for images that provide important information to sighted users.
+-   Be descriptive in hyperlinks so people who use screen readers have an easy time understanding what you’re linking to. Link text should be the same as or similar to the page title of the link’s destination
+-   Use aria labels for images that provide important information to sighted users.
 
 ### Words and phrases to use and avoid
 
@@ -329,37 +342,67 @@ Accessible language allows everyone to read and understand content, regardless o
                 <tr>
                     <td>
                         <Text className="black-300">A person with a disability</Text>
-                        <Text className="black-300">Other:</Text>
-                        <ul>
-                            <li>people with disability (women with disability, children with disability, etc)</li>
-                            <li>has disability</li>
-                            <li>lives with disability</li>
-                            <li>has a chronic health condition</li>
-                            <li>lives with a chronic health condition</li>
-                        </ul>
+                        <Text className="black-300 mt2">Other:</Text>
+                        <List>
+                            <ListItem>
+                                <Text className="black-300">people with disabilities (women with disabilities, children with disabilities, etc)
+                            </Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">has disability</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">lives with disability</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">has a chronic health condition</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">lives with a chronic health condition</Text>
+                            </ListItem>
+                        </List>
                     </td>
                     <td>
                         <Text className="black-300">
                             A disabled or differently abled person, handicapped person, physically
                             challenged, special, special needs, mentally incapacitated/ill
                         </Text>
-                        <Text className="black-300">Other:</Text>
-                        <ul>
-                            <li>afflicted by</li>
-                            <li>crippled by</li>
-                            <li>diffability</li>
-                            <li>differently abled</li>
-                            <li>handicap(ped)</li>
-                            <li>handicapable</li>
-                            <li>specially abled</li>
-                            <li>special needs</li>
-                            <li>suffers from</li>
-                            <li>the disabled</li>
-                            <li>victim of</li>
-                            <li>with different abilities</li>
-                            <li>person with a disability</li>
-                            <li>people with disabilities</li>
-                        </ul>
+                        <Text className="black-300 mt2">Other:</Text>
+                        <List>
+                            <ListItem>
+                                <Text className="black-300">afflicted by</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">crippled by</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">diffability</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">differently abled</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">handicap(ped)</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">handicapable</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">specially abled</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">special needs</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">suffers from</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">the disabled</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">victim of</Text>
+                            </ListItem>
+                        </List>
                     </td>
                 </tr>
                 <tr>
@@ -375,42 +418,84 @@ Accessible language allows everyone to read and understand content, regardless o
                         <Text className="black-300">
                             A person/people with complete or nearly complete vision loss
                         </Text>
-                        <Text className="black-300">Other:</Text>
+                        <Text className="black-300 mt2">Other:</Text>
                         <Text className="black-300">
-                            experience/experiencing vision loss
+                            experiencing vision loss
                         </Text>
                     </td>
                     <td><Text className="black-300">A blind person</Text></td>
                 </tr>
                 <tr>
                     <td>
-                        <Text className="black-300">Usless</Text>
-                        <Text className="black-300">Intense</Text>
-                        <Text className="black-300">Outrageous</Text>
-                        <Text className="black-300">Silly</Text>
+                        <List>
+                            <ListItem>
+                                <Text className="black-300">Usless</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Intense</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Outrageous</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Silly</Text>
+                            </ListItem>
+                        </List>
                     </td>
-                    <td><Text className="black-300">Dumb</Text>
-                        <Text className="black-300">Crazy</Text>
-                        <Text className="black-300">Insane</Text>
-                        <Text size={2} className="black-300">(Some catch-all terms have histories of being used to discriminate)</Text></td>
+                    <td>
+                        <List>
+                            <ListItem>
+                                <Text className="black-300">Dumb</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Crazy</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Insane</Text>
+                            </ListItem>
+                        </List>
+                        <p className="mt4">(Some catch-all terms have histories of being used to discriminate)</p>
+                    </td>
                 </tr>
                 <tr>
-                    <td><Text className="black-300">Feeling frustrated about xyz...</Text></td>
+                    <td><Text className="black-300">Feeling frustrated about...</Text></td>
                     <td><Text className="black-300">Feeling depressed about...</Text></td>
                 </tr>
                 <tr>
                     <td>
-                        <Text className="black-300">In the menu</Text>
-                        <Text className="black-300">First / before</Text>
-                        <Text className="black-300">Next / after</Text>
-                        <Text className="black-300">Read</Text>
-                        <Text className="black-300">Select / Click</Text>
+                        <List>
+                            <ListItem>
+                                <Text className="black-300">In the menu</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">First / before</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Next / after</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Read</Text>
+                            </ListItem>
+                            <ListItem>
+                                <Text className="black-300">Select / Click</Text>
+                            </ListItem>
+                        </List>
                     </td>
                     <td>
-                        <Text className="black-300">On the left/right (or other directional language)</Text>
-                        <Text className="black-300">Above / below</Text>
-                        <Text className="black-300">View / see (don’t assume this is how people are reading content)</Text>
-                        <Text className="black-300">Here (specify clearly what the destination is/will be)</Text>
+                        <List>
+                        <ListItem>
+                            <Text className="black-300">On the left/right (or other directional language)</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text className="black-300">Above / below</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text className="black-300">View / see (don’t assume this is how people are reading content)</Text>
+                        </ListItem>
+                        <ListItem>
+                            <Text className="black-300">Here (specify clearly what the destination is/will be)</Text>
+                        </ListItem>
+                        </List>
                     </td>
                 </tr>
             </tbody>
