@@ -5,7 +5,8 @@ import { groupBy } from 'lodash-es';
 
 import TokenExample from './token-example/token-example';
 import Tag from '../../tag/tag';
-import { H2, P, InlineCode } from '../../mdx/mdx';
+import { H2, P } from '../../mdx/mdx';
+import InlineCode from '../../inline-code/inline-code';
 
 interface Token {
     deprecated: boolean | null;

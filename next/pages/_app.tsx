@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
+import '@thumbtack/thumbprint-scss/type.css';
 import '../styles/global.scss';
 
 export default function Thumbprint({ Component, pageProps }: AppProps): JSX.Element {

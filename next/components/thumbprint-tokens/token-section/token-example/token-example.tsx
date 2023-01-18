@@ -1,6 +1,6 @@
 import React from 'react';
 import className from 'classnames';
-import { InlineCode } from '../../../mdx/mdx';
+import InlineCode from '../../../inline-code/inline-code';
 
 interface TokenExampleProps {
     exampleData: string;
