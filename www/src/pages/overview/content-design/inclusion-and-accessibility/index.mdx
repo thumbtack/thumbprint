@@ -3,7 +3,7 @@ title: Inclusion and accessibility
 description: This section outlines principles and techniques to ensure our content is easy to understand and inclusive of everyone’s lived experiences.
 ---
 
-import DoDont from 'components/dodont';
+import DoDont, { DoDontTable, DoDontSideBySide } from 'components/dodont';
 import Wrap from 'components/wrap';
 import { Img } from 'components/mdx';
 import { Anatomy, AnatomyItem } from 'components/anatomy';
@@ -28,134 +28,20 @@ Plain language has also been proven to increase customer compliance, reduce comp
 
 Common, simple words and phrases help with accessibility and SEO, and are more easily understood by readers who don’t speak English as their first language. Everyday words are also generally shorter, so they take up less space on mobile devices.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont coloredHeading isTable>
-            <tbody>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Help
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Assistance
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Get
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Access
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Get rid of
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Eliminate
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Help
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Facilitate
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Ask
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Request
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Need
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Require
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            To
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            In order to
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            If
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            In the event that
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            About
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            In regard to
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Pay
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Make a payment
-                        </Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_everyday_words = [
+    ['Help', 'Assistance'],
+    ['Get', 'Access'],
+    ['Get rid of', 'Eliminate'],
+    ['Help', 'Facilitate'],
+    ['Ask', 'Request'],
+    ['Need', 'Require'],
+    ['To', 'In order to'],
+    ['If', 'In the event that'],
+    ['About', 'In regard to'],
+    ['Pay', 'Make a payment'],
+];
+
+<DoDontTable examples={dd_everyday_words} />
 
 #### Use active voice instead of passive voice
 
@@ -167,50 +53,13 @@ Our Grammar and mechanics section has more information on [active voice and pass
 
 Hidden verbs are verbs that have been turned into a noun. This construction leads to more passive, indirect sentences. Hidden verbs also use more words and make sentences longer than they should be. When writing or proofreading your content, think about whether a noun construction could really be simplified into a verb.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont coloredHeading isTable>
-            <tbody>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Except for
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            With the exception of
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Applies to
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Is applicable to
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Review
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Leave a review
-                        </Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_hidden_verbs = [
+    ['Except for', 'With the exception of'],
+    ['Applies to', 'Is applicable to'],
+    ['Review', 'Leave a review'],
+];
+
+<DoDontTable examples={dd_hidden_verbs} />
 
 #### Stay in the present (tense)
 
@@ -252,18 +101,12 @@ Organize content in the order in which users would need the information. If they
 
 **Tip:** For instructions, use the model "to do this...do this". It generally creates shorter content, and it puts the information in the right order so it's easier for the reader to get to the information they need, if they need it.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <p>For help with your scheduling calendar, call 416-123-1234.</p>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <p>Call 416-123-1234 for help with your scheduling calendar.</p>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_organize_logically = [
+    ['For help with your scheduling calendar, call 416-123-1234.'],
+    ['Call 416-123-1234 for help with your scheduling calendar.'],
+];
+
+<DoDontSideBySide examples={dd_organize_logically} />
 
 #### Structure content with headers
 
@@ -277,44 +120,30 @@ Our Grammar and mechanics section has more information on [how to format headers
 
 A list can reduce word count, and make content easy to scan and remember. List content should use parallel construction and grammatical structure (i.e. all verbs with same ending, all adverbs, same tense, etc.). If it’s important to order the information in a sequence, use a numbered list.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
+export const dd_optimize_lists = [
+    [
+        <div>
             <p>Active sentences are:</p>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Shorter and simpler</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">More straightforward</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">More easily understood by ESL speakers</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Easier to remember</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <p>
-                Active sentences are shorter and more straight forward than passively constructed
-                ones. They are more easily understood by ESL speakers and easier to remember by
-                people relying on screen readers and memory.
-            </p>
-        </DoDont>
-    </GridColumn>
-</Grid>
+            <ul>
+                <li>Shorter and simpler</li>
+                <li>More straightforward</li>
+                <li>More easily understood by ESL speakers</li>
+                <li>Easier to remember</li>
+            </ul>
+        </div>,
+    ],
+    [
+        'Active sentences are shorter and more straight forward than passively constructed ones. They are more easily understood by ESL speakers and easier to remember by people relying on screen readers and memory.',
+    ],
+];
+
+<DoDontSideBySide examples={dd_optimize_lists} />
 
 #### Improve readability
 
 Content should be written at a Grade 8 reading level or lower. This makes your writing clear and concise, while still sounding sophisticated for a wide audience.
 
-Readability tools determine your content’s reading level. They check elements such as sentence length, comprehension, and complexity, and give scores or grades for your content.
-
-Use the following websites and apps to check your content’s readability the next time you write:
+Readability tools determine your content’s reading level. They check elements such as sentence length, comprehension, and complexity, and give scores or grades for your content. Use the following websites and apps to check your content’s readability the next time you write:
 
 -   [Hemingway App](https://hemingwayapp.com/)
 -   [WebFX Readable Tool](https://www.webfx.com/tools/read-able/)
@@ -335,174 +164,93 @@ Accessible language allows everyone to read and understand content, regardless o
 
 ### Words and phrases to use and avoid
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={12}>
-        <DoDont coloredHeading isTable>
-            <tbody>
-                <tr>
-                    <td>
-                        <Text className="black-300">A person with a disability</Text>
-                        <Text className="black-300 mt2">Other:</Text>
-                        <List>
-                            <ListItem>
-                                <Text className="black-300">people with disabilities (women with disabilities, children with disabilities, etc)
-                            </Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">has disability</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">lives with disability</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">has a chronic health condition</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">lives with a chronic health condition</Text>
-                            </ListItem>
-                        </List>
-                    </td>
-                    <td>
-                        <Text className="black-300">
-                            A disabled or differently abled person, handicapped person, physically
-                            challenged, special, special needs, mentally incapacitated/ill
-                        </Text>
-                        <Text className="black-300 mt2">Other:</Text>
-                        <List>
-                            <ListItem>
-                                <Text className="black-300">afflicted by</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">crippled by</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">diffability</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">differently abled</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">handicap(ped)</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">handicapable</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">specially abled</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">special needs</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">suffers from</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">the disabled</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">victim of</Text>
-                            </ListItem>
-                        </List>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">A person who uses a wheelchair</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">A wheelchair-bound person</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            A person/people with complete or nearly complete vision loss
-                        </Text>
-                        <Text className="black-300 mt2">Other:</Text>
-                        <Text className="black-300">
-                            experiencing vision loss
-                        </Text>
-                    </td>
-                    <td><Text className="black-300">A blind person</Text></td>
-                </tr>
-                <tr>
-                    <td>
-                        <List>
-                            <ListItem>
-                                <Text className="black-300">Usless</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Intense</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Outrageous</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Silly</Text>
-                            </ListItem>
-                        </List>
-                    </td>
-                    <td>
-                        <List>
-                            <ListItem>
-                                <Text className="black-300">Dumb</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Crazy</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Insane</Text>
-                            </ListItem>
-                        </List>
-                        <p className="mt4">(Some catch-all terms have histories of being used to discriminate)</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><Text className="black-300">Feeling frustrated about...</Text></td>
-                    <td><Text className="black-300">Feeling depressed about...</Text></td>
-                </tr>
-                <tr>
-                    <td>
-                        <List>
-                            <ListItem>
-                                <Text className="black-300">In the menu</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">First / before</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Next / after</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Read</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text className="black-300">Select / Click</Text>
-                            </ListItem>
-                        </List>
-                    </td>
-                    <td>
-                        <List>
-                        <ListItem>
-                            <Text className="black-300">On the left/right (or other directional language)</Text>
-                        </ListItem>
-                        <ListItem>
-                            <Text className="black-300">Above / below</Text>
-                        </ListItem>
-                        <ListItem>
-                            <Text className="black-300">View / see (don’t assume this is how people are reading content)</Text>
-                        </ListItem>
-                        <ListItem>
-                            <Text className="black-300">Here (specify clearly what the destination is/will be)</Text>
-                        </ListItem>
-                        </List>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
+export const dd_inclusive = [
+    [
+        <div>
+            <p>A person with a disability</p>
+            <div>Other:</div>
+            <ul>
+                <li>
+                    people with disabilities (women with disabilities, children with
+                    disabilities,etc)
+                </li>
+                <li>has disability</li>
+                <li>lives with disability</li>
+                <li>has a chronic health condition</li>
+                <li>lives with a chronic health condition</li>
+            </ul>
+        </div>,
+        <div>
+            <p>
+                A disabled or differently abled person, handicapped person, physically challenged,
+                special, special needs, mentally incapacitated/ill
+            </p>
+            <div>Other:</div>
+            <ul>
+                <li>afflicted by</li>
+                <li>crippled by</li>
+                <li>diffability</li>
+                <li>differently abled</li>
+                <li>handicap(ped)</li>
+                <li>handicapable</li>
+                <li>specially abled</li>
+                <li>special needs</li>
+                <li>suffers from</li>
+                <li>the disabled</li>
+                <li>victim of</li>
+            </ul>
+        </div>,
+    ],
+    [<div>A person who uses a wheelchair</div>, <div>A wheelchair-bound person</div>],
+    [
+        <div>
+            <p>A person/people with complete or nearly complete vision loss</p>
+            <div>Other:</div>
+            <div>experiencing vision loss</div>
+        </div>,
+        <div>A blind person</div>,
+    ],
+    [
+        <div>
+            <ul>
+                <li>Usless</li>
+                <li>Intense</li>
+                <li>Outrageous</li>
+                <li>Silly</li>
+            </ul>
+        </div>,
+        <div>
+            <ul>
+                <li>Dumb</li>
+                <li>Crazy</li>
+                <li>Insane</li>
+            </ul>
+            <p>(Some catch-all terms have histories of being used to discriminate)</p>
+        </div>,
+    ],
+    [<div>Feeling frustrated about...</div>, <div>Feeling depressed about...</div>],
+    [
+        <div>
+            <ul>
+                <li>In the menu</li>
+                <li>First / before</li>
+                <li>Next / after</li>
+                <li>Read</li>
+                <li>Select / Click</li>
+            </ul>
+        </div>,
+        <div>
+            <ul>
+                <li>On the left/right (or other directional language)</li>
+                <li>Above / below</li>
+                <li>View / see (don't assume this is how people are reading content)</li>
+                <li>Here (specify clearly what the destination is/will be)</li>
+            </ul>
+        </div>,
+    ],
+];
 
-</Grid>
+<DoDontTable examples={dd_inclusive} />
 
 ## Anti-racist content
 
@@ -518,80 +266,23 @@ Anti-racist content includes diverse perspectives that are different from our ow
 
 ### Words and phrases to use and avoid
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={12}>
-        <DoDont coloredHeading isTable>
-            <tbody>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            Historically underrepresented groups or people of color
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Minority/minorities, visible minorities</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            Discontinued, legacy, defunct, exempt, excluded, special case, special
-                            privilege, etc.
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">
-                            Grandfather, grandfathered, grandfathering (verbs), and grandfather
-                            clause (noun)
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Welcome back</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Long time no see</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Sorry, something went wrong</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">No can do</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Authority or expert</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Guru or ninja</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            Native to the operating system or built-in feature
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Native</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Meeting</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Powwow</Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_anti_racism = [
+    [
+        'Historically underrepresented groups or people of color',
+        'Minority/minorities, visible minorities',
+    ],
+    [
+        'Discontinued, legacy, defunct, exempt, excluded, special case, special privilege, etc.',
+        'Grandfather, grandfathered, grandfathering (verbs), and grandfather clause (noun)',
+    ],
+    ['Welcome back', 'Long time no see'],
+    ['Sorry, something went wrong', 'No can do'],
+    ['Authority or expert', 'Guru or ninja'],
+    ['Native to the operating system or built-in feature', 'Native'],
+    ['Meeting', 'Powwow'],
+];
+
+<DoDontTable examples={dd_anti_racism} />
 
 ## Gender-neutral language
 
@@ -608,139 +299,89 @@ Gender-neutral language is important so our words don’t enforce biases and ste
 
 ### Words and phrases to use and avoid
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={12}>
-        <DoDont coloredHeading isTable>
-            <tbody>
-                <tr>
-                    <td>
-                        <Text className="black-300">Parent or parents</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Moms</Text>
-                        <Text className="black-300">Dads</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Pronouns</Text>
-                        <Text className="black-300">What are your pronouns?</Text>
-                        <Text className="black-300">
-                            Prefer not to say / self-describe / respond
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Preferred pronouns</Text>
-                        <Text className="black-300">What are your preferred pronouns?</Text>
-                        <Text className="black-300">
-                            Other (in forms that collect personal data)
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,
-                            transsexual, they /them/their
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Homosexual or the wrong pronoun</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Given name</Text>
-                        <Text className="black-300">Assumed name</Text>
-                        <Text className="black-300">Legal name</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Maiden name</Text>
-                        <Text className="black-300">Married name</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">People</Text>
-                        <Text className="black-300">Everyone</Text>
-                        <Text className="black-300">Everybody</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Men and women</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            Woman/women (this is inclusive of trans women)
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Female</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">
-                            They/their/them (acceptable gender-neutral singular pronouns)
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Him and/or her</Text>
-                        <Text className="black-300">He and/or she</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Any representative name</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">John/Jane Doe</Text>
-                        <Text className="black-300">
-                            (These names are typically used to identify anonymous people in court
-                            cases, police warrants, and violent crimes.)
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Businessperson</Text>
-                        <Text className="black-300">
-                            This could apply to any position, role, or title that is a gendered
-                            word.
-                        </Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Businessman</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Staffed</Text>
-                        <Text className="black-300">Managed</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Manned</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Workforce</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Manpower</Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text className="black-300">Machine-made</Text>
-                        <Text className="black-300">Artificial</Text>
-                    </td>
-                    <td>
-                        <Text className="black-300">Man-made</Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_gender_neutral = [
+    [
+        'Parent or parents',
+        <div>
+            <div>Moms</div>
+            <div>Dads</div>
+        </div>,
+    ],
+    [
+        <div>
+            <div>Pronouns</div>
+            <div>What are your pronouns?</div>
+            <div>Prefer not to say / self-describe / respond</div>
+        </div>,
+        <div>
+            <div>Preferred pronouns</div>
+            <div>What are your preferred pronouns?</div>
+            <div>Other (in forms that collect personal data)</div>
+        </div>,
+    ],
+    [
+        'LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,transsexual, they /them/their',
+        'Homosexual or the wrong pronoun',
+    ],
+    [
+        <div>
+            <div>Given name</div>
+            <div>Assumed name</div>
+            <div>Legal name</div>
+        </div>,
+        <div>
+            <div>Maiden name</div>
+            <div>Married name</div>
+        </div>,
+    ],
+    [
+        <div>
+            <div>People</div>
+            <div>Everyone</div>
+            <div>Everybody</div>
+        </div>,
+        'Men and women',
+    ],
+    ['Woman/women (this is inclusive of trans women)', 'Female'],
+    [
+        'They/their/them (acceptable gender-neutral singular pronouns)',
+        <div>
+            <div>Him and/or her</div>
+            <div>He and/or she</div>
+        </div>,
+    ],
+    [
+        'Any representative name',
+        <div>
+            <div>John/Jane Doe</div>
+            <div>
+                (These names are typically used to identify anonymous people in court cases, police
+                warrants, and violent crimes.)
+            </div>
+        </div>,
+    ],
+    [
+        <div>
+            <div>Businessperson</div>
+            <div>This could apply to any position, role, or title that is a gendered word.</div>
+        </div>,
+        'Businessman',
+    ],
+    [
+        <div>
+            <div>Staffed</div>
+            <div>Managed</div>
+        </div>,
+        'Manned',
+    ],
+    ['Workforce', 'Manpower'],
+    [
+        <div>
+            <div>Machine-made</div>
+            <div>Artificial</div>
+        </div>,
+        'Man-made',
+    ],
+];
+
+<DoDontTable examples={dd_gender_neutral} />

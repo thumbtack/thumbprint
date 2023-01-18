@@ -3,7 +3,7 @@ title: Surfaces and elements
 description: This section outlines how we style content within key elements and surfaces. For component-level guidelines, see individual component pages.
 ---
 
-import DoDont from 'components/dodont';
+import DoDont, { DoDontTable } from 'components/dodont';
 import Wrap from 'components/wrap';
 import { Img } from 'components/mdx';
 import { Anatomy, AnatomyItem } from 'components/anatomy';
@@ -106,50 +106,13 @@ Use buttons for primary actions and links for navigation. Unless you’re follow
 
 Remember, image-only buttons and links need alt-text.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={9}>
-        <DoDont coloredHeading isTable className="w-100">
-            <tbody>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            See policy details
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Learn more
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Start free trial
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Try it now!
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Set reminder
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            Set a reminder
-                        </Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_cta = [
+    ['See policy details', 'Learn more'],
+    ['Start free trial', 'Try it now!'],
+    ['Set reminder', 'Set a reminder'],
+];
+
+<DoDontTable examples={dd_cta} />
 
 ## Error messages
 
@@ -169,47 +132,10 @@ Use complete sentences and keep body copy to two lines total. This space is gene
 
 Keep CTAs to four words or less and don’t punctuate them. If the user can resolve the error on their own, direct them to do so in the CTA (even if it’s just trying again or refreshing the page).
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={9}>
-        <DoDont coloredHeading isTable className="w-100">
-            <tbody>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            We weren’t able to process your payment.
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            The payment failed.
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            We’re working to improve.
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            We’re sorry.
-                        </Text>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <Text size={1} className="black-300">
-                            That doesn’t look like the right password.
-                        </Text>
-                    </td>
-                    <td>
-                        <Text size={1} className="black-300">
-                            You entered the wrong password
-                        </Text>
-                    </td>
-                </tr>
-            </tbody>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_error_messages = [
+    ['We weren’t able to process your payment.', 'The payment failed.'],
+    ['We’re working to improve.', 'We’re sorry.'],
+    ['That doesn’t look like the right password.', 'You entered the wrong password'],
+];
+
+<DoDontTable examples={dd_error_messages} />

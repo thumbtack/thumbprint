@@ -26,25 +26,28 @@
 // alternative option that excludes the X overlaying content
 .coloredHeading {
     &.do {
-        svg {
+        .icon {
             fill: $tp-color__green;
         }
 
-        > div:last-of-type {
+        .content {
             border-top: 2px solid $tp-color__green !important;
+            color: $tp-color__black-300 !important;
         }
     }
 
     &.dont {
-        svg {
+        .icon {
             fill: $tp-color__red;
         }
-        > div:last-of-type {
+        .content {
             border-top: 2px solid $tp-color__red !important;
+            color: $tp-color__black-300 !important;
         }
     }
 }
 
+// table version for direct comparisons (text only)
 .isTable {
     border-collapse: separate;
 
@@ -57,24 +60,23 @@
         padding: 16px !important;
     }
 
-    th {
-        &:first-of-type {
-            svg {
-                fill: $tp-color__green;
-            }
+    td {
+        color: $tp-color__black-300 !important;
+    }
 
-            > div:last-of-type {
-                border-bottom: 2px solid $tp-color__green !important;
-            }
+    .do {
+        border-bottom: 2px solid $tp-color__green !important;
+
+        .icon {
+            fill: $tp-color__green;
         }
+    }
 
-        &:last-of-type {
-            svg {
-                fill: $tp-color__red;
-            }
-            > div:last-of-type {
-                border-bottom: 2px solid $tp-color__red !important;
-            }
+    .dont {
+        border-bottom: 2px solid $tp-color__red !important;
+
+        .icon {
+            fill: $tp-color__red;
         }
     }
 }

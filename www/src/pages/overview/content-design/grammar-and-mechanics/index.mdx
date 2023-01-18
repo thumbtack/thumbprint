@@ -3,7 +3,7 @@ title: Grammar and mechanics
 description: This section outlines our approach to grammar and mechanics across the pro and customer experiences.
 ---
 
-import DoDont from 'components/dodont';
+import DoDont, { DoDontSideBySide } from 'components/dodont';
 import { Grid, GridColumn, List, ListItem, Title, Text } from '@thumbtack/thumbprint-react';
 
 ## Write using plain language
@@ -20,22 +20,12 @@ Our content should sound approachable and never robotic. Copy that sounds human 
 
 The subject of a sentence performs the action when writing in active voice. Using active voice makes our products sound more conversational.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Don’t want to request the review directly? Let us email them for you.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Don’t want to request the review directly? An email can be sent on your behalf.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_active_voice = [
+    'Don’t want to request the review directly? Let us email them for you.',
+    'Don’t want to request the review directly? An email can be sent on your behalf.',
+];
+
+<DoDontSideBySide examples={dd_active_voice}></DoDontSideBySide>
 
 ### Use passive voice to emphasize the action
 
@@ -44,22 +34,9 @@ You can opt for passive voice when you want to emphasize the action instead of t
 -   Avoid blaming the user or system
 -   Avoid referring to Thumbtack
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Unable to save prices
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                We can’t save your prices
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_passive_voice = ['Unable to save prices', 'We can’t save your prices'];
+
+<DoDontSideBySide examples={dd_passive_voice}></DoDontSideBySide>
 
 ### First vs. third person
 
@@ -67,44 +44,22 @@ Choosing the best pronoun for a given scenario helps us write copy that’s conv
 
 ### Use first person when talking about Thumbtack
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                It feels good to get things done. We’re here to help.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                It feels good to get things done. Thumbtack is here to help.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_first_person = [
+    'It feels good to get things done. We’re here to help.',
+    'It feels good to get things done. Thumbtack is here to help.',
+];
+
+<DoDontSideBySide examples={dd_first_person}></DoDontSideBySide>
 
 ### Use third person sparingly when talking about Thumbtack
 
 We typically only use third person when speaking about pros, customers, or products as separate entities.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                We analyzed millions of bids from Thumbtack pros to see what things really cost.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Thumbtack analyzed millions of bids from Thumbtack pros to see what things really
-                cost.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_third_person = [
+    'We analyzed millions of bids from Thumbtack pros to see what things really cost.',
+    'Thumbtack analyzed millions of bids from Thumbtack pros to see what things really cost.',
+];
+<DoDontSideBySide examples={dd_third_person}></DoDontSideBySide>;
 
 See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on writing using plain language.
 
@@ -118,84 +73,74 @@ The way we format and organize information helps people understand the informati
 
 We’re no longer including periods in headers.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text className="black-300">Set your hours</Text>
-            <Text className="black-300">You’re now signed up for Instant Book</Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text className="black-300">Set Your Hours.</Text>
-            <Text className="black-300">You’re Now Signed Up for Instant Book.</Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_sentence_casing = [
+    <div>
+        <div>Set your hours</div>
+        <div>You’re now signed up for Instant Book</div>
+    </div>,
+    <div>
+        <div>Set Your Hours.</div>
+        <div>You’re Now Signed Up for Instant Book.</div>
+    </div>,
+];
+
+<DoDontSideBySide examples={dd_sentence_casing} />
 
 #### Use header tags consistently
 
-Using the right header tags helps people scan the information on their screens quickly so they can move forward with their tasks.
+Using the right header tags helps people scan the information on theirscreens quickly so they can move forward with their tasks. Here are some best practices for using header tags:
 
-Here are some best practices for using header tags:
-
--   Use H1 tags to communicate the title of the page.
--   Use only one H1 per page.
--   Use H2 tags for second-level headings.
--   Use H3 tags for third-level headings sparingly.
+-   Use H1 tags to communicate the title of the page. - Use only one H1 per page.
+-   Use H2 tags for second-level headings. - Use H3 tags for third-level headings sparingly.
 -   Don’t skip heading levels.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Title size={1}>Header 1</Title>
-            <Title size={2}>Header 2</Title>
-            <Title size={2}>Header 2</Title>
-            <Title size={3}>Header 3</Title>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Title size={1}>Header 1</Title>
-            <Title size={3}>Header 3</Title>
-            <Title size={2}>Header 2</Title>
-            <Title size={1}>Header 1</Title>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_consistent_headers = [
+    [
+        <Title size={1}>Header 1</Title>,
+        <Title size={2}>Header 2</Title>,
+        <Title size={2}>Header 2</Title>,
+        <Title size={3}>Header 3</Title>,
+    ],
+    [
+        <Title size={1}>Header 1</Title>,
+        <Title size={3}>Header 3</Title>,
+        <Title size={2}>Header 2</Title>,
+        <Title size={1}>Header 1</Title>,
+    ],
+];
+
+<DoDontSideBySide examples={dd_consistent_headers} />
 
 ### Formatted text
 
 #### Avoid using bolded, italicized, or underlined text to emphasize a point
 
-To help people scan the content on a page, frontload the important information instead of bolding or italicizing it. We should only underline text when it links to other content.
+To helppeople scan the content on a page, frontload the important information instead of bolding or italicizing it. We should only underline text when it links to other content.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Get $100 in credits for telling us which tools you use to manage your availability
-                outside of Thumbtack.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-                <span className="b">get $100 in credits</span>.{' '}
-            </Text>
-            <Text size={1} className="black-300 mb3">
-                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-                <i>get $100 in credits.</i>
-            </Text>
-            <Text size={1} className="black-300">
-                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-                <span className="m_underline">get $100 in credits.</span>
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_avoid_emphasis = [
+    [
+        <div>
+            Get $100 in credits for telling us which tools you use to manage your availability
+            outside of Thumbtack.
+        </div>,
+    ],
+    [
+        <p>
+            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+            <span className="b">get $100 in credits</span>.{' '}
+        </p>,
+        <p>
+            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+            <i>get $100 in credits.</i>
+        </p>,
+        <div>
+            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+            <span className="m_underline">get $100 in credits.</span>
+        </div>,
+    ],
+];
+
+<DoDontSideBySide examples={dd_avoid_emphasis} />
 
 See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on formatting content.
 
@@ -241,65 +186,29 @@ In general, positive contractions are easier to understand and also create a mor
 
 Negative contractions are difficult to read and may be easily misread.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">I'll</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">I'm</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">It's</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">There's</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">They're</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">We'll</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">We're</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Can't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Couldn't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Didn't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Don't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Shouldn't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Weren't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Won't</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Wouldn't</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_negative_contractions = [
+    <ul>
+        <li>I'll</li>
+        <li>I'm</li>
+        <li>It's</li>
+        <li>There's</li>
+        <li>They're</li>
+        <li>We'll</li>
+        <li>We're</li>
+    </ul>,
+    <ul>
+        <li>Can't</li>
+        <li>Couldn't</li>
+        <li>Didn't</li>
+        <li>Don't</li>
+        <li>Shouldn't</li>
+        <li>Weren't</li>
+        <li>Won't</li>
+        <li>Wouldn't</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_negative_contractions}></DoDontSideBySide>
 
 ### Avoid conditional contractions
 
@@ -317,66 +226,31 @@ See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessi
 
 The Oxford or serial comma should be used to break up a series of three or more elements in a sentence.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Your base price includes consultation, travel fees, and mount on drywall, plaster,
-                or wood.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Your base price includes consultation, travel fees and mount on drywall, plaster or
-                wood.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_oxford_comman = [
+    'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood.',
+    'Your base price includes consultation, travel fees and mount on drywall, plaster or wood.',
+];
+
+<DoDontSideBySide examples={dd_oxford_comman}></DoDontSideBySide>
 
 #### Avoid using commas to combine multiple sentences
 
 To improve readability, try breaking up complex sentences into two or more sentences.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                This is a 60% discount off the current price of instant bookings. We'll let you know
-                in advance before prices change.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                This is a 60% discount off the current price of instant bookings, and we'll let you
-                know in advance before prices change.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_using_commas = [
+    "This is a 60% discount off the current price of instant bookings. We'll let you know in advance before prices change.",
+    "This is a 60% discount off the current price of instant bookings, and we'll let you know in advance before prices change.",
+];
+<DoDontSideBySide examples={dd_using_commas}></DoDontSideBySide>;
 
 #### Use a comma to separate parts of an address
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_comma_separation = [
+    'We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.',
+    'We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.',
+];
+
+<DoDontSideBySide examples={dd_comma_separation}></DoDontSideBySide>
 
 ### Dashes
 
@@ -393,46 +267,25 @@ Use em dashes to:
 
 Adding a space both before and after the em dash allows for cleaner line breaks.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.
-            </Text>
-            <Text size={1} className="black-300">
-                Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_em_dash = [
+    <div>Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.</div>,
+    <div>
+        <div>Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.</div>
+        <div>
+            Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
+        </div>
+    </div>,
+];
+
+<DoDontSideBySide examples={dd_em_dash}></DoDontSideBySide>
 
 #### Don’t use en dashes for ranges
 
 When writing product copy, use a hyphen instead.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                8 am - 5 pm
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                8 am – 5 pm
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_dash_ranges = ['8 am - 5 pm', '8 am – 5 pm'];
+
+<DoDontSideBySide examples={dd_dash_ranges}></DoDontSideBySide>
 
 #### Hyphens
 
@@ -440,38 +293,20 @@ When writing product copy, use a hyphen instead.
 -   Use hyphens to connect 2+ words that should be understood together.
 -   Don’t hyphenate the word “very” and most words that end in -ly.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Auto-pay</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Higher-intent customers</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Instantly booked jobs</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Autopay or Auto pay</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Higher intent customers</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Instantly-booked jobs</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_hyphens = [
+    <ul>
+        <li>Auto-pay</li>
+        <li>Higher-intent customers</li>
+        <li>Instantly booked jobs</li>
+    </ul>,
+    <ul>
+        <li>Autopay or Auto pay</li>
+        <li>Higher intent customers</li>
+        <li>Instantly-booked jobs</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_hyphens}></DoDontSideBySide>
 
 ### Exclamation marks (!)
 
@@ -479,59 +314,28 @@ When writing product copy, use a hyphen instead.
 
 It’s easy to overuse exclamation marks, so only use them when you need to add emphasis that won’t overwhelm people. You can add an exclamation mark to celebrate with customers and pros, but don’t overdo it.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                🎉 New direct lead! Howard G.
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Set your budget!
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_exclamation_marks = ['🎉 New direct lead! Howard G.', 'Set your budget!'];
+
+<DoDontSideBySide examples={dd_exclamation_marks}></DoDontSideBySide>
 
 ### Navigation
 
 Avoid using periods in links, buttons, and tabs.
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Opportunities</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Calendar</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">View details</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Opportunities.</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Calendar.</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">View details.</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_navigation = [
+    <ul>
+        <li>Opportunities</li>
+        <li>Calendar</li>
+        <li>View details</li>
+    </ul>,
+    <ul>
+        <li>Opportunities.</li>
+        <li>Calendar.</li>
+        <li>View details.</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_navigation}></DoDontSideBySide>
 
 ### Ampersands (&)
 
@@ -548,86 +352,42 @@ Avoid using periods in links, buttons, and tabs.
     </ListItem>
 </List>
 
-<div className="mt3">
-    <Grid gutter="wide">
-        <GridColumn aboveSmall={6}>
-            <DoDont type="do" coloredHeading>
-                <Text size={1} className="black-300">
-                    Your base price includes consultation, travel fees, and mount on drywall,
-                    plaster, or wood
-                </Text>
-            </DoDont>
-        </GridColumn>
-        <GridColumn aboveSmall={6}>
-            <DoDont type="dont" coloredHeading>
-                <Text size={1} className="black-300">
-                    Your base price includes consultation, travel fees, & mount on drywall, plaster,
-                    or wood
-                </Text>
-            </DoDont>
-        </GridColumn>
-    </Grid>
-</div>
+export const dd_ampersands = [
+    'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood',
+    'Your base price includes consultation, travel fees, & mount on drywall, plaster, or wood',
+];
+
+<DoDontSideBySide examples={dd_ampersands}></DoDontSideBySide>
 
 ### Periods
 
 #### Avoid using periods in headers
 
-<div className="mt3">
-    <Grid gutter="wide">
-        <GridColumn aboveSmall={6}>
-            <DoDont type="do" coloredHeading>
-                <List>
-                    <ListItem>
-                        <Text className="black-300">Set your hours</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text className="black-300">Edit your business hours</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text className="black-300">You’re now signed up for Instant Book</Text>
-                    </ListItem>
-                </List>
-            </DoDont>
-        </GridColumn>
-        <GridColumn aboveSmall={6}>
-            <DoDont type="dont" coloredHeading>
-                <List>
-                    <ListItem>
-                        <Text className="black-300">Set your hours.</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text className="black-300">Edit your business hours.</Text>
-                    </ListItem>
-                    <ListItem>
-                        <Text className="black-300">You’re now signed up for Instant Book.</Text>
-                    </ListItem>
-                </List>
-            </DoDont>
-        </GridColumn>
-    </Grid>
-</div>
+export const dd_periods_headers = [
+    <ul>
+        <li>Set your hours</li>
+        <li>Edit your business hours</li>
+        <li>You’re now signed up for Instant Book</li>
+    </ul>,
+    <ul>
+        <li>Set your hours.</li>
+        <li>Edit your business hours.</li>
+        <li>You’re now signed up for Instant Book.</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_periods_headers}></DoDontSideBySide>
 
 ### Emails
 
 #### Avoid using periods in email subject lines
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300">
-                Required: Review your business hours
-            </Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300">
-                Required: Review your business hours.
-            </Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_periods_emails = [
+    'Required: Review your business hours',
+    'Required: Review your business hours.',
+];
+
+<DoDontSideBySide examples={dd_periods_emails}></DoDontSideBySide>
 
 See [Surfaces and elements](/content-design/surfaces-and-elements) for more information about writing email copy.
 
@@ -642,85 +402,54 @@ Improve readability by breaking up large chunks of text into lists.
 -   Make sure list items are of similar length.
 -   Don’t separate items in the list with commas. This does not apply to using commas within a list item.
 
+export const dd_lists_general = [
+    <div>
+        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+        <ul>
+            <li>Higher-intent customers</li>
+            <li>Reduced competition</li>
+            <li>Less time communicating with customers</li>
+        </ul>
+    </div>,
+    <div>
+        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+        <ul>
+            <li>higher-intent customers,</li>
+            <li>reduced competition, and</li>
+            <li>less time communicating with customers.</li>
+        </ul>
+    </div>,
+];
+
+<DoDontSideBySide examples={dd_lists_general}></DoDontSideBySide>
+
 <Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Instant Book offers better returns for the money you spend on Thumbtack through:
-            </Text>
-            <List>
-                <ListItem>
-                    <Text className="black-300">Higher-intent customers</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Reduced competition</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Less time communicating with customers</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Instant Book offers better returns for the money you spend on Thumbtack through:
-            </Text>
-            <List>
-                <ListItem>
-                    <Text className="black-300">higher-intent customers,</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">reduced competition, and</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">less time communicating with customers.</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
+    <GridColumn aboveSmall={6}></GridColumn>
+    <GridColumn aboveSmall={6}></GridColumn>
 </Grid>
 
 ### Use numbered lists when communicating count matters
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Customers can instantly book you starting September 19th
-            </Text>
-            <ol>
-                <ListItem>
-                    <Text className="black-300">Check your business hours</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Block your calendar</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Get ready for instant bookings</Text>
-                </ListItem>
-            </ol>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text size={1} className="black-300 mb3">
-                Instant Book offers better returns for the money you spend on Thumbtack through:
-            </Text>
-            <ol>
-                <ListItem>
-                    <Text className="black-300">Higher-intent customers</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Reduced competition</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Less time communicating with customers</Text>
-                </ListItem>
-            </ol>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_numbered_lists = [
+    <div>
+        <p>Customers can instantly book you starting September 19th</p>
+        <ol>
+            <li>Check your business hours</li>
+            <li>Block your calendar</li>
+            <li>Get ready for instant bookings</li>
+        </ol>
+    </div>,
+    <div>
+        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+        <ol>
+            <li>Higher-intent customers</li>
+            <li>Reduced competition</li>
+            <li>Less time communicating with customers</li>
+        </ol>
+    </div>,
+];
+
+<DoDontSideBySide examples={dd_numbered_lists}></DoDontSideBySide>
 
 ## Numbers
 
@@ -754,57 +483,35 @@ Help pros and customers understand earnings and payment details, when jobs are h
     </ListItem>
 </List>
 
+export const dd_numbers_general = [
+    <ul>
+        <li>555-867-5309</li>
+        <li>Pros who have at least 12 hours available each week book more jobs on Thumbtack.</li>
+        <li>[H1] Invite five friends to join Thumbtack</li>
+        <li>You’ve completed over 200 jobs on Thumbtack</li>
+        <li>32 million</li>
+        <li>24%</li>
+    </ul>,
+    <ul>
+        <li>(555) 867-5309 or 1-867-555-5309</li>
+        <li>
+            Pros who have at least twelve hours available each week book more jobs on Thumbtack.
+        </li>
+        <li>[H1] Invite 5 friends to join Thumbtack</li>
+        <li>You’ve completed over two hundred jobs on Thumbtack</li>
+        <li>32,000,000</li>
+        <li>24 percent</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_numbers_general}></DoDontSideBySide>
+
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">555-867-5309</Text>
-                </ListItem>
-                <li>
-                    Pros who have at least 12 hours available each week book more jobs on Thumbtack.
-                </li>
-                <ListItem>
-                    <Text className="black-300">[H1] Invite five friends to join Thumbtack</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">You’ve completed over 200 jobs on Thumbtack</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">32 million</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">24%</Text>
-                </ListItem>
-            </List>
-        </DoDont>
+        <DoDont type="do" coloredHeading></DoDont>
     </GridColumn>
     <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">(555) 867-5309 or 1-867-555-5309</Text>
-                </ListItem>
-                <li>
-                    Pros who have at least twelve hours available each week book more jobs on
-                    Thumbtack.
-                </li>
-                <ListItem>
-                    <Text className="black-300">[H1] Invite 5 friends to join Thumbtack</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">
-                        You’ve completed over two hundred jobs on Thumbtack
-                    </Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">32,000,000</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">24 percent</Text>
-                </ListItem>
-            </List>
-        </DoDont>
+        <DoDont type="dont" coloredHeading></DoDont>
     </GridColumn>
 </Grid>
 
@@ -818,68 +525,42 @@ Round to the nearest dollar amount in:
 -   Sentences
 -   User inputs, like bidding mechanisms
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">
-                        Limited time offer: Sign up today and get $50 in free leads and bookings.
-                    </Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">Inviting friends can pay off (up to $250)</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">$65 / $120 spent</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <li>
-                    Limited time offer: Sign up today and get $50.00 in free leads and bookings.
-                </li>
-                <ListItem>
-                    <Text className="black-300">Inviting friends can pay off (up to $250.00)</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">$65.05 / $120 spent</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_currency_general = [
+    <ul>
+        <li>Limited time offer: Sign up today and get $50 in free leads and bookings.</li>
+        <li>Inviting friends can pay off (up to $250)</li>
+        <li>$65 / $120 spent</li>
+    </ul>,
+    <ul>
+        <li>Limited time offer: Sign up today and get $50.00 in free leads and bookings.</li>
+        <li>Inviting friends can pay off (up to $250.00)</li>
+        <li>$65.05 / $120 spent</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_currency_general}></DoDontSideBySide>
 
 #### Use the entire dollar amount, including cents, to:
 
 -   Communicate payments and earnings
 -   Maintain alignment in the UI
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <Text className="tc black-300">$8.34</Text>
-            <Text className="tc black-300">avg. lead cost</Text>
-            <Text className="pt3 black-300">
-                Set up direct deposit to receive $154.75 in earnings.
-            </Text>
-            <Text className="pt3 black-300">Jason sent you $168.75</Text>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <Text className="tc black-300">$8</Text>
-            <Text className="tc black-300">avg. lead cost</Text>
-            <Text className="pt3 black-300">
-                Set up direct deposit to receive $154 in earnings.
-            </Text>
-            <Text className="pt3 black-300">Jason sent you $168.</Text>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_dollar_amount = [
+    <div>
+        <div>$8.34</div>
+        <div>avg. lead cost</div>
+        <div>Set up direct deposit to receive $154.75 in earnings.</div>
+        <div>Jason sent you $168.75</div>
+    </div>,
+    <div>
+        <div>$8</div>
+        <div>avg. lead cost</div>
+        <div>Set up direct deposit to receive $154 in earnings.</div>
+        <div>Jason sent you $168.</div>
+    </div>,
+];
+
+<DoDontSideBySide examples={dd_dollar_amount}></DoDontSideBySide>;
 
 ### Dates and times
 
@@ -889,38 +570,18 @@ Round to the nearest dollar amount in:
 -   Use a dash to indicate a time range.
 -   Omit the first “am” or “pm” if a time range is within the same part of the day
 
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">July 16, 2023</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">8:00 am</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">8:00 am - 12:15 pm</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">8:00 - 10:15 am</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading>
-            <List>
-                <ListItem>
-                    <Text className="black-300">7/16/23 (unless there’s a character limit)</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">8 a.m. or 8am</Text>
-                </ListItem>
-                <ListItem>
-                    <Text className="black-300">8am – 12:15pm</Text>
-                </ListItem>
-            </List>
-        </DoDont>
-    </GridColumn>
-</Grid>
+export const dd_dates_times = [
+    <ul>
+        <li>July 16, 2023</li>
+        <li>8:00 am</li>
+        <li>8:00 am - 12:15 pm</li>
+        <li>8:00 - 10:15 am</li>
+    </ul>,
+    <ul>
+        <li>7/16/23 (unless there’s a character limit)</li>
+        <li>8 a.m. or 8am</li>
+        <li>8am – 12:15pm</li>
+    </ul>,
+];
+
+<DoDontSideBySide examples={dd_dates_times}></DoDontSideBySide>
