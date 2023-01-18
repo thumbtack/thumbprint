@@ -1,5 +1,5 @@
 import React from 'react';
-import { InlineCode } from '../../mdx/mdx';
+import InlineCode from '../../inline-code/inline-code';
 import Swatch from '../../swatch/swatch';
 
 const cleanSelector = (selector: string): string =>
