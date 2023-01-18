@@ -4,7 +4,8 @@ import { groupBy, keyBy } from 'lodash-es';
 import { Text } from '@thumbtack/thumbprint-react';
 import getLayoutProps from '../../utils/get-layout-props';
 import Alert from '../../components/alert/alert';
-import { ContentPage, InlineCode } from '../../components/mdx/mdx';
+import { ContentPage } from '../../components/mdx/mdx';
+import InlineCode from '../../components/inline-code/inline-code';
 import {
     ComponentRow,
     ComponentTable,
