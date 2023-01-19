@@ -2,20 +2,29 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-// import { Language } from 'prism-react-renderer';
+import { Language } from 'prism-react-renderer';
 import cx from 'classnames';
 import { ScrollMarkerSection } from 'react-scroll-marker';
+// eslint-disable-next-line camelcase
+import { Source_Code_Pro } from '@next/font/google';
 
 import Wrap from '../wrap/wrap';
 import PageHeader from '../page-header/page-header';
-// import CodeBlock from './code-block/code-block';
+import CodeBlock from './code-block/code-block';
 import generateSlug from '../generate-slug/generate-slug';
 import styles from './mdx.module.scss';
 import Layout from '../layout/layout';
 import { LayoutProps } from '../../utils/get-layout-props';
 import TabNav, { TabNavItem } from '../tab-nav/tab-nav';
 import { ComponentPageProps } from '../../utils/mdx-get-static-props';
+import InlineCode from '../inline-code/inline-code';
+import PackageTable from '../package-table/package-table';
+
+const sourceCodePro = Source_Code_Pro({
+    weight: ['400'],
+    style: ['normal'],
+    subsets: ['latin'],
+});
 
 const HashAnchor = ({ children, id }: { children: React.ReactNode; id: string }): JSX.Element => (
     <div className={styles.hashAnchor}>
@@ -102,46 +111,10 @@ export function P(p: Parameters<typeof Text>[0]): JSX.Element {
     return <Text {...p} className={`mb3 black-300 ${styles.readingWidth}`} />;
 }
 
-export const InlineCode = ({
-    shouldCopyToClipboard = false,
-    children,
-    theme = 'default',
-}: {
-    shouldCopyToClipboard?: boolean;
-    children?: React.ReactNode;
-    theme?: 'plain' | 'default';
-}): JSX.Element => {
-    const plainStyles = {
-        fontFamily: tokens.tpFontFamilyMonospace,
-        fontSize: '95%',
-    };
-
-    const extendedStyles = {
-        background: '#f5f7f7',
-        padding: '1px 4px',
-        color: tokens.tpColorBlack,
-        borderRadius: '5px',
-    };
-
-    let inlineStyles = plainStyles;
-
-    if (theme !== 'plain') {
-        inlineStyles = { ...plainStyles, ...extendedStyles };
-    }
-
-    return shouldCopyToClipboard ? (
-        <CopyToClipboard text={children} className={styles.inlineCodeClipboard}>
-            <code style={inlineStyles}>{children}</code>
-        </CopyToClipboard>
-    ) : (
-        <code style={inlineStyles}>{children}</code>
-    );
-};
-
 export function Pre(
     p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLPreElement>, HTMLPreElement>,
 ): JSX.Element {
-    return <pre {...p} />;
+    return <pre {...p} className={sourceCodePro.className} />;
 }
 
 export function LI(p: Parameters<typeof Text>[0]): JSX.Element {
@@ -171,17 +144,31 @@ export function UL(p: Parameters<typeof List>[0]): JSX.Element {
 export function Code(
     p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
 ): JSX.Element {
-    // const language = p.className
-    //     ? ((p.className.replace('language-', '') as unknown) as Language)
-    //     : undefined;
+    if (typeof p.children !== 'string') {
+        throw new Error('Expected code children to be a string.');
+    }
 
-    return <code>{p.children}</code>;
+    const isMultiLine = p.children.includes('\n');
+    const shouldUseCodeBlock = isMultiLine || p.className?.includes('language-');
 
-    // return (
-    //     <CodeBlock language={language} theme={p.theme} shouldRender={p.shouldRender !== 'false'}>
-    //         {p.children}
-    //     </CodeBlock>
-    // );
+    if (!shouldUseCodeBlock) {
+        return <InlineCode>{p.children}</InlineCode>;
+    }
+
+    const language = p.className
+        ? ((p.className.replace('language-', '') as unknown) as Language)
+        : undefined;
+
+    return (
+        <CodeBlock
+            language={language}
+            // TODO: Reimplement this
+            // theme={p.theme}
+            // shouldRender={p.shouldRender !== 'false'}
+        >
+            {p.children}
+        </CodeBlock>
+    );
 }
 
 export function Table(p: React.TableHTMLAttributes<HTMLTableElement>): JSX.Element {
@@ -235,7 +222,6 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
                 h3: H3,
                 h4: H4,
                 p: P,
-                inlineCode: InlineCode,
                 pre: Pre,
                 li: LI,
                 ol: OL,
@@ -297,6 +283,16 @@ export const MDXComponentPage = ({
                     </TabNavItem>
                 ))}
             </TabNav>
+            {componentPageProps.packageTable && (
+                <PackageTable
+                    version={componentPageProps.packageTable.version}
+                    packageName={componentPageProps.packageTable.name}
+                    sourceDirectory={componentPageProps.packageTable.sourceDirectory}
+                    // deprecated={componentPageProps.packageTable.deprecated}
+                    // importStatement={componentPageProps.packageTable.importStatement}
+                    ecosystem="web"
+                />
+            )}
             {children}
         </MDX>
     );

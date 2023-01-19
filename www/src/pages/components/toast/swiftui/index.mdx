@@ -1,0 +1,56 @@
+---
+title: Toast
+description: Auto-dismissing alert displayed at the bottom of the screen
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+A toast is used to display a short-lived notification and optional CTA at the bottom of the screen.
+
+![toast](thumbprintui_toast.png)
+
+## Configuration
+
+Toasts support a single left aligned title and an optional right aligned link. The toast view is attached to a View with the `.withToast()` modifier. `withToast()` accepts a TPToast binding and an optional `linkAction` closure, which is triggered when the user taps on the link text. When the toast binding passed into TPToast is nil, the toast is hidden, when it exists, the toast animates onto the screen. The toast automatically dismisses itself after a short period of time (2.5 seconds, by default)
+
+The toast's title, link text, and optional duration are set on the TPToast object itself.
+
+## Usage
+
+The toast binding is attached to a parent view with the `.withToast()` modifier. The visibility of that toast is then controlled by manipulating the binding.
+
+```swift
+@State private var toast: TPToast?
+
+public var body: some View {
+    VStack {
+        TPButton(title: "Make Toast") {
+            toast = TPToast(
+                title: "Your toast is ready!",
+                linkText: "Cancel"
+            )
+        }
+    }
+    .withToast($toast) {
+        print("Bread ejected")
+    }
+}
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/toast/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

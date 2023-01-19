@@ -2,7 +2,7 @@ import React from 'react';
 import { startsWith } from 'lodash';
 import { parse as urlParse } from 'url';
 import urlJoin from 'url-join';
-import { InlineCode } from '../mdx/mdx';
+import InlineCode from '../inline-code/inline-code';
 import Tag from '../tag/tag';
 
 /**
