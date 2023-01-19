@@ -20,12 +20,12 @@ Our content should sound approachable and never robotic. Copy that sounds human 
 
 The subject of a sentence performs the action when writing in active voice. Using active voice makes our products sound more conversational.
 
-export const dd_active_voice = [
-    'Don’t want to request the review directly? Let us email them for you.',
-    'Don’t want to request the review directly? An email can be sent on your behalf.',
-];
-
-<DoDontSideBySide examples={dd_active_voice}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        'Don’t want to request the review directly? Let us email them for you.',
+        'Don’t want to request the review directly? An email can be sent on your behalf.',
+    ]}
+/>
 
 ### Use passive voice to emphasize the action
 
@@ -34,9 +34,7 @@ You can opt for passive voice when you want to emphasize the action instead of t
 -   Avoid blaming the user or system
 -   Avoid referring to Thumbtack
 
-export const dd_passive_voice = ['Unable to save prices', 'We can’t save your prices'];
-
-<DoDontSideBySide examples={dd_passive_voice}></DoDontSideBySide>
+<DoDontSideBySide examples={['Unable to save prices', 'We can’t save your prices']} />
 
 ### First vs. third person
 
@@ -44,22 +42,23 @@ Choosing the best pronoun for a given scenario helps us write copy that’s conv
 
 ### Use first person when talking about Thumbtack
 
-export const dd_first_person = [
-    'It feels good to get things done. We’re here to help.',
-    'It feels good to get things done. Thumbtack is here to help.',
-];
-
-<DoDontSideBySide examples={dd_first_person}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        'It feels good to get things done. We’re here to help.',
+        'It feels good to get things done. Thumbtack is here to help.',
+    ]}
+/>
 
 ### Use third person sparingly when talking about Thumbtack
 
 We typically only use third person when speaking about pros, customers, or products as separate entities.
 
-export const dd_third_person = [
-    'We analyzed millions of bids from Thumbtack pros to see what things really cost.',
-    'Thumbtack analyzed millions of bids from Thumbtack pros to see what things really cost.',
-];
-<DoDontSideBySide examples={dd_third_person}></DoDontSideBySide>;
+<DoDontSideBySide
+    examples={[
+        'We analyzed millions of bids from Thumbtack pros to see what things really cost.',
+        'Thumbtack analyzed millions of bids from Thumbtack pros to see what things really cost.',
+    ]}
+/>
 
 See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on writing using plain language.
 
@@ -73,18 +72,18 @@ The way we format and organize information helps people understand the informati
 
 We’re no longer including periods in headers.
 
-export const dd_sentence_casing = [
-    <div>
-        <div>Set your hours</div>
-        <div>You’re now signed up for Instant Book</div>
-    </div>,
-    <div>
-        <div>Set Your Hours.</div>
-        <div>You’re Now Signed Up for Instant Book.</div>
-    </div>,
-];
-
-<DoDontSideBySide examples={dd_sentence_casing} />
+<DoDontSideBySide
+    examples={[
+        <div>
+            <div>Set your hours</div>
+            <div>You’re now signed up for Instant Book</div>
+        </div>,
+        <div>
+            <div>Set Your Hours.</div>
+            <div>You’re Now Signed Up for Instant Book.</div>
+        </div>,
+    ]}
+/>
 
 #### Use header tags consistently
 
@@ -94,22 +93,22 @@ Using the right header tags helps people scan the information on theirscreens qu
 -   Use H2 tags for second-level headings. - Use H3 tags for third-level headings sparingly.
 -   Don’t skip heading levels.
 
-export const dd_consistent_headers = [
-    [
-        <Title size={1}>Header 1</Title>,
-        <Title size={2}>Header 2</Title>,
-        <Title size={2}>Header 2</Title>,
-        <Title size={3}>Header 3</Title>,
-    ],
-    [
-        <Title size={1}>Header 1</Title>,
-        <Title size={3}>Header 3</Title>,
-        <Title size={2}>Header 2</Title>,
-        <Title size={1}>Header 1</Title>,
-    ],
-];
-
-<DoDontSideBySide examples={dd_consistent_headers} />
+<DoDontSideBySide
+    examples={[
+        [
+            <Title size={1}>Header 1</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={3}>Header 3</Title>,
+        ],
+        [
+            <Title size={1}>Header 1</Title>,
+            <Title size={3}>Header 3</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={1}>Header 1</Title>,
+        ],
+    ]}
+/>
 
 ### Formatted text
 
@@ -117,30 +116,30 @@ export const dd_consistent_headers = [
 
 To helppeople scan the content on a page, frontload the important information instead of bolding or italicizing it. We should only underline text when it links to other content.
 
-export const dd_avoid_emphasis = [
-    [
-        <div>
-            Get $100 in credits for telling us which tools you use to manage your availability
-            outside of Thumbtack.
-        </div>,
-    ],
-    [
-        <p>
-            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-            <span className="b">get $100 in credits</span>.{' '}
-        </p>,
-        <p>
-            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-            <i>get $100 in credits.</i>
-        </p>,
-        <div>
-            Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
-            <span className="m_underline">get $100 in credits.</span>
-        </div>,
-    ],
-];
-
-<DoDontSideBySide examples={dd_avoid_emphasis} />
+<DoDontSideBySide
+    examples={[
+        [
+            <div>
+                Get $100 in credits for telling us which tools you use to manage your availability
+                outside of Thumbtack.
+            </div>,
+        ],
+        [
+            <p>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <span className="b">get $100 in credits</span>.{' '}
+            </p>,
+            <p>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <i>get $100 in credits.</i>
+            </p>,
+            <div>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <span className="m_underline">get $100 in credits.</span>
+            </div>,
+        ],
+    ]}
+/>
 
 See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on formatting content.
 
@@ -186,29 +185,29 @@ In general, positive contractions are easier to understand and also create a mor
 
 Negative contractions are difficult to read and may be easily misread.
 
-export const dd_negative_contractions = [
-    <ul>
-        <li>I'll</li>
-        <li>I'm</li>
-        <li>It's</li>
-        <li>There's</li>
-        <li>They're</li>
-        <li>We'll</li>
-        <li>We're</li>
-    </ul>,
-    <ul>
-        <li>Can't</li>
-        <li>Couldn't</li>
-        <li>Didn't</li>
-        <li>Don't</li>
-        <li>Shouldn't</li>
-        <li>Weren't</li>
-        <li>Won't</li>
-        <li>Wouldn't</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_negative_contractions}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>I'll</li>
+            <li>I'm</li>
+            <li>It's</li>
+            <li>There's</li>
+            <li>They're</li>
+            <li>We'll</li>
+            <li>We're</li>
+        </ul>,
+        <ul>
+            <li>Can't</li>
+            <li>Couldn't</li>
+            <li>Didn't</li>
+            <li>Don't</li>
+            <li>Shouldn't</li>
+            <li>Weren't</li>
+            <li>Won't</li>
+            <li>Wouldn't</li>
+        </ul>,
+    ]}
+/>
 
 ### Avoid conditional contractions
 
@@ -226,31 +225,32 @@ See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessi
 
 The Oxford or serial comma should be used to break up a series of three or more elements in a sentence.
 
-export const dd_oxford_comman = [
-    'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood.',
-    'Your base price includes consultation, travel fees and mount on drywall, plaster or wood.',
-];
-
-<DoDontSideBySide examples={dd_oxford_comman}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood.',
+        'Your base price includes consultation, travel fees and mount on drywall, plaster or wood.',
+    ]}
+/>
 
 #### Avoid using commas to combine multiple sentences
 
 To improve readability, try breaking up complex sentences into two or more sentences.
 
-export const dd_using_commas = [
-    "This is a 60% discount off the current price of instant bookings. We'll let you know in advance before prices change.",
-    "This is a 60% discount off the current price of instant bookings, and we'll let you know in advance before prices change.",
-];
-<DoDontSideBySide examples={dd_using_commas}></DoDontSideBySide>;
+<DoDontSideBySide
+    examples={[
+        "This is a 60% discount off the current price of instant bookings. We'll let you know in advance before prices change.",
+        "This is a 60% discount off the current price of instant bookings, and we'll let you know in advance before prices change.",
+    ]}
+/>
 
 #### Use a comma to separate parts of an address
 
-export const dd_comma_separation = [
-    'We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.',
-    'We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.',
-];
-
-<DoDontSideBySide examples={dd_comma_separation}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        'We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.',
+        'We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.',
+    ]}
+/>
 
 ### Dashes
 
@@ -267,25 +267,25 @@ Use em dashes to:
 
 Adding a space both before and after the em dash allows for cleaner line breaks.
 
-export const dd_em_dash = [
-    <div>Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.</div>,
-    <div>
-        <div>Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.</div>
+<DoDontSideBySide
+    examples={[
         <div>
-            Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
-        </div>
-    </div>,
-];
-
-<DoDontSideBySide examples={dd_em_dash}></DoDontSideBySide>
+            Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.
+        </div>,
+        <div>
+            <p>Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.</p>
+            <p>
+                Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
+            </p>
+        </div>,
+    ]}
+/>
 
 #### Don’t use en dashes for ranges
 
 When writing product copy, use a hyphen instead.
 
-export const dd_dash_ranges = ['8 am - 5 pm', '8 am – 5 pm'];
-
-<DoDontSideBySide examples={dd_dash_ranges}></DoDontSideBySide>
+<DoDontSideBySide examples={['8 am - 5 pm', '8 am – 5 pm']} />
 
 #### Hyphens
 
@@ -293,20 +293,20 @@ export const dd_dash_ranges = ['8 am - 5 pm', '8 am – 5 pm'];
 -   Use hyphens to connect 2+ words that should be understood together.
 -   Don’t hyphenate the word “very” and most words that end in -ly.
 
-export const dd_hyphens = [
-    <ul>
-        <li>Auto-pay</li>
-        <li>Higher-intent customers</li>
-        <li>Instantly booked jobs</li>
-    </ul>,
-    <ul>
-        <li>Autopay or Auto pay</li>
-        <li>Higher intent customers</li>
-        <li>Instantly-booked jobs</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_hyphens}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Auto-pay</li>
+            <li>Higher-intent customers</li>
+            <li>Instantly booked jobs</li>
+        </ul>,
+        <ul>
+            <li>Autopay or Auto pay</li>
+            <li>Higher intent customers</li>
+            <li>Instantly-booked jobs</li>
+        </ul>,
+    ]}
+/>
 
 ### Exclamation marks (!)
 
@@ -314,28 +314,26 @@ export const dd_hyphens = [
 
 It’s easy to overuse exclamation marks, so only use them when you need to add emphasis that won’t overwhelm people. You can add an exclamation mark to celebrate with customers and pros, but don’t overdo it.
 
-export const dd_exclamation_marks = ['🎉 New direct lead! Howard G.', 'Set your budget!'];
-
-<DoDontSideBySide examples={dd_exclamation_marks}></DoDontSideBySide>
+<DoDontSideBySide examples={['🎉 New direct lead! Howard G.', 'Set your budget!']} />
 
 ### Navigation
 
 Avoid using periods in links, buttons, and tabs.
 
-export const dd_navigation = [
-    <ul>
-        <li>Opportunities</li>
-        <li>Calendar</li>
-        <li>View details</li>
-    </ul>,
-    <ul>
-        <li>Opportunities.</li>
-        <li>Calendar.</li>
-        <li>View details.</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_navigation}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Opportunities</li>
+            <li>Calendar</li>
+            <li>View details</li>
+        </ul>,
+        <ul>
+            <li>Opportunities.</li>
+            <li>Calendar.</li>
+            <li>View details.</li>
+        </ul>,
+    ]}
+/>
 
 ### Ampersands (&)
 
@@ -352,42 +350,39 @@ export const dd_navigation = [
     </ListItem>
 </List>
 
-export const dd_ampersands = [
-    'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood',
-    'Your base price includes consultation, travel fees, & mount on drywall, plaster, or wood',
-];
-
-<DoDontSideBySide examples={dd_ampersands}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood',
+        'Your base price includes consultation, travel fees, & mount on drywall, plaster, or wood',
+    ]}
+/>
 
 ### Periods
 
 #### Avoid using periods in headers
 
-export const dd_periods_headers = [
-    <ul>
-        <li>Set your hours</li>
-        <li>Edit your business hours</li>
-        <li>You’re now signed up for Instant Book</li>
-    </ul>,
-    <ul>
-        <li>Set your hours.</li>
-        <li>Edit your business hours.</li>
-        <li>You’re now signed up for Instant Book.</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_periods_headers}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Set your hours</li>
+            <li>Edit your business hours</li>
+            <li>You’re now signed up for Instant Book</li>
+        </ul>,
+        <ul>
+            <li>Set your hours.</li>
+            <li>Edit your business hours.</li>
+            <li>You’re now signed up for Instant Book.</li>
+        </ul>,
+    ]}
+/>
 
 ### Emails
 
 #### Avoid using periods in email subject lines
 
-export const dd_periods_emails = [
-    'Required: Review your business hours',
-    'Required: Review your business hours.',
-];
-
-<DoDontSideBySide examples={dd_periods_emails}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={['Required: Review your business hours', 'Required: Review your business hours.']}
+/>
 
 See [Surfaces and elements](/content-design/surfaces-and-elements) for more information about writing email copy.
 
@@ -402,26 +397,26 @@ Improve readability by breaking up large chunks of text into lists.
 -   Make sure list items are of similar length.
 -   Don’t separate items in the list with commas. This does not apply to using commas within a list item.
 
-export const dd_lists_general = [
-    <div>
-        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
-        <ul>
-            <li>Higher-intent customers</li>
-            <li>Reduced competition</li>
-            <li>Less time communicating with customers</li>
-        </ul>
-    </div>,
-    <div>
-        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
-        <ul>
-            <li>higher-intent customers,</li>
-            <li>reduced competition, and</li>
-            <li>less time communicating with customers.</li>
-        </ul>
-    </div>,
-];
-
-<DoDontSideBySide examples={dd_lists_general}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ul>
+                <li>Higher-intent customers</li>
+                <li>Reduced competition</li>
+                <li>Less time communicating with customers</li>
+            </ul>
+        </div>,
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ul>
+                <li>higher-intent customers,</li>
+                <li>reduced competition, and</li>
+                <li>less time communicating with customers.</li>
+            </ul>
+        </div>,
+    ]}
+/>
 
 <Grid gutter="wide">
     <GridColumn aboveSmall={6}></GridColumn>
@@ -430,26 +425,26 @@ export const dd_lists_general = [
 
 ### Use numbered lists when communicating count matters
 
-export const dd_numbered_lists = [
-    <div>
-        <p>Customers can instantly book you starting September 19th</p>
-        <ol>
-            <li>Check your business hours</li>
-            <li>Block your calendar</li>
-            <li>Get ready for instant bookings</li>
-        </ol>
-    </div>,
-    <div>
-        <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
-        <ol>
-            <li>Higher-intent customers</li>
-            <li>Reduced competition</li>
-            <li>Less time communicating with customers</li>
-        </ol>
-    </div>,
-];
-
-<DoDontSideBySide examples={dd_numbered_lists}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <div>
+            <p>Customers can instantly book you starting September 19th</p>
+            <ol>
+                <li>Check your business hours</li>
+                <li>Block your calendar</li>
+                <li>Get ready for instant bookings</li>
+            </ol>
+        </div>,
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ol>
+                <li>Higher-intent customers</li>
+                <li>Reduced competition</li>
+                <li>Less time communicating with customers</li>
+            </ol>
+        </div>,
+    ]}
+/>
 
 ## Numbers
 
@@ -483,37 +478,30 @@ Help pros and customers understand earnings and payment details, when jobs are h
     </ListItem>
 </List>
 
-export const dd_numbers_general = [
-    <ul>
-        <li>555-867-5309</li>
-        <li>Pros who have at least 12 hours available each week book more jobs on Thumbtack.</li>
-        <li>[H1] Invite five friends to join Thumbtack</li>
-        <li>You’ve completed over 200 jobs on Thumbtack</li>
-        <li>32 million</li>
-        <li>24%</li>
-    </ul>,
-    <ul>
-        <li>(555) 867-5309 or 1-867-555-5309</li>
-        <li>
-            Pros who have at least twelve hours available each week book more jobs on Thumbtack.
-        </li>
-        <li>[H1] Invite 5 friends to join Thumbtack</li>
-        <li>You’ve completed over two hundred jobs on Thumbtack</li>
-        <li>32,000,000</li>
-        <li>24 percent</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_numbers_general}></DoDontSideBySide>
-
-<Grid gutter="wide">
-    <GridColumn aboveSmall={6}>
-        <DoDont type="do" coloredHeading></DoDont>
-    </GridColumn>
-    <GridColumn aboveSmall={6}>
-        <DoDont type="dont" coloredHeading></DoDont>
-    </GridColumn>
-</Grid>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>555-867-5309</li>
+            <li>
+                Pros who have at least 12 hours available each week book more jobs on Thumbtack.
+            </li>
+            <li>[H1] Invite five friends to join Thumbtack</li>
+            <li>You’ve completed over 200 jobs on Thumbtack</li>
+            <li>32 million</li>
+            <li>24%</li>
+        </ul>,
+        <ul>
+            <li>(555) 867-5309 or 1-867-555-5309</li>
+            <li>
+                Pros who have at least twelve hours available each week book more jobs on Thumbtack.
+            </li>
+            <li>[H1] Invite 5 friends to join Thumbtack</li>
+            <li>You’ve completed over two hundred jobs on Thumbtack</li>
+            <li>32,000,000</li>
+            <li>24 percent</li>
+        </ul>,
+    ]}
+/>
 
 ### Currency
 
@@ -525,42 +513,42 @@ Round to the nearest dollar amount in:
 -   Sentences
 -   User inputs, like bidding mechanisms
 
-export const dd_currency_general = [
-    <ul>
-        <li>Limited time offer: Sign up today and get $50 in free leads and bookings.</li>
-        <li>Inviting friends can pay off (up to $250)</li>
-        <li>$65 / $120 spent</li>
-    </ul>,
-    <ul>
-        <li>Limited time offer: Sign up today and get $50.00 in free leads and bookings.</li>
-        <li>Inviting friends can pay off (up to $250.00)</li>
-        <li>$65.05 / $120 spent</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_currency_general}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Limited time offer: Sign up today and get $50 in free leads and bookings.</li>
+            <li>Inviting friends can pay off (up to $250)</li>
+            <li>$65 / $120 spent</li>
+        </ul>,
+        <ul>
+            <li>Limited time offer: Sign up today and get $50.00 in free leads and bookings.</li>
+            <li>Inviting friends can pay off (up to $250.00)</li>
+            <li>$65.05 / $120 spent</li>
+        </ul>,
+    ]}
+/>
 
 #### Use the entire dollar amount, including cents, to:
 
 -   Communicate payments and earnings
 -   Maintain alignment in the UI
 
-export const dd_dollar_amount = [
-    <div>
-        <div>$8.34</div>
-        <div>avg. lead cost</div>
-        <div>Set up direct deposit to receive $154.75 in earnings.</div>
-        <div>Jason sent you $168.75</div>
-    </div>,
-    <div>
-        <div>$8</div>
-        <div>avg. lead cost</div>
-        <div>Set up direct deposit to receive $154 in earnings.</div>
-        <div>Jason sent you $168.</div>
-    </div>,
-];
-
-<DoDontSideBySide examples={dd_dollar_amount}></DoDontSideBySide>;
+<DoDontSideBySide
+    examples={[
+        <div>
+            <div>$8.34</div>
+            <div>avg. lead cost</div>
+            <div>Set up direct deposit to receive $154.75 in earnings.</div>
+            <div>Jason sent you $168.75</div>
+        </div>,
+        <div>
+            <div>$8</div>
+            <div>avg. lead cost</div>
+            <div>Set up direct deposit to receive $154 in earnings.</div>
+            <div>Jason sent you $168.</div>
+        </div>,
+    ]}
+/>
 
 ### Dates and times
 
@@ -570,18 +558,18 @@ export const dd_dollar_amount = [
 -   Use a dash to indicate a time range.
 -   Omit the first “am” or “pm” if a time range is within the same part of the day
 
-export const dd_dates_times = [
-    <ul>
-        <li>July 16, 2023</li>
-        <li>8:00 am</li>
-        <li>8:00 am - 12:15 pm</li>
-        <li>8:00 - 10:15 am</li>
-    </ul>,
-    <ul>
-        <li>7/16/23 (unless there’s a character limit)</li>
-        <li>8 a.m. or 8am</li>
-        <li>8am – 12:15pm</li>
-    </ul>,
-];
-
-<DoDontSideBySide examples={dd_dates_times}></DoDontSideBySide>
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>July 16, 2023</li>
+            <li>8:00 am</li>
+            <li>8:00 am - 12:15 pm</li>
+            <li>8:00 - 10:15 am</li>
+        </ul>,
+        <ul>
+            <li>7/16/23 (unless there’s a character limit)</li>
+            <li>8 a.m. or 8am</li>
+            <li>8am – 12:15pm</li>
+        </ul>,
+    ]}
+/>

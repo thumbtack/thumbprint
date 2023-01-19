@@ -24,27 +24,20 @@
 }
 
 // alternative option that excludes the X overlaying content
-.coloredHeading {
-    &.do {
-        .icon {
-            fill: $tp-color__green;
-        }
+.iconDo {
+    fill: $tp-color__green;
+}
 
-        .content {
-            border-top: 2px solid $tp-color__green !important;
-            color: $tp-color__black-300 !important;
-        }
-    }
+.iconDont {
+    fill: $tp-color__red;
+}
 
-    &.dont {
-        .icon {
-            fill: $tp-color__red;
-        }
-        .content {
-            border-top: 2px solid $tp-color__red !important;
-            color: $tp-color__black-300 !important;
-        }
-    }
+.doHeader {
+    border-top: 2px solid $tp-color__green !important;
+}
+
+.dontHeader {
+    border-top: 2px solid $tp-color__red !important;
 }
 
 // table version for direct comparisons (text only)
@@ -53,30 +46,15 @@
 
     td,
     th {
-        vertical-align: top;
         border-left: 2px solid $tp-color__white !important;
         border-collapse: separate !important;
         border-spacing: 12px !important;
-        padding: 16px !important;
     }
+}
+.tableDoHeader {
+    border-bottom: 2px solid $tp-color__green !important;
+}
 
-    td {
-        color: $tp-color__black-300 !important;
-    }
-
-    .do {
-        border-bottom: 2px solid $tp-color__green !important;
-
-        .icon {
-            fill: $tp-color__green;
-        }
-    }
-
-    .dont {
-        border-bottom: 2px solid $tp-color__red !important;
-
-        .icon {
-            fill: $tp-color__red;
-        }
-    }
+.tableDontHeader {
+    border-bottom: 2px solid $tp-color__red !important;
 }

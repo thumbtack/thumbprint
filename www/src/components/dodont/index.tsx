@@ -53,22 +53,30 @@ export function DoDontSideBySide({ examples }: DoDontPropTypes): JSX.Element {
         <Grid gutter="wide">
             {map(examples, (example, index) => (
                 <GridColumn aboveSmall={6}>
-                    <div
-                        className={`flex mb3 flex-column ${styles.coloredHeading} ${
-                            isOdd(index) ? `${styles.do}` : `${styles.dont}`
-                        }`}
-                    >
+                    <div className="flex mt3 mb3 flex-column">
                         <div className="flex mb2">
                             {isOdd(index) ? (
-                                <InputsThumbsUpSmall className={`${styles.icon}`} />
+                                <InputsThumbsUpSmall className={`${styles.iconDo}`} />
                             ) : (
-                                <InputsThumbsDownSmall className={`${styles.icon}`} />
+                                <InputsThumbsDownSmall className={`${styles.iconDont}`} />
                             )}
-                            <div className={`ml2 b ${isOdd(index) ? 'do' : 'dont'}`}>
+                            <div
+                                className={classNames('ml2 b', {
+                                    [`${styles.do}`]: isOdd(index),
+                                    [`${styles.dont}`]: !isOdd(index),
+                                })}
+                            >
                                 {isOdd(index) ? 'Do' : "Don't"}
                             </div>
                         </div>
-                        <div className={`ba b-gray-300 pa3 ${styles.content}`}>{example}</div>
+                        <div
+                            className={classNames('ba b-gray-300 pa3 black-300', {
+                                [`${styles.doHeader}`]: isOdd(index),
+                                [`${styles.dontHeader}`]: !isOdd(index),
+                            })}
+                        >
+                            {example}
+                        </div>
                     </div>
                 </GridColumn>
             ))}
@@ -81,15 +89,17 @@ export function DoDontTable({ examples }: DoDontPropTypes): JSX.Element {
         <table className={`mb3 mt3 ${styles.isTable}`}>
             <thead>
                 <tr>
-                    <th>
-                        <div className={`flex items-center pb2 ${styles.do}`}>
-                            <InputsThumbsUpSmall className={`${styles.icon}`} />
+                    <th className="pa3 v-top">
+                        <div className={`flex items-center pb2 black-300 ${styles.tableDoHeader}`}>
+                            <InputsThumbsUpSmall className={`${styles.iconDo}`} />
                             <div className="ml2 b">Do</div>
                         </div>
                     </th>
-                    <th className="dont bl b-white">
-                        <div className={`flex items-center pb2 ${styles.dont}`}>
-                            <InputsThumbsDownSmall className={`${styles.icon}`} />
+                    <th className="pa3 dont bl b-white v-top">
+                        <div
+                            className={`flex items-center pb2 black-300 ${styles.tableDontHeader}`}
+                        >
+                            <InputsThumbsDownSmall className={`${styles.iconDont}`} />
                             <div className="ml2 b">Don’t</div>
                         </div>
                     </th>
@@ -98,12 +108,12 @@ export function DoDontTable({ examples }: DoDontPropTypes): JSX.Element {
             <tbody>
                 {map(examples, example => (
                     <tr>
-                        <td className="pa2 bb b-gray-300">
+                        <td className="pa3 bb b-gray-300 black-300 v-top">
                             <Text size={1} className="black-300">
                                 {example[0]}
                             </Text>
                         </td>
-                        <td className="pa2 bb b-gray-300">
+                        <td className="pa3 bb b-gray-300 black-300 v-top">
                             <Text size={1} className="black-300">
                                 {example[1]}
                             </Text>

@@ -28,20 +28,20 @@ Plain language has also been proven to increase customer compliance, reduce comp
 
 Common, simple words and phrases help with accessibility and SEO, and are more easily understood by readers who don’t speak English as their first language. Everyday words are also generally shorter, so they take up less space on mobile devices.
 
-export const dd_everyday_words = [
-    ['Help', 'Assistance'],
-    ['Get', 'Access'],
-    ['Get rid of', 'Eliminate'],
-    ['Help', 'Facilitate'],
-    ['Ask', 'Request'],
-    ['Need', 'Require'],
-    ['To', 'In order to'],
-    ['If', 'In the event that'],
-    ['About', 'In regard to'],
-    ['Pay', 'Make a payment'],
-];
-
-<DoDontTable examples={dd_everyday_words} />
+<DoDontTable
+    examples={[
+        ['Help', 'Assistance'],
+        ['Get', 'Access'],
+        ['Get rid of', 'Eliminate'],
+        ['Help', 'Facilitate'],
+        ['Ask', 'Request'],
+        ['Need', 'Require'],
+        ['To', 'In order to'],
+        ['If', 'In the event that'],
+        ['About', 'In regard to'],
+        ['Pay', 'Make a payment'],
+    ]}
+/>
 
 #### Use active voice instead of passive voice
 
@@ -53,13 +53,13 @@ Our Grammar and mechanics section has more information on [active voice and pass
 
 Hidden verbs are verbs that have been turned into a noun. This construction leads to more passive, indirect sentences. Hidden verbs also use more words and make sentences longer than they should be. When writing or proofreading your content, think about whether a noun construction could really be simplified into a verb.
 
-export const dd_hidden_verbs = [
-    ['Except for', 'With the exception of'],
-    ['Applies to', 'Is applicable to'],
-    ['Review', 'Leave a review'],
-];
-
-<DoDontTable examples={dd_hidden_verbs} />
+<DoDontTable
+    examples={[
+        ['Except for', 'With the exception of'],
+        ['Applies to', 'Is applicable to'],
+        ['Review', 'Leave a review'],
+    ]}
+/>
 
 #### Stay in the present (tense)
 
@@ -101,12 +101,12 @@ Organize content in the order in which users would need the information. If they
 
 **Tip:** For instructions, use the model "to do this...do this". It generally creates shorter content, and it puts the information in the right order so it's easier for the reader to get to the information they need, if they need it.
 
-export const dd_organize_logically = [
-    ['For help with your scheduling calendar, call 416-123-1234.'],
-    ['Call 416-123-1234 for help with your scheduling calendar.'],
-];
-
-<DoDontSideBySide examples={dd_organize_logically} />
+<DoDontSideBySide
+    examples={[
+        ['For help with your scheduling calendar, call 416-123-1234.'],
+        ['Call 416-123-1234 for help with your scheduling calendar.'],
+    ]}
+/>
 
 #### Structure content with headers
 
@@ -120,24 +120,24 @@ Our Grammar and mechanics section has more information on [how to format headers
 
 A list can reduce word count, and make content easy to scan and remember. List content should use parallel construction and grammatical structure (i.e. all verbs with same ending, all adverbs, same tense, etc.). If it’s important to order the information in a sequence, use a numbered list.
 
-export const dd_optimize_lists = [
-    [
-        <div>
-            <p>Active sentences are:</p>
-            <ul>
-                <li>Shorter and simpler</li>
-                <li>More straightforward</li>
-                <li>More easily understood by ESL speakers</li>
-                <li>Easier to remember</li>
-            </ul>
-        </div>,
-    ],
-    [
-        'Active sentences are shorter and more straight forward than passively constructed ones. They are more easily understood by ESL speakers and easier to remember by people relying on screen readers and memory.',
-    ],
-];
-
-<DoDontSideBySide examples={dd_optimize_lists} />
+<DoDontSideBySide
+    examples={[
+        [
+            <div>
+                <p>Active sentences are:</p>
+                <ul>
+                    <li>Shorter and simpler</li>
+                    <li>More straightforward</li>
+                    <li>More easily understood by ESL speakers</li>
+                    <li>Easier to remember</li>
+                </ul>
+            </div>,
+        ],
+        [
+            'Active sentences are shorter and more straight forward than passively constructed ones. They are more easily understood by ESL speakers and easier to remember by people relying on screen readers and memory.',
+        ],
+    ]}
+/>
 
 #### Improve readability
 
@@ -164,93 +164,93 @@ Accessible language allows everyone to read and understand content, regardless o
 
 ### Words and phrases to use and avoid
 
-export const dd_inclusive = [
-    [
-        <div>
-            <p>A person with a disability</p>
-            <div>Other:</div>
-            <ul>
-                <li>
-                    people with disabilities (women with disabilities, children with
-                    disabilities,etc)
-                </li>
-                <li>has disability</li>
-                <li>lives with disability</li>
-                <li>has a chronic health condition</li>
-                <li>lives with a chronic health condition</li>
-            </ul>
-        </div>,
-        <div>
-            <p>
-                A disabled or differently abled person, handicapped person, physically challenged,
-                special, special needs, mentally incapacitated/ill
-            </p>
-            <div>Other:</div>
-            <ul>
-                <li>afflicted by</li>
-                <li>crippled by</li>
-                <li>diffability</li>
-                <li>differently abled</li>
-                <li>handicap(ped)</li>
-                <li>handicapable</li>
-                <li>specially abled</li>
-                <li>special needs</li>
-                <li>suffers from</li>
-                <li>the disabled</li>
-                <li>victim of</li>
-            </ul>
-        </div>,
-    ],
-    [<div>A person who uses a wheelchair</div>, <div>A wheelchair-bound person</div>],
-    [
-        <div>
-            <p>A person/people with complete or nearly complete vision loss</p>
-            <div>Other:</div>
-            <div>experiencing vision loss</div>
-        </div>,
-        <div>A blind person</div>,
-    ],
-    [
-        <div>
-            <ul>
-                <li>Usless</li>
-                <li>Intense</li>
-                <li>Outrageous</li>
-                <li>Silly</li>
-            </ul>
-        </div>,
-        <div>
-            <ul>
-                <li>Dumb</li>
-                <li>Crazy</li>
-                <li>Insane</li>
-            </ul>
-            <p>(Some catch-all terms have histories of being used to discriminate)</p>
-        </div>,
-    ],
-    [<div>Feeling frustrated about...</div>, <div>Feeling depressed about...</div>],
-    [
-        <div>
-            <ul>
-                <li>In the menu</li>
-                <li>First / before</li>
-                <li>Next / after</li>
-                <li>Read</li>
-                <li>Select / Click</li>
-            </ul>
-        </div>,
-        <div>
-            <ul>
-                <li>On the left/right (or other directional language)</li>
-                <li>Above / below</li>
-                <li>View / see (don't assume this is how people are reading content)</li>
-                <li>Here (specify clearly what the destination is/will be)</li>
-            </ul>
-        </div>,
-    ],
-];
-
-<DoDontTable examples={dd_inclusive} />
+<DoDontTable
+    examples={[
+        [
+            <div>
+                <p>A person with a disability</p>
+                <div>Other:</div>
+                <ul>
+                    <li>
+                        people with disabilities (women with disabilities, children with
+                        disabilities,etc)
+                    </li>
+                    <li>has disability</li>
+                    <li>lives with disability</li>
+                    <li>has a chronic health condition</li>
+                    <li>lives with a chronic health condition</li>
+                </ul>
+            </div>,
+            <div>
+                <p>
+                    A disabled or differently abled person, handicapped person, physically
+                    challenged, special, special needs, mentally incapacitated/ill
+                </p>
+                <div>Other:</div>
+                <ul>
+                    <li>afflicted by</li>
+                    <li>crippled by</li>
+                    <li>diffability</li>
+                    <li>differently abled</li>
+                    <li>handicap(ped)</li>
+                    <li>handicapable</li>
+                    <li>specially abled</li>
+                    <li>special needs</li>
+                    <li>suffers from</li>
+                    <li>the disabled</li>
+                    <li>victim of</li>
+                </ul>
+            </div>,
+        ],
+        [<div>A person who uses a wheelchair</div>, <div>A wheelchair-bound person</div>],
+        [
+            <div>
+                <p>A person/people with complete or nearly complete vision loss</p>
+                <div>Other:</div>
+                <div>experiencing vision loss</div>
+            </div>,
+            <div>A blind person</div>,
+        ],
+        [
+            <div>
+                <ul>
+                    <li>Usless</li>
+                    <li>Intense</li>
+                    <li>Outrageous</li>
+                    <li>Silly</li>
+                </ul>
+            </div>,
+            <div>
+                <ul>
+                    <li>Dumb</li>
+                    <li>Crazy</li>
+                    <li>Insane</li>
+                </ul>
+                <p>(Some catch-all terms have histories of being used to discriminate)</p>
+            </div>,
+        ],
+        [<div>Feeling frustrated about...</div>, <div>Feeling depressed about...</div>],
+        [
+            <div>
+                <ul>
+                    <li>In the menu</li>
+                    <li>First / before</li>
+                    <li>Next / after</li>
+                    <li>Read</li>
+                    <li>Select / Click</li>
+                </ul>
+            </div>,
+            <div>
+                <ul>
+                    <li>On the left/right (or other directional language)</li>
+                    <li>Above / below</li>
+                    <li>View / see (don't assume this is how people are reading content)</li>
+                    <li>Here (specify clearly what the destination is/will be)</li>
+                </ul>
+            </div>,
+        ],
+    ]}
+/>
 
 ## Anti-racist content
 
@@ -266,23 +266,23 @@ Anti-racist content includes diverse perspectives that are different from our ow
 
 ### Words and phrases to use and avoid
 
-export const dd_anti_racism = [
-    [
-        'Historically underrepresented groups or people of color',
-        'Minority/minorities, visible minorities',
-    ],
-    [
-        'Discontinued, legacy, defunct, exempt, excluded, special case, special privilege, etc.',
-        'Grandfather, grandfathered, grandfathering (verbs), and grandfather clause (noun)',
-    ],
-    ['Welcome back', 'Long time no see'],
-    ['Sorry, something went wrong', 'No can do'],
-    ['Authority or expert', 'Guru or ninja'],
-    ['Native to the operating system or built-in feature', 'Native'],
-    ['Meeting', 'Powwow'],
-];
-
-<DoDontTable examples={dd_anti_racism} />
+<DoDontTable
+    examples={[
+        [
+            'Historically underrepresented groups or people of color',
+            'Minority/minorities, visible minorities',
+        ],
+        [
+            'Discontinued, legacy, defunct, exempt, excluded, special case, special privilege, etc.',
+            'Grandfather, grandfathered, grandfathering (verbs), and grandfather clause (noun)',
+        ],
+        ['Welcome back', 'Long time no see'],
+        ['Sorry, something went wrong', 'No can do'],
+        ['Authority or expert', 'Guru or ninja'],
+        ['Native to the operating system or built-in feature', 'Native'],
+        ['Meeting', 'Powwow'],
+    ]}
+/>
 
 ## Gender-neutral language
 
@@ -299,89 +299,89 @@ Gender-neutral language is important so our words don’t enforce biases and ste
 
 ### Words and phrases to use and avoid
 
-export const dd_gender_neutral = [
-    [
-        'Parent or parents',
-        <div>
-            <div>Moms</div>
-            <div>Dads</div>
-        </div>,
-    ],
-    [
-        <div>
-            <div>Pronouns</div>
-            <div>What are your pronouns?</div>
-            <div>Prefer not to say / self-describe / respond</div>
-        </div>,
-        <div>
-            <div>Preferred pronouns</div>
-            <div>What are your preferred pronouns?</div>
-            <div>Other (in forms that collect personal data)</div>
-        </div>,
-    ],
-    [
-        'LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,transsexual, they /them/their',
-        'Homosexual or the wrong pronoun',
-    ],
-    [
-        <div>
-            <div>Given name</div>
-            <div>Assumed name</div>
-            <div>Legal name</div>
-        </div>,
-        <div>
-            <div>Maiden name</div>
-            <div>Married name</div>
-        </div>,
-    ],
-    [
-        <div>
-            <div>People</div>
-            <div>Everyone</div>
-            <div>Everybody</div>
-        </div>,
-        'Men and women',
-    ],
-    ['Woman/women (this is inclusive of trans women)', 'Female'],
-    [
-        'They/their/them (acceptable gender-neutral singular pronouns)',
-        <div>
-            <div>Him and/or her</div>
-            <div>He and/or she</div>
-        </div>,
-    ],
-    [
-        'Any representative name',
-        <div>
-            <div>John/Jane Doe</div>
+<DoDontTable
+    examples={[
+        [
+            'Parent or parents',
             <div>
-                (These names are typically used to identify anonymous people in court cases, police
-                warrants, and violent crimes.)
-            </div>
-        </div>,
-    ],
-    [
-        <div>
-            <div>Businessperson</div>
-            <div>This could apply to any position, role, or title that is a gendered word.</div>
-        </div>,
-        'Businessman',
-    ],
-    [
-        <div>
-            <div>Staffed</div>
-            <div>Managed</div>
-        </div>,
-        'Manned',
-    ],
-    ['Workforce', 'Manpower'],
-    [
-        <div>
-            <div>Machine-made</div>
-            <div>Artificial</div>
-        </div>,
-        'Man-made',
-    ],
-];
-
-<DoDontTable examples={dd_gender_neutral} />
+                <div>Moms</div>
+                <div>Dads</div>
+            </div>,
+        ],
+        [
+            <div>
+                <div>Pronouns</div>
+                <div>What are your pronouns?</div>
+                <div>Prefer not to say / self-describe / respond</div>
+            </div>,
+            <div>
+                <div>Preferred pronouns</div>
+                <div>What are your preferred pronouns?</div>
+                <div>Other (in forms that collect personal data)</div>
+            </div>,
+        ],
+        [
+            'LGBTQ+ community, gay, lesbian, bisexual /pansexual, transgender,transsexual, they /them/their',
+            'Homosexual or the wrong pronoun',
+        ],
+        [
+            <div>
+                <div>Given name</div>
+                <div>Assumed name</div>
+                <div>Legal name</div>
+            </div>,
+            <div>
+                <div>Maiden name</div>
+                <div>Married name</div>
+            </div>,
+        ],
+        [
+            <div>
+                <div>People</div>
+                <div>Everyone</div>
+                <div>Everybody</div>
+            </div>,
+            'Men and women',
+        ],
+        ['Woman/women (this is inclusive of trans women)', 'Female'],
+        [
+            'They/their/them (acceptable gender-neutral singular pronouns)',
+            <div>
+                <div>Him and/or her</div>
+                <div>He and/or she</div>
+            </div>,
+        ],
+        [
+            'Any representative name',
+            <div>
+                <div>John/Jane Doe</div>
+                <div>
+                    (These names are typically used to identify anonymous people in court cases,
+                    police warrants, and violent crimes.)
+                </div>
+            </div>,
+        ],
+        [
+            <div>
+                <div>Businessperson</div>
+                <div>This could apply to any position, role, or title that is a gendered word.</div>
+            </div>,
+            'Businessman',
+        ],
+        [
+            <div>
+                <div>Staffed</div>
+                <div>Managed</div>
+            </div>,
+            'Manned',
+        ],
+        ['Workforce', 'Manpower'],
+        [
+            <div>
+                <div>Machine-made</div>
+                <div>Artificial</div>
+            </div>,
+            'Man-made',
+        ],
+    ]}
+/>
