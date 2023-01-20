@@ -19,7 +19,7 @@ export function Anatomy({ children }: PropTypes): JSX.Element {
 
 export function AnatomyItem({ title, number, children }: AnatomyItemPropTypes): JSX.Element {
     return (
-        <li className="flex pb3">
+        <li className={`flex pb3 ${styles.readingWidth}`}>
             <div className="flex-column">
                 <Badge size={2}>{number}</Badge>
             </div>
