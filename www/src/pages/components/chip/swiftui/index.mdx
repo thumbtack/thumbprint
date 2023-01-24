@@ -1,0 +1,67 @@
+---
+title: Chip
+description: Compact controls that allow for toggling and filtering
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+### Usage
+
+Chips allow users to make selections, filter content, or trigger small actions. In most cases, chips appear as a set. Chips are not buttons, and tapping on them should not trigger any sort of navigation.
+
+### Components
+
+Chips can be styled with either the `.toggle` or the `.filter` TPChip.Style. Toggle chips behave the same way as a checkbox and should be used for a set of options where more than one option can be selected.
+
+![Toggle chip](/img/ios-toggle-chip.png)
+
+Filter chips are meant to behave more like a button and should be used for filtering options.
+
+![Filter chip](/img/ios-filter-chip.png)
+
+Both types of chips behave the same way to user interaction, they only differ visually and on intended use.
+
+Finally, bespoke chip style can be created by creating a new TPChip.Style with
+
+```swift
+TPChip.Style(
+    borderColor: ColorSet,
+    backgroundColor: ColorSet,
+    textColor: ColorSet,
+    fontStyle: Typography.Style
+)
+```
+
+where `ColorSet` is a data structure that stores colors for both active and inactive states.
+
+### Usage
+
+By default, chips display with the 'toggle' style. This can be overridden (or explicitly set) by using the `tpChipStyle` function of View.
+
+```swift
+@State private var isOn: Bool = false
+
+var body: some View {
+    HStack {
+        TPChip(text: "Toggle", isActive: $isOn).tpChipStyle(.toggle)
+        TPChip(text: "Filter", isActive: $isOn).tpChipStyle(.filter)
+        TPChip(text: "Custom", isActive: $isOn).tpChipStyle(customChipStyle)
+    }
+}
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/chip/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

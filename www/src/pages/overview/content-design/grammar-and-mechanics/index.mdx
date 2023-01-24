@@ -1,0 +1,575 @@
+---
+title: Grammar and mechanics
+description: This section outlines our approach to grammar and mechanics across the pro and customer experiences.
+---
+
+import DoDont, { DoDontSideBySide } from 'components/dodont';
+import { Grid, GridColumn, List, ListItem, Title, Text } from '@thumbtack/thumbprint-react';
+
+## Write using plain language
+
+Writing in a way people understand helps them accomplish their goals with ease. We help both pros and customers find what they need and learn how to use that information by making content easy to understand.
+
+### Use conversational language
+
+Our content should sound approachable and never robotic. Copy that sounds human is easier to read and reduces cognitive load.
+
+### Active vs. passive voice
+
+#### Use active voice by default
+
+The subject of a sentence performs the action when writing in active voice. Using active voice makes our products sound more conversational.
+
+<DoDontSideBySide
+    examples={[
+        'Don’t want to request the review directly? Let us email them for you.',
+        'Don’t want to request the review directly? An email can be sent on your behalf.',
+    ]}
+/>
+
+### Use passive voice to emphasize the action
+
+You can opt for passive voice when you want to emphasize the action instead of the subject of a sentence. This can be helpful when you want to:
+
+-   Avoid blaming the user or system
+-   Avoid referring to Thumbtack
+
+<DoDontSideBySide examples={['Unable to save prices', 'We can’t save your prices']} />
+
+### First vs. third person
+
+Choosing the best pronoun for a given scenario helps us write copy that’s conversational and more inviting.
+
+### Use first person when talking about Thumbtack
+
+<DoDontSideBySide
+    examples={[
+        'It feels good to get things done. We’re here to help.',
+        'It feels good to get things done. Thumbtack is here to help.',
+    ]}
+/>
+
+### Use third person sparingly when talking about Thumbtack
+
+We typically only use third person when speaking about pros, customers, or products as separate entities.
+
+<DoDontSideBySide
+    examples={[
+        'We analyzed millions of bids from Thumbtack pros to see what things really cost.',
+        'Thumbtack analyzed millions of bids from Thumbtack pros to see what things really cost.',
+    ]}
+/>
+
+See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on writing using plain language.
+
+## Formatting
+
+The way we format and organize information helps people understand the information on their screen. This allows people to quickly find what they need and complete important tasks.
+
+### Headers
+
+#### Use sentence casing when formatting headers
+
+We’re no longer including periods in headers.
+
+<DoDontSideBySide
+    examples={[
+        <div>
+            <div>Set your hours</div>
+            <div>You’re now signed up for Instant Book</div>
+        </div>,
+        <div>
+            <div>Set Your Hours.</div>
+            <div>You’re Now Signed Up for Instant Book.</div>
+        </div>,
+    ]}
+/>
+
+#### Use header tags consistently
+
+Using the right header tags helps people scan the information on theirscreens quickly so they can move forward with their tasks. Here are some best practices for using header tags:
+
+-   Use H1 tags to communicate the title of the page. - Use only one H1 per page.
+-   Use H2 tags for second-level headings. - Use H3 tags for third-level headings sparingly.
+-   Don’t skip heading levels.
+
+<DoDontSideBySide
+    examples={[
+        [
+            <Title size={1}>Header 1</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={3}>Header 3</Title>,
+        ],
+        [
+            <Title size={1}>Header 1</Title>,
+            <Title size={3}>Header 3</Title>,
+            <Title size={2}>Header 2</Title>,
+            <Title size={1}>Header 1</Title>,
+        ],
+    ]}
+/>
+
+### Formatted text
+
+#### Avoid using bolded, italicized, or underlined text to emphasize a point
+
+To helppeople scan the content on a page, frontload the important information instead of bolding or italicizing it. We should only underline text when it links to other content.
+
+<DoDontSideBySide
+    examples={[
+        [
+            <div>
+                Get $100 in credits for telling us which tools you use to manage your availability
+                outside of Thumbtack.
+            </div>,
+        ],
+        [
+            <p>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <span className="b">get $100 in credits</span>.{' '}
+            </p>,
+            <p>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <i>get $100 in credits.</i>
+            </p>,
+            <div>
+                Tell us which tools you use to manage your availability outside of Thumbtack and{' '}
+                <span className="m_underline">get $100 in credits.</span>
+            </div>,
+        ],
+    ]}
+/>
+
+See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information on formatting content.
+
+### Capitalization
+
+#### Use sentence casing
+
+We use sentence casing for most user-facing content, including:
+
+-   Headlines, headers, and subheads
+-   Body copy
+-   Buttons and links
+-   Form field titles and hint text
+-   Job categories
+-   Most product names\*
+
+\* See title casing section for exceptions to this guideline.
+
+#### Use title casing for specific product names only
+
+We only use title casing for specific product names:
+
+-   Help Center
+-   Top Pro
+-   Thumbtack Support
+-   Get Hired Guide
+-   Project Guide
+-   Service Guide
+
+## Punctuation
+
+Improve readability, strike the right tone, and design a consistent experience for pros and customers using these punctuation guidelines.
+
+### Use contractions with care
+
+Contractions make our products sound more conversational, but should be used with care depending on the situation so we don’t sound awkward.
+
+### Use positive contractions
+
+In general, positive contractions are easier to understand and also create a more conversational tone.
+
+### Avoid negative contractions
+
+Negative contractions are difficult to read and may be easily misread.
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>I'll</li>
+            <li>I'm</li>
+            <li>It's</li>
+            <li>There's</li>
+            <li>They're</li>
+            <li>We'll</li>
+            <li>We're</li>
+        </ul>,
+        <ul>
+            <li>Can't</li>
+            <li>Couldn't</li>
+            <li>Didn't</li>
+            <li>Don't</li>
+            <li>Shouldn't</li>
+            <li>Weren't</li>
+            <li>Won't</li>
+            <li>Wouldn't</li>
+        </ul>,
+    ]}
+/>
+
+### Avoid conditional contractions
+
+These types of contractions create additional cognitive load for users with cognitive impairments and lower reading comprehension. Avoid using contractions like:
+
+-   Could’ve
+-   Should’ve
+-   Would’ve
+
+See [Inclusion and accessibility](/overview/content-design/inclusion-and-accessibility) content for more information about contractions.
+
+### Comma usage
+
+#### Use the Oxford comma
+
+The Oxford or serial comma should be used to break up a series of three or more elements in a sentence.
+
+<DoDontSideBySide
+    examples={[
+        'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood.',
+        'Your base price includes consultation, travel fees and mount on drywall, plaster or wood.',
+    ]}
+/>
+
+#### Avoid using commas to combine multiple sentences
+
+To improve readability, try breaking up complex sentences into two or more sentences.
+
+<DoDontSideBySide
+    examples={[
+        "This is a 60% discount off the current price of instant bookings. We'll let you know in advance before prices change.",
+        "This is a 60% discount off the current price of instant bookings, and we'll let you know in advance before prices change.",
+    ]}
+/>
+
+#### Use a comma to separate parts of an address
+
+<DoDontSideBySide
+    examples={[
+        'We’ll arrive at 415 Natoma St., San Francisco, California, on August 5th.',
+        'We’ll arrive at 415 Natoma St., San Francisco, California on August 5th.',
+    ]}
+/>
+
+### Dashes
+
+#### Em dashes
+
+Use em dashes to:
+
+-   Show a break in a sentence
+-   Separate a noun or series of nouns from the rest of the sentence
+-   Show an open range, such as a date with no end date
+-   Emphasize a point
+
+#### Use an em dash with a space before and after
+
+Adding a space both before and after the em dash allows for cleaner line breaks.
+
+<DoDontSideBySide
+    examples={[
+        <div>
+            Next, you’ll choose a budget – a max amount you’re able to spend weekly on leads.
+        </div>,
+        <div>
+            <p>Next, you’ll choose a budget–a max amount you’re able to spend weekly on leads.</p>
+            <p>
+                Next, you’ll choose a budget -- a max amount you’re able to spend weekly on leads.
+            </p>
+        </div>,
+    ]}
+/>
+
+#### Don’t use en dashes for ranges
+
+When writing product copy, use a hyphen instead.
+
+<DoDontSideBySide examples={['8 am - 5 pm', '8 am – 5 pm']} />
+
+#### Hyphens
+
+-   Use hyphens in prefixes.
+-   Use hyphens to connect 2+ words that should be understood together.
+-   Don’t hyphenate the word “very” and most words that end in -ly.
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Auto-pay</li>
+            <li>Higher-intent customers</li>
+            <li>Instantly booked jobs</li>
+        </ul>,
+        <ul>
+            <li>Autopay or Auto pay</li>
+            <li>Higher intent customers</li>
+            <li>Instantly-booked jobs</li>
+        </ul>,
+    ]}
+/>
+
+### Exclamation marks (!)
+
+#### Use exclamation marks sparingly
+
+It’s easy to overuse exclamation marks, so only use them when you need to add emphasis that won’t overwhelm people. You can add an exclamation mark to celebrate with customers and pros, but don’t overdo it.
+
+<DoDontSideBySide examples={['🎉 New direct lead! Howard G.', 'Set your budget!']} />
+
+### Navigation
+
+Avoid using periods in links, buttons, and tabs.
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Opportunities</li>
+            <li>Calendar</li>
+            <li>View details</li>
+        </ul>,
+        <ul>
+            <li>Opportunities.</li>
+            <li>Calendar.</li>
+            <li>View details.</li>
+        </ul>,
+    ]}
+/>
+
+### Ampersands (&)
+
+#### Avoid using ampersands
+
+<List>
+    <ListItem>
+        <Text className="black-300">
+            Avoid using ampersands unless you have a hard character limit.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Don’t use ampersands after commas.</Text>
+    </ListItem>
+</List>
+
+<DoDontSideBySide
+    examples={[
+        'Your base price includes consultation, travel fees, and mount on drywall, plaster, or wood',
+        'Your base price includes consultation, travel fees, & mount on drywall, plaster, or wood',
+    ]}
+/>
+
+### Periods
+
+#### Avoid using periods in headers
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Set your hours</li>
+            <li>Edit your business hours</li>
+            <li>You’re now signed up for Instant Book</li>
+        </ul>,
+        <ul>
+            <li>Set your hours.</li>
+            <li>Edit your business hours.</li>
+            <li>You’re now signed up for Instant Book.</li>
+        </ul>,
+    ]}
+/>
+
+### Emails
+
+#### Avoid using periods in email subject lines
+
+<DoDontSideBySide
+    examples={['Required: Review your business hours', 'Required: Review your business hours.']}
+/>
+
+See [Surfaces and elements](/content-design/surfaces-and-elements) for more information about writing email copy.
+
+### Lists
+
+Improve readability by breaking up large chunks of text into lists.
+
+#### General guidance
+
+-   Use a colon to introduce items in a list.
+-   Order list items logically.
+-   Make sure list items are of similar length.
+-   Don’t separate items in the list with commas. This does not apply to using commas within a list item.
+
+<DoDontSideBySide
+    examples={[
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ul>
+                <li>Higher-intent customers</li>
+                <li>Reduced competition</li>
+                <li>Less time communicating with customers</li>
+            </ul>
+        </div>,
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ul>
+                <li>higher-intent customers,</li>
+                <li>reduced competition, and</li>
+                <li>less time communicating with customers.</li>
+            </ul>
+        </div>,
+    ]}
+/>
+
+<Grid gutter="wide">
+    <GridColumn aboveSmall={6}></GridColumn>
+    <GridColumn aboveSmall={6}></GridColumn>
+</Grid>
+
+### Use numbered lists when communicating count matters
+
+<DoDontSideBySide
+    examples={[
+        <div>
+            <p>Customers can instantly book you starting September 19th</p>
+            <ol>
+                <li>Check your business hours</li>
+                <li>Block your calendar</li>
+                <li>Get ready for instant bookings</li>
+            </ol>
+        </div>,
+        <div>
+            <p>Instant Book offers better returns for the money you spend on Thumbtack through:</p>
+            <ol>
+                <li>Higher-intent customers</li>
+                <li>Reduced competition</li>
+                <li>Less time communicating with customers</li>
+            </ol>
+        </div>,
+    ]}
+/>
+
+## Numbers
+
+Help pros and customers understand earnings and payment details, when jobs are happening, and how to get in touch with each other by formatting numbers consistently across their experience.
+
+### General guidance
+
+<List>
+    <ListItem>
+        <Text className="black-300">
+            Use ###-###-#### formatting when writing telephone numbers. Don’t use parentheses.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Spell out small numbers in a sentence.</Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">
+            Use the actual number only if it’s in a form field, chart, date or other UX value.
+        </Text>
+    </ListItem>
+    <ListItem>
+        <Text className="black-300">Use the number for 100 and up.</Text>
+    </ListItem>
+    <li>
+        For very large numbers, combine the number and word (32 million). Abbreviate ($32M) only if
+        you have a hard character limit.
+    </li>
+    <ListItem>
+        <Text className="black-300">Use the % sign for percentages.</Text>
+    </ListItem>
+</List>
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>555-867-5309</li>
+            <li>
+                Pros who have at least 12 hours available each week book more jobs on Thumbtack.
+            </li>
+            <li>[H1] Invite five friends to join Thumbtack</li>
+            <li>You’ve completed over 200 jobs on Thumbtack</li>
+            <li>32 million</li>
+            <li>24%</li>
+        </ul>,
+        <ul>
+            <li>(555) 867-5309 or 1-867-555-5309</li>
+            <li>
+                Pros who have at least twelve hours available each week book more jobs on Thumbtack.
+            </li>
+            <li>[H1] Invite 5 friends to join Thumbtack</li>
+            <li>You’ve completed over two hundred jobs on Thumbtack</li>
+            <li>32,000,000</li>
+            <li>24 percent</li>
+        </ul>,
+    ]}
+/>
+
+### Currency
+
+#### Don’t include values after the decimal when referring to dollar amounts conversationally
+
+Round to the nearest dollar amount in:
+
+-   Headings and subject lines
+-   Sentences
+-   User inputs, like bidding mechanisms
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>Limited time offer: Sign up today and get $50 in free leads and bookings.</li>
+            <li>Inviting friends can pay off (up to $250)</li>
+            <li>$65 / $120 spent</li>
+        </ul>,
+        <ul>
+            <li>Limited time offer: Sign up today and get $50.00 in free leads and bookings.</li>
+            <li>Inviting friends can pay off (up to $250.00)</li>
+            <li>$65.05 / $120 spent</li>
+        </ul>,
+    ]}
+/>
+
+#### Use the entire dollar amount, including cents, to:
+
+-   Communicate payments and earnings
+-   Maintain alignment in the UI
+
+<DoDontSideBySide
+    examples={[
+        <div>
+            <div>$8.34</div>
+            <div>avg. lead cost</div>
+            <div>Set up direct deposit to receive $154.75 in earnings.</div>
+            <div>Jason sent you $168.75</div>
+        </div>,
+        <div>
+            <div>$8</div>
+            <div>avg. lead cost</div>
+            <div>Set up direct deposit to receive $154 in earnings.</div>
+            <div>Jason sent you $168.</div>
+        </div>,
+    ]}
+/>
+
+### Dates and times
+
+-   Spell out dates instead of using the numerical format whenever possible.
+-   Use shorthand only if you have a hard character limit.
+-   For times, use lower case “am” or “pm” with a space before.
+-   Use a dash to indicate a time range.
+-   Omit the first “am” or “pm” if a time range is within the same part of the day
+
+<DoDontSideBySide
+    examples={[
+        <ul>
+            <li>July 16, 2023</li>
+            <li>8:00 am</li>
+            <li>8:00 am - 12:15 pm</li>
+            <li>8:00 - 10:15 am</li>
+        </ul>,
+        <ul>
+            <li>7/16/23 (unless there’s a character limit)</li>
+            <li>8 a.m. or 8am</li>
+            <li>8am – 12:15pm</li>
+        </ul>,
+    ]}
+/>

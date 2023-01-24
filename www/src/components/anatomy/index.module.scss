@@ -1,5 +1,9 @@
 @import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
 
+.readingWidth {
+    max-width: 580px;
+}
+
 .childen {
     list-style: none;
 

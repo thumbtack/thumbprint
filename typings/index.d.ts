@@ -40,6 +40,33 @@ declare module 'react-copy-to-clipboard' {
     }): JSX.Element;
 }
 
+declare module 'react-docgen' {
+    export const resolver: {
+        findAllExportedComponentDefinitions: unknown;
+    };
+
+    export function parse(
+        source: string,
+        resolverParam: unknown,
+        handlers: unknown,
+        options: Record<string, unknown>,
+    ): Array<{
+        displayName: string;
+        description: string;
+        methods: unknown[];
+        props: Record<
+            string,
+            {
+                description: string;
+                required: boolean;
+                tsType: {
+                    name: string;
+                };
+            }
+        >;
+    }>;
+}
+
 declare module 'clickable-box';
 
 declare module 'react-outside-click-handler';
