@@ -4,13 +4,13 @@ import { groupBy, keyBy } from 'lodash-es';
 import { Text } from '@thumbtack/thumbprint-react';
 import getLayoutProps from '../../utils/get-layout-props';
 import Alert from '../../components/alert/alert';
-import { ContentPage } from '../../components/mdx/components';
 import InlineCode from '../../components/inline-code/inline-code';
 import {
     ComponentRow,
     ComponentTable,
     Dot,
 } from '../../components/thumbprint-components/overview/overview';
+import { ContentPage } from '../../components/mdx/mdx';
 
 interface Implementation {
     browserLink: string;

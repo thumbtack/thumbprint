@@ -1,5 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { isString, get, find } from 'lodash';
+import { Text } from '@thumbtack/thumbprint-react';
 
 import Wrap from '../wrap/wrap';
 import PageHeader from '../page-header/page-header';
@@ -8,8 +10,10 @@ import { LayoutProps } from '../../utils/get-layout-props';
 import TabNav, { TabNavItem } from '../tab-nav/tab-nav';
 import PackageTable from '../package-table/package-table';
 import { ComponentPageProps } from '../../utils/component-page-props';
-import PropsTable from '../thumbprint-components/props-table/props-table';
 import { H2, H3, H4, P, Pre, LI, OL, UL, Img, Code, Table, TD, TH, HR, Iframe } from './components';
+import InlineCode from '../inline-code/inline-code';
+import PropType from '../thumbprint-components/props-table/prop-type';
+import Tag from '../tag/tag';
 
 export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.Element => {
     return (
@@ -90,9 +94,121 @@ export const MDXComponentPage = ({
                     ecosystem="web"
                 />
             )}
+
             {children}
+
             {componentPageProps.componentDocgens && (
-                <PropsTable data={componentPageProps.componentDocgens} mdxRenderer={MDXRenderer} />
+                <React.Fragment>
+                    <H2>Props</H2>
+                    {componentPageProps.componentDocgens.map(component => (
+                        <div key={component.displayName} className="ph5 pb3 mb5 ba br2 b-gray-300">
+                            <H3>{component.displayName}</H3>
+                            {component.description && (
+                                <div className="mb3">
+                                    <MDXRenderer>{component.description}</MDXRenderer>
+                                </div>
+                            )}
+                            <ul>
+                                {Object.keys(component.props)
+                                    .sort((a, b) => {
+                                        const propA = component.props[a];
+                                        const propB = component.props[b];
+                                        if (propA.required === propB.required) {
+                                            return 0;
+                                        }
+
+                                        if (propA.required && !propB.required) {
+                                            return -1;
+                                        }
+
+                                        return 1;
+                                    })
+                                    .map(propName => {
+                                        const prop = component.props[propName];
+
+                                        const deprecated = find(
+                                            prop.description.tags,
+                                            o => o.title === 'deprecated',
+                                        );
+
+                                        return (
+                                            <li className="pv4 bt b-gray-300" key={propName}>
+                                                <div className="flex">
+                                                    <div className="b">
+                                                        <InlineCode
+                                                            shouldCopyToClipboard
+                                                            theme="plain"
+                                                        >
+                                                            {propName}
+                                                        </InlineCode>
+                                                    </div>
+                                                    {prop.required && (
+                                                        <div className="ml2">
+                                                            <Tag type="required" />
+                                                        </div>
+                                                    )}
+                                                    {deprecated && (
+                                                        <div className="ml2">
+                                                            <Tag type="deprecated" />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                <div className="black-300 mw8 mb2">
+                                                    {prop.description && (
+                                                        <MDXRenderer>
+                                                            {prop.description.description}
+                                                        </MDXRenderer>
+                                                    )}
+
+                                                    {deprecated &&
+                                                        isString(deprecated.description) && (
+                                                            <p>
+                                                                <b>Note:</b>{' '}
+                                                                {deprecated.description}
+                                                            </p>
+                                                        )}
+                                                </div>
+                                                <div className="flex">
+                                                    {prop.tsType && (
+                                                        <Text
+                                                            size={2}
+                                                            className="mr4 w-50 s_w-40 m_w-30 m_w-20"
+                                                            elementName="div"
+                                                        >
+                                                            <div className="b black-300">Type</div>
+                                                            <PropType
+                                                                type={prop.tsType.name}
+                                                                value={prop.tsType.elements}
+                                                            />
+                                                        </Text>
+                                                    )}
+                                                    {get(prop.defaultValue, 'value') && (
+                                                        <Text
+                                                            size={2}
+                                                            className="mr4 w-50 s_w-40 m_w-30 m_w-20"
+                                                            elementName="div"
+                                                        >
+                                                            <div className="b black-300">
+                                                                Default
+                                                            </div>
+                                                            <div className="black-300">
+                                                                <InlineCode theme="plain">
+                                                                    {get(
+                                                                        prop.defaultValue,
+                                                                        'value',
+                                                                    )}
+                                                                </InlineCode>
+                                                            </div>
+                                                        </Text>
+                                                    )}
+                                                </div>
+                                            </li>
+                                        );
+                                    })}
+                            </ul>
+                        </div>
+                    ))}
+                </React.Fragment>
             )}
         </MDX>
     );

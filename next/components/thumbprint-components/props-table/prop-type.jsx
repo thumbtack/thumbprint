@@ -74,6 +74,8 @@ const PropType = ({ type, value }) => {
         component = <UnionPropType value={value} />;
     } else if (type === 'instanceOf') {
         component = <InstanceOfPropType value={value} />;
+    } else if (type === 'literal') {
+        component = <DefaultPropType value={value} />;
     } else {
         component = <DefaultPropType value={type} />;
     }

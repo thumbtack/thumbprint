@@ -1,9 +1,10 @@
 import fs from 'node:fs';
 import type { GetStaticPropsContext } from 'next';
 import * as reactDocgen from 'react-docgen';
+import doctrine from 'doctrine';
 import getLayoutProps, { LayoutProps } from './get-layout-props';
-import { ReactDocgenComponent } from '../components/thumbprint-components/props-table/react-docgen-component';
 import { ComponentPageProps } from './component-page-props';
+import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
 interface Metadata {
     title?: string;
@@ -20,7 +21,7 @@ export default function getStaticProps(
 ): { props: { layoutProps: LayoutProps; componentPageProps?: ComponentPageProps } } {
     let componentPlatforms = null;
     let packageTable: ComponentPageProps['packageTable'] = null;
-    let componentDocgens: ReactDocgenComponent[] | null = null;
+    let componentDocgens = null;
 
     // Get more information for the page if it is a page for a component.
     if (metadata?.component) {
@@ -64,15 +65,34 @@ export default function getStaticProps(
                     'utf8',
                 );
 
-                componentDocgens = reactDocgen.parse(
-                    fileSource,
-                    reactDocgen.resolver.findAllExportedComponentDefinitions,
-                    null,
-                    {
-                        filename: `../packages/thumbprint-react/components/${metadata.title}/index.tsx`,
-                        cwd: `../`,
-                    },
-                );
+                componentDocgens = reactDocgen
+                    .parse(
+                        fileSource,
+                        reactDocgen.resolver.findAllExportedComponentDefinitions,
+                        null,
+                        {
+                            filename: `../packages/thumbprint-react/components/${metadata.title}/index.tsx`,
+                            cwd: `../`,
+                        },
+                    )
+                    .map(
+                        (component): ComponentDefinition => {
+                            return {
+                                ...component,
+                                props: Object.keys(component.props).reduce((acc, propName) => {
+                                    return {
+                                        ...acc,
+                                        [propName]: {
+                                            ...component.props[propName],
+                                            description: doctrine.parse(
+                                                component.props[propName].description,
+                                            ),
+                                        },
+                                    };
+                                }, {}),
+                            };
+                        },
+                    );
 
                 if (!componentDocgens) {
                     throw new Error(

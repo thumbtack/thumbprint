@@ -1,5 +1,5 @@
 import { SupportedEcosystems } from '../components/package-table/package-table';
-import { ReactDocgenComponent } from '../components/thumbprint-components/props-table/react-docgen-component';
+import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
 export interface ComponentPageProps {
     id: string;
@@ -14,5 +14,5 @@ export interface ComponentPageProps {
         // deprecated?: boolean;
         importStatement?: string;
     } | null;
-    componentDocgens: ReactDocgenComponent[] | null;
+    componentDocgens: ComponentDefinition[] | null;
 }
