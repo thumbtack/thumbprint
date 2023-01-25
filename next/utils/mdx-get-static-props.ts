@@ -1,7 +1,10 @@
 import fs from 'node:fs';
 import type { GetStaticPropsContext } from 'next';
+import * as reactDocgen from 'react-docgen';
+import doctrine from 'doctrine';
 import getLayoutProps, { LayoutProps } from './get-layout-props';
-import { SupportedEcosystems } from '../components/package-table/package-table';
+import { ComponentPageProps } from './component-page-props';
+import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
 interface Metadata {
     title?: string;
@@ -12,27 +15,13 @@ interface Metadata {
     };
 }
 
-export interface ComponentPageProps {
-    id: string;
-    platformId: string;
-    componentPlatforms: string[];
-    packageTable: {
-        name: string;
-        version: string;
-        sourceDirectory: string;
-        ecosystem: SupportedEcosystems;
-        // TODO
-        // deprecated?: boolean;
-        // importStatement?: string;
-    } | null;
-}
-
 export default function getStaticProps(
     ctx: GetStaticPropsContext,
     metadata?: Metadata,
 ): { props: { layoutProps: LayoutProps; componentPageProps?: ComponentPageProps } } {
     let componentPlatforms = null;
     let packageTable: ComponentPageProps['packageTable'] = null;
+    let componentDocgens = null;
 
     // Get more information for the page if it is a page for a component.
     if (metadata?.component) {
@@ -68,8 +57,53 @@ export default function getStaticProps(
                 ecosystem: 'web',
                 // TODO
                 // deprecated: false,
-                // importStatement: "import { View } from 'react-native';",
             };
+
+            if (metadata.component.platformId === 'react') {
+                const fileSource = fs.readFileSync(
+                    `../packages/thumbprint-react/components/${metadata.title}/index.tsx`,
+                    'utf8',
+                );
+
+                componentDocgens = reactDocgen
+                    .parse(
+                        fileSource,
+                        reactDocgen.resolver.findAllExportedComponentDefinitions,
+                        null,
+                        {
+                            filename: `../packages/thumbprint-react/components/${metadata.title}/index.tsx`,
+                            cwd: `../`,
+                        },
+                    )
+                    .map(
+                        (component): ComponentDefinition => {
+                            return {
+                                ...component,
+                                props: Object.keys(component.props).reduce((acc, propName) => {
+                                    return {
+                                        ...acc,
+                                        [propName]: {
+                                            ...component.props[propName],
+                                            description: doctrine.parse(
+                                                component.props[propName].description,
+                                            ),
+                                        },
+                                    };
+                                }, {}),
+                            };
+                        },
+                    );
+
+                if (!componentDocgens) {
+                    throw new Error(
+                        `Something went wrong when parsing the React component ${metadata.title}}`,
+                    );
+                }
+
+                packageTable.importStatement = `import { ${componentDocgens
+                    .map(c => c.displayName)
+                    .join(', ')} } from '${packageJson.name}';`;
+            }
         }
     }
 
@@ -85,6 +119,7 @@ export default function getStaticProps(
                           platformId: metadata.component.platformId as string,
                           componentPlatforms: componentPlatforms as string[],
                           packageTable,
+                          componentDocgens,
                       },
                   }
                 : {}),

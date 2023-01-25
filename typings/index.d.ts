@@ -40,6 +40,58 @@ declare module 'react-copy-to-clipboard' {
     }): JSX.Element;
 }
 
+interface DocgenComponentProps {
+    description: string;
+    required: boolean;
+    tsType: {
+        name: string;
+        raw?: string;
+        elements?: Array<{ name: string; value: string }>;
+    };
+    defaultValue?: {
+        value: string;
+        computed: boolean;
+    };
+}
+
+interface DocgenType {
+    name: string;
+}
+
+interface DocgenComponentmethodParam {
+    name: string;
+    optional: boolean;
+    type: DocgenType | null;
+}
+
+interface DocgenComponentMethod {
+    name: string;
+    docblock: string | null;
+    modifiers: unknown[];
+    params: DocgenComponentmethodParam[];
+    returns: DocgenType | null;
+}
+
+interface DocgenComponentDefinition {
+    displayName: string;
+    description: string;
+    methods: DocgenComponentMethod[];
+    props: Record<string, DocgenComponentProps>;
+}
+
+declare module 'react-docgen' {
+    export const resolver: {
+        findAllExportedComponentDefinitions: unknown;
+    };
+
+    export function parse(
+        source: string,
+        resolverParam: unknown,
+        handlers: unknown,
+        options: Record<string, unknown>,
+    ): Array<DocgenComponentDefinition>;
+}
+
 declare module 'clickable-box';
 
 declare module 'react-outside-click-handler';
