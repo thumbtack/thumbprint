@@ -1,24 +1,14 @@
-export interface ComponentDefinition {
-    displayName: string;
-    description: string;
-    methods: unknown[];
+/**
+ * This modifies the React Docgen types because we use `doctrine` to parse the description field.
+ */
+export type ComponentDefinition = DocgenComponentDefinition & {
     props: Record<
         string,
-        {
+        DocgenComponentProps & {
             description: {
                 description: string;
                 tags: Array<{ title: string; description: string }>;
             };
-            required: boolean;
-            tsType: {
-                name: string;
-                raw?: string;
-                elements?: Array<{ name: string; value: string }>;
-            };
-            defaultValue?: {
-                value: string;
-                computed: boolean;
-            };
         }
     >;
-}
+};
