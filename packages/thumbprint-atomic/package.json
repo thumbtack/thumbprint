@@ -17,7 +17,7 @@
     "scripts": {
         "start": "yarn clear && yarn generateCss",
         "clear": "rm -rf dist",
-        "generateCss": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
+        "generateCss": "mkdir -p dist && tsx ./generate-css.ts && postcss dist/atomic.css --map --use autoprefixer css-mqpacker cssnano --replace",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
@@ -31,6 +31,6 @@
         "postcss": "^8.4.12",
         "postcss-cli": "^9.1.0",
         "sass": "^1.49.9",
-        "ts-node": "^10.9.1"
+        "tsx": "^3.12.2"
     }
 }
