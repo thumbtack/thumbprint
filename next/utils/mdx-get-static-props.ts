@@ -50,7 +50,7 @@ export default function getStaticProps(
                     android: 'Android',
                 };
 
-                if (!isPlatformName(platformId)) {
+                if (!isPlatformName(platformId) || !displayName[platformId]) {
                     throw new Error(`All platforms must be defined in the \`displayName\` object.`);
                 }
 
