@@ -4,7 +4,7 @@ import { ComponentDefinition } from '../components/thumbprint-components/props-t
 export interface ComponentPageProps {
     id: string;
     platformId: string;
-    componentPlatforms: string[];
+    componentPlatforms: { id: PlatformName; name: string }[];
     packageTable: {
         name: string;
         version: string;

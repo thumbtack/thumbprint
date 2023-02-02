@@ -76,11 +76,11 @@ export const MDXComponentPage = ({
             <TabNav>
                 {componentPageProps.componentPlatforms.map(platform => (
                     <TabNavItem
-                        isActive={platform === componentPageProps.platformId}
-                        key={platform}
-                        href={`/components/${componentPageProps.id}/${platform}`}
+                        isActive={platform.id === componentPageProps.platformId}
+                        key={platform.id}
+                        href={`/components/${componentPageProps.id}/${platform.id}`}
                     >
-                        {platform}
+                        {platform.name}
                     </TabNavItem>
                 ))}
             </TabNav>
