@@ -32,8 +32,39 @@ export default function getStaticProps(
         componentPlatforms = fs
             .readdirSync(`pages/components/${metadata.component.id}`)
             .map(file => {
-                // Remove `.mdx` from string
-                return file.replace('.mdx', '');
+                // Removes `.mdx` from filename
+                const platformId = file.replace('.mdx', '');
+
+                const displayName: Record<string, string> = {
+                    usage: 'Usage',
+                    react: 'React',
+                    scss: 'SCSS',
+                    ios: 'iOS (UIKit)',
+                    swiftui: 'iOS (SwiftUI)',
+                    android: 'Android',
+                };
+
+                // Return the filename as `platformId` as well as a display name for the platform.
+                return { id: platformId, name: displayName[platformId] };
+            })
+            .sort((a, b) => {
+                const platformOrder: Record<string, number> = {
+                    usage: 1,
+                    react: 2,
+                    scss: 3,
+                    ios: 4,
+                    swiftui: 5,
+                    android: 6,
+                };
+
+                if (!platformOrder[a.id] || !platformOrder[b.id]) {
+                    throw new Error(
+                        `All platforms must be defined in the \`platformOrder\` object.`,
+                    );
+                }
+
+                // Sorts the platforms the order that we want to display them.
+                return platformOrder[a.id] - platformOrder[b.id];
             });
 
         if (componentPlatforms.length === 0) {
@@ -117,7 +148,7 @@ export default function getStaticProps(
                           // these are all defined.
                           id: metadata.component.id as string,
                           platformId: metadata.component.platformId as string,
-                          componentPlatforms: componentPlatforms as string[],
+                          componentPlatforms: componentPlatforms as ComponentPageProps['componentPlatforms'],
                           packageTable,
                           componentDocgens,
                       },
