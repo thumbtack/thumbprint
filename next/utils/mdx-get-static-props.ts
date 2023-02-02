@@ -15,6 +15,12 @@ interface Metadata {
     };
 }
 
+type PlatformName = 'usage' | 'react' | 'scss' | 'ios' | 'swiftui' | 'android';
+
+function isPlatformName(str: string): str is PlatformName {
+    return ['usage', 'react', 'scss', 'ios', 'swiftui', 'android'].includes(str);
+}
+
 export default function getStaticProps(
     ctx: GetStaticPropsContext,
     metadata?: Metadata,
@@ -35,7 +41,7 @@ export default function getStaticProps(
                 // Removes `.mdx` from filename
                 const platformId = file.replace('.mdx', '');
 
-                const displayName: Record<string, string> = {
+                const displayName: Record<PlatformName, string> = {
                     usage: 'Usage',
                     react: 'React',
                     scss: 'SCSS',
@@ -44,11 +50,15 @@ export default function getStaticProps(
                     android: 'Android',
                 };
 
+                if (!isPlatformName(platformId)) {
+                    throw new Error(`All platforms must be defined in the \`displayName\` object.`);
+                }
+
                 // Return the filename as `platformId` as well as a display name for the platform.
                 return { id: platformId, name: displayName[platformId] };
             })
             .sort((a, b) => {
-                const platformOrder: Record<string, number> = {
+                const platformOrder: Record<PlatformName, number> = {
                     usage: 1,
                     react: 2,
                     scss: 3,
