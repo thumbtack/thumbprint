@@ -67,21 +67,32 @@ export const ContentPage = ({
     );
 };
 
+interface MDXComponentPageProps {
+    children: React.ReactNode;
+    layoutProps: LayoutProps;
+    componentPageProps: ComponentPageProps;
+}
+
+/**
+ * TODO: Rename and move to a separate file once the conversion away from MDX is complete.
+ */
 export const MDXComponentPage = ({
     children,
-    title,
-    description,
     layoutProps,
     componentPageProps,
-}: ContentPageProps & { componentPageProps: ComponentPageProps }): JSX.Element => {
+}: MDXComponentPageProps): JSX.Element => {
     return (
-        <MDX title={title} description={description} layoutProps={layoutProps}>
+        <MDX
+            title={componentPageProps.title}
+            description={componentPageProps.description}
+            layoutProps={layoutProps}
+        >
             <TabNav>
                 {componentPageProps.componentPlatforms.map(platform => (
                     <TabNavItem
                         isActive={platform.id === componentPageProps.platformId}
                         key={platform.id}
-                        href={`/components/${componentPageProps.id}/${platform.id}`}
+                        href={`/components/${componentPageProps.componentId}/${platform.id}`}
                     >
                         {platform.name}
                     </TabNavItem>
