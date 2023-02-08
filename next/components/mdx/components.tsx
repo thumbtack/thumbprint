@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { Language } from 'prism-react-renderer';
 import Image from 'next/image';
 import { ScrollMarkerSection } from 'react-scroll-marker';
+import reactElementToJSXString from 'react-element-to-jsx-string';
 // eslint-disable-next-line camelcase
 import { Source_Code_Pro } from '@next/font/google';
 
@@ -132,6 +133,22 @@ export function UL(p: Parameters<typeof List>[0]): JSX.Element {
             <List {...p} />
         </div>
     );
+}
+
+export function CodeExperimental({
+    children,
+    language,
+}: {
+    children: React.ReactNode;
+    language?: Language;
+}): JSX.Element {
+    const code = typeof children === 'string' ? children : reactElementToJSXString(children);
+
+    if (code.includes('\n') === false) {
+        return <InlineCode>{code}</InlineCode>;
+    }
+
+    return <CodeBlock language={language}>{code}</CodeBlock>;
 }
 
 export function Code(

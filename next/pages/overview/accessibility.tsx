@@ -3,7 +3,7 @@ import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../components/mdx/mdx';
 import getContentPagteStaticProps from '../../utils/get-content-page-static-props';
 import accessibilityIllustration from '../../images/pages/overview/accessibility/accessibility-illustration.svg';
-import { P, A, H2, H3, Code, LI, UL, Img } from '../../components/mdx/components';
+import { P, A, H2, H3, CodeExperimental, LI, UL, Img } from '../../components/mdx/components';
 
 export const getStaticProps = getContentPagteStaticProps;
 
@@ -69,8 +69,10 @@ export default function OverviewAbout({
 
             <P>
                 By using semantic HTML elements we enable alternative ways to navigate our content.
-                We also add important attributes where appropriate, for example, <Code>alt</Code>{' '}
-                text for images and <Code>aria-label</Code> when a visible label is not available.
+                We also add important attributes where appropriate, for example,{' '}
+                <CodeExperimental>alt</CodeExperimental> text for images and{' '}
+                <CodeExperimental>aria-label</CodeExperimental> when a visible label is not
+                available.
             </P>
 
             <H3>Keyboard navigation</H3>

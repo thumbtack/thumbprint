@@ -2,7 +2,18 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
-import { Code, H2, H3, H4, A, Img, LI, OL, P, UL } from '../../../components/mdx/components';
+import {
+    CodeExperimental,
+    H2,
+    H3,
+    H4,
+    A,
+    Img,
+    LI,
+    OL,
+    P,
+    UL,
+} from '../../../components/mdx/components';
 
 import listImage from '../../../images/pages/guide/product/truncation/list.png';
 import multilineImage from '../../../images/pages/guide/product/truncation/multiline.png';
@@ -55,11 +66,11 @@ export default function OverviewAbout({
             <H4>Web</H4>
             <P>
                 In this case a few lines of well-supported CSS is sufficient. The{' '}
-                <Code>truncate</Code> class is available in our{' '}
+                <CodeExperimental>truncate</CodeExperimental> class is available in our{' '}
                 <A href="/atomic/#section-truncate">Atomic library</A> to make this easy.
             </P>
 
-            <Code language="css">
+            <CodeExperimental language="css">
                 {`
 .truncate {
     white-space: nowrap;
@@ -67,7 +78,7 @@ export default function OverviewAbout({
     text-overflow: ellipsis;
 }
 `}
-            </Code>
+            </CodeExperimental>
             <H3>2. Multiline strings</H3>
 
             <div className="ba b-gray-300 pa4">
@@ -83,10 +94,11 @@ export default function OverviewAbout({
                 This type of truncation is more complicated with no one perfect solution. There are
                 a number of Sass and JavaScript approaches but they are often convoluted and
                 limited. In this case we recommend a Sass approach that uses{' '}
-                <Code>line-height</Code> tokens to calculate a <Code>max-height</Code>.
+                <CodeExperimental>line-height</CodeExperimental> tokens to calculate a{' '}
+                <CodeExperimental>max-height</CodeExperimental>.
             </P>
 
-            <Code language="scss">{`
+            <CodeExperimental language="scss">{`
 .multiline {
     font-size: $tp-font__title__3__size; // Needed for IE 11
     line-height: $tp-font__title__3__line-height; // Needed for IE 11
@@ -96,12 +108,12 @@ export default function OverviewAbout({
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-`}</Code>
+`}</CodeExperimental>
 
             <UL>
                 <LI>
                     Most users will see an ellipsis if the text overflows the number of lines
-                    specified in <Code>-webkit-line-clamp</Code>.
+                    specified in <CodeExperimental>-webkit-line-clamp</CodeExperimental>.
                 </LI>
                 <LI>
                     Non-supporting browsers, like IE 11, will see no ellipsis and the text will cut
@@ -117,8 +129,9 @@ export default function OverviewAbout({
 
             <P>
                 Because the Sass pattern for multiline truncation described above relies on a{' '}
-                <Code>max-height</Code> calculation, it can visually break if the size of the text
-                container changes unexpectedly. To insulate against this we recommend the following:
+                <CodeExperimental>max-height</CodeExperimental> calculation, it can visually break
+                if the size of the text container changes unexpectedly. To insulate against this we
+                recommend the following:
             </P>
             <UL>
                 <LI>Truncate the string using a word count.</LI>

@@ -3,7 +3,18 @@ import type { InferGetStaticPropsType } from 'next';
 import { Text, HorizontalRule } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
-import { A, Code, H2, H3, H4, Img, P, Table, TD, TH } from '../../../components/mdx/components';
+import {
+    A,
+    CodeExperimental,
+    H2,
+    H3,
+    H4,
+    Img,
+    P,
+    Table,
+    TD,
+    TH,
+} from '../../../components/mdx/components';
 import Banner from '../../../components/motion/general/banner';
 import Scale from '../../../components/motion/general/scale';
 import Skip from '../../../components/motion/general/skip';
@@ -48,7 +59,8 @@ export default function OverviewAbout({
             <H3>Easing</H3>
             <P>
                 For those familiar with easing values on the web these are slightly more aggressive
-                than a browser’s <Code>animation-timing-function</Code> defaults.
+                than a browser’s <CodeExperimental>animation-timing-function</CodeExperimental>{' '}
+                defaults.
             </P>
             <P>
                 <A href="/tokens/scss/#section-easing">Easing tokens</A> are available for use in
@@ -59,7 +71,7 @@ export default function OverviewAbout({
                 <div className="m_col-6">
                     <div className="b">ease-in</div>
                     <Text size={2}>
-                        <Code>cubic-bezier(0.50, 0, 1, 1)</Code>
+                        <CodeExperimental>cubic-bezier(0.50, 0, 1, 1)</CodeExperimental>
                     </Text>
                     <Text size={2} className="black-300">
                         Moves from slow to fast.
@@ -76,7 +88,7 @@ export default function OverviewAbout({
                 <div className="m_col-6">
                     <div className="b">ease-out</div>
                     <Text size={2}>
-                        <Code>cubic-bezier(0, 0, 0.40, 1)</Code>
+                        <CodeExperimental>cubic-bezier(0, 0, 0.40, 1)</CodeExperimental>
                     </Text>
                     <Text size={2} className="black-300">
                         Moves from fast to slow.
@@ -93,7 +105,7 @@ export default function OverviewAbout({
                 <div className="m_col-6">
                     <div className="b">ease-in-out</div>
                     <Text size={2}>
-                        <Code>cubic-bezier(0.45, 0, 0.40, 1)</Code>
+                        <CodeExperimental>cubic-bezier(0.45, 0, 0.40, 1)</CodeExperimental>
                     </Text>
                     <Text size={2} className="black-300">
                         Moves slowly on both ends.
@@ -131,72 +143,72 @@ export default function OverviewAbout({
                     <tr>
                         <TD>
                             <Text size={2}>
-                                <Code>duration-1</Code>
+                                <CodeExperimental>duration-1</CodeExperimental>
                             </Text>
                         </TD>
                         <TD>
                             <Text size={2}>
-                                <Code>75ms</Code>
-                            </Text>
-                        </TD>
-                    </tr>
-                    <tr>
-                        <TD>
-                            <Text size={2}>
-                                <Code>duration-2</Code>
-                            </Text>
-                        </TD>
-                        <TD>
-                            <Text size={2}>
-                                <Code>150ms</Code>
+                                <CodeExperimental>75ms</CodeExperimental>
                             </Text>
                         </TD>
                     </tr>
                     <tr>
                         <TD>
                             <Text size={2}>
-                                <Code>duration-3</Code>
+                                <CodeExperimental>duration-2</CodeExperimental>
                             </Text>
                         </TD>
                         <TD>
                             <Text size={2}>
-                                <Code>200ms</Code>
-                            </Text>
-                        </TD>
-                    </tr>
-                    <tr>
-                        <TD>
-                            <Text size={2}>
-                                <Code>duration-4</Code>
-                            </Text>
-                        </TD>
-                        <TD>
-                            <Text size={2}>
-                                <Code>250ms</Code>
+                                <CodeExperimental>150ms</CodeExperimental>
                             </Text>
                         </TD>
                     </tr>
                     <tr>
                         <TD>
                             <Text size={2}>
-                                <Code>duration-5</Code>
+                                <CodeExperimental>duration-3</CodeExperimental>
                             </Text>
                         </TD>
                         <TD>
                             <Text size={2}>
-                                <Code>300ms</Code>
+                                <CodeExperimental>200ms</CodeExperimental>
                             </Text>
                         </TD>
                     </tr>
                     <tr>
                         <TD>
                             <Text size={2}>
-                                <Code>duration-6</Code>
+                                <CodeExperimental>duration-4</CodeExperimental>
                             </Text>
                         </TD>
                         <TD>
                             <Text size={2}>
-                                <Code>350ms</Code>
+                                <CodeExperimental>250ms</CodeExperimental>
+                            </Text>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                            <Text size={2}>
+                                <CodeExperimental>duration-5</CodeExperimental>
+                            </Text>
+                        </TD>
+                        <TD>
+                            <Text size={2}>
+                                <CodeExperimental>300ms</CodeExperimental>
+                            </Text>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                            <Text size={2}>
+                                <CodeExperimental>duration-6</CodeExperimental>
+                            </Text>
+                        </TD>
+                        <TD>
+                            <Text size={2}>
+                                <CodeExperimental>350ms</CodeExperimental>
                             </Text>
                         </TD>
                     </tr>
@@ -218,7 +230,8 @@ export default function OverviewAbout({
                         Color transition
                     </Text>
                     <Text size={2}>
-                        <Code>duration-3</Code> with <Code>ease-in</Code>
+                        <CodeExperimental>duration-3</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-in</CodeExperimental>
                     </Text>
                 </div>
                 <div className="m_col-4 mb3 m_mb0">
@@ -229,7 +242,8 @@ export default function OverviewAbout({
                         Pop-up
                     </Text>
                     <Text size={2}>
-                        <Code>duration-2</Code> with <Code>ease-out</Code>
+                        <CodeExperimental>duration-2</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-out</CodeExperimental>
                     </Text>
                 </div>
                 <div className="m_col-4">
@@ -240,7 +254,8 @@ export default function OverviewAbout({
                         Slide
                     </Text>
                     <Text size={2}>
-                        <Code>duration-5</Code> with <Code>ease-out</Code>
+                        <CodeExperimental>duration-5</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-out</CodeExperimental>
                     </Text>
                 </div>
             </div>
@@ -259,7 +274,8 @@ export default function OverviewAbout({
                         Banner slide down/up
                     </Text>
                     <Text size={2}>
-                        <Code>duration-3</Code> with <Code>ease-in</Code>
+                        <CodeExperimental>duration-3</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-in</CodeExperimental>
                     </Text>
                 </div>
                 <div className="m_col-4 mb3 m_mb0">
@@ -270,7 +286,8 @@ export default function OverviewAbout({
                         Hover/touch scale
                     </Text>
                     <Text size={2}>
-                        <Code>duration-2</Code> with <Code>ease-out</Code>
+                        <CodeExperimental>duration-2</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-out</CodeExperimental>
                     </Text>
                 </div>
                 <div className="m_col-4">
@@ -281,7 +298,8 @@ export default function OverviewAbout({
                         Skip fade out/in
                     </Text>
                     <Text size={2}>
-                        <Code>duration-4</Code> with <Code>ease-out</Code>
+                        <CodeExperimental>duration-4</CodeExperimental> with{' '}
+                        <CodeExperimental>ease-out</CodeExperimental>
                     </Text>
                 </div>
             </div>
