@@ -1,0 +1,13 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+.readingWidth {
+    max-width: 580px;
+}
+
+.childen {
+    list-style: none;
+
+    li {
+        padding-left: 0 !important;
+    }
+}
