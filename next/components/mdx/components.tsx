@@ -151,7 +151,7 @@ export function Code(
     }
 
     const language = p.className
-        ? (p.className.replace('language-', '') as unknown as Language)
+        ? ((p.className.replace('language-', '') as unknown) as Language)
         : p.language;
 
     return (
