@@ -1,0 +1,29 @@
+@import '../../shared.scss';
+
+.root {
+    @include root;
+    transition: background 300ms 300ms;
+
+    &.isActive {
+        background: #333;
+        transition: background 300ms;
+    }
+}
+
+.box {
+    @include box;
+}
+
+.box2 {
+    position: absolute;
+}
+
+.isActive .box1 {
+    opacity: 0.8;
+    transform: scale(0.93);
+    border-radius: 4px 4px 0 0;
+}
+
+.isActive .box2 {
+    transform: translateY(-95%);
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Title, Text, List, ListItem } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
+import classnames from 'classnames';
 import { Language } from 'prism-react-renderer';
-import cx from 'classnames';
+import Image from 'next/image';
 import { ScrollMarkerSection } from 'react-scroll-marker';
 // eslint-disable-next-line camelcase
 import { Source_Code_Pro } from '@next/font/google';
@@ -134,7 +135,9 @@ export function UL(p: Parameters<typeof List>[0]): JSX.Element {
 }
 
 export function Code(
-    p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
+    p: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        language?: Language;
+    },
 ): JSX.Element {
     if (typeof p.children !== 'string') {
         throw new Error('Expected code children to be a string.');
@@ -149,7 +152,7 @@ export function Code(
 
     const language = p.className
         ? ((p.className.replace('language-', '') as unknown) as Language)
-        : undefined;
+        : p.language;
 
     return (
         <CodeBlock
@@ -179,15 +182,54 @@ export function TD(
     return <td {...p} className="pa2 bb b-gray-300" />;
 }
 
-export function Img(p: React.ImgHTMLAttributes<HTMLImageElement>): JSX.Element {
+export function B(
+    props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>,
+): JSX.Element {
+    return <b {...props} />;
+}
+
+export function A(
+    props: React.DetailedHTMLProps<
+        React.AnchorHTMLAttributes<HTMLAnchorElement>,
+        HTMLAnchorElement
+    >,
+): JSX.Element {
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    return <a {...props} />;
+}
+
+export function Img({
+    src,
+    width,
+    height,
+    alt,
+    fill = true,
+    className,
+    style,
+}: React.ImgHTMLAttributes<HTMLImageElement> & { fill?: boolean }): JSX.Element {
+    if (!width || !height || !src) {
+        throw new Error('Expected image to have a width, height, and src.');
+    }
+
+    if (fill) {
+        return (
+            <div
+                className={classnames('relative', styles.readingWidth, className)}
+                style={{ aspectRatio: Number(width) / Number(height), ...style }}
+            >
+                <Image src={src} alt={alt || ''} fill />
+            </div>
+        );
+    }
+
     return (
-        <img
-            src={p.src}
-            alt={p.alt}
-            className={cx(p.className, styles.readingWidth)}
-            width={p.width}
-            height={p.height}
-            style={{ display: 'block' }}
+        <Image
+            src={src}
+            width={Number(width)}
+            height={Number(height)}
+            alt={alt || ''}
+            className={className}
+            style={style}
         />
     );
 }

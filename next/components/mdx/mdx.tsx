@@ -27,6 +27,9 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
                 li: LI,
                 ol: OL,
                 ul: UL,
+                // Not worth fixing this at the moment since we're moving away from MDX.
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 img: Img,
                 code: Code,
                 table: Table,

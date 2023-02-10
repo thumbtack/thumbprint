@@ -1,0 +1,40 @@
+@keyframes skeleton-progress {
+    0% {
+        left: -500px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.skeleton {
+    background-color: #eee;
+    line-height: 0.9;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.skeleton::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    top: 0;
+    left: -500px;
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0)
+    );
+    animation: skeleton-progress 1.2s ease-in-out infinite;
+}
+
+.skeleton:after {
+    content: '\00a0';
+}
