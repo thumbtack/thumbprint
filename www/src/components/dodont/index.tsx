@@ -43,7 +43,11 @@ export default function DoDont({ type, children }: DoDontCrossOutPropTypes): JSX
                         <InputsThumbsDownSmall />
                         <div className="ml2 b">Don’t</div>
                     </div>
-                    <div className="overflow-hidden ba b-gray-300 pa3 relative">{children}</div>
+                    <div
+                        className={`overflow-hidden ba b-gray-300 pa3 relative ${styles.crossout}`}
+                    >
+                        {children}
+                    </div>
                 </>
             )}
         </div>

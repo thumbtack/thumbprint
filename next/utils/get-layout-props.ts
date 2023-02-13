@@ -30,6 +30,48 @@ export default function getLayoutProps(): LayoutProps {
                         { title: 'Contributing', href: '/overview/contributing' },
                         { title: 'Developers', href: '/overview/developers' },
                         { title: 'Product Design', href: '/overview/product-design' },
+                        {
+                            title: 'Content Design',
+                            href: '/overview/content-design/voice-and-tone/',
+                            sections: [
+                                {
+                                    title: 'Voice and tone',
+                                    href: '/overview/content-design/voice-and-tone/',
+                                },
+                                {
+                                    title: 'Inclusion and accessibility',
+                                    href: '/overview/content-design/inclusion-and-accessibility/',
+                                },
+                                {
+                                    title: 'Grammar and mechanics',
+                                    href: '/overview/content-design/grammar-and-mechanics/',
+                                },
+                                {
+                                    title: 'Surfaces and elements',
+                                    href: '/overview/content-design/surfaces-and-elements/',
+                                },
+                            ],
+                        },
+                    ],
+                ],
+            },
+            {
+                title: 'Guidelines',
+                href: '/guide/product/aspect-ratio',
+                groups: [
+                    [
+                        { title: 'Aspect ratio', href: '/guide/product/aspect-ratio' },
+                        { title: 'Brand assets', href: '/guide/product/brand-assets' },
+                        { title: 'Breakpoints', href: '/guide/product/breakpoints' },
+                        { title: 'Color', href: '/guide/product/color' },
+                        { title: 'Design tokens', href: '/guide/product/design-tokens' },
+                        { title: 'Iconography', href: '/guide/product/iconography' },
+                        { title: 'Loaders', href: '/guide/product/loaders' },
+                        { title: 'Motion', href: '/guide/product/motion' },
+                        { title: 'Spacers', href: '/guide/product/spacers' },
+                        { title: 'Toolkits', href: '/guide/product/toolkits' },
+                        { title: 'Truncation', href: '/guide/product/truncation' },
+                        { title: 'Typography', href: '/guide/product/typography' },
                     ],
                 ],
             },

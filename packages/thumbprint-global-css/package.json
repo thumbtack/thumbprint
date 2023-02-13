@@ -17,7 +17,7 @@
     "scripts": {
         "start": "yarn clear && yarn generate-css",
         "clear": "rm -rf dist",
-        "generate-css": "mkdir -p dist && node --loader ts-node/esm ./generate-css.ts && postcss dist/thumbprint-global.css --map --use autoprefixer cssnano --replace",
+        "generate-css": "mkdir -p dist && tsx ./generate-css.ts && postcss dist/thumbprint-global.css --map --use autoprefixer cssnano --replace",
         "prepublishOnly": "../../scripts/should-build-package.js -- yarn start"
     },
     "devDependencies": {
@@ -29,7 +29,7 @@
         "postcss": "^8.4.12",
         "postcss-cli": "^9.1.0",
         "sass": "^1.51.0",
-        "ts-node": "^10.9.1"
+        "tsx": "^3.12.2"
     },
     "bugs": {
         "url": "https://github.com/thumbtack/thumbprint/issues"
