@@ -12,8 +12,8 @@ interface DoDontCrossOutPropTypes {
 
 interface DoDontPropTypes {
     examples: [];
-    headerText?: [];
-    description?: [];
+    headerText?: [string, string];
+    description?: [string, string];
 }
 
 // helper function to dermine which item in the iteration is a do (odd) and don't (even)
