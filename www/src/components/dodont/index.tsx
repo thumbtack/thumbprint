@@ -72,7 +72,11 @@ export function DoDontSideBySide({
                                     [`${styles.dont}`]: !isOdd(index),
                                 })}
                             >
-                                {headerText ? headerText[index] : isOdd(index) ? 'Do' : "Don't"}
+                                {headerText ? (
+                                    <span>headerText[index]</span>
+                                ) : (
+                                    <span>{isOdd(index) ? 'Do' : "Don't"}</span>
+                                )}
                             </div>
                         </div>
                         <div
