@@ -73,7 +73,7 @@ export function DoDontSideBySide({
                                 })}
                             >
                                 {headerText ? (
-                                    <span>headerText[index]</span>
+                                    <span>{headerText[index]}</span>
                                 ) : (
                                     <span>{isOdd(index) ? 'Do' : "Don't"}</span>
                                 )}
