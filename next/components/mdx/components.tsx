@@ -9,7 +9,7 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 // eslint-disable-next-line camelcase
 import { Source_Code_Pro } from '@next/font/google';
 
-import CodeBlock from './code-block/code-block';
+import CodeBlock, { SupportedLanguages } from './code-block/code-block';
 import generateSlug from '../generate-slug/generate-slug';
 import styles from './mdx.module.scss';
 import InlineCode from '../inline-code/inline-code';
@@ -140,7 +140,7 @@ export function CodeExperimental({
     language,
 }: {
     children: React.ReactNode;
-    language?: Language;
+    language?: SupportedLanguages;
 }): JSX.Element {
     const code = typeof children === 'string' ? children : reactElementToJSXString(children);
 

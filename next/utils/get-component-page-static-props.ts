@@ -95,14 +95,13 @@ export default function getComponentPageStaticProps({
         };
 
         if (platformId === 'react') {
-            const fileSource = fs.readFileSync(
-                `../packages/thumbprint-react/components/${title}/index.tsx`,
-                'utf8',
-            );
+            const titleWithoutSpaces = title.replaceAll(' ', '');
+            const pathToIndexFile = `../packages/thumbprint-react/components/${titleWithoutSpaces}/index.tsx`;
+            const fileSource = fs.readFileSync(pathToIndexFile, 'utf8');
 
             componentDocgens = reactDocgen
                 .parse(fileSource, reactDocgen.resolver.findAllExportedComponentDefinitions, null, {
-                    filename: `../packages/thumbprint-react/components/${title}/index.tsx`,
+                    filename: pathToIndexFile,
                     cwd: `../`,
                 })
                 .map(component => {

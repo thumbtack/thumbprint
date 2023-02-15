@@ -5,9 +5,11 @@ import { previewThemes, classes } from './styles';
 import prismTheme from './prism-theme';
 import styles from './code-block.module.scss';
 
+export type SupportedLanguages = Language | 'html' | 'swiftui' | 'xml' | 'java';
+
 interface PropTypes {
     children: string;
-    language?: Language | 'html';
+    language?: SupportedLanguages;
     theme?: 'light' | 'dark' | 'white';
     shouldRender?: boolean;
 }
