@@ -2,11 +2,11 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { List, ListItem, Text, Title } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { P, H2, H3, LI, UL, H4 } from '../../../components/mdx/components';
 import { DoDontSideBySide } from '../../../components/dodont';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

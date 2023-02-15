@@ -2,14 +2,14 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { P, A, H2, H3, Img, UL, LI } from '../../../components/mdx/components';
 import { Anatomy, AnatomyItem } from '../../../components/anatomy';
 import { DoDontTable } from '../../../components/dodont';
 import email from '../../../images/pages/overview/content-design/surfaces-and-elements/email.png';
 import push from '../../../images/pages/overview/content-design/surfaces-and-elements/push.png';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

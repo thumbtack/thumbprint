@@ -3,12 +3,12 @@ import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { Code, H2, H3, LI, P, UL } from '../../../components/mdx/components';
 import SwatchUsage from '../../../components/thumbprint-guide/swatch-usage';
 import Swatch from '../../../components/thumbprint-guide/swatch';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

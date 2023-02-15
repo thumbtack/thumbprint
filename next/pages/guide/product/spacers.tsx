@@ -2,14 +2,14 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { A, H2, H3, Img, LI, P, UL } from '../../../components/mdx/components';
 
 import spacerLayout1 from '../../../images/pages/guide/product/spacers/spacer-layout-1.png';
 import spacerLayout2 from '../../../images/pages/guide/product/spacers/spacer-layout-2.png';
 import spacerLayout3 from '../../../images/pages/guide/product/spacers/spacer-layout-3.png';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

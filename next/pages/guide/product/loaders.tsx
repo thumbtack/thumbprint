@@ -3,13 +3,13 @@ import type { InferGetStaticPropsType } from 'next';
 import { LoaderDots, Title, Text, Button } from '@thumbtack/thumbprint-react';
 import { ContentModifierTimeSmall } from '@thumbtack/thumbprint-icons';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { A, H2, H3, LI, OL, P } from '../../../components/mdx/components';
 import androidLoader from '../../../images/pages/guide/product/loaders/android-loader.gif';
 import iosLoader from '../../../images/pages/guide/product/loaders/ios-loader.gif';
 import Skeleton from '../../../components/skeleton-loader';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

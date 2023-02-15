@@ -1,12 +1,12 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { Code, Img, LI, P, UL } from '../../../components/mdx/components';
 
 import tokensImage from '../../../images/pages/guide/product/design-tokens/tokens.png';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

@@ -2,7 +2,7 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Text, HorizontalRule } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { A, Code, H2, H3, H4, Img, P, Table, TD, TH } from '../../../components/mdx/components';
 import Banner from '../../../components/motion/general/banner';
 import Scale from '../../../components/motion/general/scale';
@@ -20,7 +20,7 @@ import AndroidParentChild from '../../../components/motion/page/android/parent-c
 import appStoreImage from '../../../images/pages/guide/product/motion/app-store.gif';
 import transitionNoteImage from '../../../images/pages/guide/product/motion/transition-note.jpg';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,
