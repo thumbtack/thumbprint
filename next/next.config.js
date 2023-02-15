@@ -27,8 +27,8 @@ const nextConfig = {
         //
         // The param is reassigned since this is Next.js convention in their docs.
         // eslint-disable-next-line no-param-reassign
-        config.resolve.alias['@thumbtack/thumbprint-react'] =
-            '@thumbtack/thumbprint-react/dist/es/index.js';
+        // config.resolve.alias['@thumbtack/thumbprint-react'] =
+        //     '@thumbtack/thumbprint-react/dist/es/index.js';
 
         return config;
     },
