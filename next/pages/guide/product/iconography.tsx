@@ -6,11 +6,11 @@ import {
     ContentActionsAttachTiny,
 } from '@thumbtack/thumbprint-icons';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { H2, P, Table, TD, TH } from '../../../components/mdx/components';
 import Alert from '../../../components/alert/alert';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,

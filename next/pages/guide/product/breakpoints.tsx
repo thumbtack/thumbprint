@@ -2,10 +2,10 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ThemedLink } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPagteStaticProps from '../../../utils/get-content-page-static-props';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { Code, H2, P, Table, TD, TH } from '../../../components/mdx/components';
 
-export const getStaticProps = getContentPagteStaticProps;
+export const getStaticProps = getContentPageStaticProps;
 
 export default function OverviewAbout({
     layoutProps,
