@@ -2,7 +2,18 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { Code, H2, H3, H4, A, Img, LI, OL, P, UL } from '../../../components/mdx/components';
+import {
+    H2,
+    H3,
+    H4,
+    A,
+    Img,
+    LI,
+    OL,
+    P,
+    UL,
+    CodeExperimental,
+} from '../../../components/mdx/components';
 
 import listImage from '../../../images/pages/guide/product/truncation/list.png';
 import multilineImage from '../../../images/pages/guide/product/truncation/multiline.png';
