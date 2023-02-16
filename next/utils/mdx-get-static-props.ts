@@ -3,7 +3,7 @@ import type { GetStaticPropsContext } from 'next';
 import * as reactDocgen from 'react-docgen';
 import doctrine from 'doctrine';
 import getLayoutProps, { LayoutProps } from './get-layout-props';
-import { ComponentPageProps } from './component-page-props';
+import { ComponentPageProps, PlatformName } from './component-page-props';
 import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
 interface Metadata {
@@ -14,8 +14,6 @@ interface Metadata {
         platformId?: string;
     };
 }
-
-type PlatformName = 'usage' | 'react' | 'scss' | 'ios' | 'swiftui' | 'android';
 
 function isPlatformName(str: string): str is PlatformName {
     return ['usage', 'react', 'scss', 'ios', 'swiftui', 'android'].includes(str);

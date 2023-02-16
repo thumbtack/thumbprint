@@ -1,6 +1,8 @@
 import { SupportedEcosystems } from '../components/package-table/package-table';
 import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
+export type PlatformName = 'usage' | 'react' | 'scss' | 'ios' | 'swiftui' | 'android';
+
 export interface ComponentPageProps {
     id: string;
     platformId: string;
