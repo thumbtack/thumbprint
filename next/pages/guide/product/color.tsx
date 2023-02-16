@@ -4,7 +4,7 @@ import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { Code, H2, H3, LI, P, UL } from '../../../components/mdx/components';
+import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/components';
 import SwatchUsage from '../../../components/thumbprint-guide/swatch-usage';
 import Swatch from '../../../components/thumbprint-guide/swatch';
 
@@ -22,15 +22,16 @@ export default function OverviewAbout({
             <H2>Naming</H2>
             <P>
                 Color names are unambiguous and direct. &quot;Blue&quot; means blue. We do this to
-                avoid unneeded abstractions. Extended color names, like <Code>black-300</Code> are
-                variations that, like font-weight values, denote increasingly darker (500, 600) and
-                increasingly lighter shades (300, 200).
+                avoid unneeded abstractions. Extended color names, like{' '}
+                <CodeExperimental>black-300</CodeExperimental> are variations that, like font-weight
+                values, denote increasingly darker (500, 600) and increasingly lighter shades (300,
+                200).
             </P>
             <H2>Palette</H2>
             <UL>
                 <LI>
                     Our primary palette consists of &quot;core&quot; colors, as indicated by{' '}
-                    <Code>(c)</Code>, and help establish our brand.
+                    <CodeExperimental>(c)</CodeExperimental>, and help establish our brand.
                 </LI>
                 <LI>
                     We have extended this with shades that are reserved primarily for illustrations.
@@ -391,9 +392,11 @@ export default function OverviewAbout({
                     <a href="/tokens/#section-color">Thumbprint Tokens</a>.
                 </LI>
                 <LI>
-                    The &quot;core&quot; colors, as indicated by <Code>(c)</Code>, are available as
-                    classes in <a href="/atomic/#section-color">Thumbprint Atomic</a> for both{' '}
-                    <Code>color</Code> and <Code>background</Code> properties.
+                    The &quot;core&quot; colors, as indicated by{' '}
+                    <CodeExperimental>(c)</CodeExperimental>, are available as classes in{' '}
+                    <a href="/atomic/#section-color">Thumbprint Atomic</a> for both{' '}
+                    <CodeExperimental>color</CodeExperimental> and{' '}
+                    <CodeExperimental>background</CodeExperimental> properties.
                 </LI>
             </UL>
             <H2>Resources</H2>

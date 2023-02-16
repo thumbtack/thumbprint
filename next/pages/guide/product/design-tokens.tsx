@@ -2,7 +2,7 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { Code, Img, LI, P, UL } from '../../../components/mdx/components';
+import { CodeExperimental, Img, LI, P, UL } from '../../../components/mdx/components';
 
 import tokensImage from '../../../images/pages/guide/product/design-tokens/tokens.png';
 
@@ -34,7 +34,7 @@ export default function OverviewAbout({
             </P>
             <h2>Code example</h2>
             <P>Our color blue, like all other tokens, is stored as an object.</P>
-            <Code language="javascript">
+            <CodeExperimental language="javascript">
                 {`
 {
     "name": "Blue",
@@ -43,20 +43,23 @@ export default function OverviewAbout({
     "type": "color"
 }
 `}
-            </Code>
+            </CodeExperimental>
             <P>
-                In this case the <Code>id</Code> is transformed into different languages.
+                In this case the <CodeExperimental>id</CodeExperimental> is transformed into
+                different languages.
             </P>
             <UL>
                 <LI>
-                    In Sass the variable becomes <Code>$tp-color__blue</Code>.
+                    In Sass the variable becomes{' '}
+                    <CodeExperimental>$tp-color__blue</CodeExperimental>.
                 </LI>
                 <LI>
-                    In React the variable becomes <Code>tpColorBlue</Code>.
+                    In React the variable becomes <CodeExperimental>tpColorBlue</CodeExperimental>.
                 </LI>
             </UL>
             <P>
-                In each case the resulting value is the hex color <Code>#009fd9</Code>.
+                In each case the resulting value is the hex color{' '}
+                <CodeExperimental>#009fd9</CodeExperimental>.
             </P>
         </ContentPage>
     );
