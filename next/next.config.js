@@ -16,6 +16,10 @@ const nextConfig = {
         // We do this separately in CI.
         ignoreDuringBuilds: true,
     },
+    typescript: {
+        // We do this separately in CI.
+        ignoreBuildErrors: true,
+    },
     webpack: config => {
         // This allows Thumbprint React to work. It's needed for a bug in `next-transpile-modules`
         // was was ported over to Next.js and still exists as a bug in `transpilePackages`.
