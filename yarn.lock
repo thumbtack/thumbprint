@@ -3611,17 +3611,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hapi/hoek@npm:8.x":
+"@hapi/hoek@npm:8.x, @hapi/hoek@npm:8.x.x":
   version: 8.5.1
   resolution: "@hapi/hoek@npm:8.5.1"
   checksum: 8f8ce36be4f5e5d7a712072d4a028a4a95beec7a7da3a7a6e9a0c07d697f04c19b37d93751db352c314ea831f7e2120569a035dc6a351ed8c0444f1d3b275621
-  languageName: node
-  linkType: hard
-
-"@hapi/hoek@npm:8.x.x":
-  version: 8.2.1
-  resolution: "@hapi/hoek@npm:8.2.1"
-  checksum: 815ce8e111dcc0393dccf8daf53a2950c24beb0be123382004107e7ca7516388ddaabc69a7f4c8a8c5f24fc0225af968e911c46840b412b51e9aaf5b2a0650eb
   languageName: node
   linkType: hard
 
