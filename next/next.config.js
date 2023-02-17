@@ -29,10 +29,6 @@ const nextConfig = {
                 // Proxy everything except the homepage to the Gatsby version of the site.
                 // We will remove routes from this once they're ready to launch in Next.js.
                 {
-                    source: '/overview/:path*',
-                    destination: 'https://thumbprint.netlify.app/overview/:path*/',
-                },
-                {
                     source: '/guide/:path*',
                     destination: 'https://thumbprint.netlify.app/guide/:path*/',
                 },

@@ -79,8 +79,9 @@ export default function OverviewAbout({
 
             <P>
                 Interactive components should be navigable from the keyboard. This means paying
-                attention to `tabindex` values and listening for key commands to perform an action,
-                for example, closing a modal with the “escape” key.
+                attention to <CodeExperimental>tabindex</CodeExperimental> values and listening for
+                key commands to perform an action, for example, closing a modal with the “escape”
+                key.
             </P>
 
             <H3>Documentation</H3>

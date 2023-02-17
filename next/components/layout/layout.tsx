@@ -128,20 +128,35 @@ export default function Layout({
                                                             >
                                                                 <SideNavGroup level={3}>
                                                                     {groupItem.sections?.map(
-                                                                        sectionItem => (
-                                                                            <SideNavLink
-                                                                                title={
-                                                                                    sectionItem.title
-                                                                                }
-                                                                                href={
-                                                                                    sectionItem.href
-                                                                                }
-                                                                                key={
-                                                                                    sectionItem.href
-                                                                                }
-                                                                                level={3}
-                                                                            />
-                                                                        ),
+                                                                        sectionItem => {
+                                                                            const level3IsActive =
+                                                                                level1IsActive &&
+                                                                                level2IsActive &&
+                                                                                pathWithoutHash.split(
+                                                                                    '/',
+                                                                                )[3] ===
+                                                                                    sectionItem.href.split(
+                                                                                        '/',
+                                                                                    )[3];
+
+                                                                            return (
+                                                                                <SideNavLink
+                                                                                    title={
+                                                                                        sectionItem.title
+                                                                                    }
+                                                                                    href={
+                                                                                        sectionItem.href
+                                                                                    }
+                                                                                    key={
+                                                                                        sectionItem.href
+                                                                                    }
+                                                                                    level={3}
+                                                                                    isActive={
+                                                                                        level3IsActive
+                                                                                    }
+                                                                                />
+                                                                            );
+                                                                        },
                                                                     )}
                                                                 </SideNavGroup>
                                                             </SideNavLink>
