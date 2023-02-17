@@ -38,7 +38,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Get Yarn
+            - name: Get Yarn cache directory path
               id: yarn-cache-dir-path
               run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
             - name: Cache dependencies with Yarn
@@ -64,7 +64,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Get Yarn
+            - name: Get Yarn cache directory path
               id: yarn-cache-dir-path
               run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
             - name: Cache dependencies with Yarn
@@ -90,7 +90,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Get Yarn
+            - name: Get Yarn cache directory path
               id: yarn-cache-dir-path
               run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
             - name: Cache dependencies with Yarn
@@ -116,7 +116,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Get Yarn
+            - name: Get Yarn cache directory path
               id: yarn-cache-dir-path
               run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
             - name: Cache dependencies with Yarn
