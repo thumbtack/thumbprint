@@ -139,14 +139,12 @@ export function DoDontTable({ examples, headerText, description }: DoDontPropTyp
                         </td>
                     </tr>
                 ))}
-                (
                 {description ? (
                     <tr>
                         <td>{description[0]}</td>
                         <td>{description[1]}</td>
                     </tr>
                 ) : null}
-                )
             </tbody>
         </table>
     );
