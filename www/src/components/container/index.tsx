@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
@@ -177,14 +177,14 @@ export default function Container({
                             })}
                         >
                             <div className="ph3 pv4 flex-none z-1 bb b-gray-300 bg-gray-200">
-                                <Link to="/" className="db mb3">
+                                <a href="/" className="db mb3">
                                     <img
                                         src={thumbprintLogo}
                                         className="db"
                                         style={{ width: '130px', height: '22px' }}
                                         alt="Thumbprint logo"
                                     />
-                                </Link>
+                                </a>
 
                                 <DocSearch>
                                     {({ id }): JSX.Element => (
