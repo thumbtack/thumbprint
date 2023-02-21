@@ -103,7 +103,7 @@ export default function Layout({
                                         key={section.href}
                                         level={1}
                                     >
-                                        {section.groups.map(sectionGroup => {
+                                        {section.groups?.map(sectionGroup => {
                                             const key = sectionGroup
                                                 .map(groupItem => groupItem.href)
                                                 .join('-');
