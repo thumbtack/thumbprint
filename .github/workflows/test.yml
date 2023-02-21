@@ -7,18 +7,22 @@ jobs:
         name: Jest
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - uses: actions/checkout@v3
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Restore Yarn cache
-              uses: actions/cache@v2
+            - name: Get Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            - name: Cache dependencies with Yarn
+              uses: actions/cache@v3
+              id: yarn-cache
               with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: |
                   yarn install --immutable
@@ -29,18 +33,22 @@ jobs:
         name: ESLint
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - uses: actions/checkout@v3
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Restore Yarn cache
-              uses: actions/cache@v2
+            - name: Get Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            - name: Cache dependencies with Yarn
+              uses: actions/cache@v3
+              id: yarn-cache
               with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: |
                   yarn install --immutable
@@ -51,18 +59,22 @@ jobs:
         name: Stylelint
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - uses: actions/checkout@v3
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Restore Yarn cache
-              uses: actions/cache@v2
+            - name: Get Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            - name: Cache dependencies with Yarn
+              uses: actions/cache@v3
+              id: yarn-cache
               with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: |
                   yarn install --immutable
@@ -73,18 +85,22 @@ jobs:
         name: Prettier
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - uses: actions/checkout@v3
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Restore Yarn cache
-              uses: actions/cache@v2
+            - name: Get Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            - name: Cache dependencies with Yarn
+              uses: actions/cache@v3
+              id: yarn-cache
               with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: |
                   yarn install --immutable
@@ -95,18 +111,22 @@ jobs:
         name: TypeScript
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
+            - uses: actions/checkout@v3
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: 16.x
-            - name: Restore Yarn cache
-              uses: actions/cache@v2
+            - name: Get Yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+            - name: Cache dependencies with Yarn
+              uses: actions/cache@v3
+              id: yarn-cache
               with:
-                  path: |
-                      node_modules
-                      */*/node_modules
-                  key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
             - name: Install dependencies
               run: |
                   yarn install --immutable
