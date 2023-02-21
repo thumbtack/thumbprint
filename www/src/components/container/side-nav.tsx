@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 import { Text } from '@thumbtack/thumbprint-react';
 import classNames from 'classnames';
 import ClickableBox from 'clickable-box';
@@ -101,19 +100,15 @@ export function SideNavLink({
                 {hash ? (
                     <ScrollMarkerLink id={hash}>
                         {({ isActive: isHashActive, onClick }): JSX.Element => (
-                            <Link
-                                className={getLinkClasses(isHashActive)}
-                                onClick={onClick}
-                                to={to}
-                            >
+                            <a className={getLinkClasses(isHashActive)} onClick={onClick} href={to}>
                                 {title}
-                            </Link>
+                            </a>
                         )}
                     </ScrollMarkerLink>
                 ) : (
-                    <Link className={getLinkClasses(isActive)} aria-current={isActive} to={to}>
+                    <a className={getLinkClasses(isActive)} aria-current={isActive} href={to}>
                         {title}
-                    </Link>
+                    </a>
                 )}
                 {children && (
                     // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
