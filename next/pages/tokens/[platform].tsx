@@ -68,12 +68,17 @@ export default function Tokens({
     return (
         <ContentPage
             title="Tokens"
+            metaTitle={`Tokens (${currentPlatform.name})`}
             description="Design variables that power Thumbtack’s UI."
             layoutProps={layoutProps}
         >
             <TabNav>
                 {platforms.map(p => (
-                    <TabNavItem href={`/tokens/${p.id}`} isActive={p.id === currentPlatform.id}>
+                    <TabNavItem
+                        key={p.id}
+                        href={`/tokens/${p.id}`}
+                        isActive={p.id === currentPlatform.id}
+                    >
                         {p.name}
                     </TabNavItem>
                 ))}
