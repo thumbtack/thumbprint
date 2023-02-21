@@ -10,6 +10,12 @@ interface DoDontCrossOutPropTypes {
     type?: 'do' | 'dont';
 }
 
+interface DoDontPropTypes {
+    examples: [];
+    headerText?: [string, string];
+    description?: [string, string];
+}
+
 // helper function to dermine which item in the iteration is a do (odd) and don't (even)
 const isOdd = (value: number): boolean => {
     return value % 2 === 0;
@@ -50,12 +56,9 @@ export default function DoDont({ type, children }: DoDontCrossOutPropTypes): JSX
 
 export function DoDontSideBySide({
     examples,
-}: {
-    examples: [
-        string | string[] | JSX.Element | JSX.Element[],
-        string | string[] | JSX.Element | JSX.Element[],
-    ];
-}): JSX.Element {
+    headerText,
+    description,
+}: DoDontPropTypes): JSX.Element {
     return (
         <Grid gutter="wide">
             {map(examples, (example, index) => (
@@ -73,7 +76,11 @@ export function DoDontSideBySide({
                                     [`${styles.dont}`]: !isOdd(index),
                                 })}
                             >
-                                {isOdd(index) ? 'Do' : "Don't"}
+                                {headerText ? (
+                                    <span>{headerText[index]}</span>
+                                ) : (
+                                    <span>{isOdd(index) ? 'Do' : "Don't"}</span>
+                                )}
                             </div>
                         </div>
                         <div
@@ -84,6 +91,11 @@ export function DoDontSideBySide({
                         >
                             {example}
                         </div>
+                        {description ? (
+                            <Text size={2} className="black-300 pt2">
+                                {description[index]}
+                            </Text>
+                        ) : null}
                     </div>
                 </GridColumn>
             ))}
@@ -91,11 +103,7 @@ export function DoDontSideBySide({
     );
 }
 
-export function DoDontTable({
-    examples,
-}: {
-    examples: Array<Array<string | JSX.Element>>;
-}): JSX.Element {
+export function DoDontTable({ examples, headerText, description }: DoDontPropTypes): JSX.Element {
     return (
         <table className={`mb3 mt3 ${styles.isTable}`}>
             <thead>
@@ -103,7 +111,7 @@ export function DoDontTable({
                     <th className="pa3 v-top">
                         <div className={`flex items-center pb2 black-300 ${styles.tableDoHeader}`}>
                             <InputsThumbsUpSmall className={`${styles.iconDo}`} />
-                            <div className="ml2 b">Do</div>
+                            <div className="ml2 b">{headerText ? headerText[0] : 'Do'}</div>
                         </div>
                     </th>
                     <th className="pa3 dont bl b-white v-top">
@@ -111,7 +119,7 @@ export function DoDontTable({
                             className={`flex items-center pb2 black-300 ${styles.tableDontHeader}`}
                         >
                             <InputsThumbsDownSmall className={`${styles.iconDont}`} />
-                            <div className="ml2 b">Don’t</div>
+                            <div className="ml2 b">{headerText ? headerText[1] : "Don't"}</div>
                         </div>
                     </th>
                 </tr>
@@ -131,6 +139,12 @@ export function DoDontTable({
                         </td>
                     </tr>
                 ))}
+                {description ? (
+                    <tr>
+                        <td>{description[0]}</td>
+                        <td>{description[1]}</td>
+                    </tr>
+                ) : null}
             </tbody>
         </table>
     );
