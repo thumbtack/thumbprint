@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import helpSvg from './svg/help.svg';
 import colorSvg from './svg/color.svg';
@@ -11,8 +10,8 @@ export default function Featured(): JSX.Element {
     return (
         <div className="grid">
             <div className="m_col-6 mb3">
-                <Link
-                    to="/overview/about/"
+                <a
+                    href="/overview/about/"
                     className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
                 >
                     <div className="flex pv3 ph3 m_ph4 items-center">
@@ -26,11 +25,11 @@ export default function Featured(): JSX.Element {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </div>
             <div className="m_col-6 mb3">
-                <Link
-                    to="/guide/product/color/"
+                <a
+                    href="/guide/product/color/"
                     className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
                 >
                     <div className="flex pv3 ph3 m_ph4 items-center">
@@ -44,11 +43,11 @@ export default function Featured(): JSX.Element {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </div>
             <div className="m_col-6 mb3 m_mb0">
-                <Link
-                    to="/components/overview"
+                <a
+                    href="/components/overview"
                     className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
                 >
                     <div className="flex pv3 ph3 m_ph4 items-center">
@@ -62,11 +61,11 @@ export default function Featured(): JSX.Element {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </div>
             <div className="m_col-6">
-                <Link
-                    to="/help/"
+                <a
+                    href="/help/"
                     className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
                 >
                     <div className="flex pv3 ph3 m_ph4 items-center">
@@ -80,7 +79,7 @@ export default function Featured(): JSX.Element {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </a>
             </div>
         </div>
     );
