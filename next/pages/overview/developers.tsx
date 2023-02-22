@@ -2,7 +2,7 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { ContentPage } from '../../components/mdx/mdx';
 import getContentPageStaticProps from '../../utils/get-content-page-static-props';
-import { P, H2, H3, UL, OL, LI, A } from '../../components/mdx/components';
+import { P, H2, H3, UL, OL, LI, A, CodeExperimental } from '../../components/mdx/components';
 
 export const getStaticProps = getContentPageStaticProps;
 
@@ -16,7 +16,7 @@ export default function OverviewAbout({
             layoutProps={layoutProps}
         >
             <P>
-                Thumbprint provides code in a number of technologies. React and SCSS components,
+                Thumbprint provides code in a number of technologies. React and SCSS components,{' '}
                 <a href="https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421">
                     design tokens
                 </a>
@@ -96,8 +96,8 @@ export default function OverviewAbout({
 
             <P>
                 All released and unreleased changes to our React, SCSS, and Atomic packages are
-                tracked in their respective `CHANGELOG.md` files and is the best resource to
-                determine the current status of the package.
+                tracked in their respective <CodeExperimental>CHANGELOG.md</CodeExperimental> files
+                and is the best resource to determine the current status of the package.
             </P>
 
             <UL>

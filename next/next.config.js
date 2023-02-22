@@ -29,43 +29,35 @@ const nextConfig = {
                 // Proxy everything except the homepage to the Gatsby version of the site.
                 // We will remove routes from this once they're ready to launch in Next.js.
                 {
-                    source: '/overview/:path*',
-                    destination: 'https://thumbprint.netlify.app/overview/:path*/',
-                },
-                {
                     source: '/guide/:path*',
-                    destination: 'https://thumbprint.netlify.app/guide/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/guide/:path*/',
                 },
                 {
                     source: '/components/:path*',
-                    destination: 'https://thumbprint.netlify.app/components/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/components/:path*/',
                 },
                 {
                     source: '/atomic/:path*',
-                    destination: 'https://thumbprint.netlify.app/atomic/:path*/',
-                },
-                {
-                    source: '/tokens/:path*',
-                    destination: 'https://thumbprint.netlify.app/tokens/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/atomic/:path*/',
                 },
                 {
                     source: '/icons/:path*',
-                    destination: 'https://thumbprint.netlify.app/icons/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/icons/:path*/',
                 },
                 {
                     source: '/updates/:path*',
-                    destination: 'https://thumbprint.netlify.app/updates/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/updates/:path*/',
                 },
                 {
                     source: '/help/:path*',
-                    destination: 'https://thumbprint.netlify.app/help/:path*/',
+                    destination: 'https://thumbprint-gatsby.netlify.app/help/:path*/',
                 },
             ],
             fallback: [
                 {
                     // This is a fallback for any route that might've been missed above.
                     source: '/:path*',
-                    destination: 'https://thumbprint.netlify.app/:path*',
+                    destination: 'https://thumbprint-gatsby.netlify.app/:path*',
                 },
             ],
         };

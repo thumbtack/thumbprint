@@ -47,6 +47,9 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
 interface ContentPageProps {
     children: React.ReactNode;
     title: string;
+    // False positive. This is used in the `ContentPage`.
+    // eslint-disable-next-line react/no-unused-prop-types
+    metaTitle?: string;
     description?: string;
     layoutProps: LayoutProps;
 }
@@ -54,13 +57,18 @@ interface ContentPageProps {
 export const ContentPage = ({
     children,
     title,
+    metaTitle,
     description,
     layoutProps,
 }: ContentPageProps): JSX.Element => {
     return (
         <Layout {...layoutProps}>
             <Wrap>
-                <PageHeader pageTitle={title} metaTitle={title} description={description} />
+                <PageHeader
+                    pageTitle={title}
+                    metaTitle={metaTitle ?? title}
+                    description={description}
+                />
                 {children}
             </Wrap>
         </Layout>

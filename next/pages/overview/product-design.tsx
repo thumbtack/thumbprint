@@ -1,5 +1,6 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
+import { Title } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../components/mdx/mdx';
 import getContentPageStaticProps from '../../utils/get-content-page-static-props';
 import pluginContrast from '../../images/pages/overview/product-design/plugin-contrast.png';
@@ -133,7 +134,9 @@ export default function OverviewAbout({
                     />
                 </A>
                 <div className="pl4">
-                    <H3>Contrast</H3>
+                    <Title size={4} className="mb2">
+                        Contrast
+                    </Title>
 
                     <P>
                         Evaluates foreground and background colors against Web Content Accessibility
