@@ -1,8 +1,8 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Text, HorizontalRule } from '@thumbtack/thumbprint-react';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
 import {
     A,
     CodeExperimental,
@@ -14,22 +14,22 @@ import {
     Table,
     TD,
     TH,
-} from '../../../components/mdx/components';
-import Banner from '../../../components/motion/general/banner';
-import Scale from '../../../components/motion/general/scale';
-import Skip from '../../../components/motion/general/skip';
-import Easing from '../../../components/motion/general/easing';
-import Color from '../../../components/motion/general/color';
-import Pop from '../../../components/motion/general/pop';
-import Slide from '../../../components/motion/general/slide';
-import Push from '../../../components/motion/page/push';
-import IosPageSheet from '../../../components/motion/page/ios/page-sheet';
-import IosFullScreenModal from '../../../components/motion/page/ios/full-screen-modal';
-import AndroidFullPage from '../../../components/motion/page/android/full-page';
-import AndroidParentChild from '../../../components/motion/page/android/parent-child';
+} from '../../components/mdx/components';
+import Banner from '../../components/motion/general/banner';
+import Scale from '../../components/motion/general/scale';
+import Skip from '../../components/motion/general/skip';
+import Easing from '../../components/motion/general/easing';
+import Color from '../../components/motion/general/color';
+import Pop from '../../components/motion/general/pop';
+import Slide from '../../components/motion/general/slide';
+import Push from '../../components/motion/page/push';
+import IosPageSheet from '../../components/motion/page/ios/page-sheet';
+import IosFullScreenModal from '../../components/motion/page/ios/full-screen-modal';
+import AndroidFullPage from '../../components/motion/page/android/full-page';
+import AndroidParentChild from '../../components/motion/page/android/parent-child';
 
-import appStoreImage from '../../../images/pages/guide/product/motion/app-store.gif';
-import transitionNoteImage from '../../../images/pages/guide/product/motion/transition-note.jpg';
+import appStoreImage from '../../images/pages/guide/product/motion/app-store.gif';
+import transitionNoteImage from '../../images/pages/guide/product/motion/transition-note.jpg';
 
 export const getStaticProps = getContentPageStaticProps;
 
