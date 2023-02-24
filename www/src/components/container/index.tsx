@@ -48,11 +48,6 @@ export default function Container({
 
     const data = useStaticQuery(graphql`
         query HeadingQuery {
-            allAtomic: mdx(fileAbsolutePath: { glob: "**/src/pages/atomic/index.mdx" }) {
-                headings(depth: h2) {
-                    value
-                }
-            }
             allScssTokens: thumbprintToken {
                 categories(platform: "scss") {
                     name
@@ -118,7 +113,6 @@ export default function Container({
     `);
 
     const {
-        allAtomic,
         allGuides,
         allScssTokens,
         allJavaScriptTokens,
@@ -369,31 +363,7 @@ export default function Container({
                                     isActive={activeSection === 'Atomic'}
                                     to="/atomic/"
                                     level={1}
-                                >
-                                    <SideNavGroup level={2}>
-                                        <SideNavLink
-                                            title="Usage"
-                                            level={2}
-                                            to="/atomic/usage/"
-                                            isActive={pathname === '/atomic/usage/'}
-                                        />
-                                    </SideNavGroup>
-
-                                    <SideNavGroup level={2}>
-                                        {map(allAtomic.headings, ({ value }) => (
-                                            <SideNavLink
-                                                title={value}
-                                                level={2}
-                                                to={`/atomic/#${generateSlug({
-                                                    level: 'section',
-                                                    children: value,
-                                                })}`}
-                                                isActive={false}
-                                                key={value}
-                                            />
-                                        ))}
-                                    </SideNavGroup>
-                                </SideNavLink>
+                                />
 
                                 <SideNavLink
                                     title="Tokens"
