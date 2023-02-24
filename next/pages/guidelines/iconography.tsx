@@ -5,10 +5,10 @@ import {
     ContentActionsAttachSmall,
     ContentActionsAttachTiny,
 } from '@thumbtack/thumbprint-icons';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { H2, P, Table, TD, TH } from '../../../components/mdx/components';
-import Alert from '../../../components/alert/alert';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { H2, P, Table, TD, TH } from '../../components/mdx/components';
+import Alert from '../../components/alert/alert';
 
 export const getStaticProps = getContentPageStaticProps;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
 import {
     H2,
     H3,
@@ -13,11 +13,11 @@ import {
     P,
     UL,
     CodeExperimental,
-} from '../../../components/mdx/components';
+} from '../../components/mdx/components';
 
-import listImage from '../../../images/pages/guide/product/truncation/list.png';
-import multilineImage from '../../../images/pages/guide/product/truncation/multiline.png';
-import readMoreImage from '../../../images/pages/guide/product/truncation/read-more.png';
+import listImage from '../../images/pages/guide/product/truncation/list.png';
+import multilineImage from '../../images/pages/guide/product/truncation/multiline.png';
+import readMoreImage from '../../images/pages/guide/product/truncation/read-more.png';
 
 export const getStaticProps = getContentPageStaticProps;
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { CodeExperimental, Img, LI, P, UL } from '../../../components/mdx/components';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { CodeExperimental, Img, LI, P, UL } from '../../components/mdx/components';
 
-import tokensImage from '../../../images/pages/guide/product/design-tokens/tokens.png';
+import tokensImage from '../../images/pages/guide/product/design-tokens/tokens.png';
 
 export const getStaticProps = getContentPageStaticProps;
 

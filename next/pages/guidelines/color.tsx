@@ -2,11 +2,11 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/components';
-import SwatchUsage from '../../../components/thumbprint-guide/swatch-usage';
-import Swatch from '../../../components/thumbprint-guide/swatch';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { CodeExperimental, H2, H3, LI, P, UL } from '../../components/mdx/components';
+import SwatchUsage from '../../components/thumbprint-guide/swatch-usage';
+import Swatch from '../../components/thumbprint-guide/swatch';
 
 export const getStaticProps = getContentPageStaticProps;
 

@@ -1,18 +1,18 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { P, H2, Img, UL, LI } from '../../../components/mdx/components';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { P, H2, Img, UL, LI } from '../../components/mdx/components';
 
-import avatarPro from '../../../images/pages/guide/product/aspect-ratio/avatar-pro.png';
-import avatarCustomer from '../../../images/pages/guide/product/aspect-ratio/avatar-customer.png';
-import customerReview from '../../../images/pages/guide/product/aspect-ratio/customer-review.png';
-import proProfile from '../../../images/pages/guide/product/aspect-ratio/pro-profile.png';
-import serviceImage from '../../../images/pages/guide/product/aspect-ratio/service-image.png';
-import hero from '../../../images/pages/guide/product/aspect-ratio/hero.png';
-import portraitSize from '../../../images/pages/guide/product/aspect-ratio/portrait-size.jpg';
-import embed from '../../../images/pages/guide/product/aspect-ratio/embed.png';
-import custom from '../../../images/pages/guide/product/aspect-ratio/custom.png';
+import avatarPro from '../../images/pages/guide/product/aspect-ratio/avatar-pro.png';
+import avatarCustomer from '../../images/pages/guide/product/aspect-ratio/avatar-customer.png';
+import customerReview from '../../images/pages/guide/product/aspect-ratio/customer-review.png';
+import proProfile from '../../images/pages/guide/product/aspect-ratio/pro-profile.png';
+import serviceImage from '../../images/pages/guide/product/aspect-ratio/service-image.png';
+import hero from '../../images/pages/guide/product/aspect-ratio/hero.png';
+import portraitSize from '../../images/pages/guide/product/aspect-ratio/portrait-size.jpg';
+import embed from '../../images/pages/guide/product/aspect-ratio/embed.png';
+import custom from '../../images/pages/guide/product/aspect-ratio/custom.png';
 
 export const getStaticProps = getContentPageStaticProps;
 
