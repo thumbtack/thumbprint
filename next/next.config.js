@@ -23,15 +23,20 @@ const nextConfig = {
     // Match what we've already been doing with Gatsby to make the migration easier. We can remove
     // this once we've migrated all of the pages if we want to use the Next.js default.
     trailingSlash: true,
+    async redirects() {
+        return [
+            {
+                source: '/guide/product/:path*',
+                destination: '/guidelines/:path*',
+                permanent: true,
+            },
+        ];
+    },
     async rewrites() {
         return {
             beforeFiles: [
                 // Proxy everything except the homepage to the Gatsby version of the site.
                 // We will remove routes from this once they're ready to launch in Next.js.
-                {
-                    source: '/guide/:path*',
-                    destination: 'https://thumbprint-gatsby.netlify.app/guide/:path*/',
-                },
                 {
                     source: '/components/:path*',
                     destination: 'https://thumbprint-gatsby.netlify.app/components/:path*/',

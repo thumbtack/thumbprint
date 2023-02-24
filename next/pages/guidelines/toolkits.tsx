@@ -1,14 +1,14 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Title, Grid, GridColumn } from '@thumbtack/thumbprint-react';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { H2, Img, LI, P, UL } from '../../../components/mdx/components';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { H2, Img, LI, P, UL } from '../../components/mdx/components';
 
-import toolkit1Image from '../../../images/pages/guide/product/toolkits/toolkit-1.png';
-import toolkit2Image from '../../../images/pages/guide/product/toolkits/toolkit-2.png';
-import toolkit3Image from '../../../images/pages/guide/product/toolkits/toolkit-3.png';
-import toolkit4Image from '../../../images/pages/guide/product/toolkits/toolkit-4.png';
+import toolkit1Image from '../../images/pages/guide/product/toolkits/toolkit-1.png';
+import toolkit2Image from '../../images/pages/guide/product/toolkits/toolkit-2.png';
+import toolkit3Image from '../../images/pages/guide/product/toolkits/toolkit-3.png';
+import toolkit4Image from '../../images/pages/guide/product/toolkits/toolkit-4.png';
 
 export const getStaticProps = getContentPageStaticProps;
 

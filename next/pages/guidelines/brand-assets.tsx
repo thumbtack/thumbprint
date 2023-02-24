@@ -1,9 +1,9 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
-import { ContentPage } from '../../../components/mdx/mdx';
-import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { P } from '../../../components/mdx/components';
+import { ContentPage } from '../../components/mdx/mdx';
+import getContentPageStaticProps from '../../utils/get-content-page-static-props';
+import { P } from '../../components/mdx/components';
 
 export const getStaticProps = getContentPageStaticProps;
 
