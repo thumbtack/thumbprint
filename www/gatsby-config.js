@@ -108,7 +108,6 @@ module.exports = {
                 url: 'https://thumbprint-tokens.netlify.app/.netlify/functions/graphql',
             },
         },
-        'gatsby-transformer-thumbprint-atomic',
         {
             resolve: 'gatsby-transformer-react-docgen',
             options: {
