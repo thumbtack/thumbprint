@@ -15,7 +15,7 @@ export interface File {
  */
 const getClasses = (data: File[], fileName: string): File => {
     const d = data.find(i => {
-        return i.file.startsWith(fileName);
+        return i.file === `${fileName}.scss`;
     });
 
     if (!d) {

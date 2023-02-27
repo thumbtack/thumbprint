@@ -42,10 +42,6 @@ const nextConfig = {
                     destination: 'https://thumbprint-gatsby.netlify.app/components/:path*/',
                 },
                 {
-                    source: '/atomic/:path*',
-                    destination: 'https://thumbprint-gatsby.netlify.app/atomic/:path*/',
-                },
-                {
                     source: '/updates/:path*',
                     destination: 'https://thumbprint-gatsby.netlify.app/updates/:path*/',
                 },

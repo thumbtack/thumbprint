@@ -6000,18 +6000,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thumbtack/gatsby-transformer-thumbprint-atomic@workspace:packages/gatsby-transformer-thumbprint-atomic":
-  version: 0.0.0-use.local
-  resolution: "@thumbtack/gatsby-transformer-thumbprint-atomic@workspace:packages/gatsby-transformer-thumbprint-atomic"
-  dependencies:
-    gonzales-pe: ^4.2.4
-    lodash: ^4.17.21
-    node-sass-tilde-importer: 2.0.0-alpha.1
-    prettier: 2.0.5
-    sass: ^1.51.0
-  languageName: unknown
-  linkType: soft
-
 "@thumbtack/thumbprint-atomic@^4.3.1, @thumbtack/thumbprint-atomic@workspace:packages/thumbprint-atomic":
   version: 0.0.0-use.local
   resolution: "@thumbtack/thumbprint-atomic@workspace:packages/thumbprint-atomic"

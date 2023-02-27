@@ -18,17 +18,19 @@ import getClasses, {
 import CodeBlock from '../../components/mdx/code-block/code-block';
 import Layout from '../../components/layout/layout';
 import getLayoutProps, { LayoutProps } from '../../utils/get-layout-props';
+import PackageTable from '../../components/package-table/package-table';
 
 interface AtomicProps {
     files: File[];
     layoutProps: LayoutProps;
+    version: string;
 }
 
 function ExampleBox({ children }: { children: React.ReactNode }): JSX.Element {
     return <div className="pa3 ba b-gray-300 mb4 tp-body-2">{children}</div>;
 }
 
-export default function Atomic({ files, layoutProps }: AtomicProps): JSX.Element {
+export default function Atomic({ files, layoutProps, version }: AtomicProps): JSX.Element {
     return (
         <Layout {...layoutProps}>
             <Wrap>
@@ -36,6 +38,14 @@ export default function Atomic({ files, layoutProps }: AtomicProps): JSX.Element
                     pageTitle="Atomic"
                     metaTitle="Atomic"
                     description="CSS classes for composing layouts"
+                />
+
+                <PackageTable
+                    version={version}
+                    deprecated={false}
+                    packageName="@thumbtack/thumbprint-atomic"
+                    ecosystem="web"
+                    sourceDirectory="https://github.com/thumbtack/thumbprint/tree/master/packages/thumbprint-atomic"
                 />
 
                 <H2>Aspect Ratio</H2>
@@ -1029,7 +1039,9 @@ const parseAST = (css: string): CSSClass[] => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const atomicSassFilesPath = '../packages/thumbprint-atomic/src/packages';
+    const pathToAtomicSource = '../packages/thumbprint-atomic';
+    const thumbprintAtomicPackageJsonPath = `${pathToAtomicSource}/package.json`;
+    const atomicSassFilesPath = `${pathToAtomicSource}/src/packages`;
     const directoryPath = atomicSassFilesPath;
     const files = fs.readdirSync(directoryPath);
 
@@ -1047,10 +1059,17 @@ export const getStaticProps: GetStaticProps = async () => {
         };
     });
 
+    const version = JSON.parse(fs.readFileSync(thumbprintAtomicPackageJsonPath, 'utf8'))?.version;
+
+    if (!version) {
+        throw new Error('Could not get version number from package.json');
+    }
+
     return {
         props: {
             layoutProps: getLayoutProps(),
             files: data,
+            version,
         },
     };
 };
