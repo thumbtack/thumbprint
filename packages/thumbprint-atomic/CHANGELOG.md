@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-###  Added
+### Added
 
 -   [Minor] Add `row-gap` and `col-gap` classes for all spacer units and breakpoints.
 
