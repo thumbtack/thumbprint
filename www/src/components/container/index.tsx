@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import '@thumbtack/thumbprint-atomic';
 import '@thumbtack/thumbprint-global-css';
@@ -48,11 +48,6 @@ export default function Container({
 
     const data = useStaticQuery(graphql`
         query HeadingQuery {
-            allAtomic: mdx(fileAbsolutePath: { glob: "**/src/pages/atomic/index.mdx" }) {
-                headings(depth: h2) {
-                    value
-                }
-            }
             allScssTokens: thumbprintToken {
                 categories(platform: "scss") {
                     name
@@ -118,7 +113,6 @@ export default function Container({
     `);
 
     const {
-        allAtomic,
         allGuides,
         allScssTokens,
         allJavaScriptTokens,
@@ -177,14 +171,14 @@ export default function Container({
                             })}
                         >
                             <div className="ph3 pv4 flex-none z-1 bb b-gray-300 bg-gray-200">
-                                <Link to="/" className="db mb3">
+                                <a href="/" className="db mb3">
                                     <img
                                         src={thumbprintLogo}
                                         className="db"
                                         style={{ width: '130px', height: '22px' }}
                                         alt="Thumbprint logo"
                                     />
-                                </Link>
+                                </a>
 
                                 <DocSearch>
                                     {({ id }): JSX.Element => (
@@ -369,31 +363,7 @@ export default function Container({
                                     isActive={activeSection === 'Atomic'}
                                     to="/atomic/"
                                     level={1}
-                                >
-                                    <SideNavGroup level={2}>
-                                        <SideNavLink
-                                            title="Usage"
-                                            level={2}
-                                            to="/atomic/usage/"
-                                            isActive={pathname === '/atomic/usage/'}
-                                        />
-                                    </SideNavGroup>
-
-                                    <SideNavGroup level={2}>
-                                        {map(allAtomic.headings, ({ value }) => (
-                                            <SideNavLink
-                                                title={value}
-                                                level={2}
-                                                to={`/atomic/#${generateSlug({
-                                                    level: 'section',
-                                                    children: value,
-                                                })}`}
-                                                isActive={false}
-                                                key={value}
-                                            />
-                                        ))}
-                                    </SideNavGroup>
-                                </SideNavLink>
+                                />
 
                                 <SideNavLink
                                     title="Tokens"

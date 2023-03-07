@@ -42,7 +42,9 @@ export default function Alert({ type, title, children }: PropTypes): JSX.Element
                     {title}
                 </Text>
             </div>
-            <div className={`black-300 ${styles.children}`}>{children}</div>
+            <Text className={`black-300 ${styles.children}`} size={2} elementName="div">
+                {children}
+            </Text>
         </div>
     );
 }

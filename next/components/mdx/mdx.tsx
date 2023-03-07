@@ -27,6 +27,9 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
                 li: LI,
                 ol: OL,
                 ul: UL,
+                // Not worth fixing this at the moment since we're moving away from MDX.
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 img: Img,
                 code: Code,
                 table: Table,
@@ -44,6 +47,9 @@ export const MDXRenderer = ({ children }: { children: React.ReactNode }): JSX.El
 interface ContentPageProps {
     children: React.ReactNode;
     title: string;
+    // False positive. This is used in the `ContentPage`.
+    // eslint-disable-next-line react/no-unused-prop-types
+    metaTitle?: string;
     description?: string;
     layoutProps: LayoutProps;
 }
@@ -51,13 +57,18 @@ interface ContentPageProps {
 export const ContentPage = ({
     children,
     title,
+    metaTitle,
     description,
     layoutProps,
 }: ContentPageProps): JSX.Element => {
     return (
         <Layout {...layoutProps}>
             <Wrap>
-                <PageHeader pageTitle={title} metaTitle={title} description={description} />
+                <PageHeader
+                    pageTitle={title}
+                    metaTitle={metaTitle ?? title}
+                    description={description}
+                />
                 {children}
             </Wrap>
         </Layout>
@@ -76,11 +87,11 @@ export const MDXComponentPage = ({
             <TabNav>
                 {componentPageProps.componentPlatforms.map(platform => (
                     <TabNavItem
-                        isActive={platform === componentPageProps.platformId}
-                        key={platform}
-                        href={`/components/${componentPageProps.id}/${platform}`}
+                        isActive={platform.id === componentPageProps.platformId}
+                        key={platform.id}
+                        href={`/components/${componentPageProps.id}/${platform.id}`}
                     >
-                        {platform}
+                        {platform.name}
                     </TabNavItem>
                 ))}
             </TabNav>

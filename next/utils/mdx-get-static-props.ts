@@ -3,7 +3,7 @@ import type { GetStaticPropsContext } from 'next';
 import * as reactDocgen from 'react-docgen';
 import doctrine from 'doctrine';
 import getLayoutProps, { LayoutProps } from './get-layout-props';
-import { ComponentPageProps } from './component-page-props';
+import { ComponentPageProps, PlatformName } from './component-page-props';
 import { ComponentDefinition } from '../components/thumbprint-components/props-table/component-definition';
 
 interface Metadata {
@@ -13,6 +13,10 @@ interface Metadata {
         id?: string;
         platformId?: string;
     };
+}
+
+function isPlatformName(str: string): str is PlatformName {
+    return ['usage', 'react', 'scss', 'ios', 'swiftui', 'android'].includes(str);
 }
 
 export default function getStaticProps(
@@ -32,8 +36,43 @@ export default function getStaticProps(
         componentPlatforms = fs
             .readdirSync(`pages/components/${metadata.component.id}`)
             .map(file => {
-                // Remove `.mdx` from string
-                return file.replace('.mdx', '');
+                // Removes `.mdx` from filename
+                const platformId = file.replace('.mdx', '');
+
+                const displayName: Record<PlatformName, string> = {
+                    usage: 'Usage',
+                    react: 'React',
+                    scss: 'SCSS',
+                    ios: 'iOS (UIKit)',
+                    swiftui: 'iOS (SwiftUI)',
+                    android: 'Android',
+                };
+
+                if (!isPlatformName(platformId) || !displayName[platformId]) {
+                    throw new Error(`All platforms must be defined in the \`displayName\` object.`);
+                }
+
+                // Return the filename as `platformId` as well as a display name for the platform.
+                return { id: platformId, name: displayName[platformId] };
+            })
+            .sort((a, b) => {
+                const platformOrder: Record<PlatformName, number> = {
+                    usage: 1,
+                    react: 2,
+                    scss: 3,
+                    ios: 4,
+                    swiftui: 5,
+                    android: 6,
+                };
+
+                if (!platformOrder[a.id] || !platformOrder[b.id]) {
+                    throw new Error(
+                        `All platforms must be defined in the \`platformOrder\` object.`,
+                    );
+                }
+
+                // Sorts the platforms the order that we want to display them.
+                return platformOrder[a.id] - platformOrder[b.id];
             });
 
         if (componentPlatforms.length === 0) {
@@ -117,7 +156,7 @@ export default function getStaticProps(
                           // these are all defined.
                           id: metadata.component.id as string,
                           platformId: metadata.component.platformId as string,
-                          componentPlatforms: componentPlatforms as string[],
+                          componentPlatforms: componentPlatforms as ComponentPageProps['componentPlatforms'],
                           packageTable,
                           componentDocgens,
                       },
