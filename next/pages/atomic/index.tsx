@@ -468,6 +468,10 @@ export default function Atomic({ files, layoutProps, version }: AtomicProps): JS
 
                 <Table atomicClasses={getClasses(files, 'flexbox').classes} />
 
+                <H2>Gap</H2>
+
+                <Table atomicClasses={getClasses(files, 'gap').classes} />
+
                 <H2>Font Weight</H2>
 
                 <UL>

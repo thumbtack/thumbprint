@@ -845,6 +845,12 @@ _:-ms-lang(x) {
 .flex-shrink-1 {
   flex-shrink: 1 !important;
 }
+.normal {
+  font-weight: 400 !important;
+}
+.b {
+  font-weight: 700 !important;
+}
 .col-gap0 {
   -moz-column-gap: 0 !important;
   column-gap: 0 !important;
@@ -907,12 +913,6 @@ _:-ms-lang(x) {
 }
 .row-gap8 {
   row-gap: 256px !important;
-}
-.normal {
-  font-weight: 400 !important;
-}
-.b {
-  font-weight: 700 !important;
 }
 .grid {
   margin-left: -16px !important;
@@ -2359,6 +2359,12 @@ _:-ms-lang(x) {
   .s_flex-shrink-1 {
     flex-shrink: 1 !important;
   }
+  .s_normal {
+    font-weight: 400 !important;
+  }
+  .s_b {
+    font-weight: 700 !important;
+  }
   .s_col-gap0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
@@ -2421,12 +2427,6 @@ _:-ms-lang(x) {
   }
   .s_row-gap8 {
     row-gap: 256px !important;
-  }
-  .s_normal {
-    font-weight: 400 !important;
-  }
-  .s_b {
-    font-weight: 700 !important;
   }
   .s_grid {
     margin-left: -16px !important;
@@ -3847,6 +3847,12 @@ _:-ms-lang(x) {
   .m_flex-shrink-1 {
     flex-shrink: 1 !important;
   }
+  .m_normal {
+    font-weight: 400 !important;
+  }
+  .m_b {
+    font-weight: 700 !important;
+  }
   .m_col-gap0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
@@ -3909,12 +3915,6 @@ _:-ms-lang(x) {
   }
   .m_row-gap8 {
     row-gap: 256px !important;
-  }
-  .m_normal {
-    font-weight: 400 !important;
-  }
-  .m_b {
-    font-weight: 700 !important;
   }
   .m_grid {
     margin-left: -16px !important;
@@ -5335,7 +5335,13 @@ _:-ms-lang(x) {
   .l_flex-shrink-1 {
     flex-shrink: 1 !important;
   }
-  .s_col-gap0 {
+  .l_normal {
+    font-weight: 400 !important;
+  }
+  .l_b {
+    font-weight: 700 !important;
+  }
+  .l_col-gap0 {
     -moz-column-gap: 0 !important;
     column-gap: 0 !important;
   }
@@ -5397,12 +5403,6 @@ _:-ms-lang(x) {
   }
   .l_row-gap8 {
     row-gap: 256px !important;
-  }
-  .l_normal {
-    font-weight: 400 !important;
-  }
-  .l_b {
-    font-weight: 700 !important;
   }
   .l_grid {
     margin-left: -16px !important;
