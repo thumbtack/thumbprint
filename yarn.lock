@@ -6000,7 +6000,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thumbtack/thumbprint-atomic@^4.3.1, @thumbtack/thumbprint-atomic@workspace:packages/thumbprint-atomic":
+"@thumbtack/thumbprint-atomic@^4.4.0, @thumbtack/thumbprint-atomic@workspace:packages/thumbprint-atomic":
   version: 0.0.0-use.local
   resolution: "@thumbtack/thumbprint-atomic@workspace:packages/thumbprint-atomic"
   dependencies:
@@ -6043,7 +6043,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@thumbtack/thumbprint-global-css@^0.1.20, @thumbtack/thumbprint-global-css@workspace:packages/thumbprint-global-css":
+"@thumbtack/thumbprint-global-css@^0.1.21, @thumbtack/thumbprint-global-css@workspace:packages/thumbprint-global-css":
   version: 0.0.0-use.local
   resolution: "@thumbtack/thumbprint-global-css@workspace:packages/thumbprint-global-css"
   dependencies:
@@ -6070,7 +6070,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@thumbtack/thumbprint-react@^14.15.0, @thumbtack/thumbprint-react@workspace:packages/thumbprint-react":
+"@thumbtack/thumbprint-react@^14.15.1, @thumbtack/thumbprint-react@workspace:packages/thumbprint-react":
   version: 0.0.0-use.local
   resolution: "@thumbtack/thumbprint-react@workspace:packages/thumbprint-react"
   dependencies:
@@ -23951,10 +23951,10 @@ is-whitespace@latest:
     "@mdx-js/react": ^2.2.1
     "@next/font": ^13.1.2
     "@next/mdx": ^13.1.1
-    "@thumbtack/thumbprint-atomic": ^4.3.1
+    "@thumbtack/thumbprint-atomic": ^4.4.0
     "@thumbtack/thumbprint-font-face": ^1.1.0
-    "@thumbtack/thumbprint-global-css": ^0.1.20
-    "@thumbtack/thumbprint-react": ^14.15.0
+    "@thumbtack/thumbprint-global-css": ^0.1.21
+    "@thumbtack/thumbprint-react": ^14.15.1
     "@thumbtack/thumbprint-scss": ^4.0.3
     "@types/doctrine": ^0.0.5
     "@types/lodash-es": ^4.17.6
@@ -34814,7 +34814,7 @@ is-whitespace@latest:
     "@mdx-js/mdx": ^1.6.5
     "@mdx-js/react": ^1.6.5
     "@thumbtack/thumbprint-icons": 4.1.0
-    "@thumbtack/thumbprint-react": ^14.15.0
+    "@thumbtack/thumbprint-react": ^14.15.1
     "@thumbtack/thumbprint-scss": ^4.0.3
     "@types/invariant": ^2.2.31
     "@types/mdx-js__react": ^1.5.2
