@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.21 - 2023-03-14
+
 ### Changed
 
 -   [Patch] Replace `devDependency` `ts-node` with `tsx` . This does not affect the outputted code.

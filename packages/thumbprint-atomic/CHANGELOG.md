@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.4.0 - 2023-03-14
+
 ### Added
 
 -   [Minor] Add `row-gap` and `col-gap` classes for all spacer units and breakpoints.
