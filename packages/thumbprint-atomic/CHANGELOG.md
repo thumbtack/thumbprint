@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `row-gap` and `col-gap` classes for all spacer units and breakpoints.
+
 ### Changed
 
 -   [Patch] Replace `devDependency` `ts-node` with `tsx` . This does not affect the outputted code.
