@@ -1,0 +1,100 @@
+---
+title: Loader Dots
+description: Animated control for showing a loading state
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## **Usage**
+
+`TPLoaderDots` should be implemented inside a view that displays the loading state. Like a view or button which performs network request.
+
+### **Example 1**
+
+```swift
+// Declare a isLoading environment variable which needs to be passed
+// to the loading indicator for toggling the loading state.
+@Environment(\.isLoading) private var isLoading: Bool
+
+TPLoaderDots(size: size, theme: theme)
+    .environment(\.isLoading, isLoading)
+```
+
+### **Example 2**
+
+```swift
+Rectangle()
+    .frame(width: 200, height: 40, alignment: .center)
+    .tpLoaderDots(
+        isLoading: isLoading,
+        size: .medium,
+        theme: .brand,
+        hideViewOnLoading: true
+    )
+```
+
+## Themes
+
+### Brand
+
+![brand theme example](/img/swiftui/loader-dots/ld-brand-medium.png 'Brand')
+
+### Muted
+
+![muted theme example](/img/swiftui/loader-dots/ld-muted-medium.png 'Muted')
+
+### Inverse
+
+![inverse theme example](/img/swiftui/loader-dots/ld-inverse-medium.png 'Inverse')
+
+## Sizes
+
+### Small
+
+![small size example](/img/swiftui/loader-dots/ld-brand-small.png 'Small')
+
+### Medium
+
+![medium size example](/img/swiftui/loader-dots/ld-brand-medium.png 'Medium')
+
+## Custom Theme and Size
+
+Define custom theme and size and set it to loader dots.
+
+```swift
+let customTheme = TPLoaderDots.Theme(color: Color)
+let customSize = TPLoaderDots.Size(size: CGFloat, spacing: CGFloat)
+TPLoaderDots(size: customSize, theme: customTheme)
+```
+
+## Loader View
+
+Loader view provides loader dots inside a square box that can be used in any view with `tpLoaderView` method globally available for all views.
+
+```swift
+VStack {
+  Image(icon: .contentActionsAudioMedium)
+    .frame(width: 300, height: 300, alignment: .center)
+}
+.tpLoaderView(isLoading: isLoading, size: .medium, theme: .inverse)
+```
+
+![loader view example](/img/swiftui/loader-dots/ld-view.png 'Loader view')
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/loader-dots/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
+
+;

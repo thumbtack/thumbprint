@@ -1,0 +1,80 @@
+---
+title: Shadow Card
+description: A control that's an empty box with a shadow.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+This control is a `View` with a default appearance and a highlighted appearance. Also provides a tap action handler.
+
+## Example 1
+
+```swift
+TPShadowCard(action: {
+    // Some action
+    self.title = "Hellow Shadow Card!"
+}, content: {
+    Text(title)
+})
+```
+
+![Default](/img/swiftui/shadow-card/shadow-card-1.png)
+
+## Example 2
+
+```swift
+TPShadowCard(padding: .space16, action: {
+    // Some action
+    self.bodyText = "This is something is really awesome!"
+}, content: {
+    VStack(alignment: .leading) {
+        Text("Heading")
+            .tpFontStyle(.title1)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: .space4, trailing: 0))
+        Text(bodyText)
+        Spacer(minLength: .space24)
+        TPButton(title: "Cool!") {
+            // Button action
+            self.bodyText = "This is something is really cool!"
+        }
+    }
+    .frame(maxWidth: .infinity, alignment: .leading)
+    .fixedSize(horizontal: false, vertical: true)
+})
+```
+
+![Default](/img/swiftui/shadow-card/shadow-card-2.png)
+
+## Constructor
+
+```swift
+
+TPShadowCard(
+    shadow: TPShadow = .shadow300,
+    backgroundColor: Color = .tpWhite,
+    highlightedColor: Color = .tpGray300,
+    padding: CGFloat = .space8,
+    cornerRadius: CGFloat = .space4,
+    shouldHighlight: Bool = true,
+    action: (() -> Void)? = nil,
+    @ViewBuilder content: @escaping () -> Content
+)
+```
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/shadow-card/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
