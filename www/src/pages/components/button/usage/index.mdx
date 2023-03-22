@@ -4,6 +4,7 @@ description: Clickable elements used to perform actions.
 ---
 
 import { graphql } from 'gatsby';
+import { Img } from 'components/mdx';
 import { Button, TextButton, ButtonRow } from '@thumbtack/thumbprint-react';
 import { ContentModifierMessageSmall } from '@thumbtack/thumbprint-icons';
 import Alert from 'components/alert';
@@ -17,7 +18,7 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 ## Usage
 
-The Button (commonly referred to as call-to-actions or CTA) component enables users to perform actions within the page, such as submitting form data or activating sharing utilities. They are also offered in many styles to provide a visual hierarchy of intended use.
+The Button (commonly referred to as call-to-actions or CTA) component enables users to perform actions within the page, such as submitting form data or activating sharing utilities. Buttons are also offered in many styles to provide a visual hierarchy of intended use.
 
 <DoDontSideBySide
     headerText={['When to use', 'When not to use']}
@@ -36,7 +37,7 @@ The Button (commonly referred to as call-to-actions or CTA) component enables us
 ## Anatomy
 
 <UsageImg>
-    <Img src="./anatomy.png" alt="Anatomy of the pill component" width="123px" />
+    <Img src="./anatomy.png" alt="Anatomy of the pill component" width="168px" />
 </UsageImg>
 
 <Anatomy>
@@ -76,11 +77,19 @@ There are two button sizes, Large and Small. Almost always, the Large size shoul
 #### Large
 
 <UsageImg>
-    <Img
-        src="./specs-spacing.png"
-        alt="Specifications for the pill component spacing"
-        width="162px"
-    />
+    <div className="flex flex-column items-center">
+        <Img
+            src="./spacing-large-auto.png"
+            alt="Specifications for the pill component spacing"
+            width="163px"
+            className="mb4"
+        />
+        <Img
+            src="./spacing-large-100-perc.png"
+            alt="Specifications for the pill component spacing"
+            width="295px"
+        />
+    </div>
 </UsageImg>
 <Text size={2} className="black-300">
     The height of the component will be fixed at 48px/pts. Large buttons can optional be full-width
@@ -96,9 +105,9 @@ There are two button sizes, Large and Small. Almost always, the Large size shoul
 
 <UsageImg>
     <Img
-        src="./specs-spacing.png"
+        src="./spacing-small-auto.png"
         alt="Specifications for the pill component spacing"
-        width="162px"
+        width="133px"
     />
 </UsageImg>
 <Text size={2} className="black-300">
@@ -112,7 +121,7 @@ There are two button sizes, Large and Small. Almost always, the Large size shoul
     <Img
         src="./specs-sizing.png"
         alt="Specifications for the pill component sizing"
-        width="134px"
+        width="199px"
     />
 </UsageImg>
 <Text size={2} className="black-300">
@@ -127,7 +136,11 @@ Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution
 #### Primary
 
 <UsageImg>
-    <Img src="./specs-color.png" alt="Specifications for the pill component colors" width="130px" />
+    <Img
+        src="./color-primary.png"
+        alt="Specifications for the pill component colors"
+        width="182px"
+    />
 </UsageImg>
 <Text size={2} className="black-300">
     Use the Primary variation to build the strongest emphasis for CTAs.
@@ -136,7 +149,11 @@ Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution
 #### Secondary
 
 <UsageImg>
-    <Img src="./specs-color.png" alt="Specifications for the pill component colors" width="130px" />
+    <Img
+        src="./color-secondary.png"
+        alt="Specifications for the pill component colors"
+        width="250px"
+    />
 </UsageImg>
 <Text size={2} className="black-300">
     Secondary CTAs should be used as an alternative to a Primary variation when dialing back the
@@ -149,7 +166,11 @@ Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution
 #### Tertiary
 
 <UsageImg>
-    <Img src="./specs-color.png" alt="Specifications for the pill component colors" width="130px" />
+    <Img
+        src="./color-tertiary.png"
+        alt="Specifications for the pill component colors"
+        width="250px"
+    />
 </UsageImg>
 <Text size={2} className="black-300">
     When three actions are used in the same space, the tertiary should be used in the last position
@@ -163,7 +184,11 @@ Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution
 #### Caution
 
 <UsageImg>
-    <Img src="./specs-color.png" alt="Specifications for the pill component colors" width="130px" />
+    <Img
+        src="./color-caution.png"
+        alt="Specifications for the pill component colors"
+        width="250px"
+    />
 </UsageImg>
 <Text size={2} className="black-300">
     The Caution variation should be used to signal to the user that their action can potentially
@@ -177,7 +202,7 @@ Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution
 #### Solid
 
 <UsageImg>
-    <Img src="./specs-color.png" alt="Specifications for the pill component colors" width="130px" />
+    <Img src="./color-solid.png" alt="Specifications for the pill component colors" width="189px" />
 </UsageImg>
 <Text size={2} className="black-300">
     Most commonly these buttons may only be used on top of a “Base Color” such as blue or indigo or
@@ -196,10 +221,10 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
     ]}
     examples={[
         <div className="pa2">
-            <Img src="./do-text-separation.png" alt="" width="294px" />
+            <Img src="./best-practices-do-1.png" alt="" width="295px" />
         </div>,
         <div className="pa2">
-            <Img src="./dont-hard-line.png" alt="" width="294px" />
+            <Img src="./best-practices-dont-1.png" alt="" width="295px" />
         </div>,
     ]}
 />
@@ -211,10 +236,10 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
     ]}
     examples={[
         <div className="pa2">
-            <Img src="./do-text-separation.png" alt="" width="294px" />
+            <Img src="./best-practices-do-2.png" alt="" width="295px" />
         </div>,
         <div className="pa2">
-            <Img src="./dont-hard-line.png" alt="" width="294px" />
+            <Img src="./best-practices-dont-2.png" alt="" width="295px" />
         </div>,
     ]}
 />
@@ -226,10 +251,10 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
     ]}
     examples={[
         <div className="pa2">
-            <Img src="./do-text-separation.png" alt="" width="294px" />
+            <Img src="./best-practices-do-3.png" alt="" width="295px" />
         </div>,
         <div className="pa2">
-            <Img src="./dont-hard-line.png" alt="" width="294px" />
+            <Img src="./best-practices-dont-3.png" alt="" width="295px" />
         </div>,
     ]}
 />
@@ -241,10 +266,10 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
     ]}
     examples={[
         <div className="pa2">
-            <Img src="./do-text-separation.png" alt="" width="294px" />
+            <Img src="./best-practices-do-4.png" alt="" width="295px" />
         </div>,
         <div className="pa2">
-            <Img src="./dont-hard-line.png" alt="" width="294px" />
+            <Img src="./best-practices-dont-4.png" alt="" width="295px" />
         </div>,
     ]}
 />
@@ -256,10 +281,10 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
     ]}
     examples={[
         <div className="pa2">
-            <Img src="./do-text-separation.png" alt="" width="294px" />
+            <Img src="./best-practices-do-5.png" alt="" width="295px" />
         </div>,
         <div className="pa2">
-            <Img src="./dont-hard-line.png" alt="" width="294px" />
+            <Img src="./best-practices-dont-5.png" alt="" width="295px" />
         </div>,
     ]}
 />
@@ -273,7 +298,7 @@ Below is a list of examples of how CTAs should/shouldn't be used through visual 
 -   Image-only buttons and links need alt-text.
 -   Use buttons for primary actions and links for navigation.
 
-## Content Design
+## Content design
 
 Buttons and links should always be sentence case, unless they contain a proper noun. Buttons should be 4 words or less and links should be 8 words or less.
 
