@@ -1,0 +1,107 @@
+---
+title: Avatar
+description: Display user images and badges on Thumbtack.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Summary
+
+Avatars provide a container for displaying Entity or User images on Thumbtack. This component displays either the filled images after loading the image via URL or the blank Avatar view if there’s no backing image and initials are provided.
+
+<div>
+    <b>Entity</b>: a company, business, or service. A square with our standard 4px border-radius is
+    best here.
+</div>
+
+<div>
+    <b>User</b>: a person or user. A circle is best suited for people - primarily faces.
+</div>
+
+## Examples
+
+### Initials
+
+```swift
+HStack {
+    TPAvatar(url: nil, initials: "N")
+        .tpAvatarTheme(.medium)
+        .tpAvatarType(.entity)
+
+    TPAvatar(url: nil, initials: "NC", isOnline: true)
+        .tpAvatarTheme(.medium)
+        .tpAvatarType(.user)
+}
+```
+
+![Initials example screenshot](/img/swiftui/avatar/tpavatar-example-1.png)
+
+### Image initializer / Custom theme
+
+```swift
+TPAvatar(image: Image(systemName: "car.circle.fill"), isOnline: true)
+            .tpAvatarTheme(TPAvatarTheme(size: 96, badgeSize: 22, font: .callout))
+            .tpAvatarType(.user)
+```
+
+![Image init / theme customization example screenshot](/img/swiftui/avatar/tpavatar-example-2.png)
+
+### URL initializer
+
+```swift
+HStack {
+    TPAvatar(url: URL(string: "https://i.pravatar.cc/140"), isOnline: true)
+        .tpAvatarTheme(.large)
+        .tpAvatarType(.user)
+
+    TPAvatar(url: URL(string: "https://i.pravatar.cc/140"), isOnline: true)
+        .tpAvatarTheme(.large)
+        .tpAvatarType(.entity)
+}
+```
+
+![URL initializer example screenshot](/img/swiftui/avatar/tpavatar-example-3.png)
+
+## Environment Values
+
+### `.tpAvatarType(_ style: TPAvatarType)`
+
+Either `.user` or `.entity`
+
+### `.tpAvatarTheme(_ theme: TPAvatarTheme)`
+
+Allows customization of the avatar look and feel. Defaults are provided for `xSmall`, `small`, `medium`, `large`, `xLarge`
+
+## Initializers
+
+### `public init(url: URL?, initials: String? = nil, isOnline: Bool = false)`
+
+**url:** - URL used to asynchronously load the avatar image
+
+### `public init(image: Image, isOnline: Bool = false)`
+
+**image:** - Image used for the avatar
+
+### `isOnline: Bool`
+
+Boolean value that controls whether the online badge is shown or not.
+
+### `initials: String?`
+
+The initials to be shown when displaying the blank avatar. One character is used for .entity, and up to two characters can be used for .user styled avatars
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
