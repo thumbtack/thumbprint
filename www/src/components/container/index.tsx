@@ -470,6 +470,12 @@ export default function Container({
                                 >
                                     <SideNavGroup level={2}>
                                         <SideNavLink
+                                            title="Roadmap"
+                                            level={2}
+                                            to="/updates/roadmap/"
+                                            isActive={pathname.startsWith('/updates/roadmap/')}
+                                        />
+                                        <SideNavLink
                                             title="Release Notes"
                                             level={2}
                                             to="/updates/notes/"

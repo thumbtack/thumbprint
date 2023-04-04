@@ -1,0 +1,131 @@
+---
+title: Roadmap
+description: Upcoming component and documentation work
+---
+
+import { Title, Text, ThemedLink, Wrap, Pill } from '@thumbtack/thumbprint-react';
+import { Img, P } from 'components/mdx';
+
+export const compoonetUsageDocumentation = [
+    { component: 'Action Sheet', status: '', deliveryDate: '' },
+    { component: 'Alert', status: '', deliveryDate: '' },
+    { component: 'Alert Banner', status: 'complete', deliveryDate: '1/3/23' },
+    { component: 'Button', status: 'complete', deliveryDate: '4/3/23' },
+    { component: 'Button Row', status: '', deliveryDate: '' },
+    { component: 'Calendar', status: '', deliveryDate: '' },
+    { component: 'Carousel', status: '', deliveryDate: '' },
+    { component: 'Checkbox', status: '', deliveryDate: '' },
+    { component: 'Chip', status: '', deliveryDate: '' },
+    { component: 'Date Picker', status: '', deliveryDate: '' },
+    { component: 'Dropdown', status: '', deliveryDate: '' },
+    { component: 'Fab', status: '', deliveryDate: '' },
+    { component: 'Form Note', status: '', deliveryDate: '' },
+    { component: 'Fullscreen Sheet', status: '', deliveryDate: '' },
+    { component: 'Horizontal Rule', status: 'complete', deliveryDate: '2/16/23' },
+    { component: 'Image', status: '', deliveryDate: '' },
+    { component: 'Input Row', status: '', deliveryDate: '' },
+    { component: 'Label', status: 'not started', deliveryDate: '' },
+    { component: 'Link', status: '', deliveryDate: '' },
+    { component: 'List', status: '', deliveryDate: '' },
+    { component: 'Loader Dots', status: 'not started', deliveryDate: '' },
+    { component: 'Modal', status: '', deliveryDate: '' },
+    { component: 'Modal Curtain', status: '', deliveryDate: '' },
+    { component: 'Navigation Bar', status: '', deliveryDate: '' },
+    { component: 'Partial Sheet', status: '', deliveryDate: '' },
+    { component: 'Pill', status: 'complete', deliveryDate: '12/7/22' },
+    { component: 'Radio', status: '', deliveryDate: '' },
+    { component: 'Shadow Card', status: '', deliveryDate: '' },
+    { component: 'Star', status: '', deliveryDate: '' },
+    { component: 'Switch', status: '', deliveryDate: '' },
+    { component: 'Table', status: '', deliveryDate: '' },
+    { component: 'Text Area', status: '', deliveryDate: '' },
+    { component: 'Text Input', status: 'in progress', deliveryDate: '4/14/23' },
+    { component: 'Tooltip', status: 'in progress', deliveryDate: '4/14/23' },
+    { component: 'Toast', status: '', deliveryDate: '' },
+    { component: 'Type', status: '', deliveryDate: '' },
+];
+
+export const compoonetUsageActive = compoonetUsageDocumentation
+    .filter(item => item.status !== '')
+    .filter(item => item.status !== 'complete');
+export const compoonetUsageComplete = compoonetUsageDocumentation.filter(
+    item => item.status === 'complete',
+);
+export const compoonetUsageToDo = compoonetUsageDocumentation.filter(item => item.status === '');
+
+export const processPill = status => {
+    if (status == 'complete') {
+        return <Pill color="green">{status}</Pill>;
+    } else if (status == 'in progress') {
+        return <Pill color="yellow">{status}</Pill>;
+    } else {
+        return <Pill>{status || 'not started'}</Pill>;
+    }
+};
+
+export const renderUsageList = list => {
+    return (
+        <div>
+            <table className="collapse w-100 tp-body-2">
+                <thead>
+                    <tr>
+                        <td>
+                            <span className="b">Component</span>
+                        </td>
+                        <td>
+                            <span className="b">Status</span>
+                        </td>
+                        <td>
+                            <span className="b">Delivery date</span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {list.map(item => {
+                        return (
+                            <tr>
+                                <td>{item.component}</td>
+                                <td>{processPill(item.status)}</td>
+                                <td>{item.deliveryDate || 'TBD'}</td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+## What's happening now
+
+### Component usage documentation
+
+This exercise is an effort to provide clear documentation on use cases, anatomy, specs, accessibility needs, and how to use a particular component. In some cases, some usage documentation may already exist but will be updated due to this effort.
+
+Updating components will occur in order of usage patterns. The more popular the component is in adoption, the sooner the component will be addressed.
+
+This project is expected to carry over from Q2 into mid-H2 2023.
+
+#### Active & upcoming
+
+<Wrap>{renderUsageList(compoonetUsageActive)}</Wrap>
+
+#### Completed
+
+<Wrap>{renderUsageList(compoonetUsageComplete)}</Wrap>
+
+#### To do
+
+<Wrap>{renderUsageList(compoonetUsageToDo)}</Wrap>
+
+## What's next
+
+### Updated Toast component
+
+The [Toast component](/components/toast/ios/) is currently only supported by our native platforms, iOS and Android. This effort will refresh Toast's current version and support the Web platform (Mobile and Desktop).
+
+Work for this project is expected to begin in Q2 or Q3 2023.
+
+### Semantic color tokens
+
+This work will introduce a more semantic approach to provide an intentional methodology for describing colors and how they should be applied by adding a second tier of tokens (semantic) that references our current token color construct (base).
