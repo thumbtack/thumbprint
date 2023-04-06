@@ -155,6 +155,7 @@ export default function getLayoutProps(): LayoutProps {
                         { title: 'Cursor', href: '/atomic#section-cursor' },
                         { title: 'Display', href: '/atomic#section-display' },
                         { title: 'Flexbox', href: '/atomic#section-flexbox' },
+                        { title: 'Gap', href: '/atomic#section-gap' },
                         { title: 'Font Weight', href: '/atomic#section-font-weight' },
                         { title: 'Grid', href: '/atomic#section-grid' },
                         { title: 'Height', href: '/atomic#section-height' },

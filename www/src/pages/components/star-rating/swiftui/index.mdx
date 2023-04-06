@@ -1,0 +1,86 @@
+---
+title: Star Rating
+description: Display a star rating out of 5.0.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Examples
+
+### Standard
+
+```swift
+TPStarRating(rating: $rating, isInteractive: false)
+```
+
+### Size
+
+```swift
+/// Three standard sizes:
+/// small - 12
+/// medium - 18
+/// large - 24
+TPStarRating(rating: .constant(4))
+    .tpStarRatingSize(TPStarRatingSize.small)
+
+// Configurable for any size
+TPStarRating(rating: .constant(4))
+    .tpStarRatingSize(48.0)
+```
+
+![TPStarRating size example](/img/swiftui/star-rating/star-rating-example-1.png)
+
+### Theme
+
+```swift
+TPStarRating(rating: $rating)
+    .tpStarRatingTheme(TPStarRatingTheme(filledColor: .tpYellow, unfilledColor: .tpGray))
+```
+
+![TPStarRatingTheme example](/img/swiftui/star-rating/star-rating-example-2.png)
+
+## Environment Values
+
+### `.tpStarRatingSize(_ size: CGFloat)`
+
+Standard sizes defined in `TPStarRatingSize`
+
+**Default:** - `TPStarRatingSize.large`
+
+### `.tpStarRatingTheme(_ theme: TPStarRatingTheme)`
+
+Allows customization of the filled and unfilled star colors using `TPStarRatingTheme`.
+
+**Default:** - `TPStarRatingTheme.default` (filled `.tpGreen`, unfilled `.tpGray`)
+
+## Initializers
+
+### `public init(rating: Binding<Float>, maxRating: Int = 5, isInteractive: Bool = true)`
+
+**- rating:** binding to a Float
+
+**- maximumRating:** the maximum star rating (defaults to 5)
+
+**- isInteractive:** configures the component to be read only
+
+## Accessibility
+
+Component can be adjusted using VoiceOver gestures when `isInteractive` is `true`. Standard format is `Select rating (current rating) out of (maximumRating) stars`
+
+When `isInteractive` is false, the format is `Rating (current rating) out of (maximumRating) stars`
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/star-rating/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;

@@ -4,121 +4,299 @@ description: Clickable elements used to perform actions.
 ---
 
 import { graphql } from 'gatsby';
+import { Img } from 'components/mdx';
 import { Button, TextButton, ButtonRow } from '@thumbtack/thumbprint-react';
 import { ContentModifierMessageSmall } from '@thumbtack/thumbprint-icons';
 import Alert from 'components/alert';
+import { Anatomy, AnatomyItem } from 'components/anatomy';
+import DoDont, { DoDontSideBySide } from 'components/dodont';
+import UsageImg from 'components/usage-img';
 import { InlineCode } from 'components/mdx';
 import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
 
 <ComponentHeader data={props.data} />
 
-## Types
+## Usage
 
-Buttons change width depending on the content inside of them and have four variations: Primary, Secondary, Tertiary and Caution.
+The Button (commonly referred to as call-to-actions or CTA) component enables users to perform actions within the page, such as submitting form data or activating sharing utilities. Buttons are also offered in many styles to provide a visual hierarchy of intended use.
 
-<div className="mb3">
-    <ButtonRow>
-        <Button>Primary</Button>
-        <Button theme="secondary">Secondary</Button>
-        <Button theme="tertiary">Tertiary</Button>
-        <Button theme="caution">Caution</Button>
-    </ButtonRow>
-</div>
+<DoDontSideBySide
+    headerText={['When to use', 'When not to use']}
+    examples={[
+        <List>
+            <ListItem>Perform actions such as form submissions</ListItem>
+            <ListItem>Trigger popup or modal user interface elements </ListItem>
+            <ListItem>Change other UI elements such as closing overlays</ListItem>
+        </List>,
+        <List>
+            <ListItem>As links that change the url</ListItem>
+        </List>,
+    ]}
+/>
 
-#### Solid
+## Anatomy
 
-These buttons may only be used on top of a “Base Color” such as blue or indigo or on top of a photo.
+<UsageImg>
+    <Img src="./anatomy.png" alt="Anatomy of the button component" width="168px" />
+</UsageImg>
 
-<div className="bg-indigo pa4 dib">
-    <ButtonRow>
-        <Button theme="solid">Solid</Button>
-    </ButtonRow>
-</div>
+<Anatomy>
+    <AnatomyItem number="1" title="Surface">
+        <Text size={2} className="black-300">
+            Colored surface used as backdrop for the Label and Icon (optional) messaging.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="2" title="Label">
+        <Text size={2} className="black-300">
+            Succinct text that supports a contextual messaging. Text color should match the Icon
+            color and should coordinate with the Background hue.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="3" title="Icon / Left">
+        <Text size={2} className="black-300">
+            Visual support for Label messaging. Most commonly used position. Should not be used in
+            conjunction with Icon / Right.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="3" title="Icon / Right">
+        <Text size={2} className="black-300">
+            Visual support for Label messaging. Typically used a directional indicator. Should not
+            be used in conjunction with Icon / Left.
+        </Text>
+    </AnatomyItem>
+</Anatomy>
 
-### Sizes
+## Specs
+
+Component details and standards such as spacing, sizing, and color.
+
+### Spacing
 
 There are two button sizes, Large and Small. Almost always, the Large size should be used. Tertiary buttons should mostly be used in the Small size, and Tertiary may not be used at the Large size.
 
-<div className="grid mw8">
-    <div className="col-6">
-        <Button>Large</Button>
-        <div className="tp-body-3 mt2 black-300">
-            <div className="b">Text padding</div>
-            <div>Top &amp; Bottom = 14px</div>
-            <div>Left &amp; Right = 24px</div>
-        </div>
+#### Large
+
+<UsageImg>
+    <div className="flex flex-column items-center">
+        <Img
+            src="./spacing-large-auto.png"
+            alt="Spacing specifications for large button with auto width"
+            width="163px"
+            className="mb4"
+        />
+        <Img
+            src="./spacing-large-100-perc.png"
+            alt="Spacing specifications for large full-width button"
+            width="295px"
+        />
     </div>
-    <div className="col-6">
-        <Button size="small">Small</Button>
-        <div className="tp-body-3 mt2 black-300">
-            <div className="b">Text padding</div>
-            <div>Top &amp; Bottom = 14px</div>
-            <div>Left &amp; Right = 24px</div>
-        </div>
-    </div>
-</div>
+</UsageImg>
+<Text size={2} className="black-300">
+    The height of the component will be fixed at 48px/pts. Large buttons can optional be full-width
+    and take up 100% of the container’s width.
+</Text>
+<Text size={2} className="black-300">
+    Most commonly used for mobile, full-width buttons may only use the Primary & Tertiary styles.
+    They can’t be in a container over 480px wide and can’t be smaller than 300px. They also should
+    only be used on white backgrounds. Padding is set to 24px around the button
+</Text>
 
-### Full width
+#### Small
 
-Most commonly used for mobile, full width buttons may only use the Primary & Tertiary styles. They can’t be in a container over `480px` wide and can’t be smaller than `300px`. They also should only be used on white backgrounds. Padding is set to `24px` around the button
+<UsageImg>
+    <Img
+        src="./spacing-small-auto.png"
+        alt="Spacing specifications for small button with auto width"
+        width="133px"
+    />
+</UsageImg>
+<Text size={2} className="black-300">
+    The height of the component will be fixed at 32px/pts. Small buttons should not span 100% width
+    of the viewport and will always hug the contents of the component.
+</Text>
 
-<div className="mw6">
-    <Button width="full">Large</Button>
-</div>
+### Sizing
 
-## Variations
+<UsageImg>
+    <Img src="./specs-sizing.png" alt="Sizing specifications for button" width="199px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    Text should follow the Title size 6 that translates to 16px bold. Icons should apply the Small
+    size.
+</Text>
 
-Buttons and links can be combined with other elements like inputs, icons, and other links to create unique components.
+### Color
 
-### With icons
+Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution. Each variation includes a set color scheme that provides the appropriate emphasis based on the intended use case.
 
-Buttons may contain icons but should only appear on the left side of copy.
+#### Primary
 
-<ButtonRow>
-    <Button icon={<ContentModifierMessageSmall />}>Reply</Button>
-    <Button icon={<ContentModifierMessageSmall />} theme="solid">
-        Reply
-    </Button>
-</ButtonRow>
+<UsageImg>
+    <Img src="./color-primary.png" alt="Color specifications for primary button" width="182px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    Use the Primary variation to build the strongest emphasis for CTAs.
+</Text>
 
-### Loading
+#### Secondary
 
-Buttons support loading states without changing the width of the button and only available in the primary style.
+<UsageImg>
+    <Img
+        src="./color-secondary.png"
+        alt="Color specifications for secondary button"
+        width="250px"
+    />
+</UsageImg>
+<Text size={2} className="black-300">
+    Secondary CTAs should be used as an alternative to a Primary variation when dialing back the
+    need to call the user’s attention.
+</Text>
+<Text size={2} className="black-300">
+    These actions can both live in independent of and can also be paired with a Primary CTA.
+</Text>
 
-<Button isLoading>Send Quote</Button>
+#### Tertiary
 
-### Disabled
+<UsageImg>
+    <Img src="./color-tertiary.png" alt="Color specifications for tertiary button" width="250px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    When three actions are used in the same space, the tertiary should be used in the last position
+    to pull back the visual attraction given to the Primary and Secondary CTA.
+</Text>
+<Text size={2} className="black-300">
+    In certain circumstances, the Tertiary variation can be used independently of the Primary and
+    Secondary, but these instances should be used sparingly.
+</Text>
 
-Used when an action is not yet possible.
+#### Caution
 
-<ButtonRow>
-    <Button isDisabled>Primary</Button>
-    <Button isDisabled theme="secondary">
-        Secondary
-    </Button>
-    <Button isDisabled theme="tertiary">
-        Tertiary
-    </Button>
-    <Button isDisabled theme="caution">
-        Caution
-    </Button>
-</ButtonRow>
+<UsageImg>
+    <Img src="./color-caution.png" alt="Color specifications for caution button" width="250px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    The Caution variation should be used to signal to the user that their action can potentially
+    lead to a dangerous or destructive circumstance.
+</Text>
+<Text size={2} className="black-300">
+    The positioning of this action should be determined by the how destructive this moment could be
+    the UX.
+</Text>
 
-### Button row
+#### Solid
 
-Multiple related actions can be grouped in a row with default horizontal spacing.
+<UsageImg>
+    <Img src="./color-solid.png" alt="Color specifications for solid button" width="189px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    Most commonly these buttons may only be used on top of a “Base Color” such as blue or indigo or
+    on top of a photo. Solid CTAs can also be used to reduce the visual weight introduced but other
+    button variations.
+</Text>
 
-<ButtonRow>
-    <Button>Save</Button>
-    <Button theme="tertiary">Skip</Button>
-</ButtonRow>
+## Best practices
 
-## Copy
+Below is a list of examples of how CTAs should/shouldn't be used through visual representations of our Do's and Dont's.
 
--   Buttons should be sentence case with exceptions for proper nouns
--   Buttons should be limited to 3 words where possible
+<DoDontSideBySide
+    description={[
+        'Place the Primary CTA in the top position when buttons are stacked vertically.',
+        'Place the Primary CTA under any other CTA option.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-1.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-1.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
 
-<ComponentFooter data={props.data} />
+<DoDontSideBySide
+    description={[
+        'Use iconography provided by Thumbprint for the left / right icons.',
+        'Do not use external images, iconography, or emojis.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-2.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-2.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
+
+<DoDontSideBySide
+    description={[
+        'Use icons intentionally and responsibly. Icons should provide immediate and relative support to the experience.',
+        'Use iconography that can be misleading or does not provide additional context.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-3.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-3.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
+
+<DoDontSideBySide
+    description={[
+        'Use the spacing and sizing provided by the component.',
+        'Make sizing adjustments for buttons to fit particular circumstances.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-4.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-4.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
+
+<DoDontSideBySide
+    description={[
+        'Use colors provided by the variant options determined by the button theme.',
+        'Adjust CTA colors to fit a particular context.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-5.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-5.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
+
+## Accessibility
+
+-   Be sure text has a contrast ratio of at least 4.5:1 for small text and at least - 3:1 for large text (WCAG 2.0 1.4.3).
+-   Color should not be used exclusively to convey information.
+-   Text sizes should be scalable.
+-   Buttons should be accessible via keyboard interactions.
+-   Image-only buttons and links need alt-text.
+-   Use buttons for primary actions and links for navigation.
+
+## Content design
+
+-   Buttons should be 4 words or less.
+-   Write in sentence case, except for proper nouns (like the Thumbtack Guarantee).
+-   Do not use punctuation.
+-   Provide alt text for image-only buttons.
+
+Learn more about writing for buttons, CTAs, and links in [Surfaces and Elements](/overview/content-design/surfaces-and-elements/#section-calls-to-action).
+
+## Related components
+
+-   **[Button Row](/components/button-row/react/)** - Consistent spacing between buttons.
+-   **[Link](/components/link/react/)** - Color and style variations for anchor links.
+-   **[FAB](/components/fab/react/)** - Buttons providing easy access to important actions.
+-   **[Chip](/components/chip/react)** - Compact controls that allow for toggling and filtering.
 
 export const pageQuery = graphql`
     {
