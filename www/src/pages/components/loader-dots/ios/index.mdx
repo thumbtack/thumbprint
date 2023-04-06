@@ -3,6 +3,11 @@ title: Loader Dots
 description: Animated control for showing a loading state
 ---
 
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
 ## Summary
 
 Control for indicating a loading state inside a view, such as a network call on button tap.
@@ -34,3 +39,18 @@ The following sizes are supported
 `small` ![small](ios-loaderdots-brand-small.gif)
 
 `medium` ![medium](ios-loaderdots-brand-medium.gif)
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/loader-dots/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
+
+;
