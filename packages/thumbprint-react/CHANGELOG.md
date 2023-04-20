@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Add `step` prop to `TextInput`.
+
 ## 14.15.0 - 2022-10-31
 
 ### Added
