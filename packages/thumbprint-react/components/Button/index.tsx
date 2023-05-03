@@ -19,47 +19,51 @@ const getCommonProps = (
     dataTestId: props.dataTestId,
 });
 
-export function TextButton({
-    children,
-    iconLeft,
-    iconRight,
-    isDisabled = false,
-    onClick,
-    onMouseEnter,
-    onMouseOver,
-    onFocus,
-    onMouseLeave,
-    onBlur,
-    accessibilityLabel,
-    theme = 'primary',
-    type = 'button',
-    dataTest,
-    dataTestId,
-    innerRef,
-}: TextButtonProps): JSX.Element {
-    return (
-        <Plain
-            {...getCommonProps({
-                onClick,
-                isDisabled,
-                type,
-                children,
-                onMouseEnter,
-                onMouseOver,
-                onFocus,
-                onMouseLeave,
-                onBlur,
-                accessibilityLabel,
-                dataTest,
-                dataTestId,
-            })}
-            theme={theme}
-            iconLeft={iconLeft}
-            iconRight={iconRight}
-            innerRef={innerRef}
-        />
-    );
-}
+export const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
+    (
+        {
+            children,
+            iconLeft,
+            iconRight,
+            isDisabled = false,
+            onClick,
+            onMouseEnter,
+            onMouseOver,
+            onFocus,
+            onMouseLeave,
+            onBlur,
+            accessibilityLabel,
+            theme = 'primary',
+            type = 'button',
+            dataTest,
+            dataTestId,
+        }: TextButtonProps,
+        ref,
+    ): JSX.Element => {
+        return (
+            <Plain
+                {...getCommonProps({
+                    onClick,
+                    isDisabled,
+                    type,
+                    children,
+                    onMouseEnter,
+                    onMouseOver,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    accessibilityLabel,
+                    dataTest,
+                    dataTestId,
+                })}
+                theme={theme}
+                iconLeft={iconLeft}
+                iconRight={iconRight}
+                innerRef={ref}
+            />
+        );
+    },
+);
 
 export interface TextButtonProps extends MouseEventProps<HTMLButtonElement> {
     /**
