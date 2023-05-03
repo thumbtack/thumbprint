@@ -1,5 +1,6 @@
 import split from 'lodash/split';
 import isThumbtackUrl from './is-thumbtack-url';
+import { AnchorInputProps, BaseAnchorProps } from './ui-action-types';
 
 const getRel = (
     url?: string,
@@ -33,31 +34,6 @@ const getRel = (
     return undefined;
 };
 
-interface AnchorMouseEventProps {
-    onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    onMouseEnter?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    onMouseOver?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    onMouseLeave?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-    onFocus?: (event: React.FocusEvent<HTMLAnchorElement>) => void;
-    onBlur?: (event: React.FocusEvent<HTMLAnchorElement>) => void;
-}
-
-interface AnchorProps extends AnchorMouseEventProps {
-    href?: string;
-    target: string;
-    rel?: string;
-    title?: string;
-}
-
-interface AnchorInputProps extends AnchorMouseEventProps {
-    isDisabled?: boolean;
-    shouldOpenInNewTab?: boolean;
-    to?: string;
-    rel?: string;
-    target?: string;
-    title?: string;
-}
-
 /**
  * Enable plain and themed `<a>` elements to share the same props.
  */
@@ -74,7 +50,7 @@ const getAnchorProps = ({
     rel,
     target,
     title,
-}: AnchorInputProps): AnchorProps => ({
+}: AnchorInputProps): BaseAnchorProps => ({
     onClick,
     onMouseEnter,
     onMouseOver,

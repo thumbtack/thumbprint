@@ -6,6 +6,7 @@ import { InputRowContext } from '../InputRow/index';
 import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './themed.module.scss';
+import { AnchorOrButton, MouseEventProps } from './ui-action-types';
 
 // False positive
 // eslint-disable-next-line no-shadow
@@ -82,144 +83,148 @@ const withFlexWrapper = (
     </span>
 );
 
-const Themed = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ThemedPropTypes>(
-    (
-        {
-            children,
-            isDisabled = false,
-            isLoading = false,
-            icon,
-            iconRight,
-            type = 'button',
-            to,
-            shouldOpenInNewTab = false,
-            rel,
-            target,
-            onClick,
-            onMouseEnter,
-            onMouseOver,
-            onFocus,
-            onMouseLeave,
-            onBlur,
-            accessibilityLabel,
-            size = 'large',
-            theme = 'primary',
-            width = 'auto',
-            dataTestId,
-            dataTest,
-            title,
-        }: ThemedPropTypes,
-        ref,
-    ): JSX.Element => {
-        warning(
-            children || accessibilityLabel || ((icon || iconRight) && children),
-            'The prop `accessibilityLabel` must be provided to the button or link when `icon` or `iconRight` is provided but `children` is not. This helps users on screen readers navigate our content.',
-        );
+export default function Themed<T extends AnchorOrButton>({
+    children,
+    isDisabled = false,
+    isLoading = false,
+    icon,
+    iconRight,
+    type = 'button',
+    to,
+    shouldOpenInNewTab = false,
+    rel,
+    target,
+    onClick,
+    onMouseEnter,
+    onMouseOver,
+    onFocus,
+    onMouseLeave,
+    onBlur,
+    accessibilityLabel,
+    size = 'large',
+    theme = 'primary',
+    width = 'auto',
+    dataTestId,
+    dataTest,
+    title,
+    innerRef,
+}: ThemedPropTypes<T>): JSX.Element {
+    warning(
+        children || accessibilityLabel || ((icon || iconRight) && children),
+        'The prop `accessibilityLabel` must be provided to the button or link when `icon` or `iconRight` is provided but `children` is not. This helps users on screen readers navigate our content.',
+    );
 
-        return (
-            <InputRowContext.Consumer>
-                {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element => {
-                    const isAnchor = !!to;
-                    const anchorProps = getAnchorProps({
-                        isDisabled,
-                        shouldOpenInNewTab,
-                        to,
-                        onClick,
-                        onMouseEnter,
-                        onMouseOver,
-                        onFocus,
-                        onMouseLeave,
-                        onBlur,
-                        rel,
-                        target,
-                        title,
-                    });
-                    const buttonProps = getButtonProps({
-                        onClick,
-                        type,
-                        onMouseEnter,
-                        onMouseOver,
-                        onFocus,
-                        onMouseLeave,
-                        onBlur,
-                    });
+    return (
+        <InputRowContext.Consumer>
+            {({ isWithinInputRow, isFirstInputRowChild, isLastInputRowChild }): JSX.Element => {
+                const isAnchor = !!to;
 
-                    const className = classNames({
-                        [styles.themedButton]: true,
-                        [styles.themedButtonRoundedBordersLeft]:
-                            isFirstInputRowChild || !isWithinInputRow,
-                        [styles.themedButtonRoundedBordersRight]:
-                            isLastInputRowChild || !isWithinInputRow,
-                        [styles.themedButtonHasNoRightBorder]:
-                            isWithinInputRow && !isLastInputRowChild,
-                        [styles.themedButtonThemePrimary]: theme === 'primary',
-                        [styles.themedButtonThemeTertiary]: theme === 'tertiary',
-                        [styles.themedButtonThemeSecondary]: theme === 'secondary',
-                        [styles.themedButtonThemeCaution]: theme === 'caution',
-                        [styles.themedButtonThemeSolid]: theme === 'solid',
-                        [styles.themedButtonThemePopoverPrimary]: theme === 'popover-primary',
-                        [styles.themedButtonThemePopoverSecondary]: theme === 'popover-secondary',
-                        [styles.themedButtonWidthAuto]: width === 'auto' && !isWithinInputRow,
-                        [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
-                        [styles.themedButtonWidthFullBelowSmall]:
-                            width === 'full-below-small' && !isWithinInputRow,
-                    });
+                const anchorEventProps = {
+                    onClick,
+                    onMouseEnter,
+                    onMouseOver,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                } as MouseEventProps<HTMLAnchorElement>;
 
-                    const commonProps = {
-                        disabled: isLoading || isDisabled,
-                        className,
-                        'aria-label': accessibilityLabel,
-                        'data-testid': dataTestId,
-                        'data-test': dataTest,
-                    };
+                const anchorProps = getAnchorProps({
+                    isDisabled,
+                    shouldOpenInNewTab,
+                    to,
+                    ...anchorEventProps,
+                    rel,
+                    target,
+                    title,
+                });
 
-                    // There are more themes here than are valid for use with `LoaderDots`, so restrict the type
-                    // by overwriting any invalid themes as `undefined`.
-                    const restrictedTheme =
-                        theme === 'primary' || theme === 'secondary' || theme === 'tertiary'
-                            ? theme
-                            : undefined;
+                const buttonEventProps = {
+                    onClick,
+                    onMouseEnter,
+                    onMouseOver,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                } as MouseEventProps<HTMLButtonElement>;
+                const buttonProps = getButtonProps({
+                    ...buttonEventProps,
+                    type,
+                });
 
-                    const newChildren = withFlexWrapper(
-                        withLoader(withIcon(children, { icon, iconRight }), {
-                            isLoading,
-                            theme: restrictedTheme,
-                        }),
-                        { size },
-                    );
+                const className = classNames({
+                    [styles.themedButton]: true,
+                    [styles.themedButtonRoundedBordersLeft]:
+                        isFirstInputRowChild || !isWithinInputRow,
+                    [styles.themedButtonRoundedBordersRight]:
+                        isLastInputRowChild || !isWithinInputRow,
+                    [styles.themedButtonHasNoRightBorder]: isWithinInputRow && !isLastInputRowChild,
+                    [styles.themedButtonThemePrimary]: theme === 'primary',
+                    [styles.themedButtonThemeTertiary]: theme === 'tertiary',
+                    [styles.themedButtonThemeSecondary]: theme === 'secondary',
+                    [styles.themedButtonThemeCaution]: theme === 'caution',
+                    [styles.themedButtonThemeSolid]: theme === 'solid',
+                    [styles.themedButtonThemePopoverPrimary]: theme === 'popover-primary',
+                    [styles.themedButtonThemePopoverSecondary]: theme === 'popover-secondary',
+                    [styles.themedButtonWidthAuto]: width === 'auto' && !isWithinInputRow,
+                    [styles.themedButtonWidthFull]: width === 'full' || isWithinInputRow,
+                    [styles.themedButtonWidthFullBelowSmall]:
+                        width === 'full-below-small' && !isWithinInputRow,
+                });
 
-                    if (isAnchor) {
-                        return (
-                            <a
-                                {...commonProps}
-                                {...anchorProps}
-                                ref={ref as React.Ref<HTMLAnchorElement>}
-                            >
-                                {newChildren}
-                            </a>
-                        );
-                    }
+                const commonProps = {
+                    disabled: isLoading || isDisabled,
+                    className,
+                    'aria-label': accessibilityLabel,
+                    'data-testid': dataTestId,
+                    'data-test': dataTest,
+                };
 
+                // There are more themes here than are valid for use with `LoaderDots`, so restrict the type
+                // by overwriting any invalid themes as `undefined`.
+                const restrictedTheme =
+                    theme === 'primary' || theme === 'secondary' || theme === 'tertiary'
+                        ? theme
+                        : undefined;
+
+                const newChildren = withFlexWrapper(
+                    withLoader(withIcon(children, { icon, iconRight }), {
+                        isLoading,
+                        theme: restrictedTheme,
+                    }),
+                    { size },
+                );
+
+                if (isAnchor) {
                     return (
-                        // Disable this rule, even though `buttonProps.type` can never be undefined,
-                        // because the rule itself is broken and shows a false positive.
-                        // https://github.com/yannickcr/eslint-plugin-react/issues/1555
-                        // eslint-disable-next-line react/button-has-type
-                        <button
+                        <a
                             {...commonProps}
-                            {...buttonProps}
-                            ref={ref as React.Ref<HTMLButtonElement>}
+                            {...anchorProps}
+                            ref={innerRef as React.Ref<HTMLAnchorElement>}
                         >
                             {newChildren}
-                        </button>
+                        </a>
                     );
-                }}
-            </InputRowContext.Consumer>
-        );
-    },
-);
+                }
 
-interface ThemedPropTypes {
+                return (
+                    // Disable this rule, even though `buttonProps.type` can never be undefined,
+                    // because the rule itself is broken and shows a false positive.
+                    // https://github.com/yannickcr/eslint-plugin-react/issues/1555
+                    // eslint-disable-next-line react/button-has-type
+                    <button
+                        {...commonProps}
+                        {...buttonProps}
+                        ref={innerRef as React.Ref<HTMLButtonElement>}
+                    >
+                        {newChildren}
+                    </button>
+                );
+            }}
+        </InputRowContext.Consumer>
+    );
+}
+
+interface ThemedPropTypes<T extends AnchorOrButton> extends MouseEventProps<T> {
     /**
      * Contents displayed within the button.
      */
@@ -268,37 +273,6 @@ interface ThemedPropTypes {
      */
     target?: string;
     /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
-    /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
      */
@@ -338,6 +312,6 @@ interface ThemedPropTypes {
      * to use descriptive text in `children`.
      */
     title?: string;
-}
 
-export default Themed;
+    innerRef?: React.Ref<T>;
+}

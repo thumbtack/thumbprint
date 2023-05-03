@@ -1,25 +1,10 @@
 import React from 'react';
 import { Themed, Plain } from '../UIAction/index';
+import { BaseButtonProps, ButtonCommonProps, MouseEventProps } from '../UIAction/ui-action-types';
 
-interface CommonProps {
-    children?: React.ReactNode;
-    iconLeft?: React.ReactNode;
-    iconRight?: React.ReactNode;
-    isDisabled?: boolean;
-    onClick?: () => void;
-    onMouseEnter?: () => void;
-    onMouseOver?: () => void;
-    onFocus?: () => void;
-    onMouseLeave?: () => void;
-    onBlur?: () => void;
-    theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
-    type?: 'button' | 'submit';
-    dataTest?: string;
-    dataTestId?: string;
-    accessibilityLabel?: string;
-}
-
-const getCommonProps = (props: CommonProps): CommonProps => ({
+const getCommonProps = (
+    props: ButtonCommonProps<HTMLButtonElement>,
+): ButtonCommonProps<HTMLButtonElement> => ({
     onClick: props.onClick,
     isDisabled: props.isDisabled,
     type: props.type,
@@ -34,27 +19,25 @@ const getCommonProps = (props: CommonProps): CommonProps => ({
     dataTestId: props.dataTestId,
 });
 
-const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
-    (
-        {
-            children,
-            iconLeft,
-            iconRight,
-            isDisabled = false,
-            onClick,
-            onMouseEnter,
-            onMouseOver,
-            onFocus,
-            onMouseLeave,
-            onBlur,
-            accessibilityLabel,
-            theme = 'primary',
-            type = 'button',
-            dataTest,
-            dataTestId,
-        }: TextButtonProps,
-        ref,
-    ): JSX.Element => (
+export function TextButton({
+    children,
+    iconLeft,
+    iconRight,
+    isDisabled = false,
+    onClick,
+    onMouseEnter,
+    onMouseOver,
+    onFocus,
+    onMouseLeave,
+    onBlur,
+    accessibilityLabel,
+    theme = 'primary',
+    type = 'button',
+    dataTest,
+    dataTestId,
+    innerRef,
+}: TextButtonProps): JSX.Element {
+    return (
         <Plain
             {...getCommonProps({
                 onClick,
@@ -73,12 +56,12 @@ const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
             theme={theme}
             iconLeft={iconLeft}
             iconRight={iconRight}
-            ref={ref}
+            innerRef={innerRef}
         />
-    ),
-);
+    );
+}
 
-export interface TextButtonProps {
+export interface TextButtonProps extends MouseEventProps<HTMLButtonElement> {
     /**
      * Contents displayed within the button.
      */
@@ -97,31 +80,6 @@ export interface TextButtonProps {
      * `TextButton` if it is not interactive.
      */
     isDisabled?: boolean;
-    /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: () => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
@@ -192,12 +150,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             theme={theme}
             size={size}
             width={width}
-            ref={ref}
+            innerRef={ref}
         />
     ),
 );
 
-export interface ButtonProps {
+export default Button;
+
+export interface ButtonProps extends BaseButtonProps {
     /**
      * Contents displayed within the button.
      */
@@ -227,35 +187,6 @@ export interface ButtonProps {
      */
     accessibilityLabel?: string;
     /**
-     * Button’s of type `submit` will submit a form when used within a `form` element.
-     */
-    type?: 'button' | 'submit';
-    /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: () => void;
-    /**
      * Controls the button’s background, text, and border color.
      */
     theme?: 'primary' | 'secondary' | 'tertiary' | 'caution' | 'solid';
@@ -279,6 +210,3 @@ export interface ButtonProps {
      */
     dataTest?: string;
 }
-
-export default Button;
-export { TextButton };
