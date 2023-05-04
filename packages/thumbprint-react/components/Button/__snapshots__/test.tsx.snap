@@ -4,8 +4,9 @@ exports[`adds \`dataTest\` prop 1`] = `
 <ForwardRef
   dataTest="Duck"
 >
-  <ForwardRef
+  <Themed
     dataTest="Duck"
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -25,7 +26,7 @@ exports[`adds \`dataTest\` prop 1`] = `
         Goose
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -33,8 +34,9 @@ exports[`adds \`dataTest\` prop 2`] = `
 <ForwardRef
   dataTest="Duck"
 >
-  <ForwardRef
+  <Plain
     dataTest="Duck"
+    innerRef={null}
     isDisabled={false}
     theme="primary"
     type="button"
@@ -47,7 +49,7 @@ exports[`adds \`dataTest\` prop 2`] = `
     >
       Goose
     </button>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -55,8 +57,9 @@ exports[`adds \`dataTestId\` prop 1`] = `
 <ForwardRef
   dataTestId="Duck"
 >
-  <ForwardRef
+  <Themed
     dataTestId="Duck"
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -76,7 +79,7 @@ exports[`adds \`dataTestId\` prop 1`] = `
         Goose
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -84,8 +87,9 @@ exports[`adds \`dataTestId\` prop 2`] = `
 <ForwardRef
   dataTestId="Duck"
 >
-  <ForwardRef
+  <Plain
     dataTestId="Duck"
+    innerRef={null}
     isDisabled={false}
     theme="primary"
     type="button"
@@ -98,13 +102,14 @@ exports[`adds \`dataTestId\` prop 2`] = `
     >
       Goose
     </button>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
 exports[`renders button of type \`button\` by default 1`] = `
 <ForwardRef>
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -123,13 +128,14 @@ exports[`renders button of type \`button\` by default 1`] = `
         Goose
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
 exports[`renders button of type \`button\` by default 2`] = `
 <ForwardRef>
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     theme="primary"
     type="button"
@@ -141,7 +147,7 @@ exports[`renders button of type \`button\` by default 2`] = `
     >
       Goose
     </button>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -149,7 +155,8 @@ exports[`renders button of type \`submit\` when \`type\` is set 1`] = `
 <ForwardRef
   type="submit"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -168,7 +175,7 @@ exports[`renders button of type \`submit\` when \`type\` is set 1`] = `
         Goose
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -176,7 +183,8 @@ exports[`renders button of type \`submit\` when \`type\` is set 2`] = `
 <ForwardRef
   type="submit"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     theme="primary"
     type="submit"
@@ -188,13 +196,14 @@ exports[`renders button of type \`submit\` when \`type\` is set 2`] = `
     >
       Goose
     </button>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
 exports[`renders children passed in 1`] = `
 <ForwardRef>
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -213,13 +222,14 @@ exports[`renders children passed in 1`] = `
         Goose
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
 exports[`renders children passed in 2`] = `
 <ForwardRef>
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     theme="primary"
     type="button"
@@ -231,7 +241,7 @@ exports[`renders children passed in 2`] = `
     >
       Goose
     </button>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -243,12 +253,13 @@ exports[`renders icon that is passed in 1`] = `
     </svg>
   }
 >
-  <ForwardRef
+  <Themed
     icon={
       <svg>
         Duck
       </svg>
     }
+    innerRef={null}
     isDisabled={false}
     isLoading={false}
     size="large"
@@ -281,6 +292,6 @@ exports[`renders icon that is passed in 1`] = `
         </span>
       </span>
     </button>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;

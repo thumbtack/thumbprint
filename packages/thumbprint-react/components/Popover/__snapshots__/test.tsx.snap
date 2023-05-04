@@ -150,7 +150,7 @@ exports[`renders a popover 1`] = `
                   onClick={[MockFunction]}
                   theme="inherit"
                 >
-                  <ForwardRef
+                  <Plain
                     accessibilityLabel="Close popover"
                     iconLeft={
                       <svg
@@ -178,6 +178,7 @@ exports[`renders a popover 1`] = `
                         />
                       </svg>
                     }
+                    innerRef={null}
                     isDisabled={false}
                     onClick={[MockFunction]}
                     theme="inherit"
@@ -219,7 +220,7 @@ exports[`renders a popover 1`] = `
                         </svg>
                       </span>
                     </button>
-                  </ForwardRef>
+                  </Plain>
                 </ForwardRef>
               </div>
               <div
