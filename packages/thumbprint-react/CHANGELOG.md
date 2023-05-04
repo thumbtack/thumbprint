@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Added `event` argument to all event handlers (onClick, onMouseEnter, onMouseOver, onMouseLeave, onFocus, onBlur) for `Button` and `Link` components.
+-   [Patch] Updated internal `Themed` and `Plain` components to not use `ForwardRef` and also accept generic type parameters depending on their use as an anchor or button.
+
 ## 14.15.0 - 2022-10-31
 
 ### Added
