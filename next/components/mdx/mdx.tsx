@@ -137,8 +137,10 @@ export const MDXComponentPage = ({
                                     .map(propName => {
                                         const prop = component.props[propName];
 
+                                        console.log(prop);
+
                                         const deprecated = find(
-                                            prop.description.tags,
+                                            prop.description?.tags,
                                             o => o.title === 'deprecated',
                                         );
 

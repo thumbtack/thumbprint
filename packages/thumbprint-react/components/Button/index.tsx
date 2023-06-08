@@ -1,25 +1,30 @@
 import React from 'react';
 import { Themed, Plain } from '../UIAction/index';
+import { BaseButtonProps, ButtonCommonProps, MouseEventProps } from '../UIAction/ui-action-types';
 
-interface CommonProps {
-    children?: React.ReactNode;
-    iconLeft?: React.ReactNode;
-    iconRight?: React.ReactNode;
-    isDisabled?: boolean;
-    onClick?: () => void;
-    onMouseEnter?: () => void;
-    onMouseOver?: () => void;
-    onFocus?: () => void;
-    onMouseLeave?: () => void;
-    onBlur?: () => void;
-    theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
-    type?: 'button' | 'submit';
-    dataTest?: string;
-    dataTestId?: string;
-    accessibilityLabel?: string;
+// /**
+//  * hello im first
+//  * @returns
+//  */
+// export function FirstComponent(props: TextButtonProps) {
+//     return <div>hi</div>;
+// }
+
+export interface ForwardRefDefaultValuesProps {
+    /** myProp description */
+    myProp: string;
 }
 
-const getCommonProps = (props: CommonProps): CommonProps => ({
+/** ForwardRefDefaultValues description */
+export const ForwardRefDefaultValues = React.forwardRef(
+    ({ myProp = "I'm default" }: ForwardRefDefaultValuesProps, ref: React.Ref<HTMLDivElement>) => (
+        <div ref={ref}>My Property = {props.myProp}</div>
+    ),
+);
+
+const getCommonProps = (
+    props: ButtonCommonProps<HTMLButtonElement>,
+): ButtonCommonProps<HTMLButtonElement> => ({
     onClick: props.onClick,
     isDisabled: props.isDisabled,
     type: props.type,
@@ -34,51 +39,7 @@ const getCommonProps = (props: CommonProps): CommonProps => ({
     dataTestId: props.dataTestId,
 });
 
-const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
-    (
-        {
-            children,
-            iconLeft,
-            iconRight,
-            isDisabled = false,
-            onClick,
-            onMouseEnter,
-            onMouseOver,
-            onFocus,
-            onMouseLeave,
-            onBlur,
-            accessibilityLabel,
-            theme = 'primary',
-            type = 'button',
-            dataTest,
-            dataTestId,
-        }: TextButtonProps,
-        ref,
-    ): JSX.Element => (
-        <Plain
-            {...getCommonProps({
-                onClick,
-                isDisabled,
-                type,
-                children,
-                onMouseEnter,
-                onMouseOver,
-                onFocus,
-                onMouseLeave,
-                onBlur,
-                accessibilityLabel,
-                dataTest,
-                dataTestId,
-            })}
-            theme={theme}
-            iconLeft={iconLeft}
-            iconRight={iconRight}
-            ref={ref}
-        />
-    ),
-);
-
-export interface TextButtonProps {
+export interface TextButtonProps extends MouseEventProps<HTMLButtonElement> {
     /**
      * Contents displayed within the button.
      */
@@ -97,31 +58,6 @@ export interface TextButtonProps {
      * `TextButton` if it is not interactive.
      */
     isDisabled?: boolean;
-    /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: () => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
@@ -146,139 +82,142 @@ export interface TextButtonProps {
      */
     dataTest?: string;
 }
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        {
-            children,
-            isDisabled = false,
-            isLoading = false,
-            icon,
-            iconRight,
-            accessibilityLabel,
-            type = 'button',
-            onClick,
-            onMouseEnter,
-            onMouseOver,
-            onFocus,
-            onMouseLeave,
-            onBlur,
-            theme = 'primary',
-            size = 'large',
-            width = 'auto',
-            dataTest,
-            dataTestId,
-        }: ButtonProps,
-        ref,
-    ): JSX.Element => (
-        <Themed
-            {...getCommonProps({
-                onClick,
-                isDisabled,
-                type,
-                children,
-                onMouseEnter,
-                onMouseOver,
-                onFocus,
-                onMouseLeave,
-                onBlur,
-                accessibilityLabel,
-                dataTest,
-                dataTestId,
-            })}
-            icon={icon}
-            iconRight={iconRight}
-            isLoading={isLoading}
-            theme={theme}
-            size={size}
-            width={width}
-            ref={ref}
-        />
-    ),
+/**
+ * TextButton description
+ */
+export const TextButton = React.forwardRef(
+    ({ children }: TextButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+        return (
+            <Plain
+                {...getCommonProps({
+                    onClick,
+                    isDisabled,
+                    type,
+                    children,
+                    onMouseEnter,
+                    onMouseOver,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    accessibilityLabel,
+                    dataTest,
+                    dataTestId,
+                })}
+                theme={theme}
+                iconLeft={iconLeft}
+                iconRight={iconRight}
+                innerRef={ref}
+            />
+        );
+    },
 );
+// TextButton.displayName = 'TextButton';
 
-export interface ButtonProps {
-    /**
-     * Contents displayed within the button.
-     */
-    children?: React.ReactNode;
-    /**
-     * Visually and functionally disables the button.
-     */
-    isDisabled?: boolean;
-    /**
-     * Boolean determining whether the button is in a loading state. When `true` the text will
-     * we replaced with a loading animation and interaction will be disabled.
-     */
-    isLoading?: boolean;
-    /**
-     * Icon from [Thumbprint Icons](/icons/) to render left within the button. It must be one of the
-     * `small` icons.
-     */
-    icon?: React.ReactNode;
-    /**
-     * Icon from [Thumbprint Icons](/icons/) to render right within the button. It must be one of the
-     * `small` icons.
-     */
-    iconRight?: React.ReactNode;
-    /**
-     * Description of the button’s content. It is required if the button has an icon and no
-     * descriptive text.
-     */
-    accessibilityLabel?: string;
-    /**
-     * Button’s of type `submit` will submit a form when used within a `form` element.
-     */
-    type?: 'button' | 'submit';
-    /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: () => void;
-    /**
-     * Controls the button’s background, text, and border color.
-     */
-    theme?: 'primary' | 'secondary' | 'tertiary' | 'caution' | 'solid';
-    /**
-     * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
-     */
-    size?: 'small' | 'large';
-    /**
-     * `Button` components are as wide as the content that is passed in. The `full` option will
-     * expand the width to `100%` on all screens. `full-below-small` will expand the width to 100%
-     * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
-     */
-    width?: 'auto' | 'full' | 'full-below-small';
-    /**
-     * A selector hook into the React component for use in automated testing environments.
-     */
-    dataTestId?: string;
-    /**
-     * A selector hook into the React component for use in automated testing environments.
-     * @deprecated Deprecated in favor of the `dataTestId` prop
-     */
-    dataTest?: string;
-}
+// /**
+//  * Button description
+//  */
+// export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+//     (
+//         {
+//             children,
+//             isDisabled = false,
+//             isLoading = false,
+//             icon,
+//             iconRight,
+//             accessibilityLabel,
+//             type = 'button',
+//             onClick,
+//             onMouseEnter,
+//             onMouseOver,
+//             onFocus,
+//             onMouseLeave,
+//             onBlur,
+//             theme = 'primary',
+//             size = 'large',
+//             width = 'auto',
+//             dataTest,
+//             dataTestId,
+//         }: ButtonProps,
+//         ref,
+//     ): JSX.Element => (
+//         <Themed
+//             {...getCommonProps({
+//                 onClick,
+//                 isDisabled,
+//                 type,
+//                 children,
+//                 onMouseEnter,
+//                 onMouseOver,
+//                 onFocus,
+//                 onMouseLeave,
+//                 onBlur,
+//                 accessibilityLabel,
+//                 dataTest,
+//                 dataTestId,
+//             })}
+//             icon={icon}
+//             iconRight={iconRight}
+//             isLoading={isLoading}
+//             theme={theme}
+//             size={size}
+//             width={width}
+//             innerRef={ref}
+//         />
+//     ),
+// );
+// Button.displayName = 'Button';
+// export default Button;
 
-export default Button;
-export { TextButton };
+// export interface ButtonProps extends BaseButtonProps {
+//     /**
+//      * Contents displayed within the buttonfdsfsdfsd.
+//      */
+//     children?: React.ReactNode;
+//     /**
+//      * Visually and functionally disables the button.
+//      */
+//     isDisabled?: boolean;
+//     /**
+//      * Boolean determining whether the button is in a loading state. When `true` the text will
+//      * we replaced with a loading animation and interaction will be disabled.
+//      */
+//     isLoading?: boolean;
+//     /**
+//      * Icon from [Thumbprint Icons](/icons/) to render left within the button. It must be one of the
+//      * `small` icons.
+//      */
+//     icon?: React.ReactNode;
+//     /**
+//      * Icon from [Thumbprint Icons](/icons/) to render right within the button. It must be one of the
+//      * `small` icons.
+//      */
+//     iconRight?: React.ReactNode;
+//     /**
+//      * Description of the button’s content. It is required if the button has an icon and no
+//      * descriptive text.
+//      */
+//     accessibilityLabel?: string;
+//     /**
+//      * Controls the button’s background, text, and border color.
+//      */
+//     theme?: 'primary' | 'secondary' | 'tertiary' | 'caution' | 'solid';
+//     /**
+//      * Changes the button's `line-height`, `padding`, `border-radius`, and `font-size`.
+//      */
+//     size?: 'small' | 'large';
+//     /**
+//      * `Button` components are as wide as the content that is passed in. The `full` option will
+//      * expand the width to `100%` on all screens. `full-below-small` will expand the width to 100%
+//      * on devices smaller than [our `small` breakpoint](/tokens/#section-breakpoint).
+//      */
+//     width?: 'auto' | 'full' | 'full-below-small';
+//     /**
+//      * A selector hook into the React component for use in automated testing environments.
+//      */
+//     dataTestId?: string;
+//     /**
+//      * A selector hook into the React component for use in automated testing environments.
+//      * @deprecated Deprecated in favor of the `dataTestId` prop
+//      */
+//     dataTest?: string;
+// }

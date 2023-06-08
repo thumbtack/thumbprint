@@ -41,7 +41,7 @@ declare module 'react-copy-to-clipboard' {
 }
 
 interface DocgenComponentProps {
-    description: string;
+    description?: string;
     required: boolean;
     tsType: {
         name: string;

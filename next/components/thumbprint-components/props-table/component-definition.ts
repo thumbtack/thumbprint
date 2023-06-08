@@ -5,7 +5,7 @@ export type ComponentDefinition = DocgenComponentDefinition & {
     props: Record<
         string,
         DocgenComponentProps & {
-            description: {
+            description?: {
                 description: string;
                 tags: Array<{ title: string; description: string }>;
             };

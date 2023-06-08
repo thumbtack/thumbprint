@@ -286,7 +286,7 @@ exports[`Modal renders a basic modal 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -315,6 +315,7 @@ exports[`Modal renders a basic modal 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -357,7 +358,7 @@ exports[`Modal renders a basic modal 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -561,7 +562,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -590,6 +591,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -632,7 +634,7 @@ exports[`Modal renders a basic modal with content 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -821,7 +823,7 @@ exports[`Modal renders a medium height modal 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -850,6 +852,7 @@ exports[`Modal renders a medium height modal 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -892,7 +895,7 @@ exports[`Modal renders a medium height modal 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -1079,7 +1082,7 @@ exports[`Modal renders a narrow modal 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -1108,6 +1111,7 @@ exports[`Modal renders a narrow modal 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -1150,7 +1154,7 @@ exports[`Modal renders a narrow modal 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -1339,7 +1343,7 @@ exports[`Modal renders a tall height modal 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -1368,6 +1372,7 @@ exports[`Modal renders a tall height modal 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -1410,7 +1415,7 @@ exports[`Modal renders a tall height modal 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -1597,7 +1602,7 @@ exports[`Modal renders a wide modal 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -1626,6 +1631,7 @@ exports[`Modal renders a wide modal 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -1668,7 +1674,7 @@ exports[`Modal renders a wide modal 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -1855,7 +1861,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -1884,6 +1890,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -1926,7 +1933,7 @@ exports[`Modal shows the close button if \`shouldHideCloseButton\` is false 1`] 
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>
@@ -2176,7 +2183,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                           onClick={[Function]}
                           theme="inherit"
                         >
-                          <ForwardRef
+                          <Plain
                             accessibilityLabel="Close modal"
                             dataTest="close-modal"
                             iconLeft={
@@ -2205,6 +2212,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                                 />
                               </svg>
                             }
+                            innerRef={null}
                             isDisabled={false}
                             onClick={[Function]}
                             theme="inherit"
@@ -2247,7 +2255,7 @@ exports[`ModalFooter renders a sticky footer 1`] = `
                                 </svg>
                               </span>
                             </button>
-                          </ForwardRef>
+                          </Plain>
                         </ForwardRef>
                       </div>
                     </div>

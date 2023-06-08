@@ -297,7 +297,8 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef
+        <Themed
+          innerRef={null}
           isDisabled={false}
           isLoading={false}
           size="large"
@@ -316,7 +317,7 @@ exports[`works with \`Input\` and \`Button\` 1`] = `
               Duck
             </span>
           </button>
-        </ForwardRef>
+        </Themed>
       </ForwardRef>
     </div>
   </div>
@@ -337,7 +338,8 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef
+        <Themed
+          innerRef={null}
           isDisabled={false}
           isLoading={false}
           size="large"
@@ -356,7 +358,7 @@ exports[`works with \`Input\` and \`Button\` 2`] = `
               Duck
             </span>
           </button>
-        </ForwardRef>
+        </Themed>
       </ForwardRef>
     </div>
     <div
@@ -413,7 +415,8 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef
+        <Themed
+          innerRef={null}
           isDisabled={false}
           isLoading={false}
           size="large"
@@ -432,7 +435,7 @@ exports[`works with \`Input\` and \`Button\` 3`] = `
               Duck
             </span>
           </button>
-        </ForwardRef>
+        </Themed>
       </ForwardRef>
     </div>
     <div
@@ -525,7 +528,8 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
       }
     >
       <ForwardRef>
-        <ForwardRef
+        <Themed
+          innerRef={null}
           isDisabled={false}
           isLoading={false}
           size="large"
@@ -544,7 +548,7 @@ exports[`works with \`Input\` and \`Button\` 4`] = `
               Duck
             </span>
           </button>
-        </ForwardRef>
+        </Themed>
       </ForwardRef>
     </div>
   </div>

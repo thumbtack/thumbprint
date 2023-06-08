@@ -1,27 +1,9 @@
 import React from 'react';
 import warning from 'warning';
 import { Themed, Plain } from '../UIAction/index';
+import { AnchorCommonProps, MouseEventProps } from '../UIAction/ui-action-types';
 
-interface CommonProps {
-    to?: string;
-    target?: string;
-    shouldOpenInNewTab?: boolean;
-    children?: React.ReactNode;
-    isDisabled?: boolean;
-    onClick?: () => void;
-    onMouseEnter?: () => void;
-    onMouseOver?: () => void;
-    onFocus?: () => void;
-    onMouseLeave?: () => void;
-    onBlur?: () => void;
-    rel?: string;
-    dataTestId?: string;
-    dataTest?: string;
-    accessibilityLabel?: string;
-    title?: string;
-}
-
-const getCommonLinkProps = (props: CommonProps): CommonProps => {
+const getCommonLinkProps = (props: AnchorCommonProps): AnchorCommonProps => {
     warning(
         // If `onClick` prop exists then `to` must also exist.
         !props.onClick || (props.to && props.onClick),
@@ -98,12 +80,12 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
             theme={theme}
             iconLeft={iconLeft}
             iconRight={iconRight}
-            ref={ref}
+            innerRef={ref}
         />
     ),
 );
 
-export interface LinkProps {
+export interface LinkProps extends MouseEventProps<HTMLAnchorElement> {
     /**
      * Contents displayed within the anchor.
      */
@@ -123,31 +105,6 @@ export interface LinkProps {
      * Page to navigate to when the anchor is clicked.
      */
     to?: string;
-    /**
-     * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the link.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the link. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the link receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the link.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the link loses focus.
-     */
-    onBlur?: () => void;
     /**
      * The anchor `rel` attribute. Setting this value will add to any default values provided by
      * Thumbprint for the `rel` attribute.
@@ -223,7 +180,7 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
         }: ThemedLinkProps,
         ref,
     ) => (
-        <Themed
+        <Themed<HTMLAnchorElement>
             {...getCommonLinkProps({
                 to,
                 onClick,
@@ -247,12 +204,12 @@ const ThemedLink = React.forwardRef<HTMLAnchorElement, ThemedLinkProps>(
             theme={theme}
             size={size}
             width={width}
-            ref={ref}
+            innerRef={ref}
         />
     ),
 );
 
-interface ThemedLinkProps {
+interface ThemedLinkProps extends MouseEventProps<HTMLAnchorElement> {
     /**
      * Contents displayed within the button.
      */
@@ -270,31 +227,6 @@ interface ThemedLinkProps {
      * Page to navigate to when the anchor is clicked.
      */
     to?: string;
-    /**
-     * Function to fire when clicking on the anchor. This should be used alongside the `to` prop.
-     */
-    onClick?: () => void;
-    /**
-     * Function that runs when the user hovers on the link.
-     */
-    onMouseEnter?: () => void;
-    /**
-     * Function that runs when the user hovers on the link. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: () => void;
-    /**
-     * Function that runs when the link receives focus.
-     */
-    onFocus?: () => void;
-    /**
-     * Function that runs when the user hovers away from the link.
-     */
-    onMouseLeave?: () => void;
-    /**
-     * Function that runs when the link loses focus.
-     */
-    onBlur?: () => void;
     /**
      * The anchor `rel` attribute. Setting this value will add to any default values provided by
      * Thumbprint for the `rel` attribute.

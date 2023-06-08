@@ -5,8 +5,9 @@ exports[`adds \`dataTest\` prop 1`] = `
   dataTest="Duck"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
     dataTest="Duck"
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -21,7 +22,7 @@ exports[`adds \`dataTest\` prop 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -30,8 +31,9 @@ exports[`adds \`dataTest\` prop 2`] = `
   dataTest="Duck"
   to="#"
 >
-  <ForwardRef
+  <Themed
     dataTest="Duck"
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -52,7 +54,7 @@ exports[`adds \`dataTest\` prop 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -61,8 +63,9 @@ exports[`adds \`dataTestId\` prop 1`] = `
   dataTestId="Duck"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
     dataTestId="Duck"
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -77,7 +80,7 @@ exports[`adds \`dataTestId\` prop 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -86,8 +89,9 @@ exports[`adds \`dataTestId\` prop 2`] = `
   dataTestId="Duck"
   to="#"
 >
-  <ForwardRef
+  <Themed
     dataTestId="Duck"
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -108,7 +112,7 @@ exports[`adds \`dataTestId\` prop 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -117,7 +121,8 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpe
   shouldOpenInNewTab={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     theme="primary"
@@ -132,7 +137,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpe
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -141,7 +146,8 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpe
   shouldOpenInNewTab={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     size="large"
@@ -162,7 +168,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`shouldOpe
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -171,7 +177,8 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_b
   target="_blank"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     target="_blank"
@@ -187,7 +194,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_b
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -196,7 +203,8 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_b
   target="_blank"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -218,7 +226,7 @@ exports[`adds \`rel\` attribute to handle security vulnerability for \`target=_b
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -228,7 +236,8 @@ exports[`adds \`rel\` attribute when explicitly defined 1`] = `
   target="_blank"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     rel="nofollow"
     shouldOpenInNewTab={false}
@@ -245,7 +254,7 @@ exports[`adds \`rel\` attribute when explicitly defined 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -255,7 +264,8 @@ exports[`adds \`rel\` attribute when explicitly defined 2`] = `
   target="_blank"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     rel="nofollow"
     shouldOpenInNewTab={false}
@@ -278,7 +288,7 @@ exports[`adds \`rel\` attribute when explicitly defined 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -287,7 +297,8 @@ exports[`adds attribute to open link in new tab 1`] = `
   shouldOpenInNewTab={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     theme="primary"
@@ -302,7 +313,7 @@ exports[`adds attribute to open link in new tab 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -311,7 +322,8 @@ exports[`adds attribute to open link in new tab 2`] = `
   shouldOpenInNewTab={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     size="large"
@@ -332,7 +344,7 @@ exports[`adds attribute to open link in new tab 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -342,7 +354,8 @@ exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are pr
   target="foo"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     target="foo"
@@ -358,7 +371,7 @@ exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are pr
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -368,7 +381,8 @@ exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are pr
   target="foo"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={true}
     size="large"
@@ -390,7 +404,7 @@ exports[`prefers \`target\` attribute to \`shouldOpenInNewTab\` when both are pr
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -399,7 +413,8 @@ exports[`removes \`href\` if link is disabled 1`] = `
   isDisabled={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={true}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -412,7 +427,7 @@ exports[`removes \`href\` if link is disabled 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -421,7 +436,8 @@ exports[`removes \`href\` if link is disabled 2`] = `
   isDisabled={true}
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={true}
     shouldOpenInNewTab={false}
     size="large"
@@ -440,7 +456,7 @@ exports[`removes \`href\` if link is disabled 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -448,7 +464,8 @@ exports[`renders \`children\` passed in 1`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -462,7 +479,7 @@ exports[`renders \`children\` passed in 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -470,7 +487,8 @@ exports[`renders \`children\` passed in 2`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -490,7 +508,7 @@ exports[`renders \`children\` passed in 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -498,7 +516,8 @@ exports[`renders \`to\` prop as \`href\` 1`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -512,7 +531,7 @@ exports[`renders \`to\` prop as \`href\` 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -520,7 +539,8 @@ exports[`renders \`to\` prop as \`href\` 2`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -540,7 +560,7 @@ exports[`renders \`to\` prop as \`href\` 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -548,7 +568,8 @@ exports[`renders a anchor tag when a \`to\` is provided 1`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     theme="primary"
@@ -562,7 +583,7 @@ exports[`renders a anchor tag when a \`to\` is provided 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -570,7 +591,8 @@ exports[`renders a anchor tag when a \`to\` is provided 2`] = `
 <ForwardRef
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -590,7 +612,7 @@ exports[`renders a anchor tag when a \`to\` is provided 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;
 
@@ -599,7 +621,8 @@ exports[`sets \`target\` attribute 1`] = `
   target="foo"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Plain
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     target="foo"
@@ -614,7 +637,7 @@ exports[`sets \`target\` attribute 1`] = `
     >
       Goose
     </a>
-  </ForwardRef>
+  </Plain>
 </ForwardRef>
 `;
 
@@ -623,7 +646,8 @@ exports[`sets \`target\` attribute 2`] = `
   target="foo"
   to="https://example.com/"
 >
-  <ForwardRef
+  <Themed
+    innerRef={null}
     isDisabled={false}
     shouldOpenInNewTab={false}
     size="large"
@@ -644,6 +668,6 @@ exports[`sets \`target\` attribute 2`] = `
         Goose
       </span>
     </a>
-  </ForwardRef>
+  </Themed>
 </ForwardRef>
 `;

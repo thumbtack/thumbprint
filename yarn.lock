@@ -23970,6 +23970,7 @@ is-whitespace@latest:
     prism-react-renderer: ^1.3.5
     react: 18.2.0
     react-copy-to-clipboard: ^5.1.0
+    react-docgen-typescript: ^2.2.2
     react-dom: 18.2.0
     react-element-to-jsx-string: ^15.0.0
     react-live: ^3.1.1
@@ -27645,6 +27646,15 @@ is-whitespace@latest:
     react: 0.14.x || ^15.0.0 || ^16.0.0
     react-dom: 0.14.x || ^15.0.0 || ^16.0.0
   checksum: 45a80d1a7deb07c38dbd2180f63172598e8369f72ae8bd63cfe60f6cd221bbd84eaa43b08b8dd325b847009eb4bc109167e5367e005bbfaac120c914231863fe
+  languageName: node
+  linkType: hard
+
+"react-docgen-typescript@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "react-docgen-typescript@npm:2.2.2"
+  peerDependencies:
+    typescript: ">= 4.3.x"
+  checksum: a9826459ea44e818f21402728dd47f5cae60bd936574cefd4f90ad101ff3eebacd67b6e017b793309734ce62c037aa3072dbc855d2b0e29bad1a38cbf5bac115
   languageName: node
   linkType: hard
 

@@ -4,120 +4,123 @@ import classNames from 'classnames';
 import getAnchorProps from './get-anchor-props';
 import getButtonProps from './get-button-props';
 import styles from './plain.module.scss';
+import { AnchorOrButton, MouseEventProps } from './ui-action-types';
 
-const Plain = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, PropTypes>(
-    (
-        {
-            children,
-            isDisabled = false,
-            to,
-            iconLeft,
-            iconRight,
-            theme = 'primary',
-            type = 'button',
-            rel,
-            target,
-            shouldOpenInNewTab = false,
+export default function Plain<T extends AnchorOrButton>({
+    children,
+    isDisabled = false,
+    to,
+    iconLeft,
+    iconRight,
+    theme = 'primary',
+    type = 'button',
+    rel,
+    target,
+    shouldOpenInNewTab = false,
+    onClick,
+    onMouseEnter,
+    onMouseOver,
+    onFocus,
+    onMouseLeave,
+    onBlur,
+    accessibilityLabel,
+    dataTestId,
+    dataTest,
+    title,
+    innerRef,
+}: PlainProps<T>): JSX.Element {
+    warning(
+        children || accessibilityLabel || ((iconLeft || iconRight) && children),
+        'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` or `iconRight` are provided but `children` is not. This helps users on screen readers navigate our content.',
+    );
+
+    let newChildren = children;
+
+    if (iconLeft || iconRight) {
+        newChildren = (
+            <span className={styles.flexCenter}>
+                {iconLeft}
+
+                {children && (
+                    <span
+                        className={classNames({
+                            [styles.textContainer]: true,
+                            [styles.textContainerLeft]: iconLeft,
+                            [styles.textContainerRight]: iconRight,
+                        })}
+                    >
+                        {children}
+                    </span>
+                )}
+
+                {iconRight}
+            </span>
+        );
+    }
+
+    const commonProps = {
+        disabled: isDisabled,
+        children: newChildren,
+        className: classNames({
+            [styles.plain]: true,
+            [styles.plainThemePrimary]: theme === 'primary',
+            [styles.plainThemeSecondary]: theme === 'secondary',
+            [styles.plainThemeTertiary]: theme === 'tertiary',
+            [styles.plainThemeInherit]: theme === 'inherit',
+        }),
+        'aria-label': accessibilityLabel,
+        'data-testid': dataTestId,
+        'data-test': dataTest,
+    };
+
+    if (to) {
+        const eventProps = {
             onClick,
             onMouseEnter,
             onMouseOver,
             onFocus,
             onMouseLeave,
             onBlur,
-            accessibilityLabel,
-            dataTestId,
-            dataTest,
-            title,
-        },
-        ref,
-    ): JSX.Element => {
-        warning(
-            children || accessibilityLabel || ((iconLeft || iconRight) && children),
-            'The prop `accessibilityLabel` must be provided to the button or link if `iconLeft` or `iconRight` are provided but `children` is not. This helps users on screen readers navigate our content.',
-        );
-
-        let newChildren = children;
-
-        if (iconLeft || iconRight) {
-            newChildren = (
-                <span className={styles.flexCenter}>
-                    {iconLeft}
-
-                    {children && (
-                        <span
-                            className={classNames({
-                                [styles.textContainer]: true,
-                                [styles.textContainerLeft]: iconLeft,
-                                [styles.textContainerRight]: iconRight,
-                            })}
-                        >
-                            {children}
-                        </span>
-                    )}
-
-                    {iconRight}
-                </span>
-            );
-        }
-
-        const commonProps = {
-            disabled: isDisabled,
-            children: newChildren,
-            className: classNames({
-                [styles.plain]: true,
-                [styles.plainThemePrimary]: theme === 'primary',
-                [styles.plainThemeSecondary]: theme === 'secondary',
-                [styles.plainThemeTertiary]: theme === 'tertiary',
-                [styles.plainThemeInherit]: theme === 'inherit',
-            }),
-            'aria-label': accessibilityLabel,
-            'data-testid': dataTestId,
-            'data-test': dataTest,
-            ref,
-        };
-
-        if (to) {
-            return (
-                <a // eslint-disable-line jsx-a11y/anchor-has-content
-                    {...commonProps}
-                    {...getAnchorProps({
-                        isDisabled,
-                        target,
-                        shouldOpenInNewTab,
-                        to,
-                        onClick,
-                        onMouseEnter,
-                        onMouseOver,
-                        onFocus,
-                        onMouseLeave,
-                        onBlur,
-                        rel,
-                        title,
-                    })}
-                    ref={ref as React.Ref<HTMLAnchorElement>}
-                />
-            );
-        }
+        } as MouseEventProps<HTMLAnchorElement>;
 
         return (
-            <button // eslint-disable-line react/button-has-type
+            <a // eslint-disable-line jsx-a11y/anchor-has-content
                 {...commonProps}
-                {...getButtonProps({
-                    onClick,
-                    type,
-                    onMouseEnter,
-                    onMouseOver,
-                    onFocus,
-                    onMouseLeave,
-                    onBlur,
+                {...getAnchorProps({
+                    isDisabled,
+                    target,
+                    shouldOpenInNewTab,
+                    to,
+                    ...eventProps,
+                    rel,
+                    title,
                 })}
-                ref={ref as React.Ref<HTMLButtonElement>}
+                ref={innerRef as React.Ref<HTMLAnchorElement>}
             />
         );
-    },
-);
+    }
 
-interface PropTypes {
+    const eventProps = {
+        onClick,
+        onMouseEnter,
+        onMouseOver,
+        onFocus,
+        onMouseLeave,
+        onBlur,
+    } as MouseEventProps<HTMLButtonElement>;
+    return (
+        <button // eslint-disable-line react/button-has-type
+            {...commonProps}
+            {...getButtonProps({
+                type,
+                ...eventProps,
+            })}
+            ref={innerRef as React.Ref<HTMLButtonElement>}
+        />
+    );
+}
+
+interface PlainProps<T extends AnchorOrButton> extends MouseEventProps<T> {
     isDisabled?: boolean;
     /**
      * Page to navigate to when the anchor is clicked.
@@ -155,37 +158,6 @@ interface PropTypes {
     shouldOpenInNewTab?: boolean;
     children?: React.ReactNode;
     /**
-     * Function that will run when the button is clicked on.
-     */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => void;
-    /**
-     * Function that runs when the user hovers on the button.
-     */
-    onMouseEnter?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
-     * fires each time a child element receives focus.
-     */
-    onMouseOver?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the user hovers away from the button.
-     */
-    onMouseLeave?: (
-        event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>,
-    ) => void;
-    /**
-     * Function that runs when the button receives focus.
-     */
-    onFocus?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
-    /**
-     * Function that runs when the button loses focus.
-     */
-    onBlur?: (event: React.FocusEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
-    /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
      */
@@ -204,6 +176,6 @@ interface PropTypes {
      * to use descriptive text in `children`.
      */
     title?: string;
-}
 
-export default Plain;
+    innerRef?: React.Ref<T>;
+}
