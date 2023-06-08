@@ -70,17 +70,24 @@ export function validateProps(props: CalendarProps): void {
         throwError('`allowMultiSelection` is `false` but multiple dates were provided');
     }
 
-    if (isBeforeModifier(props.disabledDays) && hasAnyPastDays(days, props.disabledDays.before)) {
-        throwError(
-            `Days before ${props.disabledDays.before} are disabled but one or more provided days fall before that.`,
-        );
-    }
+    const disabledDays = castArray(props.disabledDays);
 
-    if (isAfterModifier(props.disabledDays) && hasAnyFutureDays(days, props.disabledDays.after)) {
-        throwError(
-            `Days after ${props.disabledDays.after} are disabled but one or more provided days fall after that.`,
-        );
-    }
+    /* eslint-disable lodash/prefer-lodash-method */
+    disabledDays.forEach(modifier => {
+        if (isBeforeModifier(modifier) && hasAnyPastDays(days, modifier.before)) {
+            throwError(
+                `Days before ${modifier.before} are disabled but one or more provided days fall before that.`,
+            );
+        }
+    });
+
+    disabledDays.forEach(modifier => {
+        if (isAfterModifier(modifier) && hasAnyFutureDays(days, modifier.after)) {
+            throwError(
+                `Days after ${modifier.after} are disabled but one or more provided days fall after that.`,
+            );
+        }
+    });
 }
 
 export interface CalendarProps {
@@ -115,9 +122,9 @@ export interface CalendarProps {
     /**
      * A react-day-picker modifier for greater control over disabled days. Past selection is
      * disabled by default.
-     * http://react-day-picker.js.org/docs/modifiers.html
+     * See: https://react-day-picker-v7.netlify.app/docs/matching-days
      */
-    disabledDays?: Modifier | null;
+    disabledDays?: Modifier | Modifier[] | null;
     /**
      * A Date object representing the last allowed month. Users won’t be able to navigate or
      * interact with the days after it.
@@ -138,7 +145,7 @@ export interface CalendarProps {
 /**
  * Thin wrapper around `react-day-picker` that renders a calendar.
  */
-const Calendar = ({
+export default function Calendar({
     value = [],
     onChange,
     onMonthChange,
@@ -148,7 +155,7 @@ const Calendar = ({
     allowMultiSelection = false,
     daysThemeDotIndicator,
     daysThemeStrikeout,
-}: CalendarProps): JSX.Element => {
+}: CalendarProps): JSX.Element {
     validateProps({
         value,
         onChange,
@@ -209,6 +216,4 @@ const Calendar = ({
             />
         </div>
     );
-};
-
-export default Calendar;
+}

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+-   [Minor] Fix type and URL for `Calendar`'s `disabledDays` prop.
+
 ## 14.15.0 - 2022-10-31
 
 ### Added
