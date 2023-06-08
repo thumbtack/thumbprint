@@ -5,6 +5,7 @@
 ### Changed
 
 -   [Minor] Support multiple `disabledDays` for Calendar and fix the URL to the library docs.
+
 ### Added
 
 -   [Minor] Add `step` prop to `TextInput`.
