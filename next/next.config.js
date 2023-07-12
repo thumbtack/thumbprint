@@ -34,7 +34,7 @@ const nextConfig = {
     },
     async rewrites() {
         return {
-            beforeFiles: [
+            afterFiles: [
                 // Proxy everything except the homepage to the Gatsby version of the site.
                 // We will remove routes from this once they're ready to launch in Next.js.
                 {
