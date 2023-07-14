@@ -22,7 +22,8 @@ type ImageSource = {
     srcSet: string;
 };
 
-export interface ImageProps {
+export interface ImageProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
     /**
      * If `sources` is provided, this image will be loaded by search engines and lazy-loaded for
      * users on browsers that don't support responsive images. If `sources` is not provided, this
