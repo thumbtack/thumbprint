@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { mount } from 'enzyme';
-// This is a false positive
-// eslint-disable-next-line import/no-duplicates
-import addDays from 'date-fns/add_days';
-// eslint-disable-next-line import/no-duplicates
-import subDays from 'date-fns/sub_days';
-
+import { addDays, subDays } from 'date-fns';
 import Calendar, { validateProps, normaliseValue, hasAnyPastDays, hasAnyFutureDays } from './index';
 
 test('renders a basic calendar with past date selection allowed', () => {
@@ -31,17 +26,21 @@ describe('calls `onChange` with the correct date', () => {
             <Calendar onChange={onChange} onMonthChange={onMonthChange} value={value} />,
         );
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 15th first.
-        const day15 = allDays.findWhere(n => n.prop('children') === 15);
-        day15.simulate('click');
+        const day15 = allDays
+            .findWhere(n => {
+                return n.text() === '15';
+            })
+            .at(0);
 
+        day15.simulate('click');
         expect(onChange).toHaveBeenCalledTimes(1);
         expect(onChange).toHaveBeenCalledWith([new Date('2057-09-15T07:00:00.000Z')]);
 
         // Click on the 22nd next.
-        const day22 = allDays.findWhere(n => n.prop('children') === 22);
+        const day22 = allDays.findWhere(n => n.text() === '22').at(0);
         day22.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(2);
@@ -87,17 +86,17 @@ describe('calls `onChange` with the correct date', () => {
 
         const wrapper = mount(<DatePickerExample firstDate={firstDate} onChange={onChange} />);
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 15th first.
-        const day15 = allDays.findWhere(n => n.prop('children') === 15);
+        const day15 = allDays.findWhere(n => n.text() === '15').at(0);
         day15.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
         expect(onChange).toHaveBeenCalledWith([firstDate, secondDate]);
 
         // Click on the 22nd next.
-        const day22 = allDays.findWhere(n => n.prop('children') === 22);
+        const day22 = allDays.findWhere(n => n.text() === '22').at(0);
         day22.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(2);
@@ -119,10 +118,10 @@ describe('user tries to unselect a date that was already selected', () => {
             <Calendar onChange={onChange} onMonthChange={onMonthChange} value={firstDate} />,
         );
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 3rd day.
-        const day3 = allDays.findWhere(n => n.prop('children') === 3);
+        const day3 = allDays.findWhere(n => n.text() === '3').at(0);
         day3.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -145,10 +144,10 @@ describe('user tries to unselect a date that was already selected', () => {
             />,
         );
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 3rd day.
-        const day3 = allDays.findWhere(n => n.prop('children') === 3);
+        const day3 = allDays.findWhere(n => n.text() === '3').at(0);
         day3.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -174,10 +173,10 @@ describe('user tries to click on a disabled date', () => {
             />,
         );
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 10th, the disabled date.
-        const day10 = allDays.findWhere(n => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.text() === '10').at(0);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(0);
@@ -201,10 +200,10 @@ describe('user tries to click on a disabled date', () => {
             />,
         );
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 10th, the disabled date.
-        const day10 = allDays.findWhere(n => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.text() === '10').at(0);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(0);
@@ -230,13 +229,15 @@ describe('user is able to select a date in the past if disabled days is disabled
         );
 
         // Go back a month.
-        const prevMonthButton = wrapper.find('.DayPicker-NavButton--prev');
+        const prevMonthButton = wrapper.find('.rdp-nav_button_previous').at(0);
         prevMonthButton.simulate('click');
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        wrapper.setProps({ month: dateFromPrevMonth });
+
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 10th, the date from a previous month.
-        const day10 = allDays.findWhere(n => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.text() === '10').at(0);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -262,13 +263,14 @@ describe('user is able to select a date in the past if disabled days is disabled
         );
 
         // Go back a month.
-        const prevMonthButton = wrapper.find('.DayPicker-NavButton--prev');
+        const prevMonthButton = wrapper.find('.rdp-nav_button_previous').at(0);
         prevMonthButton.simulate('click');
+        wrapper.setProps({ month: dateFromPrevMonth });
 
-        const allDays = wrapper.find('.DayPicker-Day');
+        const allDays = wrapper.find('.rdp-day');
 
         // Click on the 10th, the date from a previous month.
-        const day10 = allDays.findWhere(n => n.prop('children') === 10);
+        const day10 = allDays.findWhere(n => n.text() === '10').at(0);
         day10.simulate('click');
 
         expect(onChange).toHaveBeenCalledTimes(1);
@@ -288,7 +290,7 @@ describe('`onMonthChange` callback should be called on month change', () => {
             <Calendar value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
         );
 
-        const nextMonthButton = wrapper.find('.DayPicker-NavButton--next');
+        const nextMonthButton = wrapper.find('.rdp-nav_button_next').at(0);
         nextMonthButton.simulate('click');
 
         expect(onMonthChange).toHaveBeenCalledTimes(1);
@@ -303,7 +305,7 @@ describe('`onMonthChange` callback should be called on month change', () => {
             <Calendar value={selectedDate} onChange={onChange} onMonthChange={onMonthChange} />,
         );
 
-        const prevMonthButton = wrapper.find('.DayPicker-NavButton--prev');
+        const prevMonthButton = wrapper.find('.rdp-nav_button_previous').at(0);
         prevMonthButton.simulate('click');
 
         expect(onMonthChange).toHaveBeenCalledTimes(1);
@@ -314,7 +316,7 @@ describe('`onMonthChange` callback should be called on month change', () => {
 });
 
 describe('applying themes to Calendar day cells', () => {
-    const modifierPrefix = '.DayPicker-Day--';
+    const modifierPrefix = '.rdp-day--';
     const onChange = (): void => {};
     const onMonthChange = jest.fn();
     const year = 2057;
@@ -344,7 +346,7 @@ describe('applying themes to Calendar day cells', () => {
             />,
         );
 
-        const modifiedDays = wrapper.find(`${modifierPrefix}theme-dot`);
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-dot`).hostNodes();
         expect(modifiedDays).toHaveLength(2);
         expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
         expect(modifiedDays.at(1).text()).toEqual(String(testDay2));
@@ -371,7 +373,7 @@ describe('applying themes to Calendar day cells', () => {
             />,
         );
 
-        const modifiedDays = wrapper.find(`${modifierPrefix}theme-strikeout`);
+        const modifiedDays = wrapper.find(`${modifierPrefix}theme-strikeout`).hostNodes();
         expect(modifiedDays).toHaveLength(3);
         expect(modifiedDays.at(0).text()).toEqual(String(testDay1));
         expect(modifiedDays.at(1).text()).toEqual(String(testDay2));

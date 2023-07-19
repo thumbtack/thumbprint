@@ -1,5 +1,12 @@
 # Changelog
 
+## 14.3.6 - 2021-06-24
+
+### Changed
+
+-   [Patch] Upgrade `react-day-picker` to 8.8.0
+-   [Patch] Upgrade `date-fns` to 2.30.0
+
 ## Unreleased
 
 ## 14.16.0 - 2023-06-08

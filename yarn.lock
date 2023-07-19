@@ -2911,6 +2911,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.21.0":
+  version: 7.22.6
+  resolution: "@babel/runtime@npm:7.22.6"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: e585338287c4514a713babf4fdb8fc2a67adcebab3e7723a739fc62c79cfda875b314c90fd25f827afb150d781af97bc16c85bfdbfa2889f06053879a1ddb597
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.5.5":
   version: 7.6.2
   resolution: "@babel/runtime@npm:7.6.2"
@@ -6079,14 +6088,14 @@ __metadata:
     "@types/no-scroll": ^2.1.0
     "@types/react-swipeable": ^4.3.0
     classnames: ^2.2.6
-    date-fns: ^1.28.5
+    date-fns: ^2.30.0
     focus-trap: 4.0.2
     focus-trap-react: ^6.0.0
     intersection-observer: ^0.6.0
     lodash: ^4.17.21
     no-scroll: ^2.1.0
     object-fit-images: ^3.2.4
-    react-day-picker: 7.4.10
+    react-day-picker: 8.8.0
     react-displace: ^2.3.0
     react-onclickoutside: ^6.4.0
     react-popper: ^1.0.0
@@ -12325,17 +12334,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^1.28.5":
-  version: 1.30.1
-  resolution: "date-fns@npm:1.30.1"
-  checksum: 86b1f3269cbb1f3ee5ac9959775ea6600436f4ee2b78430cd427b41a0c9fabf740b1a5d401c085f3003539a6f4755c7c56c19fbd70ce11f6f673f6bc8075b710
-  languageName: node
-  linkType: hard
-
 "date-fns@npm:^2.14.0, date-fns@npm:^2.8.1":
   version: 2.14.0
   resolution: "date-fns@npm:2.14.0"
   checksum: a4cf0866525f9a6825206b6e8805794f66c6eb49bc77d28e64edc29a2bde725024f10822b90f3fd5302b1621fa84686afe46e499df0315127af8aa85bca4356f
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.30.0":
+  version: 2.30.0
+  resolution: "date-fns@npm:2.30.0"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+  checksum: f7be01523282e9bb06c0cd2693d34f245247a29098527d4420628966a2d9aad154bd0e90a6b1cf66d37adcb769cd108cf8a7bd49d76db0fb119af5cdd13644f4
   languageName: node
   linkType: hard
 
@@ -27601,14 +27612,13 @@ is-whitespace@latest:
   languageName: node
   linkType: hard
 
-"react-day-picker@npm:7.4.10":
-  version: 7.4.10
-  resolution: "react-day-picker@npm:7.4.10"
-  dependencies:
-    prop-types: ^15.6.2
+"react-day-picker@npm:8.8.0":
+  version: 8.8.0
+  resolution: "react-day-picker@npm:8.8.0"
   peerDependencies:
-    react: ~0.13.x || ~0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 33a4614bb4d457a3e72462d092fa131d3d7ec1ba858ac7e70d65b59e464606ffc039afdd226db37ead1326e248ca9a103007ee0bb829b277cd7297e5f5807ad1
+    date-fns: ^2.28.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: c104b4ae44bad44183f6a273327aa1d00d23afe6f3860f8335eea2d06c0f64ea015ea7438655c79a5024a8db259ba5fa9431dbf92f03889120d0c2c00a28117f
   languageName: node
   linkType: hard
 
@@ -28581,6 +28591,13 @@ is-whitespace@latest:
   version: 0.11.1
   resolution: "regenerator-runtime@npm:0.11.1"
   checksum: 3c97bd2c7b2b3247e6f8e2147a002eb78c995323732dad5dc70fac8d8d0b758d0295e7015b90d3d444446ae77cbd24b9f9123ec3a77018e81d8999818301b4f4
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
   languageName: node
   linkType: hard
 

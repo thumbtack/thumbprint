@@ -1,29 +1,12 @@
 import React from 'react';
-import DayPicker, {
-    DateUtils,
-    Modifiers,
-    Modifier,
-    BeforeModifier,
-    BeforeAfterModifier,
-    AfterModifier,
-} from 'react-day-picker';
-
-import get from 'lodash/get';
-import map from 'lodash/map';
-import findIndex from 'lodash/findIndex';
+import { DayPicker, isDateAfterType, isDateBeforeType, Matcher, Modifier } from 'react-day-picker';
 import some from 'lodash/some';
+import isArray from 'lodash/isArray';
+import map from 'lodash/map';
+import get from 'lodash/get';
+import findIndex from 'lodash/findIndex';
 import castArray from 'lodash/castArray';
-
-// False positive.
-// TODO(giles): see if upgrading date-fns fixes this.
-/* eslint-disable import/no-duplicates */
-import parse from 'date-fns/parse';
-import isAfter from 'date-fns/is_after';
-import isBefore from 'date-fns/is_before';
-import endOfDay from 'date-fns/end_of_day';
-import startOfDay from 'date-fns/start_of_day';
-/* eslint-enable */
-
+import { endOfDay, isAfter, isBefore, isSameDay, startOfDay } from 'date-fns';
 import styles from './index.module.scss';
 
 export type DateIsh = Date | string | number;
@@ -33,13 +16,15 @@ function throwError(message: string): void {
 }
 
 export function normaliseValue(value: CalendarProps['value']): Date[] {
-    if (value === null) {
+    if (!value) {
         return [];
     }
 
-    const valueArr: DateIsh[] = castArray<DateIsh>(value);
+    if (!isArray(value)) {
+        return [new Date(value)];
+    }
 
-    return map<DateIsh, Date>(valueArr, d => parse(d));
+    return map(value, d => new Date(d));
 }
 
 // Returns true any of the given `dates` fall on a day before the day of `cutoff`.
@@ -50,17 +35,6 @@ export function hasAnyPastDays(dates: Date[], cutoff: Date = new Date()): boolea
 // Returns true any of the given `dates` fall on a day after the day of `cutoff`.
 export function hasAnyFutureDays(dates: Date[], cutoff: Date = new Date()): boolean {
     return some(dates, date => isAfter(startOfDay(date), cutoff));
-}
-
-function isBeforeModifier(
-    modifier: Modifier | null,
-): modifier is BeforeModifier | BeforeAfterModifier {
-    return !!modifier && 'before' in modifier;
-}
-function isAfterModifier(
-    modifier: Modifier | null,
-): modifier is AfterModifier | BeforeAfterModifier {
-    return !!modifier && 'after' in modifier;
 }
 
 export function validateProps(props: CalendarProps): void {
@@ -74,7 +48,7 @@ export function validateProps(props: CalendarProps): void {
 
     /* eslint-disable lodash/prefer-lodash-method */
     disabledDays.forEach(modifier => {
-        if (isBeforeModifier(modifier) && hasAnyPastDays(days, modifier.before)) {
+        if (isDateBeforeType(modifier) && hasAnyPastDays(days, modifier.before)) {
             throwError(
                 `Days before ${modifier.before} are disabled but one or more provided days fall before that.`,
             );
@@ -82,7 +56,7 @@ export function validateProps(props: CalendarProps): void {
     });
 
     disabledDays.forEach(modifier => {
-        if (isAfterModifier(modifier) && hasAnyFutureDays(days, modifier.after)) {
+        if (isDateAfterType(modifier) && hasAnyFutureDays(days, modifier.after)) {
             throwError(
                 `Days after ${modifier.after} are disabled but one or more provided days fall after that.`,
             );
@@ -122,9 +96,9 @@ export interface CalendarProps {
     /**
      * A react-day-picker modifier for greater control over disabled days. Past selection is
      * disabled by default.
-     * See: https://react-day-picker-v7.netlify.app/docs/matching-days
+     * See: https://react-day-picker.js.org/api/types/Matcher
      */
-    disabledDays?: Modifier | Modifier[] | null;
+    disabledDays?: Matcher | Matcher[] | null;
     /**
      * A Date object representing the last allowed month. Users won’t be able to navigate or
      * interact with the days after it.
@@ -170,38 +144,40 @@ export default function Calendar({
 
     const selectedDays = normaliseValue(value);
 
-    const modifiers: Partial<Modifiers> = {};
+    const modifiers: Record<string, Matcher> = {};
+    const modifiersClassNames: Record<Modifier, string> = {};
 
     if (typeof daysThemeDotIndicator === 'function') {
         modifiers['theme-dot'] = daysThemeDotIndicator;
+        modifiersClassNames['theme-dot'] = 'rdp-day--theme-dot';
     }
 
     if (typeof daysThemeStrikeout === 'function') {
         modifiers['theme-strikeout'] = daysThemeStrikeout;
+        modifiersClassNames['theme-strikeout'] = 'rdp-day--theme-strikeout';
     }
 
     return (
         <div className={styles.root}>
             <DayPicker
-                disabledDays={disabledDays || undefined}
+                disabled={disabledDays || undefined}
                 fromMonth={get(disabledDays, 'before', null)}
                 toMonth={lastMonth}
-                month={month || selectedDays[0]}
-                initialMonth={month || selectedDays[0]}
-                selectedDays={selectedDays}
+                month={
+                    month ||
+                    (selectedDays && selectedDays.length > 0 ? selectedDays[0] : new Date())
+                }
+                selected={selectedDays}
                 onMonthChange={onMonthChange}
                 modifiers={modifiers}
-                onDayClick={(day, { selected, disabled }): void => {
-                    if (disabled) {
-                        return;
-                    }
-
+                modifiersClassNames={modifiersClassNames}
+                onDayClick={(day, { selected }): void => {
                     let newSelectedDays = normaliseValue(value);
 
                     if (allowMultiSelection) {
                         if (selected) {
                             const selectedIndex = findIndex(newSelectedDays, selectedDay =>
-                                DateUtils.isSameDay(selectedDay, day),
+                                isSameDay(selectedDay, day),
                             );
                             newSelectedDays.splice(selectedIndex, 1);
                         } else {
