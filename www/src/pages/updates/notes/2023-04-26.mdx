@@ -1,0 +1,81 @@
+---
+title: April, 2023
+---
+
+A lot of amazing work and new changes to the Thumbprint Design System have happened from both a design and engineering perspective since our last update.
+
+Let’s take some to celebrate those wins, talk about what's new, coming up, what's leaving, and more in this version of the TT Thumbprint Newsletter.
+
+## 🎉 What’s new
+
+It’s always exciting to get a new pair of shoes. While we won’t don these changes on our feet, these improvements to the product are even more exciting than those new sneakers!
+
+### 1. Row-gap and column-gap atomic classes
+
+We’ve added gap classes, `row-gap` and col-gap, classes for all spacer units and breakpoints. The primary use case for these classes are useful controlling the vertical or horizontal spacing between elements within a flex layout.
+
+[See gap atomic classes here](/atomic/#section-gap)
+
+### 2. iOS SwiftUI migration
+
+Thumbprint on iOS is transitioning from UIKit to SwiftUI. As a result we’re rolling in SwiftUI implementation component documentation. We’ve now added documentation pages for the [Loader Dots](/components/loader-dots/swiftui/), [Shadow Card](/components/shadow-card/swiftui/), [Avatar](/components/avatar/swiftui/) and [Star Rating](/components/star-rating/swiftui/) components. Look for the iOS (SwiftUI) tab on other components, as this documentation continues to roll out.
+
+### 3. Thumbprint Foundations library
+
+All foundational assets have been migrated from the Thumbprint Global file to a new Thumbprint Foundations library file. Migrating the core elements into a new library resource will provide the design systems with more clarity around which Figma component instances are being inserted into design work without the need to sift through the widespread use of Thumbprint icons clouding the count.
+
+## 🛠 Updates and changes
+
+We know Thumbprint is a great product, but there is always room for improvement, just like any home renovation project. Here are some updates and changes to the product that we’re excited to celebrate!
+
+### 1. Component usage documentation
+
+We're adding usage documentation to all components to provide users of Thumbprint with a clearer understanding of how to use components. Usage documentation includes examples of when to use, anatomy, specifications (spacing, sizing, color), best practices, accessibility considerations, and links to related components.
+
+[Check out the Button component for the up-to-date approach usage documentation.](/components/button/usage/)
+
+### 2. Accessible color explorations
+
+To provide a more accessible experience and moving towards WCAG 2.1 AA compliance, we’ll be exploring options for how Thumbprint can deliver a 100% set of accessible components. This work will begin with ensuring that our components provide the appropriate color contrast ratio (CCR) according to [WCAG 2.1 AA success criterion for color contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+
+### 3. Next.js migration
+
+The Thumbprint documentation site is moving to a more flexible and modern javascript framework Next.js. We're currently migrating our documentation resources to support this new framework. Moving to Nexj.js provides an upgrade to the existing Thumbprint infrastructure, making it easier to maintain, faster to develop, and document our components.
+
+## 📋 What’s coming up
+
+Here are some projects that are currently in progress or are just over the horizon.
+
+### 1. Updated usage documentation
+
+Work will continue introducing usage documentation for Thumbprint components. The order of this work is determined on the most popular components first based on Figma insertion metrics. Next up will be the Button component.
+
+#### In progress
+
+-   Text input
+-   Tooltip
+
+#### Next up
+
+-   Label
+-   Loader dots
+
+### 2. Semantic tokens (color)
+
+Our current color tokens do not provide context around usage and intention. This current format is introducing ambiguity and limiting factors around color choices. This change introduces a more semantic approach to our tokens that intends to provide an intentional methodology for describing colors and how they should be applied.
+
+## **✨** Did you know?
+
+Looking for a short snippet to help get you excited about design systems. Below you’ll find a brief knowledge drop that is noteworthy. It’s our “The more you know” (shooting star) moment.
+
+**Use can use Figma Layout Grids to help align content.**
+
+Layout grids provide a great way ensure content is aligned with pre-defined view arrangements. For example, if you want to check that the appropriate margins are applied to content in the native environment, you can use the Thumbprint Native “Base with Margin” grid style. This can be used in design time or as great way to check alignment during handoff as well.
+
+---
+
+### Additional resources
+
+**GitHub component repositories**
+
+[Documentation & Web](https://github.com/thumbtack/thumbprint) • [Andriod](https://github.com/thumbtack/thumbprint-android) • [iOS](https://github.com/thumbtack/thumbprint-ios)
