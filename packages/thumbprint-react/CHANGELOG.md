@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Fixed types for the `Image` component, acknowledging we spread `props` on a `picture` element (#940).
+
 ## 14.16.0 - 2023-06-08
 
 ### Changed
