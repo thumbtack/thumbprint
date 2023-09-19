@@ -1,13 +1,14 @@
 # Changelog
 
-## 14.3.6 - 2021-06-24
+## Unreleased
+
+## 14.17.0 - 2023-09-19
 
 ### Changed
 
+-   [Minor] Update `Calendar` component to accomodate changes in `react-day-picker` API.
 -   [Patch] Upgrade `react-day-picker` to 8.8.0
 -   [Patch] Upgrade `date-fns` to 2.30.0
-
-## Unreleased
 
 ### Fixed
 
