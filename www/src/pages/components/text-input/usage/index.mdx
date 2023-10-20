@@ -1,0 +1,183 @@
+---
+title: Text Input
+description: Form inputs with sizes and style variations.
+---
+
+import { graphql } from 'gatsby';
+import { Img } from 'components/mdx';
+import { Button, TextButton, ButtonRow } from '@thumbtack/thumbprint-react';
+import { ContentModifierMessageSmall } from '@thumbtack/thumbprint-icons';
+import Alert from 'components/alert';
+import { Anatomy, AnatomyItem } from 'components/anatomy';
+import DoDont, { DoDontSideBySide } from 'components/dodont';
+import UsageImg from 'components/usage-img';
+import { InlineCode } from 'components/mdx';
+import { ComponentHeader, ComponentFooter } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Usage
+
+Description
+
+<DoDontSideBySide
+    headerText={['When to use', 'When not to use']}
+    examples={[
+        <List>
+            <ListItem>List item</ListItem>
+        </List>,
+        <List>
+            <ListItem>List item</ListItem>
+        </List>,
+    ]}
+/>
+
+## Anatomy
+
+<UsageImg>
+    <Img src="./anatomy.png" alt="Anatomy of the button component" width="168px" />
+</UsageImg>
+
+<Anatomy>
+    <AnatomyItem number="1" title="Surface">
+        <Text size={2} className="black-300">
+            Colored surface used as backdrop for the Label and Icon (optional) messaging.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="2" title="Label">
+        <Text size={2} className="black-300">
+            Succinct text that supports a contextual messaging. Text color should match the Icon
+            color and should coordinate with the Background hue.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="3" title="Icon / Left">
+        <Text size={2} className="black-300">
+            Visual support for Label messaging. Most commonly used position. Should not be used in
+            conjunction with Icon / Right.
+        </Text>
+    </AnatomyItem>
+    <AnatomyItem number="3" title="Icon / Right">
+        <Text size={2} className="black-300">
+            Visual support for Label messaging. Typically used a directional indicator. Should not
+            be used in conjunction with Icon / Left.
+        </Text>
+    </AnatomyItem>
+</Anatomy>
+
+## Specs
+
+Component details and standards such as spacing, sizing, and color.
+
+### Spacing
+
+There are two button sizes, Large and Small. Almost always, the Large size should be used. Tertiary buttons should mostly be used in the Small size, and Tertiary may not be used at the Large size.
+
+#### Large
+
+<UsageImg>
+    <div className="flex flex-column items-center">
+        <Img
+            src="./spacing-large-auto.png"
+            alt="Spacing specifications for large button with auto width"
+            width="163px"
+            className="mb4"
+        />
+        <Img
+            src="./spacing-large-100-perc.png"
+            alt="Spacing specifications for large full-width button"
+            width="295px"
+        />
+    </div>
+</UsageImg>
+<Text size={2} className="black-300">
+    The height of the component will be fixed at 48px/pts. Large buttons can optional be full-width
+    and take up 100% of the container’s width.
+</Text>
+<Text size={2} className="black-300">
+    Most commonly used for mobile, full-width buttons may only use the Primary & Tertiary styles.
+    They can’t be in a container over 480px wide and can’t be smaller than 300px. They also should
+    only be used on white backgrounds. Padding is set to 24px around the button
+</Text>
+
+#### Small
+
+<UsageImg>
+    <Img
+        src="./spacing-small-auto.png"
+        alt="Spacing specifications for small button with auto width"
+        width="133px"
+    />
+</UsageImg>
+<Text size={2} className="black-300">
+    The height of the component will be fixed at 32px/pts. Small buttons should not span 100% width
+    of the viewport and will always hug the contents of the component.
+</Text>
+
+### Sizing
+
+<UsageImg>
+    <Img src="./specs-sizing.png" alt="Sizing specifications for button" width="199px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    Text should follow the Title size 6 that translates to 16px bold. Icons should apply the Small
+    size.
+</Text>
+
+### Color
+
+Buttons are offered in four variations: Primary, Secondary, Tertiary and Caution. Each variation includes a set color scheme that provides the appropriate emphasis based on the intended use case.
+
+#### Primary
+
+<UsageImg>
+    <Img src="./color-primary.png" alt="Color specifications for primary button" width="182px" />
+</UsageImg>
+<Text size={2} className="black-300">
+    Use the Primary variation to build the strongest emphasis for CTAs.
+</Text>
+
+## Best practices
+
+Below is a list of examples of how CTAs should/shouldn't be used through visual representations of our Do's and Dont's.
+
+<DoDontSideBySide
+    description={[
+        'Place the Primary CTA in the top position when buttons are stacked vertically.',
+        'Place the Primary CTA under any other CTA option.',
+    ]}
+    examples={[
+        <div className="pa2">
+            <Img src="./best-practices-do-1.png" alt="" width="295px" />
+        </div>,
+        <div className="pa2">
+            <Img src="./best-practices-dont-1.png" alt="" width="295px" />
+        </div>,
+    ]}
+/>
+
+## Accessibility
+
+-   Item
+
+## Content design
+
+-   Item
+
+## Related components
+
+-   **[Component](/components/button-row/react/)** - Related
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/text-input/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+    }
+`;
+
+;
