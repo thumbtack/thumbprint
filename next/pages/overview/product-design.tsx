@@ -125,7 +125,7 @@ export default function OverviewAbout({
                 our design processes.
             </P>
 
-            <div className="flex pt4">
+            <div className="flex pt4 flex-column m_flex-row">
                 <A href="https://www.figma.com/community/plugin/748533339900865323" target="_blank">
                     <Img
                         {...pluginContrast}
@@ -133,7 +133,7 @@ export default function OverviewAbout({
                         fill={false}
                     />
                 </A>
-                <div className="pl4">
+                <div className="m_pl4">
                     <Title size={4} className="mb2">
                         Contrast
                     </Title>
