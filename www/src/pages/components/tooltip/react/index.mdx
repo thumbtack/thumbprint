@@ -41,6 +41,47 @@ Screen readers will announce the `Tooltip` component `text` when the button rece
 </div>
 ```
 
+## Rich tooltips on icons
+
+Hover, click, or focus on the tooltip to open rich tooltip with link inside tooltip content.
+
+```jsx
+<div
+    style={{
+        minHeight: '120px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }}
+>
+    <Tooltip
+        text="This is a rich tooltip. For more details visit "
+        container="inline"
+        zIndex={500}
+        cta={{
+            type: 'link',
+            href: 'https://thumbprint.design/',
+            text: 'Thumbprint.design',
+        }}
+        persistTooltipOnClick
+    >
+        {({ ref, onMouseEnter, onClick, onFocus, onMouseLeave, onBlur, ariaLabel }) => (
+            <TextButton
+                iconLeft={<NotificationAlertsHelpSmall />}
+                theme="inherit"
+                accessibilityLabel={ariaLabel}
+                onMouseEnter={onMouseEnter}
+                onClick={onClick}
+                onFocus={onFocus}
+                onMouseLeave={onMouseLeave}
+                onBlur={onBlur}
+                ref={ref}
+            />
+        )}
+    </Tooltip>
+</div>
+```
+
 ## Light tooltip on a dark background
 
 The `theme` prop makes it possible to use tooltips on dark backgrounds.

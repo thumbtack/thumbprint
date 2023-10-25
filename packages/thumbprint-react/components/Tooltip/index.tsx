@@ -4,6 +4,7 @@ import assign from 'lodash/assign';
 import classNames from 'classnames';
 import { Manager, Reference, Popper, RefHandler } from 'react-popper';
 
+import { TextButton } from '../Button';
 import ConditionalPortal from '../../utils/ConditionalPortal';
 import useCloseOnEscape from '../../utils/use-close-on-escape';
 import canUseDOM from '../../utils/can-use-dom';
@@ -64,6 +65,21 @@ export interface TooltipProps {
      */
     text: string;
     /**
+     * Tooltip cta in form of text button/link for rich tooltip
+     */
+    cta?:
+        | {
+              type: 'link';
+              href: string;
+              text: string;
+              onClick?: () => void;
+          }
+        | {
+              type: 'button';
+              onClick: () => void;
+              text: string;
+          };
+    /**
      * Controls the look of the tooltip.
      */
     theme?: 'light' | 'dark';
@@ -92,6 +108,10 @@ export interface TooltipProps {
      * Adds a `z-index` to the tooltip. Before using this prop, try to use `container="inline"`.
      */
     zIndex?: number;
+    /**
+     * Persist tooltip and not hide on click
+     */
+    persistTooltipOnClick?: boolean;
 }
 
 export default function Tooltip({
@@ -102,55 +122,78 @@ export default function Tooltip({
     text,
     children,
     closeDelayLength = 200,
+    persistTooltipOnClick,
+    cta,
 }: TooltipProps): JSX.Element {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<{
+        isOpen: boolean;
+        type?: 'click' | 'hover';
+    }>({
+        isOpen: false,
+    });
     const [openTimeout, setOpenTimeout] = useState<number | undefined>(undefined);
     const [closeTimeout, setCloseTimeout] = useState<number | undefined>(undefined);
 
-    const show = (): void => {
+    const show = (type: 'click' | 'hover'): void => {
         if (closeTimeout) {
             window.clearTimeout(closeTimeout);
         }
 
-        setIsOpen(true);
+        setIsOpen({
+            isOpen: true,
+            type,
+        });
     };
 
     const hide = (): void => {
-        setIsOpen(false);
+        setIsOpen({
+            isOpen: false,
+        });
     };
 
     const onFocus = (): void => {
         if (!doesWindowSupportTouch()) {
-            show();
+            show('hover');
         }
     };
 
     const onMouseEnter = (): void => {
         if (!doesWindowSupportTouch()) {
             // Trigger the tooltip to show after a small delay to prevent flickering.
-            setOpenTimeout(window.setTimeout(show, OPEN_TIMEOUT));
+            setOpenTimeout(window.setTimeout(() => show('hover'), OPEN_TIMEOUT));
         }
     };
 
     const onMouseLeave = (): void => {
-        // By default this adds a small delay before closing to improve the user experience.
-        setCloseTimeout(window.setTimeout(hide, closeDelayLength));
+        if (!(persistTooltipOnClick && isOpen.type === 'click')) {
+            // By default this adds a small delay before closing to improve the user experience.
+            setCloseTimeout(window.setTimeout(hide, closeDelayLength));
 
-        if (openTimeout) {
-            // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
-            // tooltip from showing after the user is no longer hovering over the launcher.
-            clearTimeout(openTimeout);
+            if (openTimeout) {
+                // When the mouse leaves we should clear any in-progress open timeouts, to prevent the
+                // tooltip from showing after the user is no longer hovering over the launcher.
+                clearTimeout(openTimeout);
+            }
         }
     };
 
     const onClick = (): void => {
         if (doesWindowSupportTouch()) {
-            if (isOpen) {
+            if (isOpen.isOpen) {
                 hide();
             } else {
-                show();
+                show('click');
             }
+        } else if (persistTooltipOnClick) {
+            // Keep tooltip opened in case of desktop when persistTooltipOnClick is true
+            show('click');
         }
+    };
+
+    const onBlur = (): void => {
+        // By default this adds a small delay before closing which gives time
+        // to focus by keyboard tab inside tooltip content for rich tooltip.
+        setCloseTimeout(window.setTimeout(hide, closeDelayLength));
     };
 
     useCloseOnEscape(hide, canUseDOM);
@@ -167,7 +210,7 @@ export default function Tooltip({
                         onMouseEnter,
                         onFocus,
                         onMouseLeave,
-                        onBlur: hide,
+                        onBlur,
                         onClick,
                         ariaLabel: text,
                     })
@@ -175,7 +218,7 @@ export default function Tooltip({
             </Reference>
 
             <ConditionalPortal shouldDisplace={shouldDisplace}>
-                {canUseDOM && isOpen && (
+                {canUseDOM && isOpen.isOpen && (
                     <Popper
                         placement={position}
                         modifiers={{
@@ -199,7 +242,7 @@ export default function Tooltip({
                                 ref={ref}
                                 style={assign({}, style, { zIndex })}
                                 data-placement={placement}
-                                onMouseEnter={show}
+                                onMouseEnter={(): void => show('hover')}
                                 onMouseLeave={onMouseLeave}
                                 onClick={(event): void => {
                                     // This is to ensure the default event propagation is stopped when the tooltip
@@ -219,7 +262,44 @@ export default function Tooltip({
                                 {/* We need to let the popper instance know when the contents of the tooltip change,
                                 so it can reposition itself.
                                 https://github.com/thumbtack/thumbprint-archive/issues/1033 */}
-                                <WhenChildrenChange do={scheduleUpdate}>{text}</WhenChildrenChange>
+                                <WhenChildrenChange do={scheduleUpdate}>
+                                    <div
+                                        // For rich tooltip, we need to clear closeTimeout while user focus on
+                                        // tooltip cta in popover, to stay tooltip to be opened in case of keyboard tab.
+                                        onFocus={(): void => {
+                                            if (closeTimeout) {
+                                                window.clearTimeout(closeTimeout);
+                                            }
+                                        }}
+                                        // For rich tooltip, we need to hide tooltip popover,
+                                        // to close tooltip in case of keyboard tab
+                                        // went away from tooltip cta.
+                                        onBlur={hide}
+                                        className={styles.tooltipContent}
+                                    >
+                                        {text}
+                                        <div>
+                                            {cta && cta.type === 'link' && (
+                                                <a
+                                                    href={cta.href}
+                                                    onClick={(): void => {
+                                                        if (cta.onClick) {
+                                                            cta.onClick();
+                                                        }
+                                                    }}
+                                                >
+                                                    {cta.text}
+                                                </a>
+                                            )}
+
+                                            {cta && cta.type === 'button' && (
+                                                <TextButton onClick={cta.onClick}>
+                                                    {cta.text}
+                                                </TextButton>
+                                            )}
+                                        </div>
+                                    </div>
+                                </WhenChildrenChange>
                                 <div
                                     className={classNames({
                                         [styles.nubbin]: true,

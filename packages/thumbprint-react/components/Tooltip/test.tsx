@@ -522,6 +522,7 @@ describe('Tooltip', () => {
             act(() => {
                 jest.runAllTimers();
             });
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
@@ -723,6 +724,7 @@ describe('Tooltip', () => {
             act(() => {
                 jest.runAllTimers();
             });
+            wrapper.update();
             expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
         });
 
@@ -952,5 +954,341 @@ describe('Tooltip', () => {
 
         const ssrHTML = ReactDOMServer.renderToStaticMarkup(component);
         expect(ssrHTML).not.toContain('data-test-id="tooltip"');
+    });
+});
+
+describe('Rich Tooltip', () => {
+    test('renders a closed rich tooltip', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    test('renders an open rich tooltip', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        const button = wrapper.find('button');
+        button.simulate('focus');
+        jest.runAllTimers();
+
+        expect(wrapper).toMatchSnapshot();
+
+        button.simulate('blur');
+        jest.runAllTimers();
+    });
+
+    test('adds `zIndex`', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                zIndex={123}
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        const button = wrapper.find('button');
+        button.simulate('focus');
+        jest.runAllTimers();
+
+        expect(wrapper).toMatchSnapshot();
+
+        button.simulate('blur');
+        jest.runAllTimers();
+    });
+
+    test('renders an open tooltip with `bottom` placement', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                container="inline"
+                persistTooltipOnClick
+                position="bottom"
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        const button = wrapper.find('button');
+        button.simulate('focus');
+        jest.runAllTimers();
+        expect(wrapper).toMatchSnapshot();
+        button.simulate('blur');
+        jest.runAllTimers();
+    });
+
+    test('renders an open tooltip with a `light` theme', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                theme="light"
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        const button = wrapper.find('button');
+        button.simulate('focus');
+        jest.runAllTimers();
+        expect(wrapper).toMatchSnapshot();
+        button.simulate('blur');
+        jest.runAllTimers();
+    });
+
+    test('Pressing the `Esc` key closes the tooltip', () => {
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={onClick}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+
+        const button = wrapper.find('button');
+
+        expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
+
+        button.simulate('focus');
+        expect(wrapper.find('[role="tooltip"]').exists()).toBe(true);
+
+        act(() => {
+            // NOTE: it seems that Enzyme does not respond to the standard properties on
+            // `KeyboardEventInit`, either `code: 'Escape'` or `key: 'Escape'`. It only responds to
+            // the deprecated property `keyCode`, which is not in the type defintion. As such we
+            // have to cast the type here to prevent an error.
+            document.dispatchEvent(
+                new KeyboardEvent('keyup', {
+                    key: 'Escape',
+                    code: 'Escape',
+                    keyCode: 27,
+                } as KeyboardEventInit),
+            );
+        });
+        wrapper.update();
+
+        expect(wrapper.find('[role="tooltip"]').exists()).toBe(false);
+    });
+
+    test('Events from tooltip element propagate to parent element', () => {
+        const jestOnClick = jest.fn();
+        const wrapper = mount(
+            <Tooltip
+                text="This is a rich tooltip. For more details visit "
+                cta={{
+                    type: 'link',
+                    href: 'https://thumbprint.design/',
+                    text: 'Thumbprint.design',
+                }}
+                container="inline"
+                persistTooltipOnClick
+            >
+                {({
+                    ref,
+                    onMouseEnter,
+                    onClick,
+                    onFocus,
+                    onMouseLeave,
+                    onBlur,
+                    ariaLabel,
+                }): JSX.Element => (
+                    <button
+                        ref={ref}
+                        onMouseEnter={onMouseEnter}
+                        onClick={(): void => {
+                            onClick();
+                            jestOnClick();
+                        }}
+                        onFocus={onFocus}
+                        onMouseLeave={onMouseLeave}
+                        onBlur={onBlur}
+                        aria-label={ariaLabel}
+                        type="button"
+                    >
+                        Duck
+                    </button>
+                )}
+            </Tooltip>,
+        );
+        expect(jestOnClick).toHaveBeenCalledTimes(0);
+        wrapper.find('button').simulate('click');
+        expect(jestOnClick).toHaveBeenCalledTimes(1);
     });
 });

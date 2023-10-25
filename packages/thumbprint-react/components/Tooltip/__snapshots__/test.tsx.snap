@@ -1,5 +1,526 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Rich Tooltip adds \`zIndex\` 1`] = `
+<Tooltip
+  container="inline"
+  cta={
+    Object {
+      "href": "https://thumbprint.design/",
+      "text": "Thumbprint.design",
+      "type": "link",
+    }
+  }
+  persistTooltipOnClick={true}
+  text="This is a rich tooltip. For more details visit "
+  zIndex={123}
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="This is a rich tooltip. For more details visit "
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <ConditionalPortal
+      shouldDisplace={false}
+    >
+      <Popper
+        modifiers={
+          Object {
+            "offset": Object {
+              "offset": "0, 16px",
+            },
+            "preventOverflow": Object {
+              "boundariesElement": "window",
+            },
+          }
+        }
+        placement="top"
+        positionFixed={false}
+      >
+        <InnerPopper
+          eventsEnabled={true}
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+          referenceElement={
+            <button
+              aria-label="This is a rich tooltip. For more details visit "
+              type="button"
+            >
+              Duck
+            </button>
+          }
+        >
+          <div
+            className="tooltip tooltipDark"
+            data-test-id="tooltip"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "left": 0,
+                "opacity": 0,
+                "pointerEvents": "none",
+                "position": "absolute",
+                "top": 0,
+                "zIndex": 123,
+              }
+            }
+          >
+            <WhenChildrenChange
+              do={[Function]}
+            >
+              <div
+                className="tooltipContent"
+                onBlur={[Function]}
+                onFocus={[Function]}
+              >
+                This is a rich tooltip. For more details visit 
+                <div>
+                  <a
+                    href="https://thumbprint.design/"
+                    onClick={[Function]}
+                  >
+                    Thumbprint.design
+                  </a>
+                </div>
+              </div>
+            </WhenChildrenChange>
+            <div
+              className="nubbin nubbinDark"
+              style={Object {}}
+            />
+          </div>
+        </InnerPopper>
+      </Popper>
+    </ConditionalPortal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`Rich Tooltip renders a closed rich tooltip 1`] = `
+<Tooltip
+  container="inline"
+  cta={
+    Object {
+      "href": "https://thumbprint.design/",
+      "text": "Thumbprint.design",
+      "type": "link",
+    }
+  }
+  persistTooltipOnClick={true}
+  text="This is a rich tooltip. For more details visit "
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="This is a rich tooltip. For more details visit "
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <ConditionalPortal
+      shouldDisplace={false}
+    />
+  </Manager>
+</Tooltip>
+`;
+
+exports[`Rich Tooltip renders an open rich tooltip 1`] = `
+<Tooltip
+  container="inline"
+  cta={
+    Object {
+      "href": "https://thumbprint.design/",
+      "text": "Thumbprint.design",
+      "type": "link",
+    }
+  }
+  persistTooltipOnClick={true}
+  text="This is a rich tooltip. For more details visit "
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="This is a rich tooltip. For more details visit "
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <ConditionalPortal
+      shouldDisplace={false}
+    >
+      <Popper
+        modifiers={
+          Object {
+            "offset": Object {
+              "offset": "0, 16px",
+            },
+            "preventOverflow": Object {
+              "boundariesElement": "window",
+            },
+          }
+        }
+        placement="top"
+        positionFixed={false}
+      >
+        <InnerPopper
+          eventsEnabled={true}
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+          referenceElement={
+            <button
+              aria-label="This is a rich tooltip. For more details visit "
+              type="button"
+            >
+              Duck
+            </button>
+          }
+        >
+          <div
+            className="tooltip tooltipDark"
+            data-test-id="tooltip"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "left": 0,
+                "opacity": 0,
+                "pointerEvents": "none",
+                "position": "absolute",
+                "top": 0,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <WhenChildrenChange
+              do={[Function]}
+            >
+              <div
+                className="tooltipContent"
+                onBlur={[Function]}
+                onFocus={[Function]}
+              >
+                This is a rich tooltip. For more details visit 
+                <div>
+                  <a
+                    href="https://thumbprint.design/"
+                    onClick={[Function]}
+                  >
+                    Thumbprint.design
+                  </a>
+                </div>
+              </div>
+            </WhenChildrenChange>
+            <div
+              className="nubbin nubbinDark"
+              style={Object {}}
+            />
+          </div>
+        </InnerPopper>
+      </Popper>
+    </ConditionalPortal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`Rich Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
+<Tooltip
+  container="inline"
+  cta={
+    Object {
+      "href": "https://thumbprint.design/",
+      "text": "Thumbprint.design",
+      "type": "link",
+    }
+  }
+  persistTooltipOnClick={true}
+  position="bottom"
+  text="This is a rich tooltip. For more details visit "
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="This is a rich tooltip. For more details visit "
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <ConditionalPortal
+      shouldDisplace={false}
+    >
+      <Popper
+        modifiers={
+          Object {
+            "offset": Object {
+              "offset": "0, 16px",
+            },
+            "preventOverflow": Object {
+              "boundariesElement": "window",
+            },
+          }
+        }
+        placement="bottom"
+        positionFixed={false}
+      >
+        <InnerPopper
+          eventsEnabled={true}
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="bottom"
+          positionFixed={false}
+          referenceElement={
+            <button
+              aria-label="This is a rich tooltip. For more details visit "
+              type="button"
+            >
+              Duck
+            </button>
+          }
+        >
+          <div
+            className="tooltip tooltipDark"
+            data-test-id="tooltip"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "left": 0,
+                "opacity": 0,
+                "pointerEvents": "none",
+                "position": "absolute",
+                "top": 0,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <WhenChildrenChange
+              do={[Function]}
+            >
+              <div
+                className="tooltipContent"
+                onBlur={[Function]}
+                onFocus={[Function]}
+              >
+                This is a rich tooltip. For more details visit 
+                <div>
+                  <a
+                    href="https://thumbprint.design/"
+                    onClick={[Function]}
+                  >
+                    Thumbprint.design
+                  </a>
+                </div>
+              </div>
+            </WhenChildrenChange>
+            <div
+              className="nubbin nubbinDark"
+              style={Object {}}
+            />
+          </div>
+        </InnerPopper>
+      </Popper>
+    </ConditionalPortal>
+  </Manager>
+</Tooltip>
+`;
+
+exports[`Rich Tooltip renders an open tooltip with a \`light\` theme 1`] = `
+<Tooltip
+  container="inline"
+  cta={
+    Object {
+      "href": "https://thumbprint.design/",
+      "text": "Thumbprint.design",
+      "type": "link",
+    }
+  }
+  persistTooltipOnClick={true}
+  text="This is a rich tooltip. For more details visit "
+  theme="light"
+>
+  <Manager>
+    <Reference>
+      <InnerReference
+        getReferenceRef={[Function]}
+      >
+        <button
+          aria-label="This is a rich tooltip. For more details visit "
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          type="button"
+        >
+          Duck
+        </button>
+      </InnerReference>
+    </Reference>
+    <ConditionalPortal
+      shouldDisplace={false}
+    >
+      <Popper
+        modifiers={
+          Object {
+            "offset": Object {
+              "offset": "0, 16px",
+            },
+            "preventOverflow": Object {
+              "boundariesElement": "window",
+            },
+          }
+        }
+        placement="top"
+        positionFixed={false}
+      >
+        <InnerPopper
+          eventsEnabled={true}
+          modifiers={
+            Object {
+              "offset": Object {
+                "offset": "0, 16px",
+              },
+              "preventOverflow": Object {
+                "boundariesElement": "window",
+              },
+            }
+          }
+          placement="top"
+          positionFixed={false}
+          referenceElement={
+            <button
+              aria-label="This is a rich tooltip. For more details visit "
+              type="button"
+            >
+              Duck
+            </button>
+          }
+        >
+          <div
+            className="tooltip tooltipLight"
+            data-test-id="tooltip"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            role="tooltip"
+            style={
+              Object {
+                "left": 0,
+                "opacity": 0,
+                "pointerEvents": "none",
+                "position": "absolute",
+                "top": 0,
+                "zIndex": undefined,
+              }
+            }
+          >
+            <WhenChildrenChange
+              do={[Function]}
+            >
+              <div
+                className="tooltipContent"
+                onBlur={[Function]}
+                onFocus={[Function]}
+              >
+                This is a rich tooltip. For more details visit 
+                <div>
+                  <a
+                    href="https://thumbprint.design/"
+                    onClick={[Function]}
+                  >
+                    Thumbprint.design
+                  </a>
+                </div>
+              </div>
+            </WhenChildrenChange>
+            <div
+              className="nubbin nubbinLight"
+              style={Object {}}
+            />
+          </div>
+        </InnerPopper>
+      </Popper>
+    </ConditionalPortal>
+  </Manager>
+</Tooltip>
+`;
+
 exports[`Tooltip adds \`zIndex\` 1`] = `
 <Tooltip
   text="Goose"
@@ -35,7 +556,12 @@ exports[`Tooltip adds \`zIndex\` 1`] = `
               role="tooltip"
               style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 123;"
             >
-              Goose
+              <div
+                class="tooltipContent"
+              >
+                Goose
+                <div />
+              </div>
               <div
                 class="nubbin nubbinDark"
               />
@@ -101,7 +627,14 @@ exports[`Tooltip adds \`zIndex\` 1`] = `
               <WhenChildrenChange
                 do={[Function]}
               >
-                Goose
+                <div
+                  className="tooltipContent"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                >
+                  Goose
+                  <div />
+                </div>
               </WhenChildrenChange>
               <div
                 className="nubbin nubbinDark"
@@ -229,7 +762,14 @@ exports[`Tooltip renders an inline tooltip 1`] = `
             <WhenChildrenChange
               do={[Function]}
             >
-              Goose
+              <div
+                className="tooltipContent"
+                onBlur={[Function]}
+                onFocus={[Function]}
+              >
+                Goose
+                <div />
+              </div>
             </WhenChildrenChange>
             <div
               className="nubbin nubbinDark"
@@ -277,7 +817,12 @@ exports[`Tooltip renders an open tooltip 1`] = `
               role="tooltip"
               style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
             >
-              Goose
+              <div
+                class="tooltipContent"
+              >
+                Goose
+                <div />
+              </div>
               <div
                 class="nubbin nubbinDark"
               />
@@ -343,7 +888,14 @@ exports[`Tooltip renders an open tooltip 1`] = `
               <WhenChildrenChange
                 do={[Function]}
               >
-                Goose
+                <div
+                  className="tooltipContent"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                >
+                  Goose
+                  <div />
+                </div>
               </WhenChildrenChange>
               <div
                 className="nubbin nubbinDark"
@@ -393,7 +945,12 @@ exports[`Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
               role="tooltip"
               style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
             >
-              Goose
+              <div
+                class="tooltipContent"
+              >
+                Goose
+                <div />
+              </div>
               <div
                 class="nubbin nubbinDark"
               />
@@ -459,7 +1016,14 @@ exports[`Tooltip renders an open tooltip with \`bottom\` placement 1`] = `
               <WhenChildrenChange
                 do={[Function]}
               >
-                Goose
+                <div
+                  className="tooltipContent"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                >
+                  Goose
+                  <div />
+                </div>
               </WhenChildrenChange>
               <div
                 className="nubbin nubbinDark"
@@ -509,7 +1073,12 @@ exports[`Tooltip renders an open tooltip with a \`light\` theme 1`] = `
               role="tooltip"
               style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
             >
-              Goose
+              <div
+                class="tooltipContent"
+              >
+                Goose
+                <div />
+              </div>
               <div
                 class="nubbin nubbinLight"
               />
@@ -575,7 +1144,14 @@ exports[`Tooltip renders an open tooltip with a \`light\` theme 1`] = `
               <WhenChildrenChange
                 do={[Function]}
               >
-                Goose
+                <div
+                  className="tooltipContent"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                >
+                  Goose
+                  <div />
+                </div>
               </WhenChildrenChange>
               <div
                 className="nubbin nubbinLight"

@@ -70,3 +70,7 @@ $tooltip-max-width: 235px;
         border-top-color: $tp-color__white;
     }
 }
+
+.tooltipContent {
+    white-space: pre-line !important;
+}
