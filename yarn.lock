@@ -7050,13 +7050,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@types/uuid@npm:7.0.2"
-  checksum: 01de8b9b7c3a30464ddf666f5ed3c77006a932efabcece946907f074d9fb7379dd7ce770817a40c8686ac695adc8547ff4640c0c6dc668aaf86e3aa13a7e19f7
-  languageName: node
-  linkType: hard
-
 "@types/vfile-message@npm:*":
   version: 1.0.1
   resolution: "@types/vfile-message@npm:1.0.1"
@@ -34837,7 +34830,6 @@ is-whitespace@latest:
     "@types/mdx-js__react": ^1.5.2
     "@types/react-helmet": ^5.0.15
     "@types/url-join": ^4.0.0
-    "@types/uuid": ^7.0.2
     classnames: ^2.2.5
     clickable-box: ^1.0.0
     docsearch.js: ^2.6.2
@@ -34873,7 +34865,6 @@ is-whitespace@latest:
     react-scroll-marker: ^0.2.1
     slugify: ^1.2.9
     url-join: ^4.0.1
-    uuid: ^3.4.0
     warning: ^4.0.1
   languageName: unknown
   linkType: soft
