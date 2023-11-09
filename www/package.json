@@ -48,14 +48,12 @@
         "react-scroll-marker": "^0.2.1",
         "slugify": "^1.2.9",
         "url-join": "^4.0.1",
-        "uuid": "^3.4.0",
         "warning": "^4.0.1"
     },
     "devDependencies": {
         "@types/invariant": "^2.2.31",
         "@types/mdx-js__react": "^1.5.2",
         "@types/react-helmet": "^5.0.15",
-        "@types/url-join": "^4.0.0",
-        "@types/uuid": "^7.0.2"
+        "@types/url-join": "^4.0.0"
     }
 }
