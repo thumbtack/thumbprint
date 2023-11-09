@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+-   [Minor] Support a CTA within a tooltip
+
 ## 14.17.0 - 2023-09-19
 
 ### Changed
