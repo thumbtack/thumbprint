@@ -6,12 +6,12 @@ interface CommonProps {
     iconLeft?: React.ReactNode;
     iconRight?: React.ReactNode;
     isDisabled?: boolean;
-    onClick?: () => void;
-    onMouseEnter?: () => void;
-    onMouseOver?: () => void;
-    onFocus?: () => void;
-    onMouseLeave?: () => void;
-    onBlur?: () => void;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+    onMouseEnter?: (e: React.MouseEvent<HTMLElement>) => void;
+    onMouseOver?: (e: React.MouseEvent<HTMLElement>) => void;
+    onFocus?: (e: React.FocusEvent<HTMLElement>) => void;
+    onMouseLeave?: (e: React.MouseEvent<HTMLElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
     theme?: 'primary' | 'secondary' | 'tertiary' | 'inherit';
     type?: 'button' | 'submit';
     dataTest?: string;
