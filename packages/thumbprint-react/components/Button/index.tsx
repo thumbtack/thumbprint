@@ -100,28 +100,28 @@ export interface TextButtonProps {
     /**
      * Function that will run when the button is clicked on.
      */
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter?: () => void;
+    onMouseEnter?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver?: () => void;
+    onMouseOver?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus?: () => void;
+    onFocus?: (e: React.FocusEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave?: () => void;
+    onMouseLeave?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
     /**
      * Description of the button’s content. It is required if the button has an icon and no
      * descriptive text.
@@ -233,28 +233,28 @@ export interface ButtonProps {
     /**
      * Function that will run when the button is clicked on.
      */
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers on the button.
      */
-    onMouseEnter?: () => void;
+    onMouseEnter?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers on the button. Unlike `onMouseEnter`, `onMouseOver`
      * fires each time a child element receives focus.
      */
-    onMouseOver?: () => void;
+    onMouseOver?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the button receives focus.
      */
-    onFocus?: () => void;
+    onFocus?: (e: React.FocusEvent<HTMLElement>) => void;
     /**
      * Function that runs when the user hovers away from the button.
      */
-    onMouseLeave?: () => void;
+    onMouseLeave?: (e: React.MouseEvent<HTMLElement>) => void;
     /**
      * Function that runs when the button loses focus.
      */
-    onBlur?: () => void;
+    onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
     /**
      * Controls the button’s background, text, and border color.
      */
