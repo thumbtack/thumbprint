@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+-   [Patch] Acutally fix types for Button component mouse and focus events
+
 ## 14.18.1 - 2024-04-03
 
 ### Fixed
