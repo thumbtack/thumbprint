@@ -1,0 +1,105 @@
+---
+title: Switch
+description: A control that offers a binary choice, such as on/off.
+---
+
+import { graphql } from 'gatsby';
+import { ComponentHeader } from 'components/thumbprint-components';
+
+<ComponentHeader data={props.data} />
+
+## Basic Switch
+
+Switch can be checked or unchecked.
+
+The `isChecked` prop determines if a switch is checked.
+
+```jsx
+function SwitchExample() {
+    const [isChecked, setIsChecked] = React.useState(true);
+
+    return <Switch isChecked={isChecked} name="example-basic" onChange={v => setIsChecked(v)} />;
+}
+```
+
+## Large Switch
+
+Switches are `small` by default. The `size` prop allows you to render a `large` switch.
+
+```jsx
+function SwitchExample() {
+    const [isChecked, setIsChecked] = React.useState(true);
+
+    return (
+        <Switch
+            isChecked={isChecked}
+            size="large"
+            name="example-basic"
+            onChange={v => setIsChecked(v)}
+        />
+    );
+}
+```
+
+## Colors
+
+Switch default to Thumbtack’s `blue` color. You can use `green` instead by setting the `color` prop.
+
+```jsx
+function SwitchExample() {
+    const [isChecked, setIsChecked] = React.useState(true);
+
+    return (
+        <Switch
+            isChecked={isChecked}
+            color="green"
+            name="example-basic"
+            onChange={v => setIsChecked(v)}
+        />
+    );
+}
+```
+
+## Disabled Switch
+
+The `isDisabled` prop visually and functionally disabled switch.
+
+```jsx
+function SwitchExample() {
+    const [isChecked, setIsChecked] = React.useState(true);
+
+    return (
+        <Switch
+            isChecked={isChecked}
+            isDisabled
+            name="example-basic"
+            onChange={v => setIsChecked(v)}
+        />
+    );
+}
+```
+
+<ComponentFooter data={props.data} />
+
+export const pageQuery = graphql`
+    {
+        # Get links to by path to display in the navbar.
+        platformNav: allSitePage(filter: { path: { glob: "/components/switch/*/" } }) {
+            edges {
+                node {
+                    ...PlatformNavFragment
+                }
+            }
+        }
+        # Get package information by NPM package name.
+        packageTable: thumbprintComponent(name: { eq: "@thumbtack/thumbprint-react" }) {
+            ...PackageTableFragment
+        }
+        # Get component props by path to component file.
+        reactComponentProps: allFile(
+            filter: { relativePath: { in: ["thumbprint-react/components/Switch/index.tsx"] } }
+        ) {
+            ...ReactComponentPropsFragment
+        }
+    }
+`;
