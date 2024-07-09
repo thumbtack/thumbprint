@@ -16,9 +16,9 @@ A toast is used to display a short-lived notification and optional CTA at the bo
 
 ## Configuration
 
-Toasts support a single left aligned title and an optional right aligned link. The toast view is attached to a View with the `.withToast()` modifier. `withToast()` accepts a TPToast binding and an optional `linkAction` closure, which is triggered when the user taps on the link text. When the toast binding passed into TPToast is nil, the toast is hidden, when it exists, the toast animates onto the screen. The toast automatically dismisses itself after a short period of time (2.5 seconds, by default)
+Toasts support a single left aligned title, a theme, and an optional right aligned link. The toast view is attached to a View with the `.withToast()` modifier. `withToast()` accepts a TPToast binding and an optional `linkAction` closure, which is triggered when the user taps on the link text. When a toast binding exists, it will animated onto the screen, or, if another toast is already showing on screen, it will queue itself for presentation after the existing toast dismisses. The toast automatically dismisses itself after a short period of time (2.5 seconds, by default)
 
-The toast's title, link text, and optional duration are set on the TPToast object itself.
+The toast's title, link text, theme, and optional duration are set on the TPToast object itself.
 
 ## Usage
 
@@ -41,6 +41,20 @@ public var body: some View {
     }
 }
 ```
+
+## Theming
+
+Toasts can be themed via a TPTheme object that includes a background color, an optional icon, an icon color, and text color.
+
+There are several built in themes. `default`, `alert`, `success`, `info`, `caution`.
+
+```swift
+
+let toast = TPToast(title: someText, theme: .alert, linkText: linkText)
+
+```
+
+![alert](alert.png)
 
 export const pageQuery = graphql`
     {
