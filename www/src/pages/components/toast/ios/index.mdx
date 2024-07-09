@@ -22,50 +22,50 @@ The toast component supports dynamic type by default
 
 `public var message: String` The message text to be displayed to the user
 
-`public var linkText: String` The text on the `link` style CTA button
+`public var action: Toast.Action` The "action" to take on the toast. Includes link text, and a handler closure.
+
+`public var theme: Toast.Theme` A toast theme, which allows for customization of the background color, text color, icon, and icon color.
+
+`public let presentationDuration: TimeInterval` The duration for which to display the toast, defaults to 5 seconds.
 
 ## Usage
 
-Once constructed, a toast can be displayed with animation.
+You can construct a toast with various themes like
+
+```swift
+let toast = Toast(message: "This is a message?", theme: Toast.Theme.alert(), action: Toast.Action(text: "Take Action", handler: {
+ /* Do some action */
+}))
+```
+
+![alert](alert.png)
+
+You can customize the theme by overriding various properties
+
+```swift
+let toast = Toast(message: "This is a message?", theme: Toast.Theme.success(Icon.contentActionsAddMedium), action: Toast.Action(text: "Take Action", handler: {}))
+```
+
+![custom](custom.png)
+
+Once constructed, a toast can be displayed with animation using the showToast method.
 
 ```swift
 import Thumbprint
 
 /* ... */
 
-public func display(_ toastWithText text: String, linkText: String, in view: UIView, animate: Bool = true) {
-        let toast = Toast(title: text, linkText: linkText)
-        view.addSubview(toast)
+public func display(_ toastWithText text: String, linkText: String, in view: UIView) {
+	 let toast = Toast(message: text, action: Toast.Action(text: linkText, handler: {
+	  /* Do some action */
+	 }))
 
-        var initialYPositionConstraint: Constraint?
+     toast.showToast(animated: false, completion: nil)
+	 view.addSubview(toast)
+	 toast.snp.makeConstraints { make in
+	      make.leading.trailing.bottom.equalToSuperview()
+	 }
 
-        toast.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(Space.three)
-            initialYPositionConstraint = make.top.equalTo(tabBar.snp.bottom).constraint
-        }
-
-        view.layoutIfNeeded()
-
-        initialYPositionConstraint?.deactivate()
-
-        toast.snp.makeConstraints { make in
-            make.bottom.equalTo(tabBar.snp.top).offset(-Self.toastSpacing)
-        }
-
-        toast.alpha = 0.0
-
-        UIView.animate(withDuration: animate ? 0.5 : 0) {
-            toast.alpha = 1.0
-            view.layoutIfNeeded()
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.autoDismissDelay) {
-            UIView.animate(withDuration: Duration.six, animations: {
-                toast.alpha = 0.0
-            }, completion: { _ in
-                self.remove(toast)
-            })
-        }
 }
 ```
 
