@@ -1,0 +1,118 @@
+import { MDXComponentPage } from '../../../components/mdx/mdx';
+import baseGetStaticProps from '../../../utils/mdx-get-static-props';
+export const getStaticProps = ctx => baseGetStaticProps(ctx, metadata);
+export default props => <MDXComponentPage {...props} {...metadata} />;
+
+export const metadata = {
+    title: 'Avatar',
+    description: 'Display user images and badges on Thumbtack.',
+    component: {
+        id: 'avatar',
+        platformId: 'swiftui',
+    },
+};
+
+import { Img } from '../../../components/mdx/components';
+
+import tpAvatarExample1 from '../../../images/pages/components/avatar/swiftui/example-1.png';
+import tpAvatarExample2 from '../../../images/pages/components/avatar/swiftui/example-2.png';
+import tpAvatarExample3 from '../../../images/pages/components/avatar/swiftui/example-3.png';
+
+## Summary
+
+Avatars provide a container for displaying Entity or User images on Thumbtack. This component displays either the filled images after loading the image via URL or the blank Avatar view if there’s no backing image and initials are provided.
+
+<div>
+    <b>Entity</b>: a company, business, or service.
+</div>
+
+<div>
+    <b>User</b>: a person or user.
+</div>
+
+## Examples
+
+### Initials
+
+```swift
+HStack {
+    TPAvatar(url: nil, initials: "N")
+        .tpAvatarTheme(.medium)
+        .tpAvatarType(.entity)
+
+    TPAvatar(url: nil, initials: "NC", isOnline: true)
+        .tpAvatarTheme(.medium)
+        .tpAvatarType(.user)
+}
+```
+
+<Img
+    {...tpAvatarExample1}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="Initials example screenshot"
+></Img>
+
+### Image initializer / Custom theme
+
+```swift
+TPAvatar(image: Image(systemName: "car.circle.fill"), isOnline: true)
+            .tpAvatarTheme(TPAvatarTheme(size: 96, badgeSize: 22, font: .callout))
+            .tpAvatarType(.user)
+```
+
+<Img
+    {...tpAvatarExample2}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="Image init / theme customization example screenshot"
+></Img>
+
+### URL initializer
+
+```swift
+HStack {
+    TPAvatar(url: URL(string: "https://i.pravatar.cc/140"), isOnline: true)
+        .tpAvatarTheme(.large)
+        .tpAvatarType(.user)
+
+    TPAvatar(url: URL(string: "https://i.pravatar.cc/140"), isOnline: true)
+        .tpAvatarTheme(.large)
+        .tpAvatarType(.entity)
+}
+```
+
+<Img
+    {...tpAvatarExample3}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="URL initializer example screenshot"
+></Img>
+
+## Environment Values
+
+### `.tpAvatarType(_ style: TPAvatarType)`
+
+Either `.user` or `.entity`
+
+### `.tpAvatarTheme(_ theme: TPAvatarTheme)`
+
+Allows customization of the avatar look and feel. Defaults are provided for `xSmall`, `small`, `medium`, `large`, `xLarge`
+
+## Initializers
+
+### `public init(url: URL?, initials: String? = nil, isOnline: Bool = false)`
+
+**url:** - URL used to asynchronously load the avatar image
+
+### `public init(image: Image, isOnline: Bool = false)`
+
+**image:** - Image used for the avatar
+
+### `isOnline: Bool`
+
+Boolean value that controls whether the online badge is shown or not.
+
+### `initials: String?`
+
+The initials to be shown when displaying the blank avatar. One character is used for .entity, and up to two characters can be used for .user styled avatars
