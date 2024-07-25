@@ -2,30 +2,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { format } from 'date-fns';
 import { Text, Pill } from '@thumbtack/thumbprint-react';
 import { tpColorGray300 } from '@thumbtack/thumbprint-tokens';
 import styles from './overview.module.scss';
 
-export const ComponentRow = ({ task, description, status, releaseDate}) => (
-    <>
+export const ComponentRow = ({ task, description, status, releaseDate }) => {
+    return (
         <tr className="bb b-gray-300 bw-2 tl">
-            <td className="">
-                {task}
-            </td>
+            <td className="b">{task}</td>
             <td className="pa2">
-                {description}
+                <Text size="2">{description}</Text>
             </td>
-            <td className="pa2">
+            <td className="pa2 nowrap">
                 <Pill color="blue">{status}</Pill>
             </td>
             <td className="pa2">
-                {releaseDate}
+                {/* <Text size="2">{format(new Date(releaseDate), 'M/dd/yy')}</Text> */}
             </td>
         </tr>
-    </>
-);
+    );
+};
 
 ComponentRow.propTypes = {
+    statuses: Object,
     task: String,
     description: String,
     status: String,
@@ -68,7 +68,7 @@ export const ComponentTable = ({ children }) => (
                     <Text size={2}>Status</Text>
                 </th>
                 <th
-                    className="pt3 ph2 pb2 v-top top0 bg-white"
+                    className="pt3 ph2 pb2 v-top top0 bg-white nowrap"
                     style={{
                         position: 'sticky',
                         boxShadow: `0px 2px 0px 0px ${tpColorGray300}`,

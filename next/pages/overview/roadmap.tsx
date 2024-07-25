@@ -36,6 +36,10 @@ interface Implementation {
         'Development status': string;
         'Design status': string;
         'Documentation status': string;
+        Objective: string;
+        Problem: string;
+        Status: string;
+        'End Date': string;
     };
 }
 
@@ -49,10 +53,10 @@ interface Roadmap {
     type: string;
     updatedAt: string;
     values: {
-        Task: string;
-        Description: string;
+        Objective: string;
+        Problem: string;
         Status: string;
-        'Release Date': string;
+        'End Date': string;
     };
 }
 
@@ -84,13 +88,12 @@ export default function Components({
 
             <ComponentTable>
                 {roadmaps.map(item => {
-
                     return (
                         <ComponentRow
-                            task={item.values.Task}
-                            description={item.values.Description}
+                            task={item.values.Objective}
+                            description={item.values.Problem}
                             status={item.values.Status}
-                            releaseDate={item.values['Release Date']}
+                            releaseDate={item.values['End Date']}
                         />
                     );
                 })}
@@ -102,7 +105,7 @@ export default function Components({
 export const getStaticProps = async () => {
     const listRowsRes = await fetch(
         // https://coda.io/developers/apis/v1#operation/listRows
-        `https://coda.io/apis/v1/docs/bXyUQb2tJW/tables/PublicRoadmap/rows?useColumnNames=true`,
+        `https://coda.io/apis/v1/docs/bXyUQb2tJW/tables/PublicRoadmap2/rows?useColumnNames=true`,
         {
             headers: {
                 Authorization: `Bearer ${process.env.CODA_API_TOKEN}`,
@@ -112,21 +115,23 @@ export const getStaticProps = async () => {
 
     const data = listRowsRes.ok ? await listRowsRes.json() : null;
     const roadmaps: Roadmap[] = data ? data.items : [];
+    // const roadmaps: Implementation[] = data ? data.items : [];
 
-    // const groupedImplementations = groupBy(roadmaps, implementation => {
-    //     return implementation.values.Name;
-    // });
+    const groupedImplementations = groupBy(roadmaps, implementation => {
+        return implementation.values.Status;
+    });
 
-    // const groupedAndSortedImplementations = Object.keys(groupedImplementations)
-    //     .sort()
-    //     .map(key => {
-    //         return groupedImplementations[key];
-    //     });
+    const groupedAndSortedImplementations = Object.keys(groupedImplementations)
+        .sort()
+        .map(key => {
+            return groupedImplementations[key];
+        });
 
     return {
         props: {
             layoutProps: getLayoutProps(),
             roadmaps: roadmaps,
+            // roadmaps: groupedAndSortedImplementations,
         },
     };
 };
