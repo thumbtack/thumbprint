@@ -2,11 +2,11 @@ import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import { ContentPage } from '../../components/mdx/mdx';
-import getContentPageStaticProps from '../../utils/get-content-page-static-props';
-import { CodeExperimental, H2, H3, LI, P, UL } from '../../components/mdx/components';
-import SwatchUsage from '../../components/thumbprint-guide/swatch-usage';
-import Swatch from '../../components/thumbprint-guide/swatch';
+import { ContentPage } from '../../../components/mdx/mdx';
+import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
+import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/components';
+import SwatchUsage from '../../../components/thumbprint-guide/swatch-usage';
+import Swatch from '../../../components/thumbprint-guide/swatch';
 
 export const getStaticProps = getContentPageStaticProps;
 
@@ -15,172 +15,16 @@ export default function OverviewAbout({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <ContentPage
-            title="Color"
-            description="A simple system for interfaces and illustrations."
+            title="Accessibility"
+            description="Color support for a more inclusive experience"
             layoutProps={layoutProps}
         >
-            <H2>Naming</H2>
             <P>
-                Color names are unambiguous and direct. &quot;Blue&quot; means blue. We do this to
-                avoid unneeded abstractions. Extended color names, like{' '}
-                <CodeExperimental>black-300</CodeExperimental> are variations that, like font-weight
-                values, denote increasingly darker (500, 600) and increasingly lighter shades (300,
-                200).
+                Color usage plays a key role in how we convey emotions, establishing brand identity,
+                and guiding user interactions. Consistent and thoughtful color choices also improve
+                usability, highlight important elements, and create a cohesive design language
+                across the product.
             </P>
-            <H2>Palette</H2>
-            <UL>
-                <LI>
-                    Our primary palette consists of &quot;core&quot; colors, as indicated by{' '}
-                    <CodeExperimental>(c)</CodeExperimental>, and help establish our brand.
-                </LI>
-                <LI>
-                    We have extended this with shades that are reserved primarily for illustrations.
-                </LI>
-            </UL>
-
-            <div className="grid mt5">
-                <Swatch name="blue-100" hex={tokens.tpColorBlue100} />
-                <Swatch name="blue-200" hex={tokens.tpColorBlue200} />
-                <Swatch hasBorder />
-                <Swatch name="blue" hex={tokens.tpColorBlue} isCore />
-                <Swatch name="blue-500" hex={tokens.tpColorBlue500} />
-                <Swatch name="blue-600" hex={tokens.tpColorBlue600} />
-                <Swatch name="indigo-100" hex={tokens.tpColorIndigo100} />
-                <Swatch name="indigo-200" hex={tokens.tpColorIndigo200} />
-                <Swatch hasBorder />
-                <Swatch name="indigo" hex={tokens.tpColorIndigo} isCore />
-                <Swatch name="indigo-500" hex={tokens.tpColorIndigo500} />
-                <Swatch name="indigo-600" hex={tokens.tpColorIndigo600} />
-                <Swatch name="purple-100" hex={tokens.tpColorPurple100} />
-                <Swatch name="purple-200" hex={tokens.tpColorPurple200} />
-                <Swatch hasBorder />
-                <Swatch name="purple" hex={tokens.tpColorPurple} isCore />
-                <Swatch name="purple-500" hex={tokens.tpColorPurple500} />
-                <Swatch name="purple-600" hex={tokens.tpColorPurple600} />
-                <Swatch name="green-100" hex={tokens.tpColorGreen100} />
-                <Swatch name="green-200" hex={tokens.tpColorGreen200} />
-                <Swatch hasBorder />
-                <Swatch name="green" hex={tokens.tpColorGreen} isCore />
-                <Swatch name="green-500" hex={tokens.tpColorGreen500} />
-                <Swatch name="green-600" hex={tokens.tpColorGreen600} />
-                <Swatch name="yellow-100" hex={tokens.tpColorYellow100} />
-                <Swatch name="yellow-200" hex={tokens.tpColorYellow200} />
-                <Swatch hasBorder />
-                <Swatch name="yellow" hex={tokens.tpColorYellow} isCore />
-                <Swatch name="yellow-500" hex={tokens.tpColorYellow500} />
-                <Swatch name="yellow-600" hex={tokens.tpColorYellow600} />
-                <Swatch name="red-100" hex={tokens.tpColorRed100} />
-                <Swatch name="red-200" hex={tokens.tpColorRed200} />
-                <Swatch hasBorder />
-                <Swatch name="red" hex={tokens.tpColorRed} isCore />
-                <Swatch name="red-500" hex={tokens.tpColorRed500} />
-                <Swatch name="red-600" hex={tokens.tpColorRed600} />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch name="black-300" hex={tokens.tpColorBlack300} isCore />
-                <Swatch name="black" hex={tokens.tpColorBlack} isCore />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch name="gray-200" hex={tokens.tpColorGray200} isCore />
-                <Swatch name="gray-300" hex={tokens.tpColorGray300} isCore />
-                <Swatch name="gray" hex={tokens.tpColorGray} isCore />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-                <Swatch name="white" hex={tokens.tpColorWhite} isCore hasBorder />
-                <Swatch hasBorder />
-                <Swatch hasBorder />
-            </div>
-
-            <H2>Usage</H2>
-
-            <SwatchUsage
-                name="Blue"
-                hex={tokens.tpColorBlue}
-                doText="Highlights key actions in UI, buttons, links, icons, and branded moments"
-                dontText="Success graphics, body copy, headlines"
-            />
-
-            <SwatchUsage
-                name="Indigo"
-                hex={tokens.tpColorIndigo}
-                doText="Graphs and data visualizations, tags, pills, status labels, illustrations"
-                dontText="Text, icons"
-            />
-
-            <SwatchUsage
-                name="Purple"
-                hex={tokens.tpColorPurple}
-                doText="Graphs and data visualizations, tags, pills, status labels, illustrations"
-                dontText="Text, icons"
-            />
-
-            <SwatchUsage
-                name="Green"
-                hex={tokens.tpColorGreen}
-                doText="Success graphics, completion, and confirmation"
-                dontText="Text, background for white text, graphs and data visualizations, icons"
-            />
-
-            <SwatchUsage
-                name="Yellow"
-                hex={tokens.tpColorYellow}
-                doText="Stars, review charts, alerts, illustrations"
-                dontText="Text, background for white text, graphs and data visualizations, icons"
-            />
-
-            <SwatchUsage
-                name="Red"
-                hex={tokens.tpColorRed}
-                doText="Icons, caution buttons, alerts, warning states"
-                dontText="Background for white text, icons"
-            />
-
-            <SwatchUsage
-                name="Black"
-                hex={tokens.tpColorBlack}
-                doText="Headings, iconography, and small text that supports UI"
-                dontText="Buttons, illustrations"
-            />
-
-            <SwatchUsage
-                name="Black300"
-                hex={tokens.tpColorBlack300}
-                doText="Subheadings and body copy"
-                dontText="Logos, icons, backgrounds, borders"
-            />
-
-            <SwatchUsage
-                name="Gray"
-                hex={tokens.tpColorGray}
-                doText="Inactive icons, ghost text"
-                dontText="Logos, icons, backgrounds, borders"
-            />
-
-            <SwatchUsage
-                name="Gray300"
-                hex={tokens.tpColorGray300}
-                doText="Borders"
-                dontText="Text, buttons"
-            />
-
-            <SwatchUsage
-                name="Gray200"
-                hex={tokens.tpColorGray200}
-                doText="Backgrounds behind components, like cards"
-                dontText="Text, buttons, borders, icons"
-            />
-
-            <SwatchUsage
-                hasBorder
-                name="White"
-                hex={tokens.tpColorWhite}
-                doText="Text, borders, icons"
-                dontText="On light backgrounds"
-            />
 
             <H2>Accessibility</H2>
             <P>
