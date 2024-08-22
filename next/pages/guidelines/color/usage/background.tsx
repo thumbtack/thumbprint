@@ -45,10 +45,6 @@ interface Usage {
     };
 }
 
-const usageExampleMappings = {
-    accent: 'test',
-};
-
 export default function OverviewAbout({
     usages,
     layoutProps,
@@ -207,12 +203,6 @@ export const getStaticProps = async () => {
     const groupedUsages = groupBy(filteredImplementations, usage => {
         return usage.values.theme;
     });
-
-    // const groupedAndSortedUsages = Object.keys(groupedUsages)
-    //     .sort()
-    //     .map(key => {
-    //         return groupedUsages[key];
-    //     });
 
     return {
         props: {
