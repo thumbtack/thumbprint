@@ -3,6 +3,10 @@ import usageContentMappings from '../usage-mappings';
 import ExampleBox from '../../../../components/example-box';
 import { H2, P } from '../../../../components/mdx/components';
 
+function showInteractionColum(usages) {
+    return usages.filter(item => item.values.interaction !== '').length;
+}
+
 export default function UsageCategory({ usages, images }): JSX.Element {
     return (
         <div>
@@ -13,11 +17,14 @@ export default function UsageCategory({ usages, images }): JSX.Element {
                             <H2>{usageContentMappings[key].title}</H2>
                             <P>{usageContentMappings[key].description}</P>
                         </div>
+
                         <table className="tp-body-2 black-300">
                             <tr className="bb b-gray-300">
                                 <th className="tl pv2 pr4">Color</th>
                                 <th className="tl pv2 pr4">Emphasis</th>
-                                <th className="tl pv2 pr4">Interaction</th>
+                                {showInteractionColum(usages[key]) > 0 ? (
+                                    <th className="tl pv2 pr4">Interaction</th>
+                                ) : null}
                                 <th className="tl pv2 ">Description</th>
                             </tr>
                             {usages[key].map(component => {
@@ -37,9 +44,11 @@ export default function UsageCategory({ usages, images }): JSX.Element {
                                         <td className="v-top pv2 pr4">
                                             {component.values.emphasis}
                                         </td>
-                                        <td className="v-top pv2 pr4">
-                                            {component.values.interaction}
-                                        </td>
+                                        {showInteractionColum(usages[key]) > 0 ? (
+                                            <td className="v-top pv2 pr4">
+                                                {component.values.interaction}
+                                            </td>
+                                        ) : null}
                                         <td className="v-top pv2">
                                             {component.values.description}
                                         </td>
