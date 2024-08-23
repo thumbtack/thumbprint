@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticImageData } from 'next/image';
 import usageContentMappings from '../usage-mappings';
 import ExampleBox from '../../../../components/example-box';
 import { H2, P } from '../../../../components/mdx/components';
