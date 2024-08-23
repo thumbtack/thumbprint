@@ -1,13 +1,59 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
+import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import classNames from 'classnames';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
-import * as tokens from '@thumbtack/thumbprint-tokens';
 import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
-import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/components';
+import { H2, P } from '../../../components/mdx/components';
+
+import purple from '../../../images/pages/guide/product/color/palette/purple.png';
+import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';
+import neutral from '../../../images/pages/guide/product/color/palette/neutral.png';
+import red from '../../../images/pages/guide/product/color/palette/red.png';
+import blue from '../../../images/pages/guide/product/color/palette/blue.png';
+import green from '../../../images/pages/guide/product/color/palette/green.png';
+import indigo from '../../../images/pages/guide/product/color/palette/indigo.png';
+
+interface Image {
+    [key: string]: {
+        src: StaticImageData;
+        alt: string;
+    };
+}
+
+const images: Image = {
+    purple: {
+        src: purple,
+        alt: 'alt text',
+    },
+    yellow: {
+        src: yellow,
+        alt: 'alt text',
+    },
+    neutral: {
+        src: neutral,
+        alt: 'alt text',
+    },
+    red: {
+        src: red,
+        alt: 'alt text',
+    },
+    blue: {
+        src: blue,
+        alt: 'alt text',
+    },
+    green: {
+        src: green,
+        alt: 'alt text',
+    },
+    indigo: {
+        src: indigo,
+        alt: 'alt text',
+    },
+};
 
 interface Usage {
     values: {
@@ -155,6 +201,11 @@ export default function OverviewAbout({
 
                             <div style={{ minWidth: '375px' }}>
                                 <div className="tp-body-3 ttu">Examples</div>
+                                <img
+                                    src={images[key].src.src}
+                                    width="375px"
+                                    alt={images[key].alt}
+                                />
                             </div>
                         </div>
                     </div>

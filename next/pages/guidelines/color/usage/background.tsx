@@ -1,28 +1,61 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { groupBy, keyBy } from 'lodash-es';
-import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
-import * as tokens from '@thumbtack/thumbprint-tokens';
+import { StaticImageData } from 'next/image';
+import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import Alert from '../../../../components/alert/alert';
 import getLayoutProps from '../../../../utils/get-layout-props';
-import {
-    CodeExperimental,
-    H2,
-    H3,
-    LI,
-    P,
-    UL,
-    OL,
-    Img,
-} from '../../../../components/mdx/components';
-import SwatchUsage from '../../../../components/thumbprint-guide/swatch-usage';
-import Swatch from '../../../../components/thumbprint-guide/swatch';
+import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
 import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
 import ExampleBox from '../../../../components/example-box';
-import usageContentMappings from '../usage-mappings';
+import UsageCategory from './usage-categories';
 
-import custom from '../../../../images/pages/guide/product/aspect-ratio/avatar-customer.png';
+import intro from '../../../../images/pages/guide/product/color/usage/background/intro.png';
+import neutral from '../../../../images/pages/guide/product/color/usage/background/neutral.png';
+import primary from '../../../../images/pages/guide/product/color/usage/background/primary.png';
+import success from '../../../../images/pages/guide/product/color/usage/background/success.png';
+import guidance from '../../../../images/pages/guide/product/color/usage/background/guidance.png';
+import alert from '../../../../images/pages/guide/product/color/usage/background/alert.png';
+import caution from '../../../../images/pages/guide/product/color/usage/background/caution.png';
+import accent from '../../../../images/pages/guide/product/color/usage/background/accent.png';
+
+interface Image {
+    [key: string]: {
+        src: StaticImageData;
+        alt: string;
+    };
+}
+
+const images: Image = {
+    neutral: {
+        src: neutral,
+        alt: 'alt text',
+    },
+    primary: {
+        src: primary,
+        alt: 'alt text',
+    },
+    success: {
+        src: success,
+        alt: 'alt text',
+    },
+    guidance: {
+        src: guidance,
+        alt: 'alt text',
+    },
+    alert: {
+        src: alert,
+        alt: 'alt text',
+    },
+    caution: {
+        src: caution,
+        alt: 'alt text',
+    },
+    accent: {
+        src: accent,
+        alt: 'alt text',
+    },
+};
 
 interface Usage {
     browserLink: string;
@@ -45,7 +78,7 @@ interface Usage {
     };
 }
 
-export default function OverviewAbout({
+export default function UsageBackground({
     usages,
     layoutProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -93,7 +126,11 @@ export default function OverviewAbout({
                 </TabNavItem>
             </TabNav>
 
-            <ExampleBox>Image</ExampleBox>
+            <ExampleBox>
+                <div className="tc" style={{ minWidth: '375px' }}>
+                    <img src={intro.src} width="375px" alt="" />
+                </div>
+            </ExampleBox>
 
             <div>
                 <H2>Background colors</H2>
@@ -127,60 +164,7 @@ export default function OverviewAbout({
                 </UL>
             </div>
 
-            <div>
-                {Object.keys(usages).map(key => {
-                    return (
-                        <div key={key}>
-                            <div className="mb4">
-                                <H2>{usageContentMappings[key].title}</H2>
-                                <P>{usageContentMappings[key].description}</P>
-                            </div>
-                            <table className="tp-body-2 black-300">
-                                <tr className="bb b-gray-300">
-                                    <th className="tl pv2 pr4">Color</th>
-                                    <th className="tl pv2 pr4">Emphasis</th>
-                                    <th className="tl pv2 pr4">Interaction</th>
-                                    <th className="tl pv2 ">Description</th>
-                                </tr>
-                                {usages[key].map(component => {
-                                    return (
-                                        <tr className="bb b-gray-300" key={component}>
-                                            <td className="v-top pv2 pr4 s_nowrap">
-                                                <div>
-                                                    <span
-                                                        className="w1 h1 mr2 dib relative top-3 br2 b-gray-300 ba"
-                                                        style={{
-                                                            background: `${component.values['light-hex']}`,
-                                                        }}
-                                                    />
-                                                    {component.values.color}
-                                                </div>
-                                            </td>
-                                            <td className="v-top pv2 pr4">
-                                                {component.values.emphasis}
-                                            </td>
-                                            <td className="v-top pv2 pr4">
-                                                {component.values.interaction}
-                                            </td>
-                                            <td className="v-top pv2">
-                                                {component.values.description}
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
-                            </table>
-                            <div className="pt3">
-                                <span className="tp-body-3 black-300 ttu">Examples</span>
-                                <ExampleBox>
-                                    <div className="tc">
-                                        <H3>{key}</H3>
-                                    </div>
-                                </ExampleBox>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+            <UsageCategory usages={usages} images={images} />
         </ContentPage>
     );
 }

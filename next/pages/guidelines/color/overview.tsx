@@ -1,18 +1,41 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
-import * as tokens from '@thumbtack/thumbprint-tokens';
+import { StaticImageData } from 'next/image';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { H2, H3, P } from '../../../components/mdx/components';
-import SwatchUsage from '../../../components/thumbprint-guide/swatch-usage';
-import Swatch from '../../../components/thumbprint-guide/swatch';
+import { H2, H3, P, Img } from '../../../components/mdx/components';
 import usageContentMappings, {
     usageContent,
     emphasisContent,
     interactionContent,
     ContentMapping,
 } from './usage-mappings';
+
+import usage from '../../../images/pages/guide/product/color/overiew/usage.png';
+import emphasis from '../../../images/pages/guide/product/color/overiew/emphasis.png';
+import interaction from '../../../images/pages/guide/product/color/overiew/interaction.png';
+
+interface Image {
+    [key: string]: {
+        src: StaticImageData;
+        alt: string;
+    };
+}
+
+const images: Image = {
+    usage: {
+        src: usage,
+        alt: 'alt text',
+    },
+    emphasis: {
+        src: emphasis,
+        alt: 'alt text',
+    },
+    interaction: {
+        src: interaction,
+        alt: 'alt text',
+    },
+};
 
 export const getStaticProps = getContentPageStaticProps;
 
@@ -92,15 +115,6 @@ export default function OverviewAbout({
                 cues. Color should be used sparingly to drive focus to moments that matter. Color
                 should not be used to add personality or flair.
             </P>
-            {/* <div>
-                <H2>Naming</H2>
-                <P>
-                    Color names are unambiguous and direct. "Blue" means blue. We do this to avoid
-                    unneeded abstractions. Extended color names, like black-300 are variations that,
-                    like font-weight values, denote increasingly darker (500, 600) and increasingly
-                    lighter shades (300, 200).
-                </P>
-            </div> */}
 
             <div>
                 <H2>Color themes</H2>
@@ -135,7 +149,11 @@ export default function OverviewAbout({
                     Color usage is arranged into four high-level categories background, border, text
                     and icon. Color usage patterns are represented by their intended use case.
                 </P>
-                <ExampleBox>Image</ExampleBox>
+                <ExampleBox>
+                    <div className="tc">
+                        <img src={images.usage.src.src} width="375px" alt={images.usage.alt} />
+                    </div>
+                </ExampleBox>
                 {overviewTable({ list: usageContent })}
             </div>
 
@@ -147,7 +165,15 @@ export default function OverviewAbout({
                     attention. A strong emphasis is high contrast in comparison to the surface the
                     component occupies.
                 </P>
-                <ExampleBox>Image</ExampleBox>
+                <ExampleBox>
+                    <div className="tc">
+                        <img
+                            src={images.emphasis.src.src}
+                            width="375px"
+                            alt={images.emphasis.alt}
+                        />
+                    </div>
+                </ExampleBox>
                 {overviewTable({ list: emphasisContent })}
             </div>
 
@@ -159,7 +185,15 @@ export default function OverviewAbout({
                     with content. Not all elements are interactive, but our color usage patterns
                     provide additional color definitions when applicable.
                 </P>
-                <ExampleBox>Image</ExampleBox>
+                <ExampleBox>
+                    <div className="tc">
+                        <img
+                            src={images.interaction.src.src}
+                            width="375px"
+                            alt={images.interaction.alt}
+                        />
+                    </div>
+                </ExampleBox>
                 {overviewTable({ list: interactionContent })}
             </div>
         </ContentPage>
