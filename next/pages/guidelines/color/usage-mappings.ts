@@ -3,6 +3,7 @@ export interface ContentMapping {
         title: string;
         type?: string;
         color?: string;
+        suggestedUse?: string;
         description: string;
     };
 }
@@ -123,6 +124,65 @@ export const interactionContent: ContentMapping = {
     disabled: {
         title: 'Inverse',
         description: 'User can no longer engage with the element',
+    },
+};
+
+export const paletteColortMappings: ContentMapping = {
+    neutral: {
+        title: 'Neutral',
+        type: 'brand',
+        color: '#2f3033',
+        suggestedUse: 'Backgrounds, text, iconography, shadows.',
+        description:
+            'Express default and less-opinionated UI elements such as background colors, icons, and text elements.',
+    },
+    blue: {
+        title: 'Blue',
+        type: 'brand',
+        color: '#009fd9',
+        suggestedUse:
+            'Buttons, links, information, progress, promotional moments, brand moments, selected states.',
+        description:
+            'Drive focus and immediate attention to primary product moments. Overuse of this color is discouraged, so we can focus on the moments that matter.',
+    },
+    indigo: {
+        title: 'Indigo',
+        type: 'brand',
+        color: '#5968e2',
+        suggestedUse: 'Data visualizations, informational moments, user assistance.',
+        description:
+            'Guiding users through onboarding, user assistance, map overlays, and data visualizations.',
+    },
+    purple: {
+        title: 'Purple',
+        type: 'brand',
+        color: '#8d56eb',
+        suggestedUse: 'Pills and descriptors.',
+        description: 'Subtle background for accent purposes. ',
+    },
+    green: {
+        title: 'Green',
+        type: 'brand',
+        color: '#ffffff',
+        suggestedUse: 'Positive moments, savings, discounts, upward trends, growth, ratings.',
+        description:
+            'Guiding users through onboarding, user assistance, map overlays, and data visualizations.',
+    },
+    red: {
+        title: 'Red',
+        type: 'feedback',
+        color: '#2db783',
+        suggestedUse: 'Alerts, negative impact, cancellations, deletions and urgency.',
+        description:
+            'Should be used sparingly to not deter from important moments that require the user’s immediate attention..',
+    },
+    yellow: {
+        title: 'Yellow',
+        type: 'feedback',
+        color: '#ff5a5f',
+        suggestedUse: 'Cautionary moments.',
+        description:
+            'Add vibrant moments to bring additional energy to the ux and provide cautionary moments of user feedback.',
     },
 };
 

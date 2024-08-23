@@ -5,9 +5,11 @@ import { groupBy } from 'lodash-es';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
 import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
+import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
 import { H2, P } from '../../../components/mdx/components';
+import { paletteColortMappings } from './usage-mappings';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
 import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';
@@ -302,18 +304,15 @@ export default function OverviewAbout({
                 {Object.keys(usages).map(key => {
                     return (
                         <div className="ba b-gray-300 pa5 br3 mb5">
-                            <H2>{key}</H2>
-                            <P>
-                                Express default and less-opinionated UI elements such as background
-                                colors, icons, and text elements.
-                            </P>
+                            <H2>{paletteColortMappings[key].title}</H2>
+                            <P>{paletteColortMappings[key].description}</P>
 
-                            <div className="flex flex-row col-gap4">
+                            <div className="flex flex-column l_flex-row row-gap4 col-gap4 ">
                                 <div className="flex-auto tp-body-2">
                                     <div className="b">Suggested use</div>
-                                    <div className="pb3">
-                                        Backgrounds, text, iconography, shadows.
-                                    </div>
+                                    <Text className="pb3 black-300" size={2}>
+                                        {paletteColortMappings[key].suggestedUse}
+                                    </Text>
 
                                     <div className="br3 overflow-hidden">
                                         {usages[key].map(component => {
