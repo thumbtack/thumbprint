@@ -4,6 +4,7 @@ import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import Alert from '../../../../components/alert/alert';
+import InlineCode from '../../../../components/inline-code/inline-code';
 import getLayoutProps from '../../../../utils/get-layout-props';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
 import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';

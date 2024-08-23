@@ -4,34 +4,6 @@ import usageContentMappings from '../usage-mappings';
 import ExampleBox from '../../../../components/example-box';
 import { H2, P } from '../../../../components/mdx/components';
 
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
-
-interface Usage {
-    browserLink: string;
-    createdAt: string;
-    href: string;
-    id: string;
-    index: number;
-    name: string;
-    type: string;
-    updatedAt: string;
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-    };
-}
-
 export default function UsageCategory({ usages, images }): JSX.Element {
     return (
         <div>

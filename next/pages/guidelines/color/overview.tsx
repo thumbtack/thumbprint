@@ -3,7 +3,7 @@ import type { InferGetStaticPropsType } from 'next';
 import { StaticImageData } from 'next/image';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
-import { H2, H3, P, Img } from '../../../components/mdx/components';
+import { H2, H3, P } from '../../../components/mdx/components';
 import usageContentMappings, {
     usageContent,
     emphasisContent,

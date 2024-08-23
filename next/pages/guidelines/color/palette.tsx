@@ -105,7 +105,7 @@ function ColorSection({ values }: Usage): JSX.Element {
             className={classNames('flex flex-column tp-body-3', {
                 white:
                     (['400', '500', '600'].includes(values.level) &&
-                        values.color != 'Yellow 400') ||
+                        values.color !== 'Yellow 400') ||
                     ['Black', 'Black 300'].includes(values.color),
             })}
             style={{
@@ -156,11 +156,10 @@ function ColorSection({ values }: Usage): JSX.Element {
 
 interface SwatchProps {
     tokenColor: string;
-    children?: React.ReactNode;
     level: string;
 }
 
-function Swatch({ tokenColor, children, level }: SwatchProps): JSX.Element {
+function Swatch({ tokenColor, level }: SwatchProps): JSX.Element {
     return (
         <div
             className="flex-auto tc"

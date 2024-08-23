@@ -98,13 +98,13 @@ export default function UsageIcons({
                 <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/background">
                     Background
                 </TabNavItem>
-                <TabNavItem isActive key={1} href="/guidelines/color/usage/text">
+                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/text">
                     Text
                 </TabNavItem>
                 <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/borders">
                     Borders
                 </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/icons">
+                <TabNavItem isActive key={1} href="/guidelines/color/usage/icons">
                     Icons
                 </TabNavItem>
             </TabNav>

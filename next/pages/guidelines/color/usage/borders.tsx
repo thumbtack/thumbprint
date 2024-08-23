@@ -73,10 +73,10 @@ export default function UsageBorders({
                 <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/background">
                     Background
                 </TabNavItem>
-                <TabNavItem isActive key={1} href="/guidelines/color/usage/text">
+                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/text">
                     Text
                 </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/borders">
+                <TabNavItem isActive key={1} href="/guidelines/color/usage/borders">
                     Borders
                 </TabNavItem>
                 <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/icons">
@@ -128,7 +128,7 @@ export const getStaticProps = async () => {
 
     const data = listRowsRes.ok ? await listRowsRes.json() : null;
     const usages: Usage[] = data ? data.items : [];
-    const filteredImplementations = usages.filter(item => item.values.usage === 'borders');
+    const filteredImplementations = usages.filter(item => item.values.usage === 'border');
 
     const groupedUsages = groupBy(filteredImplementations, usage => {
         return usage.values.theme;
