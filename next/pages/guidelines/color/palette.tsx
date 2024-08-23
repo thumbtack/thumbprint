@@ -3,7 +3,7 @@ import type { InferGetStaticPropsType } from 'next';
 import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import classNames from 'classnames';
-import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
@@ -152,6 +152,23 @@ function ColorSection({ values }: Usage): JSX.Element {
     );
 }
 
+interface SwatchProps {
+    tokenColor: string;
+    children?: React.ReactNode;
+    level: string;
+}
+
+function Swatch({ tokenColor, children, level }: SwatchProps): JSX.Element {
+    return (
+        <div
+            className="flex-auto tc"
+            style={{ background: tokens[`${tokenColor}`], height: '48px' }}
+        >
+            <span style={{ color: tokens[`${tokenColor}`] }}>{level}</span>
+        </div>
+    );
+}
+
 export default function OverviewAbout({
     usages,
     layoutProps,
@@ -176,41 +193,148 @@ export default function OverviewAbout({
                 </P>
             </div>
 
-            <div>color palette table</div>
+            {/* palette */}
+            <div className="br3 overflow-hidden">
+                <div className="flex tp-body-2 pt5">
+                    <div className="flex-auto h-100 pb2 tr pr2 w1 content-center">
+                        <span className="white">Neutral</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">100</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">200</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">300</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">Core</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">500</span>
+                    </div>
+                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
+                        <span className="Black">600</span>
+                    </div>
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="Black">Netural</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorWhite" />
+                    <Swatch level="200" tokenColor="tpColorGray200" />
+                    <Swatch level="300" tokenColor="tpColorGray300" />
+                    <Swatch level="400" tokenColor="tpColorGray" />
+                    <Swatch level="500" tokenColor="tpColorBlack300" />
+                    <Swatch level="600" tokenColor="tpColorBlack" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="blue-500">Blue</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorBlue100" />
+                    <Swatch level="200" tokenColor="tpColorBlue200" />
+                    <Swatch level="300" tokenColor="tpColorBlue300" />
+                    <Swatch level="core" tokenColor="tpColorBlue" />
+                    <Swatch level="500" tokenColor="tpColorBlue500" />
+                    <Swatch level="600" tokenColor="tpColorBlue600" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="green-500">Green</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorGreen100" />
+                    <Swatch level="200" tokenColor="tpColorGreen200" />
+                    <Swatch level="300" tokenColor="tpColorGreen300" />
+                    <Swatch level="core" tokenColor="tpColorGreen" />
+                    <Swatch level="500" tokenColor="tpColorGreen500" />
+                    <Swatch level="600" tokenColor="tpColorGreen600" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="yellow-600">Yellow</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorYellow100" />
+                    <Swatch level="200" tokenColor="tpColorYellow200" />
+                    <Swatch level="300" tokenColor="tpColorYellow300" />
+                    <Swatch level="core" tokenColor="tpColorYellow" />
+                    <Swatch level="500" tokenColor="tpColorYellow500" />
+                    <Swatch level="600" tokenColor="tpColorYellow600" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="red-500">Red</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorRed100" />
+                    <Swatch level="200" tokenColor="tpColorRed200" />
+                    <Swatch level="300" tokenColor="tpColorRed300" />
+                    <Swatch level="core" tokenColor="tpColorRed" />
+                    <Swatch level="500" tokenColor="tpColorRed500" />
+                    <Swatch level="600" tokenColor="tpColorRed600" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="indigo-500">Indigo</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorIndigo100" />
+                    <Swatch level="200" tokenColor="tpColorIndigo200" />
+                    <Swatch level="300" tokenColor="tpColorIndigo300" />
+                    <Swatch level="core" tokenColor="tpColorIndigo" />
+                    <Swatch level="500" tokenColor="tpColorIndigo500" />
+                    <Swatch level="600" tokenColor="tpColorIndigo600" />
+                </div>
+                <div className="flex">
+                    <div className="flex-auto h3 tr pr2 content-center w1">
+                        <span className="purple-500">Purple</span>
+                    </div>
+                    <Swatch level="100" tokenColor="tpColorPurple100" />
+                    <Swatch level="200" tokenColor="tpColorPurple200" />
+                    <Swatch level="300" tokenColor="tpColorPurple300" />
+                    <Swatch level="core" tokenColor="tpColorPurple" />
+                    <Swatch level="500" tokenColor="tpColorPurple500" />
+                    <Swatch level="600" tokenColor="tpColorPurple600" />
+                </div>
+            </div>
 
-            {Object.keys(usages).map(key => {
-                return (
-                    <div className="ba b-gray-300 pa5 br3 mb5">
-                        <H2>{key}</H2>
-                        <P>
-                            Express default and less-opinionated UI elements such as background
-                            colors, icons, and text elements.
-                        </P>
+            {/* colors */}
+            <div className="pt6">
+                {Object.keys(usages).map(key => {
+                    return (
+                        <div className="ba b-gray-300 pa5 br3 mb5">
+                            <H2>{key}</H2>
+                            <P>
+                                Express default and less-opinionated UI elements such as background
+                                colors, icons, and text elements.
+                            </P>
 
-                        <div className="flex flex-row col-gap4">
-                            <div className="flex-auto tp-body-2">
-                                <div className="b">Suggested use</div>
-                                <div className="pb3">Backgrounds, text, iconography, shadows.</div>
+                            <div className="flex flex-row col-gap4">
+                                <div className="flex-auto tp-body-2">
+                                    <div className="b">Suggested use</div>
+                                    <div className="pb3">
+                                        Backgrounds, text, iconography, shadows.
+                                    </div>
 
-                                <div className="br3 overflow-hidden">
-                                    {usages[key].map(component => {
-                                        return <ColorSection values={component.values} />;
-                                    })}
+                                    <div className="br3 overflow-hidden">
+                                        {usages[key].map(component => {
+                                            return <ColorSection values={component.values} />;
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div style={{ minWidth: '375px' }}>
+                                    <div className="tp-body-3 ttu">Examples</div>
+                                    <img
+                                        src={images[key].src.src}
+                                        width="375px"
+                                        alt={images[key].alt}
+                                    />
                                 </div>
                             </div>
-
-                            <div style={{ minWidth: '375px' }}>
-                                <div className="tp-body-3 ttu">Examples</div>
-                                <img
-                                    src={images[key].src.src}
-                                    width="375px"
-                                    alt={images[key].alt}
-                                />
-                            </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+            </div>
         </ContentPage>
     );
 }
