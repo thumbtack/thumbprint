@@ -8,7 +8,7 @@ import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
 import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
-import { H2, P } from '../../../components/mdx/components';
+import { H2, P, LI, UL } from '../../../components/mdx/components';
 import { paletteColortMappings } from './usage-mappings';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
@@ -120,7 +120,13 @@ function ColorSection({ values }: Usage): JSX.Element {
             {/* end clickable region */}
             <div className="pb3 ph3">
                 {/* body content */}
-                <div className="pb3">{values.description}</div>
+                <div className="pb3">
+                    <ul style={{ listStyle: 'bullet' }} className="ml3">
+                        {values.description.split('\n').map(item => {
+                            return <li>{item}</li>;
+                        })}
+                    </ul>
+                </div>
                 {/* tokens */}
                 <div className="flex flex-row col-gap2 row-gap2 flex-wrap">
                     {coloredPill({
