@@ -8,7 +8,7 @@ import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
 import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
-import { H2, P, LI, UL } from '../../../components/mdx/components';
+import { H2, P } from '../../../components/mdx/components';
 import { paletteColortMappings } from './usage-mappings';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
@@ -176,6 +176,61 @@ function Swatch({ tokenColor, level }: SwatchProps): JSX.Element {
     );
 }
 
+function renderColors({ usages }): JSX.Element {
+    return (
+        <div className="pt6">
+            {Object.keys(usages)
+                .map(key => {
+                    return (
+                        <div key={key} className="ba b-gray-300 pa5 br3 mb5">
+                            <H2>{paletteColortMappings[key].title}</H2>
+                            <P>{paletteColortMappings[key].description}</P>
+
+                            <div className="flex flex-column l_flex-row row-gap4 col-gap4 ">
+                                <div className="flex-auto tp-body-2">
+                                    <div className="b">Suggested use</div>
+                                    <Text className="pb3 black-300" size={2}>
+                                        {paletteColortMappings[key].suggestedUse}
+                                    </Text>
+
+                                    <div className="br3 overflow-hidden">
+                                        {usages[key].map(component => {
+                                            return <ColorSection values={component.values} />;
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div style={{ minWidth: '375px' }}>
+                                    <div className="tp-body-3 ttu">Examples</div>
+                                    <img
+                                        src={images[key].src.src}
+                                        width="375px"
+                                        alt={images[key].alt}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+                .sort((a, b) => {
+                    const colorOrder = {
+                        purple: 4,
+                        yellow: 7,
+                        neutral: 1,
+                        red: 6,
+                        indigo: 3,
+                        green: 5,
+                        blue: 2,
+                    };
+                    if (!colorOrder[a.key] || !colorOrder[b.key]) {
+                        throw new Error(`All colors must be defined in the \`colorOrder\` object.`);
+                    }
+                    return colorOrder[a.key] - colorOrder[b.key];
+                })}
+        </div>
+    );
+}
+
 export default function OverviewAbout({
     usages,
     layoutProps,
@@ -305,40 +360,7 @@ export default function OverviewAbout({
             </div>
 
             {/* colors */}
-            <div className="pt6">
-                {Object.keys(usages).map(key => {
-                    return (
-                        <div className="ba b-gray-300 pa5 br3 mb5">
-                            <H2>{paletteColortMappings[key].title}</H2>
-                            <P>{paletteColortMappings[key].description}</P>
-
-                            <div className="flex flex-column l_flex-row row-gap4 col-gap4 ">
-                                <div className="flex-auto tp-body-2">
-                                    <div className="b">Suggested use</div>
-                                    <Text className="pb3 black-300" size={2}>
-                                        {paletteColortMappings[key].suggestedUse}
-                                    </Text>
-
-                                    <div className="br3 overflow-hidden">
-                                        {usages[key].map(component => {
-                                            return <ColorSection values={component.values} />;
-                                        })}
-                                    </div>
-                                </div>
-
-                                <div style={{ minWidth: '375px' }}>
-                                    <div className="tp-body-3 ttu">Examples</div>
-                                    <img
-                                        src={images[key].src.src}
-                                        width="375px"
-                                        alt={images[key].alt}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+            {renderColors({ usages })}
         </ContentPage>
     );
 }
