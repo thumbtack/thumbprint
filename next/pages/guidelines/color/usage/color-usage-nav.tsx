@@ -1,63 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { sortBy } from 'lodash';
 import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
 
-/**
- * Given `/components/button/react/`, this function returns `react`.
- */
-const getPlatformSlugByPath = path => {
-    const arr = path.split('/');
-    return arr[arr.length - 2];
-};
-
-const sortPlatforms = ({ node }) => {
-    const platformOrder = {
-        usage: 1,
-        react: 2,
-        scss: 3,
-        ios: 4,
-        swiftui: 5,
-        android: 6,
+interface TabProps {
+    [key: string]: {
+        name: string;
+        path: string;
     };
+}
 
-    const { path } = node;
-    return platformOrder[getPlatformSlugByPath(path)];
+const usageTabs: TabProps = {
+    background: { name: 'Background', path: '/guidelines/color/usage/background' },
+    text: { name: 'Text', path: '/guidelines/color/usage/text' },
+    borders: { name: 'Borders', path: '/guidelines/color/usage/borders' },
+    icons: { name: 'Icons', path: '/guidelines/color/usage/icons' },
 };
 
-/**
- * Given `/components/button/react/`, this function returns `React`.
- */
-const getPlatformDisplayName = path => {
-    const displayName = {
-        neutral: 'Neutral',
-        primary: 'Primary & info',
-        success: 'Success, finance & ratings',
-        guidance: 'Guidance & visualization',
-        alert: 'Alert',
-        caution: 'Caution',
-        accent: 'Accents',
-    };
-
-    return displayName[getPlatformSlugByPath(path)];
-};
-
-const PlatformNav = ({ platformNavQueryResults }) => {
-    const sortedPlatforms = sortBy(platformNavQueryResults.edges, sortPlatforms);
-
+const ColorUsageNav = ({ activeTab }: { activeTab: string }) => {
     return (
         <TabNav>
-            {sortedPlatforms.map(({ node }) => (
-                <TabNavItem to={node.path} key={node.path}>
-                    {getPlatformDisplayName(node.path)}
+            {Object.keys(usageTabs).map(node => (
+                <TabNavItem
+                    href={usageTabs[node].path}
+                    key={usageTabs[node].path}
+                    isActive={activeTab === node}
+                >
+                    <div>{usageTabs[node].name}</div>
                 </TabNavItem>
             ))}
         </TabNav>
     );
 };
 
-PlatformNav.propTypes = {
-    platformNavQueryResults: PropTypes.shape({}).isRequired,
-};
-
-export default PlatformNav;
+export default ColorUsageNav;

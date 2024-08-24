@@ -1,13 +1,13 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
 import getLayoutProps from '../../../../utils/get-layout-props';
-import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
 import ExampleBox from '../../../../components/example-box';
 import UsageCategory from './usage-categories';
+import ColorUsageNav from './color-usage-nav';
+import { Usage, Image } from '../utils';
 
 import intro from '../../../../images/pages/guide/product/color/usage/text/intro.png';
 import neutral from '../../../../images/pages/guide/product/color/usage/text/neutral.png';
@@ -18,64 +18,36 @@ import alert from '../../../../images/pages/guide/product/color/usage/text/alert
 import caution from '../../../../images/pages/guide/product/color/usage/text/caution.png';
 import accent from '../../../../images/pages/guide/product/color/usage/text/accent.png';
 
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
-
 const images: Image = {
     neutral: {
         src: neutral,
-        alt: 'alt text',
+        alt: 'user interface example where neutral colors are applied to text',
     },
     primary: {
         src: primary,
-        alt: 'alt text',
+        alt: 'user interface example where primary colors are applied to text',
     },
     success: {
         src: success,
-        alt: 'alt text',
+        alt: 'user interface example where success colors are applied to text',
     },
     guidance: {
         src: guidance,
-        alt: 'alt text',
+        alt: 'user interface example where guidance colors are applied to text',
     },
     alert: {
         src: alert,
-        alt: 'alt text',
+        alt: 'user interface example where alert colors are applied to text',
     },
     caution: {
         src: caution,
-        alt: 'alt text',
+        alt: 'user interface example where caution colors are applied to text',
     },
     accent: {
         src: accent,
-        alt: 'alt text',
+        alt: 'user interface example where accent colors are applied to text',
     },
 };
-
-interface Usage {
-    browserLink: string;
-    createdAt: string;
-    href: string;
-    id: string;
-    index: number;
-    name: string;
-    type: string;
-    updatedAt: string;
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-    };
-}
 
 export default function UsageText({
     usages,
@@ -94,20 +66,7 @@ export default function UsageText({
                 across the product.
             </P>
 
-            <TabNav>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/background">
-                    Background
-                </TabNavItem>
-                <TabNavItem isActive key={1} href="/guidelines/color/usage/text">
-                    Text
-                </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/borders">
-                    Borders
-                </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/icons">
-                    Icons
-                </TabNavItem>
-            </TabNav>
+            <ColorUsageNav activeTab="text" />
 
             <ExampleBox>
                 <div className="tc" style={{ minWidth: '375px' }}>

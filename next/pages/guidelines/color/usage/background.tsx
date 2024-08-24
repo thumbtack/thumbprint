@@ -1,15 +1,15 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import Alert from '../../../../components/alert/alert';
 import InlineCode from '../../../../components/inline-code/inline-code';
 import getLayoutProps from '../../../../utils/get-layout-props';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
-import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
 import ExampleBox from '../../../../components/example-box';
 import UsageCategory from './usage-categories';
+import ColorUsageNav from './color-usage-nav';
+import { Usage, Image } from '../utils';
 
 import intro from '../../../../images/pages/guide/product/color/usage/background/intro.png';
 import neutral from '../../../../images/pages/guide/product/color/usage/background/neutral.png';
@@ -20,64 +20,36 @@ import alert from '../../../../images/pages/guide/product/color/usage/background
 import caution from '../../../../images/pages/guide/product/color/usage/background/caution.png';
 import accent from '../../../../images/pages/guide/product/color/usage/background/accent.png';
 
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
-
 const images: Image = {
     neutral: {
         src: neutral,
-        alt: 'alt text',
+        alt: 'user interface example where the netural theme is applied to element backgrounds',
     },
     primary: {
         src: primary,
-        alt: 'alt text',
+        alt: 'user interface example where the primary theme is applied to element backgrounds',
     },
     success: {
         src: success,
-        alt: 'alt text',
+        alt: 'user interface example where the success theme is applied to element backgrounds',
     },
     guidance: {
         src: guidance,
-        alt: 'alt text',
+        alt: 'user interface example where the guidance theme is applied to element backgrounds',
     },
     alert: {
         src: alert,
-        alt: 'alt text',
+        alt: 'user interface example where the alert theme is applied to element backgrounds',
     },
     caution: {
         src: caution,
-        alt: 'alt text',
+        alt: 'user interface example where the caution theme is applied to element backgrounds',
     },
     accent: {
         src: accent,
-        alt: 'alt text',
+        alt: 'user interface example where the accent theme is applied to element backgrounds',
     },
 };
-
-interface Usage {
-    browserLink: string;
-    createdAt: string;
-    href: string;
-    id: string;
-    index: number;
-    name: string;
-    type: string;
-    updatedAt: string;
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-    };
-}
 
 export default function UsageBackground({
     usages,
@@ -112,20 +84,7 @@ export default function UsageBackground({
                 across the product.
             </P>
 
-            <TabNav>
-                <TabNavItem isActive key={1} href="/guidelines/color/usage/background">
-                    Background
-                </TabNavItem>
-                <TabNavItem isActive={false} key={2} href="/guidelines/color/usage/text">
-                    Text
-                </TabNavItem>
-                <TabNavItem isActive={false} key={3} href="/guidelines/color/usage/borders">
-                    Borders
-                </TabNavItem>
-                <TabNavItem isActive={false} key={4} href="/guidelines/color/usage/icons">
-                    Icons
-                </TabNavItem>
-            </TabNav>
+            <ColorUsageNav activeTab="background" />
 
             <ExampleBox>
                 <div className="tc" style={{ minWidth: '375px' }}>

@@ -1,56 +1,28 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { StaticImageData } from 'next/image';
 import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
 import getLayoutProps from '../../../../utils/get-layout-props';
-import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
 import ExampleBox from '../../../../components/example-box';
 import UsageCategory from './usage-categories';
+import ColorUsageNav from './color-usage-nav';
+import { Usage, Image } from '../utils';
 
 import intro from '../../../../images/pages/guide/product/color/usage/borders/intro.png';
 import neutral from '../../../../images/pages/guide/product/color/usage/borders/neutral.png';
 import guidance from '../../../../images/pages/guide/product/color/usage/borders/guidance.png';
 
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
-
 const images: Image = {
     neutral: {
         src: neutral,
-        alt: 'alt text',
+        alt: 'user interface example where neutral colors are applied to borders',
     },
     guidance: {
         src: guidance,
-        alt: 'alt text',
+        alt: 'user interface example where guidance colors are applied to borders',
     },
 };
-
-interface Usage {
-    browserLink: string;
-    createdAt: string;
-    href: string;
-    id: string;
-    index: number;
-    name: string;
-    type: string;
-    updatedAt: string;
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-    };
-}
 
 export default function UsageBorders({
     usages,
@@ -69,20 +41,7 @@ export default function UsageBorders({
                 across the product.
             </P>
 
-            <TabNav>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/background">
-                    Background
-                </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/text">
-                    Text
-                </TabNavItem>
-                <TabNavItem isActive key={1} href="/guidelines/color/usage/borders">
-                    Borders
-                </TabNavItem>
-                <TabNavItem isActive={false} key={1} href="/guidelines/color/usage/icons">
-                    Icons
-                </TabNavItem>
-            </TabNav>
+            <ColorUsageNav activeTab="borders" />
 
             <ExampleBox>
                 <div className="tc" style={{ minWidth: '375px' }}>

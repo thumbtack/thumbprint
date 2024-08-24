@@ -1,6 +1,5 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { StaticImageData } from 'next/image';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { H2, H3, P } from '../../../components/mdx/components';
@@ -10,17 +9,11 @@ import usageContentMappings, {
     interactionContent,
     ContentMapping,
 } from './usage-mappings';
+import { Image } from './utils';
 
 import usage from '../../../images/pages/guide/product/color/overiew/usage.png';
 import emphasis from '../../../images/pages/guide/product/color/overiew/emphasis.png';
 import interaction from '../../../images/pages/guide/product/color/overiew/interaction.png';
-
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
 
 const images: Image = {
     usage: {
@@ -161,7 +154,7 @@ export default function OverviewAbout({
                 <H2>Emphasis</H2>
                 <P>
                     Not all experiences are treated equal. To provide varying levels of importance
-                    in conjunction with the hue, we use levels of emphasis to draw the user’s
+                    in conjunction with the hue, we use levels of emphasis to draw the users
                     attention. A strong emphasis is high contrast in comparison to the surface the
                     component occupies.
                 </P>

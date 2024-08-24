@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { InferGetStaticPropsType } from 'next';
-import { StaticImageData } from 'next/image';
+import ClickableBox from 'clickable-box';
 import { groupBy } from 'lodash-es';
 import classNames from 'classnames';
 import * as tokens from '@thumbtack/thumbprint-tokens';
-import { NavigationCaretDownSmall } from '@thumbtack/thumbprint-icons';
+import { NavigationCaretDownSmall, NavigationCaretUpSmall } from '@thumbtack/thumbprint-icons';
 import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
 import { H2, P } from '../../../components/mdx/components';
 import { paletteColortMappings } from './usage-mappings';
+import { Color, Image } from './utils';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
 import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';
@@ -19,71 +20,44 @@ import blue from '../../../images/pages/guide/product/color/palette/blue.png';
 import green from '../../../images/pages/guide/product/color/palette/green.png';
 import indigo from '../../../images/pages/guide/product/color/palette/indigo.png';
 
-interface Image {
-    [key: string]: {
-        src: StaticImageData;
-        alt: string;
-    };
-}
-
 const images: Image = {
     purple: {
         src: purple,
-        alt: 'alt text',
+        alt: 'user interface example where purple colors are applied',
     },
     yellow: {
         src: yellow,
-        alt: 'alt text',
+        alt: 'user interface example where yellow colors are applied',
     },
     neutral: {
         src: neutral,
-        alt: 'alt text',
+        alt: 'user interface example where neutral colors are applied',
     },
     red: {
         src: red,
-        alt: 'alt text',
+        alt: 'user interface example where red colors are applied',
     },
     blue: {
         src: blue,
-        alt: 'alt text',
+        alt: 'user interface example where blue colors are applied',
     },
     green: {
         src: green,
-        alt: 'alt text',
+        alt: 'user interface example where green colors are applied',
     },
     indigo: {
         src: indigo,
-        alt: 'alt text',
+        alt: 'user interface example where indigo colors are applied',
     },
 };
 
-interface Usage {
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        'pill-color': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-        family: string;
-        level: string;
-        javascript: string;
-        ios: string;
-        android: string;
-        scss: string;
-    };
-}
-
-interface ColoredPill {
+interface ColoredPillProps {
     fill: string;
     title: string;
     value: string;
 }
 
-function coloredPill({ fill, title, value }: ColoredPill): JSX.Element {
+function coloredPill({ fill, title, value }: ColoredPillProps): JSX.Element {
     return (
         <div>
             <div>{title}</div>
@@ -99,7 +73,8 @@ function coloredPill({ fill, title, value }: ColoredPill): JSX.Element {
     );
 }
 
-function ColorSection({ values }: Usage): JSX.Element {
+function ColorSection({ values }: Color): JSX.Element {
+    const [active, setActive] = useState(false);
     return (
         <div
             className={classNames('flex flex-column tp-body-3', {
@@ -113,12 +88,20 @@ function ColorSection({ values }: Usage): JSX.Element {
             }}
         >
             {/* clickable region */}
-            <div className="pv3 ph3 b flex flex-row">
+            <ClickableBox
+                className="pv3 ph3 b flex flex-row cursor-pointer"
+                onClick={(): void => setActive(!active)}
+            >
                 <span className="flex-auto tp-body-2">{values.color}</span>{' '}
-                <NavigationCaretDownSmall />
-            </div>
+                {!active ? <NavigationCaretDownSmall /> : <NavigationCaretUpSmall />}
+            </ClickableBox>
             {/* end clickable region */}
-            <div className="pb3 ph3">
+            <div
+                className={classNames('ph3', {
+                    'h-0 overflow-hidden': !active,
+                    'h-auto pb3 ': active,
+                })}
+            >
                 {/* body content */}
                 <div className="pb3">
                     <ul style={{ listStyle: 'bullet' }} className="ml3">
@@ -128,7 +111,7 @@ function ColorSection({ values }: Usage): JSX.Element {
                     </ul>
                 </div>
                 {/* tokens */}
-                <div className="flex flex-row col-gap2 row-gap2 flex-wrap">
+                <div className="flex flex-row col-gap2 row-gap2 flex-wrap mv3">
                     {coloredPill({
                         title: 'Hex',
                         value: values['light-hex'],
@@ -193,7 +176,7 @@ function renderColors({ usages }): JSX.Element {
                                         {paletteColortMappings[key].suggestedUse}
                                     </Text>
 
-                                    <div className="br3 overflow-hidden">
+                                    <div className="br3 overflow-hidden mt2">
                                         {usages[key].map(component => {
                                             return <ColorSection values={component.values} />;
                                         })}
@@ -214,13 +197,13 @@ function renderColors({ usages }): JSX.Element {
                 })
                 .sort((a, b) => {
                     const colorOrder = {
-                        purple: 4,
-                        yellow: 7,
                         neutral: 1,
-                        red: 6,
-                        indigo: 3,
-                        green: 5,
                         blue: 2,
+                        indigo: 3,
+                        purple: 4,
+                        green: 5,
+                        red: 6,
+                        yellow: 7,
                     };
                     if (!colorOrder[a.key] || !colorOrder[b.key]) {
                         throw new Error(`All colors must be defined in the \`colorOrder\` object.`);

@@ -75,7 +75,6 @@ export default function UsageCategory({ usages, images }): JSX.Element {
                     );
                 })
                 .sort((a, b) => {
-                    console.log(a);
                     const themeOrder = {
                         neutral: 1,
                         primary: 2,
