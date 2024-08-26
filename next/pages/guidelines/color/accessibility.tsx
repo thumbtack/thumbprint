@@ -1,6 +1,7 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
 import { Grid, GridColumn, Text } from '@thumbtack/thumbprint-react';
+import * as tokens from '@thumbtack/thumbprint-tokens';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/components';
@@ -48,7 +49,8 @@ export default function OverviewAbout({
                 values. For example, when using the <strong>blue-100</strong> background color, the{' '}
                 <strong>blue-600</strong> color should be used for the text.
             </P>
-            <H3>100-level background</H3>
+
+            <H3>Low emphasis backgrounds</H3>
             <P>
                 A common and preferred pattern for non-interactive elements when applying a
                 background color uses the <strong>100-level</strong> values for backgrounds. The{' '}
@@ -99,6 +101,77 @@ export default function OverviewAbout({
                     <div className="bg-red-100 pa3 bt br bb b-gray-300">
                         <Text size={2} className="red-600">
                             red-600
+                        </Text>
+                    </div>
+                </GridColumn>
+            </Grid>
+
+            <H3>High emphasis backgrounds</H3>
+            <P>
+                When moments in the user experience call for bringing more emphasis to the moment,
+                then a darker value of of the color system can be used a background. These are more
+                commonly going to be used as a 500 (Yellow 600) value. The 100-level or white text
+                color should be used.
+            </P>
+
+            <Grid gutter="flush">
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-blue-500 pa3 bt bl bb b-gray-300"
+                        style={{ background: tokens.tpColorBlue500 }}
+                    >
+                        <Text size={2} className="white">
+                            white
+                        </Text>
+                    </div>
+                </GridColumn>
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-indigo-500 pa3 bt bb b-gray-300"
+                        style={{ background: tokens.tpColorIndigo500 }}
+                    >
+                        <Text size={2} className="white">
+                            white
+                        </Text>
+                    </div>
+                </GridColumn>
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-purple-500 pa3 bt bb b-gray-300"
+                        style={{ background: tokens.tpColorPurple500 }}
+                    >
+                        <Text size={2} className="white">
+                            white
+                        </Text>
+                    </div>
+                </GridColumn>
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-green-500 pa3 bt bb b-gray-300"
+                        style={{ background: tokens.tpColorGreen500 }}
+                    >
+                        <Text size={2} className="white">
+                            white
+                        </Text>
+                    </div>
+                </GridColumn>
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-yellow-600 pa3 bt bb b-gray-300"
+                        style={{ background: tokens.tpColorYellow600 }}
+                    >
+                        <Text size={2} className="white">
+                            white
+                        </Text>
+                    </div>
+                </GridColumn>
+                <GridColumn aboveSmall={2}>
+                    <div
+                        className="bg-red-500 pa3 bt br bb b-gray-300"
+                        style={{ background: tokens.tpColorRed500 }}
+                    >
+                        <Text size={2} className="white">
+                            white
                         </Text>
                     </div>
                 </GridColumn>

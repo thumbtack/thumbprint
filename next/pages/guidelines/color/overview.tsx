@@ -1,5 +1,6 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getContentPageStaticProps from '../../../utils/get-content-page-static-props';
 import { H2, H3, P } from '../../../components/mdx/components';
@@ -126,7 +127,7 @@ export default function OverviewAbout({
                 {colorThemeTable({ type: 'brand' })}
             </div>
 
-            <div>
+            <div className="mb5">
                 <H3>Feedback colors</H3>
                 <P>
                     These colors are used to help re-enforce important moments in the user journey
@@ -136,7 +137,9 @@ export default function OverviewAbout({
                 {colorThemeTable({ type: 'feedback' })}
             </div>
 
-            <div>
+            <Link href="/guidelines/color/palette/">See all colors</Link>
+
+            <div className="mb5">
                 <H2>Usage</H2>
                 <P>
                     Color usage is arranged into four high-level categories background, border, text
@@ -149,6 +152,8 @@ export default function OverviewAbout({
                 </ExampleBox>
                 {overviewTable({ list: usageContent })}
             </div>
+
+            <Link href="/guidelines/color/usage/background/">Read more about color usage</Link>
 
             <div>
                 <H2>Emphasis</H2>
@@ -172,10 +177,10 @@ export default function OverviewAbout({
 
             <div>
                 <H2>Interaction</H2>
-                {/* <P className="b">Moments of user engagement.</P> */}
                 <P>
                     Status such as hover, selected, disabled, and others describe how users engage
-                    with content. Not all elements are interactive, but our color usage patterns
+                    with content. Not all elements are interactive, but our{' '}
+                    <Link href="/guidelines/color/usage/background/">color usage patterns </Link>{' '}
                     provide additional color definitions when applicable.
                 </P>
                 <ExampleBox>
