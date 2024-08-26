@@ -8,7 +8,7 @@ import { CodeExperimental, H2, H3, LI, P, UL } from '../../../components/mdx/com
 
 export const getStaticProps = getContentPageStaticProps;
 
-export default function OverviewAbout({
+export default function Accessibility({
     layoutProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (

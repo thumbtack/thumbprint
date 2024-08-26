@@ -95,9 +95,7 @@ function overviewTable({ list }: { list: ContentMapping }): JSX.Element {
     );
 }
 
-export default function OverviewAbout({
-    layoutProps,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Overview({ layoutProps }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <ContentPage
             title="Overview"

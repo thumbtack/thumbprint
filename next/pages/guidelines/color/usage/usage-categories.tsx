@@ -20,42 +20,46 @@ export default function UsageCategory({ usages, images }): JSX.Element {
                             </div>
 
                             <table className="tp-body-2 black-300">
-                                <tr className="bb b-gray-300">
-                                    <th className="tl pv2 pr4">Color</th>
-                                    <th className="tl pv2 pr4">Emphasis</th>
-                                    {showInteractionColumn(usages[key]) > 0 ? (
-                                        <th className="tl pv2 pr4">Interaction</th>
-                                    ) : null}
-                                    <th className="tl pv2 ">Description</th>
-                                </tr>
-                                {usages[key].map(component => {
-                                    return (
-                                        <tr className="bb b-gray-300" key={component}>
-                                            <td className="v-top pv2 pr4 s_nowrap">
-                                                <div>
-                                                    <span
-                                                        className="w1 h1 mr2 dib relative top-3 br2 b-gray-300 ba"
-                                                        style={{
-                                                            background: `${component.values['light-hex']}`,
-                                                        }}
-                                                    />
-                                                    {component.values.color}
-                                                </div>
-                                            </td>
-                                            <td className="v-top pv2 pr4">
-                                                {component.values.emphasis}
-                                            </td>
-                                            {showInteractionColumn(usages[key]) > 0 ? (
-                                                <td className="v-top pv2 pr4">
-                                                    {component.values.interaction}
+                                <thead>
+                                    <tr className="bb b-gray-300">
+                                        <th className="tl pv2 pr4">Color</th>
+                                        <th className="tl pv2 pr4">Emphasis</th>
+                                        {showInteractionColumn(usages[key]) > 0 ? (
+                                            <th className="tl pv2 pr4">Interaction</th>
+                                        ) : null}
+                                        <th className="tl pv2 ">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {usages[key].map(component => {
+                                        return (
+                                            <tr className="bb b-gray-300" key={component.name}>
+                                                <td className="v-top pv2 pr4 s_nowrap">
+                                                    <div>
+                                                        <span
+                                                            className="w1 h1 mr2 dib relative top-3 br2 b-gray-300 ba"
+                                                            style={{
+                                                                background: `${component.values['light-hex']}`,
+                                                            }}
+                                                        />
+                                                        {component.values.color}
+                                                    </div>
                                                 </td>
-                                            ) : null}
-                                            <td className="v-top pv2">
-                                                {component.values.description}
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
+                                                <td className="v-top pv2 pr4">
+                                                    {component.values.emphasis}
+                                                </td>
+                                                {showInteractionColumn(usages[key]) > 0 ? (
+                                                    <td className="v-top pv2 pr4">
+                                                        {component.values.interaction}
+                                                    </td>
+                                                ) : null}
+                                                <td className="v-top pv2">
+                                                    {component.values.description}
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
                             </table>
                             {images[key] ? (
                                 <div className="pt3">

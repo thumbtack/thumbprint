@@ -10,7 +10,7 @@ import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
 import { H2, P } from '../../../components/mdx/components';
 import { paletteColortMappings } from './usage-mappings';
-import { Color, Image } from './utils';
+import { Color, Image, Usage } from './utils';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
 import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';
@@ -92,7 +92,7 @@ function ColorSection({ values }: Color): JSX.Element {
                 className="pv3 ph3 b flex flex-row cursor-pointer"
                 onClick={(): void => setActive(!active)}
             >
-                <span className="flex-auto tp-body-2">{values.color}</span>{' '}
+                <span className="flex-auto tp-body-2">{values.color}</span>
                 {!active ? <NavigationCaretDownSmall /> : <NavigationCaretUpSmall />}
             </ClickableBox>
             {/* end clickable region */}
@@ -105,9 +105,12 @@ function ColorSection({ values }: Color): JSX.Element {
                 {/* body content */}
                 <div className="pb3">
                     <ul style={{ listStyle: 'bullet' }} className="ml3">
-                        {values.description.split('\n').map(item => {
-                            return <li>{item}</li>;
-                        })}
+                        {values.description
+                            .split('\n')
+                            .map(item => {
+                                return <li key={item.replace(' ', '-')}>{item}</li>;
+                            })
+                            .filter((item, index, array) => array.indexOf(item) === index)}
                     </ul>
                 </div>
                 {/* tokens */}
@@ -145,17 +148,27 @@ function ColorSection({ values }: Color): JSX.Element {
 
 interface SwatchProps {
     tokenColor: string;
-    level: string;
+    isCore?: boolean;
+    className?: string;
 }
 
-function Swatch({ tokenColor, level }: SwatchProps): JSX.Element {
+function Swatch({ tokenColor, isCore, className }: SwatchProps): JSX.Element {
     return (
-        <div
-            className="flex-auto tc"
+        <td
+            className={classNames('tc', { [`${className}`]: className })}
             style={{ background: tokens[`${tokenColor}`], height: '48px' }}
         >
-            <span style={{ color: tokens[`${tokenColor}`] }}>{level}</span>
-        </div>
+            {isCore ? (
+                <span
+                    className="white br-pill pv1 ph3 tp-body-2"
+                    style={{
+                        background: tokens[`tpColor${tokenColor?.replace('tpColor', '')}500`],
+                    }}
+                >
+                    core
+                </span>
+            ) : null}
+        </td>
     );
 }
 
@@ -178,7 +191,13 @@ function renderColors({ usages }): JSX.Element {
 
                                     <div className="br3 overflow-hidden mt2">
                                         {usages[key].map(component => {
-                                            return <ColorSection values={component.values} />;
+                                            return (
+                                                <ColorSection
+                                                    name={component.name}
+                                                    values={component.values}
+                                                    key={component.name}
+                                                />
+                                            );
                                         })}
                                     </div>
                                 </div>
@@ -214,7 +233,7 @@ function renderColors({ usages }): JSX.Element {
     );
 }
 
-export default function OverviewAbout({
+export default function Palette({
     usages,
     layoutProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -239,108 +258,112 @@ export default function OverviewAbout({
             </div>
 
             {/* palette */}
-            <div className="br3 overflow-hidden">
-                <div className="flex tp-body-2 pt5">
-                    <div className="flex-auto h-100 pb2 tr pr2 w1 content-center">
-                        <span className="white">Neutral</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">100</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">200</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">300</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">Core</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">500</span>
-                    </div>
-                    <div className="flex-auto h-100 pb2 tc pr2 content-center">
-                        <span className="Black">600</span>
-                    </div>
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="Black">Netural</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorWhite" />
-                    <Swatch level="200" tokenColor="tpColorGray200" />
-                    <Swatch level="300" tokenColor="tpColorGray300" />
-                    <Swatch level="400" tokenColor="tpColorGray" />
-                    <Swatch level="500" tokenColor="tpColorBlack300" />
-                    <Swatch level="600" tokenColor="tpColorBlack" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="blue-500">Blue</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorBlue100" />
-                    <Swatch level="200" tokenColor="tpColorBlue200" />
-                    <Swatch level="300" tokenColor="tpColorBlue300" />
-                    <Swatch level="core" tokenColor="tpColorBlue" />
-                    <Swatch level="500" tokenColor="tpColorBlue500" />
-                    <Swatch level="600" tokenColor="tpColorBlue600" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="green-500">Green</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorGreen100" />
-                    <Swatch level="200" tokenColor="tpColorGreen200" />
-                    <Swatch level="300" tokenColor="tpColorGreen300" />
-                    <Swatch level="core" tokenColor="tpColorGreen" />
-                    <Swatch level="500" tokenColor="tpColorGreen500" />
-                    <Swatch level="600" tokenColor="tpColorGreen600" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="yellow-600">Yellow</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorYellow100" />
-                    <Swatch level="200" tokenColor="tpColorYellow200" />
-                    <Swatch level="300" tokenColor="tpColorYellow300" />
-                    <Swatch level="core" tokenColor="tpColorYellow" />
-                    <Swatch level="500" tokenColor="tpColorYellow500" />
-                    <Swatch level="600" tokenColor="tpColorYellow600" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="red-500">Red</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorRed100" />
-                    <Swatch level="200" tokenColor="tpColorRed200" />
-                    <Swatch level="300" tokenColor="tpColorRed300" />
-                    <Swatch level="core" tokenColor="tpColorRed" />
-                    <Swatch level="500" tokenColor="tpColorRed500" />
-                    <Swatch level="600" tokenColor="tpColorRed600" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="indigo-500">Indigo</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorIndigo100" />
-                    <Swatch level="200" tokenColor="tpColorIndigo200" />
-                    <Swatch level="300" tokenColor="tpColorIndigo300" />
-                    <Swatch level="core" tokenColor="tpColorIndigo" />
-                    <Swatch level="500" tokenColor="tpColorIndigo500" />
-                    <Swatch level="600" tokenColor="tpColorIndigo600" />
-                </div>
-                <div className="flex">
-                    <div className="flex-auto h3 tr pr2 content-center w1">
-                        <span className="purple-500">Purple</span>
-                    </div>
-                    <Swatch level="100" tokenColor="tpColorPurple100" />
-                    <Swatch level="200" tokenColor="tpColorPurple200" />
-                    <Swatch level="300" tokenColor="tpColorPurple300" />
-                    <Swatch level="core" tokenColor="tpColorPurple" />
-                    <Swatch level="500" tokenColor="tpColorPurple500" />
-                    <Swatch level="600" tokenColor="tpColorPurple600" />
-                </div>
-            </div>
+            <table className="br3 overflow-hidden w-100">
+                <thead>
+                    <tr className="tp-body-2 pt5">
+                        <th className="flex-auto h-100 pb2 tr pr2 w1 content-center">
+                            <span className="white">Neutral</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">100</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">200</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">300</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">Core</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">500</span>
+                        </th>
+                        <th className="pb2 tc normal black-300">
+                            <span className="Black">600</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="Black">Netural</span>
+                        </td>
+                        <Swatch tokenColor="tpColorWhite" className="br-top br-left br2" />
+                        <Swatch tokenColor="tpColorGray200" />
+                        <Swatch tokenColor="tpColorGray300" />
+                        <Swatch tokenColor="tpColorGray" />
+                        <Swatch tokenColor="tpColorBlack300" />
+                        <Swatch tokenColor="tpColorBlack" className="br-top br-right br2" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="blue-500">Blue</span>
+                        </td>
+                        <Swatch tokenColor="tpColorBlue100" />
+                        <Swatch tokenColor="tpColorBlue200" />
+                        <Swatch tokenColor="tpColorBlue300" />
+                        <Swatch isCore tokenColor="tpColorBlue" pillColor="tpColorBlue500" />
+                        <Swatch tokenColor="tpColorBlue500" />
+                        <Swatch tokenColor="tpColorBlue600" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="green-500">Green</span>
+                        </td>
+                        <Swatch tokenColor="tpColorGreen100" />
+                        <Swatch tokenColor="tpColorGreen200" />
+                        <Swatch tokenColor="tpColorGreen300" />
+                        <Swatch isCore tokenColor="tpColorGreen" />
+                        <Swatch tokenColor="tpColorGreen500" />
+                        <Swatch tokenColor="tpColorGreen600" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="yellow-600">Yellow</span>
+                        </td>
+                        <Swatch tokenColor="tpColorYellow100" />
+                        <Swatch tokenColor="tpColorYellow200" />
+                        <Swatch tokenColor="tpColorYellow300" />
+                        <Swatch isCore tokenColor="tpColorYellow" />
+                        <Swatch tokenColor="tpColorYellow500" />
+                        <Swatch tokenColor="tpColorYellow600" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="red-500">Red</span>
+                        </td>
+                        <Swatch tokenColor="tpColorRed100" />
+                        <Swatch tokenColor="tpColorRed200" />
+                        <Swatch tokenColor="tpColorRed300" />
+                        <Swatch isCore tokenColor="tpColorRed" />
+                        <Swatch tokenColor="tpColorRed500" />
+                        <Swatch tokenColor="tpColorRed600" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="indigo-500">Indigo</span>
+                        </td>
+                        <Swatch tokenColor="tpColorIndigo100" />
+                        <Swatch tokenColor="tpColorIndigo200" />
+                        <Swatch tokenColor="tpColorIndigo300" />
+                        <Swatch isCore tokenColor="tpColorIndigo" />
+                        <Swatch tokenColor="tpColorIndigo500" />
+                        <Swatch tokenColor="tpColorIndigo600" />
+                    </tr>
+                    <tr>
+                        <td className="flex-auto h3 tr pr3 content-center w1">
+                            <span className="purple-500">Purple</span>
+                        </td>
+                        <Swatch tokenColor="tpColorPurple100" className="br-bottom br-left br2" />
+                        <Swatch tokenColor="tpColorPurple200" />
+                        <Swatch tokenColor="tpColorPurple300" />
+                        <Swatch isCore tokenColor="tpColorPurple" />
+                        <Swatch tokenColor="tpColorPurple500" />
+                        <Swatch tokenColor="tpColorPurple600" />
+                    </tr>
+                </tbody>
+            </table>
 
             {/* colors */}
             {renderColors({ usages })}

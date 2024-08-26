@@ -18,6 +18,7 @@ export interface Usage {
         emphasis: string;
         interaction: string;
         description: string;
+        family: string;
     };
 }
 
@@ -33,6 +34,7 @@ export interface Color {
     values: {
         description: string;
         color: string;
+        level: string;
         'light-hex': string;
         'pill-color': string;
         javascript: string;
