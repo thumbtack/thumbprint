@@ -166,7 +166,7 @@ function renderColors({ usages }): JSX.Element {
                 .map(key => {
                     return (
                         <div key={key} className="ba b-gray-300 pa5 br3 mb5">
-                            <H2>{paletteColortMappings[key].title}</H2>
+                            <H2 atomicClasses="mt1">{paletteColortMappings[key].title}</H2>
                             <P>{paletteColortMappings[key].description}</P>
 
                             <div className="flex flex-column l_flex-row row-gap4 col-gap4 ">
