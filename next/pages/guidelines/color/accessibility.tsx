@@ -61,121 +61,125 @@ export default function Accessibility({
                 combinations should be avoided.
             </P>
 
-            <Grid gutter="flush">
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-blue-100 pa3 bt bl bb b-gray-300">
-                        <Text size={2} className="blue-600">
-                            blue-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-indigo-100 pa3 bt bb b-gray-300">
-                        <Text size={2} className="indigo-600">
-                            indigo-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-purple-100 pa3 bt bb b-gray-300">
-                        <Text size={2} className="purple-600">
-                            purple-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-green-100 pa3 bt bb b-gray-300">
-                        <Text size={2} className="green-600">
-                            green-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-yellow-100 pa3 bt bb b-gray-300">
-                        <Text size={2} className="yellow-600">
-                            yellow-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-red-100 pa3 bt br bb b-gray-300">
-                        <Text size={2} className="red-600">
-                            red-600
-                        </Text>
-                    </div>
-                </GridColumn>
-            </Grid>
+            <div className="br3 overflow-hidden">
+                <Grid gutter="flush">
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-blue-100 pa3 bt bl bb b-gray-300">
+                            <Text size={2} className="blue-600">
+                                blue-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-indigo-100 pa3 bt bb b-gray-300">
+                            <Text size={2} className="indigo-600">
+                                indigo-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-purple-100 pa3 bt bb b-gray-300">
+                            <Text size={2} className="purple-600">
+                                purple-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-green-100 pa3 bt bb b-gray-300">
+                            <Text size={2} className="green-600">
+                                green-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-yellow-100 pa3 bt bb b-gray-300">
+                            <Text size={2} className="yellow-600">
+                                yellow-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-red-100 pa3 bt br bb b-gray-300">
+                            <Text size={2} className="red-600">
+                                red-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                </Grid>
+            </div>
 
             <H3>High emphasis backgrounds</H3>
             <P>
                 When moments in the user experience call for bringing more emphasis to the moment,
                 then a darker value of of the color system can be used a background. These are more
-                commonly going to be used as a 500 (Yellow 600) value. The 100-level or white text
-                color should be used.
+                commonly going to be used as a 500 (Yellow 600) value. White text or 100-level color
+                should be used.
             </P>
 
-            <Grid gutter="flush">
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-blue-500 pa3 bt bl bb b-gray-300"
-                        style={{ background: tokens.tpColorBlue500 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-indigo-500 pa3 bt bb b-gray-300"
-                        style={{ background: tokens.tpColorIndigo500 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-purple-500 pa3 bt bb b-gray-300"
-                        style={{ background: tokens.tpColorPurple500 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-green-500 pa3 bt bb b-gray-300"
-                        style={{ background: tokens.tpColorGreen500 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-yellow-600 pa3 bt bb b-gray-300"
-                        style={{ background: tokens.tpColorYellow600 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div
-                        className="bg-red-500 pa3 bt br bb b-gray-300"
-                        style={{ background: tokens.tpColorRed500 }}
-                    >
-                        <Text size={2} className="white">
-                            white
-                        </Text>
-                    </div>
-                </GridColumn>
-            </Grid>
+            <div className="br3 overflow-hidden">
+                <Grid gutter="flush">
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-blue-500 pa3 bt bl bb b-gray-300"
+                            style={{ background: tokens.tpColorBlue500 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-indigo-500 pa3 bt bb b-gray-300"
+                            style={{ background: tokens.tpColorIndigo500 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-purple-500 pa3 bt bb b-gray-300"
+                            style={{ background: tokens.tpColorPurple500 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-green-500 pa3 bt bb b-gray-300"
+                            style={{ background: tokens.tpColorGreen500 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-yellow-600 pa3 bt bb b-gray-300"
+                            style={{ background: tokens.tpColorYellow600 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div
+                            className="bg-red-500 pa3 bt br bb b-gray-300"
+                            style={{ background: tokens.tpColorRed500 }}
+                        >
+                            <Text size={2} className="white">
+                                white
+                            </Text>
+                        </div>
+                    </GridColumn>
+                </Grid>
+            </div>
 
             <H3>White background</H3>
             <P>
@@ -188,50 +192,52 @@ export default function Accessibility({
                 combinations should be avoided.
             </P>
 
-            <Grid gutter="flush">
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bl bb b-gray-300">
-                        <Text size={2} className="blue-500">
-                            blue-500
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bb b-gray-300">
-                        <Text size={2} className="indigo-500">
-                            indigo-500
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bb b-gray-300">
-                        <Text size={2} className="purple-500">
-                            purple-500
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bb b-gray-300">
-                        <Text size={2} className="green-500">
-                            green-500
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bb b-gray-300">
-                        <Text size={2} className="yellow-600">
-                            yellow-600
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bb br b-gray-300">
-                        <Text size={2} className="red-500">
-                            red-500
-                        </Text>
-                    </div>
-                </GridColumn>
-            </Grid>
+            <div className="br3 overflow-hidden">
+                <Grid gutter="flush">
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bl bb b-gray-300">
+                            <Text size={2} className="blue-500">
+                                blue-500
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bb b-gray-300">
+                            <Text size={2} className="indigo-500">
+                                indigo-500
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bb b-gray-300">
+                            <Text size={2} className="purple-500">
+                                purple-500
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bb b-gray-300">
+                            <Text size={2} className="green-500">
+                                green-500
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bb b-gray-300">
+                            <Text size={2} className="yellow-600">
+                                yellow-600
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bb br b-gray-300">
+                            <Text size={2} className="red-500">
+                                red-500
+                            </Text>
+                        </div>
+                    </GridColumn>
+                </Grid>
+            </div>
 
             <H3>Neutral colors</H3>
             <P>
@@ -241,43 +247,45 @@ export default function Accessibility({
                 palette.
             </P>
 
-            <Grid gutter="flush">
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-white pa3 bt bl bb b-gray-300">
-                        <Text size={2} className="black-300">
-                            black-300
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-gray-200 pa3 bt bb b-gray-300">
-                        <Text size={2} className="black-300">
-                            black-300
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-gray-300 pa3 bt bb b-gray-300">
-                        <Text size={2} className="black">
-                            black
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-black-300 pa3 bt bb b-gray-300">
-                        <Text size={2} className="gray-200">
-                            gray-200
-                        </Text>
-                    </div>
-                </GridColumn>
-                <GridColumn aboveSmall={2}>
-                    <div className="bg-black pa3 bt br bb b-gray-300">
-                        <Text size={2} className="gray-300">
-                            gray-300
-                        </Text>
-                    </div>
-                </GridColumn>
-            </Grid>
+            <div className="br3 overflow-hidden">
+                <Grid gutter="flush">
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-white pa3 bt bl bb b-gray-300">
+                            <Text size={2} className="black-300">
+                                black-300
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-gray-200 pa3 bt bb b-gray-300">
+                            <Text size={2} className="black-300">
+                                black-300
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-gray-300 pa3 bt bb b-gray-300">
+                            <Text size={2} className="black">
+                                black
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-black-300 pa3 bt bb b-gray-300">
+                            <Text size={2} className="gray-200">
+                                gray-200
+                            </Text>
+                        </div>
+                    </GridColumn>
+                    <GridColumn aboveSmall={2}>
+                        <div className="bg-black pa3 bt br bb b-gray-300">
+                            <Text size={2} className="gray-300">
+                                gray-300
+                            </Text>
+                        </div>
+                    </GridColumn>
+                </Grid>
+            </div>
 
             <H3>Avoid using color exclusively</H3>
             <P>

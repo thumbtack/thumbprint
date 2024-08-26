@@ -1,5 +1,16 @@
 import { StaticImageData } from 'next/image';
 
+interface Values {
+    usage: string;
+    theme: string;
+    'light-hex': string;
+    color: string;
+    emphasis: string;
+    interaction: string;
+    description: string;
+    family: string;
+}
+
 export interface Usage {
     browserLink: string;
     createdAt: string;
@@ -9,17 +20,16 @@ export interface Usage {
     name: string;
     type: string;
     updatedAt: string;
-    values: {
-        usage: string;
-        // usage: string;
-        theme: string;
-        'light-hex': string;
-        color: string;
-        emphasis: string;
-        interaction: string;
-        description: string;
-        family: string;
-    };
+    values: Values;
+}
+
+interface ColorValues extends Values {
+    level: string;
+    'pill-color': string;
+    javascript: string;
+    ios: string;
+    android: string;
+    scss: string;
 }
 
 export interface Color {
@@ -31,17 +41,8 @@ export interface Color {
     name: string;
     type: string;
     updatedAt: string;
-    values: {
-        description: string;
-        color: string;
-        level: string;
-        'light-hex': string;
-        'pill-color': string;
-        javascript: string;
-        ios: string;
-        android: string;
-        scss: string;
-    };
+    key: string;
+    values: ColorValues;
 }
 
 export interface Image {

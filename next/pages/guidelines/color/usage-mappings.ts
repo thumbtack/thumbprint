@@ -35,12 +35,6 @@ const usageContentMappings: ContentMapping = {
         color: '#8d56eb',
         description: 'Illustrations and pill signals.',
     },
-    input: {
-        title: 'Inputs',
-        type: 'brand',
-        color: '#ffffff',
-        description: 'UPDATE THIS',
-    },
     success: {
         title: 'Success, finance & ratings',
         type: 'feedback',

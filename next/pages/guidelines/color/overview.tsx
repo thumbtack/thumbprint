@@ -11,6 +11,7 @@ import usageContentMappings, {
     ContentMapping,
 } from './usage-mappings';
 import { Image } from './utils';
+import ExampleBox from '../../../components/example-box';
 
 import usage from '../../../images/pages/guide/product/color/overiew/usage.png';
 import emphasis from '../../../images/pages/guide/product/color/overiew/emphasis.png';
@@ -33,18 +34,16 @@ const images: Image = {
 
 export const getStaticProps = getContentPageStaticProps;
 
-function ExampleBox({ children }: { children: React.ReactNode }): JSX.Element {
-    return <div className="pa4 ba b-gray-300 mb4 tp-body-2 bg-gray-200 br3">{children}</div>;
-}
-
 function colorThemeTable({ type }: { type: string }): JSX.Element {
     return (
         <table className="collapse tp-body-2 mb3">
-            <tbody>
+            <thead>
                 <tr className="bb b-gray-300">
                     <th className="tl pb2">Value</th>
                     <th className="tl pb2">Description</th>
                 </tr>
+            </thead>
+            <tbody>
                 {Object.keys(usageContentMappings)
                     .filter(key => usageContentMappings[key].type === type)
                     .map(key => {
@@ -59,7 +58,7 @@ function colorThemeTable({ type }: { type: string }): JSX.Element {
                                         {key}
                                     </span>
                                 </td>
-                                <td className="v-top pt3 s_nowrap">
+                                <td className="v-top pt3 s_nowrap black-300">
                                     {usageContentMappings[key].description}
                                 </td>
                             </tr>
@@ -73,11 +72,13 @@ function colorThemeTable({ type }: { type: string }): JSX.Element {
 function overviewTable({ list }: { list: ContentMapping }): JSX.Element {
     return (
         <table className="collapse tp-body-2 mb3">
-            <tbody>
+            <thead>
                 <tr className="bb b-gray-300">
                     <th className="tl pb2">Value</th>
                     <th className="tl pb2">Description</th>
                 </tr>
+            </thead>
+            <tbody>
                 {Object.keys(list).map(key => {
                     return (
                         <tr key={key}>
@@ -86,7 +87,9 @@ function overviewTable({ list }: { list: ContentMapping }): JSX.Element {
                                     {list[key].title}
                                 </span>
                             </td>
-                            <td className="v-mid pt2 s_nowrap">{list[key].description}</td>
+                            <td className="v-mid pt2 s_nowrap black-300">
+                                {list[key].description}
+                            </td>
                         </tr>
                     );
                 })}

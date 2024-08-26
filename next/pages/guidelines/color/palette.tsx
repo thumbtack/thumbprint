@@ -57,7 +57,7 @@ interface ColoredPillProps {
     value: string;
 }
 
-function coloredPill({ fill, title, value }: ColoredPillProps): JSX.Element {
+function TokenPill({ fill, title, value }: ColoredPillProps): JSX.Element {
     return (
         <div>
             <div>{title}</div>
@@ -73,7 +73,7 @@ function coloredPill({ fill, title, value }: ColoredPillProps): JSX.Element {
     );
 }
 
-function ColorSection({ values }: Color): JSX.Element {
+function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
     const [active, setActive] = useState(false);
     return (
         <div
@@ -92,7 +92,14 @@ function ColorSection({ values }: Color): JSX.Element {
                 className="pv3 ph3 b flex flex-row cursor-pointer"
                 onClick={(): void => setActive(!active)}
             >
-                <span className="flex-auto tp-body-2">{values.color}</span>
+                <div className="flex-auto tp-body-2">
+                    <span className="pr2">{values.color}</span>
+                    {values.level === '400' ? (
+                        <CoreColorPill tokenColor={values.javascript} />
+                    ) : null}
+                </div>
+
+                {values.level}
                 {!active ? <NavigationCaretDownSmall /> : <NavigationCaretUpSmall />}
             </ClickableBox>
             {/* end clickable region */}
@@ -105,37 +112,34 @@ function ColorSection({ values }: Color): JSX.Element {
                 {/* body content */}
                 <div className="pb3">
                     <ul style={{ listStyle: 'bullet' }} className="ml3">
-                        {values.description
-                            .split('\n')
-                            .map(item => {
-                                return <li key={item.replace(' ', '-')}>{item}</li>;
-                            })
-                            .filter((item, index, array) => array.indexOf(item) === index)}
+                        {values.description.split('\n').map(item => {
+                            return <li key={item.replace(' ', '-')}>{item}</li>;
+                        })}
                     </ul>
                 </div>
                 {/* tokens */}
                 <div className="flex flex-row col-gap2 row-gap2 flex-wrap mv3">
-                    {coloredPill({
+                    {TokenPill({
                         title: 'Hex',
                         value: values['light-hex'],
                         fill: values['pill-color'],
                     })}
-                    {coloredPill({
+                    {TokenPill({
                         title: 'Javascript',
                         value: values.javascript,
                         fill: values['pill-color'],
                     })}
-                    {coloredPill({
+                    {TokenPill({
                         title: 'ios',
                         value: values.ios,
                         fill: values['pill-color'],
                     })}
-                    {coloredPill({
+                    {TokenPill({
                         title: 'Android',
                         value: values.android,
                         fill: values['pill-color'],
                     })}
-                    {coloredPill({
+                    {TokenPill({
                         title: 'scss',
                         value: values.scss,
                         fill: values['pill-color'],
@@ -152,27 +156,32 @@ interface SwatchProps {
     className?: string;
 }
 
+function CoreColorPill({ tokenColor }: { tokenColor: string }): JSX.Element {
+    const bgColor = tokens[`tpColor${tokenColor?.replace('tpColor', '')}500`];
+    return (
+        <span
+            className="white br-pill pv1 ph3 tp-body-2"
+            style={{
+                background: bgColor,
+            }}
+        >
+            core
+        </span>
+    );
+}
+
 function Swatch({ tokenColor, isCore, className }: SwatchProps): JSX.Element {
     return (
         <td
             className={classNames('tc', { [`${className}`]: className })}
             style={{ background: tokens[`${tokenColor}`], height: '48px' }}
         >
-            {isCore ? (
-                <span
-                    className="white br-pill pv1 ph3 tp-body-2"
-                    style={{
-                        background: tokens[`tpColor${tokenColor?.replace('tpColor', '')}500`],
-                    }}
-                >
-                    core
-                </span>
-            ) : null}
+            {isCore ? <CoreColorPill tokenColor={tokenColor} /> : null}
         </td>
     );
 }
 
-function renderColors({ usages }): JSX.Element {
+function renderColors({ usages }: { usages: Usage[] }): JSX.Element {
     return (
         <div className="pt6">
             {Object.keys(usages)
@@ -190,10 +199,9 @@ function renderColors({ usages }): JSX.Element {
                                     </Text>
 
                                     <div className="br3 overflow-hidden mt2">
-                                        {usages[key].map(component => {
+                                        {usages[key].map((component: Usage) => {
                                             return (
                                                 <ColorSection
-                                                    name={component.name}
                                                     values={component.values}
                                                     key={component.name}
                                                 />
@@ -303,7 +311,7 @@ export default function Palette({
                         <Swatch tokenColor="tpColorBlue100" />
                         <Swatch tokenColor="tpColorBlue200" />
                         <Swatch tokenColor="tpColorBlue300" />
-                        <Swatch isCore tokenColor="tpColorBlue" pillColor="tpColorBlue500" />
+                        <Swatch isCore tokenColor="tpColorBlue" />
                         <Swatch tokenColor="tpColorBlue500" />
                         <Swatch tokenColor="tpColorBlue600" />
                     </tr>

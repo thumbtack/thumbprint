@@ -22,7 +22,8 @@ const sourceCodePro = Source_Code_Pro({
 
 // TODO: apply atomicClasses to other headers once
 // type definition error is resolved (see H2)
-interface HeadingElement extends HTMLHeadingElement {
+interface HeadingElement
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
     atomicClasses?: string;
 }
 
@@ -43,11 +44,7 @@ const HashAnchor = ({ children, id }: { children: React.ReactNode; id: string })
     </div>
 );
 
-export function H2({
-    children,
-    atomicClasses,
-    ...rest
-}: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HeadingElement>): JSX.Element {
+export function H2({ children, atomicClasses, ...rest }: HeadingElement): JSX.Element {
     const id = generateSlug({ level: 'section', children });
     const classes = classnames({ [`${atomicClasses}`]: atomicClasses, 'mt6 mb3': !atomicClasses });
 
