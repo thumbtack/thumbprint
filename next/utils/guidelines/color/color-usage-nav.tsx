@@ -1,5 +1,5 @@
 import React from 'react';
-import TabNav, { TabNavItem } from '../../../../components/tab-nav/tab-nav';
+import TabNav, { TabNavItem } from '../../../components/tab-nav/tab-nav';
 
 interface TabProps {
     [key: string]: {

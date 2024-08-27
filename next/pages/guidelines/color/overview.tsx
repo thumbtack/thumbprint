@@ -9,8 +9,8 @@ import usageContentMappings, {
     emphasisContent,
     interactionContent,
     ContentMapping,
-} from '../../../utils/color-usage-mappings';
-import { Image } from '../../../utils/color-usage-types';
+} from '../../../utils/guidelines/color/color-usage-mappings';
+import { Image } from '../../../utils/guidelines/color/color-usage-types';
 import ExampleBox from '../../../components/example-box';
 
 import usage from '../../../images/pages/guide/product/color/overiew/usage.png';

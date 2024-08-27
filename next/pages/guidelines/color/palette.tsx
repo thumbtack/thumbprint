@@ -9,8 +9,8 @@ import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
 import { H2, P } from '../../../components/mdx/components';
-import { paletteColortMappings } from '../../../utils/color-usage-mappings';
-import { Color, Image, Usage } from '../../../utils/color-usage-types';
+import { paletteColortMappings } from '../../../utils/guidelines/color/color-usage-mappings';
+import { Color, Image, Usage } from '../../../utils/guidelines/color/color-usage-types';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
 import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';

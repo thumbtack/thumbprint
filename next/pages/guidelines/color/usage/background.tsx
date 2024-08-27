@@ -7,9 +7,9 @@ import InlineCode from '../../../../components/inline-code/inline-code';
 import getLayoutProps from '../../../../utils/get-layout-props';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
 import ExampleBox from '../../../../components/example-box';
-import UsageCategory from './usage-categories';
-import ColorUsageNav from './color-usage-nav';
-import { Usage, Image } from '../../../../utils/color-usage-types';
+import UsageCategory from '../../../../utils/guidelines/color/color-usage-categories';
+import ColorUsageNav from '../../../../utils/guidelines/color/color-usage-nav';
+import { Usage, Image } from '../../../../utils/guidelines/color/color-usage-types';
 
 import intro from '../../../../images/pages/guide/product/color/usage/background/intro.png';
 import neutral from '../../../../images/pages/guide/product/color/usage/background/neutral.png';

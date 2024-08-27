@@ -1,7 +1,7 @@
 import React from 'react';
-import usageContentMappings from '../../../../utils/color-usage-mappings';
-import ExampleBox from '../../../../components/example-box';
-import { H2, P } from '../../../../components/mdx/components';
+import usageContentMappings from './color-usage-mappings';
+import ExampleBox from '../../../components/example-box';
+import { H2, P } from '../../../components/mdx/components';
 
 function showInteractionColumn(usages) {
     return usages.filter(item => item.values.interaction !== '').length;
