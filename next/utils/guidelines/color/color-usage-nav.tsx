@@ -15,7 +15,7 @@ const usageTabs: TabProps = {
     icons: { name: 'Icons', path: '/guidelines/color/usage/icons' },
 };
 
-const ColorUsageNav = ({ activeTab }: { activeTab: string }) => {
+const ColorUsageNav = ({ activeTab }: { activeTab: string }): JSX.Element => {
     return (
         <TabNav>
             {Object.keys(usageTabs).map(node => (

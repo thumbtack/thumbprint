@@ -2,12 +2,19 @@ import React from 'react';
 import usageContentMappings from './color-usage-mappings';
 import ExampleBox from '../../../components/example-box';
 import { H2, P } from '../../../components/mdx/components';
+import { Usage, Image } from './color-usage-types';
 
-function showInteractionColumn(usages) {
+function showInteractionColumn(usages: [Usage]): number {
     return usages.filter(item => item.values.interaction !== '').length;
 }
 
-export default function UsageCategory({ usages, images }): JSX.Element {
+export default function UsageCategory({
+    usages,
+    images,
+}: {
+    usages: Usage[];
+    images: Image[];
+}): JSX.Element {
     return (
         <div>
             {Object.keys(usages)
