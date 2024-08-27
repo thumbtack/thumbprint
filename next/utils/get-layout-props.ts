@@ -63,19 +63,7 @@ export default function getLayoutProps(): LayoutProps {
                         { title: 'Aspect ratio', href: '/guidelines/aspect-ratio' },
                         { title: 'Brand assets', href: '/guidelines/brand-assets' },
                         { title: 'Breakpoints', href: '/guidelines/breakpoints' },
-                        {
-                            title: 'Color',
-                            href: '/guidelines/color/overview',
-                            sections: [
-                                { title: 'Overview', href: '/guidelines/color/overview' },
-                                { title: 'Palette', href: '/guidelines/color/palette' },
-                                {
-                                    title: 'Usage',
-                                    href: '/guidelines/color/usage/background',
-                                },
-                                { title: 'Accessibility', href: '/guidelines/color/accessibility' },
-                            ],
-                        },
+                        { title: 'Color', href: '/guidelines/color' },
                         { title: 'Design tokens', href: '/guidelines/design-tokens' },
                         { title: 'Iconography', href: '/guidelines/iconography' },
                         { title: 'Loaders', href: '/guidelines/loaders' },
