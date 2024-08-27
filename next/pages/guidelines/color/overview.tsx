@@ -58,7 +58,7 @@ function colorThemeTable({ type }: { type: string }): JSX.Element {
                                         {key}
                                     </span>
                                 </td>
-                                <td className="v-top pt3 s_nowrap black-300">
+                                <td className="v-top pt3 black-300">
                                     {usageContentMappings[key].description}
                                 </td>
                             </tr>
