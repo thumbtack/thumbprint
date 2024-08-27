@@ -1,5 +1,5 @@
 import React from 'react';
-import usageContentMappings from '../usage-mappings';
+import usageContentMappings from '../../../../utils/color-usage-mappings';
 import ExampleBox from '../../../../components/example-box';
 import { H2, P } from '../../../../components/mdx/components';
 
@@ -33,7 +33,7 @@ export default function UsageCategory({ usages, images }): JSX.Element {
                                 <tbody>
                                     {usages[key].map(component => {
                                         return (
-                                            <tr className="bb b-gray-300" key={component.name}>
+                                            <tr className="bb b-gray-300" key={component}>
                                                 <td className="v-top pv2 pr4 s_nowrap">
                                                     <div>
                                                         <span

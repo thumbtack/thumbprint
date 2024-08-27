@@ -8,7 +8,7 @@ import getLayoutProps from '../../../../utils/get-layout-props';
 import ExampleBox from '../../../../components/example-box';
 import UsageCategory from './usage-categories';
 import ColorUsageNav from './color-usage-nav';
-import { Usage, Image } from '../utils';
+import { Usage, Image } from '../../../../utils/color-usage-types';
 
 import intro from '../../../../images/pages/guide/product/color/usage/text/intro.png';
 import neutral from '../../../../images/pages/guide/product/color/usage/text/neutral.png';

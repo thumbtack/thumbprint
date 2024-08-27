@@ -9,8 +9,8 @@ import { Text } from '@thumbtack/thumbprint-react';
 import { ContentPage } from '../../../components/mdx/mdx';
 import getLayoutProps from '../../../utils/get-layout-props';
 import { H2, P } from '../../../components/mdx/components';
-import { paletteColortMappings } from './usage-mappings';
-import { Color, Image, Usage } from './utils';
+import { paletteColortMappings } from '../../../utils/color-usage-mappings';
+import { Color, Image, Usage } from '../../../utils/color-usage-types';
 
 import purple from '../../../images/pages/guide/product/color/palette/purple.png';
 import yellow from '../../../images/pages/guide/product/color/palette/yellow.png';
@@ -74,7 +74,7 @@ function TokenPill({ fill, title, value }: ColoredPillProps): JSX.Element {
 }
 
 function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
-    const [active, setActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     return (
         <div
             className={classNames('flex flex-column tp-body-3', {
@@ -90,7 +90,7 @@ function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
             {/* clickable region */}
             <ClickableBox
                 className="pv3 ph3 b flex flex-row cursor-pointer"
-                onClick={(): void => setActive(!active)}
+                onClick={(): void => setIsActive(!isActive)}
             >
                 <div className="flex-auto tp-body-2">
                     <span className="pr2">{values.color}</span>
@@ -98,15 +98,13 @@ function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
                         <CoreColorPill tokenColor={values.javascript} />
                     ) : null}
                 </div>
-
-                {values.level}
-                {!active ? <NavigationCaretDownSmall /> : <NavigationCaretUpSmall />}
+                {!isActive ? <NavigationCaretDownSmall /> : <NavigationCaretUpSmall />}
             </ClickableBox>
             {/* end clickable region */}
             <div
                 className={classNames('ph3', {
-                    'h-0 overflow-hidden': !active,
-                    'h-auto pb3 ': active,
+                    'h-0 overflow-hidden': !isActive,
+                    'h-auto pb3 ': isActive,
                 })}
             >
                 {/* body content */}
@@ -119,31 +117,18 @@ function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
                 </div>
                 {/* tokens */}
                 <div className="flex flex-row col-gap2 row-gap2 flex-wrap mv3">
-                    {TokenPill({
-                        title: 'Hex',
-                        value: values['light-hex'],
-                        fill: values['pill-color'],
-                    })}
-                    {TokenPill({
-                        title: 'Javascript',
-                        value: values.javascript,
-                        fill: values['pill-color'],
-                    })}
-                    {TokenPill({
-                        title: 'ios',
-                        value: values.ios,
-                        fill: values['pill-color'],
-                    })}
-                    {TokenPill({
-                        title: 'Android',
-                        value: values.android,
-                        fill: values['pill-color'],
-                    })}
-                    {TokenPill({
-                        title: 'scss',
-                        value: values.scss,
-                        fill: values['pill-color'],
-                    })}
+                    <TokenPill
+                        title="Hex"
+                        value={values['light-hex']}
+                        fill={values['pill-color']}
+                    />
+                    <TokenPill
+                        title="Javascript"
+                        value={values.javascript}
+                        fill={values['pill-color']}
+                    />
+                    <TokenPill title="Android" value={values.android} fill={values['pill-color']} />
+                    <TokenPill title="scss" value={values.scss} fill={values['pill-color']} />
                 </div>
             </div>
         </div>

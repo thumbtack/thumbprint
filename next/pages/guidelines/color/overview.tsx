@@ -9,8 +9,8 @@ import usageContentMappings, {
     emphasisContent,
     interactionContent,
     ContentMapping,
-} from './usage-mappings';
-import { Image } from './utils';
+} from '../../../utils/color-usage-mappings';
+import { Image } from '../../../utils/color-usage-types';
 import ExampleBox from '../../../components/example-box';
 
 import usage from '../../../images/pages/guide/product/color/overiew/usage.png';
@@ -69,7 +69,7 @@ function colorThemeTable({ type }: { type: string }): JSX.Element {
     );
 }
 
-function overviewTable({ list }: { list: ContentMapping }): JSX.Element {
+function OverviewTable({ list }: { list: ContentMapping }): JSX.Element {
     return (
         <table className="collapse tp-body-2 mb3">
             <thead>
@@ -151,7 +151,7 @@ export default function Overview({ layoutProps }: InferGetStaticPropsType<typeof
                         <img src={images.usage.src.src} width="375px" alt={images.usage.alt} />
                     </div>
                 </ExampleBox>
-                {overviewTable({ list: usageContent })}
+                {OverviewTable({ list: usageContent })}
             </div>
 
             <Link href="/guidelines/color/usage/background/">Read more about color usage</Link>
@@ -173,7 +173,7 @@ export default function Overview({ layoutProps }: InferGetStaticPropsType<typeof
                         />
                     </div>
                 </ExampleBox>
-                {overviewTable({ list: emphasisContent })}
+                {OverviewTable({ list: emphasisContent })}
             </div>
 
             <div>
@@ -193,7 +193,7 @@ export default function Overview({ layoutProps }: InferGetStaticPropsType<typeof
                         />
                     </div>
                 </ExampleBox>
-                {overviewTable({ list: interactionContent })}
+                {OverviewTable({ list: interactionContent })}
             </div>
         </ContentPage>
     );
