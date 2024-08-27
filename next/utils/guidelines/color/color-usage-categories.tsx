@@ -21,10 +21,16 @@ export default function UsageCategory({
                 .map(key => {
                     return (
                         <div key={key}>
-                            <div className="mb4">
-                                <H2>{usageContentMappings[key].title}</H2>
-                                <P>{usageContentMappings[key].description}</P>
-                            </div>
+                            {usageContentMappings[key] ? (
+                                <div className="mb4">
+                                    <H2>{usageContentMappings[key].title}</H2>
+                                    <P>{usageContentMappings[key].description}</P>
+                                </div>
+                            ) : (
+                                <div className="visually-hidden">
+                                    Add missing "{key}" to usage content mapping
+                                </div>
+                            )}
 
                             <table className="tp-body-2 black-300">
                                 <thead>
@@ -49,7 +55,7 @@ export default function UsageCategory({
                                                                 background: `${component.values['light-hex']}`,
                                                             }}
                                                         />
-                                                        {component.values.color}
+                                                        {component.values.color.replace('400', '')}
                                                     </div>
                                                 </td>
                                                 <td className="v-top pv2 pr4">

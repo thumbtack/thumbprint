@@ -93,7 +93,7 @@ function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
                 onClick={(): void => setIsActive(!isActive)}
             >
                 <div className="flex-auto tp-body-2">
-                    <span className="pr2">{values.color}</span>
+                    <span className="pr2">{values.color.replace('400', '')}</span>
                     {values.level === '400' ? (
                         <CoreColorPill tokenColor={values.javascript} />
                     ) : null}
