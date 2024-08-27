@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds \`dataTestId\` prop 1`] = `
+<Switch
+  dataTestId="Duck"
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba bg-gray b-gray-300"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+  >
+    <input
+      aria-checked={false}
+      aria-disabled={false}
+      checked={false}
+      className="visually-hidden"
+      data-testid="Duck"
+      disabled={false}
+      id=""
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;
+
+exports[`adds \`disabled\` attribute 1`] = `
+<Switch
+  isDisabled={true}
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba slideToggleDisabled bg-gray b-gray-300"
+  >
+    <input
+      aria-checked={false}
+      aria-disabled={true}
+      checked={false}
+      className="visually-hidden"
+      disabled={true}
+      id=""
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;
+
+exports[`adds \`name\` attribute 1`] = `
+<Switch
+  name="ohhi"
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba bg-gray b-gray-300"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+  >
+    <input
+      aria-checked={false}
+      aria-disabled={false}
+      checked={false}
+      className="visually-hidden"
+      disabled={false}
+      id=""
+      name="ohhi"
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;
+
+exports[`is checked when \`isChecked\` is set to true 1`] = `
+<Switch
+  isChecked={true}
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba slideToggleChecked bg-blue b-blue"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+  >
+    <input
+      aria-checked={true}
+      aria-disabled={false}
+      checked={true}
+      className="visually-hidden"
+      disabled={false}
+      id=""
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;
+
+exports[`is not checked by default 1`] = `
+<Switch
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba bg-gray b-gray-300"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+  >
+    <input
+      aria-checked={false}
+      aria-disabled={false}
+      checked={false}
+      className="visually-hidden"
+      disabled={false}
+      id=""
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;
+
+exports[`renders Switch input 1`] = `
+<Switch
+  onChange={[MockFunction]}
+>
+  <div
+    className="slideToggle ba bg-gray b-gray-300"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+  >
+    <input
+      aria-checked={false}
+      aria-disabled={false}
+      checked={false}
+      className="visually-hidden"
+      disabled={false}
+      id=""
+      onChange={[Function]}
+      role="switch"
+      type="checkbox"
+    />
+    <div
+      className="toggleHandle bg-white ba b-gray-300"
+    />
+  </div>
+</Switch>
+`;

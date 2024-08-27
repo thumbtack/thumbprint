@@ -74,6 +74,7 @@ export {
     ServiceCardTitleProps,
 } from './components/ServiceCard/index';
 export { default as StarRating, StarRatingProps } from './components/StarRating/index';
+export { default as Switch, SwitchProps } from './components/Switch/index';
 export { default as TextArea, TextAreaProps } from './components/TextArea/index';
 export {
     default as TextInput,
