@@ -26,8 +26,7 @@ export default function Accessibility({
 
             <H2>Accessibility</H2>
             <P>
-                Accessibility is important for everyone, and it should not forgotten in the design
-                process. Accessible colors are vital for those with color blindness or other vision
+                Accessible colors are vital for those with color blindness or other vision
                 impairments. By using a high color contrast ratio, you can make sure that your
                 design is accessible to as many people as possible.
             </P>

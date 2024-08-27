@@ -60,10 +60,10 @@ export default function UsageIcons({
             layoutProps={layoutProps}
         >
             <P>
-                Color usage plays a key role in how we convey emotions, establishing brand identity,
-                and guiding user interactions. Consistent and thoughtful color choices also improve
-                usability, highlight important elements, and create a cohesive design language
-                across the product.
+                The use of color plays a key role in how we convey emotions, establish brand
+                identity, and guide user interactions. Consistent and thoughtful color choices also
+                improve usability, highlight important elements, and create a cohesive design
+                language across the product.
             </P>
 
             <ColorUsageNav activeTab="icons" />
@@ -77,10 +77,9 @@ export default function UsageIcons({
             <div>
                 <H2>Icons</H2>
                 <P>
-                    Icons provide visual cues in the user experience, and improve recognition by
-                    conveying information in a compact and easily recognizable form. Color usage
-                    patterns for icons should coordinated with the space they occupy and the pairing
-                    with body copy.
+                    Icons provide visual cues in the user experience and improve recognition by
+                    conveying information in a compact and easily recognizable form. Use of color in
+                    icons should coordinate with the space they occupy and any text.
                 </P>
             </div>
             <div>

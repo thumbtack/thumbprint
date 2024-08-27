@@ -1,5 +1,6 @@
 import React from 'react';
 import type { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 import { groupBy } from 'lodash-es';
 import { ContentPage } from '../../../../components/mdx/mdx';
 import { H2, H3, LI, P, UL } from '../../../../components/mdx/components';
@@ -60,10 +61,10 @@ export default function UsageText({
             layoutProps={layoutProps}
         >
             <P>
-                Color usage plays a key role in how we convey emotions, establishing brand identity,
-                and guiding user interactions. Consistent and thoughtful color choices also improve
-                usability, highlight important elements, and create a cohesive design language
-                across the product.
+                The use of color plays a key role in how we convey emotions, establish brand
+                identity, and guide user interactions. Consistent and thoughtful color choices also
+                improve usability, highlight important elements, and create a cohesive design
+                language across the product.
             </P>
 
             <ColorUsageNav activeTab="text" />
@@ -77,9 +78,10 @@ export default function UsageText({
             <div>
                 <H2>Text</H2>
                 <P>
-                    Text color can vary depending on the background surface. By default text, but
-                    not exclusively, color should be neutral when on a neutral background (see
-                    Accessibility for more information WCAG color contrast ratio requirements().
+                    Text color can vary depending on the background surface. By default, text color
+                    should be neutral when on a neutral background (see{' '}
+                    <Link href="/guidelines/color/accessibility/">Accessibility</Link> for more
+                    information WCAG color contrast ratio requirements.
                 </P>
             </div>
             <div>
@@ -87,16 +89,14 @@ export default function UsageText({
                 <UL>
                     <LI>Use neutral values for general heading (strong) and body copy (default)</LI>
                     <LI>Primary (Blue 400) is reserved for link color</LI>
+                    <LI>Use sparingly</LI>
                     <LI>
-                        When using color:
-                        <UL>
-                            <LI>Use sparingly</LI>
-                            <LI>Refer to color themes for brand or feedback color guidelines</LI>
-                            <LI>
-                                Bold text should be at least 18.5px and 24px for non-bold copy on
-                                core values.
-                            </LI>
-                        </UL>
+                        <Link href="/guidelines/color/overview/">Refer to color themes</Link> for
+                        brand or feedback color guidelines
+                    </LI>
+                    <LI>
+                        Bold text should be at least 18.5px and 24px for non-bold copy on core
+                        values.
                     </LI>
                 </UL>
             </div>
