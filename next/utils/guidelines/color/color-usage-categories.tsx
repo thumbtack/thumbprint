@@ -28,7 +28,7 @@ export default function UsageCategory({
                                 </div>
                             ) : (
                                 <div className="visually-hidden">
-                                    Add missing "{key}" to usage content mapping
+                                    Add missing {key} to usage content mapping
                                 </div>
                             )}
 
