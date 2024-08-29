@@ -40,7 +40,7 @@ const usageContentMappings: ContentMapping = {
         type: 'feedback',
         color: '#2db783',
         description:
-            'Use for positive momentary moments, like income patterns, discounts, savings, and revenue growth.',
+            'Use for positive monetary moments, like income patterns, discounts, savings, and revenue growth.',
     },
     alert: {
         title: 'Alert',
