@@ -29,7 +29,7 @@ export default function Featured(): JSX.Element {
             </div>
             <div className="m_col-6 mb3">
                 <a
-                    href="/guide/product/color/"
+                    href="/guide/product/color/overview/"
                     className={`bg-white br2 black db h-100 color-inherit ${styles.shadow}`}
                 >
                     <div className="flex pv3 ph3 m_ph4 items-center">
