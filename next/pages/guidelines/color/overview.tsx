@@ -287,7 +287,7 @@ export default function Overview({ layoutProps }: InferGetStaticPropsType<typeof
             <Link href="/guidelines/color/palette/">See all colors</Link>
 
             <div className="mb5">
-                <H2>Usage</H2>
+                <H2>Color usage</H2>
                 <P>
                     Color usage is arranged into four high-level categories background, border, text
                     and icon. Color usage patterns are represented by their intended use case.
