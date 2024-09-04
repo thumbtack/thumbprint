@@ -159,16 +159,6 @@ export default function Accessibility({
                     </GridColumn>
                     <GridColumn aboveSmall={2}>
                         <div
-                            className="bg-yellow-600 pa3 bt bb b-gray-300"
-                            style={{ background: tokens.tpColorYellow600 }}
-                        >
-                            <Text size={2} className="white">
-                                white
-                            </Text>
-                        </div>
-                    </GridColumn>
-                    <GridColumn aboveSmall={2}>
-                        <div
                             className="bg-red-500 pa3 bt br bb b-gray-300"
                             style={{ background: tokens.tpColorRed500 }}
                         >

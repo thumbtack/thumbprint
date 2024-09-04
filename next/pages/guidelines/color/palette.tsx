@@ -74,7 +74,10 @@ function TokenPill({ fill, title, value }: ColoredPillProps): JSX.Element {
 }
 
 function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
-    const [isActive, setIsActive] = useState(false);
+    // opens single color per section open by default
+    const isOpen = values.level === '400' || values.color === 'White';
+    const [isActive, setIsActive] = useState(isOpen);
+
     return (
         <div
             className={classNames('flex flex-column tp-body-3', {
@@ -135,40 +138,9 @@ function ColorSection({ values }: { values: Color['values'] }): JSX.Element {
     );
 }
 
-interface SwatchProps {
-    tokenColor: string;
-    isCore?: boolean;
-    className?: string;
-}
-
-function CoreColorPill({ tokenColor }: { tokenColor: string }): JSX.Element {
-    const bgColor = tokens[`tpColor${tokenColor?.replace('tpColor', '')}500`];
-    return (
-        <span
-            className="white br-pill pv1 ph3 tp-body-2"
-            style={{
-                background: bgColor,
-            }}
-        >
-            core
-        </span>
-    );
-}
-
-function Swatch({ tokenColor, isCore, className }: SwatchProps): JSX.Element {
-    return (
-        <td
-            className={classNames('tc', { [`${className}`]: className })}
-            style={{ background: tokens[`${tokenColor}`], height: '48px' }}
-        >
-            {isCore ? <CoreColorPill tokenColor={tokenColor} /> : null}
-        </td>
-    );
-}
-
 function renderColors({ usages }: { usages: Usage[] }): JSX.Element {
     return (
-        <div className="pt6">
+        <div className="pt4">
             {Object.keys(usages)
                 .map(key => {
                     return (
@@ -184,14 +156,16 @@ function renderColors({ usages }: { usages: Usage[] }): JSX.Element {
                                     </Text>
 
                                     <div className="br3 overflow-hidden mt2">
-                                        {usages[key].map((component: Usage) => {
-                                            return (
-                                                <ColorSection
-                                                    values={component.values}
-                                                    key={component.name}
-                                                />
-                                            );
-                                        })}
+                                        {usages[key]
+                                            .map((component: Usage) => {
+                                                return (
+                                                    <ColorSection
+                                                        values={component.values}
+                                                        key={component.name}
+                                                    />
+                                                );
+                                            })
+                                            .reverse()}
                                     </div>
                                 </div>
 
@@ -226,6 +200,20 @@ function renderColors({ usages }: { usages: Usage[] }): JSX.Element {
     );
 }
 
+function CoreColorPill({ tokenColor }: { tokenColor: string }): JSX.Element {
+    const bgColor = tokens[`tpColor${tokenColor?.replace('tpColor', '')}500`];
+    return (
+        <span
+            className="white br-pill pv1 ph3 tp-body-2"
+            style={{
+                background: bgColor,
+            }}
+        >
+            core
+        </span>
+    );
+}
+
 export default function Palette({
     usages,
     layoutProps,
@@ -241,124 +229,6 @@ export default function Palette({
                 the product. The usage patterns for each value below can be found in our usage page.
             </P>
 
-            <div>
-                <H2>Color system</H2>
-                <P>
-                    These colors should be used to drive the user experience depending on their
-                    intended use case and should be used sparingly to drive focus to moments that
-                    matter from a branded or feedback perspective.
-                </P>
-            </div>
-
-            {/* palette */}
-            <table className="br3 overflow-hidden w-100">
-                <thead>
-                    <tr className="tp-body-2 pt5">
-                        <th className="flex-auto h-100 pb2 tr pr2 w1 content-center">
-                            <span className="white">Neutral</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">100</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">200</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">300</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">Core</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">500</span>
-                        </th>
-                        <th className="pb2 tc normal black-300">
-                            <span className="Black">600</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="Black">Netural</span>
-                        </td>
-                        <Swatch tokenColor="tpColorWhite" className="br-top br-left br2" />
-                        <Swatch tokenColor="tpColorGray200" />
-                        <Swatch tokenColor="tpColorGray300" />
-                        <Swatch tokenColor="tpColorGray" />
-                        <Swatch tokenColor="tpColorBlack300" />
-                        <Swatch tokenColor="tpColorBlack" className="br-top br-right br2" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="blue-500">Blue</span>
-                        </td>
-                        <Swatch tokenColor="tpColorBlue100" />
-                        <Swatch tokenColor="tpColorBlue200" />
-                        <Swatch tokenColor="tpColorBlue300" />
-                        <Swatch isCore tokenColor="tpColorBlue" />
-                        <Swatch tokenColor="tpColorBlue500" />
-                        <Swatch tokenColor="tpColorBlue600" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="green-500">Green</span>
-                        </td>
-                        <Swatch tokenColor="tpColorGreen100" />
-                        <Swatch tokenColor="tpColorGreen200" />
-                        <Swatch tokenColor="tpColorGreen300" />
-                        <Swatch isCore tokenColor="tpColorGreen" />
-                        <Swatch tokenColor="tpColorGreen500" />
-                        <Swatch tokenColor="tpColorGreen600" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="yellow-600">Yellow</span>
-                        </td>
-                        <Swatch tokenColor="tpColorYellow100" />
-                        <Swatch tokenColor="tpColorYellow200" />
-                        <Swatch tokenColor="tpColorYellow300" />
-                        <Swatch isCore tokenColor="tpColorYellow" />
-                        <Swatch tokenColor="tpColorYellow500" />
-                        <Swatch tokenColor="tpColorYellow600" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="red-500">Red</span>
-                        </td>
-                        <Swatch tokenColor="tpColorRed100" />
-                        <Swatch tokenColor="tpColorRed200" />
-                        <Swatch tokenColor="tpColorRed300" />
-                        <Swatch isCore tokenColor="tpColorRed" />
-                        <Swatch tokenColor="tpColorRed500" />
-                        <Swatch tokenColor="tpColorRed600" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="indigo-500">Indigo</span>
-                        </td>
-                        <Swatch tokenColor="tpColorIndigo100" />
-                        <Swatch tokenColor="tpColorIndigo200" />
-                        <Swatch tokenColor="tpColorIndigo300" />
-                        <Swatch isCore tokenColor="tpColorIndigo" />
-                        <Swatch tokenColor="tpColorIndigo500" />
-                        <Swatch tokenColor="tpColorIndigo600" />
-                    </tr>
-                    <tr>
-                        <td className="flex-auto h3 tr pr3 content-center w1">
-                            <span className="purple-500">Purple</span>
-                        </td>
-                        <Swatch tokenColor="tpColorPurple100" className="br-bottom br-left br2" />
-                        <Swatch tokenColor="tpColorPurple200" />
-                        <Swatch tokenColor="tpColorPurple300" />
-                        <Swatch isCore tokenColor="tpColorPurple" />
-                        <Swatch tokenColor="tpColorPurple500" />
-                        <Swatch tokenColor="tpColorPurple600" />
-                    </tr>
-                </tbody>
-            </table>
-
-            {/* colors */}
             {renderColors({ usages })}
         </ContentPage>
     );

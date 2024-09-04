@@ -22,7 +22,7 @@ const usageContentMappings: ContentMapping = {
         description:
             'Use our brand color to tie in the most important user moments with how we express ourselves as an organization through our identity. You can also use these in info moments.',
     },
-    guidance: {
+    secondary: {
         title: 'Guidance and visualizations',
         type: 'brand',
         color: '#5968e2',
@@ -40,7 +40,7 @@ const usageContentMappings: ContentMapping = {
         type: 'feedback',
         color: '#2db783',
         description:
-            'Use for positive momentary moments, like income patterns, discounts, savings, and revenue growth.',
+            'Use for positive monetary moments, like income patterns, discounts, savings, and revenue growth.',
     },
     alert: {
         title: 'Alert',
@@ -147,7 +147,7 @@ export const paletteColortMappings: ContentMapping = {
         color: '#5968e2',
         suggestedUse: 'Data visualizations, informational moments, user assistance.',
         description:
-            'Use to guide users through onboarding, user assistance, map overlays, and data visualizations.',
+            'Use as a secondary color to guide users through onboarding, user assistance, map overlays, and data visualizations.',
     },
     purple: {
         title: 'Purple',
