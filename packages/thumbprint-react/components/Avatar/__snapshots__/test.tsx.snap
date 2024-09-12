@@ -15,12 +15,12 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
     }
   >
     <Image
-      className="circleAvatar"
+      className="squareAvatar"
       height="48px"
       src="//https://i.pravatar.cc/140"
     >
       <picture
-        className="picture circleAvatar"
+        className="picture squareAvatar"
       >
         <img
           alt=""
@@ -63,7 +63,7 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar squareAvatar"
       style={
         Object {
           "backgroundColor": "#e8f1fd",

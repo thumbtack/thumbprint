@@ -9,11 +9,35 @@ import { ComponentHeader, ComponentFooter } from 'components/thumbprint-componen
 
 <ComponentHeader data={props.data} />
 
-## Usage
-
-The Avatar component is a visual representation of a user or entity. The presentation can vary dependent on the existance on image uploaded by the user to represent an individual (customer) or a business (entity).
-
 ## Options
+
+### Entities & Users
+
+One of the defining guidelines for avatars and their shape is what the avatar is representing. We divide these two groups into entities and users.
+
+<div>
+    <b>Entity</b>: a company, business, or service. A square with our standard 4px border-radius is
+    best here.
+</div>
+
+<div>
+    <b>User</b>: a person or user. A circle is best suited for people - primarily faces.
+</div>
+
+<div className="grid mw8 mt3">
+    <div className="col-4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
+        <div className="tp-body-3 mt2 black-300">
+            <div>Entity Avatar</div>
+        </div>
+    </div>
+    <div className="col-4">
+        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
+        <div className="tp-body-3 mt2 black-300">
+            <div>User Avatar</div>
+        </div>
+    </div>
+</div>
 
 ### Sizes
 
@@ -30,53 +54,29 @@ The Avatar component is a visual representation of a user or entity. The present
 </div>
 
 <div className="flex items-baseline">
-    <div className="mr4 tc">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
+    <div className="mr4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
         <div className="tp-body-3">Extra Large</div>
     </div>
-    <div className="mr4 tc">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="large" />
+    <div className="mr4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="large" />
         <div className="tp-body-3">Large</div>
     </div>
-    <div className="mr4 tc">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="medium" />
+    <div className="mr4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="medium" />
         <div className="tp-body-3">Medium</div>
     </div>
-    <div className="mr4 tc">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="small" />
+    <div className="mr4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="small" />
         <div className="tp-body-3">Small</div>
     </div>
-    <div className="mr4 tc">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="xsmall" />
+    <div className="mr4">
+        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xsmall" />
         <div className="tp-body-3">Extra Small</div>
     </div>
 </div>
 
-## Badging
-
-A badge can be added to denote the online status of a user. The badge will be placed on the top right portion of the avatar and use the 400-level green color as positive indicator of their online status.
-
-<div>
-    <div className="flex items-center mb4">
-        <div className="mr2">
-            <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="xlarge" />
-        </div>
-        <div className="mr2">
-            <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="large" />
-        </div>
-        <div className="mr2">
-            <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="medium" />
-        </div>
-        <div className="mr2">
-            <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="small" />
-        </div>
-        <div className="mr2">
-            <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="xsmall" />
-        </div>
-    </div>
-</div>
-
-## Blank Avatars
+### Blank Avatars
 
 When images aren’t provided for avatars we use blank states in their place.
 
@@ -85,8 +85,6 @@ Initials are used for blank profiles and differ for entities and users. For enti
 The initials will display capitalized and bolded.
 
 ### Type Sizes
-
-Sizing for the initials will be automatically applied based the sizing options. Below is the list of type size mapping:
 
 <div className="grid mw8 mb3">
     <div className="col-6">
@@ -125,11 +123,7 @@ Sizing for the initials will be automatically applied based the sizing options. 
 
 ### Color
 
-Blank avatars get assigned a background 100-level color and 600-level text color from our extended palette based on the ascii value of the initials attached to the user name or entity.
-
-## Accessibility
-
--   The full name or the entity name will be used as the `title` and `alt` text.
+Blank avatars get assigned a 100-level color from our extended palette based on the ascii value of the initials attached to the user name or entity.
 
 <ComponentFooter data={props.data} />
 
