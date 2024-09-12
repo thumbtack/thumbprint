@@ -81,7 +81,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityAvatarProps>(
             >
                 {imageUrl ? (
                     <Image
-                        className={styles.squareAvatar}
+                        className={styles.circleAvatar}
                         src={imageUrl}
                         alt={fullName && `Avatar for ${fullName}`}
                         height={typeof size === 'string' ? dimensions[size] : `${size}px`}
@@ -89,7 +89,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityAvatarProps>(
                     />
                 ) : (
                     <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
                         style={getStyle(initial)}
                         title={fullName && `Avatar for ${fullName}`}
                     >
