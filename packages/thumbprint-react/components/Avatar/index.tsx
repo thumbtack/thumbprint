@@ -81,7 +81,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityAvatarProps>(
             >
                 {imageUrl ? (
                     <Image
-                        className={styles.squareAvatar}
+                        className={styles.avatarRadius}
                         src={imageUrl}
                         alt={fullName && `Avatar for ${fullName}`}
                         height={typeof size === 'string' ? dimensions[size] : `${size}px`}
@@ -89,7 +89,7 @@ const EntityAvatar = forwardRef<HTMLElement, EntityAvatarProps>(
                     />
                 ) : (
                     <span
-                        className={`${styles.initialsAvatar} ${styles.squareAvatar}`}
+                        className={`${styles.initialsAvatar} ${styles.avatarRadius}`}
                         style={getStyle(initial)}
                         title={fullName && `Avatar for ${fullName}`}
                     >
@@ -124,6 +124,7 @@ export interface EntityAvatarProps {
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | number;
     /**
      * Displays a badge if the user is online.
+     * @deprecated Indicate this information outside of the avatar instead.
      */
     isOnline?: boolean;
 }
@@ -152,7 +153,7 @@ const UserAvatar = forwardRef<HTMLElement, UserAvatarProps>(
             >
                 {imageUrl ? (
                     <Image
-                        className={styles.circleAvatar}
+                        className={styles.avatarRadius}
                         src={imageUrl}
                         alt={fullName && `Avatar for ${fullName}`}
                         height={typeof size === 'string' ? dimensions[size] : `${size}px`}
@@ -160,7 +161,7 @@ const UserAvatar = forwardRef<HTMLElement, UserAvatarProps>(
                     />
                 ) : (
                     <span
-                        className={`${styles.initialsAvatar} ${styles.circleAvatar}`}
+                        className={`${styles.initialsAvatar} ${styles.avatarRadius}`}
                         style={getStyle(initials)}
                         title={fullName && `Avatar for ${fullName}`}
                     >
@@ -203,6 +204,7 @@ export interface UserAvatarProps {
     isChecked?: boolean;
     /**
      * Displays a badge if the user is online.
+     * @deprecated Indicate this information outside of the avatar instead.
      */
     isOnline?: boolean;
 }

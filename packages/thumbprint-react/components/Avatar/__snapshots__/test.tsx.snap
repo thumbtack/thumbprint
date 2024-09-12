@@ -15,12 +15,12 @@ exports[`EntityAvatar renders an image when the user has one 1`] = `
     }
   >
     <Image
-      className="squareAvatar"
+      className="avatarRadius"
       height="48px"
       src="//https://i.pravatar.cc/140"
     >
       <picture
-        className="picture squareAvatar"
+        className="picture avatarRadius"
       >
         <img
           alt=""
@@ -63,7 +63,7 @@ exports[`EntityAvatar renders the initials when the user has no image 1`] = `
     }
   >
     <span
-      className="initialsAvatar squareAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#e8f1fd",
@@ -93,12 +93,12 @@ exports[`adds the \`fullName\` as \`alt\` text when image is provided 1`] = `
   >
     <Image
       alt="Avatar for Duck Goose"
-      className="circleAvatar"
+      className="avatarRadius"
       height="48px"
       src="//https://i.pravatar.cc/140"
     >
       <picture
-        className="picture circleAvatar"
+        className="picture avatarRadius"
       >
         <img
           alt="Avatar for Duck Goose"
@@ -141,7 +141,7 @@ exports[`adds the \`fullName\` as \`title\` text 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fafafa",
@@ -170,12 +170,12 @@ exports[`adds the \`fullName\` as \`title\` text 2`] = `
   >
     <Image
       alt="Avatar for Duck Goose"
-      className="circleAvatar"
+      className="avatarRadius"
       height="48px"
       src="//https://i.pravatar.cc/140"
     >
       <picture
-        className="picture circleAvatar"
+        className="picture avatarRadius"
       >
         <img
           alt="Avatar for Duck Goose"
@@ -219,7 +219,7 @@ exports[`adds the \`fullName\` as \`title\` text 3`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -248,7 +248,7 @@ exports[`does not add the \`fullName\` as \`alt\` text when no image is provided
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fafafa",
@@ -275,7 +275,7 @@ exports[`does not render a badge by default 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -304,7 +304,7 @@ exports[`does not render a badge by default 2`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -332,7 +332,7 @@ exports[`renders \`isOnline\` when \`isOnline\` is true 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fafafa",
@@ -375,7 +375,7 @@ exports[`renders a badge if valid badge prop is supplied 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -433,7 +433,7 @@ exports[`renders a badge if valid badge prop is supplied 2`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -491,7 +491,7 @@ exports[`renders a badge if valid badge prop is supplied 3`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -537,7 +537,7 @@ exports[`renders an SVG when \`isChecked\` is true 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -595,7 +595,7 @@ exports[`renders an SVG when \`isChecked\` is true 2`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fdf7e7",
@@ -652,12 +652,12 @@ exports[`renders an image when the user has one 1`] = `
     }
   >
     <Image
-      className="circleAvatar"
+      className="avatarRadius"
       height="48px"
       src="//https://i.pravatar.cc/140"
     >
       <picture
-        className="picture circleAvatar"
+        className="picture avatarRadius"
       >
         <img
           alt=""
@@ -701,7 +701,7 @@ exports[`renders checkmark SVG when \`isChecked\` and \`isOnline\` are true 1`] 
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#fafafa",
@@ -755,7 +755,7 @@ exports[`renders the initials when the user has no image 1`] = `
     }
   >
     <span
-      className="initialsAvatar circleAvatar"
+      className="initialsAvatar avatarRadius"
       style={
         Object {
           "backgroundColor": "#e8f1fd",

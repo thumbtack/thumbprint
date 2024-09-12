@@ -11,27 +11,22 @@ type SizeClassesType = {
     xsmall: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
-        entityOnline: ConfigItem;
     };
     small: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
-        entityOnline: ConfigItem;
     };
     medium: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
-        entityOnline: ConfigItem;
     };
     large: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
-        entityOnline: ConfigItem;
     };
     xlarge: {
         userOnline: ConfigItem;
         userChecked: ConfigItem;
-        entityOnline: ConfigItem;
     };
 };
 
@@ -48,9 +43,6 @@ const sizeClasses: SizeClassesType = {
             right: -4,
             size: 17,
         },
-        entityOnline: {
-            size: 12,
-        },
     },
     small: {
         userOnline: {
@@ -62,9 +54,6 @@ const sizeClasses: SizeClassesType = {
             top: -2,
             right: -4,
             size: 17,
-        },
-        entityOnline: {
-            size: 12,
         },
     },
     medium: {
@@ -78,9 +67,6 @@ const sizeClasses: SizeClassesType = {
             right: -2,
             size: 20,
         },
-        entityOnline: {
-            size: 14,
-        },
     },
     large: {
         userOnline: {
@@ -92,9 +78,6 @@ const sizeClasses: SizeClassesType = {
             top: 0,
             right: 0,
             size: 24,
-        },
-        entityOnline: {
-            size: 18,
         },
     },
     xlarge: {
@@ -108,13 +91,10 @@ const sizeClasses: SizeClassesType = {
             right: 6,
             size: 30,
         },
-        entityOnline: {
-            size: 24,
-        },
     },
 };
 
-type BadgeType = 'userOnline' | 'userChecked' | 'entityOnline';
+type BadgeType = 'userOnline' | 'userChecked';
 
 interface PropTypes {
     size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
@@ -124,17 +104,13 @@ interface PropTypes {
 
 /**
  * `Badge` appears on the top-right corner of an `Avatar`. It is used to either
- * show a checkmark or an indicator that there are unread notifications.
+ * show a checkmark or an indicator that there are unread notifications. This is deprecated.
  */
 export default function Badge({ size, type, children }: PropTypes): JSX.Element {
-    let badgeType: BadgeType = 'entityOnline';
+    let badgeType: BadgeType = 'userOnline';
 
-    if (type === 'user') {
-        if (children) {
-            badgeType = 'userChecked';
-        } else {
-            badgeType = 'userOnline';
-        }
+    if (type === 'user' && children) {
+        badgeType = 'userChecked';
     }
 
     const styleConfig: ConfigItem = sizeClasses[size][badgeType];
@@ -143,10 +119,8 @@ export default function Badge({ size, type, children }: PropTypes): JSX.Element 
         <div
             className={styles.badge}
             style={{
-                // EntityAvatar badges stick out by one third of their diameter.
-                // UserAvatar badges have custom positions in the style object.
-                top: badgeType === 'entityOnline' ? -(styleConfig.size / 3) : styleConfig.top,
-                right: badgeType === 'entityOnline' ? -(styleConfig.size / 3) : styleConfig.right,
+                top: styleConfig.top,
+                right: styleConfig.right,
                 width: styleConfig.size,
                 height: styleConfig.size,
             }}
