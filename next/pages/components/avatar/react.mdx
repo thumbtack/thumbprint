@@ -15,26 +15,9 @@ export const metadata = {
 import { UserAvatar, EntityAvatar } from '@thumbtack/thumbprint-react';
 import DeprecatedComponentAlert from '../../../components/thumbprint-components/deprecated-component-alert/deprecated-component-alert.tsx';
 
-## Avatar variations
-
-Avatars are available as two components: `UserAvatar` and `EntityAvatar`.
-
-```jsx
-<div className="flex">
-    <div className="mr3">
-        <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
-    </div>
-    <div>
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
-    </div>
-</div>
-```
-
-`UserAvatar` is for people or users whereas `EntityAvatar` is for companies, businesses, or services.
-
 ## Avatar sizes
 
-Both `UserAvatar` and `EntityAvatar` are available in five sizes ranging from `xlarge` to `xsmall`.
+`UserAvatar`is available in five sizes ranging from `xlarge` to `xsmall`.
 
 ```jsx
 <>
@@ -53,23 +36,6 @@ Both `UserAvatar` and `EntityAvatar` are available in five sizes ranging from `x
         </div>
         <div className="mr3">
             <UserAvatar imageUrl="https://i.pravatar.cc/140" size="xsmall" />
-        </div>
-    </div>
-    <div className="flex items-center">
-        <div className="mr3">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xlarge" />
-        </div>
-        <div className="mr3">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="large" />
-        </div>
-        <div className="mr3">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="medium" />
-        </div>
-        <div className="mr3">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="small" />
-        </div>
-        <div className="mr3">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" size="xsmall" />
         </div>
     </div>
 </>
@@ -101,32 +67,12 @@ Avatars without images can display the the user or entity’s initials instead. 
             <UserAvatar initials="HA" size="large" />
         </div>
     </div>
-    <div className="flex">
-        <div className="mr2">
-            <EntityAvatar initial="A" size="large" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar initial="B" size="large" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar initial="C" size="large" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar initial="D" size="large" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar initial="E" size="large" />
-        </div>
-        <div>
-            <EntityAvatar initial="F" size="large" />
-        </div>
-    </div>
 </>
 ```
 
-## Avatar badges
+## Badging
 
-Badges can be added to avatars to denote information including hired status and online status.
+A badge can be added to denote the online status of a user. The badge will be placed on the top right portion of the avatar and use the 400-level green color as positive indicator of their online status.
 
 ### Online
 
@@ -150,52 +96,6 @@ This badge indicates that a user or entity is online.
         <div className="mr2">
             <UserAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="xsmall" />
         </div>
-    </div>
-
-    <div className="flex items-center">
-        <div className="mr2">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="xlarge" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="large" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="medium" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="small" />
-        </div>
-        <div className="mr2">
-            <EntityAvatar imageUrl="https://i.pravatar.cc/140" isOnline size="xsmall" />
-        </div>
-    </div>
-</div>
-```
-
-### Checked
-
-<DeprecatedComponentAlert>
-    The checked badge is deprecated. To indicate hired status of a user, show this information
-    separately next to the avatar. Only the online badge is supported by both components. Checked is
-    only supported by UserAvatar.
-</DeprecatedComponentAlert>
-
-```jsx
-<div className="flex items-center mb4">
-    <div className="mr2">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" isChecked size="xlarge" />
-    </div>
-    <div className="mr2">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" isChecked size="large" />
-    </div>
-    <div className="mr2">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" isChecked size="medium" />
-    </div>
-    <div className="mr2">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" isChecked size="small" />
-    </div>
-    <div className="mr2">
-        <UserAvatar imageUrl="https://i.pravatar.cc/140" isChecked size="xsmall" />
     </div>
 </div>
 ```

@@ -1,12 +1,21 @@
----
-title: Avatar
-description: Display user images and badges on Thumbtack.
----
+import { MDXComponentPage } from '../../../components/mdx/mdx';
+import baseGetStaticProps from '../../../utils/mdx-get-static-props';
+export const getStaticProps = ctx => baseGetStaticProps(ctx, metadata);
+export default props => <MDXComponentPage {...props} {...metadata} />;
 
-import { graphql } from 'gatsby';
-import { ComponentHeader } from 'components/thumbprint-components';
+export const metadata = {
+    title: 'Avatar',
+    description: 'Display user images and badges on Thumbtack.',
+    component: {
+        id: 'avatar',
+        platformId: 'ios',
+    },
+};
 
-<ComponentHeader data={props.data} />
+import { Img } from '../../../components/mdx/components';
+
+import avatarOnlineNow from '../../../images/pages/components/avatar/ios/online-now.png';
+import avatarVariations from '../../../images/pages/components/avatar/ios/variations.png';
 
 ## Summary
 
@@ -22,7 +31,7 @@ Use `EntityAvatar` or `UserAvatar` classes directly depending on the object to b
     <b>User</b>: a person or user.
 </div>
 
-![Screenshot of Entity and User Avatars](/img/ios/avatar-variations.png)
+<Img {...avatarVariations} className="db mw6 m_h-auto" fill={false}></Img>
 
 ```swift
 let entityAvatar = EntityAvatar(size: .medium)
@@ -54,7 +63,7 @@ One of the provided avatar sizes: `xSmall`, `small`, `medium`, `large`, `xLarge`
 
 Boolean value that controls whether the online badge is shown or not.
 
-![Screenshot of Online Badge on Entity and User Avatar](/img/ios/avatar-online-now.png)
+<Img {...avatarOnlineNow} className="db mw6 m_h-auto" fill={false}></Img>
 
 ### `public var initials: String?`
 
@@ -73,16 +82,3 @@ _Note_ A URL extension is provided for utility for loading a remote image. It is
 ### `func setImageURL(_ url: URL?) -> SDWebImageOperation?`
 
 Loads an image from the given URL and sets a blank placeholder image while loading. Once loaded, the image is displayed in the Avatar.
-
-export const pageQuery = graphql`
-    {
-        # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
-            edges {
-                node {
-                    ...PlatformNavFragment
-                }
-            }
-        }
-    }
-`;

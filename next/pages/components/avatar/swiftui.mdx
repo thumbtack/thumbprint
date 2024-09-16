@@ -1,12 +1,22 @@
----
-title: Avatar
-description: Display user images and badges on Thumbtack.
----
+import { MDXComponentPage } from '../../../components/mdx/mdx';
+import baseGetStaticProps from '../../../utils/mdx-get-static-props';
+export const getStaticProps = ctx => baseGetStaticProps(ctx, metadata);
+export default props => <MDXComponentPage {...props} {...metadata} />;
 
-import { graphql } from 'gatsby';
-import { ComponentHeader } from 'components/thumbprint-components';
+export const metadata = {
+    title: 'Avatar',
+    description: 'Display user images and badges on Thumbtack.',
+    component: {
+        id: 'avatar',
+        platformId: 'swiftui',
+    },
+};
 
-<ComponentHeader data={props.data} />
+import { Img } from '../../../components/mdx/components';
+
+import tpAvatarExample1 from '../../../images/pages/components/avatar/swiftui/example-1.png';
+import tpAvatarExample2 from '../../../images/pages/components/avatar/swiftui/example-2.png';
+import tpAvatarExample3 from '../../../images/pages/components/avatar/swiftui/example-3.png';
 
 ## Summary
 
@@ -36,7 +46,12 @@ HStack {
 }
 ```
 
-![Initials example screenshot](/img/swiftui/avatar/tpavatar-example-1.png)
+<Img
+    {...tpAvatarExample1}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="Initials example screenshot"
+></Img>
 
 ### Image initializer / Custom theme
 
@@ -46,7 +61,12 @@ TPAvatar(image: Image(systemName: "car.circle.fill"), isOnline: true)
             .tpAvatarType(.user)
 ```
 
-![Image init / theme customization example screenshot](/img/swiftui/avatar/tpavatar-example-2.png)
+<Img
+    {...tpAvatarExample2}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="Image init / theme customization example screenshot"
+></Img>
 
 ### URL initializer
 
@@ -62,7 +82,12 @@ HStack {
 }
 ```
 
-![URL initializer example screenshot](/img/swiftui/avatar/tpavatar-example-3.png)
+<Img
+    {...tpAvatarExample3}
+    className="db mw7 m_h-auto"
+    fill={false}
+    alt="URL initializer example screenshot"
+></Img>
 
 ## Environment Values
 
@@ -91,16 +116,3 @@ Boolean value that controls whether the online badge is shown or not.
 ### `initials: String?`
 
 The initials to be shown when displaying the blank avatar. One character is used for .entity, and up to two characters can be used for .user styled avatars
-
-export const pageQuery = graphql`
-    {
-        # Get links to by path to display in the navbar.
-        platformNav: allSitePage(filter: { path: { glob: "/components/avatar/*/" } }) {
-            edges {
-                node {
-                    ...PlatformNavFragment
-                }
-            }
-        }
-    }
-`;
