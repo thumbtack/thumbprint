@@ -15,7 +15,7 @@
     "@thumbtack/thumbprint-atomic": "^4.4.0",
     "@thumbtack/thumbprint-font-face": "^1.1.0",
     "@thumbtack/thumbprint-global-css": "^0.1.21",
-    "@thumbtack/thumbprint-react": "^14.18.2",
+    "@thumbtack/thumbprint-react": "^0.1.0",
     "@thumbtack/thumbprint-scss": "^4.0.3",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
