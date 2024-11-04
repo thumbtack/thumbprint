@@ -1,0 +1,53 @@
+@import '~@thumbtack/thumbprint-tokens/dist/scss/_index';
+
+// Match the width/height of Thubmprint Checkbox
+$bar-height: 20px;
+$bar-height-large: 28px;
+$height-width-ratio: 1.8;
+$transition-duration: 0.1s;
+$transition-function: ease-in;
+
+.slideToggle {
+    width: $height-width-ratio * $bar-height;
+    height: $bar-height;
+    border-radius: $bar-height;
+    cursor: pointer;
+    transition: background-color $transition-duration $transition-function;
+
+    &Large {
+        width: $height-width-ratio * $bar-height-large;
+        height: $bar-height-large;
+    }
+
+    &Disabled {
+        user-select: none;
+        cursor: default;
+        opacity: 0.3;
+    }
+}
+
+.toggleHandle {
+    height: $bar-height - 2px; // Subtract 2px to account for top/bottom border of parent container
+    width: $bar-height - 2px; // Subtract 2px to account for left/right border of parent container
+    border-radius: 50%;
+    transition: transform $transition-duration $transition-function;
+    box-shadow: $tp-shadow__card;
+    box-sizing: border-box;
+
+    &Large {
+        height: $bar-height-large - 2px; // Subtract 2px to account for top/bottom border of parent container
+        width: $bar-height-large - 2px; // Subtract 2px to account for left/right border of parent container
+    }
+
+    .slideToggleChecked & {
+        transform: translate3d(($height-width-ratio - 1) * $bar-height, 0, 0);
+    }
+
+    .slideToggleLargeChecked & {
+        transform: translate3d(($height-width-ratio - 1) * $bar-height-large, 0, 0);
+    }
+
+    input:focus ~ & {
+        box-shadow: 0 0 1px 3px $tp-color__gray-300;
+    }
+}
