@@ -43,7 +43,7 @@
         "react-copy-to-clipboard": "^5.0.1",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.0",
-        "react-live": "^2.2.0",
+        "react-live": "^3.0.0",
         "react-outside-click-handler": "^1.2.2",
         "react-scroll-marker": "^0.2.1",
         "slugify": "^1.2.9",
