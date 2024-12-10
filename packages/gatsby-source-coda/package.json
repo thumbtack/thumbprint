@@ -3,7 +3,7 @@
     "version": "0.0.6",
     "private": true,
     "dependencies": {
-        "node-fetch": "^2.6.0",
+        "node-fetch": "^2.6.7",
         "query-string": "^6.8.3"
     }
 }
