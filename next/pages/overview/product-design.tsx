@@ -37,7 +37,7 @@ export default function OverviewAbout({
             <H3>Download and install fonts</H3>
 
             <P>
-                Mark For Thumbtack, our primary font, is used for 100% of our product. All of the
+                Thumbtack Rise, our primary font, is used for 100% of our product. All of the
                 weights can be found here:
             </P>
 
