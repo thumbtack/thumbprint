@@ -20,7 +20,7 @@ export default function OverviewAbout({
             layoutProps={layoutProps}
         >
             <P>
-                Our brand font is Mark and comes in two weights, 400 and 700. We have five
+                Our brand font is Rise and comes in two weights, 400 and 700. We have five
                 &quot;title&quot; variations used for headings and three &quot;body&quot; sizes used
                 for body copy.
             </P>

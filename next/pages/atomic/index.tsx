@@ -476,7 +476,7 @@ export default function Atomic({ files, layoutProps, version }: AtomicProps): JS
 
                 <UL>
                     <LI>
-                        Our Mark font only supports two weights: <InlineCode>400</InlineCode> and{' '}
+                        Our Rise font only supports two weights: <InlineCode>400</InlineCode> and{' '}
                         <InlineCode>700</InlineCode>.
                     </LI>
                     <LI>
